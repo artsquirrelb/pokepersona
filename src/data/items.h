@@ -9653,8 +9653,7 @@ const struct Item gItems[] =
     [ITEM_ABILITY_CHANGER] =
     {
         .name = _("Abili-Change"),
-        .itemId = ITEM_ABILITY_CHANGER,
-        .price = 0,
+        .price = 10000,
         .holdEffectParam = 0,
         .description = sAbilityChangerDesc,
         .pocket = POCKET_ITEMS,

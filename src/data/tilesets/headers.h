@@ -841,3 +841,14 @@ const struct Tileset gTileset_Gen4General =
     .metatileAttributes = gMetatileAttributes_Gen4General,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Gen4General2nd =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Gen4General2nd,
+    .palettes = gTilesetPalettes_Gen4General2nd,
+    .metatiles = gMetatiles_Gen4General2nd,
+    .metatileAttributes = gMetatileAttributes_Gen4General2nd,
+    .callback = NULL,
+};

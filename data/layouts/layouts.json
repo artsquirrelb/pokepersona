@@ -115,9 +115,9 @@
       "width": 40,
       "height": 20,
       "border_width": 2,
-      "border_height": 3,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "border_height": 4,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_Gen4General2nd",
       "border_filepath": "data/layouts/LittlerootTown/border.bin",
       "blockdata_filepath": "data/layouts/LittlerootTown/map.bin"
     },

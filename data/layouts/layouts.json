@@ -5308,12 +5308,12 @@
     {
       "id": "LAYOUT_AZURINE_FOREST",
       "name": "AzurineForest_Layout",
-      "width": 20,
+      "width": 24,
       "height": 20,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Gen4General",
-      "secondary_tileset": "gTileset_Gen4General2nd",
+      "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/AzurineForest/border.bin",
       "blockdata_filepath": "data/layouts/AzurineForest/map.bin"
     }

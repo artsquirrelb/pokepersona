@@ -213,3 +213,9 @@ const u16 gMetatileAttributes_Gen4General[] = INCBIN_U16("data/tilesets/primary/
 
 const u16 gMetatiles_Gen4General2nd[] = INCBIN_U16("data/tilesets/secondary/gen_4general_2nd/metatiles.bin");
 const u16 gMetatileAttributes_Gen4General2nd[] = INCBIN_U16("data/tilesets/secondary/gen_4general_2nd/metatile_attributes.bin");
+
+const u16 gMetatiles_Forest[] = INCBIN_U16("data/tilesets/secondary/forest/metatiles.bin");
+const u16 gMetatileAttributes_Forest[] = INCBIN_U16("data/tilesets/secondary/forest/metatile_attributes.bin");
+
+const u16 gMetatiles_Gen4Building[] = INCBIN_U16("data/tilesets/primary/gen_4building/metatiles.bin");
+const u16 gMetatileAttributes_Gen4Building[] = INCBIN_U16("data/tilesets/primary/gen_4building/metatile_attributes.bin");

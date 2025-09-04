@@ -1,61 +1,56 @@
 gText_Birch_Welcome::
-	.string "Hi! Sorry to keep you waiting!\p"
-	.string "Welcome to the world of POKéMON!\p"
-	.string "My name is BIRCH.\p"
-	.string "But everyone calls me the POKéMON\n"
-	.string "PROFESSOR.\p"
+	.string "This game is a project of passion\n"
+	.string "and is completely free.\p"
+	.string "If you paid for this game\n"
+	.string "you have been scammed.\p"
+	.string "The prologue quest, starter Pokemon\n"
+	.string "and starting location is different\n"
+	.string "based on your character's gender.\p"
 	.string "$"
 
 gText_Birch_Pokemon::
-	.string "This is what we call a “POKéMON.”\p"
-	.string "\n"
+	.string "If you paid for this game\n"
+	.string "you have been scammed.\p"
+	.string "The prologue quest, starter Pokemon\n"
+	.string "and starting location is different\n"
+	.string "based on your character's gender.\p"
 	.string "$"
 
 gText_Birch_MainSpeech::
-	.string "This world is widely inhabited by\n"
-	.string "creatures known as POKéMON.\p"
-	.string "We humans live alongside POKéMON,\n"
-	.string "at times as friendly playmates, and\l"
-	.string "at times as cooperative workmates.\p"
-	.string "And sometimes, we band together\n"
-	.string "and battle others like us.\p"
-	.string "But despite our closeness, we don't\n"
-	.string "know everything about POKéMON.\p"
-	.string "In fact, there are many, many\n"
-	.string "secrets surrounding POKéMON.\p"
-	.string "To unravel POKéMON mysteries,\n"
-	.string "I've been undertaking research.\l"
-	.string "That's what I do.\p"
+	.string "If you paid for this game\n"
+	.string "you have been scammed.\p"
+	.string "The prologue quest, starter Pokemon\n"
+	.string "and starting location is different\l"
+	.string "based on your character's gender.\p"
+	.string "You can still choose to experience\n"
+	.string "the other character's quest later\l"
+	.string "in the story.\p"
 	.string "$"
 
 gText_Birch_AndYouAre::
-	.string "And you are?$"
+	.string "So which character do you want\n"
+	.string "to play as?\p"
+	.string "$"
 
 gText_Birch_BoyOrGirl::
-	.string "Are you a boy?\n"
-	.string "Or are you a girl?$"
+	.string "Akihiko or Mitsuru?\p"
+	.string "$"
 
 gText_Birch_WhatsYourName::
-	.string "All right.\n"
-	.string "What's your name?$"
+	.string "So it's {PLAYER}{KUN}?\p"
+	.string "$"
 
 gText_Birch_SoItsPlayer::
 	.string "So it's {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
-	.string "Ah, okay!\p"
-	.string "You're {PLAYER}{KUN} who's moving to my\n"
-	.string "hometown of LITTLEROOT.\l"
-	.string "I get it now!\p"
+	.string "Great! If you have any question,\n"
+	.string "feel free to contact me on SNS.\p"
 	.string "$"
 
+
 gText_Birch_AreYouReady::
-	.string "All right, are you ready?\p"
-	.string "Your very own adventure is about\n"
-	.string "to unfold.\p"
-	.string "Take courage, and leap into the\n"
-	.string "world of POKéMON where dreams,\l"
-	.string "adventure, and friendships await!\p"
-	.string "Well, I'll be expecting you later.\n"
-	.string "Come see me in my POKéMON LAB.\p"
+	.string "Documents for this game can\l"
+	.string "be found at (place holder).\n"
+	.string "Please enjoy :D.\p"
 	.string "$"

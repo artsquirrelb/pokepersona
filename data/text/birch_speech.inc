@@ -17,14 +17,16 @@ gText_Birch_Pokemon::
 	.string "$"
 
 gText_Birch_MainSpeech::
-	.string "If you paid for this game\n"
-	.string "you have been scammed.\p"
-	.string "The prologue quest, starter Pokemon\n"
-	.string "and starting location is different\l"
-	.string "based on your character's gender.\p"
-	.string "You can still choose to experience\n"
-	.string "the other character's quest later\l"
-	.string "in the story.\p"
+	.string "This game is a project of passion and\n"
+	.string "is completely free.\p"
+	.string "If you paid for this game, you have\n"
+	.string "been scammed.\p"
+	.string "The prologue quest, starter Pokemon and\n"
+	.string "starting location is different based on\l"
+	.string "your chosen main character.\p"
+	.string "You can choose to experience the other's\n"
+	.string "prologue quest later as you proceed.\n"
+	.string "(If I can code it :P)\p"
 	.string "$"
 
 gText_Birch_AndYouAre::
@@ -50,7 +52,7 @@ gText_Birch_YourePlayer::
 
 
 gText_Birch_AreYouReady::
-	.string "Documents for this game can\l"
-	.string "be found at (place holder).\n"
+	.string "Documents for this game can be found at\n"
+	.string "(place holder).\l"
 	.string "Please enjoy :D.\p"
 	.string "$"

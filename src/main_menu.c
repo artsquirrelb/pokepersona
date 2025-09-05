@@ -1536,24 +1536,24 @@ static void Task_NewGameBirchSpeech_SlideInNewGenderSprite(u8 taskId)
 static void Task_NewGameBirchSpeech_WhatsYourName(u8 taskId)
 {
     NewGameBirchSpeech_ClearWindow(0);
-    StringExpandPlaceholders(gStringVar4, gText_Birch_WhatsYourName);
-    AddTextPrinterForMessage(TRUE);
+    //StringExpandPlaceholders(gStringVar4, gText_Birch_WhatsYourName);
+   // AddTextPrinterForMessage(TRUE);
     gTasks[taskId].func = Task_NewGameBirchSpeech_WaitForWhatsYourNameToPrint;
 }
 
 static void Task_NewGameBirchSpeech_WaitForWhatsYourNameToPrint(u8 taskId)
 {
-    if (!RunTextPrintersAndIsPrinter0Active())
+   // if (!RunTextPrintersAndIsPrinter0Active())
         gTasks[taskId].func = Task_NewGameBirchSpeech_WaitPressBeforeNameChoice;
 }
 
 static void Task_NewGameBirchSpeech_WaitPressBeforeNameChoice(u8 taskId)
 {
-    if ((JOY_NEW(A_BUTTON)) || (JOY_NEW(B_BUTTON)))
-    {
+   // if ((JOY_NEW(A_BUTTON)) || (JOY_NEW(B_BUTTON)))
+  //  {
         //BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_NewGameBirchSpeech_StartNamingScreen;
-    }
+  //  }
 }
 
 static void Task_NewGameBirchSpeech_StartNamingScreen(u8 taskId)
@@ -1700,14 +1700,14 @@ static void Task_NewGameBirchSpeech_FadePlayerToWhite(u8 taskId)
 {
     u8 spriteId;
 
-   // if (!gPaletteFade.active)
-  //  {
+    if (!gPaletteFade.active)
+   {
         spriteId = gTasks[taskId].tPlayerSpriteId;
         gSprites[spriteId].callback = SpriteCB_Null;
         SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_ON | DISPCNT_OBJ_1D_MAP);
         BeginNormalPaletteFade(PALETTES_OBJECTS, 0, 0, 16, RGB_WHITEALPHA);
         gTasks[taskId].func = Task_NewGameBirchSpeech_Cleanup;
-   // }
+   }
 }
 
 static void Task_NewGameBirchSpeech_Cleanup(u8 taskId)

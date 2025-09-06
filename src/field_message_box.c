@@ -5,6 +5,8 @@
 #include "text.h"
 #include "match_call.h"
 #include "field_message_box.h"
+#include "field_mugshot.h"
+#include "sprite.h"
 #include "text_window.h"
 #include "script.h"
 
@@ -126,6 +128,10 @@ static void ExpandStringAndStartDrawFieldMessage(const u8 *str, bool32 allowSkip
     StringExpandPlaceholders(gStringVar4, str);
     AddTextPrinterForMessage(allowSkippingDelayWithButtonPress);
     CreateTask_DrawFieldMessage();
+    if (IsFieldMugshotActive())
+    {
+        gSprites[GetFieldMugshotSpriteId()].data[0] = TRUE;
+    }
 }
 
 static void StartDrawFieldMessage(void)
@@ -139,6 +145,11 @@ void HideFieldMessageBox(void)
     DestroyTask_DrawFieldMessage();
     ClearDialogWindowAndFrame(0, TRUE);
     sFieldMessageBoxMode = FIELD_MESSAGE_BOX_HIDDEN;
+     if (IsFieldMugshotActive())
+    {
+        gSprites[GetFieldMugshotSpriteId()].data[0] = FALSE;
+        RemoveFieldMugshot();
+    }
 }
 
 u8 GetFieldMessageBoxMode(void)

@@ -2,7 +2,7 @@
   "map_sections": [
     {
       "id": "MAPSEC_LITTLEROOT_TOWN",
-      "name": "Sunshine Town",
+      "name": "Littleroot",
       "x": 4,
       "y": 11,
       "width": 1,
@@ -1233,7 +1233,7 @@
     },
     {
       "id": "MAPSEC_SUNSHINETOWN",
-      "name": "Azurine Forest"
+      "name": "Sunshine Town"
     }
   ]
 }

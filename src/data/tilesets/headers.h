@@ -874,3 +874,14 @@ const struct Tileset gTileset_Gen4Building =
     .metatileAttributes = gMetatileAttributes_Gen4Building,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_SunshineTown =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SunshineTown,
+    .palettes = gTilesetPalettes_SunshineTown,
+    .metatiles = gMetatiles_SunshineTown,
+    .metatileAttributes = gMetatileAttributes_SunshineTown,
+    .callback = NULL,
+};

@@ -1162,3 +1162,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/LittlerootTown_NewLabTest/scripts.inc"
 
 	.include "data/maps/AzurineForest/scripts.inc"
+
+	.include "data/maps/SunshineTown/scripts.inc"
+
+	.include "data/maps/Route1/scripts.inc"

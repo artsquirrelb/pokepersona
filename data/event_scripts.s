@@ -1166,3 +1166,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/SunshineTown/scripts.inc"
 
 	.include "data/maps/Route1/scripts.inc"
+
+	.include "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.inc"

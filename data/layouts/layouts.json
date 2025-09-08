@@ -5340,6 +5340,18 @@
       "secondary_tileset": "gTileset_SunshineTown",
       "border_filepath": "data/layouts/Route1/border.bin",
       "blockdata_filepath": "data/layouts/Route1/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F",
+      "name": "SunshineOrphanage_AkihikosRoom2F_Layout",
+      "width": 12,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
+      "border_filepath": "data/layouts/SunshineOrphanage_AkihikosRoom2F/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineOrphanage_AkihikosRoom2F/map.bin"
     }
   ]
 }

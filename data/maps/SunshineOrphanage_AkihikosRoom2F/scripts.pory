@@ -1,0 +1,8 @@
+mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts 
+{}
+script GiveRunningShoesAtStart {
+    lockall
+    msgbox("I should put on my running shoes.\p")
+    setflag(FLAG_SYS_B_DASH)
+    releaseall
+}

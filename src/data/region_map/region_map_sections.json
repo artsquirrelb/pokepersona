@@ -1234,6 +1234,10 @@
     {
       "id": "MAPSEC_SUNSHINETOWN",
       "name": "Sunshine Town"
+    },
+    {
+      "id": "MAPSEC_SUNSHINE_ORPHANAGE",
+      "name": "Sunshine Orphanage"
     }
   ]
 }

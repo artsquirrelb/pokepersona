@@ -1,0 +1,54 @@
+{
+  "id": "MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F",
+  "name": "SunshineOrphanage_AkihikosRoom2F",
+  "layout": "LAYOUT_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F",
+  "music": "MUS_LITTLEROOT",
+  "region_map_section": "MAPSEC_SUNSHINE_ORPHANAGE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_AZURINE_FOREST",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 6,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_AZURINE_FOREST",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "GiveRunningShoesAtStart"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 1,
+      "y": 10,
+      "elevation": 0,
+      "item": "ITEM_POKE_BALL",
+      "flag": "FLAG_TEMP_1"
+    }
+  ]
+}

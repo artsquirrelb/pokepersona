@@ -885,3 +885,25 @@ const struct Tileset gTileset_SunshineTown =
     .metatileAttributes = gMetatileAttributes_SunshineTown,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_SunshineOrphanageIndoor =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SunshineOrphanageIndoor,
+    .palettes = gTilesetPalettes_SunshineOrphanageIndoor,
+    .metatiles = gMetatiles_SunshineOrphanageIndoor,
+    .metatileAttributes = gMetatileAttributes_SunshineOrphanageIndoor,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Gen4Indoor =
+{
+    .isCompressed = TRUE,
+    .isSecondary = FALSE,
+    .tiles = gTilesetTiles_Gen4Indoor,
+    .palettes = gTilesetPalettes_Gen4Indoor,
+    .metatiles = gMetatiles_Gen4Indoor,
+    .metatileAttributes = gMetatileAttributes_Gen4Indoor,
+    .callback = NULL,
+};

@@ -242,7 +242,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_PC::
 
 LittlerootTown_BrendansHouse_2F_EventScript_CheckPlayersPC::
 	setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
-	special DoPCTurnOnEffect
+	//special DoPCTurnOnEffect
 	playse SE_PC_ON
 	msgbox gText_PlayerHouseBootPC, MSGBOX_DEFAULT
 	special BedroomPC

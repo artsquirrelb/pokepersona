@@ -2,8 +2,8 @@
   "id": "MAP_AZURINE_FOREST",
   "name": "AzurineForest",
   "layout": "LAYOUT_AZURINE_FOREST",
-  "music": "MUS_RG_VIRIDIAN_FOREST",
-  "region_map_section": "MAPSEC_SUNSHINETOWN",
+  "music": "MUS_PETALBURG_WOODS",
+  "region_map_section": "MAPSEC_SUNSHINEWOODS",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_ROUTE",
@@ -34,14 +34,14 @@
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_TOWN",
-      "dest_warp_id": "0"
+      "dest_warp_id": "1"
     },
     {
       "x": 0,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_TOWN",
-      "dest_warp_id": "1"
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

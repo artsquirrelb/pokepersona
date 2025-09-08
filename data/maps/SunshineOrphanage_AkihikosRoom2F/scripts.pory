@@ -1,8 +1,76 @@
 mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts 
 {}
+
+script GoSetTheClock{
+    lockall
+    createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
+    msgbox ("I should fix the clock.")
+    applymovement (OBJ_EVENT_ID_PLAYER, StepBack)
+    waitmovement(0)
+    releaseall
+    end
+}
+movement StepBack {
+    walk_up  
+}
+
+script SetWallclock {
+    goto_if_set(FLAG_SET_WALL_CLOCK PlayersHouse_2F_EventScript_CheckWallClock)
+	msgbox ("The clock is stopped.")
+	call(PlayersHouse_2F_EventScript_SetWallClock)
+	delay(30)
+    createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
+    msgbox ("Done.")
+	setvar(VAR_AKIHIKOS_INTRO, 1)
+	setflag(FLAG_SET_WALL_CLOCK)
+	releaseall
+	end
+}
+
 script GiveRunningShoesAtStart {
     lockall
-    msgbox("I should put on my running shoes.\p")
+    createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
+    msgbox("Now where are my shoes...")
+    createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_HAPPY)
+    msgbox("There they are!")
+    removefieldmugshot
+    playfanfare(MUS_OBTAIN_ITEM)
+    msgbox("{PLAYER}{KUN} put on the running shoes.")
+    waitfanfare
     setflag(FLAG_SYS_B_DASH)
+    setvar(VAR_AKIHIKOS_INTRO,2)
     releaseall
+    end
+}
+
+script AkihikosPC {
+    lockall
+    checkplayergender
+    goto_if_eq(VAR_RESULT MALE SunshineOrphanage_AkihikosRoom2F_PlayersPC)
+    goto_if_eq(VAR_RESULT FEMALE SunshineOrphanage_AkihikosRoom2F_RivalsPC)
+}
+
+script SunshineOrphanage_AkihikosRoom2F_PlayersPC {
+    //setvar VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE
+	//special DoPCTurnOnEffect
+	playse(SE_PC_ON)
+	msgbox(gText_PlayerHouseBootPC)
+	special(BedroomPC)
+	waitstate
+	releaseall
+	end
+}
+script SunshineOrphanage_AkihikosRoom2F_RivalsPC {
+    lockall
+    msgbox("It's Akihiko's PC. It's from Kirijo Electronics.")
+    releaseall
+    end
+}
+
+script ShinjirosPC {
+    lockall
+    createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
+    msgbox("It's Shinji's PC. It was a donation.")
+    releaseall
+    end
 }

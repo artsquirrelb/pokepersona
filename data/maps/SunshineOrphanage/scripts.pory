@@ -1,0 +1,111 @@
+mapscripts SunshineOrphanage_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 3) {
+            clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_AKIHIKOS_INTRO_STATE, 3: Miki_and_Shinjiro_Notice_Akihiko
+    ]
+}
+
+script Miki_and_Shinjiro_Notice_Akihiko {
+    lock
+    playse (SE_PIN)
+    applymovement (3, Miki_Runs_To_Akihiko)
+    msgbox("There you are!")
+    release
+    goto(Miki_and_Akihiko_walk_to_Shinjiro)
+}
+
+movement Miki_Runs_To_Akihiko {
+    emote_exclamation_mark
+    walk_fast_right *2
+    walk_fast_up
+}
+
+script Miki_and_Akihiko_walk_to_Shinjiro {
+    lock
+    waitmovement(0)
+    applymovement (3, Miki_leading_Akihiko_to_Shinjiro)
+    applymovement (LOCALID_PLAYER, Miki_leading_Akihiko_to_Shinjiro)
+    waitmovement(0)
+    msgbox(format("
+        Shinjiro: She wants to go to the woods but there are wild Pokemons there.\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Shinji, it's fineee. As long as we stay out of the tall grass.\p
+        {DESTROY_MUGSHOT}
+        Miki: To the woods! To the woods!\p
+        Shinjiro: Fine..."))
+        waitmessage
+    goto(Shinjiro_and_Miki_Join_Party)
+    release
+}
+
+movement Miki_leading_Akihiko_to_Shinjiro {
+    walk_down
+    walk_left
+}
+
+script Shinjiro_and_Miki_Join_Party {
+    lock
+    applymovement (4, Shinjiro_joins)
+    applymovement (3, Miki_joins)
+    waitmovement
+    removeobject (4)
+    removeobject(3)
+    setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+    msgbox(format("Shinjiro and Miki are now traveling with Akihiko."))
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 4)
+    release
+}
+movement Shinjiro_joins {
+    walk_right
+}
+
+movement Miki_joins {
+    walk_up
+}
+
+script Boy_1_OrphanageEntrance {
+    lock
+    faceplayer
+    msgbox(format("Can I grow tall like these sunflowers?\p
+    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} Just drink a lot of milk!"))
+    release
+}
+
+script Girl_OrphanageEntrance {
+    lock
+    faceplayer
+    msgbox(format(
+        "Sometimes I see people wearing black accompany with a man wearing white coat speaking with our teachers.\p 
+        I wonder who they are...\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} I asked Ms. Kobayashi once and she said they donated a lot to the orphanage."
+    ))
+    release
+}
+
+script Sunshine_Orphanage_Direction_Sign {
+    lock
+    msgbox(
+        "Sunshine Woods {DOWN_ARROW}\l
+        Beware of wild Pokemons!"
+    )
+    release
+}
+
+script Welcome_To_Sunshine_Orphanage {
+    lock
+    msgbox (format("Welcome to Sunshine Orphanage!\p
+    If you have any question, feel free to ask the staff at the main hall counter."))
+    release
+}
+
+script Donors_List {
+    lock
+    msgbox (format("List of top donors (in alphabet order):
+     --- Kai --- Kazuhisa ---\p
+     --- Kirijo --- --- ---\l
+     --- Ryota --- --- Takuya"))
+    release
+}

@@ -68,6 +68,13 @@
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_ORPHANAGE2FHALLWAY",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_SUNSHINE_ORPHANAGE_MAIN_HALL",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

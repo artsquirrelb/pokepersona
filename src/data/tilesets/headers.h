@@ -907,3 +907,14 @@ const struct Tileset gTileset_Gen4Indoor =
     .metatileAttributes = gMetatileAttributes_Gen4Indoor,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_SunshineOrphanageEntrance =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_SunshineOrphanageEntrance,
+    .palettes = gTilesetPalettes_SunshineOrphanageEntrance,
+    .metatiles = gMetatiles_SunshineOrphanageEntrance,
+    .metatileAttributes = gMetatileAttributes_SunshineOrphanageEntrance,
+    .callback = NULL,
+};

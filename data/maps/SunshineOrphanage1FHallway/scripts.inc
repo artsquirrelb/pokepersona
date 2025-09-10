@@ -26,7 +26,7 @@ BOY_1_1F::
 # 20 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	lock
 # 21 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
-	applymovement 1, facingplayer
+	faceplayer
 # 22 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	msgbox BOY_1_1F_Text_0
 # 26 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
@@ -38,7 +38,7 @@ BOY_2_1F::
 # 30 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	lock
 # 31 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
-	applymovement 2, facingplayer
+	faceplayer
 # 32 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	msgbox BOY_2_1F_Text_0
 # 36 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
@@ -50,19 +50,13 @@ GIRL_1F::
 # 40 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	lock
 # 41 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
-	applymovement 3, facingplayer
+	faceplayer
 # 42 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	msgbox GIRL_1F_Text_0
 # 45 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	release
 	return
 
-
-# 48 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
-facingplayer:
-# 49 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
-	face_player
-	step_end
 
 Restroom1F_Text_0:
 # 7 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
@@ -76,7 +70,7 @@ BOY_1_1F_Text_0:
 # 23 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	.string "I'm playing a game called Persona 3. I'm\n"
 	.string "hooked.\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} Oh, Miki loves that game as well. She\n"
+	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Oh, Miki loves that game as well. She\n"
 	.string "talks about it all the time.$"
 
 BOY_2_1F_Text_0:

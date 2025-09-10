@@ -46,15 +46,15 @@
       "x": 20,
       "y": 2,
       "elevation": 0,
-      "dest_map": "MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_SUNSHINE_ORPHANAGE",
+      "dest_warp_id": "1"
     },
     {
       "x": 21,
       "y": 2,
       "elevation": 0,
-      "dest_map": "MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_SUNSHINE_ORPHANAGE",
+      "dest_warp_id": "2"
     },
     {
       "x": 0,

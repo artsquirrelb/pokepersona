@@ -50,7 +50,7 @@
       "x": 5,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_AKIHIKOS_ROOM_STATE",
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "2",
       "script": "GiveRunningShoesAtStart"
     },
@@ -59,7 +59,7 @@
       "x": 6,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_AKIHIKOS_ROOM_STATE",
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "2",
       "script": "GiveRunningShoesAtStart"
     },
@@ -68,7 +68,7 @@
       "x": 5,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_AKIHIKOS_ROOM_STATE",
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "1",
       "script": "GoSetTheClock"
     },
@@ -77,20 +77,12 @@
       "x": 6,
       "y": 10,
       "elevation": 0,
-      "var": "VAR_AKIHIKOS_ROOM_STATE",
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "1",
       "script": "GoSetTheClock"
     }
   ],
   "bg_events": [
-    {
-      "type": "hidden_item",
-      "x": 1,
-      "y": 10,
-      "elevation": 0,
-      "item": "ITEM_POTION",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_POTION"
-    },
     {
       "type": "sign",
       "x": 4,
@@ -104,7 +96,7 @@
       "x": 7,
       "y": 2,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "ShinjirosPC"
     },
     {
@@ -112,7 +104,7 @@
       "x": 5,
       "y": 3,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "SetWallclock"
     },
     {
@@ -128,7 +120,7 @@
       "x": 1,
       "y": 4,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "BookshelfLeft"
     },
     {
@@ -136,7 +128,7 @@
       "x": 6,
       "y": 3,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "ChoresList"
     },
     {
@@ -144,8 +136,16 @@
       "x": 9,
       "y": 3,
       "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "Calendar"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TrashcanEmpty"
     }
   ]
 }

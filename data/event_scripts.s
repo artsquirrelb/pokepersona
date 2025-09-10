@@ -1174,3 +1174,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/SunshineOrphanage1FHallway/scripts.inc"
 
 	.include "data/maps/SunshineOrphanageMainHall/scripts.inc"
+
+	.include "data/maps/SunshineOrphanage/scripts.inc"

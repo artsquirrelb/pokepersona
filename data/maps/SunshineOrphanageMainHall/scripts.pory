@@ -1,0 +1,173 @@
+mapscripts SunshineOrphanageMainHall_MapScripts {
+}
+
+script Boy_1_MainHall {
+    lock
+    faceplayer
+    msgbox(format("
+    I really like the omelet rice the chef cooks for us."))
+    release
+}
+
+script Girl_1_MainHall {
+    lock
+    faceplayer
+    msgbox(format(
+        "When I graduate and get a job I'll contribute back to our orphanage."))
+    release
+}
+
+script Boy_2_MainHall {
+    lock
+    faceplayer
+    msgbox(format(
+        "They don't allow us children to have Pokemon of our own but we can still play with the staff's Pokemons."))
+    release
+}
+
+script Girl_2_MainHall {
+    lock
+    faceplayer
+    msgbox(format(
+        "{PLAYER}! I'm also getting adopted next week!\p My future adoptive parents are talking with my teacher right now.\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} That's great! Congrats!"))
+    release
+}
+
+script RichMan_MainHall {
+    lock
+    faceplayer
+    msgbox(format(
+        "We decided to adopt a daughter because my wife wanted one.\p If she's happy then I'm happy."))
+    release
+}
+
+script RichLady_MainHall {
+    lock
+    faceplayer
+    msgbox(format(
+        "We will raise Momo with love and care."))
+    release
+}
+
+script Teacher_MainHall {
+    lock
+    faceplayer
+    msgbox(format(
+        "Oh {PLAYER}, do you want more tips about drawing?\p I'm sorry, I'm a little busy right now. Can you go play outside?\p"))
+    release
+}
+
+script Boy_3_MainHall {
+    lock
+    faceplayer
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 3) {
+        msgbox(format(
+        "Oh hey, {PLAYER}! Miki is waiting for you outside.\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} I know, thanks!"))
+    }
+    elif (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {msgbox("Stay safe in the woods.\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} We will!")}
+    else {
+        msgbox(format(
+        "I heard you found a rare Pokemon in the woods?\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED} Pawmi is rare?"))
+    }
+    release
+}
+
+script DiningRoom {
+    lock
+    msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}
+    It's the dining room. The pancakes here are the best."))
+    release
+}
+
+script BackyardDoor {
+    lock
+    msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
+    Outside is the backyard. We grow crops there."))
+    release
+}
+
+script Girls_HallwayMainHall {
+    lock
+    msgbox( format(
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "It's the way to the girls' hallway. I have no business there right now."))
+    release
+}
+
+script RestroomMainHall {
+    lock
+    msgbox(format (
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "It's the restroom. I'm good for now."
+    ))
+    release
+}
+
+script PokeballShelf {
+    lock
+    msgbox(format (
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "Those belong to the staff. I shouldn't touch them."
+    ))
+    release
+}
+
+script Porygon_PC {
+    lock
+    if (flag(FLAG_SYS_POKEMON_GET) == TRUE) {call(EventScript_AccessPokemonStorage)}
+
+    else {msgbox (format("
+    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+    Porygon2 can access the Pokemon Storage. If only I have a Pokemon."))
+    release
+    end}
+}
+
+script MartLady {
+	lock
+	faceplayer
+	msgbox (format("Hi {PLAYER}, what should I get you?"))
+	if(flag(FLAG_SYS_POKEMON_GET) == TRUE) {pokemart (Orphanage_Mart_ExpandedItems)}
+	else {pokemart(Orphanage_Mart_Basic)}
+	msgbox(format("Play safe okay, child?"))
+	release
+	end
+}
+
+raw`
+	.align 2
+Orphanage_Mart_Basic:
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_AWAKENING
+	pokemartlistend
+
+Orphanage_Mart_ExpandedItems::
+	pokemart OldaleTown_Mart_Pokemart_Expanded
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+Orphanage_Mart_Expanded:
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_AWAKENING
+	pokemartlistend
+`
+script HealLady {
+    lock
+    if (flag(FLAG_SYS_POKEMON_GET) == TRUE) {
+        msgbox("You look rough. You should\l take a rest.")
+        special(HealPlayerParty)
+        release}
+    else {msgbox(format("{PLAYER} dear, make sure to stay out of tall grass when you play outside, okay?"))}
+    release
+}

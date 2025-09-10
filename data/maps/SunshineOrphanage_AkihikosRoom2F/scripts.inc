@@ -7,12 +7,12 @@ SunshineOrphanage_AkihikosRoom2F_MapScripts::
 
 SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 2 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_ROOM_STATE, 0, Akihiko_Facing_PC
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 0, Akihiko_Facing_PC
 	.2byte 0
 
 SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 3 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_ROOM_STATE, 0, AkihikosRoom2F_ONFRAME
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 0, AkihikosRoom2F_ONFRAME
 	.2byte 0
 
 
@@ -64,7 +64,7 @@ Miki_Inviting_Akihiko_To_Play::
 # 29 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setflag FLAG_VISITED_SUNSHINE_ORPHANAGE
 # 30 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_ROOM_STATE, 1
+	setvar VAR_AKIHIKOS_INTRO_STATE, 1
 # 31 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	removeobject 1
 # 32 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
@@ -164,7 +164,7 @@ SetWallclock::
 # 96 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox SetWallclock_Text_1
 # 97 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_ROOM_STATE, 2
+	setvar VAR_AKIHIKOS_INTRO_STATE, 2
 # 98 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setflag FLAG_SET_WALL_CLOCK
 # 99 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
@@ -194,7 +194,7 @@ GiveRunningShoesAtStart::
 # 113 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setflag FLAG_SYS_B_DASH
 # 114 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_ROOM_STATE, 3
+	setvar VAR_AKIHIKOS_INTRO_STATE, 3
 # 115 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	releaseall
 	end
@@ -285,7 +285,17 @@ Calendar::
 	lock
 # 174 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox Calendar_Text_0
-# 178 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 179 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	release
+	return
+
+
+TrashcanEmpty::
+# 183 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	lock
+# 184 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox TrashcanEmpty_Text_0
+# 186 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
@@ -329,7 +339,7 @@ ShinjirosPC_Text_0:
 BookshelfLeft_Text_0:
 # 153 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "A book of how to draw anime character.\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Miki often asks me to draw her favorite\n"
+	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Miki often asks me to draw her favorite\n"
 	.string "character from the game Persona 3.$"
 
 BookshelfRight_Text_0:
@@ -348,13 +358,18 @@ Calendar_Text_0:
 	.string "in 3 days, Shinji in the following day.\p"
 	.string "The Sanadas and the Aragakis look like\n"
 	.string "they are good people.\p"
-	.string "I'll miss everyone here...$"
+	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD} I'll miss everyone here...$"
+
+TrashcanEmpty_Text_0:
+# 184 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	.string "It's empty.\p"
+	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Shinji just took out the trash.$"
 
 Lets_Go_Play::
 # 37 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "It's time!\p"
 	.string "You promised to take me out today!\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Let me fix this clock real quick.\p"
+	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Let me fix this clock real quick.\p"
 	.string "Otherwise Shinji's gonna grill me.\p"
 	.string "{DESTROY_MUGSHOT} Okay! I'll be waiting outside with Ms.\n"
 	.string "Kobayashi!$"

@@ -1,6 +1,6 @@
 mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_ROOM_STATE, 0: Akihiko_Facing_PC]
-    MAP_SCRIPT_ON_FRAME_TABLE [ VAR_AKIHIKOS_ROOM_STATE, 0: AkihikosRoom2F_ONFRAME]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 0: Akihiko_Facing_PC]
+    MAP_SCRIPT_ON_FRAME_TABLE [ VAR_AKIHIKOS_INTRO_STATE , 0: AkihikosRoom2F_ONFRAME]
 }
 
 script Akihiko_Facing_PC{
@@ -27,7 +27,7 @@ script Miki_Inviting_Akihiko_To_Play{
     playse(SE_EXIT)
     setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
     setflag (FLAG_VISITED_SUNSHINE_ORPHANAGE)
-    setvar(VAR_AKIHIKOS_ROOM_STATE, 1)
+    setvar(VAR_AKIHIKOS_INTRO_STATE , 1)
     removeobject(1)
     special(RemoveCameraObject)
     release
@@ -37,7 +37,7 @@ script Miki_Inviting_Akihiko_To_Play{
 text Lets_Go_Play {
     format( 
         "It's time!\p You promised to take me out today!\p"
-        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}"
         "Let me fix this clock real quick.\p Otherwise Shinji's gonna grill me.\p"
         "{DESTROY_MUGSHOT}"
         "Okay! I'll be waiting outside with Ms. Kobayashi!"
@@ -94,7 +94,7 @@ script SetWallclock {
 	delay(30)
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
     msgbox ("Done.")
-	setvar(VAR_AKIHIKOS_ROOM_STATE, 2)
+	setvar(VAR_AKIHIKOS_INTRO_STATE , 2)
 	setflag(FLAG_SET_WALL_CLOCK)
 	releaseall
 	end
@@ -111,7 +111,7 @@ script GiveRunningShoesAtStart {
     msgbox("{PLAYER}{KUN} put on the running shoes.")
     waitfanfare
     setflag(FLAG_SYS_B_DASH)
-    setvar(VAR_AKIHIKOS_ROOM_STATE,3)
+    setvar(VAR_AKIHIKOS_INTRO_STATE ,3)
     releaseall
     end
 }
@@ -150,7 +150,7 @@ script ShinjirosPC {
 
 script BookshelfLeft {
     lockall
-    msgbox(format("A book of how to draw anime character.\p {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+    msgbox(format("A book of how to draw anime character.\p {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
     Miki often asks me to draw her favorite character from the game Persona 3."))
     releaseall
 }
@@ -176,5 +176,12 @@ script Calendar {
     "The Sanadas and the Aragakis look like they are good people.\p" 
     "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}"
     "I'll miss everyone here..."))
+    release
+}
+
+script TrashcanEmpty {
+    lock
+    msgbox(format ("It's empty.\p
+    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Shinji just took out the trash."))
     release
 }

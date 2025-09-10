@@ -1,91 +1,72 @@
 mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_AKIHIKOS_ROOM_STATE) == 0) {
-            applymovement (LOCALID_PLAYER, PlayerFaceUp)
-            setflag (FLAG_VISITED_SUNSHINE_ORPHANAGE)
-        }
-    }
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_ROOM_STATE, 0: Akihiko_Facing_PC]
+    MAP_SCRIPT_ON_FRAME_TABLE [ VAR_AKIHIKOS_ROOM_STATE, 0: AkihikosRoom2F_ONFRAME]
 }
 
-
-//Akihiko looking at the PC
+script Akihiko_Facing_PC{
+    applymovement (LOCALID_PLAYER, PlayerFaceUp)
+}
 
 movement PlayerFaceUp {face_up}
 
-script Miki_Entering_The_Room {
+script AkihikosRoom2F_ONFRAME {
     lockall
     playse(SE_EXIT)
-    msgbox("BIG BRO!")
+    special(SpawnCameraObject)
     applymovement(1, Miki_Appears)
-    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, Camera_On_Miki)
+    msgbox("BIG BRO!")
     applymovement(LOCALID_PLAYER, Akihiko_Surprised)
-    waitmovement(0)
-    msgbox(format(
-        "It's time!\p You promised to take me out today!\p"
-        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
-        "Let me fix this clock real quick.\p Otherwise Shinji's gonna grill me.\p"
-        "{DESTROY_MUGSHOT}"
-        "Okay! I'll be waiting outside with Ms. Kobayashi!"))
+    msgbox(Lets_Go_Play)
+    goto(Miki_Inviting_Akihiko_To_Play)}
+
+script Miki_Inviting_Akihiko_To_Play{
+    applymovement(OBJ_EVENT_ID_CAMERA, Camera_Back_to_Player)
     applymovement(1, Miki_Leaves)
     waitmovement(0)
     playse(SE_EXIT)
-    removeobject(1)
     setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+    setflag (FLAG_VISITED_SUNSHINE_ORPHANAGE)
     setvar(VAR_AKIHIKOS_ROOM_STATE, 1)
+    removeobject(1)
+    special(RemoveCameraObject)
     release
     end
 }
 
-// script Miki_Entering_The_Room {
-//    delay_8
-//    addobject(1)
-//    playse(SE_EXIT)
-//    applymovement(1, Miki_Appears)
-//    waitmovement(0)
-//    msgbox("BIG BRO!")
-//   goto (Akihiko_Look_At_Miki)
-//}
+text Lets_Go_Play {
+    format( 
+        "It's time!\p You promised to take me out today!\p"
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "Let me fix this clock real quick.\p Otherwise Shinji's gonna grill me.\p"
+        "{DESTROY_MUGSHOT}"
+        "Okay! I'll be waiting outside with Ms. Kobayashi!"
+    )
+}
 
-
-//script Akihiko_Look_At_Miki {
-//    applymovement(LOCALID_PLAYER, Akihiko_Surprised)
-//    waitmovement(0)
-//    delay_8
-//    msgbox (Miki_Wants_To_Go_Play)
-//    goto (Give_Me_A_Moment)
-//}
-
+movement Camera_On_Miki {
+    walk_fast_down *3
+    
+}
 movement Miki_Appears {
     walk_fast_up *4
+    jump_in_place_up
     
 }
 
 movement Akihiko_Surprised {
-    delay_8
     face_down
+    emote_exclamation_mark
 }
 
-//script Give_Me_A_Moment {
-//    createfieldmugshot (MUGSHOT_AKIHIKO EMOTE_NORMAL)
-//    msgbox(format("Let me fix this clock real quick.\p Otherwise Shinji's gonna grill me."))
-//    closemessage
-//    goto(Miki_Exiting_The_Room)
-//    }
-
-//script Miki_Exiting_The_Room
-//{
-//    msgbox(format("Okay! I'll be waiting outside with Ms. Kobayashi!"))
-//    applymovement(1, Miki_Leaves)
-//    playse(SE_EXIT)
-//    waitmovement(0)
-//    removeobject(1)
-    //setflag(FLAG_AKIHIKOS_INTRO)
-//    releaseall
-//    end
-//}
 
 movement Miki_Leaves {
     walk_fast_down *4
+}
+
+movement Camera_Back_to_Player {
+    walk_fast_up *3
+    
 }
 
 script GoSetTheClock{
@@ -108,7 +89,7 @@ movement StepBack {
 
 script SetWallclock {
     goto_if_set(FLAG_SET_WALL_CLOCK PlayersHouse_2F_EventScript_CheckWallClock)
-	msgbox ("The clock is stopped.")
+	msgbox ("The clock isn't working.")
 	call(PlayersHouse_2F_EventScript_SetWallClock)
 	delay(30)
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
@@ -177,21 +158,23 @@ script BookshelfLeft {
 script BookshelfRight {
     lockall
     msgbox(format("A book about Pokemon species in their natural habitats.\p"
-    "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} I hope I can get my own Pokemon soon.\p"))
+    "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} I hope I can get my own Pokemon soon."))
     releaseall
 }
 
 script ChoresList {
     lock
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
-    msgbox("I and Shinji's chores list.")
+    msgbox("Shinji and my chores list.")
     release
 }
 
 script Calendar {
     lock
-    msgbox(format("I and my sis are going to get adopted in 3 days, Shinji in the following day.\p" 
+    msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+    "My sis and I are going to get adopted in 3 days, Shinji in the following day.\p" 
     "The Sanadas and the Aragakis look like they are good people.\p" 
-    "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} I'll miss everyone here..."))
+    "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}"
+    "I'll miss everyone here..."))
     release
 }

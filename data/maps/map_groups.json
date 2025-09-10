@@ -627,6 +627,9 @@
     "Route124_DivingTreasureHuntersHouse"
   ],
   "gMapGroup_IndoorSunshineOrphanage": [
-    "SunshineOrphanage_AkihikosRoom2F"
+    "SunshineOrphanage_AkihikosRoom2F",
+    "SunshineOrphanage2FHallway",
+    "SunshineOrphanage1FHallway",
+    "SunshineOrphanageMainHall"
   ]
 }

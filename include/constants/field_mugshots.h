@@ -10,10 +10,16 @@ enum Mugshots {
 enum MugshotEmotes {
     EMOTE_NORMAL = 0,
     EMOTE_HAPPY,
+    EMOTE_SAD,
+    EMOTE_MAD,
+    EMOTE_SURPRISED,
+    EMOTE_TIRED,
+    EMOTE_DOUBT,
+    EMOTE_DARKENED,
     EMOTE_COUNT,
 };
 
 #define MUGSHOT_AKIHIKO 1
-#define MUGSHOT_COUNT 2
+#define MUGSHOT_COUNT 8
 
 #endif // GUARD_CONSTANTS_FIELD_MUGSHOTS_H

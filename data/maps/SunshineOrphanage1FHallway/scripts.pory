@@ -1,0 +1,50 @@
+mapscripts SunshineOrphanage1FHallway_MapScripts {
+}
+
+script Restroom1F {
+    lock
+    msgbox(format (
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "It's the restroom. I'm good for now."
+    ))
+    release
+}
+
+script TrashcanFull {
+    lock
+    msgbox("It's full of trash.")
+    release
+}
+
+script BOY_1_1F {
+    lock
+    applymovement (1, facingplayer)
+    msgbox(format (
+        "I'm playing a game called Persona 3. I'm hooked.\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}
+        Oh, Miki loves that game as well. She talks about it all the time."))
+    release
+}
+
+script BOY_2_1F {
+    lock
+    applymovement (2, facingplayer)
+    msgbox(format (
+        "You and Miki are so lucky. I wish I could also get adopted along with my big sis...\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}
+        ...\p Sorry, I don't really know what to say..."))
+    release
+}
+
+script GIRL_1F {
+    lock
+    applymovement (3, facingplayer)
+    msgbox(format ("My future adoptive parents looked very wealthy.\p Why couldn't they adopt my brother too?\p
+    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}
+    I wish I had the answer to that..."))
+    release
+}
+
+movement facingplayer {
+    face_player
+}

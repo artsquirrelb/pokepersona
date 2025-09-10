@@ -1,0 +1,46 @@
+mapscripts SunshineOrphanage2FHallway_MapScripts {}
+
+script Girls_Hallway2F{
+    lock
+    msgbox( format(
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "It's the way to the girls' hallway. I have no business there right now."
+    ))
+    release
+}
+
+script Restroom2F {
+    lock
+    msgbox(format (
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "It's the restroom. I'm good for now."
+    ))
+    release
+}
+
+script BOY_1_2F {
+    lock
+    faceplayer
+    msgbox(format(
+        "I wish the orphanage let us have Pokemon.\p"
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "I wish so too but I guess it'll be harder for the staff.\p They're already busy enough."
+        ))
+    release
+}
+
+script BOY_2_2F {
+    lock
+    faceplayer
+    msgbox(format(
+        "Few days ago I saw a Pawmi with different color in the woods.\p It's neither orange yellow nor pink.\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}
+        What color was it then?\p
+        {DESTROY_MUGSHOT}
+        Hehe, it's a secret.\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}
+        ..."))
+    release
+} 
+
+

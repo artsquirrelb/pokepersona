@@ -5352,6 +5352,42 @@
       "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
       "border_filepath": "data/layouts/SunshineOrphanage_AkihikosRoom2F/border.bin",
       "blockdata_filepath": "data/layouts/SunshineOrphanage_AkihikosRoom2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_ORPHANAGE2FHALLWAY",
+      "name": "SunshineOrphanage2FHallway_Layout",
+      "width": 23,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
+      "border_filepath": "data/layouts/SunshineOrphanage2FHallway/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineOrphanage2FHallway/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_ORPHANAGE1FHALLWAY",
+      "name": "SunshineOrphanage1FHallway_Layout",
+      "width": 23,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
+      "border_filepath": "data/layouts/SunshineOrphanage1FHallway/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineOrphanage1FHallway/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_ORPHANAGE_MAIN_HALL",
+      "name": "SunshineOrphanageMainHall_Layout",
+      "width": 20,
+      "height": 30,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
+      "border_filepath": "data/layouts/SunshineOrphanageMainHall/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineOrphanageMainHall/map.bin"
     }
   ]
 }

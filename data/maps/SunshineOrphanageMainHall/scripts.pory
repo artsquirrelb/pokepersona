@@ -118,7 +118,11 @@ script PokeballShelf {
 
 script Porygon_PC {
     lock
-    if (flag(FLAG_SYS_POKEMON_GET) == TRUE) {call(EventScript_AccessPokemonStorage)}
+    faceplayer
+    playmoncry (SPECIES_PORYGON, CRY_MODE_NORMAL)
+    waitmoncry
+    if (flag(FLAG_SYS_POKEMON_GET) == TRUE) {
+        call(EventScript_AccessPokemonStorage)}
 
     else {msgbox (format("
     {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
@@ -162,15 +166,15 @@ Orphanage_Mart_Expanded:
 	.2byte ITEM_AWAKENING
 	pokemartlistend
 `
-script HealLady {
+script Blissey_Heal {
     lock
+    faceplayer
+    playmoncry(SPECIES_BLISSEY, CRY_MODE_NORMAL)
+    waitmoncry
     if (flag(FLAG_SYS_POKEMON_GET) == TRUE){
-        playmoncry(BLISSEY, CRY_MODE_*)
-        waitmoncry
         special(HealPlayerParty)
         release}
-    else {
-        playmoncry(BLISSEY, CRY_MODE_*)
-        waitmoncry
+    else {msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+    Blissey is very good at healing. I can ask it for help when I have an injured Pokemon."))
         release} 
 }

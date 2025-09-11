@@ -169,111 +169,117 @@ Porygon_PC::
 # 120 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	lock
 # 121 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	goto_if_set FLAG_SYS_POKEMON_GET, Porygon_PC_1
+	faceplayer
+# 122 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	playmoncry SPECIES_PORYGON, CRY_MODE_NORMAL
 # 123 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	waitmoncry
+# 124 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	goto_if_set FLAG_SYS_POKEMON_GET, Porygon_PC_1
+# 127 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox Porygon_PC_Text_0
-# 126 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 130 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	end
 
 Porygon_PC_1:
-# 121 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 125 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	call EventScript_AccessPokemonStorage
 	return
 
 
 MartLady::
-# 131 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	lock
-# 132 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	faceplayer
-# 133 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox MartLady_Text_0
-# 134 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	goto_if_set FLAG_SYS_POKEMON_GET, MartLady_2
 # 135 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	lock
+# 136 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	faceplayer
+# 137 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	msgbox MartLady_Text_0
+# 138 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	goto_if_set FLAG_SYS_POKEMON_GET, MartLady_2
+# 139 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	pokemart Orphanage_Mart_Basic
 MartLady_1:
-# 136 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 140 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox MartLady_Text_1
-# 137 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 141 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	end
 
 MartLady_2:
-# 134 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 138 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	pokemart Orphanage_Mart_ExpandedItems
 	goto MartLady_1
 
 
-# 141 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-
-# 142 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.align 2
-# 143 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-Orphanage_Mart_Basic:
-# 144 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.2byte ITEM_POTION
 # 145 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.2byte ITEM_ANTIDOTE
+
 # 146 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.2byte ITEM_PARALYZE_HEAL
-# 147 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.2byte ITEM_AWAKENING
-# 148 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	pokemartlistend
-# 149 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-
-# 150 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-Orphanage_Mart_ExpandedItems::
-# 151 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	pokemart OldaleTown_Mart_Pokemart_Expanded
-# 152 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 153 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	release
-# 154 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	end
-# 155 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-
-# 156 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.align 2
-# 157 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-Orphanage_Mart_Expanded:
-# 158 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.2byte ITEM_POKE_BALL
-# 159 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 147 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+Orphanage_Mart_Basic:
+# 148 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.2byte ITEM_POTION
-# 160 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 149 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.2byte ITEM_ANTIDOTE
-# 161 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 150 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.2byte ITEM_PARALYZE_HEAL
-# 162 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 151 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.2byte ITEM_AWAKENING
+# 152 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	pokemartlistend
+# 153 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+
+# 154 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+Orphanage_Mart_ExpandedItems::
+# 155 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	pokemart OldaleTown_Mart_Pokemart_Expanded
+# 156 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 157 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	release
+# 158 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	end
+# 159 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+
+# 160 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	.align 2
+# 161 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+Orphanage_Mart_Expanded:
+# 162 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	.2byte ITEM_POKE_BALL
 # 163 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	.2byte ITEM_POTION
+# 164 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	.2byte ITEM_ANTIDOTE
+# 165 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	.2byte ITEM_PARALYZE_HEAL
+# 166 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	.2byte ITEM_AWAKENING
+# 167 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	pokemartlistend
 
-HealLady::
-# 166 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+Blissey_Heal::
+# 170 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	lock
-# 167 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	goto_if_set FLAG_SYS_POKEMON_GET, HealLady_1
+# 171 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	faceplayer
+# 172 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	playmoncry SPECIES_BLISSEY, CRY_MODE_NORMAL
 # 173 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	playmoncry BLISSEY, CRY_MODE_ *
-# 174 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	waitmoncry
-# 175 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 174 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	goto_if_set FLAG_SYS_POKEMON_GET, Blissey_Heal_1
+# 177 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	msgbox Blissey_Heal_Text_0
+# 179 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	return
 
-HealLady_1:
-# 168 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	playmoncry BLISSEY, CRY_MODE_ *
-# 169 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitmoncry
-# 170 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+Blissey_Heal_1:
+# 175 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	special HealPlayerParty
-# 171 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 176 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	return
 
@@ -359,14 +365,20 @@ PokeballShelf_Text_0:
 	.string "touch them.$"
 
 Porygon_PC_Text_0:
-# 123 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 127 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Porygon can access the Pokemon\n"
 	.string "Storage. If only I have a Pokemon.$"
 
 MartLady_Text_0:
-# 133 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 137 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Hi {PLAYER}, what should I get you?$"
 
 MartLady_Text_1:
-# 136 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 140 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Play safe okay, child?$"
+
+Blissey_Heal_Text_0:
+# 177 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Blissey is very good at healing. I can\n"
+	.string "ask it for help when I have an injured\l"
+	.string "Pokemon.$"

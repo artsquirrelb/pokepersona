@@ -35,10 +35,9 @@ script Miki_and_Akihiko_walk_to_Shinjiro {
         {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Shinji, it's fineee. As long as we stay out of the tall grass.\p
         {DESTROY_MUGSHOT}
         Miki: To the woods! To the woods!\p
-        {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}
-        Shinjiro: Fine...
-        {DESTROY_MUGSHOT}"))
+        {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT} Fine..."))
         waitmessage
+
     goto(Shinjiro_and_Miki_Join_Party)
     release
 }
@@ -56,7 +55,7 @@ script Shinjiro_and_Miki_Join_Party {
     removeobject (4)
     removeobject(3)
     setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
-    msgbox(format("Shinjiro and Miki are now traveling with Akihiko."))
+    msgbox(format("{DESTROY_MUGSHOT}Shinjiro and Miki are now traveling with Akihiko."))
     setvar(VAR_AKIHIKOS_INTRO_STATE, 4)
     release
 }

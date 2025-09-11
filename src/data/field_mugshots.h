@@ -3,6 +3,7 @@ static const u32 sFieldMugshotGfx_TestAlt[] = INCBIN_U32("graphics/field_mugshot
 static const u16 sFieldMugshotPal_TestNormal[] = INCBIN_U16("graphics/field_mugshots/test/normal.gbapal");
 static const u16 sFieldMugshotPal_TestAlt[] = INCBIN_U16("graphics/field_mugshots/test/alt.gbapal");
 */
+//Akihiko
 static const u32 sFieldMugshotGfx_AkihikoNormal[] = INCBIN_U32("graphics/field_mugshots/Akihiko/normal.4bpp.lz");
 static const u32 sFieldMugshotGfx_AkihikoHappy[] = INCBIN_U32("graphics/field_mugshots/Akihiko/happy.4bpp.lz");
 static const u32 sFieldMugshotGfx_AkihikoSad[] = INCBIN_U32("graphics/field_mugshots/Akihiko/sad.4bpp.lz");
@@ -22,8 +23,18 @@ static const u16 sFieldMugshotPal_AkihikoSurprised[] = INCBIN_U16("graphics/fiel
 static const u16 sFieldMugshotPal_AkihikoTired[] = INCBIN_U16("graphics/field_mugshots/Akihiko/tired.gbapal");
 static const u16 sFieldMugshotPal_AkihikoDarkened[] = INCBIN_U16("graphics/field_mugshots/Akihiko/darkened.gbapal");
 static const u16 sFieldMugshotPal_AkihikoSmile[] = INCBIN_U16("graphics/field_mugshots/Akihiko/smile.gbapal");
+//Shinjiro
+static const u32 sFieldMugshotGfx_ShinjiroNormal[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_ShinjiroDoubt[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/doubt.4bpp.lz");
+static const u32 sFieldMugshotGfx_ShinjiroSmile[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/smile.4bpp.lz");
+
+static const u16 sFieldMugshotPal_ShinjiroNormal[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/normal.gbapal");
+static const u16 sFieldMugshotPal_ShinjiroDoubt[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/doubt.gbapal");
+static const u16 sFieldMugshotPal_ShinjiroSmile[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/smile.gbapal");
 
 
+
+//Shinjiro
 struct MugshotGfx
 {
     const u32 *gfx;
@@ -88,5 +99,26 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .pal = sFieldMugshotPal_AkihikoSmile,
         },
 
+    },
+
+    [MUGSHOT_SHINJIRO] =
+    {
+        [EMOTE_NORMAL] =
+        {
+            .gfx = sFieldMugshotGfx_ShinjiroNormal,
+            .pal = sFieldMugshotPal_ShinjiroNormal,
+        },
+
+        [EMOTE_DOUBT] =
+        {
+            .gfx = sFieldMugshotGfx_ShinjiroDoubt,
+            .pal = sFieldMugshotPal_ShinjiroDoubt,
+        },
+
+        [EMOTE_SMILE] =
+        {
+            .gfx = sFieldMugshotGfx_ShinjiroSmile,
+            .pal = sFieldMugshotPal_ShinjiroSmile,
+        },
     },
 };

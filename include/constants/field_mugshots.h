@@ -4,6 +4,7 @@
 enum Mugshots {
     MUGSHOT_NONE = 0,
     MUGSHOT_AKIHIKO,
+    MUGSHOT_SHINJIRO,
     MUGSHOT_COUNT,
 };
 
@@ -21,6 +22,7 @@ enum MugshotEmotes {
 };
 
 #define MUGSHOT_AKIHIKO 1
-#define MUGSHOT_COUNT 9
+#define MUGSHOT_SHINJIRO 2
+#define MUGSHOT_COUNT 12
 
 #endif // GUARD_CONSTANTS_FIELD_MUGSHOTS_H

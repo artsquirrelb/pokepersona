@@ -257,22 +257,25 @@ HealLady::
 # 166 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	lock
 # 167 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	goto_if_set FLAG_SYS_POKEMON_GET, HealLady_2
-# 171 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox HealLady_Text_1
-HealLady_1:
-# 172 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	goto_if_set FLAG_SYS_POKEMON_GET, HealLady_1
+# 173 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	playmoncry BLISSEY, CRY_MODE_ *
+# 174 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	waitmoncry
+# 175 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	return
 
-HealLady_2:
+HealLady_1:
 # 168 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox HealLady_Text_0
+	playmoncry BLISSEY, CRY_MODE_ *
 # 169 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	special HealPlayerParty
+	waitmoncry
 # 170 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	special HealPlayerParty
+# 171 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
-	goto HealLady_1
+	return
 
 
 Boy_1_MainHall_Text_0:
@@ -311,11 +314,9 @@ RichLady_MainHall_Text_0:
 
 Teacher_MainHall_Text_0:
 # 57 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "Oh {PLAYER}, do you want more tips\n"
-	.string "about drawing?\p"
-	.string "I'm sorry, I'm a little busy right now.\n"
-	.string "Can you go play outside?\p"
-	.string "$"
+	.string "Oh {PLAYER}, I'm sorry. I'm a little\n"
+	.string "busy right now.\p"
+	.string "Can you go play outside?$"
 
 Boy_3_MainHall_Text_0:
 # 66 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -359,7 +360,7 @@ PokeballShelf_Text_0:
 
 Porygon_PC_Text_0:
 # 123 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Porygon2 can access the Pokemon\n"
+	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Porygon can access the Pokemon\n"
 	.string "Storage. If only I have a Pokemon.$"
 
 MartLady_Text_0:
@@ -369,13 +370,3 @@ MartLady_Text_0:
 MartLady_Text_1:
 # 136 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Play safe okay, child?$"
-
-HealLady_Text_0:
-# 168 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "You look rough. You should\l take a rest.$"
-
-HealLady_Text_1:
-# 171 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{PLAYER} dear, make sure to stay out\n"
-	.string "of tall grass when you play outside,\l"
-	.string "okay?$"

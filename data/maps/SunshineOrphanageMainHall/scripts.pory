@@ -54,7 +54,7 @@ script Teacher_MainHall {
     lock
     faceplayer
     msgbox(format(
-        "Oh {PLAYER}, do you want more tips about drawing?\p I'm sorry, I'm a little busy right now. Can you go play outside?\p"))
+        "Oh {PLAYER}, I'm sorry. I'm a little busy right now.\p Can you go play outside?"))
     release
 }
 
@@ -122,7 +122,7 @@ script Porygon_PC {
 
     else {msgbox (format("
     {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
-    Porygon2 can access the Pokemon Storage. If only I have a Pokemon."))
+    Porygon can access the Pokemon Storage. If only I have a Pokemon."))
     release
     end}
 }
@@ -164,10 +164,13 @@ Orphanage_Mart_Expanded:
 `
 script HealLady {
     lock
-    if (flag(FLAG_SYS_POKEMON_GET) == TRUE) {
-        msgbox("You look rough. You should\l take a rest.")
+    if (flag(FLAG_SYS_POKEMON_GET) == TRUE){
+        playmoncry(BLISSEY, CRY_MODE_*)
+        waitmoncry
         special(HealPlayerParty)
         release}
-    else {msgbox(format("{PLAYER} dear, make sure to stay out of tall grass when you play outside, okay?"))}
-    release
+    else {
+        playmoncry(BLISSEY, CRY_MODE_*)
+        waitmoncry
+        release} 
 }

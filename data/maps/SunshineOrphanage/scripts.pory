@@ -31,11 +31,13 @@ script Miki_and_Akihiko_walk_to_Shinjiro {
     applymovement (LOCALID_PLAYER, Miki_leading_Akihiko_to_Shinjiro)
     waitmovement(0)
     msgbox(format("
-        Shinjiro: She wants to go to the woods but there are wild Pokemons there.\p
+        {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}She wants to go to the woods but there are wild Pokemons there.\p
         {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Shinji, it's fineee. As long as we stay out of the tall grass.\p
         {DESTROY_MUGSHOT}
         Miki: To the woods! To the woods!\p
-        Shinjiro: Fine..."))
+        {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}
+        Shinjiro: Fine...
+        {DESTROY_MUGSHOT}"))
         waitmessage
     goto(Shinjiro_and_Miki_Join_Party)
     release

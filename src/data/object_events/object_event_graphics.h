@@ -38,6 +38,13 @@ const u32 gObjectEventPic_RubySapphireMayNormal[] = INCBIN_U32("graphics/object_
 const u32 gObjectEventPic_RubySapphireMayRunning[] = INCBIN_U32("graphics/object_events/pics/people/ruby_sapphire_may/running.4bpp");
 const u16 gObjectEventPal_RubySapphireMay[] = INCBIN_U16("graphics/object_events/palettes/ruby_sapphire_may.gbapal");
 const u16 gUnusedObjectEventPalette[] = INCBIN_U16("graphics/object_events/palettes/unused_palette.gbapal");
+const u32 gObjectEventPic_Shinjiro[] = INCBIN_U32("graphics/object_events/pics/people/shinjiro.4bpp");
+const u16 gObjectEventPalette_Shinjiro[] = INCBIN_U16("graphics/object_events/pics/people/shinjiro.gbapal");
+const u32 gObjectEventPic_Miki[] = INCBIN_U32("graphics/object_events/pics/people/miki.4bpp");
+const u16 gObjectEventPalette_Miki[] = INCBIN_U16("graphics/object_events/pics/people/miki.gbapal");
+const u16 gObjectEventPalette_Kurosawa[] = INCBIN_U16("graphics/object_events/pics/people/kurosawa.gbapal"); //he used mom's function name
+
+
 const u16 gObjectEventPal_Null16[16] = {};
 const u16 gObjectEventPal_Null17[16] = {};
 const u16 gObjectEventPal_Null18[16] = {};

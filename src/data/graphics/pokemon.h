@@ -24901,6 +24901,22 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_Pawmot[] = INCBIN_U16("graphics/pokemon/pawmot/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+
+#if P_DELTA_FORMS
+    const u32 gMonFrontPic_PawmiDelta[] = INCBIN_U32("graphics/pokemon/pawmi/delta/front.4bpp.lz");
+    const u16 gMonPalette_PawmiDelta[] = INCBIN_U16("graphics/pokemon/pawmi/delta/normal.gbapal");
+    const u32 gMonBackPic_PawmiDelta[] = INCBIN_U32("graphics/pokemon/pawmi/delta/back.4bpp.lz");
+    const u16 gMonShinyPalette_PawmiDelta[] = INCBIN_U16("graphics/pokemon/pawmi/delta/shiny.gbapal");
+    const u8 gMonIcon_PawmiDelta[] = INCBIN_U8("graphics/pokemon/pawmi/delta/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_PawmiDelta[] = INCBIN_COMP("graphics/pokemon/pawmi/delta/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_PawmiDelta[] = INCBIN_U16("graphics/pokemon/pawmi/delta/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_PawmiDelta[] = INCBIN_U16("graphics/pokemon/pawmi/delta/overworld_shiny.gbapal");
+
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_DELTA_FORMS
 #endif //P_FAMILY_PAWMI
 
 #if P_FAMILY_TANDEMAUS

@@ -1,0 +1,17 @@
+mapscripts BlankMap_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 6) {setflag(FLAG_SPAWN_INVISIBLE)}
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [VAR_AKIHIKOS_INTRO_STATE, 6: SunshineWoods_Eventscript_WarpBackToOrphanage]
+}
+
+
+script SunshineWoods_Eventscript_WarpBackToOrphanage {
+    lock
+    msgbox(format("{DESTROY_MUGSHOT} Akihiko picked up the Pawmi and hurried back to the orphanage."))
+    closemessage
+    fadescreenswapbuffers(FADE_TO_BLACK,0)
+    warp(MAP_SUNSHINE_ORPHANAGE_MAIN_HALL, 12, 22)
+    clearflag(FLAG_SPAWN_INVISIBLE)
+    release
+}

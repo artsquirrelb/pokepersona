@@ -24,6 +24,8 @@
 #define P_HISUIAN_FORMS                  TRUE
 #undef P_PALDEAN_FORMS
 #define P_PALDEAN_FORMS                  TRUE
+#undef P_DELTA_FORMS
+#define P_DELTA_FORMS                    TRUE
 #undef P_PIKACHU_EXTRA_FORMS
 #define P_PIKACHU_EXTRA_FORMS            TRUE
 #undef P_COSPLAY_PIKACHU_FORMS

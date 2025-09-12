@@ -175,6 +175,78 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 1,
     },
 
+    [SPECIES_PAWMI_DELTA] =
+    {
+        .baseHP        = 45,
+        .baseAttack    = 55,
+        .baseDefense   = 30,
+        .baseSpeed     = 65,
+        .baseSpAttack  = 30,
+        .baseSpDefense = 50,
+        //total 275
+        .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FIGHTING),
+        .catchRate = 190,
+        .expYield = 48,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FIELD),
+        .abilities = { ABILITY_IRON_FIST, ABILITY_FUR_COAT, ABILITY_VOLT_ABSORB},
+        .bodyColor = BODY_COLOR_GRAY,
+        .speciesName = _("Pawmi"),
+        .cryId = CRY_PAWMI,
+        .natDexNum = NATIONAL_DEX_PAWMI,
+        .categoryName = _("Mouse"),
+        .height = 3,
+        .weight = 25,
+        .description = COMPOUND_STRING(
+        //    "The pads of its paws are electricity-\n"
+        //    "discharging organs. Pawmi fires\n"
+        //   "electricity from its forepaws while\n"
+        //    "standing unsteadily on its hind legs."),
+            "Its genes have been modified to make it\n"
+            "less frail. In exchange, Delta Pawmi is\n"
+            "more susceptible to the cold."),
+        .pokemonScale = 356,
+        .pokemonOffset = 17,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_PawmiDelta,
+        .frontPicSize = MON_COORDS_SIZE(64, 64),
+        .frontPicYOffset = 10,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
+        .backPic = gMonBackPic_PawmiDelta,
+        .backPicSize = MON_COORDS_SIZE(64, 64),
+        .backPicYOffset = 7,
+        //.backAnimId = BACK_ANIM_NONE,
+        .palette = gMonPalette_PawmiDelta,
+        .shinyPalette = gMonShinyPalette_PawmiDelta,
+        .iconSprite = gMonIcon_PawmiDelta,
+        .iconPalIndex = 0,
+        .pokemonJumpType = PKMN_JUMP_TYPE_FAST,
+        SHADOW(1, 4, SHADOW_SIZE_M)
+        FOOTPRINT(Pawmi)
+            OVERWORLD(
+            sPicTable_PawmiDelta,
+            SIZE_32x32,
+            SHADOW_SIZE_S,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_PawmiDelta,
+            gShinyOverworldPalette_PawmiDelta
+        )
+        .levelUpLearnset = sPawmiDeltaLevelUpLearnset,
+        .teachableLearnset = sPawmiDeltaTeachableLearnset,
+        .eggMoveLearnset = sPawmiEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_PAWMO}),
+        //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
+        //.formChangeTable = sNoneFormChangeTable,
+        //.perfectIVCount = NUM_STATS,
+    },
+
     /* You may add any custom species below this point based on the following structure: */
 
     /*

@@ -178,3 +178,10 @@ script Blissey_Heal {
     Blissey is very good at healing. I can ask it for help when I have an injured Pokemon."))
         release} 
 }
+
+script Minccino_NPC {
+    lock
+    faceplayer
+    playmoncry(SPECIES_MINCCINO, CRY_MODE_NORMAL)
+    release
+}

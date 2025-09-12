@@ -98008,5 +98008,115 @@
     "TMMoves": [],
     "EggMoves": [],
     "TutorMoves": []
+  },
+  
+  "PAWMI_DELTA": {
+    "LevelMoves": [
+      {
+        "Level": 1,
+        "Move": "MOVE_SCRATCH"
+      },
+      {
+        "Level": 1,
+        "Move": "MOVE_GROWL"
+      },
+      {
+        "Level": 3,
+        "Move": "MOVE_CHARGE"
+      },
+      {
+        "Level": 6,
+        "Move": "MOVE_MACH_PUNCH"
+      },
+      {
+        "Level": 8,
+        "Move": "MOVE_NUZZLE"
+      },
+      {
+        "Level": 12,
+        "Move": "MOVE_BULK_UP"
+      },
+      {
+        "Level": 15,
+        "Move": "MOVE_BITE"
+      },
+      {
+        "Level": 19,
+        "Move": "MOVE_SPARK"
+      },
+      {
+        "Level": 23,
+        "Move": "MOVE_DIG"
+      },
+      {
+        "Level": 27,
+        "Move": "MOVE_THUNDER_WAVE"
+      },
+      {
+        "Level": 31,
+        "Move": "MOVE_ENTRAINMENT"
+      },
+      {
+        "Level": 35,
+        "Move": "MOVE_DOUBLE_EDGE"
+      },
+      {
+        "Level": 38,
+        "Move": "MOVE_THUNDER_PUNCH"
+      },
+      {
+        "Level": 40,
+        "Move": "MOVE_AGILITY"
+      },
+      {
+        "Level": 44,
+        "Move": "MOVE_WILD_CHARGE"
+      }
+    ],
+    "PreEvoMoves": [],
+    "TMMoves": [
+      "MOVE_TAKE_DOWN",
+      "MOVE_CHARM",
+      "MOVE_AGILITY",
+      "MOVE_PROTECT",
+      "MOVE_THUNDER_FANG",
+      "MOVE_THIEF",
+      "MOVE_CHARGE_BEAM",
+      "MOVE_FACADE",
+      "MOVE_METAL_CLAW",
+      "MOVE_SWIFT",
+      "MOVE_FLING",
+      "MOVE_ENDURE",
+      "MOVE_VOLT_SWITCH",
+      "MOVE_SUNNY_DAY",
+      "MOVE_RAIN_DANCE",
+      "MOVE_DIG",
+      "MOVE_SLEEP_TALK",
+      "MOVE_ELECTRO_BALL",
+      "MOVE_THUNDER_WAVE",
+      "MOVE_REST",
+      "MOVE_EERIE_IMPULSE",
+      "MOVE_SUBSTITUTE",
+      "MOVE_CRUNCH",
+      "MOVE_ENCORE",
+      "MOVE_THUNDERBOLT",
+      "MOVE_PLAY_ROUGH",
+      "MOVE_HELPING_HAND",
+      "MOVE_BATON_PASS",
+      "MOVE_ELECTRIC_TERRAIN",
+      "MOVE_WILD_CHARGE",
+      "MOVE_THUNDER",
+      "MOVE_TERA_BLAST",
+      "MOVE_CHARGE",
+      "MOVE_SUPER_FANG",
+      "MOVE_ELECTROWEB"
+    ],
+    "EggMoves": [
+      "MOVE_FAKE_OUT",
+      "MOVE_MACH_PUNCH",
+      "MOVE_SWEET_KISS",
+      "MOVE_WISH"
+    ],
+    "TutorMoves": []
   }
 }

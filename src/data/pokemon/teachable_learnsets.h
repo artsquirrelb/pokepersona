@@ -33821,6 +33821,27 @@ static const u16 sPawmotTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
+#if P_DELTA_FORMS
+static const u16 sPawmiDeltaTeachableLearnset[] = {
+    MOVE_BULK_UP,
+    MOVE_DIG,
+    MOVE_DOUBLE_EDGE,
+    MOVE_ENDURE,
+    MOVE_FACADE,
+    MOVE_PROTECT,
+    MOVE_RAIN_DANCE,
+    MOVE_REST,
+    MOVE_SLEEP_TALK,
+    MOVE_SUNNY_DAY,
+    MOVE_SWIFT,
+    MOVE_THIEF,
+    MOVE_THUNDER,
+    MOVE_THUNDERBOLT,
+    MOVE_THUNDER_PUNCH,
+    MOVE_THUNDER_WAVE,
+    MOVE_UNAVAILABLE,
+};
+#endif //FORMS
 #endif //P_FAMILY_PAWMI
 
 #if P_FAMILY_TANDEMAUS

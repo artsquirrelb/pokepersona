@@ -284,6 +284,18 @@ Blissey_Heal_1:
 	return
 
 
+Minccino_NPC::
+# 183 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	lock
+# 184 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	faceplayer
+# 185 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	playmoncry SPECIES_MINCCINO, CRY_MODE_NORMAL
+# 186 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	release
+	return
+
+
 Boy_1_MainHall_Text_0:
 # 7 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "I really like the omelet rice the chef\n"

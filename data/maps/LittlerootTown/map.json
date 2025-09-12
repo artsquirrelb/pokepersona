@@ -149,21 +149,21 @@
       "x": 29,
       "y": 15,
       "elevation": 0,
-      "dest_map": "MAP_AZURINE_FOREST",
+      "dest_map": "MAP_SUNSHINE_WOODS",
       "dest_warp_id": "0"
     },
     {
       "x": 29,
       "y": 16,
       "elevation": 0,
-      "dest_map": "MAP_AZURINE_FOREST",
+      "dest_map": "MAP_SUNSHINE_WOODS",
       "dest_warp_id": "1"
     },
     {
       "x": 29,
       "y": 17,
       "elevation": 0,
-      "dest_map": "MAP_AZURINE_FOREST",
+      "dest_map": "MAP_SUNSHINE_WOODS",
       "dest_warp_id": "3"
     }
   ],

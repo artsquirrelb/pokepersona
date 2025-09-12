@@ -63,7 +63,7 @@ Miki_and_Akihiko_walk_to_Shinjiro::
 	waitmovement 0
 # 33 "data/maps/SunshineOrphanage/scripts.pory"
 	msgbox Miki_and_Akihiko_walk_to_Shinjiro_Text_0
-# 40 "data/maps/SunshineOrphanage/scripts.pory"
+# 39 "data/maps/SunshineOrphanage/scripts.pory"
 	waitmessage
 # 41 "data/maps/SunshineOrphanage/scripts.pory"
 	goto Shinjiro_and_Miki_Join_Party
@@ -170,6 +170,30 @@ Donors_List::
 	return
 
 
+Sunflora_NPC::
+# 115 "data/maps/SunshineOrphanage/scripts.pory"
+	lock
+# 116 "data/maps/SunshineOrphanage/scripts.pory"
+	faceplayer
+# 117 "data/maps/SunshineOrphanage/scripts.pory"
+	playmoncry SPECIES_SUNFLORA, CRY_MODE_NORMAL
+# 118 "data/maps/SunshineOrphanage/scripts.pory"
+	release
+	return
+
+
+Budew_NPC::
+# 122 "data/maps/SunshineOrphanage/scripts.pory"
+	lock
+# 123 "data/maps/SunshineOrphanage/scripts.pory"
+	faceplayer
+# 124 "data/maps/SunshineOrphanage/scripts.pory"
+	playmoncry SPECIES_BUDEW, CRY_MODE_NORMAL
+# 125 "data/maps/SunshineOrphanage/scripts.pory"
+	release
+	return
+
+
 Miki_and_Shinjiro_Notice_Akihiko_Text_0:
 # 16 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "There you are!$"
@@ -181,11 +205,11 @@ Miki_and_Akihiko_walk_to_Shinjiro_Text_0:
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Shinji, it's fineee. As long as we stay\n"
 	.string "out of the tall grass.\p"
 	.string "{DESTROY_MUGSHOT} Miki: To the woods! To the woods!\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT} Fine... {DESTROY_MUGSHOT}$"
+	.string "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT} Fine...$"
 
 Shinjiro_and_Miki_Join_Party_Text_0:
 # 58 "data/maps/SunshineOrphanage/scripts.pory"
-	.string "Shinjiro and Miki are now traveling with\n"
+	.string "{DESTROY_MUGSHOT}Shinjiro and Miki are now traveling with\n"
 	.string "Akihiko.$"
 
 Boy_1_OrphanageEntrance_Text_0:

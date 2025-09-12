@@ -94,7 +94,7 @@
     "Underwater_Route129",
     "Underwater_Route105",
     "Underwater_Route125",
-    "AzurineForest",
+    "SunshineWoods",
     "SunshineTown",
     "Route1",
     "SunshineOrphanage"
@@ -498,7 +498,8 @@
     "BattlePyramidSquare14",
     "BattlePyramidSquare15",
     "BattlePyramidSquare16",
-    "UnionRoom"
+    "UnionRoom",
+    "BlankMap"
   ],
   "gMapGroup_SpecialArea": [
     "SafariZone_Northwest",

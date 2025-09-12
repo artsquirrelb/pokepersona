@@ -1,0 +1,167 @@
+mapscripts SunshineWoods_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if(var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
+            clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)}
+        }
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 5: Akihiko_Looking_at_Miki]
+    MAP_SCRIPT_ON_FRAME_TABLE [VAR_AKIHIKOS_INTRO_STATE, 5: SunshineWoods_Eventscript_PlayingInTheWoods]
+}
+
+script  Akihiko_Looking_at_Miki {
+    applymovement(LOCALID_PLAYER, playerfaceright)
+    hideobjectat (7, MAP_SUNSHINE_WOODS)
+}
+movement playerfaceright {
+    face_right
+}
+
+script SunshineWoods_Eventscript_DoNotEnterTheGrass {
+    lock
+    msgbox(format(
+        "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Alright, we're here.\p
+        Don't enter the tall grass, okay?\p
+        {DESTROY_MUGSHOT} Miki: Okay!"))
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    release
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 5) 
+    warpsilent(MAP_SUNSHINE_WOODS, 3, 5)
+}
+
+script SunshineWoods_Eventscript_PlayingInTheWoods {
+    lock 
+    applymovement(6, SunshineWoods_Eventscript_MikiFoundSomething)
+    goto (SunshineWoods_Eventscript_PawmisCry)
+    release
+    end
+}
+
+movement SunshineWoods_Eventscript_MikiFoundSomething {
+    delay_16
+    walk_up
+    delay_16
+    walk_down
+    delay_16
+    emote_exclamation_mark
+    delay_8
+    jump_in_place_right
+    walk_fast_left
+}
+
+script SunshineWoods_Eventscript_PawmisCry {
+    lock
+    waitmovement(0)
+    msgbox(format(
+        "Big bro! Look! I just made this flower crown! It's for you!\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}It's very pretty! Thank you, Miki!\p
+        {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Will you make one for me too, Miki?\p
+        {DESTROY_MUGSHOT} Of course!"))
+    playmoncry(SPECIES_PAWMI_DELTA, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoAlerted)
+    applymovement(5, SunshineWoods_Eventscript_ShinjiroAlerted)
+    applymovement(6, SunshineWoods_Eventscript_MikiAlerted)
+    waitmovement
+    msgbox(format(
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that?\p
+        {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Could be a wild Pokemon. Be careful!"))
+    waitmessage
+    release
+    goto (SunshineWoods_Eventscript_PawmiAppears)
+}
+
+movement SunshineWoods_Eventscript_AkihikoAlerted {
+    emote_exclamation_mark
+    delay_16
+    face_left
+    delay_16
+    face_right
+}
+movement SunshineWoods_Eventscript_ShinjiroAlerted {
+    emote_exclamation_mark
+    delay_16
+    face_up
+    delay_16
+    face_right
+    delay_16
+    face_down
+}
+movement SunshineWoods_Eventscript_MikiAlerted {
+    emote_exclamation_mark
+    jump_in_place_left
+}
+
+movement SunshineWoods_Eventscript_PawmiJumpsOut {
+    walk_fast_right
+    jump_right
+}
+
+script SunshineWoods_Eventscript_PawmiAppears {
+    lock
+    showobjectat(7, MAP_SUNSHINE_WOODS)
+    playmoncry(SPECIES_PAWMI_DELTA, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(7, SunshineWoods_Eventscript_PawmiJumpsOut)
+    applymovement(6, SunshineWoods_Eventscript_Stayback)
+    applymovement(LOCALID_PLAYER, SunshineWoods_Eventscript_Stayback)
+    applymovement(5, SunshineWoods_Eventscript_OnGuard)
+    waitmovement
+    release
+    goto(SunshineWoods_Eventscript_PawmisInjured)
+}
+
+movement SunshineWoods_Eventscript_Stayback {
+    emote_exclamation_mark
+    face_left
+    lock_facing_direction
+    jump_right
+    unlock_facing_direction
+    }
+movement SunshineWoods_Eventscript_OnGuard {
+    emote_exclamation_mark
+    walk_fast_down
+    face_left   
+}
+
+script SunshineWoods_Eventscript_PawmisInjured {
+    lock
+    playmoncry(SPECIES_PAWMI, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(7, SunshineWoods_Eventscript_PawmiIsWeak)
+    msgbox(format("
+    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Wait...\p
+    {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}It looks heavily injured.\p
+    {DESTROY_MUGSHOT}Miki: We should take it back to the orphanage!\p
+    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Yeah!"))
+    release
+    goto (TakePawmiToHeal)
+}
+
+movement SunshineWoods_Eventscript_PawmiIsWeak {
+    walk_in_place_right
+    delay_16 *2
+}
+
+script TakePawmiToHeal {
+    lock
+    applymovement(LOCALID_PLAYER, SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi)
+    msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Come on, lil' guy."))
+    closemessage
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 6)
+    removeobject(7)
+    removeobject(5)
+    removeobject(6)
+    setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+    warpsilent(MAP_BLANK_MAP,0,0)
+    release
+    
+}
+//movement SunshineWoods_Eventscript_Shinjiro_joins {
+ //   walk_down
+//}
+//movement SunshineWoods_Eventscript_Miki_joins {
+//    walk_left
+//}
+movement SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi {
+    walk_in_place_left
+}

@@ -110,3 +110,17 @@ script Donors_List {
      --- Ryota --- --- Takuya"))
     release
 }
+
+script Sunflora_NPC {
+    lock
+    faceplayer
+    playmoncry(SPECIES_SUNFLORA, CRY_MODE_NORMAL)
+    release
+}
+
+script Budew_NPC {
+    lock
+    faceplayer
+    playmoncry(SPECIES_BUDEW, CRY_MODE_NORMAL)
+    release
+}

@@ -2195,3 +2195,13 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_TERAPAGOS
+
+#if P_FAMILY_PAWMI
+static const u16 sPawmiFormSpeciesIdTable[] = {
+    SPECIES_PAWMI,
+#if P_DELTA_FORMS
+    SPECIES_PAWMI_DELTA,
+#endif
+    FORM_SPECIES_END,
+};
+#endif //P_FAMILY_PAWMI

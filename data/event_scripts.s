@@ -1161,7 +1161,7 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/LittlerootTown_NewLabTest/scripts.inc"
 
-	.include "data/maps/AzurineForest/scripts.inc"
+	.include "data/maps/SunshineWoods/scripts.inc"
 
 	.include "data/maps/SunshineTown/scripts.inc"
 
@@ -1176,3 +1176,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/SunshineOrphanageMainHall/scripts.inc"
 
 	.include "data/maps/SunshineOrphanage/scripts.inc"
+
+	.include "data/maps/BlankMap/scripts.inc"

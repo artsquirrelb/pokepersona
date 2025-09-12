@@ -6197,6 +6197,13 @@ static const struct SpriteFrameImage sPicTable_Pawmo[] = {
 static const struct SpriteFrameImage sPicTable_Pawmot[] = {
     overworld_ascending_frames(gObjectEventPic_Pawmot, 4, 4),
 };
+
+#if P_DELTA_FORMS
+static const struct SpriteFrameImage sPicTable_PawmiDelta[] = {
+    overworld_ascending_frames(gObjectEventPic_PawmiDelta, 4, 4),
+};
+
+#endif //P_DELTA_FORMS
 #endif //P_FAMILY_PAWMI
 
 #if P_FAMILY_TANDEMAUS

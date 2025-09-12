@@ -183,107 +183,107 @@ SunshineWoods_Eventscript_PawmiAppears::
 # 103 "data/maps/SunshineWoods/scripts.pory"
 	applymovement 7, SunshineWoods_Eventscript_PawmiJumpsOut
 # 104 "data/maps/SunshineWoods/scripts.pory"
-	playbgm MUS_HELP, TRUE
-# 105 "data/maps/SunshineWoods/scripts.pory"
 	applymovement 6, SunshineWoods_Eventscript_Stayback
-# 106 "data/maps/SunshineWoods/scripts.pory"
+# 105 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_Stayback
-# 107 "data/maps/SunshineWoods/scripts.pory"
+# 106 "data/maps/SunshineWoods/scripts.pory"
 	applymovement 5, SunshineWoods_Eventscript_OnGuard
-# 108 "data/maps/SunshineWoods/scripts.pory"
+# 107 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
-# 109 "data/maps/SunshineWoods/scripts.pory"
+# 108 "data/maps/SunshineWoods/scripts.pory"
 	release
-# 110 "data/maps/SunshineWoods/scripts.pory"
+# 109 "data/maps/SunshineWoods/scripts.pory"
 	goto SunshineWoods_Eventscript_PawmisInjured
 	return
 
 
-# 113 "data/maps/SunshineWoods/scripts.pory"
+# 112 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_Stayback:
-# 114 "data/maps/SunshineWoods/scripts.pory"
+# 113 "data/maps/SunshineWoods/scripts.pory"
 	emote_exclamation_mark
-# 115 "data/maps/SunshineWoods/scripts.pory"
+# 114 "data/maps/SunshineWoods/scripts.pory"
 	face_left
-# 116 "data/maps/SunshineWoods/scripts.pory"
+# 115 "data/maps/SunshineWoods/scripts.pory"
 	lock_facing_direction
-# 117 "data/maps/SunshineWoods/scripts.pory"
+# 116 "data/maps/SunshineWoods/scripts.pory"
 	jump_right
-# 118 "data/maps/SunshineWoods/scripts.pory"
+# 117 "data/maps/SunshineWoods/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 120 "data/maps/SunshineWoods/scripts.pory"
+# 119 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_OnGuard:
-# 121 "data/maps/SunshineWoods/scripts.pory"
+# 120 "data/maps/SunshineWoods/scripts.pory"
 	emote_exclamation_mark
-# 122 "data/maps/SunshineWoods/scripts.pory"
+# 121 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_down
-# 123 "data/maps/SunshineWoods/scripts.pory"
+# 122 "data/maps/SunshineWoods/scripts.pory"
 	face_left
 	step_end
 
 SunshineWoods_Eventscript_PawmisInjured::
-# 127 "data/maps/SunshineWoods/scripts.pory"
+# 126 "data/maps/SunshineWoods/scripts.pory"
 	lock
-# 128 "data/maps/SunshineWoods/scripts.pory"
+# 127 "data/maps/SunshineWoods/scripts.pory"
 	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
-# 129 "data/maps/SunshineWoods/scripts.pory"
+# 128 "data/maps/SunshineWoods/scripts.pory"
 	waitmoncry
-# 130 "data/maps/SunshineWoods/scripts.pory"
+# 129 "data/maps/SunshineWoods/scripts.pory"
 	applymovement 7, SunshineWoods_Eventscript_PawmiIsWeak
+# 130 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
 # 131 "data/maps/SunshineWoods/scripts.pory"
-	playbgm MUS_PETALBURG_WOODS, TRUE
-# 132 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Eventscript_PawmisInjured_Text_0
-# 137 "data/maps/SunshineWoods/scripts.pory"
+# 136 "data/maps/SunshineWoods/scripts.pory"
 	release
-# 138 "data/maps/SunshineWoods/scripts.pory"
+# 137 "data/maps/SunshineWoods/scripts.pory"
 	goto TakePawmiToHeal
 	return
 
 
-# 141 "data/maps/SunshineWoods/scripts.pory"
+# 140 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_PawmiIsWeak:
+# 141 "data/maps/SunshineWoods/scripts.pory"
+	shake_vertical
 # 142 "data/maps/SunshineWoods/scripts.pory"
-	walk_in_place_right
-# 143 "data/maps/SunshineWoods/scripts.pory"
 	delay_16
 # 143 "data/maps/SunshineWoods/scripts.pory"
+	shake_vertical
+# 144 "data/maps/SunshineWoods/scripts.pory"
 	delay_16
 	step_end
 
 TakePawmiToHeal::
-# 147 "data/maps/SunshineWoods/scripts.pory"
-	lock
 # 148 "data/maps/SunshineWoods/scripts.pory"
-	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi
+	lock
 # 149 "data/maps/SunshineWoods/scripts.pory"
-	msgbox TakePawmiToHeal_Text_0
+	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi
 # 150 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
+	msgbox TakePawmiToHeal_Text_0
 # 151 "data/maps/SunshineWoods/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	closemessage
 # 152 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 6
+	fadescreenswapbuffers FADE_TO_BLACK
 # 153 "data/maps/SunshineWoods/scripts.pory"
-	removeobject 7
+	setvar VAR_AKIHIKOS_INTRO_STATE, 6
 # 154 "data/maps/SunshineWoods/scripts.pory"
-	removeobject 5
+	removeobject 7
 # 155 "data/maps/SunshineWoods/scripts.pory"
-	removeobject 6
+	removeobject 5
 # 156 "data/maps/SunshineWoods/scripts.pory"
-	setflag FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO
+	removeobject 6
 # 157 "data/maps/SunshineWoods/scripts.pory"
-	warpsilent MAP_BLANK_MAP, 0, 0
+	setflag FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO
 # 158 "data/maps/SunshineWoods/scripts.pory"
+	warpsilent MAP_BLANK_MAP, 0, 0
+# 159 "data/maps/SunshineWoods/scripts.pory"
 	release
 	return
 
 
-# 167 "data/maps/SunshineWoods/scripts.pory"
-SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi:
 # 168 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi:
+# 169 "data/maps/SunshineWoods/scripts.pory"
 	walk_in_place_left
 	step_end
 
@@ -307,7 +307,7 @@ SunshineWoods_Eventscript_PawmisCry_Text_1:
 	.string "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Could be a wild Pokemon. Be careful!$"
 
 SunshineWoods_Eventscript_PawmisInjured_Text_0:
-# 132 "data/maps/SunshineWoods/scripts.pory"
+# 131 "data/maps/SunshineWoods/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Wait...\p"
 	.string "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}It looks heavily injured.\p"
 	.string "{DESTROY_MUGSHOT}Miki: We should take it back to the\n"
@@ -315,5 +315,5 @@ SunshineWoods_Eventscript_PawmisInjured_Text_0:
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Yeah!$"
 
 TakePawmiToHeal_Text_0:
-# 149 "data/maps/SunshineWoods/scripts.pory"
+# 150 "data/maps/SunshineWoods/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Come on, lil' guy.$"

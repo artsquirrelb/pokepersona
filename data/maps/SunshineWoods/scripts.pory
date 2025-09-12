@@ -127,6 +127,7 @@ script SunshineWoods_Eventscript_PawmisInjured {
     playmoncry(SPECIES_PAWMI, CRY_MODE_NORMAL)
     waitmoncry
     applymovement(7, SunshineWoods_Eventscript_PawmiIsWeak)
+    waitmovement
     msgbox(format("
     {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Wait...\p
     {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}It looks heavily injured.\p
@@ -137,8 +138,10 @@ script SunshineWoods_Eventscript_PawmisInjured {
 }
 
 movement SunshineWoods_Eventscript_PawmiIsWeak {
-    walk_in_place_right
-    delay_16 *2
+    shake_vertical
+    delay_16 
+    shake_vertical
+    delay_16
 }
 
 script TakePawmiToHeal {

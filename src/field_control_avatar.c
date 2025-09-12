@@ -147,16 +147,16 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
         input->dpadDirection = DIR_WEST;
     else if (heldKeys & DPAD_RIGHT)
         input->dpadDirection = DIR_EAST;*/
-[COLOR="Red"][S]    if (heldKeys & DPAD_UP)
+    if (heldKeys & DPAD_UP)
         input->dpadDirection = DIR_NORTH;
     else if (heldKeys & DPAD_DOWN)
         input->dpadDirection = DIR_SOUTH;
     else if (heldKeys & DPAD_LEFT)
         input->dpadDirection = DIR_WEST;
     else if (heldKeys & DPAD_RIGHT)
-        input->dpadDirection = DIR_EAST;[/S][/COLOR]
-[COLOR="YellowGreen"]    SetDirectionFromHeldKeys(heldKeys);
-    input->dpadDirection = sCurrentDirection;[/COLOR]
+        input->dpadDirection = DIR_EAST;
+        SetDirectionFromHeldKeys(heldKeys);
+        input->dpadDirection = sCurrentDirection;
  }
     if(DEBUG_OVERWORLD_MENU && !DEBUG_OVERWORLD_IN_MENU)
     {
@@ -166,7 +166,7 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
             input->DEBUG_OVERWORLD_TRIGGER_EVENT = FALSE;
         }
     }
-}
+
 #include "heat_start_menu.h"
 int ProcessPlayerFieldInput(struct FieldInput *input)
 {

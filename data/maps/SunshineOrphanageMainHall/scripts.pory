@@ -366,13 +366,13 @@ script Blissey_Heal {
     faceplayer
     playmoncry(SPECIES_BLISSEY, CRY_MODE_NORMAL)
     waitmoncry
-    if (flag(FLAG_SYS_POKEMON_GET) == TRUE){
-        special(HealPlayerParty)
-        release}
-    elif (var(VAR_AKIHIKOS_INTRO_STATE) == 7){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 7){
         msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you for healing Pawmi, Blissey!"))
         playmoncry(SPECIES_BLISSEY, CRY_MODE_NORMAL)
         applymovement(11, BlisseyHappy)
+        release}
+    elif (flag(FLAG_SYS_POKEMON_GET) == TRUE){
+        special(HealPlayerParty)
         release}
     else    
      {msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
@@ -415,3 +415,4 @@ script NicknameBoxMon {
 text NewLabTest_NotChosen {
     format("Pawmi looks at Akihiko expectantly.")
 }
+        

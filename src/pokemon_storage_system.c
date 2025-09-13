@@ -43,7 +43,6 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/pokemon_icon.h"
-#include "species.h"
 
 /*
     NOTE: This file is large. Some general groups of functions have
@@ -498,6 +497,7 @@ struct PokemonStorageSystemData
     struct Pokemon tempMon;
     s8 canReleaseMon;
     bool8 releaseStatusResolved;
+    //s8 releaseStoryStarters;
     s8 releaseCheckBoxId;
     s8 releaseCheckBoxPos;
     s8 releaseBoxId;
@@ -644,6 +644,7 @@ static void InitReleaseMon(void);
 static bool8 TryHideReleaseMon(void);
 static void InitCanReleaseMonVars(void);
 static void ReleaseMon(void);
+//static bool32 IsStoryStarterPokemon(void);
 static bool32 AtLeastThreeUsableMons(void);
 static s8 RunCanReleaseMon(void);
 static void SaveMovingMon(void);
@@ -6562,7 +6563,9 @@ static void GetRestrictedReleaseMoves(u16 *moves)
 }
 
 static void InitCanReleaseMonVars(void)
-{
+{   
+    
+
     if (!AtLeastThreeUsableMons())
     {
         // The player only has 1 or 2 usable
@@ -6571,7 +6574,12 @@ static void InitCanReleaseMonVars(void)
         sStorage->canReleaseMon = FALSE;
         return;
     }
-
+    if (GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_PAWMI_DELTA)
+    {   // The player is releasing Delta Pawmi line or Delta Vulpix line
+        sStorage->releaseStatusResolved = TRUE;
+        sStorage->canReleaseMon = FALSE;
+        return;
+    }
     if (sIsMonBeingMoved)
     {
         sStorage->tempMon = sStorage->movingMon;
@@ -6610,6 +6618,9 @@ static void InitCanReleaseMonVars(void)
 
     sStorage->releaseCheckState = 0;
 }
+//static bool32 IsStoryStarterPokemon(void)
+
+
 
 static bool32 AtLeastThreeUsableMons(void)
 {

@@ -150,7 +150,7 @@ SunshineOrphanageMainHall_Eventscript_PawmiAppreciated::
 # 87 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	closemessage
 # 88 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 14, jumpinplacedown
+	applymovement 14, MikiHappy
 # 89 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_1
 # 93 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -178,116 +178,116 @@ SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi::
 # 102 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi_Text_0
 # 103 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 13, facedown
-# 104 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	return
 
 
 SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi::
-# 108 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 107 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	lock
-# 109 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 108 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	faceplayer
-# 110 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 109 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi_Text_0
-# 111 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 14, facedown
-# 112 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 110 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	return
 
 
-# 115 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 113 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 HeartPawmi:
-# 116 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 114 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	jump_in_place_up
-# 117 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 115 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	delay_8
-# 118 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 116 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	emote_heart
 	step_end
 
+# 119 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+MikiHappy:
+# 120 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	emote_music
 # 121 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-jumpinplacedown:
-# 122 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	jump_in_place_down
 	step_end
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter::
-# 126 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 125 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	lockall
-# 127 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 126 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_0, MSGBOX_YESNO
-# 128 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 127 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_2
-# 149 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 148 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	applymovement 15, PawmiDisappointed
-# 150 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 149 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox NewLabTest_NotChosen
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_1:
-# 152 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 151 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	waitmessage
-# 153 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 152 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	releaseall
 	end
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_2:
-# 129 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 128 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
-# 130 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 129 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	givemon SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_PATCH, ITEM_CHERISH_BALL, NATURE_ADAMANT, 2, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31
-# 131 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 130 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_5
-# 138 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 137 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_6
-# 146 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 145 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_2
 	goto SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_1
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_5:
-# 132 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 131 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 133 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 132 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_1
-# 134 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 133 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	hideobjectat 15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL
-# 135 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 134 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	call NicknamePartyMon
-# 136 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 135 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	goto SunshineOrphanageMainHall_Eventscript_GoToSleep
 	goto SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_1
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_6:
-# 139 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 138 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 140 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 139 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_1
-# 141 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 140 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	hideobjectat 15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL
-# 142 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 141 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	call NicknameBoxMon
-# 143 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 142 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	goto SunshineOrphanageMainHall_Eventscript_GoToSleep
 	goto SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_1
 
 
-# 157 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 156 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 PawmiDisappointed:
-# 158 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 157 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	shake_horizontal
 	step_end
 
 SunshineOrphanageMainHall_Eventscript_GoToSleep::
-# 162 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 161 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	lock
+# 162 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	msgbox SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0
 # 163 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	applymovement 4, TeacherFacingAkihiko
 # 164 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0
+	msgbox SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_1
 # 168 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 8
 # 169 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -612,10 +612,10 @@ Blissey_Heal::
 # 368 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	waitmoncry
 # 369 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	goto_if_set FLAG_SYS_POKEMON_GET, Blissey_Heal_1
-# 372 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 6
-	goto_if_eq Blissey_Heal_2
+	compare VAR_AKIHIKOS_INTRO_STATE, 7
+	goto_if_eq Blissey_Heal_1
+# 374 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	goto_if_set FLAG_SYS_POKEMON_GET, Blissey_Heal_2
 # 378 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox Blissey_Heal_Text_1
 # 380 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -624,18 +624,18 @@ Blissey_Heal::
 
 Blissey_Heal_1:
 # 370 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	special HealPlayerParty
+	msgbox Blissey_Heal_Text_0
 # 371 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	playmoncry SPECIES_BLISSEY, CRY_MODE_NORMAL
+# 372 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	applymovement 11, BlisseyHappy
+# 373 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	return
 
 Blissey_Heal_2:
-# 373 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox Blissey_Heal_Text_0
-# 374 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	playmoncry SPECIES_BLISSEY, CRY_MODE_NORMAL
 # 375 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 11, BlisseyHappy
+	special HealPlayerParty
 # 376 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	return
@@ -707,11 +707,11 @@ SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_0:
 	.string "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Looks like it wants to stay with you.\p"
 	.string "{DESTROY_MUGSHOT}Miki: Can we keep it?\p"
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Can we, Ms. Kobayashi?\p"
-	.string "{DESTROY_MUGSHOT}Ms. Kobayashi: Normally children here\n"
-	.string "aren't allowed to have their own\l"
-	.string "Pokemon but because you are going to\l"
-	.string "leave in a few days, we can make an\l"
-	.string "exception.\p"
+	.string "{DESTROY_MUGSHOT}Ms. Kobayashi: Normally children here\p"
+	.string "aren't allowed to have their own\n"
+	.string "Pokemon.\p"
+	.string "However, since you are going to leave in\n"
+	.string "a few days, we can make an exception.\p"
 	.string "Just make sure to not cause trouble in\n"
 	.string "the mean time.$"
 
@@ -724,29 +724,33 @@ SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_1:
 
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_2:
 # 94 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{PLAYER} received 1 Cherish Ball.$"
+	.string "{PLAYER} received 1{COLOR GREEN}{SHADOW LIGHT_GREEN} (hidden){COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Cherish Ball.$"
 
 SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi_Text_0:
 # 102 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Go on, Pawmi is waiting for you.$"
 
 SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi_Text_0:
-# 110 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 109 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Miki: Let's give Pawmi a home, big bro!$"
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_0:
-# 127 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 126 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Let Pawmi in the Cherish Ball?$"
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_1:
-# 133 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 132 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Received Pawmi.$"
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_2:
-# 146 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 145 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Party full.$"
 
 SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0:
+# 162 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}The story starters are buffed.$"
+
+SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_1:
 # 165 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Ms. Kobayashi: Alrigh.\p"
 	.string "I supposed it's quite late now. You all\n"
@@ -855,7 +859,7 @@ MartLady_Text_1:
 	.string "Play safe okay, child?$"
 
 Blissey_Heal_Text_0:
-# 373 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 370 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you for healing Pawmi, Blissey!$"
 
 Blissey_Heal_Text_1:

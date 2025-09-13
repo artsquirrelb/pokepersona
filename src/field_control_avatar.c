@@ -154,7 +154,7 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
             input->DEBUG_OVERWORLD_TRIGGER_EVENT = FALSE;
         }
     }
-}
+
 #include "heat_start_menu.h"
 int ProcessPlayerFieldInput(struct FieldInput *input)
 {

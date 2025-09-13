@@ -5,8 +5,12 @@ mapscripts SunshineOrphanage_MapScripts {
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 3: Miki_and_Shinjiro_Notice_Akihiko
+        VAR_AKIHIKOS_INTRO_STATE, 3: SunshineOrphanageOnFrame3
     ]
+}
+
+script SunshineOrphanageOnFrame3{
+    goto (Miki_and_Shinjiro_Notice_Akihiko)
 }
 
 script Miki_and_Shinjiro_Notice_Akihiko {
@@ -20,6 +24,7 @@ script Miki_and_Shinjiro_Notice_Akihiko {
 
 movement Miki_Runs_To_Akihiko {
     emote_exclamation_mark
+    delay_16
     walk_fast_right *2
     walk_fast_up
 }
@@ -27,6 +32,7 @@ movement Miki_Runs_To_Akihiko {
 script Miki_and_Akihiko_walk_to_Shinjiro {
     lock
     waitmovement(0)
+    delay(16)
     applymovement (3, Miki_leading_Akihiko_to_Shinjiro)
     applymovement (LOCALID_PLAYER, Miki_leading_Akihiko_to_Shinjiro)
     waitmovement(0)

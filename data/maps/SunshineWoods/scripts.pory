@@ -4,7 +4,7 @@ mapscripts SunshineWoods_MapScripts {
             clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)}
         }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 5: Akihiko_Looking_at_Miki]
-    MAP_SCRIPT_ON_FRAME_TABLE [VAR_AKIHIKOS_INTRO_STATE, 5: SunshineWoods_Eventscript_PlayingInTheWoods]
+    MAP_SCRIPT_ON_FRAME_TABLE [VAR_AKIHIKOS_INTRO_STATE, 5: SunshineWoods_Eventscript_OnFrame]
 }
 
 script  Akihiko_Looking_at_Miki {
@@ -27,29 +27,32 @@ script SunshineWoods_Eventscript_DoNotEnterTheGrass {
     warpsilent(MAP_SUNSHINE_WOODS, 3, 5)
 }
 
+script SunshineWoods_Eventscript_OnFrame {
+    goto(SunshineWoods_Eventscript_PlayingInTheWoods)    
+}
+
 script SunshineWoods_Eventscript_PlayingInTheWoods {
     lock 
+    delay(60)
     applymovement(6, SunshineWoods_Eventscript_MikiFoundSomething)
+    waitmovement(0)
     goto (SunshineWoods_Eventscript_PawmisCry)
     release
     end
 }
 
 movement SunshineWoods_Eventscript_MikiFoundSomething {
-    delay_16
     walk_up
     delay_16
     walk_down
     delay_16
-    emote_exclamation_mark
-    delay_8
-    jump_in_place_right
+    emote_music
+    jump_in_place_right *2
     walk_fast_left
 }
 
 script SunshineWoods_Eventscript_PawmisCry {
     lock
-    waitmovement(0)
     msgbox(format(
         "Big bro! Look! I just made this flower crown! It's for you!\p
         {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}It's very pretty! Thank you, Miki!\p
@@ -60,6 +63,7 @@ script SunshineWoods_Eventscript_PawmisCry {
     applymovement(LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoAlerted)
     applymovement(5, SunshineWoods_Eventscript_ShinjiroAlerted)
     applymovement(6, SunshineWoods_Eventscript_MikiAlerted)
+    delay(30)
     waitmovement
     msgbox(format(
         "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that?\p
@@ -72,15 +76,17 @@ script SunshineWoods_Eventscript_PawmisCry {
 movement SunshineWoods_Eventscript_AkihikoAlerted {
     emote_exclamation_mark
     delay_16
+    delay_16
     face_left
+    delay_16
     delay_16
     face_right
 }
 movement SunshineWoods_Eventscript_ShinjiroAlerted {
     emote_exclamation_mark
-    delay_16
+    delay_16 *2
     face_up
-    delay_16
+    delay_16 *2
     face_right
     delay_16
     face_down
@@ -91,7 +97,6 @@ movement SunshineWoods_Eventscript_MikiAlerted {
 }
 
 movement SunshineWoods_Eventscript_PawmiJumpsOut {
-    walk_fast_right
     jump_right
 }
 
@@ -128,6 +133,7 @@ script SunshineWoods_Eventscript_PawmisInjured {
     waitmoncry
     applymovement(7, SunshineWoods_Eventscript_PawmiIsWeak)
     waitmovement
+    delay(16)
     msgbox(format("
     {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Wait...\p
     {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}It looks heavily injured.\p
@@ -138,8 +144,9 @@ script SunshineWoods_Eventscript_PawmisInjured {
 }
 
 movement SunshineWoods_Eventscript_PawmiIsWeak {
+    emote_poisoned
     shake_vertical
-    delay_16 
+    delay_16
     shake_vertical
     delay_16
 }
@@ -166,5 +173,5 @@ script TakePawmiToHeal {
 //    walk_left
 //}
 movement SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi {
-    walk_in_place_left
+    walk_left
 }

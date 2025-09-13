@@ -1,5 +1,187 @@
 mapscripts SunshineOrphanageMainHall_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE, 6: Akihiko_FaceUp]
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 6) {
+            clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+            setobjectxyperm (4, 11, 23)
+			setobjectmovementtype (4, MOVEMENT_TYPE_FACE_RIGHT)
+            hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)}
+    }
+            
+    MAP_SCRIPT_ON_FRAME_TABLE [VAR_AKIHIKOS_INTRO_STATE, 6: SunshineOrphanageMainHall_Eventscript_OnFrame6]
 }
+
+movement faceright {
+    face_right
+}
+
+script SunshineOrphanageMainHall_Eventscript_OnFrame6 {
+    goto (SunshineOrphanageMainHall_Eventscript_HealingPawmi)
+}
+
+
+script SunshineOrphanageMainHall_Eventscript_HealingPawmi {
+    lock
+    delay(30)
+    playse(MUS_HEAL)
+    waitse
+    release
+    goto(SunshineOrphanageMainHall_Eventscript_PawmiIsHealed)
+}
+movement facedown {
+    face_down
+}
+movement BlisseyHealingPawmi {
+    walk_in_place_down
+}
+
+script SunshineOrphanageMainHall_Eventscript_PawmiIsHealed {
+    lock
+    applymovement(11, BlisseyHealingPawmi)
+    playmoncry(SPECIES_BLISSEY, CRY_MODE_NORMAL)
+    waitmoncry
+    delay(30)
+    applymovement(LOCALID_PLAYER, facedown)
+    applymovement(13, facedown)
+    applymovement(14, facedown)
+    waitmovement(0)
+    delay(16)
+    showobjectat (15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
+    applymovement(15, PutdownbyAkihiko)
+    waitmovement(0)
+    msgbox(format(
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}There you go."))
+    closemessage
+    release
+    goto (SunshineOrphanageMainHall_Eventscript_PawmiAppreciated)
+}
+
+
+movement PutdownbyAkihiko {
+    walk_down
+    face_up
+    delay_8
+    walk_in_place_up
+    delay_8
+    walk_in_place_up
+}
+
+script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
+    lock
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 7){
+        goto (SunshineOrphanageMainHall_Eventscript_GetPawmiStarter)
+    }
+    else {  
+    playmoncry(SPECIES_PAWMI, CRY_MODE_NORMAL)
+    applymovement(15, HeartPawmi)
+    waitmoncry
+    waitmovement(0)
+    delay(30)
+    msgbox(format(
+        "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Looks like it wants to stay with you.\p
+        {DESTROY_MUGSHOT}Miki: Can we keep it?\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Can we, Ms. Kobayashi?\p
+        {DESTROY_MUGSHOT}Ms. Kobayashi: Normally children here\p aren't allowed to have their own Pokemon.\p However, since you are going
+        to leave in a few days, we can make an exception.\p
+        Just make sure to not cause trouble in the mean time."))
+    closemessage
+    applymovement (14, MikiHappy)
+    msgbox(format(
+        "Miki: Yay!\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p
+        {DESTROY_MUGSHOT}Ms. Kobayashi: Here, I'll give you a pokeball to keep it."))
+    closemessage
+    msgbox("{PLAYER} received 1{COLOR GREEN}{SHADOW LIGHT_GREEN} (hidden){COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Cherish Ball.")
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 7)}
+    release
+}
+
+script SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi {
+    lock
+    faceplayer
+    msgbox(format("{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Go on, Pawmi is waiting for you."))
+    release
+}
+
+script SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi {
+    lock
+    faceplayer
+    msgbox(format("Miki: Let's give Pawmi a home, big bro!"))
+    release
+}
+
+movement HeartPawmi {
+    jump_in_place_up
+    delay_8
+    emote_heart
+}
+
+movement MikiHappy {
+    emote_music
+    jump_in_place_down
+}
+
+script SunshineOrphanageMainHall_Eventscript_GetPawmiStarter {
+    lockall
+    msgbox ("Let Pawmi in the Cherish Ball?", MSGBOX_YESNO)
+    if(var(VAR_RESULT) == YES){
+        setflag(FLAG_SYS_POKEMON_GET)
+        givemon(SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_PATCH, ITEM_CHERISH_BALL, NATURE_ADAMANT, 2, MON_MALE,  0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("Received Pawmi.")
+            hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
+            call(NicknamePartyMon)
+            goto(SunshineOrphanageMainHall_Eventscript_GoToSleep)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            msgbox("Received Pawmi.")
+            hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
+            call(NicknameBoxMon)
+            goto(SunshineOrphanageMainHall_Eventscript_GoToSleep)
+        }
+        else{
+            msgbox("Party full.")}
+    }
+    else{
+        applymovement (15, PawmiDisappointed)
+        msgbox(NewLabTest_NotChosen)
+    }
+    waitmessage
+    releaseall
+    end
+}
+
+movement PawmiDisappointed {
+    shake_horizontal
+}
+
+script SunshineOrphanageMainHall_Eventscript_GoToSleep {
+    lock
+    msgbox(format("{COLOR GREEN}{SHADOW LIGHT_GREEN}The story starters are buffed."))
+    applymovement (4, TeacherFacingAkihiko)
+    msgbox(format(
+        "Ms. Kobayashi: Alrigh.\p
+        I supposed it's quite late now. You all should go to rest.\p
+        See you tomorrow."))
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 8)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(13)
+    removeobject(14)
+    removeobject(15)
+    setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+    warp(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 3, 7)
+    playse(MUS_HEAL)
+    release
+    end
+}
+
+movement TeacherFacingAkihiko {
+    walk_right
+    face_up
+}
+
 
 script Boy_1_MainHall {
     lock
@@ -8,6 +190,8 @@ script Boy_1_MainHall {
     I really like the omelet rice the chef cooks for us."))
     release
 }
+
+
 
 script Girl_1_MainHall {
     lock
@@ -52,9 +236,20 @@ script RichLady_MainHall {
 
 script Teacher_MainHall {
     lock
-    faceplayer
-    msgbox(format(
-        "Oh {PLAYER}, I'm sorry. I'm a little busy right now.\p Can you go play outside?"))
+    if(var(VAR_AKIHIKOS_INTRO_STATE) < 4){
+        faceplayer
+        msgbox(format(
+        "Oh {PLAYER}, Miki is waiting for you outside with Shinjiro."))}
+
+    elif(var(VAR_AKIHIKOS_INTRO_STATE) == 4 && var(VAR_AKIHIKOS_INTRO_STATE) == 5) {
+        faceplayer
+        msgbox(format(
+        "I'm a little busy right now. Can you go play somewhere else, {PLAYER}?"))
+    }
+    
+    else {
+        faceplayer
+        msgbox("Take care of Pawmi, okay dear?")}
     release
 }
 
@@ -174,9 +369,20 @@ script Blissey_Heal {
     if (flag(FLAG_SYS_POKEMON_GET) == TRUE){
         special(HealPlayerParty)
         release}
-    else {msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+    elif (var(VAR_AKIHIKOS_INTRO_STATE) == 7){
+        msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you for healing Pawmi, Blissey!"))
+        playmoncry(SPECIES_BLISSEY, CRY_MODE_NORMAL)
+        applymovement(11, BlisseyHappy)
+        release}
+    else    
+     {msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
     Blissey is very good at healing. I can ask it for help when I have an injured Pokemon."))
         release} 
+}
+
+movement BlisseyHappy {
+    walk_in_place_slow_down
+    emote_music
 }
 
 script Minccino_NPC {
@@ -184,4 +390,28 @@ script Minccino_NPC {
     faceplayer
     playmoncry(SPECIES_MINCCINO, CRY_MODE_NORMAL)
     release
+}
+
+
+
+script NicknamePartyMon {
+    msgbox("Give it a nickname?", MSGBOX_YESNO)
+    hidemonpic
+    if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_GetGiftMonPartySlot)
+        call(Common_EventScript_NameReceivedPartyMon)
+    }
+}
+
+script NicknameBoxMon {
+    msgbox("Give it a nickname?", MSGBOX_YESNO)
+    hidemonpic
+    if(var(VAR_RESULT) == YES){
+        call(Common_EventScript_NameReceivedBoxMon)
+    }
+    msgbox ("Transfered to PC.")
+}
+
+text NewLabTest_NotChosen {
+    format("Pawmi looks at Akihiko expectantly.")
 }

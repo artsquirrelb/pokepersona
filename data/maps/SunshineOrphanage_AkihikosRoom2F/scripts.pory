@@ -1,23 +1,39 @@
 mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 0: Akihiko_Facing_PC]
-    MAP_SCRIPT_ON_FRAME_TABLE [ VAR_AKIHIKOS_INTRO_STATE , 0: AkihikosRoom2F_ONFRAME]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 0: Akihiko_FaceUp]
+    MAP_SCRIPT_ON_FRAME_TABLE [ VAR_AKIHIKOS_INTRO_STATE , 0: AkihikosRoom2F_ONFRAME0]
 }
 
-script Akihiko_Facing_PC{
+script Akihiko_FaceUp{
     applymovement (LOCALID_PLAYER, PlayerFaceUp)
 }
 
 movement PlayerFaceUp {face_up}
 
-script AkihikosRoom2F_ONFRAME {
-    lockall
-    playse(SE_EXIT)
+script AkihikosRoom2F_ONFRAME0 {
     special(SpawnCameraObject)
+    goto (AkihikosRoom2F_Cutscene1)
+}
+
+movement AkihikoPensive {
+    emote_pensive
+}
+
+script AkihikosRoom2F_Cutscene1 {
+    lockall
+    applymovement (LOCALID_PLAYER, AkihikoPensive)
+    waitmovement(0)
+    delay(30)
+    playse(SE_EXIT)
     applymovement(1, Miki_Appears)
     applymovement(OBJ_EVENT_ID_CAMERA, Camera_On_Miki)
+    waitmovement(0)
     msgbox("BIG BRO!")
+    delay(20)
+    playse(SE_PIN)
     applymovement(LOCALID_PLAYER, Akihiko_Surprised)
+    waitmovement(0)
     msgbox(Lets_Go_Play)
+    release
     goto(Miki_Inviting_Akihiko_To_Play)}
 
 script Miki_Inviting_Akihiko_To_Play{
@@ -50,13 +66,15 @@ movement Camera_On_Miki {
 }
 movement Miki_Appears {
     walk_fast_up *4
+    delay_16
     jump_in_place_up
     
 }
 
 movement Akihiko_Surprised {
-    face_down
     emote_exclamation_mark
+    delay_16
+    face_down
 }
 
 
@@ -108,7 +126,7 @@ script GiveRunningShoesAtStart {
     msgbox("There they are!")
     removefieldmugshot
     playfanfare(MUS_OBTAIN_ITEM)
-    msgbox("{PLAYER}{KUN} put on the running shoes.")
+    msgbox("{PLAYER}{KUN} put on the {COLOR GREEN}{SHADOW LIGHT_GREEN}Running Shoes{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}.")
     waitfanfare
     setflag(FLAG_SYS_B_DASH)
     setvar(VAR_AKIHIKOS_INTRO_STATE ,3)

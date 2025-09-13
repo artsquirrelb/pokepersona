@@ -81,7 +81,7 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
         "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Looks like it wants to stay with you.\p
         {DESTROY_MUGSHOT}Miki: Can we keep it?\p
         {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Can we, Ms. Kobayashi?\p
-        {DESTROY_MUGSHOT}Ms. Kobayashi: Normally children here\p aren't allowed to have their own Pokemon.\p However, since you are going
+        {DESTROY_MUGSHOT}Ms. Kobayashi: Normally you aren't allowed to have your own Pokemon here.\p However, since you are going
         to leave in a few days, we can make an exception.\p
         Just make sure to not cause trouble in the mean time."))
     closemessage
@@ -159,10 +159,13 @@ movement PawmiDisappointed {
 
 script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     lock
-    msgbox(format("{COLOR GREEN}{SHADOW LIGHT_GREEN}The story starters are buffed."))
+    msgbox(format("{COLOR GREEN}{SHADOW LIGHT_GREEN}Tips: The shiny chance is roughly 1/100. \p 
+    No Pokemon are shiny locked, including the story starters.\p 
+    The story starters have been buffed and come with pre-determined Nature and Perfect IVs.\p
+    You also can not release them."))
     applymovement (4, TeacherFacingAkihiko)
     msgbox(format(
-        "Ms. Kobayashi: Alrigh.\p
+        "Ms. Kobayashi: Alright.\p
         I supposed it's quite late now. You all should go to rest.\p
         See you tomorrow."))
     setvar(VAR_AKIHIKOS_INTRO_STATE, 8)

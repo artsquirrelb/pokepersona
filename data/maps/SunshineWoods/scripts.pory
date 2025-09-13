@@ -55,9 +55,24 @@ script SunshineWoods_Eventscript_PawmisCry {
     lock
     msgbox(format(
         "Big bro! Look! I just made this flower crown! It's for you!\p
-        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}It's very pretty! Thank you, Miki!\p
+        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}It's very pretty! Thank you, Miki!"))
+    release
+    goto (SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown)
+}
+
+script SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown {
+    lock
+    applymovement(6, PlayerFaceUp)
+    msgbox(format("
         {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Will you make one for me too, Miki?\p
         {DESTROY_MUGSHOT} Of course!"))
+    closemessage
+    release
+    goto(SunshineWoods_Eventscript_PawmiCries)
+}
+
+script SunshineWoods_Eventscript_PawmiCries {
+    lock
     playmoncry(SPECIES_PAWMI_DELTA, CRY_MODE_NORMAL)
     waitmoncry
     applymovement(LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoAlerted)
@@ -84,9 +99,9 @@ movement SunshineWoods_Eventscript_AkihikoAlerted {
 }
 movement SunshineWoods_Eventscript_ShinjiroAlerted {
     emote_exclamation_mark
-    delay_16 *2
+    delay_16
     face_up
-    delay_16 *2
+    delay_16
     face_right
     delay_16
     face_down

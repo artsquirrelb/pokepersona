@@ -126,12 +126,20 @@ script GiveRunningShoesAtStart {
     msgbox("There they are!")
     removefieldmugshot
     playfanfare(MUS_OBTAIN_ITEM)
-    msgbox("{PLAYER}{KUN} put on the {COLOR GREEN}{SHADOW LIGHT_GREEN}Running Shoes{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}.")
+    msgbox("{PLAYER} put on the {COLOR GREEN}{SHADOW LIGHT_GREEN}Running Shoes{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}.\p
+    Tips: You can toggle Autorun with B button.")
     waitfanfare
     setflag(FLAG_SYS_B_DASH)
     setvar(VAR_AKIHIKOS_INTRO_STATE ,3)
     releaseall
     end
+}
+
+script RunningShoesToggleManual {
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 3){
+    lock
+    msgbox(format("{COLOR GREEN}{SHADOW LIGHT_GREEN}You can toggle Autorun with B button."))
+    release}
 }
 
 script AkihikosPC {

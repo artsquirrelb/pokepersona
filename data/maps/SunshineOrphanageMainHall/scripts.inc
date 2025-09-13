@@ -707,9 +707,8 @@ SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_0:
 	.string "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Looks like it wants to stay with you.\p"
 	.string "{DESTROY_MUGSHOT}Miki: Can we keep it?\p"
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Can we, Ms. Kobayashi?\p"
-	.string "{DESTROY_MUGSHOT}Ms. Kobayashi: Normally children here\p"
-	.string "aren't allowed to have their own\n"
-	.string "Pokemon.\p"
+	.string "{DESTROY_MUGSHOT}Ms. Kobayashi: Normally you aren't\n"
+	.string "allowed to have your own Pokemon here.\p"
 	.string "However, since you are going to leave in\n"
 	.string "a few days, we can make an exception.\p"
 	.string "Just make sure to not cause trouble in\n"
@@ -748,7 +747,8 @@ SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_2:
 
 SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0:
 # 162 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Tips: The shiny chance is set to 1/100.\p"
+	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Tips: The shiny chance is roughly\n"
+	.string "1/100.\p"
 	.string "No Pokemon are shiny locked, including\n"
 	.string "the story starters.\p"
 	.string "The story starters have been buffed\n"
@@ -758,7 +758,7 @@ SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0:
 
 SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_1:
 # 168 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "Ms. Kobayashi: Alrigh.\p"
+	.string "Ms. Kobayashi: Alright.\p"
 	.string "I supposed it's quite late now. You all\n"
 	.string "should go to rest.\p"
 	.string "See you tomorrow.$"

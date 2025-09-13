@@ -10,7 +10,6 @@ script Akihiko_FaceUp{
 movement PlayerFaceUp {face_up}
 
 script AkihikosRoom2F_ONFRAME0 {
-    special(SpawnCameraObject)
     goto (AkihikosRoom2F_Cutscene1)
 }
 
@@ -22,22 +21,36 @@ script AkihikosRoom2F_Cutscene1 {
     lockall
     applymovement (LOCALID_PLAYER, AkihikoPensive)
     waitmovement(0)
-    delay(30)
+    delay(60)
+    clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
     playse(SE_EXIT)
-    applymovement(1, Miki_Appears)
-    applymovement(OBJ_EVENT_ID_CAMERA, Camera_On_Miki)
-    waitmovement(0)
+    releaseall
+    goto (AkihikosRoom2F_Eventscript_MikiAppears)}
+
+movement Miki_Appears {
+    walk_fast_up *2
+    delay_8
+    jump_in_place_up
+    
+}
+script AkihikosRoom2F_Eventscript_MikiAppears {
+    lockall
+    //special(SpawnCameraObject)
+    //applymovement(OBJ_EVENT_ID_CAMERA, Camera_On_Miki)
+    //waitmovement(0)
     msgbox("BIG BRO!")
+    applymovement(1, Miki_Appears)
     delay(20)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, Akihiko_Surprised)
     waitmovement(0)
     msgbox(Lets_Go_Play)
-    release
+    releaseall
     goto(Miki_Inviting_Akihiko_To_Play)}
 
 script Miki_Inviting_Akihiko_To_Play{
-    applymovement(OBJ_EVENT_ID_CAMERA, Camera_Back_to_Player)
+    lock
+    //applymovement(OBJ_EVENT_ID_CAMERA, Camera_Back_to_Player)
     applymovement(1, Miki_Leaves)
     waitmovement(0)
     playse(SE_EXIT)
@@ -45,7 +58,7 @@ script Miki_Inviting_Akihiko_To_Play{
     setflag (FLAG_VISITED_SUNSHINE_ORPHANAGE)
     setvar(VAR_AKIHIKOS_INTRO_STATE , 1)
     removeobject(1)
-    special(RemoveCameraObject)
+    //special(RemoveCameraObject)
     release
     end
 }
@@ -64,22 +77,21 @@ movement Camera_On_Miki {
     walk_fast_down *3
     
 }
-movement Miki_Appears {
-    walk_fast_up *4
-    delay_16
-    jump_in_place_up
-    
-}
+
 
 movement Akihiko_Surprised {
     emote_exclamation_mark
-    delay_16
     face_down
+    delay_16
+    delay_16
+//    face_down
+    walk_down *4
 }
 
 
 movement Miki_Leaves {
-    walk_fast_down *4
+    //walk_fast_down *4
+    face_down
 }
 
 movement Camera_Back_to_Player {

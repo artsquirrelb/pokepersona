@@ -6,6 +6,7 @@
 #include "battle_pyramid_bag.h"
 #include "bg.h"
 #include "decompress.h"
+#include "dexnav.h"
 #include "event_data.h"
 #include "event_object_movement.h"
 #include "event_object_lock.h"
@@ -592,7 +593,7 @@ static const u8 gText_CurrentTimePM[]    = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VA
 static const u8 gText_CurrentTimePMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1} {STR_VAR_2} PM");
 
 static void SetSelectedMenu(void) {
-  if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE) {
+  if (FlagGet(DN_FLAG_DEXNAV_GET) == TRUE) {
     menuSelected = MENU_POKETCH;
   } else if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE) {
     menuSelected = MENU_POKEDEX;
@@ -638,7 +639,7 @@ void HeatStartMenu_Init(void) {
   sHeatStartMenu->flag = 0;
 
   if (GetSafariZoneFlag() == FALSE) { 
-    if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == 0) {
+    if (FlagGet(DN_FLAG_DEXNAV_GET) == FALSE && menuSelected == 0) {
       menuSelected = 255;
     }
 
@@ -691,7 +692,7 @@ static void HeatStartMenu_CreateSprites(void) {
   u32 y6 = 130;
   u32 y7 = 150;
 
-  if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE) {
+  if (FlagGet(DN_FLAG_DEXNAV_GET) == TRUE) {
     sHeatStartMenu->spriteIdPokedex = CreateSprite(&gSpriteIconPokedex, x-1, y1-2, 0);
     sHeatStartMenu->spriteIdParty   = CreateSprite(&gSpriteIconParty, x, y2-3, 0);
     sHeatStartMenu->spriteIdBag     = CreateSprite(&gSpriteIconBag, x, y3-2, 0);
@@ -827,7 +828,7 @@ static void HeatStartMenu_UpdateClockDisplay(void)
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }
 
-static const u8 gText_Poketch[] = _("  PokeNav");
+static const u8 gText_Poketch[] = _("  DexNav");
 static const u8 gText_Pokedex[] = _("  Pokédex");
 static const u8 gText_Party[]   = _("    Party ");
 static const u8 gText_Bag[]     = _("      Bag  ");
@@ -910,7 +911,7 @@ static void HeatStartMenu_ExitAndClearTilemap(void) {
   if (GetSafariZoneFlag() == FALSE) {
     FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdSave]);
     DestroySprite(&gSprites[sHeatStartMenu->spriteIdSave]); 
-    if (FlagGet(FLAG_SYS_POKENAV_GET) == TRUE) {
+    if (FlagGet(DN_FLAG_DEXNAV_GET) == TRUE) {
       FreeSpriteOamMatrix(&gSprites[sHeatStartMenu->spriteIdPoketch]);
       DestroySprite(&gSprites[sHeatStartMenu->spriteIdPoketch]);
     }
@@ -1319,11 +1320,15 @@ static void DoCleanUpAndStartSafariZoneRetire(void) {
     SafariZoneRetirePrompt();
   }
 }
+static void Adapter_OpenDexNav() {
+    u8 taskId = FindTaskIdByFunc(Task_HeatStartMenu_HandleMainInput);
+    Task_OpenDexNavFromStartMenu(taskId);
+}
 
 static void HeatStartMenu_OpenMenu(void) {
   switch (menuSelected) {
     case MENU_POKETCH:
-      DoCleanUpAndChangeCallback(CB2_InitPokeNav);
+      DoCleanUpAndChangeCallback(Adapter_OpenDexNav);
       break;
     case MENU_POKEDEX:
       DoCleanUpAndChangeCallback(CB2_OpenPokedex);
@@ -1364,7 +1369,7 @@ static void HeatStartMenu_HandleInput_DPADDOWN(void) {
     default:
       menuSelected++;
       PlaySE(SE_SELECT);
-      if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_POKETCH) {
+      if (FlagGet(DN_FLAG_DEXNAV_GET) == FALSE && menuSelected == MENU_POKETCH) {
         menuSelected++;
       } else if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_PARTY) {
         menuSelected++;
@@ -1383,7 +1388,7 @@ static void HeatStartMenu_HandleInput_DPADUP(void) {
       break;
     default:
       PlaySE(SE_SELECT);
-      if (FlagGet(FLAG_SYS_POKENAV_GET) == FALSE && menuSelected == MENU_TRAINER_CARD) {
+      if (FlagGet(DN_FLAG_DEXNAV_GET) == FALSE && menuSelected == MENU_TRAINER_CARD) {
         menuSelected -= 2;
       } else if ((FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_BAG) || (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE && menuSelected == MENU_PARTY)) {
         menuSelected = MENU_OPTIONS;

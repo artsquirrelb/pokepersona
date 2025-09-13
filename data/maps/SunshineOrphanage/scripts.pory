@@ -1,12 +1,33 @@
 mapscripts SunshineOrphanage_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 3) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 0) {
+            setflag(FLAG_SPAWN_INVISIBLE)
+            setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+        }
+        elif (var(VAR_AKIHIKOS_INTRO_STATE) == 3) {
             clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_AKIHIKOS_INTRO_STATE, 0: SunshineOrphanageOnFrame0
         VAR_AKIHIKOS_INTRO_STATE, 3: SunshineOrphanageOnFrame3
     ]
+}
+
+script SunshineOrphanageOnFrame0 {
+    goto (SunshineOrphanage_Eventscript_ShowTheMap)}
+
+script SunshineOrphanage_Eventscript_ShowTheMap{
+    lockall
+    applymovement(LOCALID_PLAYER, SlowlyShowTheMap)
+    waitmovement(0)
+    msgbox(format("   Akihiko's Prologue: Sunshine Memories\l {COLOR GREEN}{SHADOW LIGHT_GREEN}Level cap: 8      "))
+    warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F,5,4)
+    releaseall
+}
+
+movement SlowlyShowTheMap {
+    walk_up *8
 }
 
 script SunshineOrphanageOnFrame3{

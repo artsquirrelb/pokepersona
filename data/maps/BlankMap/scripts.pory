@@ -1,8 +1,10 @@
 mapscripts BlankMap_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 6) {setflag(FLAG_SPAWN_INVISIBLE)}
+        if (var(VAR_AKIHIKOS_INTRO_STATE) > 0) {setflag(FLAG_SPAWN_INVISIBLE)}
     }
-    MAP_SCRIPT_ON_FRAME_TABLE [VAR_AKIHIKOS_INTRO_STATE, 6: SunshineWoods_Eventscript_WarpBackToOrphanage]
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_AKIHIKOS_INTRO_STATE, 7: SunshineWoods_Eventscript_WarpBackToOrphanage
+        VAR_AKIHIKOS_INTRO_STATE, 9: SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom]
 }
 
 
@@ -14,4 +16,12 @@ script SunshineWoods_Eventscript_WarpBackToOrphanage {
     warp(MAP_SUNSHINE_ORPHANAGE_MAIN_HALL, 12, 22)
     clearflag(FLAG_SPAWN_INVISIBLE)
     release
+}
+
+script SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom {
+    lockall
+    playse(MUS_HEAL)
+    warp(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 3, 7)
+    clearflag(FLAG_SPAWN_INVISIBLE)
+    releaseall
 }

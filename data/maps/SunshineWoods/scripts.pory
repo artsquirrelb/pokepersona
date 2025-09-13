@@ -1,10 +1,10 @@
 mapscripts SunshineWoods_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if(var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
+        if(var(VAR_AKIHIKOS_INTRO_STATE) == 5) {
             clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)}
         }
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 5: Akihiko_Looking_at_Miki]
-    MAP_SCRIPT_ON_FRAME_TABLE [VAR_AKIHIKOS_INTRO_STATE, 5: SunshineWoods_Eventscript_OnFrame]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 6: Akihiko_Looking_at_Miki]
+    MAP_SCRIPT_ON_FRAME_TABLE [VAR_AKIHIKOS_INTRO_STATE, 6: SunshineWoods_Eventscript_OnFrame]
 }
 
 script  Akihiko_Looking_at_Miki {
@@ -23,7 +23,7 @@ script SunshineWoods_Eventscript_DoNotEnterTheGrass {
         {DESTROY_MUGSHOT} Miki: Okay!"))
     fadescreenswapbuffers(FADE_TO_BLACK)
     release
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 5) 
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 6) 
     warpsilent(MAP_SUNSHINE_WOODS, 3, 5)
 }
 
@@ -172,7 +172,7 @@ script TakePawmiToHeal {
     msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Come on, lil' guy."))
     closemessage
     fadescreenswapbuffers(FADE_TO_BLACK)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 6)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 7)
     removeobject(7)
     removeobject(5)
     removeobject(6)

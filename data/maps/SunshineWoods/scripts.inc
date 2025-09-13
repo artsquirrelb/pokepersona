@@ -9,7 +9,7 @@ SunshineWoods_MapScripts::
 
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/SunshineWoods/scripts.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 4
+	compare VAR_AKIHIKOS_INTRO_STATE, 5
 	goto_if_eq SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return
 
@@ -20,12 +20,12 @@ SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 6 "data/maps/SunshineWoods/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 5, Akihiko_Looking_at_Miki
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 6, Akihiko_Looking_at_Miki
 	.2byte 0
 
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 7 "data/maps/SunshineWoods/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 5, SunshineWoods_Eventscript_OnFrame
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 6, SunshineWoods_Eventscript_OnFrame
 	.2byte 0
 
 
@@ -53,7 +53,7 @@ SunshineWoods_Eventscript_DoNotEnterTheGrass::
 # 25 "data/maps/SunshineWoods/scripts.pory"
 	release
 # 26 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 5
+	setvar VAR_AKIHIKOS_INTRO_STATE, 6
 # 27 "data/maps/SunshineWoods/scripts.pory"
 	warpsilent MAP_SUNSHINE_WOODS, 3, 5
 	return
@@ -305,7 +305,7 @@ TakePawmiToHeal::
 # 174 "data/maps/SunshineWoods/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 175 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 6
+	setvar VAR_AKIHIKOS_INTRO_STATE, 7
 # 176 "data/maps/SunshineWoods/scripts.pory"
 	removeobject 7
 # 177 "data/maps/SunshineWoods/scripts.pory"

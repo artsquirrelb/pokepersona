@@ -10,7 +10,7 @@ SunshineOrphanage_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	compare VAR_AKIHIKOS_INTRO_STATE, 0
 	goto_if_eq SunshineOrphanage_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 # 7 "data/maps/SunshineOrphanage/scripts.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 3
+	compare VAR_AKIHIKOS_INTRO_STATE, 4
 	goto_if_eq SunshineOrphanage_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 	return
 
@@ -30,7 +30,7 @@ SunshineOrphanage_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 12 "data/maps/SunshineOrphanage/scripts.pory"
 	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 0, SunshineOrphanageOnFrame0
 # 13 "data/maps/SunshineOrphanage/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 3, SunshineOrphanageOnFrame3
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 4, SunshineOrphanageOnFrame4
 	.2byte 0
 
 
@@ -42,17 +42,17 @@ SunshineOrphanageOnFrame0::
 
 SunshineOrphanage_Eventscript_ShowTheMap::
 # 21 "data/maps/SunshineOrphanage/scripts.pory"
-	lockall
-# 22 "data/maps/SunshineOrphanage/scripts.pory"
 	applymovement LOCALID_PLAYER, SlowlyShowTheMap
-# 23 "data/maps/SunshineOrphanage/scripts.pory"
+# 22 "data/maps/SunshineOrphanage/scripts.pory"
 	waitmovement 0
-# 24 "data/maps/SunshineOrphanage/scripts.pory"
+# 23 "data/maps/SunshineOrphanage/scripts.pory"
 	msgbox SunshineOrphanage_Eventscript_ShowTheMap_Text_0
-# 25 "data/maps/SunshineOrphanage/scripts.pory"
+# 24 "data/maps/SunshineOrphanage/scripts.pory"
 	warpsilent MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 5, 4
+# 25 "data/maps/SunshineOrphanage/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 1
 # 26 "data/maps/SunshineOrphanage/scripts.pory"
-	releaseall
+	setvar VAR_CURRENT_LEVEL_CAP, 8
 	return
 
 
@@ -76,7 +76,7 @@ SlowlyShowTheMap:
 	walk_up
 	step_end
 
-SunshineOrphanageOnFrame3::
+SunshineOrphanageOnFrame4::
 # 34 "data/maps/SunshineOrphanage/scripts.pory"
 	goto Miki_and_Shinjiro_Notice_Akihiko
 	return
@@ -162,7 +162,7 @@ Shinjiro_and_Miki_Join_Party::
 # 85 "data/maps/SunshineOrphanage/scripts.pory"
 	msgbox Shinjiro_and_Miki_Join_Party_Text_0
 # 86 "data/maps/SunshineOrphanage/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 4
+	setvar VAR_AKIHIKOS_INTRO_STATE, 5
 # 87 "data/maps/SunshineOrphanage/scripts.pory"
 	release
 	return
@@ -259,7 +259,7 @@ Budew_NPC::
 
 
 SunshineOrphanage_Eventscript_ShowTheMap_Text_0:
-# 24 "data/maps/SunshineOrphanage/scripts.pory"
+# 23 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "Akihiko's Prologue: Sunshine Memories\l"
 	.string "{COLOR GREEN}{SHADOW LIGHT_GREEN}Level cap: 8$"
 
@@ -298,7 +298,7 @@ Girl_OrphanageEntrance_Text_0:
 
 Sunshine_Orphanage_Direction_Sign_Text_0:
 # 119 "data/maps/SunshineOrphanage/scripts.pory"
-	.string "Sunshine Woods {DOWN_ARROW}\l Beware of wild Pokemons!$"
+	.string "Sunshine Woods {DOWN_ARROW}\n Beware of wild Pokemons!$"
 
 Welcome_To_Sunshine_Orphanage_Text_0:
 # 127 "data/maps/SunshineOrphanage/scripts.pory"
@@ -310,5 +310,5 @@ Donors_List_Text_0:
 # 134 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "List of top donors (in alphabet order):\n"
 	.string "--- Kai --- Kazuhisa ---\p"
-	.string "--- Kirijo --- --- ---\l"
-	.string "--- Ryota --- --- Takuya$"
+	.string "--- Kirijo --- --- --- --- Ryota ---\n"
+	.string "--- Takuya$"

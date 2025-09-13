@@ -1,6 +1,6 @@
 mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 0: Akihiko_FaceUp]
-    MAP_SCRIPT_ON_FRAME_TABLE [ VAR_AKIHIKOS_INTRO_STATE , 0: AkihikosRoom2F_ONFRAME0]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 1: Akihiko_FaceUp]
+    MAP_SCRIPT_ON_FRAME_TABLE [ VAR_AKIHIKOS_INTRO_STATE , 1: AkihikosRoom2F_ONFRAME1]
 }
 
 script Akihiko_FaceUp{
@@ -9,8 +9,10 @@ script Akihiko_FaceUp{
 
 movement PlayerFaceUp {face_up}
 
-script AkihikosRoom2F_ONFRAME0 {
-    goto (AkihikosRoom2F_Cutscene1)
+script AkihikosRoom2F_ONFRAME1 {
+    lockall
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 1) {goto (AkihikosRoom2F_Cutscene1)}
+    releaseall
 }
 
 movement AkihikoPensive {
@@ -28,19 +30,18 @@ script AkihikosRoom2F_Cutscene1 {
     goto (AkihikosRoom2F_Eventscript_MikiAppears)}
 
 movement Miki_Appears {
-    walk_fast_up *2
-    delay_8
-    jump_in_place_up
+    walk_fast_up
+    jump_in_place_up *2
     
 }
 script AkihikosRoom2F_Eventscript_MikiAppears {
     lockall
-    //special(SpawnCameraObject)
-    //applymovement(OBJ_EVENT_ID_CAMERA, Camera_On_Miki)
-    //waitmovement(0)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, Camera_On_Miki)
+    waitmovement(0)
     msgbox("BIG BRO!")
     applymovement(1, Miki_Appears)
-    delay(20)
+    delay(8)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, Akihiko_Surprised)
     waitmovement(0)
@@ -56,9 +57,9 @@ script Miki_Inviting_Akihiko_To_Play{
     playse(SE_EXIT)
     setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
     setflag (FLAG_VISITED_SUNSHINE_ORPHANAGE)
-    setvar(VAR_AKIHIKOS_INTRO_STATE , 1)
+    setvar(VAR_AKIHIKOS_INTRO_STATE , 2)
     removeobject(1)
-    //special(RemoveCameraObject)
+    special(RemoveCameraObject)
     release
     end
 }
@@ -83,15 +84,14 @@ movement Akihiko_Surprised {
     emote_exclamation_mark
     face_down
     delay_16
-    delay_16
 //    face_down
-    walk_down *4
+    walk_down *3
 }
 
 
 movement Miki_Leaves {
     //walk_fast_down *4
-    face_down
+    walk_down *2
 }
 
 movement Camera_Back_to_Player {
@@ -124,7 +124,7 @@ script SetWallclock {
 	delay(30)
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
     msgbox ("Done.")
-	setvar(VAR_AKIHIKOS_INTRO_STATE , 2)
+	setvar(VAR_AKIHIKOS_INTRO_STATE , 3)
 	setflag(FLAG_SET_WALL_CLOCK)
 	releaseall
 	end
@@ -138,17 +138,17 @@ script GiveRunningShoesAtStart {
     msgbox("There they are!")
     removefieldmugshot
     playfanfare(MUS_OBTAIN_ITEM)
-    msgbox("{PLAYER} put on the {COLOR GREEN}{SHADOW LIGHT_GREEN}Running Shoes{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}.\p
-    Tips: You can toggle Autorun with B button.")
+    msgbox(format("{PLAYER} put on the {COLOR GREEN}{SHADOW LIGHT_GREEN}Running Shoes{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}.\p
+    {COLOR GREEN}{SHADOW LIGHT_GREEN}Tips: You can toggle Autorun with B button."))
     waitfanfare
     setflag(FLAG_SYS_B_DASH)
-    setvar(VAR_AKIHIKOS_INTRO_STATE ,3)
+    setvar(VAR_AKIHIKOS_INTRO_STATE ,4)
     releaseall
     end
 }
 
 script RunningShoesToggleManual {
-    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 3){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 4){
     lock
     msgbox(format("{COLOR GREEN}{SHADOW LIGHT_GREEN}You can toggle Autorun with B button."))
     release}

@@ -4,33 +4,33 @@ mapscripts SunshineOrphanage_MapScripts {
             setflag(FLAG_SPAWN_INVISIBLE)
             setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
         }
-        elif (var(VAR_AKIHIKOS_INTRO_STATE) == 3) {
+        elif (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
             clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 0: SunshineOrphanageOnFrame0
-        VAR_AKIHIKOS_INTRO_STATE, 3: SunshineOrphanageOnFrame3
+        VAR_AKIHIKOS_INTRO_STATE, 4: SunshineOrphanageOnFrame4
     ]
 }
 
 script SunshineOrphanageOnFrame0 {
     goto (SunshineOrphanage_Eventscript_ShowTheMap)}
 
-script SunshineOrphanage_Eventscript_ShowTheMap{
-    lockall
+script SunshineOrphanage_Eventscript_ShowTheMap {
     applymovement(LOCALID_PLAYER, SlowlyShowTheMap)
     waitmovement(0)
-    msgbox(format("   Akihiko's Prologue: Sunshine Memories\l {COLOR GREEN}{SHADOW LIGHT_GREEN}Level cap: 8      "))
+    msgbox(format("Akihiko's Prologue: Sunshine Memories\l {COLOR GREEN}{SHADOW LIGHT_GREEN}Level cap: 8"))
     warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F,5,4)
-    releaseall
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 1)
+    setvar(VAR_CURRENT_LEVEL_CAP, 8)
 }
 
 movement SlowlyShowTheMap {
     walk_up *8
 }
 
-script SunshineOrphanageOnFrame3{
+script SunshineOrphanageOnFrame4{
     goto (Miki_and_Shinjiro_Notice_Akihiko)
 }
 
@@ -83,7 +83,7 @@ script Shinjiro_and_Miki_Join_Party {
     removeobject(3)
     setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
     msgbox(format("{DESTROY_MUGSHOT}Shinjiro and Miki are now traveling with Akihiko."))
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 4)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 5)
     release
 }
 movement Shinjiro_joins {
@@ -116,7 +116,7 @@ script Girl_OrphanageEntrance {
 script Sunshine_Orphanage_Direction_Sign {
     lock
     msgbox(
-        "Sunshine Woods {DOWN_ARROW}\l
+        "Sunshine Woods {DOWN_ARROW}\n
         Beware of wild Pokemons!"
     )
     release
@@ -133,7 +133,7 @@ script Donors_List {
     lock
     msgbox (format("List of top donors (in alphabet order):
      --- Kai --- Kazuhisa ---\p
-     --- Kirijo --- --- ---\l
+     --- Kirijo --- --- ---
      --- Ryota --- --- Takuya"))
     release
 }

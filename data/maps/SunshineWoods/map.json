@@ -143,7 +143,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "4",
+      "var_value": "5",
       "script": "SunshineWoods_Eventscript_DoNotEnterTheGrass"
     },
     {
@@ -152,7 +152,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "4",
+      "var_value": "5",
       "script": "SunshineWoods_Eventscript_DoNotEnterTheGrass"
     }
   ],

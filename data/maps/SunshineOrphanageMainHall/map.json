@@ -121,7 +121,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 14,
-      "y": 23,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -201,7 +201,7 @@
       "x": 12,
       "y": 22,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",

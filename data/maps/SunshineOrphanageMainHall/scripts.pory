@@ -174,7 +174,7 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     removeobject(14)
     removeobject(15)
     setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
-    warp(MAP_BLANK_MAP, 0, 0)
+    warpsilent(MAP_BLANK_MAP, 0, 0)
     release
     end
 }

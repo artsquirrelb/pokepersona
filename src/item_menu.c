@@ -1162,7 +1162,7 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
     //u16 itemId;
     //u16 itemQuantity;
     //int offset;
-    s32 offset;
+    //s32 offset;
 
     if (itemIndex != LIST_CANCEL)
     {
@@ -1191,7 +1191,7 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
             offset = GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 119);
             BagMenu_Print(windowId, FONT_NARROW, gStringVar4, offset, y, 0, 0, TEXT_SKIP_DRAW, COLORID_NORMAL);
         }
-        else if (itemIndex && (offset = RegisteredItemIndex(itemIndex)) >= 0)
+        else if (itemSlot.itemId && (offset = RegisteredItemIndex(itemSlot.itemId)) >= 0)
         {
             // Print registered icon
             //if (gSaveBlock1Ptr->registeredItem != ITEM_NONE && gSaveBlock1Ptr->registeredItem == itemId)
@@ -2502,7 +2502,7 @@ static void FreeKeyItemWheelGfx(s16 *data) {
 static void Task_KeyItemWheel(u8 taskId) {
     u32 i, j;
     s16 *data = gTasks[taskId].data;
-    struct Sprite *sprite;
+    struct Sprite /**sprite*/;
     switch (tState)
     {
     case 0:

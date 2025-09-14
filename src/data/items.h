@@ -14147,9 +14147,14 @@ const struct Item gItemsInfo[] =
         .name = _("Abili-Change"),
         .price = 10000,
         .holdEffectParam = 0,
-        .description = sAbilityChangerDesc,
+        .description = COMPOUND_STRING(
+            "Miracle meds that\n"
+            "change a Pokémon's\n"
+            "ability."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_AbilityChanger,
+        .iconPic = gItemIcon_AbilityPatch,
+        .iconPalette = gItemIconPalette_AbilityPatch,
     },
 };

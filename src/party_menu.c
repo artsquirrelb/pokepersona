@@ -5196,19 +5196,22 @@ void Task_AbilityChanger(u8 taskId)
         if (tAbilityNum == 0 && gSpeciesInfo[tSpecies].abilities[0] != gSpeciesInfo[tSpecies].abilities[1] && gSpeciesInfo[tSpecies].abilities[1] != 0)
         {
             newAbilityNum = 1;
-            StringCopy(gStringVar2, gAbilityNames[GetAbilityBySpecies(tSpecies, newAbilityNum)]);
+            //StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, newAbilityNum)]);
+            StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, newAbilityNum)].name);
         }
         // If mon has 2nd or 3rd ability and 1st ability isn't empty, offer 1st ability
         else if ((tAbilityNum == 1 || tAbilityNum == 2) && gSpeciesInfo[tSpecies].abilities[0] != 0)
         {
             newAbilityNum = 0;
-            StringCopy(gStringVar2, gAbilityNames[GetAbilityBySpecies(tSpecies, newAbilityNum)]);
+            //StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, newAbilityNum)]);
+            StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, newAbilityNum)].name);
         }
         // If mon has 1st ability and 2nd ability was empty or if mon has 2nd abilities and 1st ability was empty, offer 3rd ability
         else
         {
             newAbilityNum = 2;
-            StringCopy(gStringVar2, gAbilityNames[GetAbilityBySpecies(tSpecies, newAbilityNum)]);
+            //StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, newAbilityNum)]);
+            StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, newAbilityNum)].name);
         }
         // If mon only has 
         StringExpandPlaceholders(gStringVar4, askText);
@@ -5269,13 +5272,15 @@ void Task_AbilityChanger(u8 taskId)
         if (tAbilityNum == 2)
         {
             newAbilityNum = 1;
-            StringCopy(gStringVar2, gAbilityNames[GetAbilityBySpecies(tSpecies, newAbilityNum)]);
+            //StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, newAbilityNum)]);
+            StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, newAbilityNum)].name);
         }
         // If mon has 1st or 2nd ability, offer 3rd ability
         else
         {
             newAbilityNum = 2;
-            StringCopy(gStringVar2, gAbilityNames[GetAbilityBySpecies(tSpecies, newAbilityNum)]);
+            //StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, newAbilityNum)]);
+            StringCopy(gStringVar2, gAbilitiesInfo[GetAbilityBySpecies(tSpecies, newAbilityNum)].name);
         }
         StringExpandPlaceholders(gStringVar4, askText);
         PlaySE(SE_SELECT);

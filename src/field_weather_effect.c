@@ -160,6 +160,7 @@ void Sunny_InitVars(void)
     gWeatherPtr->colorMapStepDelay = 20;
     Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
     gWeatherPtr->noShadows = FALSE;
+    Weather_SetBlendCoeffs(8, 12);
 }
 
 void Sunny_InitAll(void)

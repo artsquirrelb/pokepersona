@@ -309,6 +309,7 @@ u32 LoadSpritePalette(const struct SpritePalette *palette);
 u32 LoadSpritePaletteWithTag(const u16 *pal, u16 tag);
 u8 LoadSpritePaletteInSlot(const struct SpritePalette *palette, u8 paletteNum);
 void LoadSpritePalettes(const struct SpritePalette *palettes);
+u16 LoadSpriteSheetByTemplateKeyItem(const struct SpriteTemplate *template, u8 frame);
 u32 AllocSpritePalette(u16 tag);
 u32 IndexOfSpritePaletteTag(u16 tag);
 u16 GetSpritePaletteTagByPaletteNum(u8 paletteNum);

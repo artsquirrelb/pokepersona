@@ -235,7 +235,7 @@ SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_2:
 # 128 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 129 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	givemon SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_PATCH, ITEM_CHERISH_BALL, NATURE_ADAMANT, 2, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31
+	givemon SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_PATCH, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31
 # 130 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_5

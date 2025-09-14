@@ -14141,4 +14141,15 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    [ITEM_ABILITY_CHANGER] =
+    {
+        .name = _("Abili-Change"),
+        .price = 10000,
+        .holdEffectParam = 0,
+        .description = sAbilityChangerDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_AbilityChanger,
+    },
 };

@@ -746,9 +746,9 @@ static void HeatStartMenu_LoadBgGfx(void) {
     LoadBgTilemap(0, 0, 0, 0);
     DecompressAndCopyTileDataToVram(0, sStartMenuTiles, 0, 0, 0); // Keep as sStartMenuTiles (u32)
     if (GetSafariZoneFlag() == FALSE) {
-        LZDecompressWram(sStartMenuTilemap, buf);
+        DecompressDataWithHeaderWram(sStartMenuTilemap, buf);
     } else {
-        LZDecompressWram(sStartMenuTilemapSafari, buf);
+        DecompressDataWithHeaderWram(sStartMenuTilemapSafari, buf);
     }
 
     // Load the standard menu palette

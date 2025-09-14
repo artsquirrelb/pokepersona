@@ -14592,7 +14592,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_ABILITY_CHANGER] =
     {
-        .name = _("Abili-Change"),
+        .name = ITEM_NAME("Abili-Change"),
         .price = 10000,
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(

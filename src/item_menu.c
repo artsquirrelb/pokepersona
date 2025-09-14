@@ -1159,8 +1159,8 @@ static void BagMenu_MoveCursorCallback(s32 itemIndex, bool8 onInit, struct ListM
 
 static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
 {
-    u16 itemId;
-    u16 itemQuantity;
+    //u16 itemId;
+    //u16 itemQuantity;
     //int offset;
     s32 offset;
 
@@ -1191,7 +1191,7 @@ static void BagMenu_ItemPrintCallback(u8 windowId, u32 itemIndex, u8 y)
             offset = GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 119);
             BagMenu_Print(windowId, FONT_NARROW, gStringVar4, offset, y, 0, 0, TEXT_SKIP_DRAW, COLORID_NORMAL);
         }
-        else if (itemId && (offset = RegisteredItemIndex(itemId)) >= 0)
+        else if (itemIndex && (offset = RegisteredItemIndex(itemIndex)) >= 0)
         {
             // Print registered icon
             //if (gSaveBlock1Ptr->registeredItem != ITEM_NONE && gSaveBlock1Ptr->registeredItem == itemId)

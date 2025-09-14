@@ -138,9 +138,10 @@ script GiveRunningShoesAtStart {
     msgbox("There they are!")
     removefieldmugshot
     playfanfare(MUS_OBTAIN_ITEM)
+    waitfanfare
     msgbox(format("{PLAYER} put on the {COLOR GREEN}{SHADOW LIGHT_GREEN}Running Shoes{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}.\p
     {COLOR GREEN}{SHADOW LIGHT_GREEN}Tips: You can toggle Autorun with B button."))
-    waitfanfare
+    
     setflag(FLAG_SYS_B_DASH)
     setvar(VAR_AKIHIKOS_INTRO_STATE ,4)
     releaseall

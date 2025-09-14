@@ -17,15 +17,20 @@
 #include "constants/rgb.h"
 #include "string_util.h"
 #include "heat_start_menu.h"
+#include "event_data.h"
 
 #define tMenuSelection data[0]
 #define tTextSpeed data[1]
 #define tBattleSceneOff data[2]
 #define tBattleStyle data[3]
 #define tSound data[4]
-#define tButtonMode data[5]
-#define tWindowFrameType data[6]
-#define tStartMenuPalette data[7]
+//#define tButtonMode data[5]
+#define tWindowFrameType data[5]
+#define tStartMenuPalette data[6]
+#define tFollowers data[7]
+#define tBattleSpeed data[8]
+
+
 
 //Page 1
 enum
@@ -34,7 +39,7 @@ enum
     MENUITEM_BATTLESCENE,
     MENUITEM_BATTLESTYLE,
     MENUITEM_SOUND,
-    MENUITEM_BUTTONMODE,
+    //MENUITEM_BUTTONMODE,
     MENUITEM_FRAMETYPE,
     MENUITEM_CANCEL,
     MENUITEM_COUNT,
@@ -44,6 +49,8 @@ enum
 enum
 {
     MENUITEM_MENUPAL,
+    MENUITEM_FOLLOWER,
+    MENUITEM_BATTLESPEED,
     MENUITEM_CANCEL_PG2,
     MENUITEM_COUNT_PG2,
 };
@@ -59,11 +66,13 @@ enum
 #define YPOS_BATTLESCENE  (MENUITEM_BATTLESCENE * 16)
 #define YPOS_BATTLESTYLE  (MENUITEM_BATTLESTYLE * 16)
 #define YPOS_SOUND        (MENUITEM_SOUND * 16)
-#define YPOS_BUTTONMODE   (MENUITEM_BUTTONMODE * 16)
+//#define YPOS_BUTTONMODE   (MENUITEM_BUTTONMODE * 16)
 #define YPOS_FRAMETYPE    (MENUITEM_FRAMETYPE * 16)
 
 // Page 2
 #define YPOS_MENUPAL        (MENUITEM_MENUPAL * 16)
+#define YPOS_FOLLOWER        (MENUITEM_FOLLOWER * 16)
+#define YPOS_BATTLESPEED      (MENUITEM_BATTLESPEED * 16)
 
 #define PAGE_COUNT 2
 
@@ -86,8 +95,12 @@ static u8 FrameType_ProcessInput(u8 selection);
 static void FrameType_DrawChoices(u8 selection);
 static u8 MenuPal_ProcessInput(u8 selection);
 static void MenuPal_DrawChoices(u8 selection);
-static u8 ButtonMode_ProcessInput(u8 selection);
-static void ButtonMode_DrawChoices(u8 selection);
+static u8 BattleSpeed_ProcessInput(u8 selection);
+static void BattleSpeed_DrawChoices(u8 selection);
+static u8 Follower_ProcessInput(u8 selection);
+static void Follower_DrawChoices(u8 selection);
+//static u8 ButtonMode_ProcessInput(u8 selection);
+//static void ButtonMode_DrawChoices(u8 selection);
 static void DrawHeaderText(void);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
@@ -105,7 +118,7 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
     [MENUITEM_BATTLESCENE] = gText_BattleScene,
     [MENUITEM_BATTLESTYLE] = gText_BattleStyle,
     [MENUITEM_SOUND]       = gText_Sound,
-    [MENUITEM_BUTTONMODE]  = gText_ButtonMode,
+    //[MENUITEM_BUTTONMODE]  = gText_ButtonMode,
     [MENUITEM_FRAMETYPE]   = gText_Frame,
     [MENUITEM_CANCEL]      = gText_OptionMenuCancel,
 };
@@ -113,6 +126,8 @@ static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 static const u8 *const sOptionMenuItemsNames_Pg2[MENUITEM_COUNT_PG2] =
 {
     [MENUITEM_MENUPAL]        = gText_MenuPal,
+    [MENUITEM_FOLLOWER]       = gText_Follower,
+    [MENUITEM_BATTLESPEED]    = gText_BattleSpeed,
     [MENUITEM_CANCEL_PG2]      = gText_OptionMenuCancel,
 };
 
@@ -186,9 +201,11 @@ static void ReadAllCurrentSettings(u8 taskId)
     gTasks[taskId].tBattleSceneOff = gSaveBlock2Ptr->optionsBattleSceneOff;
     gTasks[taskId].tBattleStyle = gSaveBlock2Ptr->optionsBattleStyle;
     gTasks[taskId].tSound = gSaveBlock2Ptr->optionsSound;
-    gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
+    //gTasks[taskId].tButtonMode = gSaveBlock2Ptr->optionsButtonMode;
     gTasks[taskId].tWindowFrameType = gSaveBlock2Ptr->optionsWindowFrameType;
     gTasks[taskId].tStartMenuPalette = gSaveBlock2Ptr->optionsStartMenuPalette;
+    gTasks[taskId].tFollowers = FlagGet(FLAG_FOLLOWERS_DISABLED);
+    gTasks[taskId].tBattleSpeed = gSaveBlock2Ptr->optionsBattleSpeed;
 }
 
 static void DrawOptionsPg1(u8 taskId)
@@ -198,7 +215,7 @@ static void DrawOptionsPg1(u8 taskId)
     BattleScene_DrawChoices(gTasks[taskId].tBattleSceneOff);
     BattleStyle_DrawChoices(gTasks[taskId].tBattleStyle);
     Sound_DrawChoices(gTasks[taskId].tSound);
-    ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
+    //ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
     FrameType_DrawChoices(gTasks[taskId].tWindowFrameType);
     HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
@@ -208,6 +225,8 @@ static void DrawOptionsPg2(u8 taskId)
 {
     ReadAllCurrentSettings(taskId);
     MenuPal_DrawChoices(gTasks[taskId].tStartMenuPalette);
+    Follower_DrawChoices(gTasks[taskId].tFollowers);
+    BattleSpeed_DrawChoices(gTasks[taskId].tBattleSpeed);
     HighlightOptionMenuItem(gTasks[taskId].tMenuSelection);
     CopyWindowToVram(WIN_OPTIONS, COPYWIN_FULL);
 }
@@ -444,13 +463,13 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             if (previousOption != gTasks[taskId].tSound)
                 Sound_DrawChoices(gTasks[taskId].tSound);
             break;
-        case MENUITEM_BUTTONMODE:
-            previousOption = gTasks[taskId].tButtonMode;
-            gTasks[taskId].tButtonMode = ButtonMode_ProcessInput(gTasks[taskId].tButtonMode);
+        //case MENUITEM_BUTTONMODE:
+            //previousOption = gTasks[taskId].tButtonMode;
+            //gTasks[taskId].tButtonMode = ButtonMode_ProcessInput(gTasks[taskId].tButtonMode);
 
-            if (previousOption != gTasks[taskId].tButtonMode)
-                ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
-            break;
+           // if (previousOption != gTasks[taskId].tButtonMode)
+           //     ButtonMode_DrawChoices(gTasks[taskId].tButtonMode);
+           // break;
         case MENUITEM_FRAMETYPE:
             previousOption = gTasks[taskId].tWindowFrameType;
             gTasks[taskId].tWindowFrameType = FrameType_ProcessInput(gTasks[taskId].tWindowFrameType);
@@ -521,7 +540,24 @@ static void Task_OptionMenuProcessInput_Pg2(u8 taskId)
             gTasks[taskId].tStartMenuPalette = MenuPal_ProcessInput(gTasks[taskId].tStartMenuPalette);
             if (previousOption != gTasks[taskId].tStartMenuPalette)
                 MenuPal_DrawChoices(gTasks[taskId].tStartMenuPalette);
-            break;           
+            break;
+
+        case MENUITEM_FOLLOWER:
+            previousOption = gTasks[taskId].tFollowers;
+            gTasks[taskId].tFollowers = Follower_ProcessInput(gTasks[taskId].tFollowers);
+
+            if (previousOption != gTasks[taskId].tFollowers)
+                Follower_DrawChoices(gTasks[taskId].tFollowers);
+            break;
+
+        case MENUITEM_BATTLESPEED:
+            previousOption = gTasks[taskId].tBattleSpeed;
+            gTasks[taskId].tBattleSpeed = BattleSpeed_ProcessInput(gTasks[taskId].tBattleSpeed);
+
+            if (previousOption != gTasks[taskId].tBattleSpeed)
+                BattleSpeed_DrawChoices(gTasks[taskId].tBattleSpeed);
+            break;
+
         default:
             return;
         }
@@ -540,9 +576,11 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsBattleSceneOff = gTasks[taskId].tBattleSceneOff;
     gSaveBlock2Ptr->optionsBattleStyle = gTasks[taskId].tBattleStyle;
     gSaveBlock2Ptr->optionsSound = gTasks[taskId].tSound;
-    gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
+    //gSaveBlock2Ptr->optionsButtonMode = gTasks[taskId].tButtonMode;
     gSaveBlock2Ptr->optionsWindowFrameType = gTasks[taskId].tWindowFrameType;
     gSaveBlock2Ptr->optionsStartMenuPalette = gTasks[taskId].tStartMenuPalette;
+    gSaveBlock2Ptr->optionsBattleSpeed = gTasks[taskId].tBattleSpeed;
+
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_OptionMenuFadeOut;
@@ -756,7 +794,7 @@ static void FrameType_DrawChoices(u8 selection)
     DrawOptionMenuChoice(text, 128, YPOS_FRAMETYPE, 1);
 }
 
-static u8 ButtonMode_ProcessInput(u8 selection)
+/*static u8 ButtonMode_ProcessInput(u8 selection)
 {
     if (JOY_NEW(DPAD_RIGHT))
     {
@@ -801,7 +839,7 @@ static void ButtonMode_DrawChoices(u8 selection)
 
     DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(FONT_NORMAL, gText_ButtonTypeLEqualsA, 198), YPOS_BUTTONMODE, styles[2]);
 }
-
+*/
 static u8 MenuPal_ProcessInput(u8 selection)
 {
     if (JOY_NEW(DPAD_RIGHT))
@@ -863,6 +901,74 @@ static void MenuPal_DrawChoices(u8 selection)
 
     DrawOptionMenuChoice(gText_MenuPalColor, 104, YPOS_MENUPAL, 0);
     DrawOptionMenuChoice(text, 134, YPOS_MENUPAL, 1);
+}
+
+static u8 Follower_ProcessInput(u8 selection)
+{
+    if (JOY_NEW(DPAD_LEFT | DPAD_RIGHT))
+    {
+        selection ^= 1;
+        sArrowPressed = TRUE;
+    }
+
+    return selection;
+}
+
+static void Follower_DrawChoices(u8 selection)
+{
+    u8 styles[2];
+    styles[0] = 0;
+    styles[1] = 0;
+    styles[selection] = 1;
+
+    if (selection == 0) 
+    {
+        FlagClear(FLAG_FOLLOWERS_DISABLED);
+    }
+    else
+    {
+        FlagSet(FLAG_FOLLOWERS_DISABLED);
+    }
+
+    DrawOptionMenuChoice(gText_FollowerOn, 104, YPOS_FOLLOWER, styles[0]);
+    DrawOptionMenuChoice(gText_FollowerOff, GetStringRightAlignXOffset(FONT_NORMAL, gText_FollowerOff, 198), YPOS_FOLLOWER, styles[1]);
+}
+
+
+static u8 BattleSpeed_ProcessInput(u8 selection)
+{
+    if (JOY_NEW(DPAD_RIGHT))
+    {
+        if (++selection > 2)  // If the selection exceeds 3, wrap around to 0
+            selection = 0;
+            sArrowPressed = TRUE;
+    }
+    if (JOY_NEW(DPAD_LEFT))
+    {
+        if (--selection > 2)  // If the selection is negative, wrap around to 3
+            selection = 2;
+            sArrowPressed = TRUE;
+    }
+    // Update the battle speed variable based on the selection
+    VarSet(VAR_BATTLE_SPEED, selection);  // Set the battle speed variable
+    return selection;
+}
+
+static void BattleSpeed_DrawChoices(u8 selection)
+{
+    u8 styles[3];
+    styles[0] = 0;
+    styles[1] = 0;
+    styles[2] = 0;
+    styles[selection] = 1;  // Highlight the selected option
+    int xSpacer;
+    xSpacer = (GetStringRightAlignXOffset(1, gText_BattleSpeed3x, 198) - 104) / 3;
+
+    // Draw each menu choice at the calculated positions
+    DrawOptionMenuChoice(gText_BattleSpeed1x, 104, YPOS_BATTLESPEED, styles[0]);
+    DrawOptionMenuChoice(gText_BattleSpeed2x, 104 + xSpacer, YPOS_BATTLESPEED, styles[1]);
+    DrawOptionMenuChoice(gText_BattleSpeed3x, 104 + 2 * xSpacer, YPOS_BATTLESPEED, styles[2]);
+    //DrawOptionMenuChoice(gText_BattleSpeed4x, GetStringRightAlignXOffset(1, gText_BattleSpeed4x, 198), YPOS_BATTLESPEED, styles[3]);
 }
 
 static void DrawHeaderText(void)

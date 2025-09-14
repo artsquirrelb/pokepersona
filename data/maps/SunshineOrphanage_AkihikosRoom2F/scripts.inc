@@ -238,10 +238,11 @@ GiveRunningShoesAtStart::
 	removefieldmugshot
 # 140 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
+	waitfanfare
 # 141 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox GiveRunningShoesAtStart_Text_2
 # 143 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	waitfanfare
+	
 # 144 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setflag FLAG_SYS_B_DASH
 # 145 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"

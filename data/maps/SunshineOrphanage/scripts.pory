@@ -35,11 +35,12 @@ script SunshineOrphanageOnFrame4{
 }
 
 script Miki_and_Shinjiro_Notice_Akihiko {
-    lock
+    lockall
     playse (SE_PIN)
     applymovement (3, Miki_Runs_To_Akihiko)
+    waitmovement(0)
     msgbox("There you are!")
-    release
+    releaseall
     goto(Miki_and_Akihiko_walk_to_Shinjiro)
 }
 
@@ -52,8 +53,6 @@ movement Miki_Runs_To_Akihiko {
 
 script Miki_and_Akihiko_walk_to_Shinjiro {
     lock
-    waitmovement(0)
-    delay(16)
     applymovement (3, Miki_leading_Akihiko_to_Shinjiro)
     applymovement (LOCALID_PLAYER, Miki_leading_Akihiko_to_Shinjiro)
     waitmovement(0)
@@ -63,11 +62,10 @@ script Miki_and_Akihiko_walk_to_Shinjiro {
         {DESTROY_MUGSHOT}
         Miki: To the woods! To the woods!\p
         {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT} Fine..."))
-        waitmessage
-
-    goto(Shinjiro_and_Miki_Join_Party)
+    closemessage
     release
-}
+    goto(Shinjiro_and_Miki_Join_Party)
+    }
 
 movement Miki_leading_Akihiko_to_Shinjiro {
     walk_down
@@ -78,7 +76,7 @@ script Shinjiro_and_Miki_Join_Party {
     lock
     applymovement (4, Shinjiro_joins)
     applymovement (3, Miki_joins)
-    waitmovement
+    waitmovement(0)
     removeobject (4)
     removeobject(3)
     setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)

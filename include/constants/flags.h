@@ -48,7 +48,7 @@
 #define DN_FLAG_DEXNAV_GET              0x22 // Shows dexnav in normal menu
 #define DN_FLAG_DETECTOR_MODE           0x23 // Allow player to find hidden mons Flag
 #define I_EXP_SHARE_FLAG                0x24 // Item configs
-#define B_FLAG_FOLLOWERS_DISABLED       0x25 // Enables / Disables followers by using a flag. Helpful to disable followers for a period of time.
+#define FLAG_FOLLOWERS_DISABLED         0x25 // Enables / Disables followers by using a flag. Helpful to disable followers for a period of time.
 #define FLAG_RUNNING_SHOES_TOGGLE       0x26 
 #define FLAG_UNUSED_0x027    0x27 // Unused Flag
 #define FLAG_UNUSED_0x028    0x28 // Unused Flag

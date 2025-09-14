@@ -677,7 +677,6 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_SURF_STILL_RIGHT] = gMovementActionFuncs_SurfStillRight,
     [MOVEMENT_ACTION_SHAKE_HORIZONTAL] = gMovementActionFuncs_ShakeHorizontal,
     [MOVEMENT_ACTION_SHAKE_VERTICAL] = gMovementActionFuncs_ShakeVertical,
-    //fast diagonal
     [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_LEFT] = gMovementActionFuncs_WalkFastDiagonalUpLeft,
     [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT] = gMovementActionFuncs_WalkFastDiagonalUpRight,
     [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_LEFT] = gMovementActionFuncs_WalkFastDiagonalDownLeft,

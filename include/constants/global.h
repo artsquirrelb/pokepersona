@@ -157,6 +157,13 @@
 #define OPTIONS_BATTLE_STYLE_SHIFT 0
 #define OPTIONS_BATTLE_STYLE_SET 1
 
+#define OPTIONS_BATTLE_SCENE_1X         0
+#define OPTIONS_BATTLE_SCENE_2X         1
+#define OPTIONS_BATTLE_SCENE_3X         2
+#define OPTIONS_BATTLE_SCENE_DISABLED   3
+#define OPTIONS_BATTLE_SCENE_COUNT      4
+
+
 #define DIR_NONE        0
 #define DIR_SOUTH       1
 #define DIR_NORTH       2

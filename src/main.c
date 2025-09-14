@@ -25,6 +25,7 @@
 #include "trainer_hill.h"
 #include "test_runner.h"
 #include "constants/rgb.h"
+#include "main.h"
 
 static void VBlankIntr(void);
 static void HBlankIntr(void);
@@ -112,7 +113,7 @@ void AgbMain(void)
     ResetBgs();
     SetDefaultFontsPointer();
     InitHeap(gHeap, HEAP_SIZE);
-
+    gMain.nativeSpeedUpActive = FALSE;
     gSoftResetDisabled = FALSE;
 
     if (gFlashMemoryPresent != TRUE)

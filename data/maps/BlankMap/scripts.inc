@@ -49,4 +49,4 @@ playhealbeforewarp::
 SunshineWoods_Eventscript_WarpBackToOrphanage_Text_0:
 	.string "{DESTROY_MUGSHOT} Akihiko picked up the Pawmi and hurried\n"
 	.string "back to the orphanage.$"
-	
+		

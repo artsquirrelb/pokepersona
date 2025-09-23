@@ -609,7 +609,4 @@ NicknameBoxMon_Text_0:
 
 NewLabTest_NotChosen::
 	.string "Pawmi looks at Akihiko expectantly.$"
-	
-
-
-	
+		

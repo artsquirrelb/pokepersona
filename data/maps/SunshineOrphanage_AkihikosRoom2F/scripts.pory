@@ -1,6 +1,8 @@
 mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 1: Akihiko_FaceUp]
-    MAP_SCRIPT_ON_FRAME_TABLE [ VAR_AKIHIKOS_INTRO_STATE , 1: AkihikosRoom2F_ONFRAME1]
+    MAP_SCRIPT_ON_FRAME_TABLE [ 
+        VAR_AKIHIKOS_INTRO_STATE , 1: AkihikosRoom2F_ONFRAME1
+        VAR_AKIHIKOS_INTRO_STATE, 9: AkihikosRoom2F_ONFRAME9]
 }
 
 script Akihiko_FaceUp{
@@ -19,6 +21,11 @@ movement AkihikoPensive {
     emote_pensive
 }
 
+script AkihikosRoom2F_ONFRAME9 {
+    clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+    hideobjectat(1, MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F)
+}
+
 script AkihikosRoom2F_Cutscene1 {
     lockall
     applymovement (LOCALID_PLAYER, AkihikoPensive)
@@ -30,7 +37,7 @@ script AkihikosRoom2F_Cutscene1 {
     goto (AkihikosRoom2F_Eventscript_MikiAppears)}
 
 movement Miki_Appears {
-    walk_fast_up
+    walk_fast_up *3
     jump_in_place_up *2
     
 }
@@ -84,14 +91,13 @@ movement Akihiko_Surprised {
     emote_exclamation_mark
     face_down
     delay_16
-//    face_down
+    delay_16
     walk_down *3
 }
 
 
 movement Miki_Leaves {
-    //walk_fast_down *4
-    walk_down *2
+    walk_fast_down *3
 }
 
 movement Camera_Back_to_Player {
@@ -222,5 +228,13 @@ script TrashcanEmpty {
     lock
     msgbox(format ("It's empty.\p
     {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Shinji just took out the trash."))
+    release
+}
+
+script ShinjiroInformingAboutMsKobayashi {
+    lock
+    faceplayer
+    msgbox(format("
+    {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Morning, Akihiko.\n Ms. Kobayashi said she wanted to meet us at the main hall."))
     release
 }

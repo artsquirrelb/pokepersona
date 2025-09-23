@@ -20,15 +20,7 @@ script SunshineWoods_Eventscript_WarpBackToOrphanage {
 
 script SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom {
     lockall
-    call(playhealbeforewarp)
     warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 3, 7)
     clearflag(FLAG_SPAWN_INVISIBLE)
-    releaseall
-}
-
-script playhealbeforewarp {
-    lockall
-    playse(MUS_HEAL)
-    waitse
     releaseall
 }

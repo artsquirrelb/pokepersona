@@ -39,7 +39,7 @@ script Miki_and_Shinjiro_Notice_Akihiko {
     playse (SE_PIN)
     applymovement (3, Miki_Runs_To_Akihiko)
     waitmovement(0)
-    msgbox("There you are!")
+    msgbox("{SPEAKER NAME_MIKI}There you are!")
     releaseall
     goto(Miki_and_Akihiko_walk_to_Shinjiro)
 }
@@ -57,11 +57,10 @@ script Miki_and_Akihiko_walk_to_Shinjiro {
     applymovement (LOCALID_PLAYER, Miki_leading_Akihiko_to_Shinjiro)
     waitmovement(0)
     msgbox(format("
-        {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}She wants to go to the woods but there are wild Pokemons there.\p
-        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Shinji, it's fineee. As long as we stay out of the tall grass.\p
-        {DESTROY_MUGSHOT}
-        Miki: To the woods! To the woods!\p
-        {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT} Fine..."))
+        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Miki wants to go to the woods but there are wild Pokemons there.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Shinji, it's fineee. As long as we stay out of the tall grass.\p
+        {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}To the woods! To the woods!\p
+        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT} Fine..."))
     closemessage
     release
     goto(Shinjiro_and_Miki_Join_Party)
@@ -80,7 +79,7 @@ script Shinjiro_and_Miki_Join_Party {
     removeobject (4)
     removeobject(3)
     setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
-    msgbox(format("{DESTROY_MUGSHOT}Shinjiro and Miki are now traveling with Akihiko."))
+    msgbox(format("{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Shinjiro and Miki are now traveling with Akihiko."))
     setvar(VAR_AKIHIKOS_INTRO_STATE, 5)
     release
 }
@@ -95,18 +94,20 @@ movement Miki_joins {
 script Boy_1_OrphanageEntrance {
     lock
     faceplayer
+    setspeaker("Yuta")
     msgbox(format("Can I grow tall like these sunflowers?\p
-    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} Just drink a lot of milk!"))
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} Just drink a lot of milk!"))
     release
 }
 
 script Girl_OrphanageEntrance {
     lock
     faceplayer
+    setspeaker("Yuko")
     msgbox(format(
-        "Sometimes I see people wearing black accompany with a man wearing white coat speaking with our teachers.\p 
+        "Sometimes I see people wearing black accompanying a man wearing white coat speaking with our teachers.\p 
         I wonder who they are...\p
-        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} I asked Ms. Kobayashi once and she said they donated a lot to the orphanage."
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} I asked Ms. Kobayashi once and she said they donated a lot to the orphanage."
     ))
     release
 }

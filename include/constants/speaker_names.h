@@ -3,8 +3,11 @@
 
 enum SpeakerNames {
     SP_NAME_NONE = 0,
-    SP_NAME_MOM,
-    SP_NAME_PLAYER,
+    SP_NAME_AKIHIKO,
+    SP_NAME_MITSURU,
+    SP_NAME_SHINJIRO,
+    SP_NAME_MIKI,
+    SP_NAME_KOBAYASHI,
     SP_NAME_COUNT
 };
 

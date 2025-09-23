@@ -1,5 +1,6 @@
 mapscripts SunshineOrphanageMainHall_MapScripts {
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE, 7: Akihiko_FaceUp]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_AKIHIKOS_INTRO_STATE, 7: Akihiko_FaceUp]
     MAP_SCRIPT_ON_TRANSITION {
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 7) {
             clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
@@ -9,8 +10,8 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 9) {
             setobjectxyperm (4, 12, 5)
             setobjectmovementtype (4, MOVEMENT_TYPE_FACE_DOWN)
-            setobjectxyperm (11, 18, 6)
-            setobjectmovementtype (11, MOVEMENT_TYPE_FACE_LEFT)
+            setobjectxyperm (13, 18, 6)
+            setobjectmovementtype (13, MOVEMENT_TYPE_FACE_LEFT)
         }
     }
             
@@ -21,6 +22,10 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
 
 movement faceright {
     face_right
+}
+
+movement faceleft {
+    face_left 
 }
 
 script SunshineOrphanageMainHall_Eventscript_OnFrame7 {
@@ -61,7 +66,7 @@ script SunshineOrphanageMainHall_Eventscript_PawmiIsHealed {
     applymovement(15, PutdownbyAkihiko)
     waitmovement(0)
     msgbox(format(
-        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}There you go."))
+        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}There you go."))
     closemessage
     release
     goto (SunshineOrphanageMainHall_Eventscript_PawmiAppreciated)
@@ -89,20 +94,25 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
     waitmovement(0)
     delay(30)
     msgbox(format(
-        "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Looks like it wants to stay with you.\p
-        {DESTROY_MUGSHOT}Miki: Can we keep it?\p
-        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Can we, Ms. Kobayashi?\p
-        {DESTROY_MUGSHOT}Ms. Kobayashi: Normally you aren't allowed to have your own Pokemon here.\p However, since you are going
+        "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Looks like it wants to stay with you.\p
+        {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Can we keep it?\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Can we, Ms. Kobayashi?\p
+        {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Normally you aren't allowed to have your own Pokemon here.\p However, since you are going
         to leave in a few days, we can make an exception.\p
         Just make sure to not cause trouble in the mean time."))
     closemessage
     applymovement (14, MikiHappy)
     msgbox(format(
-        "Miki: Yay!\p
-        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p
-        {DESTROY_MUGSHOT}Ms. Kobayashi: Here, I'll give you a pokeball to keep it."))
+        "{SPEAKER NAME_MIKI}Yay!\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p
+        {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, I'll give you a pokeball to keep it."))
     closemessage
     msgbox("{PLAYER} received 1{COLOR GREEN}{SHADOW LIGHT_GREEN} (hidden){COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Cherish Ball.")
+    closemessage
+    msgbox(format("{COLOR GREEN}{SHADOW LIGHT_GREEN}Tips: The shiny chance is roughly 1/100. \p 
+    No Pokemon are shiny locked, including the story starters.\p 
+    The story starters have been buffed and come with pre-determined Nature and Perfect IVs.\p
+    You also can not release them."))
     setvar(VAR_AKIHIKOS_INTRO_STATE, 8)}
     release
 }
@@ -110,14 +120,14 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
 script SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi {
     lock
     faceplayer
-    msgbox(format("{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Go on, Pawmi is waiting for you."))
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Go on, Pawmi is waiting for you."))
     release
 }
 
 script SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi {
     lock
     faceplayer
-    msgbox(format("Miki: Let's give Pawmi a home, big bro!"))
+    msgbox(format("{SPEAKER NAME_MIKI}Let's give Pawmi a home, big bro!"))
     release
 }
 
@@ -170,17 +180,16 @@ movement PawmiDisappointed {
 
 script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     lock
-    msgbox(format("{COLOR GREEN}{SHADOW LIGHT_GREEN}Tips: The shiny chance is roughly 1/100. \p 
-    No Pokemon are shiny locked, including the story starters.\p 
-    The story starters have been buffed and come with pre-determined Nature and Perfect IVs.\p
-    You also can not release them."))
     applymovement (4, TeacherFacingAkihiko)
+    waitmovement
     msgbox(format(
-        "Ms. Kobayashi: Alright.\p
+        "{SPEAKER NAME_KOBAYASHI}Alright.\p
         I supposed it's quite late now. You all should go to rest.\p
         See you tomorrow."))
     setvar(VAR_AKIHIKOS_INTRO_STATE, 9)
     fadescreenswapbuffers(FADE_TO_BLACK)
+    playse(MUS_HEAL)
+    waitse
     removeobject(13)
     removeobject(14)
     removeobject(15)
@@ -199,6 +208,7 @@ movement TeacherFacingAkihiko {
 script Boy_1_MainHall {
     lock
     faceplayer
+    setspeaker ("Jin")
     msgbox(format("
     I really like the omelet rice the chef cooks for us."))
     release
@@ -209,6 +219,7 @@ script Boy_1_MainHall {
 script Girl_1_MainHall {
     lock
     faceplayer
+    setspeaker("Riko")
     msgbox(format(
         "When I graduate and get a job I'll contribute back to our orphanage."))
     release
@@ -217,6 +228,7 @@ script Girl_1_MainHall {
 script Boy_2_MainHall {
     lock
     faceplayer
+    setspeaker("Yamamoto")
     msgbox(format(
         "They don't allow us children to have Pokemon of our own but we can still play with the staff's Pokemons."))
     release
@@ -225,15 +237,17 @@ script Boy_2_MainHall {
 script Girl_2_MainHall {
     lock
     faceplayer
+    setspeaker("Hinata")
     msgbox(format(
         "{PLAYER}! I'm also getting adopted next week!\p My future adoptive parents are talking with my teacher right now.\p
-        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} That's great! Congrats!"))
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} That's great! Congrats!"))
     release
 }
 
 script RichMan_MainHall {
     lock
     faceplayer
+    setspeaker("Wealthy Man")
     msgbox(format(
         "We decided to adopt a daughter because my wife wanted one.\p If she's happy then I'm happy."))
     release
@@ -242,6 +256,7 @@ script RichMan_MainHall {
 script RichLady_MainHall {
     lock
     faceplayer
+    setspeaker("Wealthy Woman")
     msgbox(format(
         "We will raise Momo with love and care."))
     release
@@ -249,6 +264,7 @@ script RichLady_MainHall {
 
 script Teacher_MainHall {
     lock
+    setspeaker("Ms. Kobayashi")
     if(var(VAR_AKIHIKOS_INTRO_STATE) < 5){
         faceplayer
         msgbox(format(
@@ -273,31 +289,32 @@ script Teacher_MainHall {
 script Boy_3_MainHall {
     lock
     faceplayer
+    setspeaker("Kenichi")
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
         msgbox(format(
         "Oh hey, {PLAYER}! Miki is waiting for you outside.\p
-        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} I know, thanks!"))
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} I know, thanks!"))
     }
     elif (var(VAR_AKIHIKOS_INTRO_STATE) == 5) {msgbox("Stay safe in the woods.\p
-        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} We will!")}
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} We will!")}
     else {
         msgbox(format(
         "I heard you found a rare Pokemon in the woods?\p
-        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED} Pawmi is rare?"))
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED} Pawmi is rare?"))
     }
     release
 }
 
 script DiningRoom {
     lock
-    msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}
     It's the dining room. The pancakes here are the best."))
     release
 }
 
 script BackyardDoor {
     lock
-    msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
     Outside is the backyard. We grow crops there."))
     release
 }
@@ -305,7 +322,7 @@ script BackyardDoor {
 script Girls_HallwayMainHall {
     lock
     msgbox( format(
-        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
         "It's the way to the girls' hallway. I have no business there right now."))
     release
 }
@@ -313,7 +330,7 @@ script Girls_HallwayMainHall {
 script RestroomMainHall {
     lock
     msgbox(format (
-        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
         "It's the restroom. I'm good for now."
     ))
     release
@@ -322,7 +339,7 @@ script RestroomMainHall {
 script PokeballShelf {
     lock
     msgbox(format (
-        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
         "Those belong to the staff. I shouldn't touch them."
     ))
     release
@@ -337,7 +354,7 @@ script Porygon_PC {
         call(EventScript_AccessPokemonStorage)}
 
     else {msgbox (format("
-    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
     Porygon can access the Pokemon Storage. If only I have a Pokemon."))
     release
     end}
@@ -346,6 +363,7 @@ script Porygon_PC {
 script MartLady {
 	lock
 	faceplayer
+    setspeaker ("Ms. Tanaba")
 	msgbox (format("Hi {PLAYER}, what should I get you?"))
 	if(flag(FLAG_SYS_POKEMON_GET) == TRUE) {pokemart (Orphanage_Mart_ExpandedItems)}
 	else {pokemart(Orphanage_Mart_Basic)}
@@ -388,14 +406,14 @@ script Blissey_Heal {
         special(HealPlayerParty)
         releaseall}
     else    
-     {msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
-    Blissey is very good at healing. I can ask it for help when I have an injured Pokemon."))
+     {msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+     Blissey is very good at healing. I can ask it for help when I have an injured Pokemon."))
         releaseall} 
 }
 
 script BlisseyHealedPawmi{
     lockall
-    msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you for healing Pawmi, Blissey!"))
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you for healing Pawmi, Blissey!"))
     playmoncry(SPECIES_BLISSEY, CRY_MODE_NORMAL)
     applymovement(11, BlisseyHappy)
     waitmovement(0)
@@ -440,25 +458,27 @@ text NewLabTest_NotChosen {
 
 script SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage{
     lock
+    playse(SE_PIN)
     applymovement (4, SunshineOrphanageMainHall_Eventscript_MsKobayashiMoveRight)
     waitmovement(0)
     msgbox(format("
-    Good morning, Akihiko, Shinjiro.\n
-    Sorry to trouble you but can you two go pick up a package for me?\n
-    It should be delivered at the Pokecenter in Sunshine Town by now.\n
-    You can get there by going through Sunshine Woods.\n
-    You have a Pokémon now so it should be fine.\n
-    {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Of course, Ms. Kobayashi.\n
-    {DESTROY_MUGSHOT}Here, you can have these."))
+    {SPEAKER NAME_KOBAYASHI}Good morning, Akihiko, Shinjiro.\p
+    Sorry to trouble you but can you two go pick up a package for me?\p
+    It should be delivered at the Pokecenter in Sunshine Town by now.\p
+    You can get there by going through Sunshine Woods.\p
+    You have a Pokémon now so it should be fine.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Of course, Ms. Kobayashi.\p
+    {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, you may need these."))
     closemessage
-    playse (MUS_OBTAIN_ITEM)
-    waitse
     giveitem (ITEM_POKE_BALL, 10)
-    msgbox(format("Akihiko received 10 Pokéballs.\n
-    Be careful, dear.\n
-    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you, Ms. Kobayashi!"))
-    applymovement(11, NPC_joins_up)
-    removeobject(11)
+    giveitem (ITEM_POTION, 2)
+    closemessage
+    msgbox(format("
+    {SPEAKER NAME_KOBAYASHI}Be careful, dear.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you, Ms. Kobayashi!"))
+    applymovement(13, walkup)
+    waitmovement
+    removeobject(13)
     setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 10)
     release
@@ -471,6 +491,6 @@ movement SunshineOrphanageMainHall_Eventscript_MsKobayashiMoveRight {
     walk_right *4
 }
 
-movement NPC_joins_up {
+movement walkup {
     walk_up
 }

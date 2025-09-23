@@ -4,7 +4,7 @@ mapscripts SunshineOrphanage1FHallway_MapScripts {
 script Restroom1F {
     lock
     msgbox(format (
-        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
         "It's the restroom. I'm good for now."
     ))
     release
@@ -19,9 +19,10 @@ script TrashcanFull {
 script BOY_1_1F {
     lock
     faceplayer
+    setspeaker ("Kenta")
     msgbox(format (
         "I'm playing a game called Persona 3. I'm hooked.\p
-        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
         Oh, Miki loves that game as well. She talks about it all the time."))
     release
 }
@@ -29,9 +30,10 @@ script BOY_1_1F {
 script BOY_2_1F {
     lock
     faceplayer
+    setspeaker ("Jun")
     msgbox(format (
         "You and Miki are so lucky. I wish I could also get adopted along with my big sis...\p
-        {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}
         ...\p Sorry, I don't really know what to say..."))
     release
 }
@@ -39,8 +41,9 @@ script BOY_2_1F {
 script GIRL_1F {
     lock
     faceplayer
+    setspeaker ("Ran")
     msgbox(format ("My future adoptive parents looked very wealthy.\p Why couldn't they adopt my brother too?\p
-    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}
     I wish I had the answer to that..."))
     release
 }

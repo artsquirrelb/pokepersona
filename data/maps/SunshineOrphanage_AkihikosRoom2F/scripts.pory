@@ -1,12 +1,21 @@
 mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 1: Akihiko_FaceUp]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_AKIHIKOS_INTRO_STATE, 1: Akihiko_FaceUp
+        VAR_AKIHIKOS_INTRO_STATE, 9: HideMiki]
     MAP_SCRIPT_ON_FRAME_TABLE [ 
-        VAR_AKIHIKOS_INTRO_STATE , 1: AkihikosRoom2F_ONFRAME1
-        VAR_AKIHIKOS_INTRO_STATE, 9: AkihikosRoom2F_ONFRAME9]
+        VAR_AKIHIKOS_INTRO_STATE, 1: AkihikosRoom2F_ONFRAME1]
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 9) {
+            clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+            }
+        }
 }
 
 script Akihiko_FaceUp{
     applymovement (LOCALID_PLAYER, PlayerFaceUp)
+}
+script HideMiki {
+    hideobjectat (1, MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F)
 }
 
 movement PlayerFaceUp {face_up}
@@ -21,10 +30,6 @@ movement AkihikoPensive {
     emote_pensive
 }
 
-script AkihikosRoom2F_ONFRAME9 {
-    clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
-    hideobjectat(1, MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F)
-}
 
 script AkihikosRoom2F_Cutscene1 {
     lockall
@@ -46,7 +51,8 @@ script AkihikosRoom2F_Eventscript_MikiAppears {
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, Camera_On_Miki)
     waitmovement(0)
-    msgbox("BIG BRO!")
+    msgbox(format("
+    {SPEAKER NAME_MIKI}BIG BRO!"))
     applymovement(1, Miki_Appears)
     delay(8)
     playse(SE_PIN)
@@ -73,11 +79,10 @@ script Miki_Inviting_Akihiko_To_Play{
 
 text Lets_Go_Play {
     format( 
-        "It's time!\p You promised to take me out today!\p"
-        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}"
+        "{SPEAKER NAME_MIKI}It's time!\p You promised to take me out today!\p"
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}{SPEAKER NAME_AKIHIKO}"
         "Let me fix this clock real quick.\p Otherwise Shinji's gonna grill me.\p"
-        "{DESTROY_MUGSHOT}"
-        "Okay! I'll be waiting outside with Ms. Kobayashi!"
+        "{DESTROY_MUGSHOT}{SPEAKER NAME_MIKI}Okay! I'll be waiting outside with Ms. Kobayashi!"
     )
 }
 
@@ -110,7 +115,7 @@ script GoSetTheClock{
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
     msgbox (
         format (
-            "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+            "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}{SPEAKER NAME_AKIHIKO}"
             "I should fix the clock."
         )
     )
@@ -129,6 +134,7 @@ script SetWallclock {
 	call(PlayersHouse_2F_EventScript_SetWallClock)
 	delay(30)
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
+    setspeaker ("Akihiko")
     msgbox ("Done.")
 	setvar(VAR_AKIHIKOS_INTRO_STATE , 3)
 	setflag(FLAG_SET_WALL_CLOCK)
@@ -139,10 +145,13 @@ script SetWallclock {
 script GiveRunningShoesAtStart {
     lockall
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
+    setspeaker("Akihiko")
     msgbox("Now where are my shoes...")
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_HAPPY)
+    setspeaker ("Akihiko")
     msgbox("There they are!")
     removefieldmugshot
+    setspeaker(NULL)
     playfanfare(MUS_OBTAIN_ITEM)
     waitfanfare
     msgbox(format("{PLAYER} put on the {COLOR GREEN}{SHADOW LIGHT_GREEN}Running Shoes{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}.\p
@@ -180,6 +189,7 @@ script SunshineOrphanage_AkihikosRoom2F_PlayersPC {
 }
 script SunshineOrphanage_AkihikosRoom2F_RivalsPC {
     lockall
+    setspeaker(SP_NAME_MITSURU)
     msgbox("It's Akihiko's PC. It's from Kirijo Electronics.")
     releaseall
     end
@@ -188,6 +198,7 @@ script SunshineOrphanage_AkihikosRoom2F_RivalsPC {
 script ShinjirosPC {
     lockall
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
+    setspeaker(SP_NAME_AKIHIKO)
     msgbox("It's Shinji's PC. It was a donation.")
     releaseall
     end
@@ -195,7 +206,7 @@ script ShinjirosPC {
 
 script BookshelfLeft {
     lockall
-    msgbox(format("A book of how to draw anime character.\p {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
+    msgbox(format("A book of how to draw anime character.\p {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
     Miki often asks me to draw her favorite character from the game Persona 3."))
     releaseall
 }
@@ -203,20 +214,21 @@ script BookshelfLeft {
 script BookshelfRight {
     lockall
     msgbox(format("A book about Pokemon species in their natural habitats.\p"
-    "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} I hope I can get my own Pokemon soon."))
+    "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}{SPEAKER NAME_AKIHIKO} I hope I can get my own Pokemon soon."))
     releaseall
 }
 
 script ChoresList {
     lock
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
+    setspeaker(SP_NAME_AKIHIKO)
     msgbox("Shinji and my chores list.")
     release
 }
 
 script Calendar {
     lock
-    msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
     "My sis and I are going to get adopted in 3 days, Shinji in the following day.\p" 
     "The Sanadas and the Aragakis look like they are good people.\p" 
     "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}"
@@ -227,7 +239,7 @@ script Calendar {
 script TrashcanEmpty {
     lock
     msgbox(format ("It's empty.\p
-    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Shinji just took out the trash."))
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Shinji just took out the trash."))
     release
 }
 
@@ -235,6 +247,6 @@ script ShinjiroInformingAboutMsKobayashi {
     lock
     faceplayer
     msgbox(format("
-    {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Morning, Akihiko.\n Ms. Kobayashi said she wanted to meet us at the main hall."))
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Morning, Akihiko.\n Ms. Kobayashi said she wanted to meet us at the main hall."))
     release
 }

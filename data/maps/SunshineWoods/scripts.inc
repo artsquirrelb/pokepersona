@@ -329,34 +329,34 @@ SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi:
 
 SunshineWoods_Eventscript_DoNotEnterTheGrass_Text_0:
 # 21 "data/maps/SunshineWoods/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Alright, we're here.\p"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Alright, we're here.\p"
 	.string "Don't enter the tall grass, okay?\p"
-	.string "{DESTROY_MUGSHOT} Miki: Okay!$"
+	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Okay!$"
 
 SunshineWoods_Eventscript_PawmisCry_Text_0:
 # 57 "data/maps/SunshineWoods/scripts.pory"
-	.string "Big bro! Look! I just made this flower\n"
+	.string "{SPEAKER NAME_MIKI}Big bro! Look! I just made this flower\n"
 	.string "crown! It's for you!\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}It's very pretty! Thank you, Miki!$"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}It's very pretty! Thank you, Miki!$"
 
 SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown_Text_0:
 # 66 "data/maps/SunshineWoods/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Will you make one for me too, Miki?\p"
-	.string "{DESTROY_MUGSHOT} Of course!$"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Will you make one for me too, Miki?\p"
+	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT} Of course!$"
 
 SunshineWoods_Eventscript_PawmiCries_Text_0:
 # 84 "data/maps/SunshineWoods/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that?\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Could be a wild Pokemon. Be careful!$"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that?\p"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Could be a wild Pokemon. Be careful!$"
 
 SunshineWoods_Eventscript_PawmisInjured_Text_0:
 # 152 "data/maps/SunshineWoods/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Wait...\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}It looks heavily injured.\p"
-	.string "{DESTROY_MUGSHOT}Miki: We should take it back to the\n"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Wait...\p"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}It looks heavily injured.\p"
+	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}We should take it back to the\n"
 	.string "orphanage!\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Yeah!$"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Yeah!$"
 
 TakePawmiToHeal_Text_0:
 # 172 "data/maps/SunshineWoods/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Come on, lil' guy.$"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Come on, lil' guy.$"

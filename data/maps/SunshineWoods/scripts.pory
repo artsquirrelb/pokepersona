@@ -190,3 +190,11 @@ script TakePawmiToHeal {
 movement SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi {
     walk_left
 }
+
+script OW_Chewtle {
+    lock
+    faceplayer
+    startoverworldencounter(5)
+    release
+    end
+}

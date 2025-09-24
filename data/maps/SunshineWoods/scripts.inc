@@ -327,6 +327,18 @@ SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi:
 	walk_left
 	step_end
 
+OW_Chewtle::
+# 192 "data/maps/SunshineWoods/scripts.pory"
+	lock
+# 193 "data/maps/SunshineWoods/scripts.pory"
+	faceplayer
+# 194 "data/maps/SunshineWoods/scripts.pory"
+	startoverworldencounter 5
+# 195 "data/maps/SunshineWoods/scripts.pory"
+	release
+	end
+
+
 SunshineWoods_Eventscript_DoNotEnterTheGrass_Text_0:
 # 21 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Alright, we're here.\p"

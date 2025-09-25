@@ -15,8 +15,13 @@
   "connections": [
     {
       "map": "MAP_ROUTE1",
-      "offset": 0,
-      "direction": "up"
+      "offset": -1,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_SUNSHINE_TOWN_RIVERBANK",
+      "offset": 5,
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -49,13 +54,6 @@
   ],
   "warp_events": [
     {
-      "x": 17,
-      "y": 6,
-      "elevation": 0,
-      "dest_map": "MAP_LITTLEROOT_TOWN_NEW_LAB_TEST",
-      "dest_warp_id": "0"
-    },
-    {
       "x": 29,
       "y": 16,
       "elevation": 0,
@@ -68,33 +66,22 @@
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_WOODS",
       "dest_warp_id": "3"
+    },
+    {
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_SUNSHINE_TOWN_POKEMON_CENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 1,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_SUNSHINE_TOWN_KUROSAWAS_HOUSE",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
-  "bg_events": [
-    {
-      "type": "sign",
-      "x": 13,
-      "y": 7,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_EventScript_TownSign"
-    },
-    {
-      "type": "sign",
-      "x": 26,
-      "y": 15,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_EventScript_BrendansHouseSign"
-    },
-    {
-      "type": "sign",
-      "x": 15,
-      "y": 9,
-      "elevation": 3,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_Eventscript_RomhackingTextSign"
-    }
-  ]
+  "bg_events": []
 }

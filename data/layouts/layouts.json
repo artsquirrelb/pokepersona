@@ -5321,7 +5321,7 @@
       "id": "LAYOUT_SUNSHINE_TOWN",
       "name": "SunshineTown_Layout",
       "width": 30,
-      "height": 20,
+      "height": 25,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Gen4General",
@@ -5412,6 +5412,42 @@
       "secondary_tileset": "gTileset_Gen4General2nd",
       "border_filepath": "data/layouts/BlankMap/border.bin",
       "blockdata_filepath": "data/layouts/BlankMap/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_TOWN_RIVERBANK",
+      "name": "SunshineTownRiverbank_Layout",
+      "width": 20,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_SunshineOrphanageEntrance",
+      "border_filepath": "data/layouts/SunshineTownRiverbank/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineTownRiverbank/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_TOWN_POKEMON_CENTER",
+      "name": "SunshineTown_PokemonCenter_Layout",
+      "width": 14,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/SunshineTown_PokemonCenter/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineTown_PokemonCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_TOWN_KUROSAWAS_HOUSE",
+      "name": "SunshineTown_KurosawasHouse_Layout",
+      "width": 12,
+      "height": 9,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
+      "border_filepath": "data/layouts/SunshineTown_KurosawasHouse/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineTown_KurosawasHouse/map.bin"
     }
   ]
 }

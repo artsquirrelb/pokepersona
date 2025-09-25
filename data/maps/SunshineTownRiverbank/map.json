@@ -1,0 +1,26 @@
+{
+  "id": "MAP_SUNSHINE_TOWN_RIVERBANK",
+  "name": "SunshineTownRiverbank",
+  "layout": "LAYOUT_SUNSHINE_TOWN_RIVERBANK",
+  "music": "MUS_SUNSHINE_ORPHANAGE",
+  "region_map_section": "MAPSEC_SUNSHINETOWN_RIVERBANK",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_SUNSHINE_TOWN",
+      "offset": -5,
+      "direction": "up"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

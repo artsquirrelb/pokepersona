@@ -34,7 +34,8 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
-    "gMapGroup_IndoorSunshineOrphanage"
+    "gMapGroup_IndoorSunshineOrphanage",
+    "gMapGroup_IndoorSunshineTown"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -97,7 +98,8 @@
     "SunshineWoods",
     "SunshineTown",
     "Route1",
-    "SunshineOrphanage"
+    "SunshineOrphanage",
+    "SunshineTownRiverbank"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -633,5 +635,9 @@
     "SunshineOrphanage2FHallway",
     "SunshineOrphanage1FHallway",
     "SunshineOrphanageMainHall"
+  ],
+  "gMapGroup_IndoorSunshineTown": [
+    "SunshineTown_PokemonCenter",
+    "SunshineTown_KurosawasHouse"
   ]
 }

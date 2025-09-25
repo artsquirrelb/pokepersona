@@ -601,9 +601,9 @@ MartLady::
 	setspeaker MartLady_Text_0
 # 367 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox MartLady_Text_1
-# 368 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	goto_if_set FLAG_SYS_POKEMON_GET, MartLady_2
-# 369 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 371 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	goto_if_set FLAG_SYS_POKEDEX_GET, MartLady_2
+# 372 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	pokemart Orphanage_Mart_Basic
 MartLady_1:
 # 370 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -784,25 +784,25 @@ SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage::
 	msgbox SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage_Text_0
 # 472 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	closemessage
-# 473 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	giveitem ITEM_POKE_BALL, 10
-# 474 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	giveitem ITEM_POTION, 2
-# 475 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	closemessage
 # 476 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	giveitem ITEM_POTION, 2
+# 477 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	closemessage
+# 478 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage_Text_1
-# 479 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 13, walkup
-# 480 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitmovement
 # 481 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	removeobject 13
+	applymovement 13, walkup
 # 482 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setflag FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO
+	waitmovement
 # 483 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 10
+	removeobject 13
 # 484 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	setflag FLAG_HIDE_SHINJIRO
+# 485 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 12
+# 486 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	setrespawn HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL
+# 487 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	return
 
@@ -1069,8 +1069,8 @@ SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage_Text_0:
 	.string "{SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, you may need these.$"
 
 SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage_Text_1:
-# 476 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_KOBAYASHI}Be careful, dear.\p"
+# 478 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	.string "{SPEAKER NAME_KOBAYASHI}Stay safe, dear.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you, Ms. Kobayashi!$"
 
 NewLabTest_NotChosen::

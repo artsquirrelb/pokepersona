@@ -8,8 +8,8 @@ mapscripts SunshineWoods_MapScripts {
 }
 
 script  Akihiko_Looking_at_Miki {
-    applymovement(LOCALID_PLAYER, playerfaceright)
-    hideobjectat (7, MAP_SUNSHINE_WOODS)
+    applymovement(LOCALID_PLAYER, faceright)
+    hideobjectat (6, MAP_SUNSHINE_WOODS)
 }
 movement playerfaceright {
     face_right
@@ -34,7 +34,7 @@ script SunshineWoods_Eventscript_OnFrame {
 script SunshineWoods_Eventscript_PlayingInTheWoods {
     lock 
     delay(60)
-    applymovement(6, SunshineWoods_Eventscript_MikiFoundSomething)
+    applymovement(5, SunshineWoods_Eventscript_MikiFoundSomething)
     waitmovement(0)
     goto (SunshineWoods_Eventscript_PawmisCry)
     release
@@ -62,7 +62,7 @@ script SunshineWoods_Eventscript_PawmisCry {
 
 script SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown {
     lock
-    applymovement(6, PlayerFaceUp)
+    applymovement(5, faceup)
     msgbox(format("
         {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Will you make one for me too, Miki?\p
         {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT} Of course!"))
@@ -76,8 +76,8 @@ script SunshineWoods_Eventscript_PawmiCries {
     playmoncry(SPECIES_PAWMI_DELTA, CRY_MODE_NORMAL)
     waitmoncry
     applymovement(LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoAlerted)
-    applymovement(5, SunshineWoods_Eventscript_ShinjiroAlerted)
-    applymovement(6, SunshineWoods_Eventscript_MikiAlerted)
+    applymovement(4, SunshineWoods_Eventscript_ShinjiroAlerted)
+    applymovement(5, SunshineWoods_Eventscript_MikiAlerted)
     delay(30)
     waitmovement
     msgbox(format(
@@ -117,13 +117,13 @@ movement SunshineWoods_Eventscript_PawmiJumpsOut {
 
 script SunshineWoods_Eventscript_PawmiAppears {
     lock
-    showobjectat(7, MAP_SUNSHINE_WOODS)
+    showobjectat(6, MAP_SUNSHINE_WOODS)
     playmoncry(SPECIES_PAWMI_DELTA, CRY_MODE_NORMAL)
     waitmoncry
-    applymovement(7, SunshineWoods_Eventscript_PawmiJumpsOut)
-    applymovement(6, SunshineWoods_Eventscript_Stayback)
+    applymovement(6, jumpright)
+    applymovement(5, SunshineWoods_Eventscript_Stayback)
     applymovement(LOCALID_PLAYER, SunshineWoods_Eventscript_Stayback)
-    applymovement(5, SunshineWoods_Eventscript_OnGuard)
+    applymovement(4, SunshineWoods_Eventscript_OnGuard)
     waitmovement
     release
     goto(SunshineWoods_Eventscript_PawmisInjured)
@@ -146,7 +146,7 @@ script SunshineWoods_Eventscript_PawmisInjured {
     lock
     playmoncry(SPECIES_PAWMI, CRY_MODE_NORMAL)
     waitmoncry
-    applymovement(7, SunshineWoods_Eventscript_PawmiIsWeak)
+    applymovement(6, SunshineWoods_Eventscript_PawmiIsWeak)
     waitmovement
     delay(16)
     msgbox(format("
@@ -173,10 +173,11 @@ script TakePawmiToHeal {
     closemessage
     fadescreenswapbuffers(FADE_TO_BLACK)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 7)
-    removeobject(7)
-    removeobject(5)
     removeobject(6)
-    setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+    removeobject(4)
+    removeobject(5)
+    setflag(FLAG_HIDE_MIKI)
+    setflag(FLAG_HIDE_SHINJIRO)
     warpsilent(MAP_BLANK_MAP,0,0)
     release
     
@@ -195,6 +196,54 @@ script OW_Chewtle {
     lock
     faceplayer
     startoverworldencounter(5)
+    removeobject(8)
+    setflag(FLAG_TEMP_2)
     release
     end
+}
+
+script SunshineWoods_Eventscript_DirectionSign {
+    lock
+    msgbox(format("
+    Sunshine Orphanage {UP_ARROW}\n
+    Sunshine Town {LEFT_ARROW}"))
+    release
+}
+
+script SunshineWoods_Eventscript_IkeBattle{
+    trainerbattle_single(TRAINER_IKE, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated)
+    msgbox(SunshineWoods_Text_IkePostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script SunshineWoods_Eventscript_HotaruBattle {
+    trainerbattle_single(TRAINER_HOTARU, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated)
+    msgbox(SunshineWoods_Text_HotaruPostBattle, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text SunshineWoods_Text_IkeIntro{
+    format("
+    Hey! If you have a Pokémon, let's battle!")
+}
+
+text SunshineWoods_Text_IkeDefeated {
+    format("Woah! You're quite good!")
+}
+
+text SunshineWoods_Text_IkePostBattle {
+    format("Your Pokémon looks... kinda different.")
+}
+
+text SunshineWoods_Text_HotaruIntro {
+    format("I have cute Pokémons!")
+}
+
+text SunshineWoods_Text_HotaruDefeated {
+    format("They'll look even cuter when evolved. I even have them hold Soothe Bells!")
+}
+
+text SunshineWoods_Text_HotaruPostBattle {
+    format("You want to know where I got the items?\p
+    A grandma in Sunshine Town gave them to me after I played with her Pokémon.")
 }

@@ -365,7 +365,7 @@ script MartLady {
 	faceplayer
     setspeaker ("Ms. Tanaba")
 	msgbox (format("Hi {PLAYER}, what should I get you?"))
-	if(flag(FLAG_SYS_POKEMON_GET) == TRUE) {pokemart (Orphanage_Mart_ExpandedItems)}
+	if(flag(FLAG_SYS_POKEDEX_GET) == TRUE) {pokemart (Orphanage_Mart_ExpandedItems)}
 	else {pokemart(Orphanage_Mart_Basic)}
 	msgbox(format("Play safe okay, child?"))
 	release
@@ -470,17 +470,17 @@ script SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage{
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Of course, Ms. Kobayashi.\p
     {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, you may need these."))
     closemessage
-    giveitem (ITEM_POKE_BALL, 10)
     giveitem (ITEM_POTION, 2)
     closemessage
     msgbox(format("
-    {SPEAKER NAME_KOBAYASHI}Be careful, dear.\p
+    {SPEAKER NAME_KOBAYASHI}Stay safe, dear.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you, Ms. Kobayashi!"))
     applymovement(13, walkup)
     waitmovement
     removeobject(13)
-    setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 10)
+    setflag(FLAG_HIDE_SHINJIRO)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 12)
+    setrespawn(HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL)
     release
 }
 

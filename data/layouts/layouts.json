@@ -5308,8 +5308,8 @@
     {
       "id": "LAYOUT_SUNSHINE_WOODS",
       "name": "SunshineWoods_Layout",
-      "width": 24,
-      "height": 20,
+      "width": 32,
+      "height": 28,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Gen4General",

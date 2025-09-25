@@ -1801,10 +1801,10 @@ extern const u16 gIntroPlayer_Pal[];
 extern const u16 gIntroFlygon_Pal[];
 extern const u32 gIntroFlygon_Gfx[];
 
-// party menu graphics
+/* party menu graphics
 extern const u32 gPartyMenuBg_Gfx[];
 extern const u32 gPartyMenuBg_Tilemap[];
-extern const u16 gPartyMenuBg_Pal[];
+extern const u16 gPartyMenuBg_Pal[];*/
 
 // berry pics
 extern const u32 gBerryPic_Cheri[];
@@ -3242,10 +3242,10 @@ extern const u8 gTradeCursor_Gfx[];
 extern const u16 gTradeCursor_Pal[];
 
 // Party menu
-extern const u32 gPartyMenuPokeball_Gfx[];
-extern const u32 gPartyMenuPokeballSmall_Gfx[];
+//extern const u32 gPartyMenuPokeball_Gfx[];
+//extern const u32 gPartyMenuPokeballSmall_Gfx[];
 extern const u16 gStatusPal_Icons[];
-extern const u16 gPartyMenuPokeball_Pal[];
+//extern const u16 gPartyMenuPokeball_Pal[];
 extern const u16 gStatusPal_Icons[];
 
 // Roulette

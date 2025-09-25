@@ -81,32 +81,6 @@ Gender: Male
 Music: Male
 Double Battle: No
 
-=== TRAINER_SAWYER_1 ===
-Name: SAWYER
-Class: Hiker
-Pic: Hiker
-Gender: Male
-Music: Hiker
-Double Battle: No
-AI: Basic Trainer
-
-Geodude
-Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_AQUA_HIDEOUT_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Poochyena
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 === TRAINER_GRUNT_AQUA_HIDEOUT_2 ===
 Name: GRUNT
 Class: Team Aqua
@@ -16872,4 +16846,34 @@ Double Battle: No
 
 Kyogre
 Level: 5
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_IKE ===
+Name: Ike
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+
+Weedle
+Level: 4
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_HOTARU ===
+Name: Hotaru
+Class: Lass
+Pic: Lass
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move
+
+Pichu
+Level: 4
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Azurill
+Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe

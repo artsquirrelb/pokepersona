@@ -190,6 +190,12 @@
       "map": "MAP_SUNSHINE_TOWN",
       "x": 14,
       "y": 9
+    },
+    {
+      "id": "HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL",
+      "map": "MAP_SUNSHINE_ORPHANAGE_MAIN_HALL",
+      "x": 13,
+      "y": 21
     }
   ]
 }

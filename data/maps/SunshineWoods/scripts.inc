@@ -33,7 +33,9 @@ Akihiko_Looking_at_Miki::
 # 11 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, playerfaceright
 # 12 "data/maps/SunshineWoods/scripts.pory"
-	hideobjectat 7, MAP_SUNSHINE_WOODS
+	applymovement LOCALID_PLAYER, faceright
+# 13 "data/maps/SunshineWoods/scripts.pory"
+	hideobjectat 6, MAP_SUNSHINE_WOODS
 	return
 
 
@@ -71,9 +73,9 @@ SunshineWoods_Eventscript_PlayingInTheWoods::
 # 36 "data/maps/SunshineWoods/scripts.pory"
 	delay 60
 # 37 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 6, SunshineWoods_Eventscript_MikiFoundSomething
+	delay 60
 # 38 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement 0
+	applymovement 5, SunshineWoods_Eventscript_MikiFoundSomething
 # 39 "data/maps/SunshineWoods/scripts.pory"
 	goto SunshineWoods_Eventscript_PawmisCry
 # 40 "data/maps/SunshineWoods/scripts.pory"
@@ -119,6 +121,8 @@ SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown::
 # 65 "data/maps/SunshineWoods/scripts.pory"
 	applymovement 6, PlayerFaceUp
 # 66 "data/maps/SunshineWoods/scripts.pory"
+	applymovement 5, faceup
+# 67 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown_Text_0
 # 69 "data/maps/SunshineWoods/scripts.pory"
 	closemessage
@@ -138,12 +142,10 @@ SunshineWoods_Eventscript_PawmiCries::
 	waitmoncry
 # 78 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoAlerted
-# 79 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 5, SunshineWoods_Eventscript_ShinjiroAlerted
 # 80 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 6, SunshineWoods_Eventscript_MikiAlerted
+	applymovement 4, SunshineWoods_Eventscript_ShinjiroAlerted
 # 81 "data/maps/SunshineWoods/scripts.pory"
-	delay 30
+	applymovement 5, SunshineWoods_Eventscript_MikiAlerted
 # 82 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
 # 83 "data/maps/SunshineWoods/scripts.pory"
@@ -213,19 +215,21 @@ SunshineWoods_Eventscript_PawmiAppears::
 # 120 "data/maps/SunshineWoods/scripts.pory"
 	showobjectat 7, MAP_SUNSHINE_WOODS
 # 121 "data/maps/SunshineWoods/scripts.pory"
+	showobjectat 6, MAP_SUNSHINE_WOODS
+# 122 "data/maps/SunshineWoods/scripts.pory"
 	playmoncry SPECIES_PAWMI_DELTA, CRY_MODE_NORMAL
 # 122 "data/maps/SunshineWoods/scripts.pory"
 	waitmoncry
 # 123 "data/maps/SunshineWoods/scripts.pory"
 	applymovement 7, SunshineWoods_Eventscript_PawmiJumpsOut
 # 124 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 6, SunshineWoods_Eventscript_Stayback
+	applymovement 6, jumpright
 # 125 "data/maps/SunshineWoods/scripts.pory"
-	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_Stayback
+	applymovement 5, SunshineWoods_Eventscript_Stayback
 # 126 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 5, SunshineWoods_Eventscript_OnGuard
+	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_Stayback
 # 127 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
+	applymovement 4, SunshineWoods_Eventscript_OnGuard
 # 128 "data/maps/SunshineWoods/scripts.pory"
 	release
 # 129 "data/maps/SunshineWoods/scripts.pory"
@@ -265,9 +269,9 @@ SunshineWoods_Eventscript_PawmisInjured::
 # 148 "data/maps/SunshineWoods/scripts.pory"
 	waitmoncry
 # 149 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 7, SunshineWoods_Eventscript_PawmiIsWeak
+	waitmoncry
 # 150 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
+	applymovement 6, SunshineWoods_Eventscript_PawmiIsWeak
 # 151 "data/maps/SunshineWoods/scripts.pory"
 	delay 16
 # 152 "data/maps/SunshineWoods/scripts.pory"
@@ -309,11 +313,11 @@ TakePawmiToHeal::
 # 176 "data/maps/SunshineWoods/scripts.pory"
 	removeobject 7
 # 177 "data/maps/SunshineWoods/scripts.pory"
-	removeobject 5
-# 178 "data/maps/SunshineWoods/scripts.pory"
 	removeobject 6
+# 178 "data/maps/SunshineWoods/scripts.pory"
+	removeobject 4
 # 179 "data/maps/SunshineWoods/scripts.pory"
-	setflag FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO
+	removeobject 5
 # 180 "data/maps/SunshineWoods/scripts.pory"
 	warpsilent MAP_BLANK_MAP, 0, 0
 # 181 "data/maps/SunshineWoods/scripts.pory"
@@ -335,7 +339,37 @@ OW_Chewtle::
 # 194 "data/maps/SunshineWoods/scripts.pory"
 	startoverworldencounter 5
 # 195 "data/maps/SunshineWoods/scripts.pory"
+	removeobject 8
+# 196 "data/maps/SunshineWoods/scripts.pory"
+	setflag FLAG_TEMP_2
+# 197 "data/maps/SunshineWoods/scripts.pory"
 	release
+	end
+
+
+SunshineWoods_Eventscript_DirectionSign::
+# 202 "data/maps/SunshineWoods/scripts.pory"
+	lock
+# 203 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_DirectionSign_Text_0
+# 206 "data/maps/SunshineWoods/scripts.pory"
+	release
+	return
+
+
+SunshineWoods_Eventscript_IkeBattle::
+# 210 "data/maps/SunshineWoods/scripts.pory"
+	trainerbattle_single TRAINER_IKE, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated
+# 211 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Text_IkePostBattle, MSGBOX_AUTOCLOSE
+	end
+
+
+SunshineWoods_Eventscript_HotaruBattle::
+# 216 "data/maps/SunshineWoods/scripts.pory"
+	trainerbattle_single TRAINER_HOTARU, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated
+# 217 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Text_HotaruPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
@@ -372,3 +406,36 @@ SunshineWoods_Eventscript_PawmisInjured_Text_0:
 TakePawmiToHeal_Text_0:
 # 172 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Come on, lil' guy.$"
+
+SunshineWoods_Eventscript_DirectionSign_Text_0:
+# 203 "data/maps/SunshineWoods/scripts.pory"
+	.string "Sunshine Orphanage {UP_ARROW}\n"
+	.string "Sunshine Town {LEFT_ARROW}$"
+
+SunshineWoods_Text_IkeIntro::
+# 221 "data/maps/SunshineWoods/scripts.pory"
+	.string "Hey! If you have a Pokémon, let's\n"
+	.string "battle!$"
+
+SunshineWoods_Text_IkeDefeated::
+# 226 "data/maps/SunshineWoods/scripts.pory"
+	.string "Woah! You're quite good!$"
+
+SunshineWoods_Text_IkePostBattle::
+# 230 "data/maps/SunshineWoods/scripts.pory"
+	.string "Your Pokémon looks... kinda different.$"
+
+SunshineWoods_Text_HotaruIntro::
+# 234 "data/maps/SunshineWoods/scripts.pory"
+	.string "I have cute Pokémons!$"
+
+SunshineWoods_Text_HotaruDefeated::
+# 238 "data/maps/SunshineWoods/scripts.pory"
+	.string "They'll look even cuter when evolved. I\n"
+	.string "even have them hold Soothe Bells!$"
+
+SunshineWoods_Text_HotaruPostBattle::
+# 242 "data/maps/SunshineWoods/scripts.pory"
+	.string "You want to know where I got the items?\p"
+	.string "A grandma in Sunshine Town gave them to\n"
+	.string "me after I played with her Pokémon.$"

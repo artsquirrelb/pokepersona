@@ -46,23 +46,33 @@ BOY_2_2F::
 # 38 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 9
 	goto_if_lt BOY_2_2F_2
-# 50 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
+# 49 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	msgbox BOY_2_2F_Text_3
 BOY_2_2F_1:
-# 53 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
+# 52 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	release
 	return
 
 BOY_2_2F_2:
 # 39 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	msgbox BOY_2_2F_Text_1
-# 44 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
+# 43 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	closemessage
-# 45 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
+# 44 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	setspeaker BOY_2_2F_Text_0
-# 46 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
+# 45 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	msgbox BOY_2_2F_Text_2
 	goto BOY_2_2F_1
+
+
+TrashcanEmpty::
+# 56 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
+	lock
+# 57 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
+	msgbox TrashcanEmpty_Text_0
+# 58 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
+	release
+	return
 
 
 Girls_Hallway2F_Text_0:
@@ -95,14 +105,18 @@ BOY_2_2F_Text_1:
 	.string "Few days ago I saw a Pawmi with\n"
 	.string "different color in the woods.\p"
 	.string "It's neither orange yellow nor pink.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED} What color was it then? {DESTROY_MUGSHOT}$"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED} What color was it then?$"
 
 BOY_2_2F_Text_2:
-# 46 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
+# 45 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	.string "Hehe, it's a secret.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT} ...$"
 
 BOY_2_2F_Text_3:
-# 50 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
+# 49 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	.string "Wait, that Pawmi...\p"
 	.string "I think it's the one I saw few days ago.$"
+
+TrashcanEmpty_Text_0:
+# 57 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
+	.string "It's empty.$"

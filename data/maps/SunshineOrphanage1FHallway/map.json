@@ -56,18 +56,11 @@
   ],
   "warp_events": [
     {
-      "x": 19,
-      "y": 6,
+      "x": 20,
+      "y": 5,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_ORPHANAGE2FHALLWAY",
       "dest_warp_id": "1"
-    },
-    {
-      "x": 19,
-      "y": 7,
-      "elevation": 0,
-      "dest_map": "MAP_SUNSHINE_ORPHANAGE2FHALLWAY",
-      "dest_warp_id": "2"
     },
     {
       "x": 1,

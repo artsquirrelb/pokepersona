@@ -1,24 +1,22 @@
 mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 1: Akihiko_FaceUp
-        VAR_AKIHIKOS_INTRO_STATE, 9: HideMiki]
+        VAR_AKIHIKOS_INTRO_STATE, 1: SunshineOrphanage_AkihikosRoom2F_OnWarp1]
     MAP_SCRIPT_ON_FRAME_TABLE [ 
         VAR_AKIHIKOS_INTRO_STATE, 1: AkihikosRoom2F_ONFRAME1]
     MAP_SCRIPT_ON_TRANSITION {
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 9) {
-            clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+            clearflag(FLAG_HIDE_SHINJIRO)
             }
         }
 }
 
-script Akihiko_FaceUp{
-    applymovement (LOCALID_PLAYER, PlayerFaceUp)
-}
-script HideMiki {
-    hideobjectat (1, MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F)
+script SunshineOrphanage_AkihikosRoom2F_OnWarp1{
+    applymovement (LOCALID_PLAYER, faceup)
+    setflag(FLAG_HIDE_SHINJIRO)
 }
 
-movement PlayerFaceUp {face_up}
+movement walkdown {walk_down}
+movement faceup {face_up}
 
 script AkihikosRoom2F_ONFRAME1 {
     lockall
@@ -26,23 +24,23 @@ script AkihikosRoom2F_ONFRAME1 {
     releaseall
 }
 
-movement AkihikoPensive {
+movement emotepensive {
     emote_pensive
 }
 
 
 script AkihikosRoom2F_Cutscene1 {
     lockall
-    applymovement (LOCALID_PLAYER, AkihikoPensive)
+    applymovement (LOCALID_PLAYER, emotepensive)
     waitmovement(0)
     delay(60)
-    clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+    clearflag(FLAG_HIDE_MIKI)
     playse(SE_EXIT)
     releaseall
     goto (AkihikosRoom2F_Eventscript_MikiAppears)}
 
 movement Miki_Appears {
-    walk_fast_up *3
+    walk_fast_up *2
     jump_in_place_up *2
     
 }
@@ -54,6 +52,7 @@ script AkihikosRoom2F_Eventscript_MikiAppears {
     msgbox(format("
     {SPEAKER NAME_MIKI}BIG BRO!"))
     applymovement(1, Miki_Appears)
+    waitmovement(0)
     delay(8)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, Akihiko_Surprised)
@@ -68,7 +67,7 @@ script Miki_Inviting_Akihiko_To_Play{
     applymovement(1, Miki_Leaves)
     waitmovement(0)
     playse(SE_EXIT)
-    setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+    setflag(FLAG_HIDE_MIKI)
     setflag (FLAG_VISITED_SUNSHINE_ORPHANAGE)
     setvar(VAR_AKIHIKOS_INTRO_STATE , 2)
     removeobject(1)
@@ -87,7 +86,7 @@ text Lets_Go_Play {
 }
 
 movement Camera_On_Miki {
-    walk_fast_down *3
+    walk_down *3
     
 }
 
@@ -102,7 +101,7 @@ movement Akihiko_Surprised {
 
 
 movement Miki_Leaves {
-    walk_fast_down *3
+    walk_fast_down *2
 }
 
 movement Camera_Back_to_Player {
@@ -150,13 +149,12 @@ script GiveRunningShoesAtStart {
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_HAPPY)
     setspeaker ("Akihiko")
     msgbox("There they are!")
-    removefieldmugshot
+    closemessage
     setspeaker(NULL)
     playfanfare(MUS_OBTAIN_ITEM)
     waitfanfare
-    msgbox(format("{PLAYER} put on the {COLOR GREEN}{SHADOW LIGHT_GREEN}Running Shoes{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}.\p
-    {COLOR GREEN}{SHADOW LIGHT_GREEN}Tips: You can toggle Autorun with B button."))
-    
+    msgbox(format("{PLAYER} put on the {COLOR LIGHT_GREEN}{SHADOW TRANSPARENT}Running Shoes{COLOR DARK_GRAY}{SHADOW TRANSPARENT}.\p
+    {COLOR LIGHT_GREEN}{SHADOW TRANSPARENT}Tips: You can toggle Autorun with B button."))
     setflag(FLAG_SYS_B_DASH)
     setvar(VAR_AKIHIKOS_INTRO_STATE ,4)
     releaseall
@@ -166,7 +164,7 @@ script GiveRunningShoesAtStart {
 script RunningShoesToggleManual {
     if (var(VAR_AKIHIKOS_INTRO_STATE) >= 4){
     lock
-    msgbox(format("{COLOR GREEN}{SHADOW LIGHT_GREEN}You can toggle Autorun with B button."))
+    msgbox(format("{COLOR LIGHT_GREEN}{SHADOW TRANSPARENT}You can toggle Autorun with B button."))
     release}
 }
 
@@ -236,17 +234,109 @@ script Calendar {
     release
 }
 
-script TrashcanEmpty {
+script TrashcanEmptyAkihikoRoom {
     lock
     msgbox(format ("It's empty.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Shinji just took out the trash."))
     release
 }
 
-script ShinjiroInformingAboutMsKobayashi {
+script SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi {
     lock
     faceplayer
+    msgbox("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Morning, Akihiko.")
+    if (flag(FLAG_FOLLOWERS_DISABLED) == FALSE){
+        msgbox("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Morning to you too, Pawmi.")
+        closemessage
+        playmoncry(SPECIES_PAWMI, CRY_MODE_NORMAL)
+        waitmoncry
+        applymovement(OBJ_EVENT_ID_FOLLOWER, SunshineOrphanage_AkihikosRoom2F_Eventscript_PawmiGreetsBack)
+        waitmovement(0)}
     msgbox(format("
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Morning, Akihiko.\n Ms. Kobayashi said she wanted to meet us at the main hall."))
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Ms. Kobayashi asked for both of us to meet her at the main hall."))
+    closemessage
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 10)
+    release
+}
+
+movement SunshineOrphanage_AkihikosRoom2F_Eventscript_PawmiGreetsBack {
+    emote_music
+    lock_facing_direction
+    jump_in_place_down
+    unlock_facing_direction
+}
+
+script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji1 {
+    lock
+    applymovement(2,SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1)
+    msgbox(format("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Hey, Akihiko.\n Ms. Kobayashi said she wanted to meet us at the main hall.\p
+    Let's go.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Oh, sure."))
+    call(SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit)
+    removeobject(2)
+    setflag(FLAG_HIDE_SHINJIRO)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
+    release
+}
+
+script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji2 {
+    lock
+    applymovement(2,SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2)
+    msgbox(format("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Hey, Akihiko.\n Ms. Kobayashi said she wanted to meet us at the main hall.\p
+    Let's go.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Oh, sure."))
+    call(SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit)
+    removeobject(2)
+    setflag(FLAG_HIDE_SHINJIRO)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
+    release
+}
+
+movement SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1 {
+    walk_left*3
+    walk_down*2
+}
+movement SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2 {
+    walk_left*2
+    walk_down*2
+}
+
+script SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit {
+    lock
+    applymovement(2, walkdown)
+    waitmovement
+    release
+}
+
+script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1{
+    lock
+    msgbox(format("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Oh, you're leaving?"))
+    closemessage
+    applymovement(2,SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1)
+    msgbox(format("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go."))
+    call(SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit)
+    removeobject(2)
+    setflag(FLAG_HIDE_SHINJIRO)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
+    release
+}
+
+script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2 {
+    lock
+    msgbox(format("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Oh, you're leaving?"))
+    closemessage
+    applymovement(2,SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2)
+    msgbox(format("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go."))
+    call(SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit)
+    removeobject(2)
+    setflag(FLAG_HIDE_SHINJIRO)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
     release
 }

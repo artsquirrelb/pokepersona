@@ -39,8 +39,7 @@ script BOY_2_2F {
         msgbox(format(
         "Few days ago I saw a Pawmi with different color in the woods.\p It's neither orange yellow nor pink.\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}
-        What color was it then?
-        {DESTROY_MUGSHOT}"))
+        What color was it then?"))
     closemessage
     setspeaker("Kou")
     msgbox(format("Hehe, it's a secret.\p
@@ -52,3 +51,9 @@ script BOY_2_2F {
     }
     release
 } 
+
+script TrashcanEmpty {
+    lock
+    msgbox("It's empty.")
+    release
+}

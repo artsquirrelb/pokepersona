@@ -2,10 +2,12 @@ mapscripts SunshineOrphanage_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 0) {
             setflag(FLAG_SPAWN_INVISIBLE)
-            setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+            setflag(FLAG_HIDE_MIKI)
+            setflag(FLAG_HIDE_SHINJIRO)
         }
         elif (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
-            clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+            clearflag(FLAG_HIDE_MIKI)
+            clearflag(FLAG_HIDE_SHINJIRO)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
@@ -20,7 +22,7 @@ script SunshineOrphanageOnFrame0 {
 script SunshineOrphanage_Eventscript_ShowTheMap {
     applymovement(LOCALID_PLAYER, SlowlyShowTheMap)
     waitmovement(0)
-    msgbox(format("Akihiko's Prologue: Sunshine Memories\l {COLOR GREEN}{SHADOW LIGHT_GREEN}Level cap: 8"))
+    msgbox(format("Akihiko's Prologue: Sunshine Memories\l {COLOR LIGHT_GREEN}{SHADOW TRANSPARENT}-     Level cap: 8     -"))
     warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F,5,4)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 1)
     setvar(VAR_CURRENT_LEVEL_CAP, 8)
@@ -78,7 +80,8 @@ script Shinjiro_and_Miki_Join_Party {
     waitmovement(0)
     removeobject (4)
     removeobject(3)
-    setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+    setflag(FLAG_HIDE_MIKI)
+    setflag(FLAG_HIDE_SHINJIRO)
     msgbox(format("{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Shinjiro and Miki are now traveling with Akihiko."))
     setvar(VAR_AKIHIKOS_INTRO_STATE, 5)
     release

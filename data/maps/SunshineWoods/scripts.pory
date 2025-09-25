@@ -1,7 +1,8 @@
 mapscripts SunshineWoods_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         if(var(VAR_AKIHIKOS_INTRO_STATE) == 5) {
-            clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)}
+            clearflag(FLAG_HIDE_MIKI)}
+            clearflag(FLAG_HIDE_SHINJIRO)
         }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 6: Akihiko_Looking_at_Miki]
     MAP_SCRIPT_ON_FRAME_TABLE [VAR_AKIHIKOS_INTRO_STATE, 6: SunshineWoods_Eventscript_OnFrame]
@@ -111,7 +112,7 @@ movement SunshineWoods_Eventscript_MikiAlerted {
     jump_in_place_left
 }
 
-movement SunshineWoods_Eventscript_PawmiJumpsOut {
+movement jumpright {
     jump_right
 }
 

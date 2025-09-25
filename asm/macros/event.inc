@@ -2692,4 +2692,8 @@
 	waitmoncry
 	dowildbattle
 	.endm
-	
+
+
+
+
+

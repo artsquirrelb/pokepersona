@@ -1,13 +1,15 @@
 mapscripts SunshineOrphanageMainHall_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 7: Akihiko_FaceUp]
+        VAR_AKIHIKOS_INTRO_STATE, 7: SunshineOrphanageMainHall_OnWarp7]
     MAP_SCRIPT_ON_TRANSITION {
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 7) {
-            clearflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+            clearflag(FLAG_HIDE_MIKI)
+            clearflag(FLAG_HIDE_SHINJIRO)
             setobjectxyperm (4, 11, 23)
 			setobjectmovementtype (4, MOVEMENT_TYPE_FACE_RIGHT)
             hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)}
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 9) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 11) {
+            clearflag(FLAG_HIDE_SHINJIRO)
             setobjectxyperm (4, 12, 5)
             setobjectmovementtype (4, MOVEMENT_TYPE_FACE_DOWN)
             setobjectxyperm (13, 18, 6)
@@ -17,7 +19,7 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
             
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 7: SunshineOrphanageMainHall_Eventscript_OnFrame7
-        VAR_AKIHIKOS_INTRO_STATE, 9: SunshineOrphanageMainHall_Eventscript_OnFrame9]
+        VAR_AKIHIKOS_INTRO_STATE, 11: SunshineOrphanageMainHall_Eventscript_OnFrame11]
 }
 
 movement faceright {
@@ -28,11 +30,14 @@ movement faceleft {
     face_left 
 }
 
+script SunshineOrphanageMainHall_OnWarp7 {
+    applymovement(LOCALID_PLAYER, faceup)
+}
 script SunshineOrphanageMainHall_Eventscript_OnFrame7 {
     goto (SunshineOrphanageMainHall_Eventscript_HealingPawmi)
 }
 
-script SunshineOrphanageMainHall_Eventscript_OnFrame9{
+script SunshineOrphanageMainHall_Eventscript_OnFrame11{
     goto(SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage)
 }
 
@@ -107,9 +112,9 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p
         {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, I'll give you a pokeball to keep it."))
     closemessage
-    msgbox("{PLAYER} received 1{COLOR GREEN}{SHADOW LIGHT_GREEN} (hidden){COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Cherish Ball.")
+    msgbox("{PLAYER} received 1{COLOR LIGHT_GREEN} (hidden){COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Cherish Ball.")
     closemessage
-    msgbox(format("{COLOR GREEN}{SHADOW LIGHT_GREEN}Tips: The shiny chance is roughly 1/100. \p 
+    msgbox(format("{COLOR LIGHT_GREEN}Tips: The shiny chance is roughly 1/100. \p 
     No Pokemon are shiny locked, including the story starters.\p 
     The story starters have been buffed and come with pre-determined Nature and Perfect IVs.\p
     You also can not release them."))
@@ -193,7 +198,8 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     removeobject(13)
     removeobject(14)
     removeobject(15)
-    setflag(FLAG_HIDE_MIKI_IN_AKIHIKOS_INTRO)
+    setflag(FLAG_HIDE_MIKI)
+    setflag(FLAG_HIDE_SHINJIRO)
     warpsilent(MAP_BLANK_MAP, 0, 0)
     release
     end

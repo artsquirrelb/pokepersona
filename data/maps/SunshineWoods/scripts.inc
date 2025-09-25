@@ -10,16 +10,15 @@ SunshineWoods_MapScripts::
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 5
-	goto_if_eq SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	goto_if_eq SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	return
+
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
+# 4 "data/maps/SunshineWoods/scripts.pory"
+	clearflag FLAG_HIDE_MIKI
 # 5 "data/maps/SunshineWoods/scripts.pory"
 	clearflag FLAG_HIDE_SHINJIRO
 	return
-
-SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
-# 4 "data/maps/SunshineWoods/scripts.pory"
-	clearflag FLAG_HIDE_MIKI
-	goto SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 7 "data/maps/SunshineWoods/scripts.pory"

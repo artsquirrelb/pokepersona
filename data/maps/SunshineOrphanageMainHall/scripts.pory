@@ -15,9 +15,11 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
             setobjectxyperm (13, 18, 6)
             setobjectmovementtype (13, MOVEMENT_TYPE_FACE_LEFT)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) >=12) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 12) {
             setobjectxyperm (4, 6, 22)
             setobjectmovementtype (4, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
+        }
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 11) {
             setobjectxyperm (1, 0, 21)
             hideobjectat (1, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
             setobjectxyperm (2, 0, 18)
@@ -163,6 +165,7 @@ script SunshineOrphanageMainHall_Eventscript_GetPawmiStarter {
         givemon(SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE,  0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
+            waitfanfare
             msgbox("Received Pawmi.")
             hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
             call(NicknamePartyMon)
@@ -170,6 +173,7 @@ script SunshineOrphanageMainHall_Eventscript_GetPawmiStarter {
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
+            waitfanfare
             msgbox("Received Pawmi.")
             hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
             call(NicknameBoxMon)
@@ -193,12 +197,14 @@ movement PawmiDisappointed {
 
 script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     lock
+    delay(20)
     applymovement (4, TeacherFacingAkihiko)
-    waitmovement
+    waitmovement(0)
     msgbox(format(
         "{SPEAKER NAME_KOBAYASHI}Alright.\p
         I supposed it's quite late now. You all should go to rest.\p
         See you tomorrow."))
+    closemessage
     setvar(VAR_AKIHIKOS_INTRO_STATE, 9)
     fadescreenswapbuffers(FADE_TO_BLACK)
     playse(MUS_HEAL)
@@ -382,7 +388,7 @@ script MartLady {
 	faceplayer
     setspeaker ("Ms. Tanaba")
 	msgbox (format("Hi {PLAYER}, what should I get you?"))
-	if(flag(FLAG_SYS_POKEDEX_GET) == TRUE) {pokemart (Orphanage_Mart_ExpandedItems)}
+	if(flag(FLAG_SYS_POKEDEX_GET) == TRUE) {pokemart (Orphanage_Mart_Expanded)}
 	else {pokemart(Orphanage_Mart_Basic)}
 	msgbox(format("Play safe okay, child?"))
 	release
@@ -397,13 +403,7 @@ Orphanage_Mart_Basic:
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
 	pokemartlistend
-
-Orphanage_Mart_ExpandedItems::
-	pokemart OldaleTown_Mart_Pokemart_Expanded
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-	release
-	end
-
+    
 	.align 2
 Orphanage_Mart_Expanded:
 	.2byte ITEM_POKE_BALL
@@ -420,6 +420,8 @@ script Blissey_Heal {
     waitmoncry
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 8){goto (BlisseyHealedPawmi)}
     elif (flag(FLAG_SYS_POKEMON_GET) == TRUE){
+        playse(MUS_HEAL)
+        waitse
         special(HealPlayerParty)
         releaseall}
     else    
@@ -475,15 +477,16 @@ text NewLabTest_NotChosen {
 
 script SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage{
     lock
+    delay(16)
     playse(SE_PIN)
     applymovement (4, SunshineOrphanageMainHall_Eventscript_MsKobayashiMoveRight)
     waitmovement(0)
     msgbox(format("
     {SPEAKER NAME_KOBAYASHI}Good morning, Akihiko, Shinjiro.\p
     Sorry to trouble you but can you two go pick up a package for me?\p
-    It should be delivered at the Pokecenter in Sunshine Town by now.\p
+    It should be delivered at the Pokémon Center in Sunshine Town by now.\p
     You can get there by going through Sunshine Woods.\p
-    You have a Pokémon now so it should be fine.\p
+    Pawmi is with you now so it should be fine.\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Of course, Ms. Kobayashi.\p
     {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, you may need these."))
     closemessage

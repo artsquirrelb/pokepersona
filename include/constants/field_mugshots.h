@@ -23,6 +23,6 @@ enum MugshotEmotes {
 
 #define MUGSHOT_AKIHIKO 1
 #define MUGSHOT_SHINJIRO 2
-#define MUGSHOT_COUNT 12
+#define MUGSHOT_COUNT 14
 
 #endif // GUARD_CONSTANTS_FIELD_MUGSHOTS_H

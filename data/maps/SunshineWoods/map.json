@@ -139,14 +139,14 @@
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_TOWN",
-      "dest_warp_id": "1"
+      "dest_warp_id": "0"
     },
     {
       "x": 0,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_TOWN",
-      "dest_warp_id": "2"
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

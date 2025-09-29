@@ -4,7 +4,8 @@ mapscripts BlankMap_MapScripts {
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 7: SunshineWoods_Eventscript_WarpBackToOrphanage
-        VAR_AKIHIKOS_INTRO_STATE, 9: SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom]
+        VAR_AKIHIKOS_INTRO_STATE, 9: SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom
+        VAR_AKIHIKOS_INTRO_STATE, 13: SunshineTown_PokemonCenter_Eventscript_Onframe13]
 }
 
 
@@ -23,4 +24,14 @@ script SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom {
     warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 3, 7)
     clearflag(FLAG_SPAWN_INVISIBLE)
     releaseall
+}
+
+script SunshineTown_PokemonCenter_Eventscript_Onframe13 {
+    lock
+    msgbox("10 minutes later...")
+    closemessage
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 14)
+    warpsilent(MAP_SUNSHINE_TOWN_POKEMON_CENTER, 11, 8)
+    clearflag(FLAG_SPAWN_INVISIBLE)
+    release
 }

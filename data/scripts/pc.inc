@@ -53,7 +53,7 @@ EventScript_AccessLanettesPC::
 EventScript_TurnOffPC::
 	setvar VAR_0x8004, PC_LOCATION_OTHER
 	playse SE_PC_OFF
-	special DoPCTurnOffEffect
+	//special DoPCTurnOffEffect
 	releaseall
 	end
 

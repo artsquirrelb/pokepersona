@@ -244,6 +244,11 @@ script TrashcanEmptyAkihikoRoom {
 script SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi {
     lock
     faceplayer
+    if (flag(FLAG_TEMP_1) == TRUE) {
+        msgbox(format("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Ms. Kobayashi asked for both of us to meet her at the main hall."))
+    }
+    else{
     msgbox("
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Morning, Akihiko.")
     if (flag(FLAG_FOLLOWERS_DISABLED) == FALSE){
@@ -255,8 +260,10 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKoba
         waitmovement(0)}
     msgbox(format("
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Ms. Kobayashi asked for both of us to meet her at the main hall."))
+    
     closemessage
     setvar(VAR_AKIHIKOS_INTRO_STATE, 10)
+    setflag(FLAG_TEMP_1)}
     release
 }
 
@@ -270,6 +277,7 @@ movement SunshineOrphanage_AkihikosRoom2F_Eventscript_PawmiGreetsBack {
 script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji1 {
     lock
     applymovement(2,SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1)
+    waitmovement(0)
     msgbox(format("
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Hey, Akihiko.\n Ms. Kobayashi said she wanted to meet us at the main hall.\p
     Let's go.\p
@@ -284,6 +292,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji1 {
 script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji2 {
     lock
     applymovement(2,SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2)
+    waitmovement(0)
     msgbox(format("
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Hey, Akihiko.\n Ms. Kobayashi said she wanted to meet us at the main hall.\p
     Let's go.\p
@@ -307,7 +316,7 @@ movement SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2 {
 script SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit {
     lock
     applymovement(2, walkdown)
-    waitmovement
+    waitmovement(0)
     release
 }
 

@@ -918,3 +918,14 @@ const struct Tileset gTileset_SunshineOrphanageEntrance =
     .metatileAttributes = gMetatileAttributes_SunshineOrphanageEntrance,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Gen4PC =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Gen4PC,
+    .palettes = gTilesetPalettes_Gen4PC,
+    .metatiles = gMetatiles_Gen4PC,
+    .metatileAttributes = gMetatileAttributes_Gen4PC,
+    .callback = NULL,
+};

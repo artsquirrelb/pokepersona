@@ -25,11 +25,15 @@ static const u16 sFieldMugshotPal_AkihikoDarkened[] = INCBIN_U16("graphics/field
 static const u16 sFieldMugshotPal_AkihikoSmile[] = INCBIN_U16("graphics/field_mugshots/Akihiko/smile.gbapal");
 //Shinjiro
 static const u32 sFieldMugshotGfx_ShinjiroNormal[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/normal.4bpp.lz");
+static const u32 sFieldMugshotGfx_ShinjiroMad[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/mad.4bpp.lz");
 static const u32 sFieldMugshotGfx_ShinjiroDoubt[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/doubt.4bpp.lz");
+static const u32 sFieldMugshotGfx_ShinjiroSurprised[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/surprised.4bpp.lz");
 static const u32 sFieldMugshotGfx_ShinjiroSmile[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/smile.4bpp.lz");
 
 static const u16 sFieldMugshotPal_ShinjiroNormal[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/normal.gbapal");
+static const u16 sFieldMugshotPal_ShinjiroMad[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/mad.gbapal");
 static const u16 sFieldMugshotPal_ShinjiroDoubt[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/doubt.gbapal");
+static const u16 sFieldMugshotPal_ShinjiroSurprised[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/surprised.gbapal");
 static const u16 sFieldMugshotPal_ShinjiroSmile[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/smile.gbapal");
 
 
@@ -107,6 +111,18 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_ShinjiroNormal,
             .pal = sFieldMugshotPal_ShinjiroNormal,
+        },
+
+        [EMOTE_MAD] =
+        {
+            .gfx = sFieldMugshotGfx_ShinjiroMad,
+            .pal = sFieldMugshotPal_ShinjiroMad,
+        },
+
+        [EMOTE_SURPRISED] =
+        {
+            .gfx = sFieldMugshotGfx_ShinjiroSurprised,
+            .pal = sFieldMugshotPal_ShinjiroSurprised,
         },
 
         [EMOTE_DOUBT] =

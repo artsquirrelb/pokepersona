@@ -231,3 +231,6 @@ const u16 gMetatileAttributes_Gen4Indoor[] = INCBIN_U16("data/tilesets/primary/g
 
 const u16 gMetatiles_SunshineOrphanageEntrance[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/metatiles.bin");
 const u16 gMetatileAttributes_SunshineOrphanageEntrance[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/metatile_attributes.bin");
+
+const u16 gMetatiles_Gen4PC[] = INCBIN_U16("data/tilesets/secondary/gen_4pc/metatiles.bin");
+const u16 gMetatileAttributes_Gen4PC[] = INCBIN_U16("data/tilesets/secondary/gen_4pc/metatile_attributes.bin");

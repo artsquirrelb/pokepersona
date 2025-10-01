@@ -5416,7 +5416,7 @@
     {
       "id": "LAYOUT_SUNSHINE_TOWN_RIVERBANK",
       "name": "SunshineTownRiverbank_Layout",
-      "width": 20,
+      "width": 28,
       "height": 11,
       "border_width": 2,
       "border_height": 2,
@@ -5448,6 +5448,18 @@
       "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
       "border_filepath": "data/layouts/SunshineTown_KurosawasHouse/border.bin",
       "blockdata_filepath": "data/layouts/SunshineTown_KurosawasHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_ORPHANAGE_BURNING",
+      "name": "SunshineOrphanage_Burning_Layout",
+      "width": 31,
+      "height": 28,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_SunshineOrphanageEntrance",
+      "border_filepath": "data/layouts/SunshineOrphanage_Burning/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineOrphanage_Burning/map.bin"
     }
   ]
 }

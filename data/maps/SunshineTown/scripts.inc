@@ -21,9 +21,9 @@ SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 5 "data/maps/SunshineTown/scripts.pory"
 	setflag FLAG_HIDE_KUROSAWA
 # 6 "data/maps/SunshineTown/scripts.pory"
-	setobjectxyperm 2, 12, 6
+	setobjectxyperm 2, 12, 11
 # 7 "data/maps/SunshineTown/scripts.pory"
-	setobjectmovementtype 2, MOVEMENT_TYPE_RUN_IN_PLACE_DOWN
+	setobjectmovementtype 2, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT
 # 8 "data/maps/SunshineTown/scripts.pory"
 	setobjectxyperm 1, 1, 14
 # 9 "data/maps/SunshineTown/scripts.pory"
@@ -278,6 +278,20 @@ SunshineTown_Eventscript_DontLeaveTown::
 	closemessage
 # 170 "data/maps/SunshineTown/scripts.pory"
 	releaseall
+	return
+
+
+SunshineTown_Eventscript_WarpToBurningOrphanage::
+# 174 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 175 "data/maps/SunshineTown/scripts.pory"
+	playse SE_EXIT
+# 176 "data/maps/SunshineTown/scripts.pory"
+	warp MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23
+# 177 "data/maps/SunshineTown/scripts.pory"
+	delay 30
+# 178 "data/maps/SunshineTown/scripts.pory"
+	release
 	return
 
 

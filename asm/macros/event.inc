@@ -2693,7 +2693,12 @@
 	dowildbattle
 	.endm
 
-
+@lock and release between setting new movement type.
+.macro setobjectnewmovementtype localId:req, movementType:req
+    setvar VAR_0x8005, \localId
+    setvar VAR_0x8006, \movementType
+    special SetObjectMovementType
+    .endm
 
 
 

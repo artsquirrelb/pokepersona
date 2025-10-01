@@ -730,6 +730,9 @@
 #define METATILE_SootopolisGym_Ice_Cracked  0x20E
 #define METATILE_SootopolisGym_Stairs       0x207
 
+// gTileset_SunshineOrphanageEntrance
+#define METATILE_SunshineOrphanageEntrance_avoidreflection  0x2E1
+
 // gTileset_SunshineTown
 #define METATILE_SunshineTown_warptosunshinewoods  0x20E
 

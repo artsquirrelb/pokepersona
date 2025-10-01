@@ -5,7 +5,8 @@ mapscripts BlankMap_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 7: SunshineWoods_Eventscript_WarpBackToOrphanage
         VAR_AKIHIKOS_INTRO_STATE, 9: SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom
-        VAR_AKIHIKOS_INTRO_STATE, 13: SunshineTown_PokemonCenter_Eventscript_Onframe13]
+        VAR_AKIHIKOS_INTRO_STATE, 13: SunshineTown_PokemonCenter_Eventscript_Onframe13
+        VAR_AKIHIKOS_INTRO_STATE, 18: SunshineOrphanage_Burning_Eventscript_OnFrame18]
 }
 
 
@@ -33,5 +34,12 @@ script SunshineTown_PokemonCenter_Eventscript_Onframe13 {
     setvar(VAR_AKIHIKOS_INTRO_STATE, 14)
     warpsilent(MAP_SUNSHINE_TOWN_POKEMON_CENTER, 11, 8)
     clearflag(FLAG_SPAWN_INVISIBLE)
+    release
+}
+
+script SunshineOrphanage_Burning_Eventscript_OnFrame18 {
+    lock
+    delay(30)
+    warpsilent(MAP_SUNSHINE_TOWN_RIVERBANK, 13, 5)
     release
 }

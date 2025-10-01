@@ -839,7 +839,7 @@ const struct Tileset gTileset_Gen4General =
     .palettes = gTilesetPalettes_Gen4General,
     .metatiles = gMetatiles_Gen4General,
     .metatileAttributes = gMetatileAttributes_Gen4General,
-    .callback = NULL,
+    .callback = InitTilesetAnim_Gen4General,
 };
 
 const struct Tileset gTileset_Gen4General2nd =
@@ -916,7 +916,7 @@ const struct Tileset gTileset_SunshineOrphanageEntrance =
     .palettes = gTilesetPalettes_SunshineOrphanageEntrance,
     .metatiles = gMetatiles_SunshineOrphanageEntrance,
     .metatileAttributes = gMetatileAttributes_SunshineOrphanageEntrance,
-    .callback = NULL,
+    .callback = InitTilesetAnim_SunshineOrphanageEntrance,
 };
 
 const struct Tileset gTileset_Gen4PC =

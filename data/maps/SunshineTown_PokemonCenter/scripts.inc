@@ -215,7 +215,7 @@ SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient::
 # 117 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	special StopMapMusic
 # 118 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	playse SE_M_EXPLOSION
+	playse SE_INTRO_BLAST
 # 119 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	call SunshineTown_PokemonCenter_Eventscript_CameraShake
 # 120 "data/maps/SunshineTown_PokemonCenter/scripts.pory"

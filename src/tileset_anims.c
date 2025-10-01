@@ -24,6 +24,7 @@ static void (*sSecondaryTilesetAnimCallback)(u16);
 static void _InitPrimaryTilesetAnimation(void);
 static void _InitSecondaryTilesetAnimation(void);
 static void TilesetAnim_General(u16);
+static void TilesetAnim_Gen4General(u16);
 static void TilesetAnim_Building(u16);
 static void TilesetAnim_Rustboro(u16);
 static void TilesetAnim_Dewford(u16);
@@ -43,6 +44,7 @@ static void TilesetAnim_MauvilleGym(u16);
 static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
+static void TilesetAnim_SunshineOrphanageEntrance(u16);
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
@@ -73,6 +75,8 @@ static void QueueAnimTiles_MauvilleGym_ElectricGates(u16);
 static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
+static void QueueAnimTiles_Gen4General_RedFlower(u16);
+static void QueueAnimTiles_SunshineOrphanageEntrance_Fire(u16);
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -160,6 +164,37 @@ const u16 *const gTilesetAnims_Lavaridge_Steam[] = {
     gTilesetAnims_Lavaridge_Steam_Frame2,
     gTilesetAnims_Lavaridge_Steam_Frame3
 };
+
+const u16 gTilesetAnim_Gen4General_RedFlower_Frame0[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/redflower/redflower0.4bpp");
+const u16 gTilesetAnim_Gen4General_RedFlower_Frame1[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/redflower/redflower1.4bpp");
+const u16 gTilesetAnim_Gen4General_RedFlower_Frame2[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/redflower/redflower2.4bpp");
+const u16 gTilesetAnim_Gen4General_RedFlower_Frame3[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/redflower/redflower3.4bpp");
+
+const u16 *const gTilesetAnim_Gen4General_RedFlower[] = {
+    gTilesetAnim_Gen4General_RedFlower_Frame0,
+    gTilesetAnim_Gen4General_RedFlower_Frame1,
+    gTilesetAnim_Gen4General_RedFlower_Frame2,
+    gTilesetAnim_Gen4General_RedFlower_Frame3,
+};
+
+const u16 gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame0[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/anim/fire/0.4bpp");
+const u16 gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame1[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/anim/fire/1.4bpp");
+const u16 gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame2[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/anim/fire/2.4bpp");
+const u16 gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame3[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/anim/fire/3.4bpp");
+const u16 gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame4[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/anim/fire/4.4bpp");
+const u16 gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame5[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/anim/fire/5.4bpp");
+const u16 gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame6[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/anim/fire/6.4bpp");
+
+const u16 *const gTilesetAnim_SunshineOrphanageEntrance_Fire[] = {
+    gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame0,
+    gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame1,
+    gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame2,
+    gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame3,
+    gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame4,
+    gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame5,
+    gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame6,
+};
+
 
 const u16 gTilesetAnims_Pacifidlog_LogBridges_Frame0[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/log_bridges/0.4bpp");
 const u16 gTilesetAnims_Pacifidlog_LogBridges_Frame1[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/log_bridges/1.4bpp");
@@ -622,6 +657,13 @@ void InitTilesetAnim_General(void)
     sPrimaryTilesetAnimCallback = TilesetAnim_General;
 }
 
+void InitTilesetAnim_Gen4General(void)
+{
+    sPrimaryTilesetAnimCounter = 0;
+    sPrimaryTilesetAnimCounterMax = 256;
+    sPrimaryTilesetAnimCallback = TilesetAnim_Gen4General;
+}
+
 void InitTilesetAnim_Building(void)
 {
     sPrimaryTilesetAnimCounter = 0;
@@ -643,6 +685,12 @@ static void TilesetAnim_General(u16 timer)
         QueueAnimTiles_General_LandWaterEdge(timer / 16);
 }
 
+static void TilesetAnim_Gen4General(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_Gen4General_RedFlower(timer / 16);
+}
+
 static void TilesetAnim_Building(u16 timer)
 {
     if (timer % 8 == 0)
@@ -653,6 +701,18 @@ static void QueueAnimTiles_General_Flower(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnims_General_Flower);
     AppendTilesetAnimToBuffer(gTilesetAnims_General_Flower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(508)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Gen4General_RedFlower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnim_Gen4General_RedFlower);
+    AppendTilesetAnimToBuffer(gTilesetAnim_Gen4General_RedFlower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(70)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_SunshineOrphanageEntrance_Fire(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnim_SunshineOrphanageEntrance_Fire);
+    AppendTilesetAnimToBuffer(gTilesetAnim_SunshineOrphanageEntrance_Fire[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(928)), 4 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_General_Water(u16 timer)
@@ -832,6 +892,19 @@ void InitTilesetAnim_BattleDome(void)
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
     sSecondaryTilesetAnimCallback = TilesetAnim_BattleDome;
+}
+
+void InitTilesetAnim_SunshineOrphanageEntrance(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_SunshineOrphanageEntrance;
+}
+
+static void TilesetAnim_SunshineOrphanageEntrance(u16 timer)
+{
+    if (timer % 16 == 0)
+        QueueAnimTiles_SunshineOrphanageEntrance_Fire(timer / 16);
 }
 
 static void TilesetAnim_Rustboro(u16 timer)

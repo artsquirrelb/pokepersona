@@ -20,7 +20,7 @@
     },
     {
       "map": "MAP_SUNSHINE_TOWN_RIVERBANK",
-      "offset": 5,
+      "offset": 1,
       "direction": "down"
     }
   ],
@@ -144,6 +144,24 @@
       "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "17",
       "script": "SunshineTown_Eventscript_DontLeaveTown"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "17",
+      "script": "SunshineTown_Eventscript_WarpToBurningOrphanage"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "17",
+      "script": "SunshineTown_Eventscript_WarpToBurningOrphanage"
     }
   ],
   "bg_events": [

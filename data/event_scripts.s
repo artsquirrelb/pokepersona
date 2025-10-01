@@ -1186,3 +1186,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/SunshineTown_PokemonCenter/scripts.inc"
 
 	.include "data/maps/SunshineTown_KurosawasHouse/scripts.inc"
+
+	.include "data/maps/SunshineOrphanage_Burning/scripts.inc"

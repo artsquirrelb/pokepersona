@@ -4,8 +4,11 @@ mapscripts SunshineWoods_MapScripts {
             clearflag(FLAG_HIDE_MIKI)
             clearflag(FLAG_HIDE_SHINJIRO)}
         }
-    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [VAR_AKIHIKOS_INTRO_STATE , 6: Akihiko_Looking_at_Miki]
-    MAP_SCRIPT_ON_FRAME_TABLE [VAR_AKIHIKOS_INTRO_STATE, 6: SunshineWoods_Eventscript_OnFrame]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_AKIHIKOS_INTRO_STATE, 6: Akihiko_Looking_at_Miki]
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_AKIHIKOS_INTRO_STATE, 6: SunshineWoods_Eventscript_OnFrame6
+       ]
 }
 
 script  Akihiko_Looking_at_Miki {
@@ -28,7 +31,7 @@ script SunshineWoods_Eventscript_DoNotEnterTheGrass {
     warpsilent(MAP_SUNSHINE_WOODS, 3, 5)
 }
 
-script SunshineWoods_Eventscript_OnFrame {
+script SunshineWoods_Eventscript_OnFrame6 {
     goto(SunshineWoods_Eventscript_PlayingInTheWoods)    
 }
 

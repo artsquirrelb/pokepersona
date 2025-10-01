@@ -6,7 +6,10 @@ SunshineTownRiverbank_MapScripts::
 SunshineTownRiverbank_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/SunshineTownRiverbank/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 16
-	goto_if_ge SunshineTownRiverbank_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+	goto_if_eq SunshineTownRiverbank_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
+# 3 "data/maps/SunshineTownRiverbank/scripts.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 17
+	goto_if_eq SunshineTownRiverbank_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return
 
 SunshineTownRiverbank_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:

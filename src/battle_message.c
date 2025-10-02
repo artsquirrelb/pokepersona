@@ -3407,9 +3407,9 @@ void BattlePutTextOnWindow(const u8 *text, u8 windowId)
     printerTemplate.letterSpacing = textInfo[windowId].letterSpacing;
     printerTemplate.lineSpacing = textInfo[windowId].lineSpacing;
     printerTemplate.unk = 0;
-    printerTemplate.fgColor = textInfo[windowId].fgColor;
-    printerTemplate.bgColor = textInfo[windowId].bgColor;
-    printerTemplate.shadowColor = textInfo[windowId].shadowColor;
+    printerTemplate.fgColor = 0x1; //was textInfo[windowId].fgColor;
+    printerTemplate.bgColor = 0xE; //was textInfo[windowId].bgColor;
+    printerTemplate.shadowColor = 0xE; //was textInfo[windowId].shadowColor;
 
     if (B_WIN_MOVE_NAME_1 <= windowId && windowId <= B_WIN_MOVE_NAME_4)
     {

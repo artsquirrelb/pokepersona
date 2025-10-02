@@ -394,7 +394,7 @@ void RedrawDialogueFrame(void)
 void DrawStdWindowFrame(u8 windowId, bool8 copyToVram)
 {
     CallWindowFunction(windowId, WindowFunc_DrawStandardFrame);
-    FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(3));
     PutWindowTilemap(windowId);
     if (copyToVram == TRUE)
         CopyWindowToVram(windowId, COPYWIN_FULL);
@@ -452,6 +452,13 @@ static void WindowFunc_DrawStandardFrame(u8 bg, u8 tilemapLeft, u8 tilemapTop, u
                                 i,
                                 1,
                                 1,
+                                STD_WINDOW_PALETTE_NUM);
+        FillBgTilemapBufferRect(bg,
+                                STD_WINDOW_BASE_TILE_NUM + 4,
+                                tilemapLeft,
+                                tilemapTop,
+                                width,
+                                height + 1,
                                 STD_WINDOW_PALETTE_NUM);
         FillBgTilemapBufferRect(bg,
                                 STD_WINDOW_BASE_TILE_NUM + 5,
@@ -863,7 +870,7 @@ void DrawStdFrameWithCustomTileAndPalette(u8 windowId, bool8 copyToVram, u16 bas
     sTileNum = baseTileNum;
     sPaletteNum = paletteNum;
     CallWindowFunction(windowId, WindowFunc_DrawStdFrameWithCustomTileAndPalette);
-    FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(3)); //was fill 1
     PutWindowTilemap(windowId);
     if (copyToVram == TRUE)
         CopyWindowToVram(windowId, COPYWIN_FULL);
@@ -1115,8 +1122,9 @@ void RedrawMenuCursor(u8 oldPos, u8 newPos)
 
     width = GetMenuCursorDimensionByFont(sMenu.fontId, 0);
     height = GetMenuCursorDimensionByFont(sMenu.fontId, 1);
-    FillWindowPixelRect(sMenu.windowId, PIXEL_FILL(1), sMenu.left, sMenu.optionHeight * oldPos + sMenu.top, width, height);
-    AddTextPrinterParameterized(sMenu.windowId, sMenu.fontId, gText_SelectorArrow3, sMenu.left, sMenu.optionHeight * newPos + sMenu.top, 0, 0);
+    FillWindowPixelRect(sMenu.windowId, PIXEL_FILL(3), sMenu.left, sMenu.optionHeight * oldPos + sMenu.top, width, height);//fill was 1
+    //AddTextPrinterParameterized(sMenu.windowId, sMenu.fontId, gText_SelectorArrow3, sMenu.left, sMenu.optionHeight * newPos + sMenu.top, 0, 0);
+    AddTextPrinterParameterized6(sMenu.windowId, sMenu.fontId, gText_SelectorArrow3, sMenu.left, sMenu.optionHeight * newPos + sMenu.top, 0, 0, 0x2, 0x0, 0x0);
 }
 
 u8 Menu_MoveCursor(s8 cursorDelta)
@@ -1808,9 +1816,9 @@ void CreateYesNoMenu(const struct WindowTemplate *window, u16 baseTileNum, u8 pa
     printer.y = 1;
     printer.currentX = printer.x;
     printer.currentY = printer.y;
-    printer.fgColor = GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_FOREGROUND);
-    printer.bgColor = GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_BACKGROUND);
-    printer.shadowColor = GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_SHADOW);
+    printer.fgColor = 0x2; //GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_FOREGROUND);
+    printer.bgColor = 0x0; //GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_BACKGROUND); //=6
+    printer.shadowColor = 0x3; //GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_SHADOW); //=7
     printer.unk = GetFontAttribute(FONT_NORMAL, FONTATTR_UNKNOWN);
     printer.letterSpacing = 0;
     printer.lineSpacing = 0;
@@ -2149,6 +2157,26 @@ void AddTextPrinterParameterized5(u8 windowId, u8 fontId, const u8 *str, u8 left
     AddTextPrinter(&printer, speed, callback);
 }
 
+u16 AddTextPrinterParameterized6(u8 windowId, u8 fontId, const u8 *str, u8 x, u8 y, u8 speed, void (*callback)(struct TextPrinterTemplate *, u16), u8 fgColor, u8 bgColor, u8 shadowColor)
+{
+    struct TextPrinterTemplate printer;
+
+    printer.currentChar = str;
+    printer.windowId = windowId;
+    printer.fontId = fontId;
+    printer.x = x;
+    printer.y = y;
+    printer.currentX = x;
+    printer.currentY = y;
+    printer.letterSpacing = gFonts[fontId].letterSpacing;
+    printer.lineSpacing = gFonts[fontId].lineSpacing;
+    printer.unk = gFonts[fontId].unk;
+    printer.fgColor = fgColor;
+    printer.bgColor = bgColor;
+    printer.shadowColor = shadowColor;
+    return AddTextPrinter(&printer, speed, callback);
+}
+
 void PrintPlayerNameOnWindow(u8 windowId, const u8 *src, u16 x, u16 y)
 {
     int count = 0;
@@ -2158,6 +2186,7 @@ void PrintPlayerNameOnWindow(u8 windowId, const u8 *src, u16 x, u16 y)
     StringExpandPlaceholders(gStringVar4, src);
 
     AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, x, y, TEXT_SKIP_DRAW, 0);
+    //AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, x, y, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
 }
 
 static void UNUSED UnusedBlitBitmapRect(const struct Bitmap *src, struct Bitmap *dst, u16 srcX, u16 srcY, u16 dstX, u16 dstY, u16 width, u16 height)
@@ -2279,11 +2308,11 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
     u8 *string = dest;
 
     *(string++) = EXT_CTRL_CODE_BEGIN;
-    *(string++) = EXT_CTRL_CODE_COLOR;
+    *(string++) = EXT_CTRL_CODE_SHADOW; //was EXT_CTRL_CODE_COLOR; // set text background color?
     *(string++) = color;
     *(string++) = EXT_CTRL_CODE_BEGIN;
     *(string++) = EXT_CTRL_CODE_SHADOW;
-    *(string++) = color + 1;
+    *(string++) = 0x3; //was color + 1 //somehow this sets text shadow color, using standard message box's palette
 
     switch (textId)
     {

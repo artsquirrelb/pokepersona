@@ -2897,8 +2897,8 @@ void DisplayPartyMenuStdMessage(u32 stringId)
         DrawStdFrameWithCustomTileAndPalette(*windowPtr, FALSE, 0x4F, 13);
         StringExpandPlaceholders(gStringVar4, sActionStringTable[stringId]);
         //AddTextPrinterParameterized(*windowPtr, FONT_NORMAL, gStringVar4, 0, 1, 0, 0);
-        AddTextPrinterParameterized2(*windowPtr, FONT_NORMAL, gStringVar4, 0, 0, 2, 1, 1);
-        ScheduleBgCopyTilemapToVram(1);
+        AddTextPrinterParameterized2(*windowPtr, FONT_NORMAL, gStringVar4, 0, 0, 2, 3, 3);
+        ScheduleBgCopyTilemapToVram(2);
     }
 }
 
@@ -2921,7 +2921,7 @@ static bool8 ShouldUseChooseMonText(void)
     return FALSE;
 }
 
-static u8 DisplaySelectionWindow(u8 windowType)
+static u8 DisplaySelectionWindow(u8 windowType) //Summary/Switch/Item/Cancel menu
 {
     struct WindowTemplate window;
     u8 cursorDimension;
@@ -2966,7 +2966,8 @@ static u8 DisplaySelectionWindow(u8 windowType)
         else
             text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
 
-        AddTextPrinterParameterized4(sPartyMenuInternal->windowId[0], FONT_NORMAL, cursorDimension, (i * 16) + 1, letterSpacing, 0, sFontColorTable[fontColorsId], 0, text);
+        //AddTextPrinterParameterized4(sPartyMenuInternal->windowId[0], FONT_NORMAL, cursorDimension, (i * 16) + 1, letterSpacing, 0, sFontColorTable[fontColorsId], 0, text);
+        AddTextPrinterParameterized6(sPartyMenuInternal->windowId[0], FONT_NORMAL, text, cursorDimension, (i * 16) + 1, 0, 0, 0x2, 0x0, 0x0);
     }
 
     InitMenuInUpperLeftCorner(sPartyMenuInternal->windowId[0], sPartyMenuInternal->numActions, 0, TRUE);
@@ -2979,7 +2980,7 @@ static void PrintMessage(const u8 *text)
 {
     DrawStdFrameWithCustomTileAndPalette(WIN_MSG, FALSE, 0x4F, 13);
     gTextFlags.canABSpeedUpPrint = TRUE;
-    AddTextPrinterParameterized2(WIN_MSG, FONT_NORMAL, text, GetPlayerTextSpeedDelay(), 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_TRANSPARENT, TEXT_COLOR_TRANSPARENT);
+    AddTextPrinterParameterized2(WIN_MSG, FONT_NORMAL, text, GetPlayerTextSpeedDelay(), 0, TEXT_COLOR_DARK_GRAY, 0x3, 0x3);
 }
 
 static void PartyMenuDisplayYesNoMenu(void)

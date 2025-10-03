@@ -79,8 +79,8 @@ static EWRAM_DATA void *sTempTileDataBuffer[0x20] = {NULL};
 
 static const u8 sTextSpeedFrameDelays[] =
 {
-    [OPTIONS_TEXT_SPEED_SLOW] = 8,
-    [OPTIONS_TEXT_SPEED_MID]  = 4,
+    [OPTIONS_TEXT_SPEED_SLOW] = 1,
+    [OPTIONS_TEXT_SPEED_MID]  = 1,
     [OPTIONS_TEXT_SPEED_FAST] = 1
 };
 
@@ -1770,8 +1770,8 @@ void PrintMenuTable(u8 windowId, u8 itemCount, const struct MenuAction *menuActi
     u32 i;
 
     for (i = 0; i < itemCount; i++)
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, menuActions[i].text, 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL);
-
+        //AddTextPrinterParameterized(windowId, FONT_NORMAL, menuActions[i].text, 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized6(windowId, FONT_NORMAL, menuActions[i].text, 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL, 0x2, 0x3, 0x3);
     CopyWindowToVram(windowId, COPYWIN_GFX);
 }
 

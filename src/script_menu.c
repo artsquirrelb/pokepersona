@@ -89,7 +89,7 @@ static const struct ListMenuTemplate sScriptableListMenuTemplate =
     .item_X = 8,
     .upText_Y = 1,
     .cursorPal = 2,
-    .fillValue = 1,
+    .fillValue = 3, //was 1
     .cursorShadowPal = 3,
     .lettersSpacing = 1,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
@@ -743,17 +743,19 @@ static void CreatePCMultichoice(void)
         numChoices = 3;
         windowId = CreateWindowFromRect(0, 0, width, 6);
         SetStandardWindowBorderStyle(windowId, FALSE);
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LogOff, x, 33, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized6(windowId, FONT_NORMAL, gText_LogOff, x, 33, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
     }
 
     // Change PC name if player has met Lanette
     if (FlagGet(FLAG_SYS_PC_LANETTE))
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LanettesPC, x, 1, TEXT_SKIP_DRAW, NULL);
+        //AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LanettesPC, x, 1, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized6(windowId, FONT_NORMAL, gText_LanettesPC, x, 1, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
     else
-        AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_SomeonesPC, x, 1, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized6(windowId, FONT_NORMAL, gText_SomeonesPC, x, 1, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
 
     StringExpandPlaceholders(gStringVar4, gText_PlayersPC);
-    PrintPlayerNameOnWindow(windowId, gStringVar4, x, 17);
+    //PrintPlayerNameOnWindow(windowId, gStringVar4, x, 17);
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, x, 17, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
     InitMenuInUpperLeftCornerNormal(windowId, numChoices, 0);
     CopyWindowToVram(windowId, COPYWIN_FULL);
     InitMultichoiceCheckWrap(FALSE, numChoices, windowId, MULTI_PC);

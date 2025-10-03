@@ -19,7 +19,7 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
             setobjectxyperm (4, 6, 22)
             setobjectmovementtype (4, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 11) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 10) {
             setobjectxyperm (1, 0, 21)
             hideobjectat (1, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
             setobjectxyperm (2, 0, 18)
@@ -122,9 +122,9 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p
         {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, I'll give you a pokeball to keep it."))
     closemessage
-    msgbox("{PLAYER} received 1{COLOR LIGHT_GREEN} (hidden){COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Cherish Ball.")
+    msgbox("{PLAYER} received 1{COLOR GREEN} (hidden){COLOR DARK_GRAY} Cherish Ball.")
     closemessage
-    msgbox(format("{COLOR LIGHT_GREEN}Tips: The shiny chance is roughly 1/100. \p 
+    msgbox(format("{COLOR GREEN}Tips: The shiny chance is roughly 1/100. \p 
     No Pokemon are shiny locked, including the story starters.\p 
     The story starters have been buffed and come with pre-determined Nature and Perfect IVs.\p
     You also can not release them."))

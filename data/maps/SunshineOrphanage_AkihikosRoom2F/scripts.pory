@@ -51,12 +51,12 @@ script AkihikosRoom2F_Eventscript_MikiAppears {
     waitmovement(0)
     msgbox(format("
     {SPEAKER NAME_MIKI}BIG BRO!"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, Akihiko_Surprised)
     applymovement(1, Miki_Appears)
     waitmovement(0)
     delay(8)
-    playse(SE_PIN)
-    applymovement(LOCALID_PLAYER, Akihiko_Surprised)
-    waitmovement(0)
     msgbox(Lets_Go_Play)
     releaseall
     goto(Miki_Inviting_Akihiko_To_Play)}
@@ -79,8 +79,8 @@ script Miki_Inviting_Akihiko_To_Play{
 text Lets_Go_Play {
     format( 
         "{SPEAKER NAME_MIKI}It's time!\p You promised to take me out today!\p"
-        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}{SPEAKER NAME_AKIHIKO}"
-        "Let me fix this clock real quick.\p Otherwise Shinji's gonna grill me.\p"
+        "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}{SPEAKER NAME_AKIHIKO}
+        Let me fix this clock real quick.\p Otherwise Shinji's gonna grill me.\p"
         "{DESTROY_MUGSHOT}{SPEAKER NAME_MIKI}Okay! I'll be waiting outside with Ms. Kobayashi!"
     )
 }
@@ -111,7 +111,6 @@ movement Camera_Back_to_Player {
 
 script GoSetTheClock{
     lockall
-    createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
     msgbox (
         format (
             "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}{SPEAKER NAME_AKIHIKO}"
@@ -134,7 +133,7 @@ script SetWallclock {
 	delay(30)
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
     setspeaker ("Akihiko")
-    msgbox ("Done.")
+    msgbox ("All done.")
 	setvar(VAR_AKIHIKOS_INTRO_STATE , 3)
 	setflag(FLAG_SET_WALL_CLOCK)
 	releaseall
@@ -153,8 +152,8 @@ script GiveRunningShoesAtStart {
     setspeaker(NULL)
     playfanfare(MUS_OBTAIN_ITEM)
     waitfanfare
-    msgbox(format("{PLAYER} put on the {COLOR LIGHT_GREEN}{SHADOW TRANSPARENT}Running Shoes{COLOR DARK_GRAY}{SHADOW TRANSPARENT}.\p
-    {COLOR LIGHT_GREEN}{SHADOW TRANSPARENT}Tips: You can toggle Autorun with B button."))
+    msgbox(format("{PLAYER} put on the {COLOR GREEN}Running Shoes{COLOR DARK_GRAY}.\p
+    {COLOR GREEN}Tips: You can toggle Autorun with B button."))
     setflag(FLAG_SYS_B_DASH)
     setvar(VAR_AKIHIKOS_INTRO_STATE ,4)
     releaseall
@@ -164,7 +163,7 @@ script GiveRunningShoesAtStart {
 script RunningShoesToggleManual {
     if (var(VAR_AKIHIKOS_INTRO_STATE) >= 4){
     lock
-    msgbox(format("{COLOR LIGHT_GREEN}{SHADOW TRANSPARENT}You can toggle Autorun with B button."))
+    msgbox(format("{COLOR LIGHT_GREEN}Tips: You can toggle Autorun with B button."))
     release}
 }
 
@@ -326,6 +325,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1{
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Oh, you're leaving?"))
     closemessage
     applymovement(2,SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1)
+    waitmovement(0)
     msgbox(format("
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go."))
     call(SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit)
@@ -341,6 +341,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2 {
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Oh, you're leaving?"))
     closemessage
     applymovement(2,SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2)
+    waitmovement(0)
     msgbox(format("
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go."))
     call(SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit)

@@ -21,7 +21,7 @@ SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 	goto_if_ge SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 # 22 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 11
+	compare VAR_AKIHIKOS_INTRO_STATE, 10
 	goto_if_ge SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_10
 	return
 
@@ -904,11 +904,11 @@ SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_1:
 
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_2:
 # 125 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{PLAYER} received 1{COLOR LIGHT_GREEN} (hidden){COLOR DARK_GRAY}{SHADOW LIGHT_GRAY} Cherish Ball.$"
+	.string "{PLAYER} received 1{COLOR GREEN} (hidden){COLOR DARK_GRAY} Cherish Ball.$"
 
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_3:
 # 127 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{COLOR LIGHT_GREEN}Tips: The shiny chance is roughly\n"
+	.string "{COLOR GREEN}Tips: The shiny chance is roughly\n"
 	.string "1/100.\p"
 	.string "No Pokemon are shiny locked, including\n"
 	.string "the story starters.\p"

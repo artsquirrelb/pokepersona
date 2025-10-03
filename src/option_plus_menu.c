@@ -38,7 +38,7 @@ enum
     MENUITEM_GENERAL_FRAMETYPE,
     MENUITEM_GENERAL_FOLLOWERS,
     MENUITEM_GENERAL_AUTORUN,
-    MENUITEM_GENERAL_MATCHCALL,
+    //MENUITEM_GENERAL_MATCHCALL,
     MENUITEM_GENERAL_CANCEL,
     MENUITEM_GENERAL_COUNT,
 };
@@ -83,7 +83,7 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
         .tilemapTop = 0,
         .width = 30,
         .height = 2,
-        .paletteNum = 1,
+        .paletteNum = 7,
         .baseBlock = 2
     },
     {//WIN_OPTIONS
@@ -92,7 +92,7 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
         .tilemapTop = 3,
         .width = 26,
         .height = 10,
-        .paletteNum = 1,
+        .paletteNum = 7,
         .baseBlock = 62
     },
     {//WIN_DESCRIPTION
@@ -101,7 +101,7 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
         .tilemapTop = 15,
         .width = 26,
         .height = 4,
-        .paletteNum = 1,
+        .paletteNum = 7,//was 1
         .baseBlock = 500
     },
     DUMMY_WIN_TEMPLATE
@@ -195,7 +195,7 @@ static void ButtonMode_DrawChoices(int selection, int y);
 static void FrameType_DrawChoices(int selection, int y);
 static void Followers_DrawChoices(int selection, int y);
 static void AutoRun_DrawChoices(int selection, int y);
-static void MatchCall_DrawChoices(int selection, int y);
+//static void MatchCall_DrawChoices(int selection, int y);
 static void BattleScene_DrawChoices(int selection, int y);
 static void BattleStyle_DrawChoices(int selection, int y);
 static void BattleSpeed_DrawChoices(int selection, int y);
@@ -255,7 +255,7 @@ static const MenuItemFunctions sItemFunctionsGeneral[MENUITEM_GENERAL_COUNT] =
     [MENUITEM_GENERAL_FRAMETYPE]    = {FrameType_DrawChoices,     FrameType_ProcessInput},
     [MENUITEM_GENERAL_FOLLOWERS]    = {Followers_DrawChoices,     TwoOptions_ProcessInput},
     [MENUITEM_GENERAL_AUTORUN]      = {AutoRun_DrawChoices,       TwoOptions_ProcessInput},
-    [MENUITEM_GENERAL_MATCHCALL]    = {MatchCall_DrawChoices,     TwoOptions_ProcessInput},
+    //[MENUITEM_GENERAL_MATCHCALL]    = {MatchCall_DrawChoices,     TwoOptions_ProcessInput},
     [MENUITEM_GENERAL_CANCEL]       = {NULL, NULL},
 };
 
@@ -286,7 +286,7 @@ static const u8 *const sOptionMenuItemsNamesGeneral[MENUITEM_GENERAL_COUNT] =
     [MENUITEM_GENERAL_FRAMETYPE]    = gText_Frame,
     [MENUITEM_GENERAL_FOLLOWERS]    = gText_Followers,
     [MENUITEM_GENERAL_AUTORUN]      = gText_AutoRun,
-    [MENUITEM_GENERAL_MATCHCALL]    = gText_MatchCalls,
+    //[MENUITEM_GENERAL_MATCHCALL]    = gText_MatchCalls,
     [MENUITEM_GENERAL_CANCEL]       = gText_OptionMenuSave,
 };
 
@@ -338,7 +338,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_GENERAL_BUTTONMODE:
         case MENUITEM_GENERAL_FRAMETYPE:
         case MENUITEM_GENERAL_FOLLOWERS:
-        case MENUITEM_GENERAL_MATCHCALL:
+        //case MENUITEM_GENERAL_MATCHCALL:
         case MENUITEM_GENERAL_CANCEL:
         case MENUITEM_GENERAL_COUNT:
             return TRUE;
@@ -420,7 +420,7 @@ static const u8 *const sOptionMenuItemDescriptionsGeneral[MENUITEM_GENERAL_COUNT
     [MENUITEM_GENERAL_FRAMETYPE]   = {sText_Desc_FrameType,            sText_Empty,                     sText_Empty},
     [MENUITEM_GENERAL_FOLLOWERS]   = {sText_Desc_FollowersOn,          sText_Desc_FollowersOff,         sText_Empty},
     [MENUITEM_GENERAL_AUTORUN]     = {sText_Desc_AutoRunOn,            sText_Desc_AutoRunOff,           sText_Empty},
-    [MENUITEM_GENERAL_MATCHCALL]   = {sText_Desc_MatchCallOn,          sText_Desc_MatchCallOff,         sText_Empty},
+    //[MENUITEM_GENERAL_MATCHCALL]   = {sText_Desc_MatchCallOn,          sText_Desc_MatchCallOff,         sText_Empty},
     [MENUITEM_GENERAL_CANCEL]      = {sText_Desc_Save,                 sText_Empty,                     sText_Empty},
 };
 
@@ -455,7 +455,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledGeneral[MENUITEM_GENER
     [MENUITEM_GENERAL_FRAMETYPE]   = sText_Empty,
     [MENUITEM_GENERAL_FOLLOWERS]   = sText_Empty,
     [MENUITEM_GENERAL_AUTORUN]     = sText_Desc_Disabled_AutoRun,
-    [MENUITEM_GENERAL_MATCHCALL]   = sText_Empty,
+    //[MENUITEM_GENERAL_MATCHCALL]   = sText_Empty,
     [MENUITEM_GENERAL_CANCEL]      = sText_Empty,
 };
 
@@ -603,10 +603,10 @@ static void DrawDescriptionText(void)
 {
     u8 color_gray[3];
     color_gray[0] = TEXT_COLOR_TRANSPARENT;
-    color_gray[1] = TEXT_COLOR_OPTIONS_GRAY_FG;
-    color_gray[2] = TEXT_COLOR_OPTIONS_GRAY_SHADOW;
+    color_gray[1] = 1;//TEXT_COLOR_OPTIONS_GRAY_FG;
+    color_gray[2] = 2;//TEXT_COLOR_OPTIONS_GRAY_SHADOW;
         
-    FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(1));
+    FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(2));
     AddTextPrinterParameterized4(WIN_DESCRIPTION, FONT_NORMAL, 5, 1, 0, 0, color_gray, TEXT_SKIP_DRAW, OptionTextDescription());
     CopyWindowToVram(WIN_DESCRIPTION, COPYWIN_FULL);
 }
@@ -617,11 +617,11 @@ static void DrawLeftSideOptionText(int selection, int y)
     u8 color_gray[3];
 
     color_yellow[0] = TEXT_COLOR_TRANSPARENT;
-    color_yellow[1] = TEXT_COLOR_WHITE;
-    color_yellow[2] = TEXT_COLOR_OPTIONS_GRAY_FG;
+    color_yellow[1] = 4;//EXT_COLOR_WHITE;
+    color_yellow[2] = 2;//TEXT_COLOR_OPTIONS_GRAY_FG;
     color_gray[0] = TEXT_COLOR_TRANSPARENT;
-    color_gray[1] = TEXT_COLOR_WHITE;
-    color_gray[2] = TEXT_COLOR_OPTIONS_GRAY_SHADOW;
+    color_gray[1] = 8;//TEXT_COLOR_WHITE;
+    color_gray[2] = 2;//TEXT_COLOR_OPTIONS_GRAY_SHADOW;
 
     if (CheckConditions(selection))
         AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 8, y, 0, 0, color_yellow, TEXT_SKIP_DRAW, OptionTextRight(selection));
@@ -803,7 +803,7 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE]   = gSaveBlock2Ptr->optionsWindowFrameType;
         sOptions->sel_general[MENUITEM_GENERAL_FOLLOWERS]   = gSaveBlock2Ptr->optionsFollowersOff;
         sOptions->sel_general[MENUITEM_GENERAL_AUTORUN]     = gSaveBlock2Ptr->optionsAutoRunOff;
-        sOptions->sel_general[MENUITEM_GENERAL_MATCHCALL]   = gSaveBlock2Ptr->optionsDisableMatchCall;
+       // sOptions->sel_general[MENUITEM_GENERAL_MATCHCALL]   = gSaveBlock2Ptr->optionsDisableMatchCall;
 
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE]   = gSaveBlock2Ptr->optionsBattleSceneOff;
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE]   = gSaveBlock2Ptr->optionsBattleStyle;
@@ -1040,7 +1040,7 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE];
     gSaveBlock2Ptr->optionsFollowersOff     = sOptions->sel_general[MENUITEM_GENERAL_FOLLOWERS];
     gSaveBlock2Ptr->optionsAutoRunOff       = sOptions->sel_general[MENUITEM_GENERAL_AUTORUN];
-    gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_general[MENUITEM_GENERAL_MATCHCALL];
+    //gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_general[MENUITEM_GENERAL_MATCHCALL];
 
     gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE];
     gSaveBlock2Ptr->optionsBattleStyle      = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE];
@@ -1368,7 +1368,7 @@ static void AutoRun_DrawChoices(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
 }
 
-static void MatchCall_DrawChoices(int selection, int y)
+/*static void MatchCall_DrawChoices(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_GENERAL_MATCHCALL);
     u8 styles[2] = {0};
@@ -1376,7 +1376,7 @@ static void MatchCall_DrawChoices(int selection, int y)
 
     DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
-}
+}*/
 
 static void BattleScene_DrawChoices(int selection, int y)
 {

@@ -90,12 +90,6 @@ static const u8 sDarkDownArrowTiles[] = INCBIN_U8("graphics/fonts/down_arrow_alt
 static const u8 sUnusedFRLGBlankedDownArrow[] = INCBIN_U8("graphics/fonts/unused_frlg_blanked_down_arrow.4bpp");
 static const u8 sUnusedFRLGDownArrow[] = INCBIN_U8("graphics/fonts/unused_frlg_down_arrow.4bpp");
 static const u8 sDownArrowYCoords[] = { 0, 1, 2, 1 };
-static const u8 sWindowVerticalScrollSpeeds[] = {
-    //[OPTIONS_TEXT_SPEED_SLOW] = 1,
-    [OPTIONS_TEXT_SPEED_MID] = 2,
-    [OPTIONS_TEXT_SPEED_FAST] = 4,
-    [OPTIONS_TEXT_SPEED_INSTANT] = 4,
-};
 
 static const struct GlyphWidthFunc sGlyphWidthFuncs[] =
 {
@@ -397,22 +391,16 @@ bool32 AddTextPrinter(struct TextPrinterTemplate *printerTemplate, u8 speed, voi
 void RunTextPrinters(void)
 {
     int i;
-    u16 temp;
-    bool32 isInstantText = (gSaveBlock2Ptr->optionsTextSpeed == OPTIONS_TEXT_SPEED_INSTANT); // Force correct result. This is dumb, Revo knows.
+    bool32 isInstantText = (gSaveBlock2Ptr->optionsInstantTextOff == FALSE); // Force correct result. This is dumb, Revo knows.
 
-    //if (!gDisableTextPrinters)
     do
     {
-        //for (i = 0; i < WINDOWS_MAX; ++i)
         int numEmpty = 0;
         if (gDisableTextPrinters == 0)
         {
-            //if (sTextPrinters[i].active)
             for (i = 0; i < 0x20; ++i)
             {
-                //u16 renderCmd = RenderFont(&sTextPrinters[i]);
-                //switch (renderCmd)
-                 if (sTextPrinters[i].active)
+                if (sTextPrinters[i].active)
                 {
                     u16 temp = RenderFont(&sTextPrinters[i]);
                     switch (temp)
@@ -434,19 +422,11 @@ void RunTextPrinters(void)
                 }
                 else
                 {
-                /*case RENDER_PRINT:
-                    CopyWindowToVram(sTextPrinters[i].printerTemplate.windowId, COPYWIN_GFX);
-                case RENDER_UPDATE:
-                    if (sTextPrinters[i].callback != NULL)
-                        sTextPrinters[i].callback(&sTextPrinters[i].printerTemplate, renderCmd);
-                    break;
-                case RENDER_FINISH:
-                    sTextPrinters[i].active = FALSE;
-                    break;*/
-                     numEmpty++;
+                    numEmpty++;
                 }
             }
-              if (numEmpty == 0x20)
+
+            if (numEmpty == 0x20)
                 return;
         }
     } while (isInstantText);
@@ -1420,8 +1400,7 @@ static u16 RenderText(struct TextPrinter *textPrinter)
     case RENDER_STATE_SCROLL:
         if (textPrinter->scrollDistance)
         {
-            int scrollSpeed = GetPlayerTextSpeed();
-            int speed = sWindowVerticalScrollSpeeds[scrollSpeed];
+            int speed = 4;
             if (textPrinter->scrollDistance < speed)
             {
                 ScrollWindow(textPrinter->printerTemplate.windowId, 0, textPrinter->scrollDistance, PIXEL_FILL(textPrinter->printerTemplate.bgColor));
@@ -2156,7 +2135,7 @@ static u32 GetGlyphWidth_Normal(u16 glyphId, bool32 isJapanese)
 {
     if (isJapanese == TRUE)
         return 8;
-    else
+    else 
         return gFontNormalLatinGlyphWidths[glyphId];
 }
 

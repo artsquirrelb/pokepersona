@@ -83,7 +83,9 @@ void TransferPlttBuffer(void)
 u32 UpdatePaletteFade(void)
 {
     u32 result;
+
     sPlttPreviousUpdateResult = PALETTE_FADE_STATUS_LOADING;
+
     if (sPlttBufferTransferPending)
         return PALETTE_FADE_STATUS_LOADING;
 

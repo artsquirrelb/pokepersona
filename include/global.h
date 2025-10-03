@@ -574,15 +574,23 @@ struct SaveBlock2
     /*0x10*/ u8 playTimeMinutes;
     /*0x11*/ u8 playTimeSeconds;
     /*0x12*/ u8 playTimeVBlanks;
-    /*0x13*/ u8 optionsButtonMode;  // OPTIONS_BUTTON_MODE_[NORMAL/LR/L_EQUALS_A]
-    ///*0x14*/ u16 optionsTextSpeed:3; // OPTIONS_TEXT_SPEED_[SLOW/MID/FAST]
-    /*0x14*/ u16 optionsTextSpeed:3; // OPTIONS_TEXT_SPEED_[MID/FAST/INSTANT]
+             u16 optionsInstantTextOff:1; // whether instant text is disabled
+             u8 optionsButtonMode;  // OPTIONS_BUTTON_MODE_[NORMAL/LR/L_EQUALS_A]
              u16 optionsWindowFrameType:5; // Specifies one of the 20 decorative borders for text boxes
-             u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
-             u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
+             u16 optionsFollowersOff:1; // whether ow followers are disabled
+             u16 optionsAutoRunOff:1; // whether auto running is disabled
+             u16 optionsDisableMatchCall:1; // whether match calls are disabled
              u16 optionsBattleSceneOff:1; // whether battle animations are disabled
+             u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
+             u16 optionsBattleSpeed:4; // OPTIONS_BATTLE_SPEED_[1X/2X/3X/4X]
+             u16 optionsDisableBagUse:1; // whether bag use is disabled in battle
+             u16 optionsQuickRunButton:2; // OPTIONS_QUICK_RUN[R_BUTTON/B_BUTTON/OFF]
+             u16 optionsDoubleBattlesOff:1; // whether all trainer battles should be doubles
+             u16 optionsShowBattleMoveInfoOff:1; // whether to show battle move info
+             u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
+             u16 optionsBikeMusicOff:1; // whether cycling music is disabled
+             u16 optionsSurfMusicOff:1; // whether surfing music is disabled
              u16 regionMapZoom:1; // whether the map is zoomed in
-             u16 optionsBattleSpeed:2; // OPTIONS_BATTLE_SPEED_[1x/2x/3x]
              u16 optionsStartMenuPalette:2; // whether the start menu is in the default palette
              //u16 padding1:4;
              //u16 padding2;

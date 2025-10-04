@@ -152,19 +152,17 @@ script GiveRunningShoesAtStart {
     setspeaker(NULL)
     playfanfare(MUS_OBTAIN_ITEM)
     waitfanfare
-    msgbox(format("{PLAYER} put on the {COLOR GREEN}Running Shoes{COLOR DARK_GRAY}.\p
-    {COLOR GREEN}Tips: You can toggle Autorun with B button."))
+    msgbox(format("{PLAYER} put on the {COLOR GREEN}Running Shoes{COLOR DARK_GRAY}."))
     setflag(FLAG_SYS_B_DASH)
-    setvar(VAR_AKIHIKOS_INTRO_STATE ,4)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 4)
     releaseall
     end
 }
 
 script RunningShoesToggleManual {
-    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 4){
     lock
-    msgbox(format("{COLOR LIGHT_GREEN}Tips: You can toggle Autorun with B button."))
-    release}
+    msgbox(format("{COLOR GREEN}Tips: You can toggle various settings in Options Menu."))
+    release
 }
 
 script AkihikosPC {
@@ -187,7 +185,7 @@ script SunshineOrphanage_AkihikosRoom2F_PlayersPC {
 script SunshineOrphanage_AkihikosRoom2F_RivalsPC {
     lockall
     setspeaker(SP_NAME_MITSURU)
-    msgbox("It's Akihiko's PC. It's from Kirijo Electronics.")
+    msgbox(format("It's Akihiko's PC. It's from Kirijo Electronics."))
     releaseall
     end
 }

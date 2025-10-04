@@ -565,7 +565,7 @@ static const u8 sText_TopBar_Sound_Right[]     = _("{R_BUTTON}GENERAL");
 
 static void DrawTopBarText(void)
 {
-    const u8 color[3] = { 0, TEXT_COLOR_WHITE, TEXT_COLOR_OPTIONS_GRAY_FG };
+    const u8 color[3] = { 0, TEXT_COLOR_WHITE, 0 };//slot 3 was TEXT_COLOR_OPTIONS_GRAY_FG
 
     FillWindowPixelBuffer(WIN_TOPBAR, PIXEL_FILL(0));
     switch (sOptions->submenu)

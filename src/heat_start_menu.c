@@ -55,6 +55,7 @@
 #include "rtc.h"
 #include "event_object_movement.h"
 #include "gba/isagbprint.h"
+#include "constants/flags.h"
 
 /* CALLBACKS */
 static void SpriteCB_IconPoketch(struct Sprite* sprite);
@@ -844,28 +845,28 @@ static void HeatStartMenu_UpdateMenuName(void) {
 
   switch(menuSelected) {
     case MENU_POKETCH:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Poketch, 1, 0, 0xFF, NULL);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Poketch, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
       break;
     case MENU_POKEDEX:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
       break;
     case MENU_PARTY:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
       break;
     case MENU_BAG:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
       break;
     case MENU_TRAINER_CARD:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
       break;
     case MENU_SAVE:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
       break;
     case MENU_OPTIONS:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
       break;
     case MENU_FLAG:
-      AddTextPrinterParameterized(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
       break;
   }
   CopyWindowToVram(sHeatStartMenu->sMenuNameWindowId, COPYWIN_GFX);

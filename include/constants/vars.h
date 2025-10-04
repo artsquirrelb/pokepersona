@@ -108,7 +108,7 @@
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
 #define VAR_MAUVILLE_CITY_STATE                          0x4059 // Unused Var
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
-#define VAR_BATTLE_SPEED                                 0x405B // Speed Up Battle
+#define VAR_BATTLE_SPEED                                 0x405B // Speed Up Battle (Unused)
 #define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E

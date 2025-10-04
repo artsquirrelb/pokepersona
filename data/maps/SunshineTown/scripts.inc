@@ -295,6 +295,20 @@ SunshineTown_Eventscript_WarpToBurningOrphanage::
 	return
 
 
+testQuestmenu::
+# 182 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 183 "data/maps/SunshineTown/scripts.pory"
+	setflag FLAG_SYS_QUEST_MENU_GET
+# 184 "data/maps/SunshineTown/scripts.pory"
+	msgbox testQuestmenu_Text_0
+# 185 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 186 "data/maps/SunshineTown/scripts.pory"
+	release
+	return
+
+
 SunshineTown_Eventscript_Kurosawa_Text_0:
 # 25 "data/maps/SunshineTown/scripts.pory"
 	.string "Hm?\p"
@@ -368,3 +382,7 @@ SunshineTown_Eventscript_DontLeaveTown_Text_0:
 # 167 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should ask people in town about that\n"
 	.string "explosion sound!$"
+
+testQuestmenu_Text_0:
+# 184 "data/maps/SunshineTown/scripts.pory"
+	.string "Activated Quest$"

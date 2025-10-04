@@ -56,6 +56,8 @@
 #include "event_object_movement.h"
 #include "gba/isagbprint.h"
 #include "constants/flags.h"
+#include "quests.h"
+#include "constants/songs.h"
 
 /* CALLBACKS */
 static void SpriteCB_IconPoketch(struct Sprite* sprite);
@@ -97,6 +99,7 @@ static u8 SaveYesNoCallback(void);
 static void ShowSaveInfoWindow(void);
 static u8 SaveConfirmSaveCallback(void);
 static void InitSave(void);
+static bool8 QuestMenuCallback(void);
 
 /* ENUMs */
 enum MENU {
@@ -682,8 +685,6 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_LoadSprites();
     HeatStartMenu_CreateSprites();
     HeatStartMenu_LoadBgGfx();
-    sHeatStartMenu->sQuestButtonWindowId = AddWindow(&sWindowTemplate_QuestButton);
-    sHeatStartMenu->sMapButtonWindowId = AddWindow(&sWindowTemplate_MapButton);
     HeatStartMenu_ShowQuestButtons();
     HeatStartMenu_ShowMapButtons();
     HeatStartMenu_ShowTimeWindow();
@@ -699,7 +700,6 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_SafariZone_CreateSprites();
     HeatStartMenu_LoadBgGfx();
     ShowSafariBallsWindow();
-    sHeatStartMenu->sQuestButtonWindowId = AddWindow(&sWindowTemplate_QuestButton);
     HeatStartMenu_ShowQuestButtons();
     HeatStartMenu_ShowMapButtons();
     HeatStartMenu_ShowTimeWindow();
@@ -798,14 +798,18 @@ static void HeatStartMenu_LoadBgGfx(void) {
 
 static void HeatStartMenu_ShowQuestButtons (void)
 {
+sHeatStartMenu->sQuestButtonWindowId = AddWindow(&sWindowTemplate_QuestButton);
 FillWindowPixelBuffer(sHeatStartMenu->sQuestButtonWindowId, PIXEL_FILL(0));
 PutWindowTilemap(sHeatStartMenu->sQuestButtonWindowId);
-AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 1, 0, 0x1, 0x0, 0x2);
+  if (FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE){
+AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 0, 0, 0x1, 0x0, 0x2);
 CopyWindowToVram(sHeatStartMenu->sQuestButtonWindowId, COPYWIN_FULL);
+  }
 }
 
 static void HeatStartMenu_ShowMapButtons (void)
 {
+sHeatStartMenu->sMapButtonWindowId = AddWindow(&sWindowTemplate_MapButton);
 FillWindowPixelBuffer(sHeatStartMenu->sMapButtonWindowId, PIXEL_FILL(0));
 PutWindowTilemap(sHeatStartMenu->sMapButtonWindowId);
 AddTextPrinterParameterized2(sHeatStartMenu->sMapButtonWindowId, FONT_SMALL, gText_MapButton, 0, 0, 0x1, 0x0, 0x2);
@@ -1483,6 +1487,13 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
       }
       sHeatStartMenu->loadState = 1;
     }
+  } else if (JOY_NEW(L_BUTTON) &&sHeatStartMenu->loadState == 0 && FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE) {
+    PlaySE(SE_SELECT);
+    DestroyTask(taskId);
+    HeatStartMenu_ExitAndClearTilemap();  
+    FadeScreen(FADE_TO_BLACK, 0);
+    QuestMenuCallback();
+
   } else if (JOY_NEW(B_BUTTON) && sHeatStartMenu->loadState == 0) {
     PlaySE(SE_SELECT);
     HeatStartMenu_ExitAndClearTilemap();  
@@ -1576,4 +1587,10 @@ static void Task_HeatStartMenu_SafariZone_HandleMainInput(u8 taskId) {
       DoCleanUpAndStartSafariZoneRetire();
     }
   }
+}
+
+static bool8 QuestMenuCallback(void)
+{
+    CreateTask(Task_QuestMenu_OpenFromStartMenu, 0);
+    return TRUE;
 }

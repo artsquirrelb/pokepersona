@@ -64,6 +64,7 @@
 #include "constants/weather.h"
 #include "constants/speaker_names.h"
 #include "constants/field_mugshots.h"
+#include "constants/quests.h"
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"
@@ -590,6 +591,18 @@ gStdScripts_End::
 
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
+
+//STORY TALK:
+
+EventScript_OverworldStoryTalk::
+	lock
+	msgbox gText_TEST
+	goto EventScript_VarAkihikoIntroState1
+	release
+	end
+
+gText_TEST::
+	.string "L Button eventscript.$"
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour

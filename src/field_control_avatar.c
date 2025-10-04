@@ -79,6 +79,8 @@ static bool8 TryStartMiscWalkingScripts(u16);
 static bool8 TryStartStepCountScript(u16);
 static void UpdateFriendshipStepCounter(void);
 static void UpdateFollowerStepCounter(void);
+void InitStoryTalk(void);
+
 #if OW_POISON_DAMAGE < GEN_5
 static bool8 UpdatePoisonStepCounter(void);
 #endif // OW_POISON_DAMAGE
@@ -98,6 +100,7 @@ void FieldClearPlayerInput(struct FieldInput *input)
     input->heldDirection2 = FALSE;
     input->tookStep = FALSE;
     input->pressedBButton = FALSE;
+    input->pressedLButton = FALSE;
     input->pressedRButton = FALSE;
     input->input_field_1_1 = FALSE;
     input->input_field_1_2 = FALSE;
@@ -179,6 +182,8 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
                 input->pressedBButton = TRUE;
             if (newKeys & R_BUTTON && !FlagGet(DN_FLAG_SEARCHING))
                 input->pressedRButton = TRUE;
+            if (newKeys & L_BUTTON)
+                input->pressedLButton = TRUE;
         }
 
         if (heldKeys & (DPAD_UP | DPAD_DOWN | DPAD_LEFT | DPAD_RIGHT))
@@ -223,7 +228,9 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
         }
     }
 }
+
 #include "heat_start_menu.h"
+
 int ProcessPlayerFieldInput(struct FieldInput *input)
 {
     struct MapPosition position;
@@ -304,6 +311,13 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
 
     if (input->pressedRButton && TryStartDexNavSearch())
         return TRUE;
+    if (input->pressedLButton)
+    //Start Story Talk Eventscript
+    {   
+        PlaySE(SE_WIN_OPEN);
+        InitStoryTalk();
+        return TRUE;
+    }
 
     if(input->input_field_1_2 && DEBUG_OVERWORLD_MENU && !DEBUG_OVERWORLD_IN_MENU)
     {
@@ -659,6 +673,18 @@ static bool32 TrySetupDiveDownScript(void)
         return TRUE;
     }
     return FALSE;
+}
+
+void InitStoryTalk(void)
+{
+    if (!IsOverworldLinkActive())
+    {
+        PlayerFreeze();
+        StopPlayerAvatar();
+    }
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_OverworldStoryTalk);
+    UnlockPlayerFieldControls();
 }
 
 static bool32 TrySetupDiveEmergeScript(void)

@@ -592,6 +592,21 @@ SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2::
 	return
 
 
+EventScript_VarAkihikoIntroState1::
+# 354 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 1
+	goto_if_ge EventScript_VarAkihikoIntroState1_2
+EventScript_VarAkihikoIntroState1_1:
+	end
+
+EventScript_VarAkihikoIntroState1_2:
+# 355 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox EventScript_VarAkihikoIntroState1_Text_0
+# 357 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	closemessage
+	goto EventScript_VarAkihikoIntroState1_1
+
+
 AkihikosRoom2F_Eventscript_MikiAppears_Text_0:
 # 52 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_MIKI}BIG BRO!$"
@@ -695,6 +710,10 @@ SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_0:
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_1:
 # 327 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go.$"
+
+EventScript_VarAkihikoIntroState1_Text_0:
+# 355 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}L Button Talk Test var bigger than 1$"
 
 Lets_Go_Play::
 # 79 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"

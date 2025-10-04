@@ -348,3 +348,12 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2 {
     setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
     release
 }
+
+//Story Talk:
+script EventScript_VarAkihikoIntroState1{
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 1){
+    msgbox(format("
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}L Button Talk Test var bigger than 1"))
+    closemessage}
+    end
+}

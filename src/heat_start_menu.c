@@ -77,6 +77,8 @@ static void HeatStartMenu_LoadSprites(void);
 static void HeatStartMenu_CreateSprites(void);
 static void HeatStartMenu_SafariZone_CreateSprites(void);
 static void HeatStartMenu_LoadBgGfx(void);
+static void HeatStartMenu_ShowQuestButtons(void);
+static void HeatStartMenu_ShowMapButtons(void);
 static void HeatStartMenu_ShowTimeWindow(void);
 static void HeatStartMenu_UpdateClockDisplay(void);
 static void HeatStartMenu_UpdateMenuName(void);
@@ -127,6 +129,8 @@ struct HeatStartMenu {
   u32 sStartClockWindowId;
   u32 sMenuNameWindowId;
   u32 sSafariBallsWindowId;
+  u32 sQuestButtonWindowId;
+  u32 sMapButtonWindowId;
   u32 flag; // some u32 holding values for controlling the sprite anims and lifetime
   
   u32 spriteIdPoketch;
@@ -187,6 +191,26 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
     .baseBlock = 8
 };
 
+static const struct WindowTemplate sWindowTemplate_QuestButton = {
+    .bg = 0,
+    .tilemapLeft = 0,
+    .tilemapTop = 15,
+    .width = 7,
+    .height = 2,
+    .paletteNum = 15,
+    .baseBlock = 0x30
+};
+
+static const struct WindowTemplate sWindowTemplate_MapButton = {
+    .bg = 0,
+    .tilemapLeft = 19,
+    .tilemapTop = 15,
+    .width = 6,
+    .height = 2,
+    .paletteNum = 15,
+    .baseBlock = 0x30 +(7*2)
+};
+
 static const struct WindowTemplate sWindowTemplate_StartClock = {
   .bg = 0, 
   .tilemapLeft = 2, 
@@ -194,7 +218,7 @@ static const struct WindowTemplate sWindowTemplate_StartClock = {
   .width = 12, // If you want to shorten the dates to Sat., Sun., etc., change this to 9
   .height = 2, 
   .paletteNum = 15,
-  .baseBlock = 0x30
+  .baseBlock = 0x30 + (7*2) +(6*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_MenuName = {
@@ -204,7 +228,7 @@ static const struct WindowTemplate sWindowTemplate_MenuName = {
   .width = 7, 
   .height = 2, 
   .paletteNum = 15,
-  .baseBlock = 0x30 + (12*2)
+  .baseBlock = (0x30 + (7*2) + (12*2) +(6*2))
 };
 
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
@@ -214,7 +238,7 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .width = 7,
     .height = 4,
     .paletteNum = 15,
-    .baseBlock = (0x30 + (12*2)) + (7*2)
+    .baseBlock = (0x30 + (12*2)) + (7*2) + (7*2) +(6*2)
 };
 
 static const struct SpritePalette sSpritePal_Icon[] =
@@ -593,6 +617,9 @@ static const u8 gText_CurrentTimeAMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VA
 static const u8 gText_CurrentTimePM[]    = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1}:{STR_VAR_2} PM");
 static const u8 gText_CurrentTimePMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1} {STR_VAR_2} PM");
 
+static const u8 gText_QuestButton[]  = _("  {L_BUTTON} Quest");
+static const u8 gText_MapButton[]    = _("  Map {R_BUTTON}");
+
 static void SetSelectedMenu(void) {
   if (FlagGet(DN_FLAG_DEXNAV_GET) == TRUE) {
     menuSelected = MENU_POKETCH;
@@ -655,6 +682,10 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_LoadSprites();
     HeatStartMenu_CreateSprites();
     HeatStartMenu_LoadBgGfx();
+    sHeatStartMenu->sQuestButtonWindowId = AddWindow(&sWindowTemplate_QuestButton);
+    sHeatStartMenu->sMapButtonWindowId = AddWindow(&sWindowTemplate_MapButton);
+    HeatStartMenu_ShowQuestButtons();
+    HeatStartMenu_ShowMapButtons();
     HeatStartMenu_ShowTimeWindow();
     sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
     HeatStartMenu_UpdateMenuName();
@@ -668,6 +699,9 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_SafariZone_CreateSprites();
     HeatStartMenu_LoadBgGfx();
     ShowSafariBallsWindow();
+    sHeatStartMenu->sQuestButtonWindowId = AddWindow(&sWindowTemplate_QuestButton);
+    HeatStartMenu_ShowQuestButtons();
+    HeatStartMenu_ShowMapButtons();
     HeatStartMenu_ShowTimeWindow();
     sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
     HeatStartMenu_UpdateMenuName();
@@ -762,6 +796,22 @@ static void HeatStartMenu_LoadBgGfx(void) {
     ScheduleBgCopyTilemapToVram(0);
 }
 
+static void HeatStartMenu_ShowQuestButtons (void)
+{
+FillWindowPixelBuffer(sHeatStartMenu->sQuestButtonWindowId, PIXEL_FILL(0));
+PutWindowTilemap(sHeatStartMenu->sQuestButtonWindowId);
+AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 1, 0, 0x1, 0x0, 0x2);
+CopyWindowToVram(sHeatStartMenu->sQuestButtonWindowId, COPYWIN_FULL);
+}
+
+static void HeatStartMenu_ShowMapButtons (void)
+{
+FillWindowPixelBuffer(sHeatStartMenu->sMapButtonWindowId, PIXEL_FILL(0));
+PutWindowTilemap(sHeatStartMenu->sMapButtonWindowId);
+AddTextPrinterParameterized2(sHeatStartMenu->sMapButtonWindowId, FONT_SMALL, gText_MapButton, 0, 0, 0x1, 0x0, 0x2);
+CopyWindowToVram(sHeatStartMenu->sMapButtonWindowId, COPYWIN_FULL);
+}
+
 static void HeatStartMenu_ShowTimeWindow(void)
 {
     u8 analogHour;
@@ -786,9 +836,12 @@ static void HeatStartMenu_ShowTimeWindow(void)
         else
             StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  
     
-	AddTextPrinterParameterized(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
+	AddTextPrinterParameterized6(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 0x2, 0x0, 0x0);
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }
+
+
+
 
 static void HeatStartMenu_UpdateClockDisplay(void)
 {
@@ -825,7 +878,7 @@ static void HeatStartMenu_UpdateClockDisplay(void)
                 StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAMOff);  
     }
     
-	AddTextPrinterParameterized(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL);
+	AddTextPrinterParameterized6(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 0x2, 0x0, 0x0);
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }
 
@@ -1199,8 +1252,8 @@ static void ShowSaveInfoWindow(void) {
     u8 color;
     u32 xOffset;
     u32 yOffset;
-    const u8 *suffix;
-    u8 *alignedSuffix = gStringVar3;
+    //const u8 *suffix;
+    //u8 *alignedSuffix = gStringVar3;
 
     if (!FlagGet(FLAG_SYS_POKEDEX_GET))
     {

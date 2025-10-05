@@ -3366,3 +3366,13 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
 
     return TRUE;
 }
+
+void ScrCmd_IsCurrentMap(struct ScriptContext *ctx)
+{
+    s16 map = VarGet(ScriptReadHalfword(ctx));
+
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(map) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(map))
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
+}

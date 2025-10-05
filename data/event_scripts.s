@@ -591,18 +591,8 @@ gStdScripts_End::
 
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
+	.include "data/scripts/story_talk.inc"
 
-//STORY TALK:
-
-EventScript_OverworldStoryTalk::
-	lock
-	msgbox gText_TEST
-	goto EventScript_VarAkihikoIntroState1
-	release
-	end
-
-gText_TEST::
-	.string "L Button eventscript.$"
 
 EventScript_WhiteOut::
 	call EverGrandeCity_HallOfFame_EventScript_ResetEliteFour

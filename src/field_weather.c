@@ -1208,11 +1208,3 @@ static const u8 sWeatherNames[WEATHER_COUNT][24] = {
     [WEATHER_ROUTE123_CYCLE]     = _("ROUTE123 CYCLE"),
     [WEATHER_FOG]                = _("FOG"),
 };
-
-static const u8 sDebugText_WeatherNotDefined[] = _("NOT DEFINED!!!");
-const u8 *GetWeatherName(u32 weatherId)
-{
-    if (sWeatherNames[weatherId][0] != 0)
-        return sWeatherNames[weatherId];
-    return sDebugText_WeatherNotDefined;
-}

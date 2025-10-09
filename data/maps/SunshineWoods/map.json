@@ -117,6 +117,32 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "OW_Chewtle",
       "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "x": 20,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SunshineWoods_Eventscript_PolicemenBlockingOrphanage",
+      "flag": "FLAG_HIDE_POLICEMEN_SUNSHINE_WOODS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "x": 21,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SunshineWoods_Eventscript_PolicemenBlockingOrphanage",
+      "flag": "FLAG_HIDE_POLICEMEN_SUNSHINE_WOODS"
     }
   ],
   "warp_events": [
@@ -135,15 +161,15 @@
       "dest_warp_id": "2"
     },
     {
-      "x": 0,
-      "y": 16,
+      "x": 2,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_TOWN",
       "dest_warp_id": "0"
     },
     {
-      "x": 0,
-      "y": 17,
+      "x": 2,
+      "y": 16,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_TOWN",
       "dest_warp_id": "1"

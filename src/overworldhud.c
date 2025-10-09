@@ -147,7 +147,7 @@ void CreateOverworldTalkHUD(void)
 static void Task_DelayPrintOverworldTrainerHUD(u8 taskId)
 {
     if (!gPaletteFade.active)
-    {
+    {   if (FlagGet(FLAG_HIDE_TALK_BUTTON) == FALSE){
         LoadCompressedSpriteSheet(&sSpriteSheet_TrainerCountHUD);
         LoadSpritePalette(&sSpritePal_TrainerCountHUD);
         gOWHUDSprite = SPRITE_NONE;
@@ -156,16 +156,17 @@ static void Task_DelayPrintOverworldTrainerHUD(u8 taskId)
 
         //PrintTrainerCount(gOWHUDSprite, 0, gSprites[gOWHUDSprite].oam.tileNum + 5);
 
-        if (GetFlashLevel() > 0)
-        {
+            if (GetFlashLevel() > 0)
+            {
             SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_OBJWIN_ON);
             SetGpuRegBits(REG_OFFSET_WINOUT, WINOUT_WINOBJ_OBJ);
             gOWHUDSpriteMask = SPRITE_NONE;
             gOWHUDSpriteMask = CreateSprite(&sSpriteTemplate_TrainerCountHUD, 19, 144, 0);
             gSprites[gOWHUDSpriteMask].invisible = FALSE;
             gSprites[gOWHUDSpriteMask].oam.objMode = ST_OAM_OBJ_WINDOW;
-        }
+            }
         DestroyTask(taskId);
+        }
     }
 }
 

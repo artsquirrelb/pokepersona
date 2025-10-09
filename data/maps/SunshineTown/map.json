@@ -188,7 +188,7 @@
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "18",
-      "script": "SunshineTown_Eventscript_NoPointEnteringPC"
+      "script": "SunshineTown_Eventscript_NoPointLeavingTown"
     },
     {
       "type": "trigger",
@@ -198,6 +198,24 @@
       "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "18",
       "script": "SunshineTown_Eventscript_NoPointLeavingTown"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "17",
+      "script": "SunshineTown_Eventscript_WarpToBurningOrphanage2"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "17",
+      "script": "SunshineTown_Eventscript_WarpToBurningOrphanage2"
     }
   ],
   "bg_events": [

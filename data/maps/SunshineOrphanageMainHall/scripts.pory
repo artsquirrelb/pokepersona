@@ -10,6 +10,7 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
             hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)}
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 11) {
             clearflag(FLAG_HIDE_SHINJIRO)
+            setflag(FLAG_HIDE_TALK_BUTTON)
             setobjectxyperm (4, 12, 5)
             setobjectmovementtype (4, MOVEMENT_TYPE_FACE_DOWN)
             setobjectxyperm (13, 18, 6)
@@ -21,9 +22,8 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) >= 10) {
             setobjectxyperm (1, 0, 21)
-            hideobjectat (1, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
+            setflag(FLAG_TEMP_1)
             setobjectxyperm (2, 0, 18)
-            hideobjectat (2, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
         }
     }
             
@@ -128,7 +128,8 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
     No Pokemon are shiny locked, including the story starters.\p 
     The story starters have been buffed and come with pre-determined Nature and Perfect IVs.\p
     You also can not release them."))
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 8)}
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 8)
+    clearflag(FLAG_HIDE_TALK_BUTTON)}
     release
 }
 
@@ -206,6 +207,7 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
         See you tomorrow."))
     closemessage
     setvar(VAR_AKIHIKOS_INTRO_STATE, 9)
+    setflag(FLAG_HIDE_TALK_BUTTON)
     fadescreenswapbuffers(FADE_TO_BLACK)
     playse(MUS_HEAL)
     waitse
@@ -500,6 +502,7 @@ script SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage{
     removeobject(13)
     setflag(FLAG_HIDE_SHINJIRO)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 12)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
     setrespawn(HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL)
     release
 }

@@ -9,7 +9,7 @@ SunshineOrphanage_Burning_MapScripts::
 
 SunshineOrphanage_Burning_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 6 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 17
+	compare VAR_AKIHIKOS_INTRO_STATE, 18
 	goto_if_eq SunshineOrphanage_Burning_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return
 
@@ -22,16 +22,16 @@ SunshineOrphanage_Burning_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 
 SunshineOrphanage_Burning_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 3 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 17, SunshineOrphanage_Burning_OnWarp17
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 18, SunshineOrphanage_Burning_OnWarp18
 	.2byte 0
 
 SunshineOrphanage_Burning_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 13 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 17, SunshineOrphanage_Burning_OnFrame17
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 18, SunshineOrphanage_Burning_OnFrame18
 	.2byte 0
 
 
-SunshineOrphanage_Burning_OnWarp17::
+SunshineOrphanage_Burning_OnWarp18::
 # 18 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	applymovement LOCALID_PLAYER, faceup
 # 19 "data/maps/SunshineOrphanage_Burning/scripts.pory"
@@ -39,7 +39,7 @@ SunshineOrphanage_Burning_OnWarp17::
 	return
 
 
-SunshineOrphanage_Burning_OnFrame17::
+SunshineOrphanage_Burning_OnFrame18::
 # 26 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	lockall
 # 27 "data/maps/SunshineOrphanage_Burning/scripts.pory"
@@ -577,7 +577,7 @@ SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver::
 # 278 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	waitse
 # 279 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 18
+	setvar VAR_AKIHIKOS_INTRO_STATE, 19
 # 280 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	setflag FLAG_HIDE_SHINJIRO
 # 281 "data/maps/SunshineOrphanage_Burning/scripts.pory"

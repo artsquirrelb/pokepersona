@@ -1,9 +1,18 @@
 mapscripts SunshineWoods_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) < 22){
+            setflag(FLAG_HIDE_POLICEMEN_SUNSHINE_WOODS)
+        }
         if(var(VAR_AKIHIKOS_INTRO_STATE) == 5) {
             clearflag(FLAG_HIDE_MIKI)
-            clearflag(FLAG_HIDE_SHINJIRO)}
+            clearflag(FLAG_HIDE_SHINJIRO)
         }
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 22){
+            clearflag(FLAG_HIDE_POLICEMEN_SUNSHINE_WOODS)
+        }
+        }
+        
+        
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 6: Akihiko_Looking_at_Miki]
     MAP_SCRIPT_ON_FRAME_TABLE [
@@ -30,7 +39,8 @@ script SunshineWoods_Eventscript_DoNotEnterTheGrass {
         {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Okay!"))
     fadescreenswapbuffers(FADE_TO_BLACK)
     release
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 6) 
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 6)
+    setflag(FLAG_HIDE_TALK_BUTTON) 
     warpsilent(MAP_SUNSHINE_WOODS, 3, 5)
 }
 
@@ -253,4 +263,9 @@ text SunshineWoods_Text_HotaruDefeated {
 text SunshineWoods_Text_HotaruPostBattle {
     format("You want to know where I got the items?\p
     A grandma in Sunshine Town gave them to me after I played with her Pokémon.")
+}
+
+script SunshineWoods_Eventscript_PolicemenBlockingOrphanage {
+    msgbox(format("Our apologies but Sunshine Orphanage is currently off-limit."))
+    closemessage
 }

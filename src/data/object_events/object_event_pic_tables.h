@@ -1369,6 +1369,14 @@ const struct SpriteFrameImage gObjectEventPicTable_Shinjiro[] = {
     overworld_frame(gObjectEventPic_Shinjiro, 4, 4, 8),
 };
 
+const struct SpriteFrameImage gObjectEventPicTable_Shinjiro_Fainted[] = {
+    overworld_frame(gObjectEventPic_Shinjiro_Fainted, 4, 4, 0),
+};
+
+const struct SpriteFrameImage gObjectEventPicTable_Akihiko_Fainted[] = {
+    overworld_frame(gObjectEventPic_Akihiko_Fainted, 4, 4, 0),
+};
+
 const struct SpriteFrameImage gObjectEventPicTable_Miki[] = {
     overworld_frame(gObjectEventPic_Miki, 4, 4, 0),
     overworld_frame(gObjectEventPic_Miki, 4, 4, 1),

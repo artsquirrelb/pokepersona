@@ -1,12 +1,15 @@
 mapscripts BlankMap_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_AKIHIKOS_INTRO_STATE) > 0) {setflag(FLAG_SPAWN_INVISIBLE)}
+        if (var(VAR_AKIHIKOS_INTRO_STATE) > 0) {
+            setflag(FLAG_SPAWN_INVISIBLE)}
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 7: SunshineWoods_Eventscript_WarpBackToOrphanage
         VAR_AKIHIKOS_INTRO_STATE, 9: SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom
         VAR_AKIHIKOS_INTRO_STATE, 13: SunshineTown_PokemonCenter_Eventscript_Onframe13
-        VAR_AKIHIKOS_INTRO_STATE, 18: SunshineOrphanage_Burning_Eventscript_OnFrame18]
+        VAR_AKIHIKOS_INTRO_STATE, 19: SunshineOrphanage_Burning_Eventscript_OnFrame19
+        VAR_AKIHIKOS_INTRO_STATE, 20: SunshineTownRiverbank_Eventscript_OnFrame20
+        VAR_AKIHIKOS_INTRO_STATE, 22: SunshineTownRiverbank_Eventscript_OnFrame22]
 }
 
 
@@ -37,9 +40,26 @@ script SunshineTown_PokemonCenter_Eventscript_Onframe13 {
     release
 }
 
-script SunshineOrphanage_Burning_Eventscript_OnFrame18 {
+script SunshineOrphanage_Burning_Eventscript_OnFrame19 {
     lock
     delay(30)
     warpsilent(MAP_SUNSHINE_TOWN_RIVERBANK, 13, 5)
+    clearflag(FLAG_SPAWN_INVISIBLE)
     release
+}
+
+script SunshineTownRiverbank_Eventscript_OnFrame20 {
+    lock
+    delay(30)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 21)
+    warpsilent(MAP_SUNSHINE_TOWN_RIVERBANK, 13, 0)
+    clearflag(FLAG_SPAWN_INVISIBLE)
+}
+
+script SunshineTownRiverbank_Eventscript_OnFrame22 {
+    msgbox("A few days later.")
+    closemessage
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 23)
+    warpsilent(MAP_SUNSHINE_TOWN_KUROSAWAS_HOUSE, 4, 4)
+    clearflag(FLAG_SPAWN_INVISIBLE)
 }

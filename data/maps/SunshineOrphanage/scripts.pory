@@ -4,8 +4,10 @@ mapscripts SunshineOrphanage_MapScripts {
             setflag(FLAG_SPAWN_INVISIBLE)
             setflag(FLAG_HIDE_MIKI)
             setflag(FLAG_HIDE_SHINJIRO)
+            setflag(FLAG_HIDE_TALK_BUTTON)
         }
         elif (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
+            setflag(FLAG_HIDE_TALK_BUTTON)
             clearflag(FLAG_HIDE_MIKI)
             clearflag(FLAG_HIDE_SHINJIRO)
         }
@@ -84,6 +86,7 @@ script Shinjiro_and_Miki_Join_Party {
     setflag(FLAG_HIDE_SHINJIRO)
     msgbox(format("{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Shinjiro and Miki are now traveling with Akihiko."))
     setvar(VAR_AKIHIKOS_INTRO_STATE, 5)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
     release
 }
 movement Shinjiro_joins {

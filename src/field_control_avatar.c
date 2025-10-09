@@ -304,6 +304,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         //ShowStartMenu();
         HideMapNamePopUpWindow();
         HideTalkButton();
+        FlagSet(FLAG_HIDE_TALK_BUTTON);
         HeatStartMenu_Init();
         return TRUE;
     }

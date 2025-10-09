@@ -202,7 +202,7 @@ static const struct WindowTemplate sWindowTemplate_QuestButton = {
     .width = 7,
     .height = 2,
     .paletteNum = 15,
-    .baseBlock = 0x30
+    .baseBlock = 148
 };
 
 static const struct WindowTemplate sWindowTemplate_MapButton = {
@@ -212,7 +212,7 @@ static const struct WindowTemplate sWindowTemplate_MapButton = {
     .width = 6,
     .height = 2,
     .paletteNum = 15,
-    .baseBlock = 0x30 +(7*2)
+    .baseBlock = 148 +(7*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_StartClock = {
@@ -222,7 +222,7 @@ static const struct WindowTemplate sWindowTemplate_StartClock = {
   .width = 12, // If you want to shorten the dates to Sat., Sun., etc., change this to 9
   .height = 2, 
   .paletteNum = 15,
-  .baseBlock = 0x30 + (7*2) +(6*2)
+  .baseBlock = 148 + (7*2) +(6*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_MenuName = {
@@ -232,7 +232,7 @@ static const struct WindowTemplate sWindowTemplate_MenuName = {
   .width = 7, 
   .height = 2, 
   .paletteNum = 15,
-  .baseBlock = (0x30 + (7*2) + (12*2) +(6*2))
+  .baseBlock = (148 + (7*2) + (12*2) +(6*2))
 };
 
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
@@ -242,7 +242,7 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .width = 7,
     .height = 4,
     .paletteNum = 15,
-    .baseBlock = (0x30 + (12*2)) + (7*2) + (7*2) +(6*2)
+    .baseBlock = (148 + (12*2)) + (7*2) + (7*2) +(6*2)
 };
 
 static const struct SpritePalette sSpritePal_Icon[] =
@@ -994,7 +994,6 @@ static void HeatStartMenu_ExitAndClearTilemap(void) {
 
   ScriptUnfreezeObjectEvents();  
   UnlockPlayerFieldControls();
-  CreateOverworldTalkHUD();
 }
 
 static void DoCleanUpAndChangeCallback(MainCallback callback) {
@@ -1079,6 +1078,8 @@ static u8 SaveReturnSuccessCallback(void)
     if (!IsSEPlaying() && SaveSuccesTimer())
     {
         HideSaveInfoWindow();
+        CreateOverworldTalkHUD();
+        FlagClear(FLAG_HIDE_TALK_BUTTON);
         return SAVE_SUCCESS;
     }
     else
@@ -1363,6 +1364,7 @@ static void Task_HandleSave(u8 taskId) {
       ScriptUnfreezeObjectEvents();
       UnlockPlayerFieldControls();
       SoftResetInBattlePyramid();
+      FlagClear(FLAG_HIDE_TALK_BUTTON);
       DestroyTask(taskId);
       break;
   }
@@ -1498,7 +1500,9 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
 
   } else if (JOY_NEW(B_BUTTON) && sHeatStartMenu->loadState == 0) {
     PlaySE(SE_SELECT);
-    HeatStartMenu_ExitAndClearTilemap();  
+    HeatStartMenu_ExitAndClearTilemap(); 
+    FlagClear(FLAG_HIDE_TALK_BUTTON);
+    CreateOverworldTalkHUD(); 
     DestroyTask(taskId);
   } else if (gMain.newKeys & DPAD_DOWN && sHeatStartMenu->loadState == 0) {
     HeatStartMenu_HandleInput_DPADDOWN();

@@ -1653,9 +1653,9 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .x = 0,
         .y = 1,
         .speed = 0,
-        .fgColor = 13,
+        .fgColor = 1,
         .bgColor = 14,
-        .shadowColor = 15,
+        .shadowColor = 14,
     },
     [B_WIN_LEVEL_UP_BANNER] = {
         .fillValue = PIXEL_FILL(0),

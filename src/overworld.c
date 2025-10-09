@@ -1,5 +1,6 @@
 #include "global.h"
 #include "overworld.h"
+#include "overworldhud.h"
 #include "battle_pyramid.h"
 #include "battle_setup.h"
 #include "berry.h"
@@ -2405,6 +2406,7 @@ static void ResumeMap(bool32 a1)
     ResumePausedWeather();
     if (!a1)
         SetUpFieldTasks();
+    CreateOverworldTalkHUD();
     RunOnResumeMapScript();
     TryStartMirageTowerPulseBlendEffect();
 }

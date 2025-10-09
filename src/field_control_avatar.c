@@ -25,6 +25,7 @@
 #include "match_call.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
+#include "overworldhud.h"
 #include "pokemon.h"
 #include "safari_zone.h"
 #include "script.h"
@@ -41,6 +42,8 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
+#include "map_name_popup.h"
+
 
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPrevMetatileBehavior = 0;
@@ -299,6 +302,8 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     {
         PlaySE(SE_WIN_OPEN);
         //ShowStartMenu();
+        HideMapNamePopUpWindow();
+        HideTalkButton();
         HeatStartMenu_Init();
         return TRUE;
     }
@@ -314,7 +319,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
     if (input->pressedLButton)
     //Start Story Talk Eventscript
     {   
-        PlaySE(SE_WIN_OPEN);
+        PlaySE(SE_SELECT);
         InitStoryTalk();
         return TRUE;
     }

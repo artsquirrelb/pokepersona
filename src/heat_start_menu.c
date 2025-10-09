@@ -30,6 +30,7 @@
 #include "new_game.h"
 #include "option_menu.h"
 #include "overworld.h"
+#include "overworldhud.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "pokedex.h"
@@ -993,6 +994,7 @@ static void HeatStartMenu_ExitAndClearTilemap(void) {
 
   ScriptUnfreezeObjectEvents();  
   UnlockPlayerFieldControls();
+  CreateOverworldTalkHUD();
 }
 
 static void DoCleanUpAndChangeCallback(MainCallback callback) {

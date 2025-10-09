@@ -21,6 +21,9 @@ movement playerfaceright {
 
 script SunshineWoods_Eventscript_DoNotEnterTheGrass {
     lock
+    applymovement(2, facedown)
+    applymovement(3, facedown)
+    waitmovement(0)
     msgbox(format(
         "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Alright, we're here.\p
         Don't enter the tall grass, okay?\p

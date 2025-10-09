@@ -2852,7 +2852,7 @@
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
 
-.macro iscurrentmap map:req
+	.macro iscurrentmap map:req
     callnative ScrCmd_IsCurrentMap
     .2byte \map
     .endm

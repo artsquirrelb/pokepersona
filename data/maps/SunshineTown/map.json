@@ -151,7 +151,7 @@
       "y": 16,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "17",
+      "var_value": "18",
       "script": "SunshineTown_Eventscript_WarpToBurningOrphanage"
     },
     {
@@ -160,8 +160,44 @@
       "y": 17,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "17",
+      "var_value": "18",
       "script": "SunshineTown_Eventscript_WarpToBurningOrphanage"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "17",
+      "script": "SunshineTown_Eventscript_NoPointEnteringPC"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "18",
+      "script": "SunshineTown_Eventscript_NoPointEnteringPC"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "18",
+      "script": "SunshineTown_Eventscript_NoPointEnteringPC"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "18",
+      "script": "SunshineTown_Eventscript_NoPointLeavingTown"
     }
   ],
   "bg_events": [
@@ -180,14 +216,6 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SunshineTown_Eventscript_TownSign"
-    },
-    {
-      "type": "sign",
-      "x": 15,
-      "y": 9,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "testQuestmenu"
     }
   ]
 }

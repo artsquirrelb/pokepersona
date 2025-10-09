@@ -9,6 +9,7 @@
 #include "main.h"
 #include "menu.h"
 #include "map_name_popup.h"
+#include "overworldhud.h"
 #include "palette.h"
 #include "region_map.h"
 #include "rtc.h"

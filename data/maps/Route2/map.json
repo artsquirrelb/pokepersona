@@ -1,11 +1,11 @@
 {
-  "id": "MAP_SUNSHINE_TOWN_RIVERBANK",
-  "name": "SunshineTownRiverbank",
-  "layout": "LAYOUT_SUNSHINE_TOWN_RIVERBANK",
-  "music": "MUS_SUNSHINE_ORPHANAGE",
-  "region_map_section": "MAPSEC_SUNSHINETOWN_RIVERBANK",
+  "id": "MAP_ROUTE2",
+  "name": "Route2",
+  "layout": "LAYOUT_ROUTE2",
+  "music": "MUS_ROUTE101",
+  "region_map_section": "MAPSEC_ROUTE_2",
   "requires_flash": false,
-  "weather": "WEATHER_NONE",
+  "weather": "WEATHER_SUNNY",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -14,42 +14,47 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
+      "map": "MAP_ROUTE1",
+      "offset": -12,
+      "direction": "down"
+    },
+    {
       "map": "MAP_SUNSHINE_TOWN",
-      "offset": -3,
-      "direction": "up"
+      "offset": -1,
+      "direction": "right"
     }
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_AKIHIKO_FAINTED",
-      "x": 13,
-      "y": 5,
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 24,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_104_ORAN_1",
+      "script": "BerryTreeScript",
+      "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SHINJIRO_FAINTED",
-      "x": 15,
-      "y": 5,
+      "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
+      "x": 22,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_103_CHERI_1",
+      "script": "BerryTreeScript",
+      "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MOM",
-      "x": 13,
-      "y": 0,
+      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
+      "x": 27,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -57,12 +62,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_3"
+      "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AZUMARILL)",
-      "x": 14,
-      "y": 6,
+      "graphics_id": "OBJ_EVENT_GFX_NORMAN",
+      "x": 26,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -70,7 +75,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_2"
+      "flag": "0"
     }
   ],
   "warp_events": [],

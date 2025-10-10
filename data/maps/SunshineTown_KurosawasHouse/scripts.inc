@@ -231,64 +231,60 @@ SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa::
 	waitse
 # 138 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	msgbox SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa_Text_1
-# 143 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	closemessage
 # 144 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 24
+	closemessage
 # 145 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
-# 146 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	warp MAP_SUNSHINE_TOWN, 1, 14
 	return
 
 
 Growlithe_NPC::
-# 150 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 149 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	lockall
-# 151 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 150 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
-# 152 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 151 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	applymovement 2, Growlithe_NPC_Movement
-# 153 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 152 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	waitmovement 0
-# 154 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 153 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	msgbox Growlithe_NPC_Text_0
-# 155 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 154 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	closemessage
-# 156 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 155 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	releaseall
 	return
 
 
-# 158 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 157 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 Growlithe_NPC_Movement:
-# 159 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 158 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	face_player
-# 160 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 159 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	shake_horizontal
 	step_end
 
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse::
-# 164 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 163 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	lock
-# 165 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 164 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	faceplayer
-# 166 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 165 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	setspeaker SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_0
-# 167 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 166 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	goto_if_set FLAG_TEMP_2, SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_1
-# 173 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 172 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	msgbox SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_2
-# 179 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 178 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	closemessage
-# 180 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 179 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	setflag FLAG_TEMP_2
 	return
 
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_1:
-# 168 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 167 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	msgbox SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_1
-# 170 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 169 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	closemessage
 	return
 
@@ -352,25 +348,27 @@ SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa_Text_1:
 	.string "I'm giving this to you, Aragaki-kun.\p"
 	.string "Befriending a Pokémon will greatly help\n"
 	.string "you on your journey.\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Thank you, Kurosawa-san.\p"
+	.string "You also should help other people if you\n"
+	.string "can.\p"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Thank you, Kurosawa-san. We will.\p"
 	.string "{SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Stay safe, kids.$"
 
 Growlithe_NPC_Text_0:
-# 154 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 153 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "Growlithe looks determined.$"
 
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_0:
-# 166 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 165 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "Kurosawa$"
 
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_1:
-# 168 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 167 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}You kids are always welcomed to spend\n"
 	.string "the night here if you want to.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you, Kurosawa-san.$"
 
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_2:
-# 173 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 172 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}The Sanadas and the Aragakis were\n"
 	.string "supposed to pick you two up but they\l"
 	.string "all got into accidents and are\l"

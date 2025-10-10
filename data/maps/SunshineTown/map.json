@@ -14,20 +14,20 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_ROUTE1",
-      "offset": -1,
-      "direction": "left"
+      "map": "MAP_SUNSHINE_TOWN_RIVERBANK",
+      "offset": 3,
+      "direction": "down"
     },
     {
-      "map": "MAP_SUNSHINE_TOWN_RIVERBANK",
+      "map": "MAP_ROUTE2",
       "offset": 1,
-      "direction": "down"
+      "direction": "left"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 5,
+      "x": 7,
       "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -40,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 20,
+      "x": 22,
       "y": 12,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -53,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MOM",
-      "x": 1,
+      "x": 3,
       "y": 14,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -66,7 +66,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
-      "x": 6,
+      "x": 8,
       "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -79,10 +79,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
-      "x": 18,
+      "x": 20,
       "y": 7,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
@@ -93,7 +93,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(HAPPINY)",
-      "x": 26,
+      "x": 28,
       "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -107,42 +107,42 @@
   ],
   "warp_events": [
     {
-      "x": 29,
+      "x": 31,
       "y": 16,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_WOODS",
       "dest_warp_id": "2"
     },
     {
-      "x": 29,
+      "x": 31,
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_WOODS",
       "dest_warp_id": "3"
     },
     {
-      "x": 6,
+      "x": 8,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_TOWN_POKEMON_CENTER",
       "dest_warp_id": "1"
     },
     {
-      "x": 1,
+      "x": 3,
       "y": 13,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_TOWN_KUROSAWAS_HOUSE",
       "dest_warp_id": "0"
     },
     {
-      "x": 17,
+      "x": 19,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_TOWN_OLD_WOMANS_HOUSE_1F",
       "dest_warp_id": "0"
     },
     {
-      "x": 21,
+      "x": 23,
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_TOWN_OLD_WOMANS_HOUSE_2F",
@@ -152,7 +152,7 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 0,
+      "x": 2,
       "y": 6,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -161,7 +161,7 @@
     },
     {
       "type": "trigger",
-      "x": 0,
+      "x": 2,
       "y": 7,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -170,7 +170,7 @@
     },
     {
       "type": "trigger",
-      "x": 0,
+      "x": 2,
       "y": 6,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -179,7 +179,7 @@
     },
     {
       "type": "trigger",
-      "x": 0,
+      "x": 2,
       "y": 7,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -188,7 +188,7 @@
     },
     {
       "type": "trigger",
-      "x": 29,
+      "x": 31,
       "y": 16,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -197,7 +197,7 @@
     },
     {
       "type": "trigger",
-      "x": 29,
+      "x": 31,
       "y": 17,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -206,7 +206,7 @@
     },
     {
       "type": "trigger",
-      "x": 6,
+      "x": 8,
       "y": 5,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -215,7 +215,7 @@
     },
     {
       "type": "trigger",
-      "x": 6,
+      "x": 8,
       "y": 5,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -224,7 +224,7 @@
     },
     {
       "type": "trigger",
-      "x": 0,
+      "x": 2,
       "y": 6,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -233,7 +233,7 @@
     },
     {
       "type": "trigger",
-      "x": 0,
+      "x": 2,
       "y": 7,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -242,7 +242,7 @@
     },
     {
       "type": "trigger",
-      "x": 29,
+      "x": 31,
       "y": 16,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -251,7 +251,7 @@
     },
     {
       "type": "trigger",
-      "x": 29,
+      "x": 31,
       "y": 17,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -262,7 +262,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 13,
+      "x": 15,
       "y": 7,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -270,7 +270,7 @@
     },
     {
       "type": "sign",
-      "x": 15,
+      "x": 17,
       "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

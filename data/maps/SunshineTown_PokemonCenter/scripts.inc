@@ -15,7 +15,7 @@ SunshineTown_PokemonCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 SunshineTown_PokemonCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 # 14 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 16
-	goto_if_ge SunshineTown_PokemonCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+	goto_if_ge SunshineTown_PokemonCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
 	return
 
 SunshineTown_PokemonCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
@@ -39,6 +39,12 @@ SunshineTown_PokemonCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 SunshineTown_PokemonCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 # 14 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	playbgm MUS_HELP, TRUE
+	return
+
+SunshineTown_PokemonCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
+# 14 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 24
+	goto_if_lt SunshineTown_PokemonCenter_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 	return
 
 SunshineTown_PokemonCenter_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:

@@ -49,9 +49,9 @@
 #define DN_FLAG_DETECTOR_MODE           0x23 // Allow player to find hidden mons Flag
 #define I_EXP_SHARE_FLAG                0x24 // Item configs
 #define FLAG_FOLLOWERS_DISABLED         0x25 // Enables / Disables followers by using a flag. Helpful to disable followers for a period of time.
-#define FLAG_RUNNING_SHOES_TOGGLE       0x26 
-#define FLAG_HIDE_TALK_BUTTON           0x27 // Was Unused Flag
-#define FLAG_UNUSED_0x028    0x28 // Unused Flag
+#define FLAG_HIDE_TALK_BUTTON           0x26 // Was Unused Flag
+#define FLAG_NO_CATCHING                0x27 // Was Unused Flag
+#define FLAG_NO_RUNNING                 0x28 // Was Unused Flag
 #define FLAG_UNUSED_0x029    0x29 // Unused Flag
 #define FLAG_UNUSED_0x02A    0x2A // Unused Flag
 #define FLAG_UNUSED_0x02B    0x2B // Unused Flag

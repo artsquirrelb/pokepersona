@@ -1605,7 +1605,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .speed = 0,
         .fgColor = 13,
         .bgColor = 14,
-        .shadowColor = 15,
+        .shadowColor = 14,
     },
     [B_WIN_PP_REMAINING] = {
         .fillValue = PIXEL_FILL(0xE),
@@ -1635,7 +1635,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .speed = 0,
         .fgColor = 13,
         .bgColor = 14,
-        .shadowColor = 15,
+        .shadowColor = 14,
     },
     [B_WIN_YESNO] = {
         .fillValue = PIXEL_FILL(0xE),
@@ -1645,7 +1645,7 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .speed = 0,
         .fgColor = 13,
         .bgColor = 14,
-        .shadowColor = 15,
+        .shadowColor = 14,
     },
     [B_WIN_LEVEL_UP_BOX] = {
         .fillValue = PIXEL_FILL(0xE),

@@ -5320,7 +5320,7 @@
     {
       "id": "LAYOUT_SUNSHINE_TOWN",
       "name": "SunshineTown_Layout",
-      "width": 32,
+      "width": 34,
       "height": 25,
       "border_width": 2,
       "border_height": 2,
@@ -5332,12 +5332,12 @@
     {
       "id": "LAYOUT_ROUTE1",
       "name": "Route1_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 40,
+      "height": 28,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Gen4General",
-      "secondary_tileset": "gTileset_SunshineTown",
+      "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/Route1/border.bin",
       "blockdata_filepath": "data/layouts/Route1/map.bin"
     },
@@ -5484,6 +5484,18 @@
       "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
       "border_filepath": "data/layouts/SunshineTown_OldWomansHouse_2F/border.bin",
       "blockdata_filepath": "data/layouts/SunshineTown_OldWomansHouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE2",
+      "name": "Route2_Layout",
+      "width": 30,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_SunshineTown",
+      "border_filepath": "data/layouts/Route2/border.bin",
+      "blockdata_filepath": "data/layouts/Route2/map.bin"
     }
   ]
 }

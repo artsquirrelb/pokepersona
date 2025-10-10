@@ -3,7 +3,7 @@ SunshineOrphanageMainHall_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION
 # 2 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
-# 30 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 31 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
@@ -12,15 +12,15 @@ SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	compare VAR_AKIHIKOS_INTRO_STATE, 7
 	goto_if_eq SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
-# 11 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 12 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 11
 	goto_if_eq SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
-# 19 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 20 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 12
 	goto_if_ge SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
-# 23 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 24 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 10
 	goto_if_ge SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_10
 	return
@@ -31,41 +31,43 @@ SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 7 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	clearflag FLAG_HIDE_SHINJIRO
 # 8 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setobjectxyperm 4, 11, 23
+	setflag FLAG_HIDE_TALK_BUTTON
 # 9 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectxyperm 4, 11, 23
 # 10 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_RIGHT
+# 11 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	hideobjectat 15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL
 	goto SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
-# 12 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	clearflag FLAG_HIDE_SHINJIRO
 # 13 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_SHINJIRO
 # 14 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setobjectxyperm 4, 12, 5
+	setflag FLAG_HIDE_TALK_BUTTON
 # 15 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_DOWN
+	setobjectxyperm 4, 12, 5
 # 16 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setobjectxyperm 13, 18, 6
+	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_DOWN
 # 17 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	setobjectxyperm 13, 18, 6
+# 18 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectmovementtype 13, MOVEMENT_TYPE_FACE_LEFT
 	goto SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
 
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
-# 20 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setobjectxyperm 4, 6, 22
 # 21 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	setobjectxyperm 4, 6, 22
+# 22 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectmovementtype 4, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
 	goto SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_10:
-# 24 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setobjectxyperm 1, 0, 21
 # 25 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setflag FLAG_TEMP_1
+	setobjectxyperm 1, 0, 21
 # 26 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	setflag FLAG_TEMP_1
+# 27 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectxyperm 2, 0, 18
 	return
 
@@ -75,302 +77,300 @@ SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 	.2byte 0
 
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-# 31 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 7, SunshineOrphanageMainHall_Eventscript_OnFrame7
 # 32 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 7, SunshineOrphanageMainHall_Eventscript_OnFrame7
+# 33 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 11, SunshineOrphanageMainHall_Eventscript_OnFrame11
 	.2byte 0
 
 
-# 35 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-faceright:
 # 36 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+faceright:
+# 37 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	face_right
 	step_end
 
-# 39 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-faceleft:
 # 40 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+faceleft:
+# 41 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	face_left
 	step_end
 
 SunshineOrphanageMainHall_OnWarp7::
-# 44 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 45 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	applymovement LOCALID_PLAYER, faceup
 	return
 
 
 SunshineOrphanageMainHall_Eventscript_OnFrame7::
-# 47 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 48 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	goto SunshineOrphanageMainHall_Eventscript_HealingPawmi
 	return
 
 
 SunshineOrphanageMainHall_Eventscript_OnFrame11::
-# 51 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 52 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	goto SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage
 	return
 
 
 SunshineOrphanageMainHall_Eventscript_HealingPawmi::
-# 55 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	lock
 # 56 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	delay 30
+	lock
 # 57 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	playse MUS_HEAL
+	delay 30
 # 58 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitse
+	playse MUS_HEAL
 # 59 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	release
+	waitse
 # 60 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	release
+# 61 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	goto SunshineOrphanageMainHall_Eventscript_PawmiIsHealed
 	return
 
 
-# 62 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-facedown:
 # 63 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+facedown:
+# 64 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	face_down
 	step_end
 
-# 65 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-BlisseyHealingPawmi:
 # 66 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+BlisseyHealingPawmi:
+# 67 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	walk_in_place_down
 	step_end
 
 SunshineOrphanageMainHall_Eventscript_PawmiIsHealed::
-# 70 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	lock
 # 71 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 11, BlisseyHealingPawmi
+	lock
 # 72 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	playmoncry SPECIES_BLISSEY, CRY_MODE_NORMAL
+	applymovement 11, BlisseyHealingPawmi
 # 73 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_BLISSEY, CRY_MODE_NORMAL
 # 74 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	delay 30
+	waitmoncry
 # 75 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, facedown
+	delay 30
 # 76 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 13, facedown
+	applymovement LOCALID_PLAYER, facedown
 # 77 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 14, facedown
+	applymovement 13, facedown
 # 78 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitmovement 0
+	applymovement 14, facedown
 # 79 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	delay 16
-# 80 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	showobjectat 15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL
-# 81 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 15, PutdownbyAkihiko
-# 82 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	waitmovement 0
+# 80 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	delay 16
+# 81 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	showobjectat 15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL
+# 82 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	applymovement 15, PutdownbyAkihiko
 # 83 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	waitmovement 0
+# 84 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_PawmiIsHealed_Text_0
-# 85 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	closemessage
 # 86 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	release
+	closemessage
 # 87 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	release
+# 88 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	goto SunshineOrphanageMainHall_Eventscript_PawmiAppreciated
 	return
 
 
-# 91 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-PutdownbyAkihiko:
 # 92 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	walk_down
+PutdownbyAkihiko:
 # 93 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	face_up
+	walk_down
 # 94 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	delay_8
+	face_up
 # 95 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	walk_in_place_up
-# 96 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	delay_8
+# 96 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	walk_in_place_up
 # 97 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	delay_8
+# 98 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	walk_in_place_up
 	step_end
 
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated::
-# 101 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	lock
 # 102 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	lock
+# 103 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 8
 	goto_if_eq SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_2
-# 106 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
 # 107 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 15, HeartPawmi
+	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
 # 108 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitmoncry
+	applymovement 15, HeartPawmi
 # 109 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitmovement 0
+	waitmoncry
 # 110 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	delay 30
+	waitmovement 0
 # 111 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	delay 30
+# 112 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_0
-# 118 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	closemessage
 # 119 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 14, MikiHappy
+	closemessage
 # 120 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	applymovement 14, MikiHappy
+# 121 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_1
-# 124 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	closemessage
 # 125 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_2
-# 126 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	closemessage
+# 126 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	msgbox SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_2
 # 127 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	closemessage
+# 128 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_3
-# 131 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 8
 # 132 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 8
+# 133 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	clearflag FLAG_HIDE_TALK_BUTTON
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_1:
-# 133 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 134 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	return
 
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_2:
-# 103 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 104 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	goto SunshineOrphanageMainHall_Eventscript_GetPawmiStarter
 	goto SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_1
 
 
 SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi::
-# 137 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	lock
 # 138 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	faceplayer
+	lock
 # 139 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi_Text_0
+	faceplayer
 # 140 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	msgbox SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi_Text_0
+# 141 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	return
 
 
 SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi::
-# 144 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	lock
 # 145 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	faceplayer
+	lock
 # 146 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi_Text_0
+	faceplayer
 # 147 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	msgbox SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi_Text_0
+# 148 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	release
 	return
 
 
-# 150 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-HeartPawmi:
 # 151 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	jump_in_place_up
+HeartPawmi:
 # 152 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	delay_8
+	jump_in_place_up
 # 153 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	delay_8
+# 154 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	emote_heart
 	step_end
 
-# 156 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-MikiHappy:
 # 157 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	emote_music
+MikiHappy:
 # 158 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	emote_music
+# 159 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	jump_in_place_down
 	step_end
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter::
-# 162 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	lockall
 # 163 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_0, MSGBOX_YESNO
+	lockall
 # 164 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	msgbox SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_0, MSGBOX_YESNO
+# 165 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_2
-# 187 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 15, PawmiDisappointed
 # 188 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	applymovement 15, PawmiDisappointed
+# 189 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox NewLabTest_NotChosen
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_1:
-# 190 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitmessage
 # 191 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	waitmessage
+# 192 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	releaseall
 	end
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_2:
-# 165 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
 # 166 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	givemon SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31
+	setflag FLAG_SYS_POKEMON_GET
 # 167 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	givemon SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31
+# 168 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_5
-# 175 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 176 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_6
-# 184 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 185 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_2
 	goto SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_1
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_5:
-# 168 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
 # 169 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
 # 170 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_1
+	waitfanfare
 # 171 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	hideobjectat 15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL
+	msgbox SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_1
 # 172 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	call NicknamePartyMon
+	hideobjectat 15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL
 # 173 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	call NicknamePartyMon
+# 174 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	goto SunshineOrphanageMainHall_Eventscript_GoToSleep
 	goto SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_1
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_6:
-# 176 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
 # 177 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
 # 178 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_1
+	waitfanfare
 # 179 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	hideobjectat 15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL
+	msgbox SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_1
 # 180 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	call NicknameBoxMon
+	hideobjectat 15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL
 # 181 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	call NicknameBoxMon
+# 182 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	goto SunshineOrphanageMainHall_Eventscript_GoToSleep
 	goto SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_1
 
 
-# 195 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-PawmiDisappointed:
 # 196 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+PawmiDisappointed:
+# 197 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	shake_horizontal
 	step_end
 
 SunshineOrphanageMainHall_Eventscript_GoToSleep::
-# 200 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	lock
 # 201 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	delay 20
+	lock
 # 202 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 4, TeacherFacingAkihiko
+	delay 20
 # 203 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitmovement 0
+	applymovement 4, TeacherFacingAkihiko
 # 204 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	waitmovement 0
+# 205 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	msgbox SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0
-# 208 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	closemessage
 # 209 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 9
+	closemessage
 # 210 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setvar VAR_AKIHIKOS_INTRO_STATE, 9
 # 211 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
 # 212 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -887,11 +887,11 @@ walkup:
 	step_end
 
 SunshineOrphanageMainHall_Eventscript_PawmiIsHealed_Text_0:
-# 84 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 85 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}There you go.$"
 
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_0:
-# 112 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 113 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Looks like it wants to stay with you.\p"
 	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Can we keep it?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Can we, Ms. Kobayashi?\p"
@@ -903,17 +903,17 @@ SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_0:
 	.string "the mean time.$"
 
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_1:
-# 121 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 122 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{SPEAKER NAME_MIKI}Yay!\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p"
 	.string "{SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, I'll give you a pokeball to keep it.$"
 
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_2:
-# 125 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 126 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{PLAYER} received 1{COLOR GREEN} (hidden){COLOR DARK_GRAY} Cherish Ball.$"
 
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_3:
-# 127 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 128 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{COLOR GREEN}Tips: The shiny chance is roughly\n"
 	.string "1/100.\p"
 	.string "No Pokemon are shiny locked, including\n"
@@ -924,27 +924,27 @@ SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_3:
 	.string "You also can not release them.$"
 
 SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi_Text_0:
-# 139 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 140 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Go on, Pawmi is waiting for you.$"
 
 SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi_Text_0:
-# 146 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 147 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{SPEAKER NAME_MIKI}Let's give Pawmi a home, big bro!$"
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_0:
-# 163 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 164 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Let Pawmi in the Cherish Ball?$"
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_1:
-# 170 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 171 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Received Pawmi.$"
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_2:
-# 184 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 185 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Party full.$"
 
 SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0:
-# 205 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 206 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{SPEAKER NAME_KOBAYASHI}Alright.\p"
 	.string "I supposed it's quite late now. You all\n"
 	.string "should go to rest.\p"

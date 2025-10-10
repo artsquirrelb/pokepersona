@@ -359,7 +359,7 @@ SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi:
 
 OW_Chewtle::
 # 213 "data/maps/SunshineWoods/scripts.pory"
-	lock
+	lockall
 # 214 "data/maps/SunshineWoods/scripts.pory"
 	faceplayer
 # 215 "data/maps/SunshineWoods/scripts.pory"
@@ -369,7 +369,7 @@ OW_Chewtle::
 # 217 "data/maps/SunshineWoods/scripts.pory"
 	setflag FLAG_TEMP_2
 # 218 "data/maps/SunshineWoods/scripts.pory"
-	release
+	releaseall
 	end
 
 

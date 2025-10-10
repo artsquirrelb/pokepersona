@@ -1195,3 +1195,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/SunshineTown_OldWomansHouse_1F/scripts.inc"
 
 	.include "data/maps/SunshineTown_OldWomansHouse_2F/scripts.inc"
+
+	.include "data/maps/Route2/scripts.inc"

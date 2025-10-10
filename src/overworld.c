@@ -77,6 +77,8 @@
 #include "constants/songs.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
+#include "quests.h"
+
 
 STATIC_ASSERT((B_FLAG_FOLLOWERS_DISABLED == 0 || OW_FOLLOWERS_ENABLED), FollowersFlagAssignedWithoutEnablingThem);
 
@@ -1885,6 +1887,7 @@ void CB2_ReturnToField(void)
     }
     else
     {
+        RefreshQuestIcons();
         FieldClearVBlankHBlankCallbacks();
         SetMainCallback2(CB2_ReturnToFieldLocal);
     }
@@ -1924,6 +1927,7 @@ void CB2_ReturnToFieldFromMultiplayer(void)
 
 void CB2_ReturnToFieldWithOpenMenu(void)
 {
+    RefreshQuestIcons();
     FieldClearVBlankHBlankCallbacks();
     gFieldCallback2 = FieldCB_ReturnToFieldOpenStartMenu;
     CB2_ReturnToField();
@@ -2434,6 +2438,7 @@ static void InitObjectEventsLocal(void)
     SetPlayerAvatarTransitionFlags(player->transitionFlags);
     ResetInitialPlayerAvatarState();
     TrySpawnObjectEvents(0, 0);
+    RefreshQuestIcons();
     FollowerNPC_HandleSprite();
     UpdateFollowingPokemon();
     TryRunOnWarpIntoMapScript();
@@ -2444,6 +2449,7 @@ static void InitObjectEventsReturnToField(void)
     SpawnObjectEventsOnReturnToField(0, 0);
     RotatingGate_InitPuzzleAndGraphics();
     RunOnReturnToFieldMapScript();
+    RefreshQuestIcons();
 }
 
 static void SetCameraToTrackPlayer(void)

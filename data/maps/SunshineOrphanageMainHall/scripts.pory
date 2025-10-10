@@ -5,6 +5,7 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 7) {
             clearflag(FLAG_HIDE_MIKI)
             clearflag(FLAG_HIDE_SHINJIRO)
+            (FLAG_HIDE_TALK_BUTTON)
             setobjectxyperm (4, 11, 23)
 			setobjectmovementtype (4, MOVEMENT_TYPE_FACE_RIGHT)
             hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)}
@@ -207,7 +208,6 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
         See you tomorrow."))
     closemessage
     setvar(VAR_AKIHIKOS_INTRO_STATE, 9)
-    setflag(FLAG_HIDE_TALK_BUTTON)
     fadescreenswapbuffers(FADE_TO_BLACK)
     playse(MUS_HEAL)
     waitse

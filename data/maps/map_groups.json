@@ -639,6 +639,8 @@
   ],
   "gMapGroup_IndoorSunshineTown": [
     "SunshineTown_PokemonCenter",
-    "SunshineTown_KurosawasHouse"
+    "SunshineTown_KurosawasHouse",
+    "SunshineTown_OldWomansHouse_1F",
+    "SunshineTown_OldWomansHouse_2F"
   ]
 }

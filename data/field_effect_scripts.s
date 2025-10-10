@@ -90,6 +90,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_PensiveIcon           	@ FLDEFF_PENSIVE_ICON
 	.4byte gFieldEffectScript_PoisonedIcon          	@ FLDEFF_POISONED_ICON
 	.4byte gFieldEffectScript_TrainerExclamation       	@ FLDEFF_TRAINER_EXCLAMATION
+	.4byte gFieldEffectScript_QuestIcon					@ FLDEFF_QUEST_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -421,6 +422,7 @@ gFieldEffectScript_CaveDust::
 gFieldEffectScript_Defog::
     field_eff_callnative FldEff_Defog
     field_eff_end
+	
 gFieldEffectScript_UseRockClimb:: @ 82DBC3F
 	field_eff_callnative FldEff_UseRockClimb
 	field_eff_end
@@ -429,3 +431,6 @@ gFieldEffectScript_RockClimbDust:: @ 82DBB28
 	field_eff_loadfadedpal_callnative gSpritePalette_BigDust, FldEff_RockClimbDust
 	field_eff_end
 
+gFieldEffectScript_QuestIcon::
+	field_eff_callnative FldEff_QuestIcon
+	field_eff_end

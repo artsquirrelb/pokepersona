@@ -210,12 +210,12 @@ movement SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi {
 }
 
 script OW_Chewtle {
-    lock
+    lockall
     faceplayer
     startoverworldencounter(5)
     removeobject(8)
     setflag(FLAG_TEMP_2)
-    release
+    releaseall
     end
 }
 

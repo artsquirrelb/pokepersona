@@ -363,6 +363,104 @@ SunshineTown_Eventscript_WarpToBurningOrphanage2::
 	return
 
 
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL::
+# 213 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 214 "data/maps/SunshineTown/scripts.pory"
+	faceplayer
+# 215 "data/maps/SunshineTown/scripts.pory"
+	goto_if_unset FLAG_SYS_QUEST_MENU_GET, SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_2
+# 223 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_1
+# 224 "data/maps/SunshineTown/scripts.pory"
+	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+# 225 "data/maps/SunshineTown/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_5
+# 229 "data/maps/SunshineTown/scripts.pory"
+	call SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_1:
+# 232 "data/maps/SunshineTown/scripts.pory"
+	release
+	return
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_2:
+# 216 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0
+# 218 "data/maps/SunshineTown/scripts.pory"
+	setflag FLAG_SYS_QUEST_MENU_GET
+# 219 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 220 "data/maps/SunshineTown/scripts.pory"
+	release
+	goto SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_1
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_5:
+# 226 "data/maps/SunshineTown/scripts.pory"
+	call SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted
+	goto SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_1
+
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted::
+# 236 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted_Text_0
+# 237 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 238 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward::
+# 244 "data/maps/SunshineTown/scripts.pory"
+	questmenu QUEST_MENU_CHECK_REWARD, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+# 245 "data/maps/SunshineTown/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_1
+# 254 "data/maps/SunshineTown/scripts.pory"
+	call SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive
+	return
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_1:
+# 246 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_Text_0
+# 247 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 248 "data/maps/SunshineTown/scripts.pory"
+	giveitem ITEM_SOOTHE_BELL, 1
+# 249 "data/maps/SunshineTown/scripts.pory"
+	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+# 250 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive::
+# 259 "data/maps/SunshineTown/scripts.pory"
+	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+# 260 "data/maps/SunshineTown/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_1
+# 267 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_1
+# 268 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 269 "data/maps/SunshineTown/scripts.pory"
+	questmenu QUEST_MENU_SET_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+# 270 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_1:
+# 261 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_0
+# 262 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 263 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+
 SunshineTown_Eventscript_Kurosawa_Text_0:
 # 26 "data/maps/SunshineTown/scripts.pory"
 	.string "Hm?\p"
@@ -440,3 +538,27 @@ SunshineTown_Eventscript_DontLeaveTown_Text_0:
 SunshineTown_Eventscript_NoPointEnteringPC_Text_0:
 # 189 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to diddling around!)$"
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0:
+# 216 "data/maps/SunshineTown/scripts.pory"
+	.string "Quest Menu Unlocked.\p Talk to me again to start Quest 1.$"
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_1:
+# 223 "data/maps/SunshineTown/scripts.pory"
+	.string "Begin Quest code.$"
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted_Text_0:
+# 236 "data/maps/SunshineTown/scripts.pory"
+	.string "Thank you for playing with my Pokémon.$"
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_Text_0:
+# 246 "data/maps/SunshineTown/scripts.pory"
+	.string "Objectives are met.$"
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_0:
+# 261 "data/maps/SunshineTown/scripts.pory"
+	.string "Quest 1 is active. \nObjectives are not met.$"
+
+SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_1:
+# 267 "data/maps/SunshineTown/scripts.pory"
+	.string "Quest 1 is not active. Setting it active.$"

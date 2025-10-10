@@ -5460,6 +5460,30 @@
       "secondary_tileset": "gTileset_SunshineOrphanageEntrance",
       "border_filepath": "data/layouts/SunshineOrphanage_Burning/border.bin",
       "blockdata_filepath": "data/layouts/SunshineOrphanage_Burning/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_TOWN_OLD_WOMANS_HOUSE_1F",
+      "name": "SunshineTown_OldWomansHouse_1F_Layout",
+      "width": 19,
+      "height": 13,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
+      "border_filepath": "data/layouts/SunshineTown_OldWomansHouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineTown_OldWomansHouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_TOWN_OLD_WOMANS_HOUSE_2F",
+      "name": "SunshineTown_OldWomansHouse_2F_Layout",
+      "width": 19,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
+      "border_filepath": "data/layouts/SunshineTown_OldWomansHouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineTown_OldWomansHouse_2F/map.bin"
     }
   ]
 }

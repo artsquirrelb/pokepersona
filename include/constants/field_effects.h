@@ -86,6 +86,7 @@
 #define FLDEFF_PENSIVE_ICON              81
 #define FLDEFF_POISONED_ICON             82
 #define FLDEFF_TRAINER_EXCLAMATION       83
+#define FLDEFF_QUEST_ICON                84
 
 
 #define FLDEFFOBJ_SHADOW_S              0

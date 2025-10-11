@@ -35,7 +35,8 @@
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
     "gMapGroup_IndoorSunshineOrphanage",
-    "gMapGroup_IndoorSunshineTown"
+    "gMapGroup_IndoorSunshineTown",
+    "gMapGroup_IndoorRoute2"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -642,6 +643,10 @@
     "SunshineTown_PokemonCenter",
     "SunshineTown_KurosawasHouse",
     "SunshineTown_OldWomansHouse_1F",
-    "SunshineTown_OldWomansHouse_2F"
+    "SunshineTown_OldWomansHouse_2F",
+    "SunshineTown_House1"
+  ],
+  "gMapGroup_IndoorRoute2": [
+    "Route2_House"
   ]
 }

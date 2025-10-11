@@ -537,6 +537,30 @@ SunshineTown_Eventscript_ExpertF_PreQuest::
 	end
 
 
+SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24::
+# 328 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 329 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_Text_0, MSGBOX_YESNO
+# 330 "data/maps/SunshineTown/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_1
+# 336 "data/maps/SunshineTown/scripts.pory"
+	setflag FLAG_HIDE_TALK_BUTTON
+# 337 "data/maps/SunshineTown/scripts.pory"
+	warpsilent MAP_BLANK_MAP, 0, 0
+	return
+
+SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_1:
+# 331 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, walkright
+# 332 "data/maps/SunshineTown/scripts.pory"
+	waitmovement 0
+# 333 "data/maps/SunshineTown/scripts.pory"
+	release
+	return
+
+
 SunshineTown_Eventscript_Kurosawa_Text_0:
 # 33 "data/maps/SunshineTown/scripts.pory"
 	.string "Hm?\p"
@@ -594,7 +618,7 @@ SunshineTown_Eventscript_Boy_Text_2:
 
 SunshineTown_Eventscript_DirerctionSign_Text_0:
 # 125 "data/maps/SunshineTown/scripts.pory"
-	.string "Sunshine Riverbank {DOWN_ARROW}\p"
+	.string "Sunshine Riverbank {DOWN_ARROW}\n"
 	.string "Route 2 {LEFT_ARROW}$"
 
 SunshineTown_Eventscript_TownSign_Text_0:
@@ -664,3 +688,8 @@ SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Tex
 SunshineTown_Eventscript_ExpertF_PreQuest_Text_0:
 # 321 "data/maps/SunshineTown/scripts.pory"
 	.string "Where did I put my key again...?$"
+
+SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_Text_0:
+# 329 "data/maps/SunshineTown/scripts.pory"
+	.string "{COLOR RED}Important fight ahead. Do you want to\n"
+	.string "proceed?$"

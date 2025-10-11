@@ -121,6 +121,14 @@ SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutsc
 	return
 
 
+SunshineTown_OldWomansHouse_2F_Eventscript_Notebook::
+# 75 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
+	msgbox SunshineTown_OldWomansHouse_2F_Eventscript_Notebook_Text_0
+# 76 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
+	closemessage
+	end
+
+
 SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_QuestwasComplete_Text_0:
 # 20 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
 	.string "Riolu's loafing around.$"
@@ -147,3 +155,8 @@ SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutsc
 # 70 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}I guess that should do it. Let's return\n"
 	.string "to the grandma.$"
+
+SunshineTown_OldWomansHouse_2F_Eventscript_Notebook_Text_0:
+# 75 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
+	.string "A book of how to train Riolu into\n"
+	.string "Lucario.$"

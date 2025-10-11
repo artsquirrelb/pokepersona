@@ -194,6 +194,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BrendanDeco
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayDecorating;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Archie;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maxie;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Frozen;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KyogreFront;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GroudonFront;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Fossil;
@@ -455,6 +456,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MAY_DECORATING] =           &gObjectEventGraphicsInfo_MayDecorating,
     [OBJ_EVENT_GFX_ARCHIE] =                   &gObjectEventGraphicsInfo_Archie,
     [OBJ_EVENT_GFX_MAXIE] =                    &gObjectEventGraphicsInfo_Maxie,
+    [OBJ_EVENT_GFX_FROZEN] =                   &gObjectEventGraphicsInfo_Frozen,
     [OBJ_EVENT_GFX_KYOGRE_FRONT] =             &gObjectEventGraphicsInfo_KyogreFront,
     [OBJ_EVENT_GFX_GROUDON_FRONT] =            &gObjectEventGraphicsInfo_GroudonFront,
     [OBJ_EVENT_GFX_FOSSIL] =                   &gObjectEventGraphicsInfo_Fossil,

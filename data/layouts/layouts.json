@@ -5496,6 +5496,30 @@
       "secondary_tileset": "gTileset_SunshineTown",
       "border_filepath": "data/layouts/Route2/border.bin",
       "blockdata_filepath": "data/layouts/Route2/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_TOWN_HOUSE1",
+      "name": "SunshineTown_House1_Layout",
+      "width": 19,
+      "height": 13,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
+      "border_filepath": "data/layouts/SunshineTown_House1/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineTown_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE2_HOUSE",
+      "name": "Route2_House_Layout",
+      "width": 12,
+      "height": 13,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
+      "border_filepath": "data/layouts/Route2_House/border.bin",
+      "blockdata_filepath": "data/layouts/Route2_House/map.bin"
     }
   ]
 }

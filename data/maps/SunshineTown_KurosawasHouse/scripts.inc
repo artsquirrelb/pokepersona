@@ -289,6 +289,40 @@ SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_1:
 	return
 
 
+SunshineTown_KurosawasHouse_Eventscript_TrashcanItem::
+# 184 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	lock
+# 185 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	goto_if_set FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE, SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_2
+# 190 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	giveitem ITEM_ANTIDOTE, 1
+# 191 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	setflag FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE
+SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_1:
+# 193 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	release
+	end
+
+SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_2:
+# 186 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	msgbox SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_Text_0
+# 187 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	closemessage
+	goto SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_1
+
+
+SunshineTown_KurosawasHouse_Eventscript_Notebook::
+# 198 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	lock
+# 199 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	msgbox SunshineTown_KurosawasHouse_Eventscript_Notebook_Text_0
+# 200 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	closemessage
+# 201 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	release
+	end
+
+
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInformingAkihikoAboutMiki_Text_0:
 # 34 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_TIRED}Miki...\p"
@@ -383,3 +417,13 @@ SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_2:
 	.string "{SPEAKER NAME_AKIHIKO}{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}My... parents.\p"
 	.string "We should visit them in Kibou City.\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Yeah...$"
+
+SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_Text_0:
+# 186 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	.string "It's empty.$"
+
+SunshineTown_KurosawasHouse_Eventscript_Notebook_Text_0:
+# 199 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	.string "The notebook is full of hard-to-read\n"
+	.string "scribles. Among them is a stroke\l"
+	.string "through “Sunshine Orphanage”.$"

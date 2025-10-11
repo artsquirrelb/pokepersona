@@ -147,6 +147,13 @@
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_TOWN_OLD_WOMANS_HOUSE_2F",
       "dest_warp_id": "2"
+    },
+    {
+      "x": 26,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_SUNSHINE_TOWN_HOUSE1",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -257,6 +264,24 @@
       "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "17",
       "script": "SunshineTown_Eventscript_WarpToBurningOrphanage2"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "24",
+      "script": "SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "24",
+      "script": "SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24"
     }
   ],
   "bg_events": [

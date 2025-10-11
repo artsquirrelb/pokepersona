@@ -500,7 +500,7 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
         .tilemapTop = 9,
         .width = 3,
         .height = 4,
-        .paletteNum = 5,
+        .paletteNum = 1,
         .baseBlock = 0x0100,
     },
     [B_WIN_LEVEL_UP_BOX] = {

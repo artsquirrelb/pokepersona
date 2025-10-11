@@ -9,7 +9,10 @@ mapscripts BlankMap_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 13: SunshineTown_PokemonCenter_Eventscript_Onframe13
         VAR_AKIHIKOS_INTRO_STATE, 19: SunshineOrphanage_Burning_Eventscript_OnFrame19
         VAR_AKIHIKOS_INTRO_STATE, 20: SunshineTownRiverbank_Eventscript_OnFrame20
-        VAR_AKIHIKOS_INTRO_STATE, 22: SunshineTownRiverbank_Eventscript_OnFrame22]
+        VAR_AKIHIKOS_INTRO_STATE, 22: SunshineTownRiverbank_Eventscript_OnFrame22
+        VAR_AKIHIKOS_INTRO_STATE, 24: Route2_Eventscript_AkihikoOnFrame24
+        VAR_AKIHIKOS_INTRO_STATE, 26: Route2_Eventscript_AkihikoOnFrame26
+        ]
 }
 
 
@@ -61,5 +64,17 @@ script SunshineTownRiverbank_Eventscript_OnFrame22 {
     closemessage
     setvar(VAR_AKIHIKOS_INTRO_STATE, 23)
     warpsilent(MAP_SUNSHINE_TOWN_KUROSAWAS_HOUSE, 4, 4)
+    clearflag(FLAG_SPAWN_INVISIBLE)
+}
+
+script Route2_Eventscript_AkihikoOnFrame24 {
+    lock
+    warpsilent(MAP_ROUTE2, 29, 5)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 25)
+    release
+}
+script Route2_Eventscript_AkihikoOnFrame26 {
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 27)
+    warpsilent(MAP_ROUTE2, 1, 6)
     clearflag(FLAG_SPAWN_INVISIBLE)
 }

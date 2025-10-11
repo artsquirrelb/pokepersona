@@ -1644,8 +1644,8 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .y = 1,
         .speed = 0,
         .fgColor = 13,
-        .bgColor = 14,
-        .shadowColor = 14,
+        .bgColor = 0,
+        .shadowColor = 0,
     },
     [B_WIN_LEVEL_UP_BOX] = {
         .fillValue = PIXEL_FILL(0xE),
@@ -1896,8 +1896,8 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
         .y = 1,
         .speed = 0,
         .fgColor = 13,
-        .bgColor = 14,
-        .shadowColor = 15,
+        .bgColor = 0,
+        .shadowColor = 0,
     },
     [B_WIN_LEVEL_UP_BOX] = {
         .fillValue = PIXEL_FILL(0xE),

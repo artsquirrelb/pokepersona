@@ -1523,7 +1523,7 @@ static u32 GetBestMonDmg(struct Pokemon *party, int firstId, int lastId, u8 inva
     return bestMonId;
 }
 
-static u32 GetFirstNonIvalidMon(u32 firstId, u32 lastId, u32 invalidMons, u32 battlerIn1, u32 battlerIn2)
+static u32 GetFirstNonInvalidMon(u32 firstId, u32 lastId, u32 invalidMons, u32 battlerIn1, u32 battlerIn2)
 {
     if (!IsDoubleBattle())
         return PARTY_SIZE;
@@ -1995,7 +1995,10 @@ static s32 GetMaxDamagePlayerCouldDealToSwitchin(u32 battler, u32 opposingBattle
         {
             damageTaken = AI_CalcPartyMonDamage(playerMove, opposingBattler, battler, battleMon, AI_DEFENDING);
             if (playerMove == gBattleStruct->choicedMove[opposingBattler]) // If player is choiced, only care about the choice locked move
+            {
+                *bestPlayerMove = playerMove;
                 return damageTaken;
+            }
             if (damageTaken > maxDamageTaken)
             {
                 maxDamageTaken = damageTaken;
@@ -2015,13 +2018,19 @@ static s32 GetMaxPriorityDamagePlayerCouldDealToSwitchin(u32 battler, u32 opposi
 
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
+        // If player is choiced into a non-priority move, AI understands that it can't deal priority damage
+        if (gBattleStruct->choicedMove[opposingBattler] !=MOVE_NONE && GetMovePriority(gBattleStruct->choicedMove[opposingBattler]) < 1)
+            break;
         playerMove = SMART_SWITCHING_OMNISCIENT ? gBattleMons[opposingBattler].moves[i] : playerMoves[i];
         if (GetBattleMovePriority(opposingBattler, gAiLogicData->abilities[opposingBattler], playerMove) > 0
             && playerMove != MOVE_NONE && !IsBattleMoveStatus(playerMove) && GetMoveEffect(playerMove) != EFFECT_FOCUS_PUNCH && gBattleMons[opposingBattler].pp[i] > 0)
         {
             damageTaken = AI_CalcPartyMonDamage(playerMove, opposingBattler, battler, battleMon, AI_DEFENDING);
             if (playerMove == gBattleStruct->choicedMove[opposingBattler]) // If player is choiced, only care about the choice locked move
+            {
+                *bestPlayerPriorityMove = playerMove;
                 return damageTaken;
+            }
             if (damageTaken > maxDamageTaken)
             {
                 maxDamageTaken = damageTaken;
@@ -2298,7 +2307,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         return aceMonId;
 
     // Fallback
-    u32 bestMonId = GetFirstNonIvalidMon(firstId, lastId, invalidMons, battlerIn1, battlerIn2);
+    u32 bestMonId = GetFirstNonInvalidMon(firstId, lastId, invalidMons, battlerIn1, battlerIn2);
     if (bestMonId != PARTY_SIZE)
         return bestMonId;
 
@@ -2420,7 +2429,7 @@ u32 GetMostSuitableMonToSwitchInto(u32 battler, enum SwitchType switchType)
             return aceMonId;
 
         // Fallback
-        bestMonId = GetFirstNonIvalidMon(firstId, lastId, invalidMons, battlerIn1, battlerIn2);
+        bestMonId = GetFirstNonInvalidMon(firstId, lastId, invalidMons, battlerIn1, battlerIn2);
         if (bestMonId != PARTY_SIZE)
             return bestMonId;
 

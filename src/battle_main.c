@@ -236,7 +236,7 @@ EWRAM_DATA u16 gBattleTurnCounter = 0;
 EWRAM_DATA u8 gBattlerAbility = 0;
 EWRAM_DATA struct QueuedStatBoost gQueuedStatBoosts[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA bool8 gHasFetchedBall = FALSE;
-EWRAM_DATA u8 gLastUsedBall = 0;
+EWRAM_DATA u16 gLastUsedBall = 0;
 EWRAM_DATA u16 gLastThrownBall = 0;
 EWRAM_DATA u16 gBallToDisplay = 0;
 EWRAM_DATA bool8 gLastUsedBallMenuPresent = FALSE;
@@ -3395,7 +3395,7 @@ const u8* FaintClearSetData(u32 battler)
 
     gProtectStructs[battler].quash = FALSE;
     gProtectStructs[battler].noValidMoves = FALSE;
-    gProtectStructs[battler].helpingHand = FALSE;
+    gProtectStructs[battler].helpingHand = 0;
     gProtectStructs[battler].bounceMove = FALSE;
     gProtectStructs[battler].stealMove = FALSE;
     gProtectStructs[battler].nonVolatileStatusImmobility = FALSE;
@@ -3805,6 +3805,10 @@ static void DoBattleIntro(void)
             gBattleStruct->overworldWeatherDone = FALSE;
             Ai_InitPartyStruct(); // Save mons party counts, and first 2/4 mons on the battlefield.
 
+            // mark all battlers as sent out
+            for (battler = 0; battler < gBattlersCount; battler++)
+                GetBattlerPartyState(battler)->sentOut = TRUE;
+
             // Try to set a status to start the battle with
             gBattleStruct->startingStatus = 0;
             if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS && GetTrainerStartingStatusFromId(TRAINER_BATTLE_PARAM.opponentB))
@@ -3940,6 +3944,8 @@ static void TryDoEventsBeforeFirstTurn(void)
             if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN, i, 0, 0, 0) != 0)
                 return;
             if (TryClearIllusion(i, ABILITYEFFECT_ON_SWITCHIN))
+                return;
+            if (AbilityBattleEffects(ABILITYEFFECT_ON_SWITCHIN_IMMUNITIES, i, 0, 0, 0) != 0)
                 return;
         }
         gBattleStruct->switchInBattlerCounter = 0;
@@ -5641,12 +5647,29 @@ static void HandleEndTurn_FinishBattle(void)
                         GetMonData(GetBattlerMon(battler), MON_DATA_NICKNAME, gBattleResults.playerMon2Name);
                     }
                 }
-                else if (!IsOnPlayerSide(battler))
-                {
-                    HandleSetPokedexFlag(SpeciesToNationalPokedexNum(gBattleMons[battler].species), FLAG_SET_SEEN, gBattleMons[battler].personality);
-                }
             }
             TryPutPokemonTodayOnAir();
+        }
+
+        if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK
+                                  | BATTLE_TYPE_EREADER_TRAINER
+                                  | BATTLE_TYPE_RECORDED_LINK
+                                  | BATTLE_TYPE_TRAINER_HILL
+                                  | BATTLE_TYPE_FRONTIER)))
+        {
+            for (u32 side = 0; side < NUM_BATTLE_SIDES; side++)
+            {
+                struct Pokemon *party = GetSideParty(side);
+
+                if (side == B_SIDE_PLAYER && !B_PARTNER_MONS_MARKED_SEEN)
+                    continue;
+
+                for (u32 partySlot = 0; partySlot < PARTY_SIZE; partySlot++)
+                {
+                    if (gBattleStruct->partyState[side][partySlot].sentOut)
+                        HandleSetPokedexFlagFromMon(&party[partySlot], FLAG_SET_SEEN);
+                }
+            }
         }
 
         if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK
@@ -5774,20 +5797,24 @@ static void TryEvolvePokemon(void)
         if (!(sTriedEvolving & (1u << i)))
         {
             bool32 canStopEvo = TRUE;
-            u32 species = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_BATTLE_SPECIAL, i, NULL, &canStopEvo, CHECK_EVO);
+            enum EvolutionMode mode = EVO_MODE_BATTLE_SPECIAL;
+            u32 evolutionItemArg = i;
+            u32 species = GetEvolutionTargetSpecies(&gPlayerParty[i], mode, evolutionItemArg, NULL, &canStopEvo, CHECK_EVO);
             sTriedEvolving |= 1u << i;
 
             if (species == SPECIES_NONE && (gLeveledUpInBattle & (1u << i)))
             {
                 gLeveledUpInBattle &= ~(1u << i);
-                species = GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_BATTLE_ONLY, gLeveledUpInBattle, NULL, &canStopEvo, CHECK_EVO);
+                mode = EVO_MODE_BATTLE_ONLY;
+                evolutionItemArg = gLeveledUpInBattle;
+                species = GetEvolutionTargetSpecies(&gPlayerParty[i], mode, evolutionItemArg, NULL, &canStopEvo, CHECK_EVO);
             }
 
             if (species != SPECIES_NONE)
             {
                 FreeAllWindowBuffers();
                 gBattleMainFunc = WaitForEvoSceneToFinish;
-                GetEvolutionTargetSpecies(&gPlayerParty[i], EVO_MODE_BATTLE_ONLY, gLeveledUpInBattle, NULL, &canStopEvo, DO_EVO);
+                GetEvolutionTargetSpecies(&gPlayerParty[i], mode, evolutionItemArg, NULL, &canStopEvo, DO_EVO);
                 EvolutionScene(&gPlayerParty[i], species, canStopEvo, i);
                 return;
             }
@@ -5913,11 +5940,11 @@ u32 GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState
     enum ItemHoldEffect holdEffect;
     enum Gimmick gimmick = GetActiveGimmick(battler);
 
-    if (move == MOVE_STRUGGLE)
-        return TYPE_NORMAL;
-
     if (state == MON_IN_BATTLE)
     {
+        if (moveEffect == EFFECT_STRUGGLE)
+            return TYPE_MYSTERY;
+
         species = gBattleMons[battler].species;
         heldItem = gBattleMons[battler].item;
         holdEffect = GetBattlerHoldEffect(battler, TRUE);
@@ -6170,8 +6197,7 @@ void SetTypeBeforeUsingMove(u32 move, u32 battler)
         && GetBattleMoveType(move) == GetItemSecondaryId(heldItem)
         && effect != EFFECT_PLEDGE
         && effect != EFFECT_OHKO
-        && effect != EFFECT_SHEER_COLD
-        && effect != EFFECT_STRUGGLE)
+        && effect != EFFECT_SHEER_COLD)
     {
         gSpecialStatuses[battler].gemParam = GetBattlerHoldEffectParam(battler);
         gSpecialStatuses[battler].gemBoost = TRUE;

@@ -12,7 +12,6 @@ SINGLE_BATTLE_TEST("Endure does not prevent multiple hits and stat changes occur
 {
     GIVEN {
         ASSUME(GetMoveEffect(MOVE_SCALE_SHOT) == EFFECT_MULTI_HIT);
-        //ASSUME(GetMoveEffect(MOVE_ENDURE) == EFFECT_ENDURE);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET) { HP(1); }
     } WHEN {

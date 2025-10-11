@@ -447,4 +447,7 @@ void BtlController_HandleSwitchInShowSubstitute(u32 battler);
 // Battle Speed Up (Credit to Pokabbie)
 u32 Rogue_GetBattleSpeedScale(bool32 forHealthbar);
 
+// Battle Speed Up (Credit to Pokabbie)
+u32 Rogue_GetBattleSpeedScale(bool32 forHealthbar);
+bool32 ShouldBattleRestrictionsApply(u32 battler);
 #endif // GUARD_BATTLE_CONTROLLERS_H

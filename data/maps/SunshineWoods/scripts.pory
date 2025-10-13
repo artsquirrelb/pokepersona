@@ -228,12 +228,14 @@ script SunshineWoods_Eventscript_DirectionSign {
 }
 
 script SunshineWoods_Eventscript_IkeBattle{
+    setspeaker("Ike")
     trainerbattle_single(TRAINER_IKE, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated)
     msgbox(SunshineWoods_Text_IkePostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
 script SunshineWoods_Eventscript_HotaruBattle {
+    setspeaker("Hotaru")
     trainerbattle_single(TRAINER_HOTARU, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated)
     msgbox(SunshineWoods_Text_HotaruPostBattle, MSGBOX_AUTOCLOSE)
     end
@@ -266,6 +268,7 @@ text SunshineWoods_Text_HotaruPostBattle {
 }
 
 script SunshineWoods_Eventscript_PolicemenBlockingOrphanage {
+    setspeaker("Police Officer")
     msgbox(format("Our apologies but Sunshine Orphanage is currently off-limit."))
     closemessage
 }

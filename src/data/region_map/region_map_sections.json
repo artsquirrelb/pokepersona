@@ -1246,6 +1246,10 @@
     {
       "id": "MAPSEC_SUNSHINETOWN_RIVERBANK",
       "name": "Sunshine Town Riverbank"
+    },
+    {
+      "id": "MAPSEC_SUNSHINE_MEADOW",
+      "name": "Sunshine Meadow"
     }
   ]
 }

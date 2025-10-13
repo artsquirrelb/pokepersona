@@ -5,6 +5,7 @@ enum {
     MB_NORMAL,
     MB_SECRET_BASE_WALL,
     MB_TALL_GRASS,
+    MB_FLOWER,
     MB_LONG_GRASS,
     MB_UNUSED_04,
     MB_UNUSED_05,

@@ -27,11 +27,11 @@ SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 
 SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 4 "data/maps/SunshineTown/scripts.pory"
-	setobjectxyperm 5, 17, 7
+	setobjectxyperm 5, 19, 7
 # 5 "data/maps/SunshineTown/scripts.pory"
 	setobjectmovementtype 5, MOVEMENT_TYPE_FACE_UP
 # 6 "data/maps/SunshineTown/scripts.pory"
-	setobjectxyperm 6, 21, 3
+	setobjectxyperm 6, 23, 3
 # 7 "data/maps/SunshineTown/scripts.pory"
 	setobjectmovementtype 6, MOVEMENT_TYPE_FACE_LEFT
 	goto SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
@@ -691,5 +691,5 @@ SunshineTown_Eventscript_ExpertF_PreQuest_Text_0:
 
 SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_Text_0:
 # 329 "data/maps/SunshineTown/scripts.pory"
-	.string "{COLOR RED}Important fight ahead. Do you want to\n"
+	.string "{COLOR RED}Important scene ahead. Do you want to\n"
 	.string "proceed?$"

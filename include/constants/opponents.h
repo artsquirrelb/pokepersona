@@ -13,8 +13,8 @@
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
 #define TRAINER_GABRIELLE_1                   9
-#define TRAINER_GRUNT_ROUTE2        10
-#define TRAINER_MARCEL                       11
+#define TRAINER_GRUNT_ROUTE2                 10
+#define TRAINER_YUUKA                       11
 #define TRAINER_ALBERTO                      12
 #define TRAINER_ED                           13
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
@@ -139,7 +139,7 @@
 #define TRAINER_JESSICA_3                   133
 #define TRAINER_JESSICA_4                   134
 #define TRAINER_JESSICA_5                   135
-#define TRAINER_WINSTON_1                   136
+#define TRAINER_TAROU                   136
 #define TRAINER_MOLLIE                      137
 #define TRAINER_GARRET                      138
 #define TRAINER_WINSTON_2                   139
@@ -532,7 +532,7 @@
 #define TRAINER_BRENDAN_ROUTE_103_TORCHIC   526
 #define TRAINER_BRENDAN_ROUTE_110_TORCHIC   527
 #define TRAINER_BRENDAN_ROUTE_119_TORCHIC   528
-#define TRAINER_MAY_ROUTE_103_MUDKIP        529
+#define TRAINER_MITSURU_SUNSHINE_MEADOW        529
 #define TRAINER_MAY_ROUTE_110_MUDKIP        530
 #define TRAINER_MAY_ROUTE_119_MUDKIP        531
 #define TRAINER_MAY_ROUTE_103_TREECKO       532

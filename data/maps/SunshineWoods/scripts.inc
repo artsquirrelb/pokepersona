@@ -385,24 +385,30 @@ SunshineWoods_Eventscript_DirectionSign::
 
 SunshineWoods_Eventscript_IkeBattle::
 # 231 "data/maps/SunshineWoods/scripts.pory"
-	trainerbattle_single TRAINER_IKE, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated
+	setspeaker SunshineWoods_Eventscript_IkeBattle_Text_0
 # 232 "data/maps/SunshineWoods/scripts.pory"
+	trainerbattle_single TRAINER_IKE, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated
+# 233 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Text_IkePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 SunshineWoods_Eventscript_HotaruBattle::
-# 237 "data/maps/SunshineWoods/scripts.pory"
-	trainerbattle_single TRAINER_HOTARU, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated
 # 238 "data/maps/SunshineWoods/scripts.pory"
+	setspeaker SunshineWoods_Eventscript_HotaruBattle_Text_0
+# 239 "data/maps/SunshineWoods/scripts.pory"
+	trainerbattle_single TRAINER_HOTARU, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated
+# 240 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Text_HotaruPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage::
-# 269 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_PolicemenBlockingOrphanage_Text_0
-# 270 "data/maps/SunshineWoods/scripts.pory"
+# 271 "data/maps/SunshineWoods/scripts.pory"
+	setspeaker SunshineWoods_Eventscript_PolicemenBlockingOrphanage_Text_0
+# 272 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_PolicemenBlockingOrphanage_Text_1
+# 273 "data/maps/SunshineWoods/scripts.pory"
 	closemessage
 	return
 
@@ -446,35 +452,47 @@ SunshineWoods_Eventscript_DirectionSign_Text_0:
 	.string "Sunshine Orphanage {UP_ARROW}\n"
 	.string "Sunshine Town {LEFT_ARROW}$"
 
+SunshineWoods_Eventscript_IkeBattle_Text_0:
+# 231 "data/maps/SunshineWoods/scripts.pory"
+	.string "Ike$"
+
+SunshineWoods_Eventscript_HotaruBattle_Text_0:
+# 238 "data/maps/SunshineWoods/scripts.pory"
+	.string "Hotaru$"
+
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage_Text_0:
-# 269 "data/maps/SunshineWoods/scripts.pory"
+# 271 "data/maps/SunshineWoods/scripts.pory"
+	.string "Police Officer$"
+
+SunshineWoods_Eventscript_PolicemenBlockingOrphanage_Text_1:
+# 272 "data/maps/SunshineWoods/scripts.pory"
 	.string "Our apologies but Sunshine Orphanage\n"
 	.string "is currently off-limit.$"
 
 SunshineWoods_Text_IkeIntro::
-# 242 "data/maps/SunshineWoods/scripts.pory"
+# 244 "data/maps/SunshineWoods/scripts.pory"
 	.string "Hey! If you have a Pokémon, let's\n"
 	.string "battle!$"
 
 SunshineWoods_Text_IkeDefeated::
-# 247 "data/maps/SunshineWoods/scripts.pory"
+# 249 "data/maps/SunshineWoods/scripts.pory"
 	.string "Woah! You're quite good!$"
 
 SunshineWoods_Text_IkePostBattle::
-# 251 "data/maps/SunshineWoods/scripts.pory"
+# 253 "data/maps/SunshineWoods/scripts.pory"
 	.string "Your Pokémon looks... kinda different.$"
 
 SunshineWoods_Text_HotaruIntro::
-# 255 "data/maps/SunshineWoods/scripts.pory"
+# 257 "data/maps/SunshineWoods/scripts.pory"
 	.string "I have cute Pokémons!$"
 
 SunshineWoods_Text_HotaruDefeated::
-# 259 "data/maps/SunshineWoods/scripts.pory"
+# 261 "data/maps/SunshineWoods/scripts.pory"
 	.string "They'll look even cuter when evolved. I\n"
 	.string "even have them hold Soothe Bells!$"
 
 SunshineWoods_Text_HotaruPostBattle::
-# 263 "data/maps/SunshineWoods/scripts.pory"
+# 265 "data/maps/SunshineWoods/scripts.pory"
 	.string "You want to know where I got the items?\p"
 	.string "A grandma in Sunshine Town gave them to\n"
 	.string "me after I played with her Pokémon.$"

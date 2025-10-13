@@ -234,7 +234,7 @@ SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa::
 # 144 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	closemessage
 # 145 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	warp MAP_SUNSHINE_TOWN, 1, 14
+	warp MAP_SUNSHINE_TOWN, 3, 14
 	return
 
 

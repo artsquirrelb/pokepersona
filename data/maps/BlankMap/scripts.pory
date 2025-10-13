@@ -12,6 +12,9 @@ mapscripts BlankMap_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 22: SunshineTownRiverbank_Eventscript_OnFrame22
         VAR_AKIHIKOS_INTRO_STATE, 24: Route2_Eventscript_AkihikoOnFrame24
         VAR_AKIHIKOS_INTRO_STATE, 26: Route2_Eventscript_AkihikoOnFrame26
+        VAR_AKIHIKOS_INTRO_STATE, 28: Route2_House_Eventscript_AkihikoOnFrame28
+        VAR_AKIHIKOS_INTRO_STATE, 31: Route2_House_Eventscript_AkihikoOnFrame31
+        VAR_AKIHIKOS_INTRO_STATE, 34: SunshineMeadow_Eventscript_AkihikoOnFrame34
         ]
 }
 
@@ -69,12 +72,31 @@ script SunshineTownRiverbank_Eventscript_OnFrame22 {
 
 script Route2_Eventscript_AkihikoOnFrame24 {
     lock
-    warpsilent(MAP_ROUTE2, 29, 5)
+    warpsilent(MAP_ROUTE2, 35, 12)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 25)
     release
 }
+
 script Route2_Eventscript_AkihikoOnFrame26 {
     setvar(VAR_AKIHIKOS_INTRO_STATE, 27)
-    warpsilent(MAP_ROUTE2, 1, 6)
+    warpsilent(MAP_ROUTE2_HOUSE, 5, 3)
+    clearflag(FLAG_SPAWN_INVISIBLE)
+}
+
+script Route2_House_Eventscript_AkihikoOnFrame28 {
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 29)
+    warpsilent(MAP_ROUTE2_HOUSE, 4, 7)
+    clearflag(FLAG_SPAWN_INVISIBLE)
+}
+
+script Route2_House_Eventscript_AkihikoOnFrame31 {
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 32)
+    warpsilent(MAP_ROUTE2_HOUSE, 4, 7)
+    clearflag(FLAG_SPAWN_INVISIBLE)
+}
+
+script SunshineMeadow_Eventscript_AkihikoOnFrame34 {
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 35)
+    warpsilent(MAP_SUNSHINE_MEADOW, 7, 11)
     clearflag(FLAG_SPAWN_INVISIBLE)
 }

@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Route2_House_Eventscript_Mitsuru",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -37,8 +37,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FLAG_TEMP_2",
-      "flag": "0"
+      "script": "NULL",
+      "flag": "FLAG_TEMP_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO_FAINTED",
@@ -50,8 +50,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FLAG_TEMP_2",
-      "flag": "0"
+      "script": "NULL",
+      "flag": "FLAG_TEMP_2"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(INTELEON)",
@@ -63,20 +63,20 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "FLAG_TEMP_1",
-      "flag": "0"
+      "script": "Route2_House_Eventscript_Inteleon",
+      "flag": "FLAG_TEMP_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(VULPIX_ALOLA)",
       "x": 6,
       "y": 5,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Route2_House_Eventscript_AVulpix",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -89,26 +89,80 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "Route2_House_Eventscript_Shinjiro",
       "flag": "FLAG_TEMP_1"
     }
   ],
   "warp_events": [
     {
       "x": 7,
-      "y": 12,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_ROUTE2",
       "dest_warp_id": "0"
     },
     {
       "x": 8,
-      "y": 12,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_ROUTE2",
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
-  "bg_events": []
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "29",
+      "script": "Route2_House_Eventscript_MustTalkToShinjiro"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "29",
+      "script": "Route2_House_Eventscript_MustTalkToShinjiro"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "30",
+      "script": "Route2_House_Eventscript_MustTalkToMitsuru"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "30",
+      "script": "Route2_House_Eventscript_MustTalkToMitsuru"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TakeARest"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "TrashCanEmpty"
+    }
+  ]
 }

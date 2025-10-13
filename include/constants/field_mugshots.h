@@ -21,12 +21,14 @@ enum MugshotEmotes {
     EMOTE_SMILE,
     EMOTE_STRUGGLED,
     EMOTE_SILHOUETTE,
+    EMOTE_SERIOUS,
+    EMOTE_CONFIDENT,
     EMOTE_COUNT,
 };
 
-#define MUGSHOT_MITSURU 1 //total: 4
-#define MUGSHOT_AKIHIKO 2 //total: 10
-#define MUGSHOT_SHINJIRO 3 //total: 6
-#define MUGSHOT_COUNT 20
+#define MUGSHOT_MITSURU 1 //total: 7
+#define MUGSHOT_AKIHIKO 2 //total: 12
+#define MUGSHOT_SHINJIRO 3 //total: 8
+#define MUGSHOT_COUNT 27
 
 #endif // GUARD_CONSTANTS_FIELD_MUGSHOTS_H

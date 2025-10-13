@@ -209,23 +209,22 @@ Venipede
 Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_MARCEL ===
-Name: MARCEL
-Class: Cooltrainer
-Pic: Cooltrainer M
-Gender: Male
-Music: Cool
-Items: Hyper Potion
+=== TRAINER_YUUKA ===
+Name: Yuuka
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+Music: Girl
 Double Battle: No
 AI: Basic Trainer
 
-Manectric
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Scyther
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Shiftry
-Level: 29
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Fletchling
+Level: 6
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ALBERTO ===
 Name: ALBERTO
@@ -2491,8 +2490,8 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Glare
 - Crunch
 
-=== TRAINER_WINSTON_1 ===
-Name: WINSTON
+=== TRAINER_TAROU ===
+Name: Tarou
 Class: Rich Boy
 Pic: Rich Boy
 Gender: Male
@@ -9640,18 +9639,46 @@ Marshtomp
 Level: 31
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_MAY_ROUTE_103_MUDKIP ===
-Name: MAY
+=== TRAINER_MITSURU_SUNSHINE_MEADOW ===
+Name: Mitsuru
 Class: Rival
 Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer
+Mugshot: Blue
 
-Treecko
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+SPECIES_PONYTA_GALAR (M) @ITEM_ORAN_BERRY
+Level: 7
+Ball: Luxury Ball
+IVs: 0 HP / 20 Atk / 0 Def / 20 SpA / 0 SpD / 20 Spe
+Ability: Pastel Veil
+- Confusion
+- Double Kick
+- Growl
+- Attract
+
+SPECIES_FENNEKIN (F) @ITEM_LUM_BERRY
+Level: 8
+Ball: Luxury Ball
+IVs: 0 HP / 20 Atk / 0 Def / 20 SpA / 0 SpD / 20 Spe
+Ability: Blaze
+- Ember
+- Mud-Slap
+- Will-O-Wisp
+- Calm Mind
+
+SPECIES_VULPIX_ALOLA (F) @ITEM_OCCA_BERRY
+Level: 15
+Ball: Cherish Ball
+IVs: 0 HP / 20 Atk / 0 Def / 20 SpA / 0 SpD / 20 Spe
+Ability: Snow Warning
+- Icy Wind
+- Disarming Voice
+- Confuse Ray
+- Nasty Plot
+
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===
 Name: MAY

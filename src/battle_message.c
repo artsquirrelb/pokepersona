@@ -1382,7 +1382,7 @@ const u8 gText_MoveInterfaceType[] = _("Type/");
 const u8 gText_MoveInterfacePpType[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}PP\nType/");
 const u8 gText_MoveInterfaceDynamicColors[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}");
 const u8 gText_WhichMoveToForget4[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}Which move should\nbe forgotten?");
-const u8 gText_BattleYesNoChoice[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}Yes\nNo");
+const u8 gText_BattleYesNoChoice[] = _("Yes\nNo");
 const u8 gText_BattleSwitchWhich[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}Switch\nwhich?");
 const u8 gText_BattleSwitchWhich2[] = _("{PALETTE 5}{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 DYNAMIC_COLOR5 DYNAMIC_COLOR6}");
 const u8 gText_BattleSwitchWhich3[] = _("{UP_ARROW}");
@@ -1643,8 +1643,8 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .x = 0,
         .y = 1,
         .speed = 0,
-        .fgColor = 1,
-        .bgColor = 0,
+        .fgColor = 13,
+        .bgColor = 14,
         .shadowColor = 0,
     },
     [B_WIN_LEVEL_UP_BOX] = {
@@ -3407,9 +3407,9 @@ void BattlePutTextOnWindow(const u8 *text, u8 windowId)
     printerTemplate.letterSpacing = textInfo[windowId].letterSpacing;
     printerTemplate.lineSpacing = textInfo[windowId].lineSpacing;
     printerTemplate.unk = 0;
-    printerTemplate.fgColor = 0x1; //was textInfo[windowId].fgColor;
-    printerTemplate.bgColor = 0xE; //was textInfo[windowId].bgColor;
-    printerTemplate.shadowColor = 0x0; //was textInfo[windowId].shadowColor;
+    printerTemplate.fgColor = textInfo[windowId].fgColor;
+    printerTemplate.bgColor = textInfo[windowId].bgColor;
+    printerTemplate.shadowColor = 0; //textInfo[windowId].shadowColor;
 
     if (B_WIN_MOVE_NAME_1 <= windowId && windowId <= B_WIN_MOVE_NAME_4)
     {

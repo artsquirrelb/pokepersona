@@ -9646,7 +9646,7 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Smart Trainer
+AI: Smart Trainer / Ace Pokemon / Prefer Highest Damage Move
 Mugshot: Blue
 
 SPECIES_FENNEKIN (F) @ITEM_LUM_BERRY
@@ -9655,18 +9655,18 @@ Ball: Luxury Ball
 IVs: 31 HP / 20 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Blaze
 - Ember
-- Echoed Voice
+- Round
 - Will-O-Wisp
 - Calm Mind
 
-SPECIES_FURFROU (M) @ITEM_ORAN_BERRY
+SPECIES_FURFROU_KABUKI (M) @ITEM_ORAN_BERRY
 Level: 10
 Ball: Luxury Ball
-IVs: 31 HP / 31 Atk / 31 Def / 20 SpA / 31 SpD / 31 Spe
-- Headbutt
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Tackle
 - Rock Smash
-- Zen Headbutt
 - Toxic
+- Snarl
 
 SPECIES_VULPIX_ALOLA (F) @ITEM_LUM_BERRY
 Level: 10

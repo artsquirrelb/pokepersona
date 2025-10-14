@@ -210,4 +210,5 @@ SunshineTownRiverbank_Eventscript_OnFrame22_Text_0:
 SunshineMeadow_Eventscript_AkihikoOnFrame36_Text_0:
 # 106 "data/maps/BlankMap/scripts.pory"
 	.string "Shinjiro managed to knock out one of\n"
-	.string "Kirijo's Pokémon.$"
+	.string "Mitsuru's Pokémon before getting wiped\l"
+	.string "out by her Vulpix.$"

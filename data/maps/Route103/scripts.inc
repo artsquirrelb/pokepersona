@@ -69,7 +69,7 @@ Route103_EventScript_StartMayBattleTorchic::
 	end
 
 Route103_EventScript_StartMayBattleMudkip::
-	trainerbattle_no_intro TRAINER_MITSURU_SUNSHINE_MEADOW, Route103_Text_MayDefeated
+	//trainerbattle_no_intro TRAINER_MITSURU_SUNSHINE_MEADOW, Route103_Text_MayDefeated
 	goto Route103_EventScript_AfterMayBattle
 	end
 

@@ -25,7 +25,7 @@ script SunshineOrphanage_Eventscript_ShowTheMap {
     applymovement(LOCALID_PLAYER, SlowlyShowTheMap)
     waitmovement(0)
     msgbox(format("Akihiko's Prologue: Sunshine Memories\n
-    {COLOR GREEN}{CLEAR_TO 40}Level cap: 10"))
+    {COLOR GREEN}{CLEAR_TO 56}Level cap: 10"))
     warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 5, 4)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 1)
     setvar(VAR_CURRENT_LEVEL_CAP, 10)

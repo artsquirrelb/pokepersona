@@ -513,7 +513,7 @@ EventScript_OverworldStoryTalk_PosttalkKurosawa_Woods_Text_0:
 
 EventScript_OverworldStoryTalk_PostFirstMeetingMitsuru_Text_0:
 # 226 "data/scripts/story_talk.pory"
-	.string "(I wonder what Shinji wanted to say.)$"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(I wonder what Shinji wanted to say.)$"
 
 EventScript_OverworldStoryTalk_PostFirstMeetingShinjiro_Text_0:
 # 230 "data/scripts/story_talk.pory"

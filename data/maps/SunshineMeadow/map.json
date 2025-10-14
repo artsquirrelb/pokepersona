@@ -30,7 +30,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SunshineMeadow_Eventscript_PreMitsuruFirstBattleTalk",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -43,7 +43,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SunshineMeadow_Eventscript_VulpixPreBattle",
       "flag": "FLAG_TEMP_1"
     },
     {
@@ -56,60 +56,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "SunshineMeadow_Eventscript_InteleonPreBattle",
       "flag": "FLAG_TEMP_1"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLABEBE_RED)",
-      "x": 6,
-      "y": 14,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SunshineMeadow_Eventscript_OW_Flabebe_Red",
-      "flag": "FLAG_TEMP_2"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLABEBE_WHITE)",
-      "x": 12,
-      "y": 14,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SunshineMeadow_Eventscript_OW_Flabebe_White",
-      "flag": "FLAG_TEMP_3"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLABEBE_YELLOW)",
-      "x": 12,
-      "y": 20,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SunshineMeadow_Eventscript_OW_Flabebe_Yellow",
-      "flag": "FLAG_TEMP_4"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FLABEBE_BLUE)",
-      "x": 7,
-      "y": 21,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "SunshineMeadow_Eventscript_OW_Flabebe_Blue",
-      "flag": "FLAG_TEMP_5"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
@@ -122,7 +70,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_2"
     }
   ],
   "warp_events": [],

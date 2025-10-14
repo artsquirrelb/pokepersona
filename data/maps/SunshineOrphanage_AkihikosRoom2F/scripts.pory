@@ -41,7 +41,7 @@ script AkihikosRoom2F_Cutscene1 {
     goto (AkihikosRoom2F_Eventscript_MikiAppears)}
 
 movement Miki_Appears {
-    walk_fast_up *2
+    walk_fast_up *3
     jump_in_place_up *2
     
 }
@@ -98,12 +98,12 @@ movement Akihiko_Surprised {
     face_down
     delay_16
     delay_16
-    walk_down *3
+    walk_down *2
 }
 
 
 movement Miki_Leaves {
-    walk_fast_down *2
+    walk_fast_down *3
 }
 
 movement Camera_Back_to_Player {
@@ -305,11 +305,11 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji2 {
 
 movement SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1 {
     walk_left*3
-    walk_down*2
+    walk_down*3
 }
 movement SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2 {
     walk_left*2
-    walk_down*2
+    walk_down*3
 }
 
 script SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit {
@@ -351,11 +351,3 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2 {
     release
 }
 
-//Story Talk:
-script EventScript_VarAkihikoIntroState1{
-    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 1){
-    msgbox(format("
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}L Button Talk Test var bigger than 1"))
-    closemessage}
-    end
-}

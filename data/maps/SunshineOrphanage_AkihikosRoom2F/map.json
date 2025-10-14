@@ -44,14 +44,14 @@
   "warp_events": [
     {
       "x": 5,
-      "y": 10,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_ORPHANAGE2FHALLWAY",
       "dest_warp_id": "0"
     },
     {
       "x": 6,
-      "y": 10,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_SUNSHINE_ORPHANAGE2FHALLWAY",
       "dest_warp_id": "0"

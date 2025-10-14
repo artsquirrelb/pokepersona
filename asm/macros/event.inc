@@ -2857,5 +2857,9 @@
     .2byte \map
     .endm
 
-
+	.macro debugprint str:req, numOrVar=65535
+	.byte SCR_OP_DEBUGPRINT
+	.4byte \str
+	.2byte \numOrVar
+	.endm
 

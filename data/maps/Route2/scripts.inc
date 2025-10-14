@@ -643,9 +643,9 @@ Route2_Eventscript_DirectionSign::
 
 Route2_Eventscript_Yuuka::
 # 347 "data/maps/Route2/scripts.pory"
-	setspeaker Route2_Eventscript_Yuuka_Text_0
-# 348 "data/maps/Route2/scripts.pory"
 	trainerbattle_single TRAINER_YUUKA, Route2_YuukaIntro, Route2_YuukaDefeated
+# 348 "data/maps/Route2/scripts.pory"
+	setspeaker Route2_Eventscript_Yuuka_Text_0
 # 349 "data/maps/Route2/scripts.pory"
 	msgbox Route2_YuukaPostBattle
 # 350 "data/maps/Route2/scripts.pory"
@@ -712,45 +712,47 @@ Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon::
 # 414 "data/maps/Route2/scripts.pory"
 ShinjiroSplitsOut:
 # 415 "data/maps/Route2/scripts.pory"
-	walk_down
-# 415 "data/maps/Route2/scripts.pory"
+	set_visible
+# 416 "data/maps/Route2/scripts.pory"
 	walk_down
 # 416 "data/maps/Route2/scripts.pory"
+	walk_down
+# 417 "data/maps/Route2/scripts.pory"
 	face_up
 	step_end
 
-# 419 "data/maps/Route2/scripts.pory"
+# 420 "data/maps/Route2/scripts.pory"
 ShinjiroGoesOffCam:
-# 420 "data/maps/Route2/scripts.pory"
-	walk_right
-# 420 "data/maps/Route2/scripts.pory"
-	walk_right
-# 420 "data/maps/Route2/scripts.pory"
-	walk_right
-# 420 "data/maps/Route2/scripts.pory"
-	walk_right
-# 420 "data/maps/Route2/scripts.pory"
-	walk_right
-# 420 "data/maps/Route2/scripts.pory"
-	walk_right
-# 420 "data/maps/Route2/scripts.pory"
-	walk_right
-# 420 "data/maps/Route2/scripts.pory"
+# 421 "data/maps/Route2/scripts.pory"
 	walk_right
 # 421 "data/maps/Route2/scripts.pory"
+	walk_right
+# 421 "data/maps/Route2/scripts.pory"
+	walk_right
+# 421 "data/maps/Route2/scripts.pory"
+	walk_right
+# 421 "data/maps/Route2/scripts.pory"
+	walk_right
+# 421 "data/maps/Route2/scripts.pory"
+	walk_right
+# 421 "data/maps/Route2/scripts.pory"
+	walk_right
+# 421 "data/maps/Route2/scripts.pory"
+	walk_right
+# 422 "data/maps/Route2/scripts.pory"
 	set_invisible
 	step_end
 
 Route2_Eventscript_ShinjiroFindingPokemon::
-# 425 "data/maps/Route2/scripts.pory"
-	lock
 # 426 "data/maps/Route2/scripts.pory"
-	faceplayer
+	lock
 # 427 "data/maps/Route2/scripts.pory"
+	faceplayer
+# 428 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_ShinjiroFindingPokemon_Text_0
-# 432 "data/maps/Route2/scripts.pory"
-	closemessage
 # 433 "data/maps/Route2/scripts.pory"
+	closemessage
+# 434 "data/maps/Route2/scripts.pory"
 	release
 	end
 
@@ -831,7 +833,7 @@ Route2_Eventscript_DirectionSign_Text_0:
 	.string "Nata Town {LEFT_ARROW}$"
 
 Route2_Eventscript_Yuuka_Text_0:
-# 347 "data/maps/Route2/scripts.pory"
+# 348 "data/maps/Route2/scripts.pory"
 	.string "Yuuka$"
 
 Route2_Eventscript_Tarou_Text_0:
@@ -848,7 +850,7 @@ Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon_Text_0:
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}See you later at the Meadow.$"
 
 Route2_Eventscript_ShinjiroFindingPokemon_Text_0:
-# 427 "data/maps/Route2/scripts.pory"
+# 428 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}How's it going?\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Got myself two.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Hahaha, I've never seen you're this\n"

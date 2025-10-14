@@ -275,7 +275,7 @@ Budew_NPC::
 SunshineOrphanage_Eventscript_ShowTheMap_Text_0:
 # 27 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "Akihiko's Prologue: Sunshine Memories\n"
-	.string "{COLOR GREEN}{CLEAR_TO 40}Level cap: 10$"
+	.string "{COLOR GREEN}{CLEAR_TO 56}Level cap: 10$"
 
 Miki_and_Shinjiro_Notice_Akihiko_Text_0:
 # 47 "data/maps/SunshineOrphanage/scripts.pory"

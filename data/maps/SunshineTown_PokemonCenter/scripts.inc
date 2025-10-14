@@ -470,7 +470,7 @@ SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene0::
 # 261 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 16
 # 262 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	warpsilent MAP_SUNSHINE_TOWN, 6, 4
+	warpsilent MAP_SUNSHINE_TOWN, 8, 4
 # 263 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	releaseall
 	end

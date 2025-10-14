@@ -359,7 +359,7 @@ SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi:
 
 OW_Chewtle::
 # 213 "data/maps/SunshineWoods/scripts.pory"
-	lockall
+	lock
 # 214 "data/maps/SunshineWoods/scripts.pory"
 	faceplayer
 # 215 "data/maps/SunshineWoods/scripts.pory"
@@ -369,7 +369,7 @@ OW_Chewtle::
 # 217 "data/maps/SunshineWoods/scripts.pory"
 	setflag FLAG_TEMP_2
 # 218 "data/maps/SunshineWoods/scripts.pory"
-	releaseall
+	release
 	end
 
 
@@ -385,9 +385,9 @@ SunshineWoods_Eventscript_DirectionSign::
 
 SunshineWoods_Eventscript_IkeBattle::
 # 231 "data/maps/SunshineWoods/scripts.pory"
-	setspeaker SunshineWoods_Eventscript_IkeBattle_Text_0
-# 232 "data/maps/SunshineWoods/scripts.pory"
 	trainerbattle_single TRAINER_IKE, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated
+# 232 "data/maps/SunshineWoods/scripts.pory"
+	setspeaker SunshineWoods_Eventscript_IkeBattle_Text_0
 # 233 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Text_IkePostBattle, MSGBOX_AUTOCLOSE
 	end
@@ -395,9 +395,9 @@ SunshineWoods_Eventscript_IkeBattle::
 
 SunshineWoods_Eventscript_HotaruBattle::
 # 238 "data/maps/SunshineWoods/scripts.pory"
-	setspeaker SunshineWoods_Eventscript_HotaruBattle_Text_0
-# 239 "data/maps/SunshineWoods/scripts.pory"
 	trainerbattle_single TRAINER_HOTARU, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated
+# 239 "data/maps/SunshineWoods/scripts.pory"
+	setspeaker SunshineWoods_Eventscript_HotaruBattle_Text_0
 # 240 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Text_HotaruPostBattle, MSGBOX_AUTOCLOSE
 	end
@@ -453,11 +453,11 @@ SunshineWoods_Eventscript_DirectionSign_Text_0:
 	.string "Sunshine Town {LEFT_ARROW}$"
 
 SunshineWoods_Eventscript_IkeBattle_Text_0:
-# 231 "data/maps/SunshineWoods/scripts.pory"
+# 232 "data/maps/SunshineWoods/scripts.pory"
 	.string "Ike$"
 
 SunshineWoods_Eventscript_HotaruBattle_Text_0:
-# 238 "data/maps/SunshineWoods/scripts.pory"
+# 239 "data/maps/SunshineWoods/scripts.pory"
 	.string "Hotaru$"
 
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage_Text_0:

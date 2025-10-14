@@ -15,6 +15,7 @@ mapscripts BlankMap_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 28: Route2_House_Eventscript_AkihikoOnFrame28
         VAR_AKIHIKOS_INTRO_STATE, 31: Route2_House_Eventscript_AkihikoOnFrame31
         VAR_AKIHIKOS_INTRO_STATE, 34: SunshineMeadow_Eventscript_AkihikoOnFrame34
+        VAR_AKIHIKOS_INTRO_STATE, 36: SunshineMeadow_Eventscript_AkihikoOnFrame36
         ]
 }
 
@@ -72,7 +73,7 @@ script SunshineTownRiverbank_Eventscript_OnFrame22 {
 
 script Route2_Eventscript_AkihikoOnFrame24 {
     lock
-    warpsilent(MAP_ROUTE2, 35, 12)
+    warpsilent(MAP_ROUTE2, 35, 11)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 25)
     release
 }
@@ -97,6 +98,11 @@ script Route2_House_Eventscript_AkihikoOnFrame31 {
 
 script SunshineMeadow_Eventscript_AkihikoOnFrame34 {
     setvar(VAR_AKIHIKOS_INTRO_STATE, 35)
-    warpsilent(MAP_SUNSHINE_MEADOW, 7, 11)
-    clearflag(FLAG_SPAWN_INVISIBLE)
+    warpsilent(MAP_SUNSHINE_MEADOW, 10, 8)
+}
+
+script SunshineMeadow_Eventscript_AkihikoOnFrame36 {
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 37)
+    msgbox(format("Shinjiro managed to knock out one of Mitsuru's Pokémon before getting wiped out by her Vulpix."))
+    warpsilent(MAP_SUNSHINE_MEADOW, 10, 11)
 }

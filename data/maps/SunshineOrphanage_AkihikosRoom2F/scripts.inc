@@ -100,6 +100,8 @@ Miki_Appears:
 	walk_fast_up
 # 44 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_fast_up
+# 44 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	walk_fast_up
 # 45 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	jump_in_place_up
 # 45 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
@@ -188,12 +190,12 @@ Akihiko_Surprised:
 	walk_down
 # 101 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_down
-# 101 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	walk_down
 	step_end
 
 # 105 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 Miki_Leaves:
+# 106 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	walk_fast_down
 # 106 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_fast_down
 # 106 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
@@ -518,6 +520,8 @@ SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1:
 	walk_down
 # 308 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_down
+# 308 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	walk_down
 	step_end
 
 # 310 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
@@ -526,6 +530,8 @@ SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2:
 	walk_left
 # 311 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_left
+# 312 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	walk_down
 # 312 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_down
 # 312 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
@@ -594,21 +600,6 @@ SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2::
 # 351 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
-
-
-EventScript_VarAkihikoIntroState1::
-# 356 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 1
-	goto_if_ge EventScript_VarAkihikoIntroState1_2
-EventScript_VarAkihikoIntroState1_1:
-	end
-
-EventScript_VarAkihikoIntroState1_2:
-# 357 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox EventScript_VarAkihikoIntroState1_Text_0
-# 359 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	closemessage
-	goto EventScript_VarAkihikoIntroState1_1
 
 
 AkihikosRoom2F_Eventscript_MikiAppears_Text_0:
@@ -714,10 +705,6 @@ SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_0:
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_1:
 # 329 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go.$"
-
-EventScript_VarAkihikoIntroState1_Text_0:
-# 357 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}L Button Talk Test var bigger than 1$"
 
 Lets_Go_Play::
 # 81 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"

@@ -218,11 +218,11 @@ Music: Girl
 Double Battle: No
 AI: Basic Trainer
 
-Scyther
+Fletchling
 Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Fletchling
+Scyther
 Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -9649,35 +9649,35 @@ Double Battle: No
 AI: Smart Trainer
 Mugshot: Blue
 
-SPECIES_PONYTA_GALAR (M) @ITEM_ORAN_BERRY
-Level: 7
-Ball: Luxury Ball
-IVs: 0 HP / 20 Atk / 0 Def / 20 SpA / 0 SpD / 20 Spe
-Ability: Pastel Veil
-- Confusion
-- Double Kick
-- Growl
-- Attract
-
 SPECIES_FENNEKIN (F) @ITEM_LUM_BERRY
-Level: 8
+Level: 10
 Ball: Luxury Ball
-IVs: 0 HP / 20 Atk / 0 Def / 20 SpA / 0 SpD / 20 Spe
+IVs: 31 HP / 20 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Blaze
 - Ember
-- Mud-Slap
+- Echoed Voice
 - Will-O-Wisp
 - Calm Mind
 
-SPECIES_VULPIX_ALOLA (F) @ITEM_OCCA_BERRY
-Level: 15
+SPECIES_FURFROU (M) @ITEM_ORAN_BERRY
+Level: 10
+Ball: Luxury Ball
+IVs: 31 HP / 31 Atk / 31 Def / 20 SpA / 31 SpD / 31 Spe
+- Headbutt
+- Rock Smash
+- Zen Headbutt
+- Toxic
+
+SPECIES_VULPIX_ALOLA (F) @ITEM_LUM_BERRY
+Level: 10
 Ball: Cherish Ball
-IVs: 0 HP / 20 Atk / 0 Def / 20 SpA / 0 SpD / 20 Spe
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 100 SpA / 100 Spe
 Ability: Snow Warning
 - Icy Wind
 - Disarming Voice
-- Confuse Ray
 - Nasty Plot
+- Echoed Voice
 
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===

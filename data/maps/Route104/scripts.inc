@@ -894,12 +894,12 @@ Route104_EventScript_RematchHaley::
 	end
 
 Route104_EventScript_Winston::
-	trainerbattle_single TRAINER_TAROU, Route104_Text_WinstonIntro, Route104_Text_WinstonDefeat, Route104_EventScript_TryRegisterWinstonAfterBattle
-	specialvar VAR_RESULT, ShouldTryRematchBattle
-	goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchWinston
-	setvar VAR_0x8004, TRAINER_TAROU
-	specialvar VAR_RESULT, IsTrainerRegistered
-	goto_if_eq VAR_RESULT, FALSE, Route104_EventScript_TryRegisterWinston
+	//trainerbattle_single TRAINER_TAROU, Route104_Text_WinstonIntro, Route104_Text_WinstonDefeat, Route104_EventScript_TryRegisterWinstonAfterBattle
+	//specialvar VAR_RESULT, ShouldTryRematchBattle
+	//goto_if_eq VAR_RESULT, TRUE, Route104_EventScript_RematchWinston
+	//setvar VAR_0x8004, TRAINER_TAROU
+	//specialvar VAR_RESULT, IsTrainerRegistered
+	//goto_if_eq VAR_RESULT, FALSE, Route104_EventScript_TryRegisterWinston
 	msgbox Route104_Text_WinstonPostBattle, MSGBOX_DEFAULT
 	release
 	end

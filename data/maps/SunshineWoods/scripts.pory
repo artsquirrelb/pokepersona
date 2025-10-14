@@ -210,12 +210,12 @@ movement SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi {
 }
 
 script OW_Chewtle {
-    lockall
+    lock
     faceplayer
     startoverworldencounter(5)
     removeobject(8)
     setflag(FLAG_TEMP_2)
-    releaseall
+    release
     end
 }
 
@@ -228,15 +228,15 @@ script SunshineWoods_Eventscript_DirectionSign {
 }
 
 script SunshineWoods_Eventscript_IkeBattle{
-    setspeaker("Ike")
     trainerbattle_single(TRAINER_IKE, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated)
+    setspeaker("Ike")
     msgbox(SunshineWoods_Text_IkePostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
 script SunshineWoods_Eventscript_HotaruBattle {
-    setspeaker("Hotaru")
     trainerbattle_single(TRAINER_HOTARU, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated)
+    setspeaker("Hotaru")
     msgbox(SunshineWoods_Text_HotaruPostBattle, MSGBOX_AUTOCLOSE)
     end
 }

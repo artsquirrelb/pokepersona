@@ -43,6 +43,7 @@ script GIRL_1F {
     faceplayer
     setspeaker ("Ran")
     msgbox(format ("My future adoptive parents looked very wealthy.\p Why couldn't they adopt my brother too?\p
+    Is this because he's sick all the time...?\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}
     I wish I had the answer to that..."))
     release

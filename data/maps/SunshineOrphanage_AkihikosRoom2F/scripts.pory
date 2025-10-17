@@ -103,7 +103,8 @@ movement Akihiko_Surprised {
 
 
 movement Miki_Leaves {
-    walk_fast_down *3
+    walk_fast_down *4
+    set_invisible
 }
 
 movement Camera_Back_to_Player {

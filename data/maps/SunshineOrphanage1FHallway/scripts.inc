@@ -59,7 +59,7 @@ GIRL_1F::
 	setspeaker GIRL_1F_Text_0
 # 45 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	msgbox GIRL_1F_Text_1
-# 48 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
+# 49 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	release
 	return
 
@@ -104,4 +104,6 @@ GIRL_1F_Text_1:
 	.string "wealthy.\p"
 	.string "Why couldn't they adopt my brother\n"
 	.string "too?\p"
+	.string "Is this because he's sick all the\n"
+	.string "time...?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD} I wish I had the answer to that...$"

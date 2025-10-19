@@ -5,11 +5,15 @@ mapscripts SunshineOrphanage_MapScripts {
             setflag(FLAG_HIDE_MIKI)
             setflag(FLAG_HIDE_SHINJIRO)
             setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_TEMP_1)
         }
         elif (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
             setflag(FLAG_HIDE_TALK_BUTTON)
             clearflag(FLAG_HIDE_MIKI)
             clearflag(FLAG_HIDE_SHINJIRO)
+        }
+        elif (var(VAR_AKIHIKOS_INTRO_STATE) >= 5) {
+            setflag(FLAG_TEMP_1)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
@@ -85,7 +89,7 @@ script Shinjiro_and_Miki_Join_Party {
     removeobject(3)
     setflag(FLAG_HIDE_MIKI)
     setflag(FLAG_HIDE_SHINJIRO)
-    msgbox(format("{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Shinjiro and Miki are now traveling with Akihiko."))
+    setflag(FLAG_TEMP_1)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 5)
     clearflag(FLAG_HIDE_TALK_BUTTON)
     release

@@ -88,7 +88,7 @@ text Lets_Go_Play {
 }
 
 movement Camera_On_Miki {
-    walk_down *3
+    walk_down *2
     
 }
 
@@ -108,7 +108,7 @@ movement Miki_Leaves {
 }
 
 movement Camera_Back_to_Player {
-    walk_fast_up *3
+    walk_fast_up *2
     
 }
 

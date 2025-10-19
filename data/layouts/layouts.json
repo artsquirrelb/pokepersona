@@ -5345,7 +5345,7 @@
       "id": "LAYOUT_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F",
       "name": "SunshineOrphanage_AkihikosRoom2F_Layout",
       "width": 12,
-      "height": 12,
+      "height": 13,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Gen4Indoor",

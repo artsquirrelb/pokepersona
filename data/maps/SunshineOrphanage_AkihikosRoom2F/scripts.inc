@@ -172,8 +172,6 @@ Camera_On_Miki:
 	walk_down
 # 91 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_down
-# 91 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	walk_down
 	step_end
 
 # 96 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
@@ -208,8 +206,6 @@ Miki_Leaves:
 
 # 110 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 Camera_Back_to_Player:
-# 111 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	walk_fast_up
 # 111 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_fast_up
 # 111 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"

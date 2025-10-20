@@ -1363,10 +1363,26 @@ const struct SpriteFrameImage gObjectEventPicTable_Shinjiro[] = {
 
 const struct SpriteFrameImage gObjectEventPicTable_Shinjiro_Fainted[] = {
     overworld_frame(gObjectEventPic_Shinjiro_Fainted, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Shinjiro_Fainted, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Shinjiro_Fainted, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Shinjiro_Fainted, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Shinjiro_Fainted, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Shinjiro_Fainted, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Shinjiro_Fainted, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Shinjiro_Fainted, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Shinjiro_Fainted, 4, 4, 2),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Akihiko_Fainted[] = {
     overworld_frame(gObjectEventPic_Akihiko_Fainted, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Akihiko_Fainted, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Akihiko_Fainted, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Akihiko_Fainted, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Akihiko_Fainted, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Akihiko_Fainted, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Akihiko_Fainted, 4, 4, 1),
+    overworld_frame(gObjectEventPic_Akihiko_Fainted, 4, 4, 2),
+    overworld_frame(gObjectEventPic_Akihiko_Fainted, 4, 4, 2),
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Miki[] = {

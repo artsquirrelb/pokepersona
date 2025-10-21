@@ -529,7 +529,7 @@ script Route2_House_Eventscript_AkihikoOnFrame38 {
 
 script Route2_House_Eventscript_MitsuruExplainingObjectives {
     delay(60)
-    msgbox()
+    msgbox("test")
 }
 
 

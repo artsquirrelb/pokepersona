@@ -54,8 +54,7 @@ movement KurosawaNoticed {
 
 script SunshineTown_Eventscript_GoGetPackage0 {
     lockall
-    msgbox(format("
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The Pokémon Center is right there, Aki."))
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The Pokémon Center is right there, Aki."))
     closemessage
     applymovement(LOCALID_PLAYER, walkright)
     waitmovement(0)
@@ -74,8 +73,7 @@ movement SunshineTown_Eventscript_ShinjiroJoinsback0 {
 
 script SunshineTown_Eventscript_GoGetPackage1{
     lockall
-    msgbox(format("
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The Pokémon Center is right there, Aki."))
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The Pokémon Center is right there, Aki."))
     closemessage
     applymovement(LOCALID_PLAYER, walkright)
     waitmovement(0)
@@ -89,14 +87,12 @@ script SunshineTown_Eventscript_FatMan {
     faceplayer
     setspeaker("Kojima")
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18){
-        msgbox(format("The policeman living here ran
-        toward the woods after hearing that explosion sound.\p
+        msgbox(format("The policeman living here ran toward the woods after hearing that explosion.\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should hurry up!"))
         setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
     }
     else{
-    msgbox(format("
-    Technology is amazing.\p
+    msgbox(format("Technology is amazing.\p
     Now you can do so many things with decomps."))}
     release
 }
@@ -106,15 +102,13 @@ script SunshineTown_Eventscript_Boy {
     faceplayer
     setspeaker ("Yoshida")
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18){
-        msgbox(format("
-        I think something exploded in the woods.\p
+        msgbox(format("I think something exploded in the woods.\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DARKENED}Could it be...\p
         {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}The orphanage!"))
         setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
     }
     else {
-        msgbox(format("
-    One of the richest families in the region lived in this island.\p
+        msgbox(format("One of the richest families in the region lived in this island.\p
     I heard their mansion was at the south end of Route 1."))
     }
     release
@@ -122,16 +116,14 @@ script SunshineTown_Eventscript_Boy {
 
 script SunshineTown_Eventscript_DirerctionSign {
     lock
-    msgbox(format("
-    Sunshine Riverbank {DOWN_ARROW}\n
+    msgbox(format("Sunshine Riverbank {DOWN_ARROW}\n
     Route 2 {LEFT_ARROW}"))
     release
 }
 
 script SunshineTown_Eventscript_TownSign {
     lock
-    msgbox(format("
-    Welcome to Sunshine Town!"))
+    msgbox(format("Welcome to Sunshine Town!"))
     release
 }
 
@@ -146,8 +138,7 @@ script SunshineTown_Eventscript_ExitingPC {
     applymovement(LOCALID_PLAYER, SunshineTown_Eventscript_AkihikoExitingPC)
     applymovement (4, SunshineTown_Eventscript_ShinjiroExitingPC)
     waitmovement(0)
-    msgbox(format("
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Let's ask around what happened.\p
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Let's ask around what happened.\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}Yeah."))
     closemessage
     applymovement(4, walkup)
@@ -175,8 +166,7 @@ script SunshineTown_Eventscript_DontLeaveTown {
     lockall
     applymovement(LOCALID_PLAYER, walkright)
     waitmovement(0)
-    msgbox(format("
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should ask people in town about that explosion sound!"))
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should ask people in town about that explosion sound!"))
     closemessage
     releaseall
 }
@@ -218,7 +208,7 @@ script SunshineTown_Eventscript_WarpToBurningOrphanage2 {
 
 script SunshineTown_Eventscript_OW_Happiny{
     lockall
-    if (var(VAR_AKIHIKOS_INTRO_STATE) <24){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) < 24){
         msgbox(format("The Happiny is looking through the door. It won't budge no matter what."))
         closemessage
         releaseall
@@ -239,7 +229,7 @@ script SunshineTown_Eventscript_OW_Happiny{
 script SunshineTown_Eventscript_OnFrame23{
     lock
     msgbox(format("{COLOR GREEN}Tips: Quest System is now unlocked.\p
-    Check around for quest givers with a green exclamation mark.
+    Check around for quest givers with a green exclamation mark.\p
     You can open quest menu in Start Menu {RIGHT_ARROW} L Button."))
     closemessage
     setflag(FLAG_SYS_QUEST_MENU_GET)
@@ -305,8 +295,9 @@ script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfAct
     else {
         msgbox(format("Excuse me, young men. Can you do me a favor?\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure, ma'am. What can we do for you?"))
+        closemessage
         setspeaker("Fumiko")
-        msgbox(format("{DESTROY_MUGSHOT}One of the Pokémon caretakers I hired couldn't show up today.\p
+        msgbox(format("One of the Pokémon caretakers I hired couldn't show up today.\p
         Can you go play with my poor baby Riolu? He's on the second floor.\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Leave it to us!"))
         closemessage

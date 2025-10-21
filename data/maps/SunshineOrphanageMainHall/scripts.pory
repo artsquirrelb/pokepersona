@@ -202,10 +202,9 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     delay(20)
     applymovement (4, TeacherFacingAkihiko)
     waitmovement(0)
-    msgbox(format(
-        "{SPEAKER NAME_KOBAYASHI}Alright.\p
-        I supposed it's quite late now. You all should go to rest.\p
-        See you tomorrow."))
+    msgbox(format("{SPEAKER NAME_KOBAYASHI}Alright.\p
+    I supposed it's quite late now. You all should go to rest.\p
+    See you tomorrow."))
     closemessage
     setvar(VAR_AKIHIKOS_INTRO_STATE, 9)
     fadescreenswapbuffers(FADE_TO_BLACK)
@@ -263,25 +262,24 @@ script Girl_2_MainHall {
     if (var(VAR_AKIHIKOS_INTRO_STATE) >=12){
         msgbox(format("Your Pokémon looks so round and cute!"))
     }
-    else{msgbox(format(
-        "{PLAYER}! I'm also getting adopted next week!\p My future adoptive parents are talking with my teacher right now.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} That's great! Congrats!"))}
+    else{msgbox(format("Akihiko! I'm also getting adopted next week!\p
+    My future adoptive parents are talking with my teacher right now.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}That's great! Congrats!"))}
     release
 }
 
 script RichMan_MainHall {
     lock
     faceplayer
-    setspeaker("Wealthy Man")
-    msgbox(format(
-        "We decided to adopt a daughter because my wife wanted one.\p If she's happy then I'm happy."))
+    setspeaker("Kind-looking Man")
+    msgbox(format("We decided to adopt a daughter because my wife wanted one.\p If she's happy then I'm happy."))
     release
 }
 
 script RichLady_MainHall {
     lock
     faceplayer
-    setspeaker("Wealthy Woman")
+    setspeaker("Kind-looking Woman")
     msgbox(format(
         "We will raise Momo with love and care."))
     release
@@ -289,16 +287,16 @@ script RichLady_MainHall {
 
 script Teacher_MainHall {
     lock
-    setspeaker("Ms. Kobayashi")
+    setspeaker("Kobayashi")
     if(var(VAR_AKIHIKOS_INTRO_STATE) < 5){
         faceplayer
         msgbox(format(
-        "Oh {PLAYER}, Miki is waiting for you outside with Shinjiro."))}
+        "Oh Akihiko, Miki is waiting for you outside with Shinjiro."))}
 
     elif(var(VAR_AKIHIKOS_INTRO_STATE) == 5 && var(VAR_AKIHIKOS_INTRO_STATE) == 6) {
         faceplayer
         msgbox(format(
-        "I'm a little busy right now. Can you go play somewhere else, {PLAYER}?"))
+        "I'm a little busy right now. Can you go play somewhere else, Akihiko?"))
     }
     
     elif(var(VAR_AKIHIKOS_INTRO_STATE) >= 12){
@@ -316,16 +314,14 @@ script Boy_3_MainHall {
     faceplayer
     setspeaker("Kenichi")
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
-        msgbox(format(
-        "Oh hey, {PLAYER}! Miki is waiting for you outside.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} I know, thanks!"))
+        msgbox(format("Oh hey, Akihiko! Miki is waiting for you outside.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}I know, thanks!"))
     }
     elif (var(VAR_AKIHIKOS_INTRO_STATE) == 5) {msgbox("Stay safe in the woods.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} We will!")}
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}We will!")}
     else {
-        msgbox(format(
-        "I heard you found a rare Pokemon in the woods?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED} Pawmi is rare?"))
+        msgbox(format("I heard you found a rare Pokemon in the woods?\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Pawmi is rare?"))
     }
     release
 }
@@ -346,27 +342,20 @@ script BackyardDoor {
 
 script Girls_HallwayMainHall {
     lock
-    msgbox( format(
-        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
-        "It's the way to the girls' hallway. I have no business there right now."))
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+    It's the way to the girls' hallway. I have no business there right now."))
     release
 }
 
 script RestroomMainHall {
     lock
-    msgbox(format (
-        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
-        "It's the restroom. I'm good for now."
-    ))
+    msgbox(format ("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}It's the restroom. I'm good for now."))
     release
 }
 
 script PokeballShelf {
     lock
-    msgbox(format (
-        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
-        "Those belong to the staff. I shouldn't touch them."
-    ))
+    msgbox(format ("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Those belong to the staff. I shouldn't touch them."))
     release
 }
 
@@ -378,9 +367,8 @@ script Porygon_PC {
     if (flag(FLAG_SYS_POKEMON_GET) == TRUE) {
         call(EventScript_AccessPokemonStorage)}
 
-    else {msgbox (format("
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
-    Porygon can access the Pokemon Storage. If only I have a Pokemon."))
+    else {msgbox (format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+    Porygon can access the Pokemon Storage. If only I had a Pokemon."))
     release
     end}
 }
@@ -389,7 +377,7 @@ script MartLady {
 	lock
 	faceplayer
     setspeaker ("Ms. Tanaba")
-	msgbox (format("Hi {PLAYER}, what should I get you?"))
+	msgbox (format("Hi Akihiko, what should I get you?"))
 	if(flag(FLAG_SYS_POKEDEX_GET) == TRUE) {pokemart (Orphanage_Mart_Expanded)}
 	else {pokemart(Orphanage_Mart_Basic)}
 	msgbox(format("Play safe okay, child?"))
@@ -426,10 +414,11 @@ script Blissey_Heal {
         waitse
         special(HealPlayerParty)
         releaseall}
-    else    
-     {msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
-     Blissey is very good at healing. I can ask it for help when I have an injured Pokemon."))
-        releaseall} 
+    else{
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+        Blissey is very good at healing. I can ask it for help when I have an injured Pokemon."))
+        releaseall
+    } 
 }
 
 script BlisseyHealedPawmi{

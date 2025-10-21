@@ -29,7 +29,7 @@ script SunshineOrphanage_Eventscript_ShowTheMap {
     applymovement(LOCALID_PLAYER, SlowlyShowTheMap)
     waitmovement(0)
     msgbox(format("Akihiko's Prologue: Sunshine Memories\n
-    {COLOR GREEN}{CLEAR_TO 56}Level cap: 10"))
+    {COLOR GREEN}{CLEAR_TO 64}Level cap: 10"))
     warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 5, 4)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 1)
     setvar(VAR_CURRENT_LEVEL_CAP, 10)
@@ -65,11 +65,10 @@ script Miki_and_Akihiko_walk_to_Shinjiro {
     applymovement (3, Miki_leading_Akihiko_to_Shinjiro)
     applymovement (LOCALID_PLAYER, Miki_leading_Akihiko_to_Shinjiro)
     waitmovement(0)
-    msgbox(format("
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Miki wants to go to the woods but there are wild Pokemons there.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Shinji, it's fineee. As long as we stay out of the tall grass.\p
-        {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}To the woods! To the woods!\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT} Fine..."))
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Miki wants to go to the woods but there are wild Pokemons there.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Shinji, it's fineee. As long as we stay out of the tall grass.\p
+    {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}To the woods! To the woods!\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Sigh..."))
     closemessage
     release
     goto(Shinjiro_and_Miki_Join_Party)
@@ -107,7 +106,7 @@ script Boy_1_OrphanageEntrance {
     faceplayer
     setspeaker("Yuta")
     msgbox(format("Can I grow tall like these sunflowers?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} Just drink a lot of milk!"))
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Just drink a lot of milk!"))
     release
 }
 
@@ -115,19 +114,16 @@ script Girl_OrphanageEntrance {
     lock
     faceplayer
     setspeaker("Yuko")
-    msgbox(format(
-        "Sometimes I see people wearing black accompanying a man wearing white coat speaking with our teachers.\p 
-        I wonder who they are...\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} I asked Ms. Kobayashi once and she said they donated a lot to the orphanage."
+    msgbox(format("Sometimes I see people wearing black accompanying a man in white coat speaking with our teachers.\p 
+    I wonder who they are...\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I asked Ms. Kobayashi once and she said they donated a lot to the orphanage."
     ))
     release
 }
 
 script Sunshine_Orphanage_Direction_Sign {
     lock
-    msgbox(
-        "Sunshine Woods {DOWN_ARROW}\n
-        Beware of wild Pokemons!"
+    msgbox("Sunshine Woods {DOWN_ARROW}\nBeware of wild Pokemons!"
     )
     release
 }
@@ -142,9 +138,9 @@ script Welcome_To_Sunshine_Orphanage {
 script Donors_List {
     lock
     msgbox (format("List of top donors (in alphabet order):
-     --- Kai --- Kazuhisa ---\p
-     --- Kirijo --- --- ---
-     --- Ryota --- --- Takuya"))
+    --- Kai --- Kazuhisa ---\p
+    --- Kirijo --- --- ---
+    --- Ryota --- --- Takuya"))
     release
 }
 

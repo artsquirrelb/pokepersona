@@ -31,8 +31,8 @@ script SunshineTown_KurosawasHouse_OnFrame23 {
 
 script SunshineTown_KurosawasHouse_Eventscript_KurosawaInformingAkihikoAboutMiki {
     delay(30)
-    msgbox(format("
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_TIRED}Miki...\p
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_TIRED}...\p
+    (If only I were stronger... I could've fought back and had a chance at finding Miki...)\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}..."))
     closemessage
     delay(8)
@@ -71,7 +71,7 @@ script SunshineTown_KurosawasHouse_Eventscript_AkihikoDecidingToGo {
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Where are you going?"))
     closemessage
     delay(20)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}I believe Miki is still alive.\p
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}I believe Miki is still alive.\p
     And if she's alive, there's a big chance that she's in danger.\p
     I'll definitely find her.\p
     And in order to do that,\p
@@ -139,11 +139,43 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     Befriending a Pokémon will greatly help you on your journey.\p
     You also should help other people if you can.\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Thank you, Kurosawa-san. We will.\p
-    {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Stay safe, kids."))
+    {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Oh, right. Hang on."))
     closemessage
+    applymovement(1, KurosawaGettingTheSleepingBags)
+    delay(8)
+    applymovement(LOCALID_PLAYER, faceleft)
+    applymovement(3, faceleft)
+    delay(96)
+    applymovement(3, faceup)
+    delay(4)
+    applymovement(LOCALID_PLAYER, faceup)
+    waitmovement(1)
+    msgbox(format("{SPEAKER NAME_KUROSAWA}Take these sleeping bags. You'll need them when night falls.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Woah, these are great! Thank you, Kurosawa-san!\p
+    {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Stay safe, kids. I'll keep you updated with our searching."))
+    closemessage
+    delay(20)
     warp(MAP_SUNSHINE_TOWN, 3, 14)
 }
 
+movement KurosawaGettingTheSleepingBags {
+    walk_left*2
+    walk_down
+    walk_left*3
+    walk_up *3
+    delay_16
+    delay_16
+    delay_16
+    walk_down *3
+    walk_right*3
+    walk_up
+    walk_right*2
+    face_down
+    delay_16
+    delay_16
+    walk_right
+    face_down
+}
 script Growlithe_NPC {
     lockall
     playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
@@ -195,7 +227,7 @@ script SunshineTown_KurosawasHouse_Eventscript_TrashcanItem {
 
 script SunshineTown_KurosawasHouse_Eventscript_Notebook {
     lock
-    msgbox(format("The notebook is full of hard-to-read scribles. Among them is a stroke through “Sunshine Orphanage”."))
+    msgbox(format("The notebook is full of hard-to-read scribles. Among them is a stroke-through “Sunshine Orphanage”."))
     closemessage
     release
     end

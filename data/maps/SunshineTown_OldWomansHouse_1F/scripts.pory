@@ -9,8 +9,7 @@ script SunshineTown_OldWomansHouse_1F_Eventscript_LucarioAndRiolu {
     playmoncry(SPECIES_RIOLU, CRY_MODE_NORMAL)
     applymovement (2, shakehorizontal)
     waitmovement(0)
-    msgbox(format("
-    Lucario and Riolu are training diligently and ignore the surroundings."))
+    msgbox(format("Lucario and Riolu are training diligently and ignore the surroundings."))
     closemessage
     releaseall
     end
@@ -20,8 +19,7 @@ script SunshineTown_OldWomansHouse_1F_Eventscript_Caretaker {
     lockall
     faceplayer
     setspeaker ("Emi")
-    msgbox(format("
-    The owner of this house is a fan of Lucario.\p
+    msgbox(format("The owner of this house is a fan of Lucario.\p
     She hired us to play with her Pokémons because it gets very rowdy as she keeps bringing more Riolus home.\p
     If you want one for yourself I'm sure you can find some lurking in the tall grass in town."))
     closemessage

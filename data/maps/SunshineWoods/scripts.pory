@@ -33,10 +33,9 @@ script SunshineWoods_Eventscript_DoNotEnterTheGrass {
     applymovement(2, facedown)
     applymovement(3, facedown)
     waitmovement(0)
-    msgbox(format(
-        "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Alright, we're here.\p
-        Don't enter the tall grass, okay?\p
-        {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Okay!"))
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Alright, we're here.\p
+    Don't enter the tall grass, okay?\p
+    {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Okay!"))
     fadescreenswapbuffers(FADE_TO_BLACK)
     release
     setvar(VAR_AKIHIKOS_INTRO_STATE, 6)
@@ -70,9 +69,8 @@ movement SunshineWoods_Eventscript_MikiFoundSomething {
 
 script SunshineWoods_Eventscript_PawmisCry {
     lock
-    msgbox(format(
-        "{SPEAKER NAME_MIKI}Big bro! Look! I just made this flower crown! It's for you!\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}It's very pretty! Thank you, Miki!"))
+    msgbox(format("{SPEAKER NAME_MIKI}Big bro! Look! I just made this flower crown! It's for you!\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}It's very pretty! Thank you, Miki!"))
     release
     goto (SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown)
 }
@@ -80,9 +78,8 @@ script SunshineWoods_Eventscript_PawmisCry {
 script SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown {
     lock
     applymovement(5, faceup)
-    msgbox(format("
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Will you make one for me too, Miki?\p
-        {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT} Of course!"))
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Will you make one for me too, Miki?\p
+    {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Of course!"))
     closemessage
     release
     goto(SunshineWoods_Eventscript_PawmiCries)
@@ -97,9 +94,8 @@ script SunshineWoods_Eventscript_PawmiCries {
     applymovement(5, SunshineWoods_Eventscript_MikiAlerted)
     delay(30)
     waitmovement
-    msgbox(format(
-        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that?\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Could be a wild Pokemon. Be careful!"))
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that?\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Could be a wild Pokemon. Be careful!"))
     waitmessage
     release
     goto (SunshineWoods_Eventscript_PawmiAppears)
@@ -166,8 +162,7 @@ script SunshineWoods_Eventscript_PawmisInjured {
     applymovement(6, SunshineWoods_Eventscript_PawmiIsWeak)
     waitmovement
     delay(16)
-    msgbox(format("
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Wait...\p
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Wait...\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}It looks heavily injured.\p
     {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}We should take it back to the orphanage!\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Yeah!"))
@@ -221,8 +216,7 @@ script OW_Chewtle {
 
 script SunshineWoods_Eventscript_DirectionSign {
     lock
-    msgbox(format("
-    Sunshine Orphanage {UP_ARROW}\n
+    msgbox(format("Sunshine Orphanage {UP_ARROW}\n
     Sunshine Town {LEFT_ARROW}"))
     release
 }

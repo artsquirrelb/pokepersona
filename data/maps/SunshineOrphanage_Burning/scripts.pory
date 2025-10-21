@@ -36,8 +36,7 @@ script SunshineOrphanage_Burning_Eventscript_AkihikoNoticesTheFire {
     applymovement(5, emoteexclamation)
     applymovement(4, KobayashiNotices)
     waitmovement(0)
-    msgbox(format("
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}Crap-\p
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}Crap-\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Miki! Where's Miki?!\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}MIKI!!"))
     closemessage
@@ -129,8 +128,10 @@ script SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera {
 script SunshineOrphanage_Burning_Eventscript_EveryonePin {
     applymovement (1, emoteexclamation)
     applymovement (2, emoteexclamation)
+    delay(4)
     applymovement (3, emoteexclamation)
     applymovement (4, emoteexclamation)
+    delay(4)
     applymovement (5, emoteexclamation)
     applymovement (LOCALID_PLAYER, emoteexclamation)
     waitmovement(0)
@@ -228,7 +229,6 @@ script SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver{
     applymovement(5, AkiShinjiGettingPushed)
     applymovement(LOCALID_PLAYER, AkiShinjiGettingPushed)
     waitmovement(0)
-    closemessage
     delay(20)
     addobject(4)
     applymovement (4, KobayashiWalksTowardAzumarill)
@@ -331,6 +331,7 @@ movement AkiFellDown {
     set_invisible
 }
 
+
 script SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi {
     delay(16)
     special(SpawnCameraObject)
@@ -344,6 +345,7 @@ script SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi {
     waitmovement(0)
     delay(16)
     setspeaker("Man In Black")
+    //script currently unused, no need to edit
     msgbox(format("Where are the subjects?\p
     {SPEAKER NAME_KOBAYASHI}They aren't in their room?"))
     closemessage

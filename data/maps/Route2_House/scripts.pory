@@ -101,7 +101,7 @@ script Route2_House_Eventscript_AkiShinjiWakingUp {
     setspeaker("???????")
     msgbox(format("{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Apologies for this is the best shelter I could provide in this situation.\p
     This house is of my butler's grandson, who's currently traveling the region.\p
-    We're still in Route 2. Worry not, we're safe here."))
+    We're still in Route 2. Worry not, it's safe here."))
     closemessage
     goto(Route2_House_Eventscript_TriosFirstGreeting)
     release

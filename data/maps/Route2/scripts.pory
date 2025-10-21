@@ -81,7 +81,7 @@ script Route2_Eventscript_AkishinjiGettingBlockedBySusMen {
     closemessage
     applymovement(4, SusMan1ApproachingAkihiko)
     waitmovement(0)
-    applymovement(LOCALID_PLAYER, shakehorizontal)
+    applymovement(LOCALID_PLAYER, shakevertical)
     call(SunshineOrphanage_Burning_Eventscript_BlockShakeCamera)
     applymovement(4, SusMan1StepBack)
     waitmovement(0)
@@ -292,7 +292,7 @@ script Route2_Eventscript_MitsuruAppears {
     setspeaker("???????")
     msgbox(format("{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}...\p
     Inteleon, let's get these two out of here first.\p
-    This ice can only hold off for so long."))
+    The ice can only hold off for so long."))
     closemessage
     playse(SE_EXIT)
     applymovement(12, InteleonWalksOut)
@@ -393,7 +393,6 @@ script Route2_Eventscript_AkihikoOnFrame33 {
 }
 
 script Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon {
-    lock
     applymovement(6, ShinjiroSplitsOut)
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Aight, I'm gonna go ahead and catch some Pokémon.\p
@@ -404,13 +403,14 @@ script Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon {
     applymovement(6, ShinjiroGoesOffCam)
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement(6)
+    lock
     removeobject(6)
     setobjectxyperm(6, 29, 21)
     setobjectnewmovementtype(6, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
     addobject(6)
+    release
     setvar(VAR_AKIHIKOS_INTRO_STATE, 34)
     clearflag(FLAG_HIDE_TALK_BUTTON)
-    releaseall
     end
 }
 

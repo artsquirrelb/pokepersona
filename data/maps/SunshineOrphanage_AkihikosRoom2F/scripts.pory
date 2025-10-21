@@ -21,7 +21,7 @@ movement faceup {face_up}
 
 script AkihikosRoom2F_ONFRAME1 {
     lockall
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 1) {goto (AkihikosRoom2F_Cutscene1)}
+    goto (AkihikosRoom2F_Cutscene1)
     releaseall
 }
 
@@ -114,12 +114,7 @@ movement Camera_Back_to_Player {
 
 script GoSetTheClock{
     lockall
-    msgbox (
-        format (
-            "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}{SPEAKER NAME_AKIHIKO}"
-            "I should fix the clock."
-        )
-    )
+    msgbox(format("{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}{SPEAKER NAME_AKIHIKO}I should fix the clock."))
     applymovement (LOCALID_PLAYER, StepBack)
     waitmovement(0)
     releaseall
@@ -137,7 +132,7 @@ script SetWallclock {
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
     setspeaker ("Akihiko")
     msgbox ("All done.")
-	setvar(VAR_AKIHIKOS_INTRO_STATE , 3)
+	setvar(VAR_AKIHIKOS_INTRO_STATE, 3)
 	setflag(FLAG_SET_WALL_CLOCK)
 	releaseall
 	end
@@ -226,11 +221,10 @@ script ChoresList {
 
 script Calendar {
     lock
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
-    "My sis and I are going to get adopted in 3 days, Shinji in the following day.\p" 
-    "The Sanadas and the Aragakis look like they are good people.\p" 
-    "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}"
-    "I'll miss everyone here..."))
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+    My sis and I are going to get adopted in 3 days, Shinji in the following day.\p 
+    The Sanadas and the Aragakis look like they are good people.\p 
+    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}I'll miss everyone here..."))
     release
 }
 

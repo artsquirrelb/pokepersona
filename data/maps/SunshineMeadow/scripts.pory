@@ -179,7 +179,7 @@ script SunshineMeadow_Eventscript_ChoosingPartyForMitsuruFirstBattle {
 script SunshineMeadow_Eventscript_MitsuruFirstBattleResult {
     specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON){
-            msgbox (SunshineMeadow_Eventscript_WonMitsuruFirstBattle)
+            msgbox (SunshineMeadow_Eventscript_WonInMitsuruFirstBattle)
             closemessage
         }
         else{
@@ -189,9 +189,12 @@ script SunshineMeadow_Eventscript_MitsuruFirstBattleResult {
         goto (SunshineMeadow_Eventscript_PostMitsuruFirstBattle)
 }
 
-text SunshineMeadow_Eventscript_WonMitsuruFirstBattle {
+text SunshineMeadow_Eventscript_WonInMitsuruFirstBattle {
     format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}To be honest, althought I didn't use my full team,
-    it's still very impressive that you managed to beat me, Sanada-kun.")
+    it's still very impressive that you managed to beat me, Sanada-kun.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(I only managed to win by sheer luck...\p
+    The way she ordered her Pokémons was so smart.\p
+    It's... amazing.)")
 }
 
 text SunshineMeadow_Eventscript_LostInMitsuruFirstBattle {
@@ -285,9 +288,7 @@ movement MitsuruApproachesToHeal {
 }
 
 movement MitsuruGoesBackAfterHealing {
-    lock_facing_direction
     walk_right *2
-    unlock_facing_direction
     face_down
 }
 

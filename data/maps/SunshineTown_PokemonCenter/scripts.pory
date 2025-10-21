@@ -1,0 +1,304 @@
+mapscripts SunshineTown_PokemonCenter_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (flag(FLAG_SYS_POKEMON_GET) == TRUE) {
+            setrespawn(HEAL_LOCATION_SUNSHINE_TOWN) 
+        }
+        
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 14) {
+            clearflag(FLAG_HIDE_SHINJIRO)
+            setobjectxyperm(7, 11, 9)
+            setobjectmovementtype (7, MOVEMENT_TYPE_FACE_UP)
+            setobjectxyperm (6, 17, 8)
+            setobjectmovementtype (6, MOVEMENT_TYPE_FACE_RIGHT)
+        }
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 16 && var(VAR_AKIHIKOS_INTRO_STATE) < 24) {playbgm(MUS_HELP, TRUE)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_AKIHIKOS_INTRO_STATE, 14: SunshineTown_PokemonCenter_Eventscript_OnFrame14
+    ]
+}
+
+script PokemonCenter_Eventscript_Nurse {
+    lock
+    faceplayer
+    setspeaker("Nurse")
+    msgbox(format("Hello and welcome to the Pokémon Center.\p
+    Let me heal your tired Pokémon."))
+    hidefollower
+    playse(MUS_HEAL)
+    waitse
+    special(HealPlayerParty)
+    callnative (UpdateFollowingPokemon)
+    msgbox(format("
+    Thank you for waiting. We have restored your tired Pokémon to full health.\p
+    We hope to see you again."))
+    closemessage
+    applymovement(LOCALID_PLAYER, facedown)
+    waitmovement(0)
+	release
+	end
+}
+
+script PCStorage {
+    lock
+    call(EventScript_PC)
+    release
+}
+
+script SunshineTown_PokemonCenter_Eventscript_MartLady {
+    lock
+    faceplayer
+    setspeaker("Mart Employee")
+    msgbox(format("
+        Hello. What can I do for you?"))
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 12){
+        setflag(FLAG_HIDE_TALK_BUTTON)
+        applymovement(7, SunshineTown_PokemonCenter_Eventscript_ShinjiroFacesTheMart)
+        waitmovement(0)
+        msgbox(format("
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+        Hello. We're here to pick up a package for Ms. Kobayashi.\p
+        It should have arrived today."))
+        closemessage
+        setspeaker("Mart Employee")
+        msgbox("One moment, please.")
+        setvar(VAR_AKIHIKOS_INTRO_STATE, 13)
+        warpsilent(MAP_BLANK_MAP)
+        release
+        end
+    }
+    elif(flag(FLAG_SYS_POKEDEX_GET) == FALSE && var(VAR_AKIHIKOS_INTRO_STATE) >=14) {pokemart(SunshineTown_Mart_Basic)}
+	else {pokemart (SunshineTown_Mart_Expanded)}
+    msgbox(gText_PleaseComeAgain)
+    release
+    end
+}
+
+raw`
+	.align 2
+SunshineTown_Mart_Basic:
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_AWAKENING
+	pokemartlistend
+
+	.align 2
+SunshineTown_Mart_Expanded:
+	.2byte ITEM_POKE_BALL
+	.2byte ITEM_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_AWAKENING
+	pokemartlistend
+`
+
+movement SunshineTown_PokemonCenter_Eventscript_ShinjiroFacesTheMart {
+    walk_up
+    face_right
+}
+
+script SunshineTown_PokemonCenter_Eventscript_OnFrame14 {
+    goto(SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient)
+    release
+}
+
+script SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient {
+    lock
+    applymovement(LOCALID_PLAYER, SunshineTown_PokemonCenter_Eventscript_AkihikoMoveAround)
+    waitmovement
+    msgbox(format("
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}What's taking her so long??\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Yeah, it's been 10 minutes."))
+    closemessage
+    applymovement(LOCALID_PLAYER, walkright)
+    msgbox(format("
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Is there anything wrong, ma'am-"), MSGBOX_AUTOCLOSE)
+    special(StopMapMusic)
+    playse (SE_INTRO_BLAST)
+    call(SunshineTown_PokemonCenter_Eventscript_CameraShake)
+    delay(1)
+    call(SunshineTown_PokemonCenter_Eventscript_EveryonePin)
+    waitmovement(0)
+    playbgm(MUS_HELP, TRUE)
+    applymovement(LOCALID_PLAYER, faceleft)
+    applymovement(7, faceright)
+    waitmovement(0)
+    msgbox(format("
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that??\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}Sounded like an explosion.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Shinji, let's go check."))
+    closemessage
+    applymovement(7, SunshineTown_PokemonCenter_Eventscript_ShinjiroJoins)
+    waitmovement(0)
+    removeobject(7)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 15)
+    setflag(FLAG_HIDE_SHINJIRO)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
+    release
+    end
+}
+
+movement emoteexclamation {
+    emote_exclamation_mark
+    
+}
+
+movement SunshineTown_PokemonCenter_Eventscript_ShinjiroJoins {
+    walk_up
+    walk_right
+}
+
+script SunshineTown_PokemonCenter_Eventscript_EveryonePin {
+    playse (SE_PIN)
+    applymovement(LOCALID_PLAYER, emoteexclamation)
+    applymovement(2, emoteexclamation)
+    applymovement(3, emoteexclamation)
+    applymovement(4, emoteexclamation)
+    applymovement(6, emoteexclamation)
+    applymovement(5, emoteexclamation)
+    applymovement(7, emoteexclamation)
+}
+
+script SunshineTown_PokemonCenter_Eventscript_CameraShake {
+    delay(20)
+    setvar(VAR_0x8004, 2) //vertical pan
+    setvar(VAR_0x8005, 4) //horizontal pan
+    setvar(VAR_0x8006, 6) //number of shakes
+    setvar(VAR_0x8007, 4) //shake delay
+    special (ShakeCamera)
+    waitstate
+    delay(30)
+}
+movement SunshineTown_PokemonCenter_Eventscript_AkihikoMoveAround {
+    walk_left
+    delay_16
+    walk_right
+    delay_16
+    emote_upset
+}
+movement walkright {
+    walk_right
+}
+
+script SunshineTown_PokemonCenter_Eventscript_OldMan {
+    lock
+    faceplayer
+    setspeaker("Oda")
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15) {
+        msgbox(format("That almost gave me a heartattack..."))
+    }
+    else {msgbox(format("
+    Back in the day, Pokémon Center and Pokémart used to be in two separated buildings.\p
+    I'm glad that they changed it. It's more convenient like this."))}
+    release
+}
+
+script SunshineTown_PokemonCenter_Eventscript_YoungBoy {
+    lock
+    faceplayer
+    setspeaker ("Kenta")
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15) {
+        applymovement (1, shakehorizontal)
+        waitmovement(0)
+        msgbox(format("I-I'm fine. With Poochyena here, I'll be fine."))
+        applymovement (8, lockdirectionandwalkinplace)
+    }
+    else {
+        msgbox(format("
+    My mom said I couldn't have a Pokédex because it was too expensive."))}
+    release
+}
+
+movement shakehorizontal {
+    shake_horizontal 
+}
+
+movement lockdirectionandwalkinplace {
+    lock_facing_direction
+    walk_in_place_right
+    unlock_facing_direction
+}
+
+script SunshineTown_PokemonCenter_Eventscript_NPCPoochyena {
+    lock
+    faceplayer
+    playmoncry(SPECIES_POOCHYENA, CRY_MODE_NORMAL)
+    release
+}
+
+script SunshineTown_PokemonCenter_Eventscript_Gentleman {
+    lock
+    faceplayer
+    setspeaker ("Watanabe")
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15) {
+        msgbox(format("It sounds dangerous outside, you kids should stay here.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Thank you, sir but we'll be fine."))
+    }
+    else {msgbox (format("
+    The Kirijo group specializes in researching Pokémon in this region.\p
+    They do a good job at it but on the other hand, stuff like Pokédex and DexNav
+    cost you a fortune."))}
+    release
+}
+
+script SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene0 {
+    lockall
+    delay(30)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, SunshineTown_PokemonCenter_Eventscript_CameraToMartLady0)
+    waitmovement(0)
+    playse(SE_EXIT)
+    removeobject(LOCALID_PLAYER)
+    delay(30)
+    setspeaker ("Mart Employee")
+    applymovement(6, walkleft)
+    waitmovement(0)
+    msgbox(SunshineTown_PokemonCenter_Eventscript_MartLadyEndCutsceneText)
+    closemessage
+    special(RemoveCameraObject)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 16)
+    warpsilent(MAP_SUNSHINE_TOWN, 8, 4)
+    releaseall
+    end
+}
+
+script SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene1 {
+    lockall
+    delay(30)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, SunshineTown_PokemonCenter_Eventscript_CameraToMartLady1)
+    waitmovement(0)
+    playse(SE_EXIT)
+    removeobject(LOCALID_PLAYER)
+    delay(30)
+    setspeaker ("Mart Employee")
+    applymovement(6, walkleft)
+    waitmovement(0)
+    msgbox(SunshineTown_PokemonCenter_Eventscript_MartLadyEndCutsceneText)
+    closemessage
+    special(RemoveCameraObject)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 16)
+    warpsilent(MAP_SUNSHINE_TOWN, 8, 4)
+    releaseall
+    end
+}
+
+movement walkleft {
+    walk_left
+}
+
+movement SunshineTown_PokemonCenter_Eventscript_CameraToMartLady0 {
+    walk_up
+    walk_right *7
+}
+
+movement SunshineTown_PokemonCenter_Eventscript_CameraToMartLady1 {
+    walk_up
+    walk_right *6
+}
+
+text SunshineTown_PokemonCenter_Eventscript_MartLadyEndCutsceneText {
+    format("Sorry, Kobayashi. This is the best I could do.")
+}

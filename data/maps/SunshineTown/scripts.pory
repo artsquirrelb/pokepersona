@@ -1,0 +1,340 @@
+mapscripts SunshineTown_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) < 23){
+            setobjectxyperm(5, 19, 7)
+            setobjectmovementtype(5, MOVEMENT_TYPE_FACE_UP)
+            setobjectxyperm(6, 23, 3)
+            setobjectmovementtype(6, MOVEMENT_TYPE_FACE_LEFT)
+        }
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 16 || var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18) {
+            playbgm(MUS_HELP, TRUE)
+            setflag(FLAG_HIDE_KUROSAWA)
+            setflag(FLAG_HIDE_TALK_BUTTON)
+            setobjectxyperm(2, 12, 11)
+            setobjectmovementtype (2, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
+            setobjectxyperm(1, 1, 14)
+            setobjectmovementtype (1, MOVEMENT_TYPE_LOOK_AROUND)
+            }
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 16) {
+            clearflag(FLAG_HIDE_SHINJIRO)
+        }
+    } 
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_AKIHIKOS_INTRO_STATE, 16: SunshineTown_Eventscript_OnFrame16
+        VAR_AKIHIKOS_INTRO_STATE, 23: SunshineTown_Eventscript_OnFrame23
+    ]
+}
+
+script SunshineTown_Eventscript_Kurosawa {
+    lock
+    setspeaker(SP_NAME_KUROSAWA)
+    if (flag(FLAG_TEMP_1) == TRUE) {
+        faceplayer
+        msgbox(format("Hm?\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-we'll get going now!"))
+    }
+    else {
+        msgbox(format("If only the higher-ups allowed us-"))
+        closemessage
+        playse(SE_PIN)
+        applymovement(3, KurosawaNoticed)
+        waitmovement(0)
+        msgbox(format("{SPEAKER NAME_KUROSAWA}Do you need some help, kids?\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Oh nothing! Sorry for bothering you, sir.\p
+        (He looks so intimidating!)"))
+        setflag(FLAG_TEMP_1)
+    }
+    release
+}
+
+movement KurosawaNoticed {
+    emote_exclamation_mark
+    face_player
+}
+
+script SunshineTown_Eventscript_GoGetPackage0 {
+    lockall
+    msgbox(format("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The Pokémon Center is right there, Aki."))
+    closemessage
+    applymovement(LOCALID_PLAYER, walkright)
+    waitmovement(0)
+    releaseall
+    end
+}
+
+movement SunshineTown_Eventscript_ShinjiroPreventFromLeaving0 {
+    walk_left
+    face_right
+}
+movement SunshineTown_Eventscript_ShinjiroJoinsback0 {
+    walk_up
+    walk_right
+}
+
+script SunshineTown_Eventscript_GoGetPackage1{
+    lockall
+    msgbox(format("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The Pokémon Center is right there, Aki."))
+    closemessage
+    applymovement(LOCALID_PLAYER, walkright)
+    waitmovement(0)
+    removeobject(4)
+    releaseall
+    end
+}
+
+script SunshineTown_Eventscript_FatMan {
+    lock
+    faceplayer
+    setspeaker("Kojima")
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18){
+        msgbox(format("The policeman living here ran
+        toward the woods after hearing that explosion sound.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should hurry up!"))
+        setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
+    }
+    else{
+    msgbox(format("
+    Technology is amazing.\p
+    Now you can do so many things with decomps."))}
+    release
+}
+
+script SunshineTown_Eventscript_Boy {
+    lock
+    faceplayer
+    setspeaker ("Yoshida")
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18){
+        msgbox(format("
+        I think something exploded in the woods.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DARKENED}Could it be...\p
+        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}The orphanage!"))
+        setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
+    }
+    else {
+        msgbox(format("
+    One of the richest families in the region lived in this island.\p
+    I heard their mansion was at the south end of Route 1."))
+    }
+    release
+}
+
+script SunshineTown_Eventscript_DirerctionSign {
+    lock
+    msgbox(format("
+    Sunshine Riverbank {DOWN_ARROW}\n
+    Route 2 {LEFT_ARROW}"))
+    release
+}
+
+script SunshineTown_Eventscript_TownSign {
+    lock
+    msgbox(format("
+    Welcome to Sunshine Town!"))
+    release
+}
+
+script SunshineTown_Eventscript_OnFrame16 {
+    lockall
+    goto (SunshineTown_Eventscript_ExitingPC)
+    releaseall
+}
+
+script SunshineTown_Eventscript_ExitingPC {
+    lockall
+    applymovement(LOCALID_PLAYER, SunshineTown_Eventscript_AkihikoExitingPC)
+    applymovement (4, SunshineTown_Eventscript_ShinjiroExitingPC)
+    waitmovement(0)
+    msgbox(format("
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Let's ask around what happened.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}Yeah."))
+    closemessage
+    applymovement(4, walkup)
+    waitmovement(0)
+    removeobject(4)
+    setflag(FLAG_HIDE_SHINJIRO)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 17)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
+    releaseall
+}
+
+movement SunshineTown_Eventscript_AkihikoExitingPC {
+    walk_fast_down *1
+    walk_fast_right *2
+    face_down
+}
+
+movement SunshineTown_Eventscript_ShinjiroExitingPC {
+    walk_fast_down *3
+    walk_fast_right *2 
+    face_up
+}
+
+script SunshineTown_Eventscript_DontLeaveTown {
+    lockall
+    applymovement(LOCALID_PLAYER, walkright)
+    waitmovement(0)
+    msgbox(format("
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should ask people in town about that explosion sound!"))
+    closemessage
+    releaseall
+}
+
+script SunshineTown_Eventscript_WarpToBurningOrphanage{
+    lock
+    playse(SE_EXIT)
+    setflag(FLAG_HIDE_TALK_BUTTON)
+    warp(MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23)
+    delay(30)
+    release
+}
+
+script SunshineTown_Eventscript_NoPointEnteringPC {
+    lock
+    applymovement(LOCALID_PLAYER, walkdown)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to diddling around!)"))
+    closemessage
+    release
+}
+
+script SunshineTown_Eventscript_NoPointLeavingTown {
+    lock
+    applymovement(LOCALID_PLAYER, walkright)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to diddling around!)"))
+    closemessage
+    release
+}
+
+script SunshineTown_Eventscript_WarpToBurningOrphanage2 {
+    lock
+    playse(SE_EXIT)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
+    setflag(FLAG_HIDE_TALK_BUTTON)
+    warp(MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23)
+    delay(30)
+    release
+}
+
+script SunshineTown_Eventscript_OW_Happiny{
+    lockall
+    if (var(VAR_AKIHIKOS_INTRO_STATE) <24){
+        msgbox(format("The Happiny is looking through the door. It won't budge no matter what."))
+        closemessage
+        releaseall
+        end
+    }
+    else{
+        faceplayer
+        playmoncry(SPECIES_HAPPINY, CRY_MODE_NORMAL)
+        startoverworldencounter(6)
+        removeobject(6)
+        setflag(FLAG_TEMP_A)
+        releaseall
+        end
+    }
+    
+}
+
+script SunshineTown_Eventscript_OnFrame23{
+    lock
+    msgbox(format("{COLOR GREEN}Tips: Quest System is now unlocked.\p
+    Check around for quest givers with a green exclamation mark.
+    You can open quest menu in Start Menu {RIGHT_ARROW} L Button."))
+    closemessage
+    setflag(FLAG_SYS_QUEST_MENU_GET)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 24)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
+    release
+    end
+}
+
+script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL{
+    lock
+    setspeaker("Fumiko")
+    if (var(VAR_AKIHIKOS_INTRO_STATE) < 24){
+        goto (SunshineTown_Eventscript_ExpertF_PreQuest)
+        release
+        end
+    }
+    else {
+        faceplayer
+        questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+        if (var(VAR_RESULT) == TRUE){
+            call(SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted)
+        }
+        else{
+            call(SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward)
+        }
+    }
+    release
+    end
+}
+
+script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted {
+    msgbox(format("Soothe Bell can help you befriend Pokémon faster."))
+    closemessage
+    release
+    end
+}
+
+
+script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward {
+    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+    if (var(VAR_RESULT) == TRUE){
+        msgbox(format("My Riolu was very happy. Please take this as a thank-you for doing me a favor."))
+        closemessage
+        giveitem(ITEM_SOOTHE_BELL, 1)
+        questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+        release
+        end
+    }
+    else {
+        call(SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive)
+    }
+}
+
+script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive {
+    questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+    if (var(VAR_RESULT) == TRUE){
+        msgbox(format("You can find my poor Riolu on the second floor."))
+        closemessage
+        release
+        end
+    }
+    else {
+        msgbox(format("Excuse me, young men. Can you do me a favor?\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure, ma'am. What can we do for you?"))
+        setspeaker("Fumiko")
+        msgbox(format("{DESTROY_MUGSHOT}One of the Pokémon caretakers I hired couldn't show up today.\p
+        Can you go play with my poor baby Riolu? He's on the second floor.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Leave it to us!"))
+        closemessage
+        questmenu(QUEST_MENU_SET_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+        release
+        end
+    }
+    
+}
+
+script SunshineTown_Eventscript_ExpertF_PreQuest {
+    msgbox("Where did I put my key again...?")
+    closemessage
+    release
+    end
+}
+
+script SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24 {
+    lock
+    msgbox(format("{COLOR RED}Important scene ahead. Do you want to proceed?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == 0){
+        applymovement(LOCALID_PLAYER, walkright)
+        waitmovement(0)
+        release
+    }
+    else{
+        setflag(FLAG_HIDE_TALK_BUTTON)
+        warpsilent(MAP_BLANK_MAP, 0, 0)
+    }
+}
+    

@@ -1,0 +1,403 @@
+mapscripts SunshineOrphanage_Burning_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
+        VAR_AKIHIKOS_INTRO_STATE, 18: SunshineOrphanage_Burning_OnWarp18
+    ]
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 18){
+            clearflag(FLAG_HIDE_MIKI)
+            clearflag(FLAG_HIDE_SHINJIRO)
+            
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_AKIHIKOS_INTRO_STATE, 18: SunshineOrphanage_Burning_OnFrame18
+    ]
+}
+
+script SunshineOrphanage_Burning_OnWarp18 {
+    applymovement(LOCALID_PLAYER, faceup)
+    hideobjectat(8, MAP_SUNSHINE_ORPHANAGE_BURNING)
+    //hideobjectat(11, MAP_SUNSHINE_ORPHANAGE_BURNING)
+    //hideobjectat(12, MAP_SUNSHINE_ORPHANAGE_BURNING)
+    //hideobjectat(13, MAP_SUNSHINE_ORPHANAGE_BURNING)
+}
+
+script SunshineOrphanage_Burning_OnFrame18{
+    lockall
+    goto(SunshineOrphanage_Burning_Eventscript_AkihikoNoticesTheFire)
+    releaseall
+    end
+}
+
+script SunshineOrphanage_Burning_Eventscript_AkihikoNoticesTheFire {
+    delay(20)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, emoteexclamation)
+    applymovement(5, emoteexclamation)
+    applymovement(4, KobayashiNotices)
+    waitmovement(0)
+    msgbox(format("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}Crap-\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Miki! Where's Miki?!\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}MIKI!!"))
+    closemessage
+    goto(SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko)
+}
+
+movement KobayashiNotices {
+    emote_exclamation_mark
+    face_down
+}
+
+script SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko {
+    applymovement(LOCALID_PLAYER, AkihikoRunsUp)
+    applymovement(5, ShinjiroRunsUp)
+    delay(8)
+    applymovement(4, KobayashiBlocks)
+    call(SunshineOrphanage_Burning_Eventscript_BlockShakeCamera)
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}AKI-!"), MSGBOX_AUTOCLOSE)
+    closemessage
+    delay(30)
+    applymovement(LOCALID_PLAYER, AkihikoTriesToRunUp)
+    applymovement(4, BlockingAkihiko)
+    waitmovement(0)
+    delay(20)
+    msgbox(format("
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Teacher! Let me go!! I have to find Miki!!\p
+    {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}It's too dangerous, Akihiko!"))
+    call (SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera)
+    call (SunshineOrphanage_Burning_Eventscript_EveryonePin)
+    applymovement(5, faceup)
+    waitmovement(0)
+    delay(20)
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}The fire is coming from the girls' hallway!\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Fuck-!"))
+    closemessage
+    goto (SunshineOrphanage_Burning_Eventscript_SusMenAppear)
+}
+
+movement AkihikoRunsUp {
+    walk_fast_up *4
+    lock_facing_direction
+    jump_down
+    unlock_facing_direction
+}
+
+movement ShinjiroRunsUp {
+    walk_fast_up *3
+    face_right
+}
+
+movement KobayashiBlocks {
+    walk_fast_right
+    walk_in_place_down *2
+}
+
+movement AkihikoTriesToRunUp {
+    walk_in_place_fast_up *2
+    shake_vertical
+}
+
+movement BlockingAkihiko {
+    walk_in_place_fast_down *2
+    shake_horizontal
+}
+
+script SunshineOrphanage_Burning_Eventscript_BlockShakeCamera {
+    delay(8)
+    setvar(VAR_0x8004, 2) //vertical pan
+    setvar(VAR_0x8005, 2) //horizontal pan
+    setvar(VAR_0x8006, 4) //number of shakes
+    setvar(VAR_0x8007, 4) //shake delay
+    special (ShakeCamera)
+    waitstate
+    delay(8)
+}
+
+script SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera {
+    delay(20)
+    playse(SE_INTRO_BLAST)
+    setvar(VAR_0x8004, 2) //vertical pan
+    setvar(VAR_0x8005, 4) //horizontal pan
+    setvar(VAR_0x8006, 6) //number of shakes
+    setvar(VAR_0x8007, 4) //shake delay
+    special (ShakeCamera)
+    waitstate
+    delay(20)
+}
+
+script SunshineOrphanage_Burning_Eventscript_EveryonePin {
+    applymovement (1, emoteexclamation)
+    applymovement (2, emoteexclamation)
+    applymovement (3, emoteexclamation)
+    applymovement (4, emoteexclamation)
+    applymovement (5, emoteexclamation)
+    applymovement (LOCALID_PLAYER, emoteexclamation)
+    waitmovement(0)
+    lock
+    setobjectnewmovementtype (1, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
+    setobjectnewmovementtype (2, MOVEMENT_TYPE_RUN_IN_PLACE_LEFT)
+    setobjectnewmovementtype (3, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT)
+    release
+}
+
+script SunshineOrphanage_Burning_Eventscript_SusMenAppear {
+    delay(20)
+    playse(SE_EXIT)
+    waitse
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToTheSusMen)
+    applymovement(6, SusMenAppear1)
+    applymovement(7, SusMenAppear2)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement (4, KobayashiNoticesTheMen)
+    waitmovement(0)
+    applymovement(6, SusMenLookAround1)
+    applymovement(7, SusMenLookAround2)
+    waitmovement(0)
+    lock
+    setobjectnewmovementtype (6, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
+    setobjectnewmovementtype (7, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
+    release
+    delay(20)
+    goto (SunshineOrphanage_Burning_Eventscript_KobayashiLetsOutPokemon)
+}
+
+movement SusMenAppear1 {
+    walk_down *3
+}
+
+movement SusMenAppear2 {
+    walk_down *4
+}
+
+movement SusMenLookAround1 {
+    walk_left
+    face_right
+}
+
+movement SusMenLookAround2 {
+    face_right
+    face_down
+}
+movement CameraToTheSusMen {
+    walk_fast_up *2
+    walk_fast_left *2
+}
+
+movement KobayashiNoticesTheMen {
+    emote_exclamation_mark
+    face_up
+}
+
+script SunshineOrphanage_Burning_Eventscript_KobayashiLetsOutPokemon {
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraBackToAki)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    special (RemoveCameraObject)
+    applymovement(4, facedown)
+    waitmovement(4)
+    delay(20)
+    playse(SE_BALL_OPEN)
+    playmoncry(SPECIES_AZUMARILL, CRY_MODE_NORMAL)
+    clearflag(FLAG_HIDE_MIKI)
+    applymovement(8, Azumarillexitpokeball)
+    waitmovement(8)
+    msgbox(format("{SPEAKER NAME_KOBAYASHI}Azumarill, NOW!"))
+    closemessage
+    goto (SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver)
+}
+
+movement CameraBackToAki {
+    walk_fast_down *2
+    walk_fast_right *2
+}
+movement Azumarillexitpokeball {
+    exit_pokeball
+    jump_in_place_right
+}
+
+script SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver{
+    playmoncry(SPECIES_AZUMARILL, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(8, AzumarillGetsReady)
+    waitmovement(8)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}What the-"))
+    closemessage
+    applymovement(8, AzumarillPushesAkiShinjiToRiver)
+    applymovement(5, AkiShinjiGettingPushed)
+    applymovement(LOCALID_PLAYER, AkiShinjiGettingPushed)
+    waitmovement(0)
+    closemessage
+    delay(20)
+    addobject(4)
+    applymovement (4, KobayashiWalksTowardAzumarill)
+    waitmovement(4)
+    msgbox(format("{SPEAKER NAME_KOBAYASHI}I'm sorry, Akihiko, Shinjiro."))
+    closemessage
+    goto (SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver)
+}
+
+movement PanToKobayashi {
+    walk_fast_left*11
+}
+movement AzumarillGetsReady {
+    jump_in_place_right
+    walk_fast_left
+    walk_fast_down
+    face_right
+}
+
+movement AzumarillPushesAkiShinjiToRiver {
+    walk_fast_right*10
+}
+movement AkiShinjiGettingPushed {
+    emote_exclamation_mark
+    face_left
+    lock_facing_direction
+    walk_fast_right*10
+}
+
+script SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver {
+    delay(16)
+    lockall
+    special (StopMapMusic)
+    delay(16)
+    msgbox(format("{SPEAKER NAME_KOBAYASHI}Do not trust anyone."))
+    closemessage
+    releaseall
+    playmoncry(SPECIES_AZUMARILL, CRY_MODE_NORMAL)
+    applymovement (8, jumpinplaceright)
+    waitmovement(0)
+    applymovement (8, AzumarillFinishesPushing)
+    applymovement (5, ShinjiFellDown)
+    applymovement (LOCALID_PLAYER, AkiFellDown)
+    playse(SE_FALL)
+    waitse
+    playse(SE_M_DIVE)
+    waitse
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 19)
+    setflag(FLAG_HIDE_SHINJIRO)
+    delay(60)
+    applymovement (8, faceleft)
+    waitmovement(0)
+    delay(16)
+    msgbox(format("{SPEAKER NAME_KOBAYASHI}Go, Azumarill. I'll be fine."))
+    closemessage
+    playmoncry(SPECIES_AZUMARILL, CRY_MODE_NORMAL)
+    applymovement (8, AzumarillJumpsDownTheRiver)
+    waitmovement(0)
+    playse(SE_M_DIVE)
+    delay(30)
+    setflag(FLAG_HIDE_MIKI)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    warpsilent(MAP_BLANK_MAP, 0, 0)
+}
+
+movement KobayashiWalksTowardAzumarill {
+    walk_fast_right*5
+    walk_right *3
+}
+
+movement AzumarillJumpsDownTheRiver {
+    walk_in_place_left*2
+    delay_16
+    face_right
+    delay_16
+    jump_right
+    set_invisible
+}
+movement PanToAkihiko {
+    walk_fast_right*11
+}
+
+movement jumpinplaceright {
+    jump_in_place_right
+}
+movement AzumarillFinishesPushing {
+    walk_fast_right *2
+}
+
+movement ShinjiFellDown {
+    lock_facing_direction
+    walk_fast_right
+    jump_right
+    set_invisible
+}
+
+movement AkiFellDown {
+    lock_facing_direction
+    jump_right
+    set_invisible
+}
+
+script SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi {
+    delay(16)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, PanToKobayashiAndTheMen)
+    waitmovement(0)
+    addobject(6)
+    addobject(7)
+    applymovement(6, MenRunToKobayashi)
+    applymovement(7, MenRunToKobayashi)
+    applymovement (4, faceright)
+    waitmovement(0)
+    delay(16)
+    setspeaker("Man In Black")
+    msgbox(format("Where are the subjects?\p
+    {SPEAKER NAME_KOBAYASHI}They aren't in their room?"))
+    closemessage
+    delay(16)
+    showobjectat (11, MAP_SUNSHINE_ORPHANAGE_BURNING)
+    playmoncry(SPECIES_GOLBAT, CRY_MODE_NORMAL)
+    applymovement (11, MensMonExitPokeball)
+    waitmovement(0)
+    showobjectat (12, MAP_SUNSHINE_ORPHANAGE_BURNING)
+    playmoncry(SPECIES_PAWNIARD, CRY_MODE_NORMAL)
+    applymovement (12, MensMonExitPokeball)
+    waitmovement(0)
+    delay(16)
+    setspeaker("Man In Black")
+    msgbox(format("I repeat.\n
+    Where are the subjects?"))
+    closemessage
+    delay(16)
+    applymovement (4, KobayashiSendsOutBoltund)
+    waitmovement(0)
+    showobjectat (13, MAP_SUNSHINE_ORPHANAGE_BURNING)
+    playmoncry(SPECIES_BOLTUND, CRY_MODE_NORMAL)
+    applymovement (13, BoltundExitsPokeball)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_KOBAYASHI}I said, I don't know."))
+    closemessage
+    delay(30)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    warpsilent(MAP_BLANK_MAP, 0, 0)
+    end
+}
+
+movement MensMonExitPokeball {
+    exit_pokeball
+    shake_vertical
+    face_right
+}
+
+movement KobayashiSendsOutBoltund {
+    lock_facing_direction
+    walk_right
+}
+
+movement BoltundExitsPokeball {
+    exit_pokeball
+    shake_vertical
+    face_left
+}
+
+movement PanToKobayashiAndTheMen {
+    walk_left*3
+}
+
+movement MenRunToKobayashi{
+    walk_fast_down *5
+    walk_fast_right *8
+}

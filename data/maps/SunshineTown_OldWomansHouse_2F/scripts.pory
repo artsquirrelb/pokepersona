@@ -1,0 +1,78 @@
+mapscripts SunshineTown_OldWomansHouse_2F_MapScripts {
+    
+}
+
+script SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu {
+    lockall
+    questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+    if (var(VAR_RESULT) == 1){
+        call(SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_QuestwasComplete)
+    }
+    else {call(SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_CheckIfReward)}
+    releaseall
+    end
+}
+
+script SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_QuestwasComplete {
+    faceplayer
+    playmoncry(SPECIES_RIOLU, CRY_MODE_NORMAL)
+    waitmoncry
+    msgbox("Riolu's loafing around.")
+    closemessage
+    releaseall
+    end
+}
+
+script SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_CheckIfReward {
+    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+    if (var(VAR_RESULT) == 1){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}(Riolu is asleep. We should let it be.)"))
+        closemessage
+        releaseall
+        end
+    }
+    else{
+        call(SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_CheckIfActive)
+    }
+}
+
+script SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_CheckIfActive {
+    questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+    if (var(VAR_RESULT) == 1){
+        call(SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene)
+        questmenu(QUEST_MENU_SET_REWARD, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+        releaseall
+        end
+    }
+    else {
+        faceplayer
+        playmoncry(SPECIES_RIOLU, CRY_MODE_NORMAL)
+        waitmoncry
+        msgbox(format("Riolu looks bored."))
+        closemessage
+        releaseall
+        end
+    }
+}
+
+script SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene {
+    setflag(FLAG_HIDE_TALK_BUTTON)
+    faceplayer
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright, lil' guy. If you're bored, come at me!"))
+    closemessage
+    setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_NO_RUNNING)
+    startoverworldencounter(5)
+    clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_NO_RUNNING)
+    msgbox(format("{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Riolu poured all of its energy to the battle and got sleepy."))
+    closemessage
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}I guess that should do it. Let's return to the grandma."))
+    closemessage
+    clearflag(FLAG_HIDE_TALK_BUTTON)
+}
+script SunshineTown_OldWomansHouse_2F_Eventscript_Notebook {
+    msgbox(format("A book of how to train Riolu into Lucario."))
+    closemessage
+    end
+}

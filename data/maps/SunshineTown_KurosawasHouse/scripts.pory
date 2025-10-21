@@ -1,0 +1,202 @@
+mapscripts SunshineTown_KurosawasHouse_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_AKIHIKOS_INTRO_STATE, 23: SunshineTown_KurosawasHouse_OnWarp23
+    ]
+    MAP_SCRIPT_ON_TRANSITION{
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 23){
+            playbgm(MUS_NONE, TRUE)
+            setobjectxyperm(1, 9, 11)
+        }
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 24){
+            setflag(FLAG_TEMP_1)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_AKIHIKOS_INTRO_STATE, 23: SunshineTown_KurosawasHouse_OnFrame23
+    ]
+}
+
+movement invisible {
+    set_invisible
+}
+
+script SunshineTown_KurosawasHouse_OnWarp23 {
+    applymovement(LOCALID_PLAYER, faceleft)
+    applymovement(1, invisible)
+}
+
+script SunshineTown_KurosawasHouse_OnFrame23 {
+    goto(SunshineTown_KurosawasHouse_Eventscript_KurosawaInformingAkihikoAboutMiki)
+}
+
+script SunshineTown_KurosawasHouse_Eventscript_KurosawaInformingAkihikoAboutMiki {
+    delay(30)
+    msgbox(format("
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_TIRED}Miki...\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}..."))
+    closemessage
+    delay(8)
+    applymovement(1, KurosawaInformingAkihikoAboutMiki)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, NoticingKurosawa)
+    waitmovement(0)
+    msgbox(format("
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_TIRED}Kurosawa-san...\p
+    {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}We still haven't found her.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}And the body count didn't add up, which means...\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_TIRED}..."))
+    closemessage
+    goto(SunshineTown_KurosawasHouse_Eventscript_AkihikoDecidingToGo)
+}
+
+movement KurosawaInformingAkihikoAboutMiki {
+    set_visible
+    walk_up *6
+    walk_left *2
+}
+movement NoticingKurosawa {
+    face_right
+    emote_exclamation_mark
+}
+
+script SunshineTown_KurosawasHouse_Eventscript_AkihikoDecidingToGo {
+    delay(30)
+    applymovement (LOCALID_PLAYER, AkihikoDecidingToGo)
+    waitmovement(LOCALID_PLAYER)
+    applymovement (3, walkdown)
+    applymovement (1, facedown)
+    waitmovement(0)
+    msgbox(format("
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Where are you going?"))
+    closemessage
+    delay(20)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}I believe Miki is still alive.\p
+    And if she's alive, there's a big chance that she's in danger.\p
+    I'll definitely find her.\p
+    And in order to do that,\p
+    I must get stronger."))
+    closemessage
+    delay(10)
+    applymovement(LOCALID_PLAYER, faceup)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}It's time for me to go."))
+    closemessage
+    goto (SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow)
+}
+
+movement AkihikoDecidingToGo {
+    walk_down *2
+    walk_right *3
+}
+
+script SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow {
+    delay(20)
+    applymovement(3, ShinjiroDecidingToFollow)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}I'll go with you, Aki.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Huh? But-\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}No buts.\p
+    Letting a reckless dumbass like you traveling alone is basically murder.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}Not funny.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Beside, Miki is like a sister to me too. I'm also worried about her.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}...\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright. Let's go find her together, Shinji."))
+    closemessage
+    playbgm(MUS_SUNSHINE_ORPHANAGE, TRUE)
+    applymovement(LOCALID_PLAYER, faceup)
+    applymovement(3, ShinjiroFaceUpToKuroSawa)
+    waitmovement(0)
+    goto (SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa)
+    
+
+}
+
+movement ShinjiroDecidingToFollow {
+    walk_down
+}
+
+movement ShinjiroFaceUpToKuroSawa {
+    walk_down 
+    face_up
+}
+movement KurosawaGivingPokebalToShinji {
+    walk_left
+    face_down
+}
+
+script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+    Kurosawa-san, thank you for your hard work and for taking care of us these past few days.\p
+    Please take care.\p
+    {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Wait just a moment."))
+    closemessage
+    applymovement(1, KurosawaGivingPokebalToShinji)
+    waitmovement(0)
+    delay(20)
+    msgbox(format("{SPEAKER NAME_NONE}Kurosawa gave Shinjiro a Pokéball.\p
+    {SPEAKER NAME_KUROSAWA}Sanada-kun already has a Pokémon so I'm giving this to you, Aragaki-kun.\p
+    Befriending a Pokémon will greatly help you on your journey.\p
+    You also should help other people if you can.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Thank you, Kurosawa-san. We will.\p
+    {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Stay safe, kids."))
+    closemessage
+    warp(MAP_SUNSHINE_TOWN, 3, 14)
+}
+
+script Growlithe_NPC {
+    lockall
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+    applymovement(2, Growlithe_NPC_Movement)
+    waitmovement(0)
+    msgbox("Growlithe looks determined.")
+    closemessage
+    releaseall
+}
+movement Growlithe_NPC_Movement {
+    face_player
+    shake_horizontal
+}
+
+script SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse {
+    lock
+    faceplayer
+    setspeaker("Kurosawa")
+    if (flag(FLAG_TEMP_2) == TRUE){
+        msgbox(format("{DESTROY_MUGSHOT}You kids are always welcomed to spend the night here if you want to.\p
+        {SPEAKER NAME_AKIHIKO}{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you, Kurosawa-san."))
+        closemessage
+    }
+    else{
+        msgbox(format("{DESTROY_MUGSHOT}The Sanadas and the Aragakis were supposed to pick you two up but they all got into accidents and are currently being treated at Kibou Hospital.\p
+        The injuries aren't threatening but they'll have to stay there for a month or two.\p
+        The adoption papers were already done and approved so you're officially a Sanada and an Aragaki.\p
+        {SPEAKER NAME_AKIHIKO}{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}My... parents.\p
+        We should visit them in Kibou City.\p
+        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Yeah..."))
+        closemessage
+        setflag(FLAG_TEMP_2)
+    }
+}
+
+script SunshineTown_KurosawasHouse_Eventscript_TrashcanItem {
+    lock
+    if (flag(FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE) == TRUE){
+        msgbox("It's empty.")
+        closemessage
+    }
+    else{
+    giveitem(ITEM_ANTIDOTE, 1)
+    setflag(FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE)
+    }
+    release
+    end
+}
+
+script SunshineTown_KurosawasHouse_Eventscript_Notebook {
+    lock
+    msgbox(format("The notebook is full of hard-to-read scribles. Among them is a stroke through “Sunshine Orphanage”."))
+    closemessage
+    release
+    end
+}

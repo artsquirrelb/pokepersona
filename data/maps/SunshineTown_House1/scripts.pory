@@ -1,0 +1,46 @@
+mapscripts SunshineTown_House1_MapScripts {
+    
+}
+
+script SunshineTown_House1_Eventscript_LittleGirl {
+    lockall
+    faceplayer
+    setspeaker("Aya")
+    msgbox(format("I love my Poochyena! My mom brought it home one day after visiting my grandparents in Nata Town."))
+    closemessage
+    releaseall
+    end
+}
+
+script SunshineTown_House1_Eventscript_Poochyena {
+    lockall
+    faceplayer
+    playmoncry(SPECIES_POOCHYENA, CRY_MODE_NORMAL)
+    waitmoncry
+    releaseall
+    end
+}
+
+script SunshineTown_House1_Eventscript_Lady {
+    lock
+    faceplayer
+    setspeaker("Hikari")
+    dotimebasedevents
+    if (flag(FLAG_DAILY_ROUTE_111_RECEIVED_BERRY) == TRUE){
+        msgbox(format("You can come back tomorrow for more."))
+    }
+    else{
+        msgbox(format("My daughter and Poochyena love to play outdoor.\p
+        Sometimes they bring back berries. Here, you can have some."))
+        closemessage
+        giveitem(ITEM_RAZZ_BERRY, 2)
+        if (var(VAR_RESULT) == FALSE){
+            goto (Common_EventScript_ShowBagIsFull)
+        }
+        else{
+            setflag(FLAG_DAILY_ROUTE_111_RECEIVED_BERRY)
+        }
+    }
+    release
+    end
+}

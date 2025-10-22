@@ -360,300 +360,296 @@ SunshineMeadow_Eventscript_MitsuruFirstBattleResult_1:
 
 SunshineMeadow_Eventscript_MitsuruFirstBattleResult_2:
 # 182 "data/maps/SunshineMeadow/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_WonMitsuruFirstBattle
+	msgbox SunshineMeadow_Eventscript_WonInMitsuruFirstBattle
 # 183 "data/maps/SunshineMeadow/scripts.pory"
 	closemessage
 	goto SunshineMeadow_Eventscript_MitsuruFirstBattleResult_1
 
 
 SunshineMeadow_Eventscript_PostMitsuruFirstBattle::
-# 208 "data/maps/SunshineMeadow/scripts.pory"
-	delay 20
-# 209 "data/maps/SunshineMeadow/scripts.pory"
-	special SpawnCameraObject
-# 210 "data/maps/SunshineMeadow/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, CameraGoesLeft2
 # 211 "data/maps/SunshineMeadow/scripts.pory"
-	applymovement 1, MitsuruApproachesToHeal
+	delay 20
 # 212 "data/maps/SunshineMeadow/scripts.pory"
-	waitmovement 0
+	special SpawnCameraObject
 # 213 "data/maps/SunshineMeadow/scripts.pory"
-	special HealPlayerParty
+	applymovement OBJ_EVENT_ID_CAMERA, CameraGoesLeft2
 # 214 "data/maps/SunshineMeadow/scripts.pory"
-	playse MUS_HEAL
+	applymovement 1, MitsuruApproachesToHeal
 # 215 "data/maps/SunshineMeadow/scripts.pory"
-	waitse
+	waitmovement 0
 # 216 "data/maps/SunshineMeadow/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_0
+	special HealPlayerParty
 # 217 "data/maps/SunshineMeadow/scripts.pory"
-	closemessage
+	playse MUS_HEAL
 # 218 "data/maps/SunshineMeadow/scripts.pory"
-	applymovement 1, MitsuruGoesBackAfterHealing
+	waitse
 # 219 "data/maps/SunshineMeadow/scripts.pory"
-	waitmovement 0
+	msgbox SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_0
 # 220 "data/maps/SunshineMeadow/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_1
+	closemessage
+# 221 "data/maps/SunshineMeadow/scripts.pory"
+	applymovement 1, MitsuruGoesBackAfterHealing
 # 222 "data/maps/SunshineMeadow/scripts.pory"
-	closemessage
+	waitmovement 0
 # 223 "data/maps/SunshineMeadow/scripts.pory"
-	applymovement 1, MitsuruGoesBackToStartBattle
-# 224 "data/maps/SunshineMeadow/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, CameraGoesRight2
+	msgbox SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_1
 # 225 "data/maps/SunshineMeadow/scripts.pory"
-	waitmovement 0
-# 226 "data/maps/SunshineMeadow/scripts.pory"
-	delay 8
-# 227 "data/maps/SunshineMeadow/scripts.pory"
-	applymovement LOCALID_PLAYER, AkihikoGetsOutOfBattleSpace
-# 228 "data/maps/SunshineMeadow/scripts.pory"
-	delay 8
-# 229 "data/maps/SunshineMeadow/scripts.pory"
-	applymovement 4, ShinjiroGoesToStartBattle
-# 230 "data/maps/SunshineMeadow/scripts.pory"
-	waitmovement 0
-# 231 "data/maps/SunshineMeadow/scripts.pory"
-	delay 30
-# 232 "data/maps/SunshineMeadow/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_2
-# 235 "data/maps/SunshineMeadow/scripts.pory"
 	closemessage
-# 236 "data/maps/SunshineMeadow/scripts.pory"
+# 226 "data/maps/SunshineMeadow/scripts.pory"
+	applymovement 1, MitsuruGoesBackToStartBattle
+# 227 "data/maps/SunshineMeadow/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, CameraGoesRight2
+# 228 "data/maps/SunshineMeadow/scripts.pory"
+	waitmovement 0
+# 229 "data/maps/SunshineMeadow/scripts.pory"
+	delay 8
+# 230 "data/maps/SunshineMeadow/scripts.pory"
+	applymovement LOCALID_PLAYER, AkihikoGetsOutOfBattleSpace
+# 231 "data/maps/SunshineMeadow/scripts.pory"
+	delay 8
+# 232 "data/maps/SunshineMeadow/scripts.pory"
+	applymovement 4, ShinjiroGoesToStartBattle
+# 233 "data/maps/SunshineMeadow/scripts.pory"
+	waitmovement 0
+# 234 "data/maps/SunshineMeadow/scripts.pory"
+	delay 30
+# 235 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_2
+# 238 "data/maps/SunshineMeadow/scripts.pory"
+	closemessage
+# 239 "data/maps/SunshineMeadow/scripts.pory"
 	warpsilent MAP_BLANK_MAP, 0, 0
-# 237 "data/maps/SunshineMeadow/scripts.pory"
+# 240 "data/maps/SunshineMeadow/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 36
 	return
 
 
-# 239 "data/maps/SunshineMeadow/scripts.pory"
+# 242 "data/maps/SunshineMeadow/scripts.pory"
 CameraGoesLeft2:
-# 240 "data/maps/SunshineMeadow/scripts.pory"
+# 243 "data/maps/SunshineMeadow/scripts.pory"
 	walk_left
-# 240 "data/maps/SunshineMeadow/scripts.pory"
+# 243 "data/maps/SunshineMeadow/scripts.pory"
 	walk_left
 	step_end
 
-# 243 "data/maps/SunshineMeadow/scripts.pory"
+# 246 "data/maps/SunshineMeadow/scripts.pory"
 CameraGoesRight2:
-# 244 "data/maps/SunshineMeadow/scripts.pory"
+# 247 "data/maps/SunshineMeadow/scripts.pory"
 	walk_right
-# 244 "data/maps/SunshineMeadow/scripts.pory"
+# 247 "data/maps/SunshineMeadow/scripts.pory"
 	walk_right
 	step_end
 
 SunshineMeadow_Eventscript_AkihikoOnFrame37::
-# 247 "data/maps/SunshineMeadow/scripts.pory"
+# 250 "data/maps/SunshineMeadow/scripts.pory"
 	goto SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle
 	return
 
 
 SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle::
-# 251 "data/maps/SunshineMeadow/scripts.pory"
-	delay 30
-# 252 "data/maps/SunshineMeadow/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_0
 # 254 "data/maps/SunshineMeadow/scripts.pory"
-	closemessage
-# 255 "data/maps/SunshineMeadow/scripts.pory"
-	applymovement 4, ShinjiroGoesBackToPlacePostShinjiMitsuFirstBattle
-# 256 "data/maps/SunshineMeadow/scripts.pory"
-	applymovement 1, MitsuruGoesToTheCenterPostShinjiMitsuFirstBattle
-# 257 "data/maps/SunshineMeadow/scripts.pory"
-	applymovement 2, VulpixFollowsMitsuruPostShinjiMitsuFirstBattle
-# 258 "data/maps/SunshineMeadow/scripts.pory"
-	applymovement LOCALID_PLAYER, CameraPansDownPostShinjiMitsuFirstBattle
-# 259 "data/maps/SunshineMeadow/scripts.pory"
-	waitmovement
-# 260 "data/maps/SunshineMeadow/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_1
-# 269 "data/maps/SunshineMeadow/scripts.pory"
-	closemessage
-# 270 "data/maps/SunshineMeadow/scripts.pory"
 	delay 30
-# 271 "data/maps/SunshineMeadow/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_2
-# 274 "data/maps/SunshineMeadow/scripts.pory"
+# 255 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_0
+# 257 "data/maps/SunshineMeadow/scripts.pory"
 	closemessage
-# 275 "data/maps/SunshineMeadow/scripts.pory"
-	setflag FLAG_TEMP_1
-# 276 "data/maps/SunshineMeadow/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 38
+# 258 "data/maps/SunshineMeadow/scripts.pory"
+	applymovement 4, ShinjiroGoesBackToPlacePostShinjiMitsuFirstBattle
+# 259 "data/maps/SunshineMeadow/scripts.pory"
+	applymovement 1, MitsuruGoesToTheCenterPostShinjiMitsuFirstBattle
+# 260 "data/maps/SunshineMeadow/scripts.pory"
+	applymovement 2, VulpixFollowsMitsuruPostShinjiMitsuFirstBattle
+# 261 "data/maps/SunshineMeadow/scripts.pory"
+	applymovement LOCALID_PLAYER, CameraPansDownPostShinjiMitsuFirstBattle
+# 262 "data/maps/SunshineMeadow/scripts.pory"
+	waitmovement
+# 263 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_1
+# 272 "data/maps/SunshineMeadow/scripts.pory"
+	closemessage
+# 273 "data/maps/SunshineMeadow/scripts.pory"
+	delay 30
+# 274 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_2
 # 277 "data/maps/SunshineMeadow/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	closemessage
 # 278 "data/maps/SunshineMeadow/scripts.pory"
-	clearflag FLAG_NO_WHITEOUT
+	setflag FLAG_TEMP_1
 # 279 "data/maps/SunshineMeadow/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 38
+# 280 "data/maps/SunshineMeadow/scripts.pory"
+	clearflag FLAG_HIDE_TALK_BUTTON
+# 281 "data/maps/SunshineMeadow/scripts.pory"
+	clearflag FLAG_NO_WHITEOUT
+# 282 "data/maps/SunshineMeadow/scripts.pory"
 	warpsilent MAP_ROUTE2, 8, 12
 	end
 
 
-# 283 "data/maps/SunshineMeadow/scripts.pory"
+# 286 "data/maps/SunshineMeadow/scripts.pory"
 MitsuruApproachesToHeal:
-# 284 "data/maps/SunshineMeadow/scripts.pory"
+# 287 "data/maps/SunshineMeadow/scripts.pory"
 	walk_left
-# 284 "data/maps/SunshineMeadow/scripts.pory"
+# 287 "data/maps/SunshineMeadow/scripts.pory"
 	walk_left
-# 284 "data/maps/SunshineMeadow/scripts.pory"
+# 287 "data/maps/SunshineMeadow/scripts.pory"
 	walk_left
-# 284 "data/maps/SunshineMeadow/scripts.pory"
+# 287 "data/maps/SunshineMeadow/scripts.pory"
 	walk_left
 	step_end
 
-# 287 "data/maps/SunshineMeadow/scripts.pory"
-MitsuruGoesBackAfterHealing:
-# 288 "data/maps/SunshineMeadow/scripts.pory"
-	lock_facing_direction
-# 289 "data/maps/SunshineMeadow/scripts.pory"
-	walk_right
-# 289 "data/maps/SunshineMeadow/scripts.pory"
-	walk_right
 # 290 "data/maps/SunshineMeadow/scripts.pory"
-	unlock_facing_direction
+MitsuruGoesBackAfterHealing:
 # 291 "data/maps/SunshineMeadow/scripts.pory"
+	walk_right
+# 291 "data/maps/SunshineMeadow/scripts.pory"
+	walk_right
+# 292 "data/maps/SunshineMeadow/scripts.pory"
 	face_down
 	step_end
 
-# 294 "data/maps/SunshineMeadow/scripts.pory"
+# 295 "data/maps/SunshineMeadow/scripts.pory"
 MitsuruGoesBackToStartBattle:
-# 295 "data/maps/SunshineMeadow/scripts.pory"
-	walk_right
-# 295 "data/maps/SunshineMeadow/scripts.pory"
+# 296 "data/maps/SunshineMeadow/scripts.pory"
 	walk_right
 # 296 "data/maps/SunshineMeadow/scripts.pory"
+	walk_right
+# 297 "data/maps/SunshineMeadow/scripts.pory"
 	face_left
 	step_end
 
-# 299 "data/maps/SunshineMeadow/scripts.pory"
+# 300 "data/maps/SunshineMeadow/scripts.pory"
 AkihikoGetsOutOfBattleSpace:
-# 300 "data/maps/SunshineMeadow/scripts.pory"
-	walk_down
-# 300 "data/maps/SunshineMeadow/scripts.pory"
-	walk_down
-# 300 "data/maps/SunshineMeadow/scripts.pory"
+# 301 "data/maps/SunshineMeadow/scripts.pory"
 	walk_down
 # 301 "data/maps/SunshineMeadow/scripts.pory"
-	walk_right
+	walk_down
 # 301 "data/maps/SunshineMeadow/scripts.pory"
+	walk_down
+# 302 "data/maps/SunshineMeadow/scripts.pory"
 	walk_right
 # 302 "data/maps/SunshineMeadow/scripts.pory"
+	walk_right
+# 303 "data/maps/SunshineMeadow/scripts.pory"
 	face_up
 	step_end
 
-# 305 "data/maps/SunshineMeadow/scripts.pory"
+# 306 "data/maps/SunshineMeadow/scripts.pory"
 ShinjiroGoesToStartBattle:
-# 306 "data/maps/SunshineMeadow/scripts.pory"
-	walk_up
-# 306 "data/maps/SunshineMeadow/scripts.pory"
-	walk_up
-# 306 "data/maps/SunshineMeadow/scripts.pory"
+# 307 "data/maps/SunshineMeadow/scripts.pory"
 	walk_up
 # 307 "data/maps/SunshineMeadow/scripts.pory"
-	walk_left
+	walk_up
 # 307 "data/maps/SunshineMeadow/scripts.pory"
-	walk_left
-# 307 "data/maps/SunshineMeadow/scripts.pory"
+	walk_up
+# 308 "data/maps/SunshineMeadow/scripts.pory"
 	walk_left
 # 308 "data/maps/SunshineMeadow/scripts.pory"
+	walk_left
+# 308 "data/maps/SunshineMeadow/scripts.pory"
+	walk_left
+# 309 "data/maps/SunshineMeadow/scripts.pory"
 	face_right
 	step_end
 
-# 311 "data/maps/SunshineMeadow/scripts.pory"
+# 312 "data/maps/SunshineMeadow/scripts.pory"
 ShinjiroGoesBackToPlacePostShinjiMitsuFirstBattle:
-# 312 "data/maps/SunshineMeadow/scripts.pory"
-	walk_down
-# 312 "data/maps/SunshineMeadow/scripts.pory"
+# 313 "data/maps/SunshineMeadow/scripts.pory"
 	walk_down
 # 313 "data/maps/SunshineMeadow/scripts.pory"
-	walk_right
-# 313 "data/maps/SunshineMeadow/scripts.pory"
-	walk_right
-# 313 "data/maps/SunshineMeadow/scripts.pory"
+	walk_down
+# 314 "data/maps/SunshineMeadow/scripts.pory"
 	walk_right
 # 314 "data/maps/SunshineMeadow/scripts.pory"
-	walk_down
+	walk_right
+# 314 "data/maps/SunshineMeadow/scripts.pory"
+	walk_right
 # 315 "data/maps/SunshineMeadow/scripts.pory"
+	walk_down
+# 316 "data/maps/SunshineMeadow/scripts.pory"
 	face_up
 	step_end
 
-# 318 "data/maps/SunshineMeadow/scripts.pory"
+# 319 "data/maps/SunshineMeadow/scripts.pory"
 MitsuruGoesToTheCenterPostShinjiMitsuFirstBattle:
-# 319 "data/maps/SunshineMeadow/scripts.pory"
-	walk_left
-# 319 "data/maps/SunshineMeadow/scripts.pory"
-	walk_left
-# 319 "data/maps/SunshineMeadow/scripts.pory"
+# 320 "data/maps/SunshineMeadow/scripts.pory"
 	walk_left
 # 320 "data/maps/SunshineMeadow/scripts.pory"
-	walk_down
+	walk_left
+# 320 "data/maps/SunshineMeadow/scripts.pory"
+	walk_left
 # 321 "data/maps/SunshineMeadow/scripts.pory"
+	walk_down
+# 322 "data/maps/SunshineMeadow/scripts.pory"
 	face_down
 	step_end
 
-# 323 "data/maps/SunshineMeadow/scripts.pory"
+# 324 "data/maps/SunshineMeadow/scripts.pory"
 VulpixFollowsMitsuruPostShinjiMitsuFirstBattle:
-# 324 "data/maps/SunshineMeadow/scripts.pory"
-	walk_left
-# 324 "data/maps/SunshineMeadow/scripts.pory"
+# 325 "data/maps/SunshineMeadow/scripts.pory"
 	walk_left
 # 325 "data/maps/SunshineMeadow/scripts.pory"
+	walk_left
+# 326 "data/maps/SunshineMeadow/scripts.pory"
 	face_down
 	step_end
 
-# 327 "data/maps/SunshineMeadow/scripts.pory"
+# 328 "data/maps/SunshineMeadow/scripts.pory"
 CameraPansDownPostShinjiMitsuFirstBattle:
-# 328 "data/maps/SunshineMeadow/scripts.pory"
+# 329 "data/maps/SunshineMeadow/scripts.pory"
 	walk_down
-# 328 "data/maps/SunshineMeadow/scripts.pory"
+# 329 "data/maps/SunshineMeadow/scripts.pory"
 	walk_down
 	step_end
 
 SunshineMeadow_Eventscript_MeadowSign::
-# 331 "data/maps/SunshineMeadow/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_MeadowSign_Text_0
 # 332 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_MeadowSign_Text_0
+# 333 "data/maps/SunshineMeadow/scripts.pory"
 	closemessage
 	end
 
 
 SunshineMeadow_Eventscript_DirectionSign::
-# 337 "data/maps/SunshineMeadow/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_DirectionSign_Text_0
 # 338 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_DirectionSign_Text_0
+# 339 "data/maps/SunshineMeadow/scripts.pory"
 	closemessage
 	end
 
 
 SunshineMeadow_Eventscript_OW_Flabebe_White::
-# 343 "data/maps/SunshineMeadow/scripts.pory"
-	lock
 # 344 "data/maps/SunshineMeadow/scripts.pory"
-	faceplayer
+	lock
 # 345 "data/maps/SunshineMeadow/scripts.pory"
-	playmoncry SPECIES_FLABEBE, CRY_MODE_NORMAL
+	faceplayer
 # 346 "data/maps/SunshineMeadow/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_FLABEBE, CRY_MODE_NORMAL
 # 347 "data/maps/SunshineMeadow/scripts.pory"
-	startoverworldencounter 7
+	waitmoncry
 # 348 "data/maps/SunshineMeadow/scripts.pory"
-	removeobject 5
+	startoverworldencounter 7
 # 349 "data/maps/SunshineMeadow/scripts.pory"
-	setflag FLAG_TEMP_3
+	removeobject 5
 # 350 "data/maps/SunshineMeadow/scripts.pory"
+	setflag FLAG_TEMP_3
+# 351 "data/maps/SunshineMeadow/scripts.pory"
 	release
 	end
 
 
 SunshineMeadow_Eventscript_VulpixPreBattle::
-# 355 "data/maps/SunshineMeadow/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_VulpixPreBattle_Text_0
 # 356 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_VulpixPreBattle_Text_0
+# 357 "data/maps/SunshineMeadow/scripts.pory"
 	closemessage
 	end
 
 
 SunshineMeadow_Eventscript_InteleonPreBattle::
-# 361 "data/maps/SunshineMeadow/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_InteleonPreBattle_Text_0
 # 362 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_InteleonPreBattle_Text_0
+# 363 "data/maps/SunshineMeadow/scripts.pory"
 	closemessage
 	end
 
@@ -699,28 +695,28 @@ SunshineMeadow_Eventscript_ChoosingPartyForMitsuruFirstBattle_Text_0:
 	.string "waiting.)$"
 
 SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_0:
-# 216 "data/maps/SunshineMeadow/scripts.pory"
+# 219 "data/maps/SunshineMeadow/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Alright, I've healed your party.$"
 
 SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_1:
-# 220 "data/maps/SunshineMeadow/scripts.pory"
+# 223 "data/maps/SunshineMeadow/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}It's your turn now, Aragaki-kun.\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Aight. I'll show you what I've got.$"
 
 SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_2:
-# 232 "data/maps/SunshineMeadow/scripts.pory"
+# 235 "data/maps/SunshineMeadow/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Are you ready?\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Whenever you are.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(I should also study more of how they\n"
 	.string "fight.)$"
 
 SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_0:
-# 252 "data/maps/SunshineMeadow/scripts.pory"
+# 255 "data/maps/SunshineMeadow/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_STRUGGLED}Damn, you're tough.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I appreciate the compliment.$"
 
 SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_1:
-# 260 "data/maps/SunshineMeadow/scripts.pory"
+# 263 "data/maps/SunshineMeadow/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Now that I get a clearer vision of how\n"
 	.string "both of you fare in battle,\p"
 	.string "I'll be counting on you, Sanada-kun and\n"
@@ -736,7 +732,7 @@ SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_1:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'm looking forward to that.$"
 
 SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_2:
-# 271 "data/maps/SunshineMeadow/scripts.pory"
+# 274 "data/maps/SunshineMeadow/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Anyway, back to business.\p"
 	.string "I suppose you both want to know\n"
 	.string "further about those men.\p"
@@ -744,32 +740,36 @@ SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_2:
 	.string "I'll explain our objective.$"
 
 SunshineMeadow_Eventscript_MeadowSign_Text_0:
-# 331 "data/maps/SunshineMeadow/scripts.pory"
+# 332 "data/maps/SunshineMeadow/scripts.pory"
 	.string "Sunshine Meadow$"
 
 SunshineMeadow_Eventscript_DirectionSign_Text_0:
-# 337 "data/maps/SunshineMeadow/scripts.pory"
+# 338 "data/maps/SunshineMeadow/scripts.pory"
 	.string "Route 2 {DOWN_ARROW}$"
 
 SunshineMeadow_Eventscript_VulpixPreBattle_Text_0:
-# 355 "data/maps/SunshineMeadow/scripts.pory"
+# 356 "data/maps/SunshineMeadow/scripts.pory"
 	.string "Vulpix looks aloof and completedly\n"
 	.string "ignores you.$"
 
 SunshineMeadow_Eventscript_InteleonPreBattle_Text_0:
-# 361 "data/maps/SunshineMeadow/scripts.pory"
+# 362 "data/maps/SunshineMeadow/scripts.pory"
 	.string "Inteleon stares down at you but says\n"
 	.string "nothing.$"
 
-SunshineMeadow_Eventscript_WonMitsuruFirstBattle::
+SunshineMeadow_Eventscript_WonInMitsuruFirstBattle::
 # 192 "data/maps/SunshineMeadow/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}To be honest, althought I didn't use my\n"
 	.string "full team, it's still very impressive\l"
 	.string "that you managed to beat me,\l"
-	.string "Sanada-kun.$"
+	.string "Sanada-kun.\p"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(I only managed to win by sheer luck...\p"
+	.string "The way she ordered her Pokémons was\n"
+	.string "so smart.\p"
+	.string "It's... amazing.)$"
 
 SunshineMeadow_Eventscript_LostInMitsuruFirstBattle::
-# 197 "data/maps/SunshineMeadow/scripts.pory"
+# 200 "data/maps/SunshineMeadow/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That was a very good fight. I've learned\n"
 	.string "better of how you battle.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Don't be discouraged. It's proof that\n"
@@ -779,5 +779,5 @@ SunshineMeadow_Eventscript_LostInMitsuruFirstBattle::
 	.string "It's... amazing.)$"
 
 MitsuruFirstBattleDefeated::
-# 203 "data/maps/SunshineMeadow/scripts.pory"
+# 206 "data/maps/SunshineMeadow/scripts.pory"
 	.string "C'est magnifique.$"

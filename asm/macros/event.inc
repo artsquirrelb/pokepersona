@@ -2863,3 +2863,11 @@
 	.2byte \numOrVar
 	.endm
 
+@ Manually set the time.
+    .macro manuallysettime day:req, hour=0, minute=0, second=0
+    callnative ScrCmd_manuallysettime, requests_effects=1
+    .4byte \day
+    .4byte \hour
+    .4byte \minute
+    .4byte \second
+    .endm

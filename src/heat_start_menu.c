@@ -11,6 +11,7 @@
 #include "event_object_movement.h"
 #include "event_object_lock.h"
 #include "event_scripts.h"
+#include "fake_rtc.h"
 #include "fieldmap.h"
 #include "field_effect.h"
 #include "field_player_avatar.h"
@@ -605,13 +606,13 @@ static const u8 gText_Thursday[]  = _("Thu,");
 
 static const u8 *const gDayNameStringsTable[] =
 {
-    gText_Friday,
-    gText_Saturday,
     gText_Sunday,
     gText_Monday,
     gText_Tuesday,
     gText_Wednesday,
-    gText_Thursday
+    gText_Thursday,
+    gText_Friday,
+    gText_Saturday
 };
 
 static const u8 gText_CurrentTime[]      = _("  {STR_VAR_3} {CLEAR_TO 64}{STR_VAR_1}:{STR_VAR_2}");
@@ -821,22 +822,23 @@ static void HeatStartMenu_ShowTimeWindow(void)
 {
     u8 analogHour;
 
-	RtcCalcLocalTime();
+	//RtcCalcLocalTime();
+  struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
       // print window
   sHeatStartMenu->sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);
   FillWindowPixelBuffer(sHeatStartMenu->sStartClockWindowId, PIXEL_FILL(TEXT_COLOR_WHITE));
   PutWindowTilemap(sHeatStartMenu->sStartClockWindowId);
 	FlagSet(FLAG_TEMP_5);
 
-    analogHour = (gLocalTime.hours >= 13 && gLocalTime.hours <= 24) ? gLocalTime.hours - 12 : gLocalTime.hours;
+    analogHour = (rtc->hour >= 13 && rtc->hour <= 24) ? rtc->hour - 12 : rtc->hour;
 
-	StringCopy(gStringVar3, gDayNameStringsTable[(gLocalTime.days % 7)]);
-    ConvertIntToDecimalStringN(gStringVar1, gLocalTime.hours, STR_CONV_MODE_LEADING_ZEROS, 2);
-	ConvertIntToDecimalStringN(gStringVar2, gLocalTime.minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
+	StringCopy(gStringVar3, gDayNameStringsTable[rtc->dayOfWeek]);
+    ConvertIntToDecimalStringN(gStringVar1, rtc->hour, STR_CONV_MODE_LEADING_ZEROS, 2);
+	ConvertIntToDecimalStringN(gStringVar2, rtc->minute, STR_CONV_MODE_LEADING_ZEROS, 2);
 	    ConvertIntToDecimalStringN(gStringVar1, analogHour, STR_CONV_MODE_LEADING_ZEROS, 2);
     
 	StringExpandPlaceholders(gStringVar4, gText_CurrentTime);
-        if (gLocalTime.hours >= 13 && gLocalTime.hours <= 24)
+        if (rtc->hour >= 13 && rtc->hour <= 24)
             StringExpandPlaceholders(gStringVar4, gText_CurrentTimePM); 
         else
             StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  

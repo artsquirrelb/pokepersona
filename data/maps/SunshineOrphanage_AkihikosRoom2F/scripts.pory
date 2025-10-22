@@ -125,16 +125,23 @@ movement StepBack {
 }
 
 script SetWallclock {
-    goto_if_set(FLAG_SET_WALL_CLOCK PlayersHouse_2F_EventScript_CheckWallClock)
-	msgbox ("The clock isn't working.")
-	call(PlayersHouse_2F_EventScript_SetWallClock)
+    if (flag(FLAG_SET_WALL_CLOCK) == TRUE){
+        goto (PlayersHouse_2F_EventScript_CheckWallClock)
+    }
+    else{
+    manuallysettime(WEEKDAY_WED, 8, 32, 0)
+    setflag(FLAG_SET_WALL_CLOCK)
+	msgbox(format("The clock isn't working.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Let's see... The current time is... 8:32AM."))
+    closemessage
+	//call(PlayersHouse_2F_EventScript_SetWallClock)
 	delay(30)
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
     setspeaker ("Akihiko")
     msgbox ("All done.")
 	setvar(VAR_AKIHIKOS_INTRO_STATE, 3)
-	setflag(FLAG_SET_WALL_CLOCK)
-	releaseall
+    resumefakertc
+    }
 	end
 }
 

@@ -105,11 +105,11 @@
 // Overworld flags
 // To use the following features in scripting, replace the 0s with the flag ID you're assigning it to.
 // Eg: Replace with FLAG_UNUSED_0x264 so you can use that flag to toggle the feature.
-#define OW_FLAG_PAUSE_TIME          0  // If this flag is set and OW_USE_FAKE_RTC is enabled, seconds on the in-game clock will not advance.
-#define OW_FLAG_NO_ENCOUNTER        0  // If this flag is set, wild encounters will be disabled.
-#define OW_FLAG_NO_TRAINER_SEE      0  // If this flag is set, trainers will not battle the player unless they're talked to.
-#define OW_FLAG_NO_COLLISION        0  // If this flag is set, the player will be able to walk over tiles with collision. Mainly intended for debugging purposes.
-#define OW_FLAG_POKE_RIDER          0  // If this flag is set, the player will be able to use fly from the Pokenav Region Map and the Town Map key item by pressing 'R' on a city/location they are able to fly to.
+#define OW_FLAG_PAUSE_TIME          FLAG_PAUSE_TIME  // If this flag is set and OW_USE_FAKE_RTC is enabled, seconds on the in-game clock will not advance.
+#define OW_FLAG_NO_ENCOUNTER        FLAG_NO_ENCOUNTER  // If this flag is set, wild encounters will be disabled.
+#define OW_FLAG_NO_TRAINER_SEE      FLAG_NO_TRAINER_SEE  // If this flag is set, trainers will not battle the player unless they're talked to.
+#define OW_FLAG_NO_COLLISION        FLAG_NO_COLLISION  // If this flag is set, the player will be able to walk over tiles with collision. Mainly intended for debugging purposes.
+#define OW_FLAG_POKE_RIDER          FLAG_POKE_RIDER  // If this flag is set, the player will be able to use fly from the Pokenav Region Map and the Town Map key item by pressing 'R' on a city/location they are able to fly to.
 #define OW_FLAG_SUPPRESS_NAME_BOX   0  // If this flag is set, any namebox (whether its from a macro or a code) will not show up until this flag is unset.
 
 #define BATTLE_PYRAMID_RANDOM_ENCOUNTERS    FALSE    // If set to TRUE, battle pyramid Pokemon will be generated randomly based on the round's challenge instead of hardcoded in src/data/battle_frontier/battle_pyramid_level_50_wild_mons.h (or open_level_wild_mons.h)
@@ -131,7 +131,7 @@
 
 // Configuration
 #define OW_POPUP_BW_COLOR          OW_POPUP_BW_COLOR_BLACK  // B2W2 use different colors for their map pop-ups.
-#define OW_POPUP_BW_TIME_MODE      OW_POPUP_BW_TIME_NONE    // Determines what type of time is shown.
+#define OW_POPUP_BW_TIME_MODE      OW_POPUP_BW_TIME_12_HR    // Determines what type of time is shown.
 #define OW_POPUP_BW_ALPHA_BLEND    FALSE                    // Enables alpha blending/transparency for the pop-ups. Mainly intended to be used with the black color option.
                                                             // Setting this to TRUE will cause graphical errors with the Day Night System enabled.
 

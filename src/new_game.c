@@ -49,6 +49,7 @@
 #include "difficulty.h"
 #include "follower_npc.h"
 #include "quests.h"
+#include "fake_rtc.h"
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -140,7 +141,7 @@ static void ClearFrontierRecord(void)
 }
 
 static void WarpToTruck(void)
-{
+{   
     SetWarpDestination(MAP_GROUP(MAP_SUNSHINE_ORPHANAGE), MAP_NUM(MAP_SUNSHINE_ORPHANAGE), WARP_ID_NONE, 13, 18);
     WarpIntoMap();
 }

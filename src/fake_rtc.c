@@ -104,7 +104,7 @@ static void FakeRtc_CalcTimeDifference(struct Time *result, struct SiiRtcInfo *t
 
 void FakeRtc_ManuallySetTime(u32 day, u32 hour, u32 minute, u32 second)
 {
-    FakeRtc_Reset();
+    FakeRtc_Reset(); 
     FakeRtc_AdvanceTimeBy(day, hour, minute, second);
 }
 

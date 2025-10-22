@@ -8,6 +8,7 @@
 #include "main.h"
 #include "menu.h"
 #include "palette.h"
+#include "fake_rtc.h"
 #include "rtc.h"
 #include "scanline_effect.h"
 #include "sound.h"
@@ -1004,15 +1005,16 @@ static void UpdateClockPeriod(u8 taskId, u8 direction)
     }
 }
 
-static void InitClockWithRtc(u8 taskId)
+static void InitClockWithRtc(u8 taskId) //using fake rtc now
 {
-    RtcCalcLocalTime();
-    gTasks[taskId].tHours = gLocalTime.hours;
-    gTasks[taskId].tMinutes = gLocalTime.minutes;
+    //RtcCalcLocalTime();
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+    gTasks[taskId].tHours =  rtc->hour;//gLocalTime.hours;
+    gTasks[taskId].tMinutes = rtc->minute;//gLocalTime.minutes;
     gTasks[taskId].tMinuteHandAngle = gTasks[taskId].tMinutes * 6;
     gTasks[taskId].tHourHandAngle = (gTasks[taskId].tHours % 12) * 30 + (gTasks[taskId].tMinutes / 10) * 5;
 
-    if (gLocalTime.hours < 12)
+    if (rtc->hour <12)//(gLocalTime.hours < 12)
         gTasks[taskId].tPeriod = PERIOD_AM;
     else
         gTasks[taskId].tPeriod = PERIOD_PM;

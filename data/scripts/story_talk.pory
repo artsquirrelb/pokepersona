@@ -87,7 +87,16 @@ script EventScript_OverworldStoryTalk
         call (EventScript_OverworldStoryTalk_PreFirstBattleMitsuruRoute2House)
     }
     elif (var(VAR_AKIHIKOS_INTRO_STATE) == 34){
-        call (EventScript_OverworldStoryTalk_PreFirstBattleMitsuruShinjiroLeft)
+        iscurrentmap(MAP_SUNSHINE_MEADOW)
+        if (var(VAR_RESULT) == 1){
+            call (EventScript_OverworldStoryTalk_PreFirstBattleMitsuru_Meadow)
+        }
+        else{
+            call (EventScript_OverworldStoryTalk_PreFirstBattleMitsuruShinjiroLeft)
+        }
+    }
+    elif (var(VAR_AKIHIKOS_INTRO_STATE) == 38){
+        call (EventScript_OverworldStoryTalk_PostFirstBattleMitsuru)
     }
     else
     {
@@ -193,12 +202,12 @@ script EventScript_OverworldStoryTalk_PreTalkMartLady {
 }
 
 script EventScript_OverworldStoryTalk_PostTalkMartLady {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Let's hurry up outside. I have a bad feeling.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}Damn it, you too?"))
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Let's hurry up outside. I have a bad feeling.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Damn it, you too?"))
 }
 
 script EventScript_OverworldStoryTalk_TalkToTheTownPeople {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Someone must've known what happened. Let's ask around.)"))
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(Someone must've known what happened. Let's ask around.)"))
 }
 
 script EventScript_OverworldStoryTalk_GoBackToTheOrphanage {
@@ -243,4 +252,19 @@ script EventScript_OverworldStoryTalk_PreFirstBattleMitsuruRoute2House {
 script EventScript_OverworldStoryTalk_PreFirstBattleMitsuruShinjiroLeft {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Shinji went ahead to prepare his team.\p
     I should do the same and go to Sunshine Meadow to have my first battle with Kirijo.)"))
+}
+
+script EventScript_OverworldStoryTalk_PreFirstBattleMitsuru_Meadow{
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(There she is. Her Inteleon gonna be hard to take down.\p
+    There's also that weird-colored Vulpix.)"))
+}
+
+script EventScript_OverworldStoryTalk_PostFirstBattleMitsuru {
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}By the way, Shinji. The Ferroseed you used earlier...\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Looks a bit different, right?\p
+    It just started following me when I was looking for my first Pokémon in Route 1.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Huh...\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Wait, all three of us have Pokémons that look slightly different from usual.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}A special coincident, huh?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}..."))
 }

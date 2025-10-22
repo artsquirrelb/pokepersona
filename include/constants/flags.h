@@ -53,11 +53,11 @@
 #define FLAG_NO_CATCHING                0x27 // Was Unused Flag
 #define FLAG_NO_RUNNING                 0x28 // Was Unused Flag
 #define FLAG_NO_WHITEOUT                0x29 // Was Unused Flag
-#define FLAG_UNUSED_0x02A    0x2A // Unused Flag
-#define FLAG_UNUSED_0x02B    0x2B // Unused Flag
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
-#define FLAG_UNUSED_0x02D    0x2D // Unused Flag
-#define FLAG_UNUSED_0x02E    0x2E // Unused Flag
+#define FLAG_PAUSE_TIME                 0x2A // Was Unused Flag
+#define FLAG_NO_ENCOUNTER               0x2B // Was Unused Flag
+#define FLAG_NO_TRAINER_SEE             0x2C // Was Unused Flag
+#define FLAG_NO_COLLISION               0x2D // Was Unused Flag
+#define FLAG_POKE_RIDER                 0x2E // Was Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag

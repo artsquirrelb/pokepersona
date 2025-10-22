@@ -178,7 +178,7 @@ Route2_Eventscript_AkishinjiGettingBlockedBySusMen::
 # 83 "data/maps/Route2/scripts.pory"
 	waitmovement 0
 # 84 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, shakehorizontal
+	applymovement LOCALID_PLAYER, shakevertical
 # 85 "data/maps/Route2/scripts.pory"
 	call SunshineOrphanage_Burning_Eventscript_BlockShakeCamera
 # 86 "data/maps/Route2/scripts.pory"
@@ -686,21 +686,21 @@ Route2_Eventscript_AkihikoOnFrame33::
 
 Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon::
 # 396 "data/maps/Route2/scripts.pory"
-	lock
-# 397 "data/maps/Route2/scripts.pory"
 	applymovement 6, ShinjiroSplitsOut
-# 398 "data/maps/Route2/scripts.pory"
+# 397 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 399 "data/maps/Route2/scripts.pory"
+# 398 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon_Text_0
-# 403 "data/maps/Route2/scripts.pory"
+# 402 "data/maps/Route2/scripts.pory"
 	closemessage
-# 404 "data/maps/Route2/scripts.pory"
+# 403 "data/maps/Route2/scripts.pory"
 	applymovement 6, ShinjiroGoesOffCam
-# 405 "data/maps/Route2/scripts.pory"
+# 404 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, faceright
-# 406 "data/maps/Route2/scripts.pory"
+# 405 "data/maps/Route2/scripts.pory"
 	waitmovement 6
+# 406 "data/maps/Route2/scripts.pory"
+	lock
 # 407 "data/maps/Route2/scripts.pory"
 	removeobject 6
 # 408 "data/maps/Route2/scripts.pory"
@@ -710,11 +710,11 @@ Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon::
 # 410 "data/maps/Route2/scripts.pory"
 	addobject 6
 # 411 "data/maps/Route2/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 34
+	release
 # 412 "data/maps/Route2/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	setvar VAR_AKIHIKOS_INTRO_STATE, 34
 # 413 "data/maps/Route2/scripts.pory"
-	releaseall
+	clearflag FLAG_HIDE_TALK_BUTTON
 	end
 
 
@@ -828,7 +828,7 @@ Route2_Eventscript_MitsuruAppears_Text_0:
 	.string "{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}...\p"
 	.string "Inteleon, let's get these two out of\n"
 	.string "here first.\p"
-	.string "This ice can only hold off for so long.$"
+	.string "The ice can only hold off for so long.$"
 
 Route2_Eventscript_RouteSign_Text_0:
 # 334 "data/maps/Route2/scripts.pory"
@@ -850,7 +850,7 @@ Route2_Eventscript_Tarou_Text_0:
 	.string "Tarou$"
 
 Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon_Text_0:
-# 399 "data/maps/Route2/scripts.pory"
+# 398 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Aight, I'm gonna go ahead and catch\n"
 	.string "some Pokémon.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Sure. Be careful, the men in black could\n"

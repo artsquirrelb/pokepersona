@@ -3248,6 +3248,20 @@ bool8 ScrCmd_fwdweekday(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_manuallysettime(struct ScriptContext *ctx)
+{
+    u32 day = ScriptReadWord(ctx);
+    u32 hour = ScriptReadWord(ctx);
+    u32 minute = ScriptReadWord(ctx);
+    u32 second = ScriptReadWord(ctx);
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    FakeRtc_ManuallySetTime(day, hour, minute, second);
+
+    return TRUE;
+}
+
 void Script_EndTrainerCanSeeIf(struct ScriptContext *ctx)
 {
     u8 condition = ScriptReadByte(ctx);

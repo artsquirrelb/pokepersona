@@ -2640,4 +2640,10 @@ extern const u8 gText_Rename[]; // change nickname from summary screen
 // Switch Caught Mon into Party
 extern const u8 gText_CannotSendMonToBoxHM[];
 
+// Camp Gears
+extern const u8 gText_WaitUntilTime[];
+extern const u8 gText_WaitUntilMorning[];
+extern const u8 gText_WaitUntilDay[];
+extern const u8 gText_WaitUntilEvening[];
+extern const u8 gText_WaitUntilNight[];
 #endif // GUARD_STRINGS_H

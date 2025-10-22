@@ -1870,6 +1870,9 @@ const u16 gItemIconPalette_FameChecker[] = INCBIN_U16("graphics/items/icon_palet
 const u32 gItemIcon_TeachyTV[] = INCBIN_U32("graphics/items/icons/teachy_tv.4bpp.smol");
 const u16 gItemIconPalette_TeachyTV[] = INCBIN_U16("graphics/items/icon_palettes/teachy_tv.gbapal");
 
+const u32 gItemIcon_CampGears[] = INCBIN_U32("graphics/items/icons/camp_gears.4bpp.smol");
+const u16 gItemIconPalette_CampGears[] = INCBIN_U16("graphics/items/icon_palettes/camp_gears.gbapal");
+
 // Story Key Items
 
 const u32 gItemIcon_SSTicket[] = INCBIN_U32("graphics/items/icons/ss_ticket.4bpp.smol");

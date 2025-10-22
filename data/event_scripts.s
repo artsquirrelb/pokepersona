@@ -592,6 +592,7 @@ gStdScripts_End::
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
 	.include "data/scripts/story_talk.inc"
+	.include "data/scripts/newbagitems.inc"
 
 
 EventScript_WhiteOut::

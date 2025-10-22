@@ -1,0 +1,42 @@
+script EventScript_CampGears{
+	lock
+    if (var(VAR_AKIHIKOS_INTRO_STATE) < 38){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping)."))
+        closemessage
+    }
+    else{
+	    msgbox (gText_WaitUntilTime)
+	    multichoice (25, 4, MULTI_TIME_OF_DAY, 0)
+	    closemessage
+        if (var(VAR_RESULT) == 0){
+            fwdtime(MORNING_HOUR_BEGIN, 0)
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            delay(60)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+        }
+        elif(var(VAR_RESULT) == 1){
+            fwdtime(DAY_HOUR_BEGIN, 0)
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            delay(60)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+        }
+        elif(var(VAR_RESULT) == 2){
+            fwdtime(EVENING_HOUR_BEGIN, 0)
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            delay(60)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+        }
+        elif(var(VAR_RESULT) == 3){
+            fwdtime(NIGHT_HOUR_BEGIN, 0)
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            delay(60)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+        }
+        else{
+            playse(SE_PC_OFF)
+            waitse
+        }
+    release
+    end
+    }
+}

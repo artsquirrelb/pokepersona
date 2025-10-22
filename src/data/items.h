@@ -14605,6 +14605,23 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_AbilityPatch,
         .iconPalette = gItemIconPalette_AbilityPatch,
     },
+
+    [ITEM_CAMP_GEARS] =
+    {
+        .name = ITEM_NAME("Camp-Gears"),
+        .pluralName = ITEM_PLURAL_NAME("Camp-Gears"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Camping essentials\n"
+            "that are perfect\n"
+            "for skipping time."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CampGears,
+        .iconPic = gItemIcon_CampGears,
+        .iconPalette = gItemIconPalette_CampGears,
+    },
 };
 
 #undef ITEM_NAME

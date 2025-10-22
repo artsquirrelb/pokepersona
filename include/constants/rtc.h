@@ -75,7 +75,7 @@
     #define DAY_HOUR_END       19
 
     #define EVENING_HOUR_BEGIN 19
-    #define EVENING_HOUR_END   20
+    #define EVENING_HOUR_END   22
 
     #define NIGHT_HOUR_BEGIN   20
     #define NIGHT_HOUR_END     6

@@ -44,11 +44,11 @@ SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 # 12 "data/maps/SunshineTown/scripts.pory"
 	setflag FLAG_HIDE_TALK_BUTTON
 # 13 "data/maps/SunshineTown/scripts.pory"
-	setobjectxyperm 2, 12, 11
+	setobjectxyperm 2, 14, 11
 # 14 "data/maps/SunshineTown/scripts.pory"
 	setobjectmovementtype 2, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT
 # 15 "data/maps/SunshineTown/scripts.pory"
-	setobjectxyperm 1, 1, 14
+	setobjectxyperm 1, 3, 14
 # 16 "data/maps/SunshineTown/scripts.pory"
 	setobjectmovementtype 1, MOVEMENT_TYPE_LOOK_AROUND
 	goto SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_4

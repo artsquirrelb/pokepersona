@@ -150,7 +150,8 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     delay(4)
     applymovement(LOCALID_PLAYER, faceup)
     waitmovement(1)
-    msgbox(format("{SPEAKER NAME_KUROSAWA}Take these sleeping bags. You'll need them when night falls.\p
+    giveitem(ITEM_CAMP_GEARS)
+    msgbox(format("{SPEAKER NAME_KUROSAWA}Take these Camping Gears. You'll need them while outdoor.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Woah, these are great! Thank you, Kurosawa-san!\p
     {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Stay safe, kids. I'll keep you updated with our searching."))
     closemessage

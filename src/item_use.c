@@ -9,6 +9,7 @@
 #include "bike.h"
 #include "coins.h"
 #include "data.h"
+#include "debug.h"
 #include "event_data.h"
 #include "event_object_lock.h"
 #include "event_object_movement.h"
@@ -1605,5 +1606,28 @@ void ItemUseOutOfBattle_TownMap(u8 taskId)
         gTasks[taskId].func = ItemUseOnFieldCB_TownMap;
     }
 }
+//CampGears Functions
+static void ItemUseOnFieldCB_CampGears(u8 taskId)
+{
+    LockPlayerFieldControls();
+    ScriptContext_SetupScript(EventScript_CampGears);
+    DestroyTask(taskId);
+}
+
+void ItemUseOutOfBattle_CampGears(u8 taskId)
+{
+        if (!gTasks[taskId].tUsingRegisteredKeyItem) // to account for pressing select in the overworld
+        {   
+            sItemUseOnFieldCB = ItemUseOnFieldCB_CampGears;
+            gFieldCallback = FieldCB_UseItemOnField;
+            gBagMenu->newScreenCallback = CB2_ReturnToField;
+            Task_FadeAndCloseBagMenu(taskId);
+        }
+        else
+            gTasks[taskId].func = ItemUseOnFieldCB_CampGears;
+            
+}
+
+
 
 #undef tUsingRegisteredKeyItem

@@ -215,6 +215,7 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     removeobject(15)
     setflag(FLAG_HIDE_MIKI)
     setflag(FLAG_HIDE_SHINJIRO)
+    setflag(FLAG_HIDE_TALK_BUTTON)
     warpsilent(MAP_BLANK_MAP, 0, 0)
     release
     end

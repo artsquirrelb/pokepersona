@@ -1515,3 +1515,9 @@ const u8 gText_SubQuest2_Desc17[] = _("Description Sub 17");
 const u8 gText_SubQuest2_Desc18[] = _("Description Sub 18");
 const u8 gText_SubQuest2_Desc19[] = _("Description Sub 19");
 const u8 gText_SubQuest2_Desc20[] = _("Description Sub 20");
+// Camp Gears
+const u8 gText_WaitUntilTime[] = _("Wait until?");
+const u8 gText_WaitUntilMorning[] = _("Morning (6AM)");
+const u8 gText_WaitUntilDay[] = _("Day (10AM)");
+const u8 gText_WaitUntilEvening[] = _("Evening (7PM)");
+const u8 gText_WaitUntilNight[] = _("Night (8PM)");

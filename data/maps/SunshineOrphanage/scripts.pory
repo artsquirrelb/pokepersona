@@ -106,7 +106,7 @@ script Boy_1_OrphanageEntrance {
     faceplayer
     setspeaker("Yuta")
     msgbox(format("Can I grow tall like these sunflowers?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Just drink a lot of milk!"))
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Just drink lots of milk!"))
     release
 }
 
@@ -114,7 +114,7 @@ script Girl_OrphanageEntrance {
     lock
     faceplayer
     setspeaker("Yuko")
-    msgbox(format("Sometimes I see people wearing black accompanying a man in white coat speaking with our teachers.\p 
+    msgbox(format("Sometimes I see people wearing black accompanying a man in a white coat speaking with our teachers.\p 
     I wonder who they are...\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I asked Ms. Kobayashi once and she said they donated a lot to the orphanage."
     ))
@@ -131,7 +131,7 @@ script Sunshine_Orphanage_Direction_Sign {
 script Welcome_To_Sunshine_Orphanage {
     lock
     msgbox (format("Welcome to Sunshine Orphanage!\p
-    If you have any question, feel free to ask the staff at the main hall counter."))
+    If you have any questions, feel free to ask the staff at the main hall counter."))
     release
 }
 

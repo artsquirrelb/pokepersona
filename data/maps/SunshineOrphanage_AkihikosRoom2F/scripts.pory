@@ -199,7 +199,7 @@ script ShinjirosPC {
 
 script BookshelfLeft {
     lockall
-    msgbox(format("A book of how to draw anime character.\p {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
+    msgbox(format("A book of how to draw anime characters.\p {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
     Miki often asks me to draw her favorite character from the game Persona 3."))
     releaseall
 }
@@ -222,7 +222,7 @@ script ChoresList {
 script Calendar {
     lock
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
-    My sis and I are going to get adopted in 3 days, Shinji in the following day.\p 
+    My sis and I are going to get adopted in 3 days, Shinji on the following day.\p 
     The Sanadas and the Aragakis look like they are good people.\p 
     {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}I'll miss everyone here..."))
     release

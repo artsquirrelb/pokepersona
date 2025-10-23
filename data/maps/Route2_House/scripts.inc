@@ -1054,8 +1054,6 @@ Route2_House_Eventscript_MitsuruExplainingObjectives::
 CameraFromAkiToCenter:
 # 612 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 612 "data/maps/Route2_House/scripts.pory"
-	walk_up
 	step_end
 
 # 614 "data/maps/Route2_House/scripts.pory"

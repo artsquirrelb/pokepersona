@@ -399,6 +399,7 @@ const u8 gBattleBackgroundTerrainNames[][26] =
     [BATTLE_ENVIRONMENT_CAVE]       = _("NORMAL - CAVE            "),
     [BATTLE_ENVIRONMENT_BUILDING]   = _("NORMAL - BUILDING        "),
     [BATTLE_ENVIRONMENT_PLAIN]      = _("NORMAL - PLAIN           "),
+    [BATTLE_ENVIRONMENT_SNOW]       = _("NORMAL - SNOW            "),
 };
 
 const u8 sShadowSizeLabels[][4] =
@@ -1023,8 +1024,12 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
     if (data->battleBgType == MAP_BATTLE_SCENE_NORMAL)
     {
         if (increment)
-        {
-            if (data->battleEnvironment == BATTLE_ENVIRONMENT_PLAIN)
+        {   
+            if (data->battleEnvironment == BATTLE_ENVIRONMENT_SNOW)
+                {data->battleBgType == MAP_BATTLE_SCENE_NORMAL;
+                data->battleEnvironment == BATTLE_ENVIRONMENT_GRASS;}
+
+            else if (data->battleEnvironment == BATTLE_ENVIRONMENT_PLAIN)
                 data->battleBgType += 1;
             else
                 data->battleEnvironment += 1;
@@ -1032,6 +1037,9 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
         else
         {
             if (data->battleEnvironment == BATTLE_ENVIRONMENT_GRASS)
+                //data->battleBgType = MAP_BATTLE_SCENE_RAYQUAZA;
+                data->battleEnvironment == BATTLE_ENVIRONMENT_SNOW;
+            else if (data->battleEnvironment == BATTLE_ENVIRONMENT_SNOW)
                 data->battleBgType = MAP_BATTLE_SCENE_RAYQUAZA;
             else
                 data->battleEnvironment -= 1;
@@ -1052,7 +1060,8 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
         if (increment)
         {
             data->battleBgType = MAP_BATTLE_SCENE_NORMAL;
-            data->battleEnvironment = BATTLE_ENVIRONMENT_GRASS;
+            //data->battleEnvironment = BATTLE_ENVIRONMENT_GRASS;
+            data->battleEnvironment = BATTLE_ENVIRONMENT_SNOW;
         }
         else
             data->battleBgType -= 1;

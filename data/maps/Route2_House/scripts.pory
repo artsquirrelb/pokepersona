@@ -609,7 +609,7 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
 }
 
 movement CameraFromAkiToCenter {
-    walk_up *2
+    walk_up
 }
 movement AkihikoWalksToListenToMitsuru {
     player_run_up *4

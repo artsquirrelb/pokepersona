@@ -1025,12 +1025,10 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
     {
         if (increment)
         {   
-            if (data->battleEnvironment == BATTLE_ENVIRONMENT_SNOW)
-                {data->battleBgType == MAP_BATTLE_SCENE_NORMAL;
-                data->battleEnvironment == BATTLE_ENVIRONMENT_GRASS;}
-
-            else if (data->battleEnvironment == BATTLE_ENVIRONMENT_PLAIN)
+            if (data->battleEnvironment == BATTLE_ENVIRONMENT_PLAIN)
                 data->battleBgType += 1;
+            else if (data->battleEnvironment == BATTLE_ENVIRONMENT_SNOW)
+                data->battleEnvironment == 0;
             else
                 data->battleEnvironment += 1;
         }

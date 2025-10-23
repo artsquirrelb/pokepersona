@@ -229,7 +229,7 @@ SetWallclock::
 # 128 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	goto_if_set FLAG_SET_WALL_CLOCK, SetWallclock_2
 # 132 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	manuallysettime WEEKDAY_WED, 8, 32, 0
+	manuallysettime WEEKDAY_WED, 16, 32, 0
 # 133 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setflag FLAG_SET_WALL_CLOCK
 # 134 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
@@ -615,7 +615,7 @@ SetWallclock_Text_0:
 # 134 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "The clock isn't working.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Let's see... The current time is...\n"
-	.string "8:32AM.$"
+	.string "4:32PM.$"
 
 SetWallclock_Text_1:
 # 140 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"

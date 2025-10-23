@@ -156,6 +156,8 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Stay safe, kids. I'll keep you updated with our searching."))
     closemessage
     delay(20)
+    fwdtime(9, 30)
+    fwdweekday(WEEKDAY_SUN)
     warp(MAP_SUNSHINE_TOWN, 3, 14)
 }
 

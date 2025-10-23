@@ -169,6 +169,9 @@ u8 MovementAction_EmoteUpset_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_EmoteAngry_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_EmotePensive_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_EmotePoisoned_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_EmoteCry_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_EmoteSweat_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_EmoteAsleep_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_RevealTrainer_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_RevealTrainer_Step1(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_RockSmashBreak_Step0(struct ObjectEvent *, struct Sprite *);
@@ -487,6 +490,9 @@ u8 (*const gMovementActionFuncs_SurfStillLeft[])(struct ObjectEvent *, struct Sp
 u8 (*const gMovementActionFuncs_SurfStillRight[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_ShakeHorizontal[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_ShakeVertical[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteCry[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteSweat[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_EmoteAsleep[])(struct ObjectEvent *, struct Sprite *);
 //fast diagonal
 u8 (*const gMovementActionFuncs_WalkFastDiagonalUpLeft[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_WalkFastDiagonalUpRight[])(struct ObjectEvent *, struct Sprite *);
@@ -681,6 +687,9 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_UP_RIGHT] = gMovementActionFuncs_WalkFastDiagonalUpRight,
     [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_LEFT] = gMovementActionFuncs_WalkFastDiagonalDownLeft,
     [MOVEMENT_ACTION_WALK_FAST_DIAGONAL_DOWN_RIGHT] = gMovementActionFuncs_WalkFastDiagonalDownRight,
+    [MOVEMENT_ACTION_EMOTE_CRY] = gMovementActionFuncs_EmoteCry,
+    [MOVEMENT_ACTION_EMOTE_SWEAT] = gMovementActionFuncs_EmoteSweat,
+    [MOVEMENT_ACTION_EMOTE_ASLEEP] = gMovementActionFuncs_EmoteAsleep,
 
 };
 
@@ -1785,3 +1794,17 @@ u8 (*const gMovementActionFuncs_WalkFastDiagonalDownRight[])(struct ObjectEvent 
     MovementAction_PauseSpriteAnim,
 };
 
+u8 (*const gMovementActionFuncs_EmoteCry[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteCry_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteSweat[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteSweat_Step0,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_EmoteAsleep[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_EmoteAsleep_Step0,
+    MovementAction_Finish,
+};

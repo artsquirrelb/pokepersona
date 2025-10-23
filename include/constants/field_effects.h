@@ -87,6 +87,9 @@
 #define FLDEFF_POISONED_ICON             82
 #define FLDEFF_TRAINER_EXCLAMATION       83
 #define FLDEFF_QUEST_ICON                84
+#define FLDEFF_CRY_ICON                  85
+#define FLDEFF_SWEAT_ICON                86
+#define FLDEFF_ASLEEP_ICON               87
 
 
 #define FLDEFFOBJ_SHADOW_S              0

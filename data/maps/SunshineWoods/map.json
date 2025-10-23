@@ -2,7 +2,7 @@
   "id": "MAP_SUNSHINE_WOODS",
   "name": "SunshineWoods",
   "layout": "LAYOUT_SUNSHINE_WOODS",
-  "music": "MUS_PETALBURG_WOODS",
+  "music": "MUS_RG_VIRIDIAN_FOREST",
   "region_map_section": "MAPSEC_SUNSHINEWOODS",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",

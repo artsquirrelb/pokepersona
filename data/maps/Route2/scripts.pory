@@ -408,6 +408,7 @@ script Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon {
     setobjectxyperm(6, 29, 21)
     setobjectnewmovementtype(6, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
     addobject(6)
+    fwdtime(13, 45)
     release
     setvar(VAR_AKIHIKOS_INTRO_STATE, 34)
     clearflag(FLAG_HIDE_TALK_BUTTON)

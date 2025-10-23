@@ -2,7 +2,7 @@
   "id": "MAP_SUNSHINE_TOWN",
   "name": "SunshineTown",
   "layout": "LAYOUT_SUNSHINE_TOWN",
-  "music": "MUS_SUNSHINE_ORPHANAGE",
+  "music": "MUS_RG_SEVII_67",
   "region_map_section": "MAPSEC_SUNSHINETOWN",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

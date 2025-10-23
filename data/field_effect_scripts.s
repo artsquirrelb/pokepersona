@@ -91,6 +91,9 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_PoisonedIcon          	@ FLDEFF_POISONED_ICON
 	.4byte gFieldEffectScript_TrainerExclamation       	@ FLDEFF_TRAINER_EXCLAMATION
 	.4byte gFieldEffectScript_QuestIcon					@ FLDEFF_QUEST_ICON
+	.4byte gFieldEffectScript_CryIcon          			@ FLDEFF_CRY_ICON
+	.4byte gFieldEffectScript_SweatIcon          		@ FLDEFF_SWEAT_ICON
+	.4byte gFieldEffectScript_AsleepIcon          		@ FLDEFF_ASLEEP_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -310,6 +313,18 @@ gFieldEffectScript_TrainerExclamation::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_TrainerExclamation
 	field_eff_end
 	
+gFieldEffectScript_CryIcon::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_CryIcon
+	field_eff_end
+
+gFieldEffectScript_SweatIcon::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SweatIcon
+	field_eff_end
+
+gFieldEffectScript_AsleepIcon::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_AsleepIcon
+	field_eff_end
+
 gFieldEffectScript_Nop47::
 	field_eff_callnative FldEff_Nop47
 	field_eff_end

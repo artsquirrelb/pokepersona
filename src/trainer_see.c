@@ -75,6 +75,7 @@ static const u8 sEmotion_XGfx[] = INCBIN_U8("graphics/field_effects/pics/emote_x
 static const u8 sQuest_Gfx[] = INCBIN_U8("graphics/misc/quests_icons.4bpp");
 // HGSS emote graphics ripped by Lemon on The Spriters Resource: https://www.spriters-resource.com/ds_dsi/pokemonheartgoldsoulsilver/sheet/30497/
 static const u8 sEmotion_Gfx[] = INCBIN_U8("graphics/misc/emotes.4bpp");
+//static const u8 sEmotionExtra_Gfx[] = INCBIN_U8("graphics/misc/emotes_extra.4bpp");
 
 static u8 (*const sDirectionalApproachDistanceFuncs[])(struct ObjectEvent *trainerObj, s16 range, s16 x, s16 y) =
 {
@@ -212,7 +213,23 @@ static const struct SpriteFrameImage sSpriteImageTable_Emotes[] =
     overworld_frame(sEmotion_Gfx, 2, 2, 20), // FOLLOWER_EMOTION_POISONED
     overworld_frame(sEmotion_Gfx, 2, 2, 21), // FOLLOWER_EMOTION_POISONED
     overworld_frame(sEmotion_Gfx, 2, 2, 22), // TRAINER_!
+    overworld_frame(sEmotion_Gfx, 2, 2, 23), // EMOTION_CRY
+    overworld_frame(sEmotion_Gfx, 2, 2, 24), // EMOTION_CRY
+    overworld_frame(sEmotion_Gfx, 2, 2, 25), // EMOTION_SWEAT
+    overworld_frame(sEmotion_Gfx, 2, 2, 26), // EMOTION_SWEAT
+    overworld_frame(sEmotion_Gfx, 2, 2, 27), // EMOTION_ASLEEP
+    overworld_frame(sEmotion_Gfx, 2, 2, 28), // EMOTION_ASLEEP
 };
+
+/*static const struct SpriteFrameImage sSpriteImageTable_EmotesExtra[] =
+{   
+    overworld_frame(sEmotionExtra_Gfx, 2, 2, 0), // EMOTION_CRY
+    overworld_frame(sEmotionExtra_Gfx, 2, 2, 1), // EMOTION_CRY
+    overworld_frame(sEmotionExtra_Gfx, 2, 2, 2), // EMOTION_SWEAT
+    overworld_frame(sEmotionExtra_Gfx, 2, 2, 3), // EMOTION_SWEAT
+    overworld_frame(sEmotionExtra_Gfx, 2, 2, 4), // EMOTION_ASLEEP
+    overworld_frame(sEmotionExtra_Gfx, 2, 2, 5), // EMOTION_ASLEEP
+};*/
 
 static const union AnimCmd sSpriteAnim_Emotes0[] =
 {
@@ -308,6 +325,31 @@ static const union AnimCmd sSpriteAnim_Emotes11[] =
     ANIMCMD_END
 };
 
+
+static const union AnimCmd sSpriteAnim_Emotes12[] =//emotecry
+{
+    ANIMCMD_FRAME(11*2+1, 30),
+    ANIMCMD_FRAME(12*2, 25),
+    ANIMCMD_FRAME(11*2+1, 30),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_Emotes13[] =
+{
+    ANIMCMD_FRAME(12*2+1, 30),
+    ANIMCMD_FRAME(13*2, 25),
+    ANIMCMD_FRAME(12*2+1, 30),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_Emotes14[] =
+{
+    ANIMCMD_FRAME(13*2+1, 30),
+    ANIMCMD_FRAME(14*2, 25),
+    ANIMCMD_FRAME(13*2+1, 30),
+    ANIMCMD_END
+};
+
 static const union AnimCmd sSpriteAnim_Icons1[] =
 {
     ANIMCMD_FRAME(0, 60),
@@ -355,7 +397,18 @@ static const union AnimCmd *const sSpriteAnimTable_Emotes[] =
     sSpriteAnim_Emotes9,
     sSpriteAnim_Emotes10,
     sSpriteAnim_Emotes11,
+    sSpriteAnim_Emotes12,
+    sSpriteAnim_Emotes13,
+    sSpriteAnim_Emotes14,
+    
 };
+
+/*static const union AnimCmd *const sSpriteAnimTable_EmotesExtra[] =
+{
+    sSpriteAnim_EmotesExtra0,
+    sSpriteAnim_EmotesExtra1,
+    sSpriteAnim_EmotesExtra2,
+};*/
 
 static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 {
@@ -389,6 +442,17 @@ static const struct SpriteTemplate sSpriteTemplate_Emote =
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_TrainerIcons
 };
+/*
+static const struct SpriteTemplate sSpriteTemplate_EmoteExtra =
+{
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_EMOTES,
+    .oam = &sOamData_Icons,
+    .anims = sSpriteAnimTable_EmotesExtra,
+    .images = sSpriteImageTable_EmotesExtra,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_TrainerIcons
+};*/
 
 static const struct SpriteTemplate sSpriteTemplate_Quest =
 {
@@ -1155,6 +1219,44 @@ u8 FldEff_PoisonedIcon(void)
     return 0;
 }
 
+u8 FldEff_CryIcon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emote, 0, 0, 0x52);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_CRY_ICON, 12);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_SweatIcon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emote, 0, 0, 0x52);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_SWEAT_ICON, 13);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_AsleepIcon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emote, 0, 0, 0x52);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_ASLEEP_ICON, 14);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
 
 u8 FldEff_DoubleExclMarkIcon(void)
 {

@@ -271,6 +271,10 @@
 #define MOVEMENT_ACTION_EMOTE_ANGRY                     0xB7
 #define MOVEMENT_ACTION_EMOTE_PENSIVE                   0xB8
 #define MOVEMENT_ACTION_EMOTE_POISONED                  0xB9
+#define MOVEMENT_ACTION_EMOTE_CRY                       0xBA
+#define MOVEMENT_ACTION_EMOTE_SWEAT                     0xBB
+#define MOVEMENT_ACTION_EMOTE_ASLEEP                    0xBC
+
 
 //fast diagonal movement
 

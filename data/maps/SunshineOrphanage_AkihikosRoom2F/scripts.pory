@@ -129,10 +129,10 @@ script SetWallclock {
         goto (PlayersHouse_2F_EventScript_CheckWallClock)
     }
     else{
-    manuallysettime(WEEKDAY_WED, 8, 32, 0)
+    manuallysettime(WEEKDAY_WED, 16, 32, 0)
     setflag(FLAG_SET_WALL_CLOCK)
 	msgbox(format("The clock isn't working.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Let's see... The current time is... 8:32AM."))
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Let's see... The current time is... 4:32PM."))
     closemessage
 	//call(PlayersHouse_2F_EventScript_SetWallClock)
 	delay(30)

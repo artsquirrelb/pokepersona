@@ -216,6 +216,8 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     setflag(FLAG_HIDE_MIKI)
     setflag(FLAG_HIDE_SHINJIRO)
     setflag(FLAG_HIDE_TALK_BUTTON)
+    fwdtime(8, 30)
+    fwdweekday (WEEKDAY_THU)
     warpsilent(MAP_BLANK_MAP, 0, 0)
     release
     end

@@ -80,6 +80,7 @@ script SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle {
     elif (var(VAR_RESULT) >= 3){
         msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Very well. Shall we start?"))
         closemessage
+        fwdtime(18, 0)
         setflag(FLAG_HIDE_TALK_BUTTON)
         warpsilent(MAP_BLANK_MAP, 0, 0)
         end
@@ -169,6 +170,7 @@ script SunshineMeadow_Eventscript_ChoosingPartyForMitsuruFirstBattle {
         setvar (VAR_0x8004, SPECIAL_BATTLE_MULTI)
         setvar (VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS)
         trainerbattle_no_intro(TRAINER_MITSURU_SUNSHINE_MEADOW, MitsuruFirstBattleDefeated)
+        fwdtime(18, 30)
         setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SAVE_PARTY)
         special (CallFrontierUtilFunc)
 	    special (LoadPlayerParty)
@@ -237,6 +239,7 @@ script SunshineMeadow_Eventscript_PostMitsuruFirstBattle {
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(I should also study more of how they fight.)"))
     closemessage
     warpsilent(MAP_BLANK_MAP, 0, 0)
+    fwdtime(19, 10)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 36)
 }
 movement CameraGoesLeft2 {
@@ -279,6 +282,7 @@ script SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle{
     setvar(VAR_AKIHIKOS_INTRO_STATE, 38)
     clearflag(FLAG_HIDE_TALK_BUTTON)
     clearflag(FLAG_NO_WHITEOUT)
+    fwdtime(19, 20)
     warpsilent(MAP_ROUTE2, 8, 12)
     end
 }

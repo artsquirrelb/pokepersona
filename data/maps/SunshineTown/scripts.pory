@@ -108,7 +108,7 @@ script SunshineTown_Eventscript_Boy {
         setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
     }
     else {
-        msgbox(format("One of the richest families in the region lived in this island.\p
+        msgbox(format("One of the richest families in the region lived on this island.\p
     I heard their mansion was at the south end of Route 1."))
     }
     release
@@ -183,7 +183,7 @@ script SunshineTown_Eventscript_WarpToBurningOrphanage{
 script SunshineTown_Eventscript_NoPointEnteringPC {
     lock
     applymovement(LOCALID_PLAYER, walkdown)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to diddling around!)"))
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to be dawdling around!)"))
     closemessage
     release
 }
@@ -191,7 +191,7 @@ script SunshineTown_Eventscript_NoPointEnteringPC {
 script SunshineTown_Eventscript_NoPointLeavingTown {
     lock
     applymovement(LOCALID_PLAYER, walkright)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to diddling around!)"))
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to be dawdling around!)"))
     closemessage
     release
 }

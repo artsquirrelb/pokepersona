@@ -203,7 +203,7 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     applymovement (4, TeacherFacingAkihiko)
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_KOBAYASHI}Alright.\p
-    I supposed it's quite late now. You all should go to rest.\p
+    I supposed it's quite late now. You all should go to bed.\p
     See you tomorrow."))
     closemessage
     setvar(VAR_AKIHIKOS_INTRO_STATE, 9)

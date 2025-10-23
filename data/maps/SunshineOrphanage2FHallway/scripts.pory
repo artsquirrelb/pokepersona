@@ -26,7 +26,7 @@ script BOY_1_2F {
     msgbox(format(
         "I wish the orphanage let us have Pokemon.\p"
         "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
-        "I wish so too but I guess it'll be harder for the staff.\p They're already busy enough."
+        "I do too but I guess it'll be harder for the staff.\p They're already busy enough."
         ))
     release
 }
@@ -37,7 +37,7 @@ script BOY_2_2F {
     setspeaker("Kou")
     if (var(VAR_AKIHIKOS_INTRO_STATE) < 9) {
         msgbox(format(
-        "Few days ago I saw a Pawmi with different color in the woods.\p It's neither orange yellow nor pink.\p
+        "Few days ago I saw a Pawmi with a different color in the woods.\p It's neither orange yellow nor pink.\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}
         What color was it then?"))
     closemessage
@@ -47,7 +47,7 @@ script BOY_2_2F {
         ..."))}
     else {
         msgbox(format("Wait, that Pawmi...\p
-        I think it's the one I saw few days ago."))
+        I think it's the one I saw a few days ago."))
     }
     release
 } 

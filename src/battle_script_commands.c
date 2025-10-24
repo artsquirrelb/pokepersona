@@ -5676,7 +5676,7 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
         return FALSE;
 
     u32 effect = FALSE;
-    u32 side = GetBattlerSide(gBattlerTarget);
+    enum BattleSide side = GetBattlerSide(gBattlerTarget);
     switch (moveEffect)
     {
     case EFFECT_KNOCK_OFF:
@@ -7694,9 +7694,6 @@ static void UpdateSentMonFlags(u32 battler)
 
     gHitMarker &= ~HITMARKER_FAINTED(battler);
     gSpecialStatuses[battler].faintedHasReplacement = FALSE;
-
-    if (!BattlerHasAi(battler))
-        gBattleStruct->appearedInBattle |= 1u << gBattlerPartyIndexes[battler];
 }
 
 static void SetDmgHazardsBattlescript(u8 battler, u8 multistringId)
@@ -16339,14 +16336,68 @@ void BS_JumpIfCanGigantamax(void)
         gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
-void BS_JumpIfLastUsedItemHoldEffect(void)
+void BS_TryFlingHoldEffect(void)
 {
-    NATIVE_ARGS(u8 holdEffect, u16 secondaryId, const u8 *jumpInstr);
-    if (GetItemHoldEffect(gLastUsedItem) == cmd->holdEffect
-        && (cmd->secondaryId == 0 || GetItemSecondaryId(gLastUsedItem) == cmd->secondaryId))
-        gBattlescriptCurrInstr = cmd->jumpInstr;
-    else
+    NATIVE_ARGS();
+    enum HoldEffect holdEffect = GetItemHoldEffect(gBattleStruct->flingItem);
+    gBattleStruct->flingItem = ITEM_NONE;
+
+    if (IsMoveEffectBlockedByTarget(GetBattlerAbility(gBattlerTarget)))
+    {
+        gBattlescriptCurrInstr = BattleScript_FlingBlockedByShieldDust;
+        return;
+    }
+
+    switch (holdEffect)
+    {
+    case HOLD_EFFECT_FLAME_ORB:
+        gBattlescriptCurrInstr = cmd->nextInstr - 1;
+        gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
+        SetMoveEffect(gBattlerAttacker, gBattlerTarget, FALSE, FALSE);
+        break;
+    case HOLD_EFFECT_TOXIC_ORB:
+        gBattlescriptCurrInstr = cmd->nextInstr - 1;
+        gBattleScripting.moveEffect = MOVE_EFFECT_TOXIC;
+        SetMoveEffect(gBattlerAttacker, gBattlerTarget, FALSE, FALSE);
+        break;
+    case HOLD_EFFECT_LIGHT_BALL:
+        gBattlescriptCurrInstr = cmd->nextInstr - 1;
+        gBattleScripting.moveEffect = MOVE_EFFECT_PARALYSIS;
+        SetMoveEffect(gBattlerAttacker, gBattlerTarget, FALSE, FALSE);
+        break;
+    case HOLD_EFFECT_TYPE_POWER:
+        if (GetItemSecondaryId(gLastUsedItem) != TYPE_POISON)
+        {
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        }
+        else
+        {
+            gBattlescriptCurrInstr = cmd->nextInstr - 1;
+            gBattleScripting.moveEffect = MOVE_EFFECT_POISON;
+            SetMoveEffect(gBattlerAttacker, gBattlerTarget, FALSE, FALSE);
+        }
+        break;
+    case HOLD_EFFECT_FLINCH:
+        gBattlescriptCurrInstr = cmd->nextInstr - 1;
+        gBattleScripting.moveEffect = MOVE_EFFECT_FLINCH;
+        SetMoveEffect(gBattlerAttacker, gBattlerTarget, FALSE, FALSE);
+        break;
+    case HOLD_EFFECT_MENTAL_HERB:
+        if (ItemBattleEffects(gBattlerTarget, 0, holdEffect, IsOnFlingActivation))
+            return;
+        else
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        break;
+    case HOLD_EFFECT_WHITE_HERB:
+        if (ItemBattleEffects(gBattlerTarget, 0, holdEffect, IsOnFlingActivation))
+            return;
+        else
+            gBattlescriptCurrInstr = cmd->nextInstr;
+        break;
+    default:
         gBattlescriptCurrInstr = cmd->nextInstr;
+        break;
+    }
 }
 
 void BS_JumpIfNoWhiteOut(void)
@@ -16514,6 +16565,7 @@ void BS_SetLastUsedItem(void)
 {
     NATIVE_ARGS(u8 battler);
     gLastUsedItem = gBattleMons[GetBattlerForBattleScript(cmd->battler)].item;
+    gBattleStruct->flingItem = gLastUsedItem;
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -17928,54 +17980,6 @@ void BS_SetPoltergeistMessage(void)
     NATIVE_ARGS(const u8 *failInstr);
     PREPARE_ITEM_BUFFER(gBattleTextBuff1, gBattleMons[gBattlerTarget].item);
     gLastUsedItem = gBattleMons[gBattlerTarget].item;
-    gBattlescriptCurrInstr = cmd->nextInstr;
-}
-
-void BS_CureCertainStatuses(void)
-{
-    NATIVE_ARGS();
-    // Check infatuation
-    if (gBattleMons[gBattlerTarget].volatiles.infatuation)
-    {
-        gBattleMons[gBattlerTarget].volatiles.infatuation = 0;
-        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MENTALHERBCURE_INFATUATION;  // STRINGID_TARGETGOTOVERINFATUATION
-        StringCopy(gBattleTextBuff1, gStatusConditionString_LoveJpn);
-    }
-    // Check taunt
-    if (gDisableStructs[gBattlerTarget].tauntTimer != 0)
-    {
-        gDisableStructs[gBattlerTarget].tauntTimer = 0;
-        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MENTALHERBCURE_TAUNT;
-        PREPARE_MOVE_BUFFER(gBattleTextBuff1, MOVE_TAUNT);
-    }
-    // Check encore
-    if (gDisableStructs[gBattlerTarget].encoreTimer != 0)
-    {
-        gDisableStructs[gBattlerTarget].encoredMove = 0;
-        gDisableStructs[gBattlerTarget].encoreTimer = 0;
-        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MENTALHERBCURE_ENCORE;   // STRINGID_PKMNENCOREENDED
-    }
-    // Check torment
-    if (gBattleMons[gBattlerTarget].volatiles.torment == TRUE)
-    {
-        gBattleMons[gBattlerTarget].volatiles.torment = FALSE;
-        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MENTALHERBCURE_TORMENT;
-    }
-    // Check heal block
-    if (gBattleMons[gBattlerTarget].volatiles.healBlock)
-    {
-        gBattleMons[gBattlerTarget].volatiles.healBlock = FALSE;
-        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MENTALHERBCURE_HEALBLOCK;
-    }
-    // Check disable
-    if (gDisableStructs[gBattlerTarget].disableTimer != 0)
-    {
-        gDisableStructs[gBattlerTarget].disableTimer = 0;
-        gDisableStructs[gBattlerTarget].disabledMove = 0;
-        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MENTALHERBCURE_DISABLE;
-    }
-
-    gBattleScripting.battler = gBattlerTarget;
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 

@@ -2725,6 +2725,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_GIGANTAMAX_FACTOR:
             retVal = GetSubstruct3(boxMon)->gigantamaxFactor;
             break;
+        case MON_DATA_IS_STORY_STARTER:
+            retVal = GetSubstruct3(boxMon)->isStoryStarter;
+            break;
         case MON_DATA_TERA_TYPE:
             {
                 struct PokemonSubstruct0 *substruct0 = GetSubstruct0(boxMon);
@@ -3153,6 +3156,8 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         case MON_DATA_GIGANTAMAX_FACTOR:
             SET8(GetSubstruct3(boxMon)->gigantamaxFactor);
             break;
+        case MON_DATA_IS_STORY_STARTER:
+            SET8(GetSubstruct3(boxMon)->isStoryStarter);
         case MON_DATA_TERA_TYPE:
             SET8(GetSubstruct0(boxMon)->teraType);
             break;
@@ -6136,6 +6141,10 @@ void SetWildMonHeldItem(void)
 bool8 IsMonShiny(struct Pokemon *mon)
 {
     return GetMonData(mon, MON_DATA_IS_SHINY, NULL);
+}
+
+bool8 IsMonStoryStarter(struct Pokemon *mon){
+    return GetMonData(mon, MON_DATA_IS_STORY_STARTER, NULL);
 }
 
 const u8 *GetTrainerPartnerName(void)

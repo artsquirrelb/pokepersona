@@ -106,6 +106,7 @@ enum {
     MSG_ITEM_IS_HELD,
     MSG_CHANGED_TO_ITEM,
     MSG_CANT_STORE_MAIL,
+    MSG_CANT_RELEASE_STARTER,
 };
 
 // IDs for how to resolve variables in the above messages
@@ -481,6 +482,7 @@ struct PokemonStorageSystemData
     u8 displayMonMarkings;
     u8 displayMonLevel;
     bool8 displayMonIsEgg;
+    bool8 displayMonIsStoryStarter;
     u8 displayMonName[POKEMON_NAME_LENGTH + 1];
     u8 displayMonNameText[36];
     u8 displayMonSpeciesName[36];
@@ -1076,7 +1078,8 @@ static const struct StorageMessage sMessages[] =
     [MSG_ITEM_IS_HELD]         = {COMPOUND_STRING("{DYNAMIC 0} is now held."),   MSG_VAR_ITEM_NAME},
     [MSG_CHANGED_TO_ITEM]      = {COMPOUND_STRING("Changed to {DYNAMIC 0}."),    MSG_VAR_ITEM_NAME},
     [MSG_CANT_STORE_MAIL]      = {COMPOUND_STRING("Mail can't be stored!"),      MSG_VAR_NONE},
-};
+    [MSG_CANT_RELEASE_STARTER] = {COMPOUND_STRING("That's your starter!"),  MSG_VAR_NONE},
+};                                                       
 
 static const struct WindowTemplate sYesNoWindowTemplate =
 {
@@ -2649,6 +2652,10 @@ static void Task_OnSelectedMon(u8 taskId)
             {
                 sStorage->state = 5; // Cannot release an Egg.
             }
+            else if (sStorage ->displayMonIsStoryStarter)
+            {
+                sStorage->state = 7;
+            }
             else if (ItemIsMail(sStorage->displayMonItemId))
             {
                 sStorage->state = 4;
@@ -2706,6 +2713,11 @@ static void Task_OnSelectedMon(u8 taskId)
         PrintMessage(MSG_PLEASE_REMOVE_MAIL);
         sStorage->state = 6;
         break;
+    case 7:
+        PlaySE(SE_FAILURE);
+        PrintMessage(MSG_CANT_RELEASE_STARTER);
+        sStorage->state = 6;
+        break;
     case 6:
         if (JOY_NEW(A_BUTTON | B_BUTTON | DPAD_ANY))
         {
@@ -2714,6 +2726,7 @@ static void Task_OnSelectedMon(u8 taskId)
         }
         break;
     }
+    
 }
 
 static void Task_MoveMon(u8 taskId)
@@ -6576,17 +6589,6 @@ static void GetRestrictedReleaseMoves(u16 *moves)
 
 static void InitCanReleaseMonVars(void)
 {   
-    if (GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_PAWMI_DELTA
-        ||GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_PAWMO_DELTA
-        ||GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_PAWMOT_DELTA
-        ||GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_VULPIX_DELTA
-        ||GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_NINETALES_DELTA)
-    {   // The player is releasing Delta Pawmi line or Delta Vulpix line
-        sStorage->releaseStatusResolved = TRUE;
-        sStorage->canReleaseMon = FALSE;
-        return;
-    }
-
     if (!AtLeastThreeUsableMons())
     {
         // The player only has 1 or 2 usable
@@ -6633,8 +6635,6 @@ static void InitCanReleaseMonVars(void)
 
     sStorage->releaseCheckState = 0;
 }
-//static bool32 IsStoryStarterPokemon(void)
-
 
 
 static bool32 AtLeastThreeUsableMons(void)
@@ -6972,6 +6972,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
             sStorage->displayMonPalette = GetMonFrontSpritePal(mon);
             gender = GetMonGender(mon);
             sStorage->displayMonItemId = GetMonData(mon, MON_DATA_HELD_ITEM);
+            sStorage->displayMonIsStoryStarter = GetMonData(mon, MON_DATA_IS_STORY_STARTER); //newly added
         }
     }
     else if (mode == MODE_BOX)
@@ -6997,6 +6998,7 @@ static void SetDisplayMonData(void *pokemon, u8 mode)
             sStorage->displayMonPalette = GetMonSpritePalFromSpeciesAndPersonality(sStorage->displayMonSpecies, isShiny, sStorage->displayMonPersonality);
             gender = GetGenderFromSpeciesAndPersonality(sStorage->displayMonSpecies, sStorage->displayMonPersonality);
             sStorage->displayMonItemId = GetBoxMonData(boxMon, MON_DATA_HELD_ITEM);
+            sStorage->displayMonIsStoryStarter = GetBoxMonData(boxMon, MON_DATA_IS_STORY_STARTER); //newly added
         }
     }
     else

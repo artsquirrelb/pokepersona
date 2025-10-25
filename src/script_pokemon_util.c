@@ -332,7 +332,7 @@ void SetTeraType(struct ScriptContext *ctx)
  * if side/slot are assigned, it will create the mon at the assigned party location
  * if slot == PARTY_SIZE, it will give the mon to first available party or storage slot
  */
-static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u16 item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u8 *evs, u8 *ivs, u16 *moves, enum ShinyMode shinyMode, bool8 gmaxFactor, u8 teraType, u8 dmaxLevel)
+static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u16 item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u8 *evs, u8 *ivs, u16 *moves, enum ShinyMode shinyMode, bool8 isStoryStarter, bool8 gmaxFactor, u8 teraType, u8 dmaxLevel)
 {
     enum NationalDexOrder nationalDexNum;
     int sentToPc;
@@ -369,7 +369,8 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
         isShiny = GetMonData(&mon, MON_DATA_IS_SHINY);
 
     SetMonData(&mon, MON_DATA_IS_SHINY, &isShiny);
-
+    // if the mon is story starter
+    SetMonData(&mon, MON_DATA_IS_STORY_STARTER, &isStoryStarter);
     // gigantamax factor
     SetMonData(&mon, MON_DATA_GIGANTAMAX_FACTOR, &gmaxFactor);
 
@@ -483,7 +484,7 @@ u32 ScriptGiveMon(u16 species, u8 level, u16 item)
                                 MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1};  // ScriptGiveMonParameterized won't touch the stats' IV.
     u16 moves[MAX_MON_MOVES] = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE};
 
-    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS, evs, ivs, moves, SHINY_MODE_RANDOM, FALSE, NUMBER_OF_MON_TYPES, 0);
+    return ScriptGiveMonParameterized(0, PARTY_SIZE, species, level, item, ITEM_POKE_BALL, NUM_NATURES, NUM_ABILITY_PERSONALITY, MON_GENDERLESS, evs, ivs, moves, SHINY_MODE_RANDOM, FALSE, FALSE, NUMBER_OF_MON_TYPES, 0);
 }
 
 #define PARSE_FLAG(n, default_) (flags & (1 << (n))) ? VarGet(ScriptReadHalfword(ctx)) : (default_)
@@ -557,9 +558,10 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     u16 move3                = PARSE_FLAG(19, MOVE_NONE);
     u16 move4                = PARSE_FLAG(20, MOVE_NONE);
     enum ShinyMode shinyMode = PARSE_FLAG(21, SHINY_MODE_RANDOM);
-    bool8 gmaxFactor         = PARSE_FLAG(22, FALSE);
-    u8 teraType              = PARSE_FLAG(23, NUMBER_OF_MON_TYPES);
-    u8 dmaxLevel             = PARSE_FLAG(24, 0);
+    bool8 isStoryStarter     = PARSE_FLAG(22, FALSE);
+    bool8 gmaxFactor         = PARSE_FLAG(23, FALSE);
+    u8 teraType              = PARSE_FLAG(24, NUMBER_OF_MON_TYPES);
+    u8 dmaxLevel             = PARSE_FLAG(25, 0);
 
     u8 evs[NUM_STATS]        = {hpEv, atkEv, defEv, speedEv, spAtkEv, spDefEv};
     u8 ivs[NUM_STATS]        = {hpIv, atkIv, defIv, speedIv, spAtkIv, spDefIv};
@@ -570,7 +572,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     else
         Script_RequestEffects(SCREFF_V1);
 
-    gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, shinyMode, gmaxFactor, teraType, dmaxLevel);
+    gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, shinyMode, isStoryStarter, gmaxFactor, teraType, dmaxLevel);
 }
 
 #undef PARSE_FLAG

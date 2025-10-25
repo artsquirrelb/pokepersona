@@ -190,8 +190,8 @@ script SunshineTown_PokemonCenter_Eventscript_OldMan {
         msgbox(format("That almost gave me a heartattack..."))
     }
     else {msgbox(format("
-    Back in the day, Pokémon Center and Pokémart used to be in two separated buildings.\p
-    I'm glad that they changed it. It's more convenient like this."))}
+    Back in the day, Pokémon Center and Pokémart used to be in two separate buildings.\p
+    I'm glad they changed it. It's more convenient like this."))}
     release
 }
 
@@ -234,7 +234,7 @@ script SunshineTown_PokemonCenter_Eventscript_Gentleman {
     setspeaker ("Watanabe")
     if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15) {
         msgbox(format("It sounds dangerous outside, you kids should stay here.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Thank you, sir but we'll be fine."))
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Thank you, sir, but we'll be fine."))
     }
     else {msgbox (format("
     The Kirijo group specializes in researching Pokémon in this region.\p

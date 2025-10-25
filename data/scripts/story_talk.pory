@@ -166,7 +166,7 @@ script EventScript_OverworldStoryTalk_HaveTalkedToShinjiro {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I wonder what Ms.Kobayashi needs us for..."))
     closemessage
     applymovement(2,facedown)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}No idea, she hurried to somewhere before I could ask."))
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}No idea, she hurried off somewhere before I could ask."))
 }
 
 script EventScript_OverworldStoryTalk_ShinjiroJoinedAkihikosRoom {
@@ -221,7 +221,7 @@ script EventScript_OverworldStoryTalk_PosttalkKurosawa {
 script EventScript_OverworldStoryTalk_PosttalkKurosawa_Riverbank 
 {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Hey Shinji...\p
-    Why did you think Ms. Kobayashi do that to us?\p
+    Why do you think Ms. Kobayashi would do that to us?\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Pushing us into the river...\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}..."))
 }
@@ -229,7 +229,7 @@ script EventScript_OverworldStoryTalk_PosttalkKurosawa_Riverbank
 script EventScript_OverworldStoryTalk_PosttalkKurosawa_Woods {
     msgbox(format("
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Miki gifted me a flower crown here.\p
-    I left it in our room so it was probably burned to ashes.\p
+    I left it in our room so it was probably burned to ash.\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}..."))
 
 }
@@ -255,7 +255,7 @@ script EventScript_OverworldStoryTalk_PreFirstBattleMitsuruShinjiroLeft {
 }
 
 script EventScript_OverworldStoryTalk_PreFirstBattleMitsuru_Meadow{
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(There she is. Her Inteleon gonna be hard to take down.\p
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(There she is. Her Inteleon is gonna be hard to take down.\p
     There's also that weird-colored Vulpix.)"))
 }
 

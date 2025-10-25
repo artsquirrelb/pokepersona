@@ -156,6 +156,9 @@ static const u16 sVulpixFormSpeciesIdTable[] = {
 #if P_ALOLAN_FORMS
     SPECIES_VULPIX_ALOLA,
 #endif
+#if P_DELTA_FORMS
+    SPECIES_VULPIX_DELTA,
+#endif
     FORM_SPECIES_END,
 };
 
@@ -164,6 +167,9 @@ static const u16 sNinetalesFormSpeciesIdTable[] = {
 #if P_ALOLAN_FORMS
     SPECIES_NINETALES_ALOLA,
 #endif
+#if P_DELTA_FORMS
+    SPECIES_NINETALES_DELTA,
+#endif    
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_VULPIX
@@ -2204,4 +2210,39 @@ static const u16 sPawmiFormSpeciesIdTable[] = {
 #endif
     FORM_SPECIES_END,
 };
+
+static const u16 sPawmoFormSpeciesIdTable[] = {
+    SPECIES_PAWMO,
+#if P_DELTA_FORMS
+    SPECIES_PAWMO_DELTA,
+#endif
+    FORM_SPECIES_END,
+};
+
+static const u16 sPawmotFormSpeciesIdTable[] = {
+    SPECIES_PAWMOT,
+#if P_DELTA_FORMS
+    SPECIES_PAWMOT_DELTA,
+#endif
+    FORM_SPECIES_END,
+};
 #endif //P_FAMILY_PAWMI
+
+#if P_FAMILY_FERROSEED
+static const u16 sFerroseedFormSpeciesIdTable[] = {
+    SPECIES_FERROSEED,
+#if P_DELTA_FORMS
+    SPECIES_FERROSEED_DELTA,
+#endif
+    FORM_SPECIES_END,
+};
+
+static const u16 sFerrothornFormSpeciesIdTable[] = {
+    SPECIES_FERROTHORN,
+#if P_DELTA_FORMS
+    SPECIES_FERROTHORN_DELTA,
+#endif
+    FORM_SPECIES_END,
+};
+
+#endif //P_FAMILY_FERROSEED

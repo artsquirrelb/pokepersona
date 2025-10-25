@@ -341,6 +341,14 @@ static const struct SpriteFrameImage sPicTable_NinetalesAlola[] = {
     overworld_ascending_frames(gObjectEventPic_NinetalesAlola, 4, 4),
 };
 #endif //P_ALOLAN_FORMS
+#if P_DELTA_FORMS
+static const struct SpriteFrameImage sPicTable_VulpixDelta[] = {
+    overworld_ascending_frames(gObjectEventPic_VulpixDelta, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_NinetalesDelta[] = {
+    overworld_ascending_frames(gObjectEventPic_NinetalesDelta, 4, 4),
+};
+#endif //P_DELTA_FORMS
 #endif //P_FAMILY_VULPIX
 
 #if P_FAMILY_JIGGLYPUFF
@@ -4251,6 +4259,14 @@ static const struct SpriteFrameImage sPicTable_Ferroseed[] = {
 static const struct SpriteFrameImage sPicTable_Ferrothorn[] = {
     overworld_ascending_frames(gObjectEventPic_Ferrothorn, 4, 4),
 };
+#if P_DELTA_FORMS
+static const struct SpriteFrameImage sPicTable_FerroseedDelta[] = {
+    overworld_ascending_frames(gObjectEventPic_FerroseedDelta, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_FerrothornDelta[] = {
+    overworld_ascending_frames(gObjectEventPic_FerrothornDelta, 4, 4),
+};
+#endif //DELTA_FORMS
 #endif //P_FAMILY_FERROSEED
 
 #if P_FAMILY_KLINK
@@ -6203,6 +6219,12 @@ static const struct SpriteFrameImage sPicTable_Pawmot[] = {
 #if P_DELTA_FORMS
 static const struct SpriteFrameImage sPicTable_PawmiDelta[] = {
     overworld_ascending_frames(gObjectEventPic_PawmiDelta, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PawmoDelta[] = {
+    overworld_ascending_frames(gObjectEventPic_PawmoDelta, 4, 4),
+};
+static const struct SpriteFrameImage sPicTable_PawmotDelta[] = {
+    overworld_ascending_frames(gObjectEventPic_PawmotDelta, 4, 4),
 };
 
 #endif //P_DELTA_FORMS

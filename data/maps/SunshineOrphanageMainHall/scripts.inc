@@ -953,7 +953,7 @@ SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0:
 # 205 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{SPEAKER NAME_KOBAYASHI}Alright.\p"
 	.string "I supposed it's quite late now. You all\n"
-	.string "should go to rest.\p"
+	.string "should go to bed.\p"
 	.string "See you tomorrow.$"
 
 Boy_1_MainHall_Text_0:

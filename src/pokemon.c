@@ -7137,7 +7137,8 @@ bool32 IsSpeciesRegionalForm(u32 species)
     return gSpeciesInfo[species].isAlolanForm
         || gSpeciesInfo[species].isGalarianForm
         || gSpeciesInfo[species].isHisuianForm
-        || gSpeciesInfo[species].isPaldeanForm;
+        || gSpeciesInfo[species].isPaldeanForm
+        || gSpeciesInfo[species].isDeltaForm;
 }
 
 bool32 IsSpeciesRegionalFormFromRegion(u32 species, u32 region)

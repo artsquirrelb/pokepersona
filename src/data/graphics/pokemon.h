@@ -1562,6 +1562,33 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_ALOLAN_FORMS
+#if P_DELTA_FORMS
+    const u32 gMonFrontPic_VulpixDelta[] = INCBIN_U32("graphics/pokemon/vulpix/delta/front.4bpp.smol");
+    const u16 gMonPalette_VulpixDelta[] = INCBIN_U16("graphics/pokemon/vulpix/delta/normal.gbapal");
+    const u32 gMonBackPic_VulpixDelta[] = INCBIN_U32("graphics/pokemon/vulpix/delta/back.4bpp.smol");
+    const u16 gMonShinyPalette_VulpixDelta[] = INCBIN_U16("graphics/pokemon/vulpix/delta/shiny.gbapal");
+    const u8 gMonIcon_VulpixDelta[] = INCBIN_U8("graphics/pokemon/vulpix/delta/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_VulpixDelta[] = INCBIN_COMP("graphics/pokemon/vulpix/delta/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_VulpixDelta[] = INCBIN_U16("graphics/pokemon/vulpix/delta/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_VulpixDelta[] = INCBIN_U16("graphics/pokemon/vulpix/delta/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+    const u32 gMonFrontPic_NinetalesDelta[] = INCBIN_U32("graphics/pokemon/ninetales/delta/front.4bpp.smol");
+    const u16 gMonPalette_NinetalesDelta[] = INCBIN_U16("graphics/pokemon/ninetales/delta/normal.gbapal");
+    const u32 gMonBackPic_NinetalesDelta[] = INCBIN_U32("graphics/pokemon/ninetales/delta/back.4bpp.smol");
+    const u16 gMonShinyPalette_NinetalesDelta[] = INCBIN_U16("graphics/pokemon/ninetales/delta/shiny.gbapal");
+    const u8 gMonIcon_NinetalesDelta[] = INCBIN_U8("graphics/pokemon/ninetales/delta/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_NinetalesDelta[] = INCBIN_COMP("graphics/pokemon/ninetales/delta/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_NinetalesDelta[] = INCBIN_U16("graphics/pokemon/ninetales/delta/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_NinetalesDelta[] = INCBIN_U16("graphics/pokemon/ninetales/delta/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_DELTA_FORMS
 #endif //P_FAMILY_VULPIX
 
 #if P_FAMILY_JIGGLYPUFF
@@ -17982,6 +18009,33 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
     const u16 gShinyOverworldPalette_Ferrothorn[] = INCBIN_U16("graphics/pokemon/ferrothorn/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
+#if P_DELTA_FORMS
+    const u32 gMonFrontPic_FerroseedDelta[] = INCBIN_U32("graphics/pokemon/ferroseed/delta/anim_front.4bpp.smol");
+    const u16 gMonPalette_FerroseedDelta[] = INCBIN_U16("graphics/pokemon/ferroseed/delta/normal.gbapal");
+    const u32 gMonBackPic_FerroseedDelta[] = INCBIN_U32("graphics/pokemon/ferroseed/delta/back.4bpp.smol");
+    const u16 gMonShinyPalette_FerroseedDelta[] = INCBIN_U16("graphics/pokemon/ferroseed/delta/shiny.gbapal");
+    const u8 gMonIcon_FerroseedDelta[] = INCBIN_U8("graphics/pokemon/ferroseed/delta/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_FerroseedDelta[] = INCBIN_COMP("graphics/pokemon/ferroseed/delta/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_FerroseedDelta[] = INCBIN_U16("graphics/pokemon/ferroseed/delta/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_FerroseedDelta[] = INCBIN_U16("graphics/pokemon/ferroseed/delta/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+    const u32 gMonFrontPic_FerrothornDelta[] = INCBIN_U32("graphics/pokemon/ferrothorn/delta/anim_front.4bpp.smol");
+    const u16 gMonPalette_FerrothornDelta[] = INCBIN_U16("graphics/pokemon/ferrothorn/delta/normal.gbapal");
+    const u32 gMonBackPic_FerrothornDelta[] = INCBIN_U32("graphics/pokemon/ferrothorn/delta/back.4bpp.smol");
+    const u16 gMonShinyPalette_FerrothornDelta[] = INCBIN_U16("graphics/pokemon/ferrothorn/delta/shiny.gbapal");
+    const u8 gMonIcon_FerrothornDelta[] = INCBIN_U8("graphics/pokemon/ferrothorn/delta/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_FerrothornDelta[] = INCBIN_COMP("graphics/pokemon/ferrothorn/delta/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_FerrothornDelta[] = INCBIN_U16("graphics/pokemon/ferrothorn/delta/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_FerrothornDelta[] = INCBIN_U16("graphics/pokemon/ferrothorn/delta/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+#endif //P_DELTA_FORMS
 #endif //P_FAMILY_FERROSEED
 
 #if P_FAMILY_KLINK
@@ -24913,6 +24967,34 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
     const u16 gOverworldPalette_PawmiDelta[] = INCBIN_U16("graphics/pokemon/pawmi/delta/overworld_normal.gbapal");
     const u16 gShinyOverworldPalette_PawmiDelta[] = INCBIN_U16("graphics/pokemon/pawmi/delta/overworld_shiny.gbapal");
+
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+const u32 gMonFrontPic_PawmoDelta[] = INCBIN_U32("graphics/pokemon/pawmo/delta/front.4bpp.lz");
+    const u16 gMonPalette_PawmoDelta[] = INCBIN_U16("graphics/pokemon/pawmo/delta/normal.gbapal");
+    const u32 gMonBackPic_PawmoDelta[] = INCBIN_U32("graphics/pokemon/pawmo/delta/back.4bpp.lz");
+    const u16 gMonShinyPalette_PawmoDelta[] = INCBIN_U16("graphics/pokemon/pawmo/delta/shiny.gbapal");
+    const u8 gMonIcon_PawmoDelta[] = INCBIN_U8("graphics/pokemon/pawmo/delta/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_PawmoDelta[] = INCBIN_COMP("graphics/pokemon/pawmo/delta/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_PawmoDelta[] = INCBIN_U16("graphics/pokemon/pawmo/delta/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_PawmoDelta[] = INCBIN_U16("graphics/pokemon/pawmo/delta/overworld_shiny.gbapal");
+
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
+const u32 gMonFrontPic_PawmotDelta[] = INCBIN_U32("graphics/pokemon/pawmot/delta/front.4bpp.lz");
+    const u16 gMonPalette_PawmotDelta[] = INCBIN_U16("graphics/pokemon/pawmot/delta/normal.gbapal");
+    const u32 gMonBackPic_PawmotDelta[] = INCBIN_U32("graphics/pokemon/pawmot/delta/back.4bpp.lz");
+    const u16 gMonShinyPalette_PawmotDelta[] = INCBIN_U16("graphics/pokemon/pawmot/delta/shiny.gbapal");
+    const u8 gMonIcon_PawmotDelta[] = INCBIN_U8("graphics/pokemon/pawmot/delta/icon.4bpp");
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_PawmotDelta[] = INCBIN_COMP("graphics/pokemon/pawmot/delta/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_PawmotDelta[] = INCBIN_U16("graphics/pokemon/pawmot/delta/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_PawmotDelta[] = INCBIN_U16("graphics/pokemon/pawmot/delta/overworld_shiny.gbapal");
 
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS

@@ -1638,7 +1638,15 @@
 #define SPECIES_MIMIKYU_BUSTED_TOTEM                    1523
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
 #define SPECIES_PAWMI_DELTA                             1524
-#define SPECIES_EGG                                     (SPECIES_PAWMI_DELTA + 1)
+#define SPECIES_PAWMO_DELTA                             1525
+#define SPECIES_PAWMOT_DELTA                            1526
+#define SPECIES_VULPIX_DELTA                            1527
+#define SPECIES_NINETALES_DELTA                         1528
+#define SPECIES_FERROSEED_DELTA                         1529
+#define SPECIES_FERROTHORN_DELTA                        1530
+
+
+#define SPECIES_EGG                                     (SPECIES_FERROTHORN_DELTA + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

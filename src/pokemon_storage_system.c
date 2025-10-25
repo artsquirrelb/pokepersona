@@ -6576,18 +6576,21 @@ static void GetRestrictedReleaseMoves(u16 *moves)
 
 static void InitCanReleaseMonVars(void)
 {   
-    
+    if (GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_PAWMI_DELTA
+        ||GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_PAWMO_DELTA
+        ||GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_PAWMOT_DELTA
+        ||GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_VULPIX_DELTA
+        ||GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_NINETALES_DELTA)
+    {   // The player is releasing Delta Pawmi line or Delta Vulpix line
+        sStorage->releaseStatusResolved = TRUE;
+        sStorage->canReleaseMon = FALSE;
+        return;
+    }
 
     if (!AtLeastThreeUsableMons())
     {
         // The player only has 1 or 2 usable
         // Pokémon, this one can't be released
-        sStorage->releaseStatusResolved = TRUE;
-        sStorage->canReleaseMon = FALSE;
-        return;
-    }
-    if (GetMonData(&sStorage->movingMon, MON_DATA_SPECIES) == SPECIES_PAWMI_DELTA)
-    {   // The player is releasing Delta Pawmi line or Delta Vulpix line
         sStorage->releaseStatusResolved = TRUE;
         sStorage->canReleaseMon = FALSE;
         return;

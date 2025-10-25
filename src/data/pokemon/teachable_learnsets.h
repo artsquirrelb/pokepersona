@@ -1791,6 +1791,50 @@ static const u16 sNinetalesAlolaTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_ALOLAN_FORMS
+
+#if P_DELTA_FORMS
+static const u16 sVulpixDeltaTeachableLearnset[] = {
+    MOVE_BLIZZARD,
+    MOVE_BODY_SLAM,
+    MOVE_DIG,
+    MOVE_DOUBLE_EDGE,
+    MOVE_ENDURE,
+    MOVE_FACADE,
+    MOVE_ICE_BEAM,
+    MOVE_ICY_WIND,
+    MOVE_PROTECT,
+    MOVE_PSYCHIC,
+    MOVE_PSYCH_UP,
+    MOVE_RAIN_DANCE,
+    MOVE_REST,
+    MOVE_ROAR,
+    MOVE_SLEEP_TALK,
+    MOVE_SWIFT,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sNinetalesDeltaTeachableLearnset[] = {
+    MOVE_BLIZZARD,
+    MOVE_BODY_SLAM,
+    MOVE_CALM_MIND,
+    MOVE_DIG,
+    MOVE_DOUBLE_EDGE,
+    MOVE_ENDURE,
+    MOVE_FACADE,
+    MOVE_HYPER_BEAM,
+    MOVE_ICE_BEAM,
+    MOVE_ICY_WIND,
+    MOVE_PROTECT,
+    MOVE_PSYCHIC,
+    MOVE_PSYCH_UP,
+    MOVE_RAIN_DANCE,
+    MOVE_REST,
+    MOVE_ROAR,
+    MOVE_SLEEP_TALK,
+    MOVE_SWIFT,
+    MOVE_UNAVAILABLE,
+};
+#endif //P_DELTA_FORMS
 #endif //P_FAMILY_VULPIX
 
 #if P_FAMILY_JIGGLYPUFF
@@ -24504,6 +24548,62 @@ static const u16 sFerrothornTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_UNAVAILABLE,
 };
+#if P_DELTA_FORMS
+static const u16 sFerroseedDeltaTeachableLearnset[] = {
+    MOVE_ATTRACT,
+    MOVE_BULLET_SEED,
+    MOVE_DOUBLE_TEAM,
+    MOVE_ENDURE,
+    MOVE_EXPLOSION,
+    MOVE_FACADE,
+    MOVE_FLASH,
+    MOVE_GIGA_DRAIN,
+    MOVE_PROTECT,
+    MOVE_REST,
+    MOVE_ROCK_SMASH,
+    MOVE_ROLLOUT,
+    MOVE_SLEEP_TALK,
+    MOVE_SNORE,
+    MOVE_SOLAR_BEAM,
+    MOVE_SUNNY_DAY,
+    MOVE_SWAGGER,
+    MOVE_THUNDERBOLT,
+    MOVE_THUNDER_WAVE,
+    MOVE_TOXIC,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sFerrothornDeltaTeachableLearnset[] = {
+    MOVE_AERIAL_ACE,
+    MOVE_ATTRACT,
+    MOVE_BULLET_SEED,
+    MOVE_CUT,
+    MOVE_DOUBLE_TEAM,
+    MOVE_ENDURE,
+    MOVE_EXPLOSION,
+    MOVE_FACADE,
+    MOVE_FLASH,
+    MOVE_GIGA_DRAIN,
+    MOVE_HYPER_BEAM,
+    MOVE_PROTECT,
+    MOVE_REST,
+    MOVE_ROCK_SMASH,
+    MOVE_ROLLOUT,
+    MOVE_SANDSTORM,
+    MOVE_SLEEP_TALK,
+    MOVE_SNORE,
+    MOVE_SOLAR_BEAM,
+    MOVE_STRENGTH,
+    MOVE_SUNNY_DAY,
+    MOVE_SWAGGER,
+    MOVE_SWORDS_DANCE,
+    MOVE_THUNDER,
+    MOVE_THUNDERBOLT,
+    MOVE_THUNDER_WAVE,
+    MOVE_TOXIC,
+    MOVE_UNAVAILABLE,
+};
+#endif //DELTA FORMS
 #endif //P_FAMILY_FERROSEED
 
 #if P_FAMILY_KLINK
@@ -33823,6 +33923,7 @@ static const u16 sPawmotTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
+
 #if P_DELTA_FORMS
 static const u16 sPawmiDeltaTeachableLearnset[] = {
     MOVE_BULK_UP,
@@ -33843,7 +33944,52 @@ static const u16 sPawmiDeltaTeachableLearnset[] = {
     MOVE_THUNDER_WAVE,
     MOVE_UNAVAILABLE,
 };
-#endif //FORMS
+static const u16 sPawmoDeltaTeachableLearnset[] = {
+    MOVE_DIG,
+    MOVE_ENDURE,
+    MOVE_FACADE,
+    MOVE_FOCUS_PUNCH,
+    MOVE_PROTECT,
+    MOVE_RAIN_DANCE,
+    MOVE_REST,
+    MOVE_SLEEP_TALK,
+    MOVE_SUNNY_DAY,
+    MOVE_SWIFT,
+    MOVE_THIEF,
+    MOVE_THUNDER,
+    MOVE_THUNDERBOLT,
+    MOVE_THUNDER_PUNCH,
+    MOVE_THUNDER_WAVE,
+    MOVE_UNAVAILABLE,
+};
+
+static const u16 sPawmotDeltaTeachableLearnset[] = {
+    MOVE_BRICK_BREAK,
+    MOVE_BULK_UP,
+    MOVE_DIG,
+    MOVE_DOUBLE_EDGE,
+    MOVE_ENDURE,
+    MOVE_FACADE,
+    MOVE_FIRE_PUNCH,
+    MOVE_FOCUS_PUNCH,
+    MOVE_HYPER_BEAM,
+    MOVE_ICE_PUNCH,
+    MOVE_METRONOME,
+    MOVE_PROTECT,
+    MOVE_RAIN_DANCE,
+    MOVE_REST,
+    MOVE_ROCK_TOMB,
+    MOVE_SLEEP_TALK,
+    MOVE_SUNNY_DAY,
+    MOVE_SWIFT,
+    MOVE_THIEF,
+    MOVE_THUNDER,
+    MOVE_THUNDERBOLT,
+    MOVE_THUNDER_PUNCH,
+    MOVE_THUNDER_WAVE,
+    MOVE_UNAVAILABLE,
+};
+#endif //DELTA_FORMS
 #endif //P_FAMILY_PAWMI
 
 #if P_FAMILY_TANDEMAUS

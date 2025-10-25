@@ -9652,32 +9652,35 @@ Mugshot: Blue
 SPECIES_FENNEKIN (F) @ITEM_LUM_BERRY
 Level: 10
 Ball: Luxury Ball
-IVs: 31 HP / 20 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Shiny: Yes
+IVs: 31 HP / 0 Atk / 0 Def / 31 SpA / 0 SpD / 31 Spe
+EVs: 100 Spe
 Ability: Blaze
-- Ember
-- Round
+- Incinerate
+- Mud Shot
 - Will-O-Wisp
-- Calm Mind
+- Fire Spin
 
 SPECIES_FURFROU_KABUKI (M) @ITEM_ORAN_BERRY
 Level: 10
 Ball: Luxury Ball
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Tackle
+IVs: 0 HP / 31 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
+EVs: 100 Atk
+- Covet
 - Rock Smash
 - Toxic
-- Snarl
+- Heart Stamp
 
-SPECIES_VULPIX_ALOLA (F) @ITEM_LUM_BERRY
+SPECIES_VULPIX_DELTA (F) @ITEM_LUM_BERRY
 Level: 10
 Ball: Cherish Ball
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 100 SpA / 100 Spe
-Ability: Snow Warning
+Ability: Ice Scales
 - Icy Wind
-- Disarming Voice
+- Draining Kiss
 - Nasty Plot
-- Echoed Voice
+- Chilling Water
 
 
 === TRAINER_MAY_ROUTE_110_MUDKIP ===

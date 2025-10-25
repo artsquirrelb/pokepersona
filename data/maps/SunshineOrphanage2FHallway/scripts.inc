@@ -92,8 +92,8 @@ BOY_1_2F_Text_1:
 # 27 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	.string "I wish the orphanage let us have\n"
 	.string "Pokemon.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} I wish so too but I guess it'll be\n"
-	.string "harder for the staff.\p"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} I do too but I guess it'll be harder for\n"
+	.string "the staff.\p"
 	.string "They're already busy enough.$"
 
 BOY_2_2F_Text_0:
@@ -102,7 +102,7 @@ BOY_2_2F_Text_0:
 
 BOY_2_2F_Text_1:
 # 40 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
-	.string "Few days ago I saw a Pawmi with\n"
+	.string "Few days ago I saw a Pawmi with a\n"
 	.string "different color in the woods.\p"
 	.string "It's neither orange yellow nor pink.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED} What color was it then?$"
@@ -115,7 +115,8 @@ BOY_2_2F_Text_2:
 BOY_2_2F_Text_3:
 # 49 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	.string "Wait, that Pawmi...\p"
-	.string "I think it's the one I saw few days ago.$"
+	.string "I think it's the one I saw a few days\n"
+	.string "ago.$"
 
 TrashcanEmpty_Text_0:
 # 57 "data/maps/SunshineOrphanage2FHallway/scripts.pory"

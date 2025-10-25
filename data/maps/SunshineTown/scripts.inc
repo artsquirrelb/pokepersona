@@ -613,7 +613,7 @@ SunshineTown_Eventscript_Boy_Text_1:
 SunshineTown_Eventscript_Boy_Text_2:
 # 111 "data/maps/SunshineTown/scripts.pory"
 	.string "One of the richest families in the\n"
-	.string "region lived in this island.\p"
+	.string "region lived on this island.\p"
 	.string "I heard their mansion was at the south\n"
 	.string "end of Route 1.$"
 
@@ -638,7 +638,7 @@ SunshineTown_Eventscript_DontLeaveTown_Text_0:
 
 SunshineTown_Eventscript_NoPointEnteringPC_Text_0:
 # 186 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to diddling around!)$"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to be dawdling around!)$"
 
 SunshineTown_Eventscript_OW_Happiny_Text_0:
 # 212 "data/maps/SunshineTown/scripts.pory"

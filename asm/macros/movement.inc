@@ -177,6 +177,12 @@
 	create_movement_action emote_cry, MOVEMENT_ACTION_EMOTE_CRY
 	create_movement_action emote_sweat, MOVEMENT_ACTION_EMOTE_SWEAT
 	create_movement_action emote_asleep, MOVEMENT_ACTION_EMOTE_ASLEEP
+	create_movement_action point_up_1, MOVEMENT_ACTION_POINT_UP_1
+	create_movement_action point_up_2, MOVEMENT_ACTION_POINT_UP_2
+	create_movement_action point_up_3, MOVEMENT_ACTION_POINT_UP_3
+	create_movement_action point_down_1, MOVEMENT_ACTION_POINT_DOWN_1
+	create_movement_action point_down_2, MOVEMENT_ACTION_POINT_DOWN_2
+	create_movement_action point_down_3, MOVEMENT_ACTION_POINT_DOWN_3
 
 
 	create_movement_action exit_pokeball, MOVEMENT_ACTION_EXIT_POKEBALL

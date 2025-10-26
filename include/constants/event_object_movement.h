@@ -274,7 +274,12 @@
 #define MOVEMENT_ACTION_EMOTE_CRY                       0xBA
 #define MOVEMENT_ACTION_EMOTE_SWEAT                     0xBB
 #define MOVEMENT_ACTION_EMOTE_ASLEEP                    0xBC
-
+#define MOVEMENT_ACTION_POINT_UP_1                      0xBD
+#define MOVEMENT_ACTION_POINT_UP_2                      0xBE
+#define MOVEMENT_ACTION_POINT_UP_3                      0xBF
+#define MOVEMENT_ACTION_POINT_DOWN_1                    0xC0
+#define MOVEMENT_ACTION_POINT_DOWN_2                    0xC1
+#define MOVEMENT_ACTION_POINT_DOWN_3                    0xC2
 
 //fast diagonal movement
 

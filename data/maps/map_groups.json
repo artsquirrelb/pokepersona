@@ -505,7 +505,8 @@
     "BattlePyramidSquare15",
     "BattlePyramidSquare16",
     "UnionRoom",
-    "BlankMap"
+    "BlankMap",
+    "GameOver"
   ],
   "gMapGroup_SpecialArea": [
     "SafariZone_Northwest",

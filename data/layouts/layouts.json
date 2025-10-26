@@ -5532,6 +5532,18 @@
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/SunshineMeadow/border.bin",
       "blockdata_filepath": "data/layouts/SunshineMeadow/map.bin"
+    },
+    {
+      "id": "LAYOUT_GAME_OVER",
+      "name": "GameOver_Layout",
+      "width": 15,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_Gen4General2nd",
+      "border_filepath": "data/layouts/GameOver/border.bin",
+      "blockdata_filepath": "data/layouts/GameOver/map.bin"
     }
   ]
 }

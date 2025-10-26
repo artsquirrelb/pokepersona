@@ -3,6 +3,8 @@ mapscripts Route2_House_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 27: Route2_House_Eventscript_AkihikoOnWarp27
         VAR_AKIHIKOS_INTRO_STATE, 32: Route2_House_Eventscript_AkihikoOnWarp32
         VAR_AKIHIKOS_INTRO_STATE, 38: Route2_House_Eventscript_AkihikoOnWarp38
+        VAR_AKIHIKOS_INTRO_STATE, 39: Route2_House_Eventscript_AkihikoOnWarp39
+        VAR_AKIHIKOS_INTRO_STATE, 42: Route2_House_Eventscript_AkihikoOnWarp42
     ]
     MAP_SCRIPT_ON_TRANSITION{
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 27){
@@ -33,7 +35,14 @@ mapscripts Route2_House_MapScripts {
             playbgm(MUS_NONE, TRUE)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 39){
-            clearflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_TALK_BUTTON)
+            setobjectxyperm(1, 3, 4)
+            setobjectmovementtype(1, MOVEMENT_TYPE_FACE_UP)
+            setobjectxyperm(5, 4, 4)
+            setobjectmovementtype(5, MOVEMENT_TYPE_FACE_UP)
+            setobjectxyperm(4, 4, 7)
+            setobjectmovementtype(5, MOVEMENT_TYPE_FACE_LEFT)
+            setobjectxyperm(6, 11, 6)
         }
     }
 
@@ -41,6 +50,8 @@ mapscripts Route2_House_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 27: Route2_House_Eventscript_AkihikoOnFrame27
         VAR_AKIHIKOS_INTRO_STATE, 32: Route2_House_Eventscript_AkihikoOnFrame32
         VAR_AKIHIKOS_INTRO_STATE, 38: Route2_House_Eventscript_AkihikoOnFrame38
+        VAR_AKIHIKOS_INTRO_STATE, 39: Route2_House_Eventscript_AkihikoOnFrame39
+
     ]
 }
 
@@ -57,7 +68,10 @@ script Route2_House_Eventscript_AkihikoOnWarp32 {
 script Route2_House_Eventscript_AkihikoOnWarp38 {
     applymovement(6, faceup)
 }
-
+script Route2_House_Eventscript_AkihikoOnWarp39 {
+    applymovement(6, invisible)
+    applymovement(LOCALID_PLAYER, faceleft)
+}
 script Route2_House_Eventscript_AkihikoOnFrame27 {
     goto (Route2_House_Eventscript_AkiShinjiWakingUp)
 }
@@ -302,6 +316,7 @@ script Route2_House_Eventscript_Mitsuru {
         {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Certainly, let's hear it."))
         closemessage
         setvar(VAR_AKIHIKOS_INTRO_STATE, 31)
+        setflag(FLAG_DONT_TRANSITION_MUSIC)
         warpsilent(MAP_BLANK_MAP, 0, 0)
     }
     release
@@ -471,6 +486,7 @@ script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru {
     special(RemoveCameraObject)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 33)
     clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fwdtime(13, 40)
     release
     end
@@ -643,7 +659,7 @@ script Route2_House_Eventscript_StayingTheNight {
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Oh, right! Kurosawa-san gave us the Camping Gears."))
     closemessage
-    playse(SE_PIN)
+    playse(SE_M_BUBBLE3)
     applymovement(6, ShinjiroSweat)
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Dumbass, you weren't kidding!?\p
@@ -757,6 +773,87 @@ movement CameraSlowlyPansUpFadeScreen {
     walk_slow_up *3
 }
 
+script Route2_House_Eventscript_AkihikoOnFrame39 {
+    goto(Route2_House_Eventscript_AkihikoCantSleep)
+}
+
+script Route2_House_Eventscript_AkihikoCantSleep {
+    delay(60)
+    applymovement(LOCALID_PLAYER, emotepensive)
+    waitmovement(0)
+    delay(40)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}(Dang... I can't sleep at all.)\p
+    (Gotta admit, what Kirijo said earlier does bug me.)\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(It didn't look like she was lying.)\p
+    (If it was all true... and if Miki is already in their hands...)\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}(No, I must think positively. She must've still been fine and been waiting for me to come get her home.)\p
+    (If I can't sleep... may as well go train a bit.)"))
+    closemessage
+    applymovement(LOCALID_PLAYER, faceup)
+    waitmovement(0)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesUp2)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Kirijo is already sleeping soundly. She won't know if I sneak out.)"))
+    closemessage
+    delay(20)
+    applymovement(4, facedown)
+    waitmovement(0)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, emoteexclamation)
+    waitmovement(0)
+    delay(30)
+    playse(SE_M_DETECT)
+    applymovement(4, shakehorizontal)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}-Hiss-"))
+    closemessage
+    playse(SE_M_BUBBLE3)
+    applymovement(LOCALID_PLAYER, emotesweat)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}(And this Inteleon keeps looking daggers at me...)\p
+    (What did I even do?)"))
+    closemessage
+    applymovement(LOCALID_PLAYER, faceright)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesRight2)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Where's Shinji, though?)\p
+    (Maybe he's outside.)"))
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesLeft2)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I uh... just gonna go outside for a bit."))
+    closemessage
+    delay(20)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesDown2)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    applymovement(LOCALID_PLAYER, AkihikoExitTheRoom)
+    waitmovement(0)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 40)
+    fwdtime(22, 40)
+    warp(MAP_ROUTE2, 8, 12)
+}
+
+movement emotesweat {
+    emote_sweat
+}
+
+movement CameraGoesUp2 {
+    walk_up *2
+}
+
+movement CameraGoesDown2 {
+    walk_down *2
+}
+
+movement AkihikoExitTheRoom {
+    player_run_right *4
+    player_run_down *2
+}
+
 script TakeARest {
     msgbox(format("Let's take a quick rest."), MSGBOX_YESNO)
     if (var(VAR_RESULT) == TRUE){
@@ -768,5 +865,85 @@ script TakeARest {
     }
     else{}
     closemessage
+    end
+}
+
+script Route2_House_Eventscript_AkihikoOnWarp42 {
+    goto(Route2_House_Eventscript_AkihikoGoesToSleep)
+}
+
+script Route2_House_Eventscript_AkihikoGoesToSleep {
+    lock
+    delay(30)
+    playse(SE_M_YAWN)
+    applymovement(LOCALID_PLAYER, shakehorizontal)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}-yawn- (I'm so tired. Time to sleep.)"))
+    closemessage
+    warpsilent(MAP_BLANK_MAP, 0 ,0)
+    release
+}
+
+script Route2_House_Eventscript_Bathroom {
+    lock
+    if (var(VAR_TEMP_0) == 0){
+        msgbox(format("Do you want to use the bathroom?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == TRUE){
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            playse(SE_DOOR)
+            waitse
+            playse(SE_DOWNPOUR)
+            delay(30)
+            playse(SE_DOWNPOUR_STOP)
+            waitse
+            playse(SE_DOOR)
+            waitse
+            applymovement(LOCALID_PLAYER, faceleft)
+            waitmovement(0)
+            delay (30)
+            fadescreenswapbuffers(FADE_FROM_BLACK)
+            delay(20)
+            playse(SE_SHINY)
+            applymovement(LOCALID_PLAYER, emotemusic)
+            waitmovement(0)
+            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}(All refreshed.)"))
+            closemessage
+            setvar(VAR_TEMP_0, 1)
+        }
+        else{
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Nah, I think I'm good.)"))
+        closemessage
+        applymovement(LOCALID_PLAYER, faceleft)
+        waitmovement(0)
+        }
+    }
+    elif (var(VAR_TEMP_0) == 1){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(I just used the bathroom.)"))
+        closemessage
+        applymovement(LOCALID_PLAYER, faceleft)
+        waitmovement(0)
+        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 42)
+            {
+            setvar(VAR_TEMP_0, 2)
+            }
+    }
+    elif(var(VAR_TEMP_0) == 2){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(That reminds me, Kirijo took a really long bath yesterday.)\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}I don't understand. What's so fun in the bathroom that made her stay that long?\p
+        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}What are you staring at the bathroom door for? Is there anything wrong?\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}N-No, nothing! Nothing at all.\p
+        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}?"))
+        closemessage
+        applymovement(LOCALID_PLAYER, faceleft)
+        waitmovement(0)
+        setvar(VAR_TEMP_0, 3)
+    }
+    elif(var(VAR_TEMP_0) == 3){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(I should get going.)"))
+        closemessage
+        applymovement(LOCALID_PLAYER, faceleft)
+        waitmovement(0)
+    }
+    release
     end
 }

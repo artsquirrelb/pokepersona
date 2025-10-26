@@ -2,8 +2,12 @@ mapscripts Route2_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 25: Route2_Eventscript_AkihikoOnWarp25
         VAR_AKIHIKOS_INTRO_STATE, 33: Route2_Eventscript_AkihikoOnWarp33
+        VAR_AKIHIKOS_INTRO_STATE, 40: Route2_Eventscript_AkihikoOnWarp40
     ]
     MAP_SCRIPT_ON_TRANSITION{
+        if (var(VAR_AKIHIKOS_INTRO_STATE) < 40){
+            setflag(FLAG_TEMP_3)
+        }
         if (var(VAR_AKIHIKOS_INTRO_STATE) > 25){
             setflag(FLAG_TEMP_1)
         }
@@ -21,13 +25,20 @@ mapscripts Route2_MapScripts {
             setobjectxyperm(6, 29, 21)
             setobjectmovementtype(6, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 37){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 37 && var(VAR_AKIHIKOS_INTRO_STATE) < 40){
+            setflag(FLAG_TEMP_2)
+        }
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 40){
+            setobjectxyperm(6, 11, 13)
+        }
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 42){
             setflag(FLAG_TEMP_2)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 25: Route2_Eventscript_AkihikoOnFrame25
         VAR_AKIHIKOS_INTRO_STATE, 33: Route2_Eventscript_AkihikoOnFrame33
+        VAR_AKIHIKOS_INTRO_STATE, 40: Route2_Eventscript_AkihikoOnFrame40
     ]
 }
 
@@ -45,6 +56,9 @@ script Route2_Eventscript_AkihikoOnWarp33 {
     applymovement(6, invisible)
 }
 
+script Route2_Eventscript_AkihikoOnWarp40 {
+    applymovement(6, faceright)
+}
 script Route2_Eventscript_AkihikoOnFrame25 {
     goto(Route2_Eventscript_AkishinjiGettingBlockedBySusMen)
 }
@@ -81,7 +95,7 @@ script Route2_Eventscript_AkishinjiGettingBlockedBySusMen {
     closemessage
     applymovement(4, SusMan1ApproachingAkihiko)
     waitmovement(0)
-    applymovement(LOCALID_PLAYER, shakevertical)
+    applymovement(LOCALID_PLAYER, shakehorizontal)
     call(SunshineOrphanage_Burning_Eventscript_BlockShakeCamera)
     applymovement(4, SusMan1StepBack)
     waitmovement(0)
@@ -210,6 +224,13 @@ script Route2_Eventscript_AkishinjiAsleep {
     waitmovement(0)
     fadescreenswapbuffers(FADE_FROM_BLACK)
     delay(20)
+    playse(SE_M_SNORE)
+    applymovement(8, emoteasleep)
+    delay(8)
+    playse(SE_M_SNORE)
+    applymovement(9, emoteasleep)
+    waitmovement(0)
+    delay(20)
     setspeaker("Man In Black 2")
     applymovement(3, walkinplaceright)
     waitmovement(0)
@@ -222,6 +243,9 @@ script Route2_Eventscript_AkishinjiAsleep {
     end
 }
 
+movement emoteasleep {
+    emote_asleep
+}
 movement visible {
     set_visible
 }
@@ -437,4 +461,249 @@ script Route2_Eventscript_ShinjiroFindingPokemon {
     closemessage
     release
     end
+}
+
+script Route2_Eventscript_AkihikoOnFrame40 {
+    goto (Route2_Eventscript_AkihikoNoticingShinjiroOutside)
+}
+
+script Route2_Eventscript_AkihikoNoticingShinjiroOutside {
+    applymovement(LOCALID_PLAYER, AkihikoNoticingShinjiroOutside)
+    delay(8)
+    playse(SE_PIN)
+    waitse
+    waitmovement(0)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, walkright)
+    waitmovement(0)
+    delay(20)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Oh, there he is.)\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Hey Shinji, you coudln't sleep too?"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(6, ShinjiroHeardAkihikoCalling)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Aki.\p
+    Yep, I keep thinking of what Kirijo said.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Humans who can use Pokémon's ability, huh...\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Heh, guess we were thinking the same thing.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Well, there's not much we can do until we see for ourselves if what she said was true.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Since we're both not feeling sleepy, how about a battle?\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}I was just about to suggest that.\p
+    The Ferroseed you used earlier against Kirijo really caught my curiosity.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}I'll show what it can do. Let's do a 3-vs-3 again.\p
+    Step up if you're ready."))
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, walkleft)
+    waitmovement
+    special(RemoveCameraObject)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 41)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
+}
+
+movement AkihikoNoticingShinjiroOutside {
+    walk_down
+    face_right
+    emote_exclamation_mark
+}
+
+movement ShinjiroHeardAkihikoCalling {
+    emote_exclamation_mark
+    face_left
+}
+
+script Route2_Eventscript_MustBattleShinjiro {
+    lock
+    applymovement(LOCALID_PLAYER, walkdown)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(There's no point going back inside, it's not like I can sleep right now.)"))
+    closemessage
+    release
+    end
+}
+
+script Route2_Eventscript_InitShinjiroFirstBattle {
+    lock
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Ready for our first battle?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == FALSE){
+        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Heh, take your sweet time. We still have all night, Aki."))
+        closemessage
+        applymovement(LOCALID_PLAYER, walkleft)
+        waitmovement(0)
+        release
+        end
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Before we start, do you want me to heal your Pokémon?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == TRUE){
+            closemessage
+            playse(MUS_HEAL)
+            waitse
+            special(HealPlayerParty)
+        }
+        goto(Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle)
+        release
+        end
+    }
+}
+script Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle {
+    lock
+    specialvar(VAR_RESULT, CountPartyNonEggMons)
+    if (var(VAR_RESULT) < 3){
+        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Wait, you don't have at least 3 Pokémons to battle. I want a fair fight.\p
+        Are you sure you still want to fight handicapped?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == FALSE){
+            msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Good thinking. I won't go down easily."))
+            closemessage
+            applymovement(LOCALID_PLAYER, walkleft)
+            waitmovement(0)
+            release
+            end
+        }
+        else {
+            playse(SE_FAILURE)
+            applymovement(6, emoteangry)
+            waitmovement(0)
+            msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Don't underestimate me."))
+            closemessage
+            subvar(VAR_SHINJIRO_RELATIONSHIP_POINTS, 3)
+            goto(Route2_Eventscript_SelectingPartyShinjiroFirstBattle)
+            release
+        }
+        closemessage
+        end
+    }
+    elif (var(VAR_RESULT) >= 3){
+        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Let's go.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}No holding back, alright?"))
+        closemessage
+        goto(Route2_Eventscript_SelectingPartyShinjiroFirstBattle)
+        release
+    }
+}
+
+movement emoteangry {
+    emote_angry
+}
+
+script Route2_Eventscript_InitShinjiroFirstBattle2 {
+    lock
+    applymovement(LOCALID_PLAYER, walkup)
+    waitmovement(0)
+    applymovement(LOCALID_PLAYER, faceright)
+    waitmovement(0)
+    goto(Route2_Eventscript_InitShinjiroFirstBattle)
+    release
+    end
+}
+
+script Route2_Eventscript_SelectingPartyShinjiroFirstBattle {
+    lock
+    setflag(FLAG_NO_WHITEOUT)
+    special(ChooseHalfPartyForBattle)
+    waitstate()
+    if (var(VAR_RESULT) == FALSE){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Let's pick 3 Pokémon to fight. Shinji is waiting.)"))
+        closemessage
+        goto (Route2_Eventscript_SelectingPartyShinjiroFirstBattle)
+    }
+    else {
+        special(ReducePlayerPartyToSelectedMons)
+        setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SET_DATA)
+	    setvar (VAR_0x8005, FRONTIER_DATA_SELECTED_MON_ORDER)
+        special (CallFrontierUtilFunc)
+        setvar (VAR_0x8004, SPECIAL_BATTLE_MULTI)
+        setvar (VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS)
+        trainerbattle_no_intro(TRAINER_SHINJIRO_ROUTE_2, ShinjiroFirstBattleDefeated)
+        fwdtime(23, 20)
+        setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SAVE_PARTY)
+        special (CallFrontierUtilFunc)
+	    special (LoadPlayerParty)
+        goto (Route2__Eventscript_ShinjiroFirstBattleResult)       
+    }
+    release
+}
+
+text ShinjiroFirstBattleDefeated {
+    format("Whew, that was quite a work-out.")
+}
+
+script Route2__Eventscript_ShinjiroFirstBattleResult {
+    lock
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON){
+            msgbox (Route2_Eventscript_WonInShinjiroFirstBattle)
+            closemessage
+        }
+        else{
+            bufferleadmonspeciesname(STR_VAR_1)
+            msgbox (Route2_Eventscript_LostInShinjiroFirstBattle)
+            closemessage
+        }
+    goto (Route2_Eventscript_PostShinjiroFirstBattle)
+    release
+}
+
+text Route2_Eventscript_WonInShinjiroFirstBattle {
+    format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}-huff- -huff- (Did I win?)\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_STRUGGLED}-huff- Dang it, I was so close.\p
+    Looks like I lost to both of you, huh.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Well, next time I won't lose again.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Hehe, I'm always open for another battle against you. It was fun.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Heh, it is.")
+}
+
+text Route2_Eventscript_LostInShinjiroFirstBattle {
+    format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}Arg, I was so close!\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_STRUGGLED}-huff- Your {STR_VAR_1} did pack a punch.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}But it looks like I'm not the worst out of the three of us, heh.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Next time I won't lose.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Looking forward to that.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}... Did you just imitate Kirijo...\p
+    Please don't do that again.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Pft, the look on your face.")
+}
+
+script Route2_Eventscript_PostShinjiroFirstBattle {
+    lock
+    special(HealPlayerParty)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 42)
+    clearflag(FLAG_NO_WHITEOUT)
+    playse(SE_M_YAWN)
+    applymovement(6, shakevertical)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}-yawn- That battle took all the energy out of me.\p
+    Let's go to bed. I don't want to hear Kirijo complaining tomorrow if we sleep in.\p
+    Wanna head inside?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == FALSE){
+        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}You do you, I'm off. G'night.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}'Night, Shinji."))
+        closemessage
+        applymovement(6, Route2ShinjiroGoesInsideHouse)
+        delay(20)
+        applymovement(LOCALID_PLAYER, faceleft)
+        waitmovement(6)
+        playse(SE_DOOR)
+        //opendoor(8, 11)
+        //waitdooranim
+        applymovement(6, invisible)
+        removeobject(6)
+        setflag(FLAG_TEMP_2)
+        clearflag(FLAG_HIDE_TALK_BUTTON)
+        release
+        end
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Yeah, I'm tired too."))
+        closemessage
+        setflag(FLAG_DONT_TRANSITION_MUSIC)
+        warpsilent(MAP_BLANK_MAP, 0, 0)
+    }
+        
+}
+
+movement Route2ShinjiroGoesInsideHouse {
+    walk_down
+    walk_left*3
+    walk_up*3
 }

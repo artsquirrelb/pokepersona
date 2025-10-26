@@ -94,6 +94,12 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_CryIcon          			@ FLDEFF_CRY_ICON
 	.4byte gFieldEffectScript_SweatIcon          		@ FLDEFF_SWEAT_ICON
 	.4byte gFieldEffectScript_AsleepIcon          		@ FLDEFF_ASLEEP_ICON
+	.4byte gFieldEffectScript_PointUp1Icon         		@ FLDEFF_POINT_UP_1_ICON
+	.4byte gFieldEffectScript_PointUp2Icon         		@ FLDEFF_POINT_UP_2_ICON
+	.4byte gFieldEffectScript_PointUp3Icon         		@ FLDEFF_POINT_UP_3_ICON
+	.4byte gFieldEffectScript_PointDown1Icon         	@ FLDEFF_POINT_DOWN_1_ICON
+	.4byte gFieldEffectScript_PointDown2Icon         	@ FLDEFF_POINT_DOWN_2_ICON
+	.4byte gFieldEffectScript_PointDown3Icon         	@ FLDEFF_POINT_DOWN_3_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -323,6 +329,30 @@ gFieldEffectScript_SweatIcon::
 
 gFieldEffectScript_AsleepIcon::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_AsleepIcon
+	field_eff_end
+
+gFieldEffectScript_PointUp1Icon::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_PointUp1Icon
+	field_eff_end
+
+gFieldEffectScript_PointUp2Icon::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_PointUp2Icon
+	field_eff_end
+
+gFieldEffectScript_PointUp3Icon::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_PointUp3Icon
+	field_eff_end
+
+gFieldEffectScript_PointDown1Icon::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_PointDown1Icon
+	field_eff_end
+
+gFieldEffectScript_PointDown2Icon::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_PointDown2Icon
+	field_eff_end
+
+gFieldEffectScript_PointDown3Icon::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_PointDown3Icon
 	field_eff_end
 
 gFieldEffectScript_Nop47::

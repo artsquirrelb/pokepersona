@@ -61,6 +61,7 @@ movement NoticingKurosawa {
 }
 
 script SunshineTown_KurosawasHouse_Eventscript_AkihikoDecidingToGo {
+    if (flag(FLAG_SYS_QUEST_MENU_GET) == FALSE){
     delay(30)
     applymovement (LOCALID_PLAYER, AkihikoDecidingToGo)
     waitmovement(LOCALID_PLAYER)
@@ -82,7 +83,7 @@ script SunshineTown_KurosawasHouse_Eventscript_AkihikoDecidingToGo {
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}It's time for me to go."))
     closemessage
-    goto (SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow)
+    goto (SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow)}
 }
 
 movement AkihikoDecidingToGo {
@@ -103,7 +104,7 @@ script SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow {
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}...\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright. Let's go find her together, Shinji."))
     closemessage
-    playbgm(MUS_SUNSHINE_ORPHANAGE, TRUE)
+    playbgm(MUS_RG_SEVII_67, TRUE)
     applymovement(LOCALID_PLAYER, faceup)
     applymovement(3, ShinjiroFaceUpToKuroSawa)
     waitmovement(0)
@@ -158,7 +159,10 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     delay(20)
     fwdtime(9, 30)
     fwdweekday(WEEKDAY_SUN)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     warp(MAP_SUNSHINE_TOWN, 3, 14)
+    waitstate
+    end
 }
 
 movement KurosawaGettingTheSleepingBags {

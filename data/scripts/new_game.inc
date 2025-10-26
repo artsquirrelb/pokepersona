@@ -275,5 +275,8 @@ EventScript_ResetAllMapFlags::
 	@ More set up
 	manuallysettime WEEKDAY_WED, 16, 30, 0
 	pausefakertc @ pauses the time so that we can do our scripting part
+	setvar VAR_SHINJIRO_RELATIONSHIP_POINTS 100
+	setvar VAR_MITSURU_RELATIONSHIP_POINTS 100
+	setvar VAR_AKIHIKO_RELATIONSHIP_POINTS 100
 	call EventScript_ResetAllBerries
 	end

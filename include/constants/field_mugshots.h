@@ -3,9 +3,10 @@
 
 enum Mugshots {
     MUGSHOT_NONE = 0,
+    MUGSHOT_MITSURU,
     MUGSHOT_AKIHIKO,
     MUGSHOT_SHINJIRO,
-    MUGSHOT_MITSURU,
+    MUGSHOT_INTELEON,
     MUGSHOT_COUNT,
 };
 
@@ -30,6 +31,7 @@ enum MugshotEmotes {
 #define MUGSHOT_MITSURU 1 //total: 8
 #define MUGSHOT_AKIHIKO 2 //total: 12
 #define MUGSHOT_SHINJIRO 3 //total: 9
-#define MUGSHOT_COUNT 29
+#define MUGSHOT_INTELEON 4 //total: 1
+#define MUGSHOT_COUNT 30
 
 #endif // GUARD_CONSTANTS_FIELD_MUGSHOTS_H

@@ -3,21 +3,21 @@ mapscripts SunshineTown_House1_MapScripts {
 }
 
 script SunshineTown_House1_Eventscript_LittleGirl {
-    lockall
+    lock
     faceplayer
     setspeaker("Aya")
     msgbox(format("I love my Poochyena! My mom brought it home one day after visiting my grandparents in Nata Town."))
     closemessage
-    releaseall
+    release
     end
 }
 
 script SunshineTown_House1_Eventscript_Poochyena {
-    lockall
+    lock
     faceplayer
     playmoncry(SPECIES_POOCHYENA, CRY_MODE_NORMAL)
     waitmoncry
-    releaseall
+    release
     end
 }
 

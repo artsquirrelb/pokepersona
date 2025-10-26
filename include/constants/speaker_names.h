@@ -9,6 +9,7 @@ enum SpeakerNames {
     SP_NAME_MIKI,
     SP_NAME_KOBAYASHI,
     SP_NAME_KUROSAWA,
+    SP_NAME_INTELEON,
     SP_NAME_COUNT
 };
 

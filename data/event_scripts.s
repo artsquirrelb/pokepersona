@@ -1205,3 +1205,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route2_House/scripts.inc"
 
 	.include "data/maps/SunshineMeadow/scripts.inc"
+
+	.include "data/maps/GameOver/scripts.inc"

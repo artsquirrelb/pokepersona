@@ -106,10 +106,10 @@
 #define VAR_CURRENT_LEVEL_CAP                            0x4056 // Set current level cap
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
-#define VAR_MAUVILLE_CITY_STATE                          0x4059 // Unused Var
+#define VAR_SHINJIRO_RELATIONSHIP_POINTS                 0x4059 // Was Unused Var
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
-#define VAR_BATTLE_SPEED                                 0x405B // Speed Up Battle (Unused)
-#define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
+#define VAR_MITSURU_RELATIONSHIP_POINTS                  0x405B // Was Speed Up Battle (Unused)
+#define VAR_AKIHIKO_RELATIONSHIP_POINTS                  0x405C // Was Unused Var
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
 #define VAR_EVER_GRANDE_CITY_STATE                       0x405F // Unused Var

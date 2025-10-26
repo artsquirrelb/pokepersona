@@ -73,6 +73,9 @@ static const u16 sFieldMugshotPal_ShinjiroSerious[] = INCBIN_U16("graphics/field
 static const u16 sFieldMugshotPal_ShinjiroConfident[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/confident.gbapal");
 static const u16 sFieldMugshotPal_ShinjiroGeez[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/geez.gbapal");
 
+//Inteleon
+static const u32 sFieldMugshotGfx_InteleonSerious[] = INCBIN_U32("graphics/field_mugshots/Inteleon/serious.4bpp.lz");
+static const u16 sFieldMugshotPal_InteleonSerious[] = INCBIN_U16("graphics/field_mugshots/Inteleon/serious.gbapal");
 
 struct MugshotGfx
 {
@@ -270,6 +273,16 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_ShinjiroGeez,
             .pal = sFieldMugshotPal_ShinjiroGeez,
+        },
+    },
+
+    //Inteleon
+    [MUGSHOT_INTELEON] =
+    {
+        [EMOTE_SERIOUS] =
+        {
+            .gfx = sFieldMugshotGfx_InteleonSerious,
+            .pal = sFieldMugshotPal_InteleonSerious,
         },
     },
 };

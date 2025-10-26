@@ -229,7 +229,7 @@ script SunshineTown_Eventscript_OW_Happiny{
 script SunshineTown_Eventscript_OnFrame23{
     lock
     msgbox(format("{COLOR GREEN}Tips: Quest System is now unlocked.\p
-    Check around for quest givers with a green exclamation mark.\p
+    Check around for quest givers with a light blue exclamation mark.\p
     You can open quest menu in Start Menu {RIGHT_ARROW} L Button."))
     closemessage
     setflag(FLAG_SYS_QUEST_MENU_GET)

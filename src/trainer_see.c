@@ -75,7 +75,7 @@ static const u8 sEmotion_XGfx[] = INCBIN_U8("graphics/field_effects/pics/emote_x
 static const u8 sQuest_Gfx[] = INCBIN_U8("graphics/misc/quests_icons.4bpp");
 // HGSS emote graphics ripped by Lemon on The Spriters Resource: https://www.spriters-resource.com/ds_dsi/pokemonheartgoldsoulsilver/sheet/30497/
 static const u8 sEmotion_Gfx[] = INCBIN_U8("graphics/misc/emotes.4bpp");
-//static const u8 sEmotionExtra_Gfx[] = INCBIN_U8("graphics/misc/emotes_extra.4bpp");
+static const u8 sRelationshipPoints_Gfx[] = INCBIN_U8("graphics/misc/relationship_point.4bpp");
 
 static u8 (*const sDirectionalApproachDistanceFuncs[])(struct ObjectEvent *trainerObj, s16 range, s16 x, s16 y) =
 {
@@ -220,16 +220,6 @@ static const struct SpriteFrameImage sSpriteImageTable_Emotes[] =
     overworld_frame(sEmotion_Gfx, 2, 2, 27), // EMOTION_ASLEEP
     overworld_frame(sEmotion_Gfx, 2, 2, 28), // EMOTION_ASLEEP
 };
-
-/*static const struct SpriteFrameImage sSpriteImageTable_EmotesExtra[] =
-{   
-    overworld_frame(sEmotionExtra_Gfx, 2, 2, 0), // EMOTION_CRY
-    overworld_frame(sEmotionExtra_Gfx, 2, 2, 1), // EMOTION_CRY
-    overworld_frame(sEmotionExtra_Gfx, 2, 2, 2), // EMOTION_SWEAT
-    overworld_frame(sEmotionExtra_Gfx, 2, 2, 3), // EMOTION_SWEAT
-    overworld_frame(sEmotionExtra_Gfx, 2, 2, 4), // EMOTION_ASLEEP
-    overworld_frame(sEmotionExtra_Gfx, 2, 2, 5), // EMOTION_ASLEEP
-};*/
 
 static const union AnimCmd sSpriteAnim_Emotes0[] =
 {
@@ -403,12 +393,79 @@ static const union AnimCmd *const sSpriteAnimTable_Emotes[] =
     
 };
 
-/*static const union AnimCmd *const sSpriteAnimTable_EmotesExtra[] =
+static const struct SpriteFrameImage sSpriteImageTable_RelationshipPoints[] =
+{   
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 0), // POINT_UP_1
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 1), // POINT_UP_1
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 2), // POINT_UP_2
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 3), // POINT_UP_2
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 4), // POINT_UP_3
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 5), // POINT_UP_3
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 6), // POINT_DOWN_1
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 7), // POINT_DOWN_1
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 8), // POINT_DOWN_2
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 9), // POINT_DOWN_2
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 10), // POINT_DOWN_3
+    overworld_frame(sRelationshipPoints_Gfx, 2, 2, 11), // POINT_DOWN_3
+};
+
+static const union AnimCmd sSpriteAnim_PointUp1[] =
 {
-    sSpriteAnim_EmotesExtra0,
-    sSpriteAnim_EmotesExtra1,
-    sSpriteAnim_EmotesExtra2,
-};*/
+    ANIMCMD_FRAME(0*2, 30),
+    ANIMCMD_FRAME(0*2+1, 25),
+    ANIMCMD_FRAME(0*2, 30),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_PointUp2[] =
+{
+    ANIMCMD_FRAME(1*2, 30),
+    ANIMCMD_FRAME(1*2+1, 25),
+    ANIMCMD_FRAME(1*2, 30),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_PointUp3[] =
+{
+    ANIMCMD_FRAME(2*2, 30),
+    ANIMCMD_FRAME(2*2+1, 25),
+    ANIMCMD_FRAME(2*2, 30),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_PointDown1[] =
+{
+    ANIMCMD_FRAME(3*2, 30),
+    ANIMCMD_FRAME(3*2+1, 25),
+    ANIMCMD_FRAME(3*2, 30),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_PointDown2[] =
+{
+    ANIMCMD_FRAME(4*2, 30),
+    ANIMCMD_FRAME(4*2+1, 25),
+    ANIMCMD_FRAME(4*2, 30),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_PointDown3[] =
+{
+    ANIMCMD_FRAME(5*2, 30),
+    ANIMCMD_FRAME(5*2+1, 25),
+    ANIMCMD_FRAME(5*2, 30),
+    ANIMCMD_END
+};
+
+static const union AnimCmd *const sSpriteAnimTable_RelationshipPoints[] =
+{
+    sSpriteAnim_PointUp1,
+    sSpriteAnim_PointUp2,
+    sSpriteAnim_PointUp3,
+    sSpriteAnim_PointDown1,
+    sSpriteAnim_PointDown2,
+    sSpriteAnim_PointDown3,
+};
 
 static const struct SpriteTemplate sSpriteTemplate_ExclamationQuestionMark =
 {
@@ -442,17 +499,17 @@ static const struct SpriteTemplate sSpriteTemplate_Emote =
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_TrainerIcons
 };
-/*
-static const struct SpriteTemplate sSpriteTemplate_EmoteExtra =
+
+static const struct SpriteTemplate sSpriteTemplate_RelationshipPoint =
 {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_EMOTES,
     .oam = &sOamData_Icons,
-    .anims = sSpriteAnimTable_EmotesExtra,
-    .images = sSpriteImageTable_EmotesExtra,
+    .anims = sSpriteAnimTable_RelationshipPoints,
+    .images = sSpriteImageTable_RelationshipPoints,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = SpriteCB_TrainerIcons
-};*/
+};
 
 static const struct SpriteTemplate sSpriteTemplate_Quest =
 {
@@ -1253,6 +1310,84 @@ u8 FldEff_AsleepIcon(void)
     {
         SetIconSpriteData(&gSprites[spriteId], FLDEFF_ASLEEP_ICON, 14);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_PointUp1Icon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_RelationshipPoint, 0, 0, 0x52);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_POINT_UP_1_ICON, 0);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_RelationshipPoint, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_PointUp2Icon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_RelationshipPoint, 0, 0, 0x52);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_POINT_UP_2_ICON, 1);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_RelationshipPoint, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_PointUp3Icon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_RelationshipPoint, 0, 0, 0x52);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_POINT_UP_3_ICON, 2);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_RelationshipPoint, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_PointDown1Icon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_RelationshipPoint, 0, 0, 0x52);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_POINT_DOWN_1_ICON, 3);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_RelationshipPoint, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_PointDown2Icon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_RelationshipPoint, 0, 0, 0x52);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_POINT_DOWN_2_ICON, 4);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_RelationshipPoint, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
+u8 FldEff_PointDown3Icon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_RelationshipPoint, 0, 0, 0x52);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_POINT_DOWN_3_ICON, 5);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_RelationshipPoint, &gSprites[spriteId]);
     }
 
     return 0;

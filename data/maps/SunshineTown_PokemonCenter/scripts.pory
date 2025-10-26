@@ -54,6 +54,7 @@ script SunshineTown_PokemonCenter_Eventscript_MartLady {
         Hello. What can I do for you?"))
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 12){
         setflag(FLAG_HIDE_TALK_BUTTON)
+        setflag(FLAG_DONT_TRANSITION_MUSIC)
         applymovement(7, SunshineTown_PokemonCenter_Eventscript_ShinjiroFacesTheMart)
         waitmovement(0)
         msgbox(format("

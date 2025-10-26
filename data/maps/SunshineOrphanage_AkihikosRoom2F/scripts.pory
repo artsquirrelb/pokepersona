@@ -125,6 +125,7 @@ movement StepBack {
 }
 
 script SetWallclock {
+    lock
     if (flag(FLAG_SET_WALL_CLOCK) == TRUE){
         goto (PlayersHouse_2F_EventScript_CheckWallClock)
     }
@@ -142,6 +143,7 @@ script SetWallclock {
 	setvar(VAR_AKIHIKOS_INTRO_STATE, 3)
     resumefakertc
     }
+    release
 	end
 }
 

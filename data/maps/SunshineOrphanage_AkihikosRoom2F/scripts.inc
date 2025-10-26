@@ -227,378 +227,382 @@ StepBack:
 
 SetWallclock::
 # 128 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	lock
+# 129 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	goto_if_set FLAG_SET_WALL_CLOCK, SetWallclock_2
-# 132 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	manuallysettime WEEKDAY_WED, 16, 32, 0
 # 133 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setflag FLAG_SET_WALL_CLOCK
+	manuallysettime WEEKDAY_WED, 16, 32, 0
 # 134 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setflag FLAG_SET_WALL_CLOCK
+# 135 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox SetWallclock_Text_0
-# 136 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 137 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	closemessage
-# 138 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	delay 30
 # 139 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
+	delay 30
 # 140 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setspeaker SetWallclock_Text_1
+	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
 # 141 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox SetWallclock_Text_2
+	setspeaker SetWallclock_Text_1
 # 142 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 3
+	msgbox SetWallclock_Text_2
 # 143 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 3
+# 144 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	resumefakertc
 SetWallclock_1:
+# 146 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	release
 	end
 
 SetWallclock_2:
-# 129 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 130 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	goto PlayersHouse_2F_EventScript_CheckWallClock
 	goto SetWallclock_1
 
 
 GiveRunningShoesAtStart::
-# 149 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lockall
-# 150 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
 # 151 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setspeaker SetWallclock_Text_1
+	lockall
 # 152 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox GiveRunningShoesAtStart_Text_0
+	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
 # 153 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_HAPPY
-# 154 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setspeaker SetWallclock_Text_1
+# 154 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox GiveRunningShoesAtStart_Text_0
 # 155 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox GiveRunningShoesAtStart_Text_1
+	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_HAPPY
 # 156 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	closemessage
+	setspeaker SetWallclock_Text_1
 # 157 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setspeaker NULL
+	msgbox GiveRunningShoesAtStart_Text_1
 # 158 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	closemessage
 # 159 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	waitfanfare
+	setspeaker NULL
 # 160 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox GiveRunningShoesAtStart_Text_2
+	playfanfare MUS_OBTAIN_ITEM
 # 161 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setflag FLAG_SYS_B_DASH
+	waitfanfare
 # 162 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 4
+	msgbox GiveRunningShoesAtStart_Text_2
 # 163 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setflag FLAG_SYS_B_DASH
+# 164 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 4
+# 165 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	releaseall
 	end
 
 
 RunningShoesToggleManual::
-# 168 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lock
-# 169 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox RunningShoesToggleManual_Text_0
 # 170 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	lock
+# 171 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox RunningShoesToggleManual_Text_0
+# 172 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
 
 AkihikosPC::
-# 174 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lockall
-# 175 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	checkplayergender
 # 176 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	goto_if_eq VAR_RESULT MALE SunshineOrphanage_AkihikosRoom2F_PlayersPC
+	lockall
 # 177 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	checkplayergender
+# 178 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	goto_if_eq VAR_RESULT MALE SunshineOrphanage_AkihikosRoom2F_PlayersPC
+# 179 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	goto_if_eq VAR_RESULT FEMALE SunshineOrphanage_AkihikosRoom2F_RivalsPC
 	return
 
 
 SunshineOrphanage_AkihikosRoom2F_PlayersPC::
-# 183 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	playse SE_PC_ON
-# 184 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox gText_PlayerHouseBootPC
 # 185 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	special BedroomPC
+	playse SE_PC_ON
 # 186 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	waitstate
+	msgbox gText_PlayerHouseBootPC
 # 187 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	special BedroomPC
+# 188 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	waitstate
+# 189 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	releaseall
 	end
 
 
 SunshineOrphanage_AkihikosRoom2F_RivalsPC::
-# 191 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lockall
-# 192 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setspeaker SP_NAME_MITSURU
 # 193 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox SunshineOrphanage_AkihikosRoom2F_RivalsPC_Text_0
+	lockall
 # 194 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setspeaker SP_NAME_MITSURU
+# 195 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox SunshineOrphanage_AkihikosRoom2F_RivalsPC_Text_0
+# 196 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	releaseall
 	end
 
 
 ShinjirosPC::
-# 199 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lockall
-# 200 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
 # 201 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setspeaker SP_NAME_AKIHIKO
+	lockall
 # 202 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox ShinjirosPC_Text_0
+	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
 # 203 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setspeaker SP_NAME_AKIHIKO
+# 204 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox ShinjirosPC_Text_0
+# 205 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	releaseall
 	end
 
 
 BookshelfLeft::
-# 208 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 210 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	lockall
-# 209 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox BookshelfLeft_Text_0
 # 211 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox BookshelfLeft_Text_0
+# 213 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	releaseall
 	return
 
 
 BookshelfRight::
-# 215 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 217 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	lockall
-# 216 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox BookshelfRight_Text_0
 # 218 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox BookshelfRight_Text_0
+# 220 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	releaseall
 	return
 
 
 ChoresList::
-# 222 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lock
-# 223 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
 # 224 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setspeaker SP_NAME_AKIHIKO
+	lock
 # 225 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox ChoresList_Text_0
+	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
 # 226 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setspeaker SP_NAME_AKIHIKO
+# 227 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox ChoresList_Text_0
+# 228 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
 
 Calendar::
-# 230 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 232 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	lock
-# 231 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 233 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox Calendar_Text_0
-# 235 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 237 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
 
 TrashcanEmptyAkihikoRoom::
-# 239 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 241 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	lock
-# 240 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox TrashcanEmptyAkihikoRoom_Text_0
 # 242 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox TrashcanEmptyAkihikoRoom_Text_0
+# 244 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi::
-# 246 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lock
-# 247 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	faceplayer
 # 248 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	lock
+# 249 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	faceplayer
+# 250 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	goto_if_set FLAG_TEMP_1, SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_2
-# 253 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_1
 # 255 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_1
+# 257 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	goto_if_unset FLAG_FOLLOWERS_DISABLED, SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_6
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_5:
-# 262 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 264 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_0
-# 265 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	closemessage
-# 266 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 10
 # 267 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	closemessage
+# 268 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 10
+# 269 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setflag FLAG_TEMP_1
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_1:
-# 268 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 270 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_2:
-# 249 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 251 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_0
 	goto SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_1
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_6:
-# 256 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_2
-# 257 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	closemessage
 # 258 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
+	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_2
 # 259 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	waitmoncry
+	closemessage
 # 260 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, SunshineOrphanage_AkihikosRoom2F_Eventscript_PawmiGreetsBack
+	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
 # 261 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	waitmoncry
+# 262 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, SunshineOrphanage_AkihikosRoom2F_Eventscript_PawmiGreetsBack
+# 263 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	waitmovement 0
 	goto SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_5
 
 
-# 271 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-SunshineOrphanage_AkihikosRoom2F_Eventscript_PawmiGreetsBack:
-# 272 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	emote_music
 # 273 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lock_facing_direction
+SunshineOrphanage_AkihikosRoom2F_Eventscript_PawmiGreetsBack:
 # 274 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	jump_in_place_down
+	emote_music
 # 275 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	lock_facing_direction
+# 276 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	jump_in_place_down
+# 277 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	unlock_facing_direction
 	step_end
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji1::
-# 279 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lock
-# 280 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	applymovement 2, SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1
 # 281 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	waitmovement 0
+	lock
 # 282 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	applymovement 2, SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1
+# 283 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	waitmovement 0
+# 284 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji1_Text_0
-# 286 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	call SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit
-# 287 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	removeobject 2
 # 288 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setflag FLAG_HIDE_SHINJIRO
+	call SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit
 # 289 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 11
+	removeobject 2
 # 290 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setflag FLAG_HIDE_SHINJIRO
+# 291 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 11
+# 292 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji2::
-# 294 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lock
-# 295 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	applymovement 2, SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2
 # 296 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	waitmovement 0
+	lock
 # 297 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	applymovement 2, SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2
+# 298 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	waitmovement 0
+# 299 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji1_Text_0
-# 301 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	call SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit
-# 302 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	removeobject 2
 # 303 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setflag FLAG_HIDE_SHINJIRO
+	call SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit
 # 304 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 11
+	removeobject 2
 # 305 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setflag FLAG_HIDE_SHINJIRO
+# 306 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 11
+# 307 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
 
-# 308 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 310 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1:
-# 309 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 311 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_left
-# 309 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 311 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_left
-# 309 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 311 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_left
-# 310 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 312 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_down
-# 310 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 312 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_down
-# 310 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 312 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_down
 	step_end
 
-# 312 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 314 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2:
-# 313 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 315 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_left
-# 313 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 315 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_left
-# 314 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 316 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_down
-# 314 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 316 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_down
-# 314 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 316 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	walk_down
 	step_end
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit::
-# 318 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lock
-# 319 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	applymovement 2, walkdown
 # 320 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	waitmovement 0
+	lock
 # 321 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	applymovement 2, walkdown
+# 322 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	waitmovement 0
+# 323 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1::
-# 325 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 327 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	lock
-# 326 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_0
 # 328 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	closemessage
-# 329 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	applymovement 2, SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1
+	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_0
 # 330 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	waitmovement 0
+	closemessage
 # 331 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_1
+	applymovement 2, SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1
+# 332 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	waitmovement 0
 # 333 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	call SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit
-# 334 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	removeobject 2
+	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_1
 # 335 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setflag FLAG_HIDE_SHINJIRO
+	call SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit
 # 336 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 11
+	removeobject 2
 # 337 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setflag FLAG_HIDE_SHINJIRO
+# 338 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 11
+# 339 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2::
-# 341 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 343 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	lock
-# 342 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_0
 # 344 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	closemessage
-# 345 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	applymovement 2, SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2
+	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_0
 # 346 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	waitmovement 0
+	closemessage
 # 347 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_1
+	applymovement 2, SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2
+# 348 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	waitmovement 0
 # 349 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	call SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit
-# 350 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	removeobject 2
+	msgbox SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_1
 # 351 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setflag FLAG_HIDE_SHINJIRO
+	call SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit
 # 352 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 11
+	removeobject 2
 # 353 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setflag FLAG_HIDE_SHINJIRO
+# 354 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 11
+# 355 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
@@ -612,63 +616,63 @@ GoSetTheClock_Text_0:
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}{SPEAKER NAME_AKIHIKO}I should fix the clock.$"
 
 SetWallclock_Text_0:
-# 134 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 135 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "The clock isn't working.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Let's see... The current time is...\n"
 	.string "4:32PM.$"
 
 SetWallclock_Text_1:
-# 140 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 141 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "Akihiko$"
 
 SetWallclock_Text_2:
-# 141 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 142 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "All done.$"
 
 GiveRunningShoesAtStart_Text_0:
-# 152 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 154 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "Now where are my shoes...$"
 
 GiveRunningShoesAtStart_Text_1:
-# 155 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 157 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "There they are!$"
 
 GiveRunningShoesAtStart_Text_2:
-# 160 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 162 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{PLAYER} put on the {COLOR GREEN}Running Shoes{COLOR DARK_GRAY}.$"
 
 RunningShoesToggleManual_Text_0:
-# 169 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 171 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{COLOR GREEN}Tips: You can toggle various settings\n"
 	.string "in Options Menu.$"
 
 SunshineOrphanage_AkihikosRoom2F_RivalsPC_Text_0:
-# 193 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 195 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "It's Akihiko's PC. It's from Kirijo\n"
 	.string "Electronics.$"
 
 ShinjirosPC_Text_0:
-# 202 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 204 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "It's Shinji's PC. It was a donation.$"
 
 BookshelfLeft_Text_0:
-# 209 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 211 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "A book of how to draw anime characters.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Miki often asks me to draw her favorite\n"
 	.string "character from the game Persona 3.$"
 
 BookshelfRight_Text_0:
-# 216 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 218 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "A book about Pokemon species in their\n"
 	.string "natural habitats.\p"
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}{SPEAKER NAME_AKIHIKO} I hope I can get my own Pokemon soon.$"
 
 ChoresList_Text_0:
-# 225 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 227 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "Shinji and my chores list.$"
 
 Calendar_Text_0:
-# 231 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 233 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} My sis and I are going to get adopted\n"
 	.string "in 3 days, Shinji on the following day.\p"
 	.string "The Sanadas and the Aragakis look like\n"
@@ -676,25 +680,25 @@ Calendar_Text_0:
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}I'll miss everyone here...$"
 
 TrashcanEmptyAkihikoRoom_Text_0:
-# 240 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 242 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "It's empty.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Shinji just took out the trash.$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_0:
-# 249 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 251 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Ms. Kobayashi asked for both of us to\n"
 	.string "meet her at the main hall.$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_1:
-# 253 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 255 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string " {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Morning, Akihiko.$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_2:
-# 256 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 258 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Morning to you too, Pawmi.$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji1_Text_0:
-# 282 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 284 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Hey, Akihiko.\n"
 	.string "Ms. Kobayashi said she wanted to meet\l"
 	.string "us at the main hall.\p"
@@ -702,11 +706,11 @@ SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji1_Text_0:
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Oh, sure.$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_0:
-# 326 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 328 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Oh, you're leaving?$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_1:
-# 331 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 333 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go.$"
 
 Lets_Go_Play::

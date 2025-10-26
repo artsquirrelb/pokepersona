@@ -4,7 +4,7 @@ SunshineTown_House1_MapScripts::
 
 SunshineTown_House1_Eventscript_LittleGirl::
 # 6 "data/maps/SunshineTown_House1/scripts.pory"
-	lockall
+	lock
 # 7 "data/maps/SunshineTown_House1/scripts.pory"
 	faceplayer
 # 8 "data/maps/SunshineTown_House1/scripts.pory"
@@ -14,13 +14,13 @@ SunshineTown_House1_Eventscript_LittleGirl::
 # 10 "data/maps/SunshineTown_House1/scripts.pory"
 	closemessage
 # 11 "data/maps/SunshineTown_House1/scripts.pory"
-	releaseall
+	release
 	end
 
 
 SunshineTown_House1_Eventscript_Poochyena::
 # 16 "data/maps/SunshineTown_House1/scripts.pory"
-	lockall
+	lock
 # 17 "data/maps/SunshineTown_House1/scripts.pory"
 	faceplayer
 # 18 "data/maps/SunshineTown_House1/scripts.pory"
@@ -28,7 +28,7 @@ SunshineTown_House1_Eventscript_Poochyena::
 # 19 "data/maps/SunshineTown_House1/scripts.pory"
 	waitmoncry
 # 20 "data/maps/SunshineTown_House1/scripts.pory"
-	releaseall
+	release
 	end
 
 

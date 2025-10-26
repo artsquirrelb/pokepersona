@@ -587,6 +587,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .levelUpLearnset = sFerroseedDeltaLevelUpLearnset,
         .teachableLearnset = sFerroseedDeltaTeachableLearnset,
         .eggMoveLearnset = sFerroseedEggMoveLearnset,
+        .formSpeciesIdTable = sFerroseedFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_FERROTHORN}),
     },
 
@@ -666,6 +667,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .isDeltaForm = TRUE,
         .levelUpLearnset = sFerrothornDeltaLevelUpLearnset,
         .teachableLearnset = sFerrothornDeltaTeachableLearnset,
+        .formSpeciesIdTable = sFerrothornFormSpeciesIdTable,
     },
     /* You may add any custom species below this point based on the following structure: */
 

@@ -90,7 +90,12 @@
 #define FLDEFF_CRY_ICON                  85
 #define FLDEFF_SWEAT_ICON                86
 #define FLDEFF_ASLEEP_ICON               87
-
+#define FLDEFF_POINT_UP_1_ICON           88
+#define FLDEFF_POINT_UP_2_ICON           89
+#define FLDEFF_POINT_UP_3_ICON           90
+#define FLDEFF_POINT_DOWN_1_ICON         91
+#define FLDEFF_POINT_DOWN_2_ICON         92
+#define FLDEFF_POINT_DOWN_3_ICON         93
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

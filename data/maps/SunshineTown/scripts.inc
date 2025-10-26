@@ -649,7 +649,7 @@ SunshineTown_Eventscript_OnFrame23_Text_0:
 # 231 "data/maps/SunshineTown/scripts.pory"
 	.string "{COLOR GREEN}Tips: Quest System is now unlocked.\p"
 	.string "Check around for quest givers with a\n"
-	.string "green exclamation mark.\p"
+	.string "light blue exclamation mark.\p"
 	.string "You can open quest menu in Start Menu {RIGHT_ARROW}\n"
 	.string "L Button.$"
 

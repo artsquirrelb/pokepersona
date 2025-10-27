@@ -1134,71 +1134,75 @@ Route2_Eventscript_PostShinjiroFirstBattle::
 # 668 "data/maps/Route2/scripts.pory"
 	lock
 # 669 "data/maps/Route2/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 42
+	special HealPlayerParty
 # 670 "data/maps/Route2/scripts.pory"
-	clearflag FLAG_NO_WHITEOUT
+	setvar VAR_AKIHIKOS_INTRO_STATE, 42
 # 671 "data/maps/Route2/scripts.pory"
-	playse SE_M_YAWN
+	clearflag FLAG_NO_WHITEOUT
 # 672 "data/maps/Route2/scripts.pory"
-	applymovement 6, shakevertical
+	playse SE_M_YAWN
 # 673 "data/maps/Route2/scripts.pory"
-	waitmovement 0
+	applymovement 6, shakevertical
 # 674 "data/maps/Route2/scripts.pory"
+	waitmovement 0
+# 675 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_PostShinjiroFirstBattle_Text_0, MSGBOX_YESNO
-# 677 "data/maps/Route2/scripts.pory"
+# 678 "data/maps/Route2/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route2_Eventscript_PostShinjiroFirstBattle_1
-# 696 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Eventscript_PostShinjiroFirstBattle_Text_2
 # 697 "data/maps/Route2/scripts.pory"
-	closemessage
+	msgbox Route2_Eventscript_PostShinjiroFirstBattle_Text_2
 # 698 "data/maps/Route2/scripts.pory"
+	closemessage
+# 699 "data/maps/Route2/scripts.pory"
+	setflag FLAG_DONT_TRANSITION_MUSIC
+# 700 "data/maps/Route2/scripts.pory"
 	warpsilent MAP_BLANK_MAP, 0, 0
 	return
 
 Route2_Eventscript_PostShinjiroFirstBattle_1:
-# 678 "data/maps/Route2/scripts.pory"
+# 679 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_PostShinjiroFirstBattle_Text_1
-# 680 "data/maps/Route2/scripts.pory"
-	closemessage
 # 681 "data/maps/Route2/scripts.pory"
-	applymovement 6, Route2ShinjiroGoesInsideHouse
+	closemessage
 # 682 "data/maps/Route2/scripts.pory"
-	delay 20
+	applymovement 6, Route2ShinjiroGoesInsideHouse
 # 683 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, faceleft
+	delay 20
 # 684 "data/maps/Route2/scripts.pory"
-	waitmovement 6
+	applymovement LOCALID_PLAYER, faceleft
 # 685 "data/maps/Route2/scripts.pory"
+	waitmovement 6
+# 686 "data/maps/Route2/scripts.pory"
 	playse SE_DOOR
-# 688 "data/maps/Route2/scripts.pory"
-	applymovement 6, invisible
 # 689 "data/maps/Route2/scripts.pory"
-	removeobject 6
+	applymovement 6, invisible
 # 690 "data/maps/Route2/scripts.pory"
-	setflag FLAG_TEMP_2
+	removeobject 6
 # 691 "data/maps/Route2/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_TEMP_2
 # 692 "data/maps/Route2/scripts.pory"
+	clearflag FLAG_HIDE_TALK_BUTTON
+# 693 "data/maps/Route2/scripts.pory"
 	release
 	end
 
 
-# 703 "data/maps/Route2/scripts.pory"
+# 705 "data/maps/Route2/scripts.pory"
 Route2ShinjiroGoesInsideHouse:
-# 704 "data/maps/Route2/scripts.pory"
+# 706 "data/maps/Route2/scripts.pory"
 	walk_down
-# 705 "data/maps/Route2/scripts.pory"
+# 707 "data/maps/Route2/scripts.pory"
 	walk_left
-# 705 "data/maps/Route2/scripts.pory"
+# 707 "data/maps/Route2/scripts.pory"
 	walk_left
-# 705 "data/maps/Route2/scripts.pory"
+# 707 "data/maps/Route2/scripts.pory"
 	walk_left
-# 706 "data/maps/Route2/scripts.pory"
+# 708 "data/maps/Route2/scripts.pory"
 	walk_up
-# 706 "data/maps/Route2/scripts.pory"
+# 708 "data/maps/Route2/scripts.pory"
 	walk_up
-# 706 "data/maps/Route2/scripts.pory"
+# 708 "data/maps/Route2/scripts.pory"
 	walk_up
 	step_end
 
@@ -1264,7 +1268,8 @@ Route2_Eventscript_MitsuruAppears_Text_0:
 	.string "{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}...\p"
 	.string "Inteleon, let's get these two out of\n"
 	.string "here first.\p"
-	.string "The ice can only hold off for so long.$"
+	.string "The ice can only hold them off for so\n"
+	.string "long.$"
 
 Route2_Eventscript_RouteSign_Text_0:
 # 358 "data/maps/Route2/scripts.pory"
@@ -1374,7 +1379,7 @@ Route2_Eventscript_SelectingPartyShinjiroFirstBattle_Text_0:
 	.string "waiting.)$"
 
 Route2_Eventscript_PostShinjiroFirstBattle_Text_0:
-# 674 "data/maps/Route2/scripts.pory"
+# 675 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}-yawn- That battle took all the energy\n"
 	.string "out of me.\p"
 	.string "Let's go to bed. I don't want to hear\n"
@@ -1383,12 +1388,12 @@ Route2_Eventscript_PostShinjiroFirstBattle_Text_0:
 	.string "Wanna head inside?$"
 
 Route2_Eventscript_PostShinjiroFirstBattle_Text_1:
-# 678 "data/maps/Route2/scripts.pory"
+# 679 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}You do you, I'm off. G'night.\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}'Night, Shinji.$"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}'Night, Shinji.$"
 
 Route2_Eventscript_PostShinjiroFirstBattle_Text_2:
-# 696 "data/maps/Route2/scripts.pory"
+# 697 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Yeah, I'm tired too.$"
 
 SusMenFightIntro::

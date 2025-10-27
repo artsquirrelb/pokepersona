@@ -91,6 +91,6 @@ SunshineTown_House1_Eventscript_Lady_Text_1:
 SunshineTown_House1_Eventscript_Lady_Text_2:
 # 33 "data/maps/SunshineTown_House1/scripts.pory"
 	.string "My daughter and Poochyena love to play\n"
-	.string "outdoor.\p"
+	.string "outdoors.\p"
 	.string "Sometimes they bring back berries.\n"
 	.string "Here, you can have some.$"

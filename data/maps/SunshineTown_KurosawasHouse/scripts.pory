@@ -100,7 +100,7 @@ script SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow {
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}No buts.\p
     Letting a reckless dumbass like you travel alone is basically murder.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}Not funny.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Beside, Miki is like a sister to me too. I'm also worried about her.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Besides, Miki is like a sister to me too. I'm also worried about her.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}...\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright. Let's go find her together, Shinji."))
     closemessage
@@ -146,7 +146,7 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     delay(8)
     applymovement(LOCALID_PLAYER, faceleft)
     applymovement(3, faceleft)
-    delay(96)
+    delay(160)
     applymovement(3, faceup)
     delay(4)
     applymovement(LOCALID_PLAYER, faceup)

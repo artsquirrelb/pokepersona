@@ -220,10 +220,12 @@ static bool32 Fishing_ShowDots(struct Task *task)
         if (!DoesFishingMinigameAllowCancel())
             return FALSE;
 
-        task->tStep = FISHING_NOT_EVEN_NIBBLE;
+        /*task->tStep = FISHING_NOT_EVEN_NIBBLE;
         if (task->tRoundsPlayed != 0)
             task->tStep = FISHING_GOT_AWAY;
-        return TRUE;
+        return TRUE;*/
+        task->tStep = FISHING_GOT_BITE;
+        return FALSE;
     }
     else
     {
@@ -232,7 +234,8 @@ static bool32 Fishing_ShowDots(struct Task *task)
             task->tFrameCounter = 0;
             if (task->tNumDots >= task->tDotsRequired)
             {
-                task->tStep = FISHING_CHECK_FOR_BITE;
+                //task->tStep = FISHING_CHECK_FOR_BITE;
+                task->tStep = FISHING_GOT_BITE;
                 if (task->tRoundsPlayed != 0)
                     task->tStep = FISHING_GOT_BITE;
                 task->tRoundsPlayed++;
@@ -307,16 +310,17 @@ static bool32 Fishing_ChangeMinigame(struct Task *task)
 static bool32 Fishing_WaitForA(struct Task *task)
 {
     const s16 reelTimeouts[3] = {
-        [OLD_ROD]   = 36,
-        [GOOD_ROD]  = 33,
-        [SUPER_ROD] = 30
+        [OLD_ROD]   = 9999,
+        [GOOD_ROD]  = 9999,
+        [SUPER_ROD] = 9999
     };
 
     AlignFishingAnimationFrames();
     task->tFrameCounter++;
-    if (task->tFrameCounter >= reelTimeouts[task->tFishingRod])
-        task->tStep = FISHING_GOT_AWAY;
-    else if (JOY_NEW(A_BUTTON))
+    //if (task->tFrameCounter >= reelTimeouts[task->tFishingRod])
+    //    task->tStep = FISHING_GOT_AWAY;
+    //else if (JOY_NEW(A_BUTTON))
+    if (JOY_NEW(A_BUTTON))
         task->tStep = FISHING_CHECK_MORE_DOTS;
     return FALSE;
 }
@@ -341,7 +345,7 @@ static bool32 Fishing_CheckMoreDots(struct Task *task)
 
     AlignFishingAnimationFrames();
     task->tStep = FISHING_MON_ON_HOOK;
-    if (task->tRoundsPlayed < task->tMinRoundsRequired)
+    /*if (task->tRoundsPlayed < task->tMinRoundsRequired)
     {
         task->tStep = FISHING_INIT_DOTS;
     }
@@ -352,7 +356,7 @@ static bool32 Fishing_CheckMoreDots(struct Task *task)
 
         if (moreDotsChance[task->tFishingRod][task->tRoundsPlayed] > probability)
             task->tStep = FISHING_INIT_DOTS;
-    }
+    }*/
     return FALSE;
 }
 

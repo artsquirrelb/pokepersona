@@ -5,9 +5,9 @@ mapscripts SunshineTown_MapScripts {
             setobjectmovementtype(5, MOVEMENT_TYPE_FACE_UP)
             setobjectxyperm(6, 23, 3)
             setobjectmovementtype(6, MOVEMENT_TYPE_FACE_LEFT)
+            setflag(FLAG_HIDE_QUEST_ICON)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 16 || var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18) {
-            playbgm(MUS_HELP, TRUE)
             setflag(FLAG_HIDE_KUROSAWA)
             setflag(FLAG_HIDE_TALK_BUTTON)
             setobjectxyperm(2, 14, 11)
@@ -232,6 +232,7 @@ script SunshineTown_Eventscript_OnFrame23{
     Check around for quest givers with a light blue exclamation mark.\p
     You can open quest menu in Start Menu {RIGHT_ARROW} L Button."))
     closemessage
+    clearflag(FLAG_HIDE_QUEST_ICON)
     setflag(FLAG_SYS_QUEST_MENU_GET)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 24)
     clearflag(FLAG_HIDE_TALK_BUTTON)

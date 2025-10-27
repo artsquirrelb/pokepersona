@@ -9,9 +9,6 @@ mapscripts SunshineTownRiverbank_MapScripts {
             setflag(FLAG_TEMP_2)
             setflag(FLAG_TEMP_3)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 16 || var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18) {
-            playbgm(MUS_HELP, TRUE)
-        }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 19 || var(VAR_AKIHIKOS_INTRO_STATE) == 20) {
             playbgm(MUS_NONE, TRUE)
             setflag(FLAG_SPAWN_INVISIBLE)

@@ -620,9 +620,9 @@ SunshineTown_PokemonCenter_Eventscript_OldMan_Text_1:
 SunshineTown_PokemonCenter_Eventscript_OldMan_Text_2:
 # 193 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "Back in the day, Pokémon Center and\n"
-	.string "Pokémart used to be in two separated\l"
+	.string "Pokémart used to be in two separate\l"
 	.string "buildings.\p"
-	.string "I'm glad that they changed it. It's more\n"
+	.string "I'm glad they changed it. It's more\n"
 	.string "convenient like this.$"
 
 SunshineTown_PokemonCenter_Eventscript_YoungBoy_Text_0:
@@ -647,7 +647,7 @@ SunshineTown_PokemonCenter_Eventscript_Gentleman_Text_1:
 # 237 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "It sounds dangerous outside, you kids\n"
 	.string "should stay here.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Thank you, sir but we'll be fine.$"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Thank you, sir, but we'll be fine.$"
 
 SunshineTown_PokemonCenter_Eventscript_Gentleman_Text_2:
 # 240 "data/maps/SunshineTown_PokemonCenter/scripts.pory"

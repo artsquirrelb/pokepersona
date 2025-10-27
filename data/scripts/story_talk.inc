@@ -482,7 +482,7 @@ EventScript_OverworldStoryTalk_HaveTalkedToShinjiro_Text_0:
 
 EventScript_OverworldStoryTalk_HaveTalkedToShinjiro_Text_1:
 # 169 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}No idea, she hurried to somewhere\n"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}No idea, she hurried off somewhere\n"
 	.string "before I could ask.$"
 
 EventScript_OverworldStoryTalk_ShinjiroJoinedAkihikosRoom_Text_0:
@@ -543,8 +543,8 @@ EventScript_OverworldStoryTalk_PosttalkKurosawa_Text_0:
 EventScript_OverworldStoryTalk_PosttalkKurosawa_Riverbank_Text_0:
 # 223 "data/scripts/story_talk.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Hey Shinji...\p"
-	.string "Why did you think Ms. Kobayashi do that\n"
-	.string "to us?\p"
+	.string "Why do you think Ms. Kobayashi would do\n"
+	.string "that to us?\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Pushing us into the river...\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}...$"
 
@@ -552,7 +552,7 @@ EventScript_OverworldStoryTalk_PosttalkKurosawa_Woods_Text_0:
 # 230 "data/scripts/story_talk.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Miki gifted me a flower crown here.\p"
 	.string "I left it in our room so it was probably\n"
-	.string "burned to ashes.\p"
+	.string "burned to ash.\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}...$"
 
 EventScript_OverworldStoryTalk_PostFirstMeetingMitsuru_Text_0:
@@ -582,7 +582,7 @@ EventScript_OverworldStoryTalk_PreFirstBattleMitsuruShinjiroLeft_Text_0:
 
 EventScript_OverworldStoryTalk_PreFirstBattleMitsuru_Meadow_Text_0:
 # 258 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(There she is. Her Inteleon gonna be\n"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(There she is. Her Inteleon is gonna be\n"
 	.string "hard to take down.\p"
 	.string "There's also that weird-colored Vulpix.)$"
 

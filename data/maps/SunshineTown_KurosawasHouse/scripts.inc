@@ -245,7 +245,7 @@ SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa::
 # 148 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	applymovement 3, faceleft
 # 149 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	delay 96
+	delay 160
 # 150 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	applymovement 3, faceup
 # 151 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
@@ -455,9 +455,9 @@ SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow_Text_0:
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Huh? But-\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}No buts.\p"
 	.string "Letting a reckless dumbass like you\n"
-	.string "traveling alone is basically murder.\p"
+	.string "travel alone is basically murder.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}Not funny.\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Beside, Miki is like a sister to me too.\n"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Besides, Miki is like a sister to me too.\n"
 	.string "I'm also worried about her.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}...\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright. Let's go find her together,\n"
@@ -486,11 +486,11 @@ SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa_Text_1:
 SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa_Text_2:
 # 155 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "{SPEAKER NAME_KUROSAWA}Take these Camping Gears. You'll need\n"
-	.string "them while outdoor.\p"
+	.string "them while outdoors.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Woah, these are great! Thank you,\n"
 	.string "Kurosawa-san!\p"
 	.string "{SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Stay safe, kids. I'll keep you updated\n"
-	.string "with our searching.$"
+	.string "with our search.$"
 
 Growlithe_NPC_Text_0:
 # 191 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
@@ -502,7 +502,7 @@ SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_0:
 
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_1:
 # 205 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	.string "{DESTROY_MUGSHOT}You kids are always welcomed to spend\n"
+	.string "{DESTROY_MUGSHOT}You kids are always welcome to spend\n"
 	.string "the night here if you want to.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you, Kurosawa-san.$"
 
@@ -513,7 +513,7 @@ SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_2:
 	.string "all got into accidents and are\l"
 	.string "currently being treated at Kibou\l"
 	.string "Hospital.\p"
-	.string "The injuries aren't threatening but\n"
+	.string "The injuries aren't life threatening but\n"
 	.string "they'll have to stay there for a month\l"
 	.string "or two.\p"
 	.string "The adoption papers were already done\n"
@@ -530,5 +530,5 @@ SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_Text_0:
 SunshineTown_KurosawasHouse_Eventscript_Notebook_Text_0:
 # 237 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "The notebook is full of hard-to-read\n"
-	.string "scribles. Among them is a\l"
-	.string "stroke-through “Sunshine Orphanage”.$"
+	.string "scribbles. Among them is a\l"
+	.string "strike-through “Sunshine Orphanage”.$"

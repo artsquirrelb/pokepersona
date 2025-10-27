@@ -58,7 +58,7 @@
 #define FLAG_NO_TRAINER_SEE             0x2C // Was Unused Flag
 #define FLAG_NO_COLLISION               0x2D // Was Unused Flag
 #define FLAG_POKE_RIDER                 0x2E // Was Unused Flag
-#define FLAG_UNUSED_0x02F    0x2F // Unused Flag
+#define FLAG_HIDE_QUEST_ICON            0x2F // Was Unused Flag
 #define FLAG_UNUSED_0x030    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag

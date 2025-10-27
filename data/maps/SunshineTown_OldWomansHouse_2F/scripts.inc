@@ -148,7 +148,7 @@ SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutsc
 
 SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene_Text_1:
 # 68 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
-	.string "{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Riolu poured all of its energy to the\n"
+	.string "{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Riolu poured all of its energy into\n"
 	.string "battle and got sleepy.$"
 
 SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene_Text_2:

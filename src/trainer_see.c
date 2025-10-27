@@ -412,48 +412,42 @@ static const struct SpriteFrameImage sSpriteImageTable_RelationshipPoints[] =
 static const union AnimCmd sSpriteAnim_PointUp1[] =
 {
     ANIMCMD_FRAME(0*2, 30),
-    ANIMCMD_FRAME(0*2+1, 25),
-    ANIMCMD_FRAME(0*2, 30),
+    ANIMCMD_FRAME(0*2+1, 35),
     ANIMCMD_END
 };
 
 static const union AnimCmd sSpriteAnim_PointUp2[] =
 {
     ANIMCMD_FRAME(1*2, 30),
-    ANIMCMD_FRAME(1*2+1, 25),
-    ANIMCMD_FRAME(1*2, 30),
+    ANIMCMD_FRAME(1*2+1, 35),
     ANIMCMD_END
 };
 
 static const union AnimCmd sSpriteAnim_PointUp3[] =
 {
     ANIMCMD_FRAME(2*2, 30),
-    ANIMCMD_FRAME(2*2+1, 25),
-    ANIMCMD_FRAME(2*2, 30),
+    ANIMCMD_FRAME(2*2+1, 35),
     ANIMCMD_END
 };
 
 static const union AnimCmd sSpriteAnim_PointDown1[] =
 {
     ANIMCMD_FRAME(3*2, 30),
-    ANIMCMD_FRAME(3*2+1, 25),
-    ANIMCMD_FRAME(3*2, 30),
+    ANIMCMD_FRAME(3*2+1, 35),
     ANIMCMD_END
 };
 
 static const union AnimCmd sSpriteAnim_PointDown2[] =
 {
     ANIMCMD_FRAME(4*2, 30),
-    ANIMCMD_FRAME(4*2+1, 25),
-    ANIMCMD_FRAME(4*2, 30),
+    ANIMCMD_FRAME(4*2+1, 35),
     ANIMCMD_END
 };
 
 static const union AnimCmd sSpriteAnim_PointDown3[] =
 {
     ANIMCMD_FRAME(5*2, 30),
-    ANIMCMD_FRAME(5*2+1, 25),
-    ANIMCMD_FRAME(5*2, 30),
+    ANIMCMD_FRAME(5*2+1, 35),
     ANIMCMD_END
 };
 
@@ -1154,7 +1148,7 @@ SetIconSpriteData(&gSprites[spriteId], FLDEFF_HEART_ICON, FOLLOWER_EMOTION_LOVE)
 
 u8 FldEff_QuestIcon(void)
 {
-    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Quest, 0, 0, 0x53);
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Quest, 0, 0, 0x52);
     struct Sprite *sprite;
     
     if (spriteId == MAX_SPRITES)
@@ -1171,7 +1165,7 @@ void SpriteCB_QuestIcon(struct Sprite *sprite)
     u8 objEventId;
     struct Sprite *objEventSprite;
 
-    if (TryGetObjectEventIdByLocalIdAndMap(sprite->sLocalId, sprite->sMapNum, sprite->sMapGroup, &objEventId))
+    if (TryGetObjectEventIdByLocalIdAndMap(sprite->sLocalId, sprite->sMapNum, sprite->sMapGroup, &objEventId) || FlagGet(FLAG_HIDE_QUEST_ICON) == TRUE)
         StopQuestFieldEffect(sprite, objEventId);
 
     objEventSprite = &gSprites[gObjectEvents[objEventId].spriteId];

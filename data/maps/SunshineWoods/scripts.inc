@@ -467,7 +467,7 @@ SunshineWoods_Eventscript_PolicemenBlockingOrphanage_Text_0:
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage_Text_1:
 # 266 "data/maps/SunshineWoods/scripts.pory"
 	.string "Our apologies but Sunshine Orphanage\n"
-	.string "is currently off-limit.$"
+	.string "is currently off-limits.$"
 
 SunshineWoods_Text_IkeIntro::
 # 238 "data/maps/SunshineWoods/scripts.pory"

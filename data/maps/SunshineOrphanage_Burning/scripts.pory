@@ -290,6 +290,7 @@ script SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver {
     playse(SE_M_DIVE)
     delay(30)
     setflag(FLAG_HIDE_MIKI)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fadescreenswapbuffers(FADE_TO_BLACK)
     warpsilent(MAP_BLANK_MAP, 0, 0)
 }

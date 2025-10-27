@@ -98,7 +98,7 @@ script SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow {
     msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}I'll go with you, Aki.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Huh? But-\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}No buts.\p
-    Letting a reckless dumbass like you traveling alone is basically murder.\p
+    Letting a reckless dumbass like you travel alone is basically murder.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}Not funny.\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Beside, Miki is like a sister to me too. I'm also worried about her.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}...\p
@@ -152,9 +152,9 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     applymovement(LOCALID_PLAYER, faceup)
     waitmovement(1)
     giveitem(ITEM_CAMP_GEARS)
-    msgbox(format("{SPEAKER NAME_KUROSAWA}Take these Camping Gears. You'll need them while outdoor.\p
+    msgbox(format("{SPEAKER NAME_KUROSAWA}Take these Camping Gears. You'll need them while outdoors.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Woah, these are great! Thank you, Kurosawa-san!\p
-    {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Stay safe, kids. I'll keep you updated with our searching."))
+    {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Stay safe, kids. I'll keep you updated with our search."))
     closemessage
     delay(20)
     fwdtime(9, 30)
@@ -202,13 +202,13 @@ script SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse {
     faceplayer
     setspeaker("Kurosawa")
     if (flag(FLAG_TEMP_2) == TRUE){
-        msgbox(format("{DESTROY_MUGSHOT}You kids are always welcomed to spend the night here if you want to.\p
+        msgbox(format("{DESTROY_MUGSHOT}You kids are always welcome to spend the night here if you want to.\p
         {SPEAKER NAME_AKIHIKO}{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you, Kurosawa-san."))
         closemessage
     }
     else{
         msgbox(format("{DESTROY_MUGSHOT}The Sanadas and the Aragakis were supposed to pick you two up but they all got into accidents and are currently being treated at Kibou Hospital.\p
-        The injuries aren't threatening but they'll have to stay there for a month or two.\p
+        The injuries aren't life threatening but they'll have to stay there for a month or two.\p
         The adoption papers were already done and approved so you're officially a Sanada and an Aragaki.\p
         {SPEAKER NAME_AKIHIKO}{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}My... parents.\p
         We should visit them in Kibou City.\p
@@ -234,7 +234,7 @@ script SunshineTown_KurosawasHouse_Eventscript_TrashcanItem {
 
 script SunshineTown_KurosawasHouse_Eventscript_Notebook {
     lock
-    msgbox(format("The notebook is full of hard-to-read scribles. Among them is a stroke-through “Sunshine Orphanage”."))
+    msgbox(format("The notebook is full of hard-to-read scribbles. Among them is a strike-through “Sunshine Orphanage”."))
     closemessage
     release
     end

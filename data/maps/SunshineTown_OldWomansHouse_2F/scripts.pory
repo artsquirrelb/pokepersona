@@ -65,7 +65,7 @@ script SunshineTown_OldWomansHouse_2F_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riol
     startoverworldencounter(5)
     clearflag(FLAG_NO_CATCHING)
     clearflag(FLAG_NO_RUNNING)
-    msgbox(format("{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Riolu poured all of its energy to the battle and got sleepy."))
+    msgbox(format("{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Riolu poured all of its energy into battle and got sleepy."))
     closemessage
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}I guess that should do it. Let's return to the grandma."))
     closemessage

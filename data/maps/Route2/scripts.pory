@@ -316,7 +316,7 @@ script Route2_Eventscript_MitsuruAppears {
     setspeaker("???????")
     msgbox(format("{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}...\p
     Inteleon, let's get these two out of here first.\p
-    The ice can only hold off for so long."))
+    The ice can only hold them off for so long."))
     closemessage
     playse(SE_EXIT)
     applymovement(12, InteleonWalksOut)

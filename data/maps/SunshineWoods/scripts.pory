@@ -263,6 +263,6 @@ text SunshineWoods_Text_HotaruPostBattle {
 
 script SunshineWoods_Eventscript_PolicemenBlockingOrphanage {
     setspeaker("Police Officer")
-    msgbox(format("Our apologies but Sunshine Orphanage is currently off-limit."))
+    msgbox(format("Our apologies but Sunshine Orphanage is currently off-limits."))
     closemessage
 }

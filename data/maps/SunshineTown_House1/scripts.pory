@@ -30,7 +30,7 @@ script SunshineTown_House1_Eventscript_Lady {
         msgbox(format("You can come back tomorrow for more."))
     }
     else{
-        msgbox(format("My daughter and Poochyena love to play outdoor.\p
+        msgbox(format("My daughter and Poochyena love to play outdoors.\p
         Sometimes they bring back berries. Here, you can have some."))
         closemessage
         giveitem(ITEM_RAZZ_BERRY, 2)

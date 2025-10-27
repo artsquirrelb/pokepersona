@@ -338,6 +338,10 @@ static const u8 sMapHealLocations[][3] =
     [MAPSEC_ROUTE_132] = {MAP_GROUP(MAP_ROUTE132), MAP_NUM(MAP_ROUTE132), HEAL_LOCATION_NONE},
     [MAPSEC_ROUTE_133] = {MAP_GROUP(MAP_ROUTE133), MAP_NUM(MAP_ROUTE133), HEAL_LOCATION_NONE},
     [MAPSEC_ROUTE_134] = {MAP_GROUP(MAP_ROUTE134), MAP_NUM(MAP_ROUTE134), HEAL_LOCATION_NONE},
+    //[MAPSEC_SUNSHINE_ORPHANAGE] = {MAP_GROUP(MAP_SUNSHINE_ORPHANAGE), MAP_NUM(MAP_SUNSHINE_ORPHANAGE), HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL},
+    [MAPSEC_SUNSHINETOWN] = {MAP_GROUP(MAP_SUNSHINE_TOWN), MAP_NUM(MAP_SUNSHINE_TOWN), HEAL_LOCATION_SUNSHINE_TOWN},
+    [MAPSEC_ROUTE_1] = {MAP_GROUP(MAP_ROUTE1), MAP_NUM(MAP_ROUTE1), HEAL_LOCATION_NONE},
+    [MAPSEC_ROUTE_2] = {MAP_GROUP(MAP_ROUTE2), MAP_NUM(MAP_ROUTE2), HEAL_LOCATION_NONE},
 };
 
 static const u8 *const sEverGrandeCityNames[] =
@@ -391,7 +395,7 @@ static const struct WindowTemplate sFlyMapWindowTemplates[] =
         .tilemapTop = 17,
         .width = 12,
         .height = 2,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x01
     },
     [WIN_MAPSEC_NAME_TALL] = {
@@ -400,7 +404,7 @@ static const struct WindowTemplate sFlyMapWindowTemplates[] =
         .tilemapTop = 15,
         .width = 12,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x19
     },
     [WIN_FLY_TO_WHERE] = {
@@ -409,7 +413,7 @@ static const struct WindowTemplate sFlyMapWindowTemplates[] =
         .tilemapTop = 18,
         .width = 14,
         .height = 2,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x49
     },
     DUMMY_WIN_TEMPLATE
@@ -1732,7 +1736,7 @@ void CB2_OpenFlyMap(void)
         LoadPalette(sRegionMapFramePal, BG_PLTT_ID(1), sizeof(sRegionMapFramePal));
         PutWindowTilemap(WIN_FLY_TO_WHERE);
         FillWindowPixelBuffer(WIN_FLY_TO_WHERE, PIXEL_FILL(0));
-        AddTextPrinterParameterized(WIN_FLY_TO_WHERE, FONT_NORMAL, gText_FlyToWhere, 0, 1, 0, NULL);
+        AddTextPrinterParameterized6(WIN_FLY_TO_WHERE, FONT_NORMAL, gText_FlyToWhere, 0, 1, 0, NULL, 0x1, 0xE, 0x0);
         ScheduleBgCopyTilemapToVram(0);
         gMain.state++;
         break;
@@ -1798,9 +1802,9 @@ static void DrawFlyDestTextWindow(void)
                     namePrinted = TRUE;
                     ClearStdWindowAndFrameToTransparent(WIN_MAPSEC_NAME, FALSE);
                     DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME_TALL, FALSE, 101, 13);
-                    AddTextPrinterParameterized(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL);
+                    AddTextPrinterParameterized6(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL, 0x1, 0xE, 0x0);
                     name = sMultiNameFlyDestinations[i].name[sFlyMap->regionMap.posWithinMapSec];
-                    AddTextPrinterParameterized(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, name, GetStringRightAlignXOffset(FONT_NORMAL, name, 96), 17, 0, NULL);
+                    AddTextPrinterParameterized6(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, name, GetStringRightAlignXOffset(FONT_NORMAL, name, 96), 17, 0, NULL, 0x1, 0xE, 0x0);
                     ScheduleBgCopyTilemapToVram(0);
                     sDrawFlyDestTextWindow = TRUE;
                 }
@@ -1817,9 +1821,9 @@ static void DrawFlyDestTextWindow(void)
             else
             {
                 // Window is already drawn, just empty it
-                FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(1));
+                FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(14));
             }
-            AddTextPrinterParameterized(WIN_MAPSEC_NAME, FONT_NORMAL, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL);
+            AddTextPrinterParameterized6(WIN_MAPSEC_NAME, FONT_NORMAL, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL, 0x1, 0xE, 0x0);
             ScheduleBgCopyTilemapToVram(0);
             sDrawFlyDestTextWindow = FALSE;
         }
@@ -1832,7 +1836,7 @@ static void DrawFlyDestTextWindow(void)
             ClearStdWindowAndFrameToTransparent(WIN_MAPSEC_NAME_TALL, FALSE);
             DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME, FALSE, 101, 13);
         }
-        FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(1));
+        FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(14));
         CopyWindowToVram(WIN_MAPSEC_NAME, COPYWIN_GFX);
         ScheduleBgCopyTilemapToVram(0);
         sDrawFlyDestTextWindow = FALSE;
@@ -2040,6 +2044,8 @@ u32 FilterFlyDestination(struct RegionMap* regionMap)
 {
     switch (regionMap->mapSecId)
     {
+    case MAPSEC_SUNSHINE_ORPHANAGE:
+        return HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL;
     case MAPSEC_SOUTHERN_ISLAND:
         return HEAL_LOCATION_SOUTHERN_ISLAND_EXTERIOR;
     case MAPSEC_BATTLE_FRONTIER:

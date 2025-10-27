@@ -449,6 +449,8 @@ script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru {
     setflag(FLAG_SYS_POKEDEX_GET)
     setflag(FLAG_SYS_NATIONAL_DEX)
     special(EnableNationalPokedex)
+    setcaughtmon(SPECIES_PAWMI)
+    setcaughtmon(SPECIES_PAWMI_DELTA)
     applymovement(1, stepbackup)
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}To be honest, I'd also like to have a battle with you, Sanada-kun.\p

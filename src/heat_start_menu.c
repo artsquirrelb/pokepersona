@@ -1500,6 +1500,14 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
     FadeScreen(FADE_TO_BLACK, 0);
     QuestMenuCallback();
 
+  } else if (JOY_NEW(R_BUTTON) &&sHeatStartMenu->loadState == 0) {
+    PlaySE(SE_SELECT);
+    DestroyTask(taskId);
+    HeatStartMenu_ExitAndClearTilemap();
+    FlagClear(FLAG_HIDE_TALK_BUTTON);
+    CreateOverworldTalkHUD();   
+    ScriptContext_SetupScript(EventScript_RegionMap);
+
   } else if (JOY_NEW(B_BUTTON) && sHeatStartMenu->loadState == 0) {
     PlaySE(SE_SELECT);
     HeatStartMenu_ExitAndClearTilemap(); 

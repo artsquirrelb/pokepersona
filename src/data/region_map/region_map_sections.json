@@ -745,11 +745,19 @@
     },
     {
       "id": "MAPSEC_ROUTE_1",
-      "name": "ROUTE 1"
+      "name": "ROUTE 1",
+      "x": 22,
+      "y": 10,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_2",
-      "name": "ROUTE 2"
+      "name": "ROUTE 2",
+      "x": 20,
+      "y": 9,
+      "width": 3,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_3",
@@ -1233,23 +1241,43 @@
     },
     {
       "id": "MAPSEC_SUNSHINETOWN",
-      "name": "Sunshine Town"
+      "name": "Sunshine Town",
+      "x": 23,
+      "y": 9,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_SUNSHINE_ORPHANAGE",
-      "name": "Sunshine Orphanage"
+      "name": "Sunshine Orphanage",
+      "x": 24,
+      "y": 8,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_SUNSHINEWOODS",
-      "name": "Sunshine Woods"
+      "name": "Sunshine Woods",
+      "x": 24,
+      "y": 9,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_SUNSHINETOWN_RIVERBANK",
-      "name": "Sunshine Town Riverbank"
+      "name": "Sunshine Riverbank",
+      "x": 23,
+      "y": 10,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_SUNSHINE_MEADOW",
-      "name": "Sunshine Meadow"
+      "name": "Sunshine Meadow",
+      "x": 22,
+      "y": 8,
+      "width": 1,
+      "height": 1
     }
   ]
 }

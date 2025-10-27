@@ -29,8 +29,8 @@
  */
 
 enum {
-    WIN_MAPSEC_NAME,
     WIN_TITLE,
+    WIN_MAPSEC_NAME
 };
 
 enum {
@@ -74,23 +74,23 @@ static const struct BgTemplate sFieldRegionMapBgTemplates[] = {
 
 static const struct WindowTemplate sFieldRegionMapWindowTemplates[] =
 {
-    [WIN_MAPSEC_NAME] = {
-        .bg = 0,
-        .tilemapLeft = 17,
-        .tilemapTop = 17,
-        .width = 12,
-        .height = 2,
-        .paletteNum = 15,
-        .baseBlock = 1
-    },
     [WIN_TITLE] = {
         .bg = 0,
         .tilemapLeft = 22,
         .tilemapTop = 1,
         .width = 7,
         .height = 2,
-        .paletteNum = 15,
-        .baseBlock = 25
+        .paletteNum = 13,
+        .baseBlock = 1
+    },
+    [WIN_MAPSEC_NAME] = {
+        .bg = 0,
+        .tilemapLeft = 15,
+        .tilemapTop = 17,
+        .width = 14,
+        .height = 2,
+        .paletteNum = 13,
+        .baseBlock = 100
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -155,7 +155,7 @@ static void FieldUpdateRegionMap(void)
             break;
         case 1:
             DrawStdFrameWithCustomTileAndPalette(WIN_TITLE, FALSE, 0x27, 0xd);
-            FillWindowPixelBuffer(WIN_TITLE, PIXEL_FILL(1));
+            FillWindowPixelBuffer(WIN_TITLE, PIXEL_FILL(14));
             PrintTitleWindowText();
             ScheduleBgCopyTilemapToVram(0);
             DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME, FALSE, 0x27, 0xd);
@@ -217,13 +217,13 @@ static void PrintRegionMapSecName(void)
 {
     if (sFieldRegionMapHandler->regionMap.mapSecType != MAPSECTYPE_NONE)
     {
-        FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(1));
-        AddTextPrinterParameterized(WIN_MAPSEC_NAME, FONT_NORMAL, sFieldRegionMapHandler->regionMap.mapSecName, 0, 1, 0, NULL);
+        FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(14));
+        AddTextPrinterParameterized6(WIN_MAPSEC_NAME, FONT_NORMAL, sFieldRegionMapHandler->regionMap.mapSecName, 0, 1, 0, NULL, 0x1, 0xE, 0x0);
         ScheduleBgCopyTilemapToVram(WIN_MAPSEC_NAME);
     }
     else
     {
-        FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(1));
+        FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(14));
         CopyWindowToVram(WIN_MAPSEC_NAME, COPYWIN_FULL);
     }
 }
@@ -234,17 +234,17 @@ static void PrintTitleWindowText(void)
     u32 hoennOffset = GetStringCenterAlignXOffset(FONT_NORMAL, gText_Hoenn, 0x38);
     u32 flyOffset = GetStringCenterAlignXOffset(FONT_NORMAL, FlyPromptText, 0x38);
 
-    FillWindowPixelBuffer(WIN_TITLE, PIXEL_FILL(1));
+    FillWindowPixelBuffer(WIN_TITLE, PIXEL_FILL(14));
 
     if (sFieldRegionMapHandler->regionMap.mapSecType == MAPSECTYPE_CITY_CANFLY
         && FlagGet(OW_FLAG_POKE_RIDER) && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
     {
-        AddTextPrinterParameterized(WIN_TITLE, FONT_NORMAL, FlyPromptText, flyOffset, 1, 0, NULL);
+        AddTextPrinterParameterized6(WIN_TITLE, FONT_NORMAL, FlyPromptText, flyOffset, 1, 0, NULL, 0x1, 0xE, 0x0);
         ScheduleBgCopyTilemapToVram(WIN_TITLE);
     }
     else
     {
-        AddTextPrinterParameterized(WIN_TITLE, FONT_NORMAL, gText_Hoenn, hoennOffset, 1, 0, NULL);
+        AddTextPrinterParameterized6(WIN_TITLE, FONT_NORMAL, gText_Hoenn, hoennOffset, 1, 0, NULL, 0x1, 0xE, 0x0);
         CopyWindowToVram(WIN_TITLE, COPYWIN_FULL);
     }
 }

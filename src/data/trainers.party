@@ -9674,14 +9674,14 @@ Pic: May
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Smart Trainer / Ace Pokemon / Prefer Highest Damage Move
+AI: Smart Trainer / Prefer Highest Damage Move
 Mugshot: Blue
 
 SPECIES_FENNEKIN (F) @ITEM_LUM_BERRY
 Level: 10
 Ball: Luxury Ball
 Shiny: Yes
-IVs: 31 HP / 0 Atk / 0 Def / 31 SpA / 0 SpD / 31 Spe
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 100 Spe
 Ability: Blaze
 - Incinerate
@@ -9692,11 +9692,11 @@ Ability: Blaze
 SPECIES_FURFROU_KABUKI (M) @ITEM_ORAN_BERRY
 Level: 10
 Ball: Luxury Ball
-IVs: 0 HP / 31 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
+IVs: 0 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
 EVs: 100 Atk
 - Covet
 - Rock Smash
-- Toxic
+- Thunder Wave
 - Heart Stamp
 
 SPECIES_VULPIX_DELTA (F) @ITEM_LUM_BERRY

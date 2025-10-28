@@ -33,6 +33,7 @@ mapscripts Route2_MapScripts {
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) >= 42){
             setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
@@ -391,17 +392,15 @@ text Route2_YuukaPostBattle {
 }
 
 script Route2_Eventscript_Tarou {
+    trainerbattle_single (TRAINER_TAROU, Route2_TarouIntro, Route2_TarouDefeated)
     setspeaker("Tarou")
-    msgbox(Route2_TarouIntro)
-    closemessage
-    trainerbattle_no_intro (TRAINER_TAROU, Route2_TarouDefeated)
     msgbox(Route2_TarouPostBattle)
     closemessage
     end
 }
 
 text Route2_TarouIntro {
-    format("What are you looking at, lowlife?")
+    format("You look weak, battle me.")
 }
 
 text Route2_TarouDefeated {
@@ -696,7 +695,7 @@ script Route2_Eventscript_PostShinjiroFirstBattle {
     else{
         msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Yeah, I'm tired too."))
         closemessage
-        setflag(FLAG_DONT_TRANSITION_MUSIC)
+        clearflag(FLAG_DONT_TRANSITION_MUSIC)
         warpsilent(MAP_BLANK_MAP, 0, 0)
     }
         

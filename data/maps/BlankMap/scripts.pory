@@ -81,7 +81,7 @@ script SunshineTownRiverbank_Eventscript_OnFrame22 {
 
 script Route2_Eventscript_AkihikoOnFrame24 {
     lock
-    warpsilent(MAP_ROUTE2, 35, 11)
+    warpsilent(MAP_ROUTE2, 37, 11)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 25)
     release
 }
@@ -133,7 +133,6 @@ script Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38 {
 }
 
 script Route2_Eventscript_AkihikoOnFrame42 {
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 43)
     fwdtime(6,20)
     fwdweekday(WEEKDAY_MON)
     msgbox(format("The next morning..."))

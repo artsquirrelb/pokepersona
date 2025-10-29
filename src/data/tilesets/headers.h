@@ -929,3 +929,14 @@ const struct Tileset gTileset_Gen4PC =
     .metatileAttributes = gMetatileAttributes_Gen4PC,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_HiddenGrotto =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_HiddenGrotto,
+    .palettes = gTilesetPalettes_HiddenGrotto,
+    .metatiles = gMetatiles_HiddenGrotto,
+    .metatileAttributes = gMetatileAttributes_HiddenGrotto,
+    .callback = NULL,
+};

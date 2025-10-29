@@ -5333,7 +5333,7 @@
       "id": "LAYOUT_ROUTE1",
       "name": "Route1_Layout",
       "width": 40,
-      "height": 28,
+      "height": 30,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Gen4General",
@@ -5488,7 +5488,7 @@
     {
       "id": "LAYOUT_ROUTE2",
       "name": "Route2_Layout",
-      "width": 36,
+      "width": 38,
       "height": 26,
       "border_width": 2,
       "border_height": 2,
@@ -5544,6 +5544,42 @@
       "secondary_tileset": "gTileset_Gen4General2nd",
       "border_filepath": "data/layouts/GameOver/border.bin",
       "blockdata_filepath": "data/layouts/GameOver/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE2_2",
+      "name": "Route2_2_Layout",
+      "width": 36,
+      "height": 26,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_Gen4General2nd",
+      "border_filepath": "data/layouts/Route2_2/border.bin",
+      "blockdata_filepath": "data/layouts/Route2_2/map.bin"
+    },
+    {
+      "id": "LAYOUT_MANSIONS_GARDEN",
+      "name": "MansionsGarden_Layout",
+      "width": 50,
+      "height": 36,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_Gen4General2nd",
+      "border_filepath": "data/layouts/MansionsGarden/border.bin",
+      "blockdata_filepath": "data/layouts/MansionsGarden/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE1_HIDDEN_GROTTO",
+      "name": "Route1_HiddenGrotto_Layout",
+      "width": 21,
+      "height": 20,
+      "border_width": 6,
+      "border_height": 4,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_HiddenGrotto",
+      "border_filepath": "data/layouts/Route1_HiddenGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/Route1_HiddenGrotto/map.bin"
     }
   ]
 }

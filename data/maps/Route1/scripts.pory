@@ -10,3 +10,106 @@ script Route1_Eventscript_NotTheWayToMeadow {
     closemessage
     release
 }
+
+script Route1_Eventscript_Touma {
+    if(var(VAR_AKIHIKOS_INTRO_STATE) >= 44){
+    trainerbattle_single(TRAINER_TOUMA_2, Route1_ToumaIntro, Route1_ToumaDefeated)
+    }
+    else{
+        trainerbattle_single(TRAINER_TOUMA, Route1_ToumaIntro, Route1_ToumaDefeated)
+    }
+    setspeaker("Touma")
+    faceplayer
+    if (var(VAR_TEMP_0) == 1){
+        msgbox(format("I'll definitely become a Pokémon researcher!"))
+        closemessage
+        end
+    }
+    else{
+    msgbox(Route1_ToumaPostBattle)
+    closemessage
+    setspeaker("Touma")
+    msgbox(format("{DESTROY_MUGSHOT}Ma-Marvelous? You think so? Thanks!!"))
+    closemessage
+    setvar(VAR_TEMP_0, 1)
+    }
+    end
+}
+
+text Route1_ToumaIntro {
+    format("Um, you want a battle? Okay...")
+}
+
+text Route1_ToumaDefeated {
+    format("Aw... I knew that you looked strong.")
+}
+
+text Route1_ToumaPostBattle {
+    format("I don't do very well in my Pokémon battle classes.\p
+    But it's okay because I want to become a researcher instead of a trainer.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That is a marvelous personal goal. I wish you the best of luck.")
+}
+
+script Route1_Eventscript_Miyu {
+    if(var(VAR_AKIHIKOS_INTRO_STATE) >= 44){
+    trainerbattle_single(TRAINER_MIYU_2, Route1_MiyuIntro, Route1_MiyuDefeated)
+    }
+    else{
+        trainerbattle_single(TRAINER_MIYU, Route1_MiyuIntro, Route1_MiyuDefeated)
+    }
+    setspeaker("Miyu")
+    faceplayer
+    msgbox(Route1_MiyuPostBattle)
+    closemessage
+    end
+}
+
+text Route1_MiyuIntro {
+    format("I heard there's a hidden grotto on this route. Have you seen it?")
+}
+
+text Route1_MiyuDefeated {
+    format("Now I have to visit a Pokémon Center...")
+}
+
+text Route1_MiyuPostBattle {
+    format("If only I found that hidden grotto.")
+}
+
+script Route1_Eventscript_RouteSign {
+    msgbox("Route 1.")
+    closemessage
+    end
+}
+
+script Route1_Eventscript_DirectionSign {
+    msgbox(format("Route 2 {UP_ARROW}\n
+    Kirijo's Mansion {DOWN_ARROW}"))
+    closemessage
+    end
+}
+
+script Route1_Eventscript_HiddenGrotto {
+    lock
+    msgbox(Eventscript_HiddenGrotto, MSGBOX_YESNO)
+    closemessage
+    if (var(VAR_RESULT) == TRUE){
+        msgbox("No map yet")
+    }
+    release
+    end
+}
+
+text Eventscript_HiddenGrotto {
+    format("There's a narrow path leading further to the woods. Do you want to proceed?")
+}
+
+script Route1_Eventscript_Twins {
+    lock
+    faceplayer
+    msgbox(format("Shhh! We heard Pokémon's cry in that narrow path over there.\p
+    Our mother said we shouldn't be interacting with wild Pokémon so we'll stay here."))
+    closemessage
+    release
+    end
+}

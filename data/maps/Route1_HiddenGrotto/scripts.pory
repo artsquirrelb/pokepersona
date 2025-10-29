@@ -1,0 +1,28 @@
+mapscripts Route1_HiddenGrotto_MapScripts {}
+
+script Route1_HiddenGrotto_TaurosPaldeaAqua {
+    lock
+    playse(SE_M_SNORE)
+    applymovement(1, emoteasleep)
+    waitmovement(0)
+    delay(20)
+    msgbox(format("The Pokémon is sleeping. Wake it up?"), MSGBOX_YESNO)
+    closemessage
+    if (var(VAR_RESULT) == FALSE){
+        msgbox(format("You left the Pokémon alone."))
+        closemessage
+    }
+    else{
+        
+        delay(30)
+        playse(SE_FAILURE)
+        applymovement(1, emoteangry)
+        waitmovement(0)
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >=43){startoverworldencounter(12)}
+        else{startoverworldencounter(7)}
+        setflag(FLAG_HIDDENGROTTO_ROUTE1)
+        removeobject(1)
+    }
+    release
+    end
+}

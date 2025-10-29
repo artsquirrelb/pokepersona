@@ -153,7 +153,7 @@ Route2_Eventscript_AkihikoOnFrame24::
 # 83 "data/maps/BlankMap/scripts.pory"
 	lock
 # 84 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_ROUTE2, 35, 11
+	warpsilent MAP_ROUTE2, 37, 11
 # 85 "data/maps/BlankMap/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 25
 # 86 "data/maps/BlankMap/scripts.pory"
@@ -242,40 +242,38 @@ Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38_2:
 
 Route2_Eventscript_AkihikoOnFrame42::
 # 136 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 43
-# 137 "data/maps/BlankMap/scripts.pory"
 	fwdtime 6, 20
-# 138 "data/maps/BlankMap/scripts.pory"
+# 137 "data/maps/BlankMap/scripts.pory"
 	fwdweekday WEEKDAY_MON
-# 139 "data/maps/BlankMap/scripts.pory"
+# 138 "data/maps/BlankMap/scripts.pory"
 	msgbox Route2_Eventscript_AkihikoOnFrame42_Text_0
-# 140 "data/maps/BlankMap/scripts.pory"
+# 139 "data/maps/BlankMap/scripts.pory"
 	closemessage
-# 141 "data/maps/BlankMap/scripts.pory"
+# 140 "data/maps/BlankMap/scripts.pory"
 	warpsilent MAP_ROUTE2_HOUSE, 3, 11
 	return
 
 
 SunshineMeadow_Eventscript_GameOver::
-# 145 "data/maps/BlankMap/scripts.pory"
+# 144 "data/maps/BlankMap/scripts.pory"
 	lock
-# 146 "data/maps/BlankMap/scripts.pory"
+# 145 "data/maps/BlankMap/scripts.pory"
 	msgbox SunshineMeadow_Eventscript_GameOver_Text_0
+# 148 "data/maps/BlankMap/scripts.pory"
+	closemessage
 # 149 "data/maps/BlankMap/scripts.pory"
-	closemessage
-# 150 "data/maps/BlankMap/scripts.pory"
 	delay 30
-# 151 "data/maps/BlankMap/scripts.pory"
+# 150 "data/maps/BlankMap/scripts.pory"
 	msgbox SunshineMeadow_Eventscript_GameOver_Text_1
-# 154 "data/maps/BlankMap/scripts.pory"
+# 153 "data/maps/BlankMap/scripts.pory"
 	closemessage
-# 155 "data/maps/BlankMap/scripts.pory"
+# 154 "data/maps/BlankMap/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
-# 156 "data/maps/BlankMap/scripts.pory"
+# 155 "data/maps/BlankMap/scripts.pory"
 	warpsilent MAP_GAME_OVER, 0, 5
-# 157 "data/maps/BlankMap/scripts.pory"
+# 156 "data/maps/BlankMap/scripts.pory"
 	waitstate
-# 158 "data/maps/BlankMap/scripts.pory"
+# 157 "data/maps/BlankMap/scripts.pory"
 	release
 	end
 
@@ -310,11 +308,11 @@ Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38_Text_0:
 	.string "Later that night...$"
 
 Route2_Eventscript_AkihikoOnFrame42_Text_0:
-# 139 "data/maps/BlankMap/scripts.pory"
+# 138 "data/maps/BlankMap/scripts.pory"
 	.string "The next morning...$"
 
 SunshineMeadow_Eventscript_GameOver_Text_0:
-# 146 "data/maps/BlankMap/scripts.pory"
+# 145 "data/maps/BlankMap/scripts.pory"
 	.string "Mitsuru Kirijo walked away without\n"
 	.string "turning back.\p"
 	.string "Her Vulpix trotted along her lonesome\n"
@@ -324,7 +322,7 @@ SunshineMeadow_Eventscript_GameOver_Text_0:
 	.string "behind its two companions.$"
 
 SunshineMeadow_Eventscript_GameOver_Text_1:
-# 151 "data/maps/BlankMap/scripts.pory"
+# 150 "data/maps/BlankMap/scripts.pory"
 	.string "You and Shinjiro continued your search\n"
 	.string "for Miki to no avail.\p"
 	.string "Not long after, both of you ended up\n"

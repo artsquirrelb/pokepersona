@@ -226,64 +226,72 @@ Scyther
 Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ALBERTO ===
-Name: ALBERTO
-Class: Bird Keeper
-Pic: Bird Keeper
+=== TRAINER_TOUMA ===
+Name: Touma
+Class: Youngster
+Pic: Youngster
 Gender: Male
-Music: Cool
+Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Pelipper
-Level: 30
+Bellsprout
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Xatu
-Level: 30
+Farfetch'd
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ED ===
-Name: ED
-Class: Collector
-Pic: Collector
+=== TRAINER_TOUMA_2 ===
+Name: Touma
+Class: Youngster
+Pic: Youngster
 Gender: Male
-Music: Suspicious
+Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Zangoose
-Level: 30
+Bellsprout
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Seviper
-Level: 30
+Farfetch'd
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_4 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt F
+=== TRAINER_MIYU ===
+Name: Miyu
+Class: Picnicker
+Pic: Picnicker
 Gender: Female
-Music: Aqua
+Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Carvanha
-Level: 36
+Scatterbug
+Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DECLAN ===
-Name: DECLAN
-Class: Swimmer M
-Pic: Swimmer M
-Gender: Male
-Music: Swimmer
+Smoliv
+Level: 4
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+=== TRAINER_MIYU_2 ===
+Name: Miyu
+Class: Picnicker
+Pic: Picnicker
+Gender: Female
+Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Gyarados
-Level: 34
+Spewpa
+Level: 11
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Smoliv
+Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_RUSTURF_TUNNEL ===
@@ -9475,7 +9483,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Future Sight
 
 === TRAINER_SHINJIRO_ROUTE_2 ===
-Name: SHINJIRO
+Name: Shinjiro
 Class: Rival
 Pic: Shinjiro
 Gender: Male
@@ -9487,22 +9495,11 @@ Mugshot: Blue
 Venipede @ ITEM_ORAN_BERRY
 Level: 10
 IVs: 0 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
-EVs: 40 Atk
 Ability: Poison Point
 - Infestation
 - Poison Tail
-- Protect
+- Toxic
 - Rollout
-
-Spiritomb @ ITEM_LUM_BERRY
-Level: 10
-IVs: 15 HP / 0 Atk / 0 Def / 31 SpA / 0 SpD / 0 Spe
-EVs: 40 SpA
-Ability: Pressure
-- Will-O-Wisp
-- Hex
-- Shadow Sneak
-- Icy Wind
 
 SPECIES_FERROSEED_DELTA (M) @ ITEM_OCCA_BERRY
 Level: 10
@@ -9513,7 +9510,16 @@ Ability: Iron Barbs
 - Bullet Seed
 - Leech Seed
 - Metal Claw
-- Spiky Shield
+- Growl
+
+Misdreavus @ ITEM_LUM_BERRY
+Level: 10
+IVs: 15 HP / 0 Atk / 0 Def / 31 SpA / 0 SpD / 0 Spe
+Ability: Levitate
+- Will-O-Wisp
+- Night Shade
+- Shadow Sneak
+- Confusion
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
 Name: BRENDAN

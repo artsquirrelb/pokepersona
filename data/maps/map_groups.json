@@ -36,7 +36,8 @@
     "gMapGroup_IndoorRoute124",
     "gMapGroup_IndoorSunshineOrphanage",
     "gMapGroup_IndoorSunshineTown",
-    "gMapGroup_IndoorRoute2"
+    "gMapGroup_IndoorRoute2",
+    "gMapGroup_HiddenGrottos"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -103,7 +104,9 @@
     "SunshineTownRiverbank",
     "SunshineOrphanage_Burning",
     "Route2",
-    "SunshineMeadow"
+    "SunshineMeadow",
+    "Route2_2",
+    "MansionsGarden"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -650,5 +653,8 @@
   ],
   "gMapGroup_IndoorRoute2": [
     "Route2_House"
+  ],
+  "gMapGroup_HiddenGrottos": [
+    "Route1_HiddenGrotto"
   ]
 }

@@ -14,11 +14,11 @@
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
 #define TRAINER_GABRIELLE_1                   9
 #define TRAINER_GRUNT_ROUTE2                 10
-#define TRAINER_YUUKA                       11
-#define TRAINER_ALBERTO                      12
-#define TRAINER_ED                           13
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_4      14
-#define TRAINER_DECLAN                       15
+#define TRAINER_YUUKA                        11
+#define TRAINER_TOUMA                        12
+#define TRAINER_TOUMA_2                      13
+#define TRAINER_MIYU                         14
+#define TRAINER_MIYU_2                       15
 #define TRAINER_GRUNT_RUSTURF_TUNNEL         16
 #define TRAINER_GRUNT_WEATHER_INST_1         17
 #define TRAINER_GRUNT_WEATHER_INST_2         18

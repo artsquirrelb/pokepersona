@@ -121,11 +121,15 @@ Route1_Eventscript_HiddenGrotto_2:
 
 Route1_Eventscript_Twins::
 # 108 "data/maps/Route1/scripts.pory"
-	faceplayer
+	lock
 # 109 "data/maps/Route1/scripts.pory"
+	faceplayer
+# 110 "data/maps/Route1/scripts.pory"
 	msgbox Route1_Eventscript_Twins_Text_0
-# 111 "data/maps/Route1/scripts.pory"
+# 112 "data/maps/Route1/scripts.pory"
 	closemessage
+# 113 "data/maps/Route1/scripts.pory"
+	release
 	end
 
 
@@ -165,7 +169,7 @@ Route1_Eventscript_HiddenGrotto_Text_0:
 	.string "No map yet$"
 
 Route1_Eventscript_Twins_Text_0:
-# 109 "data/maps/Route1/scripts.pory"
+# 110 "data/maps/Route1/scripts.pory"
 	.string "Shhh! We heard Pokémon's cry in that\n"
 	.string "narrow path over there.\p"
 	.string "Our mother said we shouldn't be\n"

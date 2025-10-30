@@ -528,8 +528,8 @@ static void CB2_InitBattleInternal(void)
         switch (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA))
         {
         case TRAINER_BATTLE_TYPE_SINGLES:
-            if (gSaveBlock2Ptr->optionsDoubleBattlesOff == FALSE && GetTrainerPartySizeFromId(TRAINER_BATTLE_PARAM.opponentA) >= 2)
-                gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;
+            /*if (gSaveBlock2Ptr->optionsDoubleBattlesOff == FALSE && GetTrainerPartySizeFromId(TRAINER_BATTLE_PARAM.opponentA) >= 2)
+                gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;*/
             break;
         case TRAINER_BATTLE_TYPE_DOUBLES:
             gBattleTypeFlags |= BATTLE_TYPE_DOUBLE;

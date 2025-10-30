@@ -1471,13 +1471,13 @@ static void Task_NewGameBirchSpeech_ChooseGender(u8 taskId)
         case MALE:
             PlaySE(SE_SELECT);
             gSaveBlock2Ptr->playerGender = gender;
-            NewGameBirchSpeech_ClearGenderWindow(1, 1);
+            //NewGameBirchSpeech_ClearGenderWindow(1, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
             break;
         case FEMALE:
             PlaySE(SE_SELECT);
             gSaveBlock2Ptr->playerGender = gender;
-            NewGameBirchSpeech_ClearGenderWindow(1, 1);
+            //NewGameBirchSpeech_ClearGenderWindow(1, 1);
             gTasks[taskId].func = Task_NewGameBirchSpeech_WhatsYourName;
             break;
     }
@@ -1568,8 +1568,8 @@ static void Task_NewGameBirchSpeech_StartNamingScreen(u8 taskId)
         //! If you'd like to know how to show a specific outfit for the player instead,
         //! please check the @note comments on function NamingScreen_CreatePlayerIcon
         //! in src/naming_screen.c. ^^
-        DoNamingScreen(NAMING_SCREEN_PLAYER, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, DEFAULT_OUTFIT, CB2_NewGameBirchSpeech_ReturnFromNamingScreen);
-    
+        //DoNamingScreen(NAMING_SCREEN_PLAYER, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, DEFAULT_OUTFIT, CB2_NewGameBirchSpeech_ReturnFromNamingScreen);
+        SetMainCallback2(CB2_NewGameBirchSpeech_ReturnFromNamingScreen);
 }
 
 static void Task_NewGameBirchSpeech_SoItsPlayerName(u8 taskId)
@@ -1840,12 +1840,12 @@ static void AddBirchSpeechObjects(u8 taskId)
     gSprites[lotadSpriteId].oam.priority = 0;
     gSprites[lotadSpriteId].invisible = TRUE;
     gTasks[taskId].tLotadSpriteId = lotadSpriteId;
-    brendanSpriteId = CreateTrainerSprite(GetPlayerTrainerPicIdByOutfitGenderType(DEFAULT_OUTFIT, MALE, 0), 120, 60, 0, NULL);
+    brendanSpriteId = CreateTrainerSprite(GetPlayerTrainerPicIdByOutfitGenderType(OUTFIT_AKIHIKO, MALE, 0), 120, 60, 0, NULL);
     gSprites[brendanSpriteId].callback = SpriteCB_Null;
     gSprites[brendanSpriteId].invisible = TRUE;
     gSprites[brendanSpriteId].oam.priority = 0;
     gTasks[taskId].tBrendanSpriteId = brendanSpriteId;
-    maySpriteId = CreateTrainerSprite(GetPlayerTrainerPicIdByOutfitGenderType(DEFAULT_OUTFIT, FEMALE, 0), 120, 60, 0, NULL);
+    maySpriteId = CreateTrainerSprite(GetPlayerTrainerPicIdByOutfitGenderType(OUTFIT_MITSURU, FEMALE, 0), 120, 60, 0, NULL);
     gSprites[maySpriteId].callback = SpriteCB_Null;
     gSprites[maySpriteId].invisible = TRUE;
     gSprites[maySpriteId].oam.priority = 0;

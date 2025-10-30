@@ -1317,12 +1317,36 @@ emotecry:
 
 GiveOutfitbox::
 # 778 "data/maps/Route2/scripts.pory"
-	msgbox GiveOutfitbox_Text_0
+	lock
 # 779 "data/maps/Route2/scripts.pory"
+	goto_if_unset FLAG_SWITCH_PLAYER_OPTION, GiveOutfitbox_2
+# 784 "data/maps/Route2/scripts.pory"
+	msgbox GiveOutfitbox_Text_0
+# 786 "data/maps/Route2/scripts.pory"
 	closemessage
-# 780 "data/maps/Route2/scripts.pory"
-	additem ITEM_OUTFIT_BOX
+# 787 "data/maps/Route2/scripts.pory"
+	checkplayergender
+# 788 "data/maps/Route2/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq GiveOutfitbox_5
+# 792 "data/maps/Route2/scripts.pory"
+	unlockoutfit OUTFIT_AKIHIKO
+GiveOutfitbox_1:
+# 795 "data/maps/Route2/scripts.pory"
+	release
 	end
+
+GiveOutfitbox_2:
+# 780 "data/maps/Route2/scripts.pory"
+	giveitem ITEM_OUTFIT_BOX
+# 781 "data/maps/Route2/scripts.pory"
+	setflag FLAG_SWITCH_PLAYER_OPTION
+	goto GiveOutfitbox_1
+
+GiveOutfitbox_5:
+# 789 "data/maps/Route2/scripts.pory"
+	unlockoutfit OUTFIT_MITSURU
+	goto GiveOutfitbox_1
 
 
 Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_0:
@@ -1545,8 +1569,9 @@ Route2_Eventscript_Himari_Text_6:
 	.string "cute!$"
 
 GiveOutfitbox_Text_0:
-# 778 "data/maps/Route2/scripts.pory"
-	.string "Got Outfit Box$"
+# 784 "data/maps/Route2/scripts.pory"
+	.string "Current protag is {PLAYER}.\p"
+	.string "Unlocking {RIVAL}.$"
 
 SusMenFightIntro::
 # 168 "data/maps/Route2/scripts.pory"

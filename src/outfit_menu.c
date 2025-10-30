@@ -342,8 +342,18 @@ void OpenOutfitMenu(MainCallback retCB)
     // measures for existing saves
     if (gSaveBlock2Ptr->currOutfitId == OUTFIT_NONE)
     {
-        UnlockOutfit(DEFAULT_OUTFIT);
-        gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
+        if (gSaveBlock2Ptr->playerGender == MALE)
+    {   
+        LockOutfit(OUTFIT_MITSURU);
+        UnlockOutfit(OUTFIT_AKIHIKO);
+        gSaveBlock2Ptr->currOutfitId = OUTFIT_AKIHIKO;
+    }
+    else
+    {   
+        LockOutfit(OUTFIT_AKIHIKO);
+        UnlockOutfit(OUTFIT_MITSURU);
+        gSaveBlock2Ptr->currOutfitId = OUTFIT_MITSURU;
+    }
     }
     sOutfitMenu->retCB = retCB;
     SetMainCallback2(CB2_SetupOutfitMenu);
@@ -462,8 +472,8 @@ static bool32 SetupOutfitMenu_Graphics(void)
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            LZDecompressWram(sTilemap, sOutfitMenu->tilemapBuffers[0]);
-            LZDecompressWram(sScrollingBG_Tilemap, sOutfitMenu->tilemapBuffers[1]);
+            DecompressDataWithHeaderWram(sTilemap, sOutfitMenu->tilemapBuffers[0]);
+            DecompressDataWithHeaderWram(sScrollingBG_Tilemap, sOutfitMenu->tilemapBuffers[1]);
             sOutfitMenu->gfxState++;
         }
         break;
@@ -948,7 +958,16 @@ const void *GetPlayerHeadGfxOrPal(u8 which, bool32 isFP)
     {
         if (gSaveBlock2Ptr->currOutfitId == OUTFIT_NONE || gSaveBlock2Ptr->currOutfitId >= OUTFIT_COUNT)
         {
-            gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
+            if (gSaveBlock2Ptr->playerGender == MALE)
+            {
+                UnlockOutfit(OUTFIT_AKIHIKO);
+                gSaveBlock2Ptr->currOutfitId = OUTFIT_AKIHIKO;
+            }
+            else
+            {
+                UnlockOutfit(OUTFIT_MITSURU);
+                gSaveBlock2Ptr->currOutfitId = OUTFIT_MITSURU;
+            }
         }
 
         if (isFP)

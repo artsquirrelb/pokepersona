@@ -583,7 +583,7 @@ static void ProcessRecvCmds(u8 unused)
                         if ((linkPlayer->version & 0xFF) == VERSION_RUBY || (linkPlayer->version & 0xFF) == VERSION_SAPPHIRE)
                         {
                             linkPlayer->progressFlagsCopy = 0;
-                            linkPlayer->neverRead = 0;
+                            //linkPlayer->neverRead = 0;
                             linkPlayer->progressFlags = 0;
                         }
                         ConvertLinkPlayerName(linkPlayer);

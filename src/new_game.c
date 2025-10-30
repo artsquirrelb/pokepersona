@@ -55,6 +55,7 @@
 extern const u8 EventScript_ResetAllMapFlags[];
 
 static void ClearFrontierRecord(void);
+static void SetDefaultOutfitAccordingToPlayerGender(void);
 static void WarpToTruck(void);
 static void ResetMiniGamesRecords(void);
 static void ResetItemFlags(void);
@@ -99,17 +100,17 @@ static void InitPlayerTrainerId(void)
 // L=A isnt set here for some reason.
 static void SetDefaultOptions(void)
 {
-    gSaveBlock2Ptr->optionsInstantTextOff = FALSE;
+    gSaveBlock2Ptr->optionsInstantTextOff = TRUE;
     gSaveBlock2Ptr->optionsAutoRunOff = FALSE;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
     gSaveBlock2Ptr->optionsBattleSceneOff = FALSE;
-    gSaveBlock2Ptr->optionsBattleSpeed = OPTIONS_BATTLE_SPEED_1X;
-    gSaveBlock2Ptr->optionsDisableMatchCall = FALSE;
-    gSaveBlock2Ptr->optionsDisableBagUse = FALSE;
+    gSaveBlock2Ptr->optionsBattleSpeed = OPTIONS_BATTLE_SPEED_2X;
+    //gSaveBlock2Ptr->optionsDisableMatchCall = FALSE;
+    //gSaveBlock2Ptr->optionsDisableBagUse = FALSE;
     gSaveBlock2Ptr->optionsQuickRunButton = OPTIONS_QUICK_RUN_R_BUTTON;
-    gSaveBlock2Ptr->optionsDoubleBattlesOff = TRUE;
-    gSaveBlock2Ptr->optionsShowBattleMoveInfoOff = FALSE;
+    //gSaveBlock2Ptr->optionsDoubleBattlesOff = TRUE;
+    //gSaveBlock2Ptr->optionsShowBattleMoveInfoOff = FALSE;
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
     gSaveBlock2Ptr->optionsBikeMusicOff = FALSE;
     gSaveBlock2Ptr->optionsSurfMusicOff = FALSE;
@@ -142,6 +143,24 @@ static void ClearFrontierRecord(void)
     gSaveBlock2Ptr->frontier.opponentNames[1][0] = EOS;
 }
 
+static void SetDefaultOutfitAccordingToPlayerGender (void)
+{
+    if (gSaveBlock2Ptr->currOutfitId == DEFAULT_OUTFIT)
+    {
+        if (gSaveBlock2Ptr->playerGender == MALE)
+        {   
+            LockOutfit(OUTFIT_MITSURU);
+            UnlockOutfit(OUTFIT_AKIHIKO);
+            gSaveBlock2Ptr->currOutfitId = OUTFIT_AKIHIKO;
+        }
+        else
+        {   
+            LockOutfit(OUTFIT_AKIHIKO);
+            UnlockOutfit(OUTFIT_MITSURU);
+            gSaveBlock2Ptr->currOutfitId = OUTFIT_MITSURU;
+        }
+    }
+}
 static void WarpToTruck(void)
 {   
     SetWarpDestination(MAP_GROUP(MAP_SUNSHINE_ORPHANAGE), MAP_NUM(MAP_SUNSHINE_ORPHANAGE), WARP_ID_NONE, 13, 18);
@@ -236,6 +255,7 @@ void NewGameInitData(void)
     SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
     ResetItemFlags();
     ResetOutfitData();
+    SetDefaultOutfitAccordingToPlayerGender();
     ResetDexNav();
     ClearFollowerNPCData();
 }

@@ -1643,11 +1643,13 @@ void SetPlayerAvatarFieldMove(void)
     SetPlayerAvatarAnimation(PLAYER_AVATAR_GFX_FIELD_MOVE, ANIM_FIELD_MOVE);
 }
 
-/*void SetPlayerAvatarFishing(u8 direction)
+
+void SetPlayerAvatarFishing(u8 direction)
 {
-    ObjectEventSetGraphicsId(&gObjectEvents[gPlayerAvatar.objectEventId], GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_FISHING));
-    StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingDirectionAnimNum(direction));
-}*/
+    SetPlayerAvatarAnimation(PLAYER_AVATAR_GFX_FISHING, GetFishingDirectionAnimNum(direction));
+    //ObjectEventSetGraphicsId(&gObjectEvents[gPlayerAvatar.objectEventId], GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_FISHING));
+    //StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingDirectionAnimNum(direction));
+}
 
 void PlayerUseAcroBikeOnBumpySlope(u8 direction)
 {
@@ -1912,7 +1914,7 @@ static void Task_WaitStopSurfing(u8 taskId)
     }
 }
 
->>>>>>> feature/outfits-system-rhh
+//>>>>>>> feature/outfits-system-rhh
 void SetSpinStartFacingDir(u8 direction)
 {
     sSpinStartFacingDir = direction;

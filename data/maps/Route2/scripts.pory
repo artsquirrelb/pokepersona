@@ -775,8 +775,23 @@ movement emotecry {
 }
 
 script GiveOutfitbox {
-    msgbox(format("Got Outfit Box"))
-    closemessage
-    additem(ITEM_OUTFIT_BOX)
+    lock
+    if(flag(FLAG_SWITCH_PLAYER_OPTION) == FALSE){
+    giveitem(ITEM_OUTFIT_BOX)
+    setflag(FLAG_SWITCH_PLAYER_OPTION)
+    }
+    else{
+        msgbox(format("Current protag is {PLAYER}.\p
+        Unlocking {RIVAL}."))
+        closemessage
+        checkplayergender
+        if (var(VAR_RESULT) == MALE){
+            unlockoutfit(OUTFIT_MITSURU)
+        }
+        else{
+            unlockoutfit(OUTFIT_AKIHIKO)
+        }
+    }
+    release
     end
 }

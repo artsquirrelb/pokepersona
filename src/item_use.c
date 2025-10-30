@@ -303,7 +303,7 @@ void ItemUseOutOfBattle_Bike(u8 taskId)
 
 static void ItemUseOnFieldCB_Bike(u8 taskId)
 {
-    gUnusedBikeCameraAheadPanback = FALSE;
+    //gUnusedBikeCameraAheadPanback = FALSE;
 
     gSaveBlock2Ptr->playerBike = MACH_BIKE;
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_BIKE)

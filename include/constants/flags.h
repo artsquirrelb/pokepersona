@@ -59,7 +59,7 @@
 #define FLAG_NO_COLLISION               0x2D // Was Unused Flag
 #define FLAG_POKE_RIDER                 0x2E // Was Unused Flag
 #define FLAG_HIDE_QUEST_ICON            0x2F // Was Unused Flag
-#define FLAG_UNUSED_0x030    0x30 // Unused Flag
+#define FLAG_SWITCH_PLAYER_OPTION    0x30 // Unused Flag
 #define FLAG_UNUSED_0x031    0x31 // Unused Flag
 #define FLAG_UNUSED_0x032    0x32 // Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag

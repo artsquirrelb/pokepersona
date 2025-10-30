@@ -295,6 +295,9 @@ enum {
     PLAYER_AVATAR_GFX_FIELD_MOVE,
     PLAYER_AVATAR_GFX_FISHING,
     PLAYER_AVATAR_GFX_WATERING,
+    PLAYER_AVATAR_GFX_DECORATING,
+    PLAYER_AVATAR_GFX_VSSEEKER,
+    PLAYER_AVATAR_GFX_COUNT,
 };
 
 // Player avatar flags for which follower Pokémon are hidden

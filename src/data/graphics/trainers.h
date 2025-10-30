@@ -463,12 +463,9 @@ static const union AnimCmd *const sBackAnims_Kanto[] =
 };
 
 #define TRAINER_BACK_SPRITE(trainerPic, yOffset, sprite, pal, anim)                          \
-#define TRAINER_BACK_SPRITE(trainerPic, yOffset, sprite, pal, anim)                          \
     [trainerPic] =                                                                           \
     {                                                                                        \
         .coordinates = {.size = 8, .y_offset = yOffset},                                     \
-        .backPic = {.data = sprite, .size = TRAINER_PIC_SIZE, .relativeFrames = TRUE},       \
-        .palette = {.data = pal, .tag = trainerPic},                                         \
         .backPic = {.data = sprite, .size = TRAINER_PIC_SIZE, .relativeFrames = TRUE},       \
         .palette = {.data = pal, .tag = trainerPic},                                         \
         .animation = anim,                                                                   \
@@ -485,3 +482,4 @@ const struct TrainerBacksprite gTrainerBacksprites[] =
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_WALLY, 4, gTrainerBackPic_Wally, gTrainerPalette_Wally, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_STEVEN, 4, gTrainerBackPic_Steven, gTrainerPalette_Steven, sBackAnims_Hoenn),
 };
+

@@ -810,10 +810,10 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE]   = gSaveBlock2Ptr->optionsBattleSceneOff;
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE]   = gSaveBlock2Ptr->optionsBattleStyle;
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESPEED]   = gSaveBlock2Ptr->optionsBattleSpeed;
-        sOptions->sel_battle[MENUITEM_BATTLE_BAGUSE]        = gSaveBlock2Ptr->optionsDisableBagUse;
+        //sOptions->sel_battle[MENUITEM_BATTLE_BAGUSE]        = gSaveBlock2Ptr->optionsDisableBagUse;
         sOptions->sel_battle[MENUITEM_BATTLE_QUICKRUN]      = gSaveBlock2Ptr->optionsQuickRunButton;
-        sOptions->sel_battle[MENUITEM_BATTLE_DOUBLEBATTLE]  = gSaveBlock2Ptr->optionsDoubleBattlesOff;
-        sOptions->sel_battle[MENUITEM_BATTLE_MOVEINFO]      = gSaveBlock2Ptr->optionsShowBattleMoveInfoOff;
+        //sOptions->sel_battle[MENUITEM_BATTLE_DOUBLEBATTLE]  = gSaveBlock2Ptr->optionsDoubleBattlesOff;
+        //sOptions->sel_battle[MENUITEM_BATTLE_MOVEINFO]      = gSaveBlock2Ptr->optionsShowBattleMoveInfoOff;
 
         sOptions->sel_sound[MENUITEM_SOUND_SOUNDMODE]       = gSaveBlock2Ptr->optionsSound;
         sOptions->sel_sound[MENUITEM_SOUND_BIKEMUSIC]       = gSaveBlock2Ptr->optionsBikeMusicOff;
@@ -1047,10 +1047,10 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE];
     gSaveBlock2Ptr->optionsBattleStyle      = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE];
     gSaveBlock2Ptr->optionsBattleSpeed      = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESPEED];
-    gSaveBlock2Ptr->optionsDisableBagUse    = sOptions->sel_battle[MENUITEM_BATTLE_BAGUSE];
+    //gSaveBlock2Ptr->optionsDisableBagUse    = sOptions->sel_battle[MENUITEM_BATTLE_BAGUSE];
     gSaveBlock2Ptr->optionsQuickRunButton   = sOptions->sel_battle[MENUITEM_BATTLE_QUICKRUN];
-    gSaveBlock2Ptr->optionsDoubleBattlesOff = sOptions->sel_battle[MENUITEM_BATTLE_DOUBLEBATTLE];
-    gSaveBlock2Ptr->optionsShowBattleMoveInfoOff = sOptions->sel_battle[MENUITEM_BATTLE_MOVEINFO];
+    //gSaveBlock2Ptr->optionsDoubleBattlesOff = sOptions->sel_battle[MENUITEM_BATTLE_DOUBLEBATTLE];
+    //gSaveBlock2Ptr->optionsShowBattleMoveInfoOff = sOptions->sel_battle[MENUITEM_BATTLE_MOVEINFO];
 
     gSaveBlock2Ptr->optionsSound            = sOptions->sel_sound[MENUITEM_SOUND_SOUNDMODE];
     gSaveBlock2Ptr->optionsBikeMusicOff     = sOptions->sel_sound[MENUITEM_SOUND_BIKEMUSIC];

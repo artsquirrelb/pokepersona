@@ -1315,6 +1315,16 @@ emotecry:
 	emote_cry
 	step_end
 
+GiveOutfitbox::
+# 778 "data/maps/Route2/scripts.pory"
+	msgbox GiveOutfitbox_Text_0
+# 779 "data/maps/Route2/scripts.pory"
+	closemessage
+# 780 "data/maps/Route2/scripts.pory"
+	additem ITEM_OUTFIT_BOX
+	end
+
+
 Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_0:
 # 82 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}Ouch!\p"
@@ -1533,6 +1543,10 @@ Route2_Eventscript_Himari_Text_6:
 # 767 "data/maps/Route2/scripts.pory"
 	.string "Whoa! You have a Rockruff! It's so\n"
 	.string "cute!$"
+
+GiveOutfitbox_Text_0:
+# 778 "data/maps/Route2/scripts.pory"
+	.string "Got Outfit Box$"
 
 SusMenFightIntro::
 # 168 "data/maps/Route2/scripts.pory"

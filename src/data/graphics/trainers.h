@@ -463,9 +463,12 @@ static const union AnimCmd *const sBackAnims_Kanto[] =
 };
 
 #define TRAINER_BACK_SPRITE(trainerPic, yOffset, sprite, pal, anim)                          \
+#define TRAINER_BACK_SPRITE(trainerPic, yOffset, sprite, pal, anim)                          \
     [trainerPic] =                                                                           \
     {                                                                                        \
         .coordinates = {.size = 8, .y_offset = yOffset},                                     \
+        .backPic = {.data = sprite, .size = TRAINER_PIC_SIZE, .relativeFrames = TRUE},       \
+        .palette = {.data = pal, .tag = trainerPic},                                         \
         .backPic = {.data = sprite, .size = TRAINER_PIC_SIZE, .relativeFrames = TRUE},       \
         .palette = {.data = pal, .tag = trainerPic},                                         \
         .animation = anim,                                                                   \

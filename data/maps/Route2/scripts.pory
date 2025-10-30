@@ -773,3 +773,10 @@ script Route2_Eventscript_Himari {
 movement emotecry {
     emote_cry
 }
+
+script GiveOutfitbox {
+    msgbox(format("Got Outfit Box"))
+    closemessage
+    additem(ITEM_OUTFIT_BOX)
+    end
+}

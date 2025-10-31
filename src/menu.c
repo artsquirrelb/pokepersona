@@ -5,6 +5,7 @@
 #include "decompress.h"
 #include "dma3.h"
 #include "event_data.h"
+#include "field_name_box.h"
 #include "field_weather.h"
 #include "graphics.h"
 #include "main.h"
@@ -140,6 +141,7 @@ static const struct MenuInfoIcon sMenuInfoIcons[] =
 
 void InitStandardTextBoxWindows(void)
 {
+    ResetNameboxData();
     InitWindows(sStandardTextBox_WindowTemplates);
     sStartMenuWindowId = WINDOW_NONE;
     sMapNamePopupWindowId = WINDOW_NONE;
@@ -190,13 +192,6 @@ u16 AddTextPrinterParameterized2(u8 windowId, u8 fontId, const u8 *str, u8 speed
 }
 
 void AddTextPrinterForMessage(bool8 allowSkippingDelayWithButtonPress)
-{
-    void (*callback)(struct TextPrinterTemplate *, u16) = NULL;
-    gTextFlags.canABSpeedUpPrint = allowSkippingDelayWithButtonPress;
-    AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, GetPlayerTextSpeedDelay(), callback, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
-}
-
-void AddTextPrinterForMessage_2(bool8 allowSkippingDelayWithButtonPress)
 {
     gTextFlags.canABSpeedUpPrint = allowSkippingDelayWithButtonPress;
     AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, GetPlayerTextSpeedDelay(), NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
@@ -413,8 +408,6 @@ void ClearStdWindowAndFrame(u8 windowId, bool8 copyToVram)
 
 static void WindowFunc_DrawStandardFrame(u8 bg, u8 tilemapLeft, u8 tilemapTop, u8 width, u8 height, u8 paletteNum)
 {
-    int i;
-
     FillBgTilemapBufferRect(bg,
                             STD_WINDOW_BASE_TILE_NUM + 0,
                             tilemapLeft - 1,

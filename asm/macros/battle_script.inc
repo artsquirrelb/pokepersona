@@ -936,7 +936,7 @@
 	.4byte \failInstr
 	.endm
 
-	.macro trysetdestinybondtohappen
+	.macro unused_0xab
 	.byte 0xab
 	.endm
 
@@ -1340,7 +1340,7 @@
 	.byte \trigger
 	.endm
 
-	.macro tryworryseed failInstr:req
+	.macro tryoverwriteability failInstr:req
 	.byte 0xfe
 	.4byte \failInstr
 	.endm
@@ -1615,14 +1615,6 @@
 	.macro tryupperhand failInstr:req
 	callnative BS_TryUpperHand
 	.4byte \failInstr
-	.endm
-
-	.macro tryupdaterecoiltracker
-	callnative BS_TryUpdateRecoilTracker
-	.endm
-
-	.macro tryupdateleaderscresttracker
-	callnative BS_TryUpdateLeadersCrestTracker
 	.endm
 
 	.macro trytidyup clear:req, jumpInstr:req
@@ -2161,11 +2153,6 @@
 	.4byte \failInstr
 	.endm
 
-	.macro setsimplebeam failInstr:req
-	callnative BS_SetSimpleBeam
-	.4byte \failInstr
-	.endm
-
 	.macro tryentrainment failInstr:req
 	callnative BS_TryEntrainment
 	.4byte \failInstr
@@ -2368,8 +2355,8 @@
 	.4byte \jumpInstr
 	.endm
 
-	.macro jumpifleafguardprotected battler:req, jumpInstr:req
-	callnative BS_JumpIfLeafGuardProtected
+	.macro jumpifabilitypreventsrest battler:req, jumpInstr:req
+	callnative BS_JumpIfAbilityPreventsRest
 	.byte \battler
 	.4byte \jumpInstr
 	.endm

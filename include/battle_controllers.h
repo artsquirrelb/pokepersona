@@ -203,7 +203,7 @@ struct ChooseMoveStruct
     u8 currentPp[MAX_MON_MOVES];
     u8 maxPp[MAX_MON_MOVES];
     u16 species;
-    u8 monTypes[3];
+    enum Type monTypes[3];
     struct ZMoveData zmove;
 };
 
@@ -398,6 +398,10 @@ void HandleChooseMoveAfterDma3(u32 battler);
 // recorded player controller
 void SetControllerToRecordedPlayer(u32 battler);
 void RecordedPlayerBufferExecCompleted(u32 battler);
+
+// recorded partner controller
+void SetControllerToRecordedPartner(u32 battler);
+void RecordedPartnerBufferExecCompleted(u32 battler);
 
 // opponent controller
 void SetControllerToOpponent(u32 battler);

@@ -167,25 +167,21 @@ void ClearContinueGameWarpStatus2(void)
 }
 
 void SavePlayerParty(void)
-{
+{   
     int i;
     *GetSavedPlayerPartyCount() = gPlayerPartyCount;
-
     for (i = 0; i < PARTY_SIZE; i++)
-        SavePlayerPartyMon(i, &gPlayerParty[i]);
+    SavePlayerPartyMon(i, &gPlayerParty[i]);
 }
 
 void LoadPlayerParty(void)
 {
     int i;
-
     gPlayerPartyCount = *GetSavedPlayerPartyCount();
-
     for (i = 0; i < PARTY_SIZE; i++)
     {
         u32 data;
         gPlayerParty[i] = *GetSavedPlayerPartyMon(i);
-
         // TODO: Turn this into a save migration once those are available.
         // At which point we can remove hp and status from Pokemon entirely.
         data = gPlayerParty[i].maxHP - gPlayerParty[i].hp;

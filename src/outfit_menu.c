@@ -14,6 +14,7 @@
 #include "field_weather.h"
 #include "graphics.h"
 #include "list_menu.h"
+#include "load_save.h"
 #include "menu.h"
 #include "menu_helpers.h"
 #include "outfit_menu.h"
@@ -864,8 +865,10 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
             if (GetOutfitStatus(sOutfitMenu->idx))
             {
                 PlaySE(SE_SUCCESS);
+                SavePlayerParty();
                 gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
                 SwitchPlayerGenderAccordingToChosenOutfit();
+                LoadPlayerParty();
             }
             else
             {

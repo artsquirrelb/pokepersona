@@ -49,10 +49,10 @@ enum
     MENUITEM_BATTLE_BATTLESCENE,
     MENUITEM_BATTLE_BATTLESTYLE,
     MENUITEM_BATTLE_BATTLESPEED,
-    MENUITEM_BATTLE_BAGUSE,
+    //MENUITEM_BATTLE_BAGUSE,
     MENUITEM_BATTLE_QUICKRUN,
-    MENUITEM_BATTLE_DOUBLEBATTLE,
-    MENUITEM_BATTLE_MOVEINFO,
+    //MENUITEM_BATTLE_DOUBLEBATTLE,
+    //MENUITEM_BATTLE_MOVEINFO,
     MENUITEM_BATTLE_CANCEL,
     MENUITEM_BATTLE_COUNT,
 };
@@ -181,7 +181,7 @@ static int ThreeOptions_ProcessInput(int selection);
 static int FourOptions_ProcessInput(int selection);
 static int UNUSED ElevenOptions_ProcessInput(int selection);
 static int Sound_ProcessInput(int selection);
-static int FrameType_ProcessInput(int selection);
+//static int FrameType_ProcessInput(int selection);
 static const u8 *const OptionTextDescription(void);
 static const u8 *const OptionTextRight(u8 menuItem);
 static u8 MenuItemCount(void);
@@ -199,10 +199,10 @@ static void AutoRun_DrawChoices(int selection, int y);
 static void BattleScene_DrawChoices(int selection, int y);
 static void BattleStyle_DrawChoices(int selection, int y);
 static void BattleSpeed_DrawChoices(int selection, int y);
-static void BagUse_DrawChoices(int selection, int y);
+//static void BagUse_DrawChoices(int selection, int y);
 static void QuickRun_DrawChoices(int selection, int y);
-static void DoubleBattle_DrawChoices(int selection, int y);
-static void MoveInfo_DrawChoices(int selection, int y);
+//static void DoubleBattle_DrawChoices(int selection, int y);
+//static void MoveInfo_DrawChoices(int selection, int y);
 static void SoundMode_DrawChoices(int selection, int y);
 static void BikeMusic_DrawChoices(int selection, int y);
 static void SurfMusic_DrawChoices(int selection, int y);
@@ -264,10 +264,10 @@ static const MenuItemFunctions sItemFunctionsBattle[MENUITEM_BATTLE_COUNT] =
     [MENUITEM_BATTLE_BATTLESCENE]  = {BattleScene_DrawChoices,    TwoOptions_ProcessInput},
     [MENUITEM_BATTLE_BATTLESTYLE]  = {BattleStyle_DrawChoices,    TwoOptions_ProcessInput},
     [MENUITEM_BATTLE_BATTLESPEED]  = {BattleSpeed_DrawChoices,    FourOptions_ProcessInput},
-    [MENUITEM_BATTLE_BAGUSE]       = {BagUse_DrawChoices,         TwoOptions_ProcessInput},
+    //[MENUITEM_BATTLE_BAGUSE]       = {BagUse_DrawChoices,         TwoOptions_ProcessInput},
     [MENUITEM_BATTLE_QUICKRUN]     = {QuickRun_DrawChoices,       ThreeOptions_ProcessInput},
-    [MENUITEM_BATTLE_DOUBLEBATTLE] = {DoubleBattle_DrawChoices,   TwoOptions_ProcessInput},
-    [MENUITEM_BATTLE_MOVEINFO]     = {MoveInfo_DrawChoices,       TwoOptions_ProcessInput},
+    //[MENUITEM_BATTLE_DOUBLEBATTLE] = {DoubleBattle_DrawChoices,   TwoOptions_ProcessInput},
+    //[MENUITEM_BATTLE_MOVEINFO]     = {MoveInfo_DrawChoices,       TwoOptions_ProcessInput},
     [MENUITEM_BATTLE_CANCEL]       = {NULL, NULL},
 };
 
@@ -295,10 +295,10 @@ static const u8 *const sOptionMenuItemsNamesBattle[MENUITEM_BATTLE_COUNT] =
     [MENUITEM_BATTLE_BATTLESCENE]   = gText_BattleScene,
     [MENUITEM_BATTLE_BATTLESTYLE]   = gText_BattleStyle,
     [MENUITEM_BATTLE_BATTLESPEED]   = gText_BattleSpeed,
-    [MENUITEM_BATTLE_BAGUSE]        = gText_BagUse,
+    //[MENUITEM_BATTLE_BAGUSE]        = gText_BagUse,
     [MENUITEM_BATTLE_QUICKRUN]      = gText_QuickRun,
-    [MENUITEM_BATTLE_DOUBLEBATTLE]  = gText_DoubleBattles,
-    [MENUITEM_BATTLE_MOVEINFO]      = gText_MoveInfo,
+    //[MENUITEM_BATTLE_DOUBLEBATTLE]  = gText_DoubleBattles,
+    //[MENUITEM_BATTLE_MOVEINFO]      = gText_MoveInfo,
     [MENUITEM_BATTLE_CANCEL]        = gText_OptionMenuSave,
 };
 
@@ -349,10 +349,10 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_BATTLE_BATTLESCENE:
         case MENUITEM_BATTLE_BATTLESTYLE:
         case MENUITEM_BATTLE_BATTLESPEED:
-        case MENUITEM_BATTLE_BAGUSE:
+        //case MENUITEM_BATTLE_BAGUSE:
         case MENUITEM_BATTLE_QUICKRUN:
-        case MENUITEM_BATTLE_DOUBLEBATTLE:
-        case MENUITEM_BATTLE_MOVEINFO:
+        //case MENUITEM_BATTLE_DOUBLEBATTLE:
+        //case MENUITEM_BATTLE_MOVEINFO:
         case MENUITEM_BATTLE_CANCEL:
         case MENUITEM_BATTLE_COUNT:
             return TRUE;
@@ -1422,7 +1422,7 @@ static void BattleSpeed_DrawChoices(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSpeed4x, 202 - width4x, y, styles[3], active);
 }
 
-static void BagUse_DrawChoices(int selection, int y)
+/*static void BagUse_DrawChoices(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_BATTLE_BAGUSE);
     u8 styles[2] = {0};
@@ -1430,7 +1430,7 @@ static void BagUse_DrawChoices(int selection, int y)
 
     DrawOptionMenuChoice(gText_BattleSceneOn, 108, y, styles[0], active);
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleSceneOff, 202), y, styles[1], active);
-}
+}*/
 
 static void QuickRun_DrawChoices(int selection, int y)
 {
@@ -1444,7 +1444,7 @@ static void QuickRun_DrawChoices(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 202), y, styles[2], active);
 }
 
-static void DoubleBattle_DrawChoices(int selection, int y)
+/*static void DoubleBattle_DrawChoices(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_BATTLE_DOUBLEBATTLE);
     u8 styles[2] = {0};
@@ -1462,7 +1462,7 @@ static void MoveInfo_DrawChoices(int selection, int y)
 
     DrawOptionMenuChoice(gText_BattleSceneOn, 108, y, styles[0], active);
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleSceneOff, 202), y, styles[1], active);
-}
+}*/
 
 static void SoundMode_DrawChoices(int selection, int y)
 {

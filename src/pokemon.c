@@ -7250,17 +7250,26 @@ enum Type GetTeraTypeFromPersonality(struct Pokemon *mon)
 
 struct Pokemon *GetSavedPlayerPartyMon(u32 index)
 {
-    return &gSaveBlock1Ptr->playerParty[index];
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return &gSaveBlock1Ptr->playerParty[index];
+    else
+        return &gSaveBlock1Ptr->player2Party[index];
 }
 
 u8 *GetSavedPlayerPartyCount(void)
 {
-    return &gSaveBlock1Ptr->playerPartyCount;
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return &gSaveBlock1Ptr->playerPartyCount;
+    else
+        return &gSaveBlock1Ptr->player2PartyCount;
 }
 
 void SavePlayerPartyMon(u32 index, struct Pokemon *mon)
 {
-    gSaveBlock1Ptr->playerParty[index] = *mon;
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        gSaveBlock1Ptr->playerParty[index] = *mon;
+    else
+        gSaveBlock1Ptr->player2Party[index] = *mon;
 }
 
 bool32 IsSpeciesOfType(u32 species, enum Type type)

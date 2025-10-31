@@ -108,7 +108,7 @@ static void InitPlayerTrainer2Id(void)
 // L=A isnt set here for some reason.
 static void SetDefaultOptions(void)
 {
-    gSaveBlock2Ptr->optionsInstantTextOff = TRUE;
+    gSaveBlock2Ptr->optionsInstantTextOff = 1;
     gSaveBlock2Ptr->optionsButtonMode = OPTIONS_BUTTON_MODE_LR;
     gSaveBlock2Ptr->optionsAutoRunOff = FALSE;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;

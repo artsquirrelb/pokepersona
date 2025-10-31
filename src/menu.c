@@ -2168,10 +2168,18 @@ u16 AddTextPrinterParameterized6(u8 windowId, u8 fontId, const u8 *str, u8 x, u8
 void PrintPlayerNameOnWindow(u8 windowId, const u8 *src, u16 x, u16 y)
 {
     int count = 0;
-    while (gSaveBlock2Ptr->playerName[count] != EOS)
-        count++;
+    if (gSaveBlock2Ptr->playerGender == MALE){
+        while (gSaveBlock2Ptr->playerName[count] != EOS)
+            count++;
 
-    StringExpandPlaceholders(gStringVar4, src);
+        StringExpandPlaceholders(gStringVar4, src);
+    }
+    else
+    {   while (gSaveBlock2Ptr->player2Name[count] != EOS)
+            count++;
+
+        StringExpandPlaceholders(gStringVar4, src);
+    }
 
     AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, x, y, TEXT_SKIP_DRAW, 0);
     //AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, x, y, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
@@ -2305,7 +2313,10 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
     switch (textId)
     {
         case SAVE_MENU_NAME:
-            StringCopy(string, gSaveBlock2Ptr->playerName);
+            if (gSaveBlock2Ptr->playerGender == MALE)
+                StringCopy(string, gSaveBlock2Ptr->playerName);
+            else
+                StringCopy(string, gSaveBlock2Ptr->player2Name);
             break;
         case SAVE_MENU_CAUGHT:
             if (IsNationalPokedexEnabled())

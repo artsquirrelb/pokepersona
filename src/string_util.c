@@ -449,8 +449,11 @@ static const u8 *ExpandPlaceholder_UnknownStringVar(void)
 }
 
 static const u8 *ExpandPlaceholder_PlayerName(void)
-{
-    return gSaveBlock2Ptr->playerName;
+{   
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gSaveBlock2Ptr->playerName;
+    else
+        return gSaveBlock2Ptr->player2Name;
 }
 
 static const u8 *ExpandPlaceholder_StringVar1(void)

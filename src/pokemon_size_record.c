@@ -161,7 +161,10 @@ static void GetMonSizeRecordInfo(u16 species, u16 *sizeRecord)
     if (*sizeRecord == DEFAULT_MAX_SIZE)
         StringCopy(gStringVar2, gText_Marco);
     else
-        StringCopy(gStringVar2, gSaveBlock2Ptr->playerName);
+        if (gSaveBlock2Ptr->playerGender == MALE)    
+            StringCopy(gStringVar2, gSaveBlock2Ptr->playerName);
+        else
+            StringCopy(gStringVar2, gSaveBlock2Ptr->player2Name);
 }
 
 void InitSeedotSizeRecord(void)

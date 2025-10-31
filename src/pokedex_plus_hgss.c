@@ -7566,7 +7566,10 @@ static void Task_LoadSizeScreen(u8 taskId)
         u8 string[64];
 
         StringCopy(string, gText_SizeComparedTo);
-        StringAppend(string, gSaveBlock2Ptr->playerName);
+        if (gSaveBlock2Ptr->playerGender == MALE)
+            StringAppend(string, gSaveBlock2Ptr->playerName);
+        else
+            StringAppend(string, gSaveBlock2Ptr->player2Name);
         PrintInfoScreenText(string, GetStringCenterAlignXOffset(FONT_NORMAL, string, 0xF0), 0x79);
         gMain.state++;
         break;

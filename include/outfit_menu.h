@@ -15,5 +15,6 @@ u16 LockOutfit(u16 id);
 bool8 GetOutfitStatus(u16 id);
 bool8 IsPlayerWearingOutfit(u16 id);
 u32 GetOutfitPrice(u16 id);
+void SwitchPlayerGenderAccordingToChosenOutfit(void);
 
 #endif //! GUARD_OUTFIT_MENU_H

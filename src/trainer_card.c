@@ -721,8 +721,10 @@ static void SetPlayerCardData(struct TrainerCard *trainerCard, u8 cardType)
     trainerCard->hasPokedex = FlagGet(FLAG_SYS_POKEDEX_GET);
     trainerCard->caughtAllHoenn = HasAllHoennMons();
     trainerCard->caughtMonsCount = GetCaughtMonsCount();
-
-    trainerCard->trainerId = (gSaveBlock2Ptr->playerTrainerId[1] << 8) | gSaveBlock2Ptr->playerTrainerId[0];
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        trainerCard->trainerId = (gSaveBlock2Ptr->playerTrainerId[1] << 8) | gSaveBlock2Ptr->playerTrainerId[0];
+    else 
+        trainerCard->trainerId = (gSaveBlock2Ptr->player2TrainerId[1] << 8) | gSaveBlock2Ptr->player2TrainerId[0];
 
     trainerCard->linkBattleWins = GetCappedGameStat(GAME_STAT_LINK_BATTLE_WINS, 9999);
     trainerCard->linkBattleLosses = GetCappedGameStat(GAME_STAT_LINK_BATTLE_LOSSES, 9999);
@@ -734,7 +736,10 @@ static void SetPlayerCardData(struct TrainerCard *trainerCard, u8 cardType)
     for (i = 0; i < TRAINER_CARD_PROFILE_LENGTH; i++)
         trainerCard->easyChatProfile[i] = gSaveBlock1Ptr->easyChatProfile[i];
 
-    StringCopy(trainerCard->playerName, gSaveBlock2Ptr->playerName);
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        StringCopy(trainerCard->playerName, gSaveBlock2Ptr->playerName);
+    else
+        StringCopy(trainerCard->playerName, gSaveBlock2Ptr->player2Name);
 
     switch (cardType)
     {
@@ -1169,6 +1174,7 @@ static void BufferNameForCardBack(void)
 {
     StringCopy(sData->textPlayersCard, sData->trainerCard.playerName);
     ConvertInternationalString(sData->textPlayersCard, sData->language);
+    
     if (sData->cardType != CARD_TYPE_FRLG)
     {
         StringCopy(gStringVar1, sData->textPlayersCard);

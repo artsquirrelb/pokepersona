@@ -74,6 +74,7 @@ COMMON_DATA s8 gPcmDmaCounter = 0;
 COMMON_DATA void *gAgbMainLoop_sp = NULL;
 
 static EWRAM_DATA u16 sTrainerId = 0;
+static EWRAM_DATA u16 sTrainer2Id = 0;
 
 //EWRAM_DATA void (**gFlashTimerIntrFunc)(void) = NULL;
 
@@ -226,9 +227,26 @@ void SeedRngAndSetTrainerId(void)
     sTrainerId = Random();
 }
 
+void SeedRngAndSetTrainer2Id(void) // Mitsuru
+{
+    u32 val;
+
+    REG_TM1CNT_H = 0;
+    REG_TM2CNT_H = 0;
+    val = ((u32)REG_TM2CNT_L) << 16;
+    val |= REG_TM1CNT_L;
+    SeedRng(val);
+    sTrainer2Id = Random();
+}
+
 u16 GetGeneratedTrainerIdLower(void)
 {
     return sTrainerId;
+}
+
+u16 GetGeneratedTrainer2IdLower(void) // Mitsuru
+{
+    return sTrainer2Id;
 }
 
 void EnableVCountIntrAtLine150(void)

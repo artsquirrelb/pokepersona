@@ -865,6 +865,7 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
             {
                 PlaySE(SE_SUCCESS);
                 gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
+                SwitchPlayerGenderAccordingToChosenOutfit();
             }
             else
             {
@@ -1051,3 +1052,11 @@ void SetCurrentOutfitGfxIntoVar(struct ScriptContext *ctx)
 
     VarSet(varId, gfxId);
 }
+
+void SwitchPlayerGenderAccordingToChosenOutfit(void)
+    {
+        if (gSaveBlock2Ptr->currOutfitId == OUTFIT_AKIHIKO)
+        gSaveBlock2Ptr->playerGender = MALE;
+        if (gSaveBlock2Ptr->currOutfitId == OUTFIT_MITSURU)
+        gSaveBlock2Ptr->playerGender = FEMALE;
+    }

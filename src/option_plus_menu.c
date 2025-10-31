@@ -381,8 +381,8 @@ static const u8 sText_Desc_InstantTextOff[]     = _("Instant text is disabled.")
 //static const u8 sText_Desc_ButtonMode_LR[]      = _("On some screens the L and R buttons\nact as left and right.");
 //static const u8 sText_Desc_ButtonMode_LA[]      = _("The L button acts as another A\nbutton for one-handed play.");
 //static const u8 sText_Desc_FrameType[]          = _("Choose the frame surrounding the\nwindows.");
-static const u8 sText_Desc_MatchCallOn[]        = _("TRAINERs will be able to call you,\noffering rematches and info.");
-static const u8 sText_Desc_MatchCallOff[]       = _("You will not receive calls.\nSpecial events will still occur.");
+//static const u8 sText_Desc_MatchCallOn[]        = _("TRAINERs will be able to call you,\noffering rematches and info.");
+//static const u8 sText_Desc_MatchCallOff[]       = _("You will not receive calls.\nSpecial events will still occur.");
 static const u8 sText_Desc_FollowersOn[]        = _("Your first party POKéMON will\nfollow you in the overworld.");
 static const u8 sText_Desc_FollowersOff[]       = _("Following POKéMON will be disabled.\nYour POKéMON will not follow you.");
 static const u8 sText_Desc_AutoRunOn[]          = _("Enables auto running in the overworld.\nPress {B_BUTTON} to walk.");
@@ -392,13 +392,13 @@ static const u8 sText_Desc_BattleScene_On[]     = _("Show the POKéMON battle an
 static const u8 sText_Desc_BattleScene_Off[]    = _("Skip the POKéMON battle animations.");
 static const u8 sText_Desc_BattleStyle_Shift[]  = _("Get the option to switch your\nPOKéMON after the enemies faints.");
 static const u8 sText_Desc_BattleStyle_Set[]    = _("No free switch after fainting the\nenemies POKéMON.");
-static const u8 sText_Desc_BagUse_On[]          = _("Enables the use of items from the\nbag.");
-static const u8 sText_Desc_BagUse_Off[]         = _("Disables the use of items from the\nbag.");
+//static const u8 sText_Desc_BagUse_On[]          = _("Enables the use of items from the\nbag.");
+//static const u8 sText_Desc_BagUse_Off[]         = _("Disables the use of items from the\nbag.");
 static const u8 sText_Desc_QuickRunOptionR[]    = _("Run from wild battles by pressing\nthe {R_BUTTON} button.");
 static const u8 sText_Desc_QuickRunOptionBA[]   = _("Move the cursor to RUN by pressing\nthe {B_BUTTON} button.");
 static const u8 sText_Desc_QuickRunOptionOff[]  = _("Disables quick running from wild\nbattles.");
-static const u8 sText_Desc_DoubleBattles_On[]   = _("All Trainer battles will be double\nbattles.");
-static const u8 sText_Desc_DoubleBattles_Off[]  = _("All Trainer battles will be single\nbattles, unless forced.");
+//static const u8 sText_Desc_DoubleBattles_On[]   = _("All Trainer battles will be double\nbattles.");
+//static const u8 sText_Desc_DoubleBattles_Off[]  = _("All Trainer battles will be single\nbattles, unless forced.");
 static const u8 sText_Desc_MoveInfo_On[]        = _("Shows a window with information of\nmoves.");
 static const u8 sText_Desc_MoveInfo_Off[]       = _("Disables move information window.");
 static const u8 sText_Desc_BattleSpeed_1x[]     = _("Battle animations will play at default\nspeed.");
@@ -429,10 +429,10 @@ static const u8 *const sOptionMenuItemDescriptionsBattle[MENUITEM_BATTLE_COUNT][
     [MENUITEM_BATTLE_BATTLESCENE]  = {sText_Desc_BattleScene_On,       sText_Desc_BattleScene_Off,       sText_Empty,                    sText_Empty},
     [MENUITEM_BATTLE_BATTLESTYLE]  = {sText_Desc_BattleStyle_Shift,    sText_Desc_BattleStyle_Set,       sText_Empty,                    sText_Empty},
     [MENUITEM_BATTLE_BATTLESPEED]  = {sText_Desc_BattleSpeed_1x,       sText_Desc_BattleSpeed_2x,        sText_Desc_BattleSpeed_3x,      sText_Desc_BattleSpeed_4x},
-    [MENUITEM_BATTLE_BAGUSE]       = {sText_Desc_BagUse_On,            sText_Desc_BagUse_Off,            sText_Empty,                    sText_Empty},
+    //[MENUITEM_BATTLE_BAGUSE]       = {sText_Desc_BagUse_On,            sText_Desc_BagUse_Off,            sText_Empty,                    sText_Empty},
     [MENUITEM_BATTLE_QUICKRUN]     = {sText_Desc_QuickRunOptionR,      sText_Desc_QuickRunOptionBA,      sText_Desc_QuickRunOptionOff,   sText_Empty},
-    [MENUITEM_BATTLE_DOUBLEBATTLE] = {sText_Desc_DoubleBattles_On,    sText_Desc_DoubleBattles_Off,     sText_Empty,                    sText_Empty},
-    [MENUITEM_BATTLE_MOVEINFO]     = {sText_Desc_MoveInfo_On,          sText_Desc_MoveInfo_Off,          sText_Empty,                    sText_Empty},
+    //[MENUITEM_BATTLE_DOUBLEBATTLE] = {sText_Desc_DoubleBattles_On,    sText_Desc_DoubleBattles_Off,     sText_Empty,                    sText_Empty},
+    //[MENUITEM_BATTLE_MOVEINFO]     = {sText_Desc_MoveInfo_On,          sText_Desc_MoveInfo_Off,          sText_Empty,                    sText_Empty},
     [MENUITEM_BATTLE_CANCEL]       = {sText_Desc_Save,                 sText_Empty,                      sText_Empty,                    sText_Empty},
 };
 
@@ -464,10 +464,10 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledBattle[MENUITEM_BATTLE
     [MENUITEM_BATTLE_BATTLESCENE] = sText_Empty,
     [MENUITEM_BATTLE_BATTLESTYLE] = sText_Empty,
     [MENUITEM_BATTLE_BATTLESPEED] = sText_Empty,
-    [MENUITEM_BATTLE_BAGUSE]      = sText_Empty,
+    //[MENUITEM_BATTLE_BAGUSE]      = sText_Empty,
     [MENUITEM_BATTLE_QUICKRUN]    = sText_Empty,
-    [MENUITEM_BATTLE_DOUBLEBATTLE]  = sText_Empty,
-    [MENUITEM_BATTLE_MOVEINFO]    = sText_Empty,
+    //[MENUITEM_BATTLE_DOUBLEBATTLE]  = sText_Empty,
+    //[MENUITEM_BATTLE_MOVEINFO]    = sText_Empty,
     [MENUITEM_BATTLE_CANCEL]      = sText_Empty,
 };
 

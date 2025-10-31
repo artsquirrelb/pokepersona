@@ -93,14 +93,23 @@ void CopyTrainerId(u8 *dst, u8 *src)
 
 static void InitPlayerTrainerId(void)
 {
-    u32 trainerId = (Random() << 16) | GetGeneratedTrainerIdLower();
+    //u32 trainerId = (Random() << 16) | GetGeneratedTrainerIdLower();
+    u32 trainerId = Random32();
     SetTrainerId(trainerId, gSaveBlock2Ptr->playerTrainerId);
+}
+
+static void InitPlayerTrainer2Id(void)
+{
+    //u32 trainer2Id = (Random() << 16) | GetGeneratedTrainer2IdLower();
+    u32 trainer2Id = Random32();
+    SetTrainerId(trainer2Id, gSaveBlock2Ptr->player2TrainerId);
 }
 
 // L=A isnt set here for some reason.
 static void SetDefaultOptions(void)
 {
     gSaveBlock2Ptr->optionsInstantTextOff = TRUE;
+    gSaveBlock2Ptr->optionsButtonMode = OPTIONS_BUTTON_MODE_LR;
     gSaveBlock2Ptr->optionsAutoRunOff = FALSE;
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_SHIFT;
@@ -208,6 +217,7 @@ void NewGameInitData(void)
     gSaveBlock2Ptr->specialSaveWarpFlags = 0;
     gSaveBlock2Ptr->gcnLinkFlags = 0;
     InitPlayerTrainerId();
+    InitPlayerTrainer2Id();
     PlayTimeCounter_Reset();
     ClearPokedexFlags();
     InitEventData();

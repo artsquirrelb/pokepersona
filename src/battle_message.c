@@ -2497,7 +2497,10 @@ static const u8 *BattleStringGetPlayerName(u8 *text, u8 battler)
         if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
             toCpy = gLinkPlayers[0].name;
         else
+            if (gSaveBlock2Ptr->playerGender == MALE)
             toCpy = gSaveBlock2Ptr->playerName;
+            else
+            toCpy = gSaveBlock2Ptr->player2Name;
         break;
     case B_POSITION_PLAYER_RIGHT:
         if (((gBattleTypeFlags & BATTLE_TYPE_RECORDED) && !(gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER)))
@@ -2516,7 +2519,10 @@ static const u8 *BattleStringGetPlayerName(u8 *text, u8 battler)
         }
         else
         {
-            toCpy = gSaveBlock2Ptr->playerName;
+            if (gSaveBlock2Ptr->playerGender == MALE)
+                toCpy = gSaveBlock2Ptr->playerName;
+            else
+                toCpy = gSaveBlock2Ptr->player2Name;
         }
         break;
     }

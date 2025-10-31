@@ -408,6 +408,7 @@ void ClearStdWindowAndFrame(u8 windowId, bool8 copyToVram)
 
 static void WindowFunc_DrawStandardFrame(u8 bg, u8 tilemapLeft, u8 tilemapTop, u8 width, u8 height, u8 paletteNum)
 {
+    int i;
     FillBgTilemapBufferRect(bg,
                             STD_WINDOW_BASE_TILE_NUM + 0,
                             tilemapLeft - 1,

@@ -940,3 +940,14 @@ const struct Tileset gTileset_HiddenGrotto =
     .metatileAttributes = gMetatileAttributes_HiddenGrotto,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_MansionGarden =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MansionGarden,
+    .palettes = gTilesetPalettes_MansionGarden,
+    .metatiles = gMetatiles_MansionGarden,
+    .metatileAttributes = gMetatileAttributes_MansionGarden,
+    .callback = InitTilesetAnim_MansionGarden,
+};

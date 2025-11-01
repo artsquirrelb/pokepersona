@@ -237,3 +237,6 @@ const u16 gMetatileAttributes_Gen4PC[] = INCBIN_U16("data/tilesets/secondary/gen
 
 const u16 gMetatiles_HiddenGrotto[] = INCBIN_U16("data/tilesets/secondary/hidden_grotto/metatiles.bin");
 const u16 gMetatileAttributes_HiddenGrotto[] = INCBIN_U16("data/tilesets/secondary/hidden_grotto/metatile_attributes.bin");
+
+const u16 gMetatiles_MansionGarden[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/metatiles.bin");
+const u16 gMetatileAttributes_MansionGarden[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/metatile_attributes.bin");

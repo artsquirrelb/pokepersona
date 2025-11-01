@@ -2936,7 +2936,7 @@ static u8 DisplaySelectionWindow(u8 windowType) //Summary/Switch/Item/Cancel men
 {
     struct WindowTemplate window;
     u8 cursorDimension;
-    u8 letterSpacing;
+    //u8 letterSpacing;
     u8 i;
 
     switch (windowType)
@@ -2966,12 +2966,12 @@ static u8 DisplaySelectionWindow(u8 windowType) //Summary/Switch/Item/Cancel men
     if (windowType == SELECTWINDOW_MOVES)
         return sPartyMenuInternal->windowId[0];
     cursorDimension = GetMenuCursorDimensionByFont(FONT_NORMAL, 0);
-    letterSpacing = GetFontAttribute(FONT_NORMAL, FONTATTR_LETTER_SPACING);
+    //letterSpacing = GetFontAttribute(FONT_NORMAL, FONTATTR_LETTER_SPACING);
 
     for (i = 0; i < sPartyMenuInternal->numActions; i++)
     {
         const u8 *text;
-        u8 fontColorsId = (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) ? 4 : 3;
+        //u8 fontColorsId = (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES) ? 4 : 3;
         if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
             text = GetMoveName(FieldMove_GetMoveId(sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES));
         else

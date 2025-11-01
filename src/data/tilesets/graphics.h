@@ -1824,3 +1824,22 @@ const u16 gTilesetPalettes_HiddenGrotto[][16] =
 };
 
 const u32 gTilesetTiles_HiddenGrotto[] = INCBIN_U32("data/tilesets/secondary/hidden_grotto/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_MansionGarden[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_garden/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_MansionGarden[] = INCBIN_U32("data/tilesets/secondary/mansion_garden/tiles.4bpp.lz");

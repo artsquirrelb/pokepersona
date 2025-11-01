@@ -45,6 +45,7 @@ static void TilesetAnim_BikeShop(u16);
 static void TilesetAnim_BattlePyramid(u16);
 static void TilesetAnim_BattleDome(u16);
 static void TilesetAnim_SunshineOrphanageEntrance(u16);
+static void TilesetAnim_MansionGarden(u16);
 static void QueueAnimTiles_General_Flower(u16);
 static void QueueAnimTiles_General_Water(u16);
 static void QueueAnimTiles_General_SandWaterEdge(u16);
@@ -76,7 +77,14 @@ static void QueueAnimTiles_SootopolisGym_Waterfalls(u16);
 static void QueueAnimTiles_EliteFour_GroundLights(u16);
 static void QueueAnimTiles_EliteFour_WallLights(u16);
 static void QueueAnimTiles_Gen4General_RedFlower(u16);
+static void QueueAnimTiles_Gen4General_BlueFlower(u16);
+static void QueueAnimTiles_Gen4General_WhiteFlower(u16);
+static void QueueAnimTiles_Gen4General_YellowFlower(u16);
 static void QueueAnimTiles_SunshineOrphanageEntrance_Fire(u16);
+static void QueueAnimTiles_MansionGarden_BlueFlower(u16);
+static void QueueAnimTiles_MansionGarden_YellowFlower(u16);
+static void QueueAnimTiles_MansionGarden_Fountain(u16);
+
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
@@ -177,6 +185,42 @@ const u16 *const gTilesetAnim_Gen4General_RedFlower[] = {
     gTilesetAnim_Gen4General_RedFlower_Frame3,
 };
 
+const u16 gTilesetAnim_Gen4General_WhiteFlower_Frame0[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/whiteflower/0.4bpp");
+const u16 gTilesetAnim_Gen4General_WhiteFlower_Frame1[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/whiteflower/1.4bpp");
+const u16 gTilesetAnim_Gen4General_WhiteFlower_Frame2[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/whiteflower/2.4bpp");
+const u16 gTilesetAnim_Gen4General_WhiteFlower_Frame3[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/whiteflower/3.4bpp");
+
+const u16 *const gTilesetAnim_Gen4General_WhiteFlower[] = {
+    gTilesetAnim_Gen4General_WhiteFlower_Frame0,
+    gTilesetAnim_Gen4General_WhiteFlower_Frame1,
+    gTilesetAnim_Gen4General_WhiteFlower_Frame2,
+    gTilesetAnim_Gen4General_WhiteFlower_Frame3,
+};
+
+const u16 gTilesetAnim_Gen4General_BlueFlower_Frame0[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/blueflower/0.4bpp");
+const u16 gTilesetAnim_Gen4General_BlueFlower_Frame1[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/blueflower/1.4bpp");
+const u16 gTilesetAnim_Gen4General_BlueFlower_Frame2[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/blueflower/2.4bpp");
+const u16 gTilesetAnim_Gen4General_BlueFlower_Frame3[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/blueflower/3.4bpp");
+
+const u16 *const gTilesetAnim_Gen4General_BlueFlower[] = {
+    gTilesetAnim_Gen4General_BlueFlower_Frame0,
+    gTilesetAnim_Gen4General_BlueFlower_Frame1,
+    gTilesetAnim_Gen4General_BlueFlower_Frame2,
+    gTilesetAnim_Gen4General_BlueFlower_Frame3,
+};
+
+const u16 gTilesetAnim_Gen4General_YellowFlower_Frame0[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/yellowflower/0.4bpp");
+const u16 gTilesetAnim_Gen4General_YellowFlower_Frame1[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/yellowflower/1.4bpp");
+const u16 gTilesetAnim_Gen4General_YellowFlower_Frame2[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/yellowflower/2.4bpp");
+const u16 gTilesetAnim_Gen4General_YellowFlower_Frame3[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/yellowflower/3.4bpp");
+
+const u16 *const gTilesetAnim_Gen4General_YellowFlower[] = {
+    gTilesetAnim_Gen4General_YellowFlower_Frame0,
+    gTilesetAnim_Gen4General_YellowFlower_Frame1,
+    gTilesetAnim_Gen4General_YellowFlower_Frame2,
+    gTilesetAnim_Gen4General_YellowFlower_Frame3,
+};
+
 const u16 gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame0[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/anim/fire/0.4bpp");
 const u16 gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame1[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/anim/fire/1.4bpp");
 const u16 gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame2[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/anim/fire/2.4bpp");
@@ -195,6 +239,41 @@ const u16 *const gTilesetAnim_SunshineOrphanageEntrance_Fire[] = {
     gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame6,
 };
 
+const u16 gTilesetAnim_MansionGarden_BlueFlower_Frame0[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/blueflower/0.4bpp");
+const u16 gTilesetAnim_MansionGarden_BlueFlower_Frame1[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/blueflower/1.4bpp");
+const u16 gTilesetAnim_MansionGarden_BlueFlower_Frame2[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/blueflower/2.4bpp");
+const u16 gTilesetAnim_MansionGarden_BlueFlower_Frame3[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/blueflower/3.4bpp");
+
+const u16 *const gTilesetAnim_MansionGarden_BlueFlower[] = {
+    gTilesetAnim_MansionGarden_BlueFlower_Frame0,
+    gTilesetAnim_MansionGarden_BlueFlower_Frame1,
+    gTilesetAnim_MansionGarden_BlueFlower_Frame2,
+    gTilesetAnim_MansionGarden_BlueFlower_Frame3,
+};
+
+const u16 gTilesetAnim_MansionGarden_YellowFlower_Frame0[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/yellowflower/0.4bpp");
+const u16 gTilesetAnim_MansionGarden_YellowFlower_Frame1[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/yellowflower/1.4bpp");
+const u16 gTilesetAnim_MansionGarden_YellowFlower_Frame2[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/yellowflower/2.4bpp");
+const u16 gTilesetAnim_MansionGarden_YellowFlower_Frame3[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/yellowflower/3.4bpp");
+
+const u16 *const gTilesetAnim_MansionGarden_YellowFlower[] = {
+    gTilesetAnim_MansionGarden_YellowFlower_Frame0,
+    gTilesetAnim_MansionGarden_YellowFlower_Frame1,
+    gTilesetAnim_MansionGarden_YellowFlower_Frame2,
+    gTilesetAnim_MansionGarden_YellowFlower_Frame3,
+};
+
+const u16 gTilesetAnim_MansionGarden_Fountain_Frame0[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/fountain/0.4bpp");
+const u16 gTilesetAnim_MansionGarden_Fountain_Frame1[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/fountain/1.4bpp");
+const u16 gTilesetAnim_MansionGarden_Fountain_Frame2[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/fountain/2.4bpp");
+const u16 gTilesetAnim_MansionGarden_Fountain_Frame3[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/anim/fountain/3.4bpp");
+
+const u16 *const gTilesetAnim_MansionGarden_Fountain[] = {
+    gTilesetAnim_MansionGarden_Fountain_Frame0,
+    gTilesetAnim_MansionGarden_Fountain_Frame1,
+    gTilesetAnim_MansionGarden_Fountain_Frame2,
+    gTilesetAnim_MansionGarden_Fountain_Frame3,
+};
 
 const u16 gTilesetAnims_Pacifidlog_LogBridges_Frame0[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/log_bridges/0.4bpp");
 const u16 gTilesetAnims_Pacifidlog_LogBridges_Frame1[] = INCBIN_U16("data/tilesets/secondary/pacifidlog/anim/log_bridges/1.4bpp");
@@ -689,6 +768,12 @@ static void TilesetAnim_Gen4General(u16 timer)
 {
     if (timer % 16 == 0)
         QueueAnimTiles_Gen4General_RedFlower(timer / 16);
+    if (timer % 16 == 1)
+        QueueAnimTiles_Gen4General_BlueFlower(timer / 16);
+    if (timer % 16 == 2)
+        QueueAnimTiles_Gen4General_YellowFlower(timer / 16);
+    if (timer % 16 == 3)
+        QueueAnimTiles_Gen4General_WhiteFlower(timer / 16);
 }
 
 static void TilesetAnim_Building(u16 timer)
@@ -709,10 +794,46 @@ static void QueueAnimTiles_Gen4General_RedFlower(u16 timer)
     AppendTilesetAnimToBuffer(gTilesetAnim_Gen4General_RedFlower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(70)), 4 * TILE_SIZE_4BPP);
 }
 
+static void QueueAnimTiles_Gen4General_BlueFlower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnim_Gen4General_BlueFlower);
+    AppendTilesetAnimToBuffer(gTilesetAnim_Gen4General_BlueFlower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(0x056)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Gen4General_WhiteFlower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnim_Gen4General_WhiteFlower);
+    AppendTilesetAnimToBuffer(gTilesetAnim_Gen4General_WhiteFlower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(0x056)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Gen4General_YellowFlower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnim_Gen4General_YellowFlower);
+    AppendTilesetAnimToBuffer(gTilesetAnim_Gen4General_YellowFlower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(0x056)), 4 * TILE_SIZE_4BPP);
+}
+
 static void QueueAnimTiles_SunshineOrphanageEntrance_Fire(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnim_SunshineOrphanageEntrance_Fire);
     AppendTilesetAnimToBuffer(gTilesetAnim_SunshineOrphanageEntrance_Fire[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(928)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_MansionGarden_BlueFlower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnim_MansionGarden_BlueFlower);
+    AppendTilesetAnimToBuffer(gTilesetAnim_MansionGarden_BlueFlower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(0x290)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_MansionGarden_YellowFlower(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnim_MansionGarden_YellowFlower);
+    AppendTilesetAnimToBuffer(gTilesetAnim_MansionGarden_YellowFlower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(0x290)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_MansionGarden_Fountain(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnim_MansionGarden_Fountain);
+    AppendTilesetAnimToBuffer(gTilesetAnim_MansionGarden_Fountain[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(0x230)), 32 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_General_Water(u16 timer)
@@ -905,6 +1026,23 @@ static void TilesetAnim_SunshineOrphanageEntrance(u16 timer)
 {
     if (timer % 16 == 0)
         QueueAnimTiles_SunshineOrphanageEntrance_Fire(timer / 16);
+}
+
+void InitTilesetAnim_MansionGarden(void) ////make sure to announce these InitTilesetAnim in include\tileset_anims.h
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_MansionGarden;
+}
+
+static void TilesetAnim_MansionGarden(u16 timer)
+{
+    if (timer % 4 == 0)
+        QueueAnimTiles_MansionGarden_BlueFlower(timer / 16);
+    if (timer % 4 == 1)
+        QueueAnimTiles_MansionGarden_YellowFlower(timer / 16);
+    if (timer % 4 == 2)
+        QueueAnimTiles_MansionGarden_Fountain(timer / 16);
 }
 
 static void TilesetAnim_Rustboro(u16 timer)

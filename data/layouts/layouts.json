@@ -5560,12 +5560,12 @@
     {
       "id": "LAYOUT_MANSIONS_GARDEN",
       "name": "MansionsGarden_Layout",
-      "width": 50,
-      "height": 36,
+      "width": 52,
+      "height": 40,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Gen4General",
-      "secondary_tileset": "gTileset_Gen4General2nd",
+      "secondary_tileset": "gTileset_MansionGarden",
       "border_filepath": "data/layouts/MansionsGarden/border.bin",
       "blockdata_filepath": "data/layouts/MansionsGarden/map.bin"
     },

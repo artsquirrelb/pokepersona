@@ -1040,7 +1040,7 @@ static u32 GetCurrentTotalMinutes(struct Time *time)
     return time->days * 24 * 60 + time->hours * 60 + time->minutes;
 }
 
-static bool32 UpdateMatchCallMinutesCounter(void)
+/*static bool32 UpdateMatchCallMinutesCounter(void)
 {
     int curMinutes;
     RtcCalcLocalTime();
@@ -1144,7 +1144,7 @@ static u32 GetActiveMatchCallTrainerId(u32 activeMatchCallId)
     }
 
     return REMATCH_TABLE_ENTRIES;
-}
+}*/
 
 /*
     From the function calls below, a call can only be triggered...

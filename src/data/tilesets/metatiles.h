@@ -240,3 +240,9 @@ const u16 gMetatileAttributes_HiddenGrotto[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_MansionGarden[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/metatiles.bin");
 const u16 gMetatileAttributes_MansionGarden[] = INCBIN_U16("data/tilesets/secondary/mansion_garden/metatile_attributes.bin");
+
+const u16 gMetatiles_MansionIndoor[] = INCBIN_U16("data/tilesets/primary/mansion_indoor/metatiles.bin");
+const u16 gMetatileAttributes_MansionIndoor[] = INCBIN_U16("data/tilesets/primary/mansion_indoor/metatile_attributes.bin");
+
+const u16 gMetatiles_MansionHall[] = INCBIN_U16("data/tilesets/secondary/mansion_hall/metatiles.bin");
+const u16 gMetatileAttributes_MansionHall[] = INCBIN_U16("data/tilesets/secondary/mansion_hall/metatile_attributes.bin");

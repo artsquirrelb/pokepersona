@@ -5580,6 +5580,30 @@
       "secondary_tileset": "gTileset_HiddenGrotto",
       "border_filepath": "data/layouts/Route1_HiddenGrotto/border.bin",
       "blockdata_filepath": "data/layouts/Route1_HiddenGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_KIRIJOSMANSION_MAINHALL",
+      "name": "KirijosMansionMainHall_Layout",
+      "width": 36,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_MansionIndoor",
+      "secondary_tileset": "gTileset_MansionHall",
+      "border_filepath": "data/layouts/KirijosMansionMainHall/border.bin",
+      "blockdata_filepath": "data/layouts/KirijosMansionMainHall/map.bin"
+    },
+    {
+      "id": "LAYOUT_MITSURUS_ROOM2F",
+      "name": "MitsurusRoom2F_Layout",
+      "width": 20,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_MansionIndoor",
+      "secondary_tileset": "gTileset_MansionHall",
+      "border_filepath": "data/layouts/MitsurusRoom2F/border.bin",
+      "blockdata_filepath": "data/layouts/MitsurusRoom2F/map.bin"
     }
   ]
 }

@@ -1556,8 +1556,8 @@ const struct BlendSettings gTimeOfDayBlend[] =
 {
     [TIME_MORNING] = {.coeff = 4,  .blendColor = 0xA8B0E0,   .isTint = TRUE},
     [TIME_DAY]     = {.coeff = 0,  .blendColor = 0,          .isTint = FALSE},
-    [TIME_EVENING] = {.coeff = 4,  .blendColor = 0xA8B0E0,   .isTint = TRUE},
-    [TIME_NIGHT]   = {.coeff = 10, .blendColor = TINT_NIGHT, .isTint = TRUE},
+    [TIME_EVENING] = {.coeff = 7,  .blendColor = 0xce4993,   .isTint = TRUE},
+    [TIME_NIGHT]   = {.coeff = 10, .blendColor = 0x434993,   .isTint = TRUE},
 };
 
 #define DEFAULT_WEIGHT 256

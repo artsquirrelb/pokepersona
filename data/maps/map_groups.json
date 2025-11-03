@@ -37,7 +37,8 @@
     "gMapGroup_IndoorSunshineOrphanage",
     "gMapGroup_IndoorSunshineTown",
     "gMapGroup_IndoorRoute2",
-    "gMapGroup_HiddenGrottos"
+    "gMapGroup_HiddenGrottos",
+    "gMapGroup_KirijoMansionIndoor"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -656,5 +657,9 @@
   ],
   "gMapGroup_HiddenGrottos": [
     "Route1_HiddenGrotto"
+  ],
+  "gMapGroup_KirijoMansionIndoor": [
+    "KirijosMansionMainHall",
+    "MitsurusRoom2F"
   ]
 }

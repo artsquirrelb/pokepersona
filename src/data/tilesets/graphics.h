@@ -1843,3 +1843,41 @@ const u16 gTilesetPalettes_MansionGarden[][16] =
 };
 
 const u32 gTilesetTiles_MansionGarden[] = INCBIN_U32("data/tilesets/secondary/mansion_garden/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_MansionIndoor[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/mansion_indoor/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_MansionIndoor[] = INCBIN_U32("data/tilesets/primary/mansion_indoor/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_MansionHall[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/mansion_hall/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_MansionHall[] = INCBIN_U32("data/tilesets/secondary/mansion_hall/tiles.4bpp.lz");

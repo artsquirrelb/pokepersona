@@ -1241,6 +1241,7 @@ SECTIONS {
         sound/songs/midi/ph_nurse_held.o(.rodata);
         sound/songs/midi/ph_nurse_solo.o(.rodata);
         sound/songs/midi/mus_sunshine_orphanage.o(.rodata);
+        sound/songs/midi/mus_kirijos_mansion.o(.rodata);
     } > ROM =0
 
     lib_rodata :

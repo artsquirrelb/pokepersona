@@ -241,6 +241,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shinjiro;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shinjiro_Fainted;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Akihiko_Fainted;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Miki;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Takeharu;
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -261,8 +262,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE] =       &gObjectEventGraphicsInfo_BrendanFieldMove,
     [OBJ_EVENT_GFX_SHINJIRO] =                 &gObjectEventGraphicsInfo_Shinjiro,
     [OBJ_EVENT_GFX_SHINJIRO_FAINTED] =         &gObjectEventGraphicsInfo_Shinjiro_Fainted,
-    [OBJ_EVENT_GFX_AKIHIKO_FAINTED] =         &gObjectEventGraphicsInfo_Akihiko_Fainted,
+    [OBJ_EVENT_GFX_AKIHIKO_FAINTED] =          &gObjectEventGraphicsInfo_Akihiko_Fainted,
     [OBJ_EVENT_GFX_MIKI] =                     &gObjectEventGraphicsInfo_Miki,
+    [OBJ_EVENT_GFX_TAKEHARU] =                 &gObjectEventGraphicsInfo_Takeharu,
     [OBJ_EVENT_GFX_QUINTY_PLUMP] =             &gObjectEventGraphicsInfo_QuintyPlump,
     [OBJ_EVENT_GFX_NINJA_BOY] =                &gObjectEventGraphicsInfo_NinjaBoy,
     [OBJ_EVENT_GFX_TWIN] =                     &gObjectEventGraphicsInfo_Twin,

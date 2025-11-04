@@ -4785,3 +4785,22 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Frozen = {
     .images = gObjectEventPicTable_Frozen,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Takeharu = { 
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_5,//black-red
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 704,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_5,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard_Asym,
+    .images = gObjectEventPicTable_Takeharu,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};

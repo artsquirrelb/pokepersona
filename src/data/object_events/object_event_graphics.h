@@ -44,8 +44,10 @@ const u32 gObjectEventPic_Shinjiro_Fainted[] = INCBIN_U32("graphics/object_event
 const u32 gObjectEventPic_Akihiko_Fainted[] = INCBIN_U32("graphics/object_events/pics/people/akihiko_fainted.4bpp");
 const u32 gObjectEventPic_Miki[] = INCBIN_U32("graphics/object_events/pics/people/miki.4bpp");
 const u16 gObjectEventPalette_Miki[] = INCBIN_U16("graphics/object_events/pics/people/miki.gbapal");
-const u16 gObjectEventPalette_Kurosawa[] = INCBIN_U16("graphics/object_events/pics/people/kurosawa.gbapal"); //he used mom's function name
+//const u16 gObjectEventPalette_Kurosawa[] = INCBIN_U16("graphics/object_events/pics/people/kurosawa.gbapal"); //he used mom's function name
 const u32 gObjectEventPic_Frozen[] = INCBIN_U32("graphics/object_events/pics/people/frozen.4bpp");
+const u32 gObjectEventPic_Takeharu[] = INCBIN_U32("graphics/object_events/pics/people/takeharu.4bpp");
+const u16 gObjectEventPal_Npc5[] = INCBIN_U16("graphics/object_events/palettes/npc_5.gbapal");
 
 
 const u16 gObjectEventPal_Null16[16] = {};

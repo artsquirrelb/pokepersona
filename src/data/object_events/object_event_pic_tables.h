@@ -1400,3 +1400,7 @@ const struct SpriteFrameImage gObjectEventPicTable_Miki[] = {
 const struct SpriteFrameImage gObjectEventPicTable_Frozen[] = {
     overworld_frame(gObjectEventPic_Frozen, 4, 4, 0),
 };
+
+static const struct SpriteFrameImage gObjectEventPicTable_Takeharu[] = {
+    overworld_ascending_frames(gObjectEventPic_Takeharu, 4, 4),
+};

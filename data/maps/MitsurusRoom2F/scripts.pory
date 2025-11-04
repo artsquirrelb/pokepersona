@@ -1,1 +1,248 @@
-mapscripts MitsurusRoom2F_MapScripts {}
+mapscripts MitsurusRoom2F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        if (var(VAR_MITSURUS_INTRO_STATE) >= 2){
+            setflag(FLAG_TEMP_1)
+        }
+    }
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_MITSURUS_INTRO_STATE, 0 : MitsurusRoom2F_Eventscript_OnWarp0
+    ]
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_MITSURUS_INTRO_STATE, 0: MitsurusRoom2F_Eventscript_OnFrame0
+    ]
+}
+
+script MitsurusRoom2F_Eventscript_OnWarp0 {
+    applymovement(LOCALID_PLAYER, faceleft)
+}
+
+script MitsurusRoom2F_Eventscript_OnFrame0 {
+    setvar(VAR_MITSURUS_INTRO_STATE, 1)
+    goto(MitsurusRoom2F_Eventscript_MitsuruPacking)
+}
+
+script MitsurusRoom2F_Eventscript_MitsuruPacking {
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(emote_pensive))
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I'll need this... and a spare pair of boots..."))
+    closemessage
+    setflag(FLAG_SYS_B_DASH)
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(walk_up *6, face_left))
+    delay(40)
+    applymovement(LOCALID_VULPIX, moves(face_left, face_up))
+    waitmovement(LOCALID_PLAYER)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}My Pokédex... Repels...\p
+    And the map to Thundershard Cliff."))
+    closemessage
+    setcaughtmon(SPECIES_VULPIX_DELTA)
+    setflag(FLAG_SYS_POKEMON_GET)
+    setflag(FLAG_SYS_POKEDEX_GET)
+    setflag(FLAG_SYS_NATIONAL_DEX)
+    special(EnableNationalPokedex)
+    applymovement(LOCALID_PLAYER, emotepensive)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}What else..."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, emoteexclamation)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Oh right."))
+    closemessage
+    applymovement(LOCALID_PLAYER, moves(walk_down *2, walk_left *3, walk_up))
+    delay(8)
+    applymovement(LOCALID_VULPIX, faceleft)
+    waitmovement(LOCALID_PLAYER)
+    delay(40)
+    giveitem(ITEM_CAMP_GEARS)
+    additem(ITEM_MACH_BIKE, 1)
+    additem(ITEM_EXP_ALL, 1)
+    additem(ITEM_ESCAPE_ROPE, 1)
+    additem(ITEM_POKE_BALL, 20)
+    additem(ITEM_POTION, 2)
+    additem(ITEM_REPEL, 5)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll definitely need this while outdoors.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hmm, I figure that should be everything."))
+    closemessage
+    delay(20)
+    applymovement(LOCALID_VULPIX, moves(walk_fast_left*4, jump_in_place_up))
+    waitmovement(0)
+    playmoncry(SPECIES_VULPIX, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(LOCALID_PLAYER, facedown)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I know, I know. I'll never leave you behind, Vulpix.\p
+    Let's get you inside the Pokéball now, shall we?"))
+    closemessage
+    playmoncry(SPECIES_VULPIX, CRY_MODE_NORMAL)
+    applymovement(LOCALID_VULPIX, emotemusic)
+    waitmovement(0)
+    waitmoncry
+    lock
+    setobjectnewmovementtype(LOCALID_VULPIX, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+    release
+    msgbox(Eventscript_StarterPokemonTips)
+    closemessage
+    end
+}
+
+script MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
+    lock
+    msgbox ("Hold out the Pokéball to Vulpix?", MSGBOX_YESNO)
+    closemessage
+    if(var(VAR_RESULT) == YES){
+        setvar(VAR_MITSURUS_INTRO_STATE, 2)
+        givemon(SPECIES_VULPIX_DELTA, 7, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, 0, 0, 0, 0, SHINY_MODE_RANDOM, TRUE)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            waitfanfare
+            msgbox(format("Vulpix's pushed the Pokéball button with its nose and went inside."))
+            removeobject(LOCALID_VULPIX)
+            setflag(FLAG_TEMP_1)
+            call(NicknamePartyMon)
+            
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            waitfanfare
+            msgbox(format("Vulpix's pushed the Pokéball button with its nose and went inside."))
+            removeobject(LOCALID_VULPIX)
+            setflag(FLAG_TEMP_1)
+            call(NicknameBoxMon)
+        }
+        else{
+            msgbox("Party full.")}
+
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It's already 10:32PM.\p
+    If I don't go now, I won't be arriving at the cliff's foot before midnight."))
+    closemessage
+    manuallysettime(WEEKDAY_THU, 22, 32, 0)
+    setflag(FLAG_SET_WALL_CLOCK)
+    setflag(FLAG_SYS_CLOCK_SET)
+    msgbox(format("{COLOR GREEN}{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Tips: Check your bag for various QoL items."))
+    closemessage
+    }
+    else{
+        playse(SE_PIN)
+        applymovement (LOCALID_VULPIX, moves(emote_question_mark))
+        waitmovement
+        msgbox(format("Vulpix is wondering why you're hesitating."))
+        closemessage
+    }
+    closemessage
+    call(Eventscript_CutsceneEnds)
+    release
+    end
+}
+
+script Eventscript_CutsceneStarts {
+    setflag(FLAG_HIDE_TALK_BUTTON)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
+    setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+
+script Eventscript_CutsceneEnds {
+    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+
+script MitsurusRoom2F_Eventscript_MustPickUpVulpix {
+    lock
+    applymovement(LOCALID_PLAYER, moves(walk_right, face_down))
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Vulpix is waiting for me.)"))
+    closemessage
+    release
+    end
+}
+
+script MitsurusRoom2F_Eventscript_DollAlolanVulpix {
+    lock
+    msgbox(format("It's an Alolan Vulpix doll.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}...\p
+    (This reminds me of how my Vulpix used to look like...)"))
+    closemessage
+    release
+}
+
+script MitsurusRoom2F_Eventscript_PC {
+    lock
+    checkplayergender
+    if (var(VAR_RESULT) == FEMALE){
+        goto (MitsurusRoom2F_Eventscript_PlayerPC)
+    }
+    else{
+        goto (MitsurusRoom2F_Eventscript_RivalPC)
+    }
+    release
+    end
+}
+
+script MitsurusRoom2F_Eventscript_PlayerPC {
+    playse(SE_PC_ON)
+	msgbox(gText_PlayerHouseBootPC)
+	special(BedroomPC)
+	waitstate
+	releaseall
+	end
+}
+
+script MitsurusRoom2F_Eventscript_RivalPC {
+    lockall
+    msgbox(format("It's Mitsuru's PC. It's the latest model from Kirijo Electronics."))
+    releaseall
+    end
+}
+
+script MitsurusRoom2F_Eventscript_Piano {
+    lock
+    if(var(VAR_TEMP_0) == 0)
+    {
+        msgbox(format("Play a song? {COLOR GREEN}(It will take roughly 30 seconds.)"), MSGBOX_YESNO)
+        closemessage
+        if (var(VAR_RESULT) == TRUE){
+            playbgm(MUS_SUNSHINE_ORPHANAGE, FALSE)
+            delay(1800)
+            fadenewbgm(MUS_KIRIJOS_MANSION)
+            savebgm(MUS_KIRIJOS_MANSION)
+            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(It's time to go.)"))
+            closemessage
+            setvar(VAR_TEMP_0, 1)
+        }}
+    else
+    {
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I really need to get going.)"))
+    }
+    release
+}
+
+script MitsurusRoom2F_Eventscript_BookshelfLeft {
+    lock
+    msgbox(format("Documents about various big companies in Kitoha region.\p
+    Eleki Express's is circled in red. Beside said document are several photos of delivery trucks.\p
+    They seem to be in a mountain area."))
+    closemessage
+    release
+    end
+}
+
+script MitsurusRoom2F_Eventscript_BookshelfRight {
+    lock
+    msgbox(format("Various books about human's and Pokémon's biology, geology and genecology."))
+    closemessage
+    release
+    end
+}
+
+script MitsurusRoom2F_Eventscript_Notebooks {
+    lock
+    msgbox(format("College materials for the previous term.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Luckily, it's summer break right now.\p
+    Otherwise it'd be hard for me to go travel.\p
+    Well, I figure I can always request a leave of absence until this matter is sort out.)"))
+    closemessage
+    release
+}

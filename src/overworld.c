@@ -1556,8 +1556,8 @@ const struct BlendSettings gTimeOfDayBlend[] =
 {
     [TIME_MORNING] = {.coeff = 4,  .blendColor = 0xA8B0E0,   .isTint = TRUE},
     [TIME_DAY]     = {.coeff = 0,  .blendColor = 0,          .isTint = FALSE},
-    [TIME_EVENING] = {.coeff = 7,  .blendColor = 0xce4993,   .isTint = TRUE},
-    [TIME_NIGHT]   = {.coeff = 10, .blendColor = 0x434993,   .isTint = TRUE},
+    [TIME_EVENING] = {.coeff = 6,  .blendColor = 0xCF9D74,   .isTint = TRUE},
+    [TIME_NIGHT]   = {.coeff = 10, .blendColor = TINT_NIGHT, .isTint = TRUE},
 };
 
 #define DEFAULT_WEIGHT 256
@@ -1574,7 +1574,7 @@ void UpdateTimeOfDay(void)
 
     if (IsBetweenHours(hours, MORNING_HOUR_BEGIN, MORNING_HOUR_MIDDLE)) // night->morning
     {
-        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_NIGHT];
+        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_MORNING];
         gTimeBlend.endBlend = gTimeOfDayBlend[TIME_MORNING];
         gTimeBlend.weight = TIME_BLEND_WEIGHT(MORNING_HOUR_BEGIN, MORNING_HOUR_MIDDLE);
         gTimeBlend.altWeight = (DEFAULT_WEIGHT - gTimeBlend.weight) / 2;
@@ -1590,7 +1590,7 @@ void UpdateTimeOfDay(void)
     }
     else if (IsBetweenHours(hours, EVENING_HOUR_BEGIN, EVENING_HOUR_END)) // evening
     {
-        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_DAY];
+        gTimeBlend.startBlend = gTimeOfDayBlend[TIME_EVENING];
         gTimeBlend.endBlend = gTimeOfDayBlend[TIME_EVENING];
         gTimeBlend.weight = TIME_BLEND_WEIGHT(EVENING_HOUR_BEGIN, EVENING_HOUR_END);
         gTimeBlend.altWeight = gTimeBlend.weight / 2 + (DEFAULT_WEIGHT / 2);

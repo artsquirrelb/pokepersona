@@ -125,13 +125,18 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
     closemessage
     msgbox("{PLAYER} received 1{COLOR GREEN} (hidden){COLOR DARK_GRAY} Cherish Ball.")
     closemessage
-    msgbox(format("{COLOR GREEN}Tips: The shiny chance is roughly 1/100. \p 
-    No Pokemon are shiny locked, including the story starters.\p 
-    The story starters have been buffed and come with pre-determined Nature and Perfect IVs.\p
-    You also can not release them."))
+    msgbox(Eventscript_StarterPokemonTips)
+    closemessage
     setvar(VAR_AKIHIKOS_INTRO_STATE, 8)
     clearflag(FLAG_HIDE_TALK_BUTTON)}
     release
+}
+
+text Eventscript_StarterPokemonTips{
+    format("{COLOR GREEN}Tips: The shiny chance is roughly 1/100. \p 
+    No Pokemon are shiny locked, including the story starters.\p 
+    The story starters have been buffed and come with pre-determined Nature and Perfect IVs.\p
+    You also can not release them.")
 }
 
 script SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi {

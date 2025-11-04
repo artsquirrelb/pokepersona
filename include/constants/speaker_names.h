@@ -10,6 +10,7 @@ enum SpeakerNames {
     SP_NAME_KOBAYASHI,
     SP_NAME_KUROSAWA,
     SP_NAME_INTELEON,
+    SP_NAME_TAKEHARU,
     SP_NAME_COUNT
 };
 

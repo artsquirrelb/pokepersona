@@ -235,23 +235,25 @@ SetWallclock::
 # 134 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setflag FLAG_SET_WALL_CLOCK
 # 135 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setflag FLAG_SYS_CLOCK_SET
+# 136 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox SetWallclock_Text_0
-# 137 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 138 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	closemessage
-# 139 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	delay 30
 # 140 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
+	delay 30
 # 141 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setspeaker SetWallclock_Text_1
+	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
 # 142 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox SetWallclock_Text_2
+	setspeaker SetWallclock_Text_1
 # 143 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 3
+	msgbox SetWallclock_Text_2
 # 144 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 3
+# 145 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	resumefakertc
 SetWallclock_1:
-# 146 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 147 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	end
 
@@ -262,80 +264,78 @@ SetWallclock_2:
 
 
 GiveRunningShoesAtStart::
-# 151 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lockall
 # 152 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
+	lockall
 # 153 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setspeaker SetWallclock_Text_1
+	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_NORMAL
 # 154 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox GiveRunningShoesAtStart_Text_0
-# 155 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_HAPPY
-# 156 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setspeaker SetWallclock_Text_1
+# 155 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox GiveRunningShoesAtStart_Text_0
+# 156 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	createfieldmugshot MUGSHOT_AKIHIKO EMOTE_HAPPY
 # 157 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox GiveRunningShoesAtStart_Text_1
+	setspeaker SetWallclock_Text_1
 # 158 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	closemessage
+	msgbox GiveRunningShoesAtStart_Text_1
 # 159 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setspeaker NULL
+	closemessage
 # 160 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	setspeaker NULL
 # 161 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
 # 162 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox GiveRunningShoesAtStart_Text_2
+	waitfanfare
 # 163 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setflag FLAG_SYS_B_DASH
+	msgbox GiveRunningShoesAtStart_Text_2
 # 164 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 4
+	setflag FLAG_SYS_B_DASH
 # 165 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 4
+# 166 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	releaseall
 	end
 
 
 RunningShoesToggleManual::
-# 170 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lock
 # 171 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox RunningShoesToggleManual_Text_0
+	lock
 # 172 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox RunningShoesToggleManual_Text_0
+# 173 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	release
 	return
 
 
 AkihikosPC::
-# 176 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lockall
 # 177 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	checkplayergender
+	lockall
 # 178 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	goto_if_eq VAR_RESULT MALE SunshineOrphanage_AkihikosRoom2F_PlayersPC
+	checkplayergender
 # 179 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	goto_if_eq VAR_RESULT MALE SunshineOrphanage_AkihikosRoom2F_PlayersPC
+# 180 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	goto_if_eq VAR_RESULT FEMALE SunshineOrphanage_AkihikosRoom2F_RivalsPC
 	return
 
 
 SunshineOrphanage_AkihikosRoom2F_PlayersPC::
-# 185 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	playse SE_PC_ON
 # 186 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	msgbox gText_PlayerHouseBootPC
+	playse SE_PC_ON
 # 187 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	special BedroomPC
+	msgbox gText_PlayerHouseBootPC
 # 188 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	waitstate
+	special BedroomPC
 # 189 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	waitstate
+# 190 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	releaseall
 	end
 
 
 SunshineOrphanage_AkihikosRoom2F_RivalsPC::
-# 193 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lockall
 # 194 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setspeaker SP_NAME_MITSURU
+	lockall
 # 195 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox SunshineOrphanage_AkihikosRoom2F_RivalsPC_Text_0
 # 196 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
@@ -616,40 +616,40 @@ GoSetTheClock_Text_0:
 	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}{SPEAKER NAME_AKIHIKO}I should fix the clock.$"
 
 SetWallclock_Text_0:
-# 135 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 136 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "The clock isn't working.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Let's see... The current time is...\n"
 	.string "4:32PM.$"
 
 SetWallclock_Text_1:
-# 141 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 142 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "Akihiko$"
 
 SetWallclock_Text_2:
-# 142 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 143 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "All done.$"
 
 GiveRunningShoesAtStart_Text_0:
-# 154 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 155 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "Now where are my shoes...$"
 
 GiveRunningShoesAtStart_Text_1:
-# 157 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 158 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "There they are!$"
 
 GiveRunningShoesAtStart_Text_2:
-# 162 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 163 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{PLAYER} put on the {COLOR GREEN}Running Shoes{COLOR DARK_GRAY}.$"
 
 RunningShoesToggleManual_Text_0:
-# 171 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+# 172 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{COLOR GREEN}Tips: You can toggle various settings\n"
 	.string "in Options Menu.$"
 
 SunshineOrphanage_AkihikosRoom2F_RivalsPC_Text_0:
 # 195 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "It's Akihiko's PC. It's from Kirijo\n"
-	.string "Electronics.$"
+	.string "It's Akihiko's PC. It's an older model\n"
+	.string "from Kirijo Electronics.$"
 
 ShinjirosPC_Text_0:
 # 204 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"

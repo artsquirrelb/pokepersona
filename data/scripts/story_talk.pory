@@ -1,6 +1,25 @@
 
 script EventScript_OverworldStoryTalk
 {
+    checkplayergender
+    if (var(VAR_RESULT) == MALE && var(VAR_MITSURUS_INTRO_STATE) == 50){
+        goto (EventScript_OverworldStoryTalk_AkihikosPrologue)
+    }
+    elif (var(VAR_RESULT) == FEMALE && var(VAR_AKIHIKOS_INTRO_STATE) == 50){
+        goto (EventScript_OverworldStoryTalk_MitsurusPrologue)
+    }
+    else {
+        msgbox("No script yet.")
+    }
+    closemessage
+    end
+}
+
+////////////////////////
+///AKIHIKO'S PROLOGUE///
+////////////////////////
+
+script EventScript_OverworldStoryTalk_AkihikosPrologue {
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 2){
         call(EventScript_OverworldStoryTalk_MustSetClock)
     }
@@ -98,6 +117,9 @@ script EventScript_OverworldStoryTalk
     elif (var(VAR_AKIHIKOS_INTRO_STATE) == 38){
         call (EventScript_OverworldStoryTalk_PostFirstBattleMitsuru)
     }
+    elif (var(VAR_AKIHIKOS_INTRO_STATE) == 44){
+        call (EventScript_OverworldStoryTalk_PostPrologue)
+    }
     else
     {
         msgbox("No script yet.")
@@ -106,8 +128,8 @@ script EventScript_OverworldStoryTalk
 	end
 }
 
-
-
+//////////////////////
+//////////////////////
 
 script EventScript_OverworldStoryTalk_MustSetClock {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Let's fix the clock and join Miki outside.)"))
@@ -268,3 +290,66 @@ script EventScript_OverworldStoryTalk_PostFirstBattleMitsuru {
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}A special coincident, huh?\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}..."))
 }
+
+script EventScript_OverworldStoryTalk_PostPrologue {
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}First, let's go through Route 2 to Coralport.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Alright! There are a few trainers on that route. Time to train!\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Someone sure is fired up."))
+}
+
+
+////////////////////////
+///MITSURU'S PROLOGUE///
+////////////////////////
+
+script EventScript_OverworldStoryTalk_MitsurusPrologue {
+    if (var(VAR_MITSURUS_INTRO_STATE) == 1){
+        call(EventScript_OverworldStoryTalk_MustPickUpVulpix)
+    }
+    elif( var(VAR_MITSURUS_INTRO_STATE) == 2){
+        call(EventScript_OverworldStoryTalk_PostPickUpVulpix)
+    }
+    elif (var(VAR_MITSURUS_INTRO_STATE) == 3){
+        call(EventScript_OverworldStoryTalk_PostInteleonJoining)
+    }
+    else
+    {
+        msgbox("No script yet.")
+    }
+    closemessage
+    end
+}
+
+script EventScript_OverworldStoryTalk_MustPickUpVulpix {
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}
+        (I should return Vulpix to its Pokéball and hurry to Thundershards Cliff.)"))
+}
+
+script EventScript_OverworldStoryTalk_PostPickUpVulpix {
+    lock
+    applymovement(LOCALID_PLAYER, Common_Movement_FacePlayer)
+    applymovement(OBJ_EVENT_ID_FOLLOWER, Common_Movement_FacePlayer)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}How do you feel getting back on the field, Vulpix?"))
+    closemessage
+    playmoncry(SPECIES_VULPIX, CRY_MODE_NORMAL)
+    waitmoncry
+    if (flag(FLAG_FOLLOWERS_DISABLED) == FALSE){
+        applymovement(OBJ_EVENT_ID_FOLLOWER, moves(emote_music, face_up, delay_16, face_right, delay_16, face_down, delay_16, face_left, delay_16, face_player))
+        waitmovement(0)
+    }
+    msgbox(format("(Vulpix's dancing excitedly.)\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Haha, honestly, me too."))
+    closemessage
+    release
+
+}
+
+script EventScript_OverworldStoryTalk_PostInteleonJoining {
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Well then, I'll be counting on you to watch my back, Inteleon."))
+    closemessage
+    playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
+    waitmoncry
+    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks determinated, nodding at you.)"))
+}
+

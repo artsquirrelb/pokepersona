@@ -1,0 +1,47 @@
+mapscripts MansionsGarden_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION {
+        if (var(VAR_MITSURUS_INTRO_STATE) == 0) {
+            setflag(FLAG_SPAWN_INVISIBLE)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_MITSURUS_INTRO_STATE, 0: MansionsGarden_Eventscript_OnFrame0
+    ]
+}
+
+script EventScript_NewGameSetUp {
+    setvar (VAR_SHINJIRO_RELATIONSHIP_POINTS, 100)
+	setvar (VAR_MITSURU_RELATIONSHIP_POINTS, 100)
+	setvar (VAR_AKIHIKO_RELATIONSHIP_POINTS, 100)
+    setflag(FLAG_HIDE_TALK_BUTTON)
+
+    checkplayergender
+    if (var(VAR_RESULT) == MALE){
+        manuallysettime(WEEKDAY_WED, 16, 30, 0)
+        setvar(VAR_MITSURUS_INTRO_STATE, 50) // will be reset to 0 if player choose to play mitsuru's prologue after doing akihiko's
+    }
+    else{
+        manuallysettime(WEEKDAY_THU, 22, 30, 0)
+        setvar(VAR_AKIHIKOS_INTRO_STATE, 50) // will be reset to 0 if player choose to play akihiko's prologue after doing mitsuru's
+    }
+	pausefakertc // pauses the time so that we can do our scripting part
+}
+
+
+script MansionsGarden_Eventscript_OnFrame0 {
+    goto(MansionsGarden_Eventscript_SlowlyShowTheMap)
+}
+
+
+
+script MansionsGarden_Eventscript_SlowlyShowTheMap {
+    call(Eventscript_CutsceneStarts)
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(walk_up * 10))
+    waitmovement
+    msgbox(format("{CLEAR_TO 10}Mitsuru's Prologue: Responsibilities\n
+    {CLEAR_TO 64}{COLOR GREEN}Level cap: 10"))
+    closemessage
+    setvar(VAR_CURRENT_LEVEL_CAP, 10)
+    warpsilent(MAP_MITSURUS_ROOM2F, 15, 10)
+}

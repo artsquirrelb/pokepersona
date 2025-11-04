@@ -132,6 +132,7 @@ script SetWallclock {
     else{
     manuallysettime(WEEKDAY_WED, 16, 32, 0)
     setflag(FLAG_SET_WALL_CLOCK)
+    setflag(FLAG_SYS_CLOCK_SET)
 	msgbox(format("The clock isn't working.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Let's see... The current time is... 4:32PM."))
     closemessage
@@ -191,8 +192,7 @@ script SunshineOrphanage_AkihikosRoom2F_PlayersPC {
 }
 script SunshineOrphanage_AkihikosRoom2F_RivalsPC {
     lockall
-    setspeaker(SP_NAME_MITSURU)
-    msgbox(format("It's Akihiko's PC. It's from Kirijo Electronics."))
+    msgbox(format("It's Akihiko's PC. It's an older model from Kirijo Electronics."))
     releaseall
     end
 }

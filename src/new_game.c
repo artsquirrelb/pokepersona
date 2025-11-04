@@ -175,7 +175,7 @@ static void WarpToTruck(void)
     if (gSaveBlock2Ptr->playerGender == MALE)
         SetWarpDestination(MAP_GROUP(MAP_SUNSHINE_ORPHANAGE), MAP_NUM(MAP_SUNSHINE_ORPHANAGE), WARP_ID_NONE, 13, 18);
     else
-        SetWarpDestination(MAP_GROUP(MAP_MANSIONS_GARDEN), MAP_NUM(MAP_MANSIONS_GARDEN), WARP_ID_NONE, 43, 19);
+        SetWarpDestination(MAP_GROUP(MAP_MANSIONS_GARDEN), MAP_NUM(MAP_MANSIONS_GARDEN), WARP_ID_NONE, 43, 27);
         
     WarpIntoMap();
 }

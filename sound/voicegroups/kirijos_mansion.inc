@@ -1,6 +1,5 @@
-.align 2
-voicegroup191:: @ 1188000
-	voice_keysplit voicegroup192, KeySplitTable6
+voice_group kirijos_mansion
+    voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_keysplit voicegroup193, KeySplitTable6
 	voice_keysplit voicegroup194, KeySplitTable6
 	voice_keysplit voicegroup195, KeySplitTable7
@@ -17,12 +16,12 @@ voicegroup191:: @ 1188000
 	voice_directsound 60, 0, DirectSoundWaveData_1000008, 255, 249, 0, 235
 	voice_keysplit voicegroup206, KeySplitTable16
 	voice_keysplit voicegroup207, KeySplitTable17
-	voice_keysplit voicegroup208, KeySplitTable17
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_keysplit voicegroup209, KeySplitTable17
 	voice_keysplit voicegroup210, KeySplitTable13
 	voice_keysplit voicegroup211, KeySplitTable17
 	voice_keysplit voicegroup212, KeySplitTable18
-	voice_keysplit voicegroup213, KeySplitTable19
+	voice_keysplit voicegroup208, KeySplitTable17
 	voice_keysplit voicegroup214, KeySplitTable10
 	voice_keysplit voicegroup215, KeySplitTable9
 	voice_keysplit voicegroup216, KeySplitTable19

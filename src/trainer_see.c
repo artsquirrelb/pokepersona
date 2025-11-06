@@ -1191,6 +1191,19 @@ static void StopQuestFieldEffect(struct Sprite *sprite, u32 objEventId)
     FieldEffectStop(sprite, sprite->sFldEffId);
 }
 
+u8 FldEff_HappyIcon(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emote, 0, 0, 0x52);
+
+    if (spriteId != MAX_SPRITES)
+    {
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_HAPPY_ICON, FOLLOWER_EMOTION_HAPPY);
+        UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, &gSprites[spriteId]);
+    }
+
+    return 0;
+}
+
 u8 FldEff_MusicIcon(void)
 {
     u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Emote, 0, 0, 0x52);

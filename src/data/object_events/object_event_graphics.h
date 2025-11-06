@@ -48,6 +48,11 @@ const u16 gObjectEventPalette_Miki[] = INCBIN_U16("graphics/object_events/pics/p
 const u32 gObjectEventPic_Frozen[] = INCBIN_U32("graphics/object_events/pics/people/frozen.4bpp");
 const u32 gObjectEventPic_Takeharu[] = INCBIN_U32("graphics/object_events/pics/people/takeharu.4bpp");
 const u16 gObjectEventPal_Npc5[] = INCBIN_U16("graphics/object_events/palettes/npc_5.gbapal");
+const u32 gObjectEventPic_Waitress[] = INCBIN_U32("graphics/object_events/pics/people/waitress.4bpp");
+const u32 gObjectEventPic_Waiter[] = INCBIN_U32("graphics/object_events/pics/people/waiter.4bpp");
+const u32 gObjectEventPic_Butler[] = INCBIN_U32("graphics/object_events/pics/people/butler.4bpp");
+const u32 gObjectEventPic_Kikuno[] = INCBIN_U32("graphics/object_events/pics/people/kikuno.4bpp");
+const u32 gObjectEventPic_Receptionist_F[] = INCBIN_U32("graphics/object_events/pics/people/receptionist_f.4bpp");
 
 
 const u16 gObjectEventPal_Null16[16] = {};

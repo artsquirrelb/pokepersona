@@ -659,7 +659,8 @@
     "Route1_HiddenGrotto"
   ],
   "gMapGroup_KirijoMansionIndoor": [
-    "KirijosMansionMainHall",
-    "MitsurusRoom2F"
+    "MansionMainHall",
+    "Mansion_MitsurusRoom2F",
+    "MansionTrainingHouse"
   ]
 }

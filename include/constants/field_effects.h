@@ -97,6 +97,7 @@
 #define FLDEFF_POINT_DOWN_2_ICON         92
 #define FLDEFF_POINT_DOWN_3_ICON         93
 #define FLDEFF_ORAS_DOWSE                94
+#define FLDEFF_HAPPY_ICON                95
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

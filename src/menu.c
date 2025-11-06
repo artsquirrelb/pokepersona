@@ -552,7 +552,7 @@ static void WindowFunc_DrawDialogueFrame(u8 bg, u8 tilemapLeft, u8 tilemapTop, u
                             1,
                             DLG_WINDOW_PALETTE_NUM);
     FillBgTilemapBufferRect(bg,
-                            BG_TILE_V_FLIP(DLG_WINDOW_BASE_TILE_NUM + 1),
+                            BG_TILE_V_FLIP(DLG_WINDOW_BASE_TILE_NUM + 2),
                             tilemapLeft,
                             tilemapTop + height,
                             width - 1,

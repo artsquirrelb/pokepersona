@@ -355,6 +355,7 @@ static bool32 IsStateMovement(u32 state)
     case MOVEMENT_ACTION_POINT_DOWN_1:
     case MOVEMENT_ACTION_POINT_DOWN_2:
     case MOVEMENT_ACTION_POINT_DOWN_3:
+    case MOVEMENT_ACTION_EMOTE_HAPPY:
         return FALSE;
     }
 

@@ -175,7 +175,8 @@ script SunshineOrphanageMainHall_Eventscript_GetPawmiStarter {
             waitfanfare
             msgbox("Received Pawmi.")
             hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
-            call(NicknamePartyMon)
+            msgbox(format("{COLOR GREEN}Tips: You can rename a Pokémon in its summary screen."))
+            closemessage
             goto(SunshineOrphanageMainHall_Eventscript_GoToSleep)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -183,7 +184,8 @@ script SunshineOrphanageMainHall_Eventscript_GetPawmiStarter {
             waitfanfare
             msgbox("Received Pawmi.")
             hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
-            call(NicknameBoxMon)
+            msgbox(format("{COLOR GREEN}Tips: You can rename a Pokémon in its summary screen."))
+            closemessage
             goto(SunshineOrphanageMainHall_Eventscript_GoToSleep)
         }
         else{

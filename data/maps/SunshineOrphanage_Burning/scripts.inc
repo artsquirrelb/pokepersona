@@ -89,7 +89,7 @@ SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko::
 # 55 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	applymovement 4, KobayashiBlocks
 # 56 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	call SunshineOrphanage_Burning_Eventscript_BlockShakeCamera
+	call Eventscript_BlockShakeCamera
 # 57 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	msgbox SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko_Text_0, MSGBOX_AUTOCLOSE
 # 58 "data/maps/SunshineOrphanage_Burning/scripts.pory"
@@ -185,7 +185,7 @@ BlockingAkihiko:
 	shake_horizontal
 	step_end
 
-SunshineOrphanage_Burning_Eventscript_BlockShakeCamera::
+Eventscript_BlockShakeCamera::
 # 106 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	delay 8
 # 107 "data/maps/SunshineOrphanage_Burning/scripts.pory"

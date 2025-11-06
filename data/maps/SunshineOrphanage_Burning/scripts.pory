@@ -53,7 +53,7 @@ script SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko {
     applymovement(5, ShinjiroRunsUp)
     delay(8)
     applymovement(4, KobayashiBlocks)
-    call(SunshineOrphanage_Burning_Eventscript_BlockShakeCamera)
+    call(Eventscript_BlockShakeCamera)
     msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}AKI-!"), MSGBOX_AUTOCLOSE)
     closemessage
     delay(30)
@@ -102,7 +102,7 @@ movement BlockingAkihiko {
     shake_horizontal
 }
 
-script SunshineOrphanage_Burning_Eventscript_BlockShakeCamera {
+script Eventscript_BlockShakeCamera {
     delay(8)
     setvar(VAR_0x8004, 2) //vertical pan
     setvar(VAR_0x8005, 2) //horizontal pan

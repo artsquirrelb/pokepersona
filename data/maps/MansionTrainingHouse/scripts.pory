@@ -1,0 +1,5 @@
+mapscripts MansionTrainingHouse_MapScripts {}
+
+script MansionTrainingHouse_Eventscript_MoveTutor {
+    
+}

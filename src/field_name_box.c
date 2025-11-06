@@ -62,7 +62,7 @@ void TrySpawnNamebox(u32 tileNum)
     struct WindowTemplate template =
     {
         .bg = 0,
-        .tilemapLeft = 2,
+        .tilemapLeft = 1,
         .tilemapTop = 13,
         .width = winWidth,
         .height = OW_NAME_BOX_DEFAULT_HEIGHT,
@@ -75,7 +75,7 @@ void TrySpawnNamebox(u32 tileNum)
 
     u8 colors[3] = {TEXT_COLOR_TRANSPARENT, OW_NAME_BOX_FOREGROUND_COLOR, OW_NAME_BOX_SHADOW_COLOR};
     u8 bakColors[3];
-    int strX = GetStringCenterAlignXOffset(fontId, strbuf, (winWidth * 8));
+    //int strX = GetStringCenterAlignXOffset(fontId, strbuf, (winWidth * 8));
     if (matchCall)
     {
         colors[1] = 1;
@@ -83,7 +83,7 @@ void TrySpawnNamebox(u32 tileNum)
     }
 
     SaveTextColors(&bakColors[0], &bakColors[1], &bakColors[2]);
-    AddTextPrinterParameterized3(sNameboxWindowId, fontId, strX, 0, colors, 0, strbuf);
+    AddTextPrinterParameterized3(sNameboxWindowId, fontId, 4, 0, colors, 0, strbuf);
     RestoreTextColors(&bakColors[0], &bakColors[1], &bakColors[2]);
     PutWindowTilemap(sNameboxWindowId);
     Free(strbuf);

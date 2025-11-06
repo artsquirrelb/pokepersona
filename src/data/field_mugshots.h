@@ -9,8 +9,10 @@ static const u32 sFieldMugshotGfx_MitsuruNormal[] = INCBIN_U32("graphics/field_m
 static const u32 sFieldMugshotGfx_MitsuruHappy[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/happy.4bpp.lz");
 static const u32 sFieldMugshotGfx_MitsuruSad[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/sad.4bpp.lz");
 static const u32 sFieldMugshotGfx_MitsuruMad[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/mad.4bpp.lz");
+static const u32 sFieldMugshotGfx_MitsuruSurprised[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/surprised.4bpp.lz");
 static const u32 sFieldMugshotGfx_MitsuruSmile[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/smile.4bpp.lz");
 static const u32 sFieldMugshotGfx_MitsuruSilhouette[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/silhouette.4bpp.lz");
+static const u32 sFieldMugshotGfx_MitsuruStruggled[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/struggled.4bpp.lz");
 static const u32 sFieldMugshotGfx_MitsuruSerious[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/serious.4bpp.lz");
 static const u32 sFieldMugshotGfx_MitsuruConfident[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/confident.4bpp.lz");
 
@@ -19,8 +21,10 @@ static const u16 sFieldMugshotPal_MitsuruNormal[] = INCBIN_U16("graphics/field_m
 static const u16 sFieldMugshotPal_MitsuruHappy[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/happy.gbapal");
 static const u16 sFieldMugshotPal_MitsuruSad[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/sad.gbapal");
 static const u16 sFieldMugshotPal_MitsuruMad[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/mad.gbapal");
+static const u16 sFieldMugshotPal_MitsuruSurprised[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/surprised.gbapal");
 static const u16 sFieldMugshotPal_MitsuruSmile[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/smile.gbapal");
 static const u16 sFieldMugshotPal_MitsuruSilhouette[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/silhouette.gbapal");
+static const u16 sFieldMugshotPal_MitsuruStruggled[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/struggled.gbapal");
 static const u16 sFieldMugshotPal_MitsuruSerious[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/serious.gbapal");
 static const u16 sFieldMugshotPal_MitsuruConfident[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/confident.gbapal");
 
@@ -116,6 +120,12 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
             .pal = sFieldMugshotPal_MitsuruMad,
         },
 
+        [EMOTE_SURPRISED] =
+        {
+            .gfx = sFieldMugshotGfx_MitsuruSurprised,
+            .pal = sFieldMugshotPal_MitsuruSurprised,
+        },
+
         [EMOTE_SMILE] =
         {
             .gfx = sFieldMugshotGfx_MitsuruSmile,
@@ -126,6 +136,12 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         {
             .gfx = sFieldMugshotGfx_MitsuruSilhouette,
             .pal = sFieldMugshotPal_MitsuruSilhouette,
+        },
+
+        [EMOTE_STRUGGLED] =
+        {
+            .gfx = sFieldMugshotGfx_MitsuruStruggled,
+            .pal = sFieldMugshotPal_MitsuruStruggled,
         },
 
         [EMOTE_SERIOUS] =

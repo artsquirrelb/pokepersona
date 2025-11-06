@@ -181,7 +181,7 @@ Route2_Eventscript_AkishinjiGettingBlockedBySusMen::
 # 76 "data/maps/Route2/scripts.pory"
 	waitmovement 3
 # 77 "data/maps/Route2/scripts.pory"
-	call SunshineOrphanage_Burning_Eventscript_BlockShakeCamera
+	call Eventscript_BlockShakeCamera
 # 78 "data/maps/Route2/scripts.pory"
 	delay 20
 # 79 "data/maps/Route2/scripts.pory"
@@ -225,7 +225,7 @@ Route2_Eventscript_AkishinjiGettingBlockedBySusMen::
 # 100 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, shakehorizontal
 # 101 "data/maps/Route2/scripts.pory"
-	call SunshineOrphanage_Burning_Eventscript_BlockShakeCamera
+	call Eventscript_BlockShakeCamera
 # 102 "data/maps/Route2/scripts.pory"
 	applymovement 4, SusMan1StepBack
 # 103 "data/maps/Route2/scripts.pory"

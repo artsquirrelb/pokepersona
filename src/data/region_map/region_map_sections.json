@@ -1446,6 +1446,30 @@
       "y": 7,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_THUNDERSHARDS_CLIFF",
+      "name": "Thundershards Scree",
+      "x": 22,
+      "y": 7,
+      "width": 2,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_THUNDERSHARDS_CLIFF_2",
+      "name": "Thundershards Cave",
+      "x": 23,
+      "y": 6,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SILVERFROST_VILLAGE",
+      "name": "Silverfrost Village",
+      "x": 14,
+      "y": 0,
+      "width": 1,
+      "height": 1
     }
   ]
 }

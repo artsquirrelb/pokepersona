@@ -312,6 +312,12 @@ script EventScript_OverworldStoryTalk_MitsurusPrologue {
     elif (var(VAR_MITSURUS_INTRO_STATE) == 3){
         call(EventScript_OverworldStoryTalk_PostInteleonJoining)
     }
+    elif (var(VAR_MITSURUS_INTRO_STATE) == 4){
+        call(EventScript_OverworldStoryTalk_PrePickUpFennekin)
+    }
+    elif (var(VAR_MITSURUS_INTRO_STATE) == 6){
+        call(EventScript_OverworldStoryTalk_PostGoodByeKikuno)
+    }
     else
     {
         msgbox("No script yet.")
@@ -353,3 +359,11 @@ script EventScript_OverworldStoryTalk_PostInteleonJoining {
     msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks determinated, nodding at you.)"))
 }
 
+script EventScript_OverworldStoryTalk_PrePickUpFennekin {
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}A fire type would be great for my journey."))
+}
+
+script EventScript_OverworldStoryTalk_PostGoodByeKikuno {
+    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Now I should make my way to Thundershards Scree.\p
+    According to the map, it should be on the north of Sunshine Meadow.)"))
+}

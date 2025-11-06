@@ -246,3 +246,6 @@ const u16 gMetatileAttributes_MansionIndoor[] = INCBIN_U16("data/tilesets/primar
 
 const u16 gMetatiles_MansionHall[] = INCBIN_U16("data/tilesets/secondary/mansion_hall/metatiles.bin");
 const u16 gMetatileAttributes_MansionHall[] = INCBIN_U16("data/tilesets/secondary/mansion_hall/metatile_attributes.bin");
+
+const u16 gMetatiles_MansionTrainingHouse[] = INCBIN_U16("data/tilesets/secondary/mansion_training_house/metatiles.bin");
+const u16 gMetatileAttributes_MansionTrainingHouse[] = INCBIN_U16("data/tilesets/secondary/mansion_training_house/metatile_attributes.bin");

@@ -183,6 +183,7 @@
 	create_movement_action point_down_1, MOVEMENT_ACTION_POINT_DOWN_1
 	create_movement_action point_down_2, MOVEMENT_ACTION_POINT_DOWN_2
 	create_movement_action point_down_3, MOVEMENT_ACTION_POINT_DOWN_3
+	create_movement_action emote_happy, MOVEMENT_ACTION_EMOTE_HAPPY
 
 
 	create_movement_action exit_pokeball, MOVEMENT_ACTION_EXIT_POKEBALL

@@ -101,6 +101,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_PointDown2Icon         	@ FLDEFF_POINT_DOWN_2_ICON
 	.4byte gFieldEffectScript_PointDown3Icon         	@ FLDEFF_POINT_DOWN_3_ICON
 	.4byte gFieldEffectScript_ORASDowse                 @ FLDEFF_ORAS_DOWSE
+	.4byte gFieldEffectScript_HappyIcon                 @ FLDEFF_HAPPY_ICON
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon
@@ -290,6 +291,10 @@ gFieldEffectScript_PokeballTrail::
 
 gFieldEffectScript_HeartIcon::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_HeartIcon
+	field_eff_end
+
+gFieldEffectScript_HappyIcon::
+	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_HappyIcon
 	field_eff_end
 
 gFieldEffectScript_MusicIcon::

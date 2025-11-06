@@ -1,27 +1,27 @@
-mapscripts MitsurusRoom2F_MapScripts {
+mapscripts Mansion_MitsurusRoom2F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
         if (var(VAR_MITSURUS_INTRO_STATE) >= 2){
             setflag(FLAG_TEMP_1)
         }
     }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-        VAR_MITSURUS_INTRO_STATE, 0 : MitsurusRoom2F_Eventscript_OnWarp0
+        VAR_MITSURUS_INTRO_STATE, 0 : Mansion_MitsurusRoom2F_Eventscript_OnWarp0
     ]
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_MITSURUS_INTRO_STATE, 0: MitsurusRoom2F_Eventscript_OnFrame0
+        VAR_MITSURUS_INTRO_STATE, 0: Mansion_MitsurusRoom2F_Eventscript_OnFrame0
     ]
 }
 
-script MitsurusRoom2F_Eventscript_OnWarp0 {
+script Mansion_MitsurusRoom2F_Eventscript_OnWarp0 {
     applymovement(LOCALID_PLAYER, faceleft)
 }
 
-script MitsurusRoom2F_Eventscript_OnFrame0 {
+script Mansion_MitsurusRoom2F_Eventscript_OnFrame0 {
     setvar(VAR_MITSURUS_INTRO_STATE, 1)
-    goto(MitsurusRoom2F_Eventscript_MitsuruPacking)
+    goto(Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking)
 }
 
-script MitsurusRoom2F_Eventscript_MitsuruPacking {
+script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     delay(30)
     applymovement(LOCALID_PLAYER, moves(emote_pensive))
     waitmovement(0)
@@ -34,7 +34,7 @@ script MitsurusRoom2F_Eventscript_MitsuruPacking {
     applymovement(LOCALID_VULPIX, moves(face_left, face_up))
     waitmovement(LOCALID_PLAYER)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}My Pokédex... Repels...\p
-    And the map to Thundershard Cliff."))
+    And the map to Thundershards Cliff."))
     closemessage
     setcaughtmon(SPECIES_VULPIX_DELTA)
     setflag(FLAG_SYS_POKEMON_GET)
@@ -88,20 +88,21 @@ script MitsurusRoom2F_Eventscript_MitsuruPacking {
     end
 }
 
-script MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
+script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
     lock
     msgbox ("Hold out the Pokéball to Vulpix?", MSGBOX_YESNO)
     closemessage
     if(var(VAR_RESULT) == YES){
         setvar(VAR_MITSURUS_INTRO_STATE, 2)
-        givemon(SPECIES_VULPIX_DELTA, 7, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, 0, 0, 0, 0, SHINY_MODE_RANDOM, TRUE)
+        givemon(SPECIES_VULPIX_DELTA, 7, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ECHOED_VOICE, MOVE_POWDER_SNOW, MOVE_DISARMING_VOICE, MOVE_GROWL, SHINY_MODE_RANDOM, TRUE)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             waitfanfare
             msgbox(format("Vulpix's pushed the Pokéball button with its nose and went inside."))
             removeobject(LOCALID_VULPIX)
             setflag(FLAG_TEMP_1)
-            call(NicknamePartyMon)
+            msgbox(format("{COLOR GREEN}Tips: You can rename a Pokémon in its summary screen."))
+            closemessage
             
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -110,7 +111,8 @@ script MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
             msgbox(format("Vulpix's pushed the Pokéball button with its nose and went inside."))
             removeobject(LOCALID_VULPIX)
             setflag(FLAG_TEMP_1)
-            call(NicknameBoxMon)
+            msgbox(format("{COLOR GREEN}Tips: You can rename a Pokémon in its summary screen."))
+            closemessage
         }
         else{
             msgbox("Party full.")}
@@ -149,7 +151,7 @@ script Eventscript_CutsceneEnds {
     clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 }
 
-script MitsurusRoom2F_Eventscript_MustPickUpVulpix {
+script Mansion_MitsurusRoom2F_Eventscript_MustPickUpVulpix {
     lock
     applymovement(LOCALID_PLAYER, moves(walk_right, face_down))
     waitmovement
@@ -159,7 +161,7 @@ script MitsurusRoom2F_Eventscript_MustPickUpVulpix {
     end
 }
 
-script MitsurusRoom2F_Eventscript_DollAlolanVulpix {
+script Mansion_MitsurusRoom2F_Eventscript_DollAlolanVulpix {
     lock
     msgbox(format("It's an Alolan Vulpix doll.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}...\p
@@ -168,20 +170,20 @@ script MitsurusRoom2F_Eventscript_DollAlolanVulpix {
     release
 }
 
-script MitsurusRoom2F_Eventscript_PC {
+script Mansion_MitsurusRoom2F_Eventscript_PC {
     lock
     checkplayergender
     if (var(VAR_RESULT) == FEMALE){
-        goto (MitsurusRoom2F_Eventscript_PlayerPC)
+        goto (Mansion_MitsurusRoom2F_Eventscript_PlayerPC)
     }
     else{
-        goto (MitsurusRoom2F_Eventscript_RivalPC)
+        goto (Mansion_MitsurusRoom2F_Eventscript_RivalPC)
     }
     release
     end
 }
 
-script MitsurusRoom2F_Eventscript_PlayerPC {
+script Mansion_MitsurusRoom2F_Eventscript_PlayerPC {
     playse(SE_PC_ON)
 	msgbox(gText_PlayerHouseBootPC)
 	special(BedroomPC)
@@ -190,14 +192,14 @@ script MitsurusRoom2F_Eventscript_PlayerPC {
 	end
 }
 
-script MitsurusRoom2F_Eventscript_RivalPC {
+script Mansion_MitsurusRoom2F_Eventscript_RivalPC {
     lockall
     msgbox(format("It's Mitsuru's PC. It's the latest model from Kirijo Electronics."))
     releaseall
     end
 }
 
-script MitsurusRoom2F_Eventscript_Piano {
+script Mansion_MitsurusRoom2F_Eventscript_Piano {
     lock
     if(var(VAR_TEMP_0) == 0)
     {
@@ -219,7 +221,7 @@ script MitsurusRoom2F_Eventscript_Piano {
     release
 }
 
-script MitsurusRoom2F_Eventscript_BookshelfLeft {
+script Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft {
     lock
     msgbox(format("Documents about various big companies in Kitoha region.\p
     Eleki Express's is circled in red. Beside said document are several photos of delivery trucks.\p
@@ -229,7 +231,7 @@ script MitsurusRoom2F_Eventscript_BookshelfLeft {
     end
 }
 
-script MitsurusRoom2F_Eventscript_BookshelfRight {
+script Mansion_MitsurusRoom2F_Eventscript_BookshelfRight {
     lock
     msgbox(format("Various books about human's and Pokémon's biology, geology and genecology."))
     closemessage
@@ -237,7 +239,7 @@ script MitsurusRoom2F_Eventscript_BookshelfRight {
     end
 }
 
-script MitsurusRoom2F_Eventscript_Notebooks {
+script Mansion_MitsurusRoom2F_Eventscript_Notebooks {
     lock
     msgbox(format("College materials for the previous term.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Luckily, it's summer break right now.\p

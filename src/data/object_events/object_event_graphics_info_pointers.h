@@ -242,6 +242,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shinjiro_Fa
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Akihiko_Fainted;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Miki;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Takeharu;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Waiter;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Waitress;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Butler;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kikuno;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Receptionist_F;
+
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -265,6 +271,11 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_AKIHIKO_FAINTED] =          &gObjectEventGraphicsInfo_Akihiko_Fainted,
     [OBJ_EVENT_GFX_MIKI] =                     &gObjectEventGraphicsInfo_Miki,
     [OBJ_EVENT_GFX_TAKEHARU] =                 &gObjectEventGraphicsInfo_Takeharu,
+    [OBJ_EVENT_GFX_WAITER] =                   &gObjectEventGraphicsInfo_Waiter,
+    [OBJ_EVENT_GFX_WAITRESS] =                 &gObjectEventGraphicsInfo_Waitress,
+    [OBJ_EVENT_GFX_BUTLER] =                   &gObjectEventGraphicsInfo_Butler,
+    [OBJ_EVENT_GFX_KIKUNO] =                   &gObjectEventGraphicsInfo_Kikuno,
+    [OBJ_EVENT_GFX_RECEPTIONIST_F] =           &gObjectEventGraphicsInfo_Receptionist_F,
     [OBJ_EVENT_GFX_QUINTY_PLUMP] =             &gObjectEventGraphicsInfo_QuintyPlump,
     [OBJ_EVENT_GFX_NINJA_BOY] =                &gObjectEventGraphicsInfo_NinjaBoy,
     [OBJ_EVENT_GFX_TWIN] =                     &gObjectEventGraphicsInfo_Twin,

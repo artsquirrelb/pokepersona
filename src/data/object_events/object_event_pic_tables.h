@@ -1404,3 +1404,23 @@ const struct SpriteFrameImage gObjectEventPicTable_Frozen[] = {
 static const struct SpriteFrameImage gObjectEventPicTable_Takeharu[] = {
     overworld_ascending_frames(gObjectEventPic_Takeharu, 4, 4),
 };
+
+static const struct SpriteFrameImage gObjectEventPicTable_Waiter[] = {
+    overworld_ascending_frames(gObjectEventPic_Waiter, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_Waitress[] = {
+    overworld_ascending_frames(gObjectEventPic_Waitress, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_Butler[] = {
+    overworld_ascending_frames(gObjectEventPic_Butler, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_Kikuno[] = {
+    overworld_ascending_frames(gObjectEventPic_Kikuno, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_Receptionist_F[] = {
+    overworld_ascending_frames(gObjectEventPic_Receptionist_F, 4, 4),
+};

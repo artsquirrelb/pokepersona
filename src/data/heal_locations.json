@@ -196,6 +196,18 @@
       "map": "MAP_SUNSHINE_ORPHANAGE_MAIN_HALL",
       "x": 13,
       "y": 21
+    },
+    {
+      "id": "HEAL_LOCATION_MITSURUS_ROOM2F",
+      "map": "MAP_MITSURUS_ROOM2F",
+      "x": 10,
+      "y": 10
+    },
+    {
+      "id": "HEAL_LOCATION_MANSION_TRAINING_HOUSE",
+      "map": "MAP_MANSION_TRAINING_HOUSE",
+      "x": 16,
+      "y": 17
     }
   ]
 }

@@ -280,6 +280,7 @@
 #define MOVEMENT_ACTION_POINT_DOWN_1                    0xC0
 #define MOVEMENT_ACTION_POINT_DOWN_2                    0xC1
 #define MOVEMENT_ACTION_POINT_DOWN_3                    0xC2
+#define MOVEMENT_ACTION_EMOTE_HAPPY                     0xC3
 
 //fast diagonal movement
 

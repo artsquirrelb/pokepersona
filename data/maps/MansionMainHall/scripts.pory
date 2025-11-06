@@ -1,0 +1,289 @@
+mapscripts MansionMainHall_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        if (var(VAR_MITSURUS_INTRO_STATE) == 2){
+            setflag(FLAG_HIDE_TALK_BUTTON)
+        }
+        if (var(VAR_MITSURUS_INTRO_STATE) >= 3){
+            setflag(FLAG_TEMP_1)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_MITSURUS_INTRO_STATE, 2: MansionMainHall_Eventscript_OnFrame2
+    ]
+}
+
+script MansionMainHall_Eventscript_OnFrame2 {
+    goto(MansionMainHall_Eventscript_TakeharuStoppingMitsuru)
+}
+
+script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
+    setvar(VAR_MITSURUS_INTRO_STATE, 3)
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(walk_down*3))
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_TAKEHARU}Mitsuru."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, emoteexclamation)
+    waitmovement(0)
+    applymovement(LOCALID_PLAYER, faceleft)
+    applymovement(LOCALID_TAKEHARU, moves(walk_down*3, walk_right))
+    applymovement(LOCALID_INTELEON, moves(walk_down*2, walk_right*2))
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Father...\p
+    {SPEAKER NAME_TAKEHARU}{DESTROY_MUGSHOT}So you really intend to go, no matter what I say.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}I'm sorry, Father...\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}But we already talked about this before.\p
+    This is also my responsibility as a Kirijo.\p
+    I simply cannot sit still while our family's name is getting further tainted.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}Please... don't stop me, Father.\p
+    {SPEAKER NAME_TAKEHARU}{DESTROY_MUGSHOT}You already know I don't fully agree with this.\p
+    No sane parents would let their children do something this dangerous.\p
+    However, I'm also aware that I won't be able to stop you, since stubborness apparently runs in both of our veins.\p
+    So please, take Inteleon with you. He can look over you in my stead."))
+    closemessage
+    delay(20)
+    playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
+    applymovement(LOCALID_INTELEON, walkinplaceright)
+    waitmoncry
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Father.....\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}If that'll put your mind more at ease, I'll do so."))
+    closemessage
+    applymovement(LOCALID_TAKEHARU, faceup)
+    applymovement(LOCALID_INTELEON, facedown)
+    waitmovement(0)
+    delay(60)
+    playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
+    applymovement(LOCALID_INTELEON, walkinplacedown)
+    waitmovement(0)
+    waitmoncry
+    delay(30)
+    applymovement(LOCALID_INTELEON, moves(walk_right*2, face_left))
+    applymovement(LOCALID_TAKEHARU, faceright)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I must go now.\p
+    Please take care, Father.\p
+    {SPEAKER NAME_TAKEHARU}{DESTROY_MUGSHOT}Stay safe, and come back to me, Mitsuru.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}I'm fully intended to."))
+    closemessage
+    applymovement(LOCALID_INTELEON, moves(walk_down, set_invisible))
+    waitmovement(0)
+    removeobject(LOCALID_INTELEON)
+    setflag(FLAG_TEMP_1)
+    delay(30)
+    msgbox(format("Inteleon is now your Companion."))
+    call(Eventscript_CutsceneEnds)
+    release
+    end
+}
+
+script MansionMainHall_Eventscript_Takeharu {
+    lock
+    faceplayer
+    msgbox(format("{SPEAKER NAME_TAKEHARU}If you need anything on your journey, just make a call to home.\p
+    I'll be sure to assist you whenever.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That is assuring. Thank you, Father."))
+    closemessage
+    release
+}
+
+script MansionMainHall_Eventscript_Butler {
+    lock
+    faceplayer
+    setspeaker("Butler Yuuma")
+    if (var(VAR_TEMP_0) == 0){
+    msgbox(format("So you decided to go after all...\p
+    I will miss you so much, Young Ladyyyy."))
+    closemessage
+    playse(SE_FAINT)
+    applymovement(LOCALID_BUTLER, moves(emote_cry, shake_horizontal))
+    waitmovement(0)
+    waitse
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Y-Yuuma-san, please don't cry. I'll definitely be back in no time!"))
+    setspeaker("Butler Yuuma")
+    msgbox(format("{DESTROY_MUGSHOT}-sniff sniff-"))
+    closemessage
+    playse(SE_M_BUBBLE)
+    applymovement(LOCALID_PLAYER, emotesweat)
+    waitse
+    waitmovement(0)
+    setvar(VAR_TEMP_0, 1)
+    }
+    else
+    {
+        msgbox(format("-sniff sniff-\p
+        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}P-Please stop crying, Yuuma-san...\p
+        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(Sigh, how do I comfort a person in distress...?)"))
+        closemessage
+    }
+    release
+    end
+}
+
+script MansionMainHall_Eventscript_WaiterHaruma {
+    lock
+    setspeaker("Haruma")
+    if (var(VAR_TEMP_1) == 0){
+    msgbox(format("That dang kid Aoi better not slacking off and leaving me finish cleaning these statues on my own."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(7, moves(emote_exclamation_mark, face_player))
+    waitmovement(0)
+    setspeaker("Haruma")
+    msgbox(format("Young Lady, what can I do for you?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I don't see Kikuno anywhere. Do you know where she went to?"))
+    setspeaker("Haruma")
+    msgbox(format("{DESTROY_MUGSHOT}I saw she go outside to the main garden just earlier.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you, Haruma."))
+    closemessage
+    applymovement(7, faceleft)
+    waitmovement(0)
+    setvar(VAR_TEMP_1, 1)
+    }
+    else {
+        msgbox(format("Kikuno-san just went outside to the main garden.\p
+        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you, Haruma."))
+        closemessage
+    }
+    release
+    end
+}
+
+script MansionMainHall_Eventscript_WaitressMinori {
+    lock
+    faceplayer
+    setspeaker("Minori")
+    msgbox(AlertingWildPokemonGotInside)
+    closemessage
+    release
+    end
+}
+
+text AlertingWildPokemonGotInside {
+    format("Earlier some wild Pokémon got inside the east hall and made a mess.\p
+    The matter was resolved but we're still cleaning up.\p
+    You may prefer to exit through this west hall right now, Young Lady.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. That explained the noise I heard earlier.\p
+    Thank you for your hard work.")
+}
+
+script MansionMainHall_Eventscript_BlockingEastHall {
+    lock
+    applymovement(4, facedown)
+    applymovement(LOCALID_PLAYER, faceup)
+    waitmovement(0)
+    setspeaker("Minori")
+    msgbox(AlertingWildPokemonGotInside)
+    closemessage
+    applymovement(4, faceleft)
+    applymovement(LOCALID_PLAYER, walkleft)
+    waitmovement(0)
+    release
+    end
+}
+
+script MansionMainHall_Eventscript_WaitressKoharu {
+    lock
+    faceplayer
+    setspeaker("Koharu")
+    msgbox(TakeharusOffice)
+    closemessage
+    release
+    end
+}
+
+text TakeharusOffice {
+    format("Master Kirijo told us to not let anyone in his office.\p
+    I'll go ask him if you want to, Young Lady.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}It's fine, Koharu.\p
+    (Besides, I already discussed with Father about all the documents he keeps in there.)")
+}
+
+script MansionMainHall_Eventscript_BlockingTakeharusOffice {
+    lock
+    applymovement(LOCALID_PLAYER, faceright)
+    applymovement(6, faceleft)
+    waitmovement(0)
+    setspeaker("Koharu")
+    msgbox(TakeharusOffice)
+    closemessage
+    applymovement(LOCALID_PLAYER, facedown)
+    applymovement(6, facedown)
+    waitmovement(0)
+    release
+    end
+}
+
+script MansionMainHall_Eventscript_WaiterAoi {
+    lock
+    setspeaker("Aoi")
+    if (var(VAR_TEMP_2) == 1){
+        applymovement(5, shakehorizontal)
+        waitmovement(0)
+        msgbox(format("I have to work harder. FOR OUR YOUNG LADY!!"))
+        closemessage
+        playse(SE_M_BUBBLE)
+        applymovement(LOCALID_PLAYER, emotesweat)
+        waitmovement(0)
+        delay(20)
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I better leave him alone... with the statues.)"))
+        closemessage
+        release
+        end
+    }
+    else{
+    msgbox(format("Ugh, why are these statues so big... And why are there so many of them in this mansion...\p
+    Thanksfully this is the last one I have to clean tonight."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(5, moves(emote_exclamation_mark, face_player))
+    waitmovement(0)
+    setspeaker("Aoi")
+    msgbox(format("Y-Young Lady! How can I help?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Oh, it's nothing.\p
+    .......\p
+    You've worked hard, Aoi."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(5, emoteexclamation)
+    waitmovement(0)
+    delay(20)
+    playse(SE_M_CHARM)
+    waitse
+    playse(SE_M_CHARM)
+    applymovement(5, moves(emote_heart))
+    waitmovement(0)
+    setspeaker("Aoi")
+    msgbox(format("T-This is nothing, Young Lady!! I can still work harder!!"))
+    closemessage
+    playse(SE_M_BUBBLE)
+    applymovement(LOCALID_PLAYER, emotesweat)
+    waitmovement(0)
+    delay(20)
+    applymovement(5, facedown)
+    waitmovement(0)
+    setvar(VAR_TEMP_2, 1)
+    }
+    release
+    end
+}
+
+script MansionMainHall_Eventscript_EmptyGuestRoom {
+    lock
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(It's my guest room. I don't have any guest visited right now so it must be empty.)"))
+    closemessage
+    release
+    end
+}
+
+script MansionMainHall_Eventscript_NotTheWayOutToMainGarden {
+    lock
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I have no business in the Berry Garden right now."))
+    closemessage
+    applymovement(LOCALID_PLAYER, walkright)
+    waitmovement(0)
+    release
+    end
+}

@@ -5332,8 +5332,8 @@
     {
       "id": "LAYOUT_ROUTE1",
       "name": "Route1_Layout",
-      "width": 40,
-      "height": 30,
+      "width": 46,
+      "height": 38,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Gen4General",
@@ -5583,27 +5583,39 @@
     },
     {
       "id": "LAYOUT_KIRIJOSMANSION_MAINHALL",
-      "name": "KirijosMansionMainHall_Layout",
+      "name": "MansionMainHall_Layout",
       "width": 36,
       "height": 40,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_MansionIndoor",
       "secondary_tileset": "gTileset_MansionHall",
-      "border_filepath": "data/layouts/KirijosMansionMainHall/border.bin",
-      "blockdata_filepath": "data/layouts/KirijosMansionMainHall/map.bin"
+      "border_filepath": "data/layouts/MansionMainHall/border.bin",
+      "blockdata_filepath": "data/layouts/MansionMainHall/map.bin"
     },
     {
       "id": "LAYOUT_MITSURUS_ROOM2F",
-      "name": "MitsurusRoom2F_Layout",
+      "name": "Mansion_MitsurusRoom2F_Layout",
       "width": 21,
       "height": 20,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_MansionIndoor",
       "secondary_tileset": "gTileset_MansionHall",
-      "border_filepath": "data/layouts/MitsurusRoom2F/border.bin",
-      "blockdata_filepath": "data/layouts/MitsurusRoom2F/map.bin"
+      "border_filepath": "data/layouts/Mansion_MitsurusRoom2F/border.bin",
+      "blockdata_filepath": "data/layouts/Mansion_MitsurusRoom2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MANSION_TRAINING_HOUSE",
+      "name": "MansionTrainingHouse_Layout",
+      "width": 22,
+      "height": 24,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_MansionIndoor",
+      "secondary_tileset": "gTileset_MansionTrainingHouse",
+      "border_filepath": "data/layouts/MansionTrainingHouse/border.bin",
+      "blockdata_filepath": "data/layouts/MansionTrainingHouse/map.bin"
     }
   ]
 }

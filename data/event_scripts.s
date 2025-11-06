@@ -1214,6 +1214,8 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/Route1_HiddenGrotto/scripts.inc"
 
-	.include "data/maps/KirijosMansionMainHall/scripts.inc"
+	.include "data/maps/MansionMainHall/scripts.inc"
 
-	.include "data/maps/MitsurusRoom2F/scripts.inc"
+	.include "data/maps/Mansion_MitsurusRoom2F/scripts.inc"
+
+	.include "data/maps/MansionTrainingHouse/scripts.inc"

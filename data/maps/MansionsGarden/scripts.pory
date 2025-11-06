@@ -3,9 +3,26 @@ mapscripts MansionsGarden_MapScripts {
         if (var(VAR_MITSURUS_INTRO_STATE) == 0) {
             setflag(FLAG_SPAWN_INVISIBLE)
         }
+        if (var(VAR_MITSURUS_INTRO_STATE) == 3) {
+            setflag(FLAG_HIDE_TALK_BUTTON)
+            setobjectxyperm(KIKUNO, 37, 23)
+            setobjectmovementtype(KIKUNO, MOVEMENT_TYPE_FACE_RIGHT)
+            setobjectxyperm(INDEEDEE_F, 38, 23)
+            setobjectmovementtype(INDEEDEE_F, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+        }
+        if (var(VAR_MITSURUS_INTRO_STATE) == 5) {
+            setflag(FLAG_TEMP_2)
+            setobjectxyperm(KIKUNO, 44, 18)
+            setobjectxyperm(INDEEDEE_F, 48, 20)
+        }
+        if (var(VAR_MITSURUS_INTRO_STATE) >5){
+            setflag(FLAG_TEMP_2)
+        }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_MITSURUS_INTRO_STATE, 0: MansionsGarden_Eventscript_OnFrame0
+        VAR_MITSURUS_INTRO_STATE, 3: MansionsGarden_Eventscript_OnFrame3
+        VAR_MITSURUS_INTRO_STATE, 5: MansionsGarden_Eventscript_OnFrame5
     ]
 }
 
@@ -32,7 +49,14 @@ script MansionsGarden_Eventscript_OnFrame0 {
     goto(MansionsGarden_Eventscript_SlowlyShowTheMap)
 }
 
+script MansionsGarden_Eventscript_OnFrame3 {
+    setvar(VAR_MITSURUS_INTRO_STATE, 4)
+    goto(MansionsGarden_Eventscript_KikunoVSFennekin)
+}
 
+script MansionsGarden_Eventscript_OnFrame5 {
+    goto(MansionsGarden_Eventscript_SayingGoodbyeToKikuno)
+}
 
 script MansionsGarden_Eventscript_SlowlyShowTheMap {
     call(Eventscript_CutsceneStarts)
@@ -44,4 +68,300 @@ script MansionsGarden_Eventscript_SlowlyShowTheMap {
     closemessage
     setvar(VAR_CURRENT_LEVEL_CAP, 10)
     warpsilent(MAP_MITSURUS_ROOM2F, 15, 10)
+}
+
+
+
+script MansionsGarden_Eventscript_KikunoVSFennekin {
+    delay(20)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*2))
+    waitmovement(0)
+    playmoncry(SPECIES_FENNEKIN, CRY_MODE_NORMAL)
+    applymovement(FENNEKIN, moves(jump_in_place_left, delay_16, shake_vertical, delay_16, delay_16, walk_fast_left))
+    waitmovement(0)
+    call(Eventscript_BlockShakeCamera)
+    delay(30)
+    applymovement(FENNEKIN, moves(lock_facing_direction, jump_right, unlock_facing_direction))
+    applymovement(KIKUNO, moves(walk_in_place_right))
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_KIKUNO}Indeedee, Round!"))
+    closemessage
+    playmoncry(SPECIES_INDEEDEE_F, CRY_MODE_NORMAL)
+    applymovement(INDEEDEE_F, moves(jump_in_place_right, delay_16, shake_horizontal))
+    waitmovement(0)
+    delay(10)
+    playse(SE_LEDGE)
+    applymovement(FENNEKIN, moves(lock_facing_direction, jump_up, unlock_facing_direction))
+    waitmovement(0)
+    playse(SE_SHINY)
+    applymovement(FENNEKIN, emotemusic)
+    waitmovement(0)
+    lock
+    setobjectnewmovementtype(FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+    release
+    delay(30)
+    playse(SE_PIN)
+    applymovement(INDEEDEE_F, moves(emote_sad))
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_KIKUNO}Damn it. This one is so slippy."))
+    closemessage
+    delay(30)
+    playse(SE_PIN)
+    applymovement(FENNEKIN, moves(emote_exclamation_mark, face_up))
+    waitmovement(0)
+    delay(40)
+    playse(SE_SHINY)
+    applymovement(FENNEKIN, moves(emote_happy))
+    waitmovement(0)
+    applymovement(INDEEDEE_F, faceup)
+    applymovement(KIKUNO, moves(emote_exclamation_mark, face_up))
+    waitmovement(0)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_KIKUNO}Young Lady! Be careful!"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, emoteexclamation)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up *2))
+    applymovement(FENNEKIN, moves(walk_fast_left, walk_fast_up))
+    waitmovement(0)
+    setflag(FLAG_NO_WHITEOUT)
+    setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_SMART_WILD_AI)
+    delay(30)
+    setwildbattle(SPECIES_FENNEKIN, 5)
+    dowildbattle
+    goto (MansionsGarden_Eventscript_VSFennekin)
+}
+
+script MansionsGarden_Eventscript_VSFennekin {
+    delay(30)
+    clearflag(FLAG_NO_WHITEOUT)
+    clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_SMART_WILD_AI)
+    playse(SE_SHINY)
+    applymovement(FENNEKIN, emotemusic)
+    waitmovement
+    msgbox(format("Fennekin looks satisfied after spending all of its energy to the battle."))
+    closemessage
+    applymovement(KIKUNO, moves(walk_up*3, walk_right))
+    delay(8)
+    applymovement(INDEEDEE_F, moves(walk_up*2))
+    waitmovement(KIKUNO)
+    applymovement(LOCALID_PLAYER, faceleft)
+    waitmovement(0)
+    playse(MUS_HEAL)
+    waitse
+    special(HealPlayerParty)
+    msgbox(format("{SPEAKER NAME_KIKUNO}Phew. Thanks to you this Fennekin finally calms down.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Where did it come from? We don't normally see Fennekin around here.\p
+    {SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}It managed to sneak up into the east hall and made a mess out of the place."))
+    closemessage
+    delay(20)
+    playse(SE_SHINY)
+    applymovement(FENNEKIN, moves(emote_happy, delay_16, face_left, delay_16, face_down, delay_16, face_right, delay_16, face_up, delay_16, jump_in_place_up*2))
+    applymovement(KIKUNO, facedown)
+    applymovement(LOCALID_PLAYER, facedown)
+    waitmovement(FENNEKIN)
+    lock
+    setobjectnewmovementtype(FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+    release
+    delay(30)
+    msgbox(format("{SPEAKER NAME_KIKUNO}Looks like it wants to go with you?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Good timing. I do want a fire type in my team."))
+    closemessage
+    clearflag(FLAG_HIDE_TALK_BUTTON)
+    end
+}
+
+script MansionsGarden_Eventscript_Kikuno {
+    lock
+    faceplayer
+    if (var(VAR_MITSURUS_INTRO_STATE) == 4){
+        msgbox(format("{SPEAKER NAME_KIKUNO}Go on, Young Lady. It'll be a great teammate on your journey."))
+        closemessage
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_KIKUNO}Please stay safe, Young Lady."))
+        closemessage
+    }
+    release
+    end
+}
+
+script MansionsGarden_Eventscript_Fennekin {
+    lock
+    faceplayer
+    msgbox(format("Touch Fennekin with the Pokéball?"), MSGBOX_YESNO)
+    closemessage
+    if(var(VAR_RESULT) == TRUE){
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Now that I get a closer look at it.\p
+        It seems like there are sparkles around this Fennekin?)"), MSGBOX_YESNO)
+        closemessage
+        if (var(VAR_RESULT) == TRUE){
+            //giveshiny
+            call (MansionsGarden_Eventscript_GetShinyFennekin)
+        }
+        else{
+            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Oh, it's just dust.)"))
+            closemessage
+            call (MansionsGarden_Eventscript_GetNormalFennekin)
+        }
+        setflag(FLAG_HIDE_TALK_BUTTON)
+        setflag(FLAG_DONT_TRANSITION_MUSIC)
+        setflag(FLAG_HIDE_MAP_NAME_POPUP)
+        warpsilent(MAP_BLANK_MAP, 0, 0)
+        release
+        end
+    }
+    else{
+        playse(SE_PIN)
+        applymovement(FENNEKIN, moves(emote_question_mark))
+        waitmovement(0)
+        msgbox(format("Fennekin looks confused, but it's still waiting for you."))
+        closemessage
+    }
+}
+
+script MansionsGarden_Eventscript_GetShinyFennekin {
+    givemon(SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, 0, 0, 0, 0, SHINY_MODE_ALWAYS)
+        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+            playfanfare(MUS_OBTAIN_ITEM)
+            waitfanfare
+            msgbox(format("Fennekin happily went into the Pokéball."))
+            closemessage
+            applymovement(FENNEKIN, moves(enter_pokeball, set_invisible))
+            waitmovement(0)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+            playfanfare(MUS_OBTAIN_ITEM)
+            waitfanfare
+            msgbox(format("Fennekin happily went into the Pokéball."))
+            closemessage
+            applymovement(FENNEKIN, moves(enter_pokeball, set_invisible))
+            waitmovement(0)
+        }
+        else{
+            msgbox("Party full.")}
+}
+script MansionsGarden_Eventscript_GetNormalFennekin {
+    givemon(SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, 0, 0, 0, 0, SHINY_MODE_NEVER)
+         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+             playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        msgbox(format("Fennekin happily went into the Pokéball."))
+        closemessage
+        applymovement(FENNEKIN, moves(enter_pokeball, set_invisible))
+        waitmovement(0)
+        removeobject(FENNEKIN)
+        setflag(FLAG_TEMP_2)
+        }
+        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+             playfanfare(MUS_OBTAIN_ITEM)
+        waitfanfare
+        msgbox(format("Fennekin happily went into the Pokéball."))
+        closemessage
+        applymovement(FENNEKIN, moves(enter_pokeball, set_invisible))
+        waitmovement(0)
+        removeobject(FENNEKIN)
+        setflag(FLAG_TEMP_2)
+        }
+        else{
+            msgbox("Party full.")}
+}
+
+script MustGetFennekin {
+    lock
+    applymovement(LOCALID_PLAYER, moves(walk_left, face_down))
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I should let Fennekin join the team. It'll be a great help for my mission.)"))
+    closemessage
+    release
+    end
+}
+
+script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
+    setvar(VAR_MITSURUS_INTRO_STATE, 6)
+    delay(30)
+    applymovement(KIKUNO, emotepensive)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_KIKUNO}I guess no one manage to stop you at all.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Kikuno...\p
+    {SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}Young Lady, how about I join you on your mission?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}You know I won't agree to that.\p
+    It's too dangerous and I can't guaranteer your safety.\p
+    {SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}Hahaha, it's funny how you say the exact same thing as everyone who tried to stop you."))
+    closemessage
+    delay(40)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*2))
+    applymovement(KIKUNO, moves(walk_down*2, face_up))
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_KIKUNO}I guess this is goodbye then.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes... Please take care, Kikuno.\p
+    {SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}You too, Young Lady."))
+    closemessage
+    delay(30)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
+    applymovement(KIKUNO, moves(walk_right*2, delay_16, face_left))
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_KIKUNO}Oh right.\p
+    I'm not sure if you have heard but in case you need some healing, Nurse Sawa has returned from her maternity leave.\p
+    She should be at the Training House.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you for informing me.\p
+    {SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}My pleasure."))
+    closemessage
+    delay(10)
+    applymovement(KIKUNO, moves(walk_right *2, face_down))
+    delay(16)
+    applymovement(INDEEDEE_F, moves(walk_right, face_down))
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_diag_northwest *2))
+    waitmovement(0)
+    special(RemoveCameraObject)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I should get going now.)"))
+    closemessage
+    setrespawn(HEAL_LOCATION_MANSION_TRAINING_HOUSE)
+    release
+    end
+}
+
+script MansionsGarden_Eventscript_Indeedee {
+    lock
+    faceplayer
+    playmoncry(SPECIES_INDEEDEE_F, CRY_MODE_NORMAL)
+    waitmoncry
+    release
+    end
+}
+
+script MansionsGarden_Eventscript_TrainingHouse_Sign {
+    lock
+    msgbox("Training House")
+    closemessage
+    release
+    end
+}
+
+script MansionsGarden_Eventscript_GuestHouse_Sign {
+    lock
+    msgbox("Guest & Staff House")
+    closemessage
+    release
+    end
+}
+
+script MansionsGarden_Eventscript_WaiterKouhei {
+    lock
+    faceplayer
+    setspeaker("Kouhei")
+    if (var(VAR_MITSURUS_INTRO_STATE) < 10){
+    msgbox(format("It's my shift to stand guard tonight, Young Lady.\p
+    I will make sure no wild Pokémon can disrupt our staff's goodnight sleep."))
+    closemessage
+    }
+    release
+    end
 }

@@ -1,6 +1,6 @@
 mapscripts BlankMap_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_AKIHIKOS_INTRO_STATE) > 0) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) > 0 || var(VAR_MITSURUS_INTRO_STATE) > 0) {
             setflag(FLAG_SPAWN_INVISIBLE)
         }
         if (var(VAR_MITSURU_RELATIONSHIP_POINTS) == 0){
@@ -23,6 +23,8 @@ mapscripts BlankMap_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 36: SunshineMeadow_Eventscript_AkihikoOnFrame36
         VAR_AKIHIKOS_INTRO_STATE, 38: Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38
         VAR_AKIHIKOS_INTRO_STATE, 42: Route2_Eventscript_AkihikoOnFrame42
+        ////////////////////////
+        VAR_MITSURUS_INTRO_STATE, 4: MansionsGarden_Eventscript_Onframe4
         ]
 }
 
@@ -156,4 +158,9 @@ script SunshineMeadow_Eventscript_GameOver {
     waitstate
     release
     end
+}
+
+script MansionsGarden_Eventscript_Onframe4 {
+    setvar(VAR_MITSURUS_INTRO_STATE, 5)
+    warpsilent(MAP_MANSIONS_GARDEN, 43, 18)
 }

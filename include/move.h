@@ -131,8 +131,7 @@ struct MoveInfo
     bool32 dampBanned:1;
     //Other
     bool32 validApprenticeMove:1;
-    u32 bpCost:1;
-    u32 padding:5;
+    u32 padding:6;
     // end of word
 
     union {

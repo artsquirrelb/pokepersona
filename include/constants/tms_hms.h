@@ -8,9 +8,9 @@
     F(CALM_MIND) \
     F(ROAR) \
     F(TOXIC) \
-    F(SNOWSCAPE) \
+    F(HAIL) \
     F(BULK_UP) \
-    F(BULLET_PUNCH) \
+    F(BULLET_SEED) \
     F(HIDDEN_POWER) \
     F(SUNNY_DAY) \
     F(TAUNT) \
@@ -42,7 +42,7 @@
     F(FIRE_BLAST) \
     F(ROCK_TOMB) \
     F(AERIAL_ACE) \
-    F(THUNDER_PUNCH) \
+    F(TORMENT) \
     F(FACADE) \
     F(SECRET_POWER) \
     F(REST) \
@@ -58,10 +58,10 @@
     F(FLY) \
     F(SURF) \
     F(STRENGTH) \
+    F(FLASH) \
     F(ROCK_SMASH) \
     F(WATERFALL) \
-    F(DIVE) \
-    F(ROCK_CLIMB)
+    F(DIVE)
 
 #define FOREACH_TMHM(F) \
     FOREACH_TM(F) \

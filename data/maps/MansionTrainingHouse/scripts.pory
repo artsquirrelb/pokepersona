@@ -6,14 +6,12 @@ script MansionTrainingHouse_Eventscript_MoveTutor {
     if (var(VAR_RESULT) == FEMALE)
     {
         msgbox(format("Hello, Young Lady. What moves do you want to teach to your Pokémon today?"))
-        waitmessage
         bpmart(MansionTrainingHouse_MoveTutor, TRUE)
         msgbox(format("Good luck on your journey, Young Lady."))
         closemessage
     }
     else{
         msgbox(format("Hello, {PLAYER}. What moves do you want to teach to your Pokémon today?"))
-        waitmessage
         bpmart(MansionTrainingHouse_MoveTutor, TRUE)
         msgbox(format("Good luck on your journey, {PLAYER}."))
         closemessage

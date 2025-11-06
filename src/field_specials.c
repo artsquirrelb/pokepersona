@@ -4332,9 +4332,20 @@ bool32 CheckPartyHasSpecies(u32 givenSpecies)
 
     for (partyIndex = 0; partyIndex < CalculatePlayerPartyCount(); partyIndex++)
         if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES) == givenSpecies)
+            {
+            gSpecialVar_0x8004 = partyIndex;
             return TRUE;
+        }
 
     return FALSE;
+}
+
+void RemovePartyMon(void)
+{
+    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
+    ZeroMonData(mon);
+    CompactPartySlots();
+    CalculatePlayerPartyCount();
 }
 
 void UseBlankMessageToCancelPokemonPic(void)

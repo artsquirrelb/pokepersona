@@ -3202,6 +3202,16 @@ bool8 Scrcmd_checkspecies_choose(struct ScriptContext *ctx)
     return FALSE;
 }
 
+/*bool8 Scrcmd_changespeciesform(struct ScriptContext *ctx)
+{
+    u32 targetspeciesId = ScriptReadHalfword(ctx);
+    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
+    Script_RequestEffects(SCREFF_V1);
+    SetMonData(mon, MON_DATA_SPECIES, targetspeciesId);
+
+    return FALSE;
+}*/
+
 bool8 Scrcmd_getobjectfacingdirection(struct ScriptContext *ctx)
 {
     u32 objectId = VarGet(ScriptReadHalfword(ctx));

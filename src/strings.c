@@ -1549,4 +1549,4 @@ const u8 gText_FURFROU_MATRON[]     = _("Matron");
 const u8 gText_FURFROU_DANDY[]      = _("Dandy");
 const u8 gText_FURFROU_LA_REINE[]   = _("La Reine");
 const u8 gText_FURFROU_KABUKI[]     = _("Kabuki");
-const u8 gText_FURFROU_PHARAOH[]    = _("Pharaoh")
+const u8 gText_FURFROU_PHARAOH[]    = _("Pharaoh");

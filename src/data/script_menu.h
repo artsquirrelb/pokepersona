@@ -799,7 +799,7 @@ static const struct MenuAction MultichoiceList_FurfrouStyle[] =
     {gText_FURFROU_KABUKI},
     {gText_FURFROU_PHARAOH},
     {gText_Cancel},
-}
+};
 
 
 static const struct MenuAction MultichoiceList_Exit[] =

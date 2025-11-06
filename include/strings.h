@@ -539,6 +539,24 @@ extern const u8 gText_PokemonMoves[];
 extern const u8 gText_Underpowered[];
 extern const u8 gText_WhenInDanger[];
 
+// Camp Gears Multichoice strings
+extern const u8 gText_WaitUntilTime[];
+extern const u8 gText_WaitUntilMorning[];
+extern const u8 gText_WaitUntilDay[];
+extern const u8 gText_WaitUntilEvening[];
+extern const u8 gText_WaitUntilNight[];
+
+// MULTI_FURFROU_STYLE strings
+extern const u8 gText_FURFROU_NATURAL[];
+extern const u8 gText_FURFROU_HEART[];
+extern const u8 gText_FURFROU_STAR[];
+extern const u8 gText_FURFROU_DIAMOND[];
+extern const u8 gText_FURFROU_DEBUTANTE[];
+extern const u8 gText_FURFROU_MATRON[];
+extern const u8 gText_FURFROU_DANDY[];
+extern const u8 gText_FURFROU_LA_REINE[];
+extern const u8 gText_FURFROU_KABUKI[];
+extern const u8 gText_FURFROU_PHARAOH[];
 // Battle Frontier Maniac
 extern const u8 BattleFrontier_Lounge2_Text_SalonMaidenIsThere[];
 extern const u8 BattleFrontier_Lounge2_Text_SalonMaidenSilverMons[];
@@ -605,6 +623,16 @@ extern const u8 BattleFrontier_Lounge3_Text_GetToBattlePike[];
 extern const u8 BattleFrontier_Lounge3_Text_GetToBattlePyramid[];
 
 extern const u8 gText_BP[];
+extern const u8 gText_YouDontHaveBp[];
+extern const u8 gText_YouWantedVar1ThatllBeVar2_Bp[];
+extern const u8 gText_Var1AndYouWantedVar2_Bp[];
+extern const u8 gText_Exchange[];
+extern const u8 gText_YouWantedVar1ThatllBeVar2_BpMove[];
+extern const u8 gText_TeachMove[];
+extern const u8 gText_WhichPokemon[];
+extern const u8 gText_TutorPhysical[];
+extern const u8 gText_TutorSpecial[];
+extern const u8 gText_TutorStatus[];
 
 // Battle Frontier Exchange Corner
 extern const u8 BattleFrontier_ExchangeServiceCorner_Text_KissPosterDesc[];
@@ -2647,10 +2675,5 @@ extern const u8 gText_CannotSendMonToBoxHM[];
 extern const u8 gText_CannotSendMonToBoxActive[];
 extern const u8 gText_CannotSendMonToBoxPartner[];
 
-// Camp Gears
-extern const u8 gText_WaitUntilTime[];
-extern const u8 gText_WaitUntilMorning[];
-extern const u8 gText_WaitUntilDay[];
-extern const u8 gText_WaitUntilEvening[];
-extern const u8 gText_WaitUntilNight[];
+
 #endif // GUARD_STRINGS_H

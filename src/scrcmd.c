@@ -3475,3 +3475,16 @@ bool8 ScrCmd_debugprint(struct ScriptContext *ctx)
     }
     return FALSE;
 }
+
+bool8 ScrCmd_bpmart(struct ScriptContext *ctx)
+{
+    const void *ptr = (void *)ScriptReadWord(ctx);
+    u8 isMoveTutor = VarGet(ScriptReadHalfword(ctx));
+
+    if(isMoveTutor == TRUE)
+        CreateBPmartMoveTutor(ptr);
+    else
+        CreateBPmartMenu(ptr);;
+    ScriptContext_Stop();
+    return TRUE;
+}

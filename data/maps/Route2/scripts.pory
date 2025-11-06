@@ -760,7 +760,7 @@ script Route2_Eventscript_Himari {
     Also, I heard all forms of Lycanroc has Tough Claws! The only difference is their base stats spread."))
     closemessage
     checkspecies(SPECIES_ROCKRUFF)
-    if (var(VAR_RESULT) == TRUE){
+    if (var(VAR_RESULT) == SPECIES_ROCKRUFF){
         playse(SE_PIN)
         applymovement(15, emoteexclamation)
         waitmovement(0)

@@ -122,7 +122,7 @@
 
 #define FLAG_UNUSED_0x068                    0x68  // Unused Flag
 
-#define FLAG_HIDDENGROTTO_ROUTE1     0x69
+#define FLAG_HIDDENGROTTO_ROUTE1             0x69
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
 #define FLAG_RECEIVED_HM_ROCK_SMASH          0x6B
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player cant white out from poison before receiving Go Goggles
@@ -288,7 +288,7 @@
 #define FLAG_RECEIVED_TM_BULLET_SEED         0x106
 #define FLAG_ENTERED_ELITE_FOUR              0x107
 #define FLAG_RECEIVED_TM_HIDDEN_POWER        0x108
-#define FLAG_RECEIVED_TM_TORMENT             0x109
+#define FLAG_RECEIVED_TM_TORMENT       0x109
 #define FLAG_RECEIVED_LAVARIDGE_EGG          0x10A
 #define FLAG_RECEIVED_REVIVED_FOSSIL_MON     0x10B
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0x10C
@@ -1050,8 +1050,8 @@
 #define FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT                0x3E7
 
 // Item Ball Flags
-#define FLAG_ITEM_ROUTE_102_POTION                                  0x3E8
-#define FLAG_ITEM_ROUTE_116_X_SPECIAL                               0x3E9
+#define FLAG_ITEM_ROUTE_1_ALTARIANITE                               0x3E8
+#define FLAG_ITEM_ROUTE_1_TM_THUNDER_PUNCH                          0x3E9
 #define FLAG_ITEM_ROUTE_104_PP_UP                                   0x3EA
 #define FLAG_ITEM_ROUTE_105_IRON                                    0x3EB
 #define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC

@@ -1,5 +1,84 @@
 mapscripts MansionTrainingHouse_MapScripts {}
 
 script MansionTrainingHouse_Eventscript_MoveTutor {
-    
+    lock
+    checkplayergender
+    if (var(VAR_RESULT) == FEMALE)
+    {
+        msgbox(format("Hello, Young Lady. What moves do you want to teach to your Pokémon today?"))
+        waitmessage
+        bpmart(MansionTrainingHouse_MoveTutor, TRUE)
+        msgbox(format("Good luck on your journey, Young Lady."))
+        closemessage
+    }
+    else{
+        msgbox(format("Hello, {PLAYER}. What moves do you want to teach to your Pokémon today?"))
+        waitmessage
+        bpmart(MansionTrainingHouse_MoveTutor, TRUE)
+        msgbox(format("Good luck on your journey, {PLAYER}."))
+        closemessage
+    }
+    release
+    end
 }
+
+mart MansionTrainingHouse_MoveTutor {
+    MOVE_ECHOED_VOICE
+    MOVE_BULLET_SEED
+    MOVE_CHILLING_WATER
+    MOVE_FLAME_CHARGE
+    MOVE_CHARGE_BEAM
+    MOVE_ICY_WIND
+    MOVE_TRIPLE_KICK
+    MOVE_SMOG
+    MOVE_MUD_SHOT
+    MOVE_FEATHER_DANCE
+    MOVE_HEART_STAMP
+    MOVE_INFESTATION
+    MOVE_ROLLOUT
+    MOVE_CONFUSE_RAY
+    MOVE_FAKE_TEARS
+    MOVE_METAL_CLAW
+    MOVE_DRAINING_KISS
+    MOVE_NONE
+}
+
+script MansionTrainingHouse_Eventscript_FurfrouStyleSetter {
+    lock
+    faceplayer
+    setspeaker("Yoshiaki")
+    msgbox(format("I'm saving money to open a salon of my own.\p
+    Furfrou visits our garden from time to time so I caught one myself to practice my fur trimming skill.\p
+    Would you like me to style up your Furfrou too?"), MSGBOX_YESNO)
+    closemessage
+    if (var(VAR_RESULT) == TRUE){
+        checkspecies(SPECIES_FURFROU, NO_PARTY_SCREEN)
+        if (var(VAR_RESULT) != SPECIES_FURFROU){
+            msgbox(format("But you don't have a Furfrou in your party..."))
+            closemessage
+            release
+            end
+        }
+        else{
+            msgbox(format("Which style do you want for your Furfrou?"))
+            //multichoice(22, 3, MULTI_FURFROU_STYLE, 0)
+            //if (var(VAR_RESULT) == 0){
+                call(ChangeFormFadeScreen)
+            //    call(ChangeFurfrouToNatural)
+            //}
+        }
+    }
+    else{
+        msgbox(format("If you ever want to style your Furfrou, just ask me. I'll do it free of charge."))
+        closemessage
+        release
+        end
+    }
+}
+
+script ChangeFormFadeScreen {
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    delay(30)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+}
+

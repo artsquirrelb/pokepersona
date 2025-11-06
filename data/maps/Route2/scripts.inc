@@ -1243,7 +1243,7 @@ Route2_Eventscript_Himari::
 # 762 "data/maps/Route2/scripts.pory"
 	checkspecies SPECIES_ROCKRUFF
 # 763 "data/maps/Route2/scripts.pory"
-	compare VAR_RESULT, TRUE
+	compare VAR_RESULT, SPECIES_ROCKRUFF
 	goto_if_eq Route2_Eventscript_Himari_9
 	return
 

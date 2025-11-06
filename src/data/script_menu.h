@@ -786,6 +786,22 @@ static const struct MenuAction MultichoiceList_TimeOfDay[] =
     {gText_WaitUntilNight},
 };
 
+static const struct MenuAction MultichoiceList_FurfrouStyle[] =
+{
+    {gText_FURFROU_NATURAL},
+    {gText_FURFROU_HEART},
+    {gText_FURFROU_STAR},
+    {gText_FURFROU_DIAMOND},
+    {gText_FURFROU_DEBUTANTE},
+    {gText_FURFROU_MATRON},
+    {gText_FURFROU_DANDY},
+    {gText_FURFROU_LA_REINE},
+    {gText_FURFROU_KABUKI},
+    {gText_FURFROU_PHARAOH},
+    {gText_Cancel},
+}
+
+
 static const struct MenuAction MultichoiceList_Exit[] =
 {
     {gText_Exit},
@@ -915,6 +931,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
     [MULTI_TIME_OF_DAY]                = MULTICHOICE(MultichoiceList_TimeOfDay),
+    [MULTI_FURFROU_STYLE]              = MULTICHOICE(MultichoiceList_FurfrouStyle),
 };
 
 const u8 *const gStdStrings[] =

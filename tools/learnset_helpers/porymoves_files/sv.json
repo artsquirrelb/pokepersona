@@ -98921,7 +98921,8 @@
       "MOVE_TERA_BLAST",
       "MOVE_CHARGE",
       "MOVE_SUPER_FANG",
-      "MOVE_ELECTROWEB"
+      "MOVE_ELECTROWEB",
+      "MOVE_ZIPPY_ZAP"
     ],
     "EggMoves": [
       "MOVE_FAKE_OUT",
@@ -99041,7 +99042,8 @@
       "MOVE_FOCUS_PUNCH",
       "MOVE_ELECTROWEB",
       "MOVE_COACHING",
-      "MOVE_UPPER_HAND"
+      "MOVE_UPPER_HAND",
+      "MOVE_ZIPPY_ZAP"
     ],
     "EggMoves": [
       "MOVE_FAKE_OUT",
@@ -99189,7 +99191,8 @@
       "MOVE_ELECTROWEB",
       "MOVE_COACHING",
       "MOVE_THROAT_CHOP",
-      "MOVE_UPPER_HAND"
+      "MOVE_UPPER_HAND",
+      "MOVE_ZIPPY_ZAP"
     ],
     "EggMoves": [
       "MOVE_FAKE_OUT",

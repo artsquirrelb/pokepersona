@@ -365,3 +365,15 @@ script MansionsGarden_Eventscript_WaiterKouhei {
     release
     end
 }
+
+script MansionsGarden_Eventscript_Furfrou {
+    lock
+    faceplayer
+    playmoncry(SPECIES_FURFROU, CRY_MODE_NORMAL)
+    waitmoncry
+    startoverworldencounter(5)
+    setflag(FLAG_TEMP_3)
+    removeobject(FURFROU)
+    release
+    end
+}

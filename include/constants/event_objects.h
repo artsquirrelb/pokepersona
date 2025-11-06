@@ -257,12 +257,13 @@
 #define OBJ_EVENT_GFX_BUTLER                     250
 #define OBJ_EVENT_GFX_KIKUNO                     251
 #define OBJ_EVENT_GFX_RECEPTIONIST_F             252
-
+#define OBJ_EVENT_GFX_TM_BALL                    253
+#define OBJ_EVENT_GFX_MEGA_STONE                 254
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        253
+#define NUM_OBJ_EVENT_GFX                        255
 
 
 // These are dynamic object gfx ids.

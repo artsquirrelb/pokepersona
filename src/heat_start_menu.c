@@ -30,6 +30,7 @@
 #include "menu.h"
 #include "new_game.h"
 #include "option_menu.h"
+#include "outfit_menu.h"
 #include "overworld.h"
 #include "overworldhud.h"
 #include "palette.h"
@@ -83,6 +84,7 @@ static void HeatStartMenu_SafariZone_CreateSprites(void);
 static void HeatStartMenu_LoadBgGfx(void);
 static void HeatStartMenu_ShowQuestButtons(void);
 static void HeatStartMenu_ShowMapButtons(void);
+static void HeatStartMenu_ShowCompanionsButtons(void);
 static void HeatStartMenu_ShowTimeWindow(void);
 static void HeatStartMenu_UpdateClockDisplay(void);
 static void HeatStartMenu_UpdateMenuName(void);
@@ -136,6 +138,7 @@ struct HeatStartMenu {
   u32 sSafariBallsWindowId;
   u32 sQuestButtonWindowId;
   u32 sMapButtonWindowId;
+  u32 sCompanionsButonWindowId;
   u32 flag; // some u32 holding values for controlling the sprite anims and lifetime
   
   u32 spriteIdPoketch;
@@ -206,6 +209,16 @@ static const struct WindowTemplate sWindowTemplate_QuestButton = {
     .baseBlock = 148
 };
 
+static const struct WindowTemplate sWindowTemplate_CompanionsButton = {
+    .bg = 0,
+    .tilemapLeft = 8,
+    .tilemapTop = 15,
+    .width = 9,
+    .height = 2,
+    .paletteNum = 15,
+    .baseBlock = 148 +(7*2)
+};
+
 static const struct WindowTemplate sWindowTemplate_MapButton = {
     .bg = 0,
     .tilemapLeft = 19,
@@ -213,7 +226,7 @@ static const struct WindowTemplate sWindowTemplate_MapButton = {
     .width = 6,
     .height = 2,
     .paletteNum = 15,
-    .baseBlock = 148 +(7*2)
+    .baseBlock = 148 +(7*2) +(9*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_StartClock = {
@@ -223,7 +236,7 @@ static const struct WindowTemplate sWindowTemplate_StartClock = {
   .width = 12, // If you want to shorten the dates to Sat., Sun., etc., change this to 9
   .height = 2, 
   .paletteNum = 15,
-  .baseBlock = 148 + (7*2) +(6*2)
+  .baseBlock = 148 +(7*2) +(9*2) + (6*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_MenuName = {
@@ -233,7 +246,7 @@ static const struct WindowTemplate sWindowTemplate_MenuName = {
   .width = 7, 
   .height = 2, 
   .paletteNum = 15,
-  .baseBlock = (148 + (7*2) + (12*2) +(6*2))
+  .baseBlock = 148 +(7*2) +(9*2) + (6*2) + (12*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
@@ -243,7 +256,7 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .width = 7,
     .height = 4,
     .paletteNum = 15,
-    .baseBlock = (148 + (12*2)) + (7*2) + (7*2) +(6*2)
+    .baseBlock = 148 +(7*2) +(9*2) + (6*2) + (12*2) +(7*2)
 };
 
 static const struct SpritePalette sSpritePal_Icon[] =
@@ -624,6 +637,7 @@ static const u8 gText_CurrentTimePMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VA
 
 static const u8 gText_QuestButton[]  = _("  {L_BUTTON} Quest");
 static const u8 gText_MapButton[]    = _("  Map {R_BUTTON}");
+static const u8 gText_CompanionsButton[] = _("{SELECT_BUTTON} Companion");
 
 static void SetSelectedMenu(void) {
   if (FlagGet(DN_FLAG_DEXNAV_GET) == TRUE) {
@@ -689,6 +703,7 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_LoadBgGfx();
     HeatStartMenu_ShowQuestButtons();
     HeatStartMenu_ShowMapButtons();
+    HeatStartMenu_ShowCompanionsButtons();
     HeatStartMenu_ShowTimeWindow();
     sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
     HeatStartMenu_UpdateMenuName();
@@ -704,6 +719,7 @@ void HeatStartMenu_Init(void) {
     ShowSafariBallsWindow();
     HeatStartMenu_ShowQuestButtons();
     HeatStartMenu_ShowMapButtons();
+    HeatStartMenu_ShowCompanionsButtons();
     HeatStartMenu_ShowTimeWindow();
     sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
     HeatStartMenu_UpdateMenuName();
@@ -806,6 +822,17 @@ PutWindowTilemap(sHeatStartMenu->sQuestButtonWindowId);
   if (FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE){
 AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 0, 0, 0x1, 0x0, 0x2);
 CopyWindowToVram(sHeatStartMenu->sQuestButtonWindowId, COPYWIN_FULL);
+  }
+}
+
+static void HeatStartMenu_ShowCompanionsButtons (void)
+{
+sHeatStartMenu->sCompanionsButonWindowId = AddWindow(&sWindowTemplate_CompanionsButton);
+FillWindowPixelBuffer(sHeatStartMenu->sCompanionsButonWindowId, PIXEL_FILL(0));
+PutWindowTilemap(sHeatStartMenu->sCompanionsButonWindowId);
+  if (FlagGet(FLAG_COMPANION_MENU) == TRUE){
+AddTextPrinterParameterized2(sHeatStartMenu->sCompanionsButonWindowId, FONT_SMALL, gText_CompanionsButton, 0, 0, 0x1, 0x0, 0x2);
+CopyWindowToVram(sHeatStartMenu->sCompanionsButonWindowId, COPYWIN_FULL);
   }
 }
 
@@ -1500,7 +1527,15 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
     FadeScreen(FADE_TO_BLACK, 0);
     QuestMenuCallback();
 
-  } else if (JOY_NEW(R_BUTTON) &&sHeatStartMenu->loadState == 0) {
+  } else if (JOY_NEW(SELECT_BUTTON) &&sHeatStartMenu->loadState == 0 && FlagGet(FLAG_COMPANION_MENU) == TRUE) {
+    PlaySE(SE_SELECT);
+    DestroyTask(taskId);
+    HeatStartMenu_ExitAndClearTilemap();
+    FlagClear(FLAG_HIDE_TALK_BUTTON);
+    CreateOverworldTalkHUD();   
+    OpenOutfitMenu(CB2_ReturnToField);
+
+    } else if (JOY_NEW(R_BUTTON) &&sHeatStartMenu->loadState == 0) {
     PlaySE(SE_SELECT);
     DestroyTask(taskId);
     HeatStartMenu_ExitAndClearTilemap();

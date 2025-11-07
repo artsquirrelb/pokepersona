@@ -248,6 +248,11 @@ extern const u8 gText_BattlePyramidConfirmRetire[];
 
 // option menu texts
 extern const u8 gText_InstantText[];
+extern const u8 gText_StartMenuPal[];
+extern const u8 gText_StartMenuPal1[];
+extern const u8 gText_StartMenuPal2[];
+extern const u8 gText_StartMenuPal3[];
+extern const u8 gText_StartMenuPal4[];
 extern const u8 gText_ButtonMode[];
 extern const u8 gText_ButtonTypeNormal[];
 extern const u8 gText_ButtonTypeLR[];
@@ -2655,6 +2660,7 @@ extern const u8 gText_PkmnsNickname[];
 extern const u8 gText_TellHimTheWords[];
 
 // Exp. Share
+extern const u8 gText_ExpShareAll[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
 

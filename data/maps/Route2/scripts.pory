@@ -776,9 +776,9 @@ movement emotecry {
 
 script GiveOutfitbox {
     lock
-    if(flag(FLAG_SWITCH_PLAYER_OPTION) == FALSE){
+    if(flag(FLAG_COMPANION_MENU) == FALSE){
     giveitem(ITEM_OUTFIT_BOX)
-    setflag(FLAG_SWITCH_PLAYER_OPTION)
+    setflag(FLAG_COMPANION_MENU)
     }
     else{
         msgbox(format("Current protag is {PLAYER}.\p

@@ -446,7 +446,6 @@ script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru {
     closemessage
     additem(ITEM_POKE_BALL, 20)
     additem(ITEM_EXP_CANDY_XS, 20)
-    additem(ITEM_EXP_ALL)
     additem(ITEM_ESCAPE_ROPE, 1)
     setflag(FLAG_SYS_POKEDEX_GET)
     setflag(FLAG_SYS_NATIONAL_DEX)

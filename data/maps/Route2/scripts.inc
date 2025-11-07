@@ -1319,7 +1319,7 @@ GiveOutfitbox::
 # 778 "data/maps/Route2/scripts.pory"
 	lock
 # 779 "data/maps/Route2/scripts.pory"
-	goto_if_unset FLAG_SWITCH_PLAYER_OPTION, GiveOutfitbox_2
+	goto_if_unset FLAG_COMPANION_MENU, GiveOutfitbox_2
 # 784 "data/maps/Route2/scripts.pory"
 	msgbox GiveOutfitbox_Text_0
 # 786 "data/maps/Route2/scripts.pory"
@@ -1340,7 +1340,7 @@ GiveOutfitbox_2:
 # 780 "data/maps/Route2/scripts.pory"
 	giveitem ITEM_OUTFIT_BOX
 # 781 "data/maps/Route2/scripts.pory"
-	setflag FLAG_SWITCH_PLAYER_OPTION
+	setflag FLAG_COMPANION_MENU
 	goto GiveOutfitbox_1
 
 GiveOutfitbox_5:

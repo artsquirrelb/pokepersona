@@ -57,7 +57,6 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     delay(40)
     giveitem(ITEM_CAMP_GEARS)
     additem(ITEM_MACH_BIKE, 1)
-    additem(ITEM_EXP_ALL, 1)
     additem(ITEM_ESCAPE_ROPE, 1)
     additem(ITEM_POKE_BALL, 20)
     additem(ITEM_POTION, 2)

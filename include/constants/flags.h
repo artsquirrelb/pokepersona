@@ -59,7 +59,7 @@
 #define FLAG_NO_COLLISION               0x2D // Was Unused Flag
 #define FLAG_POKE_RIDER                 0x2E // Was Unused Flag
 #define FLAG_HIDE_QUEST_ICON            0x2F // Was Unused Flag
-#define FLAG_SWITCH_PLAYER_OPTION       0x30 // Unused Flag
+#define FLAG_COMPANION_MENU             0x30 // Unused Flag
 #define FLAG_HEAL_AFTER_FOLLOWER_BATTLE 0x31 // //NPC followers //was Unused Flag
 #define FLAG_SMART_WILD_AI              0x32 // Was Unused Flag
 #define FLAG_UNUSED_0x033    0x33 // Unused Flag

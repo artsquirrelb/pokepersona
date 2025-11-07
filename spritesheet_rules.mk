@@ -1,6 +1,7 @@
 POKEMONGFXDIR := graphics/pokemon
 OBJEVENTGFXDIR := graphics/object_events/pics
 FLDEFFGFXDIR := graphics/field_effects/pics
+BATINTGFXDIR := graphics/battle_interface
 MISCGFXDIR := graphics/misc
 
 $(OBJEVENTGFXDIR)/people/brendan/walking.4bpp: %.4bpp: %.png
@@ -5001,3 +5002,18 @@ $(OBJEVENTGFXDIR)/misc/mega_stone.4bpp: %.4bpp: %.png
 	
 graphics/door_anims/battle_tower_multi_corridor.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
+
+$(BATINTGFXDIR)/healthbox_doubles_opponent.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 4
+
+$(BATINTGFXDIR)/healthbox_doubles_player.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 4
+
+$(BATINTGFXDIR)/healthbox_safari.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 8
+
+$(BATINTGFXDIR)/healthbox_singles_opponent.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 4
+
+$(BATINTGFXDIR)/healthbox_singles_player.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 8 -mheight 8

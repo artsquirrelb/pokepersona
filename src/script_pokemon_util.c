@@ -170,8 +170,11 @@ void ScriptSetMonMoveSlot(u8 monIndex, u16 move, u8 slot)
     SetMonMoveSlot(&gPlayerParty[monIndex], move, slot);
 }
 
-// Note: When control returns to the event script, gSpecialVar_Result will be
-// TRUE if the party selection was successful.
+void SetMonSpecies(struct Pokemon *mon, u16 species)
+{
+    SetMonData(mon, MON_DATA_SPECIES, &species);
+}
+
 void ChooseHalfPartyForBattle(void)
 {
     gMain.savedCallback = CB2_ReturnFromChooseHalfParty;

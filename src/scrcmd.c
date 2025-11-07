@@ -3183,34 +3183,42 @@ bool8 Scrcmd_getsetpokedexflag(struct ScriptContext *ctx)
 bool8 Scrcmd_checkspecies(struct ScriptContext *ctx)
 {
     u32 givenSpecies = VarGet(ScriptReadHalfword(ctx));
+    u32 partyIndex;
 
     Script_RequestEffects(SCREFF_V1);
-
+    
     gSpecialVar_Result = CheckPartyHasSpecies(givenSpecies);
-
+    for (partyIndex = 0; partyIndex < CalculatePlayerPartyCount(); partyIndex++)
+        if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES) == givenSpecies)
+            gSpecialVar_0x8001 = partyIndex;
     return FALSE;
 }
 
 bool8 Scrcmd_checkspecies_choose(struct ScriptContext *ctx)
 {
     u32 givenSpecies = VarGet(ScriptReadHalfword(ctx));
-
+    u32 partyIndex;
+            
     Script_RequestEffects(SCREFF_V1);
-
-    gSpecialVar_Result = (GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES) == givenSpecies);
+    for (partyIndex = 0; partyIndex < CalculatePlayerPartyCount(); partyIndex++)
+        if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES) == givenSpecies)
+            {
+                gSpecialVar_Result = (GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES) == givenSpecies);
+                gSpecialVar_0x8001 = partyIndex;
+            }
 
     return FALSE;
 }
 
-/*bool8 Scrcmd_changespeciesform(struct ScriptContext *ctx)
+bool8 Scrcmd_changespecies(struct ScriptContext *ctx)
 {
-    u32 targetspeciesId = ScriptReadHalfword(ctx);
-    struct Pokemon *mon = &gPlayerParty[gSpecialVar_0x8004];
-    Script_RequestEffects(SCREFF_V1);
-    SetMonData(mon, MON_DATA_SPECIES, targetspeciesId);
+    u16 targetspecies = VarGet(ScriptReadHalfword(ctx));
+    u16 monIndex = gSpecialVar_0x8001;
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
+    SetMonSpecies (&gPlayerParty[monIndex], targetspecies);
     return FALSE;
-}*/
+}
 
 bool8 Scrcmd_getobjectfacingdirection(struct ScriptContext *ctx)
 {

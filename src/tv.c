@@ -3323,7 +3323,10 @@ static u8 GetTVGroupByShowId(u8 kind)
 
 u32 GetPlayerIDAsU32(void)
 {
-    return (gSaveBlock2Ptr->playerTrainerId[3] << 24) | (gSaveBlock2Ptr->playerTrainerId[2] << 16) | (gSaveBlock2Ptr->playerTrainerId[1] << 8) | gSaveBlock2Ptr->playerTrainerId[0];
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return (gSaveBlock2Ptr->playerTrainerId[3] << 24) | (gSaveBlock2Ptr->playerTrainerId[2] << 16) | (gSaveBlock2Ptr->playerTrainerId[1] << 8) | gSaveBlock2Ptr->playerTrainerId[0];
+    else
+        return (gSaveBlock2Ptr->player2TrainerId[3] << 24) | (gSaveBlock2Ptr->player2TrainerId[2] << 16) | (gSaveBlock2Ptr->player2TrainerId[1] << 8) | gSaveBlock2Ptr->player2TrainerId[0];
 }
 
 u8 CheckForPlayersHouseNews(void)

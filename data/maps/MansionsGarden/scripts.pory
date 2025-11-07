@@ -2,6 +2,10 @@ mapscripts MansionsGarden_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         if (var(VAR_MITSURUS_INTRO_STATE) == 0) {
             setflag(FLAG_SPAWN_INVISIBLE)
+            setflag(FLAG_TEMP_2)
+            setobjectxyperm(KIKUNO, 42, 20)
+            setobjectmovementtype(KIKUNO, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
+            setobjectxyperm(INDEEDEE_F, 46, 22)
         }
         if (var(VAR_MITSURUS_INTRO_STATE) == 3) {
             setflag(FLAG_HIDE_TALK_BUTTON)
@@ -90,7 +94,6 @@ script MansionsGarden_Eventscript_KikunoVSFennekin {
     playmoncry(SPECIES_INDEEDEE_F, CRY_MODE_NORMAL)
     applymovement(INDEEDEE_F, moves(jump_in_place_right, delay_16, shake_horizontal))
     waitmovement(0)
-    delay(10)
     playse(SE_LEDGE)
     applymovement(FENNEKIN, moves(lock_facing_direction, jump_up, unlock_facing_direction))
     waitmovement(0)

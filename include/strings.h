@@ -557,6 +557,9 @@ extern const u8 gText_FURFROU_DANDY[];
 extern const u8 gText_FURFROU_LA_REINE[];
 extern const u8 gText_FURFROU_KABUKI[];
 extern const u8 gText_FURFROU_PHARAOH[];
+extern const u8 gText_Next[];
+extern const u8 gText_Back[];
+
 // Battle Frontier Maniac
 extern const u8 BattleFrontier_Lounge2_Text_SalonMaidenIsThere[];
 extern const u8 BattleFrontier_Lounge2_Text_SalonMaidenSilverMons[];

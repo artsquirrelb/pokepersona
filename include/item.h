@@ -106,7 +106,6 @@ struct Item
     u8 flingPower;
     const u32 *iconPic;
     const u16 *iconPalette;
-    const u32 *iconPalette;
     u16 bpCost;
 };
 

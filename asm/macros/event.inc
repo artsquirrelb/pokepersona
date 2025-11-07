@@ -1939,18 +1939,7 @@
 	@ in src/data/items.h for items or src/data/moves_info.h for moves.
 	@ If 'isMoveTutor' is set to TRUE, the mart will work similar to a move tutor instead.
 	.macro bpmart products:req, isMoveTutor:req
-	.byte 0xef
-	.4byte \products
-	.2byte \isMoveTutor
-	.endm
-
-	@ Opens the Pokemart system, offering the specified products for sale.
-	@ Products should be a list of .2byte item values preceded by an .align 2
-	@ Uses BP as currency, with the prices based on the .bpCost value
-	@ in src/data/items.h for items or src/data/moves_info.h for moves.
-	@ If 'isMoveTutor' is set to TRUE, the mart will work similar to a move tutor instead.
-	.macro bpmart products:req, isMoveTutor:req
-	.byte 0xe5
+	.byte 0xee
 	.4byte \products
 	.2byte \isMoveTutor
 	.endm
@@ -2613,6 +2602,11 @@
 	checkspecies \speciesId, OPEN_PARTY_SCREEN
 	.endm
 
+	@Change the species the player chose to speciesId
+	.macro changespecies speciesId:req
+	callnative Scrcmd_changespecies, requests_effects=1
+	.2byte \speciesId
+	.endm 
 
 	@ Gets the facing direction of a given event object and stores it in the variable dest.
 	.macro getobjectfacingdirection localId:req, dest:req

@@ -4094,7 +4094,10 @@ static bool8 DoesMonOTMatchOwner(void)
     {
         trainerId = GetPlayerIDAsU32() & 0xFFFF;
         gender = gSaveBlock2Ptr->playerGender;
-        StringCopy(gStringVar1, gSaveBlock2Ptr->playerName);
+        if (gSaveBlock2Ptr->playerGender == MALE)
+            StringCopy(gStringVar1, gSaveBlock2Ptr->playerName);
+        else
+            StringCopy(gStringVar1, gSaveBlock2Ptr->player2Name);
     }
 
     if (gender != sum->OTGender || trainerId != (sum->OTID & 0xFFFF) || StringCompareWithoutExtCtrlCodes(gStringVar1, sum->OTName))

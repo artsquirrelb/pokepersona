@@ -52,7 +52,8 @@
     F(SKILL_SWAP) \
     F(SNATCH) \
     F(OVERHEAT) \
-    F(THUNDER_PUNCH)
+    F(THUNDER_PUNCH) \
+    F(CHILLING_WATER)
 
 #define FOREACH_HM(F) \
     F(CUT) \

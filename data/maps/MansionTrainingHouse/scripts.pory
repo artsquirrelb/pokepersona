@@ -46,25 +46,11 @@ script MansionTrainingHouse_Eventscript_FurfrouStyleSetter {
     faceplayer
     setspeaker("Yoshiaki")
     msgbox(format("I'm saving money to open a salon of my own.\p
-    Furfrou visits our garden from time to time so I caught one myself to practice my fur trimming skill.\p
+    Furfrou visits the mansion's garden from time to time so I caught one myself to practice my fur trimming skill.\p
     Would you like me to style up your Furfrou too?"), MSGBOX_YESNO)
     closemessage
     if (var(VAR_RESULT) == TRUE){
-        checkspecies(SPECIES_FURFROU, NO_PARTY_SCREEN)
-        if (var(VAR_RESULT) != SPECIES_FURFROU){
-            msgbox(format("But you don't have a Furfrou in your party..."))
-            closemessage
-            release
-            end
-        }
-        else{
-            msgbox(format("Which style do you want for your Furfrou?"))
-            //multichoice(22, 3, MULTI_FURFROU_STYLE, 0)
-            //if (var(VAR_RESULT) == 0){
-                call(ChangeFormFadeScreen)
-            //    call(ChangeFurfrouToNatural)
-            //}
-        }
+        call(CheckIfHasFurfrou)
     }
     else{
         msgbox(format("If you ever want to style your Furfrou, just ask me. I'll do it free of charge."))
@@ -74,9 +60,385 @@ script MansionTrainingHouse_Eventscript_FurfrouStyleSetter {
     }
 }
 
+script ShowMultiChoiceFurfrouStyle1 {
+    multichoice(21, 3, MULTI_FURFROU_STYLE, 0) 
+    if (var(VAR_RESULT) == 0){
+        call(ShowFurfrouNatural)
+    }
+    if (var(VAR_RESULT) == 1){
+        call(ShowFurfrouHeart)
+    }
+    elif (var(VAR_RESULT) == 2){
+        call(ShowFurfrouStar)
+    }
+    elif (var(VAR_RESULT) == 3){
+        call(ShowFurfrouDiamond)
+    }
+    elif (var(VAR_RESULT) == 4){
+        call(ShowFurfrouDebutante)
+    }
+    elif (var(VAR_RESULT) == 5){
+        call(ShowMultiChoiceFurfrouStyle2)
+    }
+    else {//cancel
+        msgbox(format("If you want to change your Furfrou's style, feel free to ask me.\p
+        It's free of charge, I just want to practice."))
+        closemessage
+        release
+        end
+    }
+}
+
+script ShowMultiChoiceFurfrouStyle2 {
+    multichoice(21, 3, MULTI_FURFROU_STYLE_2, 0)
+    if (var(VAR_RESULT) == 0){
+        call(ShowFurfrouMatron)
+    }
+    elif (var(VAR_RESULT) == 1){
+        call(ShowFurfrouDandy)
+    }
+    elif (var(VAR_RESULT) == 2){
+        call(ShowFurfrouLaReine)
+    }
+    elif (var(VAR_RESULT) == 3){
+        call(ShowFurfrouKabuki)
+    }
+    elif (var(VAR_RESULT) == 4){
+        call(ShowFurfrouPharaoh)
+    }
+    elif (var(VAR_RESULT) == 5){//back
+        call (ShowMultiChoiceFurfrouStyle1)
+    }
+    else{//cancel
+        msgbox(format("If you want to change your Furfrou's style, feel free to ask me.\p
+        It's free of charge, I just want to practice."))
+        closemessage
+        release
+        end    
+    }
+}
+
+script ShowFurfrouNatural {
+    showmonpic(SPECIES_FURFROU_NATURAL, 3, 3)
+    msgbox(format("You want the Natural style?"), MSGBOX_YESNO)
+    closemessage
+    hidemonpic
+    if (var(VAR_RESULT) == TRUE){
+        call(ChangeFurfrouToNatural)
+        msgbox(FurfrouStyleChangedPerfectly)
+        closemessage
+        setvar(VAR_0x8001, 0)
+        updatefollowingmon
+        release
+        end
+    }
+    else{
+        call(ShowMultiChoiceFurfrouStyle1)
+    }
+}
+
+script ShowFurfrouHeart {
+    showmonpic(SPECIES_FURFROU_HEART, 3, 3)
+    msgbox(format("You want the Heart style?"), MSGBOX_YESNO)
+    closemessage
+    hidemonpic
+    if (var(VAR_RESULT) == TRUE){
+        //call(PickTheFurfrou)
+        call(ChangeFurfrouToHeart)
+        msgbox(FurfrouStyleChangedPerfectly)
+        closemessage
+        setvar(VAR_0x8001, 0)
+        updatefollowingmon
+        release
+        end
+    }
+    else{
+        call(ShowMultiChoiceFurfrouStyle1)
+    }
+}
+
+script ShowFurfrouStar {
+    showmonpic(SPECIES_FURFROU_STAR, 3, 3)
+    msgbox(format("You want the Star style?"), MSGBOX_YESNO)
+    closemessage
+    hidemonpic
+    if (var(VAR_RESULT) == TRUE){
+        call(ChangeFurfrouToStar)
+        msgbox(FurfrouStyleChangedPerfectly)
+        closemessage
+        setvar(VAR_0x8001, 0)
+        updatefollowingmon
+        release
+        end
+    }
+    else{
+        call(ShowMultiChoiceFurfrouStyle1)
+    }
+}
+script ShowFurfrouDiamond {
+    showmonpic(SPECIES_FURFROU_DIAMOND, 3, 3)
+    msgbox(format("You want the Diamond style?"), MSGBOX_YESNO)
+    closemessage
+    hidemonpic
+    if (var(VAR_RESULT) == TRUE){
+        //call(PickTheFurfrou)
+        call(ChangeFurfrouToDiamond)
+        msgbox(FurfrouStyleChangedPerfectly)
+        closemessage
+        setvar(VAR_0x8001, 0)
+        updatefollowingmon
+        release
+        end
+    }
+    else{
+        call(ShowMultiChoiceFurfrouStyle1)
+    }
+}
+
+script ShowFurfrouDebutante {
+    showmonpic(SPECIES_FURFROU_DEBUTANTE, 3, 3)
+    msgbox(format("You want the Debutante style?"), MSGBOX_YESNO)
+    closemessage
+    hidemonpic
+    if (var(VAR_RESULT) == TRUE){
+        //call(PickTheFurfrou)
+        call(ChangeFurfrouToDebutante)
+        msgbox(FurfrouStyleChangedPerfectly)
+        closemessage
+        setvar(VAR_0x8001, 0)
+        updatefollowingmon
+        release
+        end
+    }
+    else{
+        call(ShowMultiChoiceFurfrouStyle1)
+    }
+}
+
+script ShowFurfrouMatron {
+    showmonpic(SPECIES_FURFROU_MATRON, 3, 3)
+    msgbox(format("You want the Matron style?"), MSGBOX_YESNO)
+    closemessage
+    hidemonpic
+    if (var(VAR_RESULT) == TRUE){
+        //call(PickTheFurfrou)
+        call(ChangeFurfrouToMatron)
+        msgbox(FurfrouStyleChangedPerfectly)
+        closemessage
+        setvar(VAR_0x8001, 0)
+        updatefollowingmon
+        release
+        end
+    }
+    else{
+        call(ShowMultiChoiceFurfrouStyle2)
+    }
+}
+
+script ShowFurfrouDandy {
+    showmonpic(SPECIES_FURFROU_DANDY, 3, 3)
+    msgbox(format("You want the Dandy style?"), MSGBOX_YESNO)
+    closemessage
+    hidemonpic
+    if (var(VAR_RESULT) == TRUE){
+        call(ChangeFurfrouToDandy)
+        msgbox(FurfrouStyleChangedPerfectly)
+        closemessage
+        setvar(VAR_0x8001, 0)
+        updatefollowingmon
+        release
+        end
+    }
+    else{
+        call(ShowMultiChoiceFurfrouStyle2)
+    }
+}
+
+script ShowFurfrouLaReine {
+    showmonpic(SPECIES_FURFROU_LA_REINE, 3, 3)
+    msgbox(format("You want the La Reine style?"), MSGBOX_YESNO)
+    closemessage
+    hidemonpic
+    if (var(VAR_RESULT) == TRUE){
+        call(ChangeFurfrouToLaReine)
+        msgbox(FurfrouStyleChangedPerfectly)
+        closemessage
+        setvar(VAR_0x8001, 0)
+        updatefollowingmon
+        release
+        end
+    }
+    else{
+        call(ShowMultiChoiceFurfrouStyle2)
+    }
+}
+
+script ShowFurfrouKabuki {
+    showmonpic(SPECIES_FURFROU_KABUKI, 3, 3)
+    msgbox(format("You want the Kabuki style?"), MSGBOX_YESNO)
+    closemessage
+    hidemonpic
+    if (var(VAR_RESULT) == TRUE){
+        call(ChangeFurfrouToKabuki)
+        msgbox(FurfrouStyleChangedPerfectly)
+        closemessage
+        setvar(VAR_0x8001, 0)
+        updatefollowingmon
+        release
+        end
+    }
+    else{
+        call(ShowMultiChoiceFurfrouStyle2)
+    }
+}
+
+script ShowFurfrouPharaoh {
+    showmonpic(SPECIES_FURFROU_PHARAOH, 3, 3)
+    msgbox(format("You want the Pharaoh style?"), MSGBOX_YESNO)
+    closemessage
+    hidemonpic
+    if (var(VAR_RESULT) == TRUE){
+        call(ChangeFurfrouToPharaoh)
+        msgbox(FurfrouStyleChangedPerfectly)
+        closemessage
+        setvar(VAR_0x8001, 0)
+        updatefollowingmon
+        release
+        end
+    }
+    else{
+        call(ShowMultiChoiceFurfrouStyle2)
+    }
+}
+
 script ChangeFormFadeScreen {
     fadescreenswapbuffers(FADE_TO_BLACK)
     delay(30)
     fadescreenswapbuffers(FADE_FROM_BLACK)
 }
 
+script ChangeFurfrouToNatural {
+    msgbox(format("Please wait a moment."))
+    closemessage
+    call(ChangeFormFadeScreen)
+    changespecies(SPECIES_FURFROU_NATURAL)
+}
+
+script ChangeFurfrouToHeart {
+    msgbox(format("Please wait a moment."))
+    closemessage
+    call(ChangeFormFadeScreen)
+    changespecies(SPECIES_FURFROU_HEART)
+}
+
+script ChangeFurfrouToStar {
+    msgbox(format("Please wait a moment."))
+    closemessage
+    call(ChangeFormFadeScreen)
+    changespecies(SPECIES_FURFROU_STAR)
+}
+
+script ChangeFurfrouToDiamond {
+    msgbox(format("Please wait a moment."))
+    closemessage
+    call(ChangeFormFadeScreen)
+    changespecies(SPECIES_FURFROU_DIAMOND)
+}
+
+script ChangeFurfrouToDebutante {
+    msgbox(format("Please wait a moment."))
+    closemessage
+    call(ChangeFormFadeScreen)
+    changespecies(SPECIES_FURFROU_DEBUTANTE)
+}
+
+script ChangeFurfrouToMatron {
+    msgbox(format("Please wait a moment."))
+    closemessage
+    call(ChangeFormFadeScreen)
+    changespecies(SPECIES_FURFROU_MATRON)
+}
+
+script ChangeFurfrouToDandy {
+    msgbox(format("Please wait a moment."))
+    closemessage
+    call(ChangeFormFadeScreen)
+    changespecies(SPECIES_FURFROU_DANDY)
+}
+
+script ChangeFurfrouToLaReine {
+    msgbox(format("Please wait a moment."))
+    closemessage
+    call(ChangeFormFadeScreen)
+    changespecies(SPECIES_FURFROU_LA_REINE)
+}
+
+script ChangeFurfrouToKabuki {
+    msgbox(format("Please wait a moment."))
+    closemessage
+    call(ChangeFormFadeScreen)
+    changespecies(SPECIES_FURFROU_KABUKI)
+}
+
+script ChangeFurfrouToPharaoh {
+    msgbox(format("Please wait a moment."))
+    closemessage
+    call(ChangeFormFadeScreen)
+    changespecies(SPECIES_FURFROU_PHARAOH)
+}
+
+text FurfrouStyleChangedPerfectly{
+    format("All perfectly done!\p
+    If you want to change your Furfrou's style again, feel free to ask me.")
+}
+
+script MansionTrainingHouse_Eventscript_Furfrou {
+    lock
+    faceplayer
+    playmoncry(SPECIES_FURFROU, CRY_MODE_NORMAL)
+    waitmoncry
+    release
+    end
+}
+
+script CheckIfHasFurfrou {
+    checkspecies(SPECIES_FURFROU_NATURAL)
+    if(var(VAR_RESULT) == FALSE){
+        checkspecies(SPECIES_FURFROU_HEART)
+    }
+    if(var(VAR_RESULT) == FALSE){
+        checkspecies(SPECIES_FURFROU_STAR)
+    }
+    if(var(VAR_RESULT) == FALSE){
+        checkspecies(SPECIES_FURFROU_DIAMOND)
+    }
+    if(var(VAR_RESULT) == FALSE){
+        checkspecies(SPECIES_FURFROU_DEBUTANTE)
+    }
+    if(var(VAR_RESULT) == FALSE){
+        checkspecies(SPECIES_FURFROU_MATRON)
+    }
+    if(var(VAR_RESULT) == FALSE){
+        checkspecies(SPECIES_FURFROU_DANDY)
+    }
+    if(var(VAR_RESULT) == FALSE){
+        checkspecies(SPECIES_FURFROU_LA_REINE)
+    }
+    if(var(VAR_RESULT) == FALSE){
+        checkspecies(SPECIES_FURFROU_KABUKI)
+    }
+    if(var(VAR_RESULT) == FALSE){
+        checkspecies(SPECIES_FURFROU_PHARAOH)
+    }
+    if(var(VAR_RESULT) == FALSE){
+        msgbox(format("But you don't have a Furfrou in party..."))
+        closemessage
+        release
+        end
+    }
+    else{
+        msgbox(format("Which style do you want for your Furfrou?"))
+        closemessage
+        call(ShowMultiChoiceFurfrouStyle1)
+    }
+}

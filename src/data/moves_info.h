@@ -5233,7 +5233,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_ICY_WIND] =
     {
         .name = COMPOUND_STRING("Icy Wind"),
-        .bpCost = (B_MOVE_TUTOR_COSTS <= GEN_3) ? 24 : ((B_MOVE_TUTOR_COSTS <= GEN_5) ? 48 : 12),
         .description = COMPOUND_STRING(
             "A chilling attack that\n"
             "lowers the foe's Speed."),

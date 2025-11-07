@@ -1061,12 +1061,21 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
         isShiny = GET_SHINY_VALUE(value, hasFixedPersonality ? fixedPersonality : personality) < SHINY_ODDS;
     }
     else // Player is the OT
-    {
-        value = gSaveBlock2Ptr->playerTrainerId[0]
+    {   
+        if (gSaveBlock2Ptr->playerGender == MALE)
+        {
+            value = gSaveBlock2Ptr->playerTrainerId[0]
               | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
               | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
               | (gSaveBlock2Ptr->playerTrainerId[3] << 24);
-
+        }
+        else
+        {
+            value = gSaveBlock2Ptr->player2TrainerId[0]
+              | (gSaveBlock2Ptr->player2TrainerId[1] << 8)
+              | (gSaveBlock2Ptr->player2TrainerId[2] << 16)
+              | (gSaveBlock2Ptr->player2TrainerId[3] << 24);
+        }
         if (P_FLAG_FORCE_NO_SHINY != 0 && FlagGet(P_FLAG_FORCE_NO_SHINY))
         {
             isShiny = FALSE;
@@ -1861,6 +1870,8 @@ void SetMonMoveSlot(struct Pokemon *mon, u16 move, u8 slot)
     u32 pp = GetMovePP(move);
     SetMonData(mon, MON_DATA_PP1 + slot, &pp);
 }
+
+
 
 static void SetMonMoveSlot_KeepPP(struct Pokemon *mon, u16 move, u8 slot)
 {
@@ -3263,10 +3274,17 @@ void CopyMon(void *dest, void *src, size_t size)
 u8 GiveMonToPlayer(struct Pokemon *mon)
 {
     s32 i;
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
+    else
+        SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->player2Name);
 
-    SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetMonData(mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
-    SetMonData(mon, MON_DATA_OT_ID, gSaveBlock2Ptr->playerTrainerId);
+    
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        SetMonData(mon, MON_DATA_OT_ID, gSaveBlock2Ptr->playerTrainerId);
+    else
+        SetMonData(mon, MON_DATA_OT_ID, gSaveBlock2Ptr->player2TrainerId);
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -5634,6 +5652,7 @@ static const u16 sUniversalMoves[] =
     MOVE_TERA_BLAST,
 };
 
+
 u8 CanLearnTeachableMove(u16 species, u16 move)
 {
     if (species == SPECIES_EGG)
@@ -6030,8 +6049,9 @@ bool8 IsTradedMon(struct Pokemon *mon)
 }
 
 bool8 IsOtherTrainer(u32 otId, u8 *otName)
-{
-    if (otId ==
+{   
+    if (gSaveBlock2Ptr->playerGender == MALE){
+        if (otId ==
         (gSaveBlock2Ptr->playerTrainerId[0]
       | (gSaveBlock2Ptr->playerTrainerId[1] << 8)
       | (gSaveBlock2Ptr->playerTrainerId[2] << 16)
@@ -6045,6 +6065,25 @@ bool8 IsOtherTrainer(u32 otId, u8 *otName)
     }
 
     return TRUE;
+    }
+
+    else {
+        if (otId ==
+        (gSaveBlock2Ptr->player2TrainerId[0]
+      | (gSaveBlock2Ptr->player2TrainerId[1] << 8)
+      | (gSaveBlock2Ptr->player2TrainerId[2] << 16)
+      | (gSaveBlock2Ptr->player2TrainerId[3] << 24)))
+    {
+        int i;
+        for (i = 0; otName[i] != EOS; i++)
+            if (otName[i] != gSaveBlock2Ptr->player2Name[i])
+                return TRUE;
+        return FALSE;
+    }
+
+    return TRUE;
+
+    }
 }
 
 void MonRestorePP(struct Pokemon *mon)

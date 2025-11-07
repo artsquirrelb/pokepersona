@@ -384,7 +384,7 @@ static const struct WindowTemplate sShopBuyMenuYesNoWindowTemplates =
 
 static const u8 sShopBuyMenuTextColors[][3] =
 {
-    [COLORID_NORMAL]      = {1, 2, 3},
+    [COLORID_NORMAL]      = {0, 2, 3},
     [COLORID_ITEM_LIST]   = {0, 2, 3},
     [COLORID_GRAY_CURSOR] = {0, 3, 2},
 };
@@ -760,7 +760,7 @@ static void MoveTutorLoadMoveInfo(u32 item)
             str = gText_TutorStatus;
             break;
     }
-    AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL); // adds Physical/Special/Status text
+    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL, 0x2, 0x0, 0x3); // adds Physical/Special/Status text
 
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerPP, 0);
     ConvertIntToDecimalStringN(buffer, move->pp, STR_CONV_MODE_LEFT_ALIGN, 2);
@@ -1381,7 +1381,7 @@ static void Task_BuyMenu(u8 taskId)
                 else if (MARTBP)
                 { 
                     CopyItemName(itemId, gStringVar1);
-                    if (ItemId_GetImportance(itemId) || !(gSaveBlock2Ptr->frontier.battlePoints >= (sShopData->totalCost * 2)))
+                    if (GetItemImportance(itemId) || !(gSaveBlock2Ptr->frontier.battlePoints >= (sShopData->totalCost * 2)))
                     {
                         ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
                         StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2_Bp);
@@ -1389,7 +1389,7 @@ static void Task_BuyMenu(u8 taskId)
                         sShopData->totalCost = ItemId_GetBpPrice(tItemId) * tItemCount;
                         BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                     }
-                    else if (ItemId_GetPocket(itemId) == POCKET_TM_HM)
+                    else if (GetItemPocket(itemId) == POCKET_TM_HM)
                     {
                         StringCopy(gStringVar2, GetMoveName(ItemIdToBattleMoveId(itemId)));
                         BuyMenuDisplayMessage(taskId, gText_Var1CertainlyHowMany2, Task_BuyHowManyDialogueInit);

@@ -61,7 +61,7 @@ script Miki_and_Akihiko_walk_to_Shinjiro {
     applymovement (3, Miki_leading_Akihiko_to_Shinjiro)
     applymovement (LOCALID_PLAYER, Miki_leading_Akihiko_to_Shinjiro)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Miki wants to go to the woods but there are wild Pokemons there.\p
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Miki wants to go to the woods but there are wild Pokémon there.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Shinji, it's fineee. As long as we stay out of the tall grass.\p
     {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}To the woods! To the woods!\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Sigh..."))
@@ -119,7 +119,7 @@ script Girl_OrphanageEntrance {
 
 script Sunshine_Orphanage_Direction_Sign {
     lock
-    msgbox("Sunshine Woods {DOWN_ARROW}\nBeware of wild Pokemons!"
+    msgbox("Sunshine Woods {DOWN_ARROW}\nBeware of wild Pokémon!"
     )
     release
 }

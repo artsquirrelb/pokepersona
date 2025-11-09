@@ -20,7 +20,7 @@ script SunshineTown_OldWomansHouse_1F_Eventscript_Caretaker {
     faceplayer
     setspeaker ("Emi")
     msgbox(format("The owner of this house is a fan of Lucario.\p
-    She hired us to play with her Pokémons because it gets very rowdy as she keeps bringing more Riolus home.\p
+    She hired us to play with her Pokémon because it gets very rowdy as she keeps bringing more Riolus home.\p
     If you want one for yourself I'm sure you can find some lurking in the tall grass in town."))
     closemessage
     releaseall

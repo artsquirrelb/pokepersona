@@ -113,7 +113,7 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
         "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Looks like it wants to stay with you.\p
         {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Can we keep it?\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Can we, Ms. Kobayashi?\p
-        {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Normally you aren't allowed to have your own Pokemon here.\p However, since you are going
+        {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Normally you aren't allowed to have your own Pokémon here.\p However, since you are going
         to leave in a few days, we can make an exception.\p
         Just make sure to not cause trouble in the mean time."))
     closemessage
@@ -134,7 +134,7 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
 
 text Eventscript_StarterPokemonTips{
     format("{COLOR GREEN}Tips: The shiny chance is roughly 1/100. \p 
-    No Pokemon are shiny locked, including the story starters.\p 
+    No Pokémon are shiny locked, including the story starters.\p 
     The story starters have been buffed and come with pre-determined Nature and Perfect IVs.\p
     You also can not release them.")
 }
@@ -259,7 +259,7 @@ script Boy_2_MainHall {
     faceplayer
     setspeaker("Yamamoto")
     msgbox(format(
-        "They don't allow us children to have Pokemon of our own but we can still play with the staff's Pokemons."))
+        "They don't allow us children to have Pokémon of our own but we can still play with the staff's Pokémon."))
     release
 }
 
@@ -328,7 +328,7 @@ script Boy_3_MainHall {
     elif (var(VAR_AKIHIKOS_INTRO_STATE) == 5) {msgbox("Stay safe in the woods.\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}We will!")}
     else {
-        msgbox(format("I heard you found a rare Pokemon in the woods?\p
+        msgbox(format("I heard you found a rare Pokémon in the woods?\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Pawmi is rare?"))
     }
     release
@@ -376,7 +376,7 @@ script Porygon_PC {
         call(EventScript_AccessPokemonStorage)}
 
     else {msgbox (format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
-    Porygon can access the Pokemon Storage. If only I had a Pokemon."))
+    Porygon can access the Pokémon Storage. If only I had a Pokémon."))
     release
     end}
 }
@@ -424,7 +424,7 @@ script Blissey_Heal {
         releaseall}
     else{
         msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
-        Blissey is very good at healing. I can ask it for help when I have an injured Pokemon."))
+        Blissey is very good at healing. I can ask it for help when I have an injured Pokémon."))
         releaseall
     } 
 }

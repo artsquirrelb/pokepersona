@@ -24,7 +24,7 @@ script BOY_1_2F {
     faceplayer
     setspeaker ("Kuro")
     msgbox(format(
-        "I wish the orphanage let us have Pokemon.\p"
+        "I wish the orphanage let us have Pokémon.\p"
         "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
         "I do too but I guess it'll be harder for the staff.\p They're already busy enough."
         ))

@@ -114,7 +114,7 @@ text Eventscript_HiddenGrotto {
 script Route1_Eventscript_Twins {
     lock
     faceplayer
-    msgbox(format("Shhh! We heard Pokémon's cry in that narrow path over there.\p
+    msgbox(format("Shhh! We heard a Pokémon's cry on that narrow path over there.\p
     Our mother said we shouldn't be interacting with wild Pokémon so we'll stay here."))
     closemessage
     release

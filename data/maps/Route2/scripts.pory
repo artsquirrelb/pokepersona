@@ -550,7 +550,7 @@ script Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle {
     lock
     specialvar(VAR_RESULT, CountPartyNonEggMons)
     if (var(VAR_RESULT) < 3){
-        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Wait, you don't have at least 3 Pokémons to battle. I want a fair fight.\p
+        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Wait, you don't have at least 3 Pokémon to battle. I want a fair fight.\p
         Are you sure you still want to fight handicapped?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == FALSE){
             msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Good thinking. I won't go down easily."))
@@ -693,7 +693,7 @@ text Route2_Eventscript_LostInShinjiroFirstBattlePointUp {
 text Route2_Eventscript_LostInShinjiroFirstBattlePointDown {
     format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}Arg, I lost...\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}...\p
-    Isn't that to be expected? Since you didn't want to fight me with 3 Pokémons?\p
+    Isn't that to be expected? Since you didn't want to fight me with 3 Pokémon?\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}...\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}I hope you won't underestimate me next time. It wasn't fun even when I won.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Yeah... Sorry.\p

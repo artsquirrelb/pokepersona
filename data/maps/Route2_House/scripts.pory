@@ -1004,7 +1004,7 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     We should make a stop at my personal researcher's lab in Windward Port. There's a package for us that I've ordered.\p
     It'll be a great help for our journey.\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}More gadgets?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}And Pokémons.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}And Pokémon.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright! Let's head out then!"))
     closemessage
     applymovement(5, walkleft)

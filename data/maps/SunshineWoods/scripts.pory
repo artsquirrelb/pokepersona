@@ -100,7 +100,7 @@ script SunshineWoods_Eventscript_PawmiCries {
     delay(30)
     waitmovement
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Could be a wild Pokemon. Be careful!"))
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Could be a wild Pokémon. Be careful!"))
     waitmessage
     release
     goto (SunshineWoods_Eventscript_PawmiAppears)
@@ -253,7 +253,7 @@ text SunshineWoods_Text_IkePostBattle {
 }
 
 text SunshineWoods_Text_HotaruIntro {
-    format("I have cute Pokémons!")
+    format("I have cute Pokémon!")
 }
 
 text SunshineWoods_Text_HotaruDefeated {

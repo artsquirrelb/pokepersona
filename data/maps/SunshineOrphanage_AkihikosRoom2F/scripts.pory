@@ -218,8 +218,8 @@ script BookshelfLeft {
 
 script BookshelfRight {
     lockall
-    msgbox(format("A book about Pokemon species in their natural habitats.\p"
-    "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}{SPEAKER NAME_AKIHIKO} I hope I can get my own Pokemon soon."))
+    msgbox(format("A book about Pokémon species in their natural habitats.\p"
+    "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}{SPEAKER NAME_AKIHIKO} I hope I can get my own Pokémon soon."))
     releaseall
 }
 

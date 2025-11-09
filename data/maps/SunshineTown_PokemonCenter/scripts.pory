@@ -1,6 +1,8 @@
 mapscripts SunshineTown_PokemonCenter_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        setrespawn(HEAL_LOCATION_SUNSHINE_TOWN)
+        if (flag(FLAG_SYS_POKEMON_GET) == TRUE) {
+            setrespawn(HEAL_LOCATION_SUNSHINE_TOWN) 
+        }
         
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 14) {
             clearflag(FLAG_HIDE_SHINJIRO)

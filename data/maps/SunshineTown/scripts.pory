@@ -1,6 +1,6 @@
 mapscripts SunshineTown_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (flag(FLAG_SYS_QUEST_MENU_GET) == FALSE){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) < 23){
             setobjectxyperm(5, 19, 7)
             setobjectmovementtype(5, MOVEMENT_TYPE_FACE_UP)
             setobjectxyperm(6, 23, 3)
@@ -245,7 +245,7 @@ script SunshineTown_Eventscript_OnFrame23{
 script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL{
     lock
     setspeaker("Fumiko")
-    if (flag(FLAG_SYS_QUEST_MENU_GET) == FALSE){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) < 24){
         goto (SunshineTown_Eventscript_ExpertF_PreQuest)
         release
         end
@@ -339,16 +339,6 @@ script SunshineTown_Eventscript_HiddenGrotto {
     if (var(VAR_RESULT) == TRUE){
         warp(MAP_SUNSHINE_TOWN_HIDDEN_GROTTO, 0)
     }
-    release
-    end
-}
-
-script SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru {
-    lock
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I have no business in Sunshine Woods right now.)"))
-    closemessage
-    applymovement(LOCALID_PLAYER, walkleft)
-    waitmovement(0)
     release
     end
 }

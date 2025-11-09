@@ -2331,7 +2331,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_THUNDER_WAVE] =
     {
         .name = COMPOUND_STRING("Thunder Wave"),
-        .bpCost = 48,
+        .bpCost = 0,
         .description = COMPOUND_STRING(
             "A weak jolt of electricity\n"
             "that paralyzes the foe."),
@@ -5465,7 +5465,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_ROLLOUT] =
     {
         .name = COMPOUND_STRING("Rollout"),
-        .bpCost = 32,
+        .bpCost = 0,
         .description = COMPOUND_STRING(
             "An attack lasting 5 turns\n"
             "with rising intensity."),

@@ -5,7 +5,6 @@
 #include "battle_pyramid.h"
 #include "battle_pyramid_bag.h"
 #include "berry.h"
-#include "berry_pouch.h"
 #include "berry_powder.h"
 #include "bike.h"
 #include "coins.h"
@@ -43,7 +42,6 @@
 #include "string_util.h"
 #include "task.h"
 #include "text.h"
-#include "tm_case.h"
 #include "vs_seeker.h"
 #include "outfit_menu.h"
 #include "constants/event_bg.h"
@@ -143,12 +141,7 @@ static void SetUpItemUseCallback(u8 taskId)
     }
     else
     {
-        if (CheckIfInBerryPouch())
-        {
-            BerryPouch_SetExitCallback(sItemUseCallbacks[type]);
-            BerryPouch_StartFadeToExitCallback(taskId);
-        }
-        else if (CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE)
+        if (CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE)
         {
             gBagMenu->newScreenCallback = sItemUseCallbacks[type];
             Task_FadeAndCloseBagMenu(taskId);
@@ -201,9 +194,7 @@ static void DisplayCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKeyIte
     StringExpandPlaceholders(gStringVar4, str);
     if (!isUsingRegisteredKeyItemOnField)
     {
-        if (CheckIfInBerryPouch())
-            DisplayItemMessageInBerryPouch(taskId, FONT_SHORT, str, Task_BerryPouch_DestroyDialogueWindowAndRefreshListMenu);
-        else if (CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE)
+        if (CurrentBattlePyramidLocation() == PYRAMID_LOCATION_NONE)
             DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, CloseItemMessage);
         else
             DisplayItemMessageInBattlePyramid(taskId, gText_DadsAdvice, Task_CloseBattlePyramidBagMessage);
@@ -1702,66 +1693,6 @@ static void Task_OpenRegisteredOutfitBox(u8 taskId)
         CleanupOverworldWindowsAndTilemaps();
         OpenOutfitMenu(CB2_ReturnToField);
         DestroyTask(taskId);
-    }
-}
-
-static void InitBerryPouchFromBag(void)
-{
-    InitBerryPouch(BERRYPOUCH_FROMFIELD, CB2_BagMenuFromStartMenu, FALSE);
-}
-
-static void Task_OpenRegisteredBerryPouch(u8 taskId)
-{
-    if (!gPaletteFade.active)
-    {
-        CleanupOverworldWindowsAndTilemaps();
-        InitBerryPouch(BERRYPOUCH_FROMFIELD, CB2_ReturnToField, TRUE);
-        DestroyTask(taskId);
-    }
-}
-
-void ItemUseOutOfBattle_BerryPouch(u8 taskId)
-{
-    if (!gTasks[taskId].tUsingRegisteredKeyItem)
-    {
-        gBagMenu->newScreenCallback = InitBerryPouchFromBag;
-        Task_FadeAndCloseBagMenu(taskId);
-    }
-    else
-    {
-        gFieldCallback = FieldCB_ReturnToFieldNoScript;
-        FadeScreen(FADE_TO_BLACK, 0);
-        gTasks[taskId].func = Task_OpenRegisteredBerryPouch;
-    }
-}
-
-static void InitTmCaseFromBag(void)
-{
-    InitTMCase(TMCASE_FIELD, CB2_BagMenuFromStartMenu, FALSE);
-}
-
-static void Task_OpenRegisteredTmCase(u8 taskId)
-{
-    if (!gPaletteFade.active)
-    {
-        CleanupOverworldWindowsAndTilemaps();
-        InitTMCase(TMCASE_FIELD, CB2_ReturnToField, TRUE);
-        DestroyTask(taskId);
-    }
-}
-
-void ItemUseOutOfBattle_TMCase(u8 taskId)
-{
-    if (!gTasks[taskId].tUsingRegisteredKeyItem)
-    {
-        gBagMenu->newScreenCallback = InitTmCaseFromBag;
-        Task_FadeAndCloseBagMenu(taskId);
-    }
-    else
-    {
-        gFieldCallback = FieldCB_ReturnToFieldNoScript;
-        FadeScreen(FADE_TO_BLACK, 0);
-        gTasks[taskId].func = Task_OpenRegisteredTmCase;
     }
 }
 

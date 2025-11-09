@@ -15,7 +15,6 @@ struct YesNoFuncTable
     TaskFunc noFunc;
 };
 
-void ResetAllBgsCoordinatesAndBgCntRegs(void);
 void ResetVramOamAndBgCntRegs(void);
 void ResetAllBgsCoordinates(void);
 void SetVBlankHBlankCallbacksToNull(void);

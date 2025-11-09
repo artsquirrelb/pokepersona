@@ -99,7 +99,7 @@ enum
 
 enum {
     BP_COLORID_WHITE,
-    BP_COLORID_DARK_GRAY,
+    BP_COLORID_DARK_GARY,
     BP_COLORID_LIGHT_GRAY,
     BP_COLORID_TEXT,
     BP_COLOR_CURSOR_ERASE = 0xFF
@@ -360,7 +360,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 5,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x1d1
     },
     [BP_VAR_WINDOW_SELL_AMOUNT] =
@@ -370,7 +370,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 9,
         .width = 12,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x1d1
     },
     [BP_VAR_WINDOW_MONEY] =
@@ -380,7 +380,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 1,
         .width = 10,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x201
     },
     [BP_VAR_WINDOW_TOSS_YESNO] =
@@ -390,7 +390,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 6,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x219
     },
     [BP_VAR_WINDOW_SELL_YESNO] =
@@ -400,7 +400,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 9,
         .width = 6,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x219
     },
     [BP_VAR_WINDOW_MESSAGE] =
@@ -420,7 +420,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 14,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x231
     },
     [BP_VAR_WINDOW_TOSS_ASK] =
@@ -430,7 +430,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 15,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x269
     },
     [BP_VAR_WINDOW_TOSS_SELECT] =
@@ -440,7 +440,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 16,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x2a5
     },
     [BP_VAR_WINDOW_THREW_AWAY] =
@@ -450,7 +450,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 23,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x2e5
     },
     [BP_VAR_WINDOW_OPTIONS_1] =
@@ -460,7 +460,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 17,
         .width = 7,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x199
     },
     [BP_VAR_WINDOW_OPTIONS_2] =
@@ -470,7 +470,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 7,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x199
     },
     [BP_VAR_WINDOW_OPTIONS_3] =
@@ -480,7 +480,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 13,
         .width = 7,
         .height = 6,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x199
     },
     [BP_VAR_WINDOW_OPTIONS_4] =
@@ -490,7 +490,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 11,
         .width = 7,
         .height = 8,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x199
     },
     [BP_VAR_WINDOW_OPTIONS_5] =
@@ -500,7 +500,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 9,
         .width = 7,
         .height = 10,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x199
     }
 };
@@ -515,7 +515,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
 static const u8 sTextColors[][3] =
 {
     [BP_COLORID_WHITE]      = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_WHITE, TEXT_COLOR_BP_DARK_GRAY },
-    [BP_COLORID_DARK_GRAY]  = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_DARK_GRAY, TEXT_COLOR_BP_LIGHT_GRAY },
+    [BP_COLORID_DARK_GARY]  = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_DARK_GRAY, TEXT_COLOR_BP_LIGHT_GRAY },
     [BP_COLORID_LIGHT_GRAY] = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_LIGHT_GRAY, TEXT_COLOR_BP_DARK_GRAY },
     [BP_COLORID_TEXT]       = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_MESSAGE_NORMAL, TEXT_COLOR_BP_MESSAGE_SHADOW },
 };
@@ -893,7 +893,7 @@ static void BerryPouchItemPrintFunc(u8 windowId, u32 itemId, u8 y)
         itemQuantity = GetBagItemQuantity(POCKET_BERRIES, itemId);
         ConvertIntToDecimalStringN(gStringVar1, itemQuantity, STR_CONV_MODE_RIGHT_ALIGN, MAX_ITEM_DIGITS);
         StringExpandPlaceholders(gStringVar4, gText_xVar1);
-        BerryPouchPrint(windowId, FONT_SMALL, gStringVar4, 110, y, 0, 0, TEXT_SKIP_DRAW, BP_COLORID_DARK_GRAY);
+        BerryPouchPrint(windowId, FONT_SMALL, gStringVar4, 110, y, 0, 0, TEXT_SKIP_DRAW, BP_COLORID_DARK_GARY);
     }
 }
 
@@ -1416,7 +1416,7 @@ static void Task_TossNo(u8 taskId)
     PutWindowTilemap(BP_WINDOW_BERRY_LIST);
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(2);
-    BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GRAY);
+    BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GARY);
     Task_CleanUpAndReturnToMain(taskId);
 }
 
@@ -1447,7 +1447,7 @@ static void Task_Toss_SelectMultiple(u8 taskId)
         PutWindowTilemap(BP_WINDOW_DESCRIPTION);
         ScheduleBgCopyTilemapToVram(0);
         ScheduleBgCopyTilemapToVram(2);
-        BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GRAY);
+        BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GARY);
         DestroyScrollIndicatorArrows();
         Task_CleanUpAndReturnToMain(taskId);
     }
@@ -1479,7 +1479,7 @@ static void Task_WaitButtonThenTossBerries(u8 taskId)
         tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchStaticResources.listMenuScrollOffset, sBerryPouchStaticResources.listMenuSelectedRow);
         PutWindowTilemap(BP_WINDOW_DESCRIPTION);
         ScheduleBgCopyTilemapToVram(0);
-        BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GRAY);
+        BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GARY);
         Task_CleanUpAndReturnToMain(taskId);
     }
 }
@@ -1527,7 +1527,7 @@ void Task_BerryPouch_DestroyDialogueWindowAndRefreshListMenu(u8 taskId)
     SetUpListMenuTemplate();
     tListTaskId = ListMenuInit(&gMultiuseListMenuTemplate, sBerryPouchStaticResources.listMenuScrollOffset, sBerryPouchStaticResources.listMenuSelectedRow);
     ScheduleBgCopyTilemapToVram(0);
-    BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GRAY);
+    BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GARY);
     Task_CleanUpAndReturnToMain(taskId);
 }
 
@@ -1539,7 +1539,7 @@ static void Task_BerryPouch_Exit(u8 taskId)
     PutWindowTilemap(BP_WINDOW_DESCRIPTION);
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(2);
-    BerryPouchSetArrowCursorFromListMenu(gTasks[taskId].tListTaskId, BP_COLORID_DARK_GRAY);
+    BerryPouchSetArrowCursorFromListMenu(gTasks[taskId].tListTaskId, BP_COLORID_DARK_GARY);
     Task_CleanUpAndReturnToMain(taskId);
 }
 
@@ -1678,7 +1678,7 @@ static void Task_SellNo(u8 taskId)
     PutWindowTilemap(BP_WINDOW_DESCRIPTION);
     RemoveMoneyLabelObject();
     ScheduleBgCopyTilemapToVram(0);
-    BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GRAY);
+    BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GARY);
     Task_CleanUpAndReturnToMain(taskId);
 }
 
@@ -1729,7 +1729,7 @@ static void Task_Sell_SelectMultiple(u8 taskId)
         RemoveMoneyLabelObject();
         ScheduleBgCopyTilemapToVram(0);
         DestroyScrollIndicatorArrows();
-        BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GRAY);
+        BerryPouchSetArrowCursorFromListMenu(tListTaskId, BP_COLORID_DARK_GARY);
         Task_CleanUpAndReturnToMain(taskId);
     }
 }

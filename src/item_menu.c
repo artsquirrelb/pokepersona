@@ -231,7 +231,7 @@ static const u8 sText_DepositHowManyVar1[] = _("Deposit how many\n{STR_VAR_1}?")
 static const u8 sText_DepositedVar2Var1s[] = _("Deposited {STR_VAR_2}\n{STR_VAR_1}.");
 static const u8 sText_NoRoomForItems[] = _("There's no room to\nstore items.");
 static const u8 sText_CantStoreImportantItems[] = _("Important items\ncan't be stored in\nthe PC!");
-static const u8 sText_BlueText[] = _("{STR_VAR_2}");
+static const u8 sText_BlueText[] = _("{COLOR_HIGHLIGHT_SHADOW DYNAMIC_COLOR4 TRANSPARENT LIGHT_GRAY}{STR_VAR_2}");
 
 static void Task_LoadBagSortOptions(u8 taskId);
 static void ItemMenu_SortByName(u8 taskId);

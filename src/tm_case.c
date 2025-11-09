@@ -308,7 +308,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 15,
         .width = 15,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x1f9
     },
     [WIN_TITLE] =
@@ -358,7 +358,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 9,
         .width = 12,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x2ed
     },
     [WIN_MONEY] =
@@ -368,7 +368,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 1,
         .width = 10,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x31d
     },
     DUMMY_WIN_TEMPLATE
@@ -391,7 +391,7 @@ static const struct WindowTemplate sWindowTemplates_ContextMenu[] = {
         .tilemapTop = 13,
         .width = 7,
         .height = 6,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 0x1cf
     },
     [WIN_GIVE_EXIT] = {

@@ -28,6 +28,7 @@
       "flag": "0"
     },
     {
+      "local_id": "SHINJIRO",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 20,
       "y": 6,
@@ -38,9 +39,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_SHINJIRO"
+      "flag": "FLAG_TEMP_1"
     },
     {
+      "local_id": "MIKI",
       "graphics_id": "OBJ_EVENT_GFX_MIKI",
       "x": 21,
       "y": 6,
@@ -51,35 +53,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_MIKI"
+      "flag": "FLAG_TEMP_1"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
-      "x": 4,
-      "y": 3,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_NONE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_SHINJIRO"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_MIKI",
-      "x": 5,
-      "y": 5,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_HIDE_MIKI"
-    },
-    {
+      "local_id": "PAWMI_D",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PAWMI_DELTA)",
       "x": 1,
       "y": 5,
@@ -90,7 +67,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_HIDE_MIKI"
+      "flag": "FLAG_TEMP_1"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
@@ -129,7 +106,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineWoods_Eventscript_PolicemenBlockingOrphanage",
-      "flag": "FLAG_HIDE_POLICEMEN_SUNSHINE_WOODS"
+      "flag": "FLAG_TEMP_3"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MOM",
@@ -142,7 +119,33 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineWoods_Eventscript_PolicemenBlockingOrphanage",
-      "flag": "FLAG_HIDE_POLICEMEN_SUNSHINE_WOODS"
+      "flag": "FLAG_TEMP_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
+      "x": 11,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_BEEDRILLITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SUNSHINE_WOODS_BEEDRILLITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "x": 23,
+      "y": 18,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_SCALD",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SUNSHINE_WOODS_TM_SCALD"
     }
   ],
   "warp_events": [
@@ -203,6 +206,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "SunshineWoods_Eventscript_DirectionSign"
+    },
+    {
+      "type": "hidden_item",
+      "x": 15,
+      "y": 8,
+      "elevation": 0,
+      "item": "ITEM_PROTEIN",
+      "flag": "FLAG_HIDDEN_ITEM_SUNSHINE_WOODS_PROTEIN"
     }
   ]
 }

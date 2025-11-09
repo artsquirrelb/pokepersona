@@ -13,14 +13,14 @@ script Route1_HiddenGrotto_TaurosPaldeaAqua {
         closemessage
     }
     else{
-        
         delay(30)
         playse(SE_FAILURE)
         applymovement(1, emoteangry)
         waitmovement(0)
-        if (var(VAR_AKIHIKOS_INTRO_STATE) >=43){startoverworldencounter(12)}
+        faceplayer
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 43 && var(VAR_AKIHIKOS_INTRO_STATE) < 50){startoverworldencounter(12)}
         else{startoverworldencounter(7)}
-        setflag(FLAG_HIDDENGROTTO_ROUTE1)
+        setflag(FLAG_DAILY_HIDDENGROTTO_ROUTE1)
         removeobject(1)
     }
     release

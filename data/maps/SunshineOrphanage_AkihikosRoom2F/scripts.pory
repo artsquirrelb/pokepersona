@@ -4,16 +4,20 @@ mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [ 
         VAR_AKIHIKOS_INTRO_STATE, 1: AkihikosRoom2F_ONFRAME1]
     MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 9) {
-            clearflag(FLAG_HIDE_SHINJIRO)
-            clearflag(FLAG_HIDE_TALK_BUTTON)
-            }
+        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 2){
+            setflag(FLAG_TEMP_1)
         }
+        if (var(VAR_AKIHIKOS_INTRO_STATE) < 0 || var(VAR_AKIHIKOS_INTRO_STATE) >= 11){
+            setflag(FLAG_TEMP_2)
+        }
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 9) {
+            clearflag(FLAG_HIDE_TALK_BUTTON)
+        }
+    }
 }
 
 script SunshineOrphanage_AkihikosRoom2F_OnWarp1{
     applymovement (LOCALID_PLAYER, faceup)
-    setflag(FLAG_HIDE_SHINJIRO)
 }
 
 movement walkdown {walk_down}
@@ -35,7 +39,6 @@ script AkihikosRoom2F_Cutscene1 {
     applymovement (LOCALID_PLAYER, emotepensive)
     waitmovement(0)
     delay(60)
-    clearflag(FLAG_HIDE_MIKI)
     playse(SE_EXIT)
     releaseall
     goto (AkihikosRoom2F_Eventscript_MikiAppears)}
@@ -68,7 +71,7 @@ script Miki_Inviting_Akihiko_To_Play{
     applymovement(1, Miki_Leaves)
     waitmovement(0)
     playse(SE_EXIT)
-    setflag(FLAG_HIDE_MIKI)
+    setflag(FLAG_TEMP_1)
     setflag (FLAG_VISITED_SUNSHINE_ORPHANAGE)
     setvar(VAR_AKIHIKOS_INTRO_STATE , 2)
     clearflag(FLAG_HIDE_TALK_BUTTON)
@@ -247,7 +250,7 @@ script TrashcanEmptyAkihikoRoom {
 script SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi {
     lock
     faceplayer
-    if (flag(FLAG_TEMP_1) == TRUE) {
+    if (var(VAR_TEMP_1) == 1) {
         msgbox(format("
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Ms. Kobayashi asked for both of us to meet her at the main hall."))
     }
@@ -266,7 +269,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKoba
     
     closemessage
     setvar(VAR_AKIHIKOS_INTRO_STATE, 10)
-    setflag(FLAG_TEMP_1)}
+    setvar(VAR_TEMP_1, 1)}
     release
 }
 
@@ -287,7 +290,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji1 {
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Oh, sure."))
     call(SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit)
     removeobject(2)
-    setflag(FLAG_HIDE_SHINJIRO)
+    setflag(FLAG_TEMP_2)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
     release
 }

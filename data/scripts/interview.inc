@@ -50,8 +50,8 @@ SlateportCity_OceanicMuseum_1F_EventScript_Reporter::
 	special InterviewBefore
 	goto_if_eq VAR_RESULT, TRUE, SlateportCity_OceanicMuseum_1F_EventScript_AlreadyInterviewed
 	copyvar VAR_0x8009, VAR_0x8006
-	goto_if_set FLAG_HIDDENGROTTO_ROUTE1, SlateportCity_OceanicMuseum_1F_EventScript_RequestInterviewShort
-	setflag FLAG_HIDDENGROTTO_ROUTE1
+	goto_if_set FLAG_UNUSED_0x69, SlateportCity_OceanicMuseum_1F_EventScript_RequestInterviewShort
+	setflag FLAG_UNUSED_0x69
 	msgbox SlateportCity_OceanicMuseum_1F_Text_InterviewRequest, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, SlateportCity_OceanicMuseum_1F_EventScript_AcceptInterview
 	goto_if_eq VAR_RESULT, NO, SlateportCity_OceanicMuseum_1F_EventScript_DeclineInterview

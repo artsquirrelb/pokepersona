@@ -60,7 +60,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_sight_or_berry_tree_id": "2",
       "script": "Route1_Eventscript_Touma",
       "flag": "0"
     },
@@ -86,7 +86,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
+      "trainer_sight_or_berry_tree_id": "4",
       "script": "Route1_Eventscript_Miyu",
       "flag": "0"
     },
@@ -160,7 +160,7 @@
       "x": 35,
       "y": 19,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN_UP_AND_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
@@ -184,14 +184,14 @@
   ],
   "warp_events": [
     {
-      "x": 7,
+      "x": 3,
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1_HIDDEN_GROTTO",
       "dest_warp_id": "0"
     },
     {
-      "x": 8,
+      "x": 4,
       "y": 18,
       "elevation": 0,
       "dest_map": "MAP_ROUTE1",
@@ -237,7 +237,7 @@
     },
     {
       "type": "sign",
-      "x": 8,
+      "x": 4,
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -245,7 +245,7 @@
     },
     {
       "type": "sign",
-      "x": 7,
+      "x": 3,
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

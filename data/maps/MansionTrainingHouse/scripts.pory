@@ -1,4 +1,8 @@
-mapscripts MansionTrainingHouse_MapScripts {}
+mapscripts MansionTrainingHouse_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        setrespawn(HEAL_LOCATION_MANSION_TRAINING_HOUSE)
+    }
+}
 
 script MansionTrainingHouse_Eventscript_MoveTutor {
     lock
@@ -25,7 +29,7 @@ mart MansionTrainingHouse_MoveTutor {
     MOVE_BULLET_SEED
     MOVE_CHILLING_WATER
     MOVE_FLAME_CHARGE
-    MOVE_CHARGE_BEAM
+    MOVE_THUNDER_WAVE
     MOVE_ICY_WIND
     MOVE_TRIPLE_KICK
     MOVE_SMOG

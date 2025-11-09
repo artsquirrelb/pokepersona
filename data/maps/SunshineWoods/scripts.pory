@@ -1,11 +1,15 @@
 mapscripts SunshineWoods_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         if (var(VAR_AKIHIKOS_INTRO_STATE) < 22){
-            setflag(FLAG_HIDE_POLICEMEN_SUNSHINE_WOODS)
+            setflag(FLAG_TEMP_3)
         }
-        if(var(VAR_AKIHIKOS_INTRO_STATE) == 5) {
-            clearflag(FLAG_HIDE_MIKI)
-            clearflag(FLAG_HIDE_SHINJIRO)
+        if (var(VAR_AKIHIKO_RELATIONSHIP_POINTS) == 6){
+            setobjectxyperm(2, 4, 3)
+            setobjectxyperm(3, 5, 5)
+            setobjectmovementtype(3, MOVEMENT_TYPE_FACE_RIGHT)
+        }
+        if(var(VAR_AKIHIKOS_INTRO_STATE) > 11) {
+            setflag(FLAG_TEMP_1)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) >= 22){
             clearflag(FLAG_HIDE_POLICEMEN_SUNSHINE_WOODS)
@@ -14,15 +18,15 @@ mapscripts SunshineWoods_MapScripts {
         
         
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 6: Akihiko_Looking_at_Miki]
+        VAR_AKIHIKOS_INTRO_STATE, 6: SunshineWoods_Eventscript_OnWarp6]
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 6: SunshineWoods_Eventscript_OnFrame6
        ]
 }
 
-script  Akihiko_Looking_at_Miki {
+script  SunshineWoods_Eventscript_OnWarp6 {
     applymovement(LOCALID_PLAYER, faceright)
-    hideobjectat (6, MAP_SUNSHINE_WOODS)
+    hideobjectat (PAWMI_D, MAP_SUNSHINE_WOODS)
 }
 movement playerfaceright {
     face_right
@@ -30,8 +34,8 @@ movement playerfaceright {
 
 script SunshineWoods_Eventscript_DoNotEnterTheGrass {
     lock
-    applymovement(2, facedown)
-    applymovement(3, facedown)
+    applymovement(SHINJIRO, facedown)
+    applymovement(MIKI, facedown)
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Alright, we're here.\p
     Don't enter the tall grass, okay?\p
@@ -50,7 +54,7 @@ script SunshineWoods_Eventscript_OnFrame6 {
 script SunshineWoods_Eventscript_PlayingInTheWoods {
     lock 
     delay(60)
-    applymovement(5, SunshineWoods_Eventscript_MikiFoundSomething)
+    applymovement(MIKI, SunshineWoods_Eventscript_MikiFoundSomething)
     waitmovement(0)
     goto (SunshineWoods_Eventscript_PawmisCry)
     release
@@ -77,7 +81,8 @@ script SunshineWoods_Eventscript_PawmisCry {
 
 script SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown {
     lock
-    applymovement(5, faceup)
+    applymovement(MIKI, faceup)
+    waitmovement(0)
     msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Will you make one for me too, Miki?\p
     {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Of course!"))
     closemessage
@@ -87,11 +92,11 @@ script SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown {
 
 script SunshineWoods_Eventscript_PawmiCries {
     lock
-    playmoncry(SPECIES_PAWMI_DELTA, CRY_MODE_NORMAL)
+    playmoncry(SPECIES_PAWMI, CRY_MODE_NORMAL)
     waitmoncry
     applymovement(LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoAlerted)
-    applymovement(4, SunshineWoods_Eventscript_ShinjiroAlerted)
-    applymovement(5, SunshineWoods_Eventscript_MikiAlerted)
+    applymovement(SHINJIRO, SunshineWoods_Eventscript_ShinjiroAlerted)
+    applymovement(MIKI, SunshineWoods_Eventscript_MikiAlerted)
     delay(30)
     waitmovement
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that?\p
@@ -130,13 +135,13 @@ movement jumpright {
 
 script SunshineWoods_Eventscript_PawmiAppears {
     lock
-    showobjectat(6, MAP_SUNSHINE_WOODS)
-    playmoncry(SPECIES_PAWMI_DELTA, CRY_MODE_NORMAL)
+    showobjectat(PAWMI_D, MAP_SUNSHINE_WOODS)
+    playmoncry(SPECIES_PAWMI, CRY_MODE_NORMAL)
     waitmoncry
-    applymovement(6, jumpright)
-    applymovement(5, SunshineWoods_Eventscript_Stayback)
+    applymovement(PAWMI_D, jumpright)
+    applymovement(MIKI, SunshineWoods_Eventscript_Stayback)
     applymovement(LOCALID_PLAYER, SunshineWoods_Eventscript_Stayback)
-    applymovement(4, SunshineWoods_Eventscript_OnGuard)
+    applymovement(SHINJIRO, SunshineWoods_Eventscript_OnGuard)
     waitmovement
     release
     goto(SunshineWoods_Eventscript_PawmisInjured)
@@ -159,7 +164,7 @@ script SunshineWoods_Eventscript_PawmisInjured {
     lock
     playmoncry(SPECIES_PAWMI, CRY_MODE_NORMAL)
     waitmoncry
-    applymovement(6, SunshineWoods_Eventscript_PawmiIsWeak)
+    applymovement(PAWMI_D, SunshineWoods_Eventscript_PawmiIsWeak)
     waitmovement
     delay(16)
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Wait...\p
@@ -185,11 +190,10 @@ script TakePawmiToHeal {
     closemessage
     fadescreenswapbuffers(FADE_TO_BLACK)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 7)
-    removeobject(6)
-    removeobject(4)
-    removeobject(5)
-    setflag(FLAG_HIDE_MIKI)
-    setflag(FLAG_HIDE_SHINJIRO)
+    removeobject(PAWMI_D)
+    removeobject(MIKI)
+    removeobject(SHINJIRO)
+    setflag(FLAG_TEMP_1)
     warpsilent(MAP_BLANK_MAP,0,0)
     release
     

@@ -1,0 +1,21 @@
+mapscripts SunshineTown_HiddenGrotto_MapScripts {}
+
+script SunshineTown_HiddenGrotto_Drampa {
+    lock
+    delay(20)
+    msgbox(format("The Pokémon is loafing around. Challenge it?"), MSGBOX_YESNO)
+    closemessage
+    if (var(VAR_RESULT) == FALSE){
+        msgbox(format("You left the Pokémon alone."))
+        closemessage
+    }
+    else{
+        faceplayer
+        delay(30)
+        startoverworldencounter(40)
+        setflag(FLAG_DAILY_HIDDENGROTTO_SUNSHINETOWN)
+        removeobject(1)
+    }
+    release
+    end
+}

@@ -5308,7 +5308,7 @@
     {
       "id": "LAYOUT_SUNSHINE_WOODS",
       "name": "SunshineWoods_Layout",
-      "width": 32,
+      "width": 34,
       "height": 28,
       "border_width": 2,
       "border_height": 2,
@@ -5616,6 +5616,18 @@
       "secondary_tileset": "gTileset_MansionTrainingHouse",
       "border_filepath": "data/layouts/MansionTrainingHouse/border.bin",
       "blockdata_filepath": "data/layouts/MansionTrainingHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_TOWN_HIDDEN_GROTTO",
+      "name": "SunshineTown_HiddenGrotto_Layout",
+      "width": 21,
+      "height": 20,
+      "border_width": 6,
+      "border_height": 4,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_HiddenGrotto",
+      "border_filepath": "data/layouts/SunshineTown_HiddenGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineTown_HiddenGrotto/map.bin"
     }
   ]
 }

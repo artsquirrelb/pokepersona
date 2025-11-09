@@ -93,6 +93,7 @@ script SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle {
             subvar(VAR_MITSURU_RELATIONSHIP_POINTS, 3) //current point: 97
             fwdtime(18, 0)
             setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_DONT_TRANSITION_MUSIC)
             warpsilent(MAP_BLANK_MAP, 0, 0)
             end
             }
@@ -209,6 +210,7 @@ movement InviPlayerTakingSpritesPlace {
 }
 script SunshineMeadow_Eventscript_ChoosingPartyForMitsuruFirstBattle {
     setflag(FLAG_NO_WHITEOUT)
+    setflag(FLAG_NO_BAG_USE)
     special(ChooseHalfPartyForBattle) //Choose 3 mons to fight
     waitstate()
     if (var(VAR_RESULT) == FALSE){
@@ -404,6 +406,7 @@ script SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle{
     setvar(VAR_AKIHIKOS_INTRO_STATE, 38)
     clearflag(FLAG_HIDE_TALK_BUTTON)
     clearflag(FLAG_NO_WHITEOUT)
+    clearflag(FLAG_NO_BAG_USE)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fwdtime(19, 20)
     warpsilent(MAP_ROUTE2, 8, 12)

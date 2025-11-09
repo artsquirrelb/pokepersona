@@ -54,7 +54,6 @@ enum
     MENUITEM_BATTLE_QUICKRUN,
     //MENUITEM_BATTLE_DOUBLEBATTLE,
     //MENUITEM_BATTLE_MOVEINFO,
-    MENUITEM_EXPSHARE_ALL,
     MENUITEM_BATTLE_CANCEL,
     MENUITEM_BATTLE_COUNT,
 };
@@ -204,7 +203,6 @@ static void BattleStyle_DrawChoices(int selection, int y);
 static void BattleSpeed_DrawChoices(int selection, int y);
 //static void BagUse_DrawChoices(int selection, int y);
 static void QuickRun_DrawChoices(int selection, int y);
-static void ExpShareAll_DrawChoices(int selection, int y);
 //static void DoubleBattle_DrawChoices(int selection, int y);
 //static void MoveInfo_DrawChoices(int selection, int y);
 static void SoundMode_DrawChoices(int selection, int y);
@@ -273,7 +271,6 @@ static const MenuItemFunctions sItemFunctionsBattle[MENUITEM_BATTLE_COUNT] =
     [MENUITEM_BATTLE_QUICKRUN]     = {QuickRun_DrawChoices,       ThreeOptions_ProcessInput},
     //[MENUITEM_BATTLE_DOUBLEBATTLE] = {DoubleBattle_DrawChoices,   TwoOptions_ProcessInput},
     //[MENUITEM_BATTLE_MOVEINFO]     = {MoveInfo_DrawChoices,       TwoOptions_ProcessInput},
-    [MENUITEM_EXPSHARE_ALL]        = {ExpShareAll_DrawChoices,    TwoOptions_ProcessInput},
     [MENUITEM_BATTLE_CANCEL]       = {NULL, NULL},
 };
 
@@ -306,7 +303,6 @@ static const u8 *const sOptionMenuItemsNamesBattle[MENUITEM_BATTLE_COUNT] =
     [MENUITEM_BATTLE_QUICKRUN]      = gText_QuickRun,
     //[MENUITEM_BATTLE_DOUBLEBATTLE]  = gText_DoubleBattles,
     //[MENUITEM_BATTLE_MOVEINFO]      = gText_MoveInfo,
-    [MENUITEM_EXPSHARE_ALL]         = gText_ExpShareAll,
     [MENUITEM_BATTLE_CANCEL]        = gText_OptionMenuSave,
 };
 
@@ -362,7 +358,6 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_BATTLE_QUICKRUN:
         //case MENUITEM_BATTLE_DOUBLEBATTLE:
         //case MENUITEM_BATTLE_MOVEINFO:
-        case MENUITEM_EXPSHARE_ALL:
         case MENUITEM_BATTLE_CANCEL:
         case MENUITEM_BATTLE_COUNT:
             return TRUE;
@@ -414,7 +409,7 @@ static const u8 sText_Desc_QuickRunOptionOff[]  = _("Disables quick running from
 //static const u8 sText_Desc_DoubleBattles_On[]   = _("All Trainer battles will be double\nbattles.");
 //static const u8 sText_Desc_DoubleBattles_Off[]  = _("All Trainer battles will be single\nbattles, unless forced.");
 static const u8 sText_Desc_ExpShareAll_On[]     = _("Every Pokémon in player's party\nwill gain EXP after battle.");
-static const u8 ssText_Desc_ExpShareAll_Off[]   = _("Only Pokémon participated in battle will gain EXP.");
+static const u8 sText_Desc_ExpShareAll_Off[]   = _("Only Pokémon participated in battle will gain EXP.");
 static const u8 sText_Desc_MoveInfo_On[]        = _("Shows a window with information of\nmoves.");
 static const u8 sText_Desc_MoveInfo_Off[]       = _("Disables move information window.");
 static const u8 sText_Desc_BattleSpeed_1x[]     = _("Battle animations will play at default\nspeed.");
@@ -450,7 +445,6 @@ static const u8 *const sOptionMenuItemDescriptionsBattle[MENUITEM_BATTLE_COUNT][
     [MENUITEM_BATTLE_QUICKRUN]     = {sText_Desc_QuickRunOptionR,      sText_Desc_QuickRunOptionBA,      sText_Desc_QuickRunOptionOff,   sText_Empty},
     //[MENUITEM_BATTLE_DOUBLEBATTLE] = {sText_Desc_DoubleBattles_On,    sText_Desc_DoubleBattles_Off,     sText_Empty,                    sText_Empty},
     //[MENUITEM_BATTLE_MOVEINFO]     = {sText_Desc_MoveInfo_On,          sText_Desc_MoveInfo_Off,          sText_Empty,                    sText_Empty},
-    [MENUITEM_EXPSHARE_ALL]        = {sText_Desc_ExpShareAll_On,       sText_Desc_ExpShareAll_On,        sText_Empty,                    sText_Empty},
     [MENUITEM_BATTLE_CANCEL]       = {sText_Desc_Save,                 sText_Empty,                      sText_Empty,                    sText_Empty},
 };
 
@@ -487,7 +481,6 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledBattle[MENUITEM_BATTLE
     [MENUITEM_BATTLE_QUICKRUN]    = sText_Empty,
     //[MENUITEM_BATTLE_DOUBLEBATTLE]  = sText_Empty,
     //[MENUITEM_BATTLE_MOVEINFO]    = sText_Empty,
-    [MENUITEM_EXPSHARE_ALL]       = sText_Empty,
     [MENUITEM_BATTLE_CANCEL]      = sText_Empty,
 };
 
@@ -835,7 +828,6 @@ void CB2_InitOptionPlusMenu(void)
         sOptions->sel_battle[MENUITEM_BATTLE_QUICKRUN]      = gSaveBlock2Ptr->optionsQuickRunButton;
         //sOptions->sel_battle[MENUITEM_BATTLE_DOUBLEBATTLE]  = gSaveBlock2Ptr->optionsDoubleBattlesOff;
         //sOptions->sel_battle[MENUITEM_BATTLE_MOVEINFO]      = gSaveBlock2Ptr->optionsShowBattleMoveInfoOff;
-        sOptions->sel_battle[MENUITEM_EXPSHARE_ALL]         = FlagGet(I_EXP_SHARE_FLAG);
         sOptions->sel_sound[MENUITEM_SOUND_SOUNDMODE]       = gSaveBlock2Ptr->optionsSound;
         sOptions->sel_sound[MENUITEM_SOUND_BIKEMUSIC]       = gSaveBlock2Ptr->optionsBikeMusicOff;
         sOptions->sel_sound[MENUITEM_SOUND_SURFMUSIC]       = gSaveBlock2Ptr->optionsSurfMusicOff;
@@ -1073,7 +1065,6 @@ static void Task_OptionMenuSave(u8 taskId)
     gSaveBlock2Ptr->optionsQuickRunButton   = sOptions->sel_battle[MENUITEM_BATTLE_QUICKRUN];
     //gSaveBlock2Ptr->optionsDoubleBattlesOff = sOptions->sel_battle[MENUITEM_BATTLE_DOUBLEBATTLE];
     //gSaveBlock2Ptr->optionsShowBattleMoveInfoOff = sOptions->sel_battle[MENUITEM_BATTLE_MOVEINFO];
-    gSaveBlock1Ptr->flags[EXP_SHARE_FLAG]   = sOptions->sel_battle[MENUITEM_EXPSHARE_ALL];
     gSaveBlock2Ptr->optionsSound            = sOptions->sel_sound[MENUITEM_SOUND_SOUNDMODE];
     gSaveBlock2Ptr->optionsBikeMusicOff     = sOptions->sel_sound[MENUITEM_SOUND_BIKEMUSIC];
     gSaveBlock2Ptr->optionsSurfMusicOff     = sOptions->sel_sound[MENUITEM_SOUND_SURFMUSIC];
@@ -1488,15 +1479,6 @@ static void QuickRun_DrawChoices(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 202), y, styles[2], active);
 }
 
-static void ExpShareAll_DrawChoices(int selection, int y)
-{
-    bool8 active = CheckConditions(MENUITEM_EXPSHARE_ALL);
-    u8 styles[2] = {0};
-    styles[selection] = 1;
-
-    DrawOptionMenuChoice(gText_BattleSceneOn, 108, y, styles[0], active);
-    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 202), y, styles[1], active);
-}
 
 /*static void DoubleBattle_DrawChoices(int selection, int y)
 {

@@ -1,9 +1,9 @@
 {
-  "id": "MAP_ROUTE1_HIDDEN_GROTTO",
-  "name": "Route1_HiddenGrotto",
-  "layout": "LAYOUT_ROUTE1_HIDDEN_GROTTO",
+  "id": "MAP_SUNSHINE_TOWN_HIDDEN_GROTTO",
+  "name": "SunshineTown_HiddenGrotto",
+  "layout": "LAYOUT_SUNSHINE_TOWN_HIDDEN_GROTTO",
   "music": "MUS_RG_SEVII_DUNGEON",
-  "region_map_section": "MAPSEC_ROUTE_1",
+  "region_map_section": "MAPSEC_SUNSHINETOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -15,7 +15,7 @@
   "connections": null,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAUROS_PALDEA_AQUA)",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(DRAMPA)",
       "x": 10,
       "y": 9,
       "elevation": 0,
@@ -24,8 +24,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route1_HiddenGrotto_TaurosPaldeaAqua",
-      "flag": "FLAG_DAILY_HIDDENGROTTO_ROUTE1"
+      "script": "SunshineTown_HiddenGrotto_Drampa",
+      "flag": "FLAG_DAILY_HIDDENGROTTO_SUNSHINETOWN"
     }
   ],
   "warp_events": [
@@ -33,22 +33,22 @@
       "x": 10,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE1",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_SUNSHINE_TOWN",
+      "dest_warp_id": "7"
     },
     {
       "x": 9,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE1",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_SUNSHINE_TOWN",
+      "dest_warp_id": "7"
     },
     {
       "x": 11,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE1",
-      "dest_warp_id": "1"
+      "dest_map": "MAP_SUNSHINE_TOWN",
+      "dest_warp_id": "8"
     }
   ],
   "coord_events": [],

@@ -53,7 +53,16 @@
     F(SNATCH) \
     F(OVERHEAT) \
     F(THUNDER_PUNCH) \
-    F(CHILLING_WATER)
+    F(CHILLING_WATER) \
+    F(SCALD) \
+    F(COVET) \
+    F(DRAINING_KISS) \
+    F(NASTY_PLOT) \
+    F(MUD_SHOT) \
+    F(WILL_O_WISP) \
+    F(INCINERATE) \
+    F(HEAT_WAVE) \
+    
 
 #define FOREACH_HM(F) \
     F(CUT) \

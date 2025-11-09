@@ -12,11 +12,14 @@ script Route1_Eventscript_NotTheWayToMeadow {
 }
 
 script Route1_Eventscript_Touma {
-    if(var(VAR_AKIHIKOS_INTRO_STATE) >= 44){
-    trainerbattle_single(TRAINER_TOUMA_2, Route1_ToumaIntro, Route1_ToumaDefeated)
+    if(var(VAR_AKIHIKOS_INTRO_STATE) >= 44 && var(VAR_AKIHIKOS_INTRO_STATE) < 50){
+        trainerbattle_single(TRAINER_TOUMA_2, Route1_ToumaIntro, Route1_ToumaDefeated)
+    }
+    elif(var(VAR_MITSURUS_INTRO_STATE) < 50){
+        trainerbattle_single(TRAINER_TOUMA, Route1_ToumaIntro, Route1_ToumaDefeated)
     }
     else{
-        trainerbattle_single(TRAINER_TOUMA, Route1_ToumaIntro, Route1_ToumaDefeated)
+        trainerbattle_single(TRAINER_TOUMA_2, Route1_ToumaIntro, Route1_ToumaDefeated)
     }
     setspeaker("Touma")
     faceplayer
@@ -51,11 +54,15 @@ text Route1_ToumaPostBattle {
 }
 
 script Route1_Eventscript_Miyu {
-    if(var(VAR_AKIHIKOS_INTRO_STATE) >= 44){
+    if(var(VAR_AKIHIKOS_INTRO_STATE) >= 44 && var(VAR_AKIHIKOS_INTRO_STATE) < 50){      //akihiko prologue post mitsuru's 1st battle
     trainerbattle_single(TRAINER_MIYU_2, Route1_MiyuIntro, Route1_MiyuDefeated)
     }
-    else{
+    elif(var(VAR_MITSURUS_INTRO_STATE) < 50){                                           //mitsuru pre chapter 1
         trainerbattle_single(TRAINER_MIYU, Route1_MiyuIntro, Route1_MiyuDefeated)
+    }
+    else{
+        trainerbattle_single(TRAINER_MIYU_2, Route1_MiyuIntro, Route1_MiyuDefeated)     //have finished both prologues (probly unecessary)
+
     }
     setspeaker("Miyu")
     faceplayer
@@ -94,7 +101,7 @@ script Route1_Eventscript_HiddenGrotto {
     msgbox(Eventscript_HiddenGrotto, MSGBOX_YESNO)
     closemessage
     if (var(VAR_RESULT) == TRUE){
-        msgbox("No map yet")
+        warp(MAP_ROUTE1_HIDDEN_GROTTO, 0)
     }
     release
     end

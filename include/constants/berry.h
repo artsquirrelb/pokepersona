@@ -44,11 +44,11 @@
 // IDs for berry tree objects, indexes into berryTrees in SaveBlock1
 // Named for whatever berry is initially planted there on a new game
 // Those with no initial berry are named "soil"
-#define BERRY_TREE_ROUTE_102_PECHA    1 //sunshine orphanage
-#define BERRY_TREE_ROUTE_102_ORAN     2 //sunshine orphanage
+#define BERRY_TREE_SUNSHINE_ORPHANAGE_PECHA    1 
+#define BERRY_TREE_SUNSHINE_ORPHANAGE_ORAN     2 
 #define BERRY_TREE_ROUTE_104_SOIL_1   3
-#define BERRY_TREE_ROUTE_104_ORAN_1   4 //route 2
-#define BERRY_TREE_ROUTE_103_CHERI_1  5 //route 2
+#define BERRY_TREE_ROUTE_2_ORAN   4 //route 2
+#define BERRY_TREE_ROUTE_2_RAWST  5 //route 2
 #define BERRY_TREE_ROUTE_103_LEPPA    6 //route 1
 #define BERRY_TREE_ROUTE_103_CHERI_2  7 //route 1
 #define BERRY_TREE_ROUTE_104_CHERI_1  8 //mansion's garden

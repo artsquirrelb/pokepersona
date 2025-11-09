@@ -125,7 +125,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsSurfMusicOff = FALSE;
     gSaveBlock2Ptr->regionMapZoom = FALSE;
     gSaveBlock2Ptr->optionsStartMenuPalette = 0;
-    FlagSet(I_EXP_SHARE_FLAG);
+    FlagSet(FLAG_EXP_SHARE);
 }
 
 static void ClearPokedexFlags(void)

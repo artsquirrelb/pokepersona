@@ -2,17 +2,13 @@ mapscripts SunshineOrphanage_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 0) {
             setflag(FLAG_SPAWN_INVISIBLE)
-            setflag(FLAG_HIDE_MIKI)
-            setflag(FLAG_HIDE_SHINJIRO)
             setflag(FLAG_HIDE_TALK_BUTTON)
             setflag(FLAG_TEMP_1)
         }
-        elif (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
             setflag(FLAG_HIDE_TALK_BUTTON)
-            clearflag(FLAG_HIDE_MIKI)
-            clearflag(FLAG_HIDE_SHINJIRO)
         }
-        elif (var(VAR_AKIHIKOS_INTRO_STATE) >= 5) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 5) {
             setflag(FLAG_TEMP_1)
         }
     }

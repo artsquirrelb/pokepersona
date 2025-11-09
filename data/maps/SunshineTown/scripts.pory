@@ -7,16 +7,18 @@ mapscripts SunshineTown_MapScripts {
             setobjectmovementtype(6, MOVEMENT_TYPE_FACE_LEFT)
             setflag(FLAG_HIDE_QUEST_ICON)
         }
+        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 16){
+            setflag(FLAG_TEMP_1)
+        }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 16 || var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18) {
-            setflag(FLAG_HIDE_KUROSAWA)
             setflag(FLAG_HIDE_TALK_BUTTON)
             setobjectxyperm(2, 14, 11)
             setobjectmovementtype (2, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
             setobjectxyperm(1, 3, 14)
             setobjectmovementtype (1, MOVEMENT_TYPE_LOOK_AROUND)
             }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 16) {
-            clearflag(FLAG_HIDE_SHINJIRO)
+        if (var(VAR_AKIHIKOS_INTRO_STATE) < 16 || var(VAR_AKIHIKOS_INTRO_STATE) >= 23) {
+            setflag(FLAG_TEMP_2)
         }
     } 
     MAP_SCRIPT_ON_FRAME_TABLE [
@@ -144,7 +146,7 @@ script SunshineTown_Eventscript_ExitingPC {
     applymovement(4, walkup)
     waitmovement(0)
     removeobject(4)
-    setflag(FLAG_HIDE_SHINJIRO)
+    setflag(FLAG_TEMP_2)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 17)
     clearflag(FLAG_HIDE_TALK_BUTTON)
     releaseall
@@ -330,3 +332,13 @@ script SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24 {
     }
 }
     
+script SunshineTown_Eventscript_HiddenGrotto {
+    lock
+    msgbox(Eventscript_HiddenGrotto, MSGBOX_YESNO)
+    closemessage
+    if (var(VAR_RESULT) == TRUE){
+        warp(MAP_SUNSHINE_TOWN_HIDDEN_GROTTO, 0)
+    }
+    release
+    end
+}

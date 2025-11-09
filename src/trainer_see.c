@@ -1166,7 +1166,7 @@ void SpriteCB_QuestIcon(struct Sprite *sprite)
     u8 objEventId;
     struct Sprite *objEventSprite;
 
-    if (TryGetObjectEventIdByLocalIdAndMap(sprite->sLocalId, sprite->sMapNum, sprite->sMapGroup, &objEventId) || FlagGet(FLAG_HIDE_QUEST_ICON) == TRUE)
+    if (TryGetObjectEventIdByLocalIdAndMap(sprite->sLocalId, sprite->sMapNum, sprite->sMapGroup, &objEventId) || FlagGet(FLAG_HIDE_QUEST_ICON) == TRUE || FlagGet(FLAG_SYS_QUEST_MENU_GET) == FALSE)
         StopQuestFieldEffect(sprite, objEventId);
 
     objEventSprite = &gSprites[gObjectEvents[objEventId].spriteId];

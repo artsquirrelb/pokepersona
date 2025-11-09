@@ -220,13 +220,13 @@ script SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse {
 
 script SunshineTown_KurosawasHouse_Eventscript_TrashcanItem {
     lock
-    if (flag(FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE) == TRUE){
+    if (flag(FLAG_HIDDEN_ITEM_SUNSHINE_ORPHANAGE_ANTIDOTE) == TRUE){
         msgbox("It's empty.")
         closemessage
     }
     else{
     giveitem(ITEM_ANTIDOTE, 1)
-    setflag(FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE)
+    setflag(FLAG_HIDDEN_ITEM_SUNSHINE_ORPHANAGE_ANTIDOTE)
     }
     release
     end

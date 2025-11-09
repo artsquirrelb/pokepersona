@@ -535,7 +535,7 @@ static void InitItemStorageMenu(u8 taskId, u8 var)
 static void ItemStorageMenuPrint(const u8 *textPtr)
 {
     DrawDialogueFrame(0, FALSE);
-    AddTextPrinterParameterized(0, FONT_NORMAL, textPtr, 0, 1, 0, 0);
+    AddTextPrinterParameterized6(0, FONT_NORMAL, textPtr, 0, 1, 0, 0, 0x2, 0x0, 0x0);
 }
 
 static void ItemStorageMenuProcessInput(u8 taskId)
@@ -707,7 +707,7 @@ static void Mailbox_DrawMailboxMenu(u8 taskId)
 {
     u8 windowId = MailboxMenu_AddWindow(MAILBOXWIN_TITLE);
     MailboxMenu_AddWindow(MAILBOXWIN_LIST);
-    AddTextPrinterParameterized(windowId, FONT_NORMAL, sText_Mailbox, GetStringCenterAlignXOffset(FONT_NORMAL, sText_Mailbox, 0x40), 1, 0, NULL);
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, sText_Mailbox, GetStringCenterAlignXOffset(FONT_NORMAL, sText_Mailbox, 0x40), 1, 0, NULL, 0x2, 0x0, 0x0);
     ScheduleBgCopyTilemapToVram(0);
     gTasks[taskId].tListTaskId = MailboxMenu_CreateList(&gPlayerPCItemPageInfo);
     MailboxMenu_AddScrollArrows(&gPlayerPCItemPageInfo);
@@ -1051,7 +1051,7 @@ static void ItemStorage_PrintMenuItem(u8 windowId, u32 id, u8 yOffset)
         }
         ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->pcItems[id].quantity, STR_CONV_MODE_RIGHT_ALIGN, 3);
         StringExpandPlaceholders(gStringVar4, gText_xVar1);
-        AddTextPrinterParameterized(windowId, FONT_NARROW, gStringVar4, GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 104), yOffset, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized6(windowId, FONT_NARROW, gStringVar4, GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 104), yOffset, TEXT_SKIP_DRAW, NULL, 0x2, 0x0, 0x0);
     }
 }
 
@@ -1067,7 +1067,7 @@ static void ItemStorage_PrintDescription(s32 id)
         description = ItemStorage_GetMessage(MSG_GO_BACK_TO_PREV);
 
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
-    AddTextPrinterParameterized(windowId, FONT_NORMAL, description, 0, 1, 0, NULL);
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, description, 0, 1, 0, NULL, 0x2, 0x0, 0x0);
 }
 
 static void ItemStorage_AddScrollIndicator(void)
@@ -1161,7 +1161,7 @@ static void ItemStorage_CreateListMenu(u8 taskId)
     if (!toss)
         text = sText_WithdrawItem;
     x = GetStringCenterAlignXOffset(FONT_NORMAL, text, 104);
-    AddTextPrinterParameterized(sItemStorageMenu->windowIds[ITEMPC_WIN_TITLE], FONT_NORMAL, text, x, 1, 0, NULL);
+    AddTextPrinterParameterized6(sItemStorageMenu->windowIds[ITEMPC_WIN_TITLE], FONT_NORMAL, text, x, 1, 0, NULL, 0x2, 0x0, 0x0);
     CopyWindowToVram(sItemStorageMenu->windowIds[ITEMPC_WIN_ICON], COPYWIN_GFX);
     ItemStorage_CompactList();
     ItemStorage_CompactCursor();
@@ -1217,7 +1217,7 @@ static void ItemStorage_PrintMessage(const u8 *string)
     u8 windowId = sItemStorageMenu->windowIds[ITEMPC_WIN_MESSAGE];
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
     StringExpandPlaceholders(gStringVar4, string);
-    AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, 0, 1, 0, NULL);
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, 0, 1, 0, NULL, 0x2, 0x0, 0x0);
 }
 
 // Process input while on the item storage's item list
@@ -1356,7 +1356,7 @@ static void ItemStorage_PrintItemQuantity(u8 windowId, u16 value, u32 mode, u8 x
 {
     ConvertIntToDecimalStringN(gStringVar1, value, mode, n);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
-    AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 48), y, 0, NULL);
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 48), y, 0, NULL, 0x2, 0x0, 0x0);
 }
 
 // Start an item Withdraw/Toss

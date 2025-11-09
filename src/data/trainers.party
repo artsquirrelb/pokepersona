@@ -9700,6 +9700,7 @@ Level: 10
 Ball: Luxury Ball
 IVs: 0 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
 EVs: 100 Atk
+Ability: Fur Coat
 - Covet
 - Rock Smash
 - Thunder Wave

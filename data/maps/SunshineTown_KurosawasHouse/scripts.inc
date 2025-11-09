@@ -386,11 +386,11 @@ SunshineTown_KurosawasHouse_Eventscript_TrashcanItem::
 # 222 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	lock
 # 223 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	goto_if_set FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE, SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_2
+	goto_if_set FLAG_HIDDEN_ITEM_SUNSHINE_ORPHANAGE_ANTIDOTE, SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_2
 # 228 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	giveitem ITEM_ANTIDOTE, 1
 # 229 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	setflag FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE
+	setflag FLAG_HIDDEN_ITEM_SUNSHINE_ORPHANAGE_ANTIDOTE
 SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_1:
 # 231 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	release

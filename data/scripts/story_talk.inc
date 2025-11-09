@@ -294,9 +294,9 @@ EventScript_OverworldStoryTalk_ShinjiroAndMikiJoinedGoingToWoods::
 
 EventScript_OverworldStoryTalk_LookingAroundInTheWoods::
 # 153 "data/scripts/story_talk.pory"
-	applymovement 2, faceup
+	applymovement MIKI, faceup
 # 154 "data/scripts/story_talk.pory"
-	applymovement 3, faceup
+	applymovement SHINJIRO, faceup
 # 155 "data/scripts/story_talk.pory"
 	waitmovement 0
 # 156 "data/scripts/story_talk.pory"
@@ -583,20 +583,18 @@ EventScript_OverworldStoryTalk_PostInteleonJoining::
 # 357 "data/scripts/story_talk.pory"
 	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
 # 358 "data/scripts/story_talk.pory"
-	waitmoncry
-# 359 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldStoryTalk_PostInteleonJoining_Text_1
 	return
 
 
 EventScript_OverworldStoryTalk_PrePickUpFennekin::
-# 363 "data/scripts/story_talk.pory"
+# 362 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldStoryTalk_PrePickUpFennekin_Text_0
 	return
 
 
 EventScript_OverworldStoryTalk_PostGoodByeKikuno::
-# 367 "data/scripts/story_talk.pory"
+# 366 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldStoryTalk_PostGoodByeKikuno_Text_0
 	return
 
@@ -824,17 +822,17 @@ EventScript_OverworldStoryTalk_PostInteleonJoining_Text_0:
 	.string "watch my back, Inteleon.$"
 
 EventScript_OverworldStoryTalk_PostInteleonJoining_Text_1:
-# 359 "data/scripts/story_talk.pory"
+# 358 "data/scripts/story_talk.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks determinated, nodding\n"
 	.string "at you.)$"
 
 EventScript_OverworldStoryTalk_PrePickUpFennekin_Text_0:
-# 363 "data/scripts/story_talk.pory"
+# 362 "data/scripts/story_talk.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}A fire type would be great for my\n"
 	.string "journey.$"
 
 EventScript_OverworldStoryTalk_PostGoodByeKikuno_Text_0:
-# 367 "data/scripts/story_talk.pory"
+# 366 "data/scripts/story_talk.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Now I should make my way to\n"
 	.string "Thundershards Scree.\p"
 	.string "According to the map, it should be on\n"

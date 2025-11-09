@@ -1,5 +1,6 @@
 mapscripts Mansion_MitsurusRoom2F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
+        setrespawn(HEAL_LOCATION_MANSION_MITSURUS_ROOM2F)
         if (var(VAR_MITSURUS_INTRO_STATE) >= 2){
             setflag(FLAG_TEMP_1)
         }
@@ -56,8 +57,9 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     waitmovement(LOCALID_PLAYER)
     delay(40)
     giveitem(ITEM_CAMP_GEARS)
-    additem(ITEM_MACH_BIKE, 1)
-    additem(ITEM_ESCAPE_ROPE, 1)
+    additem(ITEM_MACH_BIKE)
+    additem(ITEM_ESCAPE_ROPE)
+    additem(ITEM_EXP_SHARE)
     additem(ITEM_POKE_BALL, 20)
     additem(ITEM_POTION, 2)
     additem(ITEM_REPEL, 5)
@@ -123,6 +125,7 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
     setflag(FLAG_SET_WALL_CLOCK)
     setflag(FLAG_SYS_CLOCK_SET)
     msgbox(format("{COLOR GREEN}{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Tips: Check your bag for various QoL items."))
+    updatefollowingmon
     closemessage
     }
     else{

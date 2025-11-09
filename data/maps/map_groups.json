@@ -656,7 +656,8 @@
     "Route2_House"
   ],
   "gMapGroup_HiddenGrottos": [
-    "Route1_HiddenGrotto"
+    "Route1_HiddenGrotto",
+    "SunshineTown_HiddenGrotto"
   ],
   "gMapGroup_KirijoMansionIndoor": [
     "MansionMainHall",

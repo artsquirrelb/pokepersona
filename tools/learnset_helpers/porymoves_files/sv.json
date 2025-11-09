@@ -58627,9 +58627,14 @@
   "FURFROU": {
     "LevelMoves": [],
     "PreEvoMoves": [],
-    "TMMoves": [],
+    "TMMoves": [
+      "MOVE_COVET",
+      "MOVE_PSYCHIC_FANGS"
+    ],
     "EggMoves": [],
-    "TutorMoves": []
+    "TutorMoves": [
+      "MOVE_HEART_STAMP"
+    ]
   },
   "ESPURR": {
     "LevelMoves": [
@@ -90539,6 +90544,7 @@
     ],
     "PreEvoMoves": [],
     "TMMoves": [
+      "MOVE_ATTRACT",
       "MOVE_TAKE_DOWN",
       "MOVE_CHARM",
       "MOVE_FAKE_TEARS",
@@ -90734,6 +90740,7 @@
       "MOVE_AURORA_VEIL"
     ],
     "TMMoves": [
+      "MOVE_ATTRACT",
       "MOVE_TAKE_DOWN",
       "MOVE_CHARM",
       "MOVE_FAKE_TEARS",

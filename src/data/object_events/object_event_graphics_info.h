@@ -4653,14 +4653,14 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TMBall = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ParkBall = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_BALL_PARK,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 256,
     .width = 16,
     .height = 32,
-    .paletteSlot = PALSLOT_NPC_2,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = TRUE,
     .compressed = FALSE,
@@ -4668,7 +4668,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TMBall = {
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Following,
-    .images = sPicTable_TMBall,
+    .images = sPicTable_ParkBall,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

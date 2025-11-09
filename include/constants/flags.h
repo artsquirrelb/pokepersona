@@ -47,7 +47,7 @@
 #define DN_FLAG_SEARCHING               0x21 // DexNav configs
 #define DN_FLAG_DEXNAV_GET              0x22 // Shows dexnav in normal menu
 #define DN_FLAG_DETECTOR_MODE           0x23 // Allow player to find hidden mons Flag
-#define EXP_SHARE_FLAG                  0x24 // Item configs
+#define FLAG_EXP_SHARE                  0x24 // Item configs
 #define FLAG_FOLLOWERS_DISABLED         0x25 // Enables / Disables followers by using a flag. Helpful to disable followers for a period of time.
 #define FLAG_HIDE_TALK_BUTTON           0x26 // Was Unused Flag
 #define FLAG_NO_CATCHING                0x27 // Was Unused Flag
@@ -59,10 +59,10 @@
 #define FLAG_NO_COLLISION               0x2D // Was Unused Flag
 #define FLAG_POKE_RIDER                 0x2E // Was Unused Flag
 #define FLAG_HIDE_QUEST_ICON            0x2F // Was Unused Flag
-#define FLAG_COMPANION_MENU             0x30 // Unused Flag
+#define FLAG_COMPANION_MENU             0x30 // Was Unused Flag
 #define FLAG_HEAL_AFTER_FOLLOWER_BATTLE 0x31 // //NPC followers //was Unused Flag
 #define FLAG_SMART_WILD_AI              0x32 // Was Unused Flag
-#define FLAG_UNUSED_0x033    0x33 // Unused Flag
+#define FLAG_NO_BAG_USE                 0x33 // Was Unused Flag
 #define FLAG_UNUSED_0x034    0x34 // Unused Flag
 #define FLAG_UNUSED_0x035    0x35 // Unused Flag
 #define FLAG_UNUSED_0x036    0x36 // Unused Flag
@@ -122,7 +122,7 @@
 
 #define FLAG_UNUSED_0x068                    0x68  // Unused Flag
 
-#define FLAG_HIDDENGROTTO_ROUTE1             0x69
+#define FLAG_UNUSED_0x69                     0x69 //renamed to unused (not actually unused)
 #define FLAG_RECEIVED_HM_STRENGTH            0x6A
 #define FLAG_RECEIVED_HM_ROCK_SMASH          0x6B
 #define FLAG_WHITEOUT_TO_LAVARIDGE           0x6C // Set after defeating Flannery, so the player cant white out from poison before receiving Go Goggles
@@ -288,11 +288,11 @@
 #define FLAG_RECEIVED_TM_BULLET_SEED         0x106
 #define FLAG_ENTERED_ELITE_FOUR              0x107
 #define FLAG_RECEIVED_TM_HIDDEN_POWER        0x108
-#define FLAG_RECEIVED_TM_TORMENT       0x109
+#define FLAG_RECEIVED_TM_TORMENT             0x109
 #define FLAG_RECEIVED_LAVARIDGE_EGG          0x10A
 #define FLAG_RECEIVED_REVIVED_FOSSIL_MON     0x10B
 #define FLAG_SECRET_BASE_REGISTRY_ENABLED    0x10C
-#define FLAG_RECEIVED_TM_THIEF               0x10D
+#define FLAG_SUNSHINETOWN_TM_THIEF               0x10D
 #define FLAG_CONTEST_SKETCH_CREATED          0x10E  // Set but never read
 #define FLAG_EVIL_TEAM_ESCAPED_STERN_SPOKE   0x10F
 #define FLAG_RECEIVED_EXP_SHARE              0x110
@@ -381,7 +381,7 @@
 // Some Match Call entries (like those for gym leaders, Wally, and all non-trainer NPCs like Prof. Birch)
 // have their own separate flag that needs to be set to be enabled; see src/pokenav_match_call_data.c
 #define TRAINER_REGISTERED_FLAGS_START       0x15C
-#define FLAG_REGISTERED_ROSE                 (TRAINER_REGISTERED_FLAGS_START + REMATCH_ROSE)
+/*#define FLAG_REGISTERED_ROSE                 (TRAINER_REGISTERED_FLAGS_START + REMATCH_ROSE)
 #define FLAG_REGISTERED_ANDRES               (TRAINER_REGISTERED_FLAGS_START + REMATCH_ANDRES)
 #define FLAG_REGISTERED_DUSTY                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DUSTY)
 #define FLAG_REGISTERED_LOLA                 (TRAINER_REGISTERED_FLAGS_START + REMATCH_LOLA)
@@ -458,7 +458,7 @@
 #define FLAG_REGISTERED_PHOEBE               (TRAINER_REGISTERED_FLAGS_START + REMATCH_PHOEBE)
 #define FLAG_REGISTERED_GLACIA               (TRAINER_REGISTERED_FLAGS_START + REMATCH_GLACIA)
 #define FLAG_REGISTERED_DRAKE                (TRAINER_REGISTERED_FLAGS_START + REMATCH_DRAKE)
-#define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)
+#define FLAG_REGISTERED_WALLACE              (TRAINER_REGISTERED_FLAGS_START + REMATCH_WALLACE)*/
 
 #define FLAG_UNUSED_0x1AA                    0x1AA // Unused Flag
 #define FLAG_UNUSED_0x1AB                    0x1AB // Unused Flag
@@ -543,8 +543,8 @@
 
 // Hidden Items
 #define FLAG_HIDDEN_ITEMS_START                                                         0x1F4
-#define FLAG_HIDDEN_ITEM_LAVARIDGE_TOWN_ICE_HEAL             (FLAG_HIDDEN_ITEMS_START + 0x00)
-#define FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET                  (FLAG_HIDDEN_ITEMS_START + 0x01)
+#define FLAG_HIDDEN_ITEM_SUNSHINE_WOODS_PROTEIN             (FLAG_HIDDEN_ITEMS_START + 0x00)
+#define FLAG_HIDDEN_ITEM_SUNSHINETOWN_FULL_HEAL                  (FLAG_HIDDEN_ITEMS_START + 0x01)
 #define FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x02)
 #define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x03)
 #define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                    (FLAG_HIDDEN_ITEMS_START + 0x04)
@@ -594,7 +594,7 @@
 #define FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_1        (FLAG_HIDDEN_ITEMS_START + 0x30)
 #define FLAG_HIDDEN_ITEM_GRANITE_CAVE_B2F_EVERSTONE_2        (FLAG_HIDDEN_ITEMS_START + 0x31)
 #define FLAG_HIDDEN_ITEM_ROUTE_109_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x32)
-#define FLAG_HIDDEN_ITEM_ROUTE_109_GREAT_BALL                (FLAG_HIDDEN_ITEMS_START + 0x33) //Route 2
+#define FLAG_HIDDEN_ITEM_ROUTE_2_GREAT_BALL                (FLAG_HIDDEN_ITEMS_START + 0x33) //Route 2
 #define FLAG_HIDDEN_ITEM_ROUTE_109_HEART_SCALE_1             (FLAG_HIDDEN_ITEMS_START + 0x34)
 #define FLAG_HIDDEN_ITEM_ROUTE_110_GREAT_BALL                (FLAG_HIDDEN_ITEMS_START + 0x35)
 #define FLAG_HIDDEN_ITEM_ROUTE_110_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x36)
@@ -628,7 +628,7 @@
 #define FLAG_HIDDEN_ITEM_VICTORY_ROAD_B2F_ELIXIR             (FLAG_HIDDEN_ITEMS_START + 0x52)
 #define FLAG_HIDDEN_ITEM_VICTORY_ROAD_B2F_MAX_REPEL          (FLAG_HIDDEN_ITEMS_START + 0x53)
 #define FLAG_HIDDEN_ITEM_ROUTE_120_REVIVE                    (FLAG_HIDDEN_ITEMS_START + 0x54)
-#define FLAG_HIDDEN_ITEM_ROUTE_104_ANTIDOTE                  (FLAG_HIDDEN_ITEMS_START + 0x55) //kurosawas house
+#define FLAG_HIDDEN_ITEM_SUNSHINE_ORPHANAGE_ANTIDOTE                  (FLAG_HIDDEN_ITEMS_START + 0x55) //kurosawas house
 #define FLAG_HIDDEN_ITEM_ROUTE_108_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x56)
 #define FLAG_HIDDEN_ITEM_ROUTE_119_MAX_ETHER                 (FLAG_HIDDEN_ITEMS_START + 0x57)
 #define FLAG_HIDDEN_ITEM_ROUTE_104_HEART_SCALE               (FLAG_HIDDEN_ITEMS_START + 0x58)
@@ -1052,9 +1052,9 @@
 // Item Ball Flags
 #define FLAG_ITEM_ROUTE_1_ALTARIANITE                               0x3E8
 #define FLAG_ITEM_ROUTE_1_TM_THUNDER_PUNCH                          0x3E9
-#define FLAG_ITEM_ROUTE_104_PP_UP                                   0x3EA
-#define FLAG_ITEM_ROUTE_105_IRON                                    0x3EB
-#define FLAG_ITEM_ROUTE_106_PROTEIN                                 0x3EC
+#define FLAG_ITEM_SUNSHINE_WOODS_BEEDRILLITE                        0x3EA
+#define FLAG_ITEM_SUNSHINE_WOODS_TM_SCALD                           0x3EB
+#define FLAG_ITEM_SUNSHINE_TOWN_TM_ROCK_SMASH                       0x3EC
 #define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
 #define FLAG_ITEM_ROUTE_110_RARE_CANDY                              0x3EE
 #define FLAG_ITEM_ROUTE_110_DIRE_HIT                                0x3EF
@@ -1571,10 +1571,10 @@
 // These flags are cleared once per day
 // The start and end are byte-aligned because the flags are cleared in byte increments
 #define DAILY_FLAGS_START                           (FLAG_UNUSED_0x91F + (8 - FLAG_UNUSED_0x91F % 8))
-#define FLAG_UNUSED_0x920                           (DAILY_FLAGS_START + 0x0)  // Unused Flag
+#define FLAG_DAILY_HIDDENGROTTO_ROUTE1              (DAILY_FLAGS_START + 0x0)  // Was Unused Flag
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
-#define FLAG_UNUSED_0x923                           (DAILY_FLAGS_START + 0x3)  // Unused Flag
+#define FLAG_DAILY_HIDDENGROTTO_SUNSHINETOWN        (DAILY_FLAGS_START + 0x3)  // Was Unused Flag
 #define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
 #define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag

@@ -8,7 +8,7 @@ mapscripts Route2_MapScripts {
         if (var(VAR_AKIHIKOS_INTRO_STATE) < 40){
             setflag(FLAG_TEMP_3)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) > 25){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) > 25 || var(VAR_MITSURUS_INTRO_STATE) < 20){
             setflag(FLAG_TEMP_1)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) > 25 && var(VAR_AKIHIKOS_INTRO_STATE) < 33){
@@ -491,8 +491,8 @@ script Route2_Eventscript_AkihikoNoticingShinjiroOutside {
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Since we're both not feeling sleepy, how about a battle?\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}I was just about to suggest that.\p
     The Ferroseed you used earlier against Kirijo really caught my curiosity.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}I'll show what it can do. Let's do a 3-vs-3 again.\p
-    Step up if you're ready."))
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}I'll show what it can do. {COLOR RED}Let's do a 3-vs-3 without bag item use again.\p
+    {COLOR DARK_GRAY}Step up if you're ready."))
     closemessage
     applymovement(OBJ_EVENT_ID_CAMERA, walkleft)
     waitmovement
@@ -604,6 +604,7 @@ script Route2_Eventscript_InitShinjiroFirstBattle2 {
 script Route2_Eventscript_SelectingPartyShinjiroFirstBattle {
     lock
     setflag(FLAG_NO_WHITEOUT)
+    setflag(FLAG_NO_BAG_USE)
     special(ChooseHalfPartyForBattle)
     waitstate()
     if (var(VAR_RESULT) == FALSE){
@@ -703,6 +704,7 @@ script Route2_Eventscript_PostShinjiroFirstBattle {
     lock
     setvar(VAR_AKIHIKOS_INTRO_STATE, 42)
     clearflag(FLAG_NO_WHITEOUT)
+    clearflag(FLAG_NO_BAG_USE)
     playse(SE_M_YAWN)
     applymovement(6, shakevertical)
     waitmovement(0)

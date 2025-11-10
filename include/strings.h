@@ -51,6 +51,7 @@ extern const u8 gText_Tough2[];
 extern const u8 gText_Items[];
 extern const u8 gText_Key_Items[];
 extern const u8 gText_Battle_Items[];
+extern const u8 gText_Medicines[];
 extern const u8 gText_Poke_Balls[];
 extern const u8 gText_TMs_Hms[];
 extern const u8 gText_Berries2[];

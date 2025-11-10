@@ -98,6 +98,7 @@ struct ItemSlot NONNULL BagPocket_GetSlotData(struct BagPocket *pocket, u32 pock
     case POCKET_TM_HM:
     case POCKET_BERRIES:
     case POCKET_BATTLE_ITEMS:
+    case POCKET_MEDICINES:
         return BagPocket_GetSlotDataGeneric(pocket, pocketPos);
     case POCKET_DUMMY:
         return BagPocket_GetSlotDataPC(pocket, pocketPos);
@@ -122,6 +123,7 @@ void NONNULL BagPocket_SetSlotData(struct BagPocket *pocket, u32 pocketPos, stru
     case POCKET_TM_HM:
     case POCKET_BERRIES:
     case POCKET_BATTLE_ITEMS:
+    case POCKET_MEDICINES:
         BagPocket_SetSlotDataGeneric(pocket, pocketPos, newSlot);
         break;
     case POCKET_DUMMY:
@@ -166,6 +168,10 @@ void SetBagItemsPointers(void)
     gBagPockets[POCKET_BATTLE_ITEMS].itemSlots = gSaveBlock1Ptr->bag.battleItems;
     gBagPockets[POCKET_BATTLE_ITEMS].capacity = BAG_BATTLE_ITEMS_COUNT;
     gBagPockets[POCKET_BATTLE_ITEMS].id = POCKET_BATTLE_ITEMS;
+
+    gBagPockets[POCKET_MEDICINES].itemSlots = gSaveBlock1Ptr->bag.medicines;
+    gBagPockets[POCKET_MEDICINES].capacity = BAG_MEDICINES_COUNT;
+    gBagPockets[POCKET_MEDICINES].id = POCKET_MEDICINES;
 }
 
 u8 *CopyItemName(u16 itemId, u8 *dst)

@@ -24,6 +24,7 @@ EventScript_BufferPocketNameAndTryFanfare::
 	case POCKET_TM_HM,      	EventScript_BufferTMHMsPocket
 	case POCKET_BERRIES,    	EventScript_BufferBerriesPocket
 	case POCKET_BATTLE_ITEMS,	EventScript_BufferBattleItemsPocket
+	case POCKET_MEDICINES,		EventScript_BufferMedicinesPocket
 	end
 
 EventScript_BufferItemsPocket::
@@ -53,6 +54,11 @@ EventScript_BufferBerriesPocket::
 
 EventScript_BufferBattleItemsPocket::
 	bufferstdstring STR_VAR_3, STDSTRING_BATTLEITEMS
+	call_if_eq VAR_0x8007, TRUE, EventScript_PlayFanfareObtainedItem
+	return
+
+EventScript_BufferMedicinesPocket::
+	bufferstdstring STR_VAR_3, STDSTRING_MEDICINES
 	call_if_eq VAR_0x8007, TRUE, EventScript_PlayFanfareObtainedItem
 	return
 

@@ -541,12 +541,12 @@ static const u8 *GetInteractedBackgroundEventScript(struct MapPosition *position
             return NULL;
         return EventScript_HiddenItemScript;
     case BG_EVENT_SECRET_BASE:
-        if (direction == DIR_NORTH)
-        {
-            gSpecialVar_0x8004 = bgEvent->bgUnion.secretBaseId;
-            if (TrySetCurSecretBase())
-                return SecretBase_EventScript_CheckEntrance;
-        }
+        //if (direction == DIR_NORTH)
+        //{
+        //    gSpecialVar_0x8004 = bgEvent->bgUnion.secretBaseId;
+        //    if (TrySetCurSecretBase())
+        //        return SecretBase_EventScript_CheckEntrance;
+        //}
         return NULL;
     }
 
@@ -627,23 +627,23 @@ static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 me
             return SecretBase_EventScript_ShieldOrToyTV;
         if (MetatileBehavior_IsSecretBaseDecorationBase(metatileBehavior) == TRUE)
         {
-            CheckInteractedWithFriendsFurnitureBottom();
+            //CheckInteractedWithFriendsFurnitureBottom();
             return NULL;
         }
         if (MetatileBehavior_HoldsLargeDecoration(metatileBehavior) == TRUE)
         {
-            CheckInteractedWithFriendsFurnitureMiddle();
+            //CheckInteractedWithFriendsFurnitureMiddle();
             return NULL;
         }
         if (MetatileBehavior_HoldsSmallDecoration(metatileBehavior) == TRUE)
         {
-            CheckInteractedWithFriendsFurnitureTop();
+            //CheckInteractedWithFriendsFurnitureTop();
             return NULL;
         }
     }
     else if (MetatileBehavior_IsSecretBasePoster(metatileBehavior) == TRUE)
     {
-        CheckInteractedWithFriendsPosterDecor();
+        //CheckInteractedWithFriendsPosterDecor();
         return NULL;
     }
 
@@ -1109,11 +1109,11 @@ static bool8 TryDoorWarp(struct MapPosition *position, u16 metatileBehavior, u8 
 
     if (direction == DIR_NORTH)
     {
-        if (MetatileBehavior_IsOpenSecretBaseDoor(metatileBehavior) == TRUE)
-        {
-            WarpIntoSecretBase(position, gMapHeader.events);
-            return TRUE;
-        }
+        //if (MetatileBehavior_IsOpenSecretBaseDoor(metatileBehavior) == TRUE)
+        //{
+            //WarpIntoSecretBase(position, gMapHeader.events);
+           // return TRUE;
+        //}
 
         if (MetatileBehavior_IsWarpDoor(metatileBehavior) == TRUE)
         {

@@ -1513,9 +1513,9 @@ const u8 *GetTrainerALoseText(void)
 {
     const u8 *string;
 
-    if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_SECRET_BASE)
-        string = GetSecretBaseTrainerLoseText();
-    else
+    //if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_SECRET_BASE)
+    //    string = GetSecretBaseTrainerLoseText();
+    //else
         string = TRAINER_BATTLE_PARAM.defeatTextA;
 
     StringExpandPlaceholders(gStringVar4, ReturnEmptyStringIfNull(string));

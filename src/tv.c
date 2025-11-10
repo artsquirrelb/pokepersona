@@ -65,7 +65,7 @@ enum {
 
 COMMON_DATA s8 sCurTVShowSlot = 0;
 COMMON_DATA u16 sTV_SecretBaseVisitMovesTemp[8] = {0};
-COMMON_DATA u8 sTV_DecorationsBuffer[DECOR_MAX_SECRET_BASE] = {0};
+//COMMON_DATA u8 sTV_DecorationsBuffer[DECOR_MAX_SECRET_BASE] = {0};
 COMMON_DATA struct {
     u8 level;
     u16 species;
@@ -176,7 +176,7 @@ static void DoTVShowDewfordTrendWatcherNetwork(void);
 static void DoTVShowHoennTreasureInvestigators(void);
 static void DoTVShowFindThatGamer(void);
 static void DoTVShowBreakingNewsTV(void);
-static void DoTVShowSecretBaseVisit(void);
+//static void DoTVShowSecretBaseVisit(void);
 static void DoTVShowPokemonLotteryWinnerFlashReport(void);
 static void DoTVShowThePokemonBattleSeminar(void);
 static void DoTVShowTrainerFanClubSpecial(void);
@@ -1960,7 +1960,7 @@ void AlertTVThatPlayerPlayedRoulette(u16 nCoinsSpent)
     sFindThatGamerCoinsSpent = nCoinsSpent;
 }
 
-static void SecretBaseVisit_CalculateDecorationData(TVShow *show)
+/*static void SecretBaseVisit_CalculateDecorationData(TVShow *show)
 {
     u8 i, j;
     u8 n;
@@ -2092,7 +2092,7 @@ void TryPutSecretBaseVisitOnAir(void)
         StorePlayerIdInRecordMixShow(show);
         show->secretBaseVisit.language = gGameLanguage;
     }
-}
+}*/
 
 void TryPutBreakingNewsOnAir(void)
 {
@@ -2403,7 +2403,7 @@ void TryPutFrontierTVShowOnAir(u16 winStreak, u8 facilityAndMode)
     }
 }
 
-void TryPutSecretBaseSecretsOnAir(void)
+/*void TryPutSecretBaseSecretsOnAir(void)
 {
     TVShow *show;
     u8 strbuf[32];
@@ -2418,7 +2418,7 @@ void TryPutSecretBaseSecretsOnAir(void)
             show->secretBaseSecrets.active = FALSE; // NOTE: Show is not active until passed via Record Mix.
             StringCopy(show->secretBaseSecrets.playerName, gSaveBlock2Ptr->playerName);
             show->secretBaseSecrets.stepsInBase = VarGet(VAR_SECRET_BASE_STEP_COUNTER);
-            CopyCurSecretBaseOwnerName_StrVar1();
+            //CopyCurSecretBaseOwnerName_StrVar1();
             StringCopy(strbuf, gStringVar1);
             StripExtCtrlCodes(strbuf);
             StringCopy(show->secretBaseSecrets.baseOwnersName, strbuf);
@@ -2432,7 +2432,7 @@ void TryPutSecretBaseSecretsOnAir(void)
                 show->secretBaseSecrets.baseOwnersNameLanguage = gSaveBlock1Ptr->secretBases[VarGet(VAR_CURRENT_SECRET_BASE)].language;
         }
     }
-}
+}*/
 
 // Check var thresholds required to trigger the Number One show
 // The vars are reset afterwards regardless
@@ -4238,7 +4238,7 @@ void DoTVShow(void)
             DoTVShowBreakingNewsTV();
             break;
         case TVSHOW_SECRET_BASE_VISIT:
-            DoTVShowSecretBaseVisit();
+            //DoTVShowSecretBaseVisit();
             break;
         case TVSHOW_LOTTO_WINNER:
             DoTVShowPokemonLotteryWinnerFlashReport();
@@ -5889,7 +5889,7 @@ static void DoTVShowBreakingNewsTV(void)
     ShowFieldMessage(sTVBreakingNewsTextGroup[state]);
 }
 
-static void DoTVShowSecretBaseVisit(void)
+/*static void DoTVShowSecretBaseVisit(void)
 {
     TVShow *show;
     u8 state;
@@ -5907,14 +5907,14 @@ static void DoTVShowSecretBaseVisit(void)
             sTVShowState = 1;
         break;
     case 1:
-        StringCopy(gStringVar2, gDecorations[show->secretBaseVisit.decorations[0]].name);
-        if (show->secretBaseVisit.numDecorations == 1)
-            sTVShowState = 4;
-        else
+        //StringCopy(gStringVar2, gDecorations[show->secretBaseVisit.decorations[0]].name);
+        //if (show->secretBaseVisit.numDecorations == 1)
+        //    sTVShowState = 4;
+        //else
             sTVShowState = 3;
         break;
     case 3:
-        StringCopy(gStringVar2, gDecorations[show->secretBaseVisit.decorations[1]].name);
+        //StringCopy(gStringVar2, gDecorations[show->secretBaseVisit.decorations[1]].name);
         switch (show->secretBaseVisit.numDecorations)
         {
         case 2:
@@ -5967,7 +5967,7 @@ static void DoTVShowSecretBaseVisit(void)
         break;
     }
     ShowFieldMessage(sTVSecretBaseVisitTextGroup[state]);
-}
+}*/
 
 static void DoTVShowPokemonLotteryWinnerFlashReport(void)
 {

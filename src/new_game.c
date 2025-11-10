@@ -229,7 +229,7 @@ void NewGameInitData(void)
     InitEventData();
     ClearTVShowData();
     ResetGabbyAndTy();
-    ClearSecretBases();
+    //ClearSecretBases();
     ClearBerryTrees();
     SetMoney(&gSaveBlock1Ptr->money, 3000);
     SetCoins(0);
@@ -249,7 +249,7 @@ void NewGameInitData(void)
     ClearBag();
     NewGameInitPCItems();
     ClearPokeblocks();
-    ClearDecorationInventories();
+    //ClearDecorationInventories();
     InitEasyChatPhrases();
     SetMauvilleOldMan();
     InitDewfordTrend();

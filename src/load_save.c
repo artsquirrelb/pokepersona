@@ -87,7 +87,7 @@ void SetSaveBlocksPointers(u16 offset)
     gPokemonStoragePtr = (void *)(&gPokemonStorage) + offset;
 
     SetBagItemsPointers();
-    SetDecorationInventoriesPointers();
+    //SetDecorationInventoriesPointers();
 }
 
 void MoveSaveBlocks_ResetHeap(void)

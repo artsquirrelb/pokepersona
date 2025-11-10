@@ -39,19 +39,19 @@ static void Task_WateringBerryTreeAnim_Start(u8);
 static void Task_WateringBerryTreeAnim_Continue(u8);
 static void Task_WateringBerryTreeAnim_End(u8);
 
-static void FieldCallback_SecretBaseCave(void);
+//static void FieldCallback_SecretBaseCave(void);
 static void SpriteCB_CaveEntranceInit(struct Sprite *);
 static void SpriteCB_CaveEntranceOpen(struct Sprite *);
 static void SpriteCB_CaveEntranceEnd(struct Sprite *);
 static void StartSecretBaseCaveFieldEffect(void);
 
-static void FieldCallback_SecretBaseTree(void);
+//static void FieldCallback_SecretBaseTree(void);
 static void SpriteCB_TreeEntranceInit(struct Sprite *);
 static void SpriteCB_TreeEntranceOpen(struct Sprite *);
 static void SpriteCB_TreeEntranceEnd(struct Sprite *);
 static void StartSecretBaseTreeFieldEffect(void);
 
-static void FieldCallback_SecretBaseShrub(void);
+//static void FieldCallback_SecretBaseShrub(void);
 static void SpriteCB_ShrubEntranceInit(struct Sprite *);
 static void SpriteCB_ShrubEntranceOpen(struct Sprite *);
 static void SpriteCB_ShrubEntranceEnd(struct Sprite *);
@@ -490,11 +490,11 @@ static void Task_ComputerScreenCloseEffect(u8 taskId)
 #undef tBlendCnt
 #undef tBlendY
 
-static void SetCurrentSecretBase(void)
+/*static void SetCurrentSecretBase(void)
 {
     SetCurSecretBaseIdFromPosition(&gPlayerFacingPosition, gMapHeader.events);
     TrySetCurSecretBaseIndex();
-}
+}*/
 
 static void AdjustSecretPowerSpritePixelOffsets(void)
 {
@@ -548,46 +548,46 @@ bool32 SetUpFieldMove_SecretPower(void)
 {
     u8 mb;
 
-    CheckPlayerHasSecretBase();
+    //CheckPlayerHasSecretBase();
 
-    if (gSpecialVar_Result == 1 || GetPlayerFacingDirection() != DIR_NORTH)
-        return FALSE;
+    //if (gSpecialVar_Result == 1 || GetPlayerFacingDirection() != DIR_NORTH)
+        //return FALSE;
 
     GetXYCoordsOneStepInFrontOfPlayer(&gPlayerFacingPosition.x, &gPlayerFacingPosition.y);
     mb = MapGridGetMetatileBehaviorAt(gPlayerFacingPosition.x, gPlayerFacingPosition.y);
 
     if (MetatileBehavior_IsSecretBaseCave(mb) == TRUE)
     {
-        SetCurrentSecretBase();
-        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
-        gPostMenuFieldCallback = FieldCallback_SecretBaseCave;
+        //SetCurrentSecretBase();
+        //gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        //gPostMenuFieldCallback = FieldCallback_SecretBaseCave;
         return TRUE;
     }
 
     if (MetatileBehavior_IsSecretBaseTree(mb) == TRUE)
     {
-        SetCurrentSecretBase();
-        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
-        gPostMenuFieldCallback = FieldCallback_SecretBaseTree;
+        //SetCurrentSecretBase();
+        //gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        //gPostMenuFieldCallback = FieldCallback_SecretBaseTree;
         return TRUE;
     }
 
     if (MetatileBehavior_IsSecretBaseShrub(mb) == TRUE)
     {
-        SetCurrentSecretBase();
-        gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
-        gPostMenuFieldCallback = FieldCallback_SecretBaseShrub;
+        //SetCurrentSecretBase();
+        //gFieldCallback2 = FieldCallback_PrepareFadeInFromMenu;
+        //gPostMenuFieldCallback = FieldCallback_SecretBaseShrub;
         return TRUE;
     }
 
     return FALSE;
 }
 
-static void FieldCallback_SecretBaseCave(void)
+/*static void FieldCallback_SecretBaseCave(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
     ScriptContext_SetupScript(SecretBase_EventScript_CaveUseSecretPower);
-}
+}*/
 
 bool8 FldEff_UseSecretPowerCave(void)
 {
@@ -625,16 +625,16 @@ static void SpriteCB_CaveEntranceInit(struct Sprite *sprite)
 
 static void SpriteCB_CaveEntranceOpen(struct Sprite *sprite)
 {
-    if (sprite->data[0] < 40)
-    {
-        if (++sprite->data[0] == 20)
-            ToggleSecretBaseEntranceMetatile();
-    }
-    else
-    {
+    //if (sprite->data[0] < 40)
+    //{
+        //if (++sprite->data[0] == 20)
+            //ToggleSecretBaseEntranceMetatile();
+    //}
+    //else
+    //{
         sprite->data[0] = 0;
         sprite->callback = SpriteCB_CaveEntranceEnd;
-    }
+    //}
 }
 
 static void SpriteCB_CaveEntranceEnd(struct Sprite *sprite)
@@ -643,11 +643,11 @@ static void SpriteCB_CaveEntranceEnd(struct Sprite *sprite)
     ScriptContext_Enable();
 }
 
-static void FieldCallback_SecretBaseTree(void)
+/*static void FieldCallback_SecretBaseTree(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
     ScriptContext_SetupScript(SecretBase_EventScript_TreeUseSecretPower);
-}
+}*/
 
 bool8 FldEff_UseSecretPowerTree(void)
 {
@@ -682,8 +682,8 @@ bool8 FldEff_SecretPowerTree(void)
                  gSprites[gPlayerAvatar.spriteId].oam.y + gFieldEffectArguments[6],
                  148);
 
-    if (gFieldEffectArguments[7] == 1 || gFieldEffectArguments[7] == 3)
-        ToggleSecretBaseEntranceMetatile();
+    //if (gFieldEffectArguments[7] == 1 || gFieldEffectArguments[7] == 3)
+        //ToggleSecretBaseEntranceMetatile();
 
     return FALSE;
 }
@@ -703,8 +703,8 @@ static void SpriteCB_TreeEntranceOpen(struct Sprite *sprite)
 
     if (sprite->data[0] >= 40)
     {
-        if (gFieldEffectArguments[7] == 0 || gFieldEffectArguments[7] == 2)
-            ToggleSecretBaseEntranceMetatile();
+        //if (gFieldEffectArguments[7] == 0 || gFieldEffectArguments[7] == 2)
+        //    ToggleSecretBaseEntranceMetatile();
 
         sprite->data[0] = 0;
         sprite->callback = SpriteCB_TreeEntranceEnd;
@@ -717,11 +717,11 @@ static void SpriteCB_TreeEntranceEnd(struct Sprite *sprite)
     ScriptContext_Enable();
 }
 
-static void FieldCallback_SecretBaseShrub(void)
+/*static void FieldCallback_SecretBaseShrub(void)
 {
     gFieldEffectArguments[0] = GetCursorSelectionMonId();
     ScriptContext_SetupScript(SecretBase_EventScript_ShrubUseSecretPower);
-}
+}*/
 
 bool8 FldEff_UseSecretPowerShrub(void)
 {
@@ -765,8 +765,8 @@ static void SpriteCB_ShrubEntranceOpen(struct Sprite *sprite)
     {
         sprite->data[0]++;
 
-        if (sprite->data[0] == 20)
-            ToggleSecretBaseEntranceMetatile();
+        //if (sprite->data[0] == 20)
+        //    ToggleSecretBaseEntranceMetatile();
     }
     else
     {
@@ -1177,7 +1177,7 @@ void InteractWithShieldOrTVDecoration(void)
 }
 
 // As opposed to a small one (single metatile) like the balloons
-bool8 IsLargeBreakableDecoration(u16 metatileId, bool8 checkBase)
+/*bool8 IsLargeBreakableDecoration(u16 metatileId, bool8 checkBase)
 {
     if (!CurMapIsSecretBase())
         return FALSE;
@@ -1198,7 +1198,7 @@ bool8 IsLargeBreakableDecoration(u16 metatileId, bool8 checkBase)
     }
 
     return FALSE;
-}
+}*/
 
 #define tState  data[0]
 #define tMosaic data[1]

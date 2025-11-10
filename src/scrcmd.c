@@ -702,7 +702,7 @@ bool8 ScrCmd_adddecoration(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
-    gSpecialVar_Result = DecorationAdd(decorId);
+    //gSpecialVar_Result = DecorationAdd(decorId);
     return FALSE;
 }
 
@@ -712,7 +712,7 @@ bool8 ScrCmd_removedecoration(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
-    gSpecialVar_Result = DecorationRemove(decorId);
+    //gSpecialVar_Result = DecorationRemove(decorId);
     return FALSE;
 }
 
@@ -722,7 +722,7 @@ bool8 ScrCmd_checkdecorspace(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1);
 
-    gSpecialVar_Result = DecorationCheckSpace(decorId);
+    //gSpecialVar_Result = DecorationCheckSpace(decorId);
     return FALSE;
 }
 
@@ -732,7 +732,7 @@ bool8 ScrCmd_checkdecor(struct ScriptContext *ctx)
 
     Script_RequestEffects(SCREFF_V1);
 
-    gSpecialVar_Result = CheckHasDecoration(decorId);
+    //gSpecialVar_Result = CheckHasDecoration(decorId);
     return FALSE;
 }
 
@@ -2168,12 +2168,12 @@ bool8 ScrCmd_bufferitemnameplural(struct ScriptContext *ctx)
 
 bool8 ScrCmd_bufferdecorationname(struct ScriptContext *ctx)
 {
-    u8 stringVarIndex = ScriptReadByte(ctx);
-    u16 decorId = VarGet(ScriptReadHalfword(ctx));
+    //u8 stringVarIndex = ScriptReadByte(ctx);
+    //u16 decorId = VarGet(ScriptReadHalfword(ctx));
 
-    Script_RequestEffects(SCREFF_V1);
+    //Script_RequestEffects(SCREFF_V1);
 
-    StringCopy(sScriptStringVars[stringVarIndex], gDecorations[decorId].name);
+    //StringCopy(sScriptStringVars[stringVarIndex], gDecorations[decorId].name);
     return FALSE;
 }
 

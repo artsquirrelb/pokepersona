@@ -638,31 +638,31 @@ extern u8 UpdateSpritePaletteWithTime(u8);
 
 struct SecretBaseParty
 {
-    u32 personality[PARTY_SIZE];
-    u16 moves[PARTY_SIZE * MAX_MON_MOVES];
-    u16 species[PARTY_SIZE];
-    u16 heldItems[PARTY_SIZE];
-    u8 levels[PARTY_SIZE];
-    u8 EVs[PARTY_SIZE];
+    //u32 personality[PARTY_SIZE];
+    //u16 moves[PARTY_SIZE * MAX_MON_MOVES];
+    //u16 species[PARTY_SIZE];
+    //u16 heldItems[PARTY_SIZE];
+    //u8 levels[PARTY_SIZE];
+   // u8 EVs[PARTY_SIZE];
 };
 
 struct SecretBase
 {
-    /*0x1A9C*/ u8 secretBaseId;
-    /*0x1A9D*/ bool8 toRegister:4;
-    /*0x1A9D*/ u8 gender:1;
-    /*0x1A9D*/ u8 battledOwnerToday:1;
-    /*0x1A9D*/ u8 registryStatus:2;
-    /*0x1A9E*/ u8 trainerName[PLAYER_NAME_LENGTH];
-    /*0x1AA5*/ u8 trainerId[TRAINER_ID_LENGTH]; // byte 0 is used for determining trainer class
-    /*0x1AA9*/ u8 language;
-    /*0x1AAA*/ u16 numSecretBasesReceived;
-    /*0x1AAC*/ u8 numTimesEntered;
-    /*0x1AAD*/ u8 unused;
-    /*0x1AAE*/ u8 decorations[DECOR_MAX_SECRET_BASE];
-    /*0x1ABE*/ u8 decorationPositions[DECOR_MAX_SECRET_BASE];
+    /*0x1A9C*/ //u8 secretBaseId;
+    /*0x1A9D*/ //bool8 toRegister:4;
+    /*0x1A9D*/ //u8 gender:1;
+    /*0x1A9D*/ //u8 battledOwnerToday:1;
+    /*0x1A9D*/ //u8 registryStatus:2;
+    /*0x1A9E*/ //u8 trainerName[PLAYER_NAME_LENGTH];
+    /*0x1AA5*/ //u8 trainerId[TRAINER_ID_LENGTH]; // byte 0 is used for determining trainer class
+    /*0x1AA9*/ //u8 language;
+    /*0x1AAA*/// u16 numSecretBasesReceived;
+    /*0x1AAC*/// u8 numTimesEntered;
+    /*0x1AAD*/ //u8 unused;
+    /*0x1AAE*/ //u8 decorations[DECOR_MAX_SECRET_BASE];
+    /*0x1ABE*/ //u8 decorationPositions[DECOR_MAX_SECRET_BASE];
     /*0x1ACE*/ //u8 padding[2];
-    /*0x1AD0*/ struct SecretBaseParty party;
+    /*0x1AD0*/// struct SecretBaseParty party;
 };
 
 #include "constants/game_stat.h"
@@ -1107,7 +1107,6 @@ struct SaveBlock1
     /*0x238*/ struct Pokemon playerParty[PARTY_SIZE];
     /*0x490*/ u32 money;
     /*0x494*/ u16 coins;
-//    /*0x496*/ u16 registeredItem; // registered for use with SELECT button
     /*0x496*/ u16 registeredItemCompat; // used for vanilla registered item
     /*0x498*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
     /*0x560 -> 0x848 is bag storage*/
@@ -1133,9 +1132,9 @@ struct SaveBlock1
     /*0x139C*/ u16 vars[VARS_COUNT];
     /*0x159C*/ u32 gameStats[NUM_GAME_STATS];
     /*0x169C*/ struct BerryTree berryTrees[BERRY_TREES_COUNT];
-    /*0x1A9C*/ struct SecretBase secretBases[SECRET_BASES_COUNT];
-    /*0x271C*/ u8 playerRoomDecorations[DECOR_MAX_PLAYERS_HOUSE];
-    /*0x2728*/ u8 playerRoomDecorationPositions[DECOR_MAX_PLAYERS_HOUSE];
+    /*0x1A9C*/ //struct SecretBase secretBases[SECRET_BASES_COUNT];
+    /*0x271C*/ //u8 playerRoomDecorations[DECOR_MAX_PLAYERS_HOUSE];
+    /*0x2728*/ //u8 playerRoomDecorationPositions[DECOR_MAX_PLAYERS_HOUSE];
     /*0x2734*/ //u8 decorationDesks[10];
     /*0x273E*/ //u8 decorationChairs[10];
     /*0x2748*/ //u8 decorationPlants[10];

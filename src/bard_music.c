@@ -195,8 +195,8 @@ const struct BardSoundTemplate *GetWordSoundTemplates(u16 easyChatWord)
     u32 subword;
     const struct BardSoundTemplate (*ptr)[MAX_BARD_SOUNDS_PER_WORD];
 
-    if (IsBardWordInvalid(easyChatWord))
-        return sEmptyPhonemeTemplate;
+    //if (IsBardWordInvalid(easyChatWord))
+    //    return sEmptyPhonemeTemplate;
 
     category = EC_GROUP(easyChatWord);
     subword = EC_INDEX(easyChatWord);

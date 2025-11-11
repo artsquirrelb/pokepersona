@@ -78,7 +78,7 @@ struct MailRead
 static EWRAM_DATA struct MailRead *sMailRead = NULL;
 
 static void CB2_InitMailRead(void);
-static void BufferMailText(void);
+//static void BufferMailText(void);
 static void PrintMailText(void);
 static void VBlankCB_MailRead(void);
 static void CB2_MailRead(void);
@@ -450,8 +450,8 @@ void ReadMail(struct Mail *mail, MainCallback exitCallback, bool8 hasText)
     sMailRead = AllocZeroed(sizeof(*sMailRead));
     sMailRead->language = GAME_LANGUAGE;
     sMailRead->international = TRUE;
-    sMailRead->parserSingle = CopyEasyChatWord;
-    sMailRead->parserMultiple = ConvertEasyChatWordsToString;
+    //sMailRead->parserSingle = CopyEasyChatWord;
+    //sMailRead->parserMultiple = ConvertEasyChatWordsToString;
     if (IS_ITEM_MAIL(mail->itemId))
     {
         sMailRead->mailType = ITEM_TO_MAIL(mail->itemId);
@@ -576,8 +576,8 @@ static bool8 MailReadBuildGraphics(void)
             gPlttBufferFaded[BG_PLTT_ID(0) + 11] = sBgColors[gSaveBlock2Ptr->playerGender][1];
             break;
         case 13:
-            if (sMailRead->hasText)
-                BufferMailText();
+            //if (sMailRead->hasText)
+                //BufferMailText();
             break;
         case 14:
             if (sMailRead->hasText)
@@ -636,7 +636,7 @@ static void CB2_InitMailRead(void)
     } while (MenuHelpers_IsLinkActive() != TRUE);
 }
 
-static void BufferMailText(void)
+/*static void BufferMailText(void)
 {
     u16 i;
     u8 numWords;
@@ -663,7 +663,7 @@ static void BufferMailText(void)
         ConvertInternationalPlayerName(sMailRead->playerName);
         sMailRead->signatureWidth = sMailRead->layout->signatureWidth;
     }
-}
+}*/
 
 static void PrintMailText(void)
 {

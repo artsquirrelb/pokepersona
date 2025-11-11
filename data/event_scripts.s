@@ -714,7 +714,6 @@ Common_EventScript_ShowPokemonCenterSign::
 
 Common_ShowEasyChatScreen::
 	fadescreen FADE_TO_BLACK
-	special ShowEasyChatScreen
 	fadescreen FADE_FROM_BLACK
 	return
 
@@ -726,7 +725,6 @@ Common_EventScript_ReadyPetalburgGymForBattle::
 Common_EventScript_BufferTrendyPhrase::
 	dotimebasedevents
 	setvar VAR_0x8004, 0
-	special BufferTrendyPhraseString
 	return
 
 EventScript_BackupMrBrineyLocation::

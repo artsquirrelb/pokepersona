@@ -23,7 +23,7 @@
 #include "m4a.h"
 #include "constants/mauville_old_man.h"
 
-static void InitGiddyTaleList(void);
+/*static void InitGiddyTaleList(void);
 static void StartBardSong(bool8 useNewSongLyrics);
 static void Task_BardSong(u8 taskId);
 static void StorytellerSetup(void);
@@ -111,7 +111,7 @@ static void SetupTrader(void)
     TraderSetup();
 }
 
-void SetMauvilleOldMan(void)
+/*void SetMauvilleOldMan(void)
 {
     u16 trainerId = (gSaveBlock2Ptr->playerTrainerId[1] << 8) | gSaveBlock2Ptr->playerTrainerId[0];
 
@@ -120,25 +120,25 @@ void SetMauvilleOldMan(void)
     switch ((trainerId % 10) / 2)
     {
     case MAUVILLE_MAN_BARD:
-        SetupBard();
+        //SetupBard();
         break;
     case MAUVILLE_MAN_HIPSTER:
-        SetupHipster();
+        //SetupHipster();
         break;
     case MAUVILLE_MAN_TRADER:
-        SetupTrader();
+        //SetupTrader();
         break;
     case MAUVILLE_MAN_STORYTELLER:
-        SetupStoryteller();
+        //SetupStoryteller();
         break;
     case MAUVILLE_MAN_GIDDY:
-        SetupGiddy();
+        //SetupGiddy();
         break;
     }
-    SetMauvilleOldManObjEventGfx();
-}
+    //SetMauvilleOldManObjEventGfx();
+}*/
 
-u8 GetCurrentMauvilleOldMan(void)
+/*u8 GetCurrentMauvilleOldMan(void)
 {
     return gSaveBlock1Ptr->oldMan.common.id;
 }
@@ -392,7 +392,7 @@ static void ResetStorytellerFlag(void)
     Storyteller_ResetFlag();
 }
 
-void ResetMauvilleOldManFlag(void)
+/*void ResetMauvilleOldManFlag(void)
 {
     switch (GetCurrentMauvilleOldMan())
     {
@@ -412,12 +412,12 @@ void ResetMauvilleOldManFlag(void)
         break;
     }
     SetMauvilleOldManObjEventGfx();
-}
+}*/
 
 // States and task data for Task_BardSong.
 // The function BardSing receives this task as an
 // argument and reads its state as well.
-enum {
+/*enum {
     BARD_STATE_INIT,
     BARD_STATE_WAIT_BGM,
     BARD_STATE_GET_WORD,
@@ -739,14 +739,14 @@ static void Task_BardSong(u8 taskId)
     RunTextPrintersAndIsPrinter0Active();
 }
 
-void SetMauvilleOldManObjEventGfx(void)
+/*void SetMauvilleOldManObjEventGfx(void)
 {
     VarSet(VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_BARD);
-}
+}*/
 
 // Language fixers?
 
-void SanitizeMauvilleOldManForRuby(union OldMan *oldMan)
+/*void SanitizeMauvilleOldManForRuby(union OldMan *oldMan)
 {
     s32 i;
     u8 playerName[PLAYER_NAME_LENGTH + 1];
@@ -784,9 +784,9 @@ void SanitizeMauvilleOldManForRuby(union OldMan *oldMan)
         break;
     }
     }
-}
+}*/
 
-static void UNUSED SetMauvilleOldManLanguage(union OldMan *oldMan, u32 language1, u32 language2, u32 language3)
+/*static void UNUSED SetMauvilleOldManLanguage(union OldMan *oldMan, u32 language1, u32 language2, u32 language3)
 {
     s32 i;
 
@@ -849,9 +849,9 @@ static void UNUSED SetMauvilleOldManLanguage(union OldMan *oldMan, u32 language1
     }
     break;
     }
-}
+}*/
 
-void SanitizeReceivedEmeraldOldMan(union OldMan *oldMan, u32 version, u32 language)
+/*void SanitizeReceivedEmeraldOldMan(union OldMan *oldMan, u32 version, u32 language)
 {
     u8 playerName[PLAYER_NAME_LENGTH + 1];
     s32 i;
@@ -872,9 +872,9 @@ void SanitizeReceivedEmeraldOldMan(union OldMan *oldMan, u32 version, u32 langua
             }
         }
     }
-}
+}*/
 
-void SanitizeReceivedRubyOldMan(union OldMan *oldMan, u32 version, u32 language)
+/*void SanitizeReceivedRubyOldMan(union OldMan *oldMan, u32 version, u32 language)
 {
     bool32 isRuby = (version == VERSION_SAPPHIRE || version == VERSION_RUBY);
 
@@ -961,7 +961,8 @@ void SanitizeReceivedRubyOldMan(union OldMan *oldMan, u32 version, u32 language)
     break;
     }
 }
-
+*/
+/*
 struct Story
 {
     u8 stat;
@@ -1460,3 +1461,4 @@ bool8 Script_StorytellerInitializeRandomStat(void)
     sStorytellerPtr = &gSaveBlock1Ptr->oldMan.storyteller;
     return StorytellerInitializeRandomStat();
 }
+*/

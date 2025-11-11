@@ -604,9 +604,9 @@ static void Task_ShowContestResults(u8 taskId)
             {
                 IncrementGameStat(GAME_STAT_WON_LINK_CONTEST);
                 gSpecialVar_0x8005 = TVSHOW_CONTEST_LIVE_UPDATES;
-                InterviewBefore();
-                if (gSpecialVar_Result != TRUE)
-                    InterviewAfter();
+                //InterviewBefore();
+                //if (gSpecialVar_Result != TRUE)
+                //    InterviewAfter();
             }
 
             TryGainNewFanFromCounter(FANCOUNTER_FINISHED_CONTEST);
@@ -1014,8 +1014,8 @@ static void Task_WaitForLinkPartnersDisconnect(u8 taskId)
 
 static void Task_TrySetContestInterviewData(u8 taskId)
 {
-    if (!(gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK))
-        BravoTrainerPokemonProfile_BeforeInterview2(gContestFinalStandings[gContestPlayerMonIndex]);
+    /*if (!(gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK))
+        BravoTrainerPokemonProfile_BeforeInterview2(gContestFinalStandings[gContestPlayerMonIndex]);*/
 
     BeginHardwarePaletteFade(0xFF, 0, 0, 16, 0);
     gTasks[taskId].func = Task_EndShowContestResults;

@@ -2766,16 +2766,16 @@ static void Task_EndAppeals(u8 taskId)
         gContestMonAppealPointTotals[i] = eContestantStatus[i].pointTotal;
     CalculateFinalScores();
     ContestClearGeneralTextWindow();
-    if (!(gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK))
-    {
-        BravoTrainerPokemonProfile_BeforeInterview1(eContestantStatus[gContestPlayerMonIndex].prevMove);
-    }
-    else
-    {
+    //if (!(gLinkContestFlags & LINK_CONTEST_FLAG_IS_LINK))
+    //{
+        //BravoTrainerPokemonProfile_BeforeInterview1(eContestantStatus[gContestPlayerMonIndex].prevMove);
+    //}
+    //else
+    //{
         CalculateContestLiveUpdateData();
         SetConestLiveUpdateTVData();
         ContestDebugPrintBitStrings();
-    }
+    //}
     gContestRngValue = gRngValue;
     StringExpandPlaceholders(gStringVar4, gText_AllOutOfAppealTime);
     Contest_StartTextPrinter(gStringVar4, TRUE);

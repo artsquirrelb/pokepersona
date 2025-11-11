@@ -133,8 +133,8 @@ static EWRAM_DATA struct MatchCallState sMatchCallState = {0};
 static EWRAM_DATA struct BattleFrontierStreakInfo sBattleFrontierStreakInfo = {0};
 
 static u32 GetCurrentTotalMinutes(struct Time *);
-static u32 GetNumRegisteredTrainers(void);
-static u32 GetActiveMatchCallTrainerId(u32);
+//static u32 GetNumRegisteredTrainers(void);
+//static u32 GetActiveMatchCallTrainerId(u32);
 static int GetTrainerMatchCallId(int);
 static mapsec_u16_t GetRematchTrainerLocation(int);
 static bool32 TrainerIsEligibleForRematch(int);
@@ -148,7 +148,7 @@ static const struct MatchCallText *GetSameRouteMatchCallText(int, u8 *);
 static const struct MatchCallText *GetDifferentRouteMatchCallText(int, u8 *);
 static const struct MatchCallText *GetBattleMatchCallText(int, u8 *);
 static const struct MatchCallText *GetGeneralMatchCallText(int, u8 *);
-static bool32 ShouldTrainerRequestBattle(int);
+//static bool32 ShouldTrainerRequestBattle(int);
 static void BuildMatchCallString(int, const struct MatchCallText *, u8 *);
 static u16 GetFrontierStreakInfo(u16, u32 *);
 static void PopulateMatchCallStringVars(int, const s8 *);
@@ -1505,7 +1505,7 @@ static mapsec_u16_t GetRematchTrainerLocation(int matchCallId)
     return mapHeader->regionMapSectionId;
 }
 
-static u32 GetNumRematchTrainersFought(void)
+/*static u32 GetNumRematchTrainersFought(void)
 {
     u32 i, count;
     for (i = 0, count = 0; i < REMATCH_SPECIAL_TRAINER_START; i++)
@@ -1515,12 +1515,12 @@ static u32 GetNumRematchTrainersFought(void)
     }
 
     return count;
-}
+}*/
 
 // Look through the rematch table for trainers that have been defeated once before.
 // Return the index into the rematch table of the nth defeated trainer,
 // or REMATCH_TABLE_ENTRIES if fewer than n rematch trainers have been defeated.
-static u32 GetNthRematchTrainerFought(int n)
+/*static u32 GetNthRematchTrainerFought(int n)
 {
     u32 i, count;
 
@@ -1536,7 +1536,7 @@ static u32 GetNthRematchTrainerFought(int n)
     }
 
     return REMATCH_TABLE_ENTRIES;
-}
+}*/
 
 bool32 SelectMatchCallMessage(int trainerId, u8 *str)
 {
@@ -1557,12 +1557,12 @@ bool32 SelectMatchCallMessage(int trainerId, u8 *str)
     // If the player is not on the same route as the trainer
     // and they can be rematched, there is a random chance for
     // the trainer to request a battle
-    else if (ShouldTrainerRequestBattle(matchCallId))
+    /*else if (ShouldTrainerRequestBattle(matchCallId))
     {
         matchCallText = GetDifferentRouteMatchCallText(matchCallId, str);
         newRematchRequest = TRUE;
         UpdateRematchIfDefeated(matchCallId);
-    }
+    }*/
     else if (Random() % 3)
     {
         // Message talking about a battle the NPC had
@@ -1599,14 +1599,14 @@ static const struct MatchCallText *GetSameRouteMatchCallText(int matchCallId, u8
     return &sMatchCallBattleRequestTopics[topic][id];
 }
 
-static const struct MatchCallText *GetDifferentRouteMatchCallText(int matchCallId, u8 *str)
+/*static const struct MatchCallText *GetDifferentRouteMatchCallText(int matchCallId, u8 *str)
 {
     u16 textId = sMatchCallTrainers[matchCallId].differentRouteMatchCallTextId;
     int mask = 0xFF;
     u32 topic = (textId >> 8) - 1;
     u32 id = (textId & mask) - 1;
     return &sMatchCallBattleRequestTopics[topic][id];
-}
+}*/
 
 static const struct MatchCallText *GetBattleMatchCallText(int matchCallId, u8 *str)
 {
@@ -1873,7 +1873,7 @@ static void PopulateBattleFrontierStreak(int matchCallId, u8 *destStr)
     ConvertIntToDecimalStringN(destStr, sBattleFrontierStreakInfo.streak, STR_CONV_MODE_LEFT_ALIGN, i);
 }
 
-static int GetNumOwnedBadges(void)
+/*static int GetNumOwnedBadges(void)
 {
     u32 i;
 
@@ -1884,10 +1884,10 @@ static int GetNumOwnedBadges(void)
     }
 
     return i;
-}
+}*/
 
 // Whether or not a trainer calling the player from a different route should request a battle
-static bool32 ShouldTrainerRequestBattle(int matchCallId)
+/*static bool32 ShouldTrainerRequestBattle(int matchCallId)
 {
     int dayCount;
     int otId;
@@ -1913,7 +1913,7 @@ static bool32 ShouldTrainerRequestBattle(int matchCallId)
     }
 
     return FALSE;
-}
+}*/
 
 static u16 GetFrontierStreakInfo(u16 facilityId, u32 *topicTextId)
 {

@@ -1748,7 +1748,7 @@ u8 GetFrontierBrainStatus(void)
 
     return status;
 }
-
+/*
 void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
 {
     switch (whichText)
@@ -1839,7 +1839,7 @@ void CopyFrontierTrainerText(u8 whichText, u16 trainerId)
         break;
     }
 }
-
+*/
 void ResetWinStreaks(void)
 {
     s32 battleMode, lvlMode;

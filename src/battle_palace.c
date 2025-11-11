@@ -19,7 +19,7 @@ static void GetPalaceData(void);
 static void SetPalaceData(void);
 static void GetPalaceCommentId(void);
 static void SetPalaceOpponent(void);
-static void BufferOpponentIntroSpeech(void);
+//static void BufferOpponentIntroSpeech(void);
 static void IncrementPalaceStreak(void);
 static void SavePalaceChallenge(void);
 static void SetRandomPalacePrize(void);
@@ -33,7 +33,7 @@ static void (*const sBattlePalaceFunctions[])(void) =
     [BATTLE_PALACE_FUNC_SET_DATA]           = SetPalaceData,
     [BATTLE_PALACE_FUNC_GET_COMMENT_ID]     = GetPalaceCommentId,
     [BATTLE_PALACE_FUNC_SET_OPPONENT]       = SetPalaceOpponent,
-    [BATTLE_PALACE_FUNC_GET_OPPONENT_INTRO] = BufferOpponentIntroSpeech,
+    //[BATTLE_PALACE_FUNC_GET_OPPONENT_INTRO] = BufferOpponentIntroSpeech,
     [BATTLE_PALACE_FUNC_INCREMENT_STREAK]   = IncrementPalaceStreak,
     [BATTLE_PALACE_FUNC_SAVE]               = SavePalaceChallenge,
     [BATTLE_PALACE_FUNC_SET_PRIZE]          = SetRandomPalacePrize,
@@ -157,11 +157,11 @@ static void SetPalaceOpponent(void)
     SetBattleFacilityTrainerGfxId(TRAINER_BATTLE_PARAM.opponentA, 0);
 }
 
-static void BufferOpponentIntroSpeech(void)
+/*static void BufferOpponentIntroSpeech(void)
 {
     if (TRAINER_BATTLE_PARAM.opponentA < FRONTIER_TRAINERS_COUNT)
         FrontierSpeechToString(gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].speechBefore);
-}
+}*/
 
 static void IncrementPalaceStreak(void)
 {

@@ -34,7 +34,7 @@ void ClearMysteryGift(void)
     CpuFill32(0, &gSaveBlock1Ptr->mysteryGift, sizeof(gSaveBlock1Ptr->mysteryGift));
     ClearSavedWonderNewsMetadata(); // Clear is redundant, WonderNews_Reset would be sufficient
 #endif //FREE_MYSTERY_GIFT
-    InitQuestionnaireWords();
+    //InitQuestionnaireWords();
 }
 
 struct WonderNews *GetSavedWonderNews(void)

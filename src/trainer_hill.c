@@ -61,7 +61,7 @@ static void BufferChallengeTime(void);
 static void GetAllFloorsUsed(void);
 static void GetInEReaderMode(void);
 static void IsTrainerHillChallengeActive(void);
-static void ShowTrainerHillPostBattleText(void);
+//static void ShowTrainerHillPostBattleText(void);
 static void SetAllTrainerFlags(void);
 static void GetGameSaved(void);
 static void SetGameSaved(void);
@@ -242,7 +242,7 @@ static void (*const sHillFunctions[])(void) =
     [TRAINER_HILL_FUNC_GET_ALL_FLOORS_USED]   = GetAllFloorsUsed,
     [TRAINER_HILL_FUNC_GET_IN_EREADER_MODE]   = GetInEReaderMode,
     [TRAINER_HILL_FUNC_IN_CHALLENGE]          = IsTrainerHillChallengeActive,
-    [TRAINER_HILL_FUNC_POST_BATTLE_TEXT]      = ShowTrainerHillPostBattleText,
+    //[TRAINER_HILL_FUNC_POST_BATTLE_TEXT]      = ShowTrainerHillPostBattleText,
     [TRAINER_HILL_FUNC_SET_ALL_TRAINER_FLAGS] = SetAllTrainerFlags,
     [TRAINER_HILL_FUNC_GET_GAME_SAVED]        = GetGameSaved,
     [TRAINER_HILL_FUNC_SET_GAME_SAVED]        = SetGameSaved,
@@ -379,7 +379,7 @@ static void FreeDataStruct(void)
 {
     TRY_FREE_AND_SET_NULL(sHillData);
 }
-
+/*
 void CopyTrainerHillTrainerText(u8 which, u16 localId)
 {
     u8 id, floorId;
@@ -405,7 +405,7 @@ void CopyTrainerHillTrainerText(u8 which, u16 localId)
     }
 
     FreeDataStruct();
-}
+}*/
 
 static void TrainerHillStartChallenge(void)
 {
@@ -889,11 +889,11 @@ const u8 *GetTrainerHillTrainerScript(void)
     return TrainerHill_EventScript_TrainerBattle;
 }
 
-static void ShowTrainerHillPostBattleText(void)
+/*static void ShowTrainerHillPostBattleText(void)
 {
     CopyTrainerHillTrainerText(TRAINER_HILL_TEXT_AFTER, gSpecialVar_LastTalked);
     ShowFieldMessageFromBuffer();
-}
+}*/
 
 static void CreateNPCTrainerHillParty(u16 trainerId, u8 firstMonId)
 {

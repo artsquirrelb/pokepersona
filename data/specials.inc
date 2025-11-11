@@ -84,8 +84,7 @@ gSpecials::
 	def_special DoPokeNews
 	def_special GetRandomActiveShowIdx
 	def_special GetSelectedTVShow
-	def_special InterviewBefore
-	def_special InterviewAfter
+
 	def_special IsLeadMonNicknamedOrNotEnglish
 	def_special SetContestCategoryStringVarForInterview
 	def_special GetNextActiveShowIfMassOutbreak
@@ -112,24 +111,7 @@ gSpecials::
 	def_special TryContestGModeLinkup
 	def_special SaveGame
 	def_special DoWateringBerryTreeAnim
-	def_special ShowEasyChatScreen
-	def_special ShowEasyChatProfile
-	def_special Script_GetCurrentMauvilleMan
-	def_special HasBardSongBeenChanged
-	def_special SaveBardSongLyrics
-	def_special HasHipsterTaughtWord
-	def_special SetHipsterTaughtWord
-	def_special HipsterTryTeachWord
-	def_special PlayBardSong
-	def_special SetMauvilleOldManObjEventGfx
-	def_special GenerateGiddyLine
-	def_special GiddyShouldTellAnotherTale
-	def_special StorytellerGetFreeStorySlot
-	def_special Script_StorytellerDisplayStory
-	def_special StorytellerStoryListMenu
-	def_special StorytellerUpdateStat
-	def_special Script_StorytellerInitializeRandomStat
-	def_special HasStorytellerAlreadyRecorded
+	
 	def_special TraderMenuGetDecoration
 	def_special GetTraderTradedFlag
 	def_special DoesPlayerHaveNoDecorations
@@ -140,13 +122,8 @@ gSpecials::
 	def_special CompareSeedotSize
 	def_special GetLotadSizeRecordInfo
 	def_special CompareLotadSize
-	def_special TryPutNameRaterShowOnTheAir
 	def_special BufferMonNickname
 	def_special IsMonOTIDNotPlayers
-	def_special BufferTrendyPhraseString
-	def_special IsTrendyPhraseBoring
-	def_special BufferDeepLinkPhrase
-	def_special GetDewfordHallPaintingNameIndex
 	def_special SwapRegisteredBike
 	def_special CalculatePlayerPartyCount
 	def_special CountPartyNonEggMons
@@ -192,7 +169,7 @@ gSpecials::
 	def_special GabbyAndTyGetBattleNum
 	def_special GabbyAndTyAfterInterview
 	def_special GabbyAndTyBeforeInterview
-	def_special DoTVShowInSearchOfTrainers
+	
 	def_special IsGabbyAndTyShowOnTheAir
 	def_special GabbyAndTyGetLastQuote
 	def_special GabbyAndTyGetLastBattleTrivia
@@ -392,10 +369,9 @@ gSpecials::
 	def_special FavorLadyGetPrize
 	def_special SetFavorLadyState_Complete
 	def_special GetQuizLadyState
-	def_special GetQuizAuthor
 	def_special IsQuizLadyWaitingForChallenger
-	def_special QuizLadyShowQuizQuestion
-	def_special QuizLadyGetPlayerAnswer
+	
+
 	def_special IsQuizAnswerCorrect
 	def_special BufferQuizPrizeItem
 	def_special SetQuizLadyState_Complete
@@ -419,7 +395,6 @@ gSpecials::
 	def_special SetContestLadyGivenPokeblock
 	def_special GetContestLadyMonSpecies
 	def_special GetContestLadyCategory
-	def_special PutLilycoveContestLadyShowOnTheAir
 	def_special CloseBattlePikeCurtain
 	def_special CallApprenticeFunction
 	def_special ShouldTryGetTrainerScript

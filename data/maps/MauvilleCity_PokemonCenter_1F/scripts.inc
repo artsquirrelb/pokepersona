@@ -6,11 +6,9 @@ MauvilleCity_PokemonCenter_1F_MapScripts::
 MauvilleCity_PokemonCenter_1F_OnTransition:
 	setrespawn HEAL_LOCATION_MAUVILLE_CITY
 	call Common_EventScript_UpdateBrineyLocation
-	goto MauvilleCity_PokemonCenter_1F_EventScript_SetMauvilleOldManGfx
 	end
 
 MauvilleCity_PokemonCenter_1F_EventScript_SetMauvilleOldManGfx::
-	special SetMauvilleOldManObjEventGfx
 	end
 
 MauvilleCity_PokemonCenter_1F_EventScript_Nurse::

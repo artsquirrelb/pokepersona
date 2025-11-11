@@ -1675,7 +1675,7 @@ void SoftResetInBattlePyramid(void)
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
         DoSoftReset();
 }
-
+/*
 void CopyPyramidTrainerSpeechBefore(u16 trainerId)
 {
     FrontierSpeechToString(gFacilityTrainers[trainerId].speechBefore);
@@ -1690,7 +1690,7 @@ void CopyPyramidTrainerLoseSpeech(u16 trainerId)
 {
     FrontierSpeechToString(gFacilityTrainers[trainerId].speechLose);
 }
-
+*/
 u8 GetTrainerEncounterMusicIdInBattlePyramid(u16 trainerId)
 {
     int i;

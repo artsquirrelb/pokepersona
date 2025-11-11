@@ -1362,7 +1362,7 @@ void BattleSetup_StartRematchBattle(void)
 
 void ShowTrainerIntroSpeech(void)
 {
-    if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
+    /*if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {
         if (gNoOfApproachingTrainers == 0 || gNoOfApproachingTrainers == 1)
             CopyPyramidTrainerSpeechBefore(LocalIdToPyramidTrainerId(gSpecialVar_LastTalked));
@@ -1381,9 +1381,9 @@ void ShowTrainerIntroSpeech(void)
         ShowFieldMessageFromBuffer();
     }
     else
-    {
+    {*/
         ShowFieldMessage(GetIntroSpeechOfApproachingTrainer());
-    }
+    //}
 }
 
 const u8 *BattleSetup_GetScriptAddrAfterBattle(void)

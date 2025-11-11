@@ -2241,7 +2241,7 @@ static void NewGameBirchSpeech_CreateDialogueWindowBorder(u8 bg, u8 x, u8 y, u8 
 
     FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM + 10, x-2,       y+height, 1,       1, palNum);
     FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM + 11, x-1,       y+height, 1,       1, palNum);
-    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(BIRCH_DLG_BASE_TILE_NUM + 1), x,         y+height, width-1, 1, palNum);
+    FillBgTilemapBufferRect(bg, BG_TILE_V_FLIP(BIRCH_DLG_BASE_TILE_NUM + 2), x,         y+height, width-1, 1, palNum);
     FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM + 12, x+width-1, y+height, 1,       1, palNum);
     FillBgTilemapBufferRect(bg, BIRCH_DLG_BASE_TILE_NUM + 13, x+width,   y+height, 1,       1, palNum);
 }

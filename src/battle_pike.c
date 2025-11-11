@@ -68,7 +68,7 @@ static void SetHintedRoom(void);
 static void GetHintedRoomIndex(void);
 static void GetRoomTypeHint(void);
 static void ClearPikeTrainerIds(void);
-static void BufferTrainerIntro(void);
+//static void BufferTrainerIntro(void);
 static void GetCurrentRoomPikeQueenFightType(void);
 static void HealSomeMonsBeforePikeQueen(void);
 static void SetHealingroomTypesDisabled(void);
@@ -492,14 +492,14 @@ static void (*const sBattlePikeFunctions[])(void) =
     [BATTLE_PIKE_FUNC_GET_ROOM_STATUS]         = GetRoomInflictedStatus,
     [BATTLE_PIKE_FUNC_GET_ROOM_STATUS_MON]     = GetRoomInflictedStatusMon,
     [BATTLE_PIKE_FUNC_HEAL_ONE_TWO_MONS]       = HealOneOrTwoMons,
-    [BATTLE_PIKE_FUNC_BUFFER_NPC_MSG]          = BufferNPCMessage,
+    //[BATTLE_PIKE_FUNC_BUFFER_NPC_MSG]          = BufferNPCMessage,
     [BATTLE_PIKE_FUNC_STATUS_SCREEN_FLASH]     = StatusInflictionScreenFlash,
     [BATTLE_PIKE_FUNC_IS_IN]                   = GetInBattlePike,
     [BATTLE_PIKE_FUNC_SET_HINT_ROOM]           = SetHintedRoom,
     [BATTLE_PIKE_FUNC_GET_HINT_ROOM_ID]        = GetHintedRoomIndex,
     [BATTLE_PIKE_FUNC_GET_ROOM_TYPE_HINT]      = GetRoomTypeHint,
     [BATTLE_PIKE_FUNC_CLEAR_TRAINER_IDS]       = ClearPikeTrainerIds,
-    [BATTLE_PIKE_FUNC_GET_TRAINER_INTRO]       = BufferTrainerIntro,
+    //[BATTLE_PIKE_FUNC_GET_TRAINER_INTRO]       = BufferTrainerIntro,
     [BATTLE_PIKE_FUNC_GET_QUEEN_FIGHT_TYPE]    = GetCurrentRoomPikeQueenFightType,
     [BATTLE_PIKE_FUNC_HEAL_MONS_BEFORE_QUEEN]  = HealSomeMonsBeforePikeQueen,
     [BATTLE_PIKE_FUNC_SET_HEAL_ROOMS_DISABLED] = SetHealingroomTypesDisabled,
@@ -760,7 +760,7 @@ static void HealOneOrTwoMons(void)
     gSpecialVar_Result = toHeal;
 }
 
-static void BufferNPCMessage(void)
+/*static void BufferNPCMessage(void)
 {
     int speechId;
 
@@ -772,7 +772,7 @@ static void BufferNPCMessage(void)
         speechId = sNPCTable[sNpcId].speechId3;
 
     FrontierSpeechToString(sNPCSpeeches[speechId]);
-}
+}*/
 
 static void StatusInflictionScreenFlash(void)
 {
@@ -1459,7 +1459,7 @@ static void ClearPikeTrainerIds(void)
         gSaveBlock2Ptr->frontier.trainerIds[i] = 0xFFFF;
 }
 
-static void BufferTrainerIntro(void)
+/*static void BufferTrainerIntro(void)
 {
     if (gSpecialVar_0x8005 == 0)
     {
@@ -1471,7 +1471,7 @@ static void BufferTrainerIntro(void)
         if (TRAINER_BATTLE_PARAM.opponentB < FRONTIER_TRAINERS_COUNT)
             FrontierSpeechToString(gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentB].speechBefore);
     }
-}
+}*/
 
 static bool8 AtLeastTwoAliveMons(void)
 {

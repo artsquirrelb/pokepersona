@@ -355,7 +355,7 @@ u8 GetQuizLadyState(void)
         return LILYCOVE_LADY_STATE_READY;
 }
 
-u8 GetQuizAuthor(void)
+/*u8 GetQuizAuthor(void)
 {
     s32 i, j;
     u8 authorNameId;
@@ -384,7 +384,7 @@ u8 GetQuizAuthor(void)
         return QUIZ_AUTHOR_OTHER_PLAYER;
     else
         return QUIZ_AUTHOR_PLAYER;
-}
+}*/
 
 static u8 BufferQuizAuthorName(void)
 {
@@ -471,16 +471,16 @@ bool8 IsQuizLadyWaitingForChallenger(void)
     return sQuizLadyPtr->waitingForChallenger;
 }
 
-void QuizLadyGetPlayerAnswer(void)
+/*void QuizLadyGetPlayerAnswer(void)
 {
     ShowEasyChatScreen();
-}
+}*/
 
 bool8 IsQuizAnswerCorrect(void)
 {
     sQuizLadyPtr = &gSaveBlock1Ptr->lilycoveLady.quiz;
-    CopyEasyChatWord(gStringVar1, sQuizLadyPtr->correctAnswer);
-    CopyEasyChatWord(gStringVar2, sQuizLadyPtr->playerAnswer);
+    //CopyEasyChatWord(gStringVar1, sQuizLadyPtr->correctAnswer);
+    //CopyEasyChatWord(gStringVar2, sQuizLadyPtr->playerAnswer);
     return StringCompare(gStringVar1, gStringVar2) ? FALSE : TRUE;
 }
 
@@ -536,7 +536,7 @@ void ClearQuizLadyQuestionAndAnswer(void)
 void QuizLadySetCustomQuestion(void)
 {
     gSpecialVar_0x8004 = EASY_CHAT_TYPE_QUIZ_SET_QUESTION;
-    ShowEasyChatScreen();
+    //ShowEasyChatScreen();
 }
 
 void QuizLadyTakePrizeForCustomQuiz(void)
@@ -565,7 +565,7 @@ void QuizLadySetWaitingForChallenger(void)
 void BufferQuizCorrectAnswer(void)
 {
     sQuizLadyPtr = &gSaveBlock1Ptr->lilycoveLady.quiz;
-    CopyEasyChatWord(gStringVar3, sQuizLadyPtr->correctAnswer);
+    //CopyEasyChatWord(gStringVar3, sQuizLadyPtr->correctAnswer);
 }
 
 

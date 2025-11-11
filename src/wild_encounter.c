@@ -46,7 +46,7 @@ extern const u8 EventScript_SprayWoreOff[];
 #define WILD_CHECK_KEEN_EYE (1 << 1)
 
 static u16 FeebasRandom(void);
-static void FeebasSeedRng(u16 seed);
+//static void FeebasSeedRng(u16 seed);
 static bool8 IsWildLevelAllowedByRepel(u8 level);
 static void ApplyFluteEncounterRateMod(u32 *encRate);
 static void ApplyCleanseTagEncounterRateMod(u32 *encRate);
@@ -139,7 +139,7 @@ static bool8 CheckFeebas(void)
         if (Random() % 100 > 49)
             return FALSE;
 
-        FeebasSeedRng(gSaveBlock1Ptr->dewfordTrends[0].rand);
+        //FeebasSeedRng(gSaveBlock1Ptr->dewfordTrends[0].rand);
 
         // Assign each Feebas spot to a random fishing spot.
         // Randomness is fixed depending on the seed above.
@@ -175,10 +175,10 @@ static u16 FeebasRandom(void)
     return sFeebasRngValue >> 16;
 }
 
-static void FeebasSeedRng(u16 seed)
+/*static void FeebasSeedRng(u16 seed)
 {
     sFeebasRngValue = seed;
-}
+}*/
 
 // LAND_WILD_COUNT
 u32 ChooseWildMonIndex_Land(void)

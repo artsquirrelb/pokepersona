@@ -138,10 +138,7 @@ LilycoveCity_PokemonCenter_1F_EventScript_QuizLady::
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_HasQuiz::
-	specialvar VAR_RESULT, GetQuizAuthor
-	goto_if_eq VAR_RESULT, QUIZ_AUTHOR_PLAYER, LilycoveCity_PokemonCenter_1F_EventScript_WaitingToTakeYourQuiz
-	goto_if_eq VAR_RESULT, QUIZ_AUTHOR_OTHER_PLAYER, LilycoveCity_PokemonCenter_1F_EventScript_PlayerQuizReady
-	goto_if_eq VAR_RESULT, QUIZ_AUTHOR_LADY, LilycoveCity_PokemonCenter_1F_EventScript_LadyQuizReady
+
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_CheckMadeQuiz::
@@ -188,14 +185,11 @@ LilycoveCity_PokemonCenter_1F_EventScript_CheckQuizTakingState::
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_ShowQuestion::
-	special QuizLadyShowQuizQuestion
-	waitstate
-	goto LilycoveCity_PokemonCenter_1F_EventScript_CheckQuizTakingState
+
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_GetAnswer::
-	special QuizLadyGetPlayerAnswer
-	waitstate
+
 	goto LilycoveCity_PokemonCenter_1F_EventScript_CheckQuizTakingState
 	end
 
@@ -429,8 +423,7 @@ LilycoveCity_PokemonCenter_1F_EventScript_CheckAirContestLadyShow::
 	end
 
 LilycoveCity_PokemonCenter_1F_EventScript_AirContestLadyShow::
-	msgbox LilycoveCity_PokemonCenter_1F_Text_ReadyToEnterContests, MSGBOX_DEFAULT
-	special PutLilycoveContestLadyShowOnTheAir
+
 	release
 	end
 

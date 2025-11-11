@@ -463,7 +463,6 @@ LilycoveCity_PokemonTrainerFanClub_EventScript_Interviewer::
 @ Instead they always ask about whoever the Lass would be interested in, if not the player
 LilycoveCity_PokemonTrainerFanClub_EventScript_Interview::
 	setvar VAR_0x8005, TVSHOW_FAN_CLUB_SPECIAL
-	special InterviewBefore
 	goto_if_eq VAR_RESULT, TRUE, LilycoveCity_PokemonTrainerFanClub_EventScript_AlreadyInterviewed2
 	copyvar VAR_0x800A, VAR_0x8006
 	setvar VAR_0x8004, FANCLUB_MEMBER1

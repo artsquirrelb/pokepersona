@@ -19,7 +19,7 @@ struct MysteryGiftLinkGameData
     u8 maxStamps;
     u8 playerName[PLAYER_NAME_LENGTH];
     u8 playerTrainerId[TRAINER_ID_LENGTH];
-    u16 easyChatProfile[EASY_CHAT_BATTLE_WORDS_COUNT];
+    //u16 easyChatProfile[EASY_CHAT_BATTLE_WORDS_COUNT];
     u8 romHeaderGameCode[GAME_CODE_LENGTH];
     u8 romHeaderSoftwareVersion;
 };

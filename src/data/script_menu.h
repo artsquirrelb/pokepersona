@@ -975,6 +975,8 @@ const u8 *const gStdStrings[] =
     [STDSTRING_BATTLE_ARENA] = gText_BattleArena,
     [STDSTRING_BATTLE_PIKE] = gText_BattlePike,
     [STDSTRING_BATTLE_PYRAMID] = gText_BattlePyramid,
+    [STDSTRING_BATTLEITEMS] = gText_Battle_Items,
+    [STDSTRING_MEDICINES] = gText_Medicines,
 };
 
 static const u8 sLinkServicesMultichoiceIds[] =

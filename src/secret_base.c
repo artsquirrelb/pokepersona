@@ -45,7 +45,7 @@
 #include "constants/secret_bases.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
-
+/*
 #define TAG_SCROLL_ARROW 5112
 
 // Values for registryStatus
@@ -2074,3 +2074,4 @@ void CheckInteractedWithFriendsSandOrnament(void)
             break;
     }
 }
+*/

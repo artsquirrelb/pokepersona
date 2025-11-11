@@ -1058,8 +1058,8 @@ static void ApprenticeBufferString(void)
             StringCopy(stringDst, gText_OpenLevel);
         break;
     case APPRENTICE_BUFF_WIN_SPEECH:
-        FrontierSpeechToString(gSaveBlock2Ptr->apprentices[0].speechWon);
-        StringCopy(stringDst, gStringVar4);
+        //FrontierSpeechToString(gSaveBlock2Ptr->apprentices[0].speechWon);
+        //StringCopy(stringDst, gStringVar4);
         break;
     case APPRENTICE_BUFF_LEAD_MON_SPECIES:
         speciesArrayId = APPRENTICE_SPECIES_ID(PLAYER_APPRENTICE.leadMonId);

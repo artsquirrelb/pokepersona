@@ -55,20 +55,20 @@
 
 */
 
-enum {
+/*enum {
     SORT_MODE_NORMAL,
     SORT_MODE_MAX_FIRST,
     SORT_MODE_FULL,
-};
+};*/
 
-static void SortTrends(struct DewfordTrend *, u16, u8);
+/*static void SortTrends(struct DewfordTrend *, u16, u8);
 static bool8 CompareTrends(struct DewfordTrend *, struct DewfordTrend *, u8);
 static void SeedTrendRng(struct DewfordTrend *);
 static bool8 IsPhraseInSavedTrends(u16 *);
 static bool8 IsEasyChatPairEqual(u16 *, u16 *);
-static s16 GetSavedTrendIndex(struct DewfordTrend *, struct DewfordTrend *, u16);
+static s16 GetSavedTrendIndex(struct DewfordTrend *, struct DewfordTrend *, u16);*/
 
-void InitDewfordTrend(void)
+/*void InitDewfordTrend(void)
 {
     u16 i;
 
@@ -85,9 +85,9 @@ void InitDewfordTrend(void)
         SeedTrendRng(&(gSaveBlock1Ptr->dewfordTrends[i]));
     }
     SortTrends(gSaveBlock1Ptr->dewfordTrends, SAVED_TRENDS_COUNT, SORT_MODE_NORMAL);
-}
+}*/
 
-void UpdateDewfordTrendPerDay(u16 days)
+/*void UpdateDewfordTrendPerDay(u16 days)
 {
     u16 i;
 
@@ -142,13 +142,13 @@ void UpdateDewfordTrendPerDay(u16 days)
         }
         SortTrends(gSaveBlock1Ptr->dewfordTrends, SAVED_TRENDS_COUNT, SORT_MODE_NORMAL);
     }
-}
+}*/
 
 // Returns TRUE if the current trendy phrase was successfully changed to the given phrase
 // Returns FALSE otherwise
 // Regardless of whether or not the current trendy phrase was changed, the submitted
 // phrase is always saved in gSaveBlock1Ptr->dewfordTrends
-bool8 TrySetTrendyPhrase(u16 *phrase)
+/*bool8 TrySetTrendyPhrase(u16 *phrase)
 {
     struct DewfordTrend trend = {0};
     u16 i;
@@ -203,10 +203,10 @@ bool8 TrySetTrendyPhrase(u16 *phrase)
         TryPutTrendWatcherOnAir(phrase);
     }
     return FALSE;
-}
+}*/
 
 
-static void SortTrends(struct DewfordTrend *trends, u16 numTrends, u8 mode)
+/*static void SortTrends(struct DewfordTrend *trends, u16 numTrends, u8 mode)
 {
     u16 i;
     for (i = 0; i < numTrends; i++)
@@ -224,9 +224,9 @@ static void SortTrends(struct DewfordTrend *trends, u16 numTrends, u8 mode)
 }
 
 #define SAVED_TRENDS_SIZE (sizeof(struct DewfordTrend) * SAVED_TRENDS_COUNT)
-#define BUFFER_SIZE max(SAVED_TRENDS_SIZE * MAX_LINK_PLAYERS, 0x100) // More space was allocated than needed
+#define BUFFER_SIZE max(SAVED_TRENDS_SIZE * MAX_LINK_PLAYERS, 0x100) // More space was allocated than needed*/
 
-void ReceiveDewfordTrendData(struct DewfordTrend *linkedTrends, size_t size, u8 unused)
+/*void ReceiveDewfordTrendData(struct DewfordTrend *linkedTrends, size_t size, u8 unused)
 {
     u16 i, j, numTrends, players;
     struct DewfordTrend *linkedTrendsBuffer, *savedTrendsBuffer, *src, *dst, *temp;
@@ -285,9 +285,9 @@ void ReceiveDewfordTrendData(struct DewfordTrend *linkedTrends, size_t size, u8 
 
     Free(linkedTrendsBuffer);
     Free(savedTrendsBuffer);
-}
+}*/
 
-void BufferTrendyPhraseString(void)
+/*void BufferTrendyPhraseString(void)
 {
     struct DewfordTrend *trend = &gSaveBlock1Ptr->dewfordTrends[gSpecialVar_0x8004];
     ConvertEasyChatWordsToString(gStringVar1, trend->words, 2, 1);
@@ -417,3 +417,4 @@ static s16 GetSavedTrendIndex(struct DewfordTrend *savedTrends, struct DewfordTr
     }
     return -1;
 }
+*/

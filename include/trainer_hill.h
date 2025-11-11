@@ -50,7 +50,7 @@ void GetTrainerHillTrainerName(u8 *dst, u16 trainerId);
 u8 GetTrainerHillTrainerFrontSpriteId(u16 trainerId);
 void InitTrainerHillBattleStruct(void);
 void FreeTrainerHillBattleStruct(void);
-void CopyTrainerHillTrainerText(u8 which, u16 trainerId);
+//void CopyTrainerHillTrainerText(u8 which, u16 trainerId);
 bool8 InTrainerHillChallenge(void);
 void PrintOnTrainerHillRecordsWindow(void);
 void LoadTrainerHillObjectEventTemplates(void);

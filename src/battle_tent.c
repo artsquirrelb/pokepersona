@@ -24,7 +24,7 @@ static void InitVerdanturfTentChallenge(void);
 static void GetVerdanturfTentPrize(void);
 static void SetVerdanturfTentPrize(void);
 static void SetVerdanturfTentTrainerGfx(void);
-static void BufferVerdanturfTentTrainerIntro(void);
+//static void BufferVerdanturfTentTrainerIntro(void);
 static void SaveVerdanturfTentChallenge(void);
 static void SetRandomVerdanturfTentPrize(void);
 static void GiveVerdanturfTentPrize(void);
@@ -64,7 +64,7 @@ void static (*const sVerdanturfTentFuncs[])(void) =
     [VERDANTURF_TENT_FUNC_GET_PRIZE]          = GetVerdanturfTentPrize,
     [VERDANTURF_TENT_FUNC_SET_PRIZE]          = SetVerdanturfTentPrize,
     [VERDANTURF_TENT_FUNC_SET_OPPONENT_GFX]   = SetVerdanturfTentTrainerGfx,
-    [VERDANTURF_TENT_FUNC_GET_OPPONENT_INTRO] = BufferVerdanturfTentTrainerIntro,
+    //[VERDANTURF_TENT_FUNC_GET_OPPONENT_INTRO] = BufferVerdanturfTentTrainerIntro,
     [VERDANTURF_TENT_FUNC_SAVE]               = SaveVerdanturfTentChallenge,
     [VERDANTURF_TENT_FUNC_SET_RANDOM_PRIZE]   = SetRandomVerdanturfTentPrize,
     [VERDANTURF_TENT_FUNC_GIVE_PRIZE]         = GiveVerdanturfTentPrize
@@ -131,11 +131,11 @@ static void SetVerdanturfTentTrainerGfx(void)
     SetBattleFacilityTrainerGfxId(TRAINER_BATTLE_PARAM.opponentA, 0);
 }
 
-static void BufferVerdanturfTentTrainerIntro(void)
+/*static void BufferVerdanturfTentTrainerIntro(void)
 {
     if (TRAINER_BATTLE_PARAM.opponentA < FRONTIER_TRAINERS_COUNT)
         FrontierSpeechToString(gFacilityTrainers[TRAINER_BATTLE_PARAM.opponentA].speechBefore);
-}
+}*/
 
 static void SaveVerdanturfTentChallenge(void)
 {

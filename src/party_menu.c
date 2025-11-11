@@ -373,12 +373,12 @@ static void SwitchPartyMon(void);
 static void Task_SlideSelectedSlotsOnscreen(u8);
 static void CB2_SelectBagItemToGive(void);
 static void CB2_GiveHoldItem(void);
-static void CB2_WriteMailToGiveMon(void);
+//static void CB2_WriteMailToGiveMon(void);
 static void Task_SwitchHoldItemsPrompt(u8);
 static void Task_GiveHoldItem(u8);
 static void Task_SwitchItemsYesNo(u8);
 static void Task_HandleSwitchItemsYesNoInput(u8);
-static void Task_WriteMailToGiveMonAfterText(u8);
+//static void Task_WriteMailToGiveMonAfterText(u8);
 static void CB2_ReturnToPartyMenuFromWritingMail(void);
 static void Task_DisplayGaveMailFromPartyMessage(u8);
 static void UpdatePartyMonHeldItemSprite(struct Pokemon *, struct PartyMenuBox *);
@@ -452,7 +452,7 @@ static void Task_SacredAshDisplayHPRestored(u8);
 static void GiveItemOrMailToSelectedMon(u8);
 static void DisplayItemMustBeRemovedFirstMessage(u8);
 static void Task_SwitchItemsFromBagYesNo(u8);
-static void CB2_WriteMailToGiveMonFromBag(void);
+//static void CB2_WriteMailToGiveMonFromBag(void);
 static void GiveItemToSelectedMon(u8);
 static void Task_UpdateHeldItemSpriteAndClosePartyMenu(u8);
 static void CB2_ReturnToPartyOrBagMenuFromWritingMail(void);
@@ -3567,12 +3567,12 @@ static void CB2_GiveHoldItem(void)
             InitPartyMenu(gPartyMenu.menuType, KEEP_PARTY_LAYOUT, gPartyMenu.action, TRUE, PARTY_MSG_NONE, Task_SwitchHoldItemsPrompt, gPartyMenu.exitCallback);
         }
         // Give mail
-        else if (ItemIsMail(gSpecialVar_ItemId))
+        /*else if (ItemIsMail(gSpecialVar_ItemId))
         {
             RemoveBagItem(gSpecialVar_ItemId, 1);
             GiveItemToMon(&gPlayerParty[gPartyMenu.slotId], gSpecialVar_ItemId);
             CB2_WriteMailToGiveMon();
-        }
+        }*/
         // Give item
         else
         {
@@ -3629,11 +3629,11 @@ static void Task_HandleSwitchItemsYesNoInput(u8 taskId)
             gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
         }
         // Giving mail
-        else if (ItemIsMail(gSpecialVar_ItemId))
+        /*else if (ItemIsMail(gSpecialVar_ItemId))
         {
             GiveItemToMon(&gPlayerParty[gPartyMenu.slotId], gSpecialVar_ItemId);
             gTasks[taskId].func = Task_WriteMailToGiveMonAfterText;
-        }
+        }*/
         // Giving item
         else
         {
@@ -3651,7 +3651,7 @@ static void Task_HandleSwitchItemsYesNoInput(u8 taskId)
     }
 }
 
-static void Task_WriteMailToGiveMonAfterText(u8 taskId)
+/*static void Task_WriteMailToGiveMonAfterText(u8 taskId)
 {
     if (IsPartyMenuTextPrinterActive() != TRUE)
     {
@@ -3660,7 +3660,7 @@ static void Task_WriteMailToGiveMonAfterText(u8 taskId)
     }
 }
 
-static void CB2_WriteMailToGiveMon(void)
+/*static void CB2_WriteMailToGiveMon(void)
 {
     u8 mail = GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_MAIL);
 
@@ -3669,7 +3669,7 @@ static void CB2_WriteMailToGiveMon(void)
         gSaveBlock1Ptr->mail[mail].words,
         CB2_ReturnToPartyMenuFromWritingMail,
         EASY_CHAT_PERSON_DISPLAY_NONE);
-}
+}*/
 
 static void CB2_ReturnToPartyMenuFromWritingMail(void)
 {
@@ -7384,16 +7384,16 @@ static void TryGiveItemOrMailToSelectedMon(u8 taskId)
 
 static void GiveItemOrMailToSelectedMon(u8 taskId)
 {
-    if (ItemIsMail(gPartyMenu.bagItem))
+    /*if (ItemIsMail(gPartyMenu.bagItem))
     {
         RemoveBagItem(gPartyMenu.bagItem, 1);
         sPartyMenuInternal->exitCallback = CB2_WriteMailToGiveMonFromBag;
         Task_ClosePartyMenu(taskId);
     }
     else
-    {
+    {*/
         GiveItemToSelectedMon(taskId);
-    }
+    //}
 }
 
 static void GiveItemToSelectedMon(u8 taskId)
@@ -7421,7 +7421,7 @@ static void Task_UpdateHeldItemSpriteAndClosePartyMenu(u8 taskId)
     }
 }
 
-static void CB2_WriteMailToGiveMonFromBag(void)
+/*static void CB2_WriteMailToGiveMonFromBag(void)
 {
     u8 mail;
 
@@ -7432,7 +7432,7 @@ static void CB2_WriteMailToGiveMonFromBag(void)
         gSaveBlock1Ptr->mail[mail].words,
         CB2_ReturnToPartyOrBagMenuFromWritingMail,
         EASY_CHAT_PERSON_DISPLAY_NONE);
-}
+}*/
 
 static void CB2_ReturnToPartyOrBagMenuFromWritingMail(void)
 {
@@ -7492,11 +7492,11 @@ static void Task_HandleSwitchItemsFromBagYesNoInput(u8 taskId)
             DisplayPartyMenuMessage(gStringVar4, FALSE);
             gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
         }
-        else if (ItemIsMail(item))
+        /*else if (ItemIsMail(item))
         {
             sPartyMenuInternal->exitCallback = CB2_WriteMailToGiveMonFromBag;
             Task_ClosePartyMenu(taskId);
-        }
+        }*/
         else
         {
             GiveItemToMon(&gPlayerParty[gPartyMenu.slotId], item);

@@ -39,8 +39,6 @@ ProfileMan_EventScript_CancelShowProfile::
 
 ProfileMan_EventScript_ShowProfile::
 	setvar VAR_0x8004, 0
-	special ShowEasyChatProfile
-	waitmessage
 	delay 80
 	msgbox ProfileMan_Text_FantasticProfile, MSGBOX_DEFAULT
 	release

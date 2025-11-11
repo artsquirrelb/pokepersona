@@ -3471,10 +3471,10 @@ enum Ability GetMonAbility(struct Pokemon *mon)
 
 void CreateSecretBaseEnemyParty(struct SecretBase *secretBaseRecord)
 {
-    s32 i, j;
+    //s32 i, j;
 
     ZeroEnemyPartyMons();
-    *gBattleResources->secretBase = *secretBaseRecord;
+    /**gBattleResources->secretBase = *secretBaseRecord;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {
@@ -3501,20 +3501,20 @@ void CreateSecretBaseEnemyParty(struct SecretBase *secretBaseRecord)
                 SetMonData(&gEnemyParty[i], MON_DATA_PP1 + j, &pp);
             }
         }
-    }
+    }*/
 }
 
-u8 GetSecretBaseTrainerPicIndex(void)
+/*u8 GetSecretBaseTrainerPicIndex(void)
 {
     u8 facilityClass = sSecretBaseFacilityClasses[gBattleResources->secretBase->gender][gBattleResources->secretBase->trainerId[0] % NUM_SECRET_BASE_CLASSES];
     return gFacilityClassToPicIndex[facilityClass];
-}
+}*/
 
-enum TrainerClassID GetSecretBaseTrainerClass(void)
+/*enum TrainerClassID GetSecretBaseTrainerClass(void)
 {
     u8 facilityClass = sSecretBaseFacilityClasses[gBattleResources->secretBase->gender][gBattleResources->secretBase->trainerId[0] % NUM_SECRET_BASE_CLASSES];
     return gFacilityClassToTrainerClass[facilityClass];
-}
+}*/
 
 bool8 IsPlayerPartyAndPokemonStorageFull(void)
 {

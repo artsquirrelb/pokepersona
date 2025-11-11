@@ -75,12 +75,12 @@
 #define POKEBLOCKS_COUNT 40
 #define OBJECT_EVENTS_COUNT 16
 #define MAIL_COUNT (1 + PARTY_SIZE)
-#define SECRET_BASES_COUNT 1
+//#define SECRET_BASES_COUNT 1
 #define POKE_NEWS_COUNT 1
 #define PC_ITEMS_COUNT 50
 #define OBJECT_EVENT_TEMPLATES_COUNT 64
-#define DECOR_MAX_SECRET_BASE 1
-#define DECOR_MAX_PLAYERS_HOUSE 1
+//#define DECOR_MAX_SECRET_BASE 1
+//#define DECOR_MAX_PLAYERS_HOUSE 1
 #define APPRENTICE_COUNT 1
 #define APPRENTICE_MAX_QUESTIONS 1
 //#define MAX_REMATCH_ENTRIES 100 // only REMATCH_TABLE_ENTRIES (78) are used
@@ -97,8 +97,10 @@
 #define BAG_ITEMS_COUNT 60
 #define BAG_KEYITEMS_COUNT 30
 #define BAG_POKEBALLS_COUNT 16
-#define BAG_TMHM_COUNT 64
+#define BAG_TMHM_COUNT 120
 #define BAG_BERRIES_COUNT 46
+#define BAG_BATTLE_ITEMS_COUNT 120
+#define BAG_MEDICINES_COUNT 30
 
 // Number of facilities for Ranking Hall.
 // 7 facilities for single mode + tower double mode + tower multi mode.

@@ -58,7 +58,7 @@ static void SetNextFacilityOpponent(void);
 static void SetTowerBattleWon(void);
 static void AwardBattleTowerRibbons(void);
 static void SaveTowerChallenge(void);
-static void GetOpponentIntroSpeech(void);
+//static void GetOpponentIntroSpeech(void);
 static void BattleTowerNop1(void);
 static void BattleTowerNop2(void);
 static void LoadMultiPartnerCandidatesData(void);
@@ -715,7 +715,7 @@ static void (*const sBattleTowerFuncs[])(void) =
     [BATTLE_TOWER_FUNC_SET_BATTLE_WON]      = SetTowerBattleWon,
     [BATTLE_TOWER_FUNC_GIVE_RIBBONS]        = AwardBattleTowerRibbons,
     [BATTLE_TOWER_FUNC_SAVE]                = SaveTowerChallenge,
-    [BATTLE_TOWER_FUNC_GET_OPPONENT_INTRO]  = GetOpponentIntroSpeech,
+    //[BATTLE_TOWER_FUNC_GET_OPPONENT_INTRO]  = GetOpponentIntroSpeech,
     [BATTLE_TOWER_FUNC_NOP]                 = BattleTowerNop1,
     [BATTLE_TOWER_FUNC_NOP2]                = BattleTowerNop2,
     [BATTLE_TOWER_FUNC_LOAD_PARTNERS]       = LoadMultiPartnerCandidatesData,
@@ -1866,7 +1866,7 @@ static void FillFactoryTentTrainerParty(u16 trainerId, u8 firstMonId)
     }
 }
 
-void FrontierSpeechToString(const u16 *words)
+/*void FrontierSpeechToString(const u16 *words)
 {
     ConvertEasyChatWordsToString(gStringVar4, words, 3, 2);
     if (GetStringWidth(FONT_NORMAL, gStringVar4, -1) > 204u)
@@ -1881,9 +1881,9 @@ void FrontierSpeechToString(const u16 *words)
 
         gStringVar4[i] = CHAR_PROMPT_SCROLL;
     }
-}
+}*/
 
-static void GetOpponentIntroSpeech(void)
+/*static void GetOpponentIntroSpeech(void)
 {
     u16 trainerId;
     SetFacilityPtrsGetLevel();
@@ -1893,20 +1893,20 @@ static void GetOpponentIntroSpeech(void)
     else
         trainerId = TRAINER_BATTLE_PARAM.opponentA;
 
-#if FREE_BATTLE_TOWER_E_READER == FALSE
+/*#if FREE_BATTLE_TOWER_E_READER == FALSE
     if (trainerId == TRAINER_EREADER)
         FrontierSpeechToString(gSaveBlock2Ptr->frontier.ereaderTrainer.greeting);
     else if (trainerId < FRONTIER_TRAINERS_COUNT)
 #else
     if (trainerId < FRONTIER_TRAINERS_COUNT)
 #endif //FREE_BATTLE_TOWER_E_READER
-        FrontierSpeechToString(gFacilityTrainers[trainerId].speechBefore);
+        /*FrontierSpeechToString(gFacilityTrainers[trainerId].speechBefore);
     else if (trainerId < TRAINER_RECORD_MIXING_APPRENTICE)
         FrontierSpeechToString(gSaveBlock2Ptr->frontier.towerRecords[trainerId - TRAINER_RECORD_MIXING_FRIEND].greeting);
     else
         BufferApprenticeChallengeText(trainerId - TRAINER_RECORD_MIXING_APPRENTICE);
 }
-
+*/
 static void HandleSpecialTrainerBattleEnd(void)
 {
     s32 i;
@@ -2151,12 +2151,12 @@ static void SaveBattleTowerRecord(void)
     StringCopy_PlayerName(playerRecord->name, gSaveBlock2Ptr->playerName);
     playerRecord->winStreak = GetCurrentBattleTowerWinStreak(lvlMode, battleMode);
 
-    for (i = 0; i < EASY_CHAT_BATTLE_WORDS_COUNT; i++)
+    /*for (i = 0; i < EASY_CHAT_BATTLE_WORDS_COUNT; i++)
     {
         playerRecord->greeting[i] = gSaveBlock1Ptr->easyChatBattleStart[i];
         playerRecord->speechWon[i] = gSaveBlock1Ptr->easyChatBattleWon[i];
         playerRecord->speechLost[i] = gSaveBlock1Ptr->easyChatBattleLost[i];
-    }
+    }*/
 
     for (i = 0; i < MAX_FRONTIER_PARTY_SIZE; i++)
     {

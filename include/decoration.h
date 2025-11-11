@@ -1,11 +1,11 @@
 #ifndef GUARD_DECORATION_H
 #define GUARD_DECORATION_H
-
+/*
 enum DecorationPermission
 {
     /*
      * The nomenclature here describes collision and placement permissions, in that order.
-     */
+    
     DECORPERM_SOLID_FLOOR,
     DECORPERM_PASS_FLOOR,
     DECORPERM_BEHIND_FLOOR,
@@ -64,5 +64,5 @@ void ShowDecorationCategoriesWindow(u8 taskId);
 void CopyDecorationCategoryName(u8 *dest, u8 category);
 bool8 IsSelectedDecorInThePC(void);
 u8 AddDecorationIconObject(u8 decor, s16 x, s16 y, u8 priority, u16 tilesTag, u16 paletteTag);
-
+*/
 #endif //GUARD_DECORATION_H

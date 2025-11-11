@@ -4,10 +4,6 @@ DewfordTown_Hall_MapScripts::
 DewfordTown_Hall_EventScript_Girl::
 	lock
 	faceplayer
-	call Common_EventScript_BufferTrendyPhrase
-	special IsTrendyPhraseBoring
-	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Hall_EventScript_GirlBoredOfTrend
-	msgbox DewfordTown_Hall_Text_CantImagineLifeWithoutTrend, MSGBOX_DEFAULT
 	release
 	end
 
@@ -25,13 +21,7 @@ DewfordTown_Hall_EventScript_Woman::
 	end
 
 DewfordTown_Hall_EventScript_Man::
-	lock
-	faceplayer
-	call Common_EventScript_BufferTrendyPhrase
-	special BufferDeepLinkPhrase
-	msgbox DewfordTown_Hall_Text_DeepLinkBetweenXAndY, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, DewfordTown_Hall_EventScript_ConfirmTrendLink
-	goto_if_eq VAR_RESULT, NO, DewfordTown_Hall_EventScript_RejectTrendLink
+	
 	end
 
 DewfordTown_Hall_EventScript_ConfirmTrendLink::
@@ -82,18 +72,7 @@ DewfordTown_Hall_EventScript_Bookshelf::
 	end
 
 DewfordTown_Hall_EventScript_Painting::
-	lockall
-	call Common_EventScript_BufferTrendyPhrase
-	special GetDewfordHallPaintingNameIndex
-	switch VAR_RESULT
-	case 0, DewfordTown_Hall_EventScript_ScreamTitle
-	case 4, DewfordTown_Hall_EventScript_ScreamTitle
-	case 1, DewfordTown_Hall_EventScript_SmileTitle
-	case 5, DewfordTown_Hall_EventScript_ScreamTitle
-	case 2, DewfordTown_Hall_EventScript_LastTitle
-	case 6, DewfordTown_Hall_EventScript_LastTitle
-	case 3, DewfordTown_Hall_EventScript_BirthTitle
-	case 7, DewfordTown_Hall_EventScript_LastTitle
+	
 	end
 
 DewfordTown_Hall_EventScript_ScreamTitle::
@@ -129,17 +108,7 @@ DewfordTown_Hall_EventScript_PsychicM::
 	end
 
 DewfordTown_Hall_EventScript_DoTrendDebate::
-	call Common_EventScript_BufferTrendyPhrase
-	special GetDewfordHallPaintingNameIndex
-	switch VAR_RESULT
-	case 0, DewfordTown_Hall_EventScript_TrendDebate1
-	case 1, DewfordTown_Hall_EventScript_TrendDebate1
-	case 2, DewfordTown_Hall_EventScript_TrendDebate2
-	case 3, DewfordTown_Hall_EventScript_TrendDebate2
-	case 4, DewfordTown_Hall_EventScript_TrendDebate3
-	case 5, DewfordTown_Hall_EventScript_TrendDebate3
-	case 6, DewfordTown_Hall_EventScript_TrendDebate4
-	case 7, DewfordTown_Hall_EventScript_TrendDebate5
+	
 	end
 
 DewfordTown_Hall_EventScript_TrendDebate1::

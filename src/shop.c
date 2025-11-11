@@ -510,7 +510,7 @@ static void Task_HandleShopMenuQuit(u8 taskId)
 {
     ClearStdWindowAndFrameToTransparent(sMartInfo.windowId, 2); // Incorrect use, making it not copy it to vram.
     RemoveWindow(sMartInfo.windowId);
-    TryPutSmartShopperOnAir();
+    //TryPutSmartShopperOnAir();
     UnlockPlayerFieldControls();
     DestroyTask(taskId);
 
@@ -707,10 +707,10 @@ static void BuyMenuSetListEntry(struct ListMenuItem *menuItem, u16 item, u8 *nam
         CopyItemName(item, name);
     else if (sMartInfo.martType == MART_TYPE_OUTFIT)
         BufferOutfitStrings(name, item, OUTFIT_BUFFER_NAME);
-    else if (MARTMOVE)
+    else// if (MARTMOVE)
         StringCopy(name, gMovesInfo[item].name);
-    else
-        StringCopy(name, gDecorations[item].name);
+    /*else
+        StringCopy(name, gDecorations[item].name);*/
 
     menuItem->name = name;
     menuItem->id = item;
@@ -820,15 +820,15 @@ static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, s
             description = GetItemDescription(item);
         else if (sMartInfo.martType == MART_TYPE_OUTFIT)
             description = gOutfits[item].name; // the actual desc is a bit too long oops
-        else if (MARTMOVE)
+        else //if (MARTMOVE)
         {
             FormatTextByWidth(gStringVar3, 101, FONT_NARROW, gMovesInfo[item].description, GetFontAttribute(FONT_NARROW, FONTATTR_LETTER_SPACING));
             if (sNarrowerText == TRUE)
                 FormatTextByWidth(gStringVar3, 101, FONT_NARROWER, gMovesInfo[item].description, GetFontAttribute(FONT_NARROWER, FONTATTR_LETTER_SPACING));
             description = gStringVar3;
         }
-        else
-            description = gDecorations[item].description;
+        //else
+            //description = gDecorations[item].description;
     }
     else
     {
@@ -876,7 +876,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
         {
             ConvertIntToDecimalStringN(gStringVar1, GetOutfitPrice(itemId), STR_CONV_MODE_LEFT_ALIGN, 6);
         }
-        else if (MARTBP || MARTMOVE)
+        else //if (MARTBP || MARTMOVE)
         {
             ConvertIntToDecimalStringN(
                 gStringVar1,
@@ -884,14 +884,14 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
                 STR_CONV_MODE_LEFT_ALIGN,
                 6);
         }
-        else
-        {
-            ConvertIntToDecimalStringN(
-                gStringVar1,
-                gDecorations[itemId].price,
-                STR_CONV_MODE_LEFT_ALIGN,
-                6);
-        }
+        //else
+        //{
+            //ConvertIntToDecimalStringN(
+                //gStringVar1,
+                //gDecorations[itemId].price,
+                //STR_CONV_MODE_LEFT_ALIGN,
+                //6);
+        //}
 
         if ((GetItemImportance(itemId) && sMartInfo.martType != MART_TYPE_MOVE_TUTOR && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1))) || GetOutfitStatus(itemId))
             StringCopy(gStringVar4, gText_SoldOut);
@@ -967,9 +967,9 @@ static void BuyMenuAddItemIcon(u16 item, u8 iconSlot)
     }
     else
     {
-        spriteId = AddDecorationIconObject(item, 20, 84, 1, iconSlot + TAG_ITEM_ICON_BASE, iconSlot + TAG_ITEM_ICON_BASE);
+        /*spriteId = AddDecorationIconObject(item, 20, 84, 1, iconSlot + TAG_ITEM_ICON_BASE, iconSlot + TAG_ITEM_ICON_BASE);
         if (spriteId != MAX_SPRITES)
-            *spriteIdPtr = spriteId;
+            *spriteIdPtr = spriteId;*/
     }
 }
 
@@ -1333,10 +1333,10 @@ static void Task_BuyMenu(u8 taskId)
                 sShopData->totalCost = (GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
             else if (sMartInfo.martType == MART_TYPE_OUTFIT)
                 sShopData->totalCost = GetOutfitPrice(itemId);
-            else if (MARTBP || MARTMOVE)
+            else //if (MARTBP || MARTMOVE)
                 sShopData->totalCost = (ItemId_GetBpPrice(itemId));
-            else
-                sShopData->totalCost = gDecorations[itemId].price;
+            //else
+                //sShopData->totalCost = gDecorations[itemId].price;
 
             if ((GetItemImportance(itemId) && sMartInfo.martType != MART_TYPE_MOVE_TUTOR && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1))) || GetOutfitStatus(itemId))
                 BuyMenuDisplayMessage(taskId, gText_ThatItemIsSoldOut, BuyMenuReturnToItemList);
@@ -1399,7 +1399,7 @@ static void Task_BuyMenu(u8 taskId)
                         BuyMenuDisplayMessage(taskId, gText_Var1CertainlyHowMany, Task_BuyHowManyDialogueInit);
                     }
                 }
-                else if (MARTMOVE)
+                else //if (MARTMOVE)
                 {
                     sScrollOffset = sShopData->scrollOffset;
                     sSelectedRow = sShopData->selectedRow;
@@ -1412,7 +1412,7 @@ static void Task_BuyMenu(u8 taskId)
                     gSpecialVar_0x8008 = sShopData->totalCost;
                     BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                 }
-                else
+                /*else
                 {
                     StringCopy(gStringVar1, gDecorations[itemId].name);
                     ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
@@ -1423,7 +1423,7 @@ static void Task_BuyMenu(u8 taskId)
                         StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
 
                     BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
-                }
+                }*/
             }
             break;
         }
@@ -1540,7 +1540,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
     }
     else
     {
-        if (DecorationAdd(tItemId))
+        /*if (DecorationAdd(tItemId))
         {
             if (sMartInfo.martType == MART_TYPE_DECOR)
                 BuyMenuDisplayMessage(taskId, gText_ThankYouIllSendItHome, BuyMenuSubtractMoney);
@@ -1548,9 +1548,9 @@ static void BuyMenuTryMakePurchase(u8 taskId)
                 BuyMenuDisplayMessage(taskId, gText_ThanksIllSendItHome, BuyMenuSubtractMoney);
         }
         else
-        {
+        {*/
             BuyMenuDisplayMessage(taskId, gText_SpaceForVar1Full, BuyMenuReturnToItemList);
-        }
+        //}
     }
 }
 

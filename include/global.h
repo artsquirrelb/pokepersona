@@ -638,31 +638,31 @@ extern u8 UpdateSpritePaletteWithTime(u8);
 
 struct SecretBaseParty
 {
-    u32 personality[PARTY_SIZE];
-    u16 moves[PARTY_SIZE * MAX_MON_MOVES];
-    u16 species[PARTY_SIZE];
-    u16 heldItems[PARTY_SIZE];
-    u8 levels[PARTY_SIZE];
-    u8 EVs[PARTY_SIZE];
+    //u32 personality[PARTY_SIZE];
+    //u16 moves[PARTY_SIZE * MAX_MON_MOVES];
+    //u16 species[PARTY_SIZE];
+    //u16 heldItems[PARTY_SIZE];
+    //u8 levels[PARTY_SIZE];
+   // u8 EVs[PARTY_SIZE];
 };
 
 struct SecretBase
 {
-    /*0x1A9C*/ u8 secretBaseId;
-    /*0x1A9D*/ bool8 toRegister:4;
-    /*0x1A9D*/ u8 gender:1;
-    /*0x1A9D*/ u8 battledOwnerToday:1;
-    /*0x1A9D*/ u8 registryStatus:2;
-    /*0x1A9E*/ u8 trainerName[PLAYER_NAME_LENGTH];
-    /*0x1AA5*/ u8 trainerId[TRAINER_ID_LENGTH]; // byte 0 is used for determining trainer class
-    /*0x1AA9*/ u8 language;
-    /*0x1AAA*/ u16 numSecretBasesReceived;
-    /*0x1AAC*/ u8 numTimesEntered;
-    /*0x1AAD*/ u8 unused;
-    /*0x1AAE*/ u8 decorations[DECOR_MAX_SECRET_BASE];
-    /*0x1ABE*/ u8 decorationPositions[DECOR_MAX_SECRET_BASE];
+    /*0x1A9C*/ //u8 secretBaseId;
+    /*0x1A9D*/ //bool8 toRegister:4;
+    /*0x1A9D*/ //u8 gender:1;
+    /*0x1A9D*/ //u8 battledOwnerToday:1;
+    /*0x1A9D*/ //u8 registryStatus:2;
+    /*0x1A9E*/ //u8 trainerName[PLAYER_NAME_LENGTH];
+    /*0x1AA5*/ //u8 trainerId[TRAINER_ID_LENGTH]; // byte 0 is used for determining trainer class
+    /*0x1AA9*/ //u8 language;
+    /*0x1AAA*/// u16 numSecretBasesReceived;
+    /*0x1AAC*/// u8 numTimesEntered;
+    /*0x1AAD*/ //u8 unused;
+    /*0x1AAE*/ //u8 decorations[DECOR_MAX_SECRET_BASE];
+    /*0x1ABE*/ //u8 decorationPositions[DECOR_MAX_SECRET_BASE];
     /*0x1ACE*/ //u8 padding[2];
-    /*0x1AD0*/ struct SecretBaseParty party;
+    /*0x1AD0*/// struct SecretBaseParty party;
 };
 
 #include "constants/game_stat.h"
@@ -733,7 +733,7 @@ struct RamScript
 };
 
 // See dewford_trend.c
-struct DewfordTrend
+/*struct DewfordTrend
 {
     u16 trendiness:7;
     u16 maxTrendiness:7;
@@ -801,7 +801,7 @@ struct MauvilleOldManTrader
     u8 language[NUM_TRADER_ITEMS];
 };
 
-typedef union OldMan
+/*typedef union OldMan
 {
     struct MauvilleManCommon common;
     struct MauvilleManBard bard;
@@ -810,7 +810,7 @@ typedef union OldMan
     struct MauvilleOldManTrader trader;
     struct MauvilleManStoryteller storyteller;
     u8 filler[0x40];
-} OldMan;
+} OldMan;*/
 
 #define LINK_B_RECORDS_COUNT 5
 
@@ -1083,6 +1083,8 @@ struct Bag
     struct ItemSlot pokeBalls[BAG_POKEBALLS_COUNT];
     struct ItemSlot TMsHMs[BAG_TMHM_COUNT];
     struct ItemSlot berries[BAG_BERRIES_COUNT];
+    struct ItemSlot battleItems[BAG_BATTLE_ITEMS_COUNT];
+    struct ItemSlot medicines[BAG_MEDICINES_COUNT];
 };
 
 struct SaveBlock1
@@ -1097,16 +1099,16 @@ struct SaveBlock1
     /*0x2E*/ u8 weather;
     /*0x2F*/ u8 weatherCycleStage;
     /*0x30*/ u8 flashLevel;
-    /*0x31*/ //u8 padding1;
     /*0x32*/ u16 mapLayoutId;
     /*0x34*/ u16 mapView[0x100];
     /*0x234*/ u8 playerPartyCount;
-    /*0x235*/ u8 player2PartyCount;//u8 padding2[3];
+    /*0x235*/ u8 player2PartyCount;
     /*0x238*/ struct Pokemon playerParty[PARTY_SIZE];
+              struct Pokemon player2Party[PARTY_SIZE];
     /*0x490*/ u32 money;
     /*0x494*/ u16 coins;
-//    /*0x496*/ u16 registeredItem; // registered for use with SELECT button
     /*0x496*/ u16 registeredItemCompat; // used for vanilla registered item
+              u16 registeredItems[MAX_REGISTERED_ITEMS];
     /*0x498*/ struct ItemSlot pcItems[PC_ITEMS_COUNT];
     /*0x560 -> 0x848 is bag storage*/
     /*0x560*/ struct Bag bag;
@@ -1115,35 +1117,17 @@ struct SaveBlock1
     /*0x988*/ u8 filler1[0x34]; // Previously Dex Flags, feel free to remove.
 #endif //FREE_EXTRA_SEEN_FLAGS_SAVEBLOCK1
     /*0x9BC*/ u16 berryBlenderRecords[3];
-    /*0x9C2*/ u8 unused_9C2[6];
 #if FREE_MATCH_CALL == FALSE
     /*0x9C8*/ u16 trainerRematchStepCounter;
-     
     /*0x9CA*/ u8 trainerRematches[MAX_REMATCH_ENTRIES];
 #endif //FREE_MATCH_CALL
-    // MAX_REMATCH_ENTRIES decreased from vanilla's 100 to 92
-    // This is to accomodate 4 non-vanilla registeredItems
-    /*0xA26*/ u16 registeredItems[MAX_REGISTERED_ITEMS];
-    /*0xA2E*/ //u8 padding3[2];
     /*0xA30*/ struct ObjectEvent objectEvents[OBJECT_EVENTS_COUNT];
     /*0xC70*/ struct ObjectEventTemplate objectEventTemplates[OBJECT_EVENT_TEMPLATES_COUNT];
     /*0x1270*/ u8 flags[NUM_FLAG_BYTES];
     /*0x139C*/ u16 vars[VARS_COUNT];
     /*0x159C*/ u32 gameStats[NUM_GAME_STATS];
     /*0x169C*/ struct BerryTree berryTrees[BERRY_TREES_COUNT];
-    /*0x1A9C*/ struct SecretBase secretBases[SECRET_BASES_COUNT];
-    /*0x271C*/ u8 playerRoomDecorations[DECOR_MAX_PLAYERS_HOUSE];
-    /*0x2728*/ u8 playerRoomDecorationPositions[DECOR_MAX_PLAYERS_HOUSE];
-    /*0x2734*/ u8 decorationDesks[10];
-    /*0x273E*/ u8 decorationChairs[10];
-    /*0x2748*/ u8 decorationPlants[10];
-    /*0x2752*/ u8 decorationOrnaments[30];
-    /*0x2770*/ u8 decorationMats[30];
-    /*0x278E*/ u8 decorationPosters[10];
-    /*0x2798*/ u8 decorationDolls[40];
-    /*0x27C0*/ u8 decorationCushions[10];
     /*0x27CC*/ TVShow tvShows[TV_SHOWS_COUNT];
-    /*0x27CA*/ //u8 padding4[2];
     /*0x2B50*/ PokeNews pokeNews[POKE_NEWS_COUNT];
     /*0x2B90*/ u16 outbreakPokemonSpecies;
     /*0x2B92*/ u8 outbreakLocationMapNum;
@@ -1156,15 +1140,7 @@ struct SaveBlock1
     /*0x2BA1*/ u8 outbreakPokemonProbability;
     /*0x2BA2*/ u16 outbreakDaysLeft;
     /*0x2BA4*/ struct GabbyAndTyData gabbyAndTyData;
-    /*0x2BB0*/ u16 easyChatProfile[EASY_CHAT_BATTLE_WORDS_COUNT];
-    /*0x2BBC*/ u16 easyChatBattleStart[EASY_CHAT_BATTLE_WORDS_COUNT];
-    /*0x2BC8*/ u16 easyChatBattleWon[EASY_CHAT_BATTLE_WORDS_COUNT];
-    /*0x2BD4*/ u16 easyChatBattleLost[EASY_CHAT_BATTLE_WORDS_COUNT];
     /*0x2BE0*/ struct Mail mail[MAIL_COUNT];
-    /*0x2E20*/ u8 unlockedTrendySayings[NUM_TRENDY_SAYING_BYTES]; // Bitfield for unlockable Easy Chat words in EC_GROUP_TRENDY_SAYING
-    /*0x2E25*/ //u8 padding5[3];
-    /*0x2E28*/ OldMan oldMan;
-    /*0x2e64*/ struct DewfordTrend dewfordTrends[SAVED_TRENDS_COUNT];
     /*0x2e90*/ struct ContestWinner contestWinners[NUM_CONTEST_WINNERS]; // see CONTEST_WINNER_*
     /*0x3030*/ struct DayCare daycare;
 #if FREE_LINK_BATTLE_RECORDS == FALSE
@@ -1180,7 +1156,6 @@ struct SaveBlock1
 #if FREE_MYSTERY_GIFT == FALSE
     /*0x322C*/ struct MysteryGiftSave mysteryGift;
 #endif //FREE_MYSTERY_GIFT
-               struct Pokemon player2Party[PARTY_SIZE];
     /*0x3???*/ u8 dexSeen[NUM_DEX_FLAG_BYTES];
     /*0x3???*/ u8 dexCaught[NUM_DEX_FLAG_BYTES];
 #if FREE_TRAINER_HILL == FALSE

@@ -21,27 +21,26 @@ gSpecials::
 	def_special ReturnFromLinkRoom
 	def_special CleanupLinkRoomState
 	def_special ExitLinkRoom
-	def_special SetPlayerSecretBase
-	def_special CheckPlayerHasSecretBase
-	def_special EnterSecretBase
-	def_special ClearAndLeaveSecretBase
-	def_special MoveOutOfSecretBase
-	def_special IsCurSecretBaseOwnedByAnotherPlayer
-	def_special GetCurSecretBaseRegistrationValidity
-	def_special ToggleCurSecretBaseRegistry
-	def_special ShowSecretBaseDecorationMenu
-	def_special ShowSecretBaseRegistryMenu
-	def_special PrepSecretBaseBattleFlags
-	def_special GetSecretBaseOwnerAndState
-	def_special InitSecretBaseDecorationSprites
-	def_special SetDecoration
-	def_special GetObjectEventLocalIdByFlag
-	def_special GetSecretBaseTypeInFrontOfPlayer
-	def_special SetSecretBaseOwnerGfxId
-	def_special PutAwayDecorationIteration
-	def_special EnterNewlyCreatedSecretBase
-	def_special SetBattledOwnerFromResult
-	def_special DoSecretBasePCTurnOffEffect
+	//def_special SetPlayerSecretBase
+	//def_special EnterSecretBase
+	//def_special ClearAndLeaveSecretBase
+	//def_special MoveOutOfSecretBase
+	//def_special IsCurSecretBaseOwnedByAnotherPlayer
+	//def_special GetCurSecretBaseRegistrationValidity
+	//def_special ToggleCurSecretBaseRegistry
+	//def_special ShowSecretBaseDecorationMenu
+	//def_special ShowSecretBaseRegistryMenu
+	//def_special PrepSecretBaseBattleFlags
+	//def_special GetSecretBaseOwnerAndState
+	//def_special InitSecretBaseDecorationSprites
+	//def_special SetDecoration
+	//def_special GetObjectEventLocalIdByFlag
+	//def_special GetSecretBaseTypeInFrontOfPlayer
+	//def_special SetSecretBaseOwnerGfxId
+	//def_special PutAwayDecorationIteration
+	//def_special EnterNewlyCreatedSecretBase
+	//def_special SetBattledOwnerFromResult
+	//def_special DoSecretBasePCTurnOffEffect
 	def_special RecordMixingPlayerSpotTriggered
 	def_special TryBattleLinkup
 	def_special TryTradeLinkup
@@ -85,8 +84,7 @@ gSpecials::
 	def_special DoPokeNews
 	def_special GetRandomActiveShowIdx
 	def_special GetSelectedTVShow
-	def_special InterviewBefore
-	def_special InterviewAfter
+
 	def_special IsLeadMonNicknamedOrNotEnglish
 	def_special SetContestCategoryStringVarForInterview
 	def_special GetNextActiveShowIfMassOutbreak
@@ -113,24 +111,7 @@ gSpecials::
 	def_special TryContestGModeLinkup
 	def_special SaveGame
 	def_special DoWateringBerryTreeAnim
-	def_special ShowEasyChatScreen
-	def_special ShowEasyChatProfile
-	def_special Script_GetCurrentMauvilleMan
-	def_special HasBardSongBeenChanged
-	def_special SaveBardSongLyrics
-	def_special HasHipsterTaughtWord
-	def_special SetHipsterTaughtWord
-	def_special HipsterTryTeachWord
-	def_special PlayBardSong
-	def_special SetMauvilleOldManObjEventGfx
-	def_special GenerateGiddyLine
-	def_special GiddyShouldTellAnotherTale
-	def_special StorytellerGetFreeStorySlot
-	def_special Script_StorytellerDisplayStory
-	def_special StorytellerStoryListMenu
-	def_special StorytellerUpdateStat
-	def_special Script_StorytellerInitializeRandomStat
-	def_special HasStorytellerAlreadyRecorded
+	
 	def_special TraderMenuGetDecoration
 	def_special GetTraderTradedFlag
 	def_special DoesPlayerHaveNoDecorations
@@ -141,13 +122,8 @@ gSpecials::
 	def_special CompareSeedotSize
 	def_special GetLotadSizeRecordInfo
 	def_special CompareLotadSize
-	def_special TryPutNameRaterShowOnTheAir
 	def_special BufferMonNickname
 	def_special IsMonOTIDNotPlayers
-	def_special BufferTrendyPhraseString
-	def_special IsTrendyPhraseBoring
-	def_special BufferDeepLinkPhrase
-	def_special GetDewfordHallPaintingNameIndex
 	def_special SwapRegisteredBike
 	def_special CalculatePlayerPartyCount
 	def_special CountPartyNonEggMons
@@ -193,7 +169,7 @@ gSpecials::
 	def_special GabbyAndTyGetBattleNum
 	def_special GabbyAndTyAfterInterview
 	def_special GabbyAndTyBeforeInterview
-	def_special DoTVShowInSearchOfTrainers
+	
 	def_special IsGabbyAndTyShowOnTheAir
 	def_special GabbyAndTyGetLastQuote
 	def_special GabbyAndTyGetLastBattleTrivia
@@ -320,7 +296,7 @@ gSpecials::
 	def_special DoContestHallWarp
 	def_special LoadWallyZigzagoon
 	def_special IsStarterInParty
-	def_special CopyCurSecretBaseOwnerName_StrVar1
+	//def_special CopyCurSecretBaseOwnerName_StrVar1
 	def_special ScriptCheckFreePokemonStorageSpace
 	def_special DoSealedChamberShakingEffect_Long
 	def_special ShowDeptStoreElevatorFloorSelect
@@ -347,7 +323,7 @@ gSpecials::
 	def_special ScriptGetPartyMonSpecies
 	def_special IsSelectedMonEgg
 	def_special TryInitBattleTowerAwardManObjectEvent
-	def_special MoveOutOfSecretBaseFromOutside
+	//def_special MoveOutOfSecretBaseFromOutside
 	def_special LoadPlayerBag
 	def_special Script_FadeOutMapMusic
 	def_special SetPacifidlogTMReceivedDay
@@ -367,18 +343,18 @@ gSpecials::
 	def_special PutFanClubSpecialOnTheAir
 	def_special IncrementDailyPlantedBerries
 	def_special IncrementDailyPickedBerries
-	def_special InitSecretBaseVars
-	def_special CheckInteractedWithFriendsSandOrnament
-	def_special DeclinedSecretBaseBattle
-	def_special DrewSecretBaseBattle
-	def_special WonSecretBaseBattle
-	def_special LostSecretBaseBattle
-	def_special CheckInteractedWithFriendsDollDecor
-	def_special CheckInteractedWithFriendsCushionDecor
-	def_special CheckInteractedWithFriendsFurnitureBottom
-	def_special CheckInteractedWithFriendsFurnitureMiddle
-	def_special CheckInteractedWithFriendsFurnitureTop
-	def_special CheckInteractedWithFriendsPosterDecor
+	//def_special InitSecretBaseVars
+	//def_special CheckInteractedWithFriendsSandOrnament
+	//def_special DeclinedSecretBaseBattle
+	//def_special DrewSecretBaseBattle
+	//def_special WonSecretBaseBattle
+	//def_special LostSecretBaseBattle
+	//def_special CheckInteractedWithFriendsDollDecor
+	//def_special CheckInteractedWithFriendsCushionDecor
+	//def_special CheckInteractedWithFriendsFurnitureBottom
+	//def_special CheckInteractedWithFriendsFurnitureMiddle
+	//def_special CheckInteractedWithFriendsFurnitureTop
+	//def_special CheckInteractedWithFriendsPosterDecor
 	def_special SetLilycoveLadyGfx
 	def_special Script_GetLilycoveLadyId
 	def_special GetFavorLadyState
@@ -393,10 +369,9 @@ gSpecials::
 	def_special FavorLadyGetPrize
 	def_special SetFavorLadyState_Complete
 	def_special GetQuizLadyState
-	def_special GetQuizAuthor
 	def_special IsQuizLadyWaitingForChallenger
-	def_special QuizLadyShowQuizQuestion
-	def_special QuizLadyGetPlayerAnswer
+	
+
 	def_special IsQuizAnswerCorrect
 	def_special BufferQuizPrizeItem
 	def_special SetQuizLadyState_Complete
@@ -420,7 +395,6 @@ gSpecials::
 	def_special SetContestLadyGivenPokeblock
 	def_special GetContestLadyMonSpecies
 	def_special GetContestLadyCategory
-	def_special PutLilycoveContestLadyShowOnTheAir
 	def_special CloseBattlePikeCurtain
 	def_special CallApprenticeFunction
 	def_special ShouldTryGetTrainerScript

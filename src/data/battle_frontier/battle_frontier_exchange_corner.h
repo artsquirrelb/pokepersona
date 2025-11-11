@@ -1,4 +1,4 @@
-static const u16 sFrontierExchangeCorner_Decor1[] =
+/*static const u16 sFrontierExchangeCorner_Decor1[] =
 {
     DECOR_KISS_POSTER,
     DECOR_KISS_CUSHION,
@@ -21,7 +21,7 @@ static const u16 sFrontierExchangeCorner_Decor2[] =
     DECOR_CHARIZARD_DOLL,
     DECOR_BLASTOISE_DOLL,
     ITEM_LIST_END
-};
+};*/
 
 static const u16 sFrontierExchangeCorner_Vitamins[] =
 {
@@ -48,7 +48,7 @@ static const u16 sFrontierExchangeCorner_HoldItems[] =
     ITEM_LIST_END
 };
 
-static const u8 *const sFrontierExchangeCorner_Decor1Descriptions[] =
+/*static const u8 *const sFrontierExchangeCorner_Decor1Descriptions[] =
 {
     BattleFrontier_ExchangeServiceCorner_Text_KissPosterDesc,
     BattleFrontier_ExchangeServiceCorner_Text_KissCushionDesc,
@@ -63,7 +63,7 @@ static const u8 *const sFrontierExchangeCorner_Decor1Descriptions[] =
     gText_Exit,
 };
 
-static const u8 *const sFrontierExchangeCorner_Decor2Descriptions[] =
+/*static const u8 *const sFrontierExchangeCorner_Decor2Descriptions[] =
 {
     BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
@@ -71,7 +71,7 @@ static const u8 *const sFrontierExchangeCorner_Decor2Descriptions[] =
     BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
     BattleFrontier_ExchangeServiceCorner_Text_LargeDollDesc,
     gText_Exit
-};
+};*/
 
 static const u8 *const sFrontierExchangeCorner_VitaminsDescriptions[] =
 {

@@ -33,7 +33,7 @@
 #include "constants/mauville_old_man.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
-
+/*
 static EWRAM_DATA struct EasyChatScreen *sEasyChatScreen = NULL;
 static EWRAM_DATA struct EasyChatScreenControl *sScreenControl = NULL;
 static EWRAM_DATA struct EasyChatScreenWordData *sWordData = NULL;
@@ -216,11 +216,11 @@ static bool8 EasyChatIsNationalPokedexEnabled(void);
 static u16 GetRandomUnlockedEasyChatPokemon(void);
 static void SetUnlockedEasyChatGroups(void);
 static void SetUnlockedWordsByAlphabet(void);
-static u8 *CopyEasyChatWordPadded(u8 *, u16, u16);
+//static u8 *CopyEasyChatWordPadded(u8 *, u16, u16);
 static u8 IsEasyChatWordUnlocked(u16);
 static u16 SetSelectedWordGroup_GroupMode(u16);
 static u16 SetSelectedWordGroup_AlphabetMode(u16);
-static bool8 IsEasyChatIndexAndGroupUnlocked(u16, u8);
+//static bool8 IsEasyChatIndexAndGroupUnlocked(u16, u8);
 static int IsRestrictedWordSpecies(u16);
 static void DoQuizAnswerEasyChatScreen(void);
 static void DoQuizQuestionEasyChatScreen(void);
@@ -1454,7 +1454,7 @@ static void ExitEasyChatScreen(MainCallback callback)
     SetMainCallback2(callback);
 }
 
-void ShowEasyChatScreen(void)
+/*void ShowEasyChatScreen(void)
 {
     int i;
     u16 *words;
@@ -1463,55 +1463,55 @@ void ShowEasyChatScreen(void)
     switch (gSpecialVar_0x8004)
     {
     case EASY_CHAT_TYPE_PROFILE:
-        words = gSaveBlock1Ptr->easyChatProfile;
+        //words = gSaveBlock1Ptr->easyChatProfile;
         break;
     case EASY_CHAT_TYPE_BATTLE_START:
-        words = gSaveBlock1Ptr->easyChatBattleStart;
+        //words = gSaveBlock1Ptr->easyChatBattleStart;
         break;
     case EASY_CHAT_TYPE_BATTLE_WON:
-        words = gSaveBlock1Ptr->easyChatBattleWon;
+        //words = gSaveBlock1Ptr->easyChatBattleWon;
         break;
     case EASY_CHAT_TYPE_BATTLE_LOST:
-        words = gSaveBlock1Ptr->easyChatBattleLost;
+        //words = gSaveBlock1Ptr->easyChatBattleLost;
         break;
     case EASY_CHAT_TYPE_MAIL:
-        words = gSaveBlock1Ptr->mail[gSpecialVar_0x8005].words;
+        //words = gSaveBlock1Ptr->mail[gSpecialVar_0x8005].words;
         break;
     case EASY_CHAT_TYPE_BARD_SONG:
-        bard = &gSaveBlock1Ptr->oldMan.bard;
-        for (i = 0; i < NUM_BARD_SONG_WORDS; i ++)
-            bard->newSongLyrics[i] = bard->songLyrics[i];
+        //bard = &gSaveBlock1Ptr->oldMan.bard;
+        //for (i = 0; i < NUM_BARD_SONG_WORDS; i ++)
+            //bard->newSongLyrics[i] = bard->songLyrics[i];
 
-        words = bard->newSongLyrics;
+        //words = bard->newSongLyrics;
         break;
     case EASY_CHAT_TYPE_INTERVIEW:
-        words = gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].bravoTrainer.words;
+        //words = gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].bravoTrainer.words;
         displayedPersonType = gSpecialVar_0x8006;
         break;
     case EASY_CHAT_TYPE_FAN_CLUB:
-        words = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].fanclubOpinions.words[gSpecialVar_0x8006];
+        //words = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].fanclubOpinions.words[gSpecialVar_0x8006];
         displayedPersonType = EASY_CHAT_PERSON_REPORTER_FEMALE;
         break;
     case EASY_CHAT_TYPE_DUMMY_SHOW:
-        words = gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].dummy.words;
+        //words = gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].dummy.words;
         displayedPersonType = EASY_CHAT_PERSON_REPORTER_MALE;
         break;
     case EASY_CHAT_TYPE_TRENDY_PHRASE:
         words = (u16 *)gStringVar3;
-        words[0] = gSaveBlock1Ptr->dewfordTrends[0].words[0];
-        words[1] = gSaveBlock1Ptr->dewfordTrends[0].words[1];
+        //words[0] = gSaveBlock1Ptr->dewfordTrends[0].words[0];
+        //words[1] = gSaveBlock1Ptr->dewfordTrends[0].words[1];
         break;
     case EASY_CHAT_TYPE_GABBY_AND_TY:
-        words = gSaveBlock1Ptr->gabbyAndTyData.quote;
+        //words = gSaveBlock1Ptr->gabbyAndTyData.quote;
         *words = EC_EMPTY_WORD;
         displayedPersonType = EASY_CHAT_PERSON_REPORTER_FEMALE;
         break;
     case EASY_CHAT_TYPE_CONTEST_INTERVIEW:
-        words = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].bravoTrainer.words[gSpecialVar_0x8006];
+        //words = &gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].bravoTrainer.words[gSpecialVar_0x8006];
         displayedPersonType = EASY_CHAT_PERSON_REPORTER_MALE;
         break;
     case EASY_CHAT_TYPE_BATTLE_TOWER_INTERVIEW:
-        words = gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].bravoTrainerTower.words;
+        //words = gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].bravoTrainerTower.words;
         displayedPersonType = EASY_CHAT_PERSON_REPORTER_FEMALE;
         break;
     case EASY_CHAT_TYPE_GOOD_SAYING:
@@ -1519,26 +1519,26 @@ void ShowEasyChatScreen(void)
         InitializeEasyChatWordArray(words, 2);
         break;
     case EASY_CHAT_TYPE_FAN_QUESTION:
-        words = gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].fanClubSpecial.words;
+        //words = gSaveBlock1Ptr->tvShows[gSpecialVar_0x8005].fanClubSpecial.words;
         words[0] = EC_EMPTY_WORD;
         displayedPersonType = EASY_CHAT_PERSON_BOY;
         break;
     case EASY_CHAT_TYPE_QUIZ_ANSWER:
-        words = &gSaveBlock1Ptr->lilycoveLady.quiz.playerAnswer;
+        //words = &gSaveBlock1Ptr->lilycoveLady.quiz.playerAnswer;
         break;
     case EASY_CHAT_TYPE_QUIZ_QUESTION:
         return;
     case EASY_CHAT_TYPE_QUIZ_SET_QUESTION:
-        words = gSaveBlock1Ptr->lilycoveLady.quiz.question;
+        //words = gSaveBlock1Ptr->lilycoveLady.quiz.question;
         break;
     case EASY_CHAT_TYPE_QUIZ_SET_ANSWER:
-        words = &gSaveBlock1Ptr->lilycoveLady.quiz.correctAnswer;
+        //words = &gSaveBlock1Ptr->lilycoveLady.quiz.correctAnswer;
         break;
     case EASY_CHAT_TYPE_APPRENTICE:
-        words = gSaveBlock2Ptr->apprentices[0].speechWon;
+        //words = gSaveBlock2Ptr->apprentices[0].speechWon;
         break;
     case EASY_CHAT_TYPE_QUESTIONNAIRE:
-        words = GetQuestionnaireWordsPtr();
+        //words = GetQuestionnaireWordsPtr();
         break;
     default:
         return;
@@ -1546,8 +1546,8 @@ void ShowEasyChatScreen(void)
 
     CleanupOverworldWindowsAndTilemaps();
     DoEasyChatScreen(gSpecialVar_0x8004, words, CB2_ReturnToFieldContinueScript, displayedPersonType);
-}
-
+}*/
+/*
 static void CB2_QuizLadyQuestion(void)
 {
     LilycoveLady *lilycoveLady;
@@ -2978,7 +2978,7 @@ static void SetSpecialEasyChatResult(void)
         break;
     case EASY_CHAT_TYPE_TRENDY_PHRASE:
         BufferCurrentPhraseToStringVar2();
-        gSpecialVar_0x8004 = TrySetTrendyPhrase(sEasyChatScreen->currentPhrase);
+        //gSpecialVar_0x8004 = TrySetTrendyPhrase(sEasyChatScreen->currentPhrase);
         break;
     case EASY_CHAT_TYPE_GOOD_SAYING:
         gSpecialVar_0x8004 = DidPlayerInputABerryMasterWifePhrase();
@@ -5378,35 +5378,35 @@ u16 GetRandomEasyChatWordFromUnlockedGroup(u16 groupId)
 
 void ShowEasyChatProfile(void)
 {
-    u16 *easyChatWords;
+    /*u16 *easyChatWords;
     int columns, rows;
     switch (gSpecialVar_0x8004)
     {
     case 0:
-        easyChatWords = gSaveBlock1Ptr->easyChatProfile;
+        //easyChatWords = gSaveBlock1Ptr->easyChatProfile;
         columns = 2;
         rows = 2;
         break;
     case 1:
-        easyChatWords = gSaveBlock1Ptr->easyChatBattleStart;
-        if (CanPhraseFitInXRowsYCols(gSaveBlock1Ptr->easyChatBattleStart, 3, 2, 18))
-        {
-            columns = 2;
-            rows = 3;
-        }
-        else
-        {
+        //easyChatWords = gSaveBlock1Ptr->easyChatBattleStart;
+        //if (CanPhraseFitInXRowsYCols(gSaveBlock1Ptr->easyChatBattleStart, 3, 2, 18))
+        //{
+        //    columns = 2;
+        //    rows = 3;
+        //}
+        //else
+        //{
             columns = 3;
             rows = 2;
-        }
+        //}
         break;
     case 2:
-        easyChatWords = gSaveBlock1Ptr->easyChatBattleWon;
+        //easyChatWords = gSaveBlock1Ptr->easyChatBattleWon;
         columns = 3;
         rows = 2;
         break;
     case 3:
-        easyChatWords = gSaveBlock1Ptr->easyChatBattleLost;
+        //easyChatWords = gSaveBlock1Ptr->easyChatBattleLost;
         columns = 3;
         rows = 2;
         break;
@@ -5443,14 +5443,14 @@ void BufferDeepLinkPhrase(void)
     meaning trendy saying words unlocked via Mystery Event may not be available until the player has
     talked to the Hipster.
 */
-static bool8 IsTrendySayingUnlocked(u8 wordIndex)
+/*static bool8 IsTrendySayingUnlocked(u8 wordIndex)
 {
     int byteOffset = wordIndex / 8;
     int shift = wordIndex % 8;
     return (gSaveBlock1Ptr->unlockedTrendySayings[byteOffset] >> shift) & 1;
-}
+}*/
 
-void UnlockTrendySaying(u8 wordIndex)
+/*void UnlockTrendySaying(u8 wordIndex)
 {
     if (wordIndex < NUM_TRENDY_SAYINGS)
     {
@@ -5458,9 +5458,9 @@ void UnlockTrendySaying(u8 wordIndex)
         int shift = wordIndex % 8;
         gSaveBlock1Ptr->unlockedTrendySayings[byteOffset] |= 1 << shift;
     }
-}
+}*/
 
-static u8 GetNumTrendySayingsUnlocked(void)
+/*static u8 GetNumTrendySayingsUnlocked(void)
 {
     u8 i;
     u8 numUnlocked;
@@ -5472,9 +5472,9 @@ static u8 GetNumTrendySayingsUnlocked(void)
     }
 
     return numUnlocked;
-}
+}*/
 
-u16 UnlockRandomTrendySaying(void)
+/*u16 UnlockRandomTrendySaying(void)
 {
     u16 i;
     u16 numToSkip;
@@ -5502,9 +5502,9 @@ u16 UnlockRandomTrendySaying(void)
 
     // Would only be reached if there are no new words to teach, which is handled at the start.
     return EC_EMPTY_WORD;
-}
+}*/
 
-static u16 UNUSED GetRandomUnlockedTrendySaying(void)
+/*static u16 UNUSED GetRandomUnlockedTrendySaying(void)
 {
     u16 i;
     u16 n = GetNumTrendySayingsUnlocked();
@@ -5524,8 +5524,8 @@ static u16 UNUSED GetRandomUnlockedTrendySaying(void)
     }
 
     return EC_EMPTY_WORD;
-}
-
+}*/
+/*
 static bool8 EasyChatIsNationalPokedexEnabled(void)
 {
     return IsNationalPokedexEnabled();
@@ -5560,7 +5560,7 @@ static u16 GetRandomUnlockedEasyChatPokemon(void)
     return EC_EMPTY_WORD;
 }
 
-void InitEasyChatPhrases(void)
+/*void InitEasyChatPhrases(void)
 {
     u16 i, j;
 
@@ -5593,8 +5593,8 @@ void InitEasyChatPhrases(void)
     for (i = 0; i < ARRAY_COUNT(gSaveBlock1Ptr->unlockedTrendySayings); i++)
         gSaveBlock1Ptr->unlockedTrendySayings[i] = 0;
 #endif
-}
-
+}*/
+/*
 static bool8 InitEasyChatScreenWordData(void)
 {
     sWordData = Alloc(sizeof(*sWordData));
@@ -5804,7 +5804,7 @@ static bool8 IsEasyChatGroupUnlocked2(u8 groupId)
     return FALSE;
 }
 
-static bool8 IsEasyChatIndexAndGroupUnlocked(u16 wordIndex, u8 groupId)
+/*static bool8 IsEasyChatIndexAndGroupUnlocked(u16 wordIndex, u8 groupId)
 {
     switch (groupId)
     {
@@ -5817,16 +5817,16 @@ static bool8 IsEasyChatIndexAndGroupUnlocked(u16 wordIndex, u8 groupId)
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:
         return TRUE;
-    case EC_GROUP_TRENDY_SAYING:
-        return IsTrendySayingUnlocked(wordIndex);
-    default:
-        return gEasyChatGroups[groupId].wordData.words[wordIndex].enabled;
+    //case EC_GROUP_TRENDY_SAYING:
+    //    return IsTrendySayingUnlocked(wordIndex);
+    //default:
+    //    return gEasyChatGroups[groupId].wordData.words[wordIndex].enabled;
     }
-}
+}*/
 
 // Pokémon words in EC_GROUP_POKEMON_NATIONAL are always allowed (assuming the group is unlocked)
 // unless they are in this group. If they are in this group (just Deoxys), they must also have been seen.
-static int IsRestrictedWordSpecies(u16 species)
+/*static int IsRestrictedWordSpecies(u16 species)
 {
     u32 i;
     for (i = 0; i < ARRAY_COUNT(sRestrictedWordSpecies); i++)
@@ -5879,4 +5879,4 @@ bool32 IsEasyChatAnswerUnlocked(int easyChatWord)
         return FALSE;
     else
         return IsEasyChatIndexAndGroupUnlocked(index, groupId & mask);
-}
+}*/

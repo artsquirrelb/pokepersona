@@ -1,6 +1,6 @@
 #ifndef GUARD_SECRET_BASE_H
 #define GUARD_SECRET_BASE_H
-
+/*
 void HideSecretBaseDecorationSprites(void);
 void CopyCurSecretBaseOwnerName_StrVar1(void);
 void ClearJapaneseSecretBases(struct SecretBase *bases);
@@ -25,5 +25,5 @@ void TrySetCurSecretBaseIndex(void);
 void CheckPlayerHasSecretBase(void);
 void ToggleSecretBaseEntranceMetatile(void);
 void ReceiveSecretBasesData(void *secretBases, size_t recordSize, u8 linkIdx);
-
+*/
 #endif //GUARD_SECRET_BASE_H

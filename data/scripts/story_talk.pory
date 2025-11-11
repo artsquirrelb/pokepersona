@@ -150,8 +150,8 @@ script EventScript_OverworldStoryTalk_ShinjiroAndMikiJoinedGoingToWoods {
     }
 
 script EventScript_OverworldStoryTalk_LookingAroundInTheWoods {
-    applymovement(MIKI, faceup)
-    applymovement(SHINJIRO, faceup)
+    applymovement(2, faceup)
+    applymovement(3, faceup)
     waitmovement(0)
     msgbox(format("
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}What are you doing?\p

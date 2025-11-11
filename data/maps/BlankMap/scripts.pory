@@ -138,7 +138,7 @@ script Route2_Eventscript_AkihikoOnFrame42 {
     fwdtime(6,20)
     fwdweekday(WEEKDAY_MON)
     msgbox(format("The next morning..."))
-    closemessage
+    //closemessage
     warpsilent(MAP_ROUTE2_HOUSE, 3, 11)
 }
 

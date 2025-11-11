@@ -136,7 +136,7 @@ movement AkiShinjiStepBack {
     unlock_facing_direction
 }
 movement SusMan1ApproachingAkihiko {
-    walk_fast_right *2
+    walk_fast_right
 }
 
 movement SusMan1StepBack {
@@ -315,7 +315,10 @@ script Route2_Eventscript_MitsuruAppears {
     applymovement(5, MitsuruAppears)
     waitmovement(0)
     applymovement(7, DrowzeeRunsAway)
+    delay (52)
+    playse(SE_BOO)
     waitmovement(0)
+    waitse
     playse(SE_EXIT)
     waitse
     delay(30)
@@ -654,6 +657,7 @@ script Route2_Eventscript_InitShinjiroFirstBattle3 {
 
 script Route2_Eventscript_SelectingPartyShinjiroFirstBattle {
     lock
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     setflag(FLAG_NO_WHITEOUT)
     setflag(FLAG_NO_BAG_USE)
     special(ChooseHalfPartyForBattle)
@@ -675,6 +679,7 @@ script Route2_Eventscript_SelectingPartyShinjiroFirstBattle {
         setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SAVE_PARTY)
         special (CallFrontierUtilFunc)
 	    special (LoadPlayerParty)
+        fadenewbgm(MUS_RG_SS_ANNE)
         goto (Route2__Eventscript_ShinjiroFirstBattleResult)       
     }
     release
@@ -765,7 +770,6 @@ script Route2_Eventscript_PostShinjiroFirstBattle {
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Yeah, I'm tired too."))
     closemessage
     special(HealPlayerParty)
-    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     warpsilent(MAP_BLANK_MAP, 0, 0)
         
 }
@@ -812,8 +816,8 @@ script Route2_Eventscript_Himari {
     msgbox(format("Rockruff in Kitoha region can evolve into Midday, Midnight or Dusk form Lycanroc regardless of its Ability.\p
     Also, I heard all forms of Lycanroc has Tough Claws! The only difference is their base stats spread."))
     closemessage
-    checkspecies(SPECIES_ROCKRUFF)
-    if (var(VAR_RESULT) == SPECIES_ROCKRUFF){
+    checkspecies(SPECIES_ROCKRUFF, NOP_PARTY_SCREEN)
+    if (var(VAR_RESULT) == TRUE){
         playse(SE_PIN)
         applymovement(15, emoteexclamation)
         waitmovement(0)
@@ -825,26 +829,4 @@ script Route2_Eventscript_Himari {
 
 movement emotecry {
     emote_cry
-}
-
-script GiveOutfitbox {
-    lock
-    if(flag(FLAG_COMPANION_MENU) == FALSE){
-    giveitem(ITEM_OUTFIT_BOX)
-    setflag(FLAG_COMPANION_MENU)
-    }
-    else{
-        msgbox(format("Current protag is {PLAYER}.\p
-        Unlocking {RIVAL}."))
-        closemessage
-        checkplayergender
-        if (var(VAR_RESULT) == MALE){
-            unlockoutfit(OUTFIT_MITSURU)
-        }
-        else{
-            unlockoutfit(OUTFIT_AKIHIKO)
-        }
-    }
-    release
-    end
 }

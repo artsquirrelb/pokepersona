@@ -7,11 +7,12 @@ mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
         if(var(VAR_AKIHIKOS_INTRO_STATE) >= 2){
             setflag(FLAG_TEMP_1)
         }
-        if ((var(VAR_AKIHIKOS_INTRO_STATE) > 0 && var(VAR_AKIHIKOS_INTRO_STATE) < 9 )|| var(VAR_AKIHIKOS_INTRO_STATE) >= 11){
+        if ((var(VAR_AKIHIKOS_INTRO_STATE) > 0 && var(VAR_AKIHIKOS_INTRO_STATE) < 9) || var(VAR_AKIHIKOS_INTRO_STATE) >= 11){
             setflag(FLAG_TEMP_2)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 9) {
             clearflag(FLAG_HIDE_TALK_BUTTON)
+            clearflag(FLAG_DONT_TRANSITION_MUSIC)
         }
     }
 }
@@ -305,7 +306,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji2 {
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Oh, sure."))
     call(SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit)
     removeobject(2)
-    setflag(FLAG_HIDE_SHINJIRO)
+    setflag(FLAG_TEMP_2)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
     release
 }
@@ -337,7 +338,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1{
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go."))
     call(SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit)
     removeobject(2)
-    setflag(FLAG_HIDE_SHINJIRO)
+    setflag(FLAG_TEMP_2)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
     release
 }
@@ -353,7 +354,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2 {
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go."))
     call(SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit)
     removeobject(2)
-    setflag(FLAG_HIDE_SHINJIRO)
+    setflag(FLAG_TEMP_2)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
     release
 }

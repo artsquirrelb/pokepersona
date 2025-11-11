@@ -2,7 +2,7 @@
   "id": "MAP_BLANK_MAP",
   "name": "BlankMap",
   "layout": "LAYOUT_BLANK_MAP",
-  "music": "MUS_NONE",
+  "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_NONE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -9494,7 +9494,7 @@ Mugshot: Blue
 
 Venipede @ ITEM_ORAN_BERRY
 Level: 10
-IVs: 0 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Ability: Poison Point
 - Infestation
 - Poison Tail
@@ -9504,7 +9504,7 @@ Ability: Poison Point
 SPECIES_FERROSEED_DELTA (M) @ ITEM_OCCA_BERRY
 Level: 10
 Shiny: Yes
-IVs: 0 HP / 31 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 EVs: 40 Atk
 Ability: Iron Barbs 
 - Bullet Seed
@@ -9512,14 +9512,14 @@ Ability: Iron Barbs
 - Metal Claw
 - Growl
 
-Misdreavus @ ITEM_LUM_BERRY
+SPECIES_TAUROS_PALDEA_AQUA @ ITEM_LUM_BERRY
 Level: 10
-IVs: 15 HP / 0 Atk / 0 Def / 31 SpA / 0 SpD / 0 Spe
-Ability: Levitate
-- Will-O-Wisp
-- Night Shade
-- Shadow Sneak
-- Confusion
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Intimidate
+- Work Up
+- Double Kick
+- Aqua Jet
+- Tackle
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
 Name: BRENDAN
@@ -16935,10 +16935,12 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
+Azurill
+Level: 4
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
 Pichu
 Level: 4
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Azurill
-Level: 4
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+

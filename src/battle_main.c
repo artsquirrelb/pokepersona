@@ -5499,16 +5499,20 @@ static void HandleEndTurn_BattleWon(void)
         BattleStopLowHpSound();
         gBattlescriptCurrInstr = BattleScript_FrontierTrainerBattleWon;
 
-        if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_FRONTIER_BRAIN)
-            PlayBGM(MUS_VICTORY_GYM_LEADER);
-        else
-            PlayBGM(MUS_VICTORY_TRAINER);
+        if (!FlagGet(FLAG_DONT_TRANSITION_MUSIC))
+        {
+            if (TRAINER_BATTLE_PARAM.opponentA == TRAINER_FRONTIER_BRAIN)
+                PlayBGM(MUS_VICTORY_GYM_LEADER);
+            else
+                PlayBGM(MUS_VICTORY_TRAINER);
+        }
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & BATTLE_TYPE_LINK))
     {
         BattleStopLowHpSound();
         gBattlescriptCurrInstr = BattleScript_LocalTrainerBattleWon;
-
+        if (!FlagGet(FLAG_DONT_TRANSITION_MUSIC))
+        {
         switch (GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA))
         {
         case TRAINER_CLASS_ELITE_FOUR:
@@ -5529,6 +5533,7 @@ static void HandleEndTurn_BattleWon(void)
         default:
             PlayBGM(MUS_VICTORY_TRAINER);
             break;
+        }
         }
     }
     else

@@ -9,6 +9,7 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
         if (var(VAR_AKIHIKOS_INTRO_STATE) >= 11){
             setflag(FLAG_TEMP_2)
             setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_3)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 7) {
             setflag(FLAG_HIDE_TALK_BUTTON)
@@ -117,7 +118,9 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
         to leave in a few days, we can make an exception.\p
         Just make sure to not cause trouble in the mean time."))
     closemessage
+    playse(SE_SHINY)
     applymovement (14, MikiHappy)
+    waitmovement(0)
     msgbox(format(
         "{SPEAKER NAME_MIKI}Yay!\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p
@@ -220,6 +223,7 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     removeobject(13)
     removeobject(14)
     removeobject(15)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
     setflag(FLAG_HIDE_TALK_BUTTON)
     fwdtime(8, 30)
     fwdweekday (WEEKDAY_THU)
@@ -499,9 +503,9 @@ script SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage{
     removeobject(13)
     setflag(FLAG_TEMP_3)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 12)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
     setrespawn(HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL)
     release
+    clearflag(FLAG_HIDE_TALK_BUTTON)
 }
 
 movement SunshineOrphanageMainHall_Eventscript_MsKobayashiMoveRight {

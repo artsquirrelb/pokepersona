@@ -153,15 +153,55 @@ Route1_Eventscript_Twins::
 # 115 "data/maps/Route1/scripts.pory"
 	lock
 # 116 "data/maps/Route1/scripts.pory"
-	faceplayer
+	applymovement 4, Route1_Eventscript_Twins_Movement_0
 # 117 "data/maps/Route1/scripts.pory"
-	msgbox Route1_Eventscript_Twins_Text_0
+	applymovement 6, Route1_Eventscript_Twins_Movement_0
+# 118 "data/maps/Route1/scripts.pory"
+	waitmovement 0
 # 119 "data/maps/Route1/scripts.pory"
-	closemessage
+	setspeaker Route1_Eventscript_Twins_Text_0
 # 120 "data/maps/Route1/scripts.pory"
+	msgbox Route1_Eventscript_Twins_Text_1
+# 122 "data/maps/Route1/scripts.pory"
+	closemessage
+# 123 "data/maps/Route1/scripts.pory"
 	release
 	end
 
+
+Route1_Eventscript_Teddiursa::
+# 128 "data/maps/Route1/scripts.pory"
+	lock
+# 129 "data/maps/Route1/scripts.pory"
+	faceplayer
+# 130 "data/maps/Route1/scripts.pory"
+	compare VAR_MITSURUS_INTRO_STATE, 20
+	goto_if_gt Route1_Eventscript_Teddiursa_2
+# 130 "data/maps/Route1/scripts.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 100
+	goto_if_eq Route1_Eventscript_Teddiursa_2
+# 136 "data/maps/Route1/scripts.pory"
+	startoverworldencounter 7
+Route1_Eventscript_Teddiursa_1:
+# 138 "data/maps/Route1/scripts.pory"
+	removeobject 12
+# 139 "data/maps/Route1/scripts.pory"
+	setflag FLAG_TEMP_1
+# 140 "data/maps/Route1/scripts.pory"
+	release
+	end
+
+Route1_Eventscript_Teddiursa_2:
+# 132 "data/maps/Route1/scripts.pory"
+	startoverworldencounter 12
+	goto Route1_Eventscript_Teddiursa_1
+
+
+# 116 "data/maps/Route1/scripts.pory"
+Route1_Eventscript_Twins_Movement_0:
+# 116 "data/maps/Route1/scripts.pory"
+	face_player
+	step_end
 
 Route1_Eventscript_NotTheWayToMeadow_Text_0:
 # 9 "data/maps/Route1/scripts.pory"
@@ -195,7 +235,11 @@ Route1_Eventscript_DirectionSign_Text_0:
 	.string "Kirijo's Mansion {DOWN_ARROW}$"
 
 Route1_Eventscript_Twins_Text_0:
-# 117 "data/maps/Route1/scripts.pory"
+# 119 "data/maps/Route1/scripts.pory"
+	.string "Mio & Miu$"
+
+Route1_Eventscript_Twins_Text_1:
+# 120 "data/maps/Route1/scripts.pory"
 	.string "Shhh! We heard a Pokémon's cry on that\n"
 	.string "narrow path over there.\p"
 	.string "Our mother said we shouldn't be\n"

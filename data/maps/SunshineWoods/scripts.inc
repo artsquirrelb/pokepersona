@@ -13,7 +13,7 @@ SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 	goto_if_lt SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 6 "data/maps/SunshineWoods/scripts.pory"
-	compare VAR_AKIHIKO_RELATIONSHIP_POINTS, 6
+	compare VAR_AKIHIKOS_INTRO_STATE, 6
 	goto_if_eq SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 # 11 "data/maps/SunshineWoods/scripts.pory"
@@ -64,7 +64,7 @@ SunshineWoods_Eventscript_OnWarp6::
 # 28 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, faceright
 # 29 "data/maps/SunshineWoods/scripts.pory"
-	hideobjectat PAWMI_D, MAP_SUNSHINE_WOODS
+	hideobjectat 4, MAP_SUNSHINE_WOODS
 	return
 
 
@@ -78,9 +78,9 @@ SunshineWoods_Eventscript_DoNotEnterTheGrass::
 # 36 "data/maps/SunshineWoods/scripts.pory"
 	lock
 # 37 "data/maps/SunshineWoods/scripts.pory"
-	applymovement SHINJIRO, facedown
+	applymovement 2, facedown
 # 38 "data/maps/SunshineWoods/scripts.pory"
-	applymovement MIKI, facedown
+	applymovement 3, facedown
 # 39 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement 0
 # 40 "data/maps/SunshineWoods/scripts.pory"
@@ -110,7 +110,7 @@ SunshineWoods_Eventscript_PlayingInTheWoods::
 # 56 "data/maps/SunshineWoods/scripts.pory"
 	delay 60
 # 57 "data/maps/SunshineWoods/scripts.pory"
-	applymovement MIKI, SunshineWoods_Eventscript_MikiFoundSomething
+	applymovement 3, SunshineWoods_Eventscript_MikiFoundSomething
 # 58 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement 0
 # 59 "data/maps/SunshineWoods/scripts.pory"
@@ -156,7 +156,7 @@ SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown::
 # 83 "data/maps/SunshineWoods/scripts.pory"
 	lock
 # 84 "data/maps/SunshineWoods/scripts.pory"
-	applymovement MIKI, faceup
+	applymovement 3, faceup
 # 85 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement 0
 # 86 "data/maps/SunshineWoods/scripts.pory"
@@ -180,9 +180,9 @@ SunshineWoods_Eventscript_PawmiCries::
 # 97 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoAlerted
 # 98 "data/maps/SunshineWoods/scripts.pory"
-	applymovement SHINJIRO, SunshineWoods_Eventscript_ShinjiroAlerted
+	applymovement 2, SunshineWoods_Eventscript_ShinjiroAlerted
 # 99 "data/maps/SunshineWoods/scripts.pory"
-	applymovement MIKI, SunshineWoods_Eventscript_MikiAlerted
+	applymovement 3, SunshineWoods_Eventscript_MikiAlerted
 # 100 "data/maps/SunshineWoods/scripts.pory"
 	delay 30
 # 101 "data/maps/SunshineWoods/scripts.pory"
@@ -252,19 +252,19 @@ SunshineWoods_Eventscript_PawmiAppears::
 # 137 "data/maps/SunshineWoods/scripts.pory"
 	lock
 # 138 "data/maps/SunshineWoods/scripts.pory"
-	showobjectat PAWMI_D, MAP_SUNSHINE_WOODS
+	showobjectat 4, MAP_SUNSHINE_WOODS
 # 139 "data/maps/SunshineWoods/scripts.pory"
 	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
 # 140 "data/maps/SunshineWoods/scripts.pory"
 	waitmoncry
 # 141 "data/maps/SunshineWoods/scripts.pory"
-	applymovement PAWMI_D, jumpright
+	applymovement 4, jumpright
 # 142 "data/maps/SunshineWoods/scripts.pory"
-	applymovement MIKI, SunshineWoods_Eventscript_Stayback
+	applymovement 3, SunshineWoods_Eventscript_Stayback
 # 143 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_Stayback
 # 144 "data/maps/SunshineWoods/scripts.pory"
-	applymovement SHINJIRO, SunshineWoods_Eventscript_OnGuard
+	applymovement 2, SunshineWoods_Eventscript_OnGuard
 # 145 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
 # 146 "data/maps/SunshineWoods/scripts.pory"
@@ -306,7 +306,7 @@ SunshineWoods_Eventscript_PawmisInjured::
 # 166 "data/maps/SunshineWoods/scripts.pory"
 	waitmoncry
 # 167 "data/maps/SunshineWoods/scripts.pory"
-	applymovement PAWMI_D, SunshineWoods_Eventscript_PawmiIsWeak
+	applymovement 4, SunshineWoods_Eventscript_PawmiIsWeak
 # 168 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
 # 169 "data/maps/SunshineWoods/scripts.pory"
@@ -348,11 +348,11 @@ TakePawmiToHeal::
 # 192 "data/maps/SunshineWoods/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 7
 # 193 "data/maps/SunshineWoods/scripts.pory"
-	removeobject PAWMI_D
+	removeobject 4
 # 194 "data/maps/SunshineWoods/scripts.pory"
-	removeobject MIKI
+	removeobject 2
 # 195 "data/maps/SunshineWoods/scripts.pory"
-	removeobject SHINJIRO
+	removeobject 3
 # 196 "data/maps/SunshineWoods/scripts.pory"
 	setflag FLAG_TEMP_1
 # 197 "data/maps/SunshineWoods/scripts.pory"
@@ -376,7 +376,7 @@ OW_Chewtle::
 # 214 "data/maps/SunshineWoods/scripts.pory"
 	startoverworldencounter 5
 # 215 "data/maps/SunshineWoods/scripts.pory"
-	removeobject 8
+	removeobject 6
 # 216 "data/maps/SunshineWoods/scripts.pory"
 	setflag FLAG_TEMP_2
 # 217 "data/maps/SunshineWoods/scripts.pory"

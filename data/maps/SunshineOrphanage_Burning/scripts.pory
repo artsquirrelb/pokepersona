@@ -2,13 +2,6 @@ mapscripts SunshineOrphanage_Burning_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 18: SunshineOrphanage_Burning_OnWarp18
     ]
-    MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 18){
-            clearflag(FLAG_HIDE_MIKI)
-            clearflag(FLAG_HIDE_SHINJIRO)
-            
-        }
-    }
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 18: SunshineOrphanage_Burning_OnFrame18
     ]
@@ -261,6 +254,7 @@ movement AkiShinjiGettingPushed {
 script SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver {
     delay(16)
     lockall
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     special (StopMapMusic)
     delay(16)
     msgbox(format("{SPEAKER NAME_KOBAYASHI}Do not trust anyone."))
@@ -277,7 +271,7 @@ script SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver {
     playse(SE_M_DIVE)
     waitse
     setvar(VAR_AKIHIKOS_INTRO_STATE, 19)
-    setflag(FLAG_HIDE_SHINJIRO)
+    setflag(FLAG_TEMP_2)
     delay(60)
     applymovement (8, faceleft)
     waitmovement(0)

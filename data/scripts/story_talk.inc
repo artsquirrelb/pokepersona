@@ -294,9 +294,9 @@ EventScript_OverworldStoryTalk_ShinjiroAndMikiJoinedGoingToWoods::
 
 EventScript_OverworldStoryTalk_LookingAroundInTheWoods::
 # 153 "data/scripts/story_talk.pory"
-	applymovement MIKI, faceup
+	applymovement 2, faceup
 # 154 "data/scripts/story_talk.pory"
-	applymovement SHINJIRO, faceup
+	applymovement 3, faceup
 # 155 "data/scripts/story_talk.pory"
 	waitmovement 0
 # 156 "data/scripts/story_talk.pory"

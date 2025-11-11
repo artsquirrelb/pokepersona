@@ -183,6 +183,7 @@ script SunshineMeadow_Eventscript_StartingMitsuruFirstBattle {
     applymovement (5, invisible)
     waitmovement(0)
     special(RemoveCameraObject)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     goto (SunshineMeadow_Eventscript_ChoosingPartyForMitsuruFirstBattle)
     end
 }
@@ -407,9 +408,8 @@ script SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle{
     clearflag(FLAG_HIDE_TALK_BUTTON)
     clearflag(FLAG_NO_WHITEOUT)
     clearflag(FLAG_NO_BAG_USE)
-    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fwdtime(19, 20)
-    warpsilent(MAP_ROUTE2, 8, 12)
+    warpsilent(MAP_ROUTE2, 10, 13)
     end
 }
 

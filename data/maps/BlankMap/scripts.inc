@@ -252,8 +252,6 @@ Route2_Eventscript_AkihikoOnFrame42::
 	fwdweekday WEEKDAY_MON
 # 140 "data/maps/BlankMap/scripts.pory"
 	msgbox Route2_Eventscript_AkihikoOnFrame42_Text_0
-# 141 "data/maps/BlankMap/scripts.pory"
-	closemessage
 # 142 "data/maps/BlankMap/scripts.pory"
 	warpsilent MAP_ROUTE2_HOUSE, 3, 11
 	return

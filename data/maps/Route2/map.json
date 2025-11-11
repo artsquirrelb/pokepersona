@@ -305,6 +305,15 @@
       "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "41",
       "script": "Route2_Eventscript_InitShinjiroFirstBattle3"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "38",
+      "script": "NULL"
     }
   ],
   "bg_events": [

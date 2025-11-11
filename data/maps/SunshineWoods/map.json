@@ -28,7 +28,6 @@
       "flag": "0"
     },
     {
-      "local_id": "SHINJIRO",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 20,
       "y": 6,
@@ -42,7 +41,6 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "local_id": "MIKI",
       "graphics_id": "OBJ_EVENT_GFX_MIKI",
       "x": 21,
       "y": 6,
@@ -56,7 +54,6 @@
       "flag": "FLAG_TEMP_1"
     },
     {
-      "local_id": "PAWMI_D",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PAWMI_DELTA)",
       "x": 1,
       "y": 5,

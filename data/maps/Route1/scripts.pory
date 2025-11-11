@@ -113,10 +113,30 @@ text Eventscript_HiddenGrotto {
 
 script Route1_Eventscript_Twins {
     lock
-    faceplayer
+    applymovement(4, moves(face_player))
+    applymovement(6, moves(face_player))
+    waitmovement(0)
+    setspeaker("Mio & Miu")
     msgbox(format("Shhh! We heard a Pokémon's cry on that narrow path over there.\p
     Our mother said we shouldn't be interacting with wild Pokémon so we'll stay here."))
     closemessage
+    release
+    end
+}
+
+script Route1_Eventscript_Teddiursa {
+    lock
+    faceplayer
+    if (var(VAR_MITSURUS_INTRO_STATE) > 20 || var(VAR_AKIHIKOS_INTRO_STATE) == 100)
+    {   
+        startoverworldencounter(12)
+    }
+    else
+    {
+        startoverworldencounter(7)
+    }
+    removeobject(12)
+    setflag(FLAG_TEMP_1)
     release
     end
 }

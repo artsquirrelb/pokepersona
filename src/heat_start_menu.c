@@ -93,7 +93,7 @@ static u8 SaveDoSaveCallback(void);
 static void HideSaveInfoWindow(void);
 static void HideSaveMessageWindow(void);
 static u8 SaveOverwriteInputCallback(void);
-static u8 SaveConfirmOverwriteDefaultNoCallback(void);
+//static u8 SaveConfirmOverwriteDefaultNoCallback(void);
 static u8 SaveConfirmOverwriteCallback(void);
 static void ShowSaveMessage(const u8 *message, u8 (*saveCallback)(void));
 static u8 SaveFileExistsCallback(void);
@@ -1204,12 +1204,12 @@ static u8 SaveOverwriteInputCallback(void)
     return SAVE_IN_PROGRESS;
 }
 
-static u8 SaveConfirmOverwriteDefaultNoCallback(void)
+/*static u8 SaveConfirmOverwriteDefaultNoCallback(void)
 {
     DisplayYesNoMenuWithDefault(1); // Show Yes/No menu (No selected as default)
     sSaveDialogCallback = SaveOverwriteInputCallback;
     return SAVE_IN_PROGRESS;
-}
+}*/
 
 static u8 SaveConfirmOverwriteCallback(void)
 {
@@ -1227,14 +1227,14 @@ static void ShowSaveMessage(const u8 *message, u8 (*saveCallback)(void)) {
 
 static u8 SaveFileExistsCallback(void)
 {
-    if (gDifferentSaveFile == TRUE)
-    {
-        ShowSaveMessage(gText_DifferentSaveFile, SaveConfirmOverwriteDefaultNoCallback);
-    }
-    else
-    {
+    //if (gDifferentSaveFile == TRUE)
+    //{
+    //    ShowSaveMessage(gText_DifferentSaveFile, SaveConfirmOverwriteDefaultNoCallback);
+    //}
+    //else
+    //{
         sSaveDialogCallback = SaveSavingMessageCallback;
-    }
+    //}
 
     return SAVE_IN_PROGRESS;
 }
@@ -1253,11 +1253,11 @@ static u8 SaveConfirmInputCallback(void)
         {
         case SAVE_STATUS_EMPTY:
         case SAVE_STATUS_CORRUPT:
-            if (gDifferentSaveFile == FALSE)
-            {
-                sSaveDialogCallback = SaveFileExistsCallback;
-                return SAVE_IN_PROGRESS;
-            }
+            //if (gDifferentSaveFile == FALSE)
+            //{
+            //    sSaveDialogCallback = SaveFileExistsCallback;
+            //    return SAVE_IN_PROGRESS;
+            //}
 
             sSaveDialogCallback = SaveSavingMessageCallback;
             return SAVE_IN_PROGRESS;
@@ -1386,6 +1386,7 @@ static void Task_HandleSave(u8 taskId) {
       ClearDialogWindowAndFrameToTransparent(0, TRUE);
       ScriptUnfreezeObjectEvents();  
       UnlockPlayerFieldControls();
+      FlagClear(FLAG_HIDE_TALK_BUTTON);
       DestroyTask(taskId);
       break;
     case SAVE_ERROR:    // Close start menu

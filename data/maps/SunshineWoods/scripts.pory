@@ -26,7 +26,7 @@ mapscripts SunshineWoods_MapScripts {
 
 script  SunshineWoods_Eventscript_OnWarp6 {
     applymovement(LOCALID_PLAYER, faceright)
-    hideobjectat (PAWMI_D, MAP_SUNSHINE_WOODS)
+    hideobjectat (4, MAP_SUNSHINE_WOODS)
 }
 movement playerfaceright {
     face_right
@@ -54,7 +54,7 @@ script SunshineWoods_Eventscript_OnFrame6 {
 script SunshineWoods_Eventscript_PlayingInTheWoods {
     lock 
     delay(60)
-    applymovement(MIKI, SunshineWoods_Eventscript_MikiFoundSomething)
+    applymovement(3, SunshineWoods_Eventscript_MikiFoundSomething)
     waitmovement(0)
     goto (SunshineWoods_Eventscript_PawmisCry)
     release
@@ -212,7 +212,7 @@ script OW_Chewtle {
     lock
     faceplayer
     startoverworldencounter(5)
-    removeobject(8)
+    removeobject(6)
     setflag(FLAG_TEMP_2)
     release
     end

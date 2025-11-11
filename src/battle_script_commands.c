@@ -8967,14 +8967,14 @@ static void DrawLevelUpBannerText(void)
     {
         if (monGender == MON_MALE)
         {
-            txtPtr = WriteColorChangeControlCode(txtPtr, 0, TEXT_DYNAMIC_COLOR_3);
-            txtPtr = WriteColorChangeControlCode(txtPtr, 1, TEXT_DYNAMIC_COLOR_4);
+            txtPtr = WriteColorChangeControlCode(txtPtr, 0, 12);
+            txtPtr = WriteColorChangeControlCode(txtPtr, 1, 0x0);
             *(txtPtr++) = CHAR_MALE;
         }
         else
         {
-            txtPtr = WriteColorChangeControlCode(txtPtr, 0, TEXT_DYNAMIC_COLOR_5);
-            txtPtr = WriteColorChangeControlCode(txtPtr, 1, TEXT_DYNAMIC_COLOR_6);
+            txtPtr = WriteColorChangeControlCode(txtPtr, 0, 13);
+            txtPtr = WriteColorChangeControlCode(txtPtr, 1, 0x0);
             *(txtPtr++) = CHAR_FEMALE;
         }
         *(txtPtr++) = EOS;

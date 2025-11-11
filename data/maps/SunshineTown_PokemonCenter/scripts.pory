@@ -1,15 +1,14 @@
 mapscripts SunshineTown_PokemonCenter_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setrespawn(HEAL_LOCATION_SUNSHINE_TOWN)
-        
+        if (var(VAR_MITSURUS_INTRO_STATE) <20 || var(VAR_AKIHIKOS_INTRO_STATE) == 12 || var(VAR_AKIHIKOS_INTRO_STATE) >= 24) {
+            setflag(FLAG_TEMP_1)
+        }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 14) {
-            clearflag(FLAG_HIDE_SHINJIRO)
             setobjectxyperm(7, 11, 9)
             setobjectmovementtype (7, MOVEMENT_TYPE_FACE_UP)
             setobjectxyperm (6, 17, 8)
             setobjectmovementtype (6, MOVEMENT_TYPE_FACE_RIGHT)
-        }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 16 && var(VAR_AKIHIKOS_INTRO_STATE) < 24) {playbgm(MUS_HELP, TRUE)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
@@ -56,14 +55,13 @@ script SunshineTown_PokemonCenter_Eventscript_MartLady {
         applymovement(7, SunshineTown_PokemonCenter_Eventscript_ShinjiroFacesTheMart)
         waitmovement(0)
         msgbox(format("
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
-        Hello. We're here to pick up a package for Ms. Kobayashi.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Hello. We're here to pick up a package for Ms. Kobayashi.\p
         It should have arrived today."))
         closemessage
         setspeaker("Mart Employee")
         msgbox("One moment, please.")
         setvar(VAR_AKIHIKOS_INTRO_STATE, 13)
-        warpsilent(MAP_BLANK_MAP)
+        warpsilent(MAP_BLANK_MAP, 0, 0)
         release
         end
     }
@@ -105,6 +103,7 @@ script SunshineTown_PokemonCenter_Eventscript_OnFrame14 {
 
 script SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient {
     lock
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     applymovement(LOCALID_PLAYER, SunshineTown_PokemonCenter_Eventscript_AkihikoMoveAround)
     waitmovement
     msgbox(format("
@@ -121,6 +120,7 @@ script SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient {
     call(SunshineTown_PokemonCenter_Eventscript_EveryonePin)
     waitmovement(0)
     playbgm(MUS_HELP, TRUE)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
     applymovement(LOCALID_PLAYER, faceleft)
     applymovement(7, faceright)
     waitmovement(0)
@@ -133,7 +133,7 @@ script SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient {
     waitmovement(0)
     removeobject(7)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 15)
-    setflag(FLAG_HIDE_SHINJIRO)
+    setflag(FLAG_TEMP_1)
     clearflag(FLAG_HIDE_TALK_BUTTON)
     release
     end

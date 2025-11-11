@@ -630,8 +630,10 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
     applymovement(1, facedown)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesBackToCenterOfTheRoom)
     waitmovement(0)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fadenewbgm(MUS_RG_SS_ANNE)
     savebgm(MUS_RG_SS_ANNE)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
     delay (60)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}For now, I suggest we rest for the night.
     It's late and we're all tired from the battles.\p
@@ -728,7 +730,6 @@ script Route2_House_Eventscript_StayingTheNight {
     fadescreenswapbuffers(FADE_TO_BLACK)
     delay(80)
     waitmovement(0)
-    setflag(FLAG_DONT_TRANSITION_MUSIC)
     warpsilent(MAP_BLANK_MAP, 0, 0)
 }
 
@@ -1018,11 +1019,11 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     removeobject(1)
     removeobject(4)
     special(SpawnCameraObject)
-    applymovement(OBJ_EVENT_ID_CAMERA, walkdown)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down *2))
     applymovement(LOCALID_PLAYER, facedown)
-    waitmovement(0)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
     special(RemoveCameraObject)
-    delay(60)
+    delay(20)
     playse(MUS_OBTAIN_TMHM)
     waitse
     msgbox(format("Akihiko's Prologue: Sunshine Memories\n
@@ -1030,10 +1031,9 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     {COLOR DARK_GRAY}{CLEAR_TO 32}Chapter 1: Under The Rubbles\n
     {COLOR GREEN}{CLEAR_TO 64}Level cap: 18"))
     setflag(FLAG_TEMP_1)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 44)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 100) //complete akihiko's prologue
     setvar(VAR_CURRENT_LEVEL_CAP, 18)
     clearflag(FLAG_HIDE_TALK_BUTTON)
-    special(RemoveCameraObject)
     release
     end
 }

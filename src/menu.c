@@ -809,7 +809,7 @@ static void WindowFunc_DrawDialogFrameWithCustomTileAndPalette(u8 bg, u8 tilemap
                             1,
                             sPaletteNum);
     FillBgTilemapBufferRect(bg,
-                            BG_TILE_V_FLIP(sTileNum + 1),
+                            BG_TILE_V_FLIP(sTileNum + 2),
                             tilemapLeft,
                             tilemapTop + height,
                             width - 1,

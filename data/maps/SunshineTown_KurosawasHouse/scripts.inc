@@ -262,149 +262,151 @@ SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa::
 # 159 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	fwdweekday WEEKDAY_SUN
 # 160 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	warp MAP_SUNSHINE_TOWN, 3, 14
+	pausefakertc
 # 161 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	warp MAP_SUNSHINE_TOWN, 3, 14
+# 162 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	setflag FLAG_SYS_QUEST_MENU_GET
 	end
 
 
-# 165 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 166 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 KurosawaGettingTheSleepingBags:
-# 166 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	walk_left
-# 166 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 167 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	walk_left
 # 167 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	walk_left
+# 168 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	walk_down
-# 168 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	walk_left
-# 168 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	walk_left
-# 168 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 169 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	walk_left
 # 169 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	walk_up
+	walk_left
 # 169 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	walk_up
-# 169 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	walk_left
+# 170 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	walk_up
 # 170 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	delay_16
+	walk_up
+# 170 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	walk_up
 # 171 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	delay_16
 # 172 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	delay_16
 # 173 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	walk_down
-# 173 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	walk_down
-# 173 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	delay_16
+# 174 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	walk_down
 # 174 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	walk_right
+	walk_down
 # 174 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	walk_right
-# 174 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	walk_down
+# 175 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	walk_right
 # 175 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	walk_up
-# 176 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	walk_right
+# 175 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	walk_right
 # 176 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	walk_up
+# 177 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	walk_right
 # 177 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	face_down
+	walk_right
 # 178 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	delay_16
+	face_down
 # 179 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	delay_16
 # 180 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	walk_right
+	delay_16
 # 181 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	walk_right
+# 182 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	face_down
 	step_end
 
 Growlithe_NPC::
-# 184 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	lockall
 # 185 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
+	lockall
 # 186 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	applymovement 2, Growlithe_NPC_Movement
+	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
 # 187 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	waitmovement 0
+	applymovement 2, Growlithe_NPC_Movement
 # 188 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	msgbox Growlithe_NPC_Text_0
+	waitmovement 0
 # 189 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	closemessage
+	msgbox Growlithe_NPC_Text_0
 # 190 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	closemessage
+# 191 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	releaseall
 	return
 
 
-# 192 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-Growlithe_NPC_Movement:
 # 193 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	face_player
+Growlithe_NPC_Movement:
 # 194 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	face_player
+# 195 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	shake_horizontal
 	step_end
 
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse::
-# 198 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	lock
 # 199 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	faceplayer
+	lock
 # 200 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	setspeaker SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_0
+	faceplayer
 # 201 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	setspeaker SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_0
+# 202 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	goto_if_set FLAG_TEMP_2, SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_1
-# 207 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 208 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	msgbox SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_2
-# 213 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	closemessage
 # 214 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	closemessage
+# 215 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	setflag FLAG_TEMP_2
 	return
 
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_1:
-# 202 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 203 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	msgbox SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_1
-# 204 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 205 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	closemessage
 	return
 
 
 SunshineTown_KurosawasHouse_Eventscript_TrashcanItem::
-# 219 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	lock
 # 220 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	lock
+# 221 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	goto_if_set FLAG_HIDDEN_ITEM_SUNSHINE_ORPHANAGE_ANTIDOTE, SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_2
-# 225 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	giveitem ITEM_ANTIDOTE, 1
 # 226 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	giveitem ITEM_ANTIDOTE, 1
+# 227 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	setflag FLAG_HIDDEN_ITEM_SUNSHINE_ORPHANAGE_ANTIDOTE
 SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_1:
-# 228 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 229 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	release
 	end
 
 SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_2:
-# 221 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	msgbox SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_Text_0
 # 222 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	msgbox SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_Text_0
+# 223 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	closemessage
 	goto SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_1
 
 
 SunshineTown_KurosawasHouse_Eventscript_Notebook::
-# 233 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	lock
 # 234 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	msgbox SunshineTown_KurosawasHouse_Eventscript_Notebook_Text_0
+	lock
 # 235 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	closemessage
+	msgbox SunshineTown_KurosawasHouse_Eventscript_Notebook_Text_0
 # 236 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	closemessage
+# 237 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	release
 	end
 
@@ -486,21 +488,21 @@ SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa_Text_2:
 	.string "with our search.$"
 
 Growlithe_NPC_Text_0:
-# 188 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 189 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "Growlithe looks determined.$"
 
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_0:
-# 200 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 201 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "Kurosawa$"
 
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_1:
-# 202 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 203 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}You kids are always welcome to spend\n"
 	.string "the night here if you want to.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you, Kurosawa-san.$"
 
 SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_2:
-# 207 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 208 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}The Sanadas and the Aragakis were\n"
 	.string "supposed to pick you two up but they\l"
 	.string "all got into accidents and are\l"
@@ -517,11 +519,11 @@ SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse_Text_2:
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Yeah...$"
 
 SunshineTown_KurosawasHouse_Eventscript_TrashcanItem_Text_0:
-# 221 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 222 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "It's empty.$"
 
 SunshineTown_KurosawasHouse_Eventscript_Notebook_Text_0:
-# 234 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 235 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "The notebook is full of hard-to-read\n"
 	.string "scribbles. Among them is a\l"
 	.string "strike-through “Sunshine Orphanage”.$"

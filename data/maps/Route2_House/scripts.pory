@@ -504,6 +504,7 @@ script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru {
     clearflag(FLAG_HIDE_TALK_BUTTON)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fwdtime(13, 40)
+    pausefakertc
     release
     end
 }
@@ -621,6 +622,7 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}.....\p
     Very well. I suppose that's a logical idea."))
     closemessage
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     applymovement(1, faceup)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraPansUpToClock)
     waitmovement(0)
@@ -630,7 +632,6 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
     applymovement(1, facedown)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesBackToCenterOfTheRoom)
     waitmovement(0)
-    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fadenewbgm(MUS_RG_SS_ANNE)
     savebgm(MUS_RG_SS_ANNE)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
@@ -801,6 +802,10 @@ script Route2_House_Eventscript_AkihikoOnFrame39 {
 }
 
 script Route2_House_Eventscript_AkihikoCantSleep {
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    fadenewbgm(MUS_OCEANIC_MUSEUM)
+    savebgm(MUS_OCEANIC_MUSEUM)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
     delay(60)
     applymovement(LOCALID_PLAYER, emotepensive)
     waitmovement(0)
@@ -972,7 +977,7 @@ script Route2_House_Eventscript_TheFirstMorning {
     delay(30)
     playse(SE_M_YAWN)
     waitse
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}-yawn- (Gosh, I'm still feeling sleepy.)\p
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}-yawn- (Gosh, I'm still feeling sleepy.)\p
     (Maybe doing night battle wasn't a good choice.)"))
     closemessage
     delay(30)
@@ -980,7 +985,7 @@ script Route2_House_Eventscript_TheFirstMorning {
     closemessage
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraPansToMitsuruTheFirstMorning)
-    delay(60)
+    delay(30)
     applymovement(LOCALID_PLAYER, AkihikoGoesToPlaceTheFirstMorning)
     delay (4)
     applymovement(6, ShinjiroGoesToPlaceTheFirstMorning)
@@ -1019,13 +1024,13 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     removeobject(1)
     removeobject(4)
     special(SpawnCameraObject)
-    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down *2))
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down *3))
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement(OBJ_EVENT_ID_CAMERA)
     special(RemoveCameraObject)
     delay(20)
-    playse(MUS_OBTAIN_TMHM)
-    waitse
+    playfanfare(MUS_OBTAIN_TMHM)
+    waitfanfare
     msgbox(format("Akihiko's Prologue: Sunshine Memories\n
     {COLOR GREEN}{CLEAR_TO 64}COMPLETE\p
     {COLOR DARK_GRAY}{CLEAR_TO 32}Chapter 1: Under The Rubbles\n
@@ -1034,6 +1039,7 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     setvar(VAR_AKIHIKOS_INTRO_STATE, 100) //complete akihiko's prologue
     setvar(VAR_CURRENT_LEVEL_CAP, 18)
     clearflag(FLAG_HIDE_TALK_BUTTON)
+    resumefakertc
     release
     end
 }

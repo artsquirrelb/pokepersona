@@ -54,7 +54,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
     },
     [OUTFIT_AKIHIKO] = {
         //! DESC: if sets to TRUE, it will not be shown in the OUTFIT menu if it's locked.
-        .isHidden = FALSE,
+        .isHidden = TRUE,
 
         //! DESC: prices for purchasing them.
         .prices = { 0, 0 },
@@ -115,7 +115,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
     [OUTFIT_MITSURU] = {
-        .isHidden = FALSE,
+        .isHidden = TRUE,
         .prices = { 200, 500 },
         .name = COMPOUND_STRING("Mitsuru"),
         .desc = COMPOUND_STRING("Pretty fond of good boys."),

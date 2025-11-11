@@ -124,6 +124,9 @@ movement pointup2 {
 }
 
 script SunshineMeadow_Eventscript_StartingMitsuruFirstBattle {
+    lock
+    setobjectnewmovementtype(2, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+    release
     applymovement(LOCALID_PLAYER, CameraPansDownToTheArenaMitsuruFirstBattle)
     waitmovement(0)
     delay(30)
@@ -304,6 +307,7 @@ text MitsuruFirstBattleDefeated {
 
 script SunshineMeadow_Eventscript_PostMitsuruFirstBattle {
     delay(20)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesLeft2)
     applymovement(1, MitsuruApproachesToHeal)
@@ -408,6 +412,7 @@ script SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle{
     clearflag(FLAG_HIDE_TALK_BUTTON)
     clearflag(FLAG_NO_WHITEOUT)
     clearflag(FLAG_NO_BAG_USE)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fwdtime(19, 20)
     warpsilent(MAP_ROUTE2, 10, 13)
     end

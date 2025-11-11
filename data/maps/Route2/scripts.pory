@@ -35,7 +35,7 @@ mapscripts Route2_MapScripts {
             setflag(FLAG_TEMP_2)
             setflag(FLAG_TEMP_3)
         }
-        if((var(VAR_AKIHIKOS_INTRO_STATE) > 43 && var(VAR_AKIHIKOS_INTRO_STATE) < 50) || (var(VAR_MITSURUS_INTRO_STATE) > 20 && var(VAR_MITSURUS_INTRO_STATE) < 50)){
+        if((var(VAR_AKIHIKOS_INTRO_STATE) == 100) || (var(VAR_MITSURUS_INTRO_STATE) > 20 && var(VAR_MITSURUS_INTRO_STATE) < 50)){
             setflag(FLAG_TEMP_4)
             setobjectxyperm(TAROU, 7, 18)
         }
@@ -444,7 +444,7 @@ text Route2_TarouIntro {
 }
 
 text Route2_TarouDefeated {
-    format("Tch. This Pokémon sucks. I shouldn't have bought it.")
+    format("Tch. These Pokémon suck. I shouldn't have bought them.")
 }
 
 text Route2_TarouPostBattle {
@@ -657,7 +657,6 @@ script Route2_Eventscript_InitShinjiroFirstBattle3 {
 
 script Route2_Eventscript_SelectingPartyShinjiroFirstBattle {
     lock
-    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     setflag(FLAG_NO_WHITEOUT)
     setflag(FLAG_NO_BAG_USE)
     special(ChooseHalfPartyForBattle)
@@ -674,12 +673,13 @@ script Route2_Eventscript_SelectingPartyShinjiroFirstBattle {
         special (CallFrontierUtilFunc)
         setvar (VAR_0x8004, SPECIAL_BATTLE_MULTI)
         setvar (VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS)
+        clearflag(FLAG_DONT_TRANSITION_MUSIC)
         trainerbattle_no_intro(TRAINER_SHINJIRO_ROUTE_2, ShinjiroFirstBattleDefeated)
         fwdtime(23, 20)
+        fadenewbgm(MUS_OCEANIC_MUSEUM)
         setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SAVE_PARTY)
         special (CallFrontierUtilFunc)
 	    special (LoadPlayerParty)
-        fadenewbgm(MUS_RG_SS_ANNE)
         goto (Route2__Eventscript_ShinjiroFirstBattleResult)       
     }
     release
@@ -771,7 +771,6 @@ script Route2_Eventscript_PostShinjiroFirstBattle {
     closemessage
     special(HealPlayerParty)
     warpsilent(MAP_BLANK_MAP, 0, 0)
-        
 }
 
 movement Route2ShinjiroGoesInsideHouse {
@@ -829,4 +828,16 @@ script Route2_Eventscript_Himari {
 
 movement emotecry {
     emote_cry
+}
+
+script Route2_Eventscript_ShinjiroFirstBattleWarning {
+    lock
+    msgbox(format("{COLOR RED}Important battle ahead. Do you want to proceed?"), MSGBOX_YESNO)
+    closemessage
+    if (var(VAR_RESULT) == FALSE){
+        applymovement(LOCALID_PLAYER, walkdown)
+        waitmovement(0)
+    }
+    release
+    end
 }

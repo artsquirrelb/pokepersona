@@ -313,7 +313,7 @@
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "38",
-      "script": "NULL"
+      "script": "Route2_Eventscript_ShinjiroFirstBattleWarning"
     }
   ],
   "bg_events": [

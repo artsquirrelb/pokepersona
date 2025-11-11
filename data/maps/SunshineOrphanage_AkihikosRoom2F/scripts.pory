@@ -2,7 +2,8 @@ mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 1: SunshineOrphanage_AkihikosRoom2F_OnWarp1]
     MAP_SCRIPT_ON_FRAME_TABLE [ 
-        VAR_AKIHIKOS_INTRO_STATE, 1: AkihikosRoom2F_ONFRAME1]
+        VAR_AKIHIKOS_INTRO_STATE, 1: AkihikosRoom2F_ONFRAME1
+        VAR_AKIHIKOS_INTRO_STATE, 9: SunshineOrphanage_AkihikosRoom2F_OnFrame9]
     MAP_SCRIPT_ON_TRANSITION {
         if(var(VAR_AKIHIKOS_INTRO_STATE) >= 2){
             setflag(FLAG_TEMP_1)
@@ -28,6 +29,11 @@ script AkihikosRoom2F_ONFRAME1 {
     lockall
     goto (AkihikosRoom2F_Cutscene1)
     releaseall
+}
+
+script SunshineOrphanage_AkihikosRoom2F_OnFrame9 {
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    end
 }
 
 movement emotepensive {

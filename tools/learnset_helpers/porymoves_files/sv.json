@@ -51262,6 +51262,7 @@
     "LevelMoves": [],
     "PreEvoMoves": [],
     "TMMoves": [
+    "MOVE_CUT",
     "MOVE_ATTRACT",
     "MOVE_BULLET_SEED",
     "MOVE_COMEUPPANCE",
@@ -99194,7 +99195,9 @@
       "MOVE_CHARGE",
       "MOVE_SUPER_FANG",
       "MOVE_ELECTROWEB",
-      "MOVE_ZIPPY_ZAP"
+      "MOVE_ZIPPY_ZAP",
+      "MOVE_ROCK_SMASH",
+      "MOVE_STRENGTH"
     ],
     "EggMoves": [
       "MOVE_FAKE_OUT",
@@ -99315,7 +99318,9 @@
       "MOVE_ELECTROWEB",
       "MOVE_COACHING",
       "MOVE_UPPER_HAND",
-      "MOVE_ZIPPY_ZAP"
+      "MOVE_ZIPPY_ZAP",
+      "MOVE_ROCK_SMASH",
+      "MOVE_STRENGTH"
     ],
     "EggMoves": [
       "MOVE_FAKE_OUT",
@@ -99467,7 +99472,9 @@
       "MOVE_COACHING",
       "MOVE_THROAT_CHOP",
       "MOVE_UPPER_HAND",
-      "MOVE_ZIPPY_ZAP"
+      "MOVE_ZIPPY_ZAP",
+      "MOVE_ROCK_SMASH",
+      "MOVE_STRENGTH"
     ],
     "EggMoves": [
       "MOVE_FAKE_OUT",

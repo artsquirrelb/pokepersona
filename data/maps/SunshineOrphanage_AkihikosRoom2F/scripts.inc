@@ -14,14 +14,15 @@ SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 10 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 0
-	goto_if_lt SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
+	goto_if_gt SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
+SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
 # 10 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 11
 	goto_if_ge SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
 SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 # 13 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 9
-	goto_if_eq SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_9
+	goto_if_eq SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_11
 	return
 
 SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
@@ -34,7 +35,13 @@ SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 	setflag FLAG_TEMP_2
 	goto SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
 
-SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_9:
+SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
+# 10 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 9
+	goto_if_lt SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
+	goto SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_6
+
+SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
 # 14 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	clearflag FLAG_HIDE_TALK_BUTTON
 	return
@@ -679,9 +686,9 @@ BookshelfLeft_Text_0:
 
 BookshelfRight_Text_0:
 # 221 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "A book about Pokemon species in their\n"
+	.string "A book about Pokémon species in their\n"
 	.string "natural habitats.\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}{SPEAKER NAME_AKIHIKO} I hope I can get my own Pokemon soon.$"
+	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}{SPEAKER NAME_AKIHIKO} I hope I can get my own Pokémon soon.$"
 
 ChoresList_Text_0:
 # 230 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"

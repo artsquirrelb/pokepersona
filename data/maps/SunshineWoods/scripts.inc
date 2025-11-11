@@ -444,7 +444,7 @@ SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown_Text_0:
 SunshineWoods_Eventscript_PawmiCries_Text_0:
 # 102 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that?\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Could be a wild Pokemon. Be careful!$"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Could be a wild Pokémon. Be careful!$"
 
 SunshineWoods_Eventscript_PawmisInjured_Text_0:
 # 170 "data/maps/SunshineWoods/scripts.pory"
@@ -495,7 +495,7 @@ SunshineWoods_Text_IkePostBattle::
 
 SunshineWoods_Text_HotaruIntro::
 # 255 "data/maps/SunshineWoods/scripts.pory"
-	.string "I have cute Pokémons!$"
+	.string "I have cute Pokémon!$"
 
 SunshineWoods_Text_HotaruDefeated::
 # 259 "data/maps/SunshineWoods/scripts.pory"

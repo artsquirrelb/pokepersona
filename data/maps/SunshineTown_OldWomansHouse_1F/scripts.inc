@@ -69,7 +69,7 @@ SunshineTown_OldWomansHouse_1F_Eventscript_Caretaker_Text_1:
 # 22 "data/maps/SunshineTown_OldWomansHouse_1F/scripts.pory"
 	.string "The owner of this house is a fan of\n"
 	.string "Lucario.\p"
-	.string "She hired us to play with her Pokémons\n"
+	.string "She hired us to play with her Pokémon\n"
 	.string "because it gets very rowdy as she\l"
 	.string "keeps bringing more Riolus home.\p"
 	.string "If you want one for yourself I'm sure\n"

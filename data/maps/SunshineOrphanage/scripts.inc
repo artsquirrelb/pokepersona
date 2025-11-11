@@ -288,7 +288,7 @@ Miki_and_Shinjiro_Notice_Akihiko_Text_0:
 Miki_and_Akihiko_walk_to_Shinjiro_Text_0:
 # 64 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Miki wants to go to the woods but there\n"
-	.string "are wild Pokemons there.\p"
+	.string "are wild Pokémon there.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Shinji, it's fineee. As long as we stay\n"
 	.string "out of the tall grass.\p"
 	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}To the woods! To the woods!\p"
@@ -318,7 +318,7 @@ Girl_OrphanageEntrance_Text_1:
 
 Sunshine_Orphanage_Direction_Sign_Text_0:
 # 122 "data/maps/SunshineOrphanage/scripts.pory"
-	.string "Sunshine Woods {DOWN_ARROW}\nBeware of wild Pokemons!$"
+	.string "Sunshine Woods {DOWN_ARROW}\nBeware of wild Pokémon!$"
 
 Welcome_To_Sunshine_Orphanage_Text_0:
 # 129 "data/maps/SunshineOrphanage/scripts.pory"

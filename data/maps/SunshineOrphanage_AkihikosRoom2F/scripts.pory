@@ -7,7 +7,7 @@ mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
         if(var(VAR_AKIHIKOS_INTRO_STATE) >= 2){
             setflag(FLAG_TEMP_1)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) < 0 || var(VAR_AKIHIKOS_INTRO_STATE) >= 11){
+        if ((var(VAR_AKIHIKOS_INTRO_STATE) > 0 && var(VAR_AKIHIKOS_INTRO_STATE) < 9 )|| var(VAR_AKIHIKOS_INTRO_STATE) >= 11){
             setflag(FLAG_TEMP_2)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 9) {

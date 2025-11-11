@@ -1505,8 +1505,8 @@ Route2_Eventscript_InitShinjiroFirstBattle_Text_2:
 
 Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle_Text_0:
 # 553 "data/maps/Route2/scripts.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Wait, you don't have at least 3\n"
-	.string "Pokémons to battle. I want a fair fight.\p"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Wait, you don't have at least 3 Pokémon\n"
+	.string "to battle. I want a fair fight.\p"
 	.string "Are you sure you still want to fight\n"
 	.string "handicapped?$"
 
@@ -1663,8 +1663,7 @@ Route2_Eventscript_LostInShinjiroFirstBattlePointDown::
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}Arg, I lost...\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}...\p"
 	.string "Isn't that to be expected? Since you\n"
-	.string "didn't want to fight me with 3\l"
-	.string "Pokémons?\p"
+	.string "didn't want to fight me with 3 Pokémon?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}...\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}I hope you won't underestimate me next\n"
 	.string "time. It wasn't fun even when I won.\p"

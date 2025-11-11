@@ -2508,7 +2508,7 @@ void IncrementDailyBattlePoints(u16 delta)
 }
 
 // PokeNews
-
+/*
 static void TryPutRandomPokeNewsOnAir(void)
 {
     if (FlagGet(FLAG_SYS_GAME_CLEAR))
@@ -2526,7 +2526,7 @@ static void TryPutRandomPokeNewsOnAir(void)
         }
     }
 }
-
+*/
 static s8 GetFirstEmptyPokeNewsSlot(PokeNews *pokeNews)
 {
     s8 i;
@@ -2813,7 +2813,7 @@ static bool8 IsRecordMixShowAlreadySpawned(u8 kind, bool8 delete)
     return FALSE;
 }
 
-static void SortPurchasesByQuantity(void)
+/*static void SortPurchasesByQuantity(void)
 {
     u8 i, j;
 
@@ -2832,7 +2832,7 @@ static void SortPurchasesByQuantity(void)
             }
         }
     }
-}
+}*/
 
 static void TryReplaceOldTVShowOfKind(u8 kind)
 {

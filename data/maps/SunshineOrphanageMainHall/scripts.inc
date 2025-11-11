@@ -907,7 +907,7 @@ SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_0:
 	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Can we keep it?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Can we, Ms. Kobayashi?\p"
 	.string "{SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Normally you aren't allowed to have your\n"
-	.string "own Pokemon here.\p"
+	.string "own Pokémon here.\p"
 	.string "However, since you are going to leave in\n"
 	.string "a few days, we can make an exception.\p"
 	.string "Just make sure to not cause trouble in\n"
@@ -980,8 +980,8 @@ Boy_2_MainHall_Text_0:
 Boy_2_MainHall_Text_1:
 # 262 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "They don't allow us children to have\n"
-	.string "Pokemon of our own but we can still play\l"
-	.string "with the staff's Pokemons.$"
+	.string "Pokémon of our own but we can still play\l"
+	.string "with the staff's Pokémon.$"
 
 Girl_2_MainHall_Text_0:
 # 269 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -1055,7 +1055,7 @@ Boy_3_MainHall_Text_2:
 
 Boy_3_MainHall_Text_3:
 # 331 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "I heard you found a rare Pokemon in the\n"
+	.string "I heard you found a rare Pokémon in the\n"
 	.string "woods?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Pawmi is rare?$"
 
@@ -1085,8 +1085,8 @@ PokeballShelf_Text_0:
 
 Porygon_PC_Text_0:
 # 378 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Porygon can access the Pokemon\n"
-	.string "Storage. If only I had a Pokemon.$"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Porygon can access the Pokémon\n"
+	.string "Storage. If only I had a Pokémon.$"
 
 MartLady_Text_0:
 # 387 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -1104,7 +1104,7 @@ Blissey_Heal_Text_0:
 # 426 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Blissey is very good at healing. I can\n"
 	.string "ask it for help when I have an injured\l"
-	.string "Pokemon.$"
+	.string "Pokémon.$"
 
 BlisseyHealedPawmi_Text_0:
 # 434 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -1141,7 +1141,7 @@ Eventscript_StarterPokemonTips::
 # 135 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{COLOR GREEN}Tips: The shiny chance is roughly\n"
 	.string "1/100.\p"
-	.string "No Pokemon are shiny locked, including\n"
+	.string "No Pokémon are shiny locked, including\n"
 	.string "the story starters.\p"
 	.string "The story starters have been buffed\n"
 	.string "and come with pre-determined Nature\l"

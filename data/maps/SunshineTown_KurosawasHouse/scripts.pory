@@ -127,8 +127,7 @@ movement KurosawaGivingPokebalToShinji {
 }
 
 script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
-    Kurosawa-san, thank you for your hard work and for taking care of us these past few days.\p
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Kurosawa-san, thank you for your hard work and for taking care of us these past few days.\p
     Please take care.\p
     {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Wait just a moment."))
     closemessage

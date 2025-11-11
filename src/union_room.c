@@ -4446,7 +4446,7 @@ static u8 GetActivePartnersInfo(struct WirelessLink_URoom *data)
 static void ViewURoomPartnerTrainerCard(u8 *unused, struct WirelessLink_URoom *data, bool8 isParent)
 {
     struct TrainerCard *trainerCard = &gTrainerCards[GetMultiplayerId() ^ 1];
-    s32 i;
+    //s32 i;
     s32 n;
 
     DynamicPlaceholderTextUtil_Reset();

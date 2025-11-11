@@ -196,7 +196,7 @@ Route1_Eventscript_DirectionSign_Text_0:
 
 Route1_Eventscript_Twins_Text_0:
 # 117 "data/maps/Route1/scripts.pory"
-	.string "Shhh! We heard Pokémon's cry in that\n"
+	.string "Shhh! We heard a Pokémon's cry on that\n"
 	.string "narrow path over there.\p"
 	.string "Our mother said we shouldn't be\n"
 	.string "interacting with wild Pokémon so we'll\l"

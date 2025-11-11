@@ -7,8 +7,7 @@ SunshineTown_MapScripts::
 
 SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/SunshineTown/scripts.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 23
-	goto_if_lt SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
+	goto_if_unset FLAG_SYS_QUEST_MENU_GET, SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 10 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 16
@@ -446,8 +445,7 @@ SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL::
 # 247 "data/maps/SunshineTown/scripts.pory"
 	setspeaker SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0
 # 248 "data/maps/SunshineTown/scripts.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 24
-	goto_if_lt SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_2
+	goto_if_unset FLAG_SYS_QUEST_MENU_GET, SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_2
 # 254 "data/maps/SunshineTown/scripts.pory"
 	faceplayer
 # 255 "data/maps/SunshineTown/scripts.pory"
@@ -596,6 +594,22 @@ SunshineTown_Eventscript_HiddenGrotto_2:
 	goto SunshineTown_Eventscript_HiddenGrotto_1
 
 
+SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru::
+# 347 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 348 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru_Text_0
+# 349 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 350 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, walkleft
+# 351 "data/maps/SunshineTown/scripts.pory"
+	waitmovement 0
+# 352 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+
 SunshineTown_Eventscript_Kurosawa_Text_0:
 # 35 "data/maps/SunshineTown/scripts.pory"
 	.string "Hm?\p"
@@ -728,3 +742,8 @@ SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_Text_0:
 # 323 "data/maps/SunshineTown/scripts.pory"
 	.string "{COLOR RED}Important scene ahead. Do you want to\n"
 	.string "proceed?$"
+
+SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru_Text_0:
+# 348 "data/maps/SunshineTown/scripts.pory"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I have no business in Sunshine Woods\n"
+	.string "right now.)$"

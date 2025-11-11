@@ -5,6 +5,7 @@
 #include "battle_pyramid.h"
 #include "frontier_util.h"
 #include "battle_pyramid_bag.h"
+#include "berry_pouch.h"
 #include "berry_tag_screen.h"
 #include "bg.h"
 #include "data.h"
@@ -35,6 +36,7 @@
 #include "party_menu.h"
 #include "player_pc.h"
 #include "pokemon.h"
+#include "pokemon_storage_system.h"
 #include "pokemon_summary_screen.h"
 #include "scanline_effect.h"
 #include "script.h"
@@ -45,6 +47,7 @@
 #include "string_util.h"
 #include "task.h"
 #include "text_window.h"
+#include "tm_case.h"
 #include "menu_helpers.h"
 #include "window.h"
 #include "apprentice.h"
@@ -98,6 +101,8 @@ enum {
     ACTION_BY_TYPE,
     ACTION_BY_AMOUNT,
     ACTION_BY_INDEX,
+    ACTION_OPEN,
+    ACTION_BATTLE_OPEN,
     ACTION_DUMMY,
 };
 
@@ -325,6 +330,8 @@ static const struct MenuAction sItemMenuActions[] = {
     [ACTION_BY_TYPE]           = {COMPOUND_STRING("Type"),      {ItemMenu_SortByType}},
     [ACTION_BY_AMOUNT]         = {COMPOUND_STRING("Amount"),    {ItemMenu_SortByAmount}},
     [ACTION_BY_INDEX]          = {COMPOUND_STRING("Index"),     {ItemMenu_SortByIndex}},
+    [ACTION_OPEN]              = {COMPOUND_STRING("Open"),      {ItemMenu_UseOutOfBattle}},
+    [ACTION_BATTLE_OPEN]       = {COMPOUND_STRING("Open"),      {ItemMenu_UseInBattle}},
     [ACTION_DUMMY]             = {gText_EmptyString2, {NULL}}
 };
 
@@ -384,6 +391,14 @@ static const u8 sContextMenuItems_FavorLady[] = {
 
 static const u8 sContextMenuItems_QuizLady[] = {
     ACTION_CONFIRM_QUIZ_LADY, ACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_BerryPouchTMCaseOpen[] = {
+    ACTION_OPEN,        ACTION_CANCEL
+};
+
+static const u8 sContextMenuItems_BattleBerryPouch[] = {
+    ACTION_BATTLE_OPEN, ACTION_CANCEL
 };
 
 static const TaskFunc sContextMenuFuncs[] = {
@@ -794,7 +809,10 @@ void CB2_BagMenuFromBattle(void)
 // Choosing berry to plant
 void CB2_ChooseBerry(void)
 {
-    GoToBagMenu(ITEMMENULOCATION_BERRY_TREE, POCKET_BERRIES, CB2_ReturnToFieldContinueScript);
+    if (FRLG_I_ADD_BERRY_POUCH_WITH_BERRIES)
+        InitBerryPouch(BERRYPOUCH_FROMBERRYTREE, CB2_ReturnToFieldContinueScript, FALSE);
+    else
+        GoToBagMenu(ITEMMENULOCATION_BERRY_TREE, POCKET_BERRIES, CB2_ReturnToFieldContinueScript);
 }
 
 // Choosing mulch to use
@@ -1166,7 +1184,15 @@ static void GetItemNameFromPocket(u8 *dest, u16 itemId)
         StringExpandPlaceholders(dest, gText_NumberItem_TMBerry);
         break;
     default:
-        end = CopyItemName(itemId, dest);
+        if (itemId == ITEM_TM_CASE || itemId == ITEM_BERRY_POUCH)
+        {
+            CopyItemName(itemId, gStringVar2);
+            end = StringExpandPlaceholders(dest, sText_BlueText);
+        }
+        else
+        {
+            end = CopyItemName(itemId, dest);
+        }
         PrependFontIdToFit(dest, end, FONT_NARROW, 88);
         break;
     }
@@ -1594,10 +1620,10 @@ static u8 GetSwitchBagPocketDirection(void)
 
 static void ChangeBagPocketId(u8 *bagPocketId, s8 deltaBagPocketId)
 {
-    if (deltaBagPocketId == MENU_CURSOR_DELTA_RIGHT && *bagPocketId == POCKETS_COUNT - 1)
+    if (deltaBagPocketId == MENU_CURSOR_DELTA_RIGHT && *bagPocketId == POCKET_MAX_SCROLL)
         *bagPocketId = 0;
     else if (deltaBagPocketId == MENU_CURSOR_DELTA_LEFT && *bagPocketId == 0)
-        *bagPocketId = POCKETS_COUNT - 1;
+        *bagPocketId = POCKET_MAX_SCROLL;
     else
         *bagPocketId += deltaBagPocketId;
 }
@@ -1824,7 +1850,12 @@ static void OpenContextMenu(u8 taskId)
     {
     case ITEMMENULOCATION_BATTLE:
     case ITEMMENULOCATION_WALLY:
-        if (GetItemBattleUsage(gSpecialVar_ItemId))
+        if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+        {
+            gBagMenu->contextMenuItemsPtr = sContextMenuItems_BattleBerryPouch;
+            gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BattleBerryPouch);
+        }
+        else if (GetItemBattleUsage(gSpecialVar_ItemId))
         {
             gBagMenu->contextMenuItemsPtr = sContextMenuItems_BattleUse;
             gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BattleUse);
@@ -1883,7 +1914,12 @@ static void OpenContextMenu(u8 taskId)
     default:
         if (MenuHelpers_IsLinkActive() == TRUE || InUnionRoom() == TRUE)
         {
-            if (gBagPosition.pocket == POCKET_KEY_ITEMS || !IsHoldingItemAllowed(gSpecialVar_ItemId))
+            if (gSpecialVar_ItemId == ITEM_TM_CASE || gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+            {
+                gBagMenu->contextMenuItemsPtr = sContextMenuItems_BerryPouchTMCaseOpen;
+                gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_BerryPouchTMCaseOpen);
+            }
+            else if (gBagPosition.pocket == POCKET_KEY_ITEMS || !IsHoldingItemAllowed(gSpecialVar_ItemId))
             {
                 gBagMenu->contextMenuItemsPtr = sContextMenuItems_Cancel;
                 gBagMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuItems_Cancel);
@@ -1916,6 +1952,10 @@ static void OpenContextMenu(u8 taskId)
                 {
                     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_BIKE))
                         gBagMenu->contextMenuItemsBuffer[0] = ACTION_WALK;
+                }
+                if (gSpecialVar_ItemId == ITEM_TM_CASE || gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+                {
+                    gBagMenu->contextMenuItemsBuffer[0] = ACTION_OPEN;
                 }
                 break;
             case POCKET_POKE_BALLS:
@@ -2387,8 +2427,19 @@ static void ItemMenu_Cancel(u8 taskId)
     ReturnToItemList(taskId);
 }
 
+static void InitBerryPouchFromBattle(void)
+{
+    InitBerryPouch(BERRYPOUCH_FROMBATTLE, CB2_BagMenuFromBattle, FALSE);
+}
+
 static void ItemMenu_UseInBattle(u8 taskId)
 {
+    if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+    {
+        gBagMenu->newScreenCallback = InitBerryPouchFromBattle;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+
     // Safety check
     u16 type = GetItemType(gSpecialVar_ItemId);
     if (!GetItemBattleUsage(gSpecialVar_ItemId))
@@ -2408,6 +2459,16 @@ void CB2_ReturnToBagMenuPocket(void)
     GoToBagMenu(ITEMMENULOCATION_LAST, POCKETS_COUNT, NULL);
 }
 
+static void GoToTMCase_Give(void)
+{
+    InitTMCase(TMCASE_GIVE_PARTY, CB2_SelectBagItemToGive, FALSE);
+}
+
+static void GoToBerryPouch_Give(void)
+{
+    InitBerryPouch(BERRYPOUCH_FROMPARTYGIVE, CB2_SelectBagItemToGive, FALSE);
+}
+
 static void Task_ItemContext_GiveToParty(u8 taskId)
 {
     if (!IsWritingMailAllowed(gSpecialVar_ItemId))
@@ -2420,6 +2481,16 @@ static void Task_ItemContext_GiveToParty(u8 taskId)
         StringExpandPlaceholders(gStringVar4, sText_Var1CantBeHeldHere);
         DisplayItemMessage(taskId, FONT_NORMAL, gStringVar4, HandleErrorMessage);
     }
+    else if (gSpecialVar_ItemId == ITEM_TM_CASE)
+    {
+        gBagMenu->newScreenCallback = GoToTMCase_Give;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+    {
+        gBagMenu->newScreenCallback = GoToBerryPouch_Give;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
     else if (gBagPosition.pocket != POCKET_KEY_ITEMS && !GetItemImportance(gSpecialVar_ItemId))
     {
         Task_FadeAndCloseBagMenu(taskId);
@@ -2430,15 +2501,46 @@ static void Task_ItemContext_GiveToParty(u8 taskId)
     }
 }
 
+static void ReturnToBagMenuFromSubmenu_PCBox(void)
+{
+    GoToBagMenu(ITEMMENULOCATION_PCBOX, POCKETS_COUNT, CB2_ReturnToPokeStorage);
+}
+
+static void GoToTMCase_PCBox(void)
+{
+    InitTMCase(TMCASE_GIVE_PC, ReturnToBagMenuFromSubmenu_PCBox, FALSE);
+}
+
+static void GoToBerryPouch_PCBox(void)
+{
+    InitBerryPouch(BERRYPOUCH_FROMPOKEMONSTORAGEPC, ReturnToBagMenuFromSubmenu_PCBox, FALSE);
+}
+
 // Selected item to give to a Pokémon in PC storage
 static void Task_ItemContext_GiveToPC(u8 taskId)
 {
     if (ItemIsMail(gSpecialVar_ItemId) == TRUE)
+    {
         DisplayItemMessage(taskId, FONT_NORMAL, gText_CantWriteMail, HandleErrorMessage);
+    }
+    else if (gSpecialVar_ItemId == ITEM_TM_CASE)
+    {
+        gBagMenu->newScreenCallback = GoToTMCase_PCBox;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+    {
+        gBagMenu->newScreenCallback = GoToBerryPouch_PCBox;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
     else if (gBagPosition.pocket != POCKET_KEY_ITEMS && !GetItemImportance(gSpecialVar_ItemId))
+    {
         gTasks[taskId].func = Task_FadeAndCloseBagMenu;
+    }
     else
+    {
         PrintItemCantBeHeld(taskId);
+    }
 }
 
 #define tUsingRegisteredKeyItem data[3] // See usage in item_use.c
@@ -2628,11 +2730,31 @@ static void Task_KeyItemWheel(u8 taskId) {
 
 #undef tUsingRegisteredKeyItem
 
+static void GoToTMCase_Sell(void)
+{
+    InitTMCase(TMCASE_SELL, CB2_GoToSellMenu, FALSE);
+}
+
+static void GoToBerryPouch_Sell(void)
+{
+    InitBerryPouch(BERRYPOUCH_FROMMARTSELL, CB2_GoToSellMenu, FALSE);
+}
+
 static void Task_ItemContext_Sell(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    if (GetItemPrice(gSpecialVar_ItemId) == 0 || GetItemImportance(gSpecialVar_ItemId))
+    if (gSpecialVar_ItemId == ITEM_TM_CASE)
+    {
+        gBagMenu->newScreenCallback = GoToTMCase_Sell;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else if (gSpecialVar_ItemId == ITEM_BERRY_POUCH)
+    {
+        gBagMenu->newScreenCallback = GoToBerryPouch_Sell;
+        Task_FadeAndCloseBagMenu(taskId);
+    }
+    else if (GetItemPrice(gSpecialVar_ItemId) == 0 || GetItemImportance(gSpecialVar_ItemId))
     {
         CopyItemName(gSpecialVar_ItemId, gStringVar2);
         StringExpandPlaceholders(gStringVar4, gText_CantBuyKeyItem);
@@ -3469,6 +3591,18 @@ static s32 CompareItemsByIndex(enum Pocket pocketId, struct ItemSlot item1, stru
     case POCKET_TM_HM:
         index1 = GetItemTMHMIndex(item1.itemId);
         index2 = GetItemTMHMIndex(item2.itemId);
+        if (FRLG_I_HMS_FIRST)
+        {
+            if (index1 > NUM_TECHNICAL_MACHINES)
+                index1 -= NUM_TECHNICAL_MACHINES;
+            else
+                index1 += NUM_HIDDEN_MACHINES;
+
+            if (index2 > NUM_TECHNICAL_MACHINES)
+                index2 -= NUM_TECHNICAL_MACHINES;
+            else
+                index2 += NUM_HIDDEN_MACHINES;
+        }
         break;
     case POCKET_BERRIES: // To do - requires #7305
         index1 = item1.itemId;

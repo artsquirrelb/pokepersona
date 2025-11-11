@@ -101,6 +101,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
+      "local_id": "SHINJIRO",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 37,
       "y": 12,
@@ -193,10 +194,10 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 22,
-      "y": 21,
+      "x": 23,
+      "y": 17,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
@@ -205,9 +206,10 @@
       "flag": "0"
     },
     {
+      "local_id": "TAROU",
       "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
-      "x": 7,
-      "y": 18,
+      "x": 11,
+      "y": 20,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
@@ -219,8 +221,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
-      "x": 16,
-      "y": 20,
+      "x": 18,
+      "y": 21,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -242,6 +244,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Porygon_PC",
       "flag": "FLAG_TEMP_3"
+    },
+    {
+      "local_id": "KYOUSUKE",
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "x": 11,
+      "y": 21,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route2_Eventscript_Kyousuke",
+      "flag": "FLAG_TEMP_4"
     }
   ],
   "warp_events": [
@@ -265,7 +281,7 @@
     },
     {
       "type": "trigger",
-      "x": 11,
+      "x": 15,
       "y": 13,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
@@ -274,12 +290,21 @@
     },
     {
       "type": "trigger",
-      "x": 11,
+      "x": 15,
       "y": 14,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "41",
       "script": "Route2_Eventscript_InitShinjiroFirstBattle2"
+    },
+    {
+      "type": "trigger",
+      "x": 15,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "41",
+      "script": "Route2_Eventscript_InitShinjiroFirstBattle3"
     }
   ],
   "bg_events": [
@@ -293,11 +318,11 @@
     },
     {
       "type": "sign",
-      "x": 20,
+      "x": 23,
       "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "NULL"
+      "script": "Route2_Eventscript_DirectionSign"
     },
     {
       "type": "hidden_item",

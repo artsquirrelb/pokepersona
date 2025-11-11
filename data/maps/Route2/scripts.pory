@@ -29,13 +29,17 @@ mapscripts Route2_MapScripts {
             setflag(FLAG_TEMP_2)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 40){
-            setobjectxyperm(6, 12, 13)
-            //playbgm(MUS_RG_SS_ANNE, TRUE)
+            setobjectxyperm(6, 13, 13)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) >= 42){
             setflag(FLAG_TEMP_2)
             setflag(FLAG_TEMP_3)
         }
+        if((var(VAR_AKIHIKOS_INTRO_STATE) > 43 && var(VAR_AKIHIKOS_INTRO_STATE) < 50) || (var(VAR_MITSURUS_INTRO_STATE) > 20 && var(VAR_MITSURUS_INTRO_STATE) < 50)){
+            setflag(FLAG_TEMP_4)
+            setobjectxyperm(TAROU, 7, 18)
+        }
+
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 25: Route2_Eventscript_AkihikoOnFrame25
@@ -392,12 +396,44 @@ text Route2_YuukaPostBattle {
     format("Actually I went here to catch an Abra but they kept teleporting away...")
 }
 
+script Route2_Eventscript_Kyousuke {
+    lock
+    setspeaker("Tarou")
+    applymovement(TAROU, walkinplacedown)
+    waitmovement(0)
+    msgbox(format("So you're saying this Pokémon is really strong?"))
+    closemessage
+    applymovement(KYOUSUKE, walkinplaceup)
+    waitmovement(0)
+    setspeaker("Kyousuke")
+    msgbox(format("That's right, young man. Hehehehe."))
+    closemessage
+    release
+    end
+}
 script Route2_Eventscript_Tarou {
+    if((var(VAR_AKIHIKOS_INTRO_STATE) > 43 && var(VAR_AKIHIKOS_INTRO_STATE) < 50) || (var(VAR_MITSURUS_INTRO_STATE) > 20 && var(VAR_MITSURUS_INTRO_STATE) < 50)){
+        lock
+        setspeaker("Tarou")
+        applymovement(TAROU, walkinplacedown)
+        waitmovement(0)
+        msgbox(format("So you're saying these Pokémon are really strong?"))
+        closemessage
+        applymovement(KYOUSUKE, walkinplaceup)
+        waitmovement(0)
+        setspeaker("Kyousuke")
+        msgbox(format("That's right, young man. Hehehehe."))
+        closemessage
+        release
+        end
+    }
+    else{
     trainerbattle_single (TRAINER_TAROU, Route2_TarouIntro, Route2_TarouDefeated)
     setspeaker("Tarou")
     msgbox(Route2_TarouPostBattle)
     closemessage
     end
+    }
 }
 
 text Route2_TarouIntro {
@@ -494,8 +530,12 @@ script Route2_Eventscript_AkihikoNoticingShinjiroOutside {
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}I'll show what it can do. {COLOR RED}Let's do a 3-vs-3 without bag item use again.\p
     {COLOR DARK_GRAY}Step up if you're ready."))
     closemessage
-    applymovement(OBJ_EVENT_ID_CAMERA, walkleft)
-    waitmovement
+    applymovement(SHINJIRO, moves(walk_right*4, face_left))
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*4))
+    waitmovement(0)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*5))
+    waitmovement(0)
     special(RemoveCameraObject)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 41)
     clearflag(FLAG_HIDE_TALK_BUTTON)
@@ -593,6 +633,17 @@ movement emoteangry {
 script Route2_Eventscript_InitShinjiroFirstBattle2 {
     lock
     applymovement(LOCALID_PLAYER, walkup)
+    waitmovement(0)
+    applymovement(LOCALID_PLAYER, faceright)
+    waitmovement(0)
+    goto(Route2_Eventscript_InitShinjiroFirstBattle)
+    release
+    end
+}
+
+script Route2_Eventscript_InitShinjiroFirstBattle3 {
+    lock
+    applymovement(LOCALID_PLAYER, moves(walk_up*2))
     waitmovement(0)
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement(0)

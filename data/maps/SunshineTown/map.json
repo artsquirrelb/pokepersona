@@ -478,6 +478,24 @@
       "var": "VAR_AKIHIKOS_INTRO_STATE",
       "var_value": "24",
       "script": "SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_MITSURUS_INTRO_STATE",
+      "var_value": "6",
+      "script": "SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_MITSURUS_INTRO_STATE",
+      "var_value": "6",
+      "script": "SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
     }
   ],
   "bg_events": [

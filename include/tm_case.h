@@ -16,7 +16,7 @@ enum {
 
 void InitTMCase(u8 type, void (* exitCallback)(void), bool8 allowSelectClose);
 void ResetTMCaseCursorPos(void);
-void Pokedude_InitTMCase(void);
+//void Pokedude_InitTMCase(void);
 bool32 CheckIfInTMCase(void);
 
 #endif //GUARD_TM_CASE_H

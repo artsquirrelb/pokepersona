@@ -18,6 +18,8 @@
 #include "party_menu.h"
 #include "palette.h"
 #include "pokemon_storage_system.h"
+#include "pokemon_icon.h"
+#include "pokemon_summary_screen.h"
 #include "shop.h"
 #include "task.h"
 #include "text_window.h"
@@ -55,7 +57,7 @@ enum {
 // IDs for the actions in the context menu
 enum {
     ACTION_USE,
-    ACTION_GIVE,
+    //ACTION_GIVE,
     ACTION_EXIT
 };
 
@@ -115,6 +117,8 @@ static EWRAM_DATA struct ListMenuItem * sListMenuItemsBuffer = NULL;
 static EWRAM_DATA u8 (* sListMenuStringsBuffer)[29] = NULL;
 static EWRAM_DATA u16 * sTMSpritePaletteBuffer = NULL;
 static EWRAM_DATA u8 sIsInTMCase = FALSE;
+static EWRAM_DATA u8    spriteIdData[PARTY_SIZE] = {};
+static EWRAM_DATA u16   spriteIdPalette[PARTY_SIZE] = {};
 
 static void CB2_SetUpTMCaseUI_Blocking(void);
 static bool8 DoSetUpTMCaseUI(void);
@@ -138,7 +142,7 @@ static void Task_HandleListInput(u8 taskId);
 static void Task_SelectedTMHM_Field(u8 taskId);
 static void Task_ContextMenu_HandleInput(u8 taskId);
 static void Action_Use(u8 taskId);
-static void Action_Give(u8 taskId);
+//static void Action_Give(u8 taskId);
 static void PrintError_ThereIsNoPokemon(u8 taskId);
 static void PrintError_ItemCantBeHeld(u8 taskId);
 static void Task_WaitButtonAfterErrorPrint(u8 taskId);
@@ -167,13 +171,16 @@ static void PrintPlayersMoney(void);
 static void HandleCreateYesNoMenu(u8 taskId, const struct YesNoFuncTable * ptrs);
 static u8 AddContextMenu(u8 * windowId, u8 windowIndex);
 static void RemoveContextMenu(u8 * windowId);
-static u8 CreateDiscSprite(u16 itemId);
-static void SetDiscSpriteAnim(struct Sprite *sprite, u8 tmIdx);
-static void TintDiscpriteByType(u8 type);
-static void SetDiscSpritePosition(struct Sprite *sprite, u8 tmIdx);
-static void SwapDisc(u8 spriteId, u16 itemId);
-static void SpriteCB_SwapDisc(struct Sprite *sprite);
-static void LoadDiscTypePalettes(void);
+//static u8 CreateDiscSprite(u16 itemId);
+//static void SetDiscSpriteAnim(struct Sprite *sprite, u8 tmIdx);
+//static void TintDiscpriteByType(u8 type);
+//static void SetDiscSpritePosition(struct Sprite *sprite, u8 tmIdx);
+//static void SwapDisc(u8 spriteId, u16 itemId);
+//static void SpriteCB_SwapDisc(struct Sprite *sprite);
+//static void LoadDiscTypePalettes(void);
+static void DrawPartyMonIcons(void);
+static void TintPartyMonIcons(u16 tm, s32 itemIndex);
+
 
 static const struct BgTemplate sBGTemplates[] =
 {
@@ -219,20 +226,20 @@ static void (*const sSelectTMActionTasks[])(u8 taskId) =
 static const struct MenuAction sMenuActions[] =
 {
     [ACTION_USE]  = {COMPOUND_STRING("Use"),  {Action_Use} },
-    [ACTION_GIVE] = {COMPOUND_STRING("Give"), {Action_Give} },
+    //[ACTION_GIVE] = {COMPOUND_STRING("Give"), {Action_Give} },
     [ACTION_EXIT] = {COMPOUND_STRING("Exit"), {Action_Exit} },
 };
 
 static const u8 sMenuActionIndices_Field[] =
 {
     ACTION_USE,
-    ACTION_GIVE,
+    //ACTION_GIVE,
     ACTION_EXIT
 };
 
 static const u8 sMenuActionIndices_UnionRoom[] =
 {
-    ACTION_GIVE,
+    //ACTION_GIVE,
     ACTION_EXIT
 };
 
@@ -284,12 +291,12 @@ static const struct WindowTemplate sWindowTemplates[] =
     [WIN_LIST] =
     {
         .bg = 0,
-        .tilemapLeft = 10,
+        .tilemapLeft = 14,
         .tilemapTop = 1,
-        .width = 19,
+        .width = 15,
         .height = 10,
         .paletteNum = 15,
-        .baseBlock = 0x081
+        .baseBlock = 0x081 //129
     },
     [WIN_DESCRIPTION] =
     {
@@ -299,7 +306,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .width = 18,
         .height = 8,
         .paletteNum = 15,
-        .baseBlock = 0x13f
+        .baseBlock = 129 + (15 * 10) //was 0x13f = 319
     },
     [WIN_SELECTED_MSG] =
     {
@@ -309,7 +316,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .width = 15,
         .height = 4,
         .paletteNum = 13,
-        .baseBlock = 0x1f9
+        .baseBlock = 0x1f9 //505
     },
     [WIN_TITLE] =
     {
@@ -319,7 +326,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .width = 10,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x235
+        .baseBlock = 0x235 //565
     },
     [WIN_MOVE_INFO_LABELS] =
     {
@@ -329,7 +336,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .width = 5,
         .height = 6,
         .paletteNum = 12,
-        .baseBlock = 0x249
+        .baseBlock = 0x249 //585
     },
     [WIN_MOVE_INFO] =
     {
@@ -339,7 +346,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .width = 5,
         .height = 6,
         .paletteNum = 12,
-        .baseBlock = 0x267
+        .baseBlock = 0x267 //615
     },
     [WIN_MESSAGE] =
     {
@@ -349,7 +356,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .width = 26,
         .height = 4,
         .paletteNum = 13,
-        .baseBlock = 0x285
+        .baseBlock = 0x285 //645
     },
     [WIN_SELL_QUANTITY] =
     {
@@ -359,7 +366,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .width = 12,
         .height = 4,
         .paletteNum = 13,
-        .baseBlock = 0x2ed
+        .baseBlock = 0x2ed //749
     },
     [WIN_MONEY] =
     {
@@ -369,7 +376,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .width = 10,
         .height = 2,
         .paletteNum = 13,
-        .baseBlock = 0x31d
+        .baseBlock = 0x31d //797
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -576,6 +583,7 @@ static bool8 DoSetUpTMCaseUI(void)
         break;
     case 11:
         DrawMoveInfoLabels();
+        DrawPartyMonIcons();
         gMain.state++;
         break;
     case 12:
@@ -597,7 +605,7 @@ static bool8 DoSetUpTMCaseUI(void)
         gMain.state++;
         break;
     case 16:
-        sTMCaseDynamicResources->discSpriteId = CreateDiscSprite(GetTMCaseItemIdByPosition(sTMCaseStaticResources.scrollOffset + sTMCaseStaticResources.selectedRow));
+        //sTMCaseDynamicResources->discSpriteId = CreateDiscSprite(GetTMCaseItemIdByPosition(sTMCaseStaticResources.scrollOffset + sTMCaseStaticResources.selectedRow));
         gMain.state++;
         break;
     case 17:
@@ -661,7 +669,7 @@ static bool8 HandleLoadTMCaseGraphicsAndPalettes(void)
         }
         break;
     case 2:
-        DecompressDataWithHeaderWram(sTMCase_Tilemap, GetBgTilemapBuffer(1));
+        //DecompressDataWithHeaderWram(sTMCase_Tilemap, GetBgTilemapBuffer(1)); //tmcase bg graphic
         sTMCaseDynamicResources->seqId++;
         break;
     case 3:
@@ -676,7 +684,7 @@ static bool8 HandleLoadTMCaseGraphicsAndPalettes(void)
         sTMCaseDynamicResources->seqId++;
         break;
     default:
-        LoadDiscTypePalettes();
+        //LoadDiscTypePalettes();
         sTMCaseDynamicResources->seqId = 0;
         return TRUE;
     }
@@ -700,11 +708,11 @@ static void InitTMCaseListMenuItems(void)
         sListMenuItemsBuffer[i].name = sListMenuStringsBuffer[i];
         sListMenuItemsBuffer[i].id = i;
     }
-    sListMenuItemsBuffer[i].name = sText_Close;
-    sListMenuItemsBuffer[i].id = LIST_CANCEL;
+    //sListMenuItemsBuffer[i].name = sText_Close;
+    //sListMenuItemsBuffer[i].id = LIST_CANCEL;
 
     gMultiuseListMenuTemplate.items = sListMenuItemsBuffer;
-    gMultiuseListMenuTemplate.totalItems = sTMCaseDynamicResources->numTMs + 1; // +1 for Cancel
+    gMultiuseListMenuTemplate.totalItems = sTMCaseDynamicResources->numTMs;// + 1; // +1 for Cancel
     gMultiuseListMenuTemplate.windowId = WIN_LIST;
     gMultiuseListMenuTemplate.header_X = 0;
     gMultiuseListMenuTemplate.item_X = 8;
@@ -759,7 +767,7 @@ static void List_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu *li
     if (onInit != TRUE)
     {
         PlaySE(SE_SELECT);
-        SwapDisc(sTMCaseDynamicResources->discSpriteId, itemId);
+        //SwapDisc(sTMCaseDynamicResources->discSpriteId, itemId);
     }
     PrintDescription(itemIndex);
     PrintMoveInfo(itemId);
@@ -775,9 +783,9 @@ static void List_ItemPrintFunc(u8 windowId, u32 itemIndex, u8 y)
         }
         else if (!GetItemImportance(GetTMCaseItemIdByPosition(itemIndex)))
         {
-            ConvertIntToDecimalStringN(gStringVar1, GetBagItemQuantity(POCKET_TM_HM, itemIndex), STR_CONV_MODE_RIGHT_ALIGN, MAX_ITEM_DIGITS);
-            StringExpandPlaceholders(gStringVar4, gText_xVar1);
-            TMCase_Print(windowId, FONT_SMALL, gStringVar4, 126, y, 0, 0, TEXT_SKIP_DRAW, COLOR_DARK);
+            //ConvertIntToDecimalStringN(gStringVar1, GetBagItemQuantity(POCKET_TM_HM, itemIndex), STR_CONV_MODE_RIGHT_ALIGN, MAX_ITEM_DIGITS);
+            //StringExpandPlaceholders(gStringVar4, gText_xVar1);
+            //TMCase_Print(windowId, FONT_SMALL, gStringVar4, 126, y, 0, 0, TEXT_SKIP_DRAW, COLOR_DARK);
         }
     }
 }
@@ -785,12 +793,18 @@ static void List_ItemPrintFunc(u8 windowId, u32 itemIndex, u8 y)
 static void PrintDescription(s32 itemIndex)
 {
     const u8 * str;
+    struct ItemSlot itemSlot = GetBagItemIdAndQuantity(POCKET_TM_HM, itemIndex);
+    u16 itemId = itemSlot.itemId;
     if (itemIndex != LIST_CANCEL)
-        str = GetItemLongDescription(GetTMCaseItemIdByPosition(itemIndex));
+        //str = GetItemLongDescription(GetTMCaseItemIdByPosition(itemIndex));
+        str = GetItemDescription(GetBagItemId(POCKET_TM_HM, itemIndex));
     else
         str = sText_TMCaseWillBePutAway;
-    FillWindowPixelBuffer(WIN_DESCRIPTION, 0);
+    FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
     TMCase_Print(WIN_DESCRIPTION, FONT_SHORT, str, 2, 3, 1, 0, 0, COLOR_LIGHT);
+    // update icons
+    if (sSelectTMActionTasks[sTMCaseStaticResources.menuType] != sSelectTMActionTasks[2])
+        TintPartyMonIcons(itemId, itemIndex);
 }
 
 // Darkens (or subsequently lightens) the blue bg tiles around the description window when a TM/HM is selected.
@@ -1086,7 +1100,7 @@ static void Action_Use(u8 taskId)
     }
 }
 
-static void Action_Give(u8 taskId)
+/*static void Action_Give(u8 taskId)
 {
     s16 * data = gTasks[taskId].data;
     u16 itemId = GetTMCaseItemIdByPosition(tListPosition);
@@ -1114,7 +1128,7 @@ static void Action_Give(u8 taskId)
     {
         PrintError_ItemCantBeHeld(taskId);
     }
-}
+}*/
 
 static void PrintError_ThereIsNoPokemon(u8 taskId)
 {
@@ -1517,7 +1531,7 @@ static void RemoveContextMenu(u8 * windowId)
     ScheduleBgCopyTilemapToVram(0);
     *windowId = WINDOW_NONE;
 }
-
+/*
 static u8 CreateDiscSprite(u16 itemId)
 {
     u8 spriteId = CreateSprite(&sSpriteTemplate_Disc, DISC_BASE_X, DISC_BASE_Y, 0);
@@ -1635,6 +1649,108 @@ static void LoadDiscTypePalettes(void)
     spritePalette.tag = TAG_DISC;
     LoadSpritePalette(&spritePalette);
 }
+*/
+#define sMonIconStill data[3]
+static void SpriteCb_MonIcon(struct Sprite *sprite)
+{
+    if (!sprite->sMonIconStill)
+        UpdateMonIconFrame(sprite);
+}
+#undef sMonIconStill
+
+#define MON_ICON_START_X  0x10
+#define MON_ICON_START_Y  0x2a
+#define MON_ICON_PADDING  0x20
+
+
+void LoadMonIconPalettesTinted(void)
+{
+    u8 i;
+    for (i = 0; i < ARRAY_COUNT(gMonIconPaletteTable); i++)
+    {
+        LoadSpritePaletteDouble(&gMonIconPaletteTable[i]);
+        TintPalette_GrayScale2(&gPlttBufferUnfaded[0x170 + i*16], 16);
+    }
+}
+        
+
+static void DrawPartyMonIcons(void)
+{
+    u8 i;
+    u16 species;
+    u8 icon_x = 0;
+    u8 icon_y = 0;
+
+    LoadMonIconPalettesTinted();
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        //calc icon position (centered)
+        if (gPlayerPartyCount == 1)
+        {
+            icon_x = MON_ICON_START_X + MON_ICON_PADDING;
+            icon_y = MON_ICON_START_Y + MON_ICON_PADDING*0.5;
+        }
+        else if (gPlayerPartyCount == 2)
+        {
+            icon_x = i < 2 ? MON_ICON_START_X + MON_ICON_PADDING*0.5 + MON_ICON_PADDING * i : MON_ICON_START_X + MON_ICON_PADDING*0.5 + MON_ICON_PADDING * (i - 2);
+            icon_y = MON_ICON_START_Y + MON_ICON_PADDING*0.5;
+        }else if (gPlayerPartyCount == 3)
+        {
+            icon_x = i < 3 ? MON_ICON_START_X + MON_ICON_PADDING * i : MON_ICON_START_X + MON_ICON_PADDING * (i - 3);
+            icon_y = MON_ICON_START_Y + MON_ICON_PADDING*0.5;
+        }
+        else if (gPlayerPartyCount == 4)
+        {
+            icon_x = i < 2 ? MON_ICON_START_X + MON_ICON_PADDING*0.5 + MON_ICON_PADDING * i : MON_ICON_START_X + MON_ICON_PADDING*0.5 + MON_ICON_PADDING * (i - 2);
+            icon_y = i < 2 ? MON_ICON_START_Y : MON_ICON_START_Y + MON_ICON_PADDING;
+        }
+        else
+        {
+            icon_x = i < 3 ? MON_ICON_START_X + MON_ICON_PADDING * i : MON_ICON_START_X + MON_ICON_PADDING * (i - 3);
+            icon_y = i < 3 ? MON_ICON_START_Y : MON_ICON_START_Y + MON_ICON_PADDING;
+        }
+        //get species
+        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+
+        //create icon sprite
+      
+        spriteIdData[i] = CreateMonIcon(species, SpriteCb_MonIcon, icon_x, icon_y, 1, GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY));
+      
+        //Set priority, stop movement and save original palette position
+        gSprites[spriteIdData[i]].oam.priority = 0;
+        StartSpriteAnim(&gSprites[spriteIdData[i]], 4); //full stop
+        spriteIdPalette[i] = gSprites[spriteIdData[i]].oam.paletteNum; //save correct palette number to array
+    }
+}
+
+static void TintPartyMonIcons(u16 tm, s32 itemIndex)
+{
+    u8 i;
+    u16 species;
+    
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {   
+        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
+
+        if (itemIndex == -2) //I'm so stupid this was so simple smh, ok, ensures that mon sprite is faded if on close tm case option
+        {
+            gSprites[spriteIdData[i]].oam.objMode = ST_OAM_OBJ_BLEND;//gMonIconPaletteIndices[species];
+        }
+        else if (!CanLearnTeachableMove(species, ItemIdToBattleMoveId(tm)))
+        {
+            gSprites[spriteIdData[i]].oam.objMode = ST_OAM_OBJ_BLEND;
+        }
+        else
+        {
+            gSprites[spriteIdData[i]].oam.objMode = ST_OAM_OBJ_NORMAL;//gMonIconPaletteIndices[species];
+        }
+    }
+}
+
 
 bool32 CheckIfInTMCase(void)
 {

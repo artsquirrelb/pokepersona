@@ -25,6 +25,9 @@
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "pokemon_storage_system.h"
+#include "pokemon_icon.h"
+#include "pokemon_summary_screen.h"
 #include "scanline_effect.h"
 #include "script.h"
 #include "shop.h"
@@ -52,6 +55,8 @@
 #define MAX_ITEMS_SHOWN 8
 #define SHOP_MENU_PALETTE_ID 12
 
+const u8 gTextSelect[] = _("{SELECT_BUTTON}");
+
 enum {
     WIN_BUY_SELL_QUIT,
     WIN_BUY_QUIT,
@@ -69,9 +74,10 @@ enum {
 };
 
 enum {
-    COLORID_NORMAL,      // Item descriptions, quantity in bag, and quantity/price
+    COLORID_NORMAL,      // Item quantity in bag, and quantity/price
     COLORID_ITEM_LIST,   // The text in the item list, and the cursor normally
     COLORID_GRAY_CURSOR, // When the cursor has selected an item to purchase
+    COLORID_DESCRIPTION, // Item descriptions
 };
 
 enum {
@@ -127,6 +133,9 @@ EWRAM_DATA struct ItemSlot gMartPurchaseHistory[SMARTSHOPPER_NUM_ITEMS] = {0};
 static EWRAM_DATA u16 sScrollOffset = 0;
 static EWRAM_DATA u16 sSelectedRow = 0;
 static EWRAM_DATA u8 sNarrowerText = 0;
+static EWRAM_DATA u8 sShowMonIcons = 0;
+static EWRAM_DATA u8    spriteIdData[PARTY_SIZE] = {};
+static EWRAM_DATA u16   spriteIdPalette[PARTY_SIZE] = {};
 
 static void Task_ShopMenu(u8 taskId);
 static void Task_HandleShopMenuQuit(u8 taskId);
@@ -176,6 +185,9 @@ static void FormatTextByWidth(u8*, s32, u8, const u8*, s16);
 static void BuyMenuStartTutor(u8 taskId);
 static void Task_BuyMenuTutor(u8 taskId);
 static void CB2_InitBuyMenuAfterTutor(void);
+static void DrawPartyMonIcons_Shop(void);
+static void TintPartyMonIcons_Shop(u16 tm);
+static void DestroyPartyMonIcons_Shop(void);
 
 static const struct YesNoFuncTable sShopPurchaseYesNoFuncs =
 {
@@ -302,7 +314,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 1,
         .width = 10,
         .height = 2,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x001E,
     },
     [WIN_BP] = {
@@ -311,7 +323,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 1,
         .width = 6,
         .height = 2,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x001E,
     },
     [WIN_ITEM_LIST] = {
@@ -320,7 +332,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 2,
         .width = 15,
         .height = 16,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0032,
     },
     [WIN_ITEM_DESCRIPTION] = {
@@ -329,7 +341,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 13,
         .width = 14,
         .height = 6,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0122,
     },
     [WIN_QUANTITY_IN_BAG] = {
@@ -338,7 +350,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 11,
         .width = 12,
         .height = 2,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0176,
     },
     [WIN_QUANTITY_PRICE] = {
@@ -347,7 +359,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 11,
         .width = 10,
         .height = 2,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x018E,
     },
     [WIN_MESSAGE] = {
@@ -356,7 +368,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 15,
         .width = 27,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x01A2,
     },
     [WIN_BATTLE_MOVE_DESC] = {
@@ -365,7 +377,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 5,
         .width = 11,
         .height = 7,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0222,
     },
     DUMMY_WIN_TEMPLATE
@@ -378,15 +390,16 @@ static const struct WindowTemplate sShopBuyMenuYesNoWindowTemplates =
     .tilemapTop = 9,
     .width = 5,
     .height = 4,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 0x020E,
 };
 
 static const u8 sShopBuyMenuTextColors[][3] =
 {
-    [COLORID_NORMAL]      = {0, 2, 3},
-    [COLORID_ITEM_LIST]   = {0, 2, 3},
-    [COLORID_GRAY_CURSOR] = {0, 3, 2},
+    [COLORID_NORMAL]      = {0, 2, 0},
+    [COLORID_ITEM_LIST]   = {0, 2, 0},
+    [COLORID_GRAY_CURSOR] = {0, 3, 0},
+    [COLORID_DESCRIPTION] = {0, 1, 0},
 };
 
 static u8 CreateShopMenu(u8 martType)
@@ -394,6 +407,7 @@ static u8 CreateShopMenu(u8 martType)
     int numMenuItems;
 
     LockPlayerFieldControls();
+    sShowMonIcons = 0;
     sMartInfo.martType = martType;
     gSpecialVar_Result = FALSE;
 
@@ -716,6 +730,17 @@ static void BuyMenuSetListEntry(struct ListMenuItem *menuItem, u16 item, u8 *nam
     menuItem->id = item;
 }
 
+static void MoveTutorLoadMonIcons(u32 item)
+{
+    
+    DestroyPartyMonIcons_Shop();
+    FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(3));
+    AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, gTextSelect, 64, 0, TEXT_SKIP_DRAW, NULL); // adds "select" text
+    DrawPartyMonIcons_Shop();
+    TintPartyMonIcons_Shop(item);
+    CopyWindowToVram(WIN_BATTLE_MOVE_DESC, COPYWIN_GFX);
+}
+
 static void MoveTutorLoadMoveInfo(u32 item)
 {
     s32 x;
@@ -724,16 +749,19 @@ static void MoveTutorLoadMoveInfo(u32 item)
     const u8 *str;
     extern const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES];
 
-    FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(1));
+    FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(3));
 
     str = gText_MoveRelearnerPower;
-    AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 0, TEXT_SKIP_DRAW, NULL); // adds "Power" text
+    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 0, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds "Power" text
 
     str = gText_MoveRelearnerAccuracy;
-    AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 13, TEXT_SKIP_DRAW, NULL); // adds "Accuracy" text
+    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 13, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds "Accuracy" text
 
     str = gText_MoveRelearnerPP;
-    AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 26, TEXT_SKIP_DRAW, NULL); // adds "PP" text
+    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 26, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds "PP" text
+
+    str = gTextSelect;
+    AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 64, 0, TEXT_SKIP_DRAW, NULL); // adds "select" text
 
     if (item == LIST_CANCEL)
     {
@@ -744,7 +772,7 @@ static void MoveTutorLoadMoveInfo(u32 item)
     move = &gMovesInfo[item];
     str = gTypesInfo[move->type].name;
     x = GetStringRightAlignXOffset(FONT_NARROW, str, 0);
-    AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL); // adds Type name
+    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds Type name
 
     str = gTypesInfo[move->type].name;
     x = GetStringWidth(FONT_NARROW, str, 0) + GetStringRightAlignXOffset(FONT_NARROW, str, 0);
@@ -764,7 +792,7 @@ static void MoveTutorLoadMoveInfo(u32 item)
 
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerPP, 0);
     ConvertIntToDecimalStringN(buffer, move->pp, STR_CONV_MODE_LEFT_ALIGN, 2);
-    AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, buffer, x, 26, TEXT_SKIP_DRAW, NULL); // adds PP value
+    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, buffer, x, 26, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds PP value
 
     if (move->power < 2)
     {
@@ -776,7 +804,7 @@ static void MoveTutorLoadMoveInfo(u32 item)
         str = buffer;
     }
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerPower, 0);
-    AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 0, TEXT_SKIP_DRAW, NULL); // adds Power value
+    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 0, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds Power value
 
     if (move->accuracy == 0)
     {
@@ -788,7 +816,7 @@ static void MoveTutorLoadMoveInfo(u32 item)
         str = buffer;
     }
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerAccuracy, 0);
-    AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 13, TEXT_SKIP_DRAW, NULL); // adds Accuracy value
+    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 13, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds Accuracy value
 
     str = gMovesInfo[item].description;
     AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 65, 0, NULL);
@@ -802,7 +830,14 @@ static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, s
 
     if (MARTMOVE && I_MOVE_TUTOR_INFO_BOX == TRUE)
     {
-        MoveTutorLoadMoveInfo(item);
+        if(sShowMonIcons == FALSE)
+        {
+            MoveTutorLoadMoveInfo(item);
+        }
+        else
+        {
+            MoveTutorLoadMonIcons(item);
+        }
     }
     if (sMartInfo.martType != MART_TYPE_MOVE_TUTOR)
     {
@@ -837,9 +872,9 @@ static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, s
 
     FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
     if (MARTMOVE)
-        BuyMenuPrint(WIN_ITEM_DESCRIPTION, description, 4, 4, 0, COLORID_NORMAL);
+        BuyMenuPrint(WIN_ITEM_DESCRIPTION, description, 4, 4, 0, COLORID_DESCRIPTION);
     else
-        BuyMenuPrint(WIN_ITEM_DESCRIPTION, description, 3, 1, 0, COLORID_NORMAL);
+        BuyMenuPrint(WIN_ITEM_DESCRIPTION, description, 3, 1, 0, COLORID_DESCRIPTION);
 }
 
 static u16 SanitizeItemId(u16 itemId)
@@ -877,10 +912,16 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
             ConvertIntToDecimalStringN(gStringVar1, GetOutfitPrice(itemId), STR_CONV_MODE_LEFT_ALIGN, 6);
         }
         else //if (MARTBP || MARTMOVE)
-        {
+        {   
+            if (FlagGet(FLAG_BPMart) == TRUE)
+            ConvertIntToDecimalStringN(gStringVar1,
+                ItemId_GetBpPrice(itemId),
+                STR_CONV_MODE_LEFT_ALIGN,
+                6);
+            else
             ConvertIntToDecimalStringN(
                 gStringVar1,
-                ItemId_GetBpPrice(itemId),
+                GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT),
                 STR_CONV_MODE_LEFT_ALIGN,
                 6);
         }
@@ -897,7 +938,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
             StringCopy(gStringVar4, gText_SoldOut);
         else
         {
-            if (MARTBP || MARTMOVE)
+            if ((MARTBP || MARTMOVE) && FlagGet(FLAG_BPMart) == TRUE)
                 StringCopy(ConvertIntToDecimalStringN(gStringVar4, ItemId_GetBpPrice(itemId), STR_CONV_MODE_RIGHT_ALIGN, 4), gText_BP);
             else
                 StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
@@ -1079,11 +1120,11 @@ static void BuyMenuDrawGraphics(void)
 {
     BuyMenuDrawMapGraphics();
     BuyMenuCopyMenuBgToBg1TilemapBuffer();
-    if (MARTBP || MARTMOVE)
+    if ((MARTBP || MARTMOVE) && FlagGet(FLAG_BPMart) == TRUE)
         PrintBpBoxWithBorder(WIN_BP, 1, 13, gSaveBlock2Ptr->frontier.battlePoints);
     else
     {
-        AddMoneyLabelObject(19, 11);
+        //AddMoneyLabelObject(19, 11);
         PrintMoneyAmountInMoneyBoxWithBorder(WIN_MONEY, 1, 13, GetMoney(&gSaveBlock1Ptr->money));
     }
     ScheduleBgCopyTilemapToVram(0);
@@ -1145,11 +1186,10 @@ static void BuyMenuDrawMapMetatile(s16 x, s16 y, const u16 *src, u8 metatileLaye
 {
     u16 offset1 = x * 2;
     u16 offset2 = y * 64;
-
     if (metatileLayerType == METATILE_LAYER_TYPE_NORMAL)
     {
         BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src + 0);
-        BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src + 4);
+         BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src + 4);
         BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[1], offset1, offset2, src + 8);
     }
     else
@@ -1168,8 +1208,8 @@ static void BuyMenuDrawMapMetatile(s16 x, s16 y, const u16 *src, u8 metatileLaye
         {
             BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[2], offset1, offset2, src);
             BuyMenuDrawMapMetatileLayer(sShopData->tilemapBuffers[3], offset1, offset2, src + 4);
-        } 
-    }      
+        }
+    }
 }
 
 static void BuyMenuDrawMapMetatileLayer(u16 *dest, s16 offset1, s16 offset2, const u16 *src)
@@ -1314,6 +1354,30 @@ static void Task_BuyMenu(u8 taskId)
         ListMenuGetScrollAndRow(tListTaskId, &sShopData->scrollOffset, &sShopData->selectedRow);
         gSpecialVar_Result = FALSE;
 
+        if((MARTMOVE) && (JOY_NEW(SELECT_BUTTON)))
+        {
+            struct ListMenu *list = (void *) gTasks[tListTaskId].data;
+
+            if(sShowMonIcons == FALSE)
+            {
+                sShowMonIcons = TRUE;
+                PlaySE(SE_SELECT);
+                FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(3));
+                AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, gTextSelect, 64, 0, TEXT_SKIP_DRAW, NULL); // adds "select" text
+                DrawPartyMonIcons_Shop();
+                TintPartyMonIcons_Shop(list->template.items[list->scrollOffset + list->selectedRow].id);
+                CopyWindowToVram(WIN_BATTLE_MOVE_DESC, COPYWIN_GFX);
+            }
+            else
+            {
+                sShowMonIcons = FALSE;
+                PlaySE(SE_SELECT);
+                FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(3));
+                DestroyPartyMonIcons_Shop();
+                MoveTutorLoadMoveInfo(list->template.items[list->scrollOffset + list->selectedRow].id);
+            }
+        }
+
         switch (itemId)
         {
         case LIST_NOTHING_CHOSEN:
@@ -1334,7 +1398,10 @@ static void Task_BuyMenu(u8 taskId)
             else if (sMartInfo.martType == MART_TYPE_OUTFIT)
                 sShopData->totalCost = GetOutfitPrice(itemId);
             else //if (MARTBP || MARTMOVE)
-                sShopData->totalCost = (ItemId_GetBpPrice(itemId));
+                if (FlagGet(FLAG_BPMart) == TRUE)
+                    sShopData->totalCost = (ItemId_GetBpPrice(itemId));
+                else
+                    sShopData->totalCost = (GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
             //else
                 //sShopData->totalCost = gDecorations[itemId].price;
 
@@ -1344,7 +1411,7 @@ static void Task_BuyMenu(u8 taskId)
             {
                 BuyMenuDisplayMessage(taskId, gText_YouDontHaveMoney, BuyMenuReturnToItemList);
             }
-            else if ((MARTBP || MARTMOVE) && (gSaveBlock2Ptr->frontier.battlePoints < sShopData->totalCost))
+            else if ((MARTBP || MARTMOVE) && (gSaveBlock2Ptr->frontier.battlePoints < sShopData->totalCost) && FlagGet(FLAG_BPMart) == TRUE)
             {
                 BuyMenuDisplayMessage(taskId, gText_YouDontHaveBp, BuyMenuReturnToItemList);
             }
@@ -1400,16 +1467,24 @@ static void Task_BuyMenu(u8 taskId)
                     }
                 }
                 else //if (MARTMOVE)
-                {
+                {   
                     sScrollOffset = sShopData->scrollOffset;
                     sSelectedRow = sShopData->selectedRow;
                     StringCopy(gStringVar1, gMovesInfo[itemId].name);
                     gSpecialVar_0x8005 = itemId;
                     ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
-                    StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2_BpMove);
-                    tItemCount = 1;
-                    sShopData->totalCost = ItemId_GetBpPrice(tItemId) * tItemCount;
-                    gSpecialVar_0x8008 = sShopData->totalCost;
+                    if (FlagGet(FLAG_BPMart) == TRUE){
+                        StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2_BpMove);
+                        tItemCount = 1;
+                        sShopData->totalCost = ItemId_GetBpPrice(tItemId) * tItemCount;
+                        gSpecialVar_0x8008 = sShopData->totalCost;
+                    }
+                    else{
+                        ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
+                        StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
+                        tItemCount = 1;
+                        sShopData->totalCost = (GetItemPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+                    }
                     BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                 }
                 /*else
@@ -1667,7 +1742,7 @@ static void BuyMenuPrintItemQuantityAndPrice(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
 
-    FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(1));
+    FillWindowPixelBuffer(WIN_QUANTITY_PRICE, PIXEL_FILL(3));
     if (MARTBP)
         PrintBpAmount(WIN_QUANTITY_PRICE, CalculateMoneyTextHorizontalPosition(sShopData->totalCost) + 15, 1, sShopData->totalCost, TEXT_SKIP_DRAW);
     else
@@ -1865,5 +1940,112 @@ static void FormatTextByWidth(u8 *result, s32 maxWidth, u8 fontId, const u8 *str
             else
                 ptr++;
         }
+    }
+}
+
+
+#define sMonIconStill data[3]
+static void SpriteCb_MonIcon(struct Sprite *sprite)
+{
+    if (!sprite->sMonIconStill)
+        UpdateMonIconFrame(sprite);
+}
+#undef sMonIconStill
+
+#define SHOP_MON_ICON_START_X  20
+#define SHOP_MON_ICON_START_Y  51
+#define SHOP_MON_ICON_PADDING  32
+
+
+void LoadMonIconPalettesTinted_Shop(void)
+{
+    u8 i;
+    for (i = 0; i < ARRAY_COUNT(gMonIconPaletteTable); i++)
+    {
+        LoadSpritePaletteDouble(&gMonIconPaletteTable[i]);
+        TintPalette_GrayScale2(&gPlttBufferUnfaded[0x170 + i*16], 16);
+    }
+}
+        
+
+static void DrawPartyMonIcons_Shop(void)
+{
+    u8 i;
+    u16 species;
+    u8 icon_x = 0;
+    u8 icon_y = 0;
+
+    LoadMonIconPalettesTinted_Shop();
+
+    
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        //calc icon position (centered)
+        if (gPlayerPartyCount == 1)
+        {
+            icon_x = SHOP_MON_ICON_START_X + SHOP_MON_ICON_PADDING;
+            icon_y = SHOP_MON_ICON_START_Y + SHOP_MON_ICON_PADDING*0.5;
+        }
+        else if (gPlayerPartyCount == 2)
+        {
+            icon_x = i < 2 ? SHOP_MON_ICON_START_X + SHOP_MON_ICON_PADDING*0.5 + SHOP_MON_ICON_PADDING * i : SHOP_MON_ICON_START_X + SHOP_MON_ICON_PADDING*0.5 + SHOP_MON_ICON_PADDING * (i - 2);
+            icon_y = SHOP_MON_ICON_START_Y + SHOP_MON_ICON_PADDING*0.5;
+        }else if (gPlayerPartyCount == 3)
+        {
+            icon_x = i < 3 ? SHOP_MON_ICON_START_X + SHOP_MON_ICON_PADDING * i : SHOP_MON_ICON_START_X + SHOP_MON_ICON_PADDING * (i - 3);
+            icon_y = SHOP_MON_ICON_START_Y + SHOP_MON_ICON_PADDING*0.5;
+        }
+        else if (gPlayerPartyCount == 4)
+        {
+            icon_x = i < 2 ? SHOP_MON_ICON_START_X + SHOP_MON_ICON_PADDING*0.5 + SHOP_MON_ICON_PADDING * i : SHOP_MON_ICON_START_X + SHOP_MON_ICON_PADDING*0.5 + SHOP_MON_ICON_PADDING * (i - 2);
+            icon_y = i < 2 ? SHOP_MON_ICON_START_Y : SHOP_MON_ICON_START_Y + SHOP_MON_ICON_PADDING;
+        }
+        else
+        {
+            icon_x = i < 3 ? SHOP_MON_ICON_START_X + SHOP_MON_ICON_PADDING * i : SHOP_MON_ICON_START_X + SHOP_MON_ICON_PADDING * (i - 3);
+            icon_y = i < 3 ? SHOP_MON_ICON_START_Y : SHOP_MON_ICON_START_Y + SHOP_MON_ICON_PADDING;
+        }
+        //get species
+        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+
+        //create icon sprite
+        spriteIdData[i] = CreateMonIcon(species, SpriteCb_MonIcon, icon_x, icon_y, 1, GetMonData(&gPlayerParty[0], MON_DATA_PERSONALITY));
+
+        //Set priority, stop movement and save original palette position
+        gSprites[spriteIdData[i]].oam.priority = 0;
+        StartSpriteAnim(&gSprites[spriteIdData[i]], 4); //full stop
+        spriteIdPalette[i] = gSprites[spriteIdData[i]].oam.paletteNum; //save correct palette number to array
+    }
+}
+
+static void TintPartyMonIcons_Shop(u16 tm)
+{
+    u8 i;
+    u16 species;
+
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG);
+        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
+        if (!CanLearnTeachableMove(species, tm)) 
+        {
+            gSprites[spriteIdData[i]].oam.objMode = ST_OAM_OBJ_BLEND;
+        }
+        else
+        {
+            gSprites[spriteIdData[i]].oam.objMode = ST_OAM_OBJ_NORMAL;//gMonIconPaletteIndices[species];
+        }
+    }
+
+}
+
+static void DestroyPartyMonIcons_Shop(void)
+{
+    u8 i;
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        FreeAndDestroyMonIconSprite(&gSprites[spriteIdData[i]]);
+        FreeMonIconPalettes();
     }
 }

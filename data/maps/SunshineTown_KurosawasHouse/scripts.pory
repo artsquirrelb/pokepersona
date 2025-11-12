@@ -103,14 +103,14 @@ script SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow {
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}...\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright. Let's go find her together, Shinji."))
     closemessage
+    fadenewbgm(MUS_RG_SEVII_67)
+    applymovement(LOCALID_PLAYER, faceup)
+    applymovement(3, ShinjiroFaceUpToKuroSawa)
+    waitmovement(0)
     playfanfare(MUS_OBTAIN_TMHM)
     waitfanfare
     msgbox(format("Shinjiro is now travelling with Akihiko."))
     closemessage
-    fadeinbgm(20)
-    applymovement(LOCALID_PLAYER, faceup)
-    applymovement(3, ShinjiroFaceUpToKuroSawa)
-    waitmovement(0)
     goto (SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa)
     
 

@@ -182,21 +182,21 @@ SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow::
 # 105 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	closemessage
 # 106 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_TMHM
+	fadenewbgm MUS_RG_SEVII_67
 # 107 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	waitfanfare
-# 108 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	msgbox SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow_Text_1
-# 109 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	closemessage
-# 110 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	fadeinbgm 20
-# 111 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	applymovement LOCALID_PLAYER, faceup
-# 112 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 108 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	applymovement 3, ShinjiroFaceUpToKuroSawa
-# 113 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 109 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	waitmovement 0
+# 110 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	playfanfare MUS_OBTAIN_TMHM
+# 111 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	waitfanfare
+# 112 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	msgbox SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow_Text_1
+# 113 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+	closemessage
 # 114 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	goto SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa
 	return
@@ -467,7 +467,7 @@ SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow_Text_0:
 	.string "Shinji.$"
 
 SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow_Text_1:
-# 108 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
+# 112 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	.string "Shinjiro is now travelling with Akihiko.$"
 
 SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa_Text_0:

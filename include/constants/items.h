@@ -1023,8 +1023,29 @@
 #define ITEM_CAMP_GEARS 856
 #define ITEM_OUTFIT_BOX 857
 
+// NEW TMs
+#define ITEM_TM101 858
+#define ITEM_TM102 859
+#define ITEM_TM103 860
+#define ITEM_TM104 861
+#define ITEM_TM105 862
+#define ITEM_TM106 863
+#define ITEM_TM107 864
+#define ITEM_TM108 865
+#define ITEM_TM109 866
+#define ITEM_TM110 867
+#define ITEM_TM111 868
+#define ITEM_TM112 869
+#define ITEM_TM113 870
+#define ITEM_TM114 871
+#define ITEM_TM115 872
+#define ITEM_TM116 873
+#define ITEM_TM117 874
+#define ITEM_TM118 875
+#define ITEM_TM119 876
+#define ITEM_TM120 877
 
-#define ITEMS_COUNT 858
+#define ITEMS_COUNT 878
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

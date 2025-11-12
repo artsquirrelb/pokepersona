@@ -62,6 +62,51 @@
     F(WILL_O_WISP) \
     F(INCINERATE) \
     F(HEAT_WAVE) \
+    F(PSYCHIC_TERRAIN) \
+    F(GRASSY_TERRAIN) \
+    F(ELECTRIC_TERRAIN) \
+    F(MISTY_TERRAIN) \
+    F(TERRAIN_PULSE) \
+    F(PSYSHOCK) \
+    F(FLAME_CHARGE) \
+    F(BURNING_JEALOUSY) \
+    F(FLARE_BLITZ) \
+    F(HEX) \
+    F(DARK_PULSE) \
+    F(PLAY_ROUGH) \
+    F(WEATHER_BALL) \
+    F(POWER_GEM) \
+    F(EARTH_POWER) \
+    F(LOW_KICK) \
+    F(LOW_SWEEP) \
+    F(CHARGE_BEAM) \
+    F(VOLT_SWITCH) \
+    F(FIRE_PUNCH) \
+    F(ICE_PUNCH) \
+    F(SEED_BOMB) \
+    F(ELECTRO_BALL) \
+    F(GRASS_KNOT) \
+    F(BODY_PRESS) \
+    F(CRUNCH) \
+    F(WILD_CHARGE) \
+    F(CLOSE_COMBAT) \
+    F(CHARGE) \
+    F(KNOCK_OFF) \
+    F(SUPER_FANG) \
+    F(UPPER_HAND) \
+    F(THROAT_CHOP) \
+    F(ELECTROWEB) \
+    F(SUPERCELL_SLAM) \
+    F(COACHING) \
+    F(ENDURE) \
+    F(THUNDER_FANG) \
+    F(FIRE_FANG) \
+    F(ICE_FANG) \
+    F(PSYCHIC_FANGS) \
+    F(STONE_EDGE) \
+    F(U_TURN) \
+    F(SUBSTITUTE) \
+    F(ROUND)
     
 
 #define FOREACH_HM(F) \

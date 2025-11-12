@@ -3,8 +3,8 @@
 
 #ifdef MUDSKIP_SHOP_UI
 void NewShop_CreatePokemartMenu(const u16 *);
-void NewShop_CreateDecorationShop1Menu(const u16 *);
-void NewShop_CreateDecorationShop2Menu(const u16 *);
+//void NewShop_CreateDecorationShop1Menu(const u16 *);
+//void NewShop_CreateDecorationShop2Menu(const u16 *);
 void CB2_ExitSellNewShopMenu(void);
 
 #ifdef MUDSKIP_OUTFIT_SYSTEM

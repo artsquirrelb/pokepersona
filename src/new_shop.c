@@ -826,7 +826,7 @@ static void Task_HandleShopMenuQuit(u8 taskId)
 {
     ClearStdWindowAndFrameToTransparent(sMartInfo.windowId, COPYWIN_FULL);
     RemoveWindow(sMartInfo.windowId);
-    TryPutSmartShopperOnAir();
+    //TryPutSmartShopperOnAir();
     UnlockPlayerFieldControls();
     DestroyTask(taskId);
 
@@ -956,7 +956,7 @@ static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
 
     switch (sMartInfo.martType)
     {
-        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
+        /*case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
         {
             // DECOR_NONE has the same value as ITEM_NONE but this is for clarity
             if (sMartInfo.itemList[i] == DECOR_NONE)
@@ -973,22 +973,7 @@ static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
             }
             break;
         }
-        default:
-        {
-            if (sMartInfo.itemList[i] == ITEM_NONE)
-            {
-                sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, ITEM_LIST_END);
-            }
-            else
-            {
-                sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, sMartInfo.itemList[i]);
-            }
-
-            gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = x;
-            gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = y;
-            break;
-        }
-        // custom
+        // custom*/
         #ifdef MUDSKIP_OUTFIT_SYSTEM
         case NEW_SHOP_TYPE_OUTFIT:
         {
@@ -1010,6 +995,22 @@ static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
             break;
         }
         #endif // MUDSKIP_OUTFIT_SYSTEM
+        default:
+        {
+            if (sMartInfo.itemList[i] == ITEM_NONE)
+            {
+                sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, ITEM_LIST_END);
+            }
+            else
+            {
+                sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, sMartInfo.itemList[i]);
+            }
+
+            gSprites[sShopData->gridItems->iconSpriteIds[idx]].x = x;
+            gSprites[sShopData->gridItems->iconSpriteIds[idx]].y = y;
+            break;
+        }
+        
     }
 }
 
@@ -1105,8 +1106,8 @@ static void BuyMenuDecompressBgGraphics(void)
         else // if (IsMartTypeMoney(sMartInfo.martType))
             DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultMenuGfx, 0, DEFAULT_MENU_TILE_OFFSET, 0);
         DecompressAndCopyTileDataToVram(2, sNewShopMenu_DefaultScrollGfx, 0, 0, 0);
-        LZDecompressWram(sNewShopMenu_DefaultMenuTilemap, sShopData->tilemapBuffers[0]);
-        LZDecompressWram(sNewShopMenu_DefaultScrollTilemap, sShopData->tilemapBuffers[1]);
+        DecompressDataWithHeaderWram(sNewShopMenu_DefaultMenuTilemap, sShopData->tilemapBuffers[0]);
+        DecompressDataWithHeaderWram(sNewShopMenu_DefaultScrollTilemap, sShopData->tilemapBuffers[1]);
         LoadPalette(sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
         LoadPalette(sNewShopMenu_DefaultMenuPal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
         return;
@@ -1114,8 +1115,8 @@ static void BuyMenuDecompressBgGraphics(void)
     DecompressAndCopyTileDataToVram(2, Shop_GetSellerGraphics(SELLER_GFX_MENU_GFX), 0, sSellers[i].menuTileOffset != 0 ? sSellers[i].menuTileOffset : DEFAULT_MENU_TILE_OFFSET, 0);
     DecompressAndCopyTileDataToVram(2, Shop_GetSellerGraphics(SELLER_GFX_SCROLL_GFX), 0, 0, 0);
 
-    LZDecompressWram(Shop_GetSellerGraphics(SELLER_GFX_MENU_MAP), sShopData->tilemapBuffers[0]);
-    LZDecompressWram(Shop_GetSellerGraphics(SELLER_GFX_SCROLL_MAP), sShopData->tilemapBuffers[1]);
+    DecompressDataWithHeaderWram(Shop_GetSellerGraphics(SELLER_GFX_MENU_MAP), sShopData->tilemapBuffers[0]);
+    DecompressDataWithHeaderWram(Shop_GetSellerGraphics(SELLER_GFX_SCROLL_MAP), sShopData->tilemapBuffers[1]);
 
     LoadPalette(Shop_GetSellerGraphics(SELLER_GFX_MENU_PAL), BG_PLTT_ID(0), PLTT_SIZE_4BPP);
     LoadPalette(Shop_GetSellerGraphics(SELLER_GFX_SCROLL_PAL), BG_PLTT_ID(1), PLTT_SIZE_4BPP);
@@ -1132,8 +1133,8 @@ static inline const u8 *BuyMenuGetItemName(u32 id)
 {
     switch (sMartInfo.martType)
     {
-        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
-            return gDecorations[sMartInfo.itemList[id]].name;
+        //case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
+        //    return gDecorations[sMartInfo.itemList[id]].name;
         default:
             return GetItemName(sMartInfo.itemList[id]);
         // custom
@@ -1148,8 +1149,8 @@ static inline const u8 *BuyMenuGetItemDesc(u32 id)
 {
     switch (sMartInfo.martType)
     {
-        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
-            return gDecorations[sMartInfo.itemList[id]].description;
+        //case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
+        //    return gDecorations[sMartInfo.itemList[id]].description;
         default:
             return GetItemDescription(sMartInfo.itemList[id]);
         // custom
@@ -1164,8 +1165,8 @@ static inline u32 BuyMenuGetItemPrice(u32 id)
 {
     switch (sMartInfo.martType)
     {
-        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
-            return gDecorations[sMartInfo.itemList[id]].price;
+        //case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
+        //    return gDecorations[sMartInfo.itemList[id]].price;
         default:
             return GetItemPrice(sMartInfo.itemList[id]);
         // custom
@@ -1253,7 +1254,7 @@ static void BuyMenuInitWindows(void)
 
     UpdateItemData();
 
-    LoadSellerMugshot(Shop_GetSellerGraphics(SELLER_GFX_MUGSHOT_GFX), Shop_GetSellerGraphics(SELLER_GFX_MUGSHOT_PAL));
+    //LoadSellerMugshot(Shop_GetSellerGraphics(SELLER_GFX_MUGSHOT_GFX), Shop_GetSellerGraphics(SELLER_GFX_MUGSHOT_PAL));
 }
 
 static bool32 LoadSellerCursor(void)
@@ -1431,11 +1432,11 @@ static void UpdateItemData(void)
                 break;
             }
         #endif // MUDSKIP_OUTFIT_SYSTEM
-            case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
-            {
-                PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, ITEM_PRICE_Y, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
-                break;
-            }
+            //case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
+            //{
+            //    PrintMoneyLocal(WIN_MULTI, RIGHT_ALIGNED_X, ITEM_PRICE_Y, price, COLORID_BLACK, STR_CONV_MODE_LEFT_ALIGN, FALSE);
+            //    break;
+            //}
         }
 
         FillWindowPixelBuffer(WIN_ITEM_DESCRIPTION, PIXEL_FILL(0));
@@ -1555,13 +1556,13 @@ static void Task_BuyMenuTryBuyingItem(u8 taskId)
                 }
                 break;
             }
-            case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
-            {
-                StringCopy(gStringVar1, gDecorations[sShopData->currentItemId].name);
-                ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
-                BuyMenuDisplayMessage(taskId, str, BuyMenuConfirmPurchase);
-                break;
-            }
+            //case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
+            //{
+            //    StringCopy(gStringVar1, gDecorations[sShopData->currentItemId].name);
+            //    ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
+            //    BuyMenuDisplayMessage(taskId, str, BuyMenuConfirmPurchase);
+            //    break;
+            //}
         #ifdef MUDSKIP_OUTFIT_SYSTEM
             case NEW_SHOP_TYPE_OUTFIT:
             {
@@ -1708,7 +1709,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
             }
             break;
         }
-        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
+        /*case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
         {
             if (DecorationAdd(sShopData->currentItemId))
             {
@@ -1725,7 +1726,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
                 BuyMenuDisplayMessage(taskId, sText_SpaceForVar1Full, Task_ReturnToItemListWaitMsg);
             }
             break;
-        }
+        }*/
     #ifdef MUDSKIP_OUTFIT_SYSTEM
         case NEW_SHOP_TYPE_OUTFIT:
         {
@@ -1770,9 +1771,9 @@ static void BuyMenuSubtractMoney(u8 taskId)
     #ifdef MUDSKIP_OUTFIT_SYSTEM
         case NEW_SHOP_TYPE_OUTFIT:
     #endif // MUDSKIP_OUTFIT_SYSTEM
-        case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
-            gTasks[taskId].func = Task_ReturnToItemListWaitMsg;
-            break;
+        //case NEW_SHOP_TYPE_DECOR ... NEW_SHOP_TYPE_DECOR2:
+        //    gTasks[taskId].func = Task_ReturnToItemListWaitMsg;
+        //    break;
     }
 
 }
@@ -1923,7 +1924,7 @@ void NewShop_CreatePokemartMenu(const u16 *itemsForSale)
     SetShopMenuCallback(ScriptContext_Enable);
 }
 
-void NewShop_CreateDecorationShop1Menu(const u16 *itemsForSale)
+/*void NewShop_CreateDecorationShop1Menu(const u16 *itemsForSale)
 {
     CreateShopMenu(NEW_SHOP_TYPE_DECOR);
     SetShopItemsForSale(itemsForSale);
@@ -1936,7 +1937,7 @@ void NewShop_CreateDecorationShop2Menu(const u16 *itemsForSale)
     SetShopItemsForSale(itemsForSale);
     SetShopMenuCallback(ScriptContext_Enable);
 }
-
+*/
 #ifdef MUDSKIP_OUTFIT_SYSTEM
 void NewShop_CreateOutfitShopMenu(const u16 *itemsForSale)
 {

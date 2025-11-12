@@ -141,7 +141,7 @@ movement SusMan1ApproachingAkihiko {
 
 movement SusMan1StepBack {
     lock_facing_direction
-    walk_left *2
+    walk_left
     unlock_facing_direction
 }
 

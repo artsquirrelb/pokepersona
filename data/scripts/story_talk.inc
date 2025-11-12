@@ -671,7 +671,7 @@ EventScript_OverworldStoryTalk_PostPickPawmi_Text_1:
 
 EventScript_OverworldStoryTalk_HaveTalkedToShinjiro_Text_0:
 # 188 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I wonder what Ms.Kobayashi needs us\n"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I wonder what Ms. Kobayashi needs us\n"
 	.string "for...$"
 
 EventScript_OverworldStoryTalk_HaveTalkedToShinjiro_Text_1:

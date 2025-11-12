@@ -117,866 +117,868 @@ EventScript_NewGameSetUp::
 	setvar VAR_AKIHIKO_RELATIONSHIP_POINTS, 100
 # 55 "data/maps/MansionsGarden/scripts.pory"
 	setflag FLAG_HIDE_TALK_BUTTON
-# 57 "data/maps/MansionsGarden/scripts.pory"
-	checkplayergender
+# 56 "data/maps/MansionsGarden/scripts.pory"
+	setflag FLAG_COMPANION_MENU
 # 58 "data/maps/MansionsGarden/scripts.pory"
+	checkplayergender
+# 59 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq EventScript_NewGameSetUp_2
-# 63 "data/maps/MansionsGarden/scripts.pory"
-	manuallysettime WEEKDAY_THU, 22, 30, 0
 # 64 "data/maps/MansionsGarden/scripts.pory"
+	manuallysettime WEEKDAY_THU, 22, 30, 0
+# 65 "data/maps/MansionsGarden/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 50
 EventScript_NewGameSetUp_1:
-# 66 "data/maps/MansionsGarden/scripts.pory"
+# 67 "data/maps/MansionsGarden/scripts.pory"
 	pausefakertc
 	return
 
 EventScript_NewGameSetUp_2:
-# 59 "data/maps/MansionsGarden/scripts.pory"
-	manuallysettime WEEKDAY_WED, 16, 30, 0
 # 60 "data/maps/MansionsGarden/scripts.pory"
+	manuallysettime WEEKDAY_WED, 16, 30, 0
+# 61 "data/maps/MansionsGarden/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 50
 	goto EventScript_NewGameSetUp_1
 
 
 MansionsGarden_Eventscript_OnFrame0::
-# 71 "data/maps/MansionsGarden/scripts.pory"
+# 72 "data/maps/MansionsGarden/scripts.pory"
 	goto MansionsGarden_Eventscript_SlowlyShowTheMap
 	return
 
 
 MansionsGarden_Eventscript_OnFrame3::
-# 75 "data/maps/MansionsGarden/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 4
 # 76 "data/maps/MansionsGarden/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 4
+# 77 "data/maps/MansionsGarden/scripts.pory"
 	goto MansionsGarden_Eventscript_KikunoVSFennekin
 	return
 
 
 MansionsGarden_Eventscript_OnFrame5::
-# 80 "data/maps/MansionsGarden/scripts.pory"
+# 81 "data/maps/MansionsGarden/scripts.pory"
 	goto MansionsGarden_Eventscript_SayingGoodbyeToKikuno
 	return
 
 
 MansionsGarden_Eventscript_SlowlyShowTheMap::
-# 84 "data/maps/MansionsGarden/scripts.pory"
-	call Eventscript_CutsceneStarts
 # 85 "data/maps/MansionsGarden/scripts.pory"
-	delay 30
+	call Eventscript_CutsceneStarts
 # 86 "data/maps/MansionsGarden/scripts.pory"
-	applymovement LOCALID_PLAYER, MansionsGarden_Eventscript_SlowlyShowTheMap_Movement_0
+	delay 30
 # 87 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement
+	applymovement LOCALID_PLAYER, MansionsGarden_Eventscript_SlowlyShowTheMap_Movement_0
 # 88 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement
+# 89 "data/maps/MansionsGarden/scripts.pory"
 	msgbox MansionsGarden_Eventscript_SlowlyShowTheMap_Text_0
-# 90 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
 # 91 "data/maps/MansionsGarden/scripts.pory"
-	setvar VAR_CURRENT_LEVEL_CAP, 10
+	closemessage
 # 92 "data/maps/MansionsGarden/scripts.pory"
+	setvar VAR_CURRENT_LEVEL_CAP, 10
+# 93 "data/maps/MansionsGarden/scripts.pory"
 	warpsilent MAP_MITSURUS_ROOM2F, 15, 10
 	return
 
 
 MansionsGarden_Eventscript_KikunoVSFennekin::
-# 98 "data/maps/MansionsGarden/scripts.pory"
-	delay 20
 # 99 "data/maps/MansionsGarden/scripts.pory"
-	special SpawnCameraObject
+	delay 20
 # 100 "data/maps/MansionsGarden/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_0
+	special SpawnCameraObject
 # 101 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_CAMERA, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_0
 # 102 "data/maps/MansionsGarden/scripts.pory"
-	playmoncry SPECIES_FENNEKIN, CRY_MODE_NORMAL
+	waitmovement 0
 # 103 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_1
+	playmoncry SPECIES_FENNEKIN, CRY_MODE_NORMAL
 # 104 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
+	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_1
 # 105 "data/maps/MansionsGarden/scripts.pory"
-	call Eventscript_BlockShakeCamera
+	waitmovement 0
 # 106 "data/maps/MansionsGarden/scripts.pory"
-	delay 30
+	call Eventscript_BlockShakeCamera
 # 107 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_2
+	delay 30
 # 108 "data/maps/MansionsGarden/scripts.pory"
-	applymovement KIKUNO, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_3
+	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_2
 # 109 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
+	applymovement KIKUNO, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_3
 # 110 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_KikunoVSFennekin_Text_0
+	waitmovement 0
 # 111 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MansionsGarden_Eventscript_KikunoVSFennekin_Text_0
 # 112 "data/maps/MansionsGarden/scripts.pory"
-	playmoncry SPECIES_INDEEDEE_F, CRY_MODE_NORMAL
+	closemessage
 # 113 "data/maps/MansionsGarden/scripts.pory"
-	applymovement INDEEDEE_F, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_4
+	playmoncry SPECIES_INDEEDEE_F, CRY_MODE_NORMAL
 # 114 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
+	applymovement INDEEDEE_F, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_4
 # 115 "data/maps/MansionsGarden/scripts.pory"
-	playse SE_LEDGE
+	waitmovement 0
 # 116 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_5
+	playse SE_LEDGE
 # 117 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
+	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_5
 # 118 "data/maps/MansionsGarden/scripts.pory"
-	playse SE_SHINY
+	waitmovement 0
 # 119 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, emotemusic
-# 120 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
-# 121 "data/maps/MansionsGarden/scripts.pory"
-	lock
-# 122 "data/maps/MansionsGarden/scripts.pory"
-	setobjectnewmovementtype FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
-# 123 "data/maps/MansionsGarden/scripts.pory"
-	release
-# 124 "data/maps/MansionsGarden/scripts.pory"
-	delay 30
-# 125 "data/maps/MansionsGarden/scripts.pory"
-	playse SE_PIN
-# 126 "data/maps/MansionsGarden/scripts.pory"
-	applymovement INDEEDEE_F, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_6
-# 127 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
-# 128 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_KikunoVSFennekin_Text_1
-# 129 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
-# 130 "data/maps/MansionsGarden/scripts.pory"
-	delay 30
-# 131 "data/maps/MansionsGarden/scripts.pory"
-	playse SE_PIN
-# 132 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_7
-# 133 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
-# 134 "data/maps/MansionsGarden/scripts.pory"
-	delay 40
-# 135 "data/maps/MansionsGarden/scripts.pory"
 	playse SE_SHINY
-# 136 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_8
-# 137 "data/maps/MansionsGarden/scripts.pory"
+# 120 "data/maps/MansionsGarden/scripts.pory"
+	applymovement FENNEKIN, emotemusic
+# 121 "data/maps/MansionsGarden/scripts.pory"
 	waitmovement 0
-# 138 "data/maps/MansionsGarden/scripts.pory"
-	applymovement INDEEDEE_F, faceup
-# 139 "data/maps/MansionsGarden/scripts.pory"
-	applymovement KIKUNO, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_7
-# 140 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
-# 141 "data/maps/MansionsGarden/scripts.pory"
+# 122 "data/maps/MansionsGarden/scripts.pory"
+	lock
+# 123 "data/maps/MansionsGarden/scripts.pory"
+	setobjectnewmovementtype FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
+# 124 "data/maps/MansionsGarden/scripts.pory"
+	release
+# 125 "data/maps/MansionsGarden/scripts.pory"
 	delay 30
-# 142 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_KikunoVSFennekin_Text_2
-# 143 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
-# 144 "data/maps/MansionsGarden/scripts.pory"
+# 126 "data/maps/MansionsGarden/scripts.pory"
 	playse SE_PIN
-# 145 "data/maps/MansionsGarden/scripts.pory"
-	applymovement LOCALID_PLAYER, emoteexclamation
-# 146 "data/maps/MansionsGarden/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_9
-# 147 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_10
-# 148 "data/maps/MansionsGarden/scripts.pory"
+# 127 "data/maps/MansionsGarden/scripts.pory"
+	applymovement INDEEDEE_F, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_6
+# 128 "data/maps/MansionsGarden/scripts.pory"
 	waitmovement 0
-# 149 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_NO_WHITEOUT
-# 150 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_NO_CATCHING
-# 151 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_SMART_WILD_AI
-# 152 "data/maps/MansionsGarden/scripts.pory"
+# 129 "data/maps/MansionsGarden/scripts.pory"
+	msgbox MansionsGarden_Eventscript_KikunoVSFennekin_Text_1
+# 130 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 131 "data/maps/MansionsGarden/scripts.pory"
 	delay 30
+# 132 "data/maps/MansionsGarden/scripts.pory"
+	playse SE_PIN
+# 133 "data/maps/MansionsGarden/scripts.pory"
+	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_7
+# 134 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement 0
+# 135 "data/maps/MansionsGarden/scripts.pory"
+	delay 40
+# 136 "data/maps/MansionsGarden/scripts.pory"
+	playse SE_SHINY
+# 137 "data/maps/MansionsGarden/scripts.pory"
+	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_8
+# 138 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement 0
+# 139 "data/maps/MansionsGarden/scripts.pory"
+	applymovement INDEEDEE_F, faceup
+# 140 "data/maps/MansionsGarden/scripts.pory"
+	applymovement KIKUNO, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_7
+# 141 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement 0
+# 142 "data/maps/MansionsGarden/scripts.pory"
+	delay 30
+# 143 "data/maps/MansionsGarden/scripts.pory"
+	msgbox MansionsGarden_Eventscript_KikunoVSFennekin_Text_2
+# 144 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 145 "data/maps/MansionsGarden/scripts.pory"
+	playse SE_PIN
+# 146 "data/maps/MansionsGarden/scripts.pory"
+	applymovement LOCALID_PLAYER, emoteexclamation
+# 147 "data/maps/MansionsGarden/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_9
+# 148 "data/maps/MansionsGarden/scripts.pory"
+	applymovement FENNEKIN, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_10
+# 149 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement 0
+# 150 "data/maps/MansionsGarden/scripts.pory"
+	setflag FLAG_NO_WHITEOUT
+# 151 "data/maps/MansionsGarden/scripts.pory"
+	setflag FLAG_NO_CATCHING
+# 152 "data/maps/MansionsGarden/scripts.pory"
+	setflag FLAG_SMART_WILD_AI
 # 153 "data/maps/MansionsGarden/scripts.pory"
-	setwildbattle SPECIES_FENNEKIN, 5
+	delay 30
 # 154 "data/maps/MansionsGarden/scripts.pory"
-	dowildbattle
+	setwildbattle SPECIES_FENNEKIN, 5
 # 155 "data/maps/MansionsGarden/scripts.pory"
+	dowildbattle
+# 156 "data/maps/MansionsGarden/scripts.pory"
 	goto MansionsGarden_Eventscript_VSFennekin
 	return
 
 
 MansionsGarden_Eventscript_VSFennekin::
-# 159 "data/maps/MansionsGarden/scripts.pory"
-	delay 30
 # 160 "data/maps/MansionsGarden/scripts.pory"
-	clearflag FLAG_NO_WHITEOUT
-# 161 "data/maps/MansionsGarden/scripts.pory"
-	clearflag FLAG_NO_CATCHING
-# 162 "data/maps/MansionsGarden/scripts.pory"
-	clearflag FLAG_SMART_WILD_AI
-# 163 "data/maps/MansionsGarden/scripts.pory"
-	playse SE_SHINY
-# 164 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, emotemusic
-# 165 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement
-# 166 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_VSFennekin_Text_0
-# 167 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
-# 168 "data/maps/MansionsGarden/scripts.pory"
-	applymovement KIKUNO, MansionsGarden_Eventscript_VSFennekin_Movement_0
-# 169 "data/maps/MansionsGarden/scripts.pory"
-	delay 8
-# 170 "data/maps/MansionsGarden/scripts.pory"
-	applymovement INDEEDEE_F, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_9
-# 171 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement KIKUNO
-# 172 "data/maps/MansionsGarden/scripts.pory"
-	applymovement LOCALID_PLAYER, faceleft
-# 173 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
-# 174 "data/maps/MansionsGarden/scripts.pory"
-	playse MUS_HEAL
-# 175 "data/maps/MansionsGarden/scripts.pory"
-	waitse
-# 176 "data/maps/MansionsGarden/scripts.pory"
-	special HealPlayerParty
-# 177 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_VSFennekin_Text_1
-# 180 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
-# 181 "data/maps/MansionsGarden/scripts.pory"
-	delay 20
-# 182 "data/maps/MansionsGarden/scripts.pory"
-	playse SE_SHINY
-# 183 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_VSFennekin_Movement_1
-# 184 "data/maps/MansionsGarden/scripts.pory"
-	applymovement KIKUNO, facedown
-# 185 "data/maps/MansionsGarden/scripts.pory"
-	applymovement LOCALID_PLAYER, facedown
-# 186 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement FENNEKIN
-# 187 "data/maps/MansionsGarden/scripts.pory"
-	lock
-# 188 "data/maps/MansionsGarden/scripts.pory"
-	setobjectnewmovementtype FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_UP
-# 189 "data/maps/MansionsGarden/scripts.pory"
-	release
-# 190 "data/maps/MansionsGarden/scripts.pory"
 	delay 30
-# 191 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_VSFennekin_Text_2
-# 193 "data/maps/MansionsGarden/scripts.pory"
+# 161 "data/maps/MansionsGarden/scripts.pory"
+	clearflag FLAG_NO_WHITEOUT
+# 162 "data/maps/MansionsGarden/scripts.pory"
+	clearflag FLAG_NO_CATCHING
+# 163 "data/maps/MansionsGarden/scripts.pory"
+	clearflag FLAG_SMART_WILD_AI
+# 164 "data/maps/MansionsGarden/scripts.pory"
+	playse SE_SHINY
+# 165 "data/maps/MansionsGarden/scripts.pory"
+	applymovement FENNEKIN, emotemusic
+# 166 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement
+# 167 "data/maps/MansionsGarden/scripts.pory"
+	msgbox MansionsGarden_Eventscript_VSFennekin_Text_0
+# 168 "data/maps/MansionsGarden/scripts.pory"
 	closemessage
+# 169 "data/maps/MansionsGarden/scripts.pory"
+	applymovement KIKUNO, MansionsGarden_Eventscript_VSFennekin_Movement_0
+# 170 "data/maps/MansionsGarden/scripts.pory"
+	delay 8
+# 171 "data/maps/MansionsGarden/scripts.pory"
+	applymovement INDEEDEE_F, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_9
+# 172 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement KIKUNO
+# 173 "data/maps/MansionsGarden/scripts.pory"
+	applymovement LOCALID_PLAYER, faceleft
+# 174 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement 0
+# 175 "data/maps/MansionsGarden/scripts.pory"
+	playse MUS_HEAL
+# 176 "data/maps/MansionsGarden/scripts.pory"
+	waitse
+# 177 "data/maps/MansionsGarden/scripts.pory"
+	special HealPlayerParty
+# 178 "data/maps/MansionsGarden/scripts.pory"
+	msgbox MansionsGarden_Eventscript_VSFennekin_Text_1
+# 181 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 182 "data/maps/MansionsGarden/scripts.pory"
+	delay 20
+# 183 "data/maps/MansionsGarden/scripts.pory"
+	playse SE_SHINY
+# 184 "data/maps/MansionsGarden/scripts.pory"
+	applymovement FENNEKIN, MansionsGarden_Eventscript_VSFennekin_Movement_1
+# 185 "data/maps/MansionsGarden/scripts.pory"
+	applymovement KIKUNO, facedown
+# 186 "data/maps/MansionsGarden/scripts.pory"
+	applymovement LOCALID_PLAYER, facedown
+# 187 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement FENNEKIN
+# 188 "data/maps/MansionsGarden/scripts.pory"
+	lock
+# 189 "data/maps/MansionsGarden/scripts.pory"
+	setobjectnewmovementtype FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_UP
+# 190 "data/maps/MansionsGarden/scripts.pory"
+	release
+# 191 "data/maps/MansionsGarden/scripts.pory"
+	delay 30
+# 192 "data/maps/MansionsGarden/scripts.pory"
+	msgbox MansionsGarden_Eventscript_VSFennekin_Text_2
 # 194 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 195 "data/maps/MansionsGarden/scripts.pory"
 	clearflag FLAG_HIDE_TALK_BUTTON
 	end
 
 
 MansionsGarden_Eventscript_Kikuno::
-# 199 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 200 "data/maps/MansionsGarden/scripts.pory"
-	faceplayer
+	lock
 # 201 "data/maps/MansionsGarden/scripts.pory"
+	faceplayer
+# 202 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 4
 	goto_if_eq MansionsGarden_Eventscript_Kikuno_2
-# 206 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_Kikuno_Text_1
 # 207 "data/maps/MansionsGarden/scripts.pory"
+	msgbox MansionsGarden_Eventscript_Kikuno_Text_1
+# 208 "data/maps/MansionsGarden/scripts.pory"
 	closemessage
 MansionsGarden_Eventscript_Kikuno_1:
-# 209 "data/maps/MansionsGarden/scripts.pory"
+# 210 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 MansionsGarden_Eventscript_Kikuno_2:
-# 202 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_Kikuno_Text_0
 # 203 "data/maps/MansionsGarden/scripts.pory"
+	msgbox MansionsGarden_Eventscript_Kikuno_Text_0
+# 204 "data/maps/MansionsGarden/scripts.pory"
 	closemessage
 	goto MansionsGarden_Eventscript_Kikuno_1
 
 
 MansionsGarden_Eventscript_Fennekin::
-# 214 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 215 "data/maps/MansionsGarden/scripts.pory"
-	faceplayer
+	lock
 # 216 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_Fennekin_Text_0, MSGBOX_YESNO
+	faceplayer
 # 217 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MansionsGarden_Eventscript_Fennekin_Text_0, MSGBOX_YESNO
 # 218 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 219 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MansionsGarden_Eventscript_Fennekin_1
-# 239 "data/maps/MansionsGarden/scripts.pory"
-	playse SE_PIN
 # 240 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_Fennekin_Movement_0
+	playse SE_PIN
 # 241 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
+	applymovement FENNEKIN, MansionsGarden_Eventscript_Fennekin_Movement_0
 # 242 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_Fennekin_Text_3
+	waitmovement 0
 # 243 "data/maps/MansionsGarden/scripts.pory"
+	msgbox MansionsGarden_Eventscript_Fennekin_Text_3
+# 244 "data/maps/MansionsGarden/scripts.pory"
 	closemessage
 	return
 
 MansionsGarden_Eventscript_Fennekin_1:
-# 219 "data/maps/MansionsGarden/scripts.pory"
+# 220 "data/maps/MansionsGarden/scripts.pory"
 	msgbox MansionsGarden_Eventscript_Fennekin_Text_1, MSGBOX_YESNO
-# 221 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
 # 222 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 223 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MansionsGarden_Eventscript_Fennekin_5
-# 227 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_Fennekin_Text_2
 # 228 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MansionsGarden_Eventscript_Fennekin_Text_2
 # 229 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 230 "data/maps/MansionsGarden/scripts.pory"
 	call MansionsGarden_Eventscript_GetNormalFennekin
 MansionsGarden_Eventscript_Fennekin_4:
-# 231 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
 # 232 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_DONT_TRANSITION_MUSIC
+	setflag FLAG_HIDE_TALK_BUTTON
 # 233 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+	setflag FLAG_DONT_TRANSITION_MUSIC
 # 234 "data/maps/MansionsGarden/scripts.pory"
-	warpsilent MAP_BLANK_MAP, 0, 0
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 # 235 "data/maps/MansionsGarden/scripts.pory"
+	warpsilent MAP_BLANK_MAP, 0, 0
+# 236 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 MansionsGarden_Eventscript_Fennekin_5:
-# 224 "data/maps/MansionsGarden/scripts.pory"
+# 225 "data/maps/MansionsGarden/scripts.pory"
 	call MansionsGarden_Eventscript_GetShinyFennekin
 	goto MansionsGarden_Eventscript_Fennekin_4
 
 
 MansionsGarden_Eventscript_GetShinyFennekin::
-# 248 "data/maps/MansionsGarden/scripts.pory"
-	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, 0, 0, 0, 0, SHINY_MODE_ALWAYS
 # 249 "data/maps/MansionsGarden/scripts.pory"
+	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, 0, 0, 0, 0, SHINY_MODE_ALWAYS
+# 250 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq MansionsGarden_Eventscript_GetShinyFennekin_1
-# 257 "data/maps/MansionsGarden/scripts.pory"
+# 258 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq MansionsGarden_Eventscript_GetShinyFennekin_2
-# 266 "data/maps/MansionsGarden/scripts.pory"
+# 267 "data/maps/MansionsGarden/scripts.pory"
 	msgbox MansionsGarden_Eventscript_GetShinyFennekin_Text_1
 	return
 
 MansionsGarden_Eventscript_GetShinyFennekin_1:
-# 250 "data/maps/MansionsGarden/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
 # 251 "data/maps/MansionsGarden/scripts.pory"
-	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
 # 252 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_GetShinyFennekin_Text_0
+	waitfanfare
 # 253 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MansionsGarden_Eventscript_GetShinyFennekin_Text_0
 # 254 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_GetShinyFennekin_Movement_0
+	closemessage
 # 255 "data/maps/MansionsGarden/scripts.pory"
+	applymovement FENNEKIN, MansionsGarden_Eventscript_GetShinyFennekin_Movement_0
+# 256 "data/maps/MansionsGarden/scripts.pory"
 	waitmovement 0
 	return
 
 MansionsGarden_Eventscript_GetShinyFennekin_2:
-# 258 "data/maps/MansionsGarden/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
 # 259 "data/maps/MansionsGarden/scripts.pory"
-	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
 # 260 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_GetShinyFennekin_Text_0
+	waitfanfare
 # 261 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MansionsGarden_Eventscript_GetShinyFennekin_Text_0
 # 262 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_GetShinyFennekin_Movement_0
+	closemessage
 # 263 "data/maps/MansionsGarden/scripts.pory"
+	applymovement FENNEKIN, MansionsGarden_Eventscript_GetShinyFennekin_Movement_0
+# 264 "data/maps/MansionsGarden/scripts.pory"
 	waitmovement 0
 	return
 
 
 MansionsGarden_Eventscript_GetNormalFennekin::
-# 269 "data/maps/MansionsGarden/scripts.pory"
-	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, 0, 0, 0, 0, SHINY_MODE_NEVER
 # 270 "data/maps/MansionsGarden/scripts.pory"
+	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, 0, 0, 0, 0, SHINY_MODE_NEVER
+# 271 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq MansionsGarden_Eventscript_GetNormalFennekin_1
-# 280 "data/maps/MansionsGarden/scripts.pory"
+# 281 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq MansionsGarden_Eventscript_GetNormalFennekin_2
-# 291 "data/maps/MansionsGarden/scripts.pory"
+# 292 "data/maps/MansionsGarden/scripts.pory"
 	msgbox MansionsGarden_Eventscript_GetShinyFennekin_Text_1
 	return
 
 MansionsGarden_Eventscript_GetNormalFennekin_1:
-# 271 "data/maps/MansionsGarden/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
 # 272 "data/maps/MansionsGarden/scripts.pory"
-	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
 # 273 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_GetShinyFennekin_Text_0
+	waitfanfare
 # 274 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MansionsGarden_Eventscript_GetShinyFennekin_Text_0
 # 275 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_GetShinyFennekin_Movement_0
+	closemessage
 # 276 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
+	applymovement FENNEKIN, MansionsGarden_Eventscript_GetShinyFennekin_Movement_0
 # 277 "data/maps/MansionsGarden/scripts.pory"
-	removeobject FENNEKIN
+	waitmovement 0
 # 278 "data/maps/MansionsGarden/scripts.pory"
+	removeobject FENNEKIN
+# 279 "data/maps/MansionsGarden/scripts.pory"
 	setflag FLAG_TEMP_2
 	return
 
 MansionsGarden_Eventscript_GetNormalFennekin_2:
-# 281 "data/maps/MansionsGarden/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
 # 282 "data/maps/MansionsGarden/scripts.pory"
-	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
 # 283 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_GetShinyFennekin_Text_0
+	waitfanfare
 # 284 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MansionsGarden_Eventscript_GetShinyFennekin_Text_0
 # 285 "data/maps/MansionsGarden/scripts.pory"
-	applymovement FENNEKIN, MansionsGarden_Eventscript_GetShinyFennekin_Movement_0
+	closemessage
 # 286 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
+	applymovement FENNEKIN, MansionsGarden_Eventscript_GetShinyFennekin_Movement_0
 # 287 "data/maps/MansionsGarden/scripts.pory"
-	removeobject FENNEKIN
+	waitmovement 0
 # 288 "data/maps/MansionsGarden/scripts.pory"
+	removeobject FENNEKIN
+# 289 "data/maps/MansionsGarden/scripts.pory"
 	setflag FLAG_TEMP_2
 	return
 
 
 MustGetFennekin::
-# 295 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 296 "data/maps/MansionsGarden/scripts.pory"
-	applymovement LOCALID_PLAYER, MustGetFennekin_Movement_0
+	lock
 # 297 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, MustGetFennekin_Movement_0
 # 298 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MustGetFennekin_Text_0
+	waitmovement 0
 # 299 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MustGetFennekin_Text_0
 # 300 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 301 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno::
-# 305 "data/maps/MansionsGarden/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 6
 # 306 "data/maps/MansionsGarden/scripts.pory"
-	delay 30
+	setvar VAR_MITSURUS_INTRO_STATE, 6
 # 307 "data/maps/MansionsGarden/scripts.pory"
-	applymovement KIKUNO, emotepensive
+	delay 30
 # 308 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
+	applymovement KIKUNO, emotepensive
 # 309 "data/maps/MansionsGarden/scripts.pory"
-	delay 30
+	waitmovement 0
 # 310 "data/maps/MansionsGarden/scripts.pory"
+	delay 30
+# 311 "data/maps/MansionsGarden/scripts.pory"
 	msgbox MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_0
-# 316 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
 # 317 "data/maps/MansionsGarden/scripts.pory"
-	delay 40
+	closemessage
 # 318 "data/maps/MansionsGarden/scripts.pory"
-	special SpawnCameraObject
+	delay 40
 # 319 "data/maps/MansionsGarden/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_0
+	special SpawnCameraObject
 # 320 "data/maps/MansionsGarden/scripts.pory"
-	applymovement KIKUNO, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_0
+	applymovement OBJ_EVENT_ID_CAMERA, MansionsGarden_Eventscript_KikunoVSFennekin_Movement_0
 # 321 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
+	applymovement KIKUNO, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_0
 # 322 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement 0
+# 323 "data/maps/MansionsGarden/scripts.pory"
 	msgbox MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_1
-# 325 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
 # 326 "data/maps/MansionsGarden/scripts.pory"
-	delay 30
+	closemessage
 # 327 "data/maps/MansionsGarden/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_1
-# 328 "data/maps/MansionsGarden/scripts.pory"
-	applymovement KIKUNO, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_2
-# 329 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
-# 330 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_2
-# 335 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
-# 336 "data/maps/MansionsGarden/scripts.pory"
-	delay 10
-# 337 "data/maps/MansionsGarden/scripts.pory"
-	applymovement KIKUNO, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_3
-# 338 "data/maps/MansionsGarden/scripts.pory"
-	delay 16
-# 339 "data/maps/MansionsGarden/scripts.pory"
-	applymovement INDEEDEE_F, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_4
-# 340 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
-# 341 "data/maps/MansionsGarden/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_5
-# 342 "data/maps/MansionsGarden/scripts.pory"
-	waitmovement 0
-# 343 "data/maps/MansionsGarden/scripts.pory"
-	special RemoveCameraObject
-# 344 "data/maps/MansionsGarden/scripts.pory"
 	delay 30
-# 345 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_3
-# 346 "data/maps/MansionsGarden/scripts.pory"
+# 328 "data/maps/MansionsGarden/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_1
+# 329 "data/maps/MansionsGarden/scripts.pory"
+	applymovement KIKUNO, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_2
+# 330 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement 0
+# 331 "data/maps/MansionsGarden/scripts.pory"
+	msgbox MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_2
+# 336 "data/maps/MansionsGarden/scripts.pory"
 	closemessage
+# 337 "data/maps/MansionsGarden/scripts.pory"
+	delay 10
+# 338 "data/maps/MansionsGarden/scripts.pory"
+	applymovement KIKUNO, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_3
+# 339 "data/maps/MansionsGarden/scripts.pory"
+	delay 16
+# 340 "data/maps/MansionsGarden/scripts.pory"
+	applymovement INDEEDEE_F, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_4
+# 341 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement 0
+# 342 "data/maps/MansionsGarden/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_5
+# 343 "data/maps/MansionsGarden/scripts.pory"
+	waitmovement 0
+# 344 "data/maps/MansionsGarden/scripts.pory"
+	special RemoveCameraObject
+# 345 "data/maps/MansionsGarden/scripts.pory"
+	delay 30
+# 346 "data/maps/MansionsGarden/scripts.pory"
+	msgbox MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_3
 # 347 "data/maps/MansionsGarden/scripts.pory"
-	setrespawn HEAL_LOCATION_MANSION_TRAINING_HOUSE
+	closemessage
 # 348 "data/maps/MansionsGarden/scripts.pory"
+	setrespawn HEAL_LOCATION_MANSION_TRAINING_HOUSE
+# 349 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 
 MansionsGarden_Eventscript_Indeedee::
-# 353 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 354 "data/maps/MansionsGarden/scripts.pory"
-	faceplayer
+	lock
 # 355 "data/maps/MansionsGarden/scripts.pory"
-	playmoncry SPECIES_INDEEDEE_F, CRY_MODE_NORMAL
+	faceplayer
 # 356 "data/maps/MansionsGarden/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_INDEEDEE_F, CRY_MODE_NORMAL
 # 357 "data/maps/MansionsGarden/scripts.pory"
+	waitmoncry
+# 358 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 
 MansionsGarden_Eventscript_TrainingHouse_Sign::
-# 362 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 363 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_TrainingHouse_Sign_Text_0
+	lock
 # 364 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MansionsGarden_Eventscript_TrainingHouse_Sign_Text_0
 # 365 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 366 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 
 MansionsGarden_Eventscript_GuestHouse_Sign::
-# 370 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 371 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_GuestHouse_Sign_Text_0
+	lock
 # 372 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MansionsGarden_Eventscript_GuestHouse_Sign_Text_0
 # 373 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 374 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 
 MansionsGarden_Eventscript_WaiterKouhei::
-# 378 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 379 "data/maps/MansionsGarden/scripts.pory"
-	faceplayer
+	lock
 # 380 "data/maps/MansionsGarden/scripts.pory"
-	setspeaker MansionsGarden_Eventscript_WaiterKouhei_Text_0
+	faceplayer
 # 381 "data/maps/MansionsGarden/scripts.pory"
+	setspeaker MansionsGarden_Eventscript_WaiterKouhei_Text_0
+# 382 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 10
 	goto_if_lt MansionsGarden_Eventscript_WaiterKouhei_2
 MansionsGarden_Eventscript_WaiterKouhei_1:
-# 386 "data/maps/MansionsGarden/scripts.pory"
+# 387 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 MansionsGarden_Eventscript_WaiterKouhei_2:
-# 382 "data/maps/MansionsGarden/scripts.pory"
+# 383 "data/maps/MansionsGarden/scripts.pory"
 	msgbox MansionsGarden_Eventscript_WaiterKouhei_Text_1
-# 384 "data/maps/MansionsGarden/scripts.pory"
+# 385 "data/maps/MansionsGarden/scripts.pory"
 	closemessage
 	goto MansionsGarden_Eventscript_WaiterKouhei_1
 
 
 MansionsGarden_Eventscript_Furfrou::
-# 391 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 392 "data/maps/MansionsGarden/scripts.pory"
-	faceplayer
+	lock
 # 393 "data/maps/MansionsGarden/scripts.pory"
-	playmoncry SPECIES_FURFROU, CRY_MODE_NORMAL
+	faceplayer
 # 394 "data/maps/MansionsGarden/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_FURFROU, CRY_MODE_NORMAL
 # 395 "data/maps/MansionsGarden/scripts.pory"
-	startoverworldencounter 5
+	waitmoncry
 # 396 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_TEMP_3
+	startoverworldencounter 5
 # 397 "data/maps/MansionsGarden/scripts.pory"
-	removeobject FURFROU
+	setflag FLAG_TEMP_3
 # 398 "data/maps/MansionsGarden/scripts.pory"
+	removeobject FURFROU
+# 399 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 
-# 86 "data/maps/MansionsGarden/scripts.pory"
+# 87 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_SlowlyShowTheMap_Movement_0:
-# 86 "data/maps/MansionsGarden/scripts.pory"
+# 87 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 86 "data/maps/MansionsGarden/scripts.pory"
+# 87 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 86 "data/maps/MansionsGarden/scripts.pory"
+# 87 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 86 "data/maps/MansionsGarden/scripts.pory"
+# 87 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 86 "data/maps/MansionsGarden/scripts.pory"
+# 87 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 86 "data/maps/MansionsGarden/scripts.pory"
+# 87 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 86 "data/maps/MansionsGarden/scripts.pory"
+# 87 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 86 "data/maps/MansionsGarden/scripts.pory"
+# 87 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 86 "data/maps/MansionsGarden/scripts.pory"
+# 87 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 86 "data/maps/MansionsGarden/scripts.pory"
+# 87 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
 	step_end
 
-# 100 "data/maps/MansionsGarden/scripts.pory"
+# 101 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_KikunoVSFennekin_Movement_0:
-# 100 "data/maps/MansionsGarden/scripts.pory"
+# 101 "data/maps/MansionsGarden/scripts.pory"
 	walk_down
-# 100 "data/maps/MansionsGarden/scripts.pory"
+# 101 "data/maps/MansionsGarden/scripts.pory"
 	walk_down
 	step_end
 
-# 103 "data/maps/MansionsGarden/scripts.pory"
+# 104 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_KikunoVSFennekin_Movement_1:
-# 103 "data/maps/MansionsGarden/scripts.pory"
+# 104 "data/maps/MansionsGarden/scripts.pory"
 	jump_in_place_left
-# 103 "data/maps/MansionsGarden/scripts.pory"
+# 104 "data/maps/MansionsGarden/scripts.pory"
 	delay_16
-# 103 "data/maps/MansionsGarden/scripts.pory"
+# 104 "data/maps/MansionsGarden/scripts.pory"
 	shake_vertical
-# 103 "data/maps/MansionsGarden/scripts.pory"
+# 104 "data/maps/MansionsGarden/scripts.pory"
 	delay_16
-# 103 "data/maps/MansionsGarden/scripts.pory"
+# 104 "data/maps/MansionsGarden/scripts.pory"
 	delay_16
-# 103 "data/maps/MansionsGarden/scripts.pory"
+# 104 "data/maps/MansionsGarden/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 107 "data/maps/MansionsGarden/scripts.pory"
+# 108 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_KikunoVSFennekin_Movement_2:
-# 107 "data/maps/MansionsGarden/scripts.pory"
+# 108 "data/maps/MansionsGarden/scripts.pory"
 	lock_facing_direction
-# 107 "data/maps/MansionsGarden/scripts.pory"
+# 108 "data/maps/MansionsGarden/scripts.pory"
 	jump_right
-# 107 "data/maps/MansionsGarden/scripts.pory"
+# 108 "data/maps/MansionsGarden/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 108 "data/maps/MansionsGarden/scripts.pory"
+# 109 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_KikunoVSFennekin_Movement_3:
-# 108 "data/maps/MansionsGarden/scripts.pory"
+# 109 "data/maps/MansionsGarden/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 113 "data/maps/MansionsGarden/scripts.pory"
+# 114 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_KikunoVSFennekin_Movement_4:
-# 113 "data/maps/MansionsGarden/scripts.pory"
+# 114 "data/maps/MansionsGarden/scripts.pory"
 	jump_in_place_right
-# 113 "data/maps/MansionsGarden/scripts.pory"
+# 114 "data/maps/MansionsGarden/scripts.pory"
 	delay_16
-# 113 "data/maps/MansionsGarden/scripts.pory"
+# 114 "data/maps/MansionsGarden/scripts.pory"
 	shake_horizontal
 	step_end
 
-# 116 "data/maps/MansionsGarden/scripts.pory"
+# 117 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_KikunoVSFennekin_Movement_5:
-# 116 "data/maps/MansionsGarden/scripts.pory"
+# 117 "data/maps/MansionsGarden/scripts.pory"
 	lock_facing_direction
-# 116 "data/maps/MansionsGarden/scripts.pory"
+# 117 "data/maps/MansionsGarden/scripts.pory"
 	jump_up
-# 116 "data/maps/MansionsGarden/scripts.pory"
+# 117 "data/maps/MansionsGarden/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 126 "data/maps/MansionsGarden/scripts.pory"
+# 127 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_KikunoVSFennekin_Movement_6:
-# 126 "data/maps/MansionsGarden/scripts.pory"
+# 127 "data/maps/MansionsGarden/scripts.pory"
 	emote_sad
 	step_end
 
-# 132 "data/maps/MansionsGarden/scripts.pory"
+# 133 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_KikunoVSFennekin_Movement_7:
-# 132 "data/maps/MansionsGarden/scripts.pory"
+# 133 "data/maps/MansionsGarden/scripts.pory"
 	emote_exclamation_mark
-# 132 "data/maps/MansionsGarden/scripts.pory"
+# 133 "data/maps/MansionsGarden/scripts.pory"
 	face_up
 	step_end
 
-# 136 "data/maps/MansionsGarden/scripts.pory"
+# 137 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_KikunoVSFennekin_Movement_8:
-# 136 "data/maps/MansionsGarden/scripts.pory"
+# 137 "data/maps/MansionsGarden/scripts.pory"
 	emote_happy
 	step_end
 
-# 146 "data/maps/MansionsGarden/scripts.pory"
+# 147 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_KikunoVSFennekin_Movement_9:
-# 146 "data/maps/MansionsGarden/scripts.pory"
+# 147 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 146 "data/maps/MansionsGarden/scripts.pory"
+# 147 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
 	step_end
 
-# 147 "data/maps/MansionsGarden/scripts.pory"
+# 148 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_KikunoVSFennekin_Movement_10:
-# 147 "data/maps/MansionsGarden/scripts.pory"
+# 148 "data/maps/MansionsGarden/scripts.pory"
 	walk_fast_left
-# 147 "data/maps/MansionsGarden/scripts.pory"
+# 148 "data/maps/MansionsGarden/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 168 "data/maps/MansionsGarden/scripts.pory"
+# 169 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_VSFennekin_Movement_0:
-# 168 "data/maps/MansionsGarden/scripts.pory"
+# 169 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 168 "data/maps/MansionsGarden/scripts.pory"
+# 169 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 168 "data/maps/MansionsGarden/scripts.pory"
+# 169 "data/maps/MansionsGarden/scripts.pory"
 	walk_up
-# 168 "data/maps/MansionsGarden/scripts.pory"
+# 169 "data/maps/MansionsGarden/scripts.pory"
 	walk_right
 	step_end
 
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_VSFennekin_Movement_1:
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	emote_happy
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	delay_16
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	face_left
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	delay_16
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	face_down
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	delay_16
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	face_right
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	delay_16
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	face_up
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	delay_16
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	jump_in_place_up
-# 183 "data/maps/MansionsGarden/scripts.pory"
+# 184 "data/maps/MansionsGarden/scripts.pory"
 	jump_in_place_up
 	step_end
 
-# 240 "data/maps/MansionsGarden/scripts.pory"
+# 241 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_Fennekin_Movement_0:
-# 240 "data/maps/MansionsGarden/scripts.pory"
+# 241 "data/maps/MansionsGarden/scripts.pory"
 	emote_question_mark
 	step_end
 
-# 254 "data/maps/MansionsGarden/scripts.pory"
+# 255 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_GetShinyFennekin_Movement_0:
-# 254 "data/maps/MansionsGarden/scripts.pory"
+# 255 "data/maps/MansionsGarden/scripts.pory"
 	enter_pokeball
-# 254 "data/maps/MansionsGarden/scripts.pory"
+# 255 "data/maps/MansionsGarden/scripts.pory"
 	set_invisible
 	step_end
 
-# 296 "data/maps/MansionsGarden/scripts.pory"
+# 297 "data/maps/MansionsGarden/scripts.pory"
 MustGetFennekin_Movement_0:
-# 296 "data/maps/MansionsGarden/scripts.pory"
+# 297 "data/maps/MansionsGarden/scripts.pory"
 	walk_left
-# 296 "data/maps/MansionsGarden/scripts.pory"
+# 297 "data/maps/MansionsGarden/scripts.pory"
 	face_down
 	step_end
 
-# 320 "data/maps/MansionsGarden/scripts.pory"
+# 321 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_0:
-# 320 "data/maps/MansionsGarden/scripts.pory"
+# 321 "data/maps/MansionsGarden/scripts.pory"
 	walk_down
-# 320 "data/maps/MansionsGarden/scripts.pory"
+# 321 "data/maps/MansionsGarden/scripts.pory"
 	walk_down
-# 320 "data/maps/MansionsGarden/scripts.pory"
+# 321 "data/maps/MansionsGarden/scripts.pory"
 	face_up
 	step_end
 
-# 327 "data/maps/MansionsGarden/scripts.pory"
+# 328 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_1:
-# 327 "data/maps/MansionsGarden/scripts.pory"
+# 328 "data/maps/MansionsGarden/scripts.pory"
 	walk_right
-# 327 "data/maps/MansionsGarden/scripts.pory"
+# 328 "data/maps/MansionsGarden/scripts.pory"
 	walk_right
 	step_end
 
-# 328 "data/maps/MansionsGarden/scripts.pory"
+# 329 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_2:
-# 328 "data/maps/MansionsGarden/scripts.pory"
+# 329 "data/maps/MansionsGarden/scripts.pory"
 	walk_right
-# 328 "data/maps/MansionsGarden/scripts.pory"
+# 329 "data/maps/MansionsGarden/scripts.pory"
 	walk_right
-# 328 "data/maps/MansionsGarden/scripts.pory"
+# 329 "data/maps/MansionsGarden/scripts.pory"
 	delay_16
-# 328 "data/maps/MansionsGarden/scripts.pory"
+# 329 "data/maps/MansionsGarden/scripts.pory"
 	face_left
 	step_end
 
-# 337 "data/maps/MansionsGarden/scripts.pory"
+# 338 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_3:
-# 337 "data/maps/MansionsGarden/scripts.pory"
+# 338 "data/maps/MansionsGarden/scripts.pory"
 	walk_right
-# 337 "data/maps/MansionsGarden/scripts.pory"
+# 338 "data/maps/MansionsGarden/scripts.pory"
 	walk_right
-# 337 "data/maps/MansionsGarden/scripts.pory"
+# 338 "data/maps/MansionsGarden/scripts.pory"
 	face_down
 	step_end
 
-# 339 "data/maps/MansionsGarden/scripts.pory"
+# 340 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_4:
-# 339 "data/maps/MansionsGarden/scripts.pory"
+# 340 "data/maps/MansionsGarden/scripts.pory"
 	walk_right
-# 339 "data/maps/MansionsGarden/scripts.pory"
+# 340 "data/maps/MansionsGarden/scripts.pory"
 	face_down
 	step_end
 
-# 341 "data/maps/MansionsGarden/scripts.pory"
+# 342 "data/maps/MansionsGarden/scripts.pory"
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Movement_5:
-# 341 "data/maps/MansionsGarden/scripts.pory"
+# 342 "data/maps/MansionsGarden/scripts.pory"
 	walk_diag_northwest
-# 341 "data/maps/MansionsGarden/scripts.pory"
+# 342 "data/maps/MansionsGarden/scripts.pory"
 	walk_diag_northwest
 	step_end
 
 MansionsGarden_Eventscript_SlowlyShowTheMap_Text_0:
-# 88 "data/maps/MansionsGarden/scripts.pory"
+# 89 "data/maps/MansionsGarden/scripts.pory"
 	.string "{CLEAR_TO 10}Mitsuru's Prologue: Responsibilities\n"
 	.string "{CLEAR_TO 64}{COLOR GREEN}Level cap: 10$"
 
 MansionsGarden_Eventscript_KikunoVSFennekin_Text_0:
-# 110 "data/maps/MansionsGarden/scripts.pory"
+# 111 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KIKUNO}Indeedee, Round!$"
 
 MansionsGarden_Eventscript_KikunoVSFennekin_Text_1:
-# 128 "data/maps/MansionsGarden/scripts.pory"
+# 129 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KIKUNO}Damn it. This one is so slippy.$"
 
 MansionsGarden_Eventscript_KikunoVSFennekin_Text_2:
-# 142 "data/maps/MansionsGarden/scripts.pory"
+# 143 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KIKUNO}Young Lady! Be careful!$"
 
 MansionsGarden_Eventscript_VSFennekin_Text_0:
-# 166 "data/maps/MansionsGarden/scripts.pory"
+# 167 "data/maps/MansionsGarden/scripts.pory"
 	.string "Fennekin looks satisfied after\n"
 	.string "spending all of its energy to the\l"
 	.string "battle.$"
 
 MansionsGarden_Eventscript_VSFennekin_Text_1:
-# 177 "data/maps/MansionsGarden/scripts.pory"
+# 178 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KIKUNO}Phew. Thanks to you this Fennekin\n"
 	.string "finally calms down.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Where did it come from? We don't\n"
@@ -985,55 +987,55 @@ MansionsGarden_Eventscript_VSFennekin_Text_1:
 	.string "hall and made a mess out of the place.$"
 
 MansionsGarden_Eventscript_VSFennekin_Text_2:
-# 191 "data/maps/MansionsGarden/scripts.pory"
+# 192 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KIKUNO}Looks like it wants to go with you?\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Good timing. I do want a fire type in my\n"
 	.string "team.$"
 
 MansionsGarden_Eventscript_Kikuno_Text_0:
-# 202 "data/maps/MansionsGarden/scripts.pory"
+# 203 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KIKUNO}Go on, Young Lady. It'll be a great\n"
 	.string "teammate on your journey.$"
 
 MansionsGarden_Eventscript_Kikuno_Text_1:
-# 206 "data/maps/MansionsGarden/scripts.pory"
+# 207 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KIKUNO}Please stay safe, Young Lady.$"
 
 MansionsGarden_Eventscript_Fennekin_Text_0:
-# 216 "data/maps/MansionsGarden/scripts.pory"
+# 217 "data/maps/MansionsGarden/scripts.pory"
 	.string "Touch Fennekin with the Pokéball?$"
 
 MansionsGarden_Eventscript_Fennekin_Text_1:
-# 219 "data/maps/MansionsGarden/scripts.pory"
+# 220 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Now that I get a closer look at it.\p"
 	.string "It seems like there are sparkles around\n"
 	.string "this Fennekin?)$"
 
 MansionsGarden_Eventscript_Fennekin_Text_2:
-# 227 "data/maps/MansionsGarden/scripts.pory"
+# 228 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Oh, it's just dust.)$"
 
 MansionsGarden_Eventscript_Fennekin_Text_3:
-# 242 "data/maps/MansionsGarden/scripts.pory"
+# 243 "data/maps/MansionsGarden/scripts.pory"
 	.string "Fennekin looks confused, but it's still\n"
 	.string "waiting for you.$"
 
 MansionsGarden_Eventscript_GetShinyFennekin_Text_0:
-# 252 "data/maps/MansionsGarden/scripts.pory"
+# 253 "data/maps/MansionsGarden/scripts.pory"
 	.string "Fennekin happily went into the\n"
 	.string "Pokéball.$"
 
 MansionsGarden_Eventscript_GetShinyFennekin_Text_1:
-# 266 "data/maps/MansionsGarden/scripts.pory"
+# 267 "data/maps/MansionsGarden/scripts.pory"
 	.string "Party full.$"
 
 MustGetFennekin_Text_0:
-# 298 "data/maps/MansionsGarden/scripts.pory"
+# 299 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I should let Fennekin join the team.\n"
 	.string "It'll be a great help for my mission.)$"
 
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_0:
-# 310 "data/maps/MansionsGarden/scripts.pory"
+# 311 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KIKUNO}I guess no one manage to stop you at\n"
 	.string "all.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Kikuno...\p"
@@ -1047,13 +1049,13 @@ MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_0:
 	.string "to stop you.$"
 
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_1:
-# 322 "data/maps/MansionsGarden/scripts.pory"
+# 323 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KIKUNO}I guess this is goodbye then.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes... Please take care, Kikuno.\p"
 	.string "{SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}You too, Young Lady.$"
 
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_2:
-# 330 "data/maps/MansionsGarden/scripts.pory"
+# 331 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KIKUNO}Oh right.\p"
 	.string "I'm not sure if you have heard but in\n"
 	.string "case you need some healing, Nurse Sawa\l"
@@ -1063,23 +1065,23 @@ MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_2:
 	.string "{SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}My pleasure.$"
 
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_3:
-# 345 "data/maps/MansionsGarden/scripts.pory"
+# 346 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I should get going now.)$"
 
 MansionsGarden_Eventscript_TrainingHouse_Sign_Text_0:
-# 363 "data/maps/MansionsGarden/scripts.pory"
+# 364 "data/maps/MansionsGarden/scripts.pory"
 	.string "Training House$"
 
 MansionsGarden_Eventscript_GuestHouse_Sign_Text_0:
-# 371 "data/maps/MansionsGarden/scripts.pory"
+# 372 "data/maps/MansionsGarden/scripts.pory"
 	.string "Guest & Staff House$"
 
 MansionsGarden_Eventscript_WaiterKouhei_Text_0:
-# 380 "data/maps/MansionsGarden/scripts.pory"
+# 381 "data/maps/MansionsGarden/scripts.pory"
 	.string "Kouhei$"
 
 MansionsGarden_Eventscript_WaiterKouhei_Text_1:
-# 382 "data/maps/MansionsGarden/scripts.pory"
+# 383 "data/maps/MansionsGarden/scripts.pory"
 	.string "It's my shift to stand guard tonight,\n"
 	.string "Young Lady.\p"
 	.string "I will make sure no wild Pokémon can\n"

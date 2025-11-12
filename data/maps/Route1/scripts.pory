@@ -12,14 +12,12 @@ script Route1_Eventscript_NotTheWayToMeadow {
 }
 
 script Route1_Eventscript_Touma {
-    if(var(VAR_AKIHIKOS_INTRO_STATE) >= 44 && var(VAR_AKIHIKOS_INTRO_STATE) < 50){
-        trainerbattle_single(TRAINER_TOUMA_2, Route1_ToumaIntro, Route1_ToumaDefeated)
+    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){
+        trainerbattle_single(TRAINER_TOUMA_2, Route1_ToumaIntro_A, Route1_ToumaDefeated)
     }
     elif(var(VAR_MITSURUS_INTRO_STATE) < 50){
         trainerbattle_single(TRAINER_TOUMA, Route1_ToumaIntro, Route1_ToumaDefeated)
-    }
-    else{
-        trainerbattle_single(TRAINER_TOUMA_2, Route1_ToumaIntro, Route1_ToumaDefeated)
+        fwdtime(23, 50)
     }
     setspeaker("Touma")
     faceplayer
@@ -40,7 +38,9 @@ script Route1_Eventscript_Touma {
 }
 
 text Route1_ToumaIntro {
-    format("Um, you want a battle? Okay...")
+    format("Um, can you please battle me...?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Sigh... I really don't have time for this.)\p
+    ... Sure.")
 }
 
 text Route1_ToumaDefeated {
@@ -53,12 +53,17 @@ text Route1_ToumaPostBattle {
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That is a marvelous personal goal. I wish you the best of luck.")
 }
 
+text Route1_ToumaIntro_A {
+    format("Um, do you want a battle...?")
+}
+
 script Route1_Eventscript_Miyu {
-    if(var(VAR_AKIHIKOS_INTRO_STATE) >= 44 && var(VAR_AKIHIKOS_INTRO_STATE) < 50){      //akihiko prologue post mitsuru's 1st battle
-    trainerbattle_single(TRAINER_MIYU_2, Route1_MiyuIntro, Route1_MiyuDefeated)
+    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){      //akihiko prologue post mitsuru's 1st battle
+    trainerbattle_single(TRAINER_MIYU_2, Route1_MiyuIntro_A, Route1_MiyuDefeated)
     }
     elif(var(VAR_MITSURUS_INTRO_STATE) < 50){                                           //mitsuru pre chapter 1
-        trainerbattle_single(TRAINER_MIYU, Route1_MiyuIntro, Route1_MiyuDefeated)
+        trainerbattle_single(TRAINER_MIYU, Route1_MiyuIntro, Route1_MiyuIntro_A)
+        fwdtime(23, 10)
     }
     else{
         trainerbattle_single(TRAINER_MIYU_2, Route1_MiyuIntro, Route1_MiyuDefeated)     //have finished both prologues (probly unecessary)
@@ -72,7 +77,8 @@ script Route1_Eventscript_Miyu {
 }
 
 text Route1_MiyuIntro {
-    format("I heard there's a hidden grotto on this route. Have you seen it?")
+    format("Let's battle!\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Huh? What- wait-")
 }
 
 text Route1_MiyuDefeated {
@@ -81,6 +87,11 @@ text Route1_MiyuDefeated {
 
 text Route1_MiyuPostBattle {
     format("If only I found that hidden grotto.")
+}
+
+text Route1_MiyuIntro_A {
+    format("I heard there's a hidden grotto on this route. Have you seen it?")
+
 }
 
 script Route1_Eventscript_RouteSign {
@@ -139,4 +150,39 @@ script Route1_Eventscript_Teddiursa {
     setflag(FLAG_TEMP_1)
     release
     end
+}
+
+script Route1_Eventscript_Ichigo {
+    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){      //akihiko prologue post mitsuru's 1st battle
+    trainerbattle_single(TRAINER_MIYU_2, Route1_IchigoIntro_A, Route1_IchigoDefeated)
+    }
+    elif(var(VAR_MITSURUS_INTRO_STATE) < 50){                                           //mitsuru pre chapter 1
+        trainerbattle_single(TRAINER_MIYU, Route1_IchigoIntro, Route1_IchigoDefeated)
+        fwdtime(23, 30)
+    }
+    else{
+        trainerbattle_single(TRAINER_MIYU_2, Route1_IchigoIntro_A, Route1_IchigoDefeated)     //have finished both prologues (probly unecessary)
+
+    }
+    setspeaker("Ichigo")
+    faceplayer
+    msgbox(format("By the way, there's a nice guy who's giving out Old Rods in Coralport.\p
+    That's how I got my Buizel."))
+    closemessage
+    end
+}
+
+text Route1_IchigoIntro {
+   format("Hehe, you can't escape me!\p
+   {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(... Let's just get this over with.)") 
+}
+
+text Route1_IchigoIntro_A {
+    format("You can't escape me!\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Well, I'm not intended to!\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Sigh... Aki...")
+}
+
+text Route1_IchigoDefeated {
+    format("Aw, maybe having 2 water Pokémon in a team isn't the best choice.")
 }

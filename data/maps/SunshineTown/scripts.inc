@@ -611,6 +611,58 @@ SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru::
 	end
 
 
+unlockmitsuru::
+# 357 "data/maps/SunshineTown/scripts.pory"
+	compare VAR_TEMP_1, 0
+	goto_if_eq unlockmitsuru_1
+# 368 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 369 "data/maps/SunshineTown/scripts.pory"
+	unlockoutfit OUTFIT_SHINJIRO
+# 370 "data/maps/SunshineTown/scripts.pory"
+	msgbox unlockmitsuru_Text_1
+# 371 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 372 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+unlockmitsuru_1:
+# 358 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 359 "data/maps/SunshineTown/scripts.pory"
+	unlockoutfit OUTFIT_MITSURU
+# 360 "data/maps/SunshineTown/scripts.pory"
+	msgbox unlockmitsuru_Text_0
+# 361 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 362 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_TEMP_1, 1
+# 363 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+
+setshinjirofollower::
+# 378 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 379 "data/maps/SunshineTown/scripts.pory"
+	msgbox setshinjirofollower_Text_0
+# 380 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 381 "data/maps/SunshineTown/scripts.pory"
+	setflag FLAG_FOLLOWERS_DISABLED
+# 382 "data/maps/SunshineTown/scripts.pory"
+	destroyfollowernpc
+# 383 "data/maps/SunshineTown/scripts.pory"
+	createfollowernpc OBJ_EVENT_GFX_SHINJIRO, FOLLOWER_NPC_FLAG_ALL, Eventscript_ShinjiroFollower, PARTNER_SHINJIRO_C1
+# 384 "data/maps/SunshineTown/scripts.pory"
+	updatefollowingmon
+# 385 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+
 SunshineTown_Eventscript_Kurosawa_Text_0:
 # 34 "data/maps/SunshineTown/scripts.pory"
 	.string "Hm?\p"
@@ -748,3 +800,15 @@ SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru_Text_0:
 # 347 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I have no business in Sunshine Woods\n"
 	.string "right now.)$"
+
+unlockmitsuru_Text_0:
+# 360 "data/maps/SunshineTown/scripts.pory"
+	.string "unlocked mitsuru$"
+
+unlockmitsuru_Text_1:
+# 370 "data/maps/SunshineTown/scripts.pory"
+	.string "unlocked shinjiro$"
+
+setshinjirofollower_Text_0:
+# 379 "data/maps/SunshineTown/scripts.pory"
+	.string "set shinjiro follower$"

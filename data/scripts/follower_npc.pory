@@ -1,0 +1,102 @@
+script Eventscript_MitsuruFollower{
+    lock
+    faceplayer
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Is something wrong, Sanada-kun?\p
+    Do you want me to join you in battle?"), MSGBOX_YESNO)
+    closemessage
+    if (var(VAR_RESULT) == TRUE){
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I understand. I'll back you up."))
+        closemessage
+        destroyfollowernpc
+        createfollowernpc(OBJ_EVENT_GFX_MAY_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_MitsuruFollower, PARTNER_MITSURU_C1)
+        updatefollowingmon
+        setflag(FLAG_PARTNER_WILD_BATTLES)
+    }
+    else {
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}You want to train on your own? Your determination is truly admirable."))
+        closemessage
+        destroyfollowernpc
+        createfollowernpc(OBJ_EVENT_GFX_MAY_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_MitsuruFollower, 0)
+        updatefollowingmon
+        clearflag(FLAG_PARTNER_WILD_BATTLES)
+    }
+    release
+    end
+}
+
+script Eventscript_AkihikoFollower {
+    lock
+    faceplayer
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Need something, Kirijo?\p
+    Want me to join your training?"), MSGBOX_YESNO)
+    closemessage
+    if (var(VAR_RESULT) == TRUE){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright. I won't lose to you!"))
+        closemessage
+        destroyfollowernpc
+        createfollowernpc(OBJ_EVENT_GFX_BRENDAN_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_AkihikoFollower, PARTNER_AKIHIKO_C1)
+        updatefollowingmon
+        setflag(FLAG_PARTNER_WILD_BATTLES)
+    }
+    else {
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure then. I'll just train on my own."))
+        closemessage
+        destroyfollowernpc
+        createfollowernpc(OBJ_EVENT_GFX_BRENDAN_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_AkihikoFollower, 0)
+        updatefollowingmon
+        clearflag(FLAG_PARTNER_WILD_BATTLES)
+    }
+    release
+    end
+}
+
+script Eventscript_ShinjiroFollower {
+    lock
+    faceplayer
+    checkplayergender
+    if (var(VAR_RESULT) == MALE){
+        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}What's up, Aki?
+        Want me to battle along side you?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == TRUE){
+            msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Can't do anything without me, huh?"))
+            closemessage
+            destroyfollowernpc
+            createfollowernpc(OBJ_EVENT_GFX_SHINJIRO, FOLLOWER_NPC_FLAG_ALL, Eventscript_ShinjiroFollower, PARTNER_SHINJIRO_C1)
+            updatefollowingmon
+            setflag(FLAG_PARTNER_WILD_BATTLES)
+        }
+        else 
+        {
+            msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Alright then."))
+            closemessage
+            destroyfollowernpc
+            createfollowernpc(OBJ_EVENT_GFX_SHINJIRO, FOLLOWER_NPC_FLAG_ALL, Eventscript_ShinjiroFollower, 0)
+            updatefollowingmon
+            clearflag(FLAG_PARTNER_WILD_BATTLES)
+        }
+    }
+    else 
+    {
+        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}What's wrong, Princess?
+        Want me to back you up?"), MSGBOX_YESNO)  
+        if (var(VAR_RESULT) == TRUE){
+            msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}So you do need help sometimes, huh?"))
+            closemessage
+            destroyfollowernpc
+            createfollowernpc(OBJ_EVENT_GFX_SHINJIRO, FOLLOWER_NPC_FLAG_ALL, Eventscript_ShinjiroFollower, PARTNER_SHINJIRO_C1)
+            updatefollowingmon
+            setflag(FLAG_PARTNER_WILD_BATTLES)
+        }
+        else 
+        {
+            msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Sure, I know you can hold your ground."))
+            closemessage
+            destroyfollowernpc
+            createfollowernpc(OBJ_EVENT_GFX_SHINJIRO, FOLLOWER_NPC_FLAG_ALL, Eventscript_ShinjiroFollower, 0)
+            updatefollowingmon
+            clearflag(FLAG_PARTNER_WILD_BATTLES)
+        }    
+    }
+    release
+    end
+}

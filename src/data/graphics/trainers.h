@@ -296,6 +296,16 @@ const u8 gTrainerBackPic_Steven[] = INCBIN_U8("graphics/trainers/back_pics/steve
 const u16 gTrainerBackPicPalette_Red[] = INCBIN_U16("graphics/trainers/back_pics/red.gbapal");
 const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pics/leaf.gbapal");
 
+const u32 gMugshotMitsuru [] = INCBIN_U32("graphics/field_mugshots/Mitsuru/normal.4bpp.lz");
+const u16 gMugshotPalMitsuru [] = INCBIN_U16("graphics/field_mugshots/Mitsuru/normal.gbapal");
+
+const u32 gMugshotAkihiko [] = INCBIN_U32("graphics/field_mugshots/Akihiko/normal.4bpp.lz");
+const u16 gMugshotPalAkihiko [] = INCBIN_U16("graphics/field_mugshots/Akihiko/normal.gbapal");
+
+const u32 gMugshotShinjiro [] = INCBIN_U32("graphics/field_mugshots/Shinjiro/normal.4bpp.lz");
+const u16 gMugshotPalShinjiro [] = INCBIN_U16("graphics/field_mugshots/Shinjiro/normal.gbapal");
+
+
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
 // gTrainerFrontPic/gTrainerPalette pointers, (e.g "gTrainerFrontPic_Hiker" and "gTrainerPalette_Hiker").
@@ -483,3 +493,9 @@ const struct TrainerBacksprite gTrainerBacksprites[] =
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_STEVEN, 4, gTrainerBackPic_Steven, gTrainerPalette_Steven, sBackAnims_Hoenn),
 };
 
+const struct TrainerSprite gMugshotSprites[] =
+{
+    TRAINER_SPRITE(MUGSHOT_COMPANION_MITSURU, gMugshotMitsuru, gMugshotPalMitsuru),
+    TRAINER_SPRITE(MUGSHOT_COMPANION_AKIHIKO, gMugshotAkihiko, gMugshotPalAkihiko),
+    TRAINER_SPRITE(MUGSHOT_COMPANION_SHINJIRO, gMugshotShinjiro, gMugshotPalShinjiro),
+};

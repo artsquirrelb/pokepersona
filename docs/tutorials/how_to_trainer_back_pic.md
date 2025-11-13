@@ -72,7 +72,7 @@ Remember to count the number next to the trainer pic up by one!
 ## Usage
 You can test your new trainer back pic by going to [`src/data/battle_partners.party`](./src/data/battle_partners.party) and change the `Pic` field. The syntax should match the constant (`TRAINER_BACK_PIC_NEW_ONE`) with the underscore replaced by spaces. For example:
 ```diff
- === PARTNER_STEVEN ===
+ === PARTNER_AKIHIKO_C1 ===
  Name: STEVEN
  Class: Rival
 -Pic: Steven
@@ -83,7 +83,7 @@ You can test your new trainer back pic by going to [`src/data/battle_partners.pa
 
 Otherwise if you use [`src/data/battle_partners.h`](./src/data/battle_partners.h), change the `trainerPic` field instead. For example:
 ```diff
-     [DIFFICULTY_NORMAL][PARTNER_STEVEN] =
+     [DIFFICULTY_NORMAL][PARTNER_AKIHIKO_C1] =
      {
          .trainerName = _("STEVEN"),
          .trainerClass = TRAINER_CLASS_RIVAL,

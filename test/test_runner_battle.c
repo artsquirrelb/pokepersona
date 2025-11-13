@@ -378,7 +378,7 @@ static void BattleTest_Run(void *data)
         break;
     case BATTLE_TEST_AI_MULTI:
         DATA.recordedBattle.battleFlags = BATTLE_TYPE_IS_MASTER | BATTLE_TYPE_TRAINER | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_MULTI | BATTLE_TYPE_TWO_OPPONENTS;
-        DATA.recordedBattle.partnerId = TRAINER_PARTNER(PARTNER_STEVEN);
+        DATA.recordedBattle.partnerId = TRAINER_PARTNER(PARTNER_AKIHIKO_C1);
         DATA.recordedBattle.opponentA = TRAINER_LEAF;
         DATA.recordedBattle.opponentB = TRAINER_RED;
         DATA.hasAI = TRUE;
@@ -389,7 +389,7 @@ static void BattleTest_Run(void *data)
         break;
     case BATTLE_TEST_AI_TWO_VS_ONE:
         DATA.recordedBattle.battleFlags = BATTLE_TYPE_IS_MASTER | BATTLE_TYPE_TRAINER | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_MULTI;
-        DATA.recordedBattle.partnerId = TRAINER_PARTNER(PARTNER_STEVEN);
+        DATA.recordedBattle.partnerId = TRAINER_PARTNER(PARTNER_AKIHIKO_C1);
         DATA.recordedBattle.opponentA = TRAINER_LEAF;
         DATA.recordedBattle.opponentB = 0xFFFF;
         DATA.currentMonIndexes[0] = 0; // Player first mon
@@ -423,7 +423,7 @@ static void BattleTest_Run(void *data)
         break;
     case BATTLE_TEST_MULTI:
         DATA.recordedBattle.battleFlags = BATTLE_TYPE_IS_MASTER | BATTLE_TYPE_RECORDED_IS_MASTER | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_TRAINER | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_MULTI | BATTLE_TYPE_TWO_OPPONENTS;
-        DATA.recordedBattle.partnerId = TRAINER_PARTNER(PARTNER_STEVEN);
+        DATA.recordedBattle.partnerId = TRAINER_PARTNER(PARTNER_AKIHIKO_C1);
         DATA.recordedBattle.opponentA = TRAINER_LINK_OPPONENT;
         DATA.recordedBattle.opponentB = TRAINER_LINK_OPPONENT;
         DATA.currentMonIndexes[0] = 0; // Player first mon
@@ -433,7 +433,7 @@ static void BattleTest_Run(void *data)
         break;
     case BATTLE_TEST_TWO_VS_ONE:
         DATA.recordedBattle.battleFlags = BATTLE_TYPE_IS_MASTER | BATTLE_TYPE_RECORDED_IS_MASTER | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_TRAINER | BATTLE_TYPE_INGAME_PARTNER | BATTLE_TYPE_MULTI;
-        DATA.recordedBattle.partnerId = TRAINER_PARTNER(PARTNER_STEVEN);
+        DATA.recordedBattle.partnerId = TRAINER_PARTNER(PARTNER_AKIHIKO_C1);
         DATA.recordedBattle.opponentA = TRAINER_LINK_OPPONENT;
         DATA.recordedBattle.opponentB = 0xFFFF;
         DATA.currentMonIndexes[0] = 0; // Player first mon

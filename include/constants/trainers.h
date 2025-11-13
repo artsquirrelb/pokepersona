@@ -111,6 +111,14 @@
 #define TRAINER_PIC_SHINJIRO              93
 #define TRAINER_PIC_COUNT                 94
 
+//Mugshot for Companion Menu
+#define MUGSHOT_COMPANION_MITSURU       0
+#define MUGSHOT_COMPANION_AKIHIKO       1
+#define MUGSHOT_COMPANION_SHINJIRO      2
+#define MUGSHOT_COMPANION_INTELEON      3
+#define MUGSHOT_COMPANION_KOROMARU      4
+
+
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
 #define TRAINER_BACK_PIC_MAY                    1

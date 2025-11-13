@@ -19,7 +19,7 @@ The configs for follower NPCs can be found in [include/config/follower_npc.h](ht
 The `setfollowernpc` macro will turn the specified object into an NPC follower. It requires the object id, the [follower flags](#follower-flags), and optionally a custom script and a [battle partner](#battle-partner). If you do not include a custom script name (or you set it to `0`), the NPC follower will default to their normal interaction script. If there is a follower Pokémon present, it will be returned to its Pokeball until the NPC follower is destroyed.
 
 Here's an example:  
-`setfollowernpc 3, FNPC_ALL, MyScript_Eventscript_CustomFollowerScript, PARTNER_STEVEN`  
+`setfollowernpc 3, FNPC_ALL, MyScript_Eventscript_CustomFollowerScript, PARTNER_AKIHIKO_C1`  
 This would turn object number 3 on the current map into an NPC follower, give them access to all following behaviors, run that custom script when the player interacts with them, and adds the Steven battle partner to the follower ([more on this later](#battle-partner)).
 
 The object ***MUST*** have an event flag or the NPC follower will not be created!

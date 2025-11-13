@@ -6,41 +6,135 @@ Gender: Male
 Music: Male
 Back Pic: Brendan
 
-=== PARTNER_STEVEN ===
-Name: Steven
+=== PARTNER_AKIHIKO_C1 ===
+Name: Akihiko
 Class: Rival
-Pic: Steven
+Pic: Brendan
 Gender: Male
 Music: Male
-Back Pic: Steven
-AI: Basic Trainer
+Back Pic: Brendan
+AI: Smart Trainer
 
-Metang
-Brave Nature
-Level: 42
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
-- Psychic
-- Reflect
-- Metal Claw
-
-Skarmory
-Impish Nature
-Level: 43
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 6 SpA / 252 SpD
-- Toxic
-- Aerial Ace
-- Protect
-- Steel Wing
-
-Aggron
+SPECIES_PAWMI_DELTA (M) @ITEM_SITRUS_BERRY
 Adamant Nature
-Level: 44
+Ball: Cherish Ball
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
+EVs: 40 Atk / 40 Spe
+Ability: Fur Coat
+- Mach Punch
+- Spark
+- Power-up Punch
+- Nuzzle
+
+SPECIES_ROCKRUFF @ITEM_SITRUS_BERRY
+Jolly Nature
+Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 SpA / 6 SpD
-- Thunder
-- Protect
-- Solar Beam
-- Dragon Claw
+EVs: 40 Atk / 40 Spe
+Ability: Own Tempo
+- Rock Throw
+- Fire Fang
+- Bite
+- Trailblaze
+
+SPECIES_GROOKEY @ITEM_MIRACLE_SEED
+Adamant Nature
+Shiny: Yes
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 40 Atk / 40 SpA 
+- Razor Leaf
+- Fake Out
+- Leech Seed
+- Knock Off
+
+=== PARTNER_MITSURU_C1 ===
+Name: Mitsuru
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Back Pic: May
+AI: Smart Trainer
+
+SPECIES_VULPIX_DELTA (F) @ITEM_SITRUS_BERRY
+Modest Nature
+Ball: Cherish Ball
+Level: 16
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 100 SpA / 100 Spe
+Ability: Ice Scales
+- Icy Wind
+- Draining Kiss
+- Chilling Water
+- Swift
+
+SPECIES_FENNEKIN (F) @ITEM_CHARCOAL
+Modest Nature
+Ball: Luxury Ball
+Shiny: Yes
+Level: 15
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 100 SpA / 100 Spe
+Ability: Blaze
+- Incinerate
+- Mud Shot
+- Will-o-Wisp
+- Psybeam
+
+SPECIES_FURFROU_KABUKI @ITEM_SITRUS_BERRY
+Adamant Nature
+Ball: Luxury Ball
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
+EVs: 100 Atk / 100 Spe
+Ability: Fur Coat
+- Headbutt
+- Bite
+- Thunder Fang
+- Double Kick
+
+=== PARTNER_SHINJIRO_C1 ===
+Name: Shinjiro
+Class: Rival
+Pic: Shinjiro
+Gender: Male
+Music: Male
+Back Pic: Red
+AI: Smart Trainer
+
+SPECIES_FERROSEED_DELTA (M) @ITEM_MIRACLE_SEED
+Adamant Nature
+Ball: Cherish Ball
+Level: 16
+Shiny: Yes
+IVs: 31 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 0 Spe
+EVs: 40 Atk / 40 Def
+Ability: Iron Barbs
+- Metal Claw
+- Leech Seed
+- Bullet Seed 
+- Spiky Shield
+
+SPECIES_VENIPEDE (F) @ITEM_SILVER_POWDER
+Adamant Nature
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 0 Spe
+EVs: 40 Atk / 40 Def
+Ability: Speed Boost
+- Poison Tail
+- Toxic
+- Rollout 
+- Bug Bite
+
+SPECIES_OSHAWOTT (M) @ITEM_MYSTIC_WATER
+Serious Nature
+Level: 16
+IVs: 31 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 0 Spe
+EVs: 40 Atk / 40 SpA
+Ability: Torrent    
+- Water Pulse
+- Thief
+- Aerial Ace 
+- Aqua Jet

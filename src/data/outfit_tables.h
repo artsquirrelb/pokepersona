@@ -61,7 +61,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
 
         //! agbcc doesnt like COMPOUND_STRING on my end
         //! DESC: outfit's name
-        .name = COMPOUND_STRING("Akihiko"),
+        .name = COMPOUND_STRING("Akihiko Sanada"),
         .desc = COMPOUND_STRING("Never beating the good boy\nallegations."),
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
@@ -117,7 +117,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
     [OUTFIT_MITSURU] = {
         .isHidden = TRUE,
         .prices = { 200, 500 },
-        .name = COMPOUND_STRING("Mitsuru"),
+        .name = COMPOUND_STRING("Mitsuru Kirijo"),
         .desc = COMPOUND_STRING("Pretty fond of good boys."),
 
         .trainerPics = {
@@ -158,4 +158,48 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .iconsRM = { sRegionMapPlayerIcon_BrendanGfx, sRegionMapPlayerIcon_MayGfx },
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
+
+    [OUTFIT_SHINJIRO] = {
+        .isHidden = TRUE,
+        .prices = { 200, 500 },
+        .name = COMPOUND_STRING("Shinjiro Aragaki"),
+        .desc = COMPOUND_STRING("Looks grumpy, but he's soft inside."),
+
+        .trainerPics = {
+            [MALE] =   { TRAINER_PIC_BRENDAN, TRAINER_BACK_PIC_BRENDAN, },
+            [FEMALE] = { TRAINER_PIC_BRENDAN, TRAINER_BACK_PIC_BRENDAN, },
+        },
+        .avatarGfxIds = {
+            [MALE] = {
+               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_BRENDAN_NORMAL,
+               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
+               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
+               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
+           },
+           [FEMALE] = {
+               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_BRENDAN_NORMAL,
+               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
+               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
+               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
+           },   
+        },
+        .animGfxIds = {
+            [MALE] = {
+                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE,
+                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_BRENDAN_FISHING,
+                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_BRENDAN_WATERING,
+                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_BRENDAN_DECORATING,
+                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE
+            },
+            [FEMALE] = {
+                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE,
+                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_BRENDAN_FISHING,
+                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_BRENDAN_WATERING,
+                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_BRENDAN_DECORATING,
+                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE
+            },
+        },
+        .iconsRM = { sRegionMapPlayerIcon_BrendanGfx, sRegionMapPlayerIcon_MayGfx },
+        .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
+    }
 };

@@ -10,12 +10,15 @@
 #include "data.h"
 #include "decompress.h"
 #include "event_object_movement.h"
+#include "event_scripts.h"
 #include "field_player_avatar.h"
 #include "field_weather.h"
+#include "follower_npc.h"
 #include "graphics.h"
 #include "list_menu.h"
 #include "load_save.h"
 #include "menu.h"
+#include "main_menu.h"
 #include "menu_helpers.h"
 #include "outfit_menu.h"
 #include "overworld.h"
@@ -31,6 +34,7 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
+#include "constants/event_objects.h"
 
 #define GRID_COLS   1
 #define GRID_ROWS   4
@@ -60,6 +64,7 @@ enum States {
 enum Windows {
     WIN_INFO = 0,
     WIN_MSGBOX,
+    WIN_OUTFITYESNO,
 };
 
 enum Sprites {
@@ -74,6 +79,7 @@ enum SpriteTags {
     TAG_SCROLL_ARROWS = 0x9000,
     TAG_INDICATOR,
     TAG_CURSOR,
+    TAG_INDICATOR_FOLLOWER,
 };
 
 enum ColorId {
@@ -87,8 +93,8 @@ enum IndicatorAnimIds {
 };
 
 static const u8 sFontColors[][3] = { // bgColor, textColor, shadowColor
-    [COLORID_NORMAL] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      10},
-    [COLORID_MSGBOX] = {TEXT_COLOR_WHITE,       TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
+    [COLORID_NORMAL] = {0, 1, 0},
+    [COLORID_MSGBOX] = {0, 2, 0},
 };
 
 typedef struct {
@@ -120,36 +126,62 @@ static void Task_CloseOutfitMenu(u8 taskId);
 static u32 BuildOutfitLists(void);
 static inline void UpdateOutfitInfo(void);
 static void UpdateCursorPosition(void);
+static void AssignNPCFollowerAccordingCurrentCursorIdx(void);
+static u16 GetOutfitIdFromCurrentFollowerGFX(void);
+static u16 GetOutfitIdNumberFromCurrentPointer (void);
+static void SwitchPlayerAndFollower(void);
+
 
 static const u8 sText_OutfitLocked[] = _("???");
-static const u8 sText_OutfitLockedMsg[] =
+static const u8 sText_CharacterUnavailable[] =
 _(
-    "You don't have this OUTFIT yet.\n"
-    "Unlock it to be able to use it."
+    "This character is currently\n"
+    "unavailable."
 );
 
-static const u8 sText_OutfitError[] =
+static const u8 sText_NotPlayableCharacter[] =
 _(
-    "You can't change your outfit {STR_VAR_1}"
+    "This character is not playable."
 );
 
-static const u8 sText_OutfitError_Cycling[] =
+static const u8 sText_CantSwitchCharacter[] =
 _(
-    "while\ncycling! You might get tripped over!"
+    "You can't switch character {STR_VAR_1}"
 );
 
-static const u8 sText_OutfitError_Surfing[] =
+static const u8 sText_CantSwitchCharacter_Cycling[] =
 _(
-    "while\nsurfing! You might get wet!"
+    "while\ncycling! They might get tripped over!"
 );
 
-static const u8 sText_OutfitError_Diving[] =
+static const u8 sText_CantSwitchCharacter_Surfing[] =
+_(
+    "while\nsurfing! They might get wet!"
+);
+
+static const u8 sText_CantSwitchCharacter_Diving[] =
 _(
     "while\ndiving! Have common sense!" //! :masuda:
 );
 
-static const u8 sText_OutfitError_Default[] = _(
+static const u8 sText_CantSwitchCharacter_Default[] = _(
     "now!"
+);
+
+static const u8 sText_IsNowFollowing[] =
+_(
+    "This character is now following you."
+);
+
+static const u8 sText_IsCurrentPlayer[] =
+_(
+    "This character is currently player\ncharacter."
+);
+
+static const u8 sText_IsCurrentFollower [] =
+_(
+    "This character is currently following you.\n"
+    "Swapping follower and player character."
 );
 
 static const u16 sTiles[] = INCBIN_U16("graphics/outfit_menu/main.4bpp");
@@ -159,6 +191,8 @@ static const u32 sScrollingBG_Tilemap[] = INCBIN_U32("graphics/outfit_menu/scrol
 
 static const u16 sIndicatorSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/indicator.4bpp");
 static const u16 sIndicatorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/indicator.gbapal");
+static const u16 sIndicatorFollowerSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/indicator_follower.4bpp");
+static const u16 sIndicatorFollowerSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/indicator_follower.gbapal");
 static const u16 sCursorSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/cursor.4bpp");
 static const u16 sCursorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/cursor.gbapal");
 
@@ -217,7 +251,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 14,
         .width = 23,
         .height = 6,
-        .paletteNum = 0,
+        .paletteNum = 13,
         .baseBlock = 1,
     },
     [WIN_MSGBOX] =
@@ -227,7 +261,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 15,
         .width = 27,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 13,
         .baseBlock = 1+(23*6),
     },
     DUMMY_WIN_TEMPLATE,
@@ -237,6 +271,12 @@ static const struct SpriteSheet sIndicator_SpriteSheet = {
     .data = sIndicatorSprite_Gfx,
     .size = 16*32/2,
     .tag = TAG_INDICATOR,
+};
+
+static const struct SpriteSheet sIndicatorFollower_SpriteSheet = {
+    .data = sIndicatorFollowerSprite_Gfx,
+    .size = 16*32/2,
+    .tag = TAG_INDICATOR_FOLLOWER,
 };
 
 static const struct SpriteSheet sCursor_SpriteSheet = {
@@ -250,12 +290,27 @@ static const struct SpritePalette sIndicator_SpritePalette = {
     .tag = TAG_INDICATOR,
 };
 
+static const struct SpritePalette sIndicatorFollower_SpritePalette = {
+    .data = sIndicatorSprite_Pal,
+    .tag = TAG_INDICATOR_FOLLOWER,
+};
+
 static const struct SpritePalette sCursor_SpritePalette = {
     .data = sCursorSprite_Pal,
     .tag = TAG_CURSOR,
 };
 
 static const struct OamData sIndicator_SpriteOamData = {
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(16x16),
+    .size = SPRITE_SIZE(16x16),
+    .priority = 1,
+};
+
+static const struct OamData sIndicatorFollower_SpriteOamData = {
     .affineMode = ST_OAM_AFFINE_OFF,
     .objMode = ST_OAM_OBJ_NORMAL,
     .mosaic = FALSE,
@@ -290,6 +345,7 @@ static const union AnimCmd *const sIndicator_Anims[] = {
     [I_ANIM_CURSOR] = sIndicator_CursorAnims,
 };
 
+
 static const struct SpriteTemplate sCursor_SpriteTemplate = {
     .tileTag = TAG_CURSOR,
     .paletteTag = TAG_CURSOR,
@@ -309,6 +365,17 @@ static const struct SpriteTemplate sIndicator_SpriteTemplate = {
     .images = NULL,
     .oam = &sIndicator_SpriteOamData,
 };
+
+static const struct SpriteTemplate sIndicatorFollower_SpriteTemplate = {
+    .tileTag = TAG_INDICATOR_FOLLOWER,
+    .paletteTag = TAG_INDICATOR_FOLLOWER,
+    .callback = SpriteCallbackDummy,
+    .anims = sIndicator_Anims,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .images = NULL,
+    .oam = &sIndicator_SpriteOamData,
+};
+
 
 /*
 _________________
@@ -609,6 +676,31 @@ static void SpriteCB_Indicator(struct Sprite *s)
     }
 }
 
+/*static void SpriteCB_Indicator_Follower(struct Sprite *s)
+{
+    u32 idx = s->data[0];
+    u32 i = sOutfitMenu->list[sOutfitMenu->grid->topLeftItemIndex + idx];
+    
+    if (i == GetOutfitIdFromCurrentFollowerGFX())
+    {
+        s->invisible = FALSE;
+    }
+    else
+    {
+        s->invisible = TRUE;
+    }
+
+    // use different anim when there's a cursor for cool immersion
+    if (idx == sOutfitMenu->grid->selectedItem && GetOutfitStatus(i))
+    {
+        StartSpriteAnimIfDifferent(s, I_ANIM_CURSOR);
+    }
+    else
+    {
+        StartSpriteAnimIfDifferent(s, I_ANIM_NORMAL);
+    }
+}*/
+
 static inline void ForEachCB_DrawIndicatorSprites(u32 idx, u32 col, u32 row)
 {
     u32 x, y, i;
@@ -624,6 +716,21 @@ static inline void ForEachCB_DrawIndicatorSprites(u32 idx, u32 col, u32 row)
     gSprites[sOutfitMenu->currentOutfitSpriteIds[idx]].callback = SpriteCB_Indicator;
 }
 
+/*static inline void ForEachCB_DrawIndicatorFollowerSprites(u32 idx, u32 col, u32 row)
+{
+    u32 x, y, i;
+    if (idx >= sOutfitMenu->listCount)
+        return;
+
+    i = sOutfitMenu->grid->topLeftItemIndex + idx;
+    x = ((col % GRID_COLS) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0];
+    y = ((row % GRID_ROWS) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
+    x -= 8, y -= 8;
+    sOutfitMenu->currentOutfitSpriteIds[idx] = CreateSprite(&sIndicatorFollower_SpriteTemplate, x, y, 0);
+    gSprites[sOutfitMenu->currentOutfitSpriteIds[idx]].data[0] = idx;
+    gSprites[sOutfitMenu->currentOutfitSpriteIds[idx]].callback = SpriteCB_Indicator_Follower;
+}*/
+
 static void ForAllCb_DestroyIndicatorSprites(u32 idx, u32 col, u32 row)
 {
     if (sOutfitMenu->currentOutfitSpriteIds[idx] == SPRITE_NONE)
@@ -636,6 +743,19 @@ static void ForAllCb_DestroyIndicatorSprites(u32 idx, u32 col, u32 row)
 
     sOutfitMenu->currentOutfitSpriteIds[idx] = SPRITE_NONE;
 }
+
+/*static void ForAllCb_DestroyIndicatorFollowerSprites(u32 idx, u32 col, u32 row)
+{
+    if (sOutfitMenu->currentOutfitSpriteIds[idx] == SPRITE_NONE)
+        return;
+
+    if (gSprites[sOutfitMenu->currentOutfitSpriteIds[idx]].inUse)
+    {
+        DestroySprite(&gSprites[sOutfitMenu->currentOutfitSpriteIds[idx]]);
+    }
+
+    sOutfitMenu->currentOutfitSpriteIds[idx] = SPRITE_NONE;
+}*/
 
 static void SpriteCB_Overworld(struct Sprite *s)
 {
@@ -693,8 +813,10 @@ static void InputCB_UpDownScroll(void)
     sOutfitMenu->idx = sOutfitMenu->list[GridMenu_SelectedIndex(sOutfitMenu->grid)];
     GridMenu_ForAll(sOutfitMenu->grid, ForAllCB_FreeOutfitOverworlds);
     GridMenu_ForAll(sOutfitMenu->grid, ForAllCb_DestroyIndicatorSprites);
+    //GridMenu_ForAll(sOutfitMenu->grid, ForAllCb_DestroyIndicatorFollowerSprites);
     GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_PopulateOutfitOverworlds);
     GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_DrawIndicatorSprites);
+    //GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_DrawIndicatorFollowerSprites);
     UpdateOutfitInfo();
     if (!IsSEPlaying())
         PlaySE(SE_RG_BAG_CURSOR);
@@ -742,6 +864,8 @@ static void SetupOutfitMenu_Grids(void)
 
     LoadSpriteSheet(&sIndicator_SpriteSheet);
     LoadSpritePalette(&sIndicator_SpritePalette);
+    //LoadSpriteSheet(&sIndicatorFollower_SpriteSheet);
+    //LoadSpritePalette(&sIndicatorFollower_SpritePalette);
 
     GridMenu_EnableVerticalWrapAround(sOutfitMenu->grid);
     GridMenu_SetIndex(sOutfitMenu->grid, gSaveBlock2Ptr->currOutfitId - 1);
@@ -813,23 +937,43 @@ static inline void PrintDialogueBoxWithDescWin(const u8 *str, bool32 expandPlace
     gTasks[taskId].func = Task_WaitMessage;
 }
 
-static void Task_PrintCantChangeOutfit(u8 taskId)
+static void Task_PrintCantSwitchCharacter(u8 taskId)
 {
     if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_BIKE)
-        StringCopy(gStringVar1, sText_OutfitError_Cycling);
+        StringCopy(gStringVar1, sText_CantSwitchCharacter_Cycling);
     else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
-        StringCopy(gStringVar1, sText_OutfitError_Surfing);
+        StringCopy(gStringVar1, sText_CantSwitchCharacter_Surfing);
     else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
-        StringCopy(gStringVar1, sText_OutfitError_Diving);
+        StringCopy(gStringVar1, sText_CantSwitchCharacter_Diving);
     else
-        StringCopy(gStringVar1, sText_OutfitError_Default);
+        StringCopy(gStringVar1, sText_CantSwitchCharacter_Default);
 
-    PrintDialogueBoxWithDescWin(sText_OutfitError, TRUE, taskId);
+    PrintDialogueBoxWithDescWin(sText_CantSwitchCharacter, TRUE, taskId);
 }
 
-static void Task_PrintOutfitLocked(u8 taskId)
+static void Task_PrintCharacterUnavailable(u8 taskId)
 {
-    PrintDialogueBoxWithDescWin(sText_OutfitLockedMsg, FALSE, taskId);
+    PrintDialogueBoxWithDescWin(sText_CharacterUnavailable, FALSE, taskId);
+}
+
+static void Task_PrintNotPlayable(u8 taskId)
+{
+    PrintDialogueBoxWithDescWin(sText_NotPlayableCharacter, FALSE, taskId);
+}
+
+static void Task_PrintIsNowFollowing(u8 taskId)
+{
+    PrintDialogueBoxWithDescWin(sText_IsNowFollowing, FALSE, taskId);
+}
+
+static void Task_PrintCurrentlyPlayer(u8 taskId)
+{
+    PrintDialogueBoxWithDescWin(sText_IsCurrentPlayer, FALSE, taskId);
+}
+
+static void Task_PrintIsCurrentFollower(u8 taskId)
+{
+    PrintDialogueBoxWithDescWin(sText_IsCurrentFollower, FALSE, taskId);
 }
 
 static inline void CloseOutfitMenu(u8 taskId)
@@ -862,31 +1006,81 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
     if (JOY_NEW(A_BUTTON))
     {
         if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
-        {
+        {                
             if (GetOutfitStatus(sOutfitMenu->idx))
             {
-                PlaySE(SE_SUCCESS);
-                SavePlayerParty();
-                gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
-                SwitchPlayerGenderAccordingToChosenOutfit();
-                LoadPlayerParty();
+                if (sOutfitMenu->idx == OUTFIT_AKIHIKO || sOutfitMenu->idx == OUTFIT_MITSURU)
+                {
+                    u16 currentoutfitidnumber = GetOutfitIdNumberFromCurrentPointer();
+                    if (currentoutfitidnumber == GetOutfitIdFromCurrentFollowerGFX() && gSaveBlock2Ptr->currOutfitId != sOutfitMenu->idx)
+                    {
+                        PlaySE(SE_SUCCESS);
+                        SavePlayerParty();
+                        gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
+                        SwitchPlayerGenderAccordingToChosenOutfit();
+                        LoadPlayerParty();
+                        SwitchPlayerAndFollower();
+                        gTasks[taskId].func = Task_PrintIsCurrentFollower;
+                    }
+                    else 
+                    {
+                        PlaySE(SE_SUCCESS);
+                        SavePlayerParty();
+                        gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
+                        SwitchPlayerGenderAccordingToChosenOutfit();
+                        LoadPlayerParty();
+                    }
+                    
+                }
+                else 
+                {
+                    PlaySE(SE_BOO);
+                    gTasks[taskId].func = Task_PrintNotPlayable;
+                }
             }
             else
             {
                 PlaySE(SE_BOO);
-                gTasks[taskId].func = Task_PrintOutfitLocked;
+                gTasks[taskId].func = Task_PrintCharacterUnavailable;
             }
+        
         }
         else
         {
             PlaySE(SE_BOO);
             if (GetOutfitStatus(sOutfitMenu->idx))
-                gTasks[taskId].func = Task_PrintCantChangeOutfit;
+                gTasks[taskId].func = Task_PrintCantSwitchCharacter;
             else
-                gTasks[taskId].func = Task_PrintOutfitLocked; //! might be confusing?
+                gTasks[taskId].func = Task_PrintCharacterUnavailable; //! might be confusing?
         }
     }
-
+         
+    else if (JOY_NEW(L_BUTTON))
+    {
+        if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
+        {   
+            if (sOutfitMenu->idx == gSaveBlock2Ptr->currOutfitId)
+            {
+                PlaySE(SE_BOO);
+                gTasks[taskId].func = Task_PrintCurrentlyPlayer;
+            }
+            else if (sOutfitMenu->idx != gSaveBlock2Ptr->currOutfitId && GetOutfitStatus(sOutfitMenu->idx))
+            {
+                PlaySE(SE_SUCCESS);
+                
+                AssignNPCFollowerAccordingCurrentCursorIdx();
+                //SavePlayerParty();
+                //SwitchPlayerGenderAccordingToChosenOutfit();
+                //LoadPlayerParty();
+                gTasks[taskId].func = Task_PrintIsNowFollowing;
+            }
+            else
+            {
+                PlaySE(SE_BOO);
+                gTasks[taskId].func = Task_PrintCharacterUnavailable;
+            }
+        }
+    }
     UpdateCursorPosition();
 }
 
@@ -1058,9 +1252,65 @@ void SetCurrentOutfitGfxIntoVar(struct ScriptContext *ctx)
 }
 
 void SwitchPlayerGenderAccordingToChosenOutfit(void)
-    {
-        if (gSaveBlock2Ptr->currOutfitId == OUTFIT_AKIHIKO)
-        gSaveBlock2Ptr->playerGender = MALE;
-        if (gSaveBlock2Ptr->currOutfitId == OUTFIT_MITSURU)
-        gSaveBlock2Ptr->playerGender = FEMALE;
+{
+    if (gSaveBlock2Ptr->currOutfitId == OUTFIT_AKIHIKO)
+    gSaveBlock2Ptr->playerGender = MALE;
+    if (gSaveBlock2Ptr->currOutfitId == OUTFIT_MITSURU)
+    gSaveBlock2Ptr->playerGender = FEMALE;
+}
+
+void AssignNPCFollowerAccordingCurrentCursorIdx(void)
+{
+    DestroyFollowerNPC();
+    FlagSet(FLAG_FOLLOWERS_DISABLED);
+    if (sOutfitMenu->idx == OUTFIT_AKIHIKO)
+        CreateFollowerNPC(OBJ_EVENT_GFX_BRENDAN_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_AkihikoFollower);
+
+    else if (sOutfitMenu->idx == OUTFIT_MITSURU)
+        CreateFollowerNPC(OBJ_EVENT_GFX_MAY_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_MitsuruFollower);
+
+    else if (sOutfitMenu->idx == OUTFIT_SHINJIRO)
+        CreateFollowerNPC(OBJ_EVENT_GFX_SHINJIRO, FOLLOWER_NPC_FLAG_CLEAR_ON_WHITE_OUT, Eventscript_ShinjiroFollower);
+
+    else
+        FlagClear(FLAG_FOLLOWERS_DISABLED);
+}
+
+u16 GetOutfitIdFromCurrentFollowerGFX(void)
+{
+    u16 currentfollowergfx = GetFollowerNPCData(FNPC_DATA_GFX_ID);
+    
+    if (currentfollowergfx == OBJ_EVENT_GFX_BRENDAN_NORMAL)
+        return OUTFIT_AKIHIKO;
+
+    else if (currentfollowergfx == OBJ_EVENT_GFX_MAY_NORMAL)
+        return OUTFIT_MITSURU;
+        
+    else if (currentfollowergfx == OBJ_EVENT_GFX_SHINJIRO)
+        return OUTFIT_SHINJIRO;
+    
+    else
+        return 0;
+}
+
+u16 GetOutfitIdNumberFromCurrentPointer (void)
+{
+    if (sOutfitMenu->idx == OUTFIT_AKIHIKO)
+        return OUTFIT_AKIHIKO;
+    else if (sOutfitMenu->idx == OUTFIT_MITSURU)
+        return OUTFIT_MITSURU;
+    else if (sOutfitMenu->idx == OUTFIT_SHINJIRO)
+        return OUTFIT_SHINJIRO;
+    else
+        return 0;
+}
+
+void SwitchPlayerAndFollower(void)
+{
+    DestroyFollowerNPC();
+    if (gSaveBlock2Ptr->playerGender == MALE){
+        CreateFollowerNPC(OBJ_EVENT_GFX_MAY_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_MitsuruFollower);
     }
+    else
+        CreateFollowerNPC(OBJ_EVENT_GFX_BRENDAN_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_AkihikoFollower);
+}

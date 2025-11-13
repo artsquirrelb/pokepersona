@@ -330,8 +330,6 @@ SusMan1StepBack:
 	lock_facing_direction
 # 144 "data/maps/Route2/scripts.pory"
 	walk_left
-# 144 "data/maps/Route2/scripts.pory"
-	walk_left
 # 145 "data/maps/Route2/scripts.pory"
 	unlock_facing_direction
 	step_end

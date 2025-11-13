@@ -3451,7 +3451,7 @@ static void DebugAction_CreateFollowerNPC(u8 taskId)
     Debug_DestroyMenu_Full(taskId);
     LockPlayerFieldControls();
     DestroyFollowerNPC();
-    SetFollowerNPCData(FNPC_DATA_BATTLE_PARTNER, PARTNER_STEVEN);
+    SetFollowerNPCData(FNPC_DATA_BATTLE_PARTNER, PARTNER_AKIHIKO_C1);
     CreateFollowerNPC(gfx, FNPC_ALL, Debug_Follower_NPC_Event_Script);
     UnlockPlayerFieldControls();
 }

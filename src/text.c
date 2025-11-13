@@ -345,7 +345,7 @@ static void SetFontsPointer(const struct FontInfo *fonts)
 
 u32 GetPlayerTextSpeed(void)
 {
-    if (gTextFlags.forceMidTextSpeed)
+    /*if (gTextFlags.forceMidTextSpeed)
         return OPTIONS_TEXT_SPEED_MID;
 
     if (gSaveBlock2Ptr->optionsTextSpeed > OPTIONS_TEXT_SPEED_INSTANT)
@@ -354,12 +354,14 @@ u32 GetPlayerTextSpeed(void)
     if (FlagGet(FLAG_TEXT_SPEED_INSTANT) || TEXT_SPEED_INSTANT)
         return OPTIONS_TEXT_SPEED_INSTANT;
 
-    return gSaveBlock2Ptr->optionsTextSpeed;
+    return gSaveBlock2Ptr->optionsTextSpeed;*/
+    return gSaveBlock2Ptr->optionsInstantTextOff;
 }
 
 u32 GetPlayerTextSpeedDelay(void)
 {
-    return sTextSpeedFrameDelays[GetPlayerTextSpeed()];
+    //return sTextSpeedFrameDelays[GetPlayerTextSpeed()];
+    return 1;
 }
 
 u32 GetPlayerTextSpeedModifier(void)

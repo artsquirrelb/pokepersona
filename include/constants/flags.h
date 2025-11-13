@@ -44,9 +44,9 @@
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
 #define FLAG_SPAWN_INVISIBLE            0x20 // Spawn invisible player
-#define DN_FLAG_SEARCHING               0x21 // DexNav configs
-#define DN_FLAG_DEXNAV_GET              0x22 // Shows dexnav in normal menu
-#define DN_FLAG_DETECTOR_MODE           0x23 // Allow player to find hidden mons Flag
+#define FLAG_SEARCHING                  0x21 // DexNav configs
+#define FLAG_DEXNAV_GET                 0x22 // Shows dexnav in normal menu
+#define FLAG_DETECTOR_MODE              0x23 // Allow player to find hidden mons Flag
 #define FLAG_EXP_SHARE                  0x24 // Item configs
 #define FLAG_FOLLOWERS_DISABLED         0x25 // Enables / Disables followers by using a flag. Helpful to disable followers for a period of time.
 #define FLAG_HIDE_TALK_BUTTON           0x26 // Was Unused Flag
@@ -66,8 +66,8 @@
 #define FLAG_BPMart                     0x34 // Was Unused Flag
 #define FLAG_PARTNER_WILD_BATTLES       0x35 // Was Unused Flag
 #define FLAG_FORCE_DOUBLE_WILD          0x36 // Was Unused Flag
-#define FLAG_UNUSED_0x037    0x37 // Unused Flag
-#define FLAG_UNUSED_0x038    0x38 // Unused Flag
+#define FLAG_EGG_MOVES                  0x37 // Was Unused Flag
+#define FLAG_TUTOR_MOVES                0x38 // Was Unused Flag
 #define FLAG_UNUSED_0x039    0x39 // Unused Flag
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag

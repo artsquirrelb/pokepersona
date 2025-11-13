@@ -286,6 +286,7 @@ struct BerryCrushGame
     u8 localId;
     u8 playerCount;
     u8 taskId;
+    u8 textSpeed;
     u8 cmdState;
     u8 unused; // Never read
     u8 nextCmd;

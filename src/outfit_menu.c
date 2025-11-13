@@ -56,9 +56,16 @@ enum States {
     STATE_COUNT,
 };
 
+enum {
+    ACTION_SWITCH,
+    ACTION_FOLLOWER,
+    ACTION_PARTNER,
+    ACTION_CANCEL
+};
+
 enum Windows {
     WIN_INFO = 0,
-    WIN_MSGBOX,
+    WIN_MSGBOX
 };
 
 enum Sprites {
@@ -86,8 +93,8 @@ enum IndicatorAnimIds {
 };
 
 static const u8 sFontColors[][3] = { // bgColor, textColor, shadowColor
-    [COLORID_NORMAL] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      10},
-    [COLORID_MSGBOX] = {TEXT_COLOR_WHITE,       TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
+    [COLORID_NORMAL] = {0,      1,      0},
+    [COLORID_MSGBOX] = {0,      2,      3},
 };
 
 typedef struct {
@@ -98,11 +105,34 @@ typedef struct {
     u8 listCount;
     u8 currentOutfitSpriteIds[GRID_ROWS];
     u8 slotId:1; // flipped each time its used, for trainer sprites
-    u8 unused:7;
+    u8 unused:4;
     u16 idx;
     u8 gfxState;
+    const u8 *contextMenuItemsPtr;
+    u8 contextMenuItemsBuffer[4];
+    u8 contextMenuNumItems;
     MainCallback retCB;
 } OutfitMenuResources;
+
+static const struct MenuAction sOutfitMenuActions[] = {
+    [ACTION_SWITCH]             = {COMPOUND_STRING("Main Character"),               {OutfitMenu_SwitchMainCharacter}    },
+    [ACTION_FOLLOWER]           = {COMPOUND_STRING("NPC Follower"),                 {NULL}            },
+    [ACTION_PARTNER]            = {COMPOUND_STRING("Battle Partner"),               {NULL}       },
+    [ACTION_CANCEL]             = {gText_Cancel2,                                   {OutfitMenu_Cancel}                 }
+};
+
+static const u8 sContextMenuMC [] = {
+    ACTION_SWITCH,
+    ACTION_FOLLOWER,
+    ACTION_PARTNER,
+    ACTION_CANCEL
+};
+
+static const u8 sContextMenuNPC [] = {
+    ACTION_FOLLOWER,
+    ACTION_PARTNER,
+    ACTION_CANCEL
+};
 
 static void CB2_SetupOutfitMenu(void);
 static void CB2_OutfitMenu(void);
@@ -226,10 +256,35 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 15,
         .width = 27,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 13,
         .baseBlock = 1+(23*6),
     },
     DUMMY_WIN_TEMPLATE,
+};
+
+
+static const struct WindowTemplate sContextOutfitMenuWindowTemplates[] =
+{
+    [WIN_ACTION_MENU_MC] =
+    {
+        .bg = 1,
+        .tilemapLeft = 15,
+        .tilemapTop = 3,
+        .width = 10,
+        .height = 8,
+        .paletteNum = 12,
+        .baseBlock = 1+(23*6) + (27*4)
+    },
+    
+    [WIN_ACTION_MENU_NPC] = {
+        .bg = 1,
+        .tilemapLeft = 22,
+        .tilemapTop = 15,
+        .width = 10,
+        .height = 6,
+        .paletteNum = 12,
+        .baseBlock =  1+(23*6) + (27*4) + (10*8)
+    },
 };
 
 static const struct SpriteSheet sIndicator_SpriteSheet = {
@@ -796,6 +851,69 @@ static void Task_WaitMessage(u8 taskId)
     }
 }
 
+static void OutfitMenu_SwitchMainCharacter (u8 taskId)
+{
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
+        {
+            if (GetOutfitStatus(sOutfitMenu->idx))
+            {
+                PlaySE(SE_SUCCESS);
+                gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
+            }
+            else
+            {
+                PlaySE(SE_BOO);
+                gTasks[taskId].func = Task_PrintOutfitLocked;
+            }
+        }
+        else
+        {
+            PlaySE(SE_BOO);
+            if (GetOutfitStatus(sOutfitMenu->idx))
+                gTasks[taskId].func = Task_PrintCantChangeOutfit;
+            else
+                gTasks[taskId].func = Task_PrintOutfitLocked; //! might be confusing?
+        }
+}
+
+static void ReturnToOutfitList(u8 taskId)
+{
+    CreatePocketScrollArrowPair();
+    CreatePocketSwitchArrowPair();
+    ClearWindowTilemap(WIN_ACTION_MENU_MC);
+    ClearWindowTilemap(WIN_ACTION_MENU_NPC);
+    PutWindowTilemap(WIN_INFO);
+    ScheduleBgCopyTilemapToVram(0);
+    gTasks[taskId].func = Task_OutfitMenuHandleInput;
+}
+
+static void RemoveOutfitContextWindow(void)
+{
+    if (sOutfitMenu->contextMenuNumItems == 4)
+        {
+            ClearStdWindowAndFrameToTransparent(WIN_ACTION_MENU_MC, FALSE);
+            ClearWindowTilemap(WIN_ACTION_MENU_MC);
+            RemoveWindow(WIN_ACTION_MENU_MC);
+            ScheduleBgCopyTilemapToVram(1);
+        }
+    else if (sOutfitMenu->contextMenuNumItems == 3)
+        {
+            ClearStdWindowAndFrameToTransparent(WIN_ACTION_MENU_NPC, FALSE);
+            ClearWindowTilemap(WIN_ACTION_MENU_NPC);
+            RemoveWindow(WIN_ACTION_MENU_NPC);
+            ScheduleBgCopyTilemapToVram(1);
+        }
+}
+
+static void OutfitMenu_Cancel(u8 taskId)
+{
+    RemoveOutfitContextWindow();
+    ScheduleBgCopyTilemapToVram(0);
+    ScheduleBgCopyTilemapToVram(1);
+    ReturnToOutfitList(taskId);
+}
+
+
 static inline void PrintDialogueBoxWithDescWin(const u8 *str, bool32 expandPlaceholders, u8 taskId)
 {
     const u8 *txt = expandPlaceholders ? gStringVar4 : str;
@@ -859,32 +977,44 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
 
     if (JOY_NEW(A_BUTTON))
     {
-        if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
+        PlaySE(SE_SELECT);
+        if (GetOutfitPointer(sOutfitMenu->idx) == OUTFIT_AKIHIKO || GetOutfitPointer(sOutfitMenu->idx) == OUTFIT_MITSURU)
         {
-            if (GetOutfitStatus(sOutfitMenu->idx))
-            {
-                PlaySE(SE_SUCCESS);
-                gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
-            }
-            else
-            {
-                PlaySE(SE_BOO);
-                gTasks[taskId].func = Task_PrintOutfitLocked;
-            }
+            sOutfitMenu->contextMenuItemsPtr = sContextMenuMC;
+            sOutfitMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuMC);
+            gTasks[taskId].func = Task_OutfitContext;
         }
         else
         {
-            PlaySE(SE_BOO);
-            if (GetOutfitStatus(sOutfitMenu->idx))
-                gTasks[taskId].func = Task_PrintCantChangeOutfit;
-            else
-                gTasks[taskId].func = Task_PrintOutfitLocked; //! might be confusing?
-        }
-    }
+            sOutfitMenu->contextMenuItemsPtr = sContextMenuNPC;
+            sOutfitMenu->contextMenuNumItems = ARRAY_COUNT(sContextMenuNPC);
+            gTasks[taskId].func = Task_OutfitContext;
+        };
+    };
 
     UpdateCursorPosition();
 }
 
+static void Task_OutfitContext(u8 taskId)
+{
+    if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE)
+    {
+        s8 selection = Menu_ProcessInputNoWrap();
+        switch (selection)
+        {
+        case MENU_NOTHING_CHOSEN:
+            break;
+        case MENU_B_PRESSED:
+            PlaySE(SE_SELECT);
+            sOutfitMenuActions[ACTION_CANCEL].func.void_u8(taskId);
+            break;
+        default:
+            PlaySE(SE_SELECT);
+            sOutfitMenuActions[sOutfitMenu->contextMenuItemsPtr[selection]].func.void_u8(taskId);
+            break;
+        }
+    }
+}
 static void FreeOutfitMenuResources(void)
 {
     u32 i;

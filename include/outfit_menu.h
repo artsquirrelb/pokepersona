@@ -4,6 +4,13 @@
 void OpenOutfitMenu(MainCallback retCB);
 void Task_OpenOutfitMenu(u8 taskId);
 
+enum {
+    WIN_ACTION_MENU_MC,
+    WIN_ACTION_MENU_NPC,
+    WIN_ACTION_COUNT
+};
+
+
 //! misc funcs
 void BufferOutfitStrings(u8 *dest, u8 outfitId, u8 dataType);
 u32 GetPlayerTrainerPicIdByOutfitGenderType(u32 outfitId, u32 gender, bool32 type);

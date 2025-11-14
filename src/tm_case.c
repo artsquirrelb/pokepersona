@@ -114,7 +114,7 @@ static EWRAM_DATA struct {
 
 static EWRAM_DATA void *sTilemapBuffer = NULL;
 static EWRAM_DATA struct ListMenuItem * sListMenuItemsBuffer = NULL;
-static EWRAM_DATA u8 (* sListMenuStringsBuffer)[29] = NULL;
+static EWRAM_DATA u8 (* sListMenuStringsBuffer)[35] = NULL;
 static EWRAM_DATA u16 * sTMSpritePaletteBuffer = NULL;
 static EWRAM_DATA u8 sIsInTMCase = FALSE;
 static EWRAM_DATA u8    spriteIdData[PARTY_SIZE] = {};
@@ -164,7 +164,7 @@ static void InitWindowTemplatesAndPals(void);
 static void TMCase_Print(u8 windowId, u8 fontId, const u8 * str, u8 x, u8 y, u8 letterSpacing, u8 lineSpacing, u8 speed, u8 colorIdx);
 static void TMCase_SetWindowBorder2(u8 windowId);
 static void PrintMessageWithFollowupTask(u8 taskId, u8 fontId, const u8 * str, TaskFunc func);
-static void PrintTitle(void);
+//static void PrintTitle(void);
 static void DrawMoveInfoLabels(void);
 static void PlaceHMTileInWindow(u8 windowId, u8 x, u8 y);
 static void PrintPlayersMoney(void);
@@ -253,7 +253,7 @@ static const u8 sText_ClearTo18[] = _("{CLEAR_TO 18}");
 static const u8 sText_SingleSpace[] = _(" ");
 static const u8 sText_Close[] = _("Close");
 static const u8 sText_FontSmall[] = _("{FONT_SMALL}");
-static const u8 sText_FontShort[] = _("{FONT_SHORT}");
+static const u8 sText_FontShort[] = _("{FONT_SHORT_NARROW}");
 static const u8 sText_TMCase[] = _("TM CASE");
 static const u8 sText_TMCaseWillBePutAway[] = _("The TM Case will be\nput away.");
 
@@ -291,9 +291,9 @@ static const struct WindowTemplate sWindowTemplates[] =
     [WIN_LIST] =
     {
         .bg = 0,
-        .tilemapLeft = 14,
+        .tilemapLeft = 13,
         .tilemapTop = 1,
-        .width = 15,
+        .width = 17,
         .height = 10,
         .paletteNum = 15,
         .baseBlock = 0x081 //129
@@ -306,7 +306,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .width = 18,
         .height = 8,
         .paletteNum = 15,
-        .baseBlock = 129 + (15 * 10) //was 0x13f = 319
+        .baseBlock = 129 + (17 * 10) //was 0x13f = 319
     },
     [WIN_SELECTED_MSG] =
     {
@@ -318,7 +318,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .paletteNum = 13,
         .baseBlock = 0x1f9 //505
     },
-    [WIN_TITLE] =
+    /*[WIN_TITLE] =
     {
         .bg = 0,
         .tilemapLeft = 0,
@@ -327,7 +327,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .height = 2,
         .paletteNum = 15,
         .baseBlock = 0x235 //565
-    },
+    },*/
     [WIN_MOVE_INFO_LABELS] =
     {
         .bg = 0,
@@ -592,7 +592,7 @@ static bool8 DoSetUpTMCaseUI(void)
         gMain.state++;
         break;
     case 13:
-        PrintTitle();
+        //PrintTitle();
         gMain.state++;
         break;
     case 14:
@@ -695,7 +695,7 @@ static bool8 HandleLoadTMCaseGraphicsAndPalettes(void)
 static void CreateTMCaseListMenuBuffers(void)
 {
     sListMenuItemsBuffer = Alloc((BAG_TMHM_COUNT + 1) * sizeof(struct ListMenuItem));
-    sListMenuStringsBuffer = Alloc(sTMCaseDynamicResources->numTMs * 31);
+    sListMenuStringsBuffer = Alloc(sTMCaseDynamicResources->numTMs * 35);
 }
 
 static void InitTMCaseListMenuItems(void)
@@ -721,7 +721,7 @@ static void InitTMCaseListMenuItems(void)
     gMultiuseListMenuTemplate.itemVerticalPadding = 2;
     gMultiuseListMenuTemplate.upText_Y = 2;
     gMultiuseListMenuTemplate.maxShowed = sTMCaseDynamicResources->maxTMsShown;
-    gMultiuseListMenuTemplate.fontId = FONT_SHORT;
+    gMultiuseListMenuTemplate.fontId = FONT_SHORT_NARROW;
     gMultiuseListMenuTemplate.cursorPal = TEXT_COLOR_TMCASE_DARK_GRAY;
     gMultiuseListMenuTemplate.fillValue = TEXT_COLOR_TMCASE_TRANSPARENT;
     gMultiuseListMenuTemplate.cursorShadowPal = TEXT_COLOR_TMCASE_LIGHT_GRAY;
@@ -746,7 +746,7 @@ static void GetTMNumberAndMoveString(u8 * dest, u16 itemId)
     else
     {
         StringAppend(gStringVar4, gText_NumberClear01);
-        ConvertIntToDecimalStringN(gStringVar1, tmIdx, STR_CONV_MODE_LEADING_ZEROS, 2);
+        ConvertIntToDecimalStringN(gStringVar1, tmIdx, STR_CONV_MODE_LEADING_ZEROS, 3);
         StringAppend(gStringVar4, gStringVar1);
     }
     StringAppend(gStringVar4, sText_SingleSpace);
@@ -1274,7 +1274,7 @@ static void Task_SaleOfTMsCanceled(u8 taskId)
     ClearDialogWindowAndFrameToTransparent(WIN_MESSAGE, FALSE);
     PutWindowTilemap(WIN_LIST);
     PutWindowTilemap(WIN_DESCRIPTION);
-    PutWindowTilemap(WIN_TITLE);
+    //PutWindowTilemap(WIN_TITLE);
     PutWindowTilemap(WIN_MOVE_INFO_LABELS);
     PutWindowTilemap(WIN_MOVE_INFO);
     RemoveMoneyLabelObject();
@@ -1332,7 +1332,7 @@ static void Task_QuantitySelect_HandleInput(u8 taskId)
         ClearStdWindowAndFrameToTransparent(WIN_SELL_QUANTITY, FALSE);
         ClearStdWindowAndFrameToTransparent(WIN_MONEY, FALSE);
         ClearDialogWindowAndFrameToTransparent(WIN_MESSAGE, FALSE);
-        PutWindowTilemap(WIN_TITLE);
+        //PutWindowTilemap(WIN_TITLE);
         PutWindowTilemap(WIN_LIST);
         PutWindowTilemap(WIN_DESCRIPTION);
         RemoveMoneyLabelObject();
@@ -1381,7 +1381,7 @@ static void Task_AfterSale_ReturnToList(u8 taskId)
         ClearStdWindowAndFrameToTransparent(WIN_MONEY, FALSE);
         ClearDialogWindowAndFrameToTransparent(WIN_MESSAGE, FALSE);
         PutWindowTilemap(WIN_DESCRIPTION);
-        PutWindowTilemap(WIN_TITLE);
+        //PutWindowTilemap(WIN_TITLE);
         PutWindowTilemap(WIN_MOVE_INFO_LABELS);
         PutWindowTilemap(WIN_MOVE_INFO);
         RemoveMoneyLabelObject();
@@ -1405,7 +1405,7 @@ static void InitWindowTemplatesAndPals(void)
         FillWindowPixelBuffer(i, 0x00);
     PutWindowTilemap(WIN_LIST);
     PutWindowTilemap(WIN_DESCRIPTION);
-    PutWindowTilemap(WIN_TITLE);
+    //PutWindowTilemap(WIN_TITLE);
     PutWindowTilemap(WIN_MOVE_INFO_LABELS);
     PutWindowTilemap(WIN_MOVE_INFO);
     ScheduleBgCopyTilemapToVram(0);
@@ -1427,11 +1427,11 @@ static void PrintMessageWithFollowupTask(u8 taskId, u8 fontId, const u8 * str, T
     ScheduleBgCopyTilemapToVram(1);
 }
 
-static void PrintTitle(void)
+/*static void PrintTitle(void)
 {
     u32 distance = 72 - GetStringWidth(FONT_SHORT, sText_TMCase, 0);
     AddTextPrinterParameterized3(WIN_TITLE, FONT_SHORT, distance / 2, 1, sTextColors[COLOR_LIGHT], 0, sText_TMCase);
-}
+}*/
 
 static void DrawMoveInfoLabels(void)
 {

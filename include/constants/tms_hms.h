@@ -129,7 +129,7 @@
     F(CHILLING_WATER) \
     F(FLIP_TURN) \
     F(VOLT_SWITCH) \
-    F(TRAILBLAZE) \
+    F(U_TURN) \
     F(GRASSY_GLIDE) \
     F(FREEZE_DRY) \
     F(BODY_PRESS) \
@@ -138,7 +138,7 @@
     F(SCORCHING_SANDS) \
     F(ACROBATICS) \
     F(ZEN_HEADBUTT) \
-    F(U_TURN) \
+    F(TRAILBLAZE) \
     F(DRAGON_CHEER) \
     F(GYRO_BALL) \
     F(HARD_PRESS) \

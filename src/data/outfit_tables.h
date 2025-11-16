@@ -121,8 +121,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .desc = COMPOUND_STRING("Pretty fond of good boys."),
 
         .trainerPics = {
-            [MALE] = { TRAINER_PIC_MAY, TRAINER_BACK_PIC_MAY, },
-            [FEMALE] =   { TRAINER_PIC_MAY, TRAINER_BACK_PIC_MAY, },
+            [MALE] = { TRAINER_PIC_MAY, TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY, },
+            [FEMALE] =   { TRAINER_PIC_MAY, TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY, },
         },
         .avatarGfxIds = {
             [MALE] = {
@@ -166,18 +166,18 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .desc = COMPOUND_STRING("Looks grumpy, but he's soft inside."),
 
         .trainerPics = {
-            [MALE] =   { TRAINER_PIC_BRENDAN, TRAINER_BACK_PIC_BRENDAN, },
-            [FEMALE] = { TRAINER_PIC_BRENDAN, TRAINER_BACK_PIC_BRENDAN, },
+            [MALE] =   { TRAINER_PIC_SHINJIRO, TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN, },
+            [FEMALE] = { TRAINER_PIC_SHINJIRO, TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN, },
         },
         .avatarGfxIds = {
             [MALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_BRENDAN_NORMAL,
+               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_SHINJIRO,
                [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
                [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
                [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
            },
            [FEMALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_BRENDAN_NORMAL,
+               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_SHINJIRO,
                [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
                [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
                [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER

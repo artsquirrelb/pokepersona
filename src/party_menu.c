@@ -2931,7 +2931,7 @@ void DisplayPartyMenuStdMessage(u32 stringId)
         DrawStdFrameWithCustomTileAndPalette(*windowPtr, FALSE, 0x4F, 13);
         StringExpandPlaceholders(gStringVar4, sActionStringTable[stringId]);
         //AddTextPrinterParameterized(*windowPtr, FONT_NORMAL, gStringVar4, 0, 1, 0, 0);
-        AddTextPrinterParameterized2(*windowPtr, FONT_NORMAL, gStringVar4, 0, 0, 1, 0, 0);
+        AddTextPrinterParameterized2(*windowPtr, FONT_NORMAL, gStringVar4, 0, 0, 1, 3, 0);
         ScheduleBgCopyTilemapToVram(2);
     }
 }

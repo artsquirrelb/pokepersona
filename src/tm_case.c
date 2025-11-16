@@ -283,7 +283,7 @@ static const u8 sTextColors[][3] =
     [COLOR_DARK]            = {TEXT_COLOR_TMCASE_TRANSPARENT, TEXT_COLOR_TMCASE_DARK_GRAY, 0},
     [COLOR_CURSOR_SELECTED] = {TEXT_COLOR_TMCASE_TRANSPARENT, TEXT_COLOR_TMCASE_LIGHT_GRAY, TEXT_COLOR_TMCASE_DARK_GRAY},
     [COLOR_MOVE_INFO]       = {TEXT_COLOR_TMCASE_TRANSPARENT, 14, 0},
-    [COLOR_MESSAGE]         = {TEXT_COLOR_TMCASE_TRANSPARENT, TEXT_COLOR_TMCASE_MESSAGE_NORMAL, TEXT_COLOR_TMCASE_MESSAGE_SHADOW},
+    [COLOR_MESSAGE]         = {0, 1, 0},
 };
 
 static const struct WindowTemplate sWindowTemplates[] =
@@ -315,7 +315,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 15,
         .width = 15,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x1f9 //505
     },
     /*[WIN_TITLE] =
@@ -355,7 +355,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 15,
         .width = 26,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x285 //645
     },
     [WIN_SELL_QUANTITY] =
@@ -365,7 +365,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 9,
         .width = 12,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x2ed //749
     },
     [WIN_MONEY] =
@@ -375,7 +375,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 1,
         .width = 10,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x31d //797
     },
     DUMMY_WIN_TEMPLATE
@@ -387,7 +387,7 @@ static const struct WindowTemplate sYesNoWindowTemplate = {
     .tilemapTop = 9,
     .width = 6,
     .height = 4,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 0x335
 };
 
@@ -398,7 +398,7 @@ static const struct WindowTemplate sWindowTemplates_ContextMenu[] = {
         .tilemapTop = 13,
         .width = 7,
         .height = 6,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x1cf
     },
     [WIN_GIVE_EXIT] = {
@@ -407,7 +407,7 @@ static const struct WindowTemplate sWindowTemplates_ContextMenu[] = {
         .tilemapTop = 15,
         .width = 7,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x1cf
     },
 };

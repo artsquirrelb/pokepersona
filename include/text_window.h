@@ -21,6 +21,7 @@ void LoadUserWindowBorderGfx_(u8 windowId, u16 destOffset, u8 palOffset);
 void LoadUserWindowBorderGfxOnBg(u8 bg, u16 destOffset, u8 palOffset);
 void LoadLightWindowBorderGfx(u8 windowId, u16 destOffset, u8 palOffset);
 void LoadDarkWindowBorderGfx(u8 windowId, u16 destOffset, u8 palOffset);
+void LoadRightEdgeWindowBorderGfx(u8 windowId, u16 destOffset, u8 palOffset);
 void DrawTextBorderOuter(u8 windowId, u16 tileNum, u8 palNum);
 void DrawTextBorderInner(u8 windowId, u16 tileNum, u8 palNum);
 void rbox_fill_rectangle(u8 windowId);

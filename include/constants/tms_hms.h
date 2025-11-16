@@ -31,8 +31,8 @@
     F(DRAINING_KISS) \
     F(REFLECT) \
     F(LIGHT_SCREEN) \
-    F(PROTECT) \
-    F(HELPING_HAND) \
+    F(REST) \
+    F(TAUNT) \
     F(AURORA_VEIL) \
     F(SWORDS_DANCE) \
     F(NASTY_PLOT) \

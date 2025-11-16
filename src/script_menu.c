@@ -743,19 +743,19 @@ static void CreatePCMultichoice(void)
         numChoices = 3;
         windowId = CreateWindowFromRect(0, 0, width, 6);
         SetStandardWindowBorderStyle(windowId, FALSE);
-        AddTextPrinterParameterized6(windowId, FONT_NORMAL, gText_LogOff, x, 33, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
+        AddTextPrinterParameterized6(windowId, FONT_NORMAL, gText_LogOff, x, 33, TEXT_SKIP_DRAW, 0, 1, 0x0, 0x0);
     }
 
     // Change PC name if player has met Lanette
     if (FlagGet(FLAG_SYS_PC_LANETTE))
         //AddTextPrinterParameterized(windowId, FONT_NORMAL, gText_LanettesPC, x, 1, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized6(windowId, FONT_NORMAL, gText_LanettesPC, x, 1, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
+        AddTextPrinterParameterized6(windowId, FONT_NORMAL, gText_LanettesPC, x, 1, TEXT_SKIP_DRAW, 0, 1, 0x0, 0x0);
     else
-        AddTextPrinterParameterized6(windowId, FONT_NORMAL, gText_SomeonesPC, x, 1, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
+        AddTextPrinterParameterized6(windowId, FONT_NORMAL, gText_SomeonesPC, x, 1, TEXT_SKIP_DRAW, 0, 1, 0x0, 0x0);
 
     StringExpandPlaceholders(gStringVar4, gText_PlayersPC);
     //PrintPlayerNameOnWindow(windowId, gStringVar4, x, 17);
-    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, x, 17, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, x, 17, TEXT_SKIP_DRAW, 0, 1, 0x0, 0x0);
     InitMenuInUpperLeftCornerNormal(windowId, numChoices, 0);
     CopyWindowToVram(windowId, COPYWIN_FULL);
     InitMultichoiceCheckWrap(FALSE, numChoices, windowId, MULTI_PC);
@@ -764,7 +764,7 @@ static void CreatePCMultichoice(void)
 void ScriptMenu_DisplayPCStartupPrompt(void)
 {
     LoadMessageBoxAndFrameGfx(0, TRUE);
-    AddTextPrinterParameterized2(0, FONT_NORMAL, gText_WhichPCShouldBeAccessed, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    AddTextPrinterParameterized2(0, FONT_NORMAL, gText_WhichPCShouldBeAccessed, 0, NULL, TEXT_COLOR_DARK_GRAY, 0, 0);
 }
 
 bool8 ScriptMenu_CreateLilycoveSSTidalMultichoice(void)
@@ -1012,7 +1012,7 @@ static bool8 IsPicboxClosed(void)
 
 u8 CreateWindowFromRect(u8 x, u8 y, u8 width, u8 height)
 {
-    struct WindowTemplate template = CreateWindowTemplate(0, x + 1, y + 1, width, height, 15, 100);
+    struct WindowTemplate template = CreateWindowTemplate(0, x + 1, y + 1, width, height, 14, 100);
     u8 windowId = AddWindow(&template);
     PutWindowTilemap(windowId);
     return windowId;

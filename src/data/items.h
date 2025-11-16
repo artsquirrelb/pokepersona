@@ -11993,11 +11993,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM30] =
     {
         .name = ITEM_NAME("TM30"),
-        .price = 5000,
+        .price = 3000,
         .description = COMPOUND_STRING(
-            "Enables the user to evade\n"
-            "all attacks. It may fail\n"
-            "if used in succession."),
+            "The user sleeps for 2 turns\n"
+            "to fully restore HP and\n"
+            "heal any status problem."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12007,11 +12007,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM31] =
     {
         .name = ITEM_NAME("TM31"),
-        .price = 5000,
+        .price = 3000,
         .description = COMPOUND_STRING(
-            "A move that boosts the\n"
-            "power of the ally's attack\n"
-            "in a battle."),
+            "The foe is taunted into\n"
+            "a rage that allows it to\n"
+            "use only attack moves."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

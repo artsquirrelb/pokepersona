@@ -122,6 +122,18 @@ void LoadUserWindowBorderGfx(u8 windowId, u16 destOffset, u8 palOffset)
     LoadWindowGfx(windowId, gSaveBlock2Ptr->optionsWindowFrameType, destOffset, palOffset);
 }
 
+void LoadLightWindowBorderGfx(u8 windowId, u16 destOffset, u8 palOffset)
+{
+    LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sTextWindowFrame3_Gfx, 0x120, destOffset);
+    LoadPalette(sTextWindowFrame3_Pal, palOffset, PLTT_SIZE_4BPP);
+}
+
+void LoadDarkWindowBorderGfx(u8 windowId, u16 destOffset, u8 palOffset)
+{
+    LoadBgTiles(GetWindowAttribute(windowId, WINDOW_BG), sTextWindowFrame4_Gfx, 0x120, destOffset);
+    LoadPalette(sTextWindowFrame4_Pal, palOffset, PLTT_SIZE_4BPP);
+}
+
 void DrawTextBorderOuter(u8 windowId, u16 tileNum, u8 palNum)
 {
     u8 bgLayer = GetWindowAttribute(windowId, WINDOW_BG);

@@ -234,7 +234,7 @@ static const u8 sText_DepositHowManyVar1[] = _("Deposit how many\n{STR_VAR_1}?")
 static const u8 sText_DepositedVar2Var1s[] = _("Deposited {STR_VAR_2}\n{STR_VAR_1}.");
 static const u8 sText_NoRoomForItems[] = _("There's no room to\nstore items.");
 static const u8 sText_CantStoreImportantItems[] = _("Important items\ncan't be stored in\nthe PC!");
-static const u8 sText_BlueText[] = _("{COLOR 4}{STR_VAR_2}");
+static const u8 sText_BlueText[] = _("{COLOR 12}{STR_VAR_2}");
 
 static void Task_LoadBagSortOptions(u8 taskId);
 static void ItemMenu_SortByName(u8 taskId);
@@ -620,7 +620,7 @@ static const u8 sFontColorTable[][3] = {
     [COLORID_GRAY_CURSOR] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
     [COLORID_UNUSED]      = {TEXT_COLOR_DARK_GRAY,   TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
     [COLORID_TMHM_INFO]   = {TEXT_COLOR_TRANSPARENT, 15,  14},
-    [COLORID_DESCRIPTION] = {0, 2, 0}
+    [COLORID_DESCRIPTION] = {0, 1, 0}
 };
 
 static const struct WindowTemplate sDefaultBagWindows[] =
@@ -631,7 +631,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .tilemapTop = 2,
         .width = 15,
         .height = 16,
-        .paletteNum = 13, //was 1
+        .paletteNum = 0, //was 1
         .baseBlock = 0x27,
     },
     [WIN_DESCRIPTION] = {
@@ -640,7 +640,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .tilemapTop = 13,
         .width = 14,
         .height = 6,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x117,
     },
     [WIN_POCKET_NAME] = {
@@ -690,7 +690,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .tilemapTop = 17,
         .width = 7,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x21D,
     },
     [ITEMWIN_1x2] = {
@@ -699,7 +699,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .tilemapTop = 15,
         .width = 7,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x21D,
     },
     [ITEMWIN_2x2] = {
@@ -708,7 +708,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .tilemapTop = 15,
         .width = 14,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x21D,
     },
     [ITEMWIN_2x3] = {
@@ -717,7 +717,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .tilemapTop = 13,
         .width = 14,
         .height = 6,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x21D,
     },
     [ITEMWIN_MESSAGE] = {
@@ -735,7 +735,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .tilemapTop = 15,
         .width = 5,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x21D,
     },
     [ITEMWIN_YESNO_HIGH] = { // Yes/No higher up, positioned above a lower message box
@@ -744,7 +744,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .tilemapTop = 9,
         .width = 5,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x21D,
     },
     [ITEMWIN_QUANTITY] = { // Used for quantity of items to Toss/Deposit
@@ -753,7 +753,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .tilemapTop = 17,
         .width = 5,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x21D,
     },
     [ITEMWIN_QUANTITY_WIDE] = { // Used for quantity and price of items to Sell
@@ -762,7 +762,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .tilemapTop = 11,
         .width = 10,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x245,
     },
     [ITEMWIN_MONEY] = {
@@ -771,7 +771,7 @@ static const struct WindowTemplate sContextMenuWindowTemplates[] =
         .tilemapTop = 1,
         .width = 10,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x231,
     },
 };
@@ -1489,7 +1489,7 @@ static void PrintItemQuantity(u8 windowId, s16 quantity)
 {
     ConvertIntToDecimalStringN(gStringVar1, quantity, STR_CONV_MODE_LEADING_ZEROS, MAX_ITEM_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
-    AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 0x28), 2, 0, 0);
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 0x28), 2, 0, 0, 1, 0, 0);
 }
 
 // Prints the quantity of items to be sold and the amount that would be earned
@@ -1497,7 +1497,7 @@ static void PrintItemSoldAmount(int windowId, int numSold, int moneyEarned)
 {
     ConvertIntToDecimalStringN(gStringVar1, numSold, STR_CONV_MODE_LEADING_ZEROS, MAX_ITEM_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
-    AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, 0, 1, TEXT_SKIP_DRAW, 0);
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, 0, 1, TEXT_SKIP_DRAW, 0, 1, 0, 0);
     PrintMoneyAmount(windowId, CalculateMoneyTextHorizontalPosition(moneyEarned), 1, moneyEarned, 0);
 }
 
@@ -3227,7 +3227,7 @@ static void DisplayCurrentMoneyWindow(void)
 {
     u8 windowId = BagMenu_AddWindow(ITEMWIN_MONEY);
     PrintMoneyAmountInMoneyBoxWithBorder(windowId, 1, 14, GetMoney(&gSaveBlock1Ptr->money));
-    AddMoneyLabelObject(19, 11);
+    //AddMoneyLabelObject(19, 11);
 }
 
 static void RemoveMoneyWindow(void)

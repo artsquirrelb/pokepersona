@@ -300,7 +300,7 @@ static const u8 sText_Space[] = _(" ");
 static const u8 sText_Close[] = _("Close");
 static const u8 sText_FontSmall[] = _("{FONT_SMALL}");
 static const u8 sText_FontNormal[] = _("{FONT_SHORT}");
-static const u8 sText_BerryPouch[] = _("BERRY POUCH");
+static const u8 sText_BerryPouch[] = _("");//BERRY POUCH");
 static const u8 sText_TheBerryPouchWillBePutAway[] = _("The Berry Pouch will be\nput away.");
 static const u8 sText_TossOutHowManyStrVar1s[] = _("Toss out how many\n{STR_VAR_1}?");
 static const u8 sText_ThrowAwayStrVar2OfThisItemQM[] = _("Throw away {STR_VAR_2} of\nthis item?");
@@ -514,9 +514,9 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
 
 static const u8 sTextColors[][3] =
 {
-    [BP_COLORID_WHITE]      = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_WHITE, TEXT_COLOR_BP_DARK_GRAY },
-    [BP_COLORID_DARK_GRAY]  = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_DARK_GRAY, TEXT_COLOR_BP_LIGHT_GRAY },
-    [BP_COLORID_LIGHT_GRAY] = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_LIGHT_GRAY, TEXT_COLOR_BP_DARK_GRAY },
+    [BP_COLORID_WHITE]      = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_WHITE, 0 },
+    [BP_COLORID_DARK_GRAY]  = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_DARK_GRAY, 0 },
+    [BP_COLORID_LIGHT_GRAY] = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_LIGHT_GRAY, 0 },
     [BP_COLORID_TEXT]       = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_MESSAGE_NORMAL, TEXT_COLOR_BP_MESSAGE_SHADOW },
 };
 

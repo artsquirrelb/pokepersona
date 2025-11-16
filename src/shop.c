@@ -228,7 +228,7 @@ static const struct WindowTemplate sShopMenuWindowTemplates[] =
         .tilemapTop = 1,
         .width = 9,
         .height = 6,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0008,
     },
     // Separate shop menu window for decorations, which can't be sold
@@ -238,7 +238,7 @@ static const struct WindowTemplate sShopMenuWindowTemplates[] =
         .tilemapTop = 1,
         .width = 9,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0008,
     }
 };

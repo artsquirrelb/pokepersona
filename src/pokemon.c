@@ -5665,6 +5665,9 @@ static const u16 sUniversalMoves[] =
     MOVE_SECRET_POWER,
     MOVE_SUBSTITUTE,
     MOVE_TERA_BLAST,
+    MOVE_WEATHER_BALL,
+    MOVE_HELPING_HAND,
+    MOVE_PROTECT,
 };
 
 

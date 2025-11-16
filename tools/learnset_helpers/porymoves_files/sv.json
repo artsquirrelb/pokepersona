@@ -90666,7 +90666,8 @@
       "MOVE_PSYCHIC",
       "MOVE_SNOWSCAPE",
       "MOVE_ECHOED_VOICE",
-      "MOVE_HAIL"
+      "MOVE_HAIL",
+      "MOVE_FROSTBITE"
     ],
     "EggMoves": [
       "MOVE_BABY_DOLL_EYES",
@@ -90868,7 +90869,8 @@
       "MOVE_PSYCHIC",
       "MOVE_SNOWSCAPE",
       "MOVE_ECHOED_VOICE",
-      "MOVE_HAIL"
+      "MOVE_HAIL",
+      "MOVE_FROSTBITE"
     ],
     "EggMoves": [
       "MOVE_BABY_DOLL_EYES",

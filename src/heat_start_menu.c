@@ -195,7 +195,7 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
     .tilemapTop = 1,
     .width = 14,
     .height = 10,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 8
 };
 
@@ -816,33 +816,33 @@ static void HeatStartMenu_LoadBgGfx(void) {
 
 static void HeatStartMenu_ShowQuestButtons (void)
 {
-sHeatStartMenu->sQuestButtonWindowId = AddWindow(&sWindowTemplate_QuestButton);
-FillWindowPixelBuffer(sHeatStartMenu->sQuestButtonWindowId, PIXEL_FILL(0));
-PutWindowTilemap(sHeatStartMenu->sQuestButtonWindowId);
   if (FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE){
-AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 0, 0, 0x1, 0x0, 0x2);
-CopyWindowToVram(sHeatStartMenu->sQuestButtonWindowId, COPYWIN_FULL);
+    sHeatStartMenu->sQuestButtonWindowId = AddWindow(&sWindowTemplate_QuestButton);
+    FillWindowPixelBuffer(sHeatStartMenu->sQuestButtonWindowId, PIXEL_FILL(0));
+    PutWindowTilemap(sHeatStartMenu->sQuestButtonWindowId);
+    AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 0, 0, 0x1, 0x0, 0x2);
+    CopyWindowToVram(sHeatStartMenu->sQuestButtonWindowId, COPYWIN_FULL);
   }
 }
 
 static void HeatStartMenu_ShowCompanionsButtons (void)
 {
-sHeatStartMenu->sCompanionsButonWindowId = AddWindow(&sWindowTemplate_CompanionsButton);
-FillWindowPixelBuffer(sHeatStartMenu->sCompanionsButonWindowId, PIXEL_FILL(0));
-PutWindowTilemap(sHeatStartMenu->sCompanionsButonWindowId);
   if (FlagGet(FLAG_COMPANION_MENU) == TRUE){
-AddTextPrinterParameterized2(sHeatStartMenu->sCompanionsButonWindowId, FONT_SMALL, gText_CompanionsButton, 0, 0, 0x1, 0x0, 0x2);
-CopyWindowToVram(sHeatStartMenu->sCompanionsButonWindowId, COPYWIN_FULL);
+    sHeatStartMenu->sCompanionsButonWindowId = AddWindow(&sWindowTemplate_CompanionsButton);
+    FillWindowPixelBuffer(sHeatStartMenu->sCompanionsButonWindowId, PIXEL_FILL(0));
+    PutWindowTilemap(sHeatStartMenu->sCompanionsButonWindowId);
+    AddTextPrinterParameterized2(sHeatStartMenu->sCompanionsButonWindowId, FONT_SMALL, gText_CompanionsButton, 0, 0, 0x1, 0x0, 0x2);
+    CopyWindowToVram(sHeatStartMenu->sCompanionsButonWindowId, COPYWIN_FULL);
   }
 }
 
 static void HeatStartMenu_ShowMapButtons (void)
 {
-sHeatStartMenu->sMapButtonWindowId = AddWindow(&sWindowTemplate_MapButton);
-FillWindowPixelBuffer(sHeatStartMenu->sMapButtonWindowId, PIXEL_FILL(0));
-PutWindowTilemap(sHeatStartMenu->sMapButtonWindowId);
-AddTextPrinterParameterized2(sHeatStartMenu->sMapButtonWindowId, FONT_SMALL, gText_MapButton, 0, 0, 0x1, 0x0, 0x2);
-CopyWindowToVram(sHeatStartMenu->sMapButtonWindowId, COPYWIN_FULL);
+  sHeatStartMenu->sMapButtonWindowId = AddWindow(&sWindowTemplate_MapButton);
+  FillWindowPixelBuffer(sHeatStartMenu->sMapButtonWindowId, PIXEL_FILL(0));
+  PutWindowTilemap(sHeatStartMenu->sMapButtonWindowId);
+  AddTextPrinterParameterized2(sHeatStartMenu->sMapButtonWindowId, FONT_SMALL, gText_MapButton, 0, 0, 0x1, 0x0, 0x2);
+  CopyWindowToVram(sHeatStartMenu->sMapButtonWindowId, COPYWIN_FULL);
 }
 
 static void HeatStartMenu_ShowTimeWindow(void)
@@ -1300,11 +1300,11 @@ static void ShowSaveInfoWindow(void) {
     DrawStdWindowFrame(sSaveInfoWindowId, FALSE);
 
     gender = gSaveBlock2Ptr->playerGender;
-    color = 0x12;  // Red when female, blue when male.
+    color = 13;  // Red when female, blue when male.
     
     if (gender == MALE)
     {
-        color = TEXT_COLOR_BLUE;
+        color = 1;
     }
     
     // Print region name
@@ -1312,12 +1312,12 @@ static void ShowSaveInfoWindow(void) {
     
     BufferSaveMenuText(SAVE_MENU_LOCATION, gStringVar4, 0x0);
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, 8, yOffset, TEXT_SKIP_DRAW, NULL, 0xC, 0x0, 0x3);
+    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, 8, yOffset, TEXT_SKIP_DRAW, NULL, 4, 0x0, 0x0);
 
     // Print player name
     yOffset += 16;
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPlayer, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPlayer, 0, yOffset, TEXT_SKIP_DRAW, NULL, 0x2, 0x0, 0x0);
+    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPlayer, 0, yOffset, TEXT_SKIP_DRAW, NULL, 4, 0x0, 0x0);
     BufferSaveMenuText(SAVE_MENU_NAME, gStringVar4, 0x0);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     //PrintPlayerNameOnWindow(sSaveInfoWindowId, gStringVar4, xOffset, yOffset);
@@ -1326,11 +1326,11 @@ static void ShowSaveInfoWindow(void) {
     // Print badge count
     yOffset += 16;
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingBadges, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingBadges, 0, yOffset, TEXT_SKIP_DRAW, NULL, 0x2, 0x0, 0x0);
+    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingBadges, 0, yOffset, TEXT_SKIP_DRAW, NULL, 4, 0x0, 0x0);
     BufferSaveMenuText(SAVE_MENU_BADGES, gStringVar4, 0x0);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 0x8, 0x0, 0x0);
+    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 0x1, 0x0, 0x0);
 
 
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
@@ -1338,22 +1338,22 @@ static void ShowSaveInfoWindow(void) {
         // Print pokedex count
         yOffset += 16;
         //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL, 0x2, 0x0, 0x0);
+        AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL, 4, 0x0, 0x0);
         BufferSaveMenuText(SAVE_MENU_CAUGHT, gStringVar4, 0x0);
         xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
         //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 0x8, 0x0, 0x0);
+        AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
   
     }
 
     // Print play time
     yOffset += 16;
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingTime, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingTime, 0, yOffset, TEXT_SKIP_DRAW, NULL, 0x2, 0x0, 0x0);
+    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingTime, 0, yOffset, TEXT_SKIP_DRAW, NULL, 4, 0x0, 0x0);
     BufferSaveMenuText(SAVE_MENU_PLAY_TIME, gStringVar4, 0x0);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 0x8, 0x0, 0x0);
+    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 0x1, 0x0, 0x0);
 
     CopyWindowToVram(sSaveInfoWindowId, COPYWIN_GFX);
 }

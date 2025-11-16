@@ -171,10 +171,10 @@ static const struct MenuAction sItemPcSubmenuOptions[] =
 
 static const u8 sTextColors[][3] =
 {
-    [ITEM_PC_COLORID_WHITE]      = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_WHITE, TEXT_COLOR_ITEM_PC_DARK_GRAY},
-    [ITEM_PC_COLORID_DARK_GRAY]  = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_DARK_GRAY, TEXT_COLOR_ITEM_PC_LIGHT_GRAY},
-    [ITEM_PC_COLORID_LIGHT_GRAY] = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_LIGHT_GRAY, TEXT_COLOR_ITEM_PC_DARK_GRAY},
-    [ITEM_PC_COLORID_MESSAGE]    = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_MESSAGE_NORMAL, TEXT_COLOR_ITEM_PC_MESSAGE_SHADOW}
+    [ITEM_PC_COLORID_WHITE]      = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_WHITE, 0},
+    [ITEM_PC_COLORID_DARK_GRAY]  = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_DARK_GRAY, 0},
+    [ITEM_PC_COLORID_LIGHT_GRAY] = {TEXT_COLOR_ITEM_PC_TRANSPARENT, TEXT_COLOR_ITEM_PC_LIGHT_GRAY, 0},
+    [ITEM_PC_COLORID_MESSAGE]    = {TEXT_COLOR_ITEM_PC_TRANSPARENT, 1, 0}
 };
 
 static const struct WindowTemplate sWindowTemplates[] =
@@ -186,7 +186,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 1,
         .width = 19,
         .height = 12,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x02bf
     },
     [ITEM_PC_WINDOW_DESCRIPTION] =
@@ -206,7 +206,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 1,
         .width = 5,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0215
     },
     [ITEM_PC_WINDOW_WITHDRAW_AMOUNT] =
@@ -216,7 +216,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 15,
         .width = 5,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0201
     },
     [ITEM_PC_WINDOW_ITEM_OPTIONS] =
@@ -226,7 +226,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 13,
         .width = 7,
         .height = 6,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x01d7
     },
     [ITEM_PC_WINDOW_MESSAGE] =
@@ -236,7 +236,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 15,
         .width = 26,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x016f
     },
     DUMMY_WIN_TEMPLATE
@@ -251,7 +251,7 @@ static const struct WindowTemplate sSubwindowTemplates[] =
         .tilemapTop = 15,
         .width = 14,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0137
     },
     [ITEM_PC_SUBWINDOW_HOW_MANY] =
@@ -261,7 +261,7 @@ static const struct WindowTemplate sSubwindowTemplates[] =
         .tilemapTop = 15,
         .width = 16,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0137
     },
     [ITEM_PC_SUBWINDOW_WITHDRAW] =
@@ -271,7 +271,7 @@ static const struct WindowTemplate sSubwindowTemplates[] =
         .tilemapTop = 15,
         .width = 23,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x009b
     }
 };
@@ -1135,7 +1135,7 @@ static void ItemPc_InitWindows(void)
     DeactivateAllTextPrinters();
     LoadUserWindowBorderGfx(ITEM_PC_WINDOW_ITEM_LIST, 0x3C0, BG_PLTT_ID(14));
     LoadMessageBoxGfx(ITEM_PC_WINDOW_ITEM_LIST, 0x3A3, BG_PLTT_ID(13));
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    //LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     for (i = ITEM_PC_WINDOW_ITEM_LIST; i < ITEM_PC_WINDOW_WITHDRAW_AMOUNT; i++)
     {
         FillWindowPixelBuffer(i, 0x00);

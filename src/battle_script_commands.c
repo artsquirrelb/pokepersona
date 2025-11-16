@@ -8909,7 +8909,7 @@ static void DrawLevelUpWindow1(void)
     u16 currStats[NUM_STATS];
 
     GetMonLevelUpWindowStats(&gPlayerParty[gBattleStruct->expGetterMonId], currStats);
-    DrawLevelUpWindowPg1(B_WIN_LEVEL_UP_BOX, gBattleResources->beforeLvlUp->stats, currStats, 0xE, 0x1, 0x0);
+    DrawLevelUpWindowPg1(B_WIN_LEVEL_UP_BOX, gBattleResources->beforeLvlUp->stats, currStats, 4, 0x1, 0x0);
 }
 
 static void DrawLevelUpWindow2(void)
@@ -8917,7 +8917,7 @@ static void DrawLevelUpWindow2(void)
     u16 currStats[NUM_STATS];
 
     GetMonLevelUpWindowStats(&gPlayerParty[gBattleStruct->expGetterMonId], currStats);
-    DrawLevelUpWindowPg2(B_WIN_LEVEL_UP_BOX, currStats, 0xE, 0x1, 0x0);
+    DrawLevelUpWindowPg2(B_WIN_LEVEL_UP_BOX, currStats, 4, 0x1, 0x0);
 }
 
 static void InitLevelUpBanner(void)
@@ -8991,7 +8991,7 @@ static void DrawLevelUpBannerText(void)
     {
         if (monGender == MON_MALE)
         {
-            txtPtr = WriteColorChangeControlCode(txtPtr, 0, 12);
+            txtPtr = WriteColorChangeControlCode(txtPtr, 0, 6);
             txtPtr = WriteColorChangeControlCode(txtPtr, 1, 0x0);
             *(txtPtr++) = CHAR_MALE;
         }

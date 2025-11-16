@@ -20,6 +20,7 @@
 #include "decompress.h"
 #include "event_data.h"
 #include "constants/flags.h"
+#include "graphics.h"
 
 enum
 {
@@ -585,18 +586,18 @@ static void DrawTopBarText(void)
     {
         case MENU_GENERAL:
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 105, 1, color, 0, sText_TopBar_General);
-            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 2, 1, color, 0, sText_TopBar_General_Left);  // Show L to go to SOUND
-            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 190, 1, color, 0, sText_TopBar_General_Right);
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 6, 1, color, 0, sText_TopBar_General_Left);  // Show L to go to SOUND
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 188, 1, color, 0, sText_TopBar_General_Right);
             break;
         case MENU_BATTLE:
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 105, 1, color, 0, sText_TopBar_Battle);
-            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 2, 1, color, 0, sText_TopBar_Battle_Left);
-            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 190, 1, color, 0, sText_TopBar_Battle_Right);
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 6, 1, color, 0, sText_TopBar_Battle_Left);
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 188, 1, color, 0, sText_TopBar_Battle_Right);
             break;
         case MENU_SOUND:
             AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 105, 1, color, 0, sText_TopBar_Sound);
-            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 2, 1, color, 0, sText_TopBar_Sound_Left);
-            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 190, 1, color, 0, sText_TopBar_Sound_Right);  // Show R to go to GENERAL
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 6, 1, color, 0, sText_TopBar_Sound_Left);
+            AddTextPrinterParameterized3(WIN_TOPBAR, FONT_SMALL, 184, 1, color, 0, sText_TopBar_Sound_Right);  // Show R to go to GENERAL
             break;
     }
     PutWindowTilemap(WIN_TOPBAR);
@@ -618,9 +619,9 @@ static void DrawDescriptionText(void)
     u8 color_gray[3];
     color_gray[0] = TEXT_COLOR_TRANSPARENT;
     color_gray[1] = 2;//TEXT_COLOR_OPTIONS_GRAY_FG;
-    color_gray[2] = 3;//TEXT_COLOR_OPTIONS_GRAY_SHADOW;
+    color_gray[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_SHADOW;
     
-    FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(3));
+    FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(1));
     AddTextPrinterParameterized4(WIN_DESCRIPTION, FONT_NORMAL, 5, 1, 0, 0, color_gray, TEXT_SKIP_DRAW, OptionTextDescription());
     CopyWindowToVram(WIN_DESCRIPTION, COPYWIN_FULL);
 }
@@ -632,10 +633,10 @@ static void DrawLeftSideOptionText(int selection, int y)
 
     color_yellow[0] = TEXT_COLOR_TRANSPARENT;
     color_yellow[1] = 1;//EXT_COLOR_WHITE;
-    color_yellow[2] = 8;//TEXT_COLOR_OPTIONS_GRAY_FG;
+    color_yellow[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
     color_gray[0] = TEXT_COLOR_TRANSPARENT;
     color_gray[1] = 9;//TEXT_COLOR_WHITE;
-    color_gray[2] = 8;//TEXT_COLOR_OPTIONS_GRAY_SHADOW;
+    color_gray[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_SHADOW;
 
     if (CheckConditions(selection))
         AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 8, y, 0, 0, color_yellow, TEXT_SKIP_DRAW, OptionTextRight(selection));
@@ -652,19 +653,19 @@ static void DrawRightSideChoiceText(const u8 *text, int x, int y, bool8 choosen,
     {
         color_red[0] = TEXT_COLOR_TRANSPARENT;
         color_red[1] = 12;//TEXT_COLOR_OPTIONS_ORANGE_FG;
-        color_red[2] = 3;//TEXT_COLOR_OPTIONS_GRAY_FG;
+        color_red[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
         color_gray[0] = TEXT_COLOR_TRANSPARENT;
         color_gray[1] = 14;//TEXT_COLOR_OPTIONS_WHITE;
-        color_gray[2] = 3;//TEXT_COLOR_OPTIONS_GRAY_FG;
+        color_gray[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
     }
     else
     {
         color_red[0] = TEXT_COLOR_TRANSPARENT;
         color_red[1] = 12;//TEXT_COLOR_OPTIONS_WHITE;
-        color_red[2] = 3;//TEXT_COLOR_OPTIONS_GRAY_FG;
+        color_red[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
         color_gray[0] = TEXT_COLOR_TRANSPARENT;
         color_gray[1] = 14;//TEXT_COLOR_OPTIONS_WHITE;
-        color_gray[2] = 3;//TEXT_COLOR_OPTIONS_GRAY_FG;
+        color_gray[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
     }
 
     if (choosen)
@@ -800,12 +801,14 @@ void CB2_InitOptionPlusMenu(void)
         if (OptionsMenu_LoadGraphics() == TRUE)
         {
             gMain.state++;
-            LoadBgTiles(1, GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->tiles, 0x120, 0x1A2);
+            //LoadBgTiles(1, GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->tiles, 0x120, 0x1A2);
+            LoadBgTiles(1, gMessageBox_Gfx, 0x1C0, 0x1A2);
         }
         break;
     case 4:
         LoadPalette(sOptionMenuBg_Pal, 0, sizeof(sOptionMenuBg_Pal));
-        LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, 0x70, 0x20);
+        //LoadPalette(GetWindowFrameTilesPal(gSaveBlock2Ptr->optionsWindowFrameType)->pal, 0x70, 0x20);
+        LoadPalette(GetOverworldTextboxPalettePtr(), 0x70, 0x20);
         gMain.state++;
         break;
     case 5:
@@ -1531,18 +1534,21 @@ static void SurfMusic_DrawChoices(int selection, int y)
 }
 
 // Background tilemap
-#define TILE_TOP_CORNER_L 0x1A2 // 418
-#define TILE_TOP_EDGE     0x1A3 // 419
-#define TILE_TOP_CORNER_R 0x1A4 // 420
-#define TILE_LEFT_EDGE    0x1A5 // 421
-#define TILE_RIGHT_EDGE   0x1A7 // 423
-#define TILE_BOT_CORNER_L 0x1A8 // 424
-#define TILE_BOT_EDGE     0x1A9 // 425
-#define TILE_BOT_CORNER_R 0x1AA // 426
+#define TILE_TOP_CORNER_L       0x1A2 // 418
+#define TILE_TOP_EDGE           0x1A3 // 419
+#define TILE_TOP_EDGECORNER_R   0x1A7 // 423
+#define TILE_TOP_CORNER_R       0x1A8 // 424
+#define TILE_LEFT_EDGE          0x1A9 // 425
+//#define TILE_RIGHT_EDGE         0x1A7 // 423
+#define TILE_BOT_CORNER_L       0x1AC // 428
+#define TILE_BOT_EDGECORNER_L   0x1AD // 429
+#define TILE_BOT_EDGE           0x1A4 // 420 (must v-flip)
+#define TILE_BOT_EDGECORNER_R   0x1AE // 430
+#define TILE_BOT_CORNER_R       0x1AF // 431
 
 static void DrawBgWindowFrames(void)
 {
-    //                     bg, tile,              x, y, width, height, palNum
+    //                        bg, tile,                         x, y, width, height, palNum
     // Option Texts window
     //FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,  1,  2,  1,  1,  7);
     //FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2,  2, 26,  1,  7);
@@ -1554,14 +1560,17 @@ static void DrawBgWindowFrames(void)
     //FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 28, 13,  1,  1,  7);
 
     // Description window
-    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,  1, 14,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_TOP_EDGE,      2, 14, 27,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_R, 28, 14,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,     1, 15,  1,  4,  7);
-    FillBgTilemapBufferRect(1, TILE_RIGHT_EDGE,   28, 15,  1,  4,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_L,  1, 19,  1,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_EDGE,      2, 19, 27,  1,  7);
-    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R, 28, 19,  1,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_L,               1, 14,  1,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_TOP_EDGE,                   2, 14, 26,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_TOP_EDGECORNER_R,           27, 14, 1,  1,  7);   
+    FillBgTilemapBufferRect(1, TILE_TOP_CORNER_R,               28, 14,  1,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_LEFT_EDGE,                  1, 15,  1,  4,  7);
+    FillBgTilemapBufferRect(1, BG_TILE_H_FLIP(TILE_LEFT_EDGE),  28, 15,  1,  4,  7);
+    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_L,               1, 19,  1,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_BOT_EDGECORNER_L,           2, 19,  1,  1,  7);
+    FillBgTilemapBufferRect(1, BG_TILE_V_FLIP(TILE_BOT_EDGE),   3, 19, 25,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_BOT_EDGECORNER_R,           27, 19,  1,  1,  7);
+    FillBgTilemapBufferRect(1, TILE_BOT_CORNER_R,               28, 19,  1,  1,  7);
 
     CopyBgTilemapBufferToVram(1);
 }

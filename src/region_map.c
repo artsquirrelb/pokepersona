@@ -1732,8 +1732,8 @@ void CB2_OpenFlyMap(void)
     case 7:
         LoadPalette(sRegionMapFramePal, BG_PLTT_ID(1), sizeof(sRegionMapFramePal));
         PutWindowTilemap(WIN_FLY_TO_WHERE);
-        FillWindowPixelBuffer(WIN_FLY_TO_WHERE, PIXEL_FILL(0));
-        AddTextPrinterParameterized6(WIN_FLY_TO_WHERE, FONT_NORMAL, gText_FlyToWhere, 0, 1, 0, NULL, 0x1, 0xE, 0x0);
+        FillWindowPixelBuffer(WIN_FLY_TO_WHERE, PIXEL_FILL(3));
+        AddTextPrinterParameterized6(WIN_FLY_TO_WHERE, FONT_NORMAL, gText_FlyToWhere, 0, 1, 0, NULL, 0x1, 0, 0x0);
         ScheduleBgCopyTilemapToVram(0);
         gMain.state++;
         break;
@@ -1798,10 +1798,11 @@ static void DrawFlyDestTextWindow(void)
                     StringLength(sMultiNameFlyDestinations[i].name[sFlyMap->regionMap.posWithinMapSec]);
                     namePrinted = TRUE;
                     ClearStdWindowAndFrameToTransparent(WIN_MAPSEC_NAME, FALSE);
+                    LoadRightEdgeWindowBorderGfx(WIN_MAPSEC_NAME, 101, 13);
                     DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME_TALL, FALSE, 101, 13);
-                    AddTextPrinterParameterized6(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL, 0x1, 0xE, 0x0);
+                    AddTextPrinterParameterized6(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL, 0x1, 0, 0x0);
                     name = sMultiNameFlyDestinations[i].name[sFlyMap->regionMap.posWithinMapSec];
-                    AddTextPrinterParameterized6(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, name, GetStringRightAlignXOffset(FONT_NORMAL, name, 96), 17, 0, NULL, 0x1, 0xE, 0x0);
+                    AddTextPrinterParameterized6(WIN_MAPSEC_NAME_TALL, FONT_NORMAL, name, GetStringRightAlignXOffset(FONT_NORMAL, name, 96), 17, 0, NULL, 0x1, 0, 0x0);
                     ScheduleBgCopyTilemapToVram(0);
                     sDrawFlyDestTextWindow = TRUE;
                 }
@@ -1813,14 +1814,15 @@ static void DrawFlyDestTextWindow(void)
             if (sDrawFlyDestTextWindow == TRUE)
             {
                 ClearStdWindowAndFrameToTransparent(WIN_MAPSEC_NAME_TALL, FALSE);
+                LoadRightEdgeWindowBorderGfx(WIN_MAPSEC_NAME, 101, 13);
                 DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME, FALSE, 101, 13);
             }
             else
             {
                 // Window is already drawn, just empty it
-                FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(14));
+                FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(3));
             }
-            AddTextPrinterParameterized6(WIN_MAPSEC_NAME, FONT_NORMAL, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL, 0x1, 0xE, 0x0);
+            AddTextPrinterParameterized6(WIN_MAPSEC_NAME, FONT_NORMAL, sFlyMap->regionMap.mapSecName, 0, 1, 0, NULL, 0x1, 0, 0x0);
             ScheduleBgCopyTilemapToVram(0);
             sDrawFlyDestTextWindow = FALSE;
         }
@@ -1831,9 +1833,10 @@ static void DrawFlyDestTextWindow(void)
         if (sDrawFlyDestTextWindow == TRUE)
         {
             ClearStdWindowAndFrameToTransparent(WIN_MAPSEC_NAME_TALL, FALSE);
+            LoadRightEdgeWindowBorderGfx(WIN_MAPSEC_NAME, 101, 13);
             DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME, FALSE, 101, 13);
         }
-        FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(14));
+        FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(3));
         CopyWindowToVram(WIN_MAPSEC_NAME, COPYWIN_GFX);
         ScheduleBgCopyTilemapToVram(0);
         sDrawFlyDestTextWindow = FALSE;

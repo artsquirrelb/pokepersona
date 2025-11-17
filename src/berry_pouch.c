@@ -300,7 +300,7 @@ static const u8 sText_Space[] = _(" ");
 static const u8 sText_Close[] = _("Close");
 static const u8 sText_FontSmall[] = _("{FONT_SMALL}");
 static const u8 sText_FontNormal[] = _("{FONT_SHORT}");
-static const u8 sText_BerryPouch[] = _("BERRY POUCH");
+static const u8 sText_BerryPouch[] = _("");//BERRY POUCH");
 static const u8 sText_TheBerryPouchWillBePutAway[] = _("The Berry Pouch will be\nput away.");
 static const u8 sText_TossOutHowManyStrVar1s[] = _("Toss out how many\n{STR_VAR_1}?");
 static const u8 sText_ThrowAwayStrVar2OfThisItemQM[] = _("Throw away {STR_VAR_2} of\nthis item?");
@@ -360,7 +360,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 5,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x1d1
     },
     [BP_VAR_WINDOW_SELL_AMOUNT] =
@@ -370,7 +370,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 9,
         .width = 12,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x1d1
     },
     [BP_VAR_WINDOW_MONEY] =
@@ -380,7 +380,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 1,
         .width = 10,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x201
     },
     [BP_VAR_WINDOW_TOSS_YESNO] =
@@ -390,7 +390,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 6,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x219
     },
     [BP_VAR_WINDOW_SELL_YESNO] =
@@ -400,7 +400,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 9,
         .width = 6,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x219
     },
     [BP_VAR_WINDOW_MESSAGE] =
@@ -410,7 +410,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 26,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x231
     },
     [BP_VAR_WINDOW_BERRY_SELECTED] =
@@ -420,7 +420,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 14,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x231
     },
     [BP_VAR_WINDOW_TOSS_ASK] =
@@ -430,7 +430,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 15,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x269
     },
     [BP_VAR_WINDOW_TOSS_SELECT] =
@@ -440,7 +440,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 16,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x2a5
     },
     [BP_VAR_WINDOW_THREW_AWAY] =
@@ -450,7 +450,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 23,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x2e5
     },
     [BP_VAR_WINDOW_OPTIONS_1] =
@@ -460,7 +460,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 17,
         .width = 7,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x199
     },
     [BP_VAR_WINDOW_OPTIONS_2] =
@@ -470,7 +470,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 15,
         .width = 7,
         .height = 4,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x199
     },
     [BP_VAR_WINDOW_OPTIONS_3] =
@@ -480,7 +480,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 13,
         .width = 7,
         .height = 6,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x199
     },
     [BP_VAR_WINDOW_OPTIONS_4] =
@@ -490,7 +490,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 11,
         .width = 7,
         .height = 8,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x199
     },
     [BP_VAR_WINDOW_OPTIONS_5] =
@@ -500,7 +500,7 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
         .tilemapTop = 9,
         .width = 7,
         .height = 10,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x199
     }
 };
@@ -514,10 +514,10 @@ static const struct WindowTemplate sWindowTemplates_Variable[] =
 
 static const u8 sTextColors[][3] =
 {
-    [BP_COLORID_WHITE]      = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_WHITE, TEXT_COLOR_BP_DARK_GRAY },
-    [BP_COLORID_DARK_GRAY]  = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_DARK_GRAY, TEXT_COLOR_BP_LIGHT_GRAY },
-    [BP_COLORID_LIGHT_GRAY] = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_LIGHT_GRAY, TEXT_COLOR_BP_DARK_GRAY },
-    [BP_COLORID_TEXT]       = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_MESSAGE_NORMAL, TEXT_COLOR_BP_MESSAGE_SHADOW },
+    [BP_COLORID_WHITE]      = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_WHITE, 0 },
+    [BP_COLORID_DARK_GRAY]  = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_DARK_GRAY, 0 },
+    [BP_COLORID_LIGHT_GRAY] = { TEXT_COLOR_BP_TRANSPARENT, TEXT_COLOR_BP_LIGHT_GRAY, 0 },
+    [BP_COLORID_TEXT]       = { TEXT_COLOR_BP_TRANSPARENT, 1, 0 },
 };
 
 static const struct OamData sOamData = {

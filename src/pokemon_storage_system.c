@@ -875,7 +875,7 @@ static const struct WindowTemplate sWindowTemplate_MainMenu =
     .tilemapTop = 1,
     .width = 17,
     .height = 10,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 0x1,
 };
 
@@ -966,7 +966,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 17,
         .width = 18,
         .height = 2,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x14,
     },
     [WIN_ITEM_DESC] = {
@@ -975,7 +975,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 12,
         .width = 25,
         .height = 8,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x14,
     },
     DUMMY_WIN_TEMPLATE
@@ -1088,7 +1088,7 @@ static const struct WindowTemplate sYesNoWindowTemplate =
     .tilemapTop = 11,
     .width = 5,
     .height = 4,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 0x5C,
 };
 
@@ -1530,7 +1530,7 @@ static void Task_PCMainMenu(u8 taskId)
         LoadMessageBoxAndBorderGfx();
         DrawDialogueFrame(0, FALSE);
         FillWindowPixelBuffer(0, PIXEL_FILL(1));
-        AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, TEXT_SKIP_DRAW, NULL, TEXT_COLOR_DARK_GRAY, 0x1, TEXT_COLOR_LIGHT_GRAY);
+        AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, TEXT_SKIP_DRAW, NULL, 2, 0, 0);
         CopyWindowToVram(0, COPYWIN_FULL);
         CopyWindowToVram(task->tWindowId, COPYWIN_FULL);
         task->tState++;
@@ -1554,7 +1554,7 @@ static void Task_PCMainMenu(u8 taskId)
             {
                 task->tSelectedOption = task->tNextOption;
                 FillWindowPixelBuffer(0, PIXEL_FILL(1));
-                AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, 0, NULL, TEXT_COLOR_DARK_GRAY, 0x1, TEXT_COLOR_LIGHT_GRAY);
+                AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, 0, NULL, TEXT_COLOR_DARK_GRAY, 0, 0);
             }
             break;
         case MENU_B_PRESSED:
@@ -1570,14 +1570,14 @@ static void Task_PCMainMenu(u8 taskId)
             {
                 // Can't withdraw
                 FillWindowPixelBuffer(0, PIXEL_FILL(1));
-                AddTextPrinterParameterized2(0, FONT_NORMAL, gText_PartyFull, 0, NULL, TEXT_COLOR_DARK_GRAY, 0x1, TEXT_COLOR_LIGHT_GRAY);
+                AddTextPrinterParameterized2(0, FONT_NORMAL, gText_PartyFull, 0, NULL, TEXT_COLOR_DARK_GRAY, 0, 0);
                 task->tState = STATE_ERROR_MSG;
             }
             else if (task->tInput == OPTION_DEPOSIT && CountPartyMons() == 1)
             {
                 // Can't deposit
                 FillWindowPixelBuffer(0, PIXEL_FILL(1));
-                AddTextPrinterParameterized2(0, FONT_NORMAL, gText_JustOnePkmn, 0, NULL, TEXT_COLOR_DARK_GRAY, 0x1, TEXT_COLOR_LIGHT_GRAY);
+                AddTextPrinterParameterized2(0, FONT_NORMAL, gText_JustOnePkmn, 0, NULL, TEXT_COLOR_DARK_GRAY, 0, 0);
                 task->tState = STATE_ERROR_MSG;
             }
             else
@@ -1595,7 +1595,7 @@ static void Task_PCMainMenu(u8 taskId)
         if (JOY_NEW(A_BUTTON | B_BUTTON))
         {
             FillWindowPixelBuffer(0, PIXEL_FILL(1));
-            AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, 0, NULL, TEXT_COLOR_DARK_GRAY, 0, 0);
             task->tState = STATE_HANDLE_INPUT;
         }
         else if (JOY_NEW(DPAD_UP))
@@ -1605,7 +1605,7 @@ static void Task_PCMainMenu(u8 taskId)
             Menu_MoveCursor(-1);
             task->tSelectedOption = Menu_GetCursorPos();
             FillWindowPixelBuffer(0, PIXEL_FILL(1));
-            AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, 0, NULL, TEXT_COLOR_DARK_GRAY, 0, 0);
             task->tState = STATE_HANDLE_INPUT;
         }
         else if (JOY_NEW(DPAD_DOWN))
@@ -1615,7 +1615,7 @@ static void Task_PCMainMenu(u8 taskId)
             Menu_MoveCursor(1);
             task->tSelectedOption = Menu_GetCursorPos();
             FillWindowPixelBuffer(0, PIXEL_FILL(1));
-            AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, 0, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+            AddTextPrinterParameterized2(0, FONT_NORMAL, sMainMenuTexts[task->tSelectedOption].desc, 0, NULL, TEXT_COLOR_DARK_GRAY, 0, 0);
             task->tState = STATE_HANDLE_INPUT;
         }
         break;
@@ -4328,8 +4328,8 @@ static void PrintMessage(u8 id)
     }
 
     DynamicPlaceholderTextUtil_ExpandPlaceholders(sStorage->messageText, sMessages[id].text);
-    FillWindowPixelBuffer(WIN_MESSAGE, PIXEL_FILL(1));
-    AddTextPrinterParameterized(WIN_MESSAGE, FONT_NORMAL, sStorage->messageText, 0, 1, TEXT_SKIP_DRAW, NULL);
+    FillWindowPixelBuffer(WIN_MESSAGE, PIXEL_FILL(3));
+    AddTextPrinterParameterized6(WIN_MESSAGE, FONT_NORMAL, sStorage->messageText, 0, 1, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
     DrawTextBorderOuter(WIN_MESSAGE, 2, 14);
     PutWindowTilemap(WIN_MESSAGE);
     CopyWindowToVram(WIN_MESSAGE, COPYWIN_GFX);

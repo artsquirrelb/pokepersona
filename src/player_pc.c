@@ -274,7 +274,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenus[] =
         .tilemapTop = 1,
         .width = 9,
         .height = 6,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 1
     },
     [WIN_MAIN_MENU_BEDROOM] = {
@@ -283,7 +283,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenus[] =
         .tilemapTop = 1,
         .width = 9,
         .height = 8,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 1
     },
     [WIN_ITEM_STORAGE_MENU] = {
@@ -292,7 +292,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenus[] =
         .tilemapTop = 1,
         .width = 10,
         .height = 8,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 1
     },
     [WIN_ITEM_STORAGE_MENU_FRLG] = {
@@ -301,7 +301,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenus[] =
         .tilemapTop = 1,
         .width = 10,
         .height = 6,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 1
     }
 };
@@ -325,7 +325,7 @@ static const struct ListMenuTemplate sListMenuTemplate_ItemStorage =
     .cursor_X = 0,
     .upText_Y = 9,
     .cursorPal = 2,
-    .fillValue = 1,
+    .fillValue = 3,
     .cursorShadowPal = 3,
     .lettersSpacing = FALSE,
     .itemVerticalPadding = 0,
@@ -343,7 +343,7 @@ static const struct WindowTemplate sWindowTemplates_ItemStorage[ITEMPC_WIN_COUNT
         .tilemapTop = 1,
         .width = 13,
         .height = 18,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0001
     },
     [ITEMPC_WIN_MESSAGE] = {
@@ -352,7 +352,7 @@ static const struct WindowTemplate sWindowTemplates_ItemStorage[ITEMPC_WIN_COUNT
         .tilemapTop = 13,
         .width = 13,
         .height = 6,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x00EB
     },
     [ITEMPC_WIN_ICON] = {
@@ -361,7 +361,7 @@ static const struct WindowTemplate sWindowTemplates_ItemStorage[ITEMPC_WIN_COUNT
         .tilemapTop = 8,
         .width = 3,
         .height = 3,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0153
     },
     [ITEMPC_WIN_TITLE] = {
@@ -370,7 +370,7 @@ static const struct WindowTemplate sWindowTemplates_ItemStorage[ITEMPC_WIN_COUNT
         .tilemapTop = 1,
         .width = 13,
         .height = 2,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0139
     },
     [ITEMPC_WIN_QUANTITY] = {
@@ -379,7 +379,7 @@ static const struct WindowTemplate sWindowTemplates_ItemStorage[ITEMPC_WIN_COUNT
         .tilemapTop = 9,
         .width = 6,
         .height = 2,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x015C
     },
     [ITEMPC_WIN_YESNO] = {
@@ -388,12 +388,12 @@ static const struct WindowTemplate sWindowTemplates_ItemStorage[ITEMPC_WIN_COUNT
         .tilemapTop = 7,
         .width = 5,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0168
     }
 };
 
-static const u8 sSwapArrowTextColors[] = {TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY, TEXT_COLOR_DARK_GRAY};
+static const u8 sSwapArrowTextColors[] = {TEXT_COLOR_WHITE, 0, 0};
 
 void NewGameInitPCItems(void)
 {
@@ -582,7 +582,7 @@ static void InitItemStorageMenu(u8 taskId, u8 var)
 static void ItemStorageMenuPrint(const u8 *textPtr)
 {
     DrawDialogueFrame(0, FALSE);
-    AddTextPrinterParameterized6(0, FONT_NORMAL, textPtr, 0, 1, 0, 0, 0x2, 0x0, 0x0);
+    AddTextPrinterParameterized6(0, FONT_NORMAL, textPtr, 0, 1, 0, 0, 1, 0x0, 0x0);
 }
 
 static void ItemStorageMenuProcessInput(u8 taskId)
@@ -794,7 +794,7 @@ static void Mailbox_DrawMailboxMenu(u8 taskId)
 {
     u8 windowId = MailboxMenu_AddWindow(MAILBOXWIN_TITLE);
     MailboxMenu_AddWindow(MAILBOXWIN_LIST);
-    AddTextPrinterParameterized6(windowId, FONT_NORMAL, sText_Mailbox, GetStringCenterAlignXOffset(FONT_NORMAL, sText_Mailbox, 0x40), 1, 0, NULL, 0x2, 0x0, 0x0);
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, sText_Mailbox, GetStringCenterAlignXOffset(FONT_NORMAL, sText_Mailbox, 0x40), 1, 0, NULL, 1, 0x0, 0x0);
     ScheduleBgCopyTilemapToVram(0);
     gTasks[taskId].tListTaskId = MailboxMenu_CreateList(&gPlayerPCItemPageInfo);
     MailboxMenu_AddScrollArrows(&gPlayerPCItemPageInfo);
@@ -1138,7 +1138,7 @@ static void ItemStorage_PrintMenuItem(u8 windowId, u32 id, u8 yOffset)
         }
         ConvertIntToDecimalStringN(gStringVar1, gSaveBlock1Ptr->pcItems[id].quantity, STR_CONV_MODE_RIGHT_ALIGN, 3);
         StringExpandPlaceholders(gStringVar4, gText_xVar1);
-        AddTextPrinterParameterized6(windowId, FONT_NARROW, gStringVar4, GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 104), yOffset, TEXT_SKIP_DRAW, NULL, 0x2, 0x0, 0x0);
+        AddTextPrinterParameterized6(windowId, FONT_NARROW, gStringVar4, GetStringRightAlignXOffset(FONT_NARROW, gStringVar4, 104), yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
     }
 }
 
@@ -1153,8 +1153,8 @@ static void ItemStorage_PrintDescription(s32 id)
     else
         description = ItemStorage_GetMessage(MSG_GO_BACK_TO_PREV);
 
-    FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
-    AddTextPrinterParameterized6(windowId, FONT_NORMAL, description, 0, 1, 0, NULL, 0x2, 0x0, 0x0);
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(3));
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, description, 0, 1, 0, NULL, 1, 0x0, 0x0);
 }
 
 static void ItemStorage_AddScrollIndicator(void)
@@ -1248,7 +1248,7 @@ static void ItemStorage_CreateListMenu(u8 taskId)
     if (!toss)
         text = sText_WithdrawItem;
     x = GetStringCenterAlignXOffset(FONT_NORMAL, text, 104);
-    AddTextPrinterParameterized6(sItemStorageMenu->windowIds[ITEMPC_WIN_TITLE], FONT_NORMAL, text, x, 1, 0, NULL, 0x2, 0x0, 0x0);
+    AddTextPrinterParameterized6(sItemStorageMenu->windowIds[ITEMPC_WIN_TITLE], FONT_NORMAL, text, x, 1, 0, NULL, 1, 0x0, 0x0);
     CopyWindowToVram(sItemStorageMenu->windowIds[ITEMPC_WIN_ICON], COPYWIN_GFX);
     ItemStorage_CompactList();
     ItemStorage_CompactCursor();
@@ -1302,9 +1302,9 @@ static const u8 *ItemStorage_GetMessage(u16 itemId)
 static void ItemStorage_PrintMessage(const u8 *string)
 {
     u8 windowId = sItemStorageMenu->windowIds[ITEMPC_WIN_MESSAGE];
-    FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(3));
     StringExpandPlaceholders(gStringVar4, string);
-    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, 0, 1, 0, NULL, 0x2, 0x0, 0x0);
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, 0, 1, 0, NULL, 1, 0x0, 0x0);
 }
 
 // Process input while on the item storage's item list
@@ -1443,7 +1443,7 @@ static void ItemStorage_PrintItemQuantity(u8 windowId, u16 value, u32 mode, u8 x
 {
     ConvertIntToDecimalStringN(gStringVar1, value, mode, n);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
-    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 48), y, 0, NULL, 0x2, 0x0, 0x0);
+    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, GetStringCenterAlignXOffset(FONT_NORMAL, gStringVar4, 48), y, 0, NULL, 1, 0x0, 0x0);
 }
 
 // Start an item Withdraw/Toss

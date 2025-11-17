@@ -411,7 +411,7 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
         .tilemapTop = 35,
         .width = 12,
         .height = 4,
-        .paletteNum = 5,
+        .paletteNum = 1,
         .baseBlock = 0x0190,
     },
     [B_WIN_MOVE_NAME_1] = {
@@ -721,8 +721,8 @@ void InitBattleBgsVideo(void)
 
 void LoadBattleMenuWindowGfx(void)
 {
-    LoadUserWindowBorderGfx(2, 0x12, BG_PLTT_ID(1));
-    LoadUserWindowBorderGfx(2, 0x22, BG_PLTT_ID(1));
+    LoadDarkWindowBorderGfx(2, 0x12, BG_PLTT_ID(1));
+    LoadDarkWindowBorderGfx(2, 0x22, BG_PLTT_ID(1));
     LoadPalette(gBattleWindowTextPalette, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
 
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)

@@ -363,6 +363,6 @@ script EventScript_OverworldStoryTalk_PrePickUpFennekin {
 }
 
 script EventScript_OverworldStoryTalk_PostGoodByeKikuno {
-    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Now I should make my way to Thundershards Scree.\p
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Now I should make my way to Thundershards Scree.\p
     According to the map, it should be on the north of Sunshine Meadow.)"))
 }

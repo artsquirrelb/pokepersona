@@ -313,7 +313,7 @@ static const struct WindowTemplate sShopMenuWindowTemplates[] =
         .tilemapTop = 1,
         .width = 9,
         .height = 6,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0008,
     },
     // Separate shop menu window for decorations, which can't be sold
@@ -323,7 +323,7 @@ static const struct WindowTemplate sShopMenuWindowTemplates[] =
         .tilemapTop = 1,
         .width = 9,
         .height = 4,
-        .paletteNum = 15,
+        .paletteNum = 14,
         .baseBlock = 0x0008,
     }
 };
@@ -431,8 +431,8 @@ static const struct WindowTemplate sShopBuyMenuYesNoWindowTemplates =
 
 static const u8 sShopBuyMenuTextColors[][3] =
 {
-    [COLORID_NORMAL]      = {0, 1, 2},
-    [COLORID_BLACK]       = {0, 2, 3},
+    [COLORID_NORMAL]      = {0, 1, 0},
+    [COLORID_BLACK]       = {0, 2, 0},
 };
 
 static const struct SpriteSheet sDefaultCursor_SpriteSheet = {

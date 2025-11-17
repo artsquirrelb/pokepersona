@@ -1586,7 +1586,7 @@ static void Task_NewGameBirchSpeech_CreateNameYesNo(u8 taskId)
 {
     if (!RunTextPrintersAndIsPrinter0Active())
     {
-        CreateYesNoMenuParameterized(2, 1, 0xF3, 0xDF, 2, 15);
+        CreateYesNoMenuParameterized(2, 1, 0xF3, 0xDF, 2, 2);
         gTasks[taskId].func = Task_NewGameBirchSpeech_ProcessNameYesNoMenu;
     }
 }
@@ -2037,7 +2037,7 @@ static void NewGameBirchSpeech_StartFadePlatformOut(u8 taskId, u8 delay)
 static void NewGameBirchSpeech_ShowGenderMenu(void)
 {
     DrawMainMenuWindowBorder(&sNewGameBirchSpeechTextWindows[1], 0xF3);
-    FillWindowPixelBuffer(1, PIXEL_FILL(3));//was 1
+    FillWindowPixelBuffer(1, PIXEL_FILL(14));//was 1
     PrintMenuTable(1, ARRAY_COUNT(sMenuActions_Gender), sMenuActions_Gender);
     InitMenuInUpperLeftCornerNormal(1, ARRAY_COUNT(sMenuActions_Gender), 0);
     PutWindowTilemap(1);

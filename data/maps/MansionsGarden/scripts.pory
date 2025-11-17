@@ -149,7 +149,6 @@ script MansionsGarden_Eventscript_KikunoVSFennekin {
     waitmovement(0)
     setflag(FLAG_NO_WHITEOUT)
     setflag(FLAG_NO_CATCHING)
-    setflag(FLAG_SMART_WILD_AI)
     delay(30)
     setwildbattle(SPECIES_FENNEKIN, 5)
     dowildbattle
@@ -160,7 +159,7 @@ script MansionsGarden_Eventscript_VSFennekin {
     delay(30)
     clearflag(FLAG_NO_WHITEOUT)
     clearflag(FLAG_NO_CATCHING)
-    clearflag(FLAG_SMART_WILD_AI)
+    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
     playse(SE_SHINY)
     applymovement(FENNEKIN, emotemusic)
     waitmovement

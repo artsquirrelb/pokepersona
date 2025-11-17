@@ -1044,8 +1044,38 @@
 #define ITEM_TM118 875
 #define ITEM_TM119 876
 #define ITEM_TM120 877
+#define ITEM_TM121 878
+#define ITEM_TM122 879
+#define ITEM_TM123 880
+#define ITEM_TM124 881
+#define ITEM_TM125 882
+#define ITEM_TM126 883
+#define ITEM_TM127 884
+#define ITEM_TM128 885
+#define ITEM_TM129 886
+#define ITEM_TM130 887
+#define ITEM_TM131 888
+#define ITEM_TM132 889
+#define ITEM_TM133 890
+#define ITEM_TM134 891
+#define ITEM_TM135 892
+#define ITEM_TM136 893
+#define ITEM_TM137 894
+#define ITEM_TM138 895
+#define ITEM_TM139 896
+#define ITEM_TM140 897
+#define ITEM_TM141 898
+#define ITEM_TM142 899
+#define ITEM_TM143 900
+#define ITEM_TM144 901
+#define ITEM_TM145 902
+#define ITEM_TM146 903
+#define ITEM_TM147 904
+#define ITEM_TM148 905
+#define ITEM_TM149 906
+#define ITEM_TM150 907
 
-#define ITEMS_COUNT 878
+#define ITEMS_COUNT 908
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

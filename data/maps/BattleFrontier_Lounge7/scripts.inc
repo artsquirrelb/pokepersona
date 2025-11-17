@@ -121,7 +121,7 @@ BattleFrontier_Lounge7_EventScript_ThunderWave::
 
 BattleFrontier_Lounge7_EventScript_SwordsDance::
 	setvar VAR_0x8008, 48
-	setvar VAR_0x8005, MOVE_SWORDS_DANCE
+	setvar VAR_0x8005, MOVE_ENCORE
 	goto BattleFrontier_Lounge7_EventScript_ConfirmMoveSelection
 	end
 

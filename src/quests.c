@@ -232,7 +232,7 @@ static const u8 sText_Active[] = _("Active");
 static const u8 sText_Reward[] = _("Reward");
 static const u8 sText_Complete[] = _("Done");
 static const u8 sText_ShowLocation[] =
-      _("Location: {STR_VAR_2}");
+      _("   Location: {STR_VAR_2}");
 static const u8 sText_StartForMore[] =
       _("Start for more details.");
 static const u8 sText_ReturnRecieveReward[] =

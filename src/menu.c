@@ -1,5 +1,4 @@
 #include "global.h"
-#include "malloc.h"
 #include "bg.h"
 #include "blit.h"
 #include "decompress.h"
@@ -9,7 +8,9 @@
 #include "field_weather.h"
 #include "graphics.h"
 #include "main.h"
+#include "malloc.h"
 #include "map_name_popup.h"
+#include "match_call.h"
 #include "menu.h"
 #include "menu_helpers.h"
 #include "palette.h"
@@ -23,8 +24,6 @@
 #include "task.h"
 #include "text_window.h"
 #include "window.h"
-#include "match_call.h"
-#include "config/overworld.h"
 #include "field_mugshot.h"
 #include "constants/songs.h"
 
@@ -99,7 +98,7 @@ static const struct WindowTemplate sYesNo_WindowTemplates =
     .tilemapTop = 9,
     .width = 5,
     .height = 4,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 0x125
 };
 
@@ -194,13 +193,13 @@ u16 AddTextPrinterParameterized2(u8 windowId, u8 fontId, const u8 *str, u8 speed
 void AddTextPrinterForMessage(bool8 allowSkippingDelayWithButtonPress)
 {
     gTextFlags.canABSpeedUpPrint = allowSkippingDelayWithButtonPress;
-    AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, GetPlayerTextSpeedDelay(), NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, GetPlayerTextSpeedDelay(), NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, 0);//TEXT_COLOR_LIGHT_GRAY);
 }
 
 void AddTextPrinterWithCustomSpeedForMessage(bool8 allowSkippingDelayWithButtonPress, u8 speed)
 {
     gTextFlags.canABSpeedUpPrint = allowSkippingDelayWithButtonPress;
-    AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, speed, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, speed, NULL, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, 0);//TEXT_COLOR_LIGHT_GRAY);
 }
 
 void LoadMessageBoxAndBorderGfx(void)
@@ -634,16 +633,6 @@ void DisplayYesNoMenuWithDefault(u8 initialCursorPos)
     CreateYesNoMenu(&sYesNo_WindowTemplates, STD_WINDOW_BASE_TILE_NUM, STD_WINDOW_PALETTE_NUM, initialCursorPos);
 }
 
-u32 GetPlayerTextSpeed(void)
-{
-    return gSaveBlock2Ptr->optionsInstantTextOff;
-}
-
-u8 GetPlayerTextSpeedDelay(void)
-{
-    return 1;
-}
-
 u8 AddStartMenuWindow(u8 numActions)
 {
     if (sStartMenuWindowId == WINDOW_NONE)
@@ -704,7 +693,7 @@ void RemoveMapNamePopUpWindow(void)
 void AddTextPrinterWithCallbackForMessage(bool8 canSpeedUp, void (*callback)(struct TextPrinterTemplate *, u16))
 {
     gTextFlags.canABSpeedUpPrint = canSpeedUp;
-    AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, GetPlayerTextSpeedDelay(), callback, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, GetPlayerTextSpeedDelay(), callback, TEXT_COLOR_DARK_GRAY, 0, 0);
 }
 
 void EraseFieldMessageBox(bool8 copyToVram)
@@ -857,13 +846,14 @@ void DrawStdFrameWithCustomTileAndPalette(u8 windowId, bool8 copyToVram, u16 bas
         CopyWindowToVram(windowId, COPYWIN_FULL);
 }
 
+
 // Never used.
 void DrawStdFrameWithCustomTile(u8 windowId, bool8 copyToVram, u16 baseTileNum)
 {
     sTileNum = baseTileNum;
     sPaletteNum = GetWindowAttribute(windowId, WINDOW_PALETTE_NUM);
     CallWindowFunction(windowId, WindowFunc_DrawStdFrameWithCustomTileAndPalette);
-    FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
+    FillWindowPixelBuffer(windowId, PIXEL_FILL(3));
     PutWindowTilemap(windowId);
     if (copyToVram == TRUE)
         CopyWindowToVram(windowId, COPYWIN_FULL);
@@ -928,6 +918,7 @@ static void WindowFunc_DrawStdFrameWithCustomTileAndPalette(u8 bg, u8 tilemapLef
                             1,
                             sPaletteNum);
 }
+
 
 void ClearStdWindowAndFrameToTransparent(u8 windowId, bool8 copyToVram)
 {
@@ -1289,9 +1280,9 @@ void PrintMenuActionTexts(u8 windowId, u8 fontId, u8 left, u8 top, u8 letterSpac
 
     printer.windowId = windowId;
     printer.fontId = fontId;
-    printer.fgColor = GetFontAttribute(fontId, FONTATTR_COLOR_FOREGROUND);
-    printer.bgColor = 0x3;//GetFontAttribute(fontId, FONTATTR_COLOR_BACKGROUND);
-    printer.shadowColor = GetFontAttribute(fontId, FONTATTR_COLOR_SHADOW);
+    printer.fgColor = 1; //GetFontAttribute(fontId, FONTATTR_COLOR_FOREGROUND);
+    printer.bgColor = 0;//x3;//GetFontAttribute(fontId, FONTATTR_COLOR_BACKGROUND);
+    printer.shadowColor = 0;//GetFontAttribute(fontId, FONTATTR_COLOR_SHADOW);
     printer.unk = GetFontAttribute(fontId, FONTATTR_UNKNOWN);
     printer.letterSpacing = letterSpacing;
     printer.lineSpacing = GetFontAttribute(fontId, FONTATTR_LINE_SPACING);
@@ -1410,9 +1401,9 @@ void PrintMenuActionGrid(u8 windowId, u8 fontId, u8 left, u8 top, u8 optionWidth
 
     printer.windowId = windowId;
     printer.fontId = fontId;
-    printer.fgColor = GetFontAttribute(fontId, FONTATTR_COLOR_FOREGROUND);
-    printer.bgColor = 0x3;//GetFontAttribute(fontId, FONTATTR_COLOR_BACKGROUND);
-    printer.shadowColor = GetFontAttribute(fontId, FONTATTR_COLOR_SHADOW);
+    printer.fgColor = 1;//GetFontAttribute(fontId, FONTATTR_COLOR_FOREGROUND);
+    printer.bgColor = 0;//GetFontAttribute(fontId, FONTATTR_COLOR_BACKGROUND);
+    printer.shadowColor = 0;//GetFontAttribute(fontId, FONTATTR_COLOR_SHADOW);
     printer.unk = GetFontAttribute(fontId, FONTATTR_UNKNOWN);
     printer.letterSpacing = GetFontAttribute(fontId, FONTATTR_LETTER_SPACING);
     printer.lineSpacing = GetFontAttribute(fontId, FONTATTR_LINE_SPACING);
@@ -1753,7 +1744,7 @@ void PrintMenuTable(u8 windowId, u8 itemCount, const struct MenuAction *menuActi
 
     for (i = 0; i < itemCount; i++)
         //AddTextPrinterParameterized(windowId, FONT_NORMAL, menuActions[i].text, 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized6(windowId, FONT_NORMAL, menuActions[i].text, 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL, 0x2, 0x3, 0x3);
+        AddTextPrinterParameterized6(windowId, FONT_NORMAL, menuActions[i].text, 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL, 0x1, 0x0, 0x0);
     CopyWindowToVram(windowId, COPYWIN_GFX);
 }
 
@@ -1764,9 +1755,9 @@ void PrintMenuActionTextsInUpperLeftCorner(u8 windowId, u8 itemCount, const stru
 
     printer.windowId = windowId;
     printer.fontId = FONT_NORMAL;
-    printer.fgColor = GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_FOREGROUND);
-    printer.bgColor = GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_BACKGROUND);
-    printer.shadowColor = GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_SHADOW);
+    printer.fgColor = 1;//GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_FOREGROUND);
+    printer.bgColor = 0;//GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_BACKGROUND);
+    printer.shadowColor = 0;//GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_SHADOW);
     printer.unk = GetFontAttribute(FONT_NORMAL, FONTATTR_UNKNOWN);
     printer.letterSpacing = 0;
     printer.lineSpacing = 0;
@@ -1798,9 +1789,9 @@ void CreateYesNoMenu(const struct WindowTemplate *window, u16 baseTileNum, u8 pa
     printer.y = 1;
     printer.currentX = printer.x;
     printer.currentY = printer.y;
-    printer.fgColor = 0x2; //GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_FOREGROUND);
+    printer.fgColor = 0x1; //GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_FOREGROUND);
     printer.bgColor = 0x0; //GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_BACKGROUND); //=6
-    printer.shadowColor = 0x3; //GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_SHADOW); //=7
+    printer.shadowColor = 0; //GetFontAttribute(FONT_NORMAL, FONTATTR_COLOR_SHADOW); //=7
     printer.unk = GetFontAttribute(FONT_NORMAL, FONTATTR_UNKNOWN);
     printer.letterSpacing = 0;
     printer.lineSpacing = 0;
@@ -2302,7 +2293,7 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
     *(string++) = color;
     *(string++) = EXT_CTRL_CODE_BEGIN;
     *(string++) = EXT_CTRL_CODE_SHADOW;
-    *(string++) = 0x3; //was color + 1 //somehow this sets text shadow color, using standard message box's palette
+    *(string++) = 0x0; //was color + 1 //somehow this sets text shadow color, using standard message box's palette
 
     switch (textId)
     {

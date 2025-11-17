@@ -833,7 +833,7 @@ EventScript_OverworldStoryTalk_PrePickUpFennekin_Text_0:
 
 EventScript_OverworldStoryTalk_PostGoodByeKikuno_Text_0:
 # 366 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Now I should make my way to\n"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Now I should make my way to\n"
 	.string "Thundershards Scree.\p"
 	.string "According to the map, it should be on\n"
 	.string "the north of Sunshine Meadow.)$"

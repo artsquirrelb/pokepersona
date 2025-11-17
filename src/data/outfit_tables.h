@@ -52,6 +52,52 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
     [OUTFIT_NONE] = {
         .isHidden = TRUE
     },
+
+    [OUTFIT_MITSURU] = {
+        .isHidden = TRUE,
+        .prices = { 200, 500 },
+        .name = COMPOUND_STRING("Mitsuru Kirijo"),
+        .desc = COMPOUND_STRING("Pretty fond of good boys."),
+
+        .trainerPics = {
+            [MALE] = { TRAINER_PIC_MAY, TRAINER_BACK_PIC_MAY, },
+            [FEMALE] =   { TRAINER_PIC_MAY, TRAINER_BACK_PIC_MAY, },
+        },
+        .avatarGfxIds = {
+            [MALE] = {
+               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_MAY_NORMAL,
+               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_MAY_MACH_BIKE,
+               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_MAY_SURFING,
+               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_MAY_UNDERWATER
+           },
+           [FEMALE] = {
+                [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_MAY_NORMAL,
+               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_MAY_MACH_BIKE,
+               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_MAY_SURFING,
+               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_MAY_UNDERWATER
+           },   
+        },
+        .animGfxIds = {
+            [MALE] = {
+                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_MAY_FIELD_MOVE,
+                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_MAY_FISHING,
+                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_MAY_WATERING,
+                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_MAY_DECORATING,
+                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_MAY_FIELD_MOVE
+            },
+
+            [FEMALE] = {
+               [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_MAY_FIELD_MOVE,
+                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_MAY_FISHING,
+                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_MAY_WATERING,
+                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_MAY_DECORATING,
+                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_MAY_FIELD_MOVE
+            },
+        },
+        .iconsRM = { sRegionMapPlayerIcon_BrendanGfx, sRegionMapPlayerIcon_MayGfx },
+        .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
+    },
+
     [OUTFIT_AKIHIKO] = {
         //! DESC: if sets to TRUE, it will not be shown in the OUTFIT menu if it's locked.
         .isHidden = TRUE,
@@ -114,50 +160,6 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         //! unlike region map. (probably should split them tbh)
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
-    [OUTFIT_MITSURU] = {
-        .isHidden = TRUE,
-        .prices = { 200, 500 },
-        .name = COMPOUND_STRING("Mitsuru Kirijo"),
-        .desc = COMPOUND_STRING("Pretty fond of good boys."),
-
-        .trainerPics = {
-            [MALE] = { TRAINER_PIC_MAY, TRAINER_BACK_PIC_MAY, },
-            [FEMALE] =   { TRAINER_PIC_MAY, TRAINER_BACK_PIC_MAY, },
-        },
-        .avatarGfxIds = {
-            [MALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_MAY_NORMAL,
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_MAY_MACH_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_MAY_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_MAY_UNDERWATER
-           },
-           [FEMALE] = {
-                [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_MAY_NORMAL,
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_MAY_MACH_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_MAY_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_MAY_UNDERWATER
-           },   
-        },
-        .animGfxIds = {
-            [MALE] = {
-                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_MAY_FIELD_MOVE,
-                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_MAY_FISHING,
-                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_MAY_WATERING,
-                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_MAY_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_MAY_FIELD_MOVE
-            },
-
-            [FEMALE] = {
-               [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_MAY_FIELD_MOVE,
-                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_MAY_FISHING,
-                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_MAY_WATERING,
-                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_MAY_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_MAY_FIELD_MOVE
-            },
-        },
-        .iconsRM = { sRegionMapPlayerIcon_BrendanGfx, sRegionMapPlayerIcon_MayGfx },
-        .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
-    },
 
     [OUTFIT_SHINJIRO] = {
         .isHidden = TRUE,
@@ -166,18 +168,18 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .desc = COMPOUND_STRING("Looks grumpy, but he's soft inside."),
 
         .trainerPics = {
-            [MALE] =   { TRAINER_PIC_BRENDAN, TRAINER_BACK_PIC_BRENDAN, },
-            [FEMALE] = { TRAINER_PIC_BRENDAN, TRAINER_BACK_PIC_BRENDAN, },
+            [MALE] =   { TRAINER_PIC_SHINJIRO, TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN, },
+            [FEMALE] = { TRAINER_PIC_SHINJIRO, TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN, },
         },
         .avatarGfxIds = {
             [MALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_BRENDAN_NORMAL,
+               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_SHINJIRO,
                [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
                [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
                [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
            },
            [FEMALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_BRENDAN_NORMAL,
+               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_SHINJIRO,
                [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
                [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
                [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER

@@ -11577,99 +11577,98 @@ const struct Item gItemsInfo[] =
 
 // TMs/HMs. They don't have a set flingPower, as that's handled by GetFlingPowerFromItemId.
 
-    [ITEM_TM_FOCUS_PUNCH] =
+    [ITEM_TM01] =
     {
         .name = ITEM_NAME("TM01"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
-            "Powerful, but makes\n"
-            "the user flinch if\n"
-            "hit by the foe."),
+            "A move that badly poisons\n"
+            "the foe. Its poison damage\n"
+            "worsens every turn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_DRAGON_CLAW] =
+    [ITEM_TM02] =
     {
         .name = ITEM_NAME("TM02"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
-            "Hooks and slashes\n"
-            "the foe with long,\n"
-            "sharp claws."),
+            "A sinister, bluish white\n"
+            " flame is shot at the foe\n"
+            "to inflict a burn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_WATER_PULSE] =
+    [ITEM_TM03] =
     {
         .name = ITEM_NAME("TM03"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
-            "Generates an\n"
-            "ultrasonic wave\n"
-            "that may confuse."),
+            "A weak electric shock that\n"
+            "is sure to cause paralysis\n"
+            "if it hits."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_CALM_MIND] =
+    [ITEM_TM04] =
     {
         .name = ITEM_NAME("TM04"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
-            "Raises Sp. Atk and\n"
-            "Sp. Def by focusing\n"
-            "the mind."),
+            "A freezing air that can\n"
+            "frostbite the foe, reducing\n"
+            "its special moves damage."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_ROAR] =
+    [ITEM_TM05] =
     {
         .name = ITEM_NAME("TM05"),
         .price = 1000,
         .description = COMPOUND_STRING(
-            "A savage roar that\n"
-            "makes the foe flee \n"
-            "to end the battle."),
+            "An attack that varies in\n"
+            "type and intensity\n"
+            "depending on the user."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_TOXIC] =
+    [ITEM_TM06] =
     {
         .name = ITEM_NAME("TM06"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Poisons the foe\n"
-            "with a toxin that\n"
-            "gradually worsens."),
+            "The sun blazes for five\n"
+            "turns, powering up Fire-\n"
+            "type moves."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_HAIL] =
+    [ITEM_TM07] =
     {
         .name = ITEM_NAME("TM07"),
         .price = 3000,
         #if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_SNOW
         .description = COMPOUND_STRING(
-            "Raises the Defense\n"
-            "of Ice type {PKMN}\n"
-            "for 5 turns."),
+            "Raises the Defense of Ice\n"
+            "type {PKMN} for 5 turns."),
         #else
         .description = COMPOUND_STRING(
             "Creates a hailstorm\n"
@@ -11682,612 +11681,601 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_BULK_UP] =
+    [ITEM_TM08] =
     {
         .name = ITEM_NAME("TM08"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Bulks up the body\n"
-            "to boost both\n"
-            "Attack & Defense."),
+            "A 5-turn sandstorm that\n"
+            "damages all types except\n"
+            "Rock, Ground, and Steel."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_BULLET_SEED] =
+    [ITEM_TM09] =
     {
         .name = ITEM_NAME("TM09"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Shoots 2 to 5 seeds\n"
-            "in a row to strike\n"
-            "the foe."),
+            "A heavy rain falls for 5\n"
+            "turns, powering up Water-\n"
+            "type moves."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_HIDDEN_POWER] =
+    [ITEM_TM10] =
     {
         .name = ITEM_NAME("TM10"),
-        .price = 3000,
+        .price = 2000,
         .description = COMPOUND_STRING(
-            "The attack power\n"
-            "varies among\n"
-            "different Pokémon."),
+            "Star-shaped rays are shot\n"
+            "at the opposing team. This\n"
+            "attack never misses."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SUNNY_DAY] =
+    [ITEM_TM11] =
     {
         .name = ITEM_NAME("TM11"),
         .price = 2000,
         .description = COMPOUND_STRING(
-            "Raises the power of\n"
-            "Fire-type moves\n"
-            "for 5 turns."),
+            "Attacks the foe with fire\n"
+            "and burn its held Berry,\n"
+            "rendering it unusable."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_TAUNT] =
+    [ITEM_TM12] =
     {
         .name = ITEM_NAME("TM12"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Enrages the foe so\n"
-            "it can only use\n"
-            "attack moves."),
+            "Attacks with ultrasonic\n"
+            "waves. May confuse the\n"
+            "target."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_ICE_BEAM] =
+    [ITEM_TM13] =
     {
         .name = ITEM_NAME("TM13"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Fires an icy cold\n"
-            "beam that may\n"
-        #if B_USE_FROSTBITE == TRUE
-            "inflict frostbite."),
-        #else
-            "freeze the foe."),
-        #endif
+            "A rapid jolt of electricity\n"
+            "strikes the foe. It can't\n"
+            "be evaded."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_BLIZZARD] =
+    [ITEM_TM14] =
     {
         .name = ITEM_NAME("TM14"),
         .price = 5500,
         .description = COMPOUND_STRING(
-        #if B_USE_FROSTBITE == TRUE
-            "A snow-and-wind\n"
-            "attack that may\n"
-            "inflict frostbite."),
-        #else
-            "A brutal snow-and-\n"
-            "wind attack that\n"
-            "may freeze the foe."),
-        #endif
+            "The foe is attacked with\n"
+            "a strange leaf that can't\n"
+            "be evaded."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_HYPER_BEAM] =
+    [ITEM_TM15] =
     {
         .name = ITEM_NAME("TM15"),
         .price = 7500,
         .description = COMPOUND_STRING(
-            "Powerful, but needs\n"
-            "recharging the\n"
-            "next turn."),
+            "A chilling wind is used\n"
+            "to attack. It also lowers\n"
+            "opponents' Speed stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_LIGHT_SCREEN] =
+    [ITEM_TM16] =
     {
         .name = ITEM_NAME("TM16"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Creates a wall of\n"
-            "light that lowers\n"
-            "Sp. Atk damage."),
+            "A swift attack on the\n"
+            "target's legs, lowering\n"
+            "its Speed stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_PROTECT] =
+    [ITEM_TM17] =
     {
         .name = ITEM_NAME("TM17"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Negates all damage,\n"
-            "but may fail if used\n"
-            "in succession."),
+            "An attack with a high\n"
+            "critical-hit ratio. It may\n"
+            "also poison the foe."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_RAIN_DANCE] =
+    [ITEM_TM18] =
     {
         .name = ITEM_NAME("TM18"),
         .price = 2000,
         .description = COMPOUND_STRING(
-            "Raises the power of\n"
-            "Water-type moves\n"
-            "for 5 turns."),
+            "Attacks by hurling mud. It\n"
+            "also reduces the foe's\n"
+            "Speed stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_GIGA_DRAIN] =
+    [ITEM_TM19] =
     {
         .name = ITEM_NAME("TM19"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Recovers half the\n"
-            "HP of the damage \n"
-            "this move inflicts."),
+            "An extremely fast attack\n"
+            "against one target. It\n"
+            "can't be evaded."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SAFEGUARD] =
+    [ITEM_TM20] =
     {
         .name = ITEM_NAME("TM20"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Prevents status\n"
-            "abnormality with a\n"
-            "mystical power."),
+            "A peculiar ray is shot at\n"
+            "the foe. It may leave the\n"
+            "foe confused."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_FRUSTRATION] =
+    [ITEM_TM21] =
     {
         .name = ITEM_NAME("TM21"),
         .price = 1000,
         .description = COMPOUND_STRING(
-            "The less the user\n"
-            "likes you, the more\n"
-            "powerful this move."),
+            "The foe is attacked with a\n"
+            "silver dust. It may raise\n"
+            "all the user's stats."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SOLAR_BEAM] =
+    [ITEM_TM22] =
     {
         .name = ITEM_NAME("TM22"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Absorbs sunlight in\n"
-            "the 1st turn, then\n"
-            "attacks next turn."),
+            "Boulders are hurled at\n"
+            "the foe. It also lowers\n"
+            "its Speed if it hits."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_IRON_TAIL] =
+    [ITEM_TM23] =
     {
         .name = ITEM_NAME("TM23"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Slams the foe with\n"
-            "a hard tail. It may\n"
-            "lower Defense."),
+            "An attack that does huge\n"
+            "damage to a foe affected\n"
+            "by status problems."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_THUNDERBOLT] =
+    [ITEM_TM24] =
     {
         .name = ITEM_NAME("TM24"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "A powerful electric\n"
-            "attack that may\n"
-            "cause paralysis."),
+            "Knocks away the foe and\n"
+            "drags out another {PKMN}\n"
+            "in its party."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_THUNDER] =
+    [ITEM_TM25] =
     {
         .name = ITEM_NAME("TM25"),
         .price = 5500,
         .description = COMPOUND_STRING(
-            "Strikes the foe\n"
-            "with a thunderbolt.\n"
-            "It may paralyze."),
+            "An attack that may take\n"
+            "the foe's held item if the\n"
+            "user isn't holding one."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_EARTHQUAKE] =
+    [ITEM_TM26] =
     {
         .name = ITEM_NAME("TM26"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Causes a quake\n"
-            "that has no effect\n"
-            "on flying foes."),
+            "A claw attack that may\n"
+            "raise the user's Attack\n"
+            "stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_RETURN] =
+    [ITEM_TM27] =
     {
         .name = ITEM_NAME("TM27"),
-        .price = 1000,
+        .price = 3000,
         .description = COMPOUND_STRING(
-            "The more the user\n"
-            "likes you, the more\n"
-            "powerful this move."),
+            "Steals the target's energy\n"
+            "and restores the user's HP\n"
+            "by half of the damage it\n"
+            "deals."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_DIG] =
+    [ITEM_TM28] =
     {
         .name = ITEM_NAME("TM28"),
-        .price = 2000,
+        .price = 5000,
         .description = COMPOUND_STRING(
-            "Digs underground\n"
-            "the 1st turn, then\n"
-            "strikes next turn."),
+            "Creates a wall of light\n"
+            "that weakens physical\n"
+            "attacks for 5 turns."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_PSYCHIC] =
+    [ITEM_TM29] =
     {
         .name = ITEM_NAME("TM29"),
-        .price = 2000,
+        .price = 5000,
         .description = COMPOUND_STRING(
-            "A powerful psychic\n"
-            "attack that may\n"
-            "lower Sp. Def."),
+            "A wall of light that cuts\n"
+            "damage from special\n"
+            "attacks for 5 turns."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SHADOW_BALL] =
+    [ITEM_TM30] =
     {
         .name = ITEM_NAME("TM30"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Hurls a dark lump\n"
-            "at the foe. It may\n"
-            "lower Sp. Def."),
+            "The user sleeps for 2 turns\n"
+            "to fully restore HP and\n"
+            "heal any status problem."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_BRICK_BREAK] =
+    [ITEM_TM31] =
     {
         .name = ITEM_NAME("TM31"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Destroys barriers\n"
-            "like Light Screen\n"
-            "and causes damage."),
+            "The foe is taunted into\n"
+            "a rage that allows it to\n"
+            "use only attack moves."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_DOUBLE_TEAM] =
+    [ITEM_TM32] =
     {
         .name = ITEM_NAME("TM32"),
-        .price = 2000,
+        .price = 5000,
         .description = COMPOUND_STRING(
-            "Creates illusory\n"
-            "copies to enhance\n"
-            "elusiveness."),
+            "Reduces damage from phy.\n"
+            "and spe. moves for 5 turns.\n"
+            "Only usable when it snows."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_REFLECT] =
+    [ITEM_TM33] =
     {
         .name = ITEM_NAME("TM33"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
-            "Creates a wall of\n"
-            "light that weakens\n"
-            "physical attacks."),
+            "A fighting dance that\n"
+            "sharply raises the user's\n"
+            "Attack stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SHOCK_WAVE] =
+    [ITEM_TM34] =
     {
         .name = ITEM_NAME("TM34"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
-            "Zaps the foe with a\n"
-            "jolt of electricity\n"
-            "that never misses."),
+            "By thinking bad thoughts,\n"
+            "the user's Sp. Atk stat is\n"
+            "sharply raised."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_FLAMETHROWER] =
+    [ITEM_TM35] =
     {
         .name = ITEM_NAME("TM35"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Looses a stream of\n"
-            "fire that may burn\n"
-            "the foe."),
+            "The user drops its full\n"
+            "body on the foe. It may\n"
+            "leave the foe paralyzed."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SLUDGE_BOMB] =
+    [ITEM_TM36] =
     {
         .name = ITEM_NAME("TM36"),
-        .price = 1000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Hurls sludge at the\n"
-            "foe. It may poison\n"
-            "the foe."),
+            "The foe is punched with\n"
+            "a fiery fist. It may leave\n"
+            "the foe with a burn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SANDSTORM] =
+    [ITEM_TM37] =
     {
         .name = ITEM_NAME("TM37"),
-        .price = 2000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Causes a sandstorm\n"
-            "that hits the foe\n"
-            "over several turns."),
+            "Shoots boiling hot water\n"
+            "at a target. It may also\n"
+            "burn the target."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_FIRE_BLAST] =
+    [ITEM_TM38] =
     {
         .name = ITEM_NAME("TM38"),
-        .price = 5500,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "A powerful fire\n"
-            "attack that may\n"
-            "burn the foe."),
+            "The foe is punched with an\n"
+            "electrified fist. It may\n"
+            "leave the foe paralyzed."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_ROCK_TOMB] =
+    [ITEM_TM39] =
     {
         .name = ITEM_NAME("TM39"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Stops the foe from\n"
-            "moving with rocks.\n"
-            "May lower Speed."),
+            "A harsh attack that absorbs\n"
+            "half the damage it dealed\n"
+            "to restore HP."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_AERIAL_ACE] =
+    [ITEM_TM40] =
     {
         .name = ITEM_NAME("TM40"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "An extremely fast\n"
-            "attack that can't\n"
-            "be avoided."),
+            "The foe is punched with an\n"
+            "icy fist. It may leave the\n"
+            "foe frostbitten."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_TORMENT] =
+    [ITEM_TM41] =
     {
         .name = ITEM_NAME("TM41"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Prevents the foe\n"
-            "from using the same\n"
-            "move in a row."),
+            "An energy-draining punch.\n"
+            "The users HP is restored \n"
+            "by half the damage dealed."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_FACADE] =
+    [ITEM_TM42] =
     {
         .name = ITEM_NAME("TM42"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Raises Attack when\n"
-            "poisoned, burned,\n"
-            "or paralyzed."),
+            "The foe is stabbed with\n"
+            "poisonous tentacle or arm.\n"
+            "It may also poison the foe."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SECRET_POWER] =
+    [ITEM_TM43] =
     {
         .name = ITEM_NAME("TM43"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Adds an effect to\n"
-            "attack depending\n"
-            "on the location."),
+            "Crashes into a target while\n"
+            "rotating the body like a\n"
+            "drill. High crit. hit rate."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_REST] =
+    [ITEM_TM44] =
     {
         .name = ITEM_NAME("TM44"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "The user sleeps for\n"
-            "2 turns to restore\n"
-            "health and status."),
+            "Attacks with a blade of air\n"
+            "that slices even the sky.\n"
+            "It may flinch the target."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_ATTRACT] =
+    [ITEM_TM45] =
     {
         .name = ITEM_NAME("TM45"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Makes it tough to\n"
-            "attack a foe of the\n"
-            "opposite gender."),
+            "An odd psychic wave that\n"
+            "does physical damage."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_THIEF] =
+    [ITEM_TM46] =
     {
         .name = ITEM_NAME("TM46"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "While attacking,\n"
-            "it may steal the\n"
-            "foe's held item."),
+            "Slashes at the foe by\n"
+            "crossing scythes or claws\n"
+            "like a pair of scissor."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_STEEL_WING] =
+    [ITEM_TM47] =
     {
         .name = ITEM_NAME("TM47"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Spreads hard-\n"
-            "edged wings and\n"
-            "slams into the foe."),
+            "Large boulders are hurled\n"
+            "at the foes. It may make\n"
+            "the foee flinch."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SKILL_SWAP] =
+    [ITEM_TM48] =
     {
         .name = ITEM_NAME("TM48"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Switches abilities\n"
-            "with the foe on the\n"
-            "turn this is used."),
+            "Slashes with a sharp claw\n"
+            "made from shadows. It has\n"
+            "a high critical-hit ratio."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SNATCH] =
+    [ITEM_TM49] =
     {
         .name = ITEM_NAME("TM49"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Steals the effects\n"
-            "of the move the foe\n"
-            "is trying to use."),
+            "The user slashes the foe\n"
+            "with huge, sharp claws."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_OVERHEAT] =
+    [ITEM_TM50] =
     {
         .name = ITEM_NAME("TM50"),
-        .price = 3000,
+        .price = 7000,
         .description = COMPOUND_STRING(
-            "Enables full-power\n"
-            "attack, but sharply\n"
-            "lowers Sp. Atk."),
+            "Releases a horrible aura\n"
+            "imbued with dark thoughts.\n"
+            "May flinch the target."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12297,8 +12285,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM51] =
     {
         .name = ITEM_NAME("TM51"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "Gathers light energy and\n"
+            "releases at the target.\n"
+            "May lower its Sp.Def stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12308,8 +12299,10 @@ const struct Item gItemsInfo[] =
     [ITEM_TM52] =
     {
         .name = ITEM_NAME("TM52"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "Damages opposing {PKMN} by\n"
+            "emitting a powerful flash."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12319,8 +12312,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM53] =
     {
         .name = ITEM_NAME("TM53"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "Turns the ground to grass\n"
+            "for 5 turns, restoring HP\n"
+            "for grounded {PKMN} each turn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12330,8 +12326,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM54] =
     {
         .name = ITEM_NAME("TM54"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "Electrifies the ground for\n"
+            "5 turns. Grounded {PKMN}\n"
+            "no longer fall asleep."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12341,8 +12340,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM55] =
     {
         .name = ITEM_NAME("TM55"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "Protects grounded {PKMN}\n"
+            "from priority moves and up\n"
+            "Psychic moves for 5 turns."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12352,8 +12354,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM56] =
     {
         .name = ITEM_NAME("TM56"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "Covers the ground with mist\n"
+            "for 5 turns, protecting grounded\n"
+            "{PKMN} from status conditions."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12363,8 +12368,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM57] =
     {
         .name = ITEM_NAME("TM57"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "Creates a bizarre area in\n"
+            "which slower {PKMN} get to\n"
+            "move first for 5 turns."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12374,8 +12382,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM58] =
     {
         .name = ITEM_NAME("TM58"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "A turbulent whirlwind that\n"
+            "ups the Speed of all party\n"
+            "{PKMN} for 3 turns."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12385,8 +12396,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM59] =
     {
         .name = ITEM_NAME("TM59"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "A trap of spikes is laid\n"
+            "around the foe's party to\n"
+            "hurt foes switching in."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12396,8 +12410,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM60] =
     {
         .name = ITEM_NAME("TM60"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "A trap of poison spikes is\n"
+            "laid at the foe's party to\n"
+            "poison foes switching in."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12407,8 +12424,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM61] =
     {
         .name = ITEM_NAME("TM61"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "A trap of levitating stones\n"
+            "is laid at the foe's party\n"
+            "to hurt foes switching in."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12418,8 +12438,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM62] =
     {
         .name = ITEM_NAME("TM62"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "A loud attack that uses\n"
+            "sound waves to injure the\n"
+            "opposing team."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12429,8 +12452,10 @@ const struct Item gItemsInfo[] =
     [ITEM_TM63] =
     {
         .name = ITEM_NAME("TM63"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "An intense flame attack\n"
+            "that may inflict a burn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12440,8 +12465,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM64] =
     {
         .name = ITEM_NAME("TM64"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "A full-force blast of water\n"
+            "that may lower the target's\n"
+            "Defense stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12451,8 +12479,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM65] =
     {
         .name = ITEM_NAME("TM65"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "A strong electrical attack\n"
+            "that may also leave the\n"
+            "target paralyzed."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12462,8 +12493,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM66] =
     {
         .name = ITEM_NAME("TM66"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "Draws power from nature and\n"
+            "fires at the target. May\n"
+            "lower its Sp. Def stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12473,8 +12507,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM67] =
     {
         .name = ITEM_NAME("TM67"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "Blasts the foe with an icy\n"
+            "beam that may leave it\n"
+            "frostbitten."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12484,8 +12521,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM68] =
     {
         .name = ITEM_NAME("TM68"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "An attack that also breaks\n"
+            "any barrier like Light\n"
+            "Screen and Reflect."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12495,8 +12535,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM69] =
     {
         .name = ITEM_NAME("TM69"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "Filthy sludge is hurled at\n"
+            "the foe. It may poison the\n"
+            "target."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12506,8 +12549,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM70] =
     {
         .name = ITEM_NAME("TM70"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "Makes the ground under the\n"
+            "foe erupt with power. It\n"
+            "may lower the foe's Sp.Def."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12517,8 +12563,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM71] =
     {
         .name = ITEM_NAME("TM71"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 8000,
+        .description = COMPOUND_STRING(
+            "Slams the target with wings\n"
+            "to inflict damage. It hits\n"
+            "twice in a row."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12528,8 +12577,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM72] =
     {
         .name = ITEM_NAME("TM72"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "A strong telekinetic attack.\n"
+            "It may lower the target's\n"
+            "Sp. Def stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12539,8 +12591,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM73] =
     {
         .name = ITEM_NAME("TM73"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 8000,
+        .description = COMPOUND_STRING(
+            "An attack that absorbs half\n"
+            "the damage it inflicted to\n"
+            "restore HP."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12550,8 +12605,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM74] =
     {
         .name = ITEM_NAME("TM74"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 8000,
+        .description = COMPOUND_STRING(
+            "Attacks with a ray of light\n"
+            "that sparkles as if it was\n"
+            "made of gemstones."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12561,8 +12619,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM75] =
     {
         .name = ITEM_NAME("TM75"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 8000,
+        .description = COMPOUND_STRING(
+            "A shadowy blob is hurled\n"
+            "at the foe. May also lower\n"
+            "the target's Sp. Def stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12572,8 +12633,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM76] =
     {
         .name = ITEM_NAME("TM76"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 8500,
+        .description = COMPOUND_STRING(
+            "The target is attacked with\n"
+            "a shock wave generated by\n"
+            "the user's gaping mouth."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12583,8 +12647,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM77] =
     {
         .name = ITEM_NAME("TM77"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 6500,
+        .description = COMPOUND_STRING(
+            "Knocks down the foe's held\n"
+            "item to prevent its use\n"
+            "during the battle."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12594,8 +12661,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM78] =
     {
         .name = ITEM_NAME("TM78"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 8000,
+        .description = COMPOUND_STRING(
+            "Slams the target with\n"
+            "steel-hard head. It may\n"
+            "make the target flinch."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12605,8 +12675,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM79] =
     {
         .name = ITEM_NAME("TM79"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "Plays rough with the target\n"
+            "and attacks it. May lower\n"
+            "the target's Attack stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12616,8 +12689,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM80] =
     {
         .name = ITEM_NAME("TM80"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 10000,
+        .description = COMPOUND_STRING(
+            "A reckless, life-risking\n"
+            "tackle that also hurts\n"
+            "the user a little."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12627,8 +12703,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM81] =
     {
         .name = ITEM_NAME("TM81"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9500,
+        .description = COMPOUND_STRING(
+            "Exhales a heated breath to\n"
+            "attack. It may also burn\n"
+            "the target."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12638,8 +12717,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM82] =
     {
         .name = ITEM_NAME("TM82"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9500,
+        .description = COMPOUND_STRING(
+            "Attacks with muddy water.\n"
+            "It may also lower the\n"
+            "targets' accuracy."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12649,8 +12731,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM83] =
     {
         .name = ITEM_NAME("TM83"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 8500,
+        .description = COMPOUND_STRING(
+            "Electrical attack that hits\n"
+            "all {PKMN} in battle. May\n"
+            "cause paralysis."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12660,8 +12745,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM84] =
     {
         .name = ITEM_NAME("TM84"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 8000,
+        .description = COMPOUND_STRING(
+            "Slams a barrage of hard-\n"
+            "shelled seeds down on the\n"
+            "target from above."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12671,8 +12759,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM85] =
     {
         .name = ITEM_NAME("TM85"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 8000,
+        .description = COMPOUND_STRING(
+            "Twirls around with thin ice\n"
+            "and slams into the target.\n"
+            "Destroys all terrains."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12682,8 +12773,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM86] =
     {
         .name = ITEM_NAME("TM86"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 8000,
+        .description = COMPOUND_STRING(
+            "A blast of aura power from\n"
+            "deep within the user's body.\n"
+            "This move never misses."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12693,8 +12787,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM87] =
     {
         .name = ITEM_NAME("TM87"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 10000,
+        .description = COMPOUND_STRING(
+            "Swamps the area with giant\n"
+            "sludge wave. It may also\n"
+            "poison those hit."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12704,8 +12801,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM88] =
     {
         .name = ITEM_NAME("TM88"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9500,
+        .description = COMPOUND_STRING(
+            "The user fiercely attacks\n"
+            "the target using its entire\n"
+            "body."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12715,8 +12815,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM89] =
     {
         .name = ITEM_NAME("TM89"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 5000,
+        .description = COMPOUND_STRING(
+            "Lands and rests, restores\n"
+            "the user's HP by up to\n"
+            "half of its max HP."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12726,8 +12829,12 @@ const struct Item gItemsInfo[] =
     [ITEM_TM90] =
     {
         .name = ITEM_NAME("TM90"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "Attacks with psychic power.\n"
+            "Power is boosted and\n"
+            "damanges all foes in Psychic\n"
+            "Terrain."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12737,8 +12844,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM91] =
     {
         .name = ITEM_NAME("TM91"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "Generates a damaging sound\n"
+            "wave with wings. May lower\n"
+            "the target's Sp. Def stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12748,8 +12858,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM92] =
     {
         .name = ITEM_NAME("TM92"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 10000,
+        .description = COMPOUND_STRING(
+            "Stabs the foe with a\n"
+            "sharpened stone. It has a\n"
+            "high critical-hit ratio."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12759,8 +12872,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM93] =
     {
         .name = ITEM_NAME("TM93"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "Vanishes and strikes the\n"
+            "target on the next turn,\n"
+            "ignoring protection."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12770,8 +12886,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM94] =
     {
         .name = ITEM_NAME("TM94"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 5000,
+        .description = COMPOUND_STRING(
+            "A mystic, powerful dance\n"
+            "that boosts the user's\n"
+            "Attack and Speed stats."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12781,8 +12900,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM95] =
     {
         .name = ITEM_NAME("TM95"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 4500,
+        .description = COMPOUND_STRING(
+            "Turns the target's power\n"
+            "against it. Use the target's\n"
+            "Attack stat to damage it."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12792,8 +12914,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM96] =
     {
         .name = ITEM_NAME("TM96"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9000,
+        .description = COMPOUND_STRING(
+            "An attack with a steel-hard\n"
+            "tail. May lower the target's\n"
+            "Defense stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12803,8 +12928,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM97] =
     {
         .name = ITEM_NAME("TM97"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 9500,
+        .description = COMPOUND_STRING(
+            "Borrows the power of the\n"
+            "moon to attack the target.\n"
+            "May lower its Sp. Atk stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12814,8 +12942,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM98] =
     {
         .name = ITEM_NAME("TM98"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 15000,
+        .description = COMPOUND_STRING(
+            "A severely damaging attack\n"
+            "that makes the user rest\n"
+            "on the next turn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12825,8 +12956,10 @@ const struct Item gItemsInfo[] =
     [ITEM_TM99] =
     {
         .name = ITEM_NAME("TM99"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 11000,
+        .description = COMPOUND_STRING(
+            "A fiery blast that scorches\n"
+            "all. May cause a burn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12836,8 +12969,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM100] =
     {
         .name = ITEM_NAME("TM100"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 11000,
+        .description = COMPOUND_STRING(
+            "A high volume of water is\n"
+            "blasted at the target\n"
+            "under great pressure."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12847,8 +12983,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM101] =
     {
         .name = ITEM_NAME("TM101"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 11000,
+        .description = COMPOUND_STRING(
+            "A lightning attack that may\n"
+            "cause paralysis. Never\n"
+            "misses in rain."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12858,30 +12997,39 @@ const struct Item gItemsInfo[] =
         [ITEM_TM102] =
     {
         .name = ITEM_NAME("TM102"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 12000,
+        .description = COMPOUND_STRING(
+            "A 2-turn move that blasts\n"
+            "the foe with absorbed\n"
+            "energy in the 2nd turn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-        [ITEM_TM103] =
+    [ITEM_TM103] =
     {
         .name = ITEM_NAME("TM103"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 11000,
+        .description = COMPOUND_STRING(
+            "The foes are blasted with a\n"
+            "blizzard. May frostbite the\n"
+            "foes. Never misses in snow."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-        [ITEM_TM104] =
+    [ITEM_TM104] =
     {
         .name = ITEM_NAME("TM104"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 12000,
+        .description = COMPOUND_STRING(
+            "A powerful attack, but it\n"
+            "also lowers the user's\n"
+            "Attack and Defense stats."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12891,8 +13039,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM105] =
     {
         .name = ITEM_NAME("TM105"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 12000,
+        .description = COMPOUND_STRING(
+            "Shoots filthy garbage at\n"
+            "the foe to attack. It may\n"
+            "poison the target."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12902,8 +13053,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM106] =
     {
         .name = ITEM_NAME("TM106"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 10000,
+        .description = COMPOUND_STRING(
+            "An earthquake that strikes\n"
+            "all {PKMN} in battle\n"
+            "excluding the user."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12913,8 +13067,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM107] =
     {
         .name = ITEM_NAME("TM107"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 11000,
+        .description = COMPOUND_STRING(
+            "A fierce wind that may\n"
+            "confuse the target. Never\n"
+            "misses in rain."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12924,8 +13081,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM108] =
     {
         .name = ITEM_NAME("TM108"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 10000,
+        .description = COMPOUND_STRING(
+            "Absorbs half the damage it\n"
+            "inflicted on a sleeping foe\n"
+            "to restore HP."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12935,8 +13095,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM109] =
     {
         .name = ITEM_NAME("TM109"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 12000,
+        .description = COMPOUND_STRING(
+            "A brutal ramming attack\n"
+            "delivered with a tough and\n"
+            "impressive horn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12946,8 +13109,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM110] =
     {
         .name = ITEM_NAME("TM110"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 12000,
+        .description = COMPOUND_STRING(
+            "Gathers energy from space,\n"
+            "boosts Sp. Atk stat on 1st\n"
+            "turn and attacks next turn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12957,8 +13123,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM111] =
     {
         .name = ITEM_NAME("TM111"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 11000,
+        .description = COMPOUND_STRING(
+            "Controlling the target's\n"
+            "item to attack. Fails if\n"
+            "the target has no item."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12968,8 +13137,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM112] =
     {
         .name = ITEM_NAME("TM112"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 13000,
+        .description = COMPOUND_STRING(
+            "Comets are summoned down\n"
+            "from the sky. Sharply\n"
+            "lowers the user's Sp.Atk."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12979,8 +13151,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM113] =
     {
         .name = ITEM_NAME("TM113"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 8000,
+        .description = COMPOUND_STRING(
+            "The foe is crunched with\n"
+            "sharp fangs. It may lower\n"
+            "the target's Sp. Def stat."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12990,8 +13165,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM114] =
     {
         .name = ITEM_NAME("TM114"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 14000,
+        .description = COMPOUND_STRING(
+            "Fires a beam of steel from\n"
+            "the user's entire body.\n"
+            "Also damages the user."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13001,8 +13179,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM115] =
     {
         .name = ITEM_NAME("TM115"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 5000,
+        .description = COMPOUND_STRING(
+            "Attacks everything and\n"
+            "faints upon using. Power is\n"
+            "boosted on Misty Terrain."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13012,8 +13193,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM116] =
     {
         .name = ITEM_NAME("TM116"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 10000,
+        .description = COMPOUND_STRING(
+            "The user blows up to inflict\n"
+            "severe damage, even making\n"
+            "itself faint."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13023,8 +13207,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM117] =
     {
         .name = ITEM_NAME("TM117"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 12000,
+        .description = COMPOUND_STRING(
+            "Cloaks in fire and charges\n"
+            "at the foe, hurting self\n"
+            "and may burn the target."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13034,8 +13221,12 @@ const struct Item gItemsInfo[] =
     [ITEM_TM118] =
     {
         .name = ITEM_NAME("TM118"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 10000,
+        .description = COMPOUND_STRING(
+            "Drops onto the target with\n"
+            "electrified body. If the\n"
+            "move misses, it hurts the\n"
+            "user instead."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13045,8 +13236,11 @@ const struct Item gItemsInfo[] =
     [ITEM_TM119] =
     {
         .name = ITEM_NAME("TM119"),
-        .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .price = 12500,
+        .description = COMPOUND_STRING(
+            "Gathers light on the 1st\n"
+            "turn and attacks with a\n"
+            "blade on the next turn."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13056,6 +13250,331 @@ const struct Item gItemsInfo[] =
     [ITEM_TM120] =
     {
         .name = ITEM_NAME("TM120"),
+        .price = 12000,
+        .description = COMPOUND_STRING(
+            "Fights the foe without\n"
+            "guarding, lowering the\n"
+            "user's Def and Sp.Def."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM121] =
+    {
+        .name = ITEM_NAME("TM121"),
+        .price = 12000,
+        .description = COMPOUND_STRING(
+            "Tucks in wings and charges\n"
+            "from a low altitude. The\n"
+            "user also suffers massive\n"
+            "damage."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM122] =
+    {
+        .name = ITEM_NAME("TM122"),
+        .price = 10000,
+        .description = COMPOUND_STRING(
+            "Two turns after this move\n"
+            "is used, the foe is attacked\n"
+            "psychically."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM123] =
+    {
+        .name = ITEM_NAME("TM123"),
+        .price = 2000,
+        .description = COMPOUND_STRING(
+            "A restrained attack that\n"
+            "always leaves the foe\n"
+            "with at least 1 HP."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM124] =
+    {
+        .name = ITEM_NAME("TM124"),
+        .price = 5000,
+        .description = COMPOUND_STRING(
+            "Breathes a special, hot\n"
+            "fire that also lowers the\n"
+            "target's Sp. Atk stat."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM125] =
+    {
+        .name = ITEM_NAME("TM125"),
+        .price = 3000,
+        .description = COMPOUND_STRING(
+            "Attacks with cold water\n"
+            "that lowers the target's\n"
+            "Attack stat."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM126] =
+    {
+        .name = ITEM_NAME("TM126"),
+        .price = 5000,
+        .description = COMPOUND_STRING(
+            "Rushes back to switch\n"
+            "place with a waiting {PKMN}\n"
+            "in party after attacking."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM127] =
+    {
+        .name = ITEM_NAME("TM127"),
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "Rushes back to switch\n"
+            "place with a waiting {PKMN}\n"
+            "in party after attacking."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM128] =
+    {
+        .name = ITEM_NAME("TM128"),
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "Rushes back to switch\n"
+            "place with a waiting {PKMN}\n"
+            "in party after attacking."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM129] =
+    {
+        .name = ITEM_NAME("TM129"),
+        .price = 3500,
+        .description = COMPOUND_STRING(
+            "Glides and attacks the\n"
+            "target. Always goes first\n"
+            "on Grassy Terrain."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM130] =
+    {
+        .name = ITEM_NAME("TM130"),
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "Rapidly cools the target.\n"
+            "May cause frostbite. Super\n"
+            "effective on Water types."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM131] =
+    {
+        .name = ITEM_NAME("TM131"),
+        .price = 8000,
+        .description = COMPOUND_STRING(
+            "Slam the target with entire\n"
+            "body. Uses the user's\n"
+            "Defense stat to inflict\n"
+            "damage."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM132] =
+    {
+        .name = ITEM_NAME("TM132"),
+        .price = 10000,
+        .description = COMPOUND_STRING(
+            "An attack that is executed\n"
+            "last. The user flinches if\n"
+            "hit beforehand."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM133] =
+    {
+        .name = ITEM_NAME("TM133"),
+        .price = 5000,
+        .description = COMPOUND_STRING(
+            "Drenches the target in a\n"
+            "poisonous liquid. Double\n"
+            "power on poisoned target."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM134] =
+    {
+        .name = ITEM_NAME("TM134"),
+        .price = 7000,
+        .description = COMPOUND_STRING(
+            "Throws scorching sand at\n"
+            "the target. It may burn\n"
+            "the target."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM135] =
+    {
+        .name = ITEM_NAME("TM135"),
+        .price = 5500,
+        .description = COMPOUND_STRING(
+            "Nimbly strikes the target.\n"
+            "If the user isn't holding\n"
+            "an item, power is doubled."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM136] =
+    {
+        .name = ITEM_NAME("TM136"),
+        .price = 8000,
+        .description = COMPOUND_STRING(
+            "Focuses willpower and rams\n"
+            "at the target. May cause\n"
+            "the target to flinch."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM137] =
+    {
+        .name = ITEM_NAME("TM137"),
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Attacks suddenly and raises\n"
+            "the user's Speed stat."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM138] =
+    {
+        .name = ITEM_NAME("TM138"),
+        .price = 5000,
+        .description = COMPOUND_STRING(
+            "Raise all allies' critical-\n"
+            "hit ratio. More effective\n"
+            "effective on Dragon types."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+
+    [ITEM_TM139] =
+    {
+        .name = ITEM_NAME("TM139"),
+        .price = 5000,
+        .description = COMPOUND_STRING(
+            "Tackles the target with a\n"
+            "high-speed spin. The\n"
+            "slower the user the higher\n"
+            "the move's power."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM140] =
+    {
+        .name = ITEM_NAME("TM140"),
+        .price = 5000,
+        .description = COMPOUND_STRING(
+            "The more the HP the target\n"
+            "has left, the greater the\n"
+            "move's power."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM141] =
+    {
+        .name = ITEM_NAME("TM141"),
+        .price = 12500,
+        .description = COMPOUND_STRING(
+            "The user explodes to\n"
+            "inflict terrible damage\n"
+            "even while fainting itself."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM142] =
+    {
+        .name = ITEM_NAME("TM142"),
+        .price = 3000,
+        .description = COMPOUND_STRING(
+            "An attack that may confuse\n"
+            "the target. Can also be\n"
+            "used to scale rocky walls."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM143] =
+    {
+        .name = ITEM_NAME("TM143"),
         .price = 3000,
         .description = sQuestionMarksDesc, // Todo
         .importance = I_REUSABLE_TMS,
@@ -13064,15 +13583,90 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
+    [ITEM_TM144] =
+    {
+        .name = ITEM_NAME("TM144"),
+        .price = 3000,
+        .description = sQuestionMarksDesc, // Todo
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM145] =
+    {
+        .name = ITEM_NAME("TM145"),
+        .price = 3000,
+        .description = sQuestionMarksDesc, // Todo
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM146] =
+    {
+        .name = ITEM_NAME("TM146"),
+        .price = 3000,
+        .description = sQuestionMarksDesc, // Todo
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM147] =
+    {
+        .name = ITEM_NAME("TM147"),
+        .price = 3000,
+        .description = sQuestionMarksDesc, // Todo
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM148] =
+    {
+        .name = ITEM_NAME("TM148"),
+        .price = 3000,
+        .description = sQuestionMarksDesc, // Todo
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM149] =
+    {
+        .name = ITEM_NAME("TM149"),
+        .price = 3000,
+        .description = sQuestionMarksDesc, // Todo
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
+
+    [ITEM_TM150] =
+    {
+        .name = ITEM_NAME("TM150"),
+        .price = 3000,
+        .description = sQuestionMarksDesc, // Todo
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_TMHM,
+    },
 
     [ITEM_HM_CUT] =
     {
         .name = ITEM_NAME("HM01"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Attacks the foe\n"
-            "with sharp blades\n"
-            "or claws."),
+            "Attacks the foe with sharp\n"
+            "blades or claws."),
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13084,9 +13678,8 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("HM02"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Flies up on the\n"
-            "first turn, then\n"
-            "attacks next turn."),
+            "Flies up on the 1st turn,\n"
+            "then attacks next turn."),
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13098,9 +13691,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("HM03"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Creates a huge\n"
-            "wave, then crashes\n"
-            "it down on the foe."),
+            "Creates a huge wave, then\n"
+            "crashes it down on the\n"
+            "targets."),
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13112,9 +13705,8 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("HM04"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Builds enormous\n"
-            "power, then slams\n"
-            "the foe."),
+            "Builds enormous power then\n"
+            "slams the foe."),
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13126,9 +13718,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("HM05"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Looses a powerful\n"
-            "blast of light that\n"
-            "reduces accuracy."),
+            "Looses a powerful blast\n"
+            "of light that reduces\n"
+            "the target's accuracy."),
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13140,9 +13732,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("HM06"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A rock-crushingly\n"
-            "tough attack that\n"
-            "may lower Defense."),
+            "A rock-crushingly tough\n"
+            "attack that may lower \n"
+            "Defense."),
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13154,9 +13746,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("HM07"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Attacks the foe\n"
-            "with enough power\n"
-            "to climb waterfalls."),
+            "Attacks the foe with\n"
+            "enough power to climb\n"
+            "waterfalls."),
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13168,9 +13760,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("HM08"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Dives underwater\n"
-            "the 1st turn, then\n"
-            "attacks next turn."),
+            "Dives underwater the 1st\n"
+            "turn, then attacks next\n"
+            "turn."),
         .importance = 1,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

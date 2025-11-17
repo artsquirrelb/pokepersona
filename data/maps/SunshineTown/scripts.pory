@@ -352,36 +352,20 @@ script SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru {
     end
 }
 
-script unlockmitsuru
+script unlockoutfits
 {
-    if (var(VAR_TEMP_1) == 0){
-    lock
+    msgbox("unlocked all outfits")
+    closemessage
     unlockoutfit(OUTFIT_MITSURU)
-    msgbox("unlocked mitsuru")
-    closemessage
-    setvar(VAR_TEMP_1, 1)
-    release
-    end
-    }
-    else
-    {
-    lock
     unlockoutfit(OUTFIT_SHINJIRO)
-    msgbox("unlocked shinjiro")
-    closemessage
-    release
-    end 
-    }
+    unlockoutfit(OUTFIT_AKIHIKO)
 }
 
 script setshinjirofollower{
-    lock
-    msgbox("set shinjiro follower")
-    closemessage
-    setflag(FLAG_FOLLOWERS_DISABLED)
-    destroyfollowernpc
-    createfollowernpc(OBJ_EVENT_GFX_SHINJIRO, FOLLOWER_NPC_FLAG_ALL, Eventscript_ShinjiroFollower, PARTNER_SHINJIRO_C1)
-    updatefollowingmon
-    release
+    checkfollowernpc
+    if(var(VAR_RESULT) == 1){
+        msgbox(format("you have a follower npc)"))
+        closemessage
+    }
     end
 }

@@ -80,7 +80,7 @@ static const struct WindowTemplate sFieldRegionMapWindowTemplates[] =
         .tilemapTop = 1,
         .width = 7,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 0,
         .baseBlock = 1
     },
     [WIN_MAPSEC_NAME] = {
@@ -89,7 +89,7 @@ static const struct WindowTemplate sFieldRegionMapWindowTemplates[] =
         .tilemapTop = 17,
         .width = 12,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 0,
         .baseBlock = 100
     },
     DUMMY_WIN_TEMPLATE
@@ -154,12 +154,12 @@ static void FieldUpdateRegionMap(void)
             sFieldRegionMapHandler->state++;
             break;
         case 1:
-            LoadRightEdgeWindowBorderGfx(WIN_TITLE, 0x27, 13);
-            DrawStdFrameWithCustomTileAndPalette(WIN_TITLE, FALSE, 0x27, 0xd);
+            LoadRightEdgeWindowBorderGfx(WIN_TITLE, 0x27, 0);
+            DrawStdFrameWithCustomTileAndPalette(WIN_TITLE, FALSE, 0x27, 0);
             FillWindowPixelBuffer(WIN_TITLE, PIXEL_FILL(3));
             PrintTitleWindowText();
             ScheduleBgCopyTilemapToVram(0);
-            DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME, FALSE, 0x27, 0xd);
+            DrawStdFrameWithCustomTileAndPalette(WIN_MAPSEC_NAME, FALSE, 0x27, 0);
             PrintRegionMapSecName();
             BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
             sFieldRegionMapHandler->state++;

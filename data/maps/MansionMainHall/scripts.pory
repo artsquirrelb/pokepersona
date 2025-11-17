@@ -72,6 +72,7 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     waitmovement(0)
     removeobject(LOCALID_INTELEON)
     setflag(FLAG_TEMP_1)
+    setflag(FLAG_HIDE_MAP_NAME_POPUP)
     delay(30)
     msgbox(format("Inteleon is now your Companion."))
     call(Eventscript_CutsceneEnds)

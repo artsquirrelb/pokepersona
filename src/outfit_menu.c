@@ -127,8 +127,8 @@ static u32 BuildOutfitLists(void);
 static inline void UpdateOutfitInfo(void);
 static void UpdateCursorPosition(void);
 static void AssignNPCFollowerAccordingCurrentCursorIdx(void);
-static u16 GetOutfitIdFromCurrentFollowerGFX(void);
-static u16 GetOutfitIdNumberFromCurrentPointer (void);
+//static u16 GetOutfitIdFromCurrentFollowerGFX(void);
+//static u16 GetOutfitIdNumberFromCurrentPointer (void);
 static void SwitchPlayerAndFollower(void);
 
 
@@ -800,6 +800,7 @@ static void ForEachCB_PopulateOutfitOverworlds(u32 idx, u32 col, u32 row)
     }
 }
 
+
 static void ForAllCB_FreeOutfitOverworlds(u32 idx, u32 col, u32 row)
 {
     if (sOutfitMenu->grid->iconSpriteIds[idx] == SPRITE_NONE)
@@ -1020,9 +1021,9 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
             {
                 if (sOutfitMenu->idx == OUTFIT_AKIHIKO) //selecting Akihiko
                 {
-                    //u16 currentpointeroutfitidnumber = GetOutfitIdNumberFromCurrentPointer();
-                    if (GetOutfitIdFromCurrentFollowerGFX() == OUTFIT_AKIHIKO   //if current follower is akihiko
-                    && gSaveBlock2Ptr->currOutfitId == OUTFIT_MITSURU)          //and current player is mitsuru
+                    if (PlayerHasFollowerNPC()                                                    //if there is a follower
+                        && GetFollowerNPCData(FNPC_DATA_GFX_ID) == OBJ_EVENT_GFX_BRENDAN_NORMAL    //& current follower is akihiko
+                        && gSaveBlock2Ptr->playerGender == FEMALE)                                  //& current player is mitsuru
                     {
                         PlaySE(SE_SUCCESS);
                         SavePlayerParty();
@@ -1031,22 +1032,24 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
                         LoadPlayerParty();
                         SwitchPlayerAndFollower();                              //swap player to akihiko and follower to mitsuru
                         gTasks[taskId].func = Task_PrintIsCurrentFollower;
+                        
                     }
-                    else                                           //current follower isn't akihiko or current player is already akihiko
+                    else                    //there's no follower atm or current follower isnt akihiko or current player is akihiko
                     {
                         PlaySE(SE_SUCCESS);
                         SavePlayerParty();
                         gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
                         SwitchPlayerGenderAccordingToChosenOutfit();
                         LoadPlayerParty();
+                                                     
                         gTasks[taskId].func = Task_PrintIsNowPlayer;
                     }
                     
                 }
                 else if (sOutfitMenu->idx == OUTFIT_MITSURU) //selecting Mitsuru)
                 {
-                    if (GetOutfitIdFromCurrentFollowerGFX() == OUTFIT_MITSURU   //if current follower is mitsuru
-                    && gSaveBlock2Ptr->currOutfitId == OUTFIT_AKIHIKO)          //and current player is akihiko
+                    if (GetFollowerNPCData(FNPC_DATA_GFX_ID) == OBJ_EVENT_GFX_MAY_NORMAL   //if current follower is mitsuru
+                    && gSaveBlock2Ptr->playerGender == MALE)                                //and current player is akihiko
                     {
                         PlaySE(SE_SUCCESS);
                         SavePlayerParty();
@@ -1059,6 +1062,7 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
                     else                                         //current follower isn't mitsuru or current player is already mitsuru
                     {
                         PlaySE(SE_SUCCESS);
+                        
                         SavePlayerParty();
                         gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
                         SwitchPlayerGenderAccordingToChosenOutfit();
@@ -1101,8 +1105,8 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
             else if (sOutfitMenu->idx != gSaveBlock2Ptr->currOutfitId && GetOutfitStatus(sOutfitMenu->idx)) //if the selected chara is not player and is unlocked
             {
                 PlaySE(SE_SUCCESS);
-                
                 AssignNPCFollowerAccordingCurrentCursorIdx();
+                UpdateOutfitInfo();
                 gTasks[taskId].func = Task_PrintIsNowFollowing;
             }
             else                                                           //the selected character is not player and is locked
@@ -1292,32 +1296,30 @@ void SwitchPlayerGenderAccordingToChosenOutfit(void)
 
 void AssignNPCFollowerAccordingCurrentCursorIdx(void)
 {
+    DestroyFollowerNPC();
     FlagSet(FLAG_FOLLOWERS_DISABLED);
-    UpdateFollowingPokemon();
+
     if (sOutfitMenu->idx == OUTFIT_AKIHIKO)
-    {
-        DestroyFollowerNPC();
         CreateFollowerNPC(OBJ_EVENT_GFX_BRENDAN_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_AkihikoFollower);
-    }
 
     else if (sOutfitMenu->idx == OUTFIT_MITSURU)
-    {
-        DestroyFollowerNPC();
+
         CreateFollowerNPC(OBJ_EVENT_GFX_MAY_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_MitsuruFollower);
-    }
+
     else if (sOutfitMenu->idx == OUTFIT_SHINJIRO)
-    {
-        DestroyFollowerNPC();
         CreateFollowerNPC(OBJ_EVENT_GFX_SHINJIRO, FOLLOWER_NPC_FLAG_CLEAR_ON_WHITE_OUT, Eventscript_ShinjiroFollower);
-    }
+
     else
-    {
         FlagClear(FLAG_FOLLOWERS_DISABLED);
-        UpdateFollowingPokemon();
-    }
+        
+    GridMenu_ForAll(sOutfitMenu->grid, ForAllCB_FreeOutfitOverworlds);
+    GridMenu_ForAll(sOutfitMenu->grid, ForAllCb_DestroyIndicatorSprites);
+    GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_PopulateOutfitOverworlds);
+    GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_DrawIndicatorSprites);
+    UpdateFollowingPokemon();
 }
 
-u16 GetOutfitIdFromCurrentFollowerGFX(void)
+/*u16 GetOutfitIdFromCurrentFollowerGFX(void)
 {
     u16 currentfollowergfx = GetFollowerNPCData(FNPC_DATA_GFX_ID);
     
@@ -1344,15 +1346,21 @@ u16 GetOutfitIdNumberFromCurrentPointer (void)
         return OUTFIT_SHINJIRO;
     else
         return 0;
-}
+}*/
 
 void SwitchPlayerAndFollower(void)
 {   
+    DestroyFollowerNPC();
     FlagSet(FLAG_FOLLOWERS_DISABLED);
     UpdateFollowingPokemon();
-    DestroyFollowerNPC();
+
     if (gSaveBlock2Ptr->playerGender == MALE)
         CreateFollowerNPC(OBJ_EVENT_GFX_MAY_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_MitsuruFollower);
     else
         CreateFollowerNPC(OBJ_EVENT_GFX_BRENDAN_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_AkihikoFollower);
+
+    GridMenu_ForAll(sOutfitMenu->grid, ForAllCB_FreeOutfitOverworlds);
+    GridMenu_ForAll(sOutfitMenu->grid, ForAllCb_DestroyIndicatorSprites);
+    GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_PopulateOutfitOverworlds);
+    GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_DrawIndicatorSprites);
 }

@@ -103,7 +103,7 @@ static void TryReplaceOldTVShowOfKind(u8);
 static void Script_FindFirstEmptyNormalTVShowSlot(void);
 static void CompactTVShowArray(TVShow *);
 static s8 GetFirstEmptyPokeNewsSlot(PokeNews *);
-static bool8 IsAddingPokeNewsDisallowed(u8);
+//static bool8 IsAddingPokeNewsDisallowed(u8);
 static void ClearPokeNewsBySlot(u8);
 static void TranslateRubyShows(TVShow *);
 static void TranslateJapaneseEmeraldShows(TVShow *);
@@ -2666,7 +2666,7 @@ static bool8 ShouldApplyPokeNewsEffect(u8 newsKind)
     return TRUE;
 }
 
-static bool8 IsAddingPokeNewsDisallowed(u8 newsKind)
+/*static bool8 IsAddingPokeNewsDisallowed(u8 newsKind)
 {
     u8 i;
     if (newsKind == POKENEWS_NONE)
@@ -2679,7 +2679,7 @@ static bool8 IsAddingPokeNewsDisallowed(u8 newsKind)
             return TRUE;
     }
     return FALSE;
-}
+}*/
 
 static void UpdatePokeNewsCountdown(u16 days)
 {

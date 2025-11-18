@@ -540,3 +540,5 @@ gSpecials::
 	def_special SetHiddenNature
 	def_special SetObjectMovementType
 	def_special SetAbility
+	def_special ObjectEventInteractionGetApricornTreeData
+	def_special ObjectEventInteractionPickApricornTree

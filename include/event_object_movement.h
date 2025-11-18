@@ -515,4 +515,6 @@ bool8 PlayerIsUnderWaterfall(struct ObjectEvent *objectEvent);
 
 const struct SpritePalette *GetObjectEventPaletteFromTag(u16 tag);
 
+u8 GetObjectEventApricornTreeId(u8 objectEventId);
+
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H

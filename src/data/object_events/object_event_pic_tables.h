@@ -1434,3 +1434,7 @@ static const struct SpriteFrameImage gObjectEventPicTable_Kikuno[] = {
 static const struct SpriteFrameImage gObjectEventPicTable_Receptionist_F[] = {
     overworld_ascending_frames(gObjectEventPic_Receptionist_F, 4, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_ApricornTree[] = {
+    overworld_frame(gObjectEventPic_ApricornTree, 2, 2, 0),
+};

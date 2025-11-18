@@ -1398,7 +1398,7 @@ static void NamingScreen_NoIcon(void)
  * the specified outfit id to be used to show the correct obj for the player.
  * 
  * So, for example, if you want it to show the player's current outfit instead of
- * DEFAULT_OUTFIT, change this:
+ * DEFAULT_CHARACTER, change this:
  * DoNamingScreen(NAMING_SCREEN_PLAYER,
  *                gSaveBlock2Ptr->playerName,
  *                gSaveBlock2Ptr->playerGender,
@@ -1418,12 +1418,12 @@ static void NamingScreen_NoIcon(void)
  *                gSaveBlock2Ptr->playerName,
  *                gSaveBlock2Ptr->playerGender,
  *                0, 
- *                OUTFIT_MITSURU,
+ *                CHARACTER_MITSURU,
  *                CB2_NewGameBirchSpeech_ReturnFromNamingScreen);
  */
 static void NamingScreen_CreatePlayerIcon(void)
 {
-    u16 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(DEFAULT_OUTFIT, PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
+    u16 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(DEFAULT_CHARACTER, PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
     u8 spriteId;
     // u32 outfit = sNamingScreen->monPersonality;
 

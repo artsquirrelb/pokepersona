@@ -285,6 +285,11 @@ const u16 gTrainerPalette_RubySapphireMay[] = INCBIN_U16("graphics/trainers/pale
 const u32 gTrainerFrontPic_Shinjiro[] = INCBIN_U32("graphics/trainers/front_pics/shinjiro.4bpp.smol");
 const u16 gTrainerPalette_Shinjiro[] = INCBIN_U16("graphics/trainers/front_pics/shinjiro.gbapal");
 
+const u32 gTrainerFrontPic_Inteleon_T[] = INCBIN_U32("graphics/field_mugshots/Inteleon/serious.4bpp.lz");
+const u16 gTrainerPalette_Inteleon_T[] = INCBIN_U16("graphics/field_mugshots/Inteleon/serious.gbapal");
+const u32 gTrainerBackPic_Inteleon_T[] = INCBIN_U32("graphics/pokemon/inteleon/inteleon_t_back.4bpp");
+const u16 gTrainerBackPalette_Inteleon_T[] = INCBIN_U16("graphics/pokemon/inteleon/normal.gbapal");
+
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
@@ -409,7 +414,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_LEAF, gTrainerFrontPic_Leaf, gTrainerPalette_Leaf),
     TRAINER_SPRITE(TRAINER_PIC_RS_BRENDAN, gTrainerFrontPic_RubySapphireBrendan, gTrainerPalette_RubySapphireBrendan),
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
-    TRAINER_SPRITE(TRAINER_PIC_SHINJIRO, gTrainerFrontPic_Shinjiro, gTrainerPalette_Shinjiro)
+    TRAINER_SPRITE(TRAINER_PIC_SHINJIRO, gTrainerFrontPic_Shinjiro, gTrainerPalette_Shinjiro),
+    TRAINER_SPRITE(TRAINER_PIC_INTELEON_T, gTrainerFrontPic_Inteleon_T, gTrainerPalette_Inteleon_T),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =
@@ -485,4 +491,5 @@ const struct TrainerBacksprite gTrainerBacksprites[] =
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_RUBY_SAPPHIRE_MAY, 4, gTrainerBackPic_RubySapphireMay, gTrainerPalette_RubySapphireMay, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_WALLY, 4, gTrainerBackPic_Wally, gTrainerPalette_Wally, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_STEVEN, 4, gTrainerBackPic_Steven, gTrainerPalette_Steven, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_INTELEON_T, 4, gTrainerBackPic_Inteleon_T, gTrainerBackPalette_Inteleon_T, sBackAnims_Hoenn),
 };

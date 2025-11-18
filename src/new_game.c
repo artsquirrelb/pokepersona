@@ -156,19 +156,21 @@ static void ClearFrontierRecord(void)
 
 static void SetDefaultOutfitAccordingToPlayerGender (void)
 {
-    if (gSaveBlock2Ptr->currOutfitId == DEFAULT_OUTFIT)
+    if (gSaveBlock2Ptr->currOutfitId == DEFAULT_CHARACTER)
     {
         if (gSaveBlock2Ptr->playerGender == MALE)
         {   
-            LockOutfit(OUTFIT_MITSURU);
-            UnlockOutfit(OUTFIT_AKIHIKO);
-            gSaveBlock2Ptr->currOutfitId = OUTFIT_AKIHIKO;
+            LockCharacter(CHARACTER_MITSURU);
+            UnlockCharacter(CHARACTER_AKIHIKO);
+            MakeCharaAvailable(CHARACTER_AKIHIKO);
+            gSaveBlock2Ptr->currOutfitId = CHARACTER_AKIHIKO;
         }
         else
         {   
-            LockOutfit(OUTFIT_AKIHIKO);
-            UnlockOutfit(OUTFIT_MITSURU);
-            gSaveBlock2Ptr->currOutfitId = OUTFIT_MITSURU;
+            LockCharacter(CHARACTER_AKIHIKO);
+            UnlockCharacter(CHARACTER_MITSURU);
+            MakeCharaAvailable(CHARACTER_MITSURU);
+            gSaveBlock2Ptr->currOutfitId = CHARACTER_MITSURU;
         }
     }
 }
@@ -202,8 +204,8 @@ void ResetMenuAndMonGlobals(void)
 static void ResetOutfitData(void)
 {
     memset(gSaveBlock2Ptr->outfits, 0, sizeof(gSaveBlock2Ptr->outfits));
-    UnlockOutfit(DEFAULT_OUTFIT);
-    gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
+    UnlockCharacter(DEFAULT_CHARACTER);
+    gSaveBlock2Ptr->currOutfitId = DEFAULT_CHARACTER;
 }
 
 void NewGameInitData(void)

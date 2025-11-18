@@ -65,7 +65,7 @@ static const u32 sTrainerCountGfx[] = INCBIN_U32("graphics/interface/trainercoun
 
 static const u16 sTrainerCountPal[] = INCBIN_U16("graphics/interface/trainercount_hud.gbapal");
 
-#define TRAINER_COUNT_PAL_TAG       OBJ_EVENT_PAL_TAG_BRENDAN // Shares the same pal as the trainer it uses
+#define TRAINER_COUNT_PAL_TAG       OBJ_EVENT_PAL_TAG_EMOTES // Shares the same pal as overworld emotes
 #define TAG_TRAINER_COUNT_GFX       30050
 //#define TAG_MON_REWARD_GFX          30051
 
@@ -104,7 +104,7 @@ static const struct OamData sOamData_TrainerCountHUD =
 {
     .size = SPRITE_SIZE(32x32),
     .shape = SPRITE_SHAPE(32x32),
-    .priority = 1,
+    .priority = 0,
 };
 
 /*static const struct OamData sOamData_MonRewardHUD =
@@ -151,7 +151,7 @@ static void Task_DelayPrintOverworldTrainerHUD(u8 taskId)
         LoadCompressedSpriteSheet(&sSpriteSheet_TrainerCountHUD);
         LoadSpritePalette(&sSpritePal_TrainerCountHUD);
         gOWHUDSprite = SPRITE_NONE;
-        gOWHUDSprite = CreateSprite(&sSpriteTemplate_TrainerCountHUD, 19, 144, 0);
+        gOWHUDSprite = CreateSprite(&sSpriteTemplate_TrainerCountHUD, 19, 2, 0);
         gSprites[gOWHUDSprite].invisible = FALSE;
 
         //PrintTrainerCount(gOWHUDSprite, 0, gSprites[gOWHUDSprite].oam.tileNum + 5);
@@ -161,7 +161,7 @@ static void Task_DelayPrintOverworldTrainerHUD(u8 taskId)
             SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_OBJWIN_ON);
             SetGpuRegBits(REG_OFFSET_WINOUT, WINOUT_WINOBJ_OBJ);
             gOWHUDSpriteMask = SPRITE_NONE;
-            gOWHUDSpriteMask = CreateSprite(&sSpriteTemplate_TrainerCountHUD, 19, 144, 0);
+            gOWHUDSpriteMask = CreateSprite(&sSpriteTemplate_TrainerCountHUD, 19, 2, 0);
             gSprites[gOWHUDSpriteMask].invisible = FALSE;
             gSprites[gOWHUDSpriteMask].oam.objMode = ST_OAM_OBJ_WINDOW;
             }

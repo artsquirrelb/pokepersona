@@ -231,7 +231,7 @@ script SunshineTown_Eventscript_OnFrame23{
     lock
     msgbox(format("{COLOR GREEN}Tips: Quest System is now unlocked.\p
     Check around for quest givers with a light blue exclamation mark.\p
-    You can open quest menu in Start Menu {RIGHT_ARROW} L Button."))
+    You can open quest menu in {START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}."))
     closemessage
     clearflag(FLAG_HIDE_QUEST_ICON)
     setflag(FLAG_SYS_QUEST_MENU_GET)
@@ -352,20 +352,26 @@ script SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru {
     end
 }
 
-script unlockoutfits
+script unlockcharacters
 {
-    msgbox("unlocked all outfits")
+    msgbox(format("unlocked & made available all charas"))
     closemessage
-    unlockoutfit(OUTFIT_MITSURU)
-    unlockoutfit(OUTFIT_SHINJIRO)
-    unlockoutfit(OUTFIT_AKIHIKO)
+    unlockcharacter(CHARACTER_MITSURU)
+    unlockcharacter(CHARACTER_SHINJIRO)
+    unlockcharacter(CHARACTER_AKIHIKO)
+    makecharaAvailable(CHARACTER_MITSURU)
+    makecharaAvailable(CHARACTER_AKIHIKO)
+    makecharaAvailable(CHARACTER_SHINJIRO)
+    end
 }
 
-script setshinjirofollower{
-    checkfollowernpc
-    if(var(VAR_RESULT) == 1){
-        msgbox(format("you have a follower npc)"))
-        closemessage
-    }
-    end
+script makecharagrayout{
+    msgbox(format("Marking prologue to completed & reset all temp vars"))
+    closemessage
+    setvar(VAR_AKIHIKOS_INTRO_STATE, 100)
+    setvar(VAR_MITSURUS_INTRO_STATE, 100)
+    setvar(VAR_TEMP_0, 0)
+    setvar(VAR_TEMP_1, 0)
+    setvar(VAR_TEMP_2, 0)
+    setvar(VAR_TEMP_3, 0)
 }

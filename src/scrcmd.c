@@ -3075,10 +3075,28 @@ bool8 ScrCmd_toggleoutfit(struct ScriptContext *ctx)
     {
     default:
     case OUTFIT_TOGGLE_UNLOCK:
-        UnlockOutfit(outfitId);
+        UnlockCharacter(outfitId);
         break;
     case OUTFIT_TOGGLE_LOCK:
-        LockOutfit(outfitId);
+        LockCharacter(outfitId);
+        break;
+    }
+    return TRUE;
+}
+
+bool8 ScrCmd_togglecharaavailability(struct ScriptContext *ctx)
+{
+    u16 outfitId = VarGet(ScriptReadHalfword(ctx));
+    u8 type = ScriptReadByte(ctx);
+
+    switch(type)
+    {
+    default:
+    case CHARA_TOGGLE_AVAILABLE:
+        MakeCharaAvailable(outfitId);
+        break;
+    case CHARA_TOGGLE_UNAVAILABLE:
+        MakeCharaUnavailable(outfitId);
         break;
     }
     return TRUE;
@@ -3099,6 +3117,15 @@ bool8 ScrCmd_getoutfitstatus(struct ScriptContext *ctx)
             gSpecialVar_Result = IsPlayerWearingOutfit(outfitId);
             break;
     }
+    return TRUE;
+}
+
+bool8 ScrCmd_getcharaavailability(struct ScriptContext *ctx)
+{
+    u16 outfitId = VarGet(ScriptReadHalfword(ctx));
+    
+    gSpecialVar_Result = GetCharaAvailability(outfitId);
+    
     return TRUE;
 }
 

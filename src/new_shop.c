@@ -980,7 +980,7 @@ static void ForEachCB_PopulateItemIcons(u32 idx, u32 col, u32 row)
             //! TODO: Fix coord of this
             u16 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(sMartInfo.itemList[i], PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
 
-            if (sMartInfo.itemList[i] == OUTFIT_NONE) // is 0 as DECOR/ITEM_NONE
+            if (sMartInfo.itemList[i] == CHARACTER_NONE) // is 0 as DECOR/ITEM_NONE
             {
                 sShopData->gridItems->iconSpriteIds[idx] = AddItemIconSprite(GFXTAG_ITEM + idx, PALTAG_ITEM + idx, ITEM_LIST_END);
             }
@@ -1730,7 +1730,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
     #ifdef MUDSKIP_OUTFIT_SYSTEM
         case NEW_SHOP_TYPE_OUTFIT:
         {
-            UnlockOutfit(sShopData->currentItemId);
+            UnlockCharacter(sShopData->currentItemId);
             BuyMenuDisplayMessage(taskId, gText_HereIsTheOutfitThankYou, BuyMenuSubtractMoney);
             break;
         }

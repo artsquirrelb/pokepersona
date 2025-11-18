@@ -126,6 +126,8 @@
 #define MULTI_TIME_OF_DAY                  115
 #define MULTI_FURFROU_STYLE                116
 #define MULTI_FURFROU_STYLE_2              117
+#define MULTI_NPC_FOLLOWER_1               118
+#define MULTI_NPC_FOLLOWER_2               119
 
 // Lilycove SS Tidal Multichoice Selections
 #define SSTIDAL_SELECTION_SLATEPORT        0

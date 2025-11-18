@@ -109,7 +109,9 @@ script SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow {
     waitmovement(0)
     playfanfare(MUS_OBTAIN_TMHM)
     waitfanfare
-    msgbox(format("Shinjiro is now travelling with Akihiko."))
+    msgbox(format("{COLOR GREEN}Shinjiro is now your Companion.\n
+    Tips: Companion Menu is now unlocked.\n
+    You can open it in {START_BUTTON} Menu {RIGHT_ARROW} {SELECT_BUTTON}."))
     closemessage
     goto (SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa)
     

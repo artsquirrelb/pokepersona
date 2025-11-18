@@ -1606,7 +1606,7 @@ static void BuyMenuTryMakePurchase(u8 taskId)
     }
     else if (sMartInfo.martType == MART_TYPE_OUTFIT)
     {
-        UnlockOutfit(tItemId);
+        UnlockCharacter(tItemId);
         BuyMenuDisplayMessage(taskId, gText_HereIsTheOutfitThankYou, BuyMenuSubtractMoney);
     }
     else if (MARTMOVE)

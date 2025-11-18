@@ -808,7 +808,21 @@ static const struct MenuAction MultichoiceList_FurfrouStyle2[] =
     {gText_Cancel},
 };
 
+static const struct MenuAction MultichoiceList_NPCFollower1[] =
+{
+    {COMPOUND_STRING("Let's chat.")},
+    {COMPOUND_STRING("Let's battle together")},
+    {COMPOUND_STRING("Can you step back?")},
+    {COMPOUND_STRING("Nothing actually.")},
+};
 
+static const struct MenuAction MultichoiceList_NPCFollower2[] =
+{
+    {COMPOUND_STRING("Let's chat.")},
+    {COMPOUND_STRING("I can battle on my own.")},
+    {COMPOUND_STRING("Can you step back?")},
+    {COMPOUND_STRING("Nothing actually.")},
+};
 
 static const struct MenuAction MultichoiceList_Exit[] =
 {
@@ -941,6 +955,8 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_TIME_OF_DAY]                = MULTICHOICE(MultichoiceList_TimeOfDay),
     [MULTI_FURFROU_STYLE]              = MULTICHOICE(MultichoiceList_FurfrouStyle),
     [MULTI_FURFROU_STYLE_2]            = MULTICHOICE(MultichoiceList_FurfrouStyle2),
+    [MULTI_NPC_FOLLOWER_1]             = MULTICHOICE(MultichoiceList_NPCFollower1),
+    [MULTI_NPC_FOLLOWER_2]             = MULTICHOICE(MultichoiceList_NPCFollower2),
 };
 
 const u8 *const gStdStrings[] =

@@ -611,35 +611,44 @@ SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru::
 	end
 
 
-unlockoutfits::
+unlockcharacters::
 # 357 "data/maps/SunshineTown/scripts.pory"
-	msgbox unlockoutfits_Text_0
+	msgbox unlockcharacters_Text_0
 # 358 "data/maps/SunshineTown/scripts.pory"
 	closemessage
 # 359 "data/maps/SunshineTown/scripts.pory"
-	unlockoutfit OUTFIT_MITSURU
+	unlockcharacter CHARACTER_MITSURU
 # 360 "data/maps/SunshineTown/scripts.pory"
-	unlockoutfit OUTFIT_SHINJIRO
+	unlockcharacter CHARACTER_SHINJIRO
 # 361 "data/maps/SunshineTown/scripts.pory"
-	unlockoutfit OUTFIT_AKIHIKO
-	return
-
-
-setshinjirofollower::
-# 365 "data/maps/SunshineTown/scripts.pory"
-	checkfollowernpc
-# 366 "data/maps/SunshineTown/scripts.pory"
-	compare VAR_RESULT, 1
-	goto_if_eq setshinjirofollower_2
-setshinjirofollower_1:
+	unlockcharacter CHARACTER_AKIHIKO
+# 362 "data/maps/SunshineTown/scripts.pory"
+	makecharaAvailable CHARACTER_MITSURU
+# 363 "data/maps/SunshineTown/scripts.pory"
+	makecharaAvailable CHARACTER_AKIHIKO
+# 364 "data/maps/SunshineTown/scripts.pory"
+	makecharaAvailable CHARACTER_SHINJIRO
 	end
 
-setshinjirofollower_2:
-# 367 "data/maps/SunshineTown/scripts.pory"
-	msgbox setshinjirofollower_Text_0
-# 368 "data/maps/SunshineTown/scripts.pory"
+
+makecharagrayout::
+# 369 "data/maps/SunshineTown/scripts.pory"
+	msgbox makecharagrayout_Text_0
+# 370 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-	goto setshinjirofollower_1
+# 371 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 100
+# 372 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 100
+# 373 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_TEMP_0, 0
+# 374 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_TEMP_1, 0
+# 375 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_TEMP_2, 0
+# 376 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_TEMP_3, 0
+	return
 
 
 SunshineTown_Eventscript_Kurosawa_Text_0:
@@ -729,8 +738,7 @@ SunshineTown_Eventscript_OnFrame23_Text_0:
 	.string "{COLOR GREEN}Tips: Quest System is now unlocked.\p"
 	.string "Check around for quest givers with a\n"
 	.string "light blue exclamation mark.\p"
-	.string "You can open quest menu in Start Menu {RIGHT_ARROW}\n"
-	.string "L Button.$"
+	.string "You can open quest menu in {START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}.$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0:
 # 246 "data/maps/SunshineTown/scripts.pory"
@@ -780,10 +788,11 @@ SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru_Text_0:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I have no business in Sunshine Woods\n"
 	.string "right now.)$"
 
-unlockoutfits_Text_0:
+unlockcharacters_Text_0:
 # 357 "data/maps/SunshineTown/scripts.pory"
-	.string "unlocked all outfits$"
+	.string "unlocked & made available all charas$"
 
-setshinjirofollower_Text_0:
-# 367 "data/maps/SunshineTown/scripts.pory"
-	.string "you have a follower npc)$"
+makecharagrayout_Text_0:
+# 369 "data/maps/SunshineTown/scripts.pory"
+	.string "Marking prologue to completed & reset\n"
+	.string "all temp vars$"

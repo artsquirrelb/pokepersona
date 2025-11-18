@@ -117,8 +117,6 @@ EventScript_NewGameSetUp::
 	setvar VAR_AKIHIKO_RELATIONSHIP_POINTS, 100
 # 55 "data/maps/MansionsGarden/scripts.pory"
 	setflag FLAG_HIDE_TALK_BUTTON
-# 56 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_COMPANION_MENU
 # 58 "data/maps/MansionsGarden/scripts.pory"
 	checkplayergender
 # 59 "data/maps/MansionsGarden/scripts.pory"

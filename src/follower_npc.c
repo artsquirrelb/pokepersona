@@ -1751,3 +1751,15 @@ void ScriptChangeFollowerNPCBattlePartner(struct ScriptContext *ctx)
 
     SetFollowerNPCData(FNPC_DATA_BATTLE_PARTNER, newBattlePartner);
 }
+
+void ScriptCheckBattlePartner(struct ScriptContext *ctx)
+{
+    if (!FNPC_ENABLE_NPC_FOLLOWERS || !PlayerHasFollowerNPC())
+        return;
+    gSpecialVar_Result = GetFollowerNPCData(FNPC_DATA_BATTLE_PARTNER);
+
+    if (gSpecialVar_Result > 0 && gSpecialVar_Result < PARTNER_COUNT)
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
+}

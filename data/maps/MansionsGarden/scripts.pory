@@ -53,7 +53,7 @@ script EventScript_NewGameSetUp {
 	setvar (VAR_MITSURU_RELATIONSHIP_POINTS, 100)
 	setvar (VAR_AKIHIKO_RELATIONSHIP_POINTS, 100)
     setflag(FLAG_HIDE_TALK_BUTTON)
-    setflag(FLAG_COMPANION_MENU)
+
 
     checkplayergender
     if (var(VAR_RESULT) == MALE){

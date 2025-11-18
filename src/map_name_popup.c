@@ -405,6 +405,7 @@ static void Task_MapNamePopUpWindow(u8 taskId)
     {
     case STATE_PRINT:
         // Wait, then create and print the pop up window
+        FlagSet(FLAG_HIDE_TALK_BUTTON);
         if (++task->tPrintTimer > 30)
         {
             task->tState = STATE_SLIDE_IN;
@@ -464,6 +465,7 @@ static void Task_MapNamePopUpWindow(u8 taskId)
         break;
     case STATE_END:
         HideMapNamePopUpWindow();
+        FlagClear(FLAG_HIDE_TALK_BUTTON);
         return;
     }
     if (OW_POPUP_GENERATION != GEN_5)
@@ -474,6 +476,7 @@ void HideMapNamePopUpWindow(void)
 {
     if (FuncIsActiveTask(Task_MapNamePopUpWindow))
     {
+        
     #ifdef UBFIX
         if (GetMapNamePopUpWindowId() != WINDOW_NONE)
     #endif // UBFIX
@@ -528,7 +531,6 @@ static void ShowMapNamePopUpWindow(void)
     u8 x;
     const u8 *mapDisplayHeaderSource;
     u8 mapNamePopUpWindowId, secondaryPopUpWindowId;
-
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE)
     {
         if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_TOP)

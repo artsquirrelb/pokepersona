@@ -134,7 +134,9 @@
 #define NUM_DEX_FLAG_BYTES ROUND_BITS_TO_BYTES(POKEMON_SLOTS_NUMBER)
 #define NUM_FLAG_BYTES ROUND_BITS_TO_BYTES(FLAGS_COUNT)
 #define NUM_TRENDY_SAYING_BYTES ROUND_BITS_TO_BYTES(NUM_TRENDY_SAYINGS)
-#define NUM_OUTFIT_OWNED_BYTES ROUND_BITS_TO_BYTES(OUTFIT_COUNT)
+
+#define NUM_OUTFIT_OWNED_BYTES ROUND_BITS_TO_BYTES(CHARACTER_COUNT)
+#define NUM_CHARA_AVAIL_BYTES ROUND_BITS_TO_BYTES(CHARACTER_COUNT)
 
 // This produces an error at compile-time if expr is zero.
 // It looks like file.c:line: size of array `id' is negative
@@ -587,14 +589,10 @@ struct SaveBlock2
              u16 optionsWindowFrameType:5; // Specifies one of the 20 decorative borders for text boxes
              u16 optionsFollowersOff:1; // whether ow followers are disabled
              u16 optionsAutoRunOff:1; // whether auto running is disabled
-             //u16 optionsDisableMatchCall:1; // whether match calls are disabled
              u16 optionsBattleSceneOff:1; // whether battle animations are disabled
              u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
              u16 optionsBattleSpeed:4; // OPTIONS_BATTLE_SPEED_[1X/2X/3X/4X]
-             //u16 optionsDisableBagUse:1; // whether bag use is disabled in battle
              u16 optionsQuickRunButton:2; // OPTIONS_QUICK_RUN[R_BUTTON/B_BUTTON/OFF]
-             //u16 optionsDoubleBattlesOff:1; // whether all trainer battles should be doubles
-             //u16 optionsShowBattleMoveInfoOff:1; // whether to show battle move info
              u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
              u16 optionsBikeMusicOff:1; // whether cycling music is disabled
              u16 optionsSurfMusicOff:1; // whether surfing music is disabled
@@ -603,6 +601,7 @@ struct SaveBlock2
              u16 playerBike:1;
              u16 currOutfitId:4;
              u16 outfits[NUM_OUTFIT_OWNED_BYTES];
+             u16 CharacterAvailability[NUM_CHARA_AVAIL_BYTES];
     /*0x18*/ struct Pokedex pokedex;
     /*0x90*/ u8 filler_90[0x6];
     /*0x98*/ struct Time localTimeOffset;

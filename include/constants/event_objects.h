@@ -8,7 +8,7 @@
 #define OBJ_EVENT_GFX_BRENDAN_MACH_BIKE            1
 #define OBJ_EVENT_GFX_BRENDAN_SURFING              2
 #define OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE           3
-#define OBJ_EVENT_GFX_BRENDAN_NORMAL               4
+#define OBJ_EVENT_GFX_MANIAC                       4
 #define OBJ_EVENT_GFX_NINJA_BOY                    5
 #define OBJ_EVENT_GFX_TWIN                         6
 #define OBJ_EVENT_GFX_BOY_1                        7
@@ -43,7 +43,7 @@
 #define OBJ_EVENT_GFX_BUG_CATCHER                 36
 #define OBJ_EVENT_GFX_PSYCHIC_M                   37
 #define OBJ_EVENT_GFX_SCHOOL_KID_M                38
-#define OBJ_EVENT_GFX_MANIAC                      39
+#define OBJ_EVENT_GFX_BRENDAN_NORMAL                      39
 #define OBJ_EVENT_GFX_HEX_MANIAC                  40
 #define OBJ_EVENT_GFX_RAYQUAZA_STILL              41
 #define OBJ_EVENT_GFX_SWIMMER_M                   42
@@ -356,7 +356,7 @@
 #define OBJ_EVENT_ID_PLAYER LOCALID_PLAYER
 
 // Moved from src/event_object_movement.c so that they're accesible from other files.
-#define OBJ_EVENT_PAL_TAG_BRENDAN                 0x1100
+#define OBJ_EVENT_PAL_TAG_ZIGZAGOON               0x1100
 #define OBJ_EVENT_PAL_TAG_BRENDAN_REFLECTION      0x1101
 #define OBJ_EVENT_PAL_TAG_BRIDGE_REFLECTION       0x1102
 #define OBJ_EVENT_PAL_TAG_NPC_1                   0x1103
@@ -371,7 +371,7 @@
 #define OBJ_EVENT_PAL_TAG_QUINTY_PLUMP_REFLECTION 0x110C
 #define OBJ_EVENT_PAL_TAG_TRUCK                   0x110D
 #define OBJ_EVENT_PAL_TAG_VIGOROTH                0x110E
-#define OBJ_EVENT_PAL_TAG_ZIGZAGOON               0x110F
+#define OBJ_EVENT_PAL_TAG_BRENDAN                 0x110F
 #define OBJ_EVENT_PAL_TAG_MAY                     0x1110
 #define OBJ_EVENT_PAL_TAG_MAY_REFLECTION          0x1111
 #define OBJ_EVENT_PAL_TAG_MOVING_BOX              0x1112

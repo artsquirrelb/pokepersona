@@ -3,7 +3,7 @@
 
 #if MODERN == 0
 static const u8 sText_OutfitName_Player[] = _("{PLAYER}");
-static const u8 sText_OutfitDesc_Akihiko[] = _("Never beating the good boy\nallegations.");
+static const u8 sText_OutfitDesc_Akihiko[] = _("Wants to get stronger to\nfind his sister Miki.");
 
 static const u8 sText_OutfitName_Rival[] = _("{RIVAL}");
 static const u8 sText_OutfitDesc_Mitsuru[] = _("Pretty fond of good boys.");
@@ -47,17 +47,19 @@ static const u8 sFrontierPassPlayerIcons_RSBrendanMay_Gfx[] = INCBIN_U8("graphic
 #define OBJ_EVENT_GFX_OUTFIT_RS_MAY_DECORATING OBJ_EVENT_GFX_MAY_DECORATING
 #define OBJ_EVENT_GFX_OUTFIT_RS_MAY_FIELD_MOVE OBJ_EVENT_GFX_MAY_FIELD_MOVE
 
-const struct Outfit gOutfits[OUTFIT_COUNT] =
+const struct Outfit gOutfits[CHARACTER_COUNT] =
 {
-    [OUTFIT_NONE] = {
+    [CHARACTER_NONE] = {
         .isHidden = TRUE
     },
 
-    [OUTFIT_MITSURU] = {
+    [CHARACTER_MITSURU] = {
         .isHidden = TRUE,
         .prices = { 200, 500 },
         .name = COMPOUND_STRING("Mitsuru Kirijo"),
-        .desc = COMPOUND_STRING("Pretty fond of good boys."),
+        .desc = COMPOUND_STRING(
+            "Burdens herself for her family's sin.\n"
+            "A clever trainer and leader."),
 
         .trainerPics = {
             [MALE] = { TRAINER_PIC_MAY, TRAINER_BACK_PIC_MAY, },
@@ -98,7 +100,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
 
-    [OUTFIT_AKIHIKO] = {
+    [CHARACTER_AKIHIKO] = {
         //! DESC: if sets to TRUE, it will not be shown in the OUTFIT menu if it's locked.
         .isHidden = TRUE,
 
@@ -108,7 +110,9 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         //! agbcc doesnt like COMPOUND_STRING on my end
         //! DESC: outfit's name
         .name = COMPOUND_STRING("Akihiko Sanada"),
-        .desc = COMPOUND_STRING("Never beating the good boy\nallegations."),
+        .desc = COMPOUND_STRING(
+            "Wants to get stronger to find his sister.\n"
+            "Very loyal to those he trusts and cares."),
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
         .trainerPics = {
@@ -161,11 +165,13 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
 
-    [OUTFIT_SHINJIRO] = {
+    [CHARACTER_SHINJIRO] = {
         .isHidden = TRUE,
         .prices = { 200, 500 },
         .name = COMPOUND_STRING("Shinjiro Aragaki"),
-        .desc = COMPOUND_STRING("Looks grumpy, but he's soft inside."),
+        .desc = COMPOUND_STRING(
+            "Looks grumpy, but he's soft inside.\n"
+            "Akihiko's childhood best friend."),
 
         .trainerPics = {
             [MALE] =   { TRAINER_PIC_SHINJIRO, TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN, },
@@ -203,5 +209,33 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         },
         .iconsRM = { sRegionMapPlayerIcon_BrendanGfx, sRegionMapPlayerIcon_MayGfx },
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
+    },
+
+    [CHARACTER_INTELEON_T] = {
+        .isHidden = TRUE,
+        .prices = { 200, 500 },
+        .name = COMPOUND_STRING("Inteleon (Takeharu's)"),
+        .desc = COMPOUND_STRING(
+            "Always serious, cares a lot about\n"
+            "Mitsuru and acts like a mentor."),
+
+        .trainerPics = {
+            [MALE] =   { TRAINER_PIC_INTELEON_T, TRAINER_BACK_PIC_INTELEON_T, },
+            [FEMALE] = { TRAINER_PIC_INTELEON_T, TRAINER_BACK_PIC_INTELEON_T, },
+        },
+        .avatarGfxIds = {
+            [MALE] = {
+               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_SPECIES(INTELEON),
+               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
+               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
+               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
+           },
+           [FEMALE] = {
+               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_SPECIES(INTELEON),
+               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
+               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
+               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
+           },   
+        },
     }
 };

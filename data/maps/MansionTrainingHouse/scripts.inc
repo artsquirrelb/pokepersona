@@ -801,34 +801,6 @@ CheckIfHasFurfrou_28:
 	end
 
 
-testcompanionbutton::
-# 451 "data/maps/MansionTrainingHouse/scripts.pory"
-	lock
-# 452 "data/maps/MansionTrainingHouse/scripts.pory"
-	msgbox testcompanionbutton_Text_0
-# 453 "data/maps/MansionTrainingHouse/scripts.pory"
-	closemessage
-# 454 "data/maps/MansionTrainingHouse/scripts.pory"
-	setflag FLAG_COMPANION_MENU
-# 455 "data/maps/MansionTrainingHouse/scripts.pory"
-	release
-	end
-
-
-testquestbutton::
-# 460 "data/maps/MansionTrainingHouse/scripts.pory"
-	lock
-# 461 "data/maps/MansionTrainingHouse/scripts.pory"
-	msgbox testquestbutton_Text_0
-# 462 "data/maps/MansionTrainingHouse/scripts.pory"
-	closemessage
-# 463 "data/maps/MansionTrainingHouse/scripts.pory"
-	setflag FLAG_SYS_QUEST_MENU_GET
-# 464 "data/maps/MansionTrainingHouse/scripts.pory"
-	release
-	end
-
-
 MansionTrainingHouse_Eventscript_MoveTutor_Text_0:
 # 12 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "Hello, Young Lady. What moves do you\n"
@@ -925,14 +897,6 @@ CheckIfHasFurfrou_Text_1:
 # 444 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "Which style do you want for your\n"
 	.string "Furfrou?$"
-
-testcompanionbutton_Text_0:
-# 452 "data/maps/MansionTrainingHouse/scripts.pory"
-	.string "unlocking companion button and menu$"
-
-testquestbutton_Text_0:
-# 461 "data/maps/MansionTrainingHouse/scripts.pory"
-	.string "unlocking quest button and menu$"
 
 FurfrouStyleChangedPerfectly::
 # 394 "data/maps/MansionTrainingHouse/scripts.pory"

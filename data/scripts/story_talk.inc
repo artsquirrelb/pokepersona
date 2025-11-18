@@ -501,7 +501,7 @@ EventScript_OverworldStoryTalk_MitsurusPrologue::
 	compare VAR_MITSURUS_INTRO_STATE, 6
 	goto_if_eq EventScript_OverworldStoryTalk_MitsurusPrologue_6
 # 323 "data/scripts/story_talk.pory"
-	msgbox EventScript_OverworldStoryTalk_Text_0
+	call EventScript_OverworldStoryTalk_NoScript
 EventScript_OverworldStoryTalk_MitsurusPrologue_1:
 # 325 "data/scripts/story_talk.pory"
 	closemessage
@@ -533,93 +533,101 @@ EventScript_OverworldStoryTalk_MitsurusPrologue_6:
 	goto EventScript_OverworldStoryTalk_MitsurusPrologue_1
 
 
-EventScript_OverworldStoryTalk_MustPickUpVulpix::
+EventScript_OverworldStoryTalk_NoScript::
 # 330 "data/scripts/story_talk.pory"
+	msgbox EventScript_OverworldStoryTalk_Text_0
+# 331 "data/scripts/story_talk.pory"
+	closemessage
+	return
+
+
+EventScript_OverworldStoryTalk_MustPickUpVulpix::
+# 334 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldStoryTalk_MustPickUpVulpix_Text_0
 	return
 
 
 EventScript_OverworldStoryTalk_PostPickUpVulpix::
-# 335 "data/scripts/story_talk.pory"
-	lock
-# 336 "data/scripts/story_talk.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FacePlayer
-# 337 "data/scripts/story_talk.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, Common_Movement_FacePlayer
-# 338 "data/scripts/story_talk.pory"
-	waitmovement 0
 # 339 "data/scripts/story_talk.pory"
-	msgbox EventScript_OverworldStoryTalk_PostPickUpVulpix_Text_0
+	lock
 # 340 "data/scripts/story_talk.pory"
-	closemessage
+	applymovement LOCALID_PLAYER, Common_Movement_FacePlayer
 # 341 "data/scripts/story_talk.pory"
-	playmoncry SPECIES_VULPIX, CRY_MODE_NORMAL
+	applymovement OBJ_EVENT_ID_FOLLOWER, Common_Movement_FacePlayer
 # 342 "data/scripts/story_talk.pory"
-	waitmoncry
+	waitmovement 0
 # 343 "data/scripts/story_talk.pory"
+	msgbox EventScript_OverworldStoryTalk_PostPickUpVulpix_Text_0
+# 344 "data/scripts/story_talk.pory"
+	closemessage
+# 345 "data/scripts/story_talk.pory"
+	playmoncry SPECIES_VULPIX, CRY_MODE_NORMAL
+# 346 "data/scripts/story_talk.pory"
+	waitmoncry
+# 347 "data/scripts/story_talk.pory"
 	goto_if_unset FLAG_FOLLOWERS_DISABLED, EventScript_OverworldStoryTalk_PostPickUpVulpix_2
 EventScript_OverworldStoryTalk_PostPickUpVulpix_1:
-# 347 "data/scripts/story_talk.pory"
+# 351 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldStoryTalk_PostPickUpVulpix_Text_1
-# 349 "data/scripts/story_talk.pory"
+# 353 "data/scripts/story_talk.pory"
 	closemessage
-# 350 "data/scripts/story_talk.pory"
+# 354 "data/scripts/story_talk.pory"
 	release
 	return
 
 EventScript_OverworldStoryTalk_PostPickUpVulpix_2:
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 	applymovement OBJ_EVENT_ID_FOLLOWER, EventScript_OverworldStoryTalk_PostPickUpVulpix_Movement_0
-# 345 "data/scripts/story_talk.pory"
+# 349 "data/scripts/story_talk.pory"
 	waitmovement 0
 	goto EventScript_OverworldStoryTalk_PostPickUpVulpix_1
 
 
 EventScript_OverworldStoryTalk_PostInteleonJoining::
-# 355 "data/scripts/story_talk.pory"
+# 359 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldStoryTalk_PostInteleonJoining_Text_0
-# 356 "data/scripts/story_talk.pory"
+# 360 "data/scripts/story_talk.pory"
 	closemessage
-# 357 "data/scripts/story_talk.pory"
+# 361 "data/scripts/story_talk.pory"
 	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 358 "data/scripts/story_talk.pory"
+# 362 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldStoryTalk_PostInteleonJoining_Text_1
 	return
 
 
 EventScript_OverworldStoryTalk_PrePickUpFennekin::
-# 362 "data/scripts/story_talk.pory"
+# 366 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldStoryTalk_PrePickUpFennekin_Text_0
 	return
 
 
 EventScript_OverworldStoryTalk_PostGoodByeKikuno::
-# 366 "data/scripts/story_talk.pory"
+# 370 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldStoryTalk_PostGoodByeKikuno_Text_0
 	return
 
 
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 EventScript_OverworldStoryTalk_PostPickUpVulpix_Movement_0:
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 	emote_music
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 	face_up
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 	delay_16
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 	face_right
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 	delay_16
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 	face_down
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 	delay_16
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 	face_left
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 	delay_16
-# 344 "data/scripts/story_talk.pory"
+# 348 "data/scripts/story_talk.pory"
 	face_player
 	step_end
 
@@ -802,37 +810,37 @@ EventScript_OverworldStoryTalk_PostPrologue_Text_0:
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Someone sure is fired up.$"
 
 EventScript_OverworldStoryTalk_MustPickUpVulpix_Text_0:
-# 330 "data/scripts/story_talk.pory"
+# 334 "data/scripts/story_talk.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL} (I should return Vulpix to its Pokéball\n"
 	.string "and hurry to Thundershards Cliff.)$"
 
 EventScript_OverworldStoryTalk_PostPickUpVulpix_Text_0:
-# 339 "data/scripts/story_talk.pory"
+# 343 "data/scripts/story_talk.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}How do you feel getting back on the\n"
 	.string "field, Vulpix?$"
 
 EventScript_OverworldStoryTalk_PostPickUpVulpix_Text_1:
-# 347 "data/scripts/story_talk.pory"
+# 351 "data/scripts/story_talk.pory"
 	.string "(Vulpix's dancing excitedly.)\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Haha, honestly, me too.$"
 
 EventScript_OverworldStoryTalk_PostInteleonJoining_Text_0:
-# 355 "data/scripts/story_talk.pory"
+# 359 "data/scripts/story_talk.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Well then, I'll be counting on you to\n"
 	.string "watch my back, Inteleon.$"
 
 EventScript_OverworldStoryTalk_PostInteleonJoining_Text_1:
-# 358 "data/scripts/story_talk.pory"
+# 362 "data/scripts/story_talk.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks determinated, nodding\n"
 	.string "at you.)$"
 
 EventScript_OverworldStoryTalk_PrePickUpFennekin_Text_0:
-# 362 "data/scripts/story_talk.pory"
+# 366 "data/scripts/story_talk.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}A fire type would be great for my\n"
 	.string "journey.$"
 
 EventScript_OverworldStoryTalk_PostGoodByeKikuno_Text_0:
-# 366 "data/scripts/story_talk.pory"
+# 370 "data/scripts/story_talk.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Now I should make my way to\n"
 	.string "Thundershards Scree.\p"
 	.string "According to the map, it should be on\n"

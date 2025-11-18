@@ -447,20 +447,3 @@ script CheckIfHasFurfrou {
     }
 }
 
-script testcompanionbutton {
-    lock
-    msgbox(format("unlocking companion button and menu"))
-    closemessage
-    setflag(FLAG_COMPANION_MENU)
-    release
-    end
-}
-
-script testquestbutton {
-    lock
-    msgbox(format("unlocking quest button and menu"))
-    closemessage
-    setflag(FLAG_SYS_QUEST_MENU_GET)
-    release
-    end
-}

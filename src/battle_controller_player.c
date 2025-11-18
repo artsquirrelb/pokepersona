@@ -1868,7 +1868,7 @@ u32 LinkPlayerGetTrainerPicId(u32 multiplayerId)
         trainerPicId = gender + TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN;
     else
     {
-        if (outfitId < OUTFIT_COUNT)
+        if (outfitId < CHARACTER_COUNT)
             trainerPicId = GetPlayerTrainerPicIdByOutfitGenderType(outfitId, gender, 1);
         else
             trainerPicId = gender + TRAINER_BACK_PIC_BRENDAN;

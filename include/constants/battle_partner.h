@@ -3,9 +3,11 @@
 #define GUARD_CONSTANTS_BATTLE_PARTNERS_H
 
 #define PARTNER_NONE            0
-#define PARTNER_AKIHIKO_C1      1
-#define PARTNER_MITSURU_C1      2
-#define PARTNER_SHINJIRO_C1     3
-#define PARTNER_COUNT           4
+#define PARTNER_INTELEON_T_P    1
+#define PARTNER_AKIHIKO_C1      2
+#define PARTNER_MITSURU_C1      3
+#define PARTNER_SHINJIRO_C1     4
+#define PARTNER_INTELEON_T_C1   5
+#define PARTNER_COUNT           6
 
 #endif  // GUARD_CONSTANTS_BATTLE_PARTNERS_H

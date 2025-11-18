@@ -1929,6 +1929,19 @@
 	.byte \type
 	.endm
 
+	@! Make character grayed out or not in companion menu
+	.macro togglecharaavailability outfitId:req, type:req
+	callnative ScrCmd_togglecharaavailability, requests_effects=1
+	.2byte \outfitId
+	.byte \type
+	.endm
+
+	@! Gets the current availability of the character if they're grayed out in the companion menu and store result in VAR_RESULT
+	.macro getcharaAvailability outfitId:req
+	callnative ScrCmd_getcharaavailability, requests_effects=1
+	.2byte \outfitId
+	.endm
+
 	@! Gets the current status of the specified outfit where:
 	@! OUTFIT_CHECK_FLAG is for checking if it's either unlocked/locked
 	@! OUTFIT_CHECK_USED is for checking if it's currently used
@@ -2305,12 +2318,20 @@
 	bufferoutfitstr \stringVarId, \outfitId, OUTFIT_BUFFER_DESC
 	.endm
 
-	.macro unlockoutfit outfitId:req
+	.macro unlockcharacter outfitId:req
 	toggleoutfit \outfitId, OUTFIT_TOGGLE_UNLOCK
 	.endm
 
-	.macro lockoutfit outfitId:req
+	.macro lockcharacter outfitId:req
 	toggleoutfit \outfitId, OUTFIT_TOGGLE_LOCK
+	.endm
+
+	.macro makecharaAvailable outfitId:req
+	togglecharaavailability \outfitId, CHARA_TOGGLE_AVAILABLE
+	.endm
+
+	.macro makecharaUnavailable outfitId:req
+	togglecharaavailability \outfitId, CHARA_TOGGLE_UNAVAILABLE
 	.endm
 
 	@! Jumps to \dest if the specified outfit is unlocked
@@ -2817,6 +2838,11 @@
 	.2byte \battlePartner
 	.endm
 
+	@ Check if the existing follower NPC is battle partner and store result in VAR_RESULT
+	.macro checkfollowerbattler
+	callnative ScriptCheckBattlePartner
+	.endm 
+	
 	@ Manually buffer a string as the speaker's name for namebox.
 	@ The next shown message/msgbox will include a namebox, if the provided string is not NULL.
 	@ An SP_NAME_* constant can also be used, it'll take the name from gSpeakerNamesTable instead.

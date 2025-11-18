@@ -327,7 +327,7 @@ struct Outfit
     const void *iconsFP; //! frontier pass
 };
 
-extern const struct Outfit gOutfits[OUTFIT_COUNT];
+extern const struct Outfit gOutfits[CHARACTER_COUNT];
 
 #define GFX 0
 #define PAL 1

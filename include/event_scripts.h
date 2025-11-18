@@ -686,7 +686,7 @@ extern const u8 EventScript_OverworldStoryTalk[];
 extern const u8 Eventscript_MitsuruFollower[];
 extern const u8 Eventscript_AkihikoFollower[];
 extern const u8 Eventscript_ShinjiroFollower[];
-
+extern const u8 Eventscript_InteleonTFollower[];
 
 // DexNav
 extern const u8 EventScript_StartDexNavBattle[];

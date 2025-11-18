@@ -138,3 +138,43 @@ Ability: Torrent
 - Thief
 - Aerial Ace 
 - Aqua Jet
+
+=== PARTNER_INTELEON_T_P ===
+Name: Inteleon
+Class: Rival
+Pic: Inteleon_T
+Gender: Male
+Music: Male
+Back Pic: Inteleon_T
+AI: Basic Trainer
+
+SPECIES_INTELEON (M)
+Serious Nature
+Level: 9
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 40 Def / 40 SpD / 40 Spe
+Ability: Torrent    
+- Hail
+- Helping Hand
+- Water Pulse 
+- Icy Wind
+
+=== PARTNER_INTELEON_T_C1 ===
+Name: Inteleon
+Class: Rival
+Pic: Inteleon_T
+Gender: Male
+Music: Male
+Back Pic: Inteleon_T
+AI: Basic Trainer
+
+SPECIES_INTELEON (M) @ITEM_MYSTIC_WATER
+Serious Nature
+Level: 16
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 100 SpA / 100 Spe
+Ability: Torrent    
+- Snipe Shot
+- Shadow Ball
+- Dark Pulse 
+- Ice Beam

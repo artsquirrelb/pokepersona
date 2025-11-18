@@ -1532,8 +1532,6 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
     PlaySE(SE_SELECT);
     DestroyTask(taskId);
     HeatStartMenu_ExitAndClearTilemap();
-    FlagClear(FLAG_HIDE_TALK_BUTTON);
-    CreateOverworldTalkHUD();   
     OpenOutfitMenu(CB2_ReturnToField);
 
     } else if (JOY_NEW(R_BUTTON) &&sHeatStartMenu->loadState == 0) {
@@ -1541,7 +1539,6 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
     DestroyTask(taskId);
     HeatStartMenu_ExitAndClearTilemap();
     FlagClear(FLAG_HIDE_TALK_BUTTON);
-    CreateOverworldTalkHUD();   
     ScriptContext_SetupScript(EventScript_RegionMap);
 
   } else if (JOY_NEW(B_BUTTON) && sHeatStartMenu->loadState == 0) {

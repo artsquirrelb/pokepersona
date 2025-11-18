@@ -320,12 +320,16 @@ script EventScript_OverworldStoryTalk_MitsurusPrologue {
     }
     else
     {
-        msgbox("No script yet.")
+        call(EventScript_OverworldStoryTalk_NoScript)
     }
     closemessage
     end
 }
 
+script EventScript_OverworldStoryTalk_NoScript {
+    msgbox("No script yet.")
+    closemessage
+}
 script EventScript_OverworldStoryTalk_MustPickUpVulpix {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}
         (I should return Vulpix to its Pokéball and hurry to Thundershards Cliff.)"))

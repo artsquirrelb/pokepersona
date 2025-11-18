@@ -72,10 +72,15 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     waitmovement(0)
     removeobject(LOCALID_INTELEON)
     setflag(FLAG_TEMP_1)
-    setflag(FLAG_HIDE_MAP_NAME_POPUP)
     delay(30)
-    msgbox(format("Inteleon is now your Companion."))
+    msgbox(format("Inteleon is now your Companion.\n
+    {COLOR GREEN}Tips: Companion Menu is now unlocked.\n
+    You can open it in {START_BUTTON} Menu {RIGHT_ARROW} {SELECT_BUTTON}."))
+    closemessage
     call(Eventscript_CutsceneEnds)
+    setflag(FLAG_HIDE_MAP_NAME_POPUP)
+    unlockcharacter(CHARACTER_INTELEON_T)
+    makecharaAvailable(CHARACTER_INTELEON_T)
     release
     end
 }

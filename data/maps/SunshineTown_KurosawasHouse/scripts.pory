@@ -109,10 +109,12 @@ script SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow {
     waitmovement(0)
     playfanfare(MUS_OBTAIN_TMHM)
     waitfanfare
-    msgbox(format("{COLOR GREEN}Shinjiro is now your Companion.\n
-    Tips: Companion Menu is now unlocked.\n
+    msgbox(format("{COLOR GREEN}Tips: Shinjiro is now your Companion. Companion Menu is now unlocked.\p
     You can open it in {START_BUTTON} Menu {RIGHT_ARROW} {SELECT_BUTTON}."))
     closemessage
+    setflag(FLAG_COMPANION_MENU)
+    unlockcharacter(CHARACTER_SHINJIRO)
+    makecharaAvailable(CHARACTER_SHINJIRO)
     goto (SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa)
     
 

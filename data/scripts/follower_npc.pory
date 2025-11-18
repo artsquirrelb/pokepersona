@@ -1,3 +1,8 @@
+
+//////////////////////////////
+/////////MITSURU/////////////
+////////////////////////////
+
 script Eventscript_MitsuruFollower{
     lock
     faceplayer
@@ -126,6 +131,10 @@ script Eventscript_NPCFollowerReturn {
 }
 
 
+//////////////////////////////
+/////////AKIHIKO/////////////
+////////////////////////////
+
 script Eventscript_AkihikoFollower {
     lock
     faceplayer
@@ -205,6 +214,9 @@ script Eventscript_AkihikoFollower_Cancel {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Huh? Okay then."))
 }
 
+//////////////////////////////
+/////////SHINJIRO////////////
+////////////////////////////
 script Eventscript_ShinjiroFollower {
     lock
     faceplayer
@@ -358,10 +370,20 @@ script Eventscript_ShinjiMitsuFollower_Talk {
 }
 
 script Eventscript_ShinjiroFollower_Aki_SetPartner{
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Can't do anything without me, huh?"))
-    closemessage
-    changefollowerbattler(PARTNER_SHINJIRO_C1)
-    setflag(FLAG_PARTNER_WILD_BATTLES)
+    if (var(VAR_AKIHIKOS_INTRO_STATE) > 0 && var(VAR_AKIHIKOS_INTRO_STATE) < 38){
+        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Aki, I don't have a Pokémon yet.\p
+        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}But well, I suppose I've got your back in a fist fight. Just bring me a bus stop sign or something."))
+    }
+    elif (var(VAR_AKIHIKOS_INTRO_STATE) >= 38 && var(VAR_AKIHIKOS_INTRO_STATE) < 100){
+        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Don't we have to return to the house in Route 2?\p
+        Now is not the time to train, Aki."))
+    }
+    elif (var(VAR_AKIHIKOS_INTRO_STATE) == 100){
+        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Can't do anything without me, huh?"))
+        closemessage
+        changefollowerbattler(PARTNER_SHINJIRO_C1)
+        setflag(FLAG_PARTNER_WILD_BATTLES)
+    }
 }
 
 script Eventscript_ShinjiroFollower_Aki_UnsetPartner {
@@ -410,6 +432,10 @@ script Eventscript_ShinjiroFollower_Mitsu_Cancel {
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Whatever.")) 
 }
+
+//////////////////////////////
+/////////INTELEON////////////
+////////////////////////////
 
 script Eventscript_InteleonTFollower {
     lock

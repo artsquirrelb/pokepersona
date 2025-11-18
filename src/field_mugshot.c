@@ -18,7 +18,7 @@ static EWRAM_DATA u8 sFieldMugshotSlot = 0;
 
 // don't remove the `+ 32`
 // otherwise your sprite will not be placed in the place you desire
-#define MUGSHOT_X 16 + 32
+#define MUGSHOT_X 10 + 32
 #define MUGSHOT_Y 41  + 32
 
 static void SpriteCB_FieldMugshot(struct Sprite *s);

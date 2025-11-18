@@ -208,6 +208,7 @@ movement PawmiDisappointed {
 }
 
 script SunshineOrphanageMainHall_Eventscript_GoToSleep {
+    setflag(FLAG_HIDE_TALK_BUTTON)
     lock
     delay(20)
     applymovement (4, TeacherFacingAkihiko)
@@ -224,7 +225,6 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     removeobject(14)
     removeobject(15)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
-    setflag(FLAG_HIDE_TALK_BUTTON)
     fwdtime(8, 30)
     fwdweekday (WEEKDAY_THU)
     warpsilent(MAP_BLANK_MAP, 0, 0)

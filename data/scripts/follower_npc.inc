@@ -1,1049 +1,1085 @@
 Eventscript_MitsuruFollower::
-# 2 "data/scripts/follower_npc.pory"
+# 7 "data/scripts/follower_npc.pory"
 	lock
-# 3 "data/scripts/follower_npc.pory"
+# 8 "data/scripts/follower_npc.pory"
 	faceplayer
-# 4 "data/scripts/follower_npc.pory"
+# 9 "data/scripts/follower_npc.pory"
 	checkfollowerbattler
-# 5 "data/scripts/follower_npc.pory"
+# 10 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_MitsuruFollower_Text_0
-# 6 "data/scripts/follower_npc.pory"
+# 11 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Eventscript_MitsuruFollower_1
-# 14 "data/scripts/follower_npc.pory"
+# 19 "data/scripts/follower_npc.pory"
 	multichoice 18, 4, MULTI_NPC_FOLLOWER_2, 0
-# 15 "data/scripts/follower_npc.pory"
+# 20 "data/scripts/follower_npc.pory"
 	call Eventscript_MitsuruFollowerMultichoice2
-# 16 "data/scripts/follower_npc.pory"
+# 21 "data/scripts/follower_npc.pory"
 	closemessage
-# 17 "data/scripts/follower_npc.pory"
+# 22 "data/scripts/follower_npc.pory"
 	release
 	end
 
 Eventscript_MitsuruFollower_1:
-# 7 "data/scripts/follower_npc.pory"
+# 12 "data/scripts/follower_npc.pory"
 	multichoice 18, 4, MULTI_NPC_FOLLOWER_1, 0
-# 8 "data/scripts/follower_npc.pory"
+# 13 "data/scripts/follower_npc.pory"
 	call Eventscript_MitsuruFollowerMultichoice1
-# 9 "data/scripts/follower_npc.pory"
+# 14 "data/scripts/follower_npc.pory"
 	closemessage
-# 10 "data/scripts/follower_npc.pory"
+# 15 "data/scripts/follower_npc.pory"
 	release
 	end
 
 
 Eventscript_MitsuruFollowerMultichoice1::
-# 23 "data/scripts/follower_npc.pory"
+# 28 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Eventscript_MitsuruFollowerMultichoice1_1
-# 26 "data/scripts/follower_npc.pory"
+# 31 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Eventscript_MitsuruFollowerMultichoice1_2
-# 29 "data/scripts/follower_npc.pory"
+# 34 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Eventscript_MitsuruFollowerMultichoice1_3
-# 33 "data/scripts/follower_npc.pory"
+# 38 "data/scripts/follower_npc.pory"
 	call Eventscript_MitsuruFollower_Cancel
 	return
 
 Eventscript_MitsuruFollowerMultichoice1_1:
-# 24 "data/scripts/follower_npc.pory"
+# 29 "data/scripts/follower_npc.pory"
 	call Eventscript_AkiMitsuFollower_Talk
 	return
 
 Eventscript_MitsuruFollowerMultichoice1_2:
-# 27 "data/scripts/follower_npc.pory"
+# 32 "data/scripts/follower_npc.pory"
 	call Eventscript_MitsuruFollower_SetPartner
 	return
 
 Eventscript_MitsuruFollowerMultichoice1_3:
-# 30 "data/scripts/follower_npc.pory"
+# 35 "data/scripts/follower_npc.pory"
 	call Eventscript_MitsuruFollower_Return
 	return
 
 
 Eventscript_MitsuruFollowerMultichoice2::
-# 38 "data/scripts/follower_npc.pory"
+# 43 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Eventscript_MitsuruFollowerMultichoice2_1
-# 41 "data/scripts/follower_npc.pory"
+# 46 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Eventscript_MitsuruFollowerMultichoice2_2
-# 44 "data/scripts/follower_npc.pory"
+# 49 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Eventscript_MitsuruFollowerMultichoice2_3
-# 48 "data/scripts/follower_npc.pory"
+# 53 "data/scripts/follower_npc.pory"
 	call Eventscript_MitsuruFollower_Cancel
 	return
 
 Eventscript_MitsuruFollowerMultichoice2_1:
-# 39 "data/scripts/follower_npc.pory"
+# 44 "data/scripts/follower_npc.pory"
 	call Eventscript_AkiMitsuFollower_Talk
 	return
 
 Eventscript_MitsuruFollowerMultichoice2_2:
-# 42 "data/scripts/follower_npc.pory"
+# 47 "data/scripts/follower_npc.pory"
 	call Eventscript_MitsuruFollower_UnsetPartner
 	return
 
 Eventscript_MitsuruFollowerMultichoice2_3:
-# 45 "data/scripts/follower_npc.pory"
+# 50 "data/scripts/follower_npc.pory"
 	call Eventscript_MitsuruFollower_Return
 	return
 
 
 Eventscript_AkiMitsuFollower_Talk::
-# 52 "data/scripts/follower_npc.pory"
+# 57 "data/scripts/follower_npc.pory"
 	compare VAR_TEMP_0, 2
 	goto_if_eq Eventscript_AkiMitsuFollower_Talk_1
-# 56 "data/scripts/follower_npc.pory"
+# 61 "data/scripts/follower_npc.pory"
 	compare VAR_TEMP_0, 1
 	goto_if_eq Eventscript_AkiMitsuFollower_Talk_2
-# 71 "data/scripts/follower_npc.pory"
+# 76 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkiMitsuFollower_Talk_Text_2
-# 74 "data/scripts/follower_npc.pory"
+# 79 "data/scripts/follower_npc.pory"
 	closemessage
-# 75 "data/scripts/follower_npc.pory"
+# 80 "data/scripts/follower_npc.pory"
 	setvar VAR_TEMP_0, 1
 	return
 
 Eventscript_AkiMitsuFollower_Talk_1:
-# 53 "data/scripts/follower_npc.pory"
+# 58 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkiMitsuFollower_Talk_Text_0
 	return
 
 Eventscript_AkiMitsuFollower_Talk_2:
-# 57 "data/scripts/follower_npc.pory"
+# 62 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkiMitsuFollower_Talk_Text_1
-# 67 "data/scripts/follower_npc.pory"
+# 72 "data/scripts/follower_npc.pory"
 	closemessage
-# 68 "data/scripts/follower_npc.pory"
+# 73 "data/scripts/follower_npc.pory"
 	setvar VAR_TEMP_0, 2
 	return
 
 
 Eventscript_MitsuruFollower_SetPartner::
-# 80 "data/scripts/follower_npc.pory"
+# 85 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_MitsuruFollower_SetPartner_Text_0
-# 81 "data/scripts/follower_npc.pory"
+# 86 "data/scripts/follower_npc.pory"
 	closemessage
-# 82 "data/scripts/follower_npc.pory"
+# 87 "data/scripts/follower_npc.pory"
 	changefollowerbattler PARTNER_MITSURU_C1
-# 83 "data/scripts/follower_npc.pory"
+# 88 "data/scripts/follower_npc.pory"
 	setflag FLAG_PARTNER_WILD_BATTLES
 	return
 
 
 Eventscript_MitsuruFollower_UnsetPartner::
-# 87 "data/scripts/follower_npc.pory"
+# 92 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_MitsuruFollower_UnsetPartner_Text_0
-# 88 "data/scripts/follower_npc.pory"
+# 93 "data/scripts/follower_npc.pory"
 	closemessage
-# 89 "data/scripts/follower_npc.pory"
+# 94 "data/scripts/follower_npc.pory"
 	changefollowerbattler 0
-# 90 "data/scripts/follower_npc.pory"
+# 95 "data/scripts/follower_npc.pory"
 	clearflag FLAG_PARTNER_WILD_BATTLES
 	return
 
 
 Eventscript_MitsuruFollower_Return::
-# 94 "data/scripts/follower_npc.pory"
+# 99 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_MitsuruFollower_Return_Text_0
-# 95 "data/scripts/follower_npc.pory"
+# 100 "data/scripts/follower_npc.pory"
 	closemessage
-# 96 "data/scripts/follower_npc.pory"
+# 101 "data/scripts/follower_npc.pory"
 	call Eventscript_NPCFollowerReturn
 	return
 
 
 Eventscript_MitsuruFollower_Cancel::
-# 100 "data/scripts/follower_npc.pory"
+# 105 "data/scripts/follower_npc.pory"
 	playse SE_PIN
-# 101 "data/scripts/follower_npc.pory"
+# 106 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Eventscript_MitsuruFollower_Cancel_Movement_0
-# 102 "data/scripts/follower_npc.pory"
+# 107 "data/scripts/follower_npc.pory"
 	waitmovement 0
-# 103 "data/scripts/follower_npc.pory"
+# 108 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_MitsuruFollower_Cancel_Text_0
 	return
 
 
 Eventscript_NPCFollowerReturn::
-# 109 "data/scripts/follower_npc.pory"
+# 114 "data/scripts/follower_npc.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 110 "data/scripts/follower_npc.pory"
+# 115 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, DIR_NORTH
 	goto_if_eq Eventscript_NPCFollowerReturn_2
-# 113 "data/scripts/follower_npc.pory"
+# 118 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, DIR_EAST
 	goto_if_eq Eventscript_NPCFollowerReturn_3
-# 116 "data/scripts/follower_npc.pory"
+# 121 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, DIR_WEST
 	goto_if_eq Eventscript_NPCFollowerReturn_4
-# 120 "data/scripts/follower_npc.pory"
+# 125 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, walkup
 Eventscript_NPCFollowerReturn_1:
-# 122 "data/scripts/follower_npc.pory"
+# 127 "data/scripts/follower_npc.pory"
 	waitmovement 0
-# 123 "data/scripts/follower_npc.pory"
+# 128 "data/scripts/follower_npc.pory"
 	clearflag FLAG_FOLLOWERS_DISABLED
-# 124 "data/scripts/follower_npc.pory"
+# 129 "data/scripts/follower_npc.pory"
 	clearflag FLAG_PARTNER_WILD_BATTLES
-# 125 "data/scripts/follower_npc.pory"
+# 130 "data/scripts/follower_npc.pory"
 	destroyfollowernpc
 	return
 
 Eventscript_NPCFollowerReturn_2:
-# 111 "data/scripts/follower_npc.pory"
+# 116 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, walkdown
 	goto Eventscript_NPCFollowerReturn_1
 
 Eventscript_NPCFollowerReturn_3:
-# 114 "data/scripts/follower_npc.pory"
+# 119 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, walkleft
 	goto Eventscript_NPCFollowerReturn_1
 
 Eventscript_NPCFollowerReturn_4:
-# 117 "data/scripts/follower_npc.pory"
+# 122 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, walkright
 	goto Eventscript_NPCFollowerReturn_1
 
 
 Eventscript_AkihikoFollower::
-# 130 "data/scripts/follower_npc.pory"
+# 139 "data/scripts/follower_npc.pory"
 	lock
-# 131 "data/scripts/follower_npc.pory"
+# 140 "data/scripts/follower_npc.pory"
 	faceplayer
-# 132 "data/scripts/follower_npc.pory"
+# 141 "data/scripts/follower_npc.pory"
 	checkfollowerbattler
-# 133 "data/scripts/follower_npc.pory"
+# 142 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkihikoFollower_Text_0
-# 134 "data/scripts/follower_npc.pory"
+# 143 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Eventscript_AkihikoFollower_1
-# 142 "data/scripts/follower_npc.pory"
+# 151 "data/scripts/follower_npc.pory"
 	multichoice 18, 4, MULTI_NPC_FOLLOWER_2, 0
-# 143 "data/scripts/follower_npc.pory"
+# 152 "data/scripts/follower_npc.pory"
 	call Eventscript_AkihikoFollowerMultichoice2
-# 144 "data/scripts/follower_npc.pory"
+# 153 "data/scripts/follower_npc.pory"
 	closemessage
-# 145 "data/scripts/follower_npc.pory"
+# 154 "data/scripts/follower_npc.pory"
 	release
 	end
 
 Eventscript_AkihikoFollower_1:
-# 135 "data/scripts/follower_npc.pory"
+# 144 "data/scripts/follower_npc.pory"
 	multichoice 18, 4, MULTI_NPC_FOLLOWER_1, 0
-# 136 "data/scripts/follower_npc.pory"
+# 145 "data/scripts/follower_npc.pory"
 	call Eventscript_AkihikoFollowerMultichoice1
-# 137 "data/scripts/follower_npc.pory"
+# 146 "data/scripts/follower_npc.pory"
 	closemessage
-# 138 "data/scripts/follower_npc.pory"
+# 147 "data/scripts/follower_npc.pory"
 	release
 	end
 
 
 Eventscript_AkihikoFollowerMultichoice1::
-# 151 "data/scripts/follower_npc.pory"
+# 160 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Eventscript_AkihikoFollowerMultichoice1_1
-# 154 "data/scripts/follower_npc.pory"
+# 163 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Eventscript_AkihikoFollowerMultichoice1_2
-# 157 "data/scripts/follower_npc.pory"
+# 166 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Eventscript_AkihikoFollowerMultichoice1_3
-# 161 "data/scripts/follower_npc.pory"
+# 170 "data/scripts/follower_npc.pory"
 	call Eventscript_AkihikoFollower_Cancel
 	return
 
 Eventscript_AkihikoFollowerMultichoice1_1:
-# 152 "data/scripts/follower_npc.pory"
+# 161 "data/scripts/follower_npc.pory"
 	call Eventscript_AkiMitsuFollower_Talk
 	return
 
 Eventscript_AkihikoFollowerMultichoice1_2:
-# 155 "data/scripts/follower_npc.pory"
+# 164 "data/scripts/follower_npc.pory"
 	call Eventscript_AkihikoFollower_SetPartner
 	return
 
 Eventscript_AkihikoFollowerMultichoice1_3:
-# 158 "data/scripts/follower_npc.pory"
+# 167 "data/scripts/follower_npc.pory"
 	call Eventscript_AkihikoFollower_Return
 	return
 
 
 Eventscript_AkihikoFollowerMultichoice2::
-# 166 "data/scripts/follower_npc.pory"
+# 175 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Eventscript_AkihikoFollowerMultichoice2_1
-# 169 "data/scripts/follower_npc.pory"
+# 178 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Eventscript_AkihikoFollowerMultichoice2_2
-# 172 "data/scripts/follower_npc.pory"
+# 181 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Eventscript_AkihikoFollowerMultichoice2_3
-# 176 "data/scripts/follower_npc.pory"
+# 185 "data/scripts/follower_npc.pory"
 	call Eventscript_AkihikoFollower_Cancel
 	return
 
 Eventscript_AkihikoFollowerMultichoice2_1:
-# 167 "data/scripts/follower_npc.pory"
+# 176 "data/scripts/follower_npc.pory"
 	call Eventscript_AkiMitsuFollower_Talk
 	return
 
 Eventscript_AkihikoFollowerMultichoice2_2:
-# 170 "data/scripts/follower_npc.pory"
+# 179 "data/scripts/follower_npc.pory"
 	call Eventscript_AkihikoFollower_UnsetPartner
 	return
 
 Eventscript_AkihikoFollowerMultichoice2_3:
-# 173 "data/scripts/follower_npc.pory"
+# 182 "data/scripts/follower_npc.pory"
 	call Eventscript_AkihikoFollower_Return
 	return
 
 
 Eventscript_AkihikoFollower_SetPartner::
-# 181 "data/scripts/follower_npc.pory"
+# 190 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkihikoFollower_SetPartner_Text_0
-# 182 "data/scripts/follower_npc.pory"
+# 191 "data/scripts/follower_npc.pory"
 	closemessage
-# 183 "data/scripts/follower_npc.pory"
+# 192 "data/scripts/follower_npc.pory"
 	changefollowerbattler PARTNER_AKIHIKO_C1
-# 184 "data/scripts/follower_npc.pory"
+# 193 "data/scripts/follower_npc.pory"
 	updatefollowingmon
-# 185 "data/scripts/follower_npc.pory"
+# 194 "data/scripts/follower_npc.pory"
 	setflag FLAG_PARTNER_WILD_BATTLES
 	return
 
 
 Eventscript_AkihikoFollower_UnsetPartner::
-# 189 "data/scripts/follower_npc.pory"
+# 198 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkihikoFollower_UnsetPartner_Text_0
-# 190 "data/scripts/follower_npc.pory"
+# 199 "data/scripts/follower_npc.pory"
 	closemessage
-# 191 "data/scripts/follower_npc.pory"
+# 200 "data/scripts/follower_npc.pory"
 	changefollowerbattler 0
-# 192 "data/scripts/follower_npc.pory"
+# 201 "data/scripts/follower_npc.pory"
 	clearflag FLAG_PARTNER_WILD_BATTLES
 	return
 
 
 Eventscript_AkihikoFollower_Return::
-# 196 "data/scripts/follower_npc.pory"
+# 205 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkihikoFollower_Return_Text_0
-# 197 "data/scripts/follower_npc.pory"
+# 206 "data/scripts/follower_npc.pory"
 	closemessage
-# 198 "data/scripts/follower_npc.pory"
+# 207 "data/scripts/follower_npc.pory"
 	call Eventscript_NPCFollowerReturn
 	return
 
 
 Eventscript_AkihikoFollower_Cancel::
-# 202 "data/scripts/follower_npc.pory"
+# 211 "data/scripts/follower_npc.pory"
 	playse SE_PIN
-# 203 "data/scripts/follower_npc.pory"
+# 212 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Eventscript_MitsuruFollower_Cancel_Movement_0
-# 204 "data/scripts/follower_npc.pory"
+# 213 "data/scripts/follower_npc.pory"
 	waitmovement 0
-# 205 "data/scripts/follower_npc.pory"
+# 214 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkihikoFollower_Cancel_Text_0
 	return
 
 
 Eventscript_ShinjiroFollower::
-# 209 "data/scripts/follower_npc.pory"
+# 221 "data/scripts/follower_npc.pory"
 	lock
-# 210 "data/scripts/follower_npc.pory"
+# 222 "data/scripts/follower_npc.pory"
 	faceplayer
-# 211 "data/scripts/follower_npc.pory"
+# 223 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 212 "data/scripts/follower_npc.pory"
+# 224 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_ShinjiroFollower_2
-# 216 "data/scripts/follower_npc.pory"
+# 228 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiroFollower_Text_1
 Eventscript_ShinjiroFollower_1:
-# 218 "data/scripts/follower_npc.pory"
+# 230 "data/scripts/follower_npc.pory"
 	checkfollowerbattler
-# 219 "data/scripts/follower_npc.pory"
+# 231 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Eventscript_ShinjiroFollower_6
-# 224 "data/scripts/follower_npc.pory"
+# 236 "data/scripts/follower_npc.pory"
 	multichoice 18, 4, MULTI_NPC_FOLLOWER_2, 0
-# 225 "data/scripts/follower_npc.pory"
+# 237 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollowerMultichoice2
 Eventscript_ShinjiroFollower_5:
-# 227 "data/scripts/follower_npc.pory"
+# 239 "data/scripts/follower_npc.pory"
 	closemessage
-# 228 "data/scripts/follower_npc.pory"
+# 240 "data/scripts/follower_npc.pory"
 	release
 	end
 
 Eventscript_ShinjiroFollower_2:
-# 213 "data/scripts/follower_npc.pory"
+# 225 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiroFollower_Text_0
 	goto Eventscript_ShinjiroFollower_1
 
 Eventscript_ShinjiroFollower_6:
-# 220 "data/scripts/follower_npc.pory"
+# 232 "data/scripts/follower_npc.pory"
 	multichoice 18, 4, MULTI_NPC_FOLLOWER_1, 0
-# 221 "data/scripts/follower_npc.pory"
+# 233 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollowerMultichoice1
 	goto Eventscript_ShinjiroFollower_5
 
 
 Eventscript_ShinjiroFollowerMultichoice1::
-# 233 "data/scripts/follower_npc.pory"
+# 245 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice1_1
-# 242 "data/scripts/follower_npc.pory"
+# 254 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice1_2
-# 251 "data/scripts/follower_npc.pory"
+# 263 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice1_3
-# 261 "data/scripts/follower_npc.pory"
+# 273 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 262 "data/scripts/follower_npc.pory"
+# 274 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice1_17
-# 266 "data/scripts/follower_npc.pory"
+# 278 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Mitsu_Cancel
 	return
 
 Eventscript_ShinjiroFollowerMultichoice1_1:
-# 234 "data/scripts/follower_npc.pory"
+# 246 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 235 "data/scripts/follower_npc.pory"
+# 247 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice1_8
-# 239 "data/scripts/follower_npc.pory"
+# 251 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiMitsuFollower_Talk
 	return
 
 Eventscript_ShinjiroFollowerMultichoice1_2:
-# 243 "data/scripts/follower_npc.pory"
+# 255 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 244 "data/scripts/follower_npc.pory"
+# 256 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice1_11
-# 248 "data/scripts/follower_npc.pory"
+# 260 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Mitsu_SetPartner
 	return
 
 Eventscript_ShinjiroFollowerMultichoice1_3:
-# 252 "data/scripts/follower_npc.pory"
+# 264 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 253 "data/scripts/follower_npc.pory"
+# 265 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice1_14
-# 257 "data/scripts/follower_npc.pory"
+# 269 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Mitsu_Return
 	return
 
 Eventscript_ShinjiroFollowerMultichoice1_8:
-# 236 "data/scripts/follower_npc.pory"
+# 248 "data/scripts/follower_npc.pory"
 	call Eventscript_AkiShinjiFollower_Talk
 	return
 
 Eventscript_ShinjiroFollowerMultichoice1_11:
-# 245 "data/scripts/follower_npc.pory"
+# 257 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Aki_SetPartner
 	return
 
 Eventscript_ShinjiroFollowerMultichoice1_14:
-# 254 "data/scripts/follower_npc.pory"
+# 266 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Aki_Return
 	return
 
 Eventscript_ShinjiroFollowerMultichoice1_17:
-# 263 "data/scripts/follower_npc.pory"
+# 275 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Aki_Cancel
 	return
 
 
 Eventscript_ShinjiroFollowerMultichoice2::
-# 272 "data/scripts/follower_npc.pory"
+# 284 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice2_1
-# 281 "data/scripts/follower_npc.pory"
+# 293 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice2_2
-# 290 "data/scripts/follower_npc.pory"
+# 302 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice2_3
-# 300 "data/scripts/follower_npc.pory"
+# 312 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 301 "data/scripts/follower_npc.pory"
+# 313 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice2_17
-# 305 "data/scripts/follower_npc.pory"
+# 317 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Mitsu_Cancel
 	return
 
 Eventscript_ShinjiroFollowerMultichoice2_1:
-# 273 "data/scripts/follower_npc.pory"
+# 285 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 274 "data/scripts/follower_npc.pory"
+# 286 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice2_8
-# 278 "data/scripts/follower_npc.pory"
+# 290 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiMitsuFollower_Talk
 	return
 
 Eventscript_ShinjiroFollowerMultichoice2_2:
-# 282 "data/scripts/follower_npc.pory"
+# 294 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 283 "data/scripts/follower_npc.pory"
+# 295 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice2_11
-# 287 "data/scripts/follower_npc.pory"
+# 299 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Mitsu_UnsetPartner
 	return
 
 Eventscript_ShinjiroFollowerMultichoice2_3:
-# 291 "data/scripts/follower_npc.pory"
+# 303 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 292 "data/scripts/follower_npc.pory"
+# 304 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_ShinjiroFollowerMultichoice2_14
-# 296 "data/scripts/follower_npc.pory"
+# 308 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Mitsu_Return
 	return
 
 Eventscript_ShinjiroFollowerMultichoice2_8:
-# 275 "data/scripts/follower_npc.pory"
+# 287 "data/scripts/follower_npc.pory"
 	call Eventscript_AkiShinjiFollower_Talk
 	return
 
 Eventscript_ShinjiroFollowerMultichoice2_11:
-# 284 "data/scripts/follower_npc.pory"
+# 296 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Aki_UnsetPartner
 	return
 
 Eventscript_ShinjiroFollowerMultichoice2_14:
-# 293 "data/scripts/follower_npc.pory"
+# 305 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Aki_Return
 	return
 
 Eventscript_ShinjiroFollowerMultichoice2_17:
-# 302 "data/scripts/follower_npc.pory"
+# 314 "data/scripts/follower_npc.pory"
 	call Eventscript_ShinjiroFollower_Aki_Cancel
 	return
 
 
 Eventscript_AkiShinjiFollower_Talk::
-# 311 "data/scripts/follower_npc.pory"
+# 323 "data/scripts/follower_npc.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 100
 	goto_if_lt Eventscript_AkiShinjiFollower_Talk_1
-# 314 "data/scripts/follower_npc.pory"
+# 326 "data/scripts/follower_npc.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 100
 	goto_if_eq Eventscript_AkiShinjiFollower_Talk_2
 	return
 
 Eventscript_AkiShinjiFollower_Talk_1:
-# 312 "data/scripts/follower_npc.pory"
+# 324 "data/scripts/follower_npc.pory"
 	call Eventscript_AkiShinjiFollower_Talk_P
 	return
 
 Eventscript_AkiShinjiFollower_Talk_2:
-# 315 "data/scripts/follower_npc.pory"
+# 327 "data/scripts/follower_npc.pory"
 	call Eventscript_AkiShinjiFollower_Talk_C1
 	return
 
 
 Eventscript_ShinjiMitsuFollower_Talk::
-# 320 "data/scripts/follower_npc.pory"
+# 332 "data/scripts/follower_npc.pory"
 	compare VAR_TEMP_2, 1
 	goto_if_eq Eventscript_ShinjiMitsuFollower_Talk_1
-# 324 "data/scripts/follower_npc.pory"
+# 336 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiMitsuFollower_Talk_Text_1
-# 341 "data/scripts/follower_npc.pory"
+# 353 "data/scripts/follower_npc.pory"
 	closemessage
-# 342 "data/scripts/follower_npc.pory"
+# 354 "data/scripts/follower_npc.pory"
 	setvar VAR_TEMP_2, 1
-# 343 "data/scripts/follower_npc.pory"
+# 355 "data/scripts/follower_npc.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 344 "data/scripts/follower_npc.pory"
+# 356 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, DIR_NORTH
 	goto_if_eq Eventscript_ShinjiMitsuFollower_Talk_5
-# 347 "data/scripts/follower_npc.pory"
+# 359 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, DIR_EAST
 	goto_if_eq Eventscript_ShinjiMitsuFollower_Talk_6
-# 350 "data/scripts/follower_npc.pory"
+# 362 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, DIR_WEST
 	goto_if_eq Eventscript_ShinjiMitsuFollower_Talk_7
-# 354 "data/scripts/follower_npc.pory"
+# 366 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, walkup
 Eventscript_ShinjiMitsuFollower_Talk_4:
-# 356 "data/scripts/follower_npc.pory"
+# 368 "data/scripts/follower_npc.pory"
 	waitmovement 0
 	return
 
 Eventscript_ShinjiMitsuFollower_Talk_1:
-# 321 "data/scripts/follower_npc.pory"
+# 333 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiMitsuFollower_Talk_Text_0
 	return
 
 Eventscript_ShinjiMitsuFollower_Talk_5:
-# 345 "data/scripts/follower_npc.pory"
+# 357 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, walkdown
 	goto Eventscript_ShinjiMitsuFollower_Talk_4
 
 Eventscript_ShinjiMitsuFollower_Talk_6:
-# 348 "data/scripts/follower_npc.pory"
+# 360 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, walkleft
 	goto Eventscript_ShinjiMitsuFollower_Talk_4
 
 Eventscript_ShinjiMitsuFollower_Talk_7:
-# 351 "data/scripts/follower_npc.pory"
+# 363 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, walkright
 	goto Eventscript_ShinjiMitsuFollower_Talk_4
 
 
 Eventscript_ShinjiroFollower_Aki_SetPartner::
-# 361 "data/scripts/follower_npc.pory"
+# 373 "data/scripts/follower_npc.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 0
+	goto_if_gt Eventscript_ShinjiroFollower_Aki_SetPartner_8
+Eventscript_ShinjiroFollower_Aki_SetPartner_6:
+# 377 "data/scripts/follower_npc.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 38
+	goto_if_ge Eventscript_ShinjiroFollower_Aki_SetPartner_5
+Eventscript_ShinjiroFollower_Aki_SetPartner_4:
+# 381 "data/scripts/follower_npc.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 100
+	goto_if_eq Eventscript_ShinjiroFollower_Aki_SetPartner_3
+	return
+
+Eventscript_ShinjiroFollower_Aki_SetPartner_1:
+# 374 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiroFollower_Aki_SetPartner_Text_0
-# 362 "data/scripts/follower_npc.pory"
+	return
+
+Eventscript_ShinjiroFollower_Aki_SetPartner_2:
+# 378 "data/scripts/follower_npc.pory"
+	msgbox Eventscript_ShinjiroFollower_Aki_SetPartner_Text_1
+	return
+
+Eventscript_ShinjiroFollower_Aki_SetPartner_3:
+# 382 "data/scripts/follower_npc.pory"
+	msgbox Eventscript_ShinjiroFollower_Aki_SetPartner_Text_2
+# 383 "data/scripts/follower_npc.pory"
 	closemessage
-# 363 "data/scripts/follower_npc.pory"
+# 384 "data/scripts/follower_npc.pory"
 	changefollowerbattler PARTNER_SHINJIRO_C1
-# 364 "data/scripts/follower_npc.pory"
+# 385 "data/scripts/follower_npc.pory"
 	setflag FLAG_PARTNER_WILD_BATTLES
 	return
 
+Eventscript_ShinjiroFollower_Aki_SetPartner_5:
+# 377 "data/scripts/follower_npc.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 100
+	goto_if_lt Eventscript_ShinjiroFollower_Aki_SetPartner_2
+	goto Eventscript_ShinjiroFollower_Aki_SetPartner_4
+
+Eventscript_ShinjiroFollower_Aki_SetPartner_8:
+# 373 "data/scripts/follower_npc.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 38
+	goto_if_lt Eventscript_ShinjiroFollower_Aki_SetPartner_1
+	goto Eventscript_ShinjiroFollower_Aki_SetPartner_6
+
 
 Eventscript_ShinjiroFollower_Aki_UnsetPartner::
-# 368 "data/scripts/follower_npc.pory"
+# 390 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiroFollower_Aki_UnsetPartner_Text_0
-# 369 "data/scripts/follower_npc.pory"
+# 391 "data/scripts/follower_npc.pory"
 	closemessage
-# 370 "data/scripts/follower_npc.pory"
+# 392 "data/scripts/follower_npc.pory"
 	changefollowerbattler 0
-# 371 "data/scripts/follower_npc.pory"
+# 393 "data/scripts/follower_npc.pory"
 	clearflag FLAG_PARTNER_WILD_BATTLES
 	return
 
 
 Eventscript_ShinjiroFollower_Mitsu_SetPartner::
-# 375 "data/scripts/follower_npc.pory"
+# 397 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiroFollower_Mitsu_SetPartner_Text_0
-# 376 "data/scripts/follower_npc.pory"
+# 398 "data/scripts/follower_npc.pory"
 	closemessage
-# 377 "data/scripts/follower_npc.pory"
+# 399 "data/scripts/follower_npc.pory"
 	changefollowerbattler PARTNER_SHINJIRO_C1
-# 378 "data/scripts/follower_npc.pory"
+# 400 "data/scripts/follower_npc.pory"
 	setflag FLAG_PARTNER_WILD_BATTLES
 	return
 
 
 Eventscript_ShinjiroFollower_Mitsu_UnsetPartner::
-# 382 "data/scripts/follower_npc.pory"
+# 404 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiroFollower_Mitsu_UnsetPartner_Text_0
-# 383 "data/scripts/follower_npc.pory"
+# 405 "data/scripts/follower_npc.pory"
 	closemessage
-# 384 "data/scripts/follower_npc.pory"
+# 406 "data/scripts/follower_npc.pory"
 	changefollowerbattler 0
-# 385 "data/scripts/follower_npc.pory"
+# 407 "data/scripts/follower_npc.pory"
 	clearflag FLAG_PARTNER_WILD_BATTLES
 	return
 
 
 Eventscript_ShinjiroFollower_Aki_Return::
-# 389 "data/scripts/follower_npc.pory"
+# 411 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiroFollower_Aki_Return_Text_0
-# 390 "data/scripts/follower_npc.pory"
+# 412 "data/scripts/follower_npc.pory"
 	closemessage
-# 391 "data/scripts/follower_npc.pory"
+# 413 "data/scripts/follower_npc.pory"
 	call Eventscript_NPCFollowerReturn
 	return
 
 
 Eventscript_ShinjiroFollower_Mitsu_Return::
-# 395 "data/scripts/follower_npc.pory"
+# 417 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiroFollower_Mitsu_Return_Text_0
-# 396 "data/scripts/follower_npc.pory"
+# 418 "data/scripts/follower_npc.pory"
 	closemessage
-# 397 "data/scripts/follower_npc.pory"
+# 419 "data/scripts/follower_npc.pory"
 	call Eventscript_NPCFollowerReturn
 	return
 
 
 Eventscript_ShinjiroFollower_Aki_Cancel::
-# 401 "data/scripts/follower_npc.pory"
+# 423 "data/scripts/follower_npc.pory"
 	playse SE_PIN
-# 402 "data/scripts/follower_npc.pory"
+# 424 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Eventscript_MitsuruFollower_Cancel_Movement_0
-# 403 "data/scripts/follower_npc.pory"
+# 425 "data/scripts/follower_npc.pory"
 	waitmovement 0
-# 404 "data/scripts/follower_npc.pory"
+# 426 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiroFollower_Aki_Cancel_Text_0
 	return
 
 
 Eventscript_ShinjiroFollower_Mitsu_Cancel::
-# 408 "data/scripts/follower_npc.pory"
+# 430 "data/scripts/follower_npc.pory"
 	playse SE_PIN
-# 409 "data/scripts/follower_npc.pory"
+# 431 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Eventscript_MitsuruFollower_Cancel_Movement_0
-# 410 "data/scripts/follower_npc.pory"
+# 432 "data/scripts/follower_npc.pory"
 	waitmovement 0
-# 411 "data/scripts/follower_npc.pory"
+# 433 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_ShinjiroFollower_Mitsu_Cancel_Text_0
 	return
 
 
 Eventscript_InteleonTFollower::
-# 415 "data/scripts/follower_npc.pory"
+# 441 "data/scripts/follower_npc.pory"
 	lock
-# 416 "data/scripts/follower_npc.pory"
+# 442 "data/scripts/follower_npc.pory"
 	faceplayer
-# 417 "data/scripts/follower_npc.pory"
+# 443 "data/scripts/follower_npc.pory"
 	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 418 "data/scripts/follower_npc.pory"
+# 444 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_Text_0
-# 419 "data/scripts/follower_npc.pory"
+# 445 "data/scripts/follower_npc.pory"
 	checkfollowerbattler
-# 420 "data/scripts/follower_npc.pory"
+# 446 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Eventscript_InteleonTFollower_2
-# 425 "data/scripts/follower_npc.pory"
+# 451 "data/scripts/follower_npc.pory"
 	multichoice 18, 4, MULTI_NPC_FOLLOWER_2, 0
-# 426 "data/scripts/follower_npc.pory"
+# 452 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollowerMultichoice2
 Eventscript_InteleonTFollower_1:
-# 428 "data/scripts/follower_npc.pory"
+# 454 "data/scripts/follower_npc.pory"
 	closemessage
-# 429 "data/scripts/follower_npc.pory"
+# 455 "data/scripts/follower_npc.pory"
 	release
 	end
 
 Eventscript_InteleonTFollower_2:
-# 421 "data/scripts/follower_npc.pory"
+# 447 "data/scripts/follower_npc.pory"
 	multichoice 18, 4, MULTI_NPC_FOLLOWER_1, 0
-# 422 "data/scripts/follower_npc.pory"
+# 448 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollowerMultichoice1
 	goto Eventscript_InteleonTFollower_1
 
 
 Eventscript_InteleonTFollowerMultichoice1::
-# 434 "data/scripts/follower_npc.pory"
+# 460 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Eventscript_InteleonTFollowerMultichoice1_1
-# 443 "data/scripts/follower_npc.pory"
+# 469 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Eventscript_InteleonTFollowerMultichoice1_2
-# 452 "data/scripts/follower_npc.pory"
+# 478 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Eventscript_InteleonTFollowerMultichoice1_3
-# 456 "data/scripts/follower_npc.pory"
+# 482 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_Cancel
 	return
 
 Eventscript_InteleonTFollowerMultichoice1_1:
-# 435 "data/scripts/follower_npc.pory"
+# 461 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 436 "data/scripts/follower_npc.pory"
+# 462 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_InteleonTFollowerMultichoice1_8
-# 440 "data/scripts/follower_npc.pory"
+# 466 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_MitsuTalk
 	return
 
 Eventscript_InteleonTFollowerMultichoice1_2:
-# 444 "data/scripts/follower_npc.pory"
+# 470 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 445 "data/scripts/follower_npc.pory"
+# 471 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_InteleonTFollowerMultichoice1_11
-# 449 "data/scripts/follower_npc.pory"
+# 475 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_Mitsu_SetPartner
 	return
 
 Eventscript_InteleonTFollowerMultichoice1_3:
-# 453 "data/scripts/follower_npc.pory"
+# 479 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_Return
 	return
 
 Eventscript_InteleonTFollowerMultichoice1_8:
-# 437 "data/scripts/follower_npc.pory"
+# 463 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_AkiTalk
 	return
 
 Eventscript_InteleonTFollowerMultichoice1_11:
-# 446 "data/scripts/follower_npc.pory"
+# 472 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_Aki_SetPartner
 	return
 
 
 Eventscript_InteleonTFollowerMultichoice2::
-# 461 "data/scripts/follower_npc.pory"
+# 487 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Eventscript_InteleonTFollowerMultichoice2_1
-# 470 "data/scripts/follower_npc.pory"
+# 496 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq Eventscript_InteleonTFollowerMultichoice2_2
-# 479 "data/scripts/follower_npc.pory"
+# 505 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq Eventscript_InteleonTFollowerMultichoice2_3
-# 483 "data/scripts/follower_npc.pory"
+# 509 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_Cancel
 	return
 
 Eventscript_InteleonTFollowerMultichoice2_1:
-# 462 "data/scripts/follower_npc.pory"
+# 488 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 463 "data/scripts/follower_npc.pory"
+# 489 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_InteleonTFollowerMultichoice2_8
-# 467 "data/scripts/follower_npc.pory"
+# 493 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_MitsuTalk
 	return
 
 Eventscript_InteleonTFollowerMultichoice2_2:
-# 471 "data/scripts/follower_npc.pory"
+# 497 "data/scripts/follower_npc.pory"
 	checkplayergender
-# 472 "data/scripts/follower_npc.pory"
+# 498 "data/scripts/follower_npc.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Eventscript_InteleonTFollowerMultichoice2_11
-# 476 "data/scripts/follower_npc.pory"
+# 502 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_Mitsu_UnsetPartner
 	return
 
 Eventscript_InteleonTFollowerMultichoice2_3:
-# 480 "data/scripts/follower_npc.pory"
+# 506 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_Return
 	return
 
 Eventscript_InteleonTFollowerMultichoice2_8:
-# 464 "data/scripts/follower_npc.pory"
+# 490 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_AkiTalk
 	return
 
 Eventscript_InteleonTFollowerMultichoice2_11:
-# 473 "data/scripts/follower_npc.pory"
+# 499 "data/scripts/follower_npc.pory"
 	call Eventscript_InteleonTFollower_Aki_UnsetPartner
 	return
 
 
 Eventscript_InteleonTFollower_AkiTalk::
-# 488 "data/scripts/follower_npc.pory"
+# 514 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, shakehorizontal
-# 489 "data/scripts/follower_npc.pory"
+# 515 "data/scripts/follower_npc.pory"
 	waitmovement 0
-# 490 "data/scripts/follower_npc.pory"
+# 516 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_AkiTalk_Text_0
 	return
 
 
 Eventscript_InteleonTFollower_MitsuTalk::
-# 494 "data/scripts/follower_npc.pory"
+# 520 "data/scripts/follower_npc.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 100
 	goto_if_lt Eventscript_InteleonTFollower_MitsuTalk_1
-# 513 "data/scripts/follower_npc.pory"
+# 539 "data/scripts/follower_npc.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 100
 	goto_if_eq Eventscript_InteleonTFollower_MitsuTalk_2
 	return
 
 Eventscript_InteleonTFollower_MitsuTalk_1:
-# 495 "data/scripts/follower_npc.pory"
+# 521 "data/scripts/follower_npc.pory"
 	compare VAR_TEMP_3, 1
 	goto_if_eq Eventscript_InteleonTFollower_MitsuTalk_5
-# 500 "data/scripts/follower_npc.pory"
+# 526 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_MitsuTalk_Text_1
-# 502 "data/scripts/follower_npc.pory"
+# 528 "data/scripts/follower_npc.pory"
 	closemessage
-# 503 "data/scripts/follower_npc.pory"
+# 529 "data/scripts/follower_npc.pory"
 	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 504 "data/scripts/follower_npc.pory"
+# 530 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, LockDirectionAndWalkInPlace
-# 505 "data/scripts/follower_npc.pory"
+# 531 "data/scripts/follower_npc.pory"
 	waitmovement 0
-# 506 "data/scripts/follower_npc.pory"
+# 532 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_MitsuTalk_Text_2
-# 509 "data/scripts/follower_npc.pory"
+# 535 "data/scripts/follower_npc.pory"
 	closemessage
-# 510 "data/scripts/follower_npc.pory"
+# 536 "data/scripts/follower_npc.pory"
 	setvar VAR_TEMP_3, 1
 	return
 
 Eventscript_InteleonTFollower_MitsuTalk_2:
-# 514 "data/scripts/follower_npc.pory"
+# 540 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_MitsuTalk_Text_3
-# 516 "data/scripts/follower_npc.pory"
+# 542 "data/scripts/follower_npc.pory"
 	closemessage
-# 517 "data/scripts/follower_npc.pory"
+# 543 "data/scripts/follower_npc.pory"
 	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 518 "data/scripts/follower_npc.pory"
+# 544 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, LockDirectionAndWalkInPlace
-# 519 "data/scripts/follower_npc.pory"
+# 545 "data/scripts/follower_npc.pory"
 	waitmovement 0
-# 520 "data/scripts/follower_npc.pory"
+# 546 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_MitsuTalk_Text_4
 	return
 
 Eventscript_InteleonTFollower_MitsuTalk_5:
-# 496 "data/scripts/follower_npc.pory"
+# 522 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_MitsuTalk_Text_0
 	return
 
 
-# 525 "data/scripts/follower_npc.pory"
+# 551 "data/scripts/follower_npc.pory"
 LockDirectionAndWalkInPlace:
-# 526 "data/scripts/follower_npc.pory"
+# 552 "data/scripts/follower_npc.pory"
 	lock_facing_direction
-# 527 "data/scripts/follower_npc.pory"
+# 553 "data/scripts/follower_npc.pory"
 	walk_in_place_right
-# 528 "data/scripts/follower_npc.pory"
+# 554 "data/scripts/follower_npc.pory"
 	unlock_facing_direction
 	step_end
 
 Eventscript_InteleonTFollower_Aki_SetPartner::
-# 532 "data/scripts/follower_npc.pory"
+# 558 "data/scripts/follower_npc.pory"
 	closemessage
-# 533 "data/scripts/follower_npc.pory"
+# 559 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, shakehorizontal
-# 534 "data/scripts/follower_npc.pory"
+# 560 "data/scripts/follower_npc.pory"
 	waitmovement 0
-# 535 "data/scripts/follower_npc.pory"
+# 561 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_Aki_SetPartner_Text_0
-# 536 "data/scripts/follower_npc.pory"
+# 562 "data/scripts/follower_npc.pory"
 	closemessage
-# 537 "data/scripts/follower_npc.pory"
+# 563 "data/scripts/follower_npc.pory"
 	changefollowerbattler 0
-# 538 "data/scripts/follower_npc.pory"
+# 564 "data/scripts/follower_npc.pory"
 	clearflag FLAG_PARTNER_WILD_BATTLES
 	return
 
 
 Eventscript_InteleonTFollower_Mitsu_SetPartner::
-# 542 "data/scripts/follower_npc.pory"
+# 568 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_Mitsu_SetPartner_Text_0
-# 543 "data/scripts/follower_npc.pory"
+# 569 "data/scripts/follower_npc.pory"
 	closemessage
-# 544 "data/scripts/follower_npc.pory"
+# 570 "data/scripts/follower_npc.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 100
 	goto_if_lt Eventscript_InteleonTFollower_Mitsu_SetPartner_2
-# 547 "data/scripts/follower_npc.pory"
+# 573 "data/scripts/follower_npc.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 100
 	goto_if_eq Eventscript_InteleonTFollower_Mitsu_SetPartner_3
 Eventscript_InteleonTFollower_Mitsu_SetPartner_1:
-# 550 "data/scripts/follower_npc.pory"
+# 576 "data/scripts/follower_npc.pory"
 	setflag FLAG_PARTNER_WILD_BATTLES
 	return
 
 Eventscript_InteleonTFollower_Mitsu_SetPartner_2:
-# 545 "data/scripts/follower_npc.pory"
+# 571 "data/scripts/follower_npc.pory"
 	changefollowerbattler PARTNER_INTELEON_T_P
 	goto Eventscript_InteleonTFollower_Mitsu_SetPartner_1
 
 Eventscript_InteleonTFollower_Mitsu_SetPartner_3:
-# 548 "data/scripts/follower_npc.pory"
+# 574 "data/scripts/follower_npc.pory"
 	changefollowerbattler PARTNER_INTELEON_T_C1
 	goto Eventscript_InteleonTFollower_Mitsu_SetPartner_1
 
 
 Eventscript_InteleonTFollower_Aki_UnsetPartner::
-# 554 "data/scripts/follower_npc.pory"
+# 580 "data/scripts/follower_npc.pory"
 	release
 	end
 
 
 Eventscript_InteleonTFollower_Mitsu_UnsetPartner::
-# 559 "data/scripts/follower_npc.pory"
+# 585 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_Mitsu_SetPartner_Text_0
-# 560 "data/scripts/follower_npc.pory"
+# 586 "data/scripts/follower_npc.pory"
 	closemessage
-# 561 "data/scripts/follower_npc.pory"
+# 587 "data/scripts/follower_npc.pory"
 	changefollowerbattler 0
-# 562 "data/scripts/follower_npc.pory"
+# 588 "data/scripts/follower_npc.pory"
 	clearflag FLAG_PARTNER_WILD_BATTLES
 	return
 
 
 Eventscript_InteleonTFollower_Return::
-# 566 "data/scripts/follower_npc.pory"
+# 592 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_Mitsu_SetPartner_Text_0
-# 567 "data/scripts/follower_npc.pory"
+# 593 "data/scripts/follower_npc.pory"
 	closemessage
-# 568 "data/scripts/follower_npc.pory"
+# 594 "data/scripts/follower_npc.pory"
 	call Eventscript_NPCFollowerReturn
 	return
 
 
 Eventscript_InteleonTFollower_Cancel::
-# 572 "data/scripts/follower_npc.pory"
+# 598 "data/scripts/follower_npc.pory"
 	playse SE_PIN
-# 573 "data/scripts/follower_npc.pory"
+# 599 "data/scripts/follower_npc.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Eventscript_MitsuruFollower_Cancel_Movement_0
-# 574 "data/scripts/follower_npc.pory"
+# 600 "data/scripts/follower_npc.pory"
 	waitmovement 0
-# 575 "data/scripts/follower_npc.pory"
+# 601 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_InteleonTFollower_Cancel_Text_0
 	return
 
 
 Eventscript_AkiShinjiFollower_Talk_P::
-# 580 "data/scripts/follower_npc.pory"
+# 606 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkiShinjiFollower_Talk_P_Text_0
 	return
 
 
 Eventscript_AkiShinjiFollower_Talk_C1::
-# 587 "data/scripts/follower_npc.pory"
+# 613 "data/scripts/follower_npc.pory"
 	compare VAR_TEMP_1, 2
 	goto_if_eq Eventscript_AkiShinjiFollower_Talk_C1_1
-# 595 "data/scripts/follower_npc.pory"
+# 621 "data/scripts/follower_npc.pory"
 	compare VAR_TEMP_1, 1
 	goto_if_eq Eventscript_AkiShinjiFollower_Talk_C1_2
-# 606 "data/scripts/follower_npc.pory"
+# 632 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkiShinjiFollower_Talk_C1_Text_2
-# 615 "data/scripts/follower_npc.pory"
+# 641 "data/scripts/follower_npc.pory"
 	setvar VAR_TEMP_1, 1
 	return
 
 Eventscript_AkiShinjiFollower_Talk_C1_1:
-# 588 "data/scripts/follower_npc.pory"
+# 614 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkiShinjiFollower_Talk_C1_Text_0
-# 590 "data/scripts/follower_npc.pory"
+# 616 "data/scripts/follower_npc.pory"
 	closemessage
-# 591 "data/scripts/follower_npc.pory"
+# 617 "data/scripts/follower_npc.pory"
 	playse SE_BOO
-# 592 "data/scripts/follower_npc.pory"
+# 618 "data/scripts/follower_npc.pory"
 	applymovement LOCALID_PLAYER, emoteangry
-# 593 "data/scripts/follower_npc.pory"
+# 619 "data/scripts/follower_npc.pory"
 	waitmovement 0
 	return
 
 Eventscript_AkiShinjiFollower_Talk_C1_2:
-# 596 "data/scripts/follower_npc.pory"
+# 622 "data/scripts/follower_npc.pory"
 	msgbox Eventscript_AkiShinjiFollower_Talk_C1_Text_1
-# 602 "data/scripts/follower_npc.pory"
+# 628 "data/scripts/follower_npc.pory"
 	closemessage
-# 603 "data/scripts/follower_npc.pory"
+# 629 "data/scripts/follower_npc.pory"
 	setvar VAR_TEMP_1, 2
 	return
 
 
-# 101 "data/scripts/follower_npc.pory"
+# 106 "data/scripts/follower_npc.pory"
 Eventscript_MitsuruFollower_Cancel_Movement_0:
-# 101 "data/scripts/follower_npc.pory"
+# 106 "data/scripts/follower_npc.pory"
 	emote_question_mark
 	step_end
 
 Eventscript_MitsuruFollower_Text_0:
-# 5 "data/scripts/follower_npc.pory"
+# 10 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Is something wrong, Sanada-kun?$"
 
 Eventscript_AkiMitsuFollower_Talk_Text_0:
-# 53 "data/scripts/follower_npc.pory"
+# 58 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Let's go, Sanada-kun. There's no time to\n"
 	.string "waste.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}I know.$"
 
 Eventscript_AkiMitsuFollower_Talk_Text_1:
-# 57 "data/scripts/follower_npc.pory"
+# 62 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I'm still getting used to travelling with\n"
 	.string "a larger party like this.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}If I have to be honest, I find it quite\n"
@@ -1063,7 +1099,7 @@ Eventscript_AkiMitsuFollower_Talk_Text_1:
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Of course, I believe so.$"
 
 Eventscript_AkiMitsuFollower_Talk_Text_2:
-# 71 "data/scripts/follower_npc.pory"
+# 76 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Just want to say that you won't regret\n"
 	.string "partnering with us.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}We'll see. I do rarely make wrong\n"
@@ -1073,58 +1109,58 @@ Eventscript_AkiMitsuFollower_Talk_Text_2:
 	.string "wrong choice.$"
 
 Eventscript_MitsuruFollower_SetPartner_Text_0:
-# 80 "data/scripts/follower_npc.pory"
+# 85 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Very well. I'll back you up.$"
 
 Eventscript_MitsuruFollower_UnsetPartner_Text_0:
-# 87 "data/scripts/follower_npc.pory"
+# 92 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}You want to train on your own? Your\n"
 	.string "determination is truly admirable.$"
 
 Eventscript_MitsuruFollower_Return_Text_0:
-# 94 "data/scripts/follower_npc.pory"
+# 99 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}By all means. I figure you miss your\n"
 	.string "Pokémon as well.$"
 
 Eventscript_MitsuruFollower_Cancel_Text_0:
-# 103 "data/scripts/follower_npc.pory"
+# 108 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Well, if you have anything you want to\n"
 	.string "say to me, please don't hesitate.$"
 
 Eventscript_AkihikoFollower_Text_0:
-# 133 "data/scripts/follower_npc.pory"
+# 142 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Need something, Kirijo?$"
 
 Eventscript_AkihikoFollower_SetPartner_Text_0:
-# 181 "data/scripts/follower_npc.pory"
+# 190 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright. I won't lose to you!$"
 
 Eventscript_AkihikoFollower_UnsetPartner_Text_0:
-# 189 "data/scripts/follower_npc.pory"
+# 198 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure then. I'll just train on my own.$"
 
 Eventscript_AkihikoFollower_Return_Text_0:
-# 196 "data/scripts/follower_npc.pory"
+# 205 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Understood!$"
 
 Eventscript_AkihikoFollower_Cancel_Text_0:
-# 205 "data/scripts/follower_npc.pory"
+# 214 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Huh? Okay then.$"
 
 Eventscript_ShinjiroFollower_Text_0:
-# 213 "data/scripts/follower_npc.pory"
+# 225 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}What's up, Aki?$"
 
 Eventscript_ShinjiroFollower_Text_1:
-# 216 "data/scripts/follower_npc.pory"
+# 228 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}What's wrong, Princess?$"
 
 Eventscript_ShinjiMitsuFollower_Talk_Text_0:
-# 321 "data/scripts/follower_npc.pory"
+# 333 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Ahem, let's just go.$"
 
 Eventscript_ShinjiMitsuFollower_Talk_Text_1:
-# 324 "data/scripts/follower_npc.pory"
+# 336 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}.......\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}.......\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Ahem, may I ask you something?\p"
@@ -1152,56 +1188,69 @@ Eventscript_ShinjiMitsuFollower_Talk_Text_1:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Aragaki-kun?$"
 
 Eventscript_ShinjiroFollower_Aki_SetPartner_Text_0:
-# 361 "data/scripts/follower_npc.pory"
+# 374 "data/scripts/follower_npc.pory"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Aki, I don't have a Pokémon yet.\p"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}But well, I suppose I've got your back\n"
+	.string "in a fist fight. Just bring me a bus stop\l"
+	.string "sign or something.$"
+
+Eventscript_ShinjiroFollower_Aki_SetPartner_Text_1:
+# 378 "data/scripts/follower_npc.pory"
+	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Don't we have to return to the house in\n"
+	.string "Route 2?\p"
+	.string "Now is not the time to train, Aki.$"
+
+Eventscript_ShinjiroFollower_Aki_SetPartner_Text_2:
+# 382 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Can't do anything without me, huh?$"
 
 Eventscript_ShinjiroFollower_Aki_UnsetPartner_Text_0:
-# 368 "data/scripts/follower_npc.pory"
+# 390 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Alright then.$"
 
 Eventscript_ShinjiroFollower_Mitsu_SetPartner_Text_0:
-# 375 "data/scripts/follower_npc.pory"
+# 397 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}So you do need help sometimes, huh?$"
 
 Eventscript_ShinjiroFollower_Mitsu_UnsetPartner_Text_0:
-# 382 "data/scripts/follower_npc.pory"
+# 404 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Sure, I know you can hold your ground.$"
 
 Eventscript_ShinjiroFollower_Aki_Return_Text_0:
-# 389 "data/scripts/follower_npc.pory"
+# 411 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Sure then, I'll also check how Ferroseed\n"
 	.string "is doing.$"
 
 Eventscript_ShinjiroFollower_Mitsu_Return_Text_0:
-# 395 "data/scripts/follower_npc.pory"
+# 417 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Got it.$"
 
 Eventscript_ShinjiroFollower_Aki_Cancel_Text_0:
-# 404 "data/scripts/follower_npc.pory"
+# 426 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}What is it? Just spit it out.$"
 
 Eventscript_ShinjiroFollower_Mitsu_Cancel_Text_0:
-# 411 "data/scripts/follower_npc.pory"
+# 433 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Whatever.$"
 
 Eventscript_InteleonTFollower_Text_0:
-# 418 "data/scripts/follower_npc.pory"
+# 444 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks at you and waits for\n"
 	.string "what you want to say.)$"
 
 Eventscript_InteleonTFollower_AkiTalk_Text_0:
-# 490 "data/scripts/follower_npc.pory"
+# 516 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(It doesn't look like it wants to chat\n"
 	.string "with you.)$"
 
 Eventscript_InteleonTFollower_MitsuTalk_Text_0:
-# 496 "data/scripts/follower_npc.pory"
+# 522 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Let's focusing on completing our\n"
 	.string "mission, for Father.\p"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon nodded, looking determined.)$"
 
 Eventscript_InteleonTFollower_MitsuTalk_Text_1:
-# 500 "data/scripts/follower_npc.pory"
+# 526 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}I hope Father will be safe without you,\n"
 	.string "Inteleon.\p"
 	.string "You're his most trusted partner and you\n"
@@ -1209,7 +1258,7 @@ Eventscript_InteleonTFollower_MitsuTalk_Text_1:
 	.string "can remember.$"
 
 Eventscript_InteleonTFollower_MitsuTalk_Text_2:
-# 506 "data/scripts/follower_npc.pory"
+# 532 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_NORMAL}(Inteleon puts its hand on Mitsuru's\n"
 	.string "shoulder, nodding.)\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}You're right, I should believe in him.\p"
@@ -1217,35 +1266,35 @@ Eventscript_InteleonTFollower_MitsuTalk_Text_2:
 	.string "mission.$"
 
 Eventscript_InteleonTFollower_MitsuTalk_Text_3:
-# 514 "data/scripts/follower_npc.pory"
+# 540 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}How do you think about those two boys,\n"
 	.string "Inteleon?\p"
 	.string "Did I make a right choice partnering up\n"
 	.string "with them?$"
 
 Eventscript_InteleonTFollower_MitsuTalk_Text_4:
-# 520 "data/scripts/follower_npc.pory"
+# 546 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_DOUBT}(Inteleon lost in thought. Looks like it\n"
 	.string "needs more time to answer this\l"
 	.string "question.)\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}I suppose only time will tell.$"
 
 Eventscript_InteleonTFollower_Aki_SetPartner_Text_0:
-# 535 "data/scripts/follower_npc.pory"
+# 561 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon refused. It doesn't trust\n"
 	.string "Akihiko enough right now.)$"
 
 Eventscript_InteleonTFollower_Mitsu_SetPartner_Text_0:
-# 542 "data/scripts/follower_npc.pory"
+# 568 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon silently nods.)$"
 
 Eventscript_InteleonTFollower_Cancel_Text_0:
-# 575 "data/scripts/follower_npc.pory"
+# 601 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks confused but says\n"
 	.string "nothing.)$"
 
 Eventscript_AkiShinjiFollower_Talk_P_Text_0:
-# 580 "data/scripts/follower_npc.pory"
+# 606 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Have you thought of which Pokémon you\n"
 	.string "want for your first?\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Not sure, but I guess I'd like a\n"
@@ -1257,13 +1306,13 @@ Eventscript_AkiShinjiFollower_Talk_P_Text_0:
 	.string "isn't bad at all.$"
 
 Eventscript_AkiShinjiFollower_Talk_C1_Text_0:
-# 588 "data/scripts/follower_npc.pory"
+# 614 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Enough chatting. I'm done with your\n"
 	.string "dumbass.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}I'm not dumb!!$"
 
 Eventscript_AkiShinjiFollower_Talk_C1_Text_1:
-# 596 "data/scripts/follower_npc.pory"
+# 622 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}There's one more weird thing about her.\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Yeah?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}She takes at least an hour in bath. I\n"
@@ -1274,7 +1323,7 @@ Eventscript_AkiShinjiFollower_Talk_C1_Text_1:
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Don't dig your own grave like that.$"
 
 Eventscript_AkiShinjiFollower_Talk_C1_Text_2:
-# 606 "data/scripts/follower_npc.pory"
+# 632 "data/scripts/follower_npc.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}At the risk of turning myself into a\n"
 	.string "broken record, you shouldn't trust that\l"
 	.string "girl so easily.\p"

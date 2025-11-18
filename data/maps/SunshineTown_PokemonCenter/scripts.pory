@@ -185,7 +185,7 @@ script SunshineTown_PokemonCenter_Eventscript_OldMan {
     lock
     faceplayer
     setspeaker("Oda")
-    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15) {
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15 && var(VAR_AKIHIKOS_INTRO_STATE) < 24) {
         msgbox(format("That almost gave me a heartattack..."))
     }
     else {msgbox(format("
@@ -198,7 +198,7 @@ script SunshineTown_PokemonCenter_Eventscript_YoungBoy {
     lock
     faceplayer
     setspeaker ("Kenta")
-    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15) {
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15 && var(VAR_AKIHIKOS_INTRO_STATE) < 24) {
         applymovement (1, shakehorizontal)
         waitmovement(0)
         msgbox(format("I-I'm fine. With Poochyena here, I'll be fine."))
@@ -231,7 +231,7 @@ script SunshineTown_PokemonCenter_Eventscript_Gentleman {
     lock
     faceplayer
     setspeaker ("Watanabe")
-    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15) {
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15 && var(VAR_AKIHIKOS_INTRO_STATE) < 24) {
         msgbox(format("It sounds dangerous outside, you kids should stay here.\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Thank you, sir, but we'll be fine."))
     }

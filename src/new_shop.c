@@ -309,8 +309,8 @@ static const struct WindowTemplate sShopMenuWindowTemplates[] =
 {
     [WIN_BUY_SELL_QUIT] = {
         .bg = 0,
-        .tilemapLeft = 2,
-        .tilemapTop = 1,
+        .tilemapLeft = 23,
+        .tilemapTop = 7,
         .width = 9,
         .height = 6,
         .paletteNum = 14,
@@ -319,8 +319,8 @@ static const struct WindowTemplate sShopMenuWindowTemplates[] =
     // Separate shop menu window for decorations, which can't be sold
     [WIN_BUY_QUIT] = {
         .bg = 0,
-        .tilemapLeft = 2,
-        .tilemapTop = 1,
+        .tilemapLeft = 23,
+        .tilemapTop = 9,
         .width = 9,
         .height = 4,
         .paletteNum = 14,
@@ -574,6 +574,7 @@ static u8 CreateShopMenu(u8 martType)
     int numMenuItems;
 
     LockPlayerFieldControls();
+    FlagSet(FLAG_HIDE_TALK_BUTTON);
     sMartInfo.martType = martType;
 
     switch (martType)
@@ -828,6 +829,7 @@ static void Task_HandleShopMenuQuit(u8 taskId)
     RemoveWindow(sMartInfo.windowId);
     //TryPutSmartShopperOnAir();
     UnlockPlayerFieldControls();
+    FlagClear(FLAG_HIDE_TALK_BUTTON);
     DestroyTask(taskId);
 
     if (sMartInfo.callback)

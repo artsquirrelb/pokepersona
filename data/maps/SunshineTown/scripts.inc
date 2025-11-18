@@ -425,228 +425,228 @@ SunshineTown_Eventscript_OnFrame23::
 	lock
 # 232 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_OnFrame23_Text_0
-# 235 "data/maps/SunshineTown/scripts.pory"
-	closemessage
 # 236 "data/maps/SunshineTown/scripts.pory"
-	clearflag FLAG_HIDE_QUEST_ICON
+	closemessage
 # 237 "data/maps/SunshineTown/scripts.pory"
-	setflag FLAG_SYS_QUEST_MENU_GET
+	clearflag FLAG_HIDE_QUEST_ICON
 # 238 "data/maps/SunshineTown/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 24
+	setflag FLAG_SYS_QUEST_MENU_GET
 # 239 "data/maps/SunshineTown/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	setvar VAR_AKIHIKOS_INTRO_STATE, 24
 # 240 "data/maps/SunshineTown/scripts.pory"
+	clearflag FLAG_HIDE_TALK_BUTTON
+# 241 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL::
-# 245 "data/maps/SunshineTown/scripts.pory"
-	lock
 # 246 "data/maps/SunshineTown/scripts.pory"
-	setspeaker SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0
+	lock
 # 247 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0
+# 248 "data/maps/SunshineTown/scripts.pory"
 	goto_if_unset FLAG_SYS_QUEST_MENU_GET, SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_2
-# 253 "data/maps/SunshineTown/scripts.pory"
-	faceplayer
 # 254 "data/maps/SunshineTown/scripts.pory"
-	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+	faceplayer
 # 255 "data/maps/SunshineTown/scripts.pory"
+	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+# 256 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_5
-# 259 "data/maps/SunshineTown/scripts.pory"
+# 260 "data/maps/SunshineTown/scripts.pory"
 	call SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_1:
-# 262 "data/maps/SunshineTown/scripts.pory"
+# 263 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_2:
-# 248 "data/maps/SunshineTown/scripts.pory"
-	goto SunshineTown_Eventscript_ExpertF_PreQuest
 # 249 "data/maps/SunshineTown/scripts.pory"
+	goto SunshineTown_Eventscript_ExpertF_PreQuest
+# 250 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_5:
-# 256 "data/maps/SunshineTown/scripts.pory"
+# 257 "data/maps/SunshineTown/scripts.pory"
 	call SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted
 	goto SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_1
 
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted::
-# 267 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted_Text_0
 # 268 "data/maps/SunshineTown/scripts.pory"
-	closemessage
+	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted_Text_0
 # 269 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 270 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward::
-# 275 "data/maps/SunshineTown/scripts.pory"
-	questmenu QUEST_MENU_CHECK_REWARD, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
 # 276 "data/maps/SunshineTown/scripts.pory"
+	questmenu QUEST_MENU_CHECK_REWARD, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+# 277 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_1
-# 285 "data/maps/SunshineTown/scripts.pory"
+# 286 "data/maps/SunshineTown/scripts.pory"
 	call SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive
 	return
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_1:
-# 277 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_Text_0
 # 278 "data/maps/SunshineTown/scripts.pory"
-	closemessage
+	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_Text_0
 # 279 "data/maps/SunshineTown/scripts.pory"
-	giveitem ITEM_SOOTHE_BELL, 1
+	closemessage
 # 280 "data/maps/SunshineTown/scripts.pory"
-	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+	giveitem ITEM_SOOTHE_BELL, 1
 # 281 "data/maps/SunshineTown/scripts.pory"
+	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+# 282 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive::
-# 290 "data/maps/SunshineTown/scripts.pory"
-	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
 # 291 "data/maps/SunshineTown/scripts.pory"
+	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+# 292 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_1
-# 298 "data/maps/SunshineTown/scripts.pory"
+# 299 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_1
-# 300 "data/maps/SunshineTown/scripts.pory"
-	closemessage
 # 301 "data/maps/SunshineTown/scripts.pory"
-	setspeaker SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0
-# 302 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_2
-# 305 "data/maps/SunshineTown/scripts.pory"
 	closemessage
+# 302 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0
+# 303 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_2
 # 306 "data/maps/SunshineTown/scripts.pory"
-	questmenu QUEST_MENU_SET_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+	closemessage
 # 307 "data/maps/SunshineTown/scripts.pory"
+	questmenu QUEST_MENU_SET_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
+# 308 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_1:
-# 292 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_0
 # 293 "data/maps/SunshineTown/scripts.pory"
-	closemessage
+	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_0
 # 294 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 295 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 
 SunshineTown_Eventscript_ExpertF_PreQuest::
-# 314 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_ExpertF_PreQuest_Text_0
 # 315 "data/maps/SunshineTown/scripts.pory"
-	closemessage
+	msgbox SunshineTown_Eventscript_ExpertF_PreQuest_Text_0
 # 316 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 317 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 
 SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24::
-# 321 "data/maps/SunshineTown/scripts.pory"
-	lock
 # 322 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_Text_0, MSGBOX_YESNO
+	lock
 # 323 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_Text_0, MSGBOX_YESNO
+# 324 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_1
-# 329 "data/maps/SunshineTown/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
 # 330 "data/maps/SunshineTown/scripts.pory"
+	setflag FLAG_HIDE_TALK_BUTTON
+# 331 "data/maps/SunshineTown/scripts.pory"
 	warpsilent MAP_BLANK_MAP, 0, 0
 	return
 
 SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_1:
-# 324 "data/maps/SunshineTown/scripts.pory"
-	applymovement LOCALID_PLAYER, walkright
 # 325 "data/maps/SunshineTown/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, walkright
 # 326 "data/maps/SunshineTown/scripts.pory"
+	waitmovement 0
+# 327 "data/maps/SunshineTown/scripts.pory"
 	release
 	return
 
 
 SunshineTown_Eventscript_HiddenGrotto::
-# 335 "data/maps/SunshineTown/scripts.pory"
-	lock
 # 336 "data/maps/SunshineTown/scripts.pory"
-	msgbox Eventscript_HiddenGrotto, MSGBOX_YESNO
+	lock
 # 337 "data/maps/SunshineTown/scripts.pory"
-	closemessage
+	msgbox Eventscript_HiddenGrotto, MSGBOX_YESNO
 # 338 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 339 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq SunshineTown_Eventscript_HiddenGrotto_2
 SunshineTown_Eventscript_HiddenGrotto_1:
-# 341 "data/maps/SunshineTown/scripts.pory"
+# 342 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 SunshineTown_Eventscript_HiddenGrotto_2:
-# 339 "data/maps/SunshineTown/scripts.pory"
+# 340 "data/maps/SunshineTown/scripts.pory"
 	warp MAP_SUNSHINE_TOWN_HIDDEN_GROTTO, 0
 	goto SunshineTown_Eventscript_HiddenGrotto_1
 
 
 SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru::
-# 346 "data/maps/SunshineTown/scripts.pory"
-	lock
 # 347 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru_Text_0
+	lock
 # 348 "data/maps/SunshineTown/scripts.pory"
-	closemessage
+	msgbox SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru_Text_0
 # 349 "data/maps/SunshineTown/scripts.pory"
-	applymovement LOCALID_PLAYER, walkleft
+	closemessage
 # 350 "data/maps/SunshineTown/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, walkleft
 # 351 "data/maps/SunshineTown/scripts.pory"
+	waitmovement 0
+# 352 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 
 unlockcharacters::
-# 357 "data/maps/SunshineTown/scripts.pory"
-	msgbox unlockcharacters_Text_0
 # 358 "data/maps/SunshineTown/scripts.pory"
-	closemessage
+	msgbox unlockcharacters_Text_0
 # 359 "data/maps/SunshineTown/scripts.pory"
-	unlockcharacter CHARACTER_MITSURU
+	closemessage
 # 360 "data/maps/SunshineTown/scripts.pory"
-	unlockcharacter CHARACTER_SHINJIRO
+	unlockcharacter CHARACTER_MITSURU
 # 361 "data/maps/SunshineTown/scripts.pory"
-	unlockcharacter CHARACTER_AKIHIKO
+	unlockcharacter CHARACTER_SHINJIRO
 # 362 "data/maps/SunshineTown/scripts.pory"
-	makecharaAvailable CHARACTER_MITSURU
+	unlockcharacter CHARACTER_AKIHIKO
 # 363 "data/maps/SunshineTown/scripts.pory"
-	makecharaAvailable CHARACTER_AKIHIKO
+	makecharaAvailable CHARACTER_MITSURU
 # 364 "data/maps/SunshineTown/scripts.pory"
+	makecharaAvailable CHARACTER_AKIHIKO
+# 365 "data/maps/SunshineTown/scripts.pory"
 	makecharaAvailable CHARACTER_SHINJIRO
 	end
 
 
 makecharagrayout::
-# 369 "data/maps/SunshineTown/scripts.pory"
-	msgbox makecharagrayout_Text_0
 # 370 "data/maps/SunshineTown/scripts.pory"
-	closemessage
+	msgbox makecharagrayout_Text_0
 # 371 "data/maps/SunshineTown/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 100
+	closemessage
 # 372 "data/maps/SunshineTown/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 100
+	setvar VAR_AKIHIKOS_INTRO_STATE, 100
 # 373 "data/maps/SunshineTown/scripts.pory"
-	setvar VAR_TEMP_0, 0
+	setvar VAR_MITSURUS_INTRO_STATE, 100
 # 374 "data/maps/SunshineTown/scripts.pory"
-	setvar VAR_TEMP_1, 0
+	setvar VAR_TEMP_0, 0
 # 375 "data/maps/SunshineTown/scripts.pory"
-	setvar VAR_TEMP_2, 0
+	setvar VAR_TEMP_1, 0
 # 376 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_TEMP_2, 0
+# 377 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_TEMP_3, 0
 	return
 
@@ -738,36 +738,37 @@ SunshineTown_Eventscript_OnFrame23_Text_0:
 	.string "{COLOR GREEN}Tips: Quest System is now unlocked.\p"
 	.string "Check around for quest givers with a\n"
 	.string "light blue exclamation mark.\p"
-	.string "You can open quest menu in {START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}.$"
+	.string "You can open quest menu in\n"
+	.string "{START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}.$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0:
-# 246 "data/maps/SunshineTown/scripts.pory"
+# 247 "data/maps/SunshineTown/scripts.pory"
 	.string "Fumiko$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted_Text_0:
-# 267 "data/maps/SunshineTown/scripts.pory"
+# 268 "data/maps/SunshineTown/scripts.pory"
 	.string "Soothe Bell can help you befriend\n"
 	.string "Pokémon faster.$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_Text_0:
-# 277 "data/maps/SunshineTown/scripts.pory"
+# 278 "data/maps/SunshineTown/scripts.pory"
 	.string "My Riolu was very happy. Please take\n"
 	.string "this as a thank-you for doing me a\l"
 	.string "favor.$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_0:
-# 292 "data/maps/SunshineTown/scripts.pory"
+# 293 "data/maps/SunshineTown/scripts.pory"
 	.string "You can find my poor Riolu on the\n"
 	.string "second floor.$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_1:
-# 298 "data/maps/SunshineTown/scripts.pory"
+# 299 "data/maps/SunshineTown/scripts.pory"
 	.string "Excuse me, young men. Can you do me a\n"
 	.string "favor?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure, ma'am. What can we do for you?$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_2:
-# 302 "data/maps/SunshineTown/scripts.pory"
+# 303 "data/maps/SunshineTown/scripts.pory"
 	.string "One of the Pokémon caretakers I hired\n"
 	.string "couldn't show up today.\p"
 	.string "Can you go play with my poor baby Riolu?\n"
@@ -775,24 +776,24 @@ SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Tex
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Leave it to us!$"
 
 SunshineTown_Eventscript_ExpertF_PreQuest_Text_0:
-# 314 "data/maps/SunshineTown/scripts.pory"
+# 315 "data/maps/SunshineTown/scripts.pory"
 	.string "Where did I put my key again...?$"
 
 SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_Text_0:
-# 322 "data/maps/SunshineTown/scripts.pory"
+# 323 "data/maps/SunshineTown/scripts.pory"
 	.string "{COLOR RED}Important scene ahead. Do you want to\n"
 	.string "proceed?$"
 
 SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru_Text_0:
-# 347 "data/maps/SunshineTown/scripts.pory"
+# 348 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I have no business in Sunshine Woods\n"
 	.string "right now.)$"
 
 unlockcharacters_Text_0:
-# 357 "data/maps/SunshineTown/scripts.pory"
+# 358 "data/maps/SunshineTown/scripts.pory"
 	.string "unlocked & made available all charas$"
 
 makecharagrayout_Text_0:
-# 369 "data/maps/SunshineTown/scripts.pory"
+# 370 "data/maps/SunshineTown/scripts.pory"
 	.string "Marking prologue to completed & reset\n"
 	.string "all temp vars$"

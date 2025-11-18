@@ -468,13 +468,15 @@ script Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon {
     waitmovement(6)
     lock
     removeobject(6)
-    setobjectxyperm(6, 29, 21)
+    setobjectxyperm(6, 31, 21)
     setobjectnewmovementtype(6, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
-    addobject(6)
+    setobjectxy(6, 31, 21)
     fwdtime(13, 45)
     release
     setvar(VAR_AKIHIKOS_INTRO_STATE, 34)
     clearflag(FLAG_HIDE_TALK_BUTTON)
+    destroyfollowernpc
+    makecharaUnavailable(CHARACTER_SHINJIRO)
     end
 }
 
@@ -810,6 +812,7 @@ script Route2_Eventscript_Himari {
     elif (var(VAR_TEMP_0) == 2){
         msgbox(format("Thank you for letting me pet your Rockruff!\p
         Its fur is surprisingly soft!"))
+        closemessage
     }
     else{
     msgbox(format("Rockruff in Kitoha region can evolve into Midday, Midnight or Dusk form Lycanroc regardless of its Ability.\p

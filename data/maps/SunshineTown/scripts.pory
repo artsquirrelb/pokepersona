@@ -231,7 +231,8 @@ script SunshineTown_Eventscript_OnFrame23{
     lock
     msgbox(format("{COLOR GREEN}Tips: Quest System is now unlocked.\p
     Check around for quest givers with a light blue exclamation mark.\p
-    You can open quest menu in {START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}."))
+    You can open quest menu in\n
+    {START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}."))
     closemessage
     clearflag(FLAG_HIDE_QUEST_ICON)
     setflag(FLAG_SYS_QUEST_MENU_GET)

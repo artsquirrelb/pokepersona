@@ -373,35 +373,35 @@ PawmiDisappointed:
 
 SunshineOrphanageMainHall_Eventscript_GoToSleep::
 # 211 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	lock
-# 212 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	delay 20
-# 213 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	applymovement 4, TeacherFacingAkihiko
-# 214 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitmovement 0
-# 215 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	msgbox SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0
-# 218 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	closemessage
-# 219 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 9
-# 220 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 221 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	playse MUS_HEAL
-# 222 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	waitse
-# 223 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	removeobject 13
-# 224 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	removeobject 14
-# 225 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	removeobject 15
-# 226 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setflag FLAG_DONT_TRANSITION_MUSIC
-# 227 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setflag FLAG_HIDE_TALK_BUTTON
+# 212 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	lock
+# 213 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	delay 20
+# 214 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	applymovement 4, TeacherFacingAkihiko
+# 215 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	waitmovement 0
+# 216 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	msgbox SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0
+# 219 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	closemessage
+# 220 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 9
+# 221 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 222 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	playse MUS_HEAL
+# 223 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	waitse
+# 224 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	removeobject 13
+# 225 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	removeobject 14
+# 226 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	removeobject 15
+# 227 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	setflag FLAG_DONT_TRANSITION_MUSIC
 # 228 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	fwdtime 8, 30
 # 229 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -957,7 +957,7 @@ SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_3:
 	.string "Party full.$"
 
 SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0:
-# 215 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 216 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "{SPEAKER NAME_KOBAYASHI}Alright.\p"
 	.string "I supposed it's quite late now. You all\n"
 	.string "should go to bed.\p"

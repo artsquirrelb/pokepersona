@@ -381,7 +381,7 @@ script Route2_House_Eventscript_AVulpix {
 script Route2_House_Eventscript_Inteleon {
     lock
     faceplayer
-    msgbox("Inteleon's looking at you judgingly.\p
+    msgbox("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon's looking at you judgingly.)\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}(Someone's got an attitude...)")
     closemessage
     applymovement(4, faceright)
@@ -904,6 +904,7 @@ script Route2_House_Eventscript_Bathroom {
         msgbox(format("Do you want to use the bathroom?"), MSGBOX_YESNO)
         closemessage
         if (var(VAR_RESULT) == TRUE){
+            hidefollowernpc
             fadescreenswapbuffers(FADE_TO_BLACK)
             playse(SE_DOOR)
             waitse

@@ -113,136 +113,140 @@ SunshineTownRiverbank_Eventscript_AzumarillJumpOutOfTheRiver::
 # 53 "data/maps/SunshineTownRiverbank/scripts.pory"
 	showobjectat 4, MAP_SUNSHINE_TOWN_RIVERBANK
 # 54 "data/maps/SunshineTownRiverbank/scripts.pory"
-	applymovement 4, AzumarillJumpsOffRiver
+	dofieldeffectjumpsplash 14, 6, 1
 # 55 "data/maps/SunshineTownRiverbank/scripts.pory"
-	waitmovement 0
+	applymovement 4, AzumarillJumpsOffRiver
 # 56 "data/maps/SunshineTownRiverbank/scripts.pory"
-	delay 40
+	waitfieldeffect FLDEFF_JUMP_SMALL_SPLASH
 # 57 "data/maps/SunshineTownRiverbank/scripts.pory"
-	applymovement 4, AzumarillRunsOff
-# 58 "data/maps/SunshineTownRiverbank/scripts.pory"
 	waitmovement 0
+# 58 "data/maps/SunshineTownRiverbank/scripts.pory"
+	delay 40
 # 59 "data/maps/SunshineTownRiverbank/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 20
+	applymovement 4, AzumarillRunsOff
 # 60 "data/maps/SunshineTownRiverbank/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	waitmovement 0
 # 61 "data/maps/SunshineTownRiverbank/scripts.pory"
-	warpsilent MAP_BLANK_MAP, 0, 0
+	setvar VAR_AKIHIKOS_INTRO_STATE, 20
 # 62 "data/maps/SunshineTownRiverbank/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 63 "data/maps/SunshineTownRiverbank/scripts.pory"
+	warpsilent MAP_BLANK_MAP, 0, 0
+# 64 "data/maps/SunshineTownRiverbank/scripts.pory"
 	release
 	return
 
 
-# 65 "data/maps/SunshineTownRiverbank/scripts.pory"
-AzumarillJumpsOffRiver:
-# 66 "data/maps/SunshineTownRiverbank/scripts.pory"
-	jump_up
 # 67 "data/maps/SunshineTownRiverbank/scripts.pory"
-	delay_16
+AzumarillJumpsOffRiver:
 # 68 "data/maps/SunshineTownRiverbank/scripts.pory"
-	delay_16
+	jump_up
 # 69 "data/maps/SunshineTownRiverbank/scripts.pory"
-	face_left
+	delay_16
 # 70 "data/maps/SunshineTownRiverbank/scripts.pory"
 	delay_16
 # 71 "data/maps/SunshineTownRiverbank/scripts.pory"
-	delay_16
+	face_left
 # 72 "data/maps/SunshineTownRiverbank/scripts.pory"
-	face_right
+	delay_16
 # 73 "data/maps/SunshineTownRiverbank/scripts.pory"
 	delay_16
 # 74 "data/maps/SunshineTownRiverbank/scripts.pory"
-	delay_16
+	face_right
 # 75 "data/maps/SunshineTownRiverbank/scripts.pory"
+	delay_16
+# 76 "data/maps/SunshineTownRiverbank/scripts.pory"
+	delay_16
+# 77 "data/maps/SunshineTownRiverbank/scripts.pory"
 	emote_pensive
 	step_end
 
-# 78 "data/maps/SunshineTownRiverbank/scripts.pory"
+# 80 "data/maps/SunshineTownRiverbank/scripts.pory"
 AzumarillRunsOff:
-# 79 "data/maps/SunshineTownRiverbank/scripts.pory"
+# 81 "data/maps/SunshineTownRiverbank/scripts.pory"
 	walk_fast_up
-# 79 "data/maps/SunshineTownRiverbank/scripts.pory"
+# 81 "data/maps/SunshineTownRiverbank/scripts.pory"
 	walk_fast_up
-# 79 "data/maps/SunshineTownRiverbank/scripts.pory"
+# 81 "data/maps/SunshineTownRiverbank/scripts.pory"
 	walk_fast_up
-# 79 "data/maps/SunshineTownRiverbank/scripts.pory"
+# 81 "data/maps/SunshineTownRiverbank/scripts.pory"
 	walk_fast_up
-# 79 "data/maps/SunshineTownRiverbank/scripts.pory"
+# 81 "data/maps/SunshineTownRiverbank/scripts.pory"
 	walk_fast_up
 	step_end
 
 SunshineTownRiverbank_Eventscript_OnFrame21::
-# 83 "data/maps/SunshineTownRiverbank/scripts.pory"
-	lock
-# 84 "data/maps/SunshineTownRiverbank/scripts.pory"
-	goto SunshineTownRiverbank_Eventscript_KurosawaFindingAkiShinji
 # 85 "data/maps/SunshineTownRiverbank/scripts.pory"
+	lock
+# 86 "data/maps/SunshineTownRiverbank/scripts.pory"
+	goto SunshineTownRiverbank_Eventscript_KurosawaFindingAkiShinji
+# 87 "data/maps/SunshineTownRiverbank/scripts.pory"
 	release
 	return
 
 
 SunshineTownRiverbank_Eventscript_KurosawaFindingAkiShinji::
-# 89 "data/maps/SunshineTownRiverbank/scripts.pory"
-	lock
-# 90 "data/maps/SunshineTownRiverbank/scripts.pory"
-	delay 30
 # 91 "data/maps/SunshineTownRiverbank/scripts.pory"
-	addobject 3, MAP_SUNSHINE_TOWN_RIVERBANK
+	lock
 # 92 "data/maps/SunshineTownRiverbank/scripts.pory"
-	addobject 4, MAP_SUNSHINE_TOWN_RIVERBANK
+	delay 30
 # 93 "data/maps/SunshineTownRiverbank/scripts.pory"
-	playse SE_PIN
+	addobject 3, MAP_SUNSHINE_TOWN_RIVERBANK
 # 94 "data/maps/SunshineTownRiverbank/scripts.pory"
-	applymovement 3, emoteexclamation
+	addobject 4, MAP_SUNSHINE_TOWN_RIVERBANK
 # 95 "data/maps/SunshineTownRiverbank/scripts.pory"
-	waitmovement 0
+	playse SE_PIN
 # 96 "data/maps/SunshineTownRiverbank/scripts.pory"
-	delay 20
+	applymovement 3, emoteexclamation
 # 97 "data/maps/SunshineTownRiverbank/scripts.pory"
-	applymovement LOCALID_PLAYER, KurosawaFindingAkiShinji
-# 98 "data/maps/SunshineTownRiverbank/scripts.pory"
-	applymovement 3, KurosawaFindingAkiShinji
-# 99 "data/maps/SunshineTownRiverbank/scripts.pory"
 	waitmovement 0
+# 98 "data/maps/SunshineTownRiverbank/scripts.pory"
+	delay 20
+# 99 "data/maps/SunshineTownRiverbank/scripts.pory"
+	applymovement LOCALID_PLAYER, KurosawaFindingAkiShinji
 # 100 "data/maps/SunshineTownRiverbank/scripts.pory"
-	delay 40
+	applymovement 3, KurosawaFindingAkiShinji
 # 101 "data/maps/SunshineTownRiverbank/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	waitmovement 0
 # 102 "data/maps/SunshineTownRiverbank/scripts.pory"
-	delay 16
+	delay 40
 # 103 "data/maps/SunshineTownRiverbank/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 22
+	fadescreenswapbuffers FADE_TO_BLACK
 # 104 "data/maps/SunshineTownRiverbank/scripts.pory"
-	warpsilent MAP_BLANK_MAP, 0, 0
+	delay 16
 # 105 "data/maps/SunshineTownRiverbank/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 22
+# 106 "data/maps/SunshineTownRiverbank/scripts.pory"
+	warpsilent MAP_BLANK_MAP, 0, 0
+# 107 "data/maps/SunshineTownRiverbank/scripts.pory"
 	release
 	return
 
 
-# 108 "data/maps/SunshineTownRiverbank/scripts.pory"
-KurosawaFindingAkiShinji:
-# 109 "data/maps/SunshineTownRiverbank/scripts.pory"
-	walk_fast_down
-# 109 "data/maps/SunshineTownRiverbank/scripts.pory"
-	walk_fast_down
-# 109 "data/maps/SunshineTownRiverbank/scripts.pory"
-	walk_fast_down
-# 109 "data/maps/SunshineTownRiverbank/scripts.pory"
-	walk_fast_down
 # 110 "data/maps/SunshineTownRiverbank/scripts.pory"
-	delay_16
+KurosawaFindingAkiShinji:
 # 111 "data/maps/SunshineTownRiverbank/scripts.pory"
-	delay_16
+	walk_fast_down
+# 111 "data/maps/SunshineTownRiverbank/scripts.pory"
+	walk_fast_down
+# 111 "data/maps/SunshineTownRiverbank/scripts.pory"
+	walk_fast_down
+# 111 "data/maps/SunshineTownRiverbank/scripts.pory"
+	walk_fast_down
 # 112 "data/maps/SunshineTownRiverbank/scripts.pory"
 	delay_16
 # 113 "data/maps/SunshineTownRiverbank/scripts.pory"
-	walk_right
-# 113 "data/maps/SunshineTownRiverbank/scripts.pory"
-	walk_right
-# 114 "data/maps/SunshineTownRiverbank/scripts.pory"
-	face_down
-# 115 "data/maps/SunshineTownRiverbank/scripts.pory"
 	delay_16
+# 114 "data/maps/SunshineTownRiverbank/scripts.pory"
+	delay_16
+# 115 "data/maps/SunshineTownRiverbank/scripts.pory"
+	walk_right
+# 115 "data/maps/SunshineTownRiverbank/scripts.pory"
+	walk_right
 # 116 "data/maps/SunshineTownRiverbank/scripts.pory"
+	face_down
+# 117 "data/maps/SunshineTownRiverbank/scripts.pory"
+	delay_16
+# 118 "data/maps/SunshineTownRiverbank/scripts.pory"
 	delay_16
 	step_end

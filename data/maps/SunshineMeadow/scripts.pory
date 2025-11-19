@@ -521,3 +521,47 @@ script SunshineMeadow_Eventscript_InteleonPreBattle {
     closemessage
     end
 }
+
+script SunshineMeadow_Eventscript_DoSparkleFieldEffect {
+    playse(SE_SHINY)
+    dofieldeffectsparkle(12, 9, 2)
+    waitfieldeffect(FLDEFF_SPARKLE)
+    setvar(VAR_TEMP_0, 1)
+}
+
+script SunshineMeadow_Eventscript_JumpOverFence{
+    checkplayergender
+    if (var(VAR_RESULT) == FEMALE){
+        if (var(VAR_MITSURUS_INTRO_STATE) > 100){
+            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(There's no reason to go over there right now.)\p
+            (The lab was already exploded and everything was burned away.)"))
+            closemessage
+            end
+        }
+        else{
+            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(I think I can jump over this fence.)"))
+            closemessage
+            hidefollower
+            hidefollowernpc
+            specialvar(VAR_RESULT, GetPlayerFacingDirection)
+            if (var(VAR_RESULT) == DIR_NORTH)
+            {
+                applymovement(LOCALID_PLAYER, moves(jump_up, jump_up))
+                waitmovement(0)
+            }
+            elif (var(VAR_RESULT) == DIR_SOUTH)
+            {
+                applymovement(LOCALID_PLAYER, moves(jump_down, jump_down))
+                waitmovement(0)
+            }
+        }
+    }
+    else{
+        if (var(VAR_AKIHIKOS_INTRO_STATE) < 100){
+            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Huh, there's a footprint here. Looks like someone climbed over the fence.)\p
+            (I'd like to explore further but right now I have other more important matters to attend to.)"))
+            closemessage
+        }
+    }
+    
+}

@@ -905,6 +905,94 @@ SunshineMeadow_Eventscript_InteleonPreBattle::
 	end
 
 
+SunshineMeadow_Eventscript_DoSparkleFieldEffect::
+# 526 "data/maps/SunshineMeadow/scripts.pory"
+	dofieldeffectsparkle 12, 9, 2
+# 527 "data/maps/SunshineMeadow/scripts.pory"
+	waitfieldeffect FLDEFF_SPARKLE
+# 528 "data/maps/SunshineMeadow/scripts.pory"
+	setvar VAR_TEMP_0, 1
+	return
+
+
+SunshineMeadow_Eventscript_JumpOverFence::
+# 532 "data/maps/SunshineMeadow/scripts.pory"
+	checkplayergender
+# 533 "data/maps/SunshineMeadow/scripts.pory"
+	compare VAR_RESULT, FEMALE
+	goto_if_eq SunshineMeadow_Eventscript_JumpOverFence_1
+# 559 "data/maps/SunshineMeadow/scripts.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 100
+	goto_if_lt SunshineMeadow_Eventscript_JumpOverFence_7
+	return
+
+SunshineMeadow_Eventscript_JumpOverFence_1:
+# 534 "data/maps/SunshineMeadow/scripts.pory"
+	compare VAR_MITSURUS_INTRO_STATE, 100
+	goto_if_gt SunshineMeadow_Eventscript_JumpOverFence_4
+# 541 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_JumpOverFence_Text_1
+# 542 "data/maps/SunshineMeadow/scripts.pory"
+	closemessage
+# 543 "data/maps/SunshineMeadow/scripts.pory"
+	hidefollower
+# 544 "data/maps/SunshineMeadow/scripts.pory"
+	hidefollowernpc
+# 545 "data/maps/SunshineMeadow/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 546 "data/maps/SunshineMeadow/scripts.pory"
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_eq SunshineMeadow_Eventscript_JumpOverFence_9
+# 551 "data/maps/SunshineMeadow/scripts.pory"
+	compare VAR_RESULT, DIR_SOUTH
+	goto_if_eq SunshineMeadow_Eventscript_JumpOverFence_10
+	return
+
+SunshineMeadow_Eventscript_JumpOverFence_4:
+# 535 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_JumpOverFence_Text_0
+# 537 "data/maps/SunshineMeadow/scripts.pory"
+	closemessage
+	end
+
+SunshineMeadow_Eventscript_JumpOverFence_7:
+# 560 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_JumpOverFence_Text_2
+# 562 "data/maps/SunshineMeadow/scripts.pory"
+	closemessage
+	return
+
+SunshineMeadow_Eventscript_JumpOverFence_9:
+# 548 "data/maps/SunshineMeadow/scripts.pory"
+	applymovement LOCALID_PLAYER, SunshineMeadow_Eventscript_JumpOverFence_Movement_0
+# 549 "data/maps/SunshineMeadow/scripts.pory"
+	waitmovement 0
+	return
+
+SunshineMeadow_Eventscript_JumpOverFence_10:
+# 553 "data/maps/SunshineMeadow/scripts.pory"
+	applymovement LOCALID_PLAYER, SunshineMeadow_Eventscript_JumpOverFence_Movement_1
+# 554 "data/maps/SunshineMeadow/scripts.pory"
+	waitmovement 0
+	return
+
+
+# 548 "data/maps/SunshineMeadow/scripts.pory"
+SunshineMeadow_Eventscript_JumpOverFence_Movement_0:
+# 548 "data/maps/SunshineMeadow/scripts.pory"
+	jump_up
+# 548 "data/maps/SunshineMeadow/scripts.pory"
+	jump_up
+	step_end
+
+# 553 "data/maps/SunshineMeadow/scripts.pory"
+SunshineMeadow_Eventscript_JumpOverFence_Movement_1:
+# 553 "data/maps/SunshineMeadow/scripts.pory"
+	jump_down
+# 553 "data/maps/SunshineMeadow/scripts.pory"
+	jump_down
+	step_end
+
 SunshineMeadow_Eventscript_PreMitsuruFirstBattleTalk_Text_0:
 # 60 "data/maps/SunshineMeadow/scripts.pory"
 	.string "{COLOR RED}Tips: From this point onward, the\n"
@@ -1065,6 +1153,25 @@ SunshineMeadow_Eventscript_InteleonPreBattle_Text_0:
 # 520 "data/maps/SunshineMeadow/scripts.pory"
 	.string "Inteleon stares down at you but says\n"
 	.string "nothing.$"
+
+SunshineMeadow_Eventscript_JumpOverFence_Text_0:
+# 535 "data/maps/SunshineMeadow/scripts.pory"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(There's no reason to go over there\n"
+	.string "right now.)\p"
+	.string "(The lab was already exploded and\n"
+	.string "everything was burned away.)$"
+
+SunshineMeadow_Eventscript_JumpOverFence_Text_1:
+# 541 "data/maps/SunshineMeadow/scripts.pory"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(I think I can jump over this fence.)$"
+
+SunshineMeadow_Eventscript_JumpOverFence_Text_2:
+# 560 "data/maps/SunshineMeadow/scripts.pory"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Huh, there's a footprint here. Looks\n"
+	.string "like someone climbed over the fence.)\p"
+	.string "(I'd like to explore further but right\n"
+	.string "now I have other more important\l"
+	.string "matters to attend to.)$"
 
 SunshineMeadow_Eventscript_WonInMitsuruFirstBattlePointUp::
 # 275 "data/maps/SunshineMeadow/scripts.pory"

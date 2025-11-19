@@ -2179,6 +2179,23 @@
 	dofieldeffect FLDEFF_SPARKLE
 	.endm
 
+	@ Does a water surfacing field effect at the given coordinates.
+	.macro dofieldeffectwatersurfacing x:req, y:req, priority:req
+	setfieldeffectargument 0, \x
+	setfieldeffectargument 1, \y
+	setfieldeffectargument 2, \priority
+	dofieldeffect FLDEFF_WATER_SURFACING;
+	.endm
+
+	@ Does a water splash field effect at the given coordinates.
+	.macro dofieldeffectjumpsplash x:req, y:req, priority:req
+	setfieldeffectargument 0, \x
+	setfieldeffectargument 1, \y
+	setfieldeffectargument 2, \priority
+	dofieldeffect FLDEFF_JUMP_SMALL_SPLASH;
+	.endm
+
+	
 	@ Prints a braille message, waits for an A or B press, then closes the message.
 	.macro braillemsgbox text:req
 	braillemessage \text

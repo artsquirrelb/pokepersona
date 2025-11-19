@@ -105,6 +105,7 @@ const u16 gItemIconPalette_FullRestore[] = INCBIN_U16("graphics/items/icon_palet
 const u32 gItemIcon_Revive[] = INCBIN_U32("graphics/items/icons/revive.4bpp.smol");
 const u16 gItemIconPalette_Revive[] = INCBIN_U16("graphics/items/icon_palettes/revive.gbapal");
 
+const u32 gItemIcon_MinRevive[] = INCBIN_U32("graphics/items/icons/min_revive.4bpp.smol");
 const u32 gItemIcon_MaxRevive[] = INCBIN_U32("graphics/items/icons/max_revive.4bpp.smol");
 
 const u32 gItemIcon_FreshWater[] = INCBIN_U32("graphics/items/icons/fresh_water.4bpp.smol");

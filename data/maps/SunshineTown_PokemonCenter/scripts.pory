@@ -65,8 +65,15 @@ script SunshineTown_PokemonCenter_Eventscript_MartLady {
         release
         end
     }
-    elif(flag(FLAG_SYS_POKEDEX_GET) == FALSE && var(VAR_AKIHIKOS_INTRO_STATE) >=14) {pokemart(SunshineTown_Mart_Basic)}
-	else {pokemart (SunshineTown_Mart_Expanded)}
+    if(flag(FLAG_SYS_POKEDEX_GET) == FALSE){
+        pokemart(GeneralMart_PreDex)
+    }
+	elif (flag(FLAG_SYS_POKEDEX_GET) == TRUE && var(VAR_AKIHIKOS_INTRO_STATE) < 100) {
+        pokemart (GeneralMart_Prologue)
+    }
+    elif (var(VAR_AKIHIKOS_INTRO_STATE) == 100){
+        pokemart (GeneralMart_C1_1)
+    }
     msgbox(gText_PleaseComeAgain)
     release
     end
@@ -74,7 +81,7 @@ script SunshineTown_PokemonCenter_Eventscript_MartLady {
 
 raw`
 	.align 2
-SunshineTown_Mart_Basic:
+GeneralMart_PreDex:
 	.2byte ITEM_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
@@ -82,13 +89,24 @@ SunshineTown_Mart_Basic:
 	pokemartlistend
 
 	.align 2
-SunshineTown_Mart_Expanded:
+GeneralMart_Prologue:
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
 	pokemartlistend
+
+    .align 2
+GeneralMart_C1_1:
+    .2byte ITEM_POKE_BALL
+    .2byte ITEM_POTION
+    .2byte ITEM_ANTIDOTE
+    .2byte ITEM_PARALYZE_HEAL
+    .2byte ITEM_AWAKENING
+    .2byte ITEM_BURN_HEAL
+    .2byte ITEM_ICE_HEAL
+    .2byte ITEM_MIN_REVIVE
 `
 
 movement SunshineTown_PokemonCenter_Eventscript_ShinjiroFacesTheMart {

@@ -14887,6 +14887,9 @@ void BS_ItemRestoreHP(void)
             case ITEM6_HEAL_HP_QUARTER:
                 healAmount = maxHP / 4;
                 break;
+            case ITEM6_HEAL_HP_ONE10TH:
+                healAmount = maxHP / 10;
+                break;
             default:
                 healAmount = healParam;
                 break;

@@ -101,13 +101,16 @@ SunshineTown_PokemonCenter_Eventscript_MartLady::
 	goto_if_eq SunshineTown_PokemonCenter_Eventscript_MartLady_2
 # 68 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	goto_if_unset FLAG_SYS_POKEDEX_GET, SunshineTown_PokemonCenter_Eventscript_MartLady_5
-SunshineTown_PokemonCenter_Eventscript_MartLady_4:
-# 69 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	pokemart SunshineTown_Mart_Expanded
-SunshineTown_PokemonCenter_Eventscript_MartLady_1:
-# 70 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	msgbox gText_PleaseComeAgain
 # 71 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	goto_if_set FLAG_SYS_POKEDEX_GET, SunshineTown_PokemonCenter_Eventscript_MartLady_9
+SunshineTown_PokemonCenter_Eventscript_MartLady_8:
+# 74 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 100
+	goto_if_eq SunshineTown_PokemonCenter_Eventscript_MartLady_7
+SunshineTown_PokemonCenter_Eventscript_MartLady_4:
+# 77 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	msgbox gText_PleaseComeAgain
+# 78 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	release
 	end
 
@@ -136,423 +139,476 @@ SunshineTown_PokemonCenter_Eventscript_MartLady_2:
 	release
 	end
 
-SunshineTown_PokemonCenter_Eventscript_MartLady_3:
-# 68 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	pokemart SunshineTown_Mart_Basic
-	goto SunshineTown_PokemonCenter_Eventscript_MartLady_1
-
 SunshineTown_PokemonCenter_Eventscript_MartLady_5:
-# 68 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 14
-	goto_if_ge SunshineTown_PokemonCenter_Eventscript_MartLady_3
+# 69 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	pokemart GeneralMart_PreDex
 	goto SunshineTown_PokemonCenter_Eventscript_MartLady_4
 
+SunshineTown_PokemonCenter_Eventscript_MartLady_6:
+# 72 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	pokemart GeneralMart_Prologue
+	goto SunshineTown_PokemonCenter_Eventscript_MartLady_4
 
+SunshineTown_PokemonCenter_Eventscript_MartLady_7:
 # 75 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	pokemart GeneralMart_C1_1
+	goto SunshineTown_PokemonCenter_Eventscript_MartLady_4
 
-# 76 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.align 2
-# 77 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-SunshineTown_Mart_Basic:
-# 78 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_POTION
-# 79 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_ANTIDOTE
-# 80 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_PARALYZE_HEAL
-# 81 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_AWAKENING
+SunshineTown_PokemonCenter_Eventscript_MartLady_9:
+# 71 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 100
+	goto_if_lt SunshineTown_PokemonCenter_Eventscript_MartLady_6
+	goto SunshineTown_PokemonCenter_Eventscript_MartLady_8
+
+
 # 82 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	pokemartlistend
+
 # 83 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-
-# 84 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.align 2
+# 84 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+GeneralMart_PreDex:
 # 85 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-SunshineTown_Mart_Expanded:
-# 86 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_POKE_BALL
-# 87 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.2byte ITEM_POTION
-# 88 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 86 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.2byte ITEM_ANTIDOTE
-# 89 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 87 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.2byte ITEM_PARALYZE_HEAL
-# 90 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 88 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.2byte ITEM_AWAKENING
-# 91 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 89 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	pokemartlistend
+# 90 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 
+# 91 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	.align 2
+# 92 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+GeneralMart_Prologue:
+# 93 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_POKE_BALL
 # 94 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-SunshineTown_PokemonCenter_Eventscript_ShinjiroFacesTheMart:
+	.2byte ITEM_POTION
 # 95 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	walk_up
+	.2byte ITEM_ANTIDOTE
 # 96 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_PARALYZE_HEAL
+# 97 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_AWAKENING
+# 98 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	pokemartlistend
+# 99 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+
+# 100 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+    .align 2
+# 101 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+GeneralMart_C1_1:
+# 102 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+    .2byte ITEM_POKE_BALL
+# 103 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+    .2byte ITEM_POTION
+# 104 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+    .2byte ITEM_ANTIDOTE
+# 105 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+    .2byte ITEM_PARALYZE_HEAL
+# 106 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+    .2byte ITEM_AWAKENING
+# 107 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+    .2byte ITEM_BURN_HEAL
+# 108 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+    .2byte ITEM_ICE_HEAL
+# 109 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+    .2byte ITEM_MIN_REVIVE
+
+# 112 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+SunshineTown_PokemonCenter_Eventscript_ShinjiroFacesTheMart:
+# 113 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	walk_up
+# 114 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	face_right
 	step_end
 
 SunshineTown_PokemonCenter_Eventscript_OnFrame14::
-# 100 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 118 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	goto SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient
-# 101 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 119 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	release
 	return
 
 
 SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient::
-# 105 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	lock
-# 106 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 107 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	applymovement LOCALID_PLAYER, SunshineTown_PokemonCenter_Eventscript_AkihikoMoveAround
-# 108 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	waitmovement
-# 109 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	msgbox SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_0
-# 112 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	closemessage
-# 113 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	applymovement LOCALID_PLAYER, walkright
-# 114 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	msgbox SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_1, MSGBOX_AUTOCLOSE
-# 116 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	special StopMapMusic
-# 117 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	playse SE_INTRO_BLAST
-# 118 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	call SunshineTown_PokemonCenter_Eventscript_CameraShake
-# 119 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	delay 1
-# 120 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	call SunshineTown_PokemonCenter_Eventscript_EveryonePin
-# 121 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	waitmovement 0
-# 122 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	playbgm MUS_HELP, TRUE
 # 123 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setflag FLAG_DONT_TRANSITION_MUSIC
+	lock
 # 124 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	applymovement LOCALID_PLAYER, faceleft
+	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 125 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	applymovement 7, faceright
+	applymovement LOCALID_PLAYER, SunshineTown_PokemonCenter_Eventscript_AkihikoMoveAround
 # 126 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	waitmovement 0
+	waitmovement
 # 127 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	msgbox SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_2
-# 131 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	msgbox SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_0
+# 130 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	closemessage
+# 131 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	applymovement LOCALID_PLAYER, walkright
 # 132 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	applymovement 7, SunshineTown_PokemonCenter_Eventscript_ShinjiroJoins
-# 133 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	waitmovement 0
+	msgbox SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_1, MSGBOX_AUTOCLOSE
 # 134 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	removeobject 7
+	special StopMapMusic
 # 135 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 15
+	playse SE_INTRO_BLAST
 # 136 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setflag FLAG_TEMP_1
+	call SunshineTown_PokemonCenter_Eventscript_CameraShake
 # 137 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	delay 1
 # 138 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	call SunshineTown_PokemonCenter_Eventscript_EveryonePin
+# 139 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	waitmovement 0
+# 140 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	playbgm MUS_HELP, TRUE
+# 141 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	setflag FLAG_DONT_TRANSITION_MUSIC
+# 142 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	applymovement LOCALID_PLAYER, faceleft
+# 143 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	applymovement 7, faceright
+# 144 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	waitmovement 0
+# 145 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	msgbox SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_2
+# 149 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	closemessage
+# 150 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	applymovement 7, SunshineTown_PokemonCenter_Eventscript_ShinjiroJoins
+# 151 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	waitmovement 0
+# 152 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	removeobject 7
+# 153 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 15
+# 154 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	setflag FLAG_TEMP_1
+# 155 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	clearflag FLAG_HIDE_TALK_BUTTON
+# 156 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	release
 	end
 
 
-# 142 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 160 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 emoteexclamation:
-# 143 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 161 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 147 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 165 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 SunshineTown_PokemonCenter_Eventscript_ShinjiroJoins:
-# 148 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 166 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_up
-# 149 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 167 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
 	step_end
 
 SunshineTown_PokemonCenter_Eventscript_EveryonePin::
-# 153 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 171 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	playse SE_PIN
-# 154 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 172 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement LOCALID_PLAYER, emoteexclamation
-# 155 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 173 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 2, emoteexclamation
-# 156 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 174 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 3, emoteexclamation
-# 157 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 175 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 4, emoteexclamation
-# 158 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 176 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 6, emoteexclamation
-# 159 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 177 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 5, emoteexclamation
-# 160 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 178 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 7, emoteexclamation
 	return
 
 
 SunshineTown_PokemonCenter_Eventscript_CameraShake::
-# 164 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 182 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay 20
-# 165 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 183 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setvar VAR_0x8004, 2
-# 166 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 184 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setvar VAR_0x8005, 4
-# 167 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 185 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setvar VAR_0x8006, 6
-# 168 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 186 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setvar VAR_0x8007, 4
-# 169 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 187 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	special ShakeCamera
-# 170 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 188 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	waitstate
-# 171 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 189 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay 30
 	return
 
 
-# 173 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 191 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 SunshineTown_PokemonCenter_Eventscript_AkihikoMoveAround:
-# 174 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 192 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_left
-# 175 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 193 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay_16
-# 176 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 194 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 177 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 195 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay_16
-# 178 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 196 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	emote_upset
 	step_end
 
-# 180 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 198 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 walkright:
-# 181 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 199 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
 	step_end
 
 SunshineTown_PokemonCenter_Eventscript_OldMan::
-# 185 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 203 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	lock
-# 186 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 204 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	faceplayer
-# 187 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 205 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setspeaker SunshineTown_PokemonCenter_Eventscript_OldMan_Text_0
-# 188 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 206 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 15
-	goto_if_ge SunshineTown_PokemonCenter_Eventscript_OldMan_2
-# 191 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	goto_if_ge SunshineTown_PokemonCenter_Eventscript_OldMan_4
+SunshineTown_PokemonCenter_Eventscript_OldMan_3:
+# 209 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	msgbox SunshineTown_PokemonCenter_Eventscript_OldMan_Text_2
 SunshineTown_PokemonCenter_Eventscript_OldMan_1:
-# 194 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 212 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	release
 	return
 
 SunshineTown_PokemonCenter_Eventscript_OldMan_2:
-# 189 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 207 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	msgbox SunshineTown_PokemonCenter_Eventscript_OldMan_Text_1
 	goto SunshineTown_PokemonCenter_Eventscript_OldMan_1
 
+SunshineTown_PokemonCenter_Eventscript_OldMan_4:
+# 206 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 24
+	goto_if_lt SunshineTown_PokemonCenter_Eventscript_OldMan_2
+	goto SunshineTown_PokemonCenter_Eventscript_OldMan_3
+
 
 SunshineTown_PokemonCenter_Eventscript_YoungBoy::
-# 198 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 216 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	lock
-# 199 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 217 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	faceplayer
-# 200 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 218 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setspeaker SunshineTown_PokemonCenter_Eventscript_YoungBoy_Text_0
-# 201 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 219 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 15
-	goto_if_ge SunshineTown_PokemonCenter_Eventscript_YoungBoy_2
-# 208 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	goto_if_ge SunshineTown_PokemonCenter_Eventscript_YoungBoy_4
+SunshineTown_PokemonCenter_Eventscript_YoungBoy_3:
+# 226 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	msgbox SunshineTown_PokemonCenter_Eventscript_YoungBoy_Text_2
 SunshineTown_PokemonCenter_Eventscript_YoungBoy_1:
-# 210 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 228 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	release
 	return
 
 SunshineTown_PokemonCenter_Eventscript_YoungBoy_2:
-# 202 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 220 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 1, shakehorizontal
-# 203 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 221 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	waitmovement 0
-# 204 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 222 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	msgbox SunshineTown_PokemonCenter_Eventscript_YoungBoy_Text_1
-# 205 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 223 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 8, lockdirectionandwalkinplace
 	goto SunshineTown_PokemonCenter_Eventscript_YoungBoy_1
 
+SunshineTown_PokemonCenter_Eventscript_YoungBoy_4:
+# 219 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 24
+	goto_if_lt SunshineTown_PokemonCenter_Eventscript_YoungBoy_2
+	goto SunshineTown_PokemonCenter_Eventscript_YoungBoy_3
 
-# 213 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+
+# 231 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 shakehorizontal:
-# 214 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 232 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	shake_horizontal
 	step_end
 
-# 217 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 235 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 lockdirectionandwalkinplace:
-# 218 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 236 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	lock_facing_direction
-# 219 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 237 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_in_place_right
-# 220 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 238 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	unlock_facing_direction
 	step_end
 
 SunshineTown_PokemonCenter_Eventscript_NPCPoochyena::
-# 224 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 242 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	lock
-# 225 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 243 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	faceplayer
-# 226 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 244 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	playmoncry SPECIES_POOCHYENA, CRY_MODE_NORMAL
-# 227 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 245 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	release
 	return
 
 
 SunshineTown_PokemonCenter_Eventscript_Gentleman::
-# 231 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 249 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	lock
-# 232 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 250 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	faceplayer
-# 233 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 251 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setspeaker SunshineTown_PokemonCenter_Eventscript_Gentleman_Text_0
-# 234 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 252 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 15
-	goto_if_ge SunshineTown_PokemonCenter_Eventscript_Gentleman_2
-# 238 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	goto_if_ge SunshineTown_PokemonCenter_Eventscript_Gentleman_4
+SunshineTown_PokemonCenter_Eventscript_Gentleman_3:
+# 256 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	msgbox SunshineTown_PokemonCenter_Eventscript_Gentleman_Text_2
 SunshineTown_PokemonCenter_Eventscript_Gentleman_1:
-# 242 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 260 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	release
 	return
 
 SunshineTown_PokemonCenter_Eventscript_Gentleman_2:
-# 235 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 253 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	msgbox SunshineTown_PokemonCenter_Eventscript_Gentleman_Text_1
 	goto SunshineTown_PokemonCenter_Eventscript_Gentleman_1
 
+SunshineTown_PokemonCenter_Eventscript_Gentleman_4:
+# 252 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	compare VAR_AKIHIKOS_INTRO_STATE, 24
+	goto_if_lt SunshineTown_PokemonCenter_Eventscript_Gentleman_2
+	goto SunshineTown_PokemonCenter_Eventscript_Gentleman_3
+
 
 SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene0::
-# 246 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 264 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	lockall
-# 247 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 265 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay 30
-# 248 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 266 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	special SpawnCameraObject
-# 249 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 267 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, SunshineTown_PokemonCenter_Eventscript_CameraToMartLady0
-# 250 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 268 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	waitmovement 0
-# 251 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 269 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	playse SE_EXIT
-# 252 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 270 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	removeobject LOCALID_PLAYER
-# 253 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 271 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay 30
-# 254 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 272 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_0
-# 255 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 273 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 6, walkleft
-# 256 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 274 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	waitmovement 0
-# 257 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 275 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	msgbox SunshineTown_PokemonCenter_Eventscript_MartLadyEndCutsceneText
-# 258 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 276 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	closemessage
-# 259 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 277 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	special RemoveCameraObject
-# 260 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 278 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 16
-# 261 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 279 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	warpsilent MAP_SUNSHINE_TOWN, 8, 4
-# 262 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 280 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	releaseall
 	end
 
 
 SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene1::
-# 267 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 285 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	lockall
-# 268 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 286 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay 30
-# 269 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 287 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	special SpawnCameraObject
-# 270 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 288 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, SunshineTown_PokemonCenter_Eventscript_CameraToMartLady1
-# 271 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 289 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	waitmovement 0
-# 272 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 290 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	playse SE_EXIT
-# 273 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 291 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	removeobject LOCALID_PLAYER
-# 274 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 292 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay 30
-# 275 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 293 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_0
-# 276 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 294 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 6, walkleft
-# 277 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 295 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	waitmovement 0
-# 278 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 296 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	msgbox SunshineTown_PokemonCenter_Eventscript_MartLadyEndCutsceneText
-# 279 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 297 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	closemessage
-# 280 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 298 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	special RemoveCameraObject
-# 281 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 299 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 16
-# 282 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 300 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	warpsilent MAP_SUNSHINE_TOWN, 8, 4
-# 283 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 301 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	releaseall
 	end
 
 
-# 287 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 305 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 walkleft:
-# 288 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 306 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_left
 	step_end
 
-# 291 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 309 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 SunshineTown_PokemonCenter_Eventscript_CameraToMartLady0:
-# 292 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 310 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_up
-# 293 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 311 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 293 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 311 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 293 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 311 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 293 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 311 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 293 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 311 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 293 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 311 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 293 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 311 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
 	step_end
 
-# 296 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 314 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 SunshineTown_PokemonCenter_Eventscript_CameraToMartLady1:
-# 297 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 315 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_up
-# 298 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 316 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 298 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 316 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 298 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 316 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 298 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 316 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 298 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 316 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
-# 298 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 316 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	walk_right
 	step_end
 
@@ -591,30 +647,30 @@ SunshineTown_PokemonCenter_Eventscript_MartLady_Text_3:
 	.string "One moment, please.$"
 
 SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_0:
-# 109 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 127 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}What's taking her so long??\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Yeah, it's been 10 minutes.$"
 
 SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_1:
-# 114 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 132 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Is there anything wrong, ma'am-$"
 
 SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_2:
-# 127 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 145 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that??\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}Sounded like an explosion.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Shinji, let's go check.$"
 
 SunshineTown_PokemonCenter_Eventscript_OldMan_Text_0:
-# 187 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 205 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "Oda$"
 
 SunshineTown_PokemonCenter_Eventscript_OldMan_Text_1:
-# 189 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 207 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "That almost gave me a heartattack...$"
 
 SunshineTown_PokemonCenter_Eventscript_OldMan_Text_2:
-# 191 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 209 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "Back in the day, Pokémon Center and\n"
 	.string "Pokémart used to be in two separate\l"
 	.string "buildings.\p"
@@ -622,31 +678,31 @@ SunshineTown_PokemonCenter_Eventscript_OldMan_Text_2:
 	.string "convenient like this.$"
 
 SunshineTown_PokemonCenter_Eventscript_YoungBoy_Text_0:
-# 200 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 218 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "Kenta$"
 
 SunshineTown_PokemonCenter_Eventscript_YoungBoy_Text_1:
-# 204 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 222 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "I-I'm fine. With Poochyena here, I'll be\n"
 	.string "fine.$"
 
 SunshineTown_PokemonCenter_Eventscript_YoungBoy_Text_2:
-# 208 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 226 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "My mom said I couldn't have a Pokédex\n"
 	.string "because it was too expensive.$"
 
 SunshineTown_PokemonCenter_Eventscript_Gentleman_Text_0:
-# 233 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 251 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "Watanabe$"
 
 SunshineTown_PokemonCenter_Eventscript_Gentleman_Text_1:
-# 235 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 253 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "It sounds dangerous outside, you kids\n"
 	.string "should stay here.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Thank you, sir, but we'll be fine.$"
 
 SunshineTown_PokemonCenter_Eventscript_Gentleman_Text_2:
-# 238 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 256 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "The Kirijo group specializes in\n"
 	.string "researching Pokémon in this region.\p"
 	.string "They do a good job at it but on the\n"
@@ -654,6 +710,6 @@ SunshineTown_PokemonCenter_Eventscript_Gentleman_Text_2:
 	.string "DexNav cost you a fortune.$"
 
 SunshineTown_PokemonCenter_Eventscript_MartLadyEndCutsceneText::
-# 301 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+# 319 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "Sorry, Kobayashi. This is the best I\n"
 	.string "could do.$"

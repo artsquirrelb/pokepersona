@@ -48,6 +48,11 @@ const u8 gItemEffect_FullHeal[6] = {
     [3] = ITEM3_STATUS_ALL,
 };
 
+const u8 gItemEffect_MinRevive[7] = {
+    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP,
+    [6] = ITEM6_HEAL_HP_ONE10TH,
+};
+
 const u8 gItemEffect_Revive[7] = {
     [4] = ITEM4_REVIVE | ITEM4_HEAL_HP,
     [6] = ITEM6_HEAL_HP_HALF,

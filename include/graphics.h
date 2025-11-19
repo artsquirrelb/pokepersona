@@ -434,6 +434,7 @@ extern const u16 gItemIconPalette_MaxPotion[];
 extern const u16 gItemIconPalette_FullRestore[];
 extern const u32 gItemIcon_Revive[];
 extern const u16 gItemIconPalette_Revive[];
+extern const u32 gItemIcon_MinRevive[];
 extern const u32 gItemIcon_MaxRevive[];
 extern const u32 gItemIcon_FreshWater[];
 extern const u16 gItemIconPalette_FreshWater[];

@@ -726,6 +726,25 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_FullRestore,
     },
 
+    [ITEM_MIN_REVIVE] =
+    {
+        .name = ITEM_NAME("Min Revive"),
+        .price = (I_PRICE >= GEN_7) ? 1000 : 500,
+        .description = COMPOUND_STRING(
+            "Revives a fainted\n"
+            "Pokémon with 1/10\n"
+            "of its HP."),
+        .pocket = POCKET_MEDICINES,
+        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_REVIVE,
+        .effect = gItemEffect_MinRevive,
+        .flingPower = 30,
+        .iconPic = gItemIcon_MinRevive,
+        .iconPalette = gItemIconPalette_Revive,
+    },
+
     [ITEM_REVIVE] =
     {
         .name = ITEM_NAME("Revive"),

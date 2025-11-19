@@ -1075,7 +1075,10 @@
 #define ITEM_TM149 906
 #define ITEM_TM150 907
 
-#define ITEMS_COUNT 908
+//NEW POKEPERSONA ITEMS
+#define ITEM_MIN_REVIVE 908
+
+#define ITEMS_COUNT 909
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

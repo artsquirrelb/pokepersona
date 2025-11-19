@@ -2646,6 +2646,11 @@ static u32 GetHPHealAmount(u8 itemEffectParam, struct Pokemon *mon)
         if (itemEffectParam == 0)
             itemEffectParam = 1;
         break;
+    case ITEM6_HEAL_HP_ONE10TH:
+        itemEffectParam = GetMonData(mon, MON_DATA_MAX_HP, NULL) / 10;
+        if (itemEffectParam == 0)
+            itemEffectParam = 1;
+        break;
     }
 
     return itemEffectParam;

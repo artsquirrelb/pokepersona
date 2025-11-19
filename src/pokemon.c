@@ -4040,6 +4040,11 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                             if (dataUnsigned == 0)
                                 dataUnsigned = 1;
                             break;
+                        case ITEM6_HEAL_HP_ONE10TH:
+                            dataUnsigned = maxHP / 10;
+                            if (dataUnsigned == 0)
+                                dataUnsigned = 1;
+                            break;
                         }
 
                         // Only restore HP if not at max health

@@ -5524,7 +5524,7 @@
     {
       "id": "LAYOUT_SUNSHINE_MEADOW",
       "name": "SunshineMeadow_Layout",
-      "width": 20,
+      "width": 22,
       "height": 30,
       "border_width": 2,
       "border_height": 2,
@@ -5628,6 +5628,18 @@
       "secondary_tileset": "gTileset_HiddenGrotto",
       "border_filepath": "data/layouts/SunshineTown_HiddenGrotto/border.bin",
       "blockdata_filepath": "data/layouts/SunshineTown_HiddenGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_THUNDERSHARDS_MT_SUNSHINE_MEADOW",
+      "name": "ThundershardsMtSunshineMeadow_Layout",
+      "width": 22,
+      "height": 12,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_Forest",
+      "border_filepath": "data/layouts/ThundershardsMtSunshineMeadow/border.bin",
+      "blockdata_filepath": "data/layouts/ThundershardsMtSunshineMeadow/map.bin"
     }
   ]
 }

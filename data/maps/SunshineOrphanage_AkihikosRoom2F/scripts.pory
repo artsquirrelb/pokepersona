@@ -74,7 +74,6 @@ script Miki_Inviting_Akihiko_To_Play{
     waitmovement(0)
     playse(SE_EXIT)
     setflag(FLAG_TEMP_1)
-    setflag (FLAG_VISITED_SUNSHINE_ORPHANAGE)
     setvar(VAR_AKIHIKOS_INTRO_STATE , 2)
     clearflag(FLAG_HIDE_TALK_BUTTON)
     removeobject(1)

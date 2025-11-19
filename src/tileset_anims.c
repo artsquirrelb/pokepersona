@@ -80,10 +80,14 @@ static void QueueAnimTiles_Gen4General_RedFlower(u16);
 static void QueueAnimTiles_Gen4General_BlueFlower(u16);
 static void QueueAnimTiles_Gen4General_WhiteFlower(u16);
 static void QueueAnimTiles_Gen4General_YellowFlower(u16);
+static void QueueAnimTiles_Gen4General_Pond(u16);
+static void QueueAnimTiles_Gen4General_PondEdge(u16);
+static void QueueAnimTiles_Gen4General_PondStone(u16);
 static void QueueAnimTiles_SunshineOrphanageEntrance_Fire(u16);
 static void QueueAnimTiles_MansionGarden_BlueFlower(u16);
 static void QueueAnimTiles_MansionGarden_YellowFlower(u16);
 static void QueueAnimTiles_MansionGarden_Fountain(u16);
+
 
 
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
@@ -219,6 +223,66 @@ const u16 *const gTilesetAnim_Gen4General_YellowFlower[] = {
     gTilesetAnim_Gen4General_YellowFlower_Frame1,
     gTilesetAnim_Gen4General_YellowFlower_Frame2,
     gTilesetAnim_Gen4General_YellowFlower_Frame3,
+};
+
+const u16 gTilesetAnim_Gen4General_Pond_Frame0[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pond/0.4bpp");
+const u16 gTilesetAnim_Gen4General_Pond_Frame1[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pond/1.4bpp");
+const u16 gTilesetAnim_Gen4General_Pond_Frame2[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pond/2.4bpp");
+const u16 gTilesetAnim_Gen4General_Pond_Frame3[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pond/3.4bpp");
+const u16 gTilesetAnim_Gen4General_Pond_Frame4[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pond/4.4bpp");
+const u16 gTilesetAnim_Gen4General_Pond_Frame5[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pond/5.4bpp");
+const u16 gTilesetAnim_Gen4General_Pond_Frame6[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pond/6.4bpp");
+const u16 gTilesetAnim_Gen4General_Pond_Frame7[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pond/7.4bpp");
+
+const u16 *const gTilesetAnim_Gen4General_Pond[] = {
+    gTilesetAnim_Gen4General_Pond_Frame0,
+    gTilesetAnim_Gen4General_Pond_Frame1,
+    gTilesetAnim_Gen4General_Pond_Frame2,
+    gTilesetAnim_Gen4General_Pond_Frame3,
+    gTilesetAnim_Gen4General_Pond_Frame4,
+    gTilesetAnim_Gen4General_Pond_Frame5,
+    gTilesetAnim_Gen4General_Pond_Frame6,
+    gTilesetAnim_Gen4General_Pond_Frame7,
+};
+
+const u16 gTilesetAnim_Gen4General_PondEdge_Frame0[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondedge/0.4bpp");
+const u16 gTilesetAnim_Gen4General_PondEdge_Frame1[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondedge/1.4bpp");
+const u16 gTilesetAnim_Gen4General_PondEdge_Frame2[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondedge/2.4bpp");
+const u16 gTilesetAnim_Gen4General_PondEdge_Frame3[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondedge/3.4bpp");
+const u16 gTilesetAnim_Gen4General_PondEdge_Frame4[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondedge/4.4bpp");
+const u16 gTilesetAnim_Gen4General_PondEdge_Frame5[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondedge/5.4bpp");
+const u16 gTilesetAnim_Gen4General_PondEdge_Frame6[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondedge/6.4bpp");
+const u16 gTilesetAnim_Gen4General_PondEdge_Frame7[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondedge/7.4bpp");
+
+const u16 *const gTilesetAnim_Gen4General_PondEdge[] = {
+    gTilesetAnim_Gen4General_PondEdge_Frame0,
+    gTilesetAnim_Gen4General_PondEdge_Frame1,
+    gTilesetAnim_Gen4General_PondEdge_Frame2,
+    gTilesetAnim_Gen4General_PondEdge_Frame3,
+    gTilesetAnim_Gen4General_PondEdge_Frame4,
+    gTilesetAnim_Gen4General_PondEdge_Frame5,
+    gTilesetAnim_Gen4General_PondEdge_Frame6,
+    gTilesetAnim_Gen4General_PondEdge_Frame7,
+};
+
+const u16 gTilesetAnim_Gen4General_PondStone_Frame0[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondstone/0.4bpp");
+const u16 gTilesetAnim_Gen4General_PondStone_Frame1[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondstone/1.4bpp");
+const u16 gTilesetAnim_Gen4General_PondStone_Frame2[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondstone/2.4bpp");
+const u16 gTilesetAnim_Gen4General_PondStone_Frame3[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondstone/3.4bpp");
+const u16 gTilesetAnim_Gen4General_PondStone_Frame4[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondstone/4.4bpp");
+const u16 gTilesetAnim_Gen4General_PondStone_Frame5[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondstone/5.4bpp");
+const u16 gTilesetAnim_Gen4General_PondStone_Frame6[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondstone/6.4bpp");
+const u16 gTilesetAnim_Gen4General_PondStone_Frame7[] = INCBIN_U16("data/tilesets/primary/gen_4general/anim/pondstone/7.4bpp");
+
+const u16 *const gTilesetAnim_Gen4General_PondStone[] = {
+    gTilesetAnim_Gen4General_PondStone_Frame0,
+    gTilesetAnim_Gen4General_PondStone_Frame1,
+    gTilesetAnim_Gen4General_PondStone_Frame2,
+    gTilesetAnim_Gen4General_PondStone_Frame3,
+    gTilesetAnim_Gen4General_PondStone_Frame4,
+    gTilesetAnim_Gen4General_PondStone_Frame5,
+    gTilesetAnim_Gen4General_PondStone_Frame6,
+    gTilesetAnim_Gen4General_PondStone_Frame7,
 };
 
 const u16 gTilesetAnim_SunshineOrphanageEntrance_Fire_Frame0[] = INCBIN_U16("data/tilesets/secondary/sunshine_orphanage_entrance/anim/fire/0.4bpp");
@@ -774,6 +838,12 @@ static void TilesetAnim_Gen4General(u16 timer)
         QueueAnimTiles_Gen4General_YellowFlower(timer / 16);
     if (timer % 16 == 3)
         QueueAnimTiles_Gen4General_WhiteFlower(timer / 16);
+    if (timer % 16 == 4)
+        QueueAnimTiles_Gen4General_Pond(timer / 16);
+    if (timer % 16 == 5)
+        QueueAnimTiles_Gen4General_PondEdge(timer / 16);
+    if (timer % 16 == 6)
+        QueueAnimTiles_Gen4General_PondStone(timer / 16);
 }
 
 static void TilesetAnim_Building(u16 timer)
@@ -810,6 +880,24 @@ static void QueueAnimTiles_Gen4General_YellowFlower(u16 timer)
 {
     u16 i = timer % ARRAY_COUNT(gTilesetAnim_Gen4General_YellowFlower);
     AppendTilesetAnimToBuffer(gTilesetAnim_Gen4General_YellowFlower[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(0x056)), 4 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Gen4General_Pond(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnim_Gen4General_Pond);
+    AppendTilesetAnimToBuffer(gTilesetAnim_Gen4General_Pond[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(384)), 20 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Gen4General_PondEdge(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnim_Gen4General_PondEdge);
+    AppendTilesetAnimToBuffer(gTilesetAnim_Gen4General_PondEdge[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(404)), 24 * TILE_SIZE_4BPP);
+}
+
+static void QueueAnimTiles_Gen4General_PondStone(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnim_Gen4General_PondStone);
+    AppendTilesetAnimToBuffer(gTilesetAnim_Gen4General_PondStone[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(352)), 4 * TILE_SIZE_4BPP);
 }
 
 static void QueueAnimTiles_SunshineOrphanageEntrance_Fire(u16 timer)

@@ -906,6 +906,8 @@ script Route2_House_Eventscript_Bathroom {
         if (var(VAR_RESULT) == TRUE){
             hidefollowernpc
             fadescreenswapbuffers(FADE_TO_BLACK)
+            destroyfollowernpc
+            clearflag(FLAG_FOLLOWERS_DISABLED)
             playse(SE_DOOR)
             waitse
             playse(SE_DOWNPOUR)

@@ -1,0 +1,26 @@
+{
+  "id": "MAP_THUNDERSHARDS_MT_SUNSHINE_MEADOW",
+  "name": "ThundershardsMtSunshineMeadow",
+  "layout": "LAYOUT_THUNDERSHARDS_MT_SUNSHINE_MEADOW",
+  "music": "MUS_MT_PYRE_EXTERIOR",
+  "region_map_section": "MAPSEC_THUNDERSHARDS_CLIFF",
+  "requires_flash": false,
+  "weather": "WEATHER_RAIN_THUNDERSTORM",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_SUNSHINE_MEADOW",
+      "offset": 0,
+      "direction": "down"
+    }
+  ],
+  "object_events": [],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

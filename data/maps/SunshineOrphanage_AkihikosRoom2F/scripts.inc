@@ -169,7 +169,6 @@ Miki_Inviting_Akihiko_To_Play::
 # 76 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setflag FLAG_TEMP_1
 # 77 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	setflag FLAG_VISITED_SUNSHINE_ORPHANAGE
 # 78 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 2
 # 79 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"

@@ -4,7 +4,7 @@
 #include "constants/global.h"
 #include "constants/map_event_ids.h"
 
-#define OBJ_EVENT_GFX_QUINTY_PLUMP                 0
+#define OBJ_EVENT_GFX_LIGHT_SPRITE                 0
 #define OBJ_EVENT_GFX_BRENDAN_MACH_BIKE            1
 #define OBJ_EVENT_GFX_BRENDAN_SURFING              2
 #define OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE           3
@@ -245,7 +245,7 @@
 #define OBJ_EVENT_GFX_HOOH                       238
 #define OBJ_EVENT_GFX_POKE_BALL                  239
 #define OBJ_EVENT_GFX_OW_MON                     240
-#define OBJ_EVENT_GFX_LIGHT_SPRITE               241
+#define OBJ_EVENT_GFX_QUINTY_PLUMP               241
 #define OBJ_EVENT_GFX_SHINJIRO                   242
 #define OBJ_EVENT_GFX_SHINJIRO_FAINTED           243
 #define OBJ_EVENT_GFX_AKIHIKO_FAINTED            244

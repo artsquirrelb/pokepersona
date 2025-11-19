@@ -1223,3 +1223,5 @@ EventScript_VsSeekerChargingDone::
 
 	.include "data/maps/SunshineTown_HiddenGrotto/scripts.inc"
 	.include "data/scripts/apricorn_tree.inc"
+
+	.include "data/maps/ThundershardsMtSunshineMeadow/scripts.inc"

@@ -38,9 +38,12 @@ script PokemonCenter_Eventscript_Nurse {
 }
 
 script PCStorage {
+    setflag(FLAG_HIDE_TALK_BUTTON)
     lock
     call(EventScript_PC)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
     release
+
 }
 
 script SunshineTown_PokemonCenter_Eventscript_MartLady {

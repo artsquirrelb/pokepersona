@@ -1539,6 +1539,7 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
     DestroyTask(taskId);
     HeatStartMenu_ExitAndClearTilemap();
     FlagClear(FLAG_HIDE_TALK_BUTTON);
+    LockPlayerFieldControls();
     ScriptContext_SetupScript(EventScript_RegionMap);
 
   } else if (JOY_NEW(B_BUTTON) && sHeatStartMenu->loadState == 0) {

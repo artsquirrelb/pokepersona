@@ -1,5 +1,6 @@
 mapscripts SunshineTown_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_VISITED_SUNSHINE_TOWN)
         if (flag(FLAG_SYS_QUEST_MENU_GET) == FALSE){
             setobjectxyperm(5, 19, 7)
             setobjectmovementtype(5, MOVEMENT_TYPE_FACE_UP)

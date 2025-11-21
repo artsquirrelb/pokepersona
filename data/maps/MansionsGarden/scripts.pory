@@ -346,6 +346,8 @@ script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
     closemessage
     setrespawn(HEAL_LOCATION_MANSION_TRAINING_HOUSE)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
     release
     end
 }

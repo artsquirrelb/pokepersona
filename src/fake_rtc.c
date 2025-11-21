@@ -73,7 +73,7 @@ void FakeRtc_ForwardTimeTo(u32 hour, u32 minute, u32 second)
 
     FakeRtc_CalcTimeDifference(&diff, fakeRtc, &target);
     FakeRtc_AdvanceTimeBy(0, diff.hours, diff.minutes, diff.seconds);
-    Script_ResumeFakeRtc();
+    //Script_ResumeFakeRtc();
 }
 
 static void FakeRtc_CalcTimeDifference(struct Time *result, struct SiiRtcInfo *t1, struct Time *t2)

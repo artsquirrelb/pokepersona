@@ -5,6 +5,7 @@ mapscripts ThundershardsCave_2F_MapScripts {
         if (var(VAR_MITSURUS_INTRO_STATE) == 13 || var(VAR_MITSURUS_INTRO_STATE) == 14){
             setflag(FLAG_TEMP_3)
             setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
             addobject(12)
         }
         if (var(VAR_MITSURUS_INTRO_STATE) > 13){
@@ -147,7 +148,7 @@ script ThundershardsCave_2F_Eventscript_FreezingKGStaff {
     clearflag(FLAG_TEMP_4)
     addobject(21, MAP_THUNDERSHARDS_CAVE_2F)
     showobjectat(21, MAP_THUNDERSHARDS_CAVE_2F)
-    applymovement(21, moves(walk_left, set_visible, jump_right))
+    applymovement(21, moves(set_visible, jump_right))
     delay(8)
     playse(SE_LEDGE)
     waitmovement(21)

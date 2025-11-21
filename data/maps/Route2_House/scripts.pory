@@ -5,8 +5,14 @@ mapscripts Route2_House_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 38: Route2_House_Eventscript_AkihikoOnWarp38
         VAR_AKIHIKOS_INTRO_STATE, 39: Route2_House_Eventscript_AkihikoOnWarp39
         VAR_AKIHIKOS_INTRO_STATE, 42: Route2_House_Eventscript_AkihikoOnWarp42
+        ////////
+        VAR_MITSURUS_INTRO_STATE, 8: Route2_House_Eventscript_MitsuruOnWarp8
+        VAR_MITSURUS_INTRO_STATE, 10: Route2_House_Eventscript_MitsuruOnWarp10
     ]
     MAP_SCRIPT_ON_TRANSITION{
+        if (var(VAR_AKIHIKOS_INTRO_STATE) != 39){
+            setflag(FLAG_TEMP_3)
+        }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 27){
             setflag(FLAG_SPAWN_INVISIBLE)
             setobjectxyperm(6, 6, 8)
@@ -35,10 +41,8 @@ mapscripts Route2_House_MapScripts {
             playbgm(MUS_NONE, TRUE)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 39){
-            //playbgm(MUS_RG_SS_ANNE, TRUE)
             setflag(FLAG_HIDE_TALK_BUTTON)
-            setobjectxyperm(1, 3, 4)
-            setobjectmovementtype(1, MOVEMENT_TYPE_FACE_UP)
+            hideobjectat(1, MAP_ROUTE2_HOUSE)
             setobjectxyperm(5, 4, 4)
             setobjectmovementtype(5, MOVEMENT_TYPE_FACE_UP)
             setobjectxyperm(4, 4, 7)
@@ -61,6 +65,9 @@ mapscripts Route2_House_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 39: Route2_House_Eventscript_AkihikoOnFrame39
         VAR_AKIHIKOS_INTRO_STATE, 42: Route2_House_Eventscript_AkihikoOnFrame42
         VAR_AKIHIKOS_INTRO_STATE, 43: Route2_House_Eventscript_AkihikoOnFrame43
+        /////////////
+        VAR_MITSURUS_INTRO_STATE, 8: Route2_House_Eventscript_MitsuruOnFrame8
+        VAR_MITSURUS_INTRO_STATE, 10: Route2_House_Eventscript_MitsuruOnFrame10
     ]
 }
 
@@ -85,6 +92,9 @@ script Route2_House_Eventscript_AkihikoOnWarp42 {
     applymovement(LOCALID_PLAYER, faceleft)
 }
 
+script Route2_House_Eventscript_MitsuruOnWarp10 {
+    applymovement(LOCALID_PLAYER, faceright)
+}
 
 script Route2_House_Eventscript_AkihikoOnFrame27 {
     goto (Route2_House_Eventscript_AkiShinjiWakingUp)
@@ -92,6 +102,10 @@ script Route2_House_Eventscript_AkihikoOnFrame27 {
 
 script Route2_House_Eventscript_AkihikoOnFrame32 {
     goto (Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru)
+}
+
+script Route2_House_Eventscript_MitsuruOnFrame8 {
+    goto (Route2_House_Eventscript_MitsuruRestForTheNight)    
 }
 
 script Route2_House_Eventscript_AkiShinjiWakingUp {
@@ -245,7 +259,7 @@ script Route2_House_Eventscript_TriosFirstGreeting {
     warpsilent(MAP_BLANK_MAP, 0, 0)
     special(RemoveCameraObject)
     fwdtime(13, 20)
-    pausefakertc
+    //pausefakertc
     release
     end
 }
@@ -504,7 +518,7 @@ script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru {
     clearflag(FLAG_HIDE_TALK_BUTTON)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fwdtime(13, 40)
-    pausefakertc
+    //pausefakertc
     release
     end
 }
@@ -820,12 +834,15 @@ script Route2_House_Eventscript_AkihikoCantSleep {
     applymovement(LOCALID_PLAYER, faceup)
     waitmovement(0)
     special(SpawnCameraObject)
-    applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesUp2)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up*4))
     waitmovement(0)
+    applymovement(7, emoteasleep)
+    waitmovement
     delay(30)
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Kirijo is already sleeping soundly. She won't know if I sneak out.)"))
     closemessage
     delay(20)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_fast_down*2))
     applymovement(4, facedown)
     waitmovement(0)
     playse(SE_PIN)
@@ -924,27 +941,51 @@ script Route2_House_Eventscript_Bathroom {
             playse(SE_SHINY)
             applymovement(LOCALID_PLAYER, emotemusic)
             waitmovement(0)
-            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}(All refreshed.)"))
+            checkplayergender
+            if (var(VAR_RESULT) == MALE){
+                addtime(0, 0, 10)
+                msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}(All refreshed.)"))
+            }
+            else{
+                addtime(0, 0, 40)
+                msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}(That really freshened me up.)"))
+            }
             closemessage
             special(HealPlayerParty)
             setvar(VAR_TEMP_0, 1)
         }
         else{
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Nah, I think I'm good.)"))
-        closemessage
-        applymovement(LOCALID_PLAYER, faceleft)
-        waitmovement(0)
+            checkplayergender
+            if(var(VAR_RESULT) == MALE){
+                msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Nah, I think I'm good.)"))
+            }
+            else{
+                msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Let's do it later.)"))
+            }
+            closemessage
+            applymovement(LOCALID_PLAYER, faceleft)
+            waitmovement(0)
         }
     }
     elif (var(VAR_TEMP_0) == 1){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(I just used the bathroom.)"))
+        checkplayergender
+        if (var(VAR_RESULT) == MALE){
+            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(I just used the bathroom.)"))
+        }
+        else{
+            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Let's not waste time any further.)"))
+        }
         closemessage
         applymovement(LOCALID_PLAYER, faceleft)
         waitmovement(0)
-        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 42)
-            {
+        checkplayergender
+        if(var(VAR_RESULT) == MALE && var(VAR_AKIHIKOS_INTRO_STATE) >= 42)
+        {
             setvar(VAR_TEMP_0, 2)
-            }
+        }
+        release
+        end
+
     }
     elif(var(VAR_TEMP_0) == 2){
         msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(That reminds me, Kirijo took a really long bath yesterday.)\p
@@ -1028,7 +1069,6 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     removeobject(4)
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down *3))
-    applymovement(LOCALID_PLAYER, facedown)
     waitmovement(OBJ_EVENT_ID_CAMERA)
     special(RemoveCameraObject)
     delay(20)
@@ -1037,12 +1077,16 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     msgbox(format("Akihiko's Prologue: Sunshine Memories\n
     {COLOR GREEN}{CLEAR_TO 64}COMPLETE\p
     {COLOR DARK_GRAY}{CLEAR_TO 32}Chapter 1: Under The Rubbles\n
-    {COLOR GREEN}{CLEAR_TO 64}Level cap: 18"))
+    {COLOR GREEN}{CLEAR_TO 64}Level cap: 18\p
+    {COLOR RED}Mitsuru's Prologue {COLOR GREEN}unlocked. Check Quest Menu for more details."))
+    closemessage
     setflag(FLAG_TEMP_1)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 100) //complete akihiko's prologue
     setvar(VAR_CURRENT_LEVEL_CAP, 18)
     clearflag(FLAG_HIDE_TALK_BUTTON)
-    resumefakertc
+    applymovement(LOCALID_PLAYER, facedown)
+    waitmovement
+    makecharaAvailable(CHARACTER_SHINJIRO)
     release
     end
 }
@@ -1070,4 +1114,42 @@ movement MitsuruJoinsTheFirstMorning {
 movement InteleonJoinsTheFirstMorning {
     walk_right *4
     set_invisible
+}
+
+script Route2_House_Eventscript_MitsuruOnWarp8{
+    applymovement(LOCALID_PLAYER, faceup)
+}
+
+script Route2_House_Eventscript_MitsuruRestForTheNight {
+    lock
+    applymovement(LOCALID_PLAYER, moves(walk_up*4, walk_left*2, walk_up*2, delay_16, delay_16, face_right, delay_16, delay_16, face_up, delay_16, delay_16 face_left))
+    waitmovement
+    delay(30)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Not too shabby. This will do."))
+    closemessage
+    setvar(VAR_MITSURUS_INTRO_STATE, 9)
+    setflag(FLAG_HIDE_TALK_BUTTON)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
+    warpsilent(MAP_BLANK_MAP)
+    end
+}
+
+script Route2_House_Eventscript_MitsuruOnFrame10 {
+    lock
+    msgbox(format("{CLEAR_TO 64}Friday, 6:25 AM"))
+    closemessage
+    goto(Route2_House_Eventscript_MitsuruPostRest)
+}
+
+script Route2_House_Eventscript_MitsuruPostRest {
+    delay(20)
+    applymovement(LOCALID_PLAYER, faceup)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(The sun's up. Time to move out.)"))
+    closemessage
+    setvar(VAR_MITSURUS_INTRO_STATE, 11)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    release
+    end
 }

@@ -627,87 +627,89 @@ MansionsGarden_Eventscript_SayingGoodbyeToKikuno::
 # 347 "data/maps/MansionsGarden/scripts.pory"
 	setrespawn HEAL_LOCATION_MANSION_TRAINING_HOUSE
 # 348 "data/maps/MansionsGarden/scripts.pory"
+	clearflag FLAG_DONT_TRANSITION_MUSIC
+# 349 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 
 MansionsGarden_Eventscript_Indeedee::
-# 353 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 354 "data/maps/MansionsGarden/scripts.pory"
-	faceplayer
+	lock
 # 355 "data/maps/MansionsGarden/scripts.pory"
-	playmoncry SPECIES_INDEEDEE_F, CRY_MODE_NORMAL
+	faceplayer
 # 356 "data/maps/MansionsGarden/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_INDEEDEE_F, CRY_MODE_NORMAL
 # 357 "data/maps/MansionsGarden/scripts.pory"
+	waitmoncry
+# 358 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 
 MansionsGarden_Eventscript_TrainingHouse_Sign::
-# 362 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 363 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_TrainingHouse_Sign_Text_0
+	lock
 # 364 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MansionsGarden_Eventscript_TrainingHouse_Sign_Text_0
 # 365 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 366 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 
 MansionsGarden_Eventscript_GuestHouse_Sign::
-# 370 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 371 "data/maps/MansionsGarden/scripts.pory"
-	msgbox MansionsGarden_Eventscript_GuestHouse_Sign_Text_0
+	lock
 # 372 "data/maps/MansionsGarden/scripts.pory"
-	closemessage
+	msgbox MansionsGarden_Eventscript_GuestHouse_Sign_Text_0
 # 373 "data/maps/MansionsGarden/scripts.pory"
+	closemessage
+# 374 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 
 MansionsGarden_Eventscript_WaiterKouhei::
-# 378 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 379 "data/maps/MansionsGarden/scripts.pory"
-	faceplayer
+	lock
 # 380 "data/maps/MansionsGarden/scripts.pory"
-	setspeaker MansionsGarden_Eventscript_WaiterKouhei_Text_0
+	faceplayer
 # 381 "data/maps/MansionsGarden/scripts.pory"
+	setspeaker MansionsGarden_Eventscript_WaiterKouhei_Text_0
+# 382 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 10
 	goto_if_lt MansionsGarden_Eventscript_WaiterKouhei_2
 MansionsGarden_Eventscript_WaiterKouhei_1:
-# 386 "data/maps/MansionsGarden/scripts.pory"
+# 387 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
 MansionsGarden_Eventscript_WaiterKouhei_2:
-# 382 "data/maps/MansionsGarden/scripts.pory"
+# 383 "data/maps/MansionsGarden/scripts.pory"
 	msgbox MansionsGarden_Eventscript_WaiterKouhei_Text_1
-# 384 "data/maps/MansionsGarden/scripts.pory"
+# 385 "data/maps/MansionsGarden/scripts.pory"
 	closemessage
 	goto MansionsGarden_Eventscript_WaiterKouhei_1
 
 
 MansionsGarden_Eventscript_Furfrou::
-# 391 "data/maps/MansionsGarden/scripts.pory"
-	lock
 # 392 "data/maps/MansionsGarden/scripts.pory"
-	faceplayer
+	lock
 # 393 "data/maps/MansionsGarden/scripts.pory"
-	playmoncry SPECIES_FURFROU, CRY_MODE_NORMAL
+	faceplayer
 # 394 "data/maps/MansionsGarden/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_FURFROU, CRY_MODE_NORMAL
 # 395 "data/maps/MansionsGarden/scripts.pory"
-	startoverworldencounter 5
+	waitmoncry
 # 396 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_TEMP_3
+	startoverworldencounter 5
 # 397 "data/maps/MansionsGarden/scripts.pory"
-	removeobject FURFROU
+	setflag FLAG_TEMP_3
 # 398 "data/maps/MansionsGarden/scripts.pory"
+	removeobject FURFROU
+# 399 "data/maps/MansionsGarden/scripts.pory"
 	release
 	end
 
@@ -1065,19 +1067,19 @@ MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_3:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I should get going now.)$"
 
 MansionsGarden_Eventscript_TrainingHouse_Sign_Text_0:
-# 363 "data/maps/MansionsGarden/scripts.pory"
+# 364 "data/maps/MansionsGarden/scripts.pory"
 	.string "Training House$"
 
 MansionsGarden_Eventscript_GuestHouse_Sign_Text_0:
-# 371 "data/maps/MansionsGarden/scripts.pory"
+# 372 "data/maps/MansionsGarden/scripts.pory"
 	.string "Guest & Staff House$"
 
 MansionsGarden_Eventscript_WaiterKouhei_Text_0:
-# 380 "data/maps/MansionsGarden/scripts.pory"
+# 381 "data/maps/MansionsGarden/scripts.pory"
 	.string "Kouhei$"
 
 MansionsGarden_Eventscript_WaiterKouhei_Text_1:
-# 382 "data/maps/MansionsGarden/scripts.pory"
+# 383 "data/maps/MansionsGarden/scripts.pory"
 	.string "It's my shift to stand guard tonight,\n"
 	.string "Young Lady.\p"
 	.string "I will make sure no wild Pokémon can\n"

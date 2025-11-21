@@ -1,0 +1,227 @@
+mapscripts ThundershardsCave_2F_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+    ]
+    MAP_SCRIPT_ON_TRANSITION{
+        if (var(VAR_MITSURUS_INTRO_STATE) == 13 || var(VAR_MITSURUS_INTRO_STATE) == 14){
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_4)
+            addobject(12)
+        }
+        if (var(VAR_MITSURUS_INTRO_STATE) > 13){
+            setflag(FLAG_TEMP_2)
+        }
+        if(var(VAR_MITSURUS_INTRO_STATE) >14){
+            setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_4)
+        }
+        if (var(VAR_MITSURUS_INTRO_STATE) == 15){
+            setobjectxyperm(19, 34, 8)
+            setobjectxyperm(20, 33, 8)
+        }
+        if(var(VAR_MITSURUS_INTRO_STATE) > 15){
+            setflag(FLAG_TEMP_3)
+        }
+    }
+}
+
+script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff1 {
+    lock
+    setvar(VAR_MITSURUS_INTRO_STATE, 14)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, delay_16, delay_16, player_run_right*2, face_left))
+    waitmovement
+    delay(30)
+    goto(ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff)
+    release
+}
+
+script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff2 {
+    lock
+    setvar(VAR_MITSURUS_INTRO_STATE, 14)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, delay_16, delay_16, player_run_right, face_left))
+    waitmovement
+    delay(30)
+    fadenewbgm(MUS_ABNORMAL_WEATHER)
+    goto(ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff)
+    release
+}
+
+movement walkinplaceleft {
+    walk_in_place_left
+}
+
+script ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff {
+    lock
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
+    waitmovement(0)
+    applymovement(14, walkinplaceleft)
+    waitmovement
+    setspeaker("Scientist")
+    msgbox(format("The subjects were successfully transported to the new lab.\p
+    There's only a few leftover reports I need to fetch.\p
+    The cops already caught onto this lab so we need to move fast.\p
+    Make sure no curious cats get in before I finish.\p
+    There's already a weird man mining the rocks in the floor below."))
+    closemessage
+    applymovement(12, walkinplaceright)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_MIB}Don't worry sir. That's our job."))
+    closemessage
+    applymovement(14, moves(walk_right*5, set_invisible))
+    waitmovement
+    removeobject(14)
+    setflag(FLAG_TEMP_2)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*2))
+    waitmovement(0)
+    special(RemoveCameraObject)
+    bufferleadmonspeciesname(STR_VAR_1)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}.........\p
+    ({STR_VAR_1}, are you ready?)"))
+    closemessage
+    playfirstmoncry
+    waitmoncry
+    waitmovement
+    release
+    end
+}
+
+script ThundershardsCave_2F_Eventscript_LetsJumpKGStaff {
+    lock
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(They haven't noticed me yet. Let's surprise those people.)"))
+    closemessage
+    applymovement(LOCALID_PLAYER, walkup)
+    waitmovement(0)
+    release
+}
+
+script ThundershardsCave_2F_Eventscript_KirijoGenesisStaff {
+    setflag(FLAG_HIDE_TALK_BUTTON)
+    lock
+    playse(SE_PIN)
+    applymovement(12, moves(emote_exclamation_mark, face_left))
+    waitmovement(0)
+    delay(4)
+    playse(SE_PIN)
+    applymovement(13, moves(emote_exclamation_mark, face_left))
+    waitmovement(0)
+    bufferpartymonnick(STR_VAR_1, 0)
+    bufferpartymonnick(STR_VAR_2, 1)
+    msgbox(format("{SPEAKER NAME_WIB}What the- Why are you here-\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}{STR_VAR_1}, {STR_VAR_2}."))
+    closemessage
+    trainerbattle_two_trainers(TRAINER_KG_STAFF_M_THUNDERSHARDS_CAVE_1F, KG_Staff_M_defeated, TRAINER_KG_STAFF_F_THUNDERSHARDS_CAVE_1F, KG_Staff_F_defeated)
+    goto(ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle)
+    release
+}
+
+script ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle {
+    lock
+    delay(20)
+    applymovement(13, faceup)
+    waitmovement(0)
+    delay(4)
+    applymovement(12, facedown)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MIB}(Should we report to the manager?)\p
+    {SPEAKER NAME_WIB}(She beated both us out of nowhere, she must be here for trouble.)\p
+    {SPEAKER NAME_MIB}(Exactly, let's go.)"))
+    closemessage
+    applymovement(13, moves(walk_fast_right * 3))
+    delay(8)
+    applymovement(12, moves(walk_fast_right, walk_fast_down, walk_fast_right))
+    waitmovement(0)
+    getplayerxy(VAR_TEMP_0, VAR_TEMP_1)
+    if (var(VAR_TEMP_0) == 27 && var(VAR_TEMP_1) == 7){
+        applymovement(LOCALID_PLAYER, moves(walk_fast_down, face_right))
+        waitmovement
+    }
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Not so fast."))
+    closemessage
+    goto(ThundershardsCave_2F_Eventscript_FreezingKGStaff)
+    release
+}
+
+script ThundershardsCave_2F_Eventscript_FreezingKGStaff {
+    clearflag(FLAG_TEMP_4)
+    addobject(21, MAP_THUNDERSHARDS_CAVE_2F)
+    showobjectat(21, MAP_THUNDERSHARDS_CAVE_2F)
+    applymovement(21, moves(walk_left, set_visible, jump_right))
+    delay(8)
+    playse(SE_LEDGE)
+    waitmovement(21)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_fast_right*2))
+    waitmovement(0)
+    fadescreenswapbuffers(FADE_TO_WHITE, 1)
+    delay(20)
+    playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
+    waitmoncry
+    playse(SE_M_BUBBLE_BEAM)
+    waitse
+    playmoncry(SPECIES_VULPIX, CRY_MODE_NORMAL)
+    waitmoncry
+    playse(SE_M_ICY_WIND)
+    waitse
+    applymovement(12, invisible)
+    applymovement(13, invisible)
+    waitmovement(0)
+    removeobject(12)
+    removeobject(13)
+    setflag(FLAG_TEMP_1)
+    clearflag(FLAG_TEMP_3)
+    addobject(19)
+    addobject(20)
+    waitmovement(0)
+    fadescreenswapbuffers(FADE_FROM_WHITE)
+    delay(20)
+    applymovement(19, shakehorizontal)
+    playse(SE_M_HARDEN)
+    delay(4)
+    applymovement(20, shakehorizontal)
+    playse(SE_M_HARDEN)
+    waitse
+    delay(8)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*2))
+    waitmovement(0)
+    special(RemoveCameraObject)
+    delay(20)
+    bufferleadmonspeciesname(STR_VAR_1)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Don't worry, you'll thaw out in about 20 minutes.\p
+    Let's go, {STR_VAR_1}, Inteleon."))
+    closemessage
+    applymovement(21, moves(walk_left, set_invisible))
+    waitmovement
+    removeobject(21)
+    setflag(FLAG_TEMP_4)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
+    release
+    end
+}
+
+text KG_Staff_M_defeated {
+    format("Dammit. I knew she graduated the Ranger School early but still-")
+}
+
+text KG_Staff_F_defeated {
+    format("Why is the Kirijo young lady here?")
+}
+
+script ThundershardsCave_2F_Eventscript_FrozenStaff {
+    if (var(VAR_MITSURUS_INTRO_STATE) == 14){
+    lock
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(I should be able to push them.)"))
+    closemessage
+    playse(SE_SELECT)
+    applymovement(19, moves(walk_fast_right*3, face_down))
+    applymovement(20, moves(walk_fast_right*3, face_down))
+    waitmovement(0)
+    playse(SE_CLICK)
+    waitse
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}(Magnifique.)"))
+    setvar(VAR_MITSURUS_INTRO_STATE, 15)
+    release
+    }
+}
+

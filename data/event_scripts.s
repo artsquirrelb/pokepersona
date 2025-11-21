@@ -1225,3 +1225,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/apricorn_tree.inc"
 
 	.include "data/maps/ThundershardsMtSunshineMeadow/scripts.inc"
+
+	.include "data/maps/ThundershardsCave_1F/scripts.inc"
+
+	.include "data/maps/ThundershardsCave_1F_NorthRoom/scripts.inc"
+
+	.include "data/maps/ThundershardsCave_2F/scripts.inc"
+
+	.include "data/maps/ThundershardsCliff_2F_Exterior/scripts.inc"

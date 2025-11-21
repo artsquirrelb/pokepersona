@@ -19,6 +19,10 @@ script Mansion_MitsurusRoom2F_Eventscript_OnWarp0 {
 
 script Mansion_MitsurusRoom2F_Eventscript_OnFrame0 {
     setvar(VAR_MITSURUS_INTRO_STATE, 1)
+    lock
+    msgbox(format("Thursday, 10:30PM"))
+    closemessage
+    pausefakertc
     goto(Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking)
 }
 
@@ -63,6 +67,7 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     additem(ITEM_POKE_BALL, 20)
     additem(ITEM_POTION, 2)
     additem(ITEM_REPEL, 5)
+    setflag(FLAG_EXP_SHARE)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll definitely need this while outdoors.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hmm, I figure that should be everything."))
     closemessage

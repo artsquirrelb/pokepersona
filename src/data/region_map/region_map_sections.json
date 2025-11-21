@@ -1457,7 +1457,7 @@
     },
     {
       "id": "MAPSEC_THUNDERSHARDS_CLIFF_2",
-      "name": "Thundershards Cave",
+      "name": "Thundershards Cave 2F",
       "x": 23,
       "y": 6,
       "width": 1,
@@ -1470,6 +1470,14 @@
       "y": 0,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_THUNDERSHARDS_CLIFF_CAVE_1F",
+      "name": "Thundershard Cave 1F"
+    },
+    {
+      "id": "MAPSEC_THUNDERSHARDS_CLIFF_CAVE_2F",
+      "name": "Thundershard Cave 2F"
     }
   ]
 }

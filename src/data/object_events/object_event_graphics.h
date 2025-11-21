@@ -42,9 +42,10 @@ const u32 gObjectEventPic_Shinjiro[] = INCBIN_U32("graphics/object_events/pics/p
 const u16 gObjectEventPalette_Shinjiro[] = INCBIN_U16("graphics/object_events/pics/people/shinjiro.gbapal");
 const u32 gObjectEventPic_Shinjiro_Fainted[] = INCBIN_U32("graphics/object_events/pics/people/shinjiro_fainted.4bpp");
 const u32 gObjectEventPic_Akihiko_Fainted[] = INCBIN_U32("graphics/object_events/pics/people/akihiko_fainted.4bpp");
+const u32 gObjectEventPic_Mitsuru_Sleeping[] = INCBIN_U32("graphics/object_events/pics/people/mitsuru_sleeping.4bpp");
 const u32 gObjectEventPic_Miki[] = INCBIN_U32("graphics/object_events/pics/people/miki.4bpp");
 const u16 gObjectEventPalette_Miki[] = INCBIN_U16("graphics/object_events/pics/people/miki.gbapal");
-//const u16 gObjectEventPalette_Kurosawa[] = INCBIN_U16("graphics/object_events/pics/people/kurosawa.gbapal"); //he used mom's function name
+const u16 gObjectEventPalette_MitsuruSleeping[] = INCBIN_U16("graphics/object_events/pics/people/mitsuru_sleeping.gbapal");
 const u32 gObjectEventPic_Frozen[] = INCBIN_U32("graphics/object_events/pics/people/frozen.4bpp");
 const u32 gObjectEventPic_Takeharu[] = INCBIN_U32("graphics/object_events/pics/people/takeharu.4bpp");
 const u16 gObjectEventPal_Npc5[] = INCBIN_U16("graphics/object_events/palettes/npc_5.gbapal");
@@ -53,6 +54,8 @@ const u32 gObjectEventPic_Waiter[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Butler[] = INCBIN_U32("graphics/object_events/pics/people/butler.4bpp");
 const u32 gObjectEventPic_Kikuno[] = INCBIN_U32("graphics/object_events/pics/people/kikuno.4bpp");
 const u32 gObjectEventPic_Receptionist_F[] = INCBIN_U32("graphics/object_events/pics/people/receptionist_f.4bpp");
+const u32 gObjectEventPic_NeckBeard[] = INCBIN_U32("graphics/object_events/pics/people/neckbeard.4bpp");
+
 
 
 const u16 gObjectEventPal_Null16[16] = {};
@@ -377,8 +380,9 @@ const u32 gObjectEventPic_Noland[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Lucy[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/lucy.4bpp");
 const u32 gObjectEventPic_Brandon[] = INCBIN_U32("graphics/object_events/pics/people/frontier_brains/brandon.4bpp");
 const u32 gObjectEventPic_PokeBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_poke.4bpp");
-//const u32 gObjectEventPic_TMBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_park.4bpp");
 const u32 gObjectEventPic_MegaStone[] = INCBIN_U32("graphics/object_events/pics/misc/mega_stone.4bpp");
+const u32 gObjectEventPic_ScriptSparkle[] = INCBIN_U32("graphics/object_events/pics/misc/script_sparkle.4bpp");
+
 
 const u32 gObjectEventPic_DeoxysOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/deoxys.4bpp");
 const u32 gObjectEventPic_MewOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/mew.4bpp");

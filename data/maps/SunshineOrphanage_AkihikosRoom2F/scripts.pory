@@ -135,6 +135,7 @@ script SetWallclock {
     }
     else{
     manuallysettime(WEEKDAY_WED, 16, 32, 0)
+    pausefakertc
     setflag(FLAG_SET_WALL_CLOCK)
     setflag(FLAG_SYS_CLOCK_SET)
 	msgbox(format("The clock isn't working.\p
@@ -146,7 +147,6 @@ script SetWallclock {
     setspeaker ("Akihiko")
     msgbox ("All done.")
 	setvar(VAR_AKIHIKOS_INTRO_STATE, 3)
-    resumefakertc
     }
     release
 	end

@@ -208,6 +208,12 @@
       "map": "MAP_MITSURUS_ROOM2F",
       "x": 16,
       "y": 8
+    },
+    {
+      "id": "HEAL_LOCATION_ROUTE2_HOUSE",
+      "map": "MAP_ROUTE2_HOUSE",
+      "x": 4,
+      "y": 4
     }
   ]
 }

@@ -80,7 +80,7 @@
 #define PP_STALL_SCORE_REDUCTION                                20 // Score reduction if any roll for PP stall detection passes
 
 // AI_FLAG_ASSUME_STAB settings
-#define ASSUME_STAB_SEES_ABILITY                                FALSE // Flag also gives omniscience for player's ability. Can use AI_FLAG_WEIGH_ABILITY_PREDICTION instead for smarter prediction without omniscience.
+#define ASSUME_STAB_SEES_ABILITY                                TRUE // Flag also gives omniscience for player's ability. Can use AI_FLAG_WEIGH_ABILITY_PREDICTION instead for smarter prediction without omniscience.
 
 // AI_FLAG_ASSUME_STATUS_MOVES settings
 #define ASSUME_STATUS_MOVES_HAS_TUNING                  TRUE // Flag has varying rates for different kinds of status move.

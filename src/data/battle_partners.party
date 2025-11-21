@@ -1,6 +1,6 @@
 === PARTNER_NONE ===
 Name:
-Class: Pkmn Trainer 1
+Class: Companion
 Pic: Brendan
 Gender: Male
 Music: Male
@@ -8,7 +8,7 @@ Back Pic: Brendan
 
 === PARTNER_AKIHIKO_C1 ===
 Name: Akihiko
-Class: Rival
+Class: Companion
 Pic: Brendan
 Gender: Male
 Music: Male
@@ -51,7 +51,7 @@ EVs: 40 Atk / 40 SpA
 
 === PARTNER_MITSURU_C1 ===
 Name: Mitsuru
-Class: Rival
+Class: Companion
 Pic: May
 Gender: Female
 Music: Female
@@ -97,7 +97,7 @@ Ability: Fur Coat
 
 === PARTNER_SHINJIRO_C1 ===
 Name: Shinjiro
-Class: Rival
+Class: Companion
 Pic: Shinjiro
 Gender: Male
 Music: Male
@@ -141,7 +141,7 @@ Ability: Torrent
 
 === PARTNER_INTELEON_T_P ===
 Name: Inteleon
-Class: Rival
+Class: Companion
 Pic: Inteleon_T
 Gender: Male
 Music: Male
@@ -161,7 +161,7 @@ Ability: Torrent
 
 === PARTNER_INTELEON_T_C1 ===
 Name: Inteleon
-Class: Rival
+Class: Companion
 Pic: Inteleon_T
 Gender: Male
 Music: Male

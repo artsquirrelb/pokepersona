@@ -1,12 +1,11 @@
 mapscripts BlankMap_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_AKIHIKOS_INTRO_STATE) > 0 || var(VAR_MITSURUS_INTRO_STATE) > 0) {
-            setflag(FLAG_SPAWN_INVISIBLE)
-        }
+        setflag(FLAG_SPAWN_INVISIBLE)
         if (var(VAR_MITSURU_RELATIONSHIP_POINTS) == 0){
            setflag(FLAG_SPAWN_INVISIBLE)
            playbgm(MUS_END, TRUE) 
         }
+    
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 7: SunshineWoods_Eventscript_WarpBackToOrphanage
@@ -25,6 +24,9 @@ mapscripts BlankMap_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 42: Route2_Eventscript_AkihikoOnFrame42
         ////////////////////////
         VAR_MITSURUS_INTRO_STATE, 4: MansionsGarden_Eventscript_Onframe4
+        VAR_MITSURUS_INTRO_STATE, 7: SunshineMeadow_Eventscript_MitsuruOnframe7
+        VAR_MITSURUS_INTRO_STATE, 9: Route2_House_Eventscript_MitsuruOnFrame9
+
         ]
 }
 
@@ -164,4 +166,21 @@ script SunshineMeadow_Eventscript_GameOver {
 script MansionsGarden_Eventscript_Onframe4 {
     setvar(VAR_MITSURUS_INTRO_STATE, 5)
     warpsilent(MAP_MANSIONS_GARDEN, 43, 18)
+}
+
+script SunshineMeadow_Eventscript_MitsuruOnframe7 {
+    setvar(VAR_MITSURUS_INTRO_STATE, 8)
+    fwdtime(0, 40)
+    warpsilent(MAP_SUNSHINE_MEADOW, 15, 15)
+}
+
+script Route2_House_Eventscript_MitsuruOnFrame9 {
+    fwdtime(6, 25)
+    setvar(VAR_MITSURUS_INTRO_STATE, 10)
+    playse(MUS_HEAL)
+    special(HealPlayerParty)
+    delay(50)
+    warpsilent(MAP_ROUTE2_HOUSE, 4, 4)
+    setrespawn(HEAL_LOCATION_ROUTE2_HOUSE)
+
 }

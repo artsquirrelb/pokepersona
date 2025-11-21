@@ -5640,6 +5640,54 @@
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ThundershardsMtSunshineMeadow/border.bin",
       "blockdata_filepath": "data/layouts/ThundershardsMtSunshineMeadow/map.bin"
+    },
+    {
+      "id": "LAYOUT_THUNDERSTONE_SCREE_1F",
+      "name": "ThundershardsCave_1F_Layout",
+      "width": 42,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Dungeon",
+      "secondary_tileset": "gTileset_StoneCave",
+      "border_filepath": "data/layouts/ThundershardsCave_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ThundershardsCave_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_THUNDERSHARDS_CAVE_1F_NORTH_ROOM",
+      "name": "ThundershardsCave_1F_NorthRoom_Layout",
+      "width": 20,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Dungeon",
+      "secondary_tileset": "gTileset_StoneCave",
+      "border_filepath": "data/layouts/ThundershardsCave_1F_NorthRoom/border.bin",
+      "blockdata_filepath": "data/layouts/ThundershardsCave_1F_NorthRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_THUNDERSHARDS_CAVE_2F",
+      "name": "ThundershardsCave_2F_Layout",
+      "width": 42,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Dungeon",
+      "secondary_tileset": "gTileset_StoneCave",
+      "border_filepath": "data/layouts/ThundershardsCave_2F/border.bin",
+      "blockdata_filepath": "data/layouts/ThundershardsCave_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_THUNDERSHARDS_CLIFF_2F_EXTERIOR",
+      "name": "ThundershardsCliff_2F_Exterior_Layout",
+      "width": 32,
+      "height": 50,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_Forest",
+      "border_filepath": "data/layouts/ThundershardsCliff_2F_Exterior/border.bin",
+      "blockdata_filepath": "data/layouts/ThundershardsCliff_2F_Exterior/map.bin"
     }
   ]
 }

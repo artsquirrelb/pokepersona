@@ -1,0 +1,148 @@
+mapscripts ThundershardsCliff_2F_Exterior_MapScripts {
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_MITSURUS_INTRO_STATE, 15: ThundershardsCliff_2F_Exterior_OnWarp15
+    ]
+    MAP_SCRIPT_ON_TRANSITION{
+        if (var(VAR_MITSURUS_INTRO_STATE) >15 ){
+            setflag(FLAG_TEMP_1)
+        }
+    }
+}
+
+script ThundershardsCliff_2F_Exterior_OnWarp15 {
+    applymovement(9, invisible)
+}
+
+script ThundershardsCave_2F_Eventscript_Warning {
+    lock
+    msgbox(format("Important scene ahead. Do you want to proceed?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == FALSE){
+        closemessage
+        applymovement(LOCALID_PLAYER, walkleft)
+        waitmovement
+    }
+    release
+    end
+}
+
+
+script ThundershardsCave_2F_Eventscript_DailyChansey_Heal {
+    lock
+    faceplayer
+    msgbox(format("Ask Chansey to heal your party?"), MSGBOX_YESNO)
+    closemessage
+    if (var(VAR_RESULT) == TRUE){
+        dotimebasedevents
+        playse(MUS_HEAL)
+        waitse
+        special(HealPlayerParty)
+        playmoncry(SPECIES_CHANSEY, CRY_MODE_NORMAL)
+        waitmovement
+        release
+        specialvar(VAR_RESULT, GetPlayerFacingDirection)
+        if (var(VAR_RESULT) == DIR_NORTH){
+            applymovement(10, walkinplacedown)
+        }
+        else{
+            applymovement(10, walkinplaceleft)
+        }
+        waitmovement
+        lock
+        fadescreenswapbuffers(FADE_TO_BLACK)
+        removeobject(10)
+        playse(SE_FLEE)
+        waitse
+        setflag(FLAG_DAILY_CHANSEY_HEAL_THUNDERSHARD_CAVE_2F_EXTERIOR)
+        fadescreenswapbuffers(FADE_FROM_BLACK)
+        msgbox(format("Chansey ran off somewhere. It may be back tomorrow."))
+        closemessage
+    }
+    release
+    end
+}
+script ThundershardsCliff_2F_Exterior_Eventscript_MitsuruApproaching_CaveEntrance {
+    lock
+    applymovement(LOCALID_PLAYER, moves(walk_down, face_right))
+    waitmovement
+    goto(ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave)
+}
+
+script ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave {
+    lock
+    delay(20)
+    playse(SE_EXIT)
+    applymovement(9, moves(set_visible, walk_in_place_left))
+    waitmovement
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, emoteexclamation)
+    delay(4)
+    playse(SE_PIN)
+    applymovement(9, emoteexclamation)
+    waitmovement
+    delay(20)
+    applymovement(9, walkinplaceleft)
+    waitmovement
+    setspeaker("Scientist")
+    bufferleadmonspeciesname(STR_VAR_1)
+    msgbox(format("Tch. I told those two to not let anyone through.\p
+    And here you are, Young Lady.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}They were no match for me.\p
+    And you're not going anywhere either.\p
+    Let's go, {STR_VAR_1}."))
+    closemessage
+    trainerbattle_no_intro(TRAINER_KG_STAFF_SCIENTIST_THUNDERSHARDS_CAVE_2F_EXTERIOR, KGScientist_Defeated)
+    goto(ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat)
+}
+
+text KGScientist_Defeated {
+    format("You really live up to your name, Young Lady.")
+}
+
+script ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat {
+    lock
+    setspeaker("Scientist")
+    msgbox(format("That was pretty informative.\p
+    Looks like your synergy level has increased again, Young Lady.\p
+    As expected of our premium prototype.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_MAD}Norbert, you...!"))
+    setspeaker("Norbert")
+    msgbox(format("{DESTROY_MUGSHOT}As the prize for winning, I'll spare you a bit of information.\p
+    You aren't the only premium prototype anymore.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}...!"))
+    setspeaker("Norbert")
+    msgbox(format("{DESTROY_MUGSHOT}Well then, as much as I enjoyed our little chat, there's somewhere else I need to be.\p
+    I hope we don't meet again, for your own good, little miss.\p
+    Oh, and be careful of the fire. Hehehehehe.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_MAD}What- WAIT-!"))
+    closemessage
+    applymovement(LOCALID_PLAYER, moves(player_run_right*2, face_left))
+    dofieldeffectnpcflyout(24, 25, 1)
+    applymovement(9, invisible)
+    waitfieldeffect(FLDEFF_NPCFLY_OUT)
+    waitmovement(LOCALID_PLAYER)
+    removeobject(9)
+    setflag(FLAG_TEMP_1)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_MAD}Damn it!!"))
+    closemessage
+    delay(8)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Wait... He said “fire”?"))
+    closemessage
+    goto(ThundershardsCliff_2F_Exterior_Eventscript_LabExploding)
+}
+
+script ThundershardsCliff_2F_Exterior_Eventscript_LabExploding {
+    special(StopMapMusic)
+    call(SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, face_right, lock_facing_direction, jump_left, unlock_facing_direction))
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}What the-"))
+    closemessage
+    fadescreenswapbuffers(FADE_TO_WHITE)
+    call(SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera)
+    delay(20)
+    call(SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera)
+    setvar(VAR_MITSURUS_INTRO_STATE, 16)
+    warpsilent(MAP_THUNDERSHARDS_CAVE_2F, 2)
+    release
+}

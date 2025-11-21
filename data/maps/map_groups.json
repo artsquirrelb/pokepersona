@@ -108,7 +108,8 @@
     "SunshineMeadow",
     "Route2_2",
     "MansionsGarden",
-    "ThundershardsMtSunshineMeadow"
+    "ThundershardsMtSunshineMeadow",
+    "ThundershardsCliff_2F_Exterior"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -446,7 +447,10 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "ThundershardsCave_1F",
+    "ThundershardsCave_1F_NorthRoom",
+    "ThundershardsCave_2F"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

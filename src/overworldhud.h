@@ -4,4 +4,5 @@
 //void CreateOverworldMonHUD(void);
 void CreateOverworldTalkHUD(void);
 void HideTalkButton (void);
+void ShowTalkButton (void);
 #endif // GUARD_OVERWORLD_H

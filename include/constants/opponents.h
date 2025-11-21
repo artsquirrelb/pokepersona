@@ -7,10 +7,10 @@
 #define TRAINER_IKE                           1
 #define TRAINER_HOTARU                        2
 #define TRAINER_ICHIGO                        3
-#define TRAINER_GRUNT_AQUA_HIDEOUT_3          4
-#define TRAINER_GRUNT_AQUA_HIDEOUT_4          5
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_1       6
-#define TRAINER_GRUNT_SEAFLOOR_CAVERN_2       7
+#define TRAINER_KG_STAFF_M_THUNDERSHARDS_CAVE_1F          4
+#define TRAINER_KG_STAFF_F_THUNDERSHARDS_CAVE_1F          5
+#define TRAINER_KG_STAFF_SCIENTIST_THUNDERSHARDS_CAVE_2F_EXTERIOR       6
+#define TRAINER_ICHIGO_2       7
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_3       8
 #define TRAINER_GABRIELLE_1                   9
 #define TRAINER_GRUNT_ROUTE2                 10

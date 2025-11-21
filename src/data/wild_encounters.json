@@ -11250,6 +11250,164 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_THUNDERSTONE_SCREE_1F",
+          "base_label": "gThundershardsCave_1F",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 7,
+                "max_level": 8,
+                "species": "SPECIES_GEODUDE_ALOLA"
+              },
+              {
+                "min_level": 7,
+                "max_level": 8,
+                "species": "SPECIES_SHUCKLE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 8,
+                "species": "SPECIES_JOLTIK"
+              },
+              {
+                "min_level": 7,
+                "max_level": 8,
+                "species": "SPECIES_JOLTIK"
+              },
+              {
+                "min_level": 7,
+                "max_level": 8,
+                "species": "SPECIES_NOIBAT"
+              },
+              {
+                "min_level": 7,
+                "max_level": 8,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 8,
+                "species": "SPECIES_DIGLETT"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_GEODUDE"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_GEODUDE_ALOLA"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_GRAVELER_ALOLA"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_SHUCKLE"
+              }
+            ]
+          }
+        },
+        {
+          "map": "MAP_THUNDERSHARDS_CAVE_2F",
+          "base_label": "gThundershardsCave_2F",
+          "land_mons": {
+            "encounter_rate": 10,
+            "mons": [
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_GEODUDE_ALOLA"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_SHUCKLE"
+              },
+              {
+                "min_level": 8,
+                "max_level": 9,
+                "species": "SPECIES_JOLTIK"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_JOLTIK"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_NOIBAT"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_ZUBAT"
+              },
+              {
+                "min_level": 8,
+                "max_level": 9,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 8,
+                "max_level": 9,
+                "species": "SPECIES_ONIX"
+              },
+              {
+                "min_level": 9,
+                "max_level": 9,
+                "species": "SPECIES_NOIBAT"
+              },
+              {
+                "min_level": 9,
+                "max_level": 9,
+                "species": "SPECIES_ZUBAT"
+              }
+            ]
+          },
+          "rock_smash_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_GRAVELER"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_GRAVELER_ALOLA"
+              },
+              {
+                "min_level": 15,
+                "max_level": 17,
+                "species": "SPECIES_SHUCKLE"
+              }
+            ]
+          }
         }
       ]
     },

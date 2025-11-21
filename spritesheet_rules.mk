@@ -61,6 +61,12 @@ $(OBJEVENTGFXDIR)/people/kikuno.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/receptionist_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/neckbeard.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/mitsuru_sleeping.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/elite_four/drake.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
@@ -167,7 +173,7 @@ $(OBJEVENTGFXDIR)/people/ruby_sapphire_may/running.4bpp: %.4bpp: %.png
 
 
 $(OBJEVENTGFXDIR)/people/team_aqua/aqua_member_f.4bpp: %.4bpp: %.png
-	$(GFX) $< $@ -mwidth 2 -mheight 4
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/team_aqua/aqua_member_m.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
@@ -5000,6 +5006,9 @@ $(POKEMONGFXDIR)/ferrothorn/delta/overworld.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/misc/ball_%.4bpp: $(OBJEVENTGFXDIR)/misc/ball_%.png ; $(GFX) $< $@ -mwidth 2 -mheight 4
 
 $(OBJEVENTGFXDIR)/misc/mega_stone.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2
+
+$(OBJEVENTGFXDIR)/misc/script_sparkle.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 	
 graphics/door_anims/battle_tower_multi_corridor.4bpp: %.4bpp: %.png

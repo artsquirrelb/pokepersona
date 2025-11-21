@@ -75,7 +75,7 @@ Comments can be added as C comment blocks
 
 === TRAINER_NONE ===
 Name:
-Class: Pkmn Trainer 1
+Class: Companion
 Pic: Hiker
 Gender: Male
 Music: Male
@@ -98,61 +98,94 @@ SPECIES_BUIZEL
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
-Name: GRUNT
-Class: Team Aqua
+=== TRAINER_KG_STAFF_M_THUNDERSHARDS_CAVE_1F ===
+Name: Charles
+Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
+Double Battle: Yes
+AI: Basic Trainer
+
+SPECIES_ELGYEM @ITEM_ORAN_BERRY
+Level: 8
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 20 Def / 20 SpD
+Ability: Telepathy
+- Reflect
+- Thunder Wave
+- Light Screen
+- Helping Hand
+
+=== TRAINER_KG_STAFF_F_THUNDERSHARDS_CAVE_1F ===
+Name: Emily
+Class: Kirijo Genesis Staff
+Pic: Aqua Grunt F
+Gender: Female
+Music: Aqua
+Double Battle: No
+AI: Basic Trainer / AI_FLAG_ATTACKS_PARTNER
+
+SPECIES_BRONZOR @ITEM_ORAN_BERRY
+Level: 8
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 40 Atk
+Ability: Levitate
+- Hypnosis
+- Payback
+- Bulldoze
+- Rock Tomb
+
+=== TRAINER_KG_STAFF_SCIENTIST_THUNDERSHARDS_CAVE_2F_EXTERIOR ===
+Name: Norbert
+Class: Kirijo Genesis Staff
+Pic: Scientist
+Gender: Male
+Music: Aqua
+Double Battle: Yes
+AI: Basic Trainer
+
+SPECIES_NATU @ITEM_ORAN_BERRY
+Level: 9
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 40 SpA
+Ability: Gluttony
+- Night Shade
+- Thunder Wave
+- Confusion
+- Helping Hand
+
+SPECIES_TOGEDEMARU @ITEM_ORAN_BERRY
+Level: 9
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 40 Atk
+Ability: Iron Barbs
+- Nuzzle
+- Fake Out
+- Rollout
+- Zappy Shock
+
+=== TRAINER_ICHIGO_2 ===
+Name: Ichigo
+Class: Camper
+Pic: Camper
+Gender: Male
+Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 32
+
+SPECIES_PANPOUR
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_GRUNT_AQUA_HIDEOUT_4 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Carvanha
-Level: 32
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Poochyena
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_2 ===
-Name: GRUNT
-Class: Team Aqua
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Carvanha
-Level: 36
+SPECIES_BUIZEL
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -198,7 +231,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_ROUTE2 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -296,7 +329,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_RUSTURF_TUNNEL ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -309,7 +342,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_1 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -326,7 +359,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_2 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -343,7 +376,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_3 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -364,7 +397,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MUSEUM_1 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -377,7 +410,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MUSEUM_2 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -407,7 +440,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_1 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -420,7 +453,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_2 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -433,7 +466,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_3 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -450,7 +483,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_4 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
@@ -463,7 +496,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_5 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
@@ -476,7 +509,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_6 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
@@ -3366,7 +3399,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_7 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
@@ -3383,7 +3416,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_8 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -10529,7 +10562,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_5 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -10563,7 +10596,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_MT_PYRE_4 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua
@@ -10952,7 +10985,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_WEATHER_INST_5 ===
 Name: GRUNT
-Class: Team Aqua
+Class: Team Magma
 Pic: Aqua Grunt F
 Gender: Female
 Music: Aqua

@@ -275,8 +275,6 @@ SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa::
 	fwdtime 9, 30
 # 167 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	fwdweekday WEEKDAY_SUN
-# 168 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	pausefakertc
 # 169 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	warp MAP_SUNSHINE_TOWN, 3, 14
 # 170 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"

@@ -247,11 +247,14 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Waitress;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Butler;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kikuno;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Receptionist_F;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeckBeard;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mitsuru_Sleeping;
 
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ParkBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MegaStone;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScriptSparkle;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight;
 
@@ -337,6 +340,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_ITEM_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_TM_BALL] =                  &gObjectEventGraphicsInfo_ParkBall,
     [OBJ_EVENT_GFX_MEGA_STONE] =               &gObjectEventGraphicsInfo_MegaStone,
+    [OBJ_EVENT_GFX_SPARKLE] =                  &gObjectEventGraphicsInfo_ScriptSparkle,
     [OBJ_EVENT_GFX_BERRY_TREE] =               &gObjectEventGraphicsInfo_BerryTree,
     [OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES] =  &gObjectEventGraphicsInfo_BerryTreeEarlyStages,
     [OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES] =   &gObjectEventGraphicsInfo_BerryTreeLateStages,
@@ -521,6 +525,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
+    [OBJ_EVENT_GFX_NECK_BEARD] =               &gObjectEventGraphicsInfo_NeckBeard,
+    [OBJ_EVENT_GFX_MITSURU_SLEEPING] =         &gObjectEventGraphicsInfo_Mitsuru_Sleeping,
+    
+    
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

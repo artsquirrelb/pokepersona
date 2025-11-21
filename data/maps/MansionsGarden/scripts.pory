@@ -345,6 +345,7 @@ script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I should get going now.)"))
     closemessage
     setrespawn(HEAL_LOCATION_MANSION_TRAINING_HOUSE)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     release
     end
 }

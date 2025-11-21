@@ -1,0 +1,125 @@
+mapscripts ThundershardsCave_1F_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        if(var(VAR_MITSURUS_INTRO_STATE) > 12){
+            setflag(FLAG_TEMP_1)
+        }
+    }
+}
+
+
+script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
+    lock
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
+    waitmovement
+    delay(16)
+    applymovement(12, moves(shake_horizontal))
+    waitmovement
+    playse(SE_M_ROCK_THROW)
+    applymovement(9, moves(rock_smash_break))
+    waitmovement(9)
+    removeobject(9)
+    setflag(FLAG_TEMP_1)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*2))
+    applymovement(12, moves(walk_left, walk_down, face_left))
+    waitmovement
+    special(RemoveCameraObject)
+    setspeaker("Big Man")
+    msgbox(format("Rocks are fascinating, don't you agree, young lady?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Huh? Oh- yes, I suppose they are."))
+    closemessage
+    playse(SE_SHINY)
+    applymovement(12, emotemusic)
+    waitmovement
+    setspeaker("Rock-loving Big Man?")
+    msgbox(format("I know right? Your answer just made my day!\p
+    If only my son thought the same."))
+    closemessage
+    applymovement(12, walkleft)
+    waitmovement
+    msgbox(format("Here, your can have this. I got it from breaking the rock just now."))
+    closemessage
+    giveitem(ITEM_PEARL)
+    msgbox(format("I'd love to give you a pickaxe so you can break rocks for items on your own.\p
+    Unfortunately I only have this old one with me and it's my lucky charm.\p
+    If you visit my house in Coralport I can give you a new one."))
+    setspeaker("Mr. Nebe")
+    msgbox(format("Just ask around for Nebe's house when you get there. Coralport is very hospitable.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}I- Thank you. Nebe-san."))
+    closemessage
+    applymovement(12, moves(walk_down, walk_left*7, walk_down *4, set_invisible))
+    delay(8)
+    applymovement(LOCALID_PLAYER, moves(face_down, delay_8, face_left))
+    waitmovement(12)
+    playse(SE_EXIT)
+    waitse
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}.......\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I should go on with my mission.)"))
+    closemessage
+    applymovement(LOCALID_PLAYER, faceright)
+    waitmovement
+    setvar(VAR_MITSURUS_INTRO_STATE, 13)
+    release
+    end
+}
+
+script ThundershardsCave_1F_EventScript_NeckBeardInvites2 {
+    lock
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
+    waitmovement
+    delay(16)
+    applymovement(12, moves(shake_horizontal))
+    waitmovement
+    playse(SE_M_ROCK_THROW)
+    applymovement(9, moves(rock_smash_break))
+    waitmovement(9)
+    delay(30)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*2))
+    applymovement(12, moves(walk_left, walk_down *2, face_left))
+    waitmovement
+    special(RemoveCameraObject)
+    setspeaker("Big Man")
+    msgbox(format("Rocks are fascinating, don't you agree, young lady?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Huh? Oh- yes, I suppose they are."))
+    closemessage
+    playse(SE_SHINY)
+    applymovement(12, emotemusic)
+    waitmovement
+    setspeaker("Rock-loving Big Man?")
+    msgbox(format("I know right? Your answer just made my day!\p
+    If only my son thought the same."))
+    closemessage
+    applymovement(12, walkleft)
+    waitmovement
+    setspeaker("Rock-loving Big Man?")
+    msgbox(format("Here, your can have this. I got it from breaking the rock just now."))
+    closemessage
+    giveitem(ITEM_PEARL)
+    setspeaker("Rock-loving Big Man?")
+    msgbox(format("I'd love to give you a pickaxe so you can break rocks for items on your own.\p
+    Unfortunately I only have this old one with me and it's my lucky charm.\p
+    If you visit my house in Coralport I can give you a new one."))
+    setspeaker("Mr. Nebe")
+    msgbox(format("Just ask around for Nebe's house when you get there. Coralport is very hospitable.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}I- Thank you. Nebe-san."))
+    closemessage
+    applymovement(12, moves(walk_up, walk_left*7, walk_down *5, set_invisible))
+    delay(8)
+    applymovement(LOCALID_PLAYER, moves(face_up, delay_8, face_left))
+    waitmovement(12)
+    playse(SE_EXIT)
+    waitse
+    removeobject(12)
+    removeobject(9)
+    setflag(FLAG_TEMP_1)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}.......\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I should go on with my mission.)"))
+    closemessage
+    applymovement(LOCALID_PLAYER, faceright)
+    waitmovement
+    setvar(VAR_MITSURUS_INTRO_STATE, 13)
+    release
+    end
+}

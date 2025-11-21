@@ -1,8 +1,15 @@
 mapscripts Route2_MapScripts {
+    MAP_SCRIPT_ON_LOAD{
+        if (var(VAR_MITSURUS_INTRO_STATE) < 10){
+            setmetatile(10, 11, 0x2C2, TRUE)
+        }
+    }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 25: Route2_Eventscript_AkihikoOnWarp25
         VAR_AKIHIKOS_INTRO_STATE, 33: Route2_Eventscript_AkihikoOnWarp33
         VAR_AKIHIKOS_INTRO_STATE, 40: Route2_Eventscript_AkihikoOnWarp40
+        ////////////////
+        VAR_MITSURUS_INTRO_STATE, 8: Route2_Eventscript_MitsuruOnWarp8
     ]
     MAP_SCRIPT_ON_TRANSITION{
         if (var(VAR_AKIHIKOS_INTRO_STATE) < 40){
@@ -39,12 +46,13 @@ mapscripts Route2_MapScripts {
             setflag(FLAG_TEMP_4)
             setobjectxyperm(TAROU, 7, 18)
         }
-
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 25: Route2_Eventscript_AkihikoOnFrame25
         VAR_AKIHIKOS_INTRO_STATE, 33: Route2_Eventscript_AkihikoOnFrame33
         VAR_AKIHIKOS_INTRO_STATE, 40: Route2_Eventscript_AkihikoOnFrame40
+        ////////////
+        VAR_MITSURUS_INTRO_STATE, 8: Route2_Eventscript_MitsuruOnFrame8
     ]
 }
 
@@ -65,8 +73,17 @@ script Route2_Eventscript_AkihikoOnWarp33 {
 script Route2_Eventscript_AkihikoOnWarp40 {
     applymovement(6, faceright)
 }
+
+script Route2_Eventscript_MitsuruOnWarp8 {
+    applymovement(LOCALID_PLAYER, faceleft)    
+}
+
 script Route2_Eventscript_AkihikoOnFrame25 {
     goto(Route2_Eventscript_AkishinjiGettingBlockedBySusMen)
+}
+
+script Route2_Eventscript_MitsuruOnFrame8 {
+    goto(Route2_Eventscript_MitsuruApproachingRoute2House)
 }
 
 script Route2_Eventscript_AkishinjiGettingBlockedBySusMen {
@@ -380,7 +397,14 @@ script Route2_Eventscript_DirectionSign {
 }
 
 script Route2_Eventscript_Yuuka {
-    trainerbattle_single (TRAINER_YUUKA, Route2_YuukaIntro, Route2_YuukaDefeated)
+    checkplayergender
+    if (var(VAR_RESULT) == MALE){
+        trainerbattle_single (TRAINER_YUUKA, Route2_YuukaIntro, Route2_YuukaDefeated)
+    }
+    else{
+        trainerbattle_single (TRAINER_YUUKA, Route2_YuukaIntro_M, Route2_YuukaDefeated)
+        fwdtime(0, 20)
+    }
     setspeaker("Yuuka")
     msgbox(Route2_YuukaPostBattle)
     closemessage
@@ -389,6 +413,11 @@ script Route2_Eventscript_Yuuka {
 
 text Route2_YuukaIntro {
     format("Hey, I'm bored. Want a quick battle?")
+}
+
+text Route2_YuukaIntro_M {
+    format("Hey, I'm bored. Let's have a quick battle!\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(It's so late, you should be at home!)")
 }
 
 text Route2_YuukaDefeated {
@@ -519,7 +548,7 @@ script Route2_Eventscript_AkihikoNoticingShinjiroOutside {
     waitmovement(0)
     delay(20)
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Oh, there he is.)\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Hey Shinji, you coudln't sleep too?"))
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Hey Shinji, you couldn't sleep too?"))
     closemessage
     playse(SE_PIN)
     applymovement(6, ShinjiroHeardAkihikoCalling)
@@ -843,4 +872,50 @@ script Route2_Eventscript_ShinjiroFirstBattleWarning {
     }
     release
     end
+}
+
+script Route2_Eventscript_NotTheWayToSunshineMeadow_Mitsuru {
+    lock
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(There's no time to wander around in Sunshine Town right now.)"))
+    closemessage
+    applymovement(LOCALID_PLAYER, walkleft)
+    waitmovement(0)
+    release
+    end
+}
+
+script Route2_Eventscript_MitsuruApproachingRoute2House {
+    lock
+    applymovement(LOCALID_PLAYER, moves(player_run_left*6, face_up))
+    waitmovement
+    delay(40)
+    applymovement(LOCALID_PLAYER, moves(walk_up, face_right))
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Yuuma-san said the key is under the pot of plant outside of the house.)\p
+    (Let's see..........)\p
+    (Found it.)"))
+    closemessage
+    applymovement(LOCALID_PLAYER, faceup)
+    waitmovement
+    delay(40)
+    playse(SE_CLICK)
+    waitse
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Please excuse my intrusion."))
+    closemessage
+    delay(20)
+    applymovement(LOCALID_PLAYER, walkup)
+    waitmovement
+    playse(SE_DOOR)
+    warpsilent(MAP_ROUTE2_HOUSE, 7, 12)
+    waitstate
+}
+
+script Route2_Eventscript_HouseLocked{
+    if (var(VAR_MITSURUS_INTRO_STATE) <10){
+        lock
+        msgbox(format("It's locked."))
+        closemessage
+        release
+        end
+    }
 }

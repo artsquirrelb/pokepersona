@@ -494,21 +494,39 @@
     },
     {
       "type": "trigger",
-      "x": 31,
-      "y": 16,
+      "x": 1,
+      "y": 6,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
       "var_value": "6",
-      "script": "SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
+      "script": "Route2_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
     },
     {
       "type": "trigger",
-      "x": 31,
-      "y": 17,
+      "x": 1,
+      "y": 7,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
       "var_value": "6",
-      "script": "SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
+      "script": "Route2_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_MITSURUS_INTRO_STATE",
+      "var_value": "11",
+      "script": "Route2_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_MITSURUS_INTRO_STATE",
+      "var_value": "11",
+      "script": "Route2_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
     }
   ],
   "bg_events": [

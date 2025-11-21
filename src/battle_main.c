@@ -303,10 +303,10 @@ static const s8 sCenterToCornerVecXs[8] ={-32, -16, -16, -32, -32};
 // [TRAINER_CLASS_XYZ] = { _("name"), <money=5>, <ball=BALL_POKE> }
 const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
 {
-    [TRAINER_CLASS_PKMN_TRAINER_1] = { _("{PKMN} Trainer") },
+    [TRAINER_CLASS_COMPANION] = { _("Companion"), 15 },
     [TRAINER_CLASS_PKMN_TRAINER_2] = { _("{PKMN} Trainer") },
     [TRAINER_CLASS_HIKER] = { _("Hiker"), 10 },
-    [TRAINER_CLASS_TEAM_AQUA] = { _("Team Aqua") },
+    [TRAINER_CLASS_KIRIJO_GENESIS_STAFF] = { _("K.G. Staff"), 10, BALL_BEAST },
     [TRAINER_CLASS_PKMN_BREEDER] = { _("{PKMN} Breeder"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_HEAL : BALL_FRIEND },
     [TRAINER_CLASS_COOLTRAINER] = { _("Cooltrainer"), 12, BALL_ULTRA },
     [TRAINER_CLASS_BIRD_KEEPER] = { _("Bird Keeper"), 8 },
@@ -5519,7 +5519,7 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_CHAMPION:
             PlayBGM(MUS_VICTORY_LEAGUE);
             break;
-        case TRAINER_CLASS_TEAM_AQUA:
+        case TRAINER_CLASS_KIRIJO_GENESIS_STAFF:
         case TRAINER_CLASS_TEAM_MAGMA:
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_AQUA_LEADER:

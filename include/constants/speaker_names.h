@@ -12,6 +12,9 @@ enum SpeakerNames {
     SP_NAME_INTELEON,
     SP_NAME_TAKEHARU,
     SP_NAME_KIKUNO,
+    SP_NAME_MIB,
+    SP_NAME_WIB,
+    SP_NAME_KG_STAFF,
     SP_NAME_COUNT
 };
 

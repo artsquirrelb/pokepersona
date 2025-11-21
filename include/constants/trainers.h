@@ -110,7 +110,8 @@
 #define TRAINER_PIC_RS_MAY                92
 #define TRAINER_PIC_SHINJIRO              93
 #define TRAINER_PIC_INTELEON_T            94
-#define TRAINER_PIC_COUNT                 95
+#define TRAINER_PIC_SCIENTIST             95
+#define TRAINER_PIC_COUNT                 96
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -290,10 +291,10 @@
 
 enum TrainerClassID
 {
-    TRAINER_CLASS_PKMN_TRAINER_1, // Unused
+    TRAINER_CLASS_COMPANION, // Was Unused
     TRAINER_CLASS_PKMN_TRAINER_2, // Unused
     TRAINER_CLASS_HIKER,
-    TRAINER_CLASS_TEAM_AQUA,
+    TRAINER_CLASS_KIRIJO_GENESIS_STAFF,
     TRAINER_CLASS_PKMN_BREEDER,
     TRAINER_CLASS_COOLTRAINER,
     TRAINER_CLASS_BIRD_KEEPER,

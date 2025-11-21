@@ -3,10 +3,14 @@ mapscripts SunshineMeadow_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 34: SunshineMeadow_Eventscript_AkihikoOnWarp34
         VAR_AKIHIKOS_INTRO_STATE, 35: SunshineMeadow_Eventscript_AkihikoOnWarp35
         VAR_AKIHIKOS_INTRO_STATE, 37: SunshineMeadow_Eventscript_AkihikoOnWarp37
+        /////
+        VAR_MITSURUS_INTRO_STATE, 8: SunshineMeadow_Eventscript_MitsuruOnWarp8
     ]
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 35: SunshineMeadow_Eventscript_AkihikoOnFrame35
         VAR_AKIHIKOS_INTRO_STATE, 37: SunshineMeadow_Eventscript_AkihikoOnFrame37
+        VAR_MITSURUS_INTRO_STATE, 6: SunshineMeadow_Eventscript_MitsuruOnFrame6
+        VAR_MITSURUS_INTRO_STATE, 8: SunshineMeadow_Eventscript_MitsuruOnFrame8
     ]
     MAP_SCRIPT_ON_TRANSITION{
         if(var(VAR_AKIHIKOS_INTRO_STATE) == 34){
@@ -27,6 +31,9 @@ mapscripts SunshineMeadow_MapScripts {
         if(var(VAR_AKIHIKOS_INTRO_STATE) >= 38){
             setflag(FLAG_TEMP_1)
             setflag(FLAG_TEMP_2)
+        }
+        if (var(VAR_MITSURUS_INTRO_STATE) >= 6 && var(VAR_MITSURUS_INTRO_STATE) <= 8){
+            setflag(FLAG_TEMP_3)
         }
     }
 }
@@ -53,6 +60,23 @@ script SunshineMeadow_Eventscript_AkihikoOnWarp37 {
 
 script SunshineMeadow_Eventscript_AkihikoOnFrame35 {
     goto (SunshineMeadow_Eventscript_StartingMitsuruFirstBattle)
+}
+
+script SunshineMeadow_Eventscript_MitsuruOnFrame6 {
+    lock
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
+    setflag(FLAG_HIDE_TALK_BUTTON)
+    setvar(VAR_MITSURUS_INTRO_STATE, 7)
+    warpsilent(MAP_BLANK_MAP, 0, 0)
+}
+
+script SunshineMeadow_Eventscript_MitsuruOnWarp8 {
+    applymovement(LOCALID_PLAYER, faceup)    
+}
+
+script SunshineMeadow_Eventscript_MitsuruOnFrame8 {
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    goto(SunshineMeadow_Eventscript_MitsuruAproachTheFence)
 }
 
 script SunshineMeadow_Eventscript_PreMitsuruFirstBattleTalk {
@@ -539,7 +563,7 @@ script SunshineMeadow_Eventscript_JumpOverFence{
             end
         }
         else{
-            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(I think I can jump over this fence.)"))
+            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Here we go.)"))
             closemessage
             hidefollower
             hidefollowernpc
@@ -547,13 +571,21 @@ script SunshineMeadow_Eventscript_JumpOverFence{
             if (var(VAR_RESULT) == DIR_NORTH)
             {
                 applymovement(LOCALID_PLAYER, moves(jump_up, jump_up))
+                playse(SE_LEDGE)
+                delay(16)
+                playse(SE_LEDGE)
                 waitmovement(0)
             }
             elif (var(VAR_RESULT) == DIR_SOUTH)
             {
                 applymovement(LOCALID_PLAYER, moves(jump_down, jump_down))
+                playse(SE_LEDGE)
+                delay(16)
+                playse(SE_LEDGE)
                 waitmovement(0)
             }
+            clearflag(FLAG_TEMP_HIDE_FOLLOWER)
+            updatefollowingmon
         }
     }
     else{
@@ -564,4 +596,51 @@ script SunshineMeadow_Eventscript_JumpOverFence{
         }
     }
     
+}
+
+script SunshineMeadow_Eventscript_MitsuruAproachTheFence {
+    lock
+    applymovement(LOCALID_PLAYER, moves(player_run_up*4, player_run_left*3, player_run_up))
+    waitmovement(0)
+    delay(20)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}-Huff- -Huff-\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Eventhough I ran with all my might, it's still too late.)"))
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up*3, delay_16, delay_16, delay_16, walk_down*3))
+    waitmovement(0)
+    special(RemoveCameraObject)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It's already 0:43 AM... not very ideal to tackle a mountain cave.\p
+    Not to mention, my Pokémon are all tired from the unexpected battles."))
+    closemessage
+    applymovement(LOCALID_PLAYER, facedown)
+    waitmovement
+    delay(20)
+    applymovement(LOCALID_PLAYER, emotepensive)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Yuuma-san said his grandson owned a house nearby in Route 2.)\p
+    (He's travelling the region at the moment and I'm free to use it in the mean time.)\p
+    (Alright then.)"))
+    closemessage
+    applymovement(LOCALID_PLAYER, moves(player_run_down *2, player_run_right *3))
+    delay(20)
+    warpsilent(MAP_ROUTE2, 16, 13)
+    waitmovement
+    waitstate
+}
+
+script SunshineMeadow_Eventscript_MitsuruPlansToJumpOverTheFence {
+    lock
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(The cave entrance is just on the other side of the fences.)\p
+    It's not too tall so I believe I can jump over them.)"))
+    closemessage
+    setvar(VAR_MITSURUS_INTRO_STATE, 12)
+    release
+}
+
+script SunshineMeadow_Eventscript_ThundershardsCliffSign {
+    lock
+    msgbox(format("Thundershards Cave\n
+    High risk of cave-in. DO NOT ENTER."))
+    closemessage
+    release
 }

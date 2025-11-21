@@ -39,8 +39,7 @@ script Route1_Eventscript_Touma {
 
 text Route1_ToumaIntro {
     format("Um, can you please battle me...?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Sigh... I really don't have time for this.)\p
-    ... Sure.")
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Sigh... I really don't have time for this.)")
 }
 
 text Route1_ToumaDefeated {
@@ -154,15 +153,15 @@ script Route1_Eventscript_Teddiursa {
 
 script Route1_Eventscript_Ichigo {
     if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){      //akihiko prologue post mitsuru's 1st battle
-    trainerbattle_single(TRAINER_MIYU_2, Route1_IchigoIntro_A, Route1_IchigoDefeated)
+        trainerbattle_single(TRAINER_MIYU_2, Route1_IchigoIntro_A, Route1_IchigoDefeated)
     }
     elif(var(VAR_MITSURUS_INTRO_STATE) < 50){                                           //mitsuru pre chapter 1
-        trainerbattle_single(TRAINER_MIYU, Route1_IchigoIntro, Route1_IchigoDefeated)
+        trainerbattle_single(TRAINER_ICHIGO, Route1_IchigoIntro, Route1_IchigoDefeated)
         fwdtime(23, 30)
     }
-    else{
+    else
+    {
         trainerbattle_single(TRAINER_MIYU_2, Route1_IchigoIntro_A, Route1_IchigoDefeated)     //have finished both prologues (probly unecessary)
-
     }
     setspeaker("Ichigo")
     faceplayer

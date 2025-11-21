@@ -257,7 +257,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 23,
-      "y": 9,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -269,8 +269,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 28,
-      "y": 9,
+      "x": 21,
+      "y": 8,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",
       "movement_range_x": 0,
@@ -282,7 +282,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
-      "x": 28,
+      "x": 21,
       "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_BERRY_TREE_GROWTH",

@@ -12,6 +12,7 @@
 #include "metatile_behavior.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
+#include "field_mugshot.h"
 #include "follower_npc.h"
 #include "random.h"
 #include "starter_choose.h"
@@ -409,6 +410,7 @@ static void DoBattlePikeWildBattle(void)
 
 static void DoTrainerBattle(void)
 {
+    RemoveFieldMugshot();
     CreateBattleStartTask(GetTrainerBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_TRAINER_BATTLES);
@@ -789,7 +791,7 @@ enum BattleTransition GetTrainerBattleTransition(void)
         || trainerClass == TRAINER_CLASS_MAGMA_ADMIN)
         return B_TRANSITION_MAGMA;
 
-    if (trainerClass == TRAINER_CLASS_TEAM_AQUA
+    if (trainerClass == TRAINER_CLASS_KIRIJO_GENESIS_STAFF
         || trainerClass == TRAINER_CLASS_AQUA_LEADER
         || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;

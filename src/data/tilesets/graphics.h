@@ -1900,3 +1900,41 @@ const u16 gTilesetPalettes_MansionTrainingHouse[][16] =
 };
 
 const u32 gTilesetTiles_MansionTrainingHouse[] = INCBIN_U32("data/tilesets/secondary/mansion_training_house/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Dungeon[][16] =
+{
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/primary/dungeon/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Dungeon[] = INCBIN_U32("data/tilesets/primary/dungeon/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_StoneCave[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/stone_cave/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_StoneCave[] = INCBIN_U32("data/tilesets/secondary/stone_cave/tiles.4bpp.lz");

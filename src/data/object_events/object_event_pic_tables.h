@@ -470,7 +470,7 @@ static const struct SpriteFrameImage sPicTable_AquaMemberM[] = {
 };
 
 static const struct SpriteFrameImage sPicTable_AquaMemberF[] = {
-    overworld_ascending_frames(gObjectEventPic_AquaMemberF, 2, 4),
+    overworld_ascending_frames(gObjectEventPic_AquaMemberF, 4, 4),
 };
 
 static const struct SpriteFrameImage sPicTable_MagmaMemberM[] = {
@@ -1119,6 +1119,12 @@ static const struct SpriteFrameImage sPicTable_MegaStone[] = {
     overworld_frame(gObjectEventPic_MegaStone, 2, 2, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_ScriptSparkle[] = {
+    overworld_frame(gObjectEventPic_ScriptSparkle, 2, 2, 0),
+    overworld_frame(gObjectEventPic_ScriptSparkle, 2, 2, 1),
+    overworld_frame(gObjectEventPic_ScriptSparkle, 2, 2, 2),
+};
+
 extern const struct SpriteFrameImage gFieldEffectObjectPicTable_BallLight[];
 
 #if OW_FOLLOWERS_POKEBALLS
@@ -1437,4 +1443,12 @@ static const struct SpriteFrameImage gObjectEventPicTable_Receptionist_F[] = {
 
 static const struct SpriteFrameImage sPicTable_ApricornTree[] = {
     overworld_frame(gObjectEventPic_ApricornTree, 2, 2, 0),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_NeckBeard[] = {
+    overworld_ascending_frames(gObjectEventPic_NeckBeard, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_Mitsuru_Sleeping[] = {
+    overworld_frame(gObjectEventPic_Mitsuru_Sleeping, 4, 4, 0),
 };

@@ -588,6 +588,14 @@ static const union AnimCmd sAnim_GoFastestSouth[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_ObjectSparkle[] =
+{
+    ANIMCMD_FRAME(0, 12),
+    ANIMCMD_FRAME(1, 12),
+    ANIMCMD_FRAME(2, 12),
+    ANIMCMD_JUMP(0),
+};
+
 static const union AnimCmd sAnim_ExitPokeballFastSouth[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -1464,6 +1472,11 @@ static const union AnimCmd *const sAnimTable_AcroBike[] = {
     [ANIM_MOVING_WHEELIE_NORTH] = sAnim_MovingWheelieNorth,
     [ANIM_MOVING_WHEELIE_WEST] = sAnim_MovingWheelieWest,
     [ANIM_MOVING_WHEELIE_EAST] = sAnim_MovingWheelieEast,
+};
+
+static const union AnimCmd *const sAnimTable_ObjectSparkle[] =
+{
+    [ANIM_OBJECT_SPARKLE] = sAnim_ObjectSparkle,
 };
 
 static const union AnimCmd *const sAnimTable_Surfing[] = {

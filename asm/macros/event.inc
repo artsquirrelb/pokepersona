@@ -2195,6 +2195,13 @@
 	dofieldeffect FLDEFF_JUMP_SMALL_SPLASH;
 	.endm
 
+	@ Does NPC fly out field effect at the given coordinates.
+	.macro dofieldeffectnpcflyout x:req, y:req, priority:req
+	setfieldeffectargument 0, \x
+	setfieldeffectargument 1, \y
+	setfieldeffectargument 2, \priority
+	dofieldeffect FLDEFF_NPCFLY_OUT;
+	.endm
 	
 	@ Prints a braille message, waits for an A or B press, then closes the message.
 	.macro braillemsgbox text:req

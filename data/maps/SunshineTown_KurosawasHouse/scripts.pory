@@ -165,7 +165,7 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     delay(20)
     fwdtime(9, 30)
     fwdweekday(WEEKDAY_SUN)
-    pausefakertc
+    //pausefakertc
     warp(MAP_SUNSHINE_TOWN, 3, 14)
     setflag(FLAG_SYS_QUEST_MENU_GET)
     end

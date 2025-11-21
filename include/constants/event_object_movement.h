@@ -351,6 +351,8 @@
 
 #define ANIM_FIELD_MOVE 0
 
+#define ANIM_OBJECT_SPARKLE 0
+
 #define ANIM_STAY_STILL      0
 #define ANIM_REMOVE_OBSTACLE 1
 

@@ -545,7 +545,7 @@
 #define FLAG_HIDDEN_ITEMS_START                                                         0x1F4
 #define FLAG_HIDDEN_ITEM_SUNSHINE_WOODS_PROTEIN             (FLAG_HIDDEN_ITEMS_START + 0x00)
 #define FLAG_HIDDEN_ITEM_SUNSHINETOWN_FULL_HEAL                  (FLAG_HIDDEN_ITEMS_START + 0x01)
-#define FLAG_HIDDEN_ITEM_ROUTE_111_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x02)
+#define FLAG_HIDDEN_ITEM_THUNDERSHARD_CAVE_1F_STARDUST                  (FLAG_HIDDEN_ITEMS_START + 0x02)
 #define FLAG_HIDDEN_ITEM_ROUTE_113_ETHER                     (FLAG_HIDDEN_ITEMS_START + 0x03)
 #define FLAG_HIDDEN_ITEM_ROUTE_114_CARBOS                    (FLAG_HIDDEN_ITEMS_START + 0x04)
 #define FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM                   (FLAG_HIDDEN_ITEMS_START + 0x05)
@@ -1055,15 +1055,15 @@
 #define FLAG_ITEM_SUNSHINE_WOODS_BEEDRILLITE                        0x3EA
 #define FLAG_ITEM_SUNSHINE_WOODS_TM_SCALD                           0x3EB
 #define FLAG_ITEM_SUNSHINE_TOWN_TM_ROCK_SMASH                       0x3EC
-#define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
-#define FLAG_ITEM_ROUTE_110_RARE_CANDY                              0x3EE
-#define FLAG_ITEM_ROUTE_110_DIRE_HIT                                0x3EF
+#define FLAG_ITEM_THUNDERSHARDS_CAVE_1F_TM_THUNDER_WAVE              0x3ED
+#define FLAG_ITEM_THUNDERSHARDS_CAVE_2F_AGGRONITE                   0x3EE
+#define FLAG_THUNDERSHARDS_CAVE_2F_TM_THUNDERBOLT                                0x3EF
 #define FLAG_ITEM_ROUTE_111_TM_SANDSTORM                            0x3F0
-#define FLAG_ITEM_ROUTE_111_STARDUST                                0x3F1
+#define FLAG_ITEM_THUNDERSHARDS_CAVE_2F_EXTERIOR_AERODACTYLITE                                0x3F1
 #define FLAG_ITEM_ROUTE_111_HP_UP                                   0x3F2
 #define FLAG_ITEM_ROUTE_112_NUGGET                                  0x3F3
 #define FLAG_ITEM_ROUTE_113_MAX_ETHER                               0x3F4
-#define FLAG_ITEM_ROUTE_113_SUPER_REPEL                             0x3F5
+#define FLAG_ITEM_THUNDERSHARD_CAVE_1F_CALCIUM                      0x3F5
 #define FLAG_ITEM_ROUTE_114_RARE_CANDY                              0x3F6
 #define FLAG_ITEM_ROUTE_114_PROTEIN                                 0x3F7
 #define FLAG_ITEM_ROUTE_115_SUPER_POTION                            0x3F8
@@ -1575,7 +1575,7 @@
 #define FLAG_DAILY_CONTEST_LOBBY_RECEIVED_BERRY     (DAILY_FLAGS_START + 0x1)
 #define FLAG_DAILY_SECRET_BASE                      (DAILY_FLAGS_START + 0x2)
 #define FLAG_DAILY_HIDDENGROTTO_SUNSHINETOWN        (DAILY_FLAGS_START + 0x3)  // Was Unused Flag
-#define FLAG_UNUSED_0x924                           (DAILY_FLAGS_START + 0x4)  // Unused Flag
+#define FLAG_DAILY_CHANSEY_HEAL_THUNDERSHARD_CAVE_2F_EXTERIOR                           (DAILY_FLAGS_START + 0x4)  // Was Unused Flag
 #define FLAG_UNUSED_0x925                           (DAILY_FLAGS_START + 0x5)  // Unused Flag
 #define FLAG_UNUSED_0x926                           (DAILY_FLAGS_START + 0x6)  // Unused Flag
 #define FLAG_UNUSED_0x927                           (DAILY_FLAGS_START + 0x7)  // Unused Flag

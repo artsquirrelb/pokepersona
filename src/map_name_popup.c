@@ -405,7 +405,6 @@ static void Task_MapNamePopUpWindow(u8 taskId)
     {
     case STATE_PRINT:
         // Wait, then create and print the pop up window
-        FlagSet(FLAG_HIDE_TALK_BUTTON);
         if (++task->tPrintTimer > 30)
         {
             task->tState = STATE_SLIDE_IN;
@@ -420,6 +419,7 @@ static void Task_MapNamePopUpWindow(u8 taskId)
         break;
     case STATE_SLIDE_IN:
         // Slide the window onscreen.
+        HideTalkButton();
         task->tYOffset -= POPUP_SLIDE_SPEED;
         if (task->tYOffset <= 0 )
         {
@@ -465,7 +465,6 @@ static void Task_MapNamePopUpWindow(u8 taskId)
         break;
     case STATE_END:
         HideMapNamePopUpWindow();
-        FlagClear(FLAG_HIDE_TALK_BUTTON);
         return;
     }
     if (OW_POPUP_GENERATION != GEN_5)
@@ -507,6 +506,7 @@ void HideMapNamePopUpWindow(void)
         SetGpuReg_ForcedBlank(REG_OFFSET_BG0VOFS, 0);
         DestroyTask(gPopupTaskId);
     }
+    ShowTalkButton();
 }
 
 static void UpdateSecondaryPopUpWindow(u8 secondaryPopUpWindowId)

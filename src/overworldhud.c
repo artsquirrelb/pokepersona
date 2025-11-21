@@ -253,7 +253,13 @@ static void PrintTrainerCount(u32 spriteId, u32 bgColor, u32 startTile) // 0xbc0
     TextIntoTrainerCountObject(objVram + (startTile * TILE_SIZE_4BPP), windowTileData, 7);
     RemoveWindow(windowId);
 }*/
+
 void HideTalkButton (void)
 {
     gSprites[gOWHUDSprite].invisible = TRUE;
+}
+
+void ShowTalkButton (void)
+{
+    gSprites[gOWHUDSprite].invisible = FALSE;
 }

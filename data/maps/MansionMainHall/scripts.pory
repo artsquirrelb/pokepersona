@@ -79,6 +79,8 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     closemessage
     call(Eventscript_CutsceneEnds)
     setflag(FLAG_HIDE_MAP_NAME_POPUP)
+    setflag(FLAG_COMPANION_MENU)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     unlockcharacter(CHARACTER_INTELEON_T)
     makecharaAvailable(CHARACTER_INTELEON_T)
     release

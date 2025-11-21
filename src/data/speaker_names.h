@@ -9,4 +9,7 @@ const u8 *const gSpeakerNamesTable[SP_NAME_COUNT] =
     [SP_NAME_INTELEON] = COMPOUND_STRING("Inteleon"),
     [SP_NAME_TAKEHARU] = COMPOUND_STRING("Takeharu"),
     [SP_NAME_KIKUNO] = COMPOUND_STRING("Kikuno"),
+    [SP_NAME_MIB] = COMPOUND_STRING("Man In Black"),
+    [SP_NAME_WIB] = COMPOUND_STRING("Woman In Black"),
+    [SP_NAME_KG_STAFF] = COMPOUND_STRING("Kirijo Genesis Staff"),
 };

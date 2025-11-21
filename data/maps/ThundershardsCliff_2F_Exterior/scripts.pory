@@ -1,17 +1,13 @@
 mapscripts ThundershardsCliff_2F_Exterior_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-        VAR_MITSURUS_INTRO_STATE, 15: ThundershardsCliff_2F_Exterior_OnWarp15
     ]
     MAP_SCRIPT_ON_TRANSITION{
-        if (var(VAR_MITSURUS_INTRO_STATE) >15 ){
+        if (var(VAR_MITSURUS_INTRO_STATE) >= 15 ){
             setflag(FLAG_TEMP_1)
         }
     }
 }
 
-script ThundershardsCliff_2F_Exterior_OnWarp15 {
-    applymovement(9, invisible)
-}
 
 script ThundershardsCave_2F_Eventscript_Warning {
     lock
@@ -70,17 +66,18 @@ script ThundershardsCliff_2F_Exterior_Eventscript_MitsuruApproaching_CaveEntranc
 script ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave {
     lock
     delay(20)
+    clearflag(FLAG_TEMP_1)
+    addobject(8)
     playse(SE_EXIT)
-    applymovement(9, moves(set_visible, walk_in_place_left))
-    waitmovement
+    waitse
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, emoteexclamation)
     delay(4)
     playse(SE_PIN)
-    applymovement(9, emoteexclamation)
+    applymovement(8, emoteexclamation)
     waitmovement
     delay(20)
-    applymovement(9, walkinplaceleft)
+    applymovement(8, walkinplaceleft)
     waitmovement
     setspeaker("Scientist")
     bufferleadmonspeciesname(STR_VAR_1)
@@ -117,10 +114,10 @@ script ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat {
     closemessage
     applymovement(LOCALID_PLAYER, moves(player_run_right*2, face_left))
     dofieldeffectnpcflyout(24, 25, 1)
-    applymovement(9, invisible)
+    applymovement(8, invisible)
     waitfieldeffect(FLDEFF_NPCFLY_OUT)
     waitmovement(LOCALID_PLAYER)
-    removeobject(9)
+    removeobject(8)
     setflag(FLAG_TEMP_1)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_MAD}Damn it!!"))
     closemessage

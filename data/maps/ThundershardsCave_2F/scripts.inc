@@ -147,15 +147,15 @@ ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff::
 # 73 "data/maps/ThundershardsCave_2F/scripts.pory"
 	applymovement 14, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_1
 # 74 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement
+	delay 70
 # 75 "data/maps/ThundershardsCave_2F/scripts.pory"
-	removeobject 14
-# 76 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setflag FLAG_TEMP_2
-# 77 "data/maps/ThundershardsCave_2F/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_2
-# 78 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 76 "data/maps/ThundershardsCave_2F/scripts.pory"
 	waitmovement 0
+# 77 "data/maps/ThundershardsCave_2F/scripts.pory"
+	removeobject 14
+# 78 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setflag FLAG_TEMP_2
 # 79 "data/maps/ThundershardsCave_2F/scripts.pory"
 	special RemoveCameraObject
 # 80 "data/maps/ThundershardsCave_2F/scripts.pory"
@@ -480,11 +480,11 @@ ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_1:
 	set_invisible
 	step_end
 
-# 77 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 75 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_2:
-# 77 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 75 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_left
-# 77 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 75 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_left
 	step_end
 
@@ -551,13 +551,13 @@ ThundershardsCave_2F_Eventscript_FreezingKGStaff_Movement_2:
 # 218 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_FrozenStaff_Movement_0:
 # 218 "data/maps/ThundershardsCave_2F/scripts.pory"
-	walk_fast_right
+	lock_facing_direction
 # 218 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
 # 218 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
 # 218 "data/maps/ThundershardsCave_2F/scripts.pory"
-	face_down
+	walk_fast_right
 	step_end
 
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_0:

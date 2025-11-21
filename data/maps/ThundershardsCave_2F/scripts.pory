@@ -71,11 +71,11 @@ script ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff {
     msgbox(format("{SPEAKER NAME_MIB}Don't worry sir. That's our job."))
     closemessage
     applymovement(14, moves(walk_right*5, set_invisible))
-    waitmovement
-    removeobject(14)
-    setflag(FLAG_TEMP_2)
+    delay(60)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*2))
     waitmovement(0)
+    removeobject(14)
+    setflag(FLAG_TEMP_2)
     special(RemoveCameraObject)
     bufferleadmonspeciesname(STR_VAR_1)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}.........\p
@@ -215,8 +215,8 @@ script ThundershardsCave_2F_Eventscript_FrozenStaff {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(I should be able to push them.)"))
     closemessage
     playse(SE_SELECT)
-    applymovement(19, moves(walk_fast_right*3, face_down))
-    applymovement(20, moves(walk_fast_right*3, face_down))
+    applymovement(19, moves(lock_facing_direction, walk_fast_right*3))
+    applymovement(20, moves(lock_facing_direction, walk_fast_right*3))
     waitmovement(0)
     playse(SE_CLICK)
     waitse

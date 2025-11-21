@@ -147,7 +147,7 @@ ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff::
 # 73 "data/maps/ThundershardsCave_2F/scripts.pory"
 	applymovement 14, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_1
 # 74 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 70
+	delay 50
 # 75 "data/maps/ThundershardsCave_2F/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_2
 # 76 "data/maps/ThundershardsCave_2F/scripts.pory"

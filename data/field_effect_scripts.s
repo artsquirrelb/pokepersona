@@ -102,6 +102,11 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_PointDown3Icon         	@ FLDEFF_POINT_DOWN_3_ICON
 	.4byte gFieldEffectScript_ORASDowse                 @ FLDEFF_ORAS_DOWSE
 	.4byte gFieldEffectScript_HappyIcon                 @ FLDEFF_HAPPY_ICON
+	.4byte gFieldEffectScript_Explosion                 @ FLDEFF_EXPLOSION
+	
+gFieldEffectScript_Explosion::
+	field_eff_loadfadedpal_callnative gSpritePalette_ExplosionFieldEffect, FldEff_Explosion
+	field_eff_end
 
 gFieldEffectScript_ExclamationMarkIcon1::
 	field_eff_callnative FldEff_ExclamationMarkIcon

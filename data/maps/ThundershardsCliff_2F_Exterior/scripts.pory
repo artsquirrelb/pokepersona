@@ -71,7 +71,7 @@ script ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave {
     playse(SE_EXIT)
     waitse
     playse(SE_PIN)
-    applymovement(LOCALID_PLAYER, emoteexclamation)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, face_right))
     delay(4)
     playse(SE_PIN)
     applymovement(8, emoteexclamation)
@@ -131,7 +131,11 @@ script ThundershardsCliff_2F_Exterior_Eventscript_LabExploding {
     special(StopMapMusic)
     call(SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera)
     playse(SE_PIN)
+    setfieldeffectargument (0, 25)
+    setfieldeffectargument (1, 25)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, face_right, lock_facing_direction, jump_left, unlock_facing_direction))
+    dofieldeffect(FLDEFF_EXPLOSION)
+    waitfieldeffect(FLDEFF_EXPLOSION)
     waitmovement
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}What the-"))
     closemessage

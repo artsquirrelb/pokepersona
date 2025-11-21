@@ -71,7 +71,7 @@ script ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff {
     msgbox(format("{SPEAKER NAME_MIB}Don't worry sir. That's our job."))
     closemessage
     applymovement(14, moves(walk_right*5, set_invisible))
-    delay(60)
+    delay(50)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*2))
     waitmovement(0)
     removeobject(14)

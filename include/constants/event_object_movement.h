@@ -353,6 +353,9 @@
 
 #define ANIM_OBJECT_SPARKLE 0
 
+#define ANIM_MINING_ROCK    0
+#define ANIM_MINING_ROCK_HALF    1
+
 #define ANIM_STAY_STILL      0
 #define ANIM_REMOVE_OBSTACLE 1
 

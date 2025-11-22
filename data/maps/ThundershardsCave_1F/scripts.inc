@@ -27,17 +27,17 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites1::
 # 15 "data/maps/ThundershardsCave_1F/scripts.pory"
 	delay 16
 # 16 "data/maps/ThundershardsCave_1F/scripts.pory"
-	applymovement 12, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_1
+	applymovement 7, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_1
 # 17 "data/maps/ThundershardsCave_1F/scripts.pory"
 	waitmovement
 # 18 "data/maps/ThundershardsCave_1F/scripts.pory"
 	playse SE_M_ROCK_THROW
 # 19 "data/maps/ThundershardsCave_1F/scripts.pory"
-	applymovement 9, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_2
+	applymovement 4, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_2
 # 20 "data/maps/ThundershardsCave_1F/scripts.pory"
-	waitmovement 9
+	waitmovement 4
 # 21 "data/maps/ThundershardsCave_1F/scripts.pory"
-	removeobject 9
+	removeobject 4
 # 22 "data/maps/ThundershardsCave_1F/scripts.pory"
 	setflag FLAG_TEMP_1
 # 23 "data/maps/ThundershardsCave_1F/scripts.pory"
@@ -45,7 +45,7 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites1::
 # 24 "data/maps/ThundershardsCave_1F/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_3
 # 25 "data/maps/ThundershardsCave_1F/scripts.pory"
-	applymovement 12, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_4
+	applymovement 7, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_4
 # 26 "data/maps/ThundershardsCave_1F/scripts.pory"
 	waitmovement
 # 27 "data/maps/ThundershardsCave_1F/scripts.pory"
@@ -59,7 +59,7 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites1::
 # 32 "data/maps/ThundershardsCave_1F/scripts.pory"
 	playse SE_SHINY
 # 33 "data/maps/ThundershardsCave_1F/scripts.pory"
-	applymovement 12, emotemusic
+	applymovement 7, emotemusic
 # 34 "data/maps/ThundershardsCave_1F/scripts.pory"
 	waitmovement
 # 35 "data/maps/ThundershardsCave_1F/scripts.pory"
@@ -69,7 +69,7 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites1::
 # 38 "data/maps/ThundershardsCave_1F/scripts.pory"
 	closemessage
 # 39 "data/maps/ThundershardsCave_1F/scripts.pory"
-	applymovement 12, walkleft
+	applymovement 7, walkleft
 # 40 "data/maps/ThundershardsCave_1F/scripts.pory"
 	waitmovement
 # 41 "data/maps/ThundershardsCave_1F/scripts.pory"
@@ -87,13 +87,13 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites1::
 # 50 "data/maps/ThundershardsCave_1F/scripts.pory"
 	closemessage
 # 51 "data/maps/ThundershardsCave_1F/scripts.pory"
-	applymovement 12, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_5
+	applymovement 7, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_5
 # 52 "data/maps/ThundershardsCave_1F/scripts.pory"
 	delay 8
 # 53 "data/maps/ThundershardsCave_1F/scripts.pory"
 	applymovement LOCALID_PLAYER, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_6
 # 54 "data/maps/ThundershardsCave_1F/scripts.pory"
-	waitmovement 12
+	waitmovement 7
 # 55 "data/maps/ThundershardsCave_1F/scripts.pory"
 	playse SE_EXIT
 # 56 "data/maps/ThundershardsCave_1F/scripts.pory"
@@ -215,6 +215,43 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites2::
 # 123 "data/maps/ThundershardsCave_1F/scripts.pory"
 	release
 	end
+
+
+ThundershardsCave_1F_EventScript_MiningRock::
+# 128 "data/maps/ThundershardsCave_1F/scripts.pory"
+	lock
+# 129 "data/maps/ThundershardsCave_1F/scripts.pory"
+	msgbox ThundershardsCave_1F_EventScript_MiningRock_Text_0, MSGBOX_YESNO
+# 130 "data/maps/ThundershardsCave_1F/scripts.pory"
+	compare VAR_RESULT, TRUE
+	goto_if_eq ThundershardsCave_1F_EventScript_MiningRock_2
+ThundershardsCave_1F_EventScript_MiningRock_1:
+# 141 "data/maps/ThundershardsCave_1F/scripts.pory"
+	closemessage
+# 142 "data/maps/ThundershardsCave_1F/scripts.pory"
+	release
+	return
+
+ThundershardsCave_1F_EventScript_MiningRock_2:
+# 131 "data/maps/ThundershardsCave_1F/scripts.pory"
+	closemessage
+# 132 "data/maps/ThundershardsCave_1F/scripts.pory"
+	dotimebasedevents
+# 133 "data/maps/ThundershardsCave_1F/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 134 "data/maps/ThundershardsCave_1F/scripts.pory"
+	special StartMining
+# 135 "data/maps/ThundershardsCave_1F/scripts.pory"
+	playse SE_M_ROCK_THROW
+# 136 "data/maps/ThundershardsCave_1F/scripts.pory"
+	applymovement 8, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_2
+# 137 "data/maps/ThundershardsCave_1F/scripts.pory"
+	waitmovement
+# 138 "data/maps/ThundershardsCave_1F/scripts.pory"
+	removeobject 8
+# 139 "data/maps/ThundershardsCave_1F/scripts.pory"
+	setflag FLAG_MINING_ROCK_THUNDERSHARDS_CAVE_1F
+	goto ThundershardsCave_1F_EventScript_MiningRock_1
 
 
 # 13 "data/maps/ThundershardsCave_1F/scripts.pory"
@@ -398,3 +435,7 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites1_Text_8:
 # 57 "data/maps/ThundershardsCave_1F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}.......\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I should go on with my mission.)$"
+
+ThundershardsCave_1F_EventScript_MiningRock_Text_0:
+# 129 "data/maps/ThundershardsCave_1F/scripts.pory"
+	.string "Start mining this rock?$"

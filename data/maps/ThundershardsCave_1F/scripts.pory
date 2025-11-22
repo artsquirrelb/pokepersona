@@ -13,16 +13,16 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
     waitmovement
     delay(16)
-    applymovement(12, moves(shake_horizontal))
+    applymovement(7, moves(shake_horizontal))
     waitmovement
     playse(SE_M_ROCK_THROW)
-    applymovement(9, moves(rock_smash_break))
-    waitmovement(9)
-    removeobject(9)
+    applymovement(4, moves(rock_smash_break))
+    waitmovement(4)
+    removeobject(4)
     setflag(FLAG_TEMP_1)
     delay(30)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*2))
-    applymovement(12, moves(walk_left, walk_down, face_left))
+    applymovement(7, moves(walk_left, walk_down, face_left))
     waitmovement
     special(RemoveCameraObject)
     setspeaker("Big Man")
@@ -30,13 +30,13 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Huh? Oh- yes, I suppose they are."))
     closemessage
     playse(SE_SHINY)
-    applymovement(12, emotemusic)
+    applymovement(7, emotemusic)
     waitmovement
     setspeaker("Rock-loving Big Man?")
     msgbox(format("I know right? Your answer just made my day!\p
     If only my son thought the same."))
     closemessage
-    applymovement(12, walkleft)
+    applymovement(7, walkleft)
     waitmovement
     msgbox(format("Here, your can have this. I got it from breaking the rock just now."))
     closemessage
@@ -48,10 +48,10 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     msgbox(format("Just ask around for Nebe's house when you get there. Coralport is very hospitable.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}I- Thank you. Nebe-san."))
     closemessage
-    applymovement(12, moves(walk_down, walk_left*7, walk_down *4, set_invisible))
+    applymovement(7, moves(walk_down, walk_left*7, walk_down *4, set_invisible))
     delay(8)
     applymovement(LOCALID_PLAYER, moves(face_down, delay_8, face_left))
-    waitmovement(12)
+    waitmovement(7)
     playse(SE_EXIT)
     waitse
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}.......\p
@@ -122,4 +122,22 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites2 {
     setvar(VAR_MITSURUS_INTRO_STATE, 13)
     release
     end
+}
+
+script ThundershardsCave_1F_EventScript_MiningRock {
+    lock
+    msgbox(format("Start mining this rock?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == TRUE){
+        closemessage
+        dotimebasedevents
+        fadescreenswapbuffers(FADE_TO_BLACK)
+        special(StartMining)
+        playse(SE_M_ROCK_THROW)
+        applymovement(8, moves(rock_smash_break))
+        waitmovement
+        removeobject(8)
+        setflag(FLAG_MINING_ROCK_THUNDERSHARDS_CAVE_1F)
+    }
+    closemessage
+    release
 }

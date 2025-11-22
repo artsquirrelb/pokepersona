@@ -1125,6 +1125,13 @@ static const struct SpriteFrameImage sPicTable_ScriptSparkle[] = {
     overworld_frame(gObjectEventPic_ScriptSparkle, 2, 2, 2),
 };
 
+static const struct SpriteFrameImage sPicTable_MiningRock[] = {
+    overworld_frame(gObjectEventPic_MiningRock, 2, 2, 0),
+    overworld_frame(gObjectEventPic_MiningRock, 2, 2, 1),
+    overworld_frame(gObjectEventPic_MiningRock, 2, 2, 2),
+    overworld_frame(gObjectEventPic_MiningRock, 2, 2, 3),
+};
+
 extern const struct SpriteFrameImage gFieldEffectObjectPicTable_BallLight[];
 
 #if OW_FOLLOWERS_POKEBALLS

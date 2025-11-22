@@ -596,6 +596,21 @@ static const union AnimCmd sAnim_ObjectSparkle[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_MiningRock [] =
+{
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_FRAME(2, 8),
+    ANIMCMD_FRAME(1, 8),
+    ANIMCMD_JUMP(0),
+};
+
+static const union AnimCmd sAnim_MiningRockHalf [] =
+{
+    ANIMCMD_FRAME(3, 8),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_ExitPokeballFastSouth[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -1477,6 +1492,12 @@ static const union AnimCmd *const sAnimTable_AcroBike[] = {
 static const union AnimCmd *const sAnimTable_ObjectSparkle[] =
 {
     [ANIM_OBJECT_SPARKLE] = sAnim_ObjectSparkle,
+};
+
+static const union AnimCmd *const sAnimTable_MiningRock[] =
+{
+    [ANIM_MINING_ROCK] = sAnim_MiningRock,
+    [ANIM_MINING_ROCK_HALF] = sAnim_MiningRockHalf,
 };
 
 static const union AnimCmd *const sAnimTable_Surfing[] = {

@@ -50,7 +50,7 @@ script MansionTrainingHouse_Eventscript_FurfrouStyleSetter {
     faceplayer
     setspeaker("Yoshiaki")
     msgbox(format("I'm saving money to open a salon of my own.\p
-    Furfrou visits the mansion's garden from time to time so I caught one myself to practice my fur trimming skill.\p
+    Furfrou visits the mansion's garden from time to time so I caught one myself to practice my fur trimming skills.\p
     Would you like me to style up your Furfrou too?"), MSGBOX_YESNO)
     closemessage
     if (var(VAR_RESULT) == TRUE){

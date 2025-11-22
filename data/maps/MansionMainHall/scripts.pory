@@ -35,10 +35,10 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}I'm sorry, Father...\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}But we already talked about this before.\p
     This is also my responsibility as a Kirijo.\p
-    I simply cannot sit still while our family's name is getting further tainted.\p
+    I simply cannot sit still while our family's name gets further tainted.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}Please... don't stop me, Father.\p
     {SPEAKER NAME_TAKEHARU}{DESTROY_MUGSHOT}You already know I don't fully agree with this.\p
-    No sane parents would let their children do something this dangerous.\p
+    No sane parent would let their child do something this dangerous.\p
     However, I'm also aware that I won't be able to stop you, since stubborness apparently runs in both of our veins.\p
     So please, take Inteleon with you. He can look over you in my stead."))
     closemessage
@@ -66,7 +66,7 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I must go now.\p
     Please take care, Father.\p
     {SPEAKER NAME_TAKEHARU}{DESTROY_MUGSHOT}Stay safe, and come back to me, Mitsuru.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}I'm fully intended to."))
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}I fully intend to."))
     closemessage
     applymovement(LOCALID_INTELEON, moves(walk_down, set_invisible))
     waitmovement(0)
@@ -90,7 +90,7 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
 script MansionMainHall_Eventscript_Takeharu {
     lock
     faceplayer
-    msgbox(format("{SPEAKER NAME_TAKEHARU}If you need anything on your journey, just make a call to home.\p
+    msgbox(format("{SPEAKER NAME_TAKEHARU}If you need anything on your journey, just make a call home.\p
     I'll be sure to assist you whenever.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That is assuring. Thank you, Father."))
     closemessage
@@ -134,16 +134,16 @@ script MansionMainHall_Eventscript_WaiterHaruma {
     lock
     setspeaker("Haruma")
     if (var(VAR_TEMP_1) == 0){
-    msgbox(format("That dang kid Aoi better not slacking off and leaving me finish cleaning these statues on my own."))
+    msgbox(format("That dang kid Aoi better not be slacking off and leaving me to finish cleaning these statues on my own."))
     closemessage
     playse(SE_PIN)
     applymovement(7, moves(emote_exclamation_mark, face_player))
     waitmovement(0)
     setspeaker("Haruma")
     msgbox(format("Young Lady, what can I do for you?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I don't see Kikuno anywhere. Do you know where she went to?"))
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I don't see Kikuno anywhere. Do you know where she went off to?"))
     setspeaker("Haruma")
-    msgbox(format("{DESTROY_MUGSHOT}I saw she go outside to the main garden just earlier.\p
+    msgbox(format("{DESTROY_MUGSHOT}I saw her go outside to the main garden a bit earlier.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you, Haruma."))
     closemessage
     applymovement(7, faceleft)
@@ -280,7 +280,7 @@ script MansionMainHall_Eventscript_WaiterAoi {
 
 script MansionMainHall_Eventscript_EmptyGuestRoom {
     lock
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(It's my guest room. I don't have any guest visited right now so it must be empty.)"))
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(It's my guest room. I don't have any guest visiting right now so it must be empty.)"))
     closemessage
     release
     end

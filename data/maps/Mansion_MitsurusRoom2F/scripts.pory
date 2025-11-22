@@ -70,7 +70,7 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     setflag(FLAG_EXP_SHARE)
     addmoney(12000)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll definitely need this while outdoors.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hmm, I figure that should be everything."))
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hmm, that should be everything."))
     closemessage
     delay(20)
     applymovement(LOCALID_VULPIX, moves(walk_fast_left*4, jump_in_place_up))
@@ -173,7 +173,7 @@ script Mansion_MitsurusRoom2F_Eventscript_DollAlolanVulpix {
     lock
     msgbox(format("It's an Alolan Vulpix doll.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}...\p
-    (This reminds me of how my Vulpix used to look like...)"))
+    (This reminds me of how my Vulpix used to look...)"))
     closemessage
     release
 }
@@ -241,7 +241,7 @@ script Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft {
 
 script Mansion_MitsurusRoom2F_Eventscript_BookshelfRight {
     lock
-    msgbox(format("Various books about human's and Pokémon's biology, geology and genecology."))
+    msgbox(format("Various books about human's and Pokémon's biology, geology and genealogy."))
     closemessage
     release
     end
@@ -249,10 +249,10 @@ script Mansion_MitsurusRoom2F_Eventscript_BookshelfRight {
 
 script Mansion_MitsurusRoom2F_Eventscript_Notebooks {
     lock
-    msgbox(format("College materials for the previous term.\p
+    msgbox(format("College materials from the previous term.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Luckily, it's summer break right now.\p
-    Otherwise it'd be hard for me to go travel.\p
-    Well, I figure I can always request a leave of absence until this matter is sort out.)"))
+    Otherwise it'd be hard for me to travel.\p
+    Well, I figure I can always request a leave of absence until this matter is sorted out.)"))
     closemessage
     release
 }

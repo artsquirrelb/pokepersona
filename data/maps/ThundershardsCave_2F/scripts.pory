@@ -82,7 +82,7 @@ script ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff {
     There's only a few leftover reports I need to fetch.\p
     The cops already caught onto this lab so we need to move fast.\p
     Make sure no curious cats get in before I finish.\p
-    There's already a weird man mining the rocks in the floor below."))
+    There's already a weird man mining the rocks on the floor below."))
     closemessage
     applymovement(12, walkinplaceright)
     waitmovement(0)
@@ -144,7 +144,7 @@ script ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle {
     applymovement(12, facedown)
     waitmovement
     msgbox(format("{SPEAKER NAME_MIB}(Should we report to the manager?)\p
-    {SPEAKER NAME_WIB}(She beated both us out of nowhere, she must be here for trouble.)\p
+    {SPEAKER NAME_WIB}(She beat both of us out of nowhere, she must be here for trouble.)\p
     {SPEAKER NAME_MIB}(Exactly, let's go.)"))
     closemessage
     applymovement(13, moves(walk_fast_right * 3))

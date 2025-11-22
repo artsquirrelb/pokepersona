@@ -529,6 +529,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_Shinjiro,          OBJ_EVENT_PAL_SHINJIRO},
     {gObjectEventPalette_Miki,              OBJ_EVENT_PAL_MIKI},
     {gObjectEventPalette_MitsuruSleeping,   OBJ_EVENT_PAL_TAG_MITSURU_SLEEPING},
+    {gObjectEventPalette_MiningRock,        OBJ_EVENT_PAL_TAG_MINING_ROCK},
     {gObjectEventPal_Npc5,                  OBJ_EVENT_PAL_TAG_NPC_5},
 
 #if OW_FOLLOWERS_POKEBALLS

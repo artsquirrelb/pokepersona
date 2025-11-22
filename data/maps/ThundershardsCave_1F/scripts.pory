@@ -130,7 +130,7 @@ script ThundershardsCave_1F_EventScript_MiningRock {
     if (var(VAR_RESULT) == TRUE){
         closemessage
         dotimebasedevents
-        fadescreenswapbuffers(FADE_TO_BLACK)
+        fadescreen(FADE_TO_BLACK)
         special(StartMining)
         playse(SE_M_ROCK_THROW)
         applymovement(8, moves(rock_smash_break))

@@ -38,7 +38,7 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     delay(40)
     applymovement(LOCALID_VULPIX, moves(face_left, face_up))
     waitmovement(LOCALID_PLAYER)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}My Pokédex... Repels...\p
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}My Pokédex, wallet... Repels...\p
     And the map to Thundershards Cliff."))
     closemessage
     setcaughtmon(SPECIES_VULPIX_DELTA)
@@ -68,6 +68,7 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     additem(ITEM_POTION, 2)
     additem(ITEM_REPEL, 5)
     setflag(FLAG_EXP_SHARE)
+    addmoney(12000)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll definitely need this while outdoors.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hmm, I figure that should be everything."))
     closemessage

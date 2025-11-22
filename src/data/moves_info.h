@@ -237,6 +237,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Mega Punch"),
         .bpCost = 24,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "A strong punch thrown with\n"
             "incredible power."),
@@ -2356,7 +2357,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_THUNDER_WAVE] =
     {
         .name = COMPOUND_STRING("Thunder Wave"),
-        .bpCost = 0,
+        .price = 2000,
         .description = COMPOUND_STRING(
             "A weak jolt of electricity\n"
             "that paralyzes the foe."),
@@ -2955,6 +2956,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_CONFUSE_RAY] =
     {
         .name = COMPOUND_STRING("Confuse Ray"),
+        .price = 500,
         .description = COMPOUND_STRING(
             "A sinister ray that\n"
             "confuses the foe."),
@@ -3323,6 +3325,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_SMOG] =
     {
         .name = COMPOUND_STRING("Smog"),
+        .price = 1000,
         .description = COMPOUND_STRING(
             "An exhaust-gas attack\n"
             "that may also poison."),
@@ -4506,6 +4509,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_TRIPLE_KICK] =
     {
         .name = COMPOUND_STRING("Triple Kick"),
+        .price = 3000,
         .description = COMPOUND_STRING(
             "Kicks the foe 3 times in a\n"
             "row with rising intensity."),
@@ -5260,6 +5264,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_ICY_WIND] =
     {
         .name = COMPOUND_STRING("Icy Wind"),
+        .price = 1000,
         .description = COMPOUND_STRING(
             "A chilling attack that\n"
             "lowers the foe's Speed."),
@@ -5493,6 +5498,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Rollout"),
         .bpCost = 0,
+        .price = 2000,
         .description = COMPOUND_STRING(
             "An attack lasting 5 turns\n"
             "with rising intensity."),
@@ -6201,6 +6207,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_METAL_CLAW] =
     {
         .name = COMPOUND_STRING("Metal Claw"),
+        .price = 1000,
         .description = COMPOUND_STRING(
             "A claw attack that may\n"
             "raise the user's Attack."),
@@ -7956,6 +7963,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_FEATHER_DANCE] =
     {
         .name = COMPOUND_STRING("Feather Dance"),
+        .price = 1000,
         .description = COMPOUND_STRING(
             "Envelops the foe with down\n"
             "to sharply reduce Attack."),
@@ -8379,6 +8387,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_FAKE_TEARS] =
     {
         .name = COMPOUND_STRING("Fake Tears"),
+        .price = 100,
         .description = COMPOUND_STRING(
             "Feigns crying to sharply\n"
             "lower the foe's Sp. Def."),
@@ -8838,6 +8847,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_BULLET_SEED] =
     {
         .name = COMPOUND_STRING("Bullet Seed"),
+        .price = 1000,
         .description = COMPOUND_STRING(
             "Shoots 2 to 5 seeds in a row\n"
             "to strike the foe."),
@@ -9094,6 +9104,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_MUD_SHOT] =
     {
         .name = COMPOUND_STRING("Mud Shot"),
+        .price = 3000,
         .description = COMPOUND_STRING(
             "Hurls mud at the foe and\n"
             "reduces Speed."),
@@ -12716,6 +12727,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_FLAME_CHARGE] =
     {
         .name = COMPOUND_STRING("Flame Charge"),
+        .price = 2000,
         .description = COMPOUND_STRING(
             "Attacks in a cloak of\n"
             "flames. Raises Speed."),
@@ -12943,6 +12955,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_ECHOED_VOICE] =
     {
         .name = COMPOUND_STRING("Echoed Voice"),
+        .price = 1000,
         .description = COMPOUND_STRING(
             "Does more damage every turn\n"
             "it is used."),
@@ -13748,6 +13761,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_HEART_STAMP] =
     {
         .name = COMPOUND_STRING("Heart Stamp"),
+        .price = 2000,
         .description = COMPOUND_STRING(
             "A sudden blow after a cute\n"
             "act. May cause flinching."),
@@ -14900,6 +14914,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_DRAINING_KISS] =
     {
         .name = COMPOUND_STRING("Draining Kiss"),
+        .price = 2000,
         .description = sDrainingKissDescription,
         .effect = EFFECT_ABSORB,
         .power = 50,
@@ -15743,6 +15758,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_INFESTATION] =
     {
         .name = COMPOUND_STRING("Infestation"),
+        .price = 1500,
         .description = COMPOUND_STRING(
             "The foe is infested and\n"
             "attacked for "BINDING_TURNS" turns."),
@@ -20531,6 +20547,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_CHILLING_WATER] =
     {
         .name = COMPOUND_STRING("Chilling Water"),
+        .price = 2000,
         .description = COMPOUND_STRING(
             "A shower with ice-cold water\n"
             "lowers the target's Attack."),

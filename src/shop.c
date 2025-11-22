@@ -633,7 +633,10 @@ static void CB2_InitBuyMenuAfterTutor(void)
     u8 taskId;
     if (gSpecialVar_Result == TRUE)
     {
-        gSaveBlock2Ptr->frontier.battlePoints -= gSpecialVar_0x8008;
+        if (FlagGet(FLAG_BPMARTMOVE) == TRUE)
+            gSaveBlock2Ptr->frontier.battlePoints -= gSpecialVar_0x8008;
+        else
+            RemoveMoney(&gSaveBlock1Ptr->money, gSpecialVar_0x8008);
         gSpecialVar_0x8008 = 0;
         SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
     }
@@ -887,10 +890,12 @@ static u16 SanitizeItemId(u16 itemId)
 
 static u16 ItemId_GetBpPrice(u16 itemId)
 {
-    if (MARTMOVE)
+    if (MARTMOVE && FlagGet(FLAG_BPMARTMOVE) == TRUE)
         return gMovesInfo[itemId].bpCost;
+    else if( MARTMOVE)
+        return gMovesInfo[itemId].price;
     else
-        return gItemsInfo[SanitizeItemId(itemId)].bpCost;
+        return gItemsInfo[SanitizeItemId(itemId)].bpPrice;
 }
 
 static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
@@ -913,15 +918,8 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
         }
         else //if (MARTBP || MARTMOVE)
         {   
-            if (FlagGet(FLAG_BPMart) == TRUE)
             ConvertIntToDecimalStringN(gStringVar1,
                 ItemId_GetBpPrice(itemId),
-                STR_CONV_MODE_LEFT_ALIGN,
-                6);
-            else
-            ConvertIntToDecimalStringN(
-                gStringVar1,
-                GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT),
                 STR_CONV_MODE_LEFT_ALIGN,
                 6);
         }
@@ -938,7 +936,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
             StringCopy(gStringVar4, gText_SoldOut);
         else
         {
-            if ((MARTBP || MARTMOVE) && FlagGet(FLAG_BPMart) == TRUE)
+            if (MARTBP || (MARTMOVE && FlagGet(FLAG_BPMARTMOVE) == TRUE))
                 StringCopy(ConvertIntToDecimalStringN(gStringVar4, ItemId_GetBpPrice(itemId), STR_CONV_MODE_RIGHT_ALIGN, 4), gText_BP);
             else
                 StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
@@ -1120,7 +1118,7 @@ static void BuyMenuDrawGraphics(void)
 {
     BuyMenuDrawMapGraphics();
     BuyMenuCopyMenuBgToBg1TilemapBuffer();
-    if ((MARTBP || MARTMOVE) && FlagGet(FLAG_BPMart) == TRUE)
+    if ((MARTBP || MARTMOVE) && FlagGet(FLAG_BPMARTMOVE) == TRUE)
         PrintBpBoxWithBorder(WIN_BP, 1, 13, gSaveBlock2Ptr->frontier.battlePoints);
     else
     {
@@ -1398,10 +1396,7 @@ static void Task_BuyMenu(u8 taskId)
             else if (sMartInfo.martType == MART_TYPE_OUTFIT)
                 sShopData->totalCost = GetOutfitPrice(itemId);
             else //if (MARTBP || MARTMOVE)
-                if (FlagGet(FLAG_BPMart) == TRUE)
-                    sShopData->totalCost = (ItemId_GetBpPrice(itemId));
-                else
-                    sShopData->totalCost = (GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
+                sShopData->totalCost = (ItemId_GetBpPrice(itemId));
             //else
                 //sShopData->totalCost = gDecorations[itemId].price;
 
@@ -1411,7 +1406,7 @@ static void Task_BuyMenu(u8 taskId)
             {
                 BuyMenuDisplayMessage(taskId, gText_YouDontHaveMoney, BuyMenuReturnToItemList);
             }
-            else if ((MARTBP || MARTMOVE) && (gSaveBlock2Ptr->frontier.battlePoints < sShopData->totalCost) && FlagGet(FLAG_BPMart) == TRUE)
+            else if ((MARTBP || (MARTMOVE&& FlagGet(FLAG_BPMARTMOVE) == TRUE)) && (gSaveBlock2Ptr->frontier.battlePoints < sShopData->totalCost))
             {
                 BuyMenuDisplayMessage(taskId, gText_YouDontHaveBp, BuyMenuReturnToItemList);
             }
@@ -1473,7 +1468,7 @@ static void Task_BuyMenu(u8 taskId)
                     StringCopy(gStringVar1, gMovesInfo[itemId].name);
                     gSpecialVar_0x8005 = itemId;
                     ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
-                    if (FlagGet(FLAG_BPMart) == TRUE){
+                    if (FlagGet(FLAG_BPMARTMOVE) == TRUE){
                         StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2_BpMove);
                         tItemCount = 1;
                         sShopData->totalCost = ItemId_GetBpPrice(tItemId) * tItemCount;
@@ -1483,7 +1478,8 @@ static void Task_BuyMenu(u8 taskId)
                         ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
                         StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
                         tItemCount = 1;
-                        sShopData->totalCost = (GetItemPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+                        sShopData->totalCost = ItemId_GetBpPrice(tItemId) * tItemCount;
+                        gSpecialVar_0x8008 = sShopData->totalCost;
                     }
                     BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                 }
@@ -1544,7 +1540,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
 
     if (AdjustQuantityAccordingToDPadInput(&tItemCount, sShopData->maxQuantity) == TRUE)
     {
-        if (MARTBP)
+        if (MARTBP || MARTMOVE)
             sShopData->totalCost = ItemId_GetBpPrice(tItemId) * tItemCount;
         else
             sShopData->totalCost = (GetItemPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
@@ -1633,7 +1629,7 @@ static void BuyMenuSubtractMoney(u8 taskId)
 {
     IncrementGameStat(GAME_STAT_SHOPPED);
     PlaySE(SE_SHOP);
-    if (MARTBP)
+    if (MARTBP || (MARTMOVE && FlagGet(FLAG_BPMARTMOVE) == TRUE))
     {
         gSaveBlock2Ptr->frontier.battlePoints -= sShopData->totalCost;
         if (gSaveBlock2Ptr->frontier.battlePoints < 0)

@@ -109,7 +109,6 @@ struct Item
     u16 bpPrice;
     const u32 *iconPic;
     const u16 *iconPalette;
-    u16 bpCost;
 };
 
 struct ALIGNED(2) BagPocket

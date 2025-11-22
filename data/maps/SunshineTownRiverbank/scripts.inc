@@ -113,11 +113,11 @@ SunshineTownRiverbank_Eventscript_AzumarillJumpOutOfTheRiver::
 # 53 "data/maps/SunshineTownRiverbank/scripts.pory"
 	showobjectat 4, MAP_SUNSHINE_TOWN_RIVERBANK
 # 54 "data/maps/SunshineTownRiverbank/scripts.pory"
-	dofieldeffectjumpsplash 14, 6, 1
+	dofieldeffectwatersurfacing 14, 6, 1
 # 55 "data/maps/SunshineTownRiverbank/scripts.pory"
 	applymovement 4, AzumarillJumpsOffRiver
 # 56 "data/maps/SunshineTownRiverbank/scripts.pory"
-	waitfieldeffect FLDEFF_JUMP_SMALL_SPLASH
+	waitfieldeffect FLDEFF_WATER_SURFACING
 # 57 "data/maps/SunshineTownRiverbank/scripts.pory"
 	waitmovement 0
 # 58 "data/maps/SunshineTownRiverbank/scripts.pory"

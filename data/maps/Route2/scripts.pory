@@ -444,7 +444,7 @@ script Route2_Eventscript_Kyousuke {
     end
 }
 script Route2_Eventscript_Tarou {
-    if((var(VAR_AKIHIKOS_INTRO_STATE) > 43 && var(VAR_AKIHIKOS_INTRO_STATE) < 50) || (var(VAR_MITSURUS_INTRO_STATE) > 20 && var(VAR_MITSURUS_INTRO_STATE) < 50)){
+    if((var(VAR_AKIHIKOS_INTRO_STATE) > 43 && var(VAR_AKIHIKOS_INTRO_STATE) < 50) || var(VAR_MITSURUS_INTRO_STATE) < 20){
         lock
         setspeaker("Tarou")
         applymovement(TAROU, walkinplacedown)

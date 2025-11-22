@@ -1,4 +1,11 @@
 mapscripts SunshineMeadow_MapScripts {
+    MAP_SCRIPT_ON_LOAD{
+        if (var(VAR_MITSURUS_INTRO_STATE) > 16){
+            setmetatile(11, 5, 0x020, TRUE)
+            setmetatile(12, 5, 0x01A, TRUE)
+            setmetatile(8, 5, 0x01A, TRUE)
+        }
+    }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 34: SunshineMeadow_Eventscript_AkihikoOnWarp34
         VAR_AKIHIKOS_INTRO_STATE, 35: SunshineMeadow_Eventscript_AkihikoOnWarp35
@@ -9,8 +16,10 @@ mapscripts SunshineMeadow_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 35: SunshineMeadow_Eventscript_AkihikoOnFrame35
         VAR_AKIHIKOS_INTRO_STATE, 37: SunshineMeadow_Eventscript_AkihikoOnFrame37
+        /////
         VAR_MITSURUS_INTRO_STATE, 6: SunshineMeadow_Eventscript_MitsuruOnFrame6
         VAR_MITSURUS_INTRO_STATE, 8: SunshineMeadow_Eventscript_MitsuruOnFrame8
+        VAR_MITSURUS_INTRO_STATE, 17: SunshineMeadow_Eventscript_MitsuruOnFrame17
     ]
     MAP_SCRIPT_ON_TRANSITION{
         if(var(VAR_AKIHIKOS_INTRO_STATE) == 34){
@@ -28,12 +37,25 @@ mapscripts SunshineMeadow_MapScripts {
             setobjectxyperm(4, 7, 11)
             setobjectxyperm(5, 9, 14)
         }
-        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 38){
+        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 38 && var(VAR_MITSURUS_INTRO_STATE) != 17){
             setflag(FLAG_TEMP_1)
             setflag(FLAG_TEMP_2)
         }
         if (var(VAR_MITSURUS_INTRO_STATE) >= 6 && var(VAR_MITSURUS_INTRO_STATE) <= 8){
             setflag(FLAG_TEMP_3)
+        }
+        if (var(VAR_MITSURUS_INTRO_STATE) > 16){
+            setobjectxyperm(12, 14, 8)
+        }
+        if (var(VAR_MITSURUS_INTRO_STATE) == 17){
+            setflag(FLAG_SPAWN_INVISIBLE)
+            setflag(FLAG_TEMP_2)
+            setobjectxyperm(1, 11, 10)
+            setobjectmovementtype(1, MOVEMENT_TYPE_FACE_UP)
+            setobjectxyperm(2, 12, 10)
+            setobjectmovementtype(2, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+            setobjectxyperm(3, 10, 10)
+            setobjectmovementtype(3, MOVEMENT_TYPE_FACE_UP)
         }
     }
 }
@@ -77,6 +99,10 @@ script SunshineMeadow_Eventscript_MitsuruOnWarp8 {
 script SunshineMeadow_Eventscript_MitsuruOnFrame8 {
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     goto(SunshineMeadow_Eventscript_MitsuruAproachTheFence)
+}
+
+script SunshineMeadow_Eventscript_MitsuruOnFrame17 {
+    goto(SunshineMeadow_Eventscript_MitsuruLookingOverCollapsedCave)    
 }
 
 script SunshineMeadow_Eventscript_PreMitsuruFirstBattleTalk {
@@ -575,6 +601,8 @@ script SunshineMeadow_Eventscript_JumpOverFence{
                 delay(16)
                 playse(SE_LEDGE)
                 waitmovement(0)
+                clearflag(FLAG_TEMP_HIDE_FOLLOWER)
+                updatefollowingmon
             }
             elif (var(VAR_RESULT) == DIR_SOUTH)
             {
@@ -583,9 +611,9 @@ script SunshineMeadow_Eventscript_JumpOverFence{
                 delay(16)
                 playse(SE_LEDGE)
                 waitmovement(0)
+                clearflag(FLAG_TEMP_HIDE_FOLLOWER)
+                updatefollowingmon
             }
-            clearflag(FLAG_TEMP_HIDE_FOLLOWER)
-            updatefollowingmon
         }
     }
     else{
@@ -600,7 +628,7 @@ script SunshineMeadow_Eventscript_JumpOverFence{
 
 script SunshineMeadow_Eventscript_MitsuruAproachTheFence {
     lock
-    applymovement(LOCALID_PLAYER, moves(player_run_up*4, player_run_left*3, player_run_up))
+    applymovement(LOCALID_PLAYER, moves(player_run_up*4, player_run_left*3, player_run_up, face_up))
     waitmovement(0)
     delay(20)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}-Huff- -Huff-\p
@@ -643,4 +671,43 @@ script SunshineMeadow_Eventscript_ThundershardsCliffSign {
     High risk of cave-in. DO NOT ENTER."))
     closemessage
     release
+}
+
+script SunshineMeadow_Eventscript_MitsuruLookingOverCollapsedCave {
+    applymovement(LOCALID_PLAYER, moves(set_invisible, walk_slow_down*7, face_up))
+    waitmovement
+    delay(20)
+    applymovement(LOCALID_PLAYER, visible)
+    applymovement(1, invisible)
+    waitmoncry
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}.......\p
+    I failed. They got away with all the evidences."))
+    closemessage
+    applymovement(LOCALID_PLAYER, facedown)
+    applymovement(3, moves(walk_down, face_up))
+    applymovement(2, moves(walk_down, walk_left, face_up))
+    waitmovement
+    delay(20)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}Let's regroup and plan our next move.\p
+    We also need to visit the Pokémon Center in Sunshine Town to heal the team."))
+    closemessage
+    playmoncry(SPECIES_VULPIX, CRY_MODE_NORMAL)
+    playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
+    waitmoncry
+    applymovement(3, moves(walk_up, walk_right, set_invisible))
+    applymovement(2, moves(enter_pokeball))
+    waitmovement
+    delay(30)
+    removeobject(1)
+    removeobject(2)
+    removeobject(3)
+    setflag(FLAG_TEMP_1)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+    fadedefaultbgm
+    setvar(VAR_MITSURUS_INTRO_STATE, 18)
+    special(ShowMapNamePopup)
+    release
+    end
 }

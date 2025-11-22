@@ -37,15 +37,15 @@ script ThundershardsCave_2F_Eventscript_DailyChansey_Heal {
         release
         specialvar(VAR_RESULT, GetPlayerFacingDirection)
         if (var(VAR_RESULT) == DIR_NORTH){
-            applymovement(10, walkinplacedown)
+            applymovement(9, walkinplacedown)
         }
         else{
-            applymovement(10, walkinplaceleft)
+            applymovement(9, walkinplaceleft)
         }
         waitmovement
         lock
         fadescreenswapbuffers(FADE_TO_BLACK)
-        removeobject(10)
+        removeobject(9)
         playse(SE_FLEE)
         waitse
         setflag(FLAG_DAILY_CHANSEY_HEAL_THUNDERSHARD_CAVE_2F_EXTERIOR)
@@ -97,16 +97,16 @@ text KGScientist_Defeated {
 
 script ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat {
     lock
-    setspeaker("Scientist")
+    setspeaker("Scientist Norbert")
     msgbox(format("That was pretty informative.\p
     Looks like your synergy level has increased again, Young Lady.\p
     As expected of our premium prototype.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_MAD}Norbert, you...!"))
-    setspeaker("Norbert")
+    setspeaker("Scientist Norbert")
     msgbox(format("{DESTROY_MUGSHOT}As the prize for winning, I'll spare you a bit of information.\p
     You aren't the only premium prototype anymore.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}...!"))
-    setspeaker("Norbert")
+    setspeaker("Scientist Norbert")
     msgbox(format("{DESTROY_MUGSHOT}Well then, as much as I enjoyed our little chat, there's somewhere else I need to be.\p
     I hope we don't meet again, for your own good, little miss.\p
     Oh, and be careful of the fire. Hehehehehe.\p
@@ -124,26 +124,57 @@ script ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat {
     delay(8)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Wait... He said “fire”?"))
     closemessage
+    setvar(VAR_MITSURUS_INTRO_STATE, 16)
     goto(ThundershardsCliff_2F_Exterior_Eventscript_LabExploding)
+    release
 }
 
 script ThundershardsCliff_2F_Exterior_Eventscript_LabExploding {
+    lock
     special(StopMapMusic)
-    call(SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera)
-    playse(SE_PIN)
+    playse(SE_INTRO_BLAST)
+    setvar(VAR_0x8004, 2) //vertical pan
+    setvar(VAR_0x8005, 4) //horizontal pan
+    setvar(VAR_0x8006, 6) //number of shakes
+    setvar(VAR_0x8007, 4) //shake delay
+    special (ShakeCamera)
     setfieldeffectargument (0, 25)
     setfieldeffectargument (1, 25)
-    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, face_right, lock_facing_direction, jump_left, unlock_facing_direction))
     dofieldeffect(FLDEFF_EXPLOSION)
     waitfieldeffect(FLDEFF_EXPLOSION)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, face_right, lock_facing_direction, jump_left, unlock_facing_direction))
     waitmovement
+    playbgm(MUS_HELP, FALSE)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}What the-"))
     closemessage
-    fadescreenswapbuffers(FADE_TO_WHITE)
-    call(SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera)
+    applymovement(LOCALID_PLAYER, moves(player_run_left*5, player_run_down, player_run_left,
+    player_run_down, player_run_left*7, player_run_down*3, player_run_left, player_run_down*3))
+    playse(SE_INTRO_BLAST)
+    setvar(VAR_0x8004, 2) //vertical pan
+    setvar(VAR_0x8005, 4) //horizontal pan
+    setvar(VAR_0x8006, 6) //number of shakes
+    setvar(VAR_0x8007, 4) //shake delay
+    special (ShakeCamera)
+    setfieldeffectargument (0, 18)
+    setfieldeffectargument (1, 23)
+    dofieldeffect(FLDEFF_EXPLOSION)
+    waitfieldeffect(FLDEFF_EXPLOSION)
     delay(20)
-    call(SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera)
-    setvar(VAR_MITSURUS_INTRO_STATE, 16)
-    warpsilent(MAP_THUNDERSHARDS_CAVE_2F, 2)
+    playse(SE_INTRO_BLAST)
+    setvar(VAR_0x8004, 2) //vertical pan
+    setvar(VAR_0x8005, 4) //horizontal pan
+    setvar(VAR_0x8006, 6) //number of shakes
+    setvar(VAR_0x8007, 4) //shake delay
+    special (ShakeCamera)
+    setfieldeffectargument (0, 8)
+    setfieldeffectargument (1, 28)
+    dofieldeffect(FLDEFF_EXPLOSION)
+    waitfieldeffect(FLDEFF_EXPLOSION)
+    applymovement(9, moves(jump_right, set_invisible))
+    waitmovement
+    fadescreenswapbuffers(FADE_TO_WHITE)
+    warp(MAP_THUNDERSHARDS_CAVE_2F, 2)
     release
 }

@@ -829,8 +829,7 @@ Route2_Eventscript_Tarou::
 Route2_Eventscript_Tarou_3:
 # 447 "data/maps/Route2/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 20
-	goto_if_gt Route2_Eventscript_Tarou_7
-Route2_Eventscript_Tarou_2:
+	goto_if_lt Route2_Eventscript_Tarou_1
 # 463 "data/maps/Route2/scripts.pory"
 	trainerbattle_single TRAINER_TAROU, Route2_TarouIntro, Route2_TarouDefeated
 # 464 "data/maps/Route2/scripts.pory"
@@ -873,12 +872,6 @@ Route2_Eventscript_Tarou_4:
 	compare VAR_AKIHIKOS_INTRO_STATE, 50
 	goto_if_lt Route2_Eventscript_Tarou_1
 	goto Route2_Eventscript_Tarou_3
-
-Route2_Eventscript_Tarou_7:
-# 447 "data/maps/Route2/scripts.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 50
-	goto_if_lt Route2_Eventscript_Tarou_1
-	goto Route2_Eventscript_Tarou_2
 
 
 Route2_Eventscript_AkihikoOnFrame33::

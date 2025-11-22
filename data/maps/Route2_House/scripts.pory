@@ -1087,6 +1087,8 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement
     makecharaAvailable(CHARACTER_SHINJIRO)
+    unlockcharacter(CHARACTER_MITSURU)
+    unlockcharacter(CHARACTER_INTELEON_T)
     release
     end
 }

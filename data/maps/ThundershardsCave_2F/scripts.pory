@@ -1,11 +1,11 @@
 mapscripts ThundershardsCave_2F_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_MITSURUS_INTRO_STATE, 16: ThundershardsCave_2F_Eventscript_OnWarp16
     ]
     MAP_SCRIPT_ON_TRANSITION{
         if (var(VAR_MITSURUS_INTRO_STATE) == 13 || var(VAR_MITSURUS_INTRO_STATE) == 14){
             setflag(FLAG_TEMP_3)
             setflag(FLAG_TEMP_4)
-            setflag(FLAG_TEMP_5)
             addobject(12)
         }
         if (var(VAR_MITSURUS_INTRO_STATE) > 13){
@@ -22,7 +22,25 @@ mapscripts ThundershardsCave_2F_MapScripts {
         if(var(VAR_MITSURUS_INTRO_STATE) > 15){
             setflag(FLAG_TEMP_3)
         }
+        if(var(VAR_MITSURUS_INTRO_STATE) == 16){
+            setweather(WEATHER_DROUGHT)
+            special(StartDroughtWeatherBlend)
+        }
+        if(var(VAR_MITSURUS_INTRO_STATE) <20){
+            setflag(FLAG_TEMP_5)
+        }
     }
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_MITSURUS_INTRO_STATE, 16: ThundershardsCave_2F_Eventscript_OnFrame16
+    ]
+}
+
+script ThundershardsCave_2F_Eventscript_OnWarp16 {
+    applymovement(LOCALID_PLAYER, faceleft)
+}
+
+script ThundershardsCave_2F_Eventscript_OnFrame16 {
+    goto(ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave)    
 }
 
 script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff1 {
@@ -226,3 +244,72 @@ script ThundershardsCave_2F_Eventscript_FrozenStaff {
     }
 }
 
+script ShakeScreenNoSound {
+    delay(20)
+    setvar(VAR_0x8004, 2) //vertical pan
+    setvar(VAR_0x8005, 4) //horizontal pan
+    setvar(VAR_0x8006, 6) //number of shakes
+    setvar(VAR_0x8007, 4) //shake delay
+    special (ShakeCamera)
+    waitstate
+    delay(20)
+}
+
+script ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave {
+    playse(SE_INTRO_BLAST)
+    setvar(VAR_0x8004, 2) //vertical pan
+    setvar(VAR_0x8005, 4) //horizontal pan
+    setvar(VAR_0x8006, 6) //number of shakes
+    setvar(VAR_0x8007, 4) //shake delay
+    special (ShakeCamera)
+    setfieldeffectargument (0, 37)
+    setfieldeffectargument (1, 7)
+    dofieldeffect(FLDEFF_EXPLOSION)
+    applymovement(LOCALID_PLAYER, moves(player_run_left*6, face_up))
+    waitfieldeffect(FLDEFF_EXPLOSION)
+    waitmovement
+    delay(10)
+    special(SpawnCameraObject)    
+    applymovement(OBJ_EVENT_ID_CAMERA, walkup)
+    waitmovement
+    call(ShakeScreenNoSound)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Looks like those two managed to escape.\p
+    That's a relief.)"))
+    closemessage
+    call(ShakeScreenNoSound)
+    applymovement(OBJ_EVENT_ID_CAMERA, walkdown)
+    waitmovement
+    special(RemoveCameraObject)
+    delay(30)
+    playse(SE_INTRO_BLAST)
+    setvar(VAR_0x8004, 2) //vertical pan
+    setvar(VAR_0x8005, 4) //horizontal pan
+    setvar(VAR_0x8006, 6) //number of shakes
+    setvar(VAR_0x8007, 4) //shake delay
+    special (ShakeCamera)
+    setfieldeffectargument (0, 29)
+    setfieldeffectargument (1, 10)
+    dofieldeffect(FLDEFF_EXPLOSION)
+    waitfieldeffect(FLDEFF_EXPLOSION)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, face_down))
+    waitmovement
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(player_run_left, player_run_up*2, player_run_left*7, player_run_down*8))
+    delay(20)
+    call(ShakeScreenNoSound)
+    delay(10)
+    fadescreenswapbuffers(FADE_TO_WHITE)
+    playse(SE_INTRO_BLAST)
+    setvar(VAR_0x8004, 2) //vertical pan
+    setvar(VAR_0x8005, 4) //horizontal pan
+    setvar(VAR_0x8006, 6) //number of shakes
+    setvar(VAR_0x8007, 4) //shake delay
+    special (ShakeCamera)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    fadenewbgm(MUS_DUMMY)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
+    setflag(FLAG_HIDE_MAP_NAME_POPUP)
+    setvar(VAR_MITSURUS_INTRO_STATE, 17)
+    warp(MAP_SUNSHINE_MEADOW, 11, 3)
+}

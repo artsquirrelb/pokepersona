@@ -55,7 +55,8 @@ static void Task_MiningMainInput(u8 taskId);
 static void Task_MiningFadeAndExitMenu(u8 taskId);
 static void Task_MiningPrintResult(u8 taskId);
 static void Task_MiningCreateYesNoMenu(u8 taskId);
-static void Task_MiningProcessYesNoMenu(u8 taskId);
+static void MiningQuitYes(u8 taskId);
+static void MiningQuitNo(u8 taskId);
 
 
 /* >> Others << */
@@ -165,7 +166,6 @@ struct MiningState
 
 // Win IDs
 #define WIN_MSG         0
-#define WIN_YESNO       1
 
 // Other Sprite Tags
 #define TAG_DUMMY               0
@@ -246,22 +246,12 @@ static const struct WindowTemplate sWindowTemplates[] =
     [WIN_MSG] =
     {
         .bg = 0,
-        .tilemapLeft = 2,
+        .tilemapLeft = 1,
         .tilemapTop = 15,
-        .width = 27,
+        .width = 28,
         .height = 4,
         .paletteNum = 14,
         .baseBlock = 256,
-    },
-    [WIN_YESNO] =
-    {
-        .bg = 0,
-        .tilemapLeft = 26,
-        .tilemapTop = 9,
-        .width = 3,
-        .height = 4,
-        .paletteNum = 14,
-        .baseBlock = 256 + (27*4),
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -270,12 +260,12 @@ static const struct WindowTemplate sMiningYesNo[] =
 {
     {
         .bg = 0,
-        .tilemapLeft = 26,
+        .tilemapLeft = 25,
         .tilemapTop = 9,
         .width = 3,
         .height = 4,
         .paletteNum = 14,
-        .baseBlock = 256 + (27*4),
+        .baseBlock = 256 + (28*4),
     }
 };
 
@@ -2222,30 +2212,34 @@ static void Task_MiningMainInput(u8 taskId)
         EndMining(taskId);
 }
 
+static const struct YesNoFuncTable sMiningYesNoFuncs =
+{
+    MiningQuitYes,
+    MiningQuitNo
+};
+
 static void Task_MiningCreateYesNoMenu(u8 taskId)
 {
     if (!RunTextPrintersAndIsPrinter0Active())
     {   
-        DrawDialogFrameWithCustomTileAndPalette(WIN_YESNO, FALSE, 20, 15);
-        CreateYesNoMenu(sMiningYesNo, 0, 13, 1);
-        gTasks[taskId].func = Task_MiningProcessYesNoMenu;
+        CreateYesNoMenuWithCallbacks(taskId, sMiningYesNo, 1, 0, 1, 20, 14, &sMiningYesNoFuncs);
     }
 }
 
-static void Task_MiningProcessYesNoMenu(u8 taskId)
+static void MiningQuitYes(u8 taskId)
 {
-    switch (Menu_ProcessInputNoWrapClearOnChoose())
-    {
-        case 0:
-            PlaySE(SE_SELECT);
-            EndMining(taskId);
-            break;
-        case MENU_B_PRESSED:
-        case 1:
-            PlaySE(SE_SELECT);
-            ClearDialogWindowAndFrame(WIN_MSG, TRUE);
-            gTasks[taskId].func = Task_MiningMainInput;
-    }
+    PlaySE(SE_SELECT);
+    ClearStdWindowAndFrame(WIN_MSG, TRUE);
+    sMiningUiState->stressLevelPos = STRESS_LEVEL_POS_MAX;
+    CreateTask(MiningUi_Shake, 0);
+    gTasks[taskId].func = Task_MiningMainInput;
+}
+
+static void MiningQuitNo(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    ClearStdWindowAndFrame(WIN_MSG, TRUE);
+    gTasks[taskId].func = Task_MiningMainInput;
 }
 
 static void StressLevel_Draw_0(u8 ofs, u8 ofs2, u16* ptr) 
@@ -3056,7 +3050,6 @@ static void InitMiningWindows(void)
         ScheduleBgCopyTilemapToVram(0);
 #if FLAG_USE_DEFAULT_MESSAGE_BOX == FALSE
         LoadBgTiles(GetWindowAttribute(WIN_MSG, WINDOW_BG), gMiningMessageBoxGfx, 0x1C0, 20);
-        LoadBgTiles(GetWindowAttribute(WIN_YESNO, WINDOW_BG), gMiningMessageBoxGfx, 100, 364);
         LoadPalette(gMiningMessageBoxPal, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
         LoadPalette(gMiningMessageBoxPal, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
 #elif FLAG_USE_DEFAULT_MESSAGE_BOX == TRUE
@@ -3066,8 +3059,6 @@ static void InitMiningWindows(void)
 #endif
         PutWindowTilemap(WIN_MSG);
         CopyWindowToVram(WIN_MSG, COPYWIN_FULL);
-        PutWindowTilemap(WIN_YESNO);
-        CopyWindowToVram(WIN_YESNO, COPYWIN_FULL);
     }
 }
 
@@ -3079,7 +3070,7 @@ static void PrintMessage(const u8 *string)
 
     u8 txtColor[]= {0, 1, 0};
 
-    DrawDialogFrameWithCustomTileAndPalette(WIN_MSG, FALSE, 20, 15);
+    DrawStdFrameWithCustomTileAndPalette(WIN_MSG, FALSE, 20, 15);
     FillWindowPixelBuffer(WIN_MSG, PIXEL_FILL(3));
     CopyWindowToVram(WIN_MSG, 3);
     PutWindowTilemap(WIN_MSG);
@@ -3121,7 +3112,7 @@ static bool32 ClearWindowPlaySelectButtonPress(void)
             case STATE_ITEM_BAG_4:
                 break;
             default:
-                ClearDialogWindowAndFrame(WIN_MSG, TRUE);
+                ClearStdWindowAndFrame(WIN_MSG, TRUE);
                 break;
         }
         return TRUE;

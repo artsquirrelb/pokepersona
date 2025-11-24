@@ -548,7 +548,7 @@ Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_3:
 Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_4:
 # 72 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll definitely need this while outdoors.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hmm, I figure that should be everything.$"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hmm, that should be everything.$"
 
 Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_5:
 # 83 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
@@ -600,7 +600,7 @@ Mansion_MitsurusRoom2F_Eventscript_DollAlolanVulpix_Text_0:
 	.string "It's an Alolan Vulpix doll.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}...\p"
 	.string "(This reminds me of how my Vulpix used\n"
-	.string "to look like...)$"
+	.string "to look...)$"
 
 Mansion_MitsurusRoom2F_Eventscript_RivalPC_Text_0:
 # 204 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
@@ -633,14 +633,14 @@ Mansion_MitsurusRoom2F_Eventscript_BookshelfRight_Text_0:
 # 242 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "Various books about human's and\n"
 	.string "Pokémon's biology, geology and\l"
-	.string "genecology.$"
+	.string "genealogy.$"
 
 Mansion_MitsurusRoom2F_Eventscript_Notebooks_Text_0:
 # 250 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	.string "College materials for the previous term.\p"
+	.string "College materials from the previous\n"
+	.string "term.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Luckily, it's summer break right now.\p"
-	.string "Otherwise it'd be hard for me to go\n"
-	.string "travel.\p"
+	.string "Otherwise it'd be hard for me to travel.\p"
 	.string "Well, I figure I can always request a\n"
 	.string "leave of absence until this matter is\l"
-	.string "sort out.)$"
+	.string "sorted out.)$"

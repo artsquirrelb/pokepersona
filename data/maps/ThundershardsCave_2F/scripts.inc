@@ -816,7 +816,7 @@ ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_1:
 	.string "Make sure no curious cats get in before\n"
 	.string "I finish.\p"
 	.string "There's already a weird man mining the\n"
-	.string "rocks in the floor below.$"
+	.string "rocks on the floor below.$"
 
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_2:
 # 90 "data/maps/ThundershardsCave_2F/scripts.pory"
@@ -840,8 +840,8 @@ ThundershardsCave_2F_Eventscript_KirijoGenesisStaff_Text_0:
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Text_0:
 # 147 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_MIB}(Should we report to the manager?)\p"
-	.string "{SPEAKER NAME_WIB}(She beated both us out of nowhere, she\n"
-	.string "must be here for trouble.)\p"
+	.string "{SPEAKER NAME_WIB}(She beat both of us out of nowhere,\n"
+	.string "she must be here for trouble.)\p"
 	.string "{SPEAKER NAME_MIB}(Exactly, let's go.)$"
 
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Text_1:

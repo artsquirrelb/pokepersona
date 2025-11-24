@@ -590,6 +590,7 @@ script SunshineMeadow_Eventscript_JumpOverFence{
             end
         }
         else{
+            lock
             msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Here we go.)"))
             closemessage
             hidefollower
@@ -604,6 +605,7 @@ script SunshineMeadow_Eventscript_JumpOverFence{
                 waitmovement(0)
                 clearflag(FLAG_TEMP_HIDE_FOLLOWER)
                 updatefollowingmon
+                release
             }
             elif (var(VAR_RESULT) == DIR_SOUTH)
             {
@@ -614,6 +616,7 @@ script SunshineMeadow_Eventscript_JumpOverFence{
                 waitmovement(0)
                 clearflag(FLAG_TEMP_HIDE_FOLLOWER)
                 updatefollowingmon
+                release
             }
         }
     }

@@ -260,7 +260,7 @@ ThundershardsCave_1F_EventScript_MiningRock_2:
 # 142 "data/maps/ThundershardsCave_1F/scripts.pory"
 	removeobject 8
 # 143 "data/maps/ThundershardsCave_1F/scripts.pory"
-	setflag FLAG_MINING_ROCK_THUNDERSHARDS_CAVE_1F
+	setflag FLAG_DAILY_MINING_ROCK_THUNDERSHARDS_CAVE_1F
 	goto ThundershardsCave_1F_EventScript_MiningRock_1
 
 

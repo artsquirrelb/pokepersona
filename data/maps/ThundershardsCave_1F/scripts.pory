@@ -140,7 +140,7 @@ script ThundershardsCave_1F_EventScript_MiningRock {
         applymovement(8, moves(rock_smash_break))
         waitmovement
         removeobject(8)
-        setflag(FLAG_MINING_ROCK_THUNDERSHARDS_CAVE_1F)
+        setflag(FLAG_DAILY_MINING_ROCK_THUNDERSHARDS_CAVE_1F)
     }
     closemessage
     release

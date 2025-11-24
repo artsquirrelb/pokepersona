@@ -152,3 +152,4 @@
 	.include "src/ui_main_menu.o"
 	.include "src/field_mugshot.o"
 	.include "src/quests.o"
+	.include "src/ui_stat_editor.o"

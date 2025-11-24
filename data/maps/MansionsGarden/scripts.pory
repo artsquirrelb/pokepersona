@@ -126,7 +126,7 @@ script MansionsGarden_Eventscript_KikunoVSFennekin {
     playse(SE_PIN)
     applymovement(INDEEDEE_F, moves(emote_sad))
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_KIKUNO}Damn it. This one is so slippy."))
+    msgbox(format("{SPEAKER NAME_KIKUNO}Damn it. This one is so slippery."))
     closemessage
     delay(30)
     playse(SE_PIN)
@@ -163,7 +163,7 @@ script MansionsGarden_Eventscript_VSFennekin {
     playse(SE_SHINY)
     applymovement(FENNEKIN, emotemusic)
     waitmovement
-    msgbox(format("Fennekin looks satisfied after spending all of its energy to the battle."))
+    msgbox(format("Fennekin looks satisfied after spending all of its energy in battle."))
     closemessage
     applymovement(KIKUNO, moves(walk_up*3, walk_right))
     delay(8)
@@ -174,9 +174,9 @@ script MansionsGarden_Eventscript_VSFennekin {
     playse(MUS_HEAL)
     waitse
     special(HealPlayerParty)
-    msgbox(format("{SPEAKER NAME_KIKUNO}Phew. Thanks to you this Fennekin finally calms down.\p
+    msgbox(format("{SPEAKER NAME_KIKUNO}Phew. Thanks to you, this Fennekin finally calmed down.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Where did it come from? We don't normally see Fennekin around here.\p
-    {SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}It managed to sneak up into the east hall and made a mess out of the place."))
+    {SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}It managed to sneak up into the east hall and made a mess of the place."))
     closemessage
     delay(20)
     playse(SE_SHINY)
@@ -217,7 +217,7 @@ script MansionsGarden_Eventscript_Fennekin {
     msgbox(format("Touch Fennekin with the Pokéball?"), MSGBOX_YESNO)
     closemessage
     if(var(VAR_RESULT) == TRUE){
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Now that I get a closer look at it.\p
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Now that I get a closer look at it...\p
         It seems like there are sparkles around this Fennekin?)"), MSGBOX_YESNO)
         closemessage
         if (var(VAR_RESULT) == TRUE){
@@ -306,11 +306,11 @@ script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
     applymovement(KIKUNO, emotepensive)
     waitmovement(0)
     delay(30)
-    msgbox(format("{SPEAKER NAME_KIKUNO}I guess no one manage to stop you at all.\p
+    msgbox(format("{SPEAKER NAME_KIKUNO}I guess no one managed to stop you at all.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Kikuno...\p
     {SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}Young Lady, how about I join you on your mission?\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}You know I won't agree to that.\p
-    It's too dangerous and I can't guaranteer your safety.\p
+    It's too dangerous and I can't guarantee your safety.\p
     {SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}Hahaha, it's funny how you say the exact same thing as everyone who tried to stop you."))
     closemessage
     delay(40)
@@ -327,7 +327,7 @@ script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
     applymovement(KIKUNO, moves(walk_right*2, delay_16, face_left))
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_KIKUNO}Oh right.\p
-    I'm not sure if you have heard but in case you need some healing, Nurse Sawa has returned from her maternity leave.\p
+    I'm not sure if you have heard, but in case you need some healing, Nurse Sawa has returned from her maternity leave.\p
     She should be at the Training House.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you for informing me.\p
     {SPEAKER NAME_KIKUNO}{DESTROY_MUGSHOT}My pleasure."))
@@ -383,7 +383,7 @@ script MansionsGarden_Eventscript_WaiterKouhei {
     setspeaker("Kouhei")
     if (var(VAR_MITSURUS_INTRO_STATE) < 10){
     msgbox(format("It's my shift to stand guard tonight, Young Lady.\p
-    I will make sure no wild Pokémon can disrupt our staff's goodnight sleep."))
+    I will make sure no wild Pokémon disrupt our staff's goodnight sleep."))
     closemessage
     }
     release

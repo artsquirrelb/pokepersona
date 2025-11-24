@@ -61,9 +61,9 @@ script Eventscript_AkiMitsuFollower_Talk {
     elif(var(VAR_TEMP_0) == 1){
         msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I'm still getting used to travelling with a larger party like this.\p
         {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}If I have to be honest, I find it quite delightful so far.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Oh? Did you go travel before?\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Oh? Did you travel before?\p
         {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}It was for the Ranger School. I used to do the fieldwork for the Pokémon Researchers there.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}That sounds awesome. I and Miki have always wanted to travel the region, for Pokémon research or no.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}That sounds awesome. Miki and I have always wanted to travel the region, for Pokémon research or not.\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}......\p
         {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}......\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}I just brought the mood down, didn't I? Sorry.\p
@@ -531,19 +531,19 @@ script Eventscript_InteleonTFollower_MitsuTalk {
             waitmovement(0)
             msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_NORMAL}(Inteleon puts its hand on Mitsuru's shoulder, nodding.)\p
             {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}You're right, I should believe in him.\p
-            Let's focusing on completing our mission."))
+            Let's focus on completing our mission."))
             closemessage
             setvar(VAR_TEMP_3, 1)
         }
     }
     elif (var(VAR_MITSURUS_INTRO_STATE) == 100){
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}How do you think about those two boys, Inteleon?\p
-        Did I make a right choice partnering up with them?"))
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}What do you think about those two boys, Inteleon?\p
+        Did I make the right choice partnering up with them?"))
         closemessage
         playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
         applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, LockDirectionAndWalkInPlace)
         waitmovement(0)
-        msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_DOUBT}(Inteleon lost in thought. Looks like it needs more time to answer this question.)\p
+        msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_DOUBT}(Inteleon is lost in thought. Looks like it needs more time to answer this question.)\p
         {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}I suppose only time will tell."))
     }
 }
@@ -621,7 +621,7 @@ script Eventscript_AkiShinjiFollower_Talk_C1 {
     elif (var(VAR_TEMP_1) == 1){
         msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}There's one more weird thing about her.\p
         {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Yeah?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}She takes at least an hour in bath. I don't get it.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}She takes at least an hour in the bath. I don't get it.\p
         {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}.............\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Should I ask her? It bothers me when I don't understand something.\p
         {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Don't dig your own grave like that."))
@@ -631,7 +631,7 @@ script Eventscript_AkiShinjiFollower_Talk_C1 {
     else{
         msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}At the risk of turning myself into a broken record, you shouldn't trust that girl so easily.\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}I know, Shinji. Ms. Kobayashi's always warned us to not trust rich people.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Although I think she's quite weird for a billionair young lady.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Although I think she's quite weird for a billionaire young lady.\p
         {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}How so?\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}She's not being arrogant nor flaunting her wealth?\p
         Nor looking down on us orphan kids.\p

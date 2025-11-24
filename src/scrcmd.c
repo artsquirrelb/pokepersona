@@ -43,6 +43,7 @@
 #include "pokemon_storage_system.h"
 #include "random.h"
 #include "overworld.h"
+#include "overworldhud.h"
 #include "rotating_tile_puzzle.h"
 #include "rtc.h"
 #include "script.h"
@@ -1657,6 +1658,7 @@ bool8 ScrCmd_releaseall(struct ScriptContext *ctx)
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
+    ShowTalkButton();
     gMsgBoxIsCancelable = FALSE;
     return FALSE;
 }
@@ -1678,6 +1680,7 @@ bool8 ScrCmd_release(struct ScriptContext *ctx)
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
+    ShowTalkButton();
     gMsgBoxIsCancelable = FALSE;
     return FALSE;
 }
@@ -1747,6 +1750,7 @@ bool8 ScrCmd_closemessage(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
     HideFieldMessageBox();
+    ShowTalkButton();
     return FALSE;
 }
 
@@ -2434,6 +2438,22 @@ bool8 ScrCmd_updatecoinsbox(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
     PrintCoinsString(GetCoins());
+    return FALSE;
+}
+
+bool8 SrcCmd_showtalkbutton(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    ShowTalkButton();
+    return FALSE;
+}
+
+bool8 SrcCmd_hidetalkbutton(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    HideTalkButton();
     return FALSE;
 }
 

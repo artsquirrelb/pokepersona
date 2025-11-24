@@ -45,6 +45,7 @@ script ThundershardsCave_2F_Eventscript_OnFrame16 {
 
 script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff1 {
     lock
+    hidetalkbutton
     setvar(VAR_MITSURUS_INTRO_STATE, 14)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, delay_16, delay_16, player_run_right*2, face_left))
@@ -116,7 +117,7 @@ script ThundershardsCave_2F_Eventscript_LetsJumpKGStaff {
 }
 
 script ThundershardsCave_2F_Eventscript_KirijoGenesisStaff {
-    setflag(FLAG_HIDE_TALK_BUTTON)
+    hidetalkbutton
     lock
     playse(SE_PIN)
     applymovement(12, moves(emote_exclamation_mark, face_left))

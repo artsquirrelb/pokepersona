@@ -86,15 +86,15 @@ static void HeatStartMenu_ShowQuestButtons(void);
 static void HeatStartMenu_ShowMapButtons(void);
 static void HeatStartMenu_ShowCompanionsButtons(void);
 static void HeatStartMenu_ShowTimeWindow(void);
-static void HeatStartMenu_UpdateClockDisplay(void);
+//static void HeatStartMenu_UpdateClockDisplay(void);
 static void HeatStartMenu_UpdateMenuName(void);
 static u8 RunSaveCallback(void);
 static u8 SaveDoSaveCallback(void);
 static void HideSaveInfoWindow(void);
 static void HideSaveMessageWindow(void);
-static u8 SaveOverwriteInputCallback(void);
+//static u8 SaveOverwriteInputCallback(void);
 //static u8 SaveConfirmOverwriteDefaultNoCallback(void);
-static u8 SaveConfirmOverwriteCallback(void);
+//static u8 SaveConfirmOverwriteCallback(void);
 static void ShowSaveMessage(const u8 *message, u8 (*saveCallback)(void));
 static u8 SaveFileExistsCallback(void);
 static u8 SaveSavingMessageCallback(void);
@@ -664,11 +664,12 @@ static void ShowSafariBallsWindow(void)
 
 void HeatStartMenu_Init(void) {
   if (!IsOverworldLinkActive()) {
-    FreezeObjectEvents();
-    PlayerFreeze();
-    StopPlayerAvatar();
+    
+      FreezeObjectEvents();
+      PlayerFreeze();
+      StopPlayerAvatar();
   }
-
+  HideTalkButton();
   LockPlayerFieldControls();
 
   if (sHeatStartMenu == NULL) {
@@ -877,7 +878,7 @@ static void HeatStartMenu_ShowTimeWindow(void)
 
 
 
-static void HeatStartMenu_UpdateClockDisplay(void)
+/*static void HeatStartMenu_UpdateClockDisplay(void)
 {
     u8 analogHour;
 
@@ -914,7 +915,7 @@ static void HeatStartMenu_UpdateClockDisplay(void)
     
 	AddTextPrinterParameterized6(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 0x2, 0x0, 0x0);
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
-}
+}*/
 
 static const u8 gText_Poketch[] = _("  DexNav");
 static const u8 gText_Pokedex[] = _("  Pokédex");
@@ -1107,8 +1108,8 @@ static u8 SaveReturnSuccessCallback(void)
     if (!IsSEPlaying() && SaveSuccesTimer())
     {
         HideSaveInfoWindow();
-        CreateOverworldTalkHUD();
         FlagClear(FLAG_HIDE_TALK_BUTTON);
+        ShowTalkButton();
         return SAVE_SUCCESS;
     }
     else
@@ -1187,7 +1188,7 @@ static void HideSaveMessageWindow(void) {
   ClearDialogWindowAndFrame(0, TRUE);
 }
 
-static u8 SaveOverwriteInputCallback(void)
+/*static u8 SaveOverwriteInputCallback(void)
 {
     switch (Menu_ProcessInputNoWrapClearOnChoose())
     {
@@ -1202,7 +1203,7 @@ static u8 SaveOverwriteInputCallback(void)
     }
 
     return SAVE_IN_PROGRESS;
-}
+}*/
 
 /*static u8 SaveConfirmOverwriteDefaultNoCallback(void)
 {
@@ -1211,12 +1212,12 @@ static u8 SaveOverwriteInputCallback(void)
     return SAVE_IN_PROGRESS;
 }*/
 
-static u8 SaveConfirmOverwriteCallback(void)
+/*static u8 SaveConfirmOverwriteCallback(void)
 {
     DisplayYesNoMenuDefaultYes(); // Show Yes/No menu
     sSaveDialogCallback = SaveOverwriteInputCallback;
     return SAVE_IN_PROGRESS;
-}
+}*/
 
 static void ShowSaveMessage(const u8 *message, u8 (*saveCallback)(void)) {
     StringExpandPlaceholders(gStringVar4, message);
@@ -1387,6 +1388,7 @@ static void Task_HandleSave(u8 taskId) {
       ScriptUnfreezeObjectEvents();  
       UnlockPlayerFieldControls();
       FlagClear(FLAG_HIDE_TALK_BUTTON);
+      ShowTalkButton();
       DestroyTask(taskId);
       break;
     case SAVE_ERROR:    // Close start menu
@@ -1395,6 +1397,7 @@ static void Task_HandleSave(u8 taskId) {
       UnlockPlayerFieldControls();
       SoftResetInBattlePyramid();
       FlagClear(FLAG_HIDE_TALK_BUTTON);
+      ShowTalkButton();
       DestroyTask(taskId);
       break;
   }
@@ -1539,6 +1542,7 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
     DestroyTask(taskId);
     HeatStartMenu_ExitAndClearTilemap();
     FlagClear(FLAG_HIDE_TALK_BUTTON);
+    ShowTalkButton();
     LockPlayerFieldControls();
     ScriptContext_SetupScript(EventScript_RegionMap);
 
@@ -1546,7 +1550,7 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
     PlaySE(SE_SELECT);
     HeatStartMenu_ExitAndClearTilemap(); 
     FlagClear(FLAG_HIDE_TALK_BUTTON);
-    CreateOverworldTalkHUD(); 
+    ShowTalkButton();
     DestroyTask(taskId);
   } else if (gMain.newKeys & DPAD_DOWN && sHeatStartMenu->loadState == 0) {
     HeatStartMenu_HandleInput_DPADDOWN();

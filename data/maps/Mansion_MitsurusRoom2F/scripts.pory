@@ -92,10 +92,12 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     release
     msgbox(Eventscript_StarterPokemonTips)
     closemessage
+    clearflag(FLAG_HIDE_TALK_BUTTON)
     end
 }
 
 script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
+    setflag(FLAG_HIDE_TALK_BUTTON)
     lock
     msgbox ("Hold out the Pokéball to Vulpix?", MSGBOX_YESNO)
     closemessage
@@ -142,20 +144,18 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
         closemessage
     }
     closemessage
-    call(Eventscript_CutsceneEnds)
+    clearflag(FLAG_HIDE_TALK_BUTTON)
     release
     end
 }
 
 script Eventscript_CutsceneStarts {
     setflag(FLAG_HIDE_TALK_BUTTON)
-    setflag(FLAG_DONT_TRANSITION_MUSIC)
     setflag(FLAG_HIDE_MAP_NAME_POPUP)
 }
 
 script Eventscript_CutsceneEnds {
     clearflag(FLAG_HIDE_TALK_BUTTON)
-    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 }
 
@@ -179,15 +179,17 @@ script Mansion_MitsurusRoom2F_Eventscript_DollAlolanVulpix {
 }
 
 script Mansion_MitsurusRoom2F_Eventscript_PC {
+    setflag(FLAG_HIDE_TALK_BUTTON)
     lock
     checkplayergender
     if (var(VAR_RESULT) == FEMALE){
-        goto (Mansion_MitsurusRoom2F_Eventscript_PlayerPC)
+        call (Mansion_MitsurusRoom2F_Eventscript_PlayerPC)
     }
     else{
-        goto (Mansion_MitsurusRoom2F_Eventscript_RivalPC)
+        call (Mansion_MitsurusRoom2F_Eventscript_RivalPC)
     }
     release
+    clearflag(FLAG_HIDE_TALK_BUTTON)
     end
 }
 
@@ -196,15 +198,11 @@ script Mansion_MitsurusRoom2F_Eventscript_PlayerPC {
 	msgbox(gText_PlayerHouseBootPC)
 	special(BedroomPC)
 	waitstate
-	releaseall
-	end
 }
 
 script Mansion_MitsurusRoom2F_Eventscript_RivalPC {
-    lockall
     msgbox(format("It's Mitsuru's PC. It's the latest model from Kirijo Electronics."))
-    releaseall
-    end
+    closemessage
 }
 
 script Mansion_MitsurusRoom2F_Eventscript_Piano {

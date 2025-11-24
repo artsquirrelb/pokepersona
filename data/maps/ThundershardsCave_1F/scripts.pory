@@ -9,6 +9,7 @@ mapscripts ThundershardsCave_1F_MapScripts {
 
 script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     lock
+    hidetalkbutton
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
     waitmovement
@@ -61,6 +62,7 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     waitmovement
     setvar(VAR_MITSURUS_INTRO_STATE, 13)
     release
+    showtalkbutton
     end
 }
 
@@ -132,6 +134,8 @@ script ThundershardsCave_1F_EventScript_MiningRock {
         dotimebasedevents
         fadescreen(FADE_TO_BLACK)
         special(StartMining)
+        waitstate
+        hidetalkbutton
         playse(SE_M_ROCK_THROW)
         applymovement(8, moves(rock_smash_break))
         waitmovement
@@ -140,4 +144,6 @@ script ThundershardsCave_1F_EventScript_MiningRock {
     }
     closemessage
     release
+    showtalkbutton
+    end
 }

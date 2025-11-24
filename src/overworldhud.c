@@ -151,7 +151,7 @@ static void Task_DelayPrintOverworldTrainerHUD(u8 taskId)
         LoadCompressedSpriteSheet(&sSpriteSheet_TrainerCountHUD);
         LoadSpritePalette(&sSpritePal_TrainerCountHUD);
         gOWHUDSprite = SPRITE_NONE;
-        gOWHUDSprite = CreateSprite(&sSpriteTemplate_TrainerCountHUD, 19, 2, 0);
+        gOWHUDSprite = CreateSprite(&sSpriteTemplate_TrainerCountHUD, 19, 146, 0);
         gSprites[gOWHUDSprite].invisible = FALSE;
 
         //PrintTrainerCount(gOWHUDSprite, 0, gSprites[gOWHUDSprite].oam.tileNum + 5);
@@ -161,7 +161,7 @@ static void Task_DelayPrintOverworldTrainerHUD(u8 taskId)
             SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_OBJWIN_ON);
             SetGpuRegBits(REG_OFFSET_WINOUT, WINOUT_WINOBJ_OBJ);
             gOWHUDSpriteMask = SPRITE_NONE;
-            gOWHUDSpriteMask = CreateSprite(&sSpriteTemplate_TrainerCountHUD, 19, 2, 0);
+            gOWHUDSpriteMask = CreateSprite(&sSpriteTemplate_TrainerCountHUD, 19, 146, 0);
             gSprites[gOWHUDSpriteMask].invisible = FALSE;
             gSprites[gOWHUDSpriteMask].oam.objMode = ST_OAM_OBJ_WINDOW;
             }
@@ -261,5 +261,7 @@ void HideTalkButton (void)
 
 void ShowTalkButton (void)
 {
-    gSprites[gOWHUDSprite].invisible = FALSE;
+    if (FlagGet(FLAG_HIDE_TALK_BUTTON) == FALSE){
+        gSprites[gOWHUDSprite].invisible = FALSE;
+    }
 }

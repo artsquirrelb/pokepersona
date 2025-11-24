@@ -5,22 +5,28 @@ mapscripts MansionTrainingHouse_MapScripts {
 }
 
 script MansionTrainingHouse_Eventscript_MoveTutor {
+    hidetalkbutton
     lock
     checkplayergender
     if (var(VAR_RESULT) == FEMALE)
     {
+        setspeaker("Ayaka")
         msgbox(format("Hello, Young Lady. What moves do you want to teach to your Pokémon today?"))
         bpmart(MansionTrainingHouse_MoveTutor, TRUE)
+        setspeaker("Ayaka")
         msgbox(format("Good luck on your journey, Young Lady."))
         closemessage
     }
     else{
+        setspeaker("Ayaka")
         msgbox(format("Hello, {PLAYER}. What moves do you want to teach to your Pokémon today?"))
         bpmart(MansionTrainingHouse_MoveTutor, TRUE)
+        setspeaker("Ayaka")
         msgbox(format("Good luck on your journey, {PLAYER}."))
         closemessage
     }
     release
+    showtalkbutton
     end
 }
 
@@ -57,6 +63,7 @@ script MansionTrainingHouse_Eventscript_FurfrouStyleSetter {
         call(CheckIfHasFurfrou)
     }
     else{
+        setspeaker("Yoshiaki")
         msgbox(format("If you ever want to style your Furfrou, just ask me. I'll do it free of charge."))
         closemessage
         release
@@ -65,6 +72,7 @@ script MansionTrainingHouse_Eventscript_FurfrouStyleSetter {
 }
 
 script ShowMultiChoiceFurfrouStyle1 {
+    setspeaker("Yoshiaki")
     multichoice(21, 3, MULTI_FURFROU_STYLE, 0) 
     if (var(VAR_RESULT) == 0){
         call(ShowFurfrouNatural)
@@ -85,6 +93,7 @@ script ShowMultiChoiceFurfrouStyle1 {
         call(ShowMultiChoiceFurfrouStyle2)
     }
     else {//cancel
+        setspeaker("Yoshiaki")
         msgbox(format("If you want to change your Furfrou's style, feel free to ask me.\p
         It's free of charge, I just want to practice."))
         closemessage
@@ -94,6 +103,7 @@ script ShowMultiChoiceFurfrouStyle1 {
 }
 
 script ShowMultiChoiceFurfrouStyle2 {
+    setspeaker("Yoshiaki")
     multichoice(21, 3, MULTI_FURFROU_STYLE_2, 0)
     if (var(VAR_RESULT) == 0){
         call(ShowFurfrouMatron)
@@ -114,6 +124,7 @@ script ShowMultiChoiceFurfrouStyle2 {
         call (ShowMultiChoiceFurfrouStyle1)
     }
     else{//cancel
+        setspeaker("Yoshiaki")
         msgbox(format("If you want to change your Furfrou's style, feel free to ask me.\p
         It's free of charge, I just want to practice."))
         closemessage
@@ -435,12 +446,14 @@ script CheckIfHasFurfrou {
         checkspecies(SPECIES_FURFROU_PHARAOH)
     }
     if(var(VAR_RESULT) == FALSE){
+        setspeaker("Yoshiaki")
         msgbox(format("But you don't have a Furfrou in party..."))
         closemessage
         release
         end
     }
     else{
+        setspeaker("Yoshiaki")
         msgbox(format("Which style do you want for your Furfrou?"))
         closemessage
         call(ShowMultiChoiceFurfrouStyle1)

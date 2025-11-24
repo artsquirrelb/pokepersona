@@ -34,8 +34,8 @@
 // Top level PC menu options
 enum {
     MENU_ITEMSTORAGE,
-    MENU_MAILBOX,
-    MENU_DECORATION,
+    //MENU_MAILBOX,
+    //MENU_DECORATION,
     MENU_TURNOFF
 };
 
@@ -114,7 +114,7 @@ static void Mailbox_PrintMailOptions(u8);
 static void Mailbox_MailOptionsProcessInput(u8);
 
 static void PlayerPC_ItemStorage(u8);
-static void PlayerPC_Mailbox(u8);
+//static void PlayerPC_Mailbox(u8);
 //static void PlayerPC_Decoration(u8);
 static void PlayerPC_TurnOff(u8);
 
@@ -215,7 +215,7 @@ static const u8 *const sItemStorage_OptionDescriptionsRG[] =
 static const struct MenuAction sPlayerPCMenuActions[] =
 {
     [MENU_ITEMSTORAGE] = { COMPOUND_STRING("Item Storage"), {PlayerPC_ItemStorage} },
-    [MENU_MAILBOX]     = { sText_Mailbox,                   {PlayerPC_Mailbox} },
+    //[MENU_MAILBOX]     = { sText_Mailbox,                   {PlayerPC_Mailbox} },
     //[MENU_DECORATION]  = { COMPOUND_STRING("Decoration"),   {PlayerPC_Decoration} },
     [MENU_TURNOFF]     = { COMPOUND_STRING("Turn Off"),     {PlayerPC_TurnOff} }
 };
@@ -223,8 +223,8 @@ static const struct MenuAction sPlayerPCMenuActions[] =
 static const u8 sBedroomPC_OptionOrder[] =
 {
     MENU_ITEMSTORAGE,
-    MENU_MAILBOX,
-    MENU_DECORATION,
+    //MENU_MAILBOX,
+    //MENU_DECORATION,
     MENU_TURNOFF
 };
 #define NUM_BEDROOM_PC_OPTIONS ARRAY_COUNT(sBedroomPC_OptionOrder)
@@ -232,7 +232,7 @@ static const u8 sBedroomPC_OptionOrder[] =
 static const u8 sPlayerPC_OptionOrder[] =
 {
     MENU_ITEMSTORAGE,
-    MENU_MAILBOX,
+    //MENU_MAILBOX,
     MENU_TURNOFF
 };
 #define NUM_PLAYER_PC_OPTIONS ARRAY_COUNT(sPlayerPC_OptionOrder)
@@ -282,7 +282,7 @@ static const struct WindowTemplate sWindowTemplates_MainMenus[] =
         .tilemapLeft = 1,
         .tilemapTop = 1,
         .width = 9,
-        .height = 8,
+        .height = 6,
         .paletteNum = 14,
         .baseBlock = 1
     },
@@ -494,7 +494,7 @@ static void PlayerPC_ItemStorage(u8 taskId)
     gTasks[taskId].func = ItemStorageMenuProcessInput;
 }
 
-static void PlayerPC_Mailbox(u8 taskId)
+/*static void PlayerPC_Mailbox(u8 taskId)
 {
     gPlayerPCItemPageInfo.count = GetMailboxMailCount();
 
@@ -522,7 +522,7 @@ static void PlayerPC_Mailbox(u8 taskId)
             DisplayItemMessageOnField(taskId, gText_NoMailHere, ReshowPlayerPC);
         }
     }
-}
+}*/
 
 /*static void PlayerPC_Decoration(u8 taskId)
 {
@@ -582,7 +582,7 @@ static void InitItemStorageMenu(u8 taskId, u8 var)
 static void ItemStorageMenuPrint(const u8 *textPtr)
 {
     DrawDialogueFrame(0, FALSE);
-    AddTextPrinterParameterized6(0, FONT_NORMAL, textPtr, 0, 1, 0, 0, 1, 0x0, 0x0);
+    AddTextPrinterParameterized6(0, FONT_NORMAL, textPtr, 0, 1, 0, 0, 2, 0x0, 0x0);
 }
 
 static void ItemStorageMenuProcessInput(u8 taskId)

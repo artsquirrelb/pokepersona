@@ -54,6 +54,9 @@ static void Task_WaitButtonPressOpening(u8 taskId);
 static void Task_MiningMainInput(u8 taskId);
 static void Task_MiningFadeAndExitMenu(u8 taskId);
 static void Task_MiningPrintResult(u8 taskId);
+static void Task_MiningCreateYesNoMenu(u8 taskId);
+static void Task_MiningProcessYesNoMenu(u8 taskId);
+
 
 /* >> Others << */
 static void Mining_FadeAndBail(void);
@@ -162,6 +165,7 @@ struct MiningState
 
 // Win IDs
 #define WIN_MSG         0
+#define WIN_YESNO       1
 
 // Other Sprite Tags
 #define TAG_DUMMY               0
@@ -249,7 +253,30 @@ static const struct WindowTemplate sWindowTemplates[] =
         .paletteNum = 14,
         .baseBlock = 256,
     },
+    [WIN_YESNO] =
+    {
+        .bg = 0,
+        .tilemapLeft = 26,
+        .tilemapTop = 9,
+        .width = 3,
+        .height = 4,
+        .paletteNum = 14,
+        .baseBlock = 256 + (27*4),
+    },
     DUMMY_WIN_TEMPLATE
+};
+
+static const struct WindowTemplate sMiningYesNo[] =
+{
+    {
+        .bg = 0,
+        .tilemapLeft = 26,
+        .tilemapTop = 9,
+        .width = 3,
+        .height = 4,
+        .paletteNum = 14,
+        .baseBlock = 256 + (27*4),
+    }
 };
 
 static const struct BgTemplate sMiningBgTemplates[] =
@@ -1516,6 +1543,7 @@ static const u8 sText_EverythingWas[] = _("Everything was dug up!");
 static const u8 sText_WasObtained[] = _("{STR_VAR_1}\nwas obtained!");
 static const u8 sText_TooBad[] = _("Too bad!\nYour Bag is full!");
 static const u8 sText_TheWall[] = _("The wall collapsed!");
+static const u8 sTextConfirmQuit[] = _("Do you want to quit? You will get all the\nitems you have dug up.");
 
 static u32 MiningUtil_GetTotalTileAmount(u8 itemId) 
 {
@@ -1530,7 +1558,7 @@ static u32 random(u32 amount)
 
 void StartMining(void) 
 {
-    Mining_Init(CB2_ReturnToField);
+    Mining_Init(CB2_ReturnToFieldContinueScript);
 }
 
 static void Mining_Init(MainCallback callback) 
@@ -1539,7 +1567,7 @@ static void Mining_Init(MainCallback callback)
 
     if (sMiningUiState == NULL) 
     {
-        SetMainCallback2(callback);
+        SetMainCallback2(CB2_ReturnToFieldContinueScript);
         return;
     }
 
@@ -2140,10 +2168,12 @@ static void Task_MiningMainInput(u8 taskId)
 
         if (sMiningUiState->tool == 1) 
         {
+            PlaySE(SE_BANG);
             sMiningUiState->ShakeHitEffect = CreateSprite(&gSpriteHitEffectHammer, (sMiningUiState->cursorX*16)+8, (sMiningUiState->cursorY*16)+8, 0);
             sMiningUiState->ShakeHitTool = CreateSprite(&gSpriteHitHammer, (sMiningUiState->cursorX*16)+24, sMiningUiState->cursorY*16, 0);
         } else 
         {
+            PlaySE(SE_M_ROCK_THROW);
             sMiningUiState->ShakeHitEffect = CreateSprite(&gSpriteHitEffectPickaxe, (sMiningUiState->cursorX*16)+8, (sMiningUiState->cursorY*16)+8, 0);
             sMiningUiState->ShakeHitTool = CreateSprite(&gSpriteHitPickaxe, (sMiningUiState->cursorX*16)+24, sMiningUiState->cursorY*16, 0);
         }
@@ -2166,15 +2196,23 @@ static void Task_MiningMainInput(u8 taskId)
     }
 
     else if (gMain.newAndRepeatedKeys & L_BUTTON) 
-    {
+    {   
+        PlaySE(SE_SELECT);
         StartSpriteAnim(&gSprites[sMiningUiState->bRedSpriteIndex], 1);
         StartSpriteAnim(&gSprites[sMiningUiState->bBlueSpriteIndex],1);
         sMiningUiState->tool = RED_BUTTON;
     } else if (gMain.newAndRepeatedKeys & R_BUTTON) 
     {
+        PlaySE(SE_SELECT);
         StartSpriteAnim(&gSprites[sMiningUiState->bRedSpriteIndex], 0);
         StartSpriteAnim(&gSprites[sMiningUiState->bBlueSpriteIndex], 0);
         sMiningUiState->tool = BLUE_BUTTON;
+
+    } else if (gMain.newAndRepeatedKeys & B_BUTTON)
+    {
+        PlaySE(SE_SELECT);
+        PrintMessage(sTextConfirmQuit);
+        gTasks[taskId].func = Task_MiningCreateYesNoMenu;
     }
 
     if (AreAllItemsFound()) 
@@ -2182,6 +2220,32 @@ static void Task_MiningMainInput(u8 taskId)
 
     if (IsStressLevelMax())
         EndMining(taskId);
+}
+
+static void Task_MiningCreateYesNoMenu(u8 taskId)
+{
+    if (!RunTextPrintersAndIsPrinter0Active())
+    {   
+        DrawDialogFrameWithCustomTileAndPalette(WIN_YESNO, FALSE, 20, 15);
+        CreateYesNoMenu(sMiningYesNo, 0, 13, 1);
+        gTasks[taskId].func = Task_MiningProcessYesNoMenu;
+    }
+}
+
+static void Task_MiningProcessYesNoMenu(u8 taskId)
+{
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+        case 0:
+            PlaySE(SE_SELECT);
+            EndMining(taskId);
+            break;
+        case MENU_B_PRESSED:
+        case 1:
+            PlaySE(SE_SELECT);
+            ClearDialogWindowAndFrame(WIN_MSG, TRUE);
+            gTasks[taskId].func = Task_MiningMainInput;
+    }
 }
 
 static void StressLevel_Draw_0(u8 ofs, u8 ofs2, u16* ptr) 
@@ -2714,6 +2778,7 @@ static void HandleItemState(u32 itemId) {
     {
         BeginNormalPaletteFade(1 << (16 + gSprites[sMiningUiState->buriedItems[itemId].spriteId].oam.paletteNum), 2, 16, 0, RGB_WHITE);
         sMiningUiState->buriedItems[itemId].buriedState = stop;
+        PlaySE(SE_NOTE_C_HIGH);
         SetBuriedItemStatus(itemId,TRUE);
     }
 }
@@ -2991,8 +3056,9 @@ static void InitMiningWindows(void)
         ScheduleBgCopyTilemapToVram(0);
 #if FLAG_USE_DEFAULT_MESSAGE_BOX == FALSE
         LoadBgTiles(GetWindowAttribute(WIN_MSG, WINDOW_BG), gMiningMessageBoxGfx, 0x1C0, 20);
-        LoadPalette(gMiningMessageBoxPal, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+        LoadBgTiles(GetWindowAttribute(WIN_YESNO, WINDOW_BG), gMiningMessageBoxGfx, 100, 364);
         LoadPalette(gMiningMessageBoxPal, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
+        LoadPalette(gMiningMessageBoxPal, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
 #elif FLAG_USE_DEFAULT_MESSAGE_BOX == TRUE
         LoadBgTiles(GetWindowAttribute(WIN_MSG, WINDOW_BG), gMessageBox_Gfx, 0x1C0, 20);
         LoadPalette(GetOverworldTextboxPalettePtr(), BG_PLTT_ID(15), PLTT_SIZE_4BPP);
@@ -3000,6 +3066,8 @@ static void InitMiningWindows(void)
 #endif
         PutWindowTilemap(WIN_MSG);
         CopyWindowToVram(WIN_MSG, COPYWIN_FULL);
+        PutWindowTilemap(WIN_YESNO);
+        CopyWindowToVram(WIN_YESNO, COPYWIN_FULL);
     }
 }
 
@@ -3235,6 +3303,7 @@ static void WallCollapseAnimation()
 {
     sMiningUiState->delayCounter = 0;
     sMiningUiState->isCollapseAnimActive = TRUE;
+    PlaySE(SE_M_EARTHQUAKE);
     ShowBg(1);
     CreateTask(Task_WallCollapseDelay, 0);
 }

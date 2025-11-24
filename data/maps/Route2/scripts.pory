@@ -444,20 +444,8 @@ script Route2_Eventscript_Kyousuke {
     end
 }
 script Route2_Eventscript_Tarou {
-    if((var(VAR_AKIHIKOS_INTRO_STATE) > 43 && var(VAR_AKIHIKOS_INTRO_STATE) < 50) || var(VAR_MITSURUS_INTRO_STATE) < 20){
-        lock
-        setspeaker("Tarou")
-        applymovement(TAROU, walkinplacedown)
-        waitmovement(0)
-        msgbox(format("So you're saying these Pokémon are really strong?"))
-        closemessage
-        applymovement(KYOUSUKE, walkinplaceup)
-        waitmovement(0)
-        setspeaker("Kyousuke")
-        msgbox(format("That's right, young man. Hehehehe."))
-        closemessage
-        release
-        end
+    if(((var(VAR_AKIHIKOS_INTRO_STATE) > 43 && var(VAR_AKIHIKOS_INTRO_STATE) < 50)) || var(VAR_MITSURUS_INTRO_STATE) < 20){
+        goto(Route2_Eventscript_Kyousuke)
     }
     else{
     trainerbattle_single (TRAINER_TAROU, Route2_TarouIntro, Route2_TarouDefeated)
@@ -886,7 +874,7 @@ script Route2_Eventscript_NotTheWayToSunshineMeadow_Mitsuru {
 
 script Route2_Eventscript_MitsuruApproachingRoute2House {
     lock
-    applymovement(LOCALID_PLAYER, moves(player_run_left*6, face_up))
+    applymovement(LOCALID_PLAYER, moves(player_run_left*3, walk_left*2, walk_slow_left, face_up))
     waitmovement
     delay(40)
     applymovement(LOCALID_PLAYER, moves(walk_up, face_right))

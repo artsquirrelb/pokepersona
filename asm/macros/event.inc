@@ -3079,3 +3079,15 @@
 	callnative ScrCmd_istmrelearneractive, requests_effects=1
 	.4byte \destination
 	.endm
+
+@Talk Button Related
+	.macro showtalkbutton
+	callnative SrcCmd_showtalkbutton
+	.endm
+
+	.macro hidetalkbutton
+	callnative SrcCmd_hidetalkbutton
+	.endm
+
+
+

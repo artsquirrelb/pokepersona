@@ -178,120 +178,120 @@ Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking::
 	msgbox Eventscript_StarterPokemonTips
 # 94 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
+# 95 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	clearflag FLAG_HIDE_TALK_BUTTON
 	end
 
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball::
-# 99 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	lock
 # 100 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_0, MSGBOX_YESNO
+	setflag FLAG_HIDE_TALK_BUTTON
 # 101 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	closemessage
+	lock
 # 102 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_0, MSGBOX_YESNO
+# 103 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	closemessage
+# 104 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_2
-# 138 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	playse SE_PIN
-# 139 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	applymovement LOCALID_VULPIX, Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Movement_0
 # 140 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	waitmovement
+	playse SE_PIN
 # 141 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_6
+	applymovement LOCALID_VULPIX, Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Movement_0
 # 142 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	closemessage
-Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_1:
+	waitmovement
+# 143 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_6
 # 144 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
-# 145 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	call Eventscript_CutsceneEnds
+Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_1:
 # 146 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	closemessage
+# 147 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	clearflag FLAG_HIDE_TALK_BUTTON
+# 148 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	release
 	end
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_2:
-# 103 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 2
-# 104 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	givemon SPECIES_VULPIX_DELTA, 7, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ECHOED_VOICE, MOVE_POWDER_SNOW, MOVE_DISARMING_VOICE, MOVE_GROWL, SHINY_MODE_RANDOM, TRUE
 # 105 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 2
+# 106 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	givemon SPECIES_VULPIX_DELTA, 7, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ECHOED_VOICE, MOVE_POWDER_SNOW, MOVE_DISARMING_VOICE, MOVE_GROWL, SHINY_MODE_RANDOM, TRUE
+# 107 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_6
-# 115 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 117 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_7
-# 125 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 127 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_3
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_5:
-# 127 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_4
 # 129 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	closemessage
-# 130 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	manuallysettime WEEKDAY_THU, 22, 32, 0
+	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_4
 # 131 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	setflag FLAG_SET_WALL_CLOCK
+	closemessage
 # 132 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	setflag FLAG_SYS_CLOCK_SET
+	manuallysettime WEEKDAY_THU, 22, 32, 0
 # 133 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_5
+	setflag FLAG_SET_WALL_CLOCK
 # 134 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	updatefollowingmon
+	setflag FLAG_SYS_CLOCK_SET
 # 135 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_5
+# 136 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	updatefollowingmon
+# 137 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
 	goto Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_1
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_6:
-# 106 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 107 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	waitfanfare
 # 108 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_1
+	playfanfare MUS_OBTAIN_ITEM
 # 109 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	removeobject LOCALID_VULPIX
+	waitfanfare
 # 110 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	setflag FLAG_TEMP_1
+	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_1
 # 111 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_2
+	removeobject LOCALID_VULPIX
 # 112 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	setflag FLAG_TEMP_1
+# 113 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_2
+# 114 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
 	goto Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_5
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_7:
-# 116 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 117 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	waitfanfare
 # 118 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_1
+	playfanfare MUS_OBTAIN_ITEM
 # 119 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	removeobject LOCALID_VULPIX
+	waitfanfare
 # 120 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	setflag FLAG_TEMP_1
+	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_1
 # 121 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_2
+	removeobject LOCALID_VULPIX
 # 122 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	setflag FLAG_TEMP_1
+# 123 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	msgbox Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_2
+# 124 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
 	goto Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_5
 
 
 Eventscript_CutsceneStarts::
-# 151 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
-# 152 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	setflag FLAG_DONT_TRANSITION_MUSIC
 # 153 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	setflag FLAG_HIDE_TALK_BUTTON
+# 154 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	return
 
 
 Eventscript_CutsceneEnds::
-# 157 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
 # 158 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
+	clearflag FLAG_HIDE_TALK_BUTTON
 # 159 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	return
@@ -327,122 +327,122 @@ Mansion_MitsurusRoom2F_Eventscript_DollAlolanVulpix::
 
 Mansion_MitsurusRoom2F_Eventscript_PC::
 # 182 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	lock
+	setflag FLAG_HIDE_TALK_BUTTON
 # 183 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	checkplayergender
+	lock
 # 184 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	checkplayergender
+# 185 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	compare VAR_RESULT, FEMALE
 	goto_if_eq Mansion_MitsurusRoom2F_Eventscript_PC_2
-# 188 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	goto Mansion_MitsurusRoom2F_Eventscript_RivalPC
+# 189 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	call Mansion_MitsurusRoom2F_Eventscript_RivalPC
 Mansion_MitsurusRoom2F_Eventscript_PC_1:
-# 190 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 191 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	release
+# 192 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	clearflag FLAG_HIDE_TALK_BUTTON
 	end
 
 Mansion_MitsurusRoom2F_Eventscript_PC_2:
-# 185 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	goto Mansion_MitsurusRoom2F_Eventscript_PlayerPC
+# 186 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	call Mansion_MitsurusRoom2F_Eventscript_PlayerPC
 	goto Mansion_MitsurusRoom2F_Eventscript_PC_1
 
 
 Mansion_MitsurusRoom2F_Eventscript_PlayerPC::
-# 195 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	playse SE_PC_ON
-# 196 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox gText_PlayerHouseBootPC
 # 197 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	special BedroomPC
+	playse SE_PC_ON
 # 198 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	waitstate
+	msgbox gText_PlayerHouseBootPC
 # 199 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	releaseall
-	end
+	special BedroomPC
+# 200 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	waitstate
+	return
 
 
 Mansion_MitsurusRoom2F_Eventscript_RivalPC::
 # 204 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	lockall
-# 205 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_RivalPC_Text_0
-# 206 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	releaseall
-	end
+# 205 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	closemessage
+	return
 
 
 Mansion_MitsurusRoom2F_Eventscript_Piano::
-# 211 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 209 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	lock
-# 212 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 210 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	compare VAR_TEMP_0, 0
 	goto_if_eq Mansion_MitsurusRoom2F_Eventscript_Piano_2
-# 227 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 225 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_Piano_Text_2
 Mansion_MitsurusRoom2F_Eventscript_Piano_1:
-# 229 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 227 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	release
 	return
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_2:
-# 214 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 212 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_Piano_Text_0, MSGBOX_YESNO
-# 215 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 213 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
-# 216 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 214 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Mansion_MitsurusRoom2F_Eventscript_Piano_5
 	goto Mansion_MitsurusRoom2F_Eventscript_Piano_1
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_5:
-# 217 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 215 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	playbgm MUS_SUNSHINE_ORPHANAGE, FALSE
-# 218 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 216 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	delay 1800
-# 219 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 217 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	fadenewbgm MUS_KIRIJOS_MANSION
-# 220 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 218 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	savebgm MUS_KIRIJOS_MANSION
-# 221 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 219 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_Piano_Text_1
-# 222 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 220 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
-# 223 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 221 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	setvar VAR_TEMP_0, 1
 	goto Mansion_MitsurusRoom2F_Eventscript_Piano_1
 
 
 Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft::
-# 233 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 231 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	lock
-# 234 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 232 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft_Text_0
-# 237 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 235 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
-# 238 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 236 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	release
 	end
 
 
 Mansion_MitsurusRoom2F_Eventscript_BookshelfRight::
-# 243 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 241 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	lock
-# 244 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 242 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_BookshelfRight_Text_0
-# 245 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 243 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
-# 246 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 244 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	release
 	end
 
 
 Mansion_MitsurusRoom2F_Eventscript_Notebooks::
-# 251 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 249 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	lock
-# 252 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 250 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_Notebooks_Text_0
-# 256 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 254 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
-# 257 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 255 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	release
 	return
 
@@ -509,9 +509,9 @@ Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Movement_4:
 	jump_in_place_up
 	step_end
 
-# 139 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 141 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Movement_0:
-# 139 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 141 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	emote_question_mark
 	step_end
 
@@ -558,36 +558,36 @@ Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_5:
 	.string "shall we?$"
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_0:
-# 100 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 102 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "Hold out the Pokéball to Vulpix?$"
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_1:
-# 108 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 110 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "Vulpix's pushed the Pokéball button\n"
 	.string "with its nose and went inside.$"
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_2:
-# 111 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 113 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "{COLOR GREEN}Tips: You can rename a Pokémon in its\n"
 	.string "summary screen.$"
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_3:
-# 125 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 127 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "Party full.$"
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_4:
-# 127 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 129 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It's already 10:32PM.\p"
 	.string "If I don't go now, I won't be arriving at\n"
 	.string "the cliff's foot before midnight.$"
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_5:
-# 133 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 135 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "{COLOR GREEN}{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Tips: Check your bag for various QoL\n"
 	.string "items.$"
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_6:
-# 141 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 143 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "Vulpix is wondering why you're\n"
 	.string "hesitating.$"
 
@@ -603,25 +603,25 @@ Mansion_MitsurusRoom2F_Eventscript_DollAlolanVulpix_Text_0:
 	.string "to look like...)$"
 
 Mansion_MitsurusRoom2F_Eventscript_RivalPC_Text_0:
-# 205 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 204 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "It's Mitsuru's PC. It's the latest model\n"
 	.string "from Kirijo Electronics.$"
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_Text_0:
-# 214 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 212 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "Play a song? {COLOR GREEN}(It will take roughly 30\n"
 	.string "seconds.)$"
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_Text_1:
-# 221 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 219 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(It's time to go.)$"
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_Text_2:
-# 227 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 225 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I really need to get going.)$"
 
 Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft_Text_0:
-# 234 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 232 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "Documents about various big companies\n"
 	.string "in Kitoha region.\p"
 	.string "Eleki Express's is circled in red. Beside\n"
@@ -630,13 +630,13 @@ Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft_Text_0:
 	.string "They seem to be in a mountain area.$"
 
 Mansion_MitsurusRoom2F_Eventscript_BookshelfRight_Text_0:
-# 244 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 242 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "Various books about human's and\n"
 	.string "Pokémon's biology, geology and\l"
 	.string "genecology.$"
 
 Mansion_MitsurusRoom2F_Eventscript_Notebooks_Text_0:
-# 252 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 250 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "College materials for the previous term.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Luckily, it's summer break right now.\p"
 	.string "Otherwise it'd be hard for me to go\n"

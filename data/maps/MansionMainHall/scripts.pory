@@ -18,7 +18,7 @@ script MansionMainHall_Eventscript_OnFrame2 {
 
 script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     setvar(VAR_MITSURUS_INTRO_STATE, 3)
-    delay(30)
+    delay(10)
     applymovement(LOCALID_PLAYER, moves(walk_down*3))
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_TAKEHARU}Mitsuru."))
@@ -77,13 +77,13 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     {COLOR GREEN}Tips: Companion Menu is now unlocked.\n
     You can open it in {START_BUTTON} Menu {RIGHT_ARROW} {SELECT_BUTTON}."))
     closemessage
-    call(Eventscript_CutsceneEnds)
     setflag(FLAG_HIDE_MAP_NAME_POPUP)
     setflag(FLAG_COMPANION_MENU)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     unlockcharacter(CHARACTER_INTELEON_T)
     makecharaAvailable(CHARACTER_INTELEON_T)
     release
+    clearflag(FLAG_HIDE_TALK_BUTTON)
     end
 }
 

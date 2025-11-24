@@ -41,7 +41,7 @@ MansionMainHall_Eventscript_TakeharuStoppingMitsuru::
 # 20 "data/maps/MansionMainHall/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 3
 # 21 "data/maps/MansionMainHall/scripts.pory"
-	delay 30
+	delay 10
 # 22 "data/maps/MansionMainHall/scripts.pory"
 	applymovement LOCALID_PLAYER, MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_0
 # 23 "data/maps/MansionMainHall/scripts.pory"
@@ -127,19 +127,19 @@ MansionMainHall_Eventscript_TakeharuStoppingMitsuru::
 # 79 "data/maps/MansionMainHall/scripts.pory"
 	closemessage
 # 80 "data/maps/MansionMainHall/scripts.pory"
-	call Eventscript_CutsceneEnds
-# 81 "data/maps/MansionMainHall/scripts.pory"
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-# 82 "data/maps/MansionMainHall/scripts.pory"
+# 81 "data/maps/MansionMainHall/scripts.pory"
 	setflag FLAG_COMPANION_MENU
-# 83 "data/maps/MansionMainHall/scripts.pory"
+# 82 "data/maps/MansionMainHall/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 84 "data/maps/MansionMainHall/scripts.pory"
+# 83 "data/maps/MansionMainHall/scripts.pory"
 	unlockcharacter CHARACTER_INTELEON_T
-# 85 "data/maps/MansionMainHall/scripts.pory"
+# 84 "data/maps/MansionMainHall/scripts.pory"
 	makecharaAvailable CHARACTER_INTELEON_T
-# 86 "data/maps/MansionMainHall/scripts.pory"
+# 85 "data/maps/MansionMainHall/scripts.pory"
 	release
+# 86 "data/maps/MansionMainHall/scripts.pory"
+	clearflag FLAG_HIDE_TALK_BUTTON
 	end
 
 

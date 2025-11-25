@@ -68,7 +68,7 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     additem(ITEM_POTION, 2)
     additem(ITEM_REPEL, 5)
     setflag(FLAG_EXP_SHARE)
-    addmoney(12000)
+    addmoney(15000)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll definitely need this while outdoors.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hmm, that should be everything."))
     closemessage

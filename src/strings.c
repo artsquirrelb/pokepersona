@@ -1327,7 +1327,7 @@ const u8 gText_DelAll[] = _("Del. All");
 const u8 gText_Cancel5[] = _("Cancel");
 const u8 gText_Ok2[] = _("OK");
 
-const u8 gText_StatEditor[] = _("EDIT STATS");
+const u8 gText_StatEditor[] = _("Edit EVs");
 const u8 gText_Quiz[] = _("Quiz");
 const u8 gText_Answer[] = _("Answer");
 const u8 gText_PokeBalls[] = _("Poké Balls");

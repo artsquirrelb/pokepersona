@@ -135,7 +135,7 @@ Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking::
 # 70 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	setflag FLAG_EXP_SHARE
 # 71 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	addmoney 12000
+	addmoney 15000
 # 72 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_4
 # 74 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"

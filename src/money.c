@@ -157,8 +157,8 @@ void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
     StringExpandPlaceholders(txtPtr, gText_PokedollarVar1);
 
     if (numDigits > 8)
-        PrependFontIdToFit(gStringVar4, txtPtr + 1 + numDigits, FONT_NORMAL, 54);
-    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, x, y, speed, NULL, 1, 0x0, 0);
+        PrependFontIdToFit(gStringVar4, txtPtr + 1 + numDigits, FONT_NARROW, 54);
+    AddTextPrinterParameterized6(windowId, FONT_NARROW, gStringVar4, x, y, speed, NULL, 1, 0x0, 0);
 }
 
 void PrintMoneyAmountInMoneyBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete, int amount)

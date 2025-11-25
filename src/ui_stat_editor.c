@@ -19,6 +19,7 @@
 #include "malloc.h"
 #include "menu.h"
 #include "menu_helpers.h"
+#include "money.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "scanline_effect.h"
@@ -34,6 +35,7 @@
 #include "constants/field_weather.h"
 #include "constants/songs.h"
 #include "constants/rgb.h"
+#include "constants/vars.h"
 #include "pokemon_icon.h"
 #include "pokedex.h"
 #include "trainer_pokemon_sprites.h"
@@ -62,6 +64,9 @@ struct StatEditorResources
     u16 ivTotal;
     u16 partyid;
     u16 inputMode;
+    u16 totalcost;
+    u16 totalearning;
+    struct Pokemon *mon;
 };
 
 #define INPUT_SELECT_STAT 0
@@ -96,6 +101,8 @@ static void SelectorCallback(struct Sprite *sprite);
 static struct Pokemon *ReturnPartyMon();
 static u8 CreateSelector();
 static void DestroySelector();
+static void Task_ComparingTotalCostandTotalEarning (u8 taskId);
+static bool8 CheckIfStatCantIncrease(void);
 
 //==========CONST=DATA==========//
 static const struct BgTemplate sStatEditorBgTemplates[] =
@@ -169,7 +176,7 @@ enum Colors
 static const u8 sMenuWindowFontColors[][3] = 
 {
     [FONT_BLACK]  = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
-    [FONT_WHITE]  = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_WHITE,  TEXT_COLOR_DARK_GRAY},
+    [FONT_WHITE]  = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_WHITE,  0},
     [FONT_RED]   = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_RED,        TEXT_COLOR_LIGHT_GRAY},
     [FONT_BLUE]  = {TEXT_COLOR_TRANSPARENT,  TEXT_COLOR_BLUE,       TEXT_COLOR_LIGHT_GRAY},
 };
@@ -341,7 +348,8 @@ static bool8 StatEditor_DoGfxSetup(void)
             gMain.state++;
         break;
     case 4:
-        sStatEditorDataPtr->speciesID = GetMonData(ReturnPartyMon(), MON_DATA_SPECIES);
+        sStatEditorDataPtr->mon = ReturnPartyMon();
+        sStatEditorDataPtr->speciesID = GetMonData(sStatEditorDataPtr->mon, MON_DATA_SPECIES);
         FreeMonIconPalettes();
         LoadMonIconPalettes();
         LoadCompressedSpriteSheet(&sSpriteSheet_Selector);
@@ -498,8 +506,34 @@ static struct Pokemon *ReturnPartyMon()
 #define MON_ICON_Y     32 + 24
 static void SampleUi_DrawMonIcon(u16 dexNum)
 {
+    // The species ID for the Pokémon icon.
     u16 speciesId = dexNum;
-    sStatEditorDataPtr->monIconSpriteId = CreateMonPicSprite_Affine(speciesId, 0, 0x8000, TRUE, MON_ICON_X, MON_ICON_Y, 0, TAG_NONE);
+    
+    // Initialize personality to 0 as a default.
+    u32 personality = 0;
+    // Initialize isShiny to FALSE as a default.
+    bool8 isShiny = FALSE;
+
+    // Check if a Pokémon struct is available in the stat editor data.
+    // We assume 'sStatEditorDataPtr->mon' points to the current Pokémon being edited.
+    if (sStatEditorDataPtr->mon != NULL)
+    {
+        // Retrieve the personality ID from the Pokémon data.
+        personality = GetMonData(sStatEditorDataPtr->mon, MON_DATA_PERSONALITY);
+        // Also retrieve the isShiny flag directly from the Pokémon data.
+        isShiny = GetMonData(sStatEditorDataPtr->mon, MON_DATA_IS_SHINY);
+    }
+
+    sStatEditorDataPtr->monIconSpriteId = CreateMonPicSprite_Affine(
+        speciesId,
+        isShiny,     // Pass the retrieved shiny status
+        personality, // Pass the actual personality to enable shiny detection
+        TRUE,        // Assuming this is the 'flags' argument (e.g., for front pic)
+        MON_ICON_X,
+        MON_ICON_Y,
+        0,           // paletteSlot
+        TAG_NONE     // paletteTag
+    );
 
     gSprites[sStatEditorDataPtr->monIconSpriteId].oam.priority = 0;
 }
@@ -595,15 +629,19 @@ static const u8 sText_MonLevel[]         = _("Lv.{CLEAR 1}{STR_VAR_1}");
 
 static const u8 sText_MenuLRButtonTextMain[]   = _("Cycle Party");
 static const u8 sText_MenuAButtonTextMain[]    = _("Edit Stats");
-static const u8 sText_MenuBButtonTextMain[]    = _("Back");
+static const u8 sText_MenuBButtonTextMain[]    = _("Save & Back");
 static const u8 sText_MenuDPadButtonTextMain[] = _("Change Stat");
+static const u8 sText_Cost[]          = _("Cost");
+static const u8 sText_Earning[]          = _("Earning");
+static const u8 sText_NotEnoughMoney[] =_("You don't have enough money.");
 
 #define BUTTON_Y 4
 static void PrintTitleToWindowMainState()
 {
-    FillWindowPixelBuffer(WINDOW_1, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+    FillWindowPixelBuffer(WINDOW_1, PIXEL_FILL(TEXT_COLOR_TRANSPARENT)); 
+    PrintMoneyAmount(WINDOW_1, 0, 0, GetMoney(&gSaveBlock1Ptr->money), TEXT_SKIP_DRAW);
     
-    AddTextPrinterParameterized4(WINDOW_1, FONT_NORMAL, 1, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuTitle);
+    //AddTextPrinterParameterized4(WINDOW_1, FONT_NORMAL, 1, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuTitle);
 
     BlitBitmapToWindow(WINDOW_1, sR_ButtonGfx, 75, (BUTTON_Y), 24, 8);
     AddTextPrinterParameterized4(WINDOW_1, FONT_NARROW, 102, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuLRButtonTextMain);
@@ -615,15 +653,30 @@ static void PrintTitleToWindowMainState()
     CopyWindowToVram(WINDOW_1, 3);
 }
 
+#define POKEDOLLAR_PER_EV   300
+
 static void PrintTitleToWindowEditState()
 {
-    FillWindowPixelBuffer(WINDOW_1, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+
+    //AddTextPrinterParameterized4(WINDOW_1, FONT_NORMAL, 1, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuTitle);
+    FillWindowPixelBuffer(WINDOW_1, PIXEL_FILL(TEXT_COLOR_TRANSPARENT)); 
+    PrintMoneyAmount(WINDOW_1, 0, 0, GetMoney(&gSaveBlock1Ptr->money), TEXT_SKIP_DRAW);
+
+    if (sStatEditorDataPtr->totalcost < sStatEditorDataPtr->totalearning){
+        ConvertIntToDecimalStringN(gStringVar3, sStatEditorDataPtr->totalearning - sStatEditorDataPtr->totalcost, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
+        AddTextPrinterParameterized4(WINDOW_1, FONT_NARROW, 78, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_Earning);
+        AddTextPrinterParameterized4(WINDOW_1, FONT_NARROW, 117, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, gStringVar3);
+    }
+    else
+    {
+        ConvertIntToDecimalStringN(gStringVar3, sStatEditorDataPtr->totalcost - sStatEditorDataPtr->totalearning, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
+        AddTextPrinterParameterized4(WINDOW_1, FONT_NARROW, 78, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_Cost);
+        AddTextPrinterParameterized4(WINDOW_1, FONT_NARROW, 117, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, gStringVar3);
+    }
     
-    AddTextPrinterParameterized4(WINDOW_1, FONT_NORMAL, 1, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuTitle);
 
-    BlitBitmapToWindow(WINDOW_1, sDPad_ButtonGfx, 75, (BUTTON_Y), 24, 8);
-    AddTextPrinterParameterized4(WINDOW_1, FONT_NARROW, 102, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuDPadButtonTextMain);
-
+    //BlitBitmapToWindow(WINDOW_1, sDPad_ButtonGfx, 75, (BUTTON_Y), 24, 8);
+    
     BlitBitmapToWindow(WINDOW_1, sB_ButtonGfx, 160, (BUTTON_Y), 8, 8);
     AddTextPrinterParameterized4(WINDOW_1, FONT_NARROW, 172, 0, 0, 0, sMenuWindowFontColors[FONT_WHITE], TEXT_SKIP_DRAW, sText_MenuBButtonTextMain);
 
@@ -803,11 +856,18 @@ static void Task_DelayedSpriteLoad(u8 taskId) // wait 4 frames after changing th
 
 static void ReloadNewPokemon(u8 taskId)
 {
+    // Make the old sprite invisible and free its resources.
     gSprites[sStatEditorDataPtr->monIconSpriteId].invisible = TRUE;
     FreeResourcesAndDestroySprite(&gSprites[sStatEditorDataPtr->monIconSpriteId], sStatEditorDataPtr->monIconSpriteId);
-    sStatEditorDataPtr->speciesID = GetMonData(ReturnPartyMon(), MON_DATA_SPECIES);
+    //Update sStatEditorDataPtr->mon to point to the currently selected party Pokémon.
+    sStatEditorDataPtr->mon = ReturnPartyMon();
+
+    //retrieve the species ID from the updated mon pointer.
+    sStatEditorDataPtr->speciesID = GetMonData(sStatEditorDataPtr->mon, MON_DATA_SPECIES);
+
+    // Set the task function to handle the delayed sprite loading.
     gTasks[taskId].func = Task_DelayedSpriteLoad;
-    gTasks[taskId].data[11] = 0;
+    gTasks[taskId].data[11] = 0; // Initialize data for the delayed task if needed
 }
 
 static void Task_StatEditorMain(u8 taskId) // input control when first loaded into menu
@@ -822,7 +882,7 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
         gTasks[taskId].func = Task_MenuEditingStat;
         if(sStatEditorDataPtr->editingStat == 0)
             StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1);
-        if((sStatEditorDataPtr->editingStat == 255 || (sStatEditorDataPtr->evTotal == 510)) && (sStatEditorDataPtr->selector_x == 0))
+        if((sStatEditorDataPtr->editingStat == 252 || (sStatEditorDataPtr->evTotal == 510)) && (sStatEditorDataPtr->selector_x == 0))
             StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
         if((sStatEditorDataPtr->editingStat == 31) && (sStatEditorDataPtr->selector_x == 1))
             StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
@@ -859,7 +919,7 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
     if (JOY_NEW(DPAD_LEFT) || JOY_NEW(DPAD_RIGHT))
     {
         if(sStatEditorDataPtr->selector_x == 0)
-            sStatEditorDataPtr->selector_x = 1;
+            sStatEditorDataPtr->selector_x = 0;
         else
             sStatEditorDataPtr->selector_x = 0; 
     }
@@ -880,6 +940,45 @@ static void Task_StatEditorMain(u8 taskId) // input control when first loaded in
 
 }
 
+static void Task_ComparingTotalCostandTotalEarning (u8 taskId)
+{
+    if (sStatEditorDataPtr->totalcost > sStatEditorDataPtr->totalearning)
+    {
+        if (!IsEnoughMoney(&gSaveBlock1Ptr->money, sStatEditorDataPtr->totalcost - sStatEditorDataPtr->totalearning))
+        {
+            PlaySE(SE_BOO);
+            PrintTitleToWindowEditState();
+            sStatEditorDataPtr->inputMode = INPUT_EDIT_STAT;
+            gTasks[taskId].func = Task_MenuEditingStat;
+            return;
+        }
+
+        else
+        {
+            PlaySE(SE_SELECT);
+            RemoveMoney(&gSaveBlock1Ptr->money, sStatEditorDataPtr->totalcost - sStatEditorDataPtr->totalearning);
+            sStatEditorDataPtr->totalcost = 0;
+            sStatEditorDataPtr->totalearning = 0;
+            StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 0);
+            sStatEditorDataPtr->inputMode = INPUT_SELECT_STAT;
+            PrintTitleToWindowMainState();
+            gTasks[taskId].func = Task_StatEditorMain;
+            return;
+        }
+    }
+    else
+    {
+        PlaySE(SE_SELECT);
+        AddMoney(&gSaveBlock1Ptr->money, sStatEditorDataPtr->totalearning - sStatEditorDataPtr->totalcost);
+        sStatEditorDataPtr->totalcost = 0;
+        sStatEditorDataPtr->totalearning = 0;
+        StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 0);
+        sStatEditorDataPtr->inputMode = INPUT_SELECT_STAT;
+        PrintTitleToWindowMainState();
+        gTasks[taskId].func = Task_StatEditorMain;
+        return;
+    }
+}
 static void ChangeAndUpdateStat()
 {
     u16 currentStatEnum = selectedStatToStatEnum[sStatEditorDataPtr->selectedStat];
@@ -909,6 +1008,7 @@ static void ChangeAndUpdateStat()
     }
 
     PrintMonStats();
+    PrintTitleToWindowEditState();
 }
 
 #define EDIT_INPUT_INCREASE_STATE           0
@@ -916,17 +1016,28 @@ static void ChangeAndUpdateStat()
 #define EDIT_INPUT_DECREASE_STATE           2
 #define EDIT_INPUT_MAX_DECREASE_STATE       3
 
+/*u16 ChoosingLowerValueEVCAPorMAXBUYABLEEV(void)
+{
+    if (sStatEditorDataPtr->MaxBuyableEv < VarGet(VAR_CURRENT_EV_CAP))
+        return sStatEditorDataPtr->MaxBuyableEv;
+    else
+        return VarGet(VAR_CURRENT_EV_CAP);
+}*/
+
 #define STAT_MINIMUM          0  
-#define IV_MAX_SINGLE_STAT    MAX_PER_STAT_IVS
-#define EV_MAX_SINGLE_STAT    MAX_PER_STAT_EVS
-#define EV_MAX_TOTAL          B_EV_CAP_VARIABLE//MAX_TOTAL_EVS
+#define IV_MAX_SINGLE_STAT    31   
+#define EV_MAX_SINGLE_STAT    252   
+#define EV_MAX_TOTAL          VarGet(VAR_CURRENT_EV_CAP)      
                 
 #define EDITING_EVS     0
 #define EDITING_IVS     1
 
-#define CHECK_IF_STAT_CANT_INCREASE (((sStatEditorDataPtr->editingStat == ((sStatEditorDataPtr->selector_x == EDITING_EVS) ? (EV_MAX_SINGLE_STAT) : (IV_MAX_SINGLE_STAT))) \
+
+
+//#define CHECK_IF_STAT_CANT_INCREASE (((sStatEditorDataPtr->editingStat == ((sStatEditorDataPtr->selector_x == EDITING_EVS) ? (EV_MAX_SINGLE_STAT) : (IV_MAX_SINGLE_STAT))) \
                                      || ((sStatEditorDataPtr->selector_x == EDITING_EVS) && (sStatEditorDataPtr->evTotal == EV_MAX_TOTAL))))
-/*
+
+ /*
 Breakdown of CHECK_IF_STAT_CANT_INCREASE
 TLDR: Stat can't increase if you're either: at the maximum amount a stat can have (for both EVs and IVs), or for EVs, if you already hit the max total of EVs
 
@@ -942,10 +1053,20 @@ TLDR: Stat can't increase if you're either: at the maximum amount a stat can hav
  | ((sStatEditorDataPtr->selector_x == EDITING_EVS) && (sStatEditorDataPtr->evTotal == EV_MAX_TOTAL))
   \> Together, these two check if you're editing an EV and already at the maximum amount of EVs
 */
+    #define INCREASE_DECREASE_AMOUNT 1
+
+static bool8 CheckIfStatCantIncrease(void)
+{
+    if (sStatEditorDataPtr->evTotal == EV_MAX_TOTAL || sStatEditorDataPtr->editingStat == EV_MAX_SINGLE_STAT)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 static void HandleEditingStatInput(u32 input)
 {
     u16 iterator = 0;
-    if((input <= EDIT_INPUT_MAX_INCREASE_STATE) && CHECK_IF_STAT_CANT_INCREASE)
+    if((input <= EDIT_INPUT_MAX_INCREASE_STATE) && CheckIfStatCantIncrease() == TRUE)
     {
         StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
         return;
@@ -957,27 +1078,32 @@ static void HandleEditingStatInput(u32 input)
         return;
     }
 
-    #define INCREASE_DECREASE_AMOUNT 1
-
     switch(input)
     {
         case EDIT_INPUT_DECREASE_STATE:
             for (iterator = 0; iterator < INCREASE_DECREASE_AMOUNT; iterator++)
             {
                 if(!(sStatEditorDataPtr->editingStat == STAT_MINIMUM))
+                {
+                    sStatEditorDataPtr->totalearning += POKEDOLLAR_PER_EV;
                     sStatEditorDataPtr->editingStat--;
+                }
                 else
                     break;
             }
             break;
-       case EDIT_INPUT_MAX_DECREASE_STATE:
+        case EDIT_INPUT_MAX_DECREASE_STATE:
+            sStatEditorDataPtr->totalearning += (sStatEditorDataPtr->editingStat)*POKEDOLLAR_PER_EV;
             sStatEditorDataPtr->editingStat = STAT_MINIMUM;
             break;
         case EDIT_INPUT_INCREASE_STATE:
             for (iterator = 0; iterator < INCREASE_DECREASE_AMOUNT; iterator++)
             {
-                if(!CHECK_IF_STAT_CANT_INCREASE)
+                if(!CheckIfStatCantIncrease())
+                {
+                    sStatEditorDataPtr->totalcost += POKEDOLLAR_PER_EV;
                     sStatEditorDataPtr->editingStat++;
+                }
                 else
                     break;
             }
@@ -985,22 +1111,31 @@ static void HandleEditingStatInput(u32 input)
         case EDIT_INPUT_MAX_INCREASE_STATE:
             if((sStatEditorDataPtr->selector_x == EDITING_EVS))
             {
+                if(!CheckIfStatCantIncrease())
+                {
                 if (EV_MAX_TOTAL - sStatEditorDataPtr->evTotal < EV_MAX_SINGLE_STAT)
+                {
+                    sStatEditorDataPtr->totalcost += (EV_MAX_TOTAL - sStatEditorDataPtr->evTotal)*POKEDOLLAR_PER_EV;
                     sStatEditorDataPtr->editingStat += EV_MAX_TOTAL - sStatEditorDataPtr->evTotal;
+                }
                 else
+                {
+                    sStatEditorDataPtr->totalcost += (EV_MAX_SINGLE_STAT - sStatEditorDataPtr->evTotal)*POKEDOLLAR_PER_EV;
                     sStatEditorDataPtr->editingStat = EV_MAX_SINGLE_STAT;
+                }
                 if(sStatEditorDataPtr->editingStat > EV_MAX_SINGLE_STAT)
                     sStatEditorDataPtr->editingStat = EV_MAX_SINGLE_STAT;
+                }
             }
             else
             {
                 sStatEditorDataPtr->editingStat = IV_MAX_SINGLE_STAT;
             }
-    }
+        }
 
     ChangeAndUpdateStat();
 
-    if(CHECK_IF_STAT_CANT_INCREASE)
+    if(CheckIfStatCantIncrease() == TRUE)
         StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 2);
     else if(sStatEditorDataPtr->editingStat == STAT_MINIMUM)
         StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 1); 
@@ -1012,22 +1147,20 @@ static void Task_MenuEditingStat(u8 taskId) // This function should be refactore
 {
     if (JOY_NEW(B_BUTTON))
     {
-        gTasks[taskId].func = Task_StatEditorMain;
-        StartSpriteAnim(&gSprites[sStatEditorDataPtr->selectorSpriteId], 0);
-        PlaySE(SE_SELECT);
-        sStatEditorDataPtr->inputMode = INPUT_SELECT_STAT;
-        PrintTitleToWindowMainState();
-        return;
+        gTasks[taskId].func = Task_ComparingTotalCostandTotalEarning;
     }
     if (JOY_NEW(DPAD_LEFT))
         HandleEditingStatInput(EDIT_INPUT_DECREASE_STATE);
     else if (JOY_NEW(DPAD_RIGHT))
         HandleEditingStatInput(EDIT_INPUT_INCREASE_STATE);
-    else if (JOY_NEW(DPAD_UP) || JOY_NEW(R_BUTTON))
+    else if (JOY_NEW(DPAD_UP))
         HandleEditingStatInput(EDIT_INPUT_MAX_INCREASE_STATE);
-    else if (JOY_NEW(DPAD_DOWN) || JOY_NEW(L_BUTTON))
+    else if (JOY_NEW(DPAD_DOWN))
         HandleEditingStatInput(EDIT_INPUT_MAX_DECREASE_STATE);
+    else if (JOY_NEW(L_BUTTON))
+        HandleEditingStatInput(EDIT_INPUT_MAX_DECREASE_STATE);
+    else if (JOY_NEW(R_BUTTON))
+        HandleEditingStatInput(EDIT_INPUT_MAX_INCREASE_STATE);
 
 }
-
 

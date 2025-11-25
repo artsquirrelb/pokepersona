@@ -29,6 +29,7 @@ script SunshineOrphanage_Eventscript_ShowTheMap {
     warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 5, 4)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 1)
     setvar(VAR_CURRENT_LEVEL_CAP, 10)
+    setvar(VAR_CURRENT_EV_CAP, 52)
 }
 
 movement SlowlyShowTheMap {

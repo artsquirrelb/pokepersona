@@ -1973,22 +1973,53 @@ u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevati
     return spriteId;
 }
 
-// Return address of first conscious party mon or NULL
+
+
+// This and the above function could probably use some clean-up/optimization
+// The general order of operations is:
+// 1. If the follower has been recalled to its ball, return NULL
+// 2. If no preferred follower has been set or the player is in battle facility or contest hall, use default behavior
+// 3. Use preferred follower
+// 4. If preferred follower is fainted or an egg (hopefully this shouldn't be possible), use default behavior
+// Default: Return address of first conscious party mon or NULL
 struct Pokemon *GetFirstLiveMon(void)
 {
     u32 i;
-    for (i = 0; i < PARTY_SIZE; i++)
+    //for (i = 0; i < PARTY_SIZE; i++)
+    u32 j = gSaveBlock3Ptr->followerIndex;
+
+    if (j == OW_FOLLOWER_RECALLED)
+        return NULL;
+    if (j == OW_FOLLOWER_NOT_SET)
     {
-        struct Pokemon *mon = &gPlayerParty[i];
+        for (i = 0; i < PARTY_SIZE; i++)
+        {
+            if (gPlayerParty[i].hp > 0 && !(gPlayerParty[i].box.isEgg || gPlayerParty[i].box.isBadEgg))
+                return &gPlayerParty[i];
+        }
+        return NULL;
+    }                                                                 
+    if (gPlayerParty[j].hp > 0 && !(gPlayerParty[j].box.isEgg || gPlayerParty[j].box.isBadEgg))
+        return &gPlayerParty[j];
+    else
+    {
+        for (i = 0; i < PARTY_SIZE; i++)
+        {
+            if (gPlayerParty[i].hp > 0 && !(gPlayerParty[i].box.isEgg || gPlayerParty[i].box.isBadEgg))
+                return &gPlayerParty[i];
+        }
+        return NULL;
+
+        /*struct Pokemon *mon = &gPlayerParty[i];
         if ((OW_FOLLOWERS_ALLOWED_SPECIES && GetMonData(mon, MON_DATA_SPECIES_OR_EGG) != VarGet(OW_FOLLOWERS_ALLOWED_SPECIES))
          || (OW_FOLLOWERS_ALLOWED_MET_LVL && GetMonData(mon, MON_DATA_MET_LEVEL) != VarGet(OW_FOLLOWERS_ALLOWED_MET_LVL))
          || (OW_FOLLOWERS_ALLOWED_MET_LOC && GetMonData(mon, MON_DATA_MET_LOCATION) != VarGet(OW_FOLLOWERS_ALLOWED_MET_LOC)))
             continue;
 
         if (gPlayerParty[i].hp > 0 && !(gPlayerParty[i].box.isEgg || gPlayerParty[i].box.isBadEgg))
-            return &gPlayerParty[i];
+            return &gPlayerParty[i];*/
     }
-    return NULL;
+    //return NULL;
 }
 
 // Return follower ObjectEvent or NULL

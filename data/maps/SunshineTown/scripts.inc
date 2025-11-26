@@ -847,32 +847,36 @@ SunshineTown_Eventscript_MitsuruSeeingPoliceRunning::
 # 463 "data/maps/SunshineTown/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 464 "data/maps/SunshineTown/scripts.pory"
-	fadenewbgm MUS_P5_RUN_RUN_RUN
-# 465 "data/maps/SunshineTown/scripts.pory"
 	setspeaker SunshineTown_Eventscript_FatMan_Text_0
-# 466 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_2
+# 465 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_2, MSGBOX_AUTOCLOSE
+# 467 "data/maps/SunshineTown/scripts.pory"
+	fadenewbgm MUS_P3_CALAMITY
+# 468 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_3
 # 469 "data/maps/SunshineTown/scripts.pory"
 	closemessage
 # 470 "data/maps/SunshineTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, walkleft
 # 471 "data/maps/SunshineTown/scripts.pory"
-	special RemoveCameraObject
+	waitmovement
 # 472 "data/maps/SunshineTown/scripts.pory"
-	applymovement 1, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_6
+	special RemoveCameraObject
 # 473 "data/maps/SunshineTown/scripts.pory"
-	delay 20
+	applymovement 1, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_6
 # 474 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_3
-# 479 "data/maps/SunshineTown/scripts.pory"
-	closemessage
+	delay 20
+# 475 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_4
 # 480 "data/maps/SunshineTown/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 20
+	closemessage
 # 481 "data/maps/SunshineTown/scripts.pory"
-	setflag FLAG_DONT_TRANSITION_MUSIC
+	setvar VAR_MITSURUS_INTRO_STATE, 20
 # 482 "data/maps/SunshineTown/scripts.pory"
-	call Eventscript_CutsceneEnds
+	setflag FLAG_DONT_TRANSITION_MUSIC
 # 483 "data/maps/SunshineTown/scripts.pory"
+	call Eventscript_CutsceneEnds
+# 484 "data/maps/SunshineTown/scripts.pory"
 	releaseall
 	end
 
@@ -985,27 +989,27 @@ SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_5:
 	walk_fast_right
 	step_end
 
-# 472 "data/maps/SunshineTown/scripts.pory"
+# 473 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_6:
-# 472 "data/maps/SunshineTown/scripts.pory"
+# 473 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 472 "data/maps/SunshineTown/scripts.pory"
+# 473 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 472 "data/maps/SunshineTown/scripts.pory"
+# 473 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 472 "data/maps/SunshineTown/scripts.pory"
+# 473 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 472 "data/maps/SunshineTown/scripts.pory"
+# 473 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 472 "data/maps/SunshineTown/scripts.pory"
+# 473 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 472 "data/maps/SunshineTown/scripts.pory"
+# 473 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 472 "data/maps/SunshineTown/scripts.pory"
+# 473 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 472 "data/maps/SunshineTown/scripts.pory"
+# 473 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 472 "data/maps/SunshineTown/scripts.pory"
+# 473 "data/maps/SunshineTown/scripts.pory"
 	set_invisible
 	step_end
 
@@ -1176,17 +1180,20 @@ SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_1:
 	.string "Everyone in town looks on edge.$"
 
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_2:
-# 466 "data/maps/SunshineTown/scripts.pory"
+# 465 "data/maps/SunshineTown/scripts.pory"
 	.string "There was an explosion at the\n"
 	.string "orphanage west of town, didn't you\l"
 	.string "hear?\p"
 	.string "Lots of people were injured and the\n"
-	.string "town people are trying to help.\p"
+	.string "town people are trying to help.$"
+
+SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_3:
+# 468 "data/maps/SunshineTown/scripts.pory"
 	.string "Now excuse me, I gotta bring these\n"
 	.string "medicines to the injured.$"
 
-SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_3:
-# 474 "data/maps/SunshineTown/scripts.pory"
+SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_4:
+# 475 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(The orphanage was exploded?)\p"
 	.string "(Damn it! How am I so naive. Of course\n"
 	.string "they would do that to erase the proofs\l"

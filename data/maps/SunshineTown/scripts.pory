@@ -461,13 +461,15 @@ script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
     applymovement(1, faceleft)
     waitmovement
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
-    fadenewbgm(MUS_P5_RUN_RUN_RUN)
     setspeaker("Kojima")
-    msgbox(format("There was an explosion at the orphanage west of town, didn't you hear?\p
-    Lots of people were injured and the town people are trying to help.\p
+    msgbox(format("There was an explosion at the orphanage west of town, didn't you hear?"), MSGBOX_AUTOCLOSE)
+    fadenewbgm(MUS_P3_CALAMITY)
+    setspeaker("Kojima")
+    msgbox(format("Lots of people were injured and the town people are trying to help.\p
     Now excuse me, I gotta bring these medicines to the injured."))
     closemessage
     applymovement(OBJ_EVENT_ID_CAMERA, walkleft)
+    waitmovement
     special(RemoveCameraObject)
     applymovement(1, moves(walk_fast_right*3, walk_fast_down*6, set_invisible))
     delay(20)

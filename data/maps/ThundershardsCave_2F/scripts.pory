@@ -51,18 +51,21 @@ script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff1 {
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, delay_16, delay_16, player_run_right*2, face_left))
     waitmovement
     delay(30)
+    fadenewbgm(MUS_P5_MENTAL_BREAKDOWN)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
     goto(ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff)
     release
 }
 
 script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff2 {
     lock
+    hidetalkbutton
     setvar(VAR_MITSURUS_INTRO_STATE, 14)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, delay_16, delay_16, player_run_right, face_left))
     waitmovement
     delay(30)
-    fadenewbgm(MUS_MENTAL_BREAKDOWN)
+    fadenewbgm(MUS_P5_MENTAL_BREAKDOWN)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     goto(ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff)
     release

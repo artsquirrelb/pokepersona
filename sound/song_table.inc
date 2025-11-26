@@ -611,11 +611,12 @@ gSongTable::
 	song ph_nurse_blend, 2, 2
 	song ph_nurse_held, 2, 2
 	song ph_nurse_solo, 2, 2
-	song mus_sunshine_orphanage, 0, 0
-	song mus_sunshine_orphanage_slow, 0, 0
-	song mus_kirijos_mansion, 0, 0
-	song mus_run_run_run, 0, 0
-	song mus_mental_breakdown, 0, 0
+	song mus_xc2_garfont_mercernaries, 0, 0
+	song mus_xc2_garfont_mercernaries_night, 0, 0
+	song mus_xc2_torigoth_night, 0, 0
+	song mus_p5_run_run_run, 0, 0
+	song mus_p5_mental_breakdown, 0, 0
+	song mus_p3_calamity, 0, 0
 
 	.align 2
 dummy_song_header:

@@ -395,13 +395,13 @@ Mansion_MitsurusRoom2F_Eventscript_Piano_2:
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_5:
 # 215 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	playbgm MUS_SUNSHINE_ORPHANAGE_SLOW, FALSE
+	playbgm MUS_XC2_GARFONT_MERCERNARIES_NIGHT, FALSE
 # 216 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	delay 1800
 # 217 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	fadenewbgm MUS_KIRIJOS_MANSION
+	fadenewbgm MUS_XC2_TORIGOTH_NIGHT
 # 218 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	savebgm MUS_KIRIJOS_MANSION
+	savebgm MUS_XC2_TORIGOTH_NIGHT
 # 219 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_Piano_Text_1
 # 220 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"

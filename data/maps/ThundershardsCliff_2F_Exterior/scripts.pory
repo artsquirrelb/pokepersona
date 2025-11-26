@@ -68,7 +68,8 @@ script ThundershardsCliff_2F_Exterior_Eventscript_MitsuruApproaching_CaveEntranc
 script ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave {
     lock
     setflag(FLAG_HIDE_TALK_BUTTON)
-    fadenewbgm(MUS_MENTAL_BREAKDOWN)
+    fadenewbgm(MUS_P5_MENTAL_BREAKDOWN)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
     delay(20)
     clearflag(FLAG_TEMP_1)
     addobject(8)
@@ -128,6 +129,7 @@ script ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat {
     delay(8)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Wait... He said “fire”?"))
     closemessage
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     setvar(VAR_MITSURUS_INTRO_STATE, 16)
     goto(ThundershardsCliff_2F_Exterior_Eventscript_LabExploding)
     release
@@ -149,7 +151,7 @@ script ThundershardsCliff_2F_Exterior_Eventscript_LabExploding {
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, face_right, lock_facing_direction, jump_left, unlock_facing_direction))
     waitmovement
-    playbgm(MUS_RUN_RUN_RUN, FALSE)
+    playbgm(MUS_P3_CALAMITY, FALSE)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}What the-"))
     closemessage

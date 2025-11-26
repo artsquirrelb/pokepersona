@@ -133,190 +133,196 @@ ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave::
 # 70 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	setflag FLAG_HIDE_TALK_BUTTON
 # 71 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	delay 20
+	fadenewbgm MUS_P5_MENTAL_BREAKDOWN
 # 72 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	clearflag FLAG_TEMP_1
+	setflag FLAG_DONT_TRANSITION_MUSIC
 # 73 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	addobject 8
-# 74 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	playse SE_EXIT
-# 75 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	waitse
-# 76 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	playse SE_PIN
-# 77 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	applymovement LOCALID_PLAYER, ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave_Movement_0
-# 78 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	delay 4
-# 79 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	playse SE_PIN
-# 80 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	applymovement 8, emoteexclamation
-# 81 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	waitmovement
-# 82 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	delay 20
+# 74 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	clearflag FLAG_TEMP_1
+# 75 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	addobject 8
+# 76 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	playse SE_EXIT
+# 77 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	waitse
+# 78 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	playse SE_PIN
+# 79 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	applymovement LOCALID_PLAYER, ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave_Movement_0
+# 80 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	delay 4
+# 81 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	playse SE_PIN
+# 82 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	applymovement 8, emoteexclamation
 # 83 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	applymovement 8, walkinplaceleft
-# 84 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	waitmovement
+# 84 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	delay 20
 # 85 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setspeaker ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave_Text_0
+	applymovement 8, walkinplaceleft
 # 86 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	bufferleadmonspeciesname STR_VAR_1
+	waitmovement
 # 87 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setspeaker ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave_Text_0
+# 88 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	bufferleadmonspeciesname STR_VAR_1
+# 89 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	msgbox ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave_Text_1
-# 92 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	closemessage
-# 93 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	trainerbattle_no_intro TRAINER_KG_STAFF_SCIENTIST_THUNDERSHARDS_CAVE_2F_EXTERIOR, KGScientist_Defeated
 # 94 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	closemessage
+# 95 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	trainerbattle_no_intro TRAINER_KG_STAFF_SCIENTIST_THUNDERSHARDS_CAVE_2F_EXTERIOR, KGScientist_Defeated
+# 96 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	goto ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat
 	return
 
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat::
-# 102 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	lock
-# 103 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setspeaker ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_0
 # 104 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	lock
+# 105 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setspeaker ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_0
+# 106 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	msgbox ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_1
-# 108 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 110 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	setspeaker ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_0
-# 109 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 111 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	msgbox ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_2
-# 112 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 114 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	setspeaker ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_0
-# 113 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 115 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	msgbox ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_3
-# 117 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	closemessage
-# 118 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	applymovement LOCALID_PLAYER, ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Movement_0
 # 119 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	dofieldeffectnpcflyout 24, 25, 1
+	closemessage
 # 120 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	applymovement 8, invisible
+	applymovement LOCALID_PLAYER, ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Movement_0
 # 121 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	waitfieldeffect FLDEFF_NPCFLY_OUT
+	dofieldeffectnpcflyout 24, 25, 1
 # 122 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	applymovement 8, invisible
 # 123 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	removeobject 8
+	waitfieldeffect FLDEFF_NPCFLY_OUT
 # 124 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setflag FLAG_TEMP_1
+	waitmovement LOCALID_PLAYER
 # 125 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	msgbox ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_4
+	removeobject 8
 # 126 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	closemessage
+	setflag FLAG_TEMP_1
 # 127 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	delay 8
+	msgbox ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_4
 # 128 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	msgbox ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_5
-# 129 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	closemessage
+# 129 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	delay 8
 # 130 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 16
+	msgbox ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_5
 # 131 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	goto ThundershardsCliff_2F_Exterior_Eventscript_LabExploding
+	closemessage
 # 132 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	clearflag FLAG_DONT_TRANSITION_MUSIC
+# 133 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 16
+# 134 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	goto ThundershardsCliff_2F_Exterior_Eventscript_LabExploding
+# 135 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	release
 	return
 
 
 ThundershardsCliff_2F_Exterior_Eventscript_LabExploding::
-# 136 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	lock
-# 137 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	special StopMapMusic
-# 138 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	playse SE_INTRO_BLAST
 # 139 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8004, 2
+	lock
 # 140 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8005, 4
+	special StopMapMusic
 # 141 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8006, 6
+	playse SE_INTRO_BLAST
 # 142 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8004, 2
 # 143 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	special ShakeCamera
+	setvar VAR_0x8005, 4
 # 144 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setfieldeffectargument 0, 25
+	setvar VAR_0x8006, 6
 # 145 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setfieldeffectargument 1, 25
+	setvar VAR_0x8007, 4
 # 146 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	dofieldeffect FLDEFF_EXPLOSION
+	special ShakeCamera
 # 147 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	waitfieldeffect FLDEFF_EXPLOSION
+	setfieldeffectargument 0, 25
 # 148 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	playse SE_PIN
+	setfieldeffectargument 1, 25
 # 149 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	applymovement LOCALID_PLAYER, ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Movement_0
+	dofieldeffect FLDEFF_EXPLOSION
 # 150 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	waitmovement
+	waitfieldeffect FLDEFF_EXPLOSION
 # 151 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	playbgm MUS_RUN_RUN_RUN, FALSE
+	playse SE_PIN
 # 152 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setflag FLAG_DONT_TRANSITION_MUSIC
+	applymovement LOCALID_PLAYER, ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Movement_0
 # 153 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	msgbox ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Text_0
-# 154 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	closemessage
-# 155 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	applymovement LOCALID_PLAYER, ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Movement_1
-# 157 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	playse SE_INTRO_BLAST
-# 158 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8004, 2
-# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8005, 4
-# 160 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8006, 6
-# 161 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8007, 4
-# 162 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	special ShakeCamera
-# 163 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setfieldeffectargument 0, 18
-# 164 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setfieldeffectargument 1, 23
-# 165 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	dofieldeffect FLDEFF_EXPLOSION
-# 166 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	waitfieldeffect FLDEFF_EXPLOSION
-# 167 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	delay 20
-# 168 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	playse SE_INTRO_BLAST
-# 169 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8004, 2
-# 170 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8005, 4
-# 171 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8006, 6
-# 172 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setvar VAR_0x8007, 4
-# 173 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	special ShakeCamera
-# 174 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setfieldeffectargument 0, 8
-# 175 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setfieldeffectargument 1, 28
-# 176 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	dofieldeffect FLDEFF_EXPLOSION
-# 177 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	waitfieldeffect FLDEFF_EXPLOSION
-# 178 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	applymovement 9, ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Movement_2
-# 179 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	waitmovement
+# 154 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	playbgm MUS_P3_CALAMITY, FALSE
+# 155 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setflag FLAG_DONT_TRANSITION_MUSIC
+# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	msgbox ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Text_0
+# 157 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	closemessage
+# 158 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	applymovement LOCALID_PLAYER, ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Movement_1
+# 160 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	playse SE_INTRO_BLAST
+# 161 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setvar VAR_0x8004, 2
+# 162 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setvar VAR_0x8005, 4
+# 163 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setvar VAR_0x8006, 6
+# 164 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setvar VAR_0x8007, 4
+# 165 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	special ShakeCamera
+# 166 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setfieldeffectargument 0, 18
+# 167 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setfieldeffectargument 1, 23
+# 168 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	dofieldeffect FLDEFF_EXPLOSION
+# 169 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	waitfieldeffect FLDEFF_EXPLOSION
+# 170 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	delay 20
+# 171 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	playse SE_INTRO_BLAST
+# 172 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setvar VAR_0x8004, 2
+# 173 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setvar VAR_0x8005, 4
+# 174 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setvar VAR_0x8006, 6
+# 175 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setvar VAR_0x8007, 4
+# 176 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	special ShakeCamera
+# 177 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setfieldeffectargument 0, 8
+# 178 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	setfieldeffectargument 1, 28
+# 179 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	dofieldeffect FLDEFF_EXPLOSION
 # 180 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	fadescreenswapbuffers FADE_TO_WHITE
+	waitfieldeffect FLDEFF_EXPLOSION
 # 181 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	warp MAP_THUNDERSHARDS_CAVE_2F, 2
+	applymovement 9, ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Movement_2
 # 182 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	waitmovement
+# 183 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	fadescreenswapbuffers FADE_TO_WHITE
+# 184 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+	warp MAP_THUNDERSHARDS_CAVE_2F, 2
+# 185 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	release
 	return
 
@@ -329,97 +335,97 @@ ThundershardsCliff_2F_Exterior_Eventscript_MitsuruApproaching_CaveEntrance_Movem
 	face_right
 	step_end
 
-# 77 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 79 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave_Movement_0:
-# 77 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 79 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	emote_exclamation_mark
-# 77 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 79 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	face_right
 	step_end
 
-# 118 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 120 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Movement_0:
-# 118 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 120 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_right
-# 118 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 120 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_right
-# 118 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 120 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	face_left
 	step_end
 
-# 149 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 152 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Movement_0:
-# 149 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 152 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	emote_exclamation_mark
-# 149 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 152 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	face_right
-# 149 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 152 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	lock_facing_direction
-# 149 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 152 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	jump_left
-# 149 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 152 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 155 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 158 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Movement_1:
-# 155 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 158 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 155 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 158 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 155 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 158 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 155 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 158 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 155 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 158 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 155 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 158 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_down
-# 155 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 158 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_down
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_down
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_down
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_down
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_left
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_down
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_down
-# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 159 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	player_run_down
 	step_end
 
-# 178 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 181 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Movement_2:
-# 178 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 181 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	jump_right
-# 178 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 181 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	set_invisible
 	step_end
 
 ThundershardsCave_2F_Eventscript_Warning_Text_0:
 # 14 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	.string "Important scene ahead. Do you want to\n"
+	.string "{COLOR RED}Important scene ahead. Do you want to\n"
 	.string "proceed?$"
 
 ThundershardsCave_2F_Eventscript_DailyChansey_Heal_Text_0:
@@ -432,11 +438,11 @@ ThundershardsCave_2F_Eventscript_DailyChansey_Heal_Text_1:
 	.string "back tomorrow.$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave_Text_0:
-# 85 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 87 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	.string "Scientist$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave_Text_1:
-# 87 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 89 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	.string "Tch. I told those two to not let anyone\n"
 	.string "through.\p"
 	.string "And here you are, Young Lady.\p"
@@ -445,11 +451,11 @@ ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave_Text_1:
 	.string "Let's go, {STR_VAR_1}.$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_0:
-# 103 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 105 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	.string "Scientist Norbert$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_1:
-# 104 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 106 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	.string "That was pretty informative.\p"
 	.string "Looks like your synergy level has\n"
 	.string "increased again, Young Lady.\p"
@@ -457,7 +463,7 @@ ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_1:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_MAD}Norbert, you...!$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_2:
-# 109 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 111 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	.string "{DESTROY_MUGSHOT}As the prize for winning, I'll spare you\n"
 	.string "a bit of information.\p"
 	.string "You aren't the only premium prototype\n"
@@ -465,7 +471,7 @@ ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_2:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}...!$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_3:
-# 113 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 115 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Well then, as much as I enjoyed our\n"
 	.string "little chat, there's somewhere else I\l"
 	.string "need to be.\p"
@@ -476,18 +482,18 @@ ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_3:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_MAD}What- WAIT-!$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_4:
-# 125 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 127 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_MAD}Damn it!!$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_5:
-# 128 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 130 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Wait... He said “fire”?$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Text_0:
-# 153 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 156 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}What the-$"
 
 KGScientist_Defeated::
-# 97 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
+# 99 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	.string "You really live up to your name, Young\n"
 	.string "Lady.$"

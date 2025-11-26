@@ -2,7 +2,7 @@
   "id": "MAP_KIRIJOS_MANSION_MAIN_HALL",
   "name": "MansionMainHall",
   "layout": "LAYOUT_KIRIJOSMANSION_MAINHALL",
-  "music": "MUS_KIRIJOS_MANSION",
+  "music": "MUS_XC2_TORIGOTH_NIGHT",
   "region_map_section": "MAPSEC_KIRIJOS_MANSION",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

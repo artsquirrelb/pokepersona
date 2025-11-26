@@ -821,7 +821,7 @@ static void HeatStartMenu_ShowQuestButtons (void)
     sHeatStartMenu->sQuestButtonWindowId = AddWindow(&sWindowTemplate_QuestButton);
     FillWindowPixelBuffer(sHeatStartMenu->sQuestButtonWindowId, PIXEL_FILL(0));
     PutWindowTilemap(sHeatStartMenu->sQuestButtonWindowId);
-    AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 0, 0, 0x1, 0x0, 5);
+    AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 0, 0, 0x1, 0x0, 14);
     CopyWindowToVram(sHeatStartMenu->sQuestButtonWindowId, COPYWIN_FULL);
   }
 }
@@ -832,7 +832,7 @@ static void HeatStartMenu_ShowCompanionsButtons (void)
     sHeatStartMenu->sCompanionsButonWindowId = AddWindow(&sWindowTemplate_CompanionsButton);
     FillWindowPixelBuffer(sHeatStartMenu->sCompanionsButonWindowId, PIXEL_FILL(0));
     PutWindowTilemap(sHeatStartMenu->sCompanionsButonWindowId);
-    AddTextPrinterParameterized2(sHeatStartMenu->sCompanionsButonWindowId, FONT_SMALL, gText_CompanionsButton, 0, 0, 0x1, 0x0, 5);
+    AddTextPrinterParameterized2(sHeatStartMenu->sCompanionsButonWindowId, FONT_SMALL, gText_CompanionsButton, 0, 0, 0x1, 0x0, 14);
     CopyWindowToVram(sHeatStartMenu->sCompanionsButonWindowId, COPYWIN_FULL);
   }
 }
@@ -842,7 +842,7 @@ static void HeatStartMenu_ShowMapButtons (void)
   sHeatStartMenu->sMapButtonWindowId = AddWindow(&sWindowTemplate_MapButton);
   FillWindowPixelBuffer(sHeatStartMenu->sMapButtonWindowId, PIXEL_FILL(0));
   PutWindowTilemap(sHeatStartMenu->sMapButtonWindowId);
-  AddTextPrinterParameterized2(sHeatStartMenu->sMapButtonWindowId, FONT_SMALL, gText_MapButton, 0, 0, 0x1, 0x0, 5);
+  AddTextPrinterParameterized2(sHeatStartMenu->sMapButtonWindowId, FONT_SMALL, gText_MapButton, 0, 0, 0x1, 0x0, 14);
   CopyWindowToVram(sHeatStartMenu->sMapButtonWindowId, COPYWIN_FULL);
 }
 
@@ -871,7 +871,7 @@ static void HeatStartMenu_ShowTimeWindow(void)
         else
             StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  
     
-	AddTextPrinterParameterized6(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 0x2, 0x0, 5);
+	AddTextPrinterParameterized6(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 0x2, 0x0, 14);
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }
 
@@ -933,28 +933,28 @@ static void HeatStartMenu_UpdateMenuName(void) {
 
   switch(menuSelected) {
     case MENU_POKETCH:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Poketch, 1, 0, 0xFF, NULL, 0x2, 0x0, 5);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Poketch, 1, 0, 0xFF, NULL, 0x2, 0x0, 14);
       break;
     case MENU_POKEDEX:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL, 0x2, 0x0, 5);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL, 0x2, 0x0, 14);
       break;
     case MENU_PARTY:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL, 0x2, 0x0, 5);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL, 0x2, 0x0, 14);
       break;
     case MENU_BAG:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL, 0x2, 0x0, 5);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL, 0x2, 0x0, 14);
       break;
     case MENU_TRAINER_CARD:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL, 0x2, 0x0, 5);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL, 0x2, 0x0, 14);
       break;
     case MENU_SAVE:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL, 0x2, 0x0, 5);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL, 0x2, 0x0, 14);
       break;
     case MENU_OPTIONS:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL, 0x2, 0x0, 5);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL, 0x2, 0x0, 14);
       break;
     case MENU_FLAG:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL, 0x2, 0x0, 5);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL, 0x2, 0x0, 14);
       break;
   }
   CopyWindowToVram(sHeatStartMenu->sMenuNameWindowId, COPYWIN_GFX);

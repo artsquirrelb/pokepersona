@@ -1,4 +1,4 @@
-voice_group sunshine_orphanage
+voice_group xc2_garfont_mercernaries
     voice_keysplit voicegroup_piano_keysplit, keysplit_piano
     voice_keysplit voicegroup193, KeySplitTable6
 	voice_keysplit voicegroup194, KeySplitTable6
@@ -26,4 +26,4 @@ voice_group sunshine_orphanage
 	voice_keysplit voicegroup215, KeySplitTable9
 	voice_keysplit voicegroup216, KeySplitTable19
     voice_keysplit voicegroup217, KeySplitTable9
-	
+

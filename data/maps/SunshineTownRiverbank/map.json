@@ -2,7 +2,7 @@
   "id": "MAP_SUNSHINE_TOWN_RIVERBANK",
   "name": "SunshineTownRiverbank",
   "layout": "LAYOUT_SUNSHINE_TOWN_RIVERBANK",
-  "music": "MUS_SUNSHINE_ORPHANAGE",
+  "music": "MUS_XC2_GARFONT_MERCERNARIES",
   "region_map_section": "MAPSEC_SUNSHINETOWN_RIVERBANK",
   "requires_flash": false,
   "weather": "WEATHER_SUNNY",

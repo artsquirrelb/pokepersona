@@ -545,13 +545,14 @@
 #define PH_NURSE_HELD               608
 #define PH_NURSE_SOLO               609
 
-#define MUS_SUNSHINE_ORPHANAGE      610
-#define MUS_SUNSHINE_ORPHANAGE_SLOW 611
-#define MUS_KIRIJOS_MANSION         612
-#define MUS_RUN_RUN_RUN             613
-#define MUS_MENTAL_BREAKDOWN        614
+#define MUS_XC2_GARFONT_MERCERNARIES      610
+#define MUS_XC2_GARFONT_MERCERNARIES_NIGHT 611
+#define MUS_XC2_TORIGOTH_NIGHT         612
+#define MUS_P5_RUN_RUN_RUN             613
+#define MUS_P5_MENTAL_BREAKDOWN        614
+#define MUS_P3_CALAMITY                615
 
-#define END_MUS                     MUS_MENTAL_BREAKDOWN
+#define END_MUS                     MUS_P3_CALAMITY
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

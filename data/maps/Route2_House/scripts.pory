@@ -604,7 +604,7 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
     closemessage
     delay(50)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
-    playbgm(MUS_MENTAL_BREAKDOWN, TRUE)
+    playbgm(MUS_P5_MENTAL_BREAKDOWN, TRUE)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}What if I say, there's a way for a trainer to become one with their Pokémon?\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Huh? What do you mean?\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}In the most literal way possible.\p

@@ -1083,7 +1083,7 @@ Route2_House_Eventscript_MitsuruExplainingObjectives::
 # 606 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 607 "data/maps/Route2_House/scripts.pory"
-	playbgm MUS_MENTAL_BREAKDOWN, TRUE
+	playbgm MUS_P5_MENTAL_BREAKDOWN, TRUE
 # 608 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruExplainingObjectives_Text_1
 # 621 "data/maps/Route2_House/scripts.pory"

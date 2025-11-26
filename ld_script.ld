@@ -1243,11 +1243,12 @@ SECTIONS {
         sound/songs/midi/ph_nurse_blend.o(.rodata);
         sound/songs/midi/ph_nurse_held.o(.rodata);
         sound/songs/midi/ph_nurse_solo.o(.rodata);
-        sound/songs/midi/mus_sunshine_orphanage.o(.rodata);
-        sound/songs/midi/mus_sunshine_orphanage_slow.o(.rodata);
-        sound/songs/midi/mus_kirijos_mansion.o(.rodata);
-        sound/songs/midi/mus_run_run_run.o(.rodata);
-        sound/songs/midi/mus_mental_breakdown.o(.rodata);
+        sound/songs/midi/mus_xc2_garfont_mercernaries.o(.rodata);
+        sound/songs/midi/mus_xc2_garfont_mercernaries_night.o(.rodata);
+        sound/songs/midi/mus_xc2_torigoth_night.o(.rodata);
+        sound/songs/midi/mus_p5_run_run_run.o(.rodata);
+        sound/songs/midi/mus_p5_mental_breakdown.o(.rodata);
+        sound/songs/midi/mus_p3_calamity.o(.rodata);
     } > ROM =0
 
     lib_rodata :

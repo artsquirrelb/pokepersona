@@ -137,9 +137,8 @@
 .include "sound/voicegroups/frlg_sfx.inc"
 .include "sound/voicegroups/bard.inc"
 .include "sound/voicegroups/unused_2.inc" @ used by unused GSC radio tower takeover test track in RS
-.include "sound/voicegroups/sunshine_orphanage.inc"
-.include "sound/voicegroups/kirijos_mansion.inc"
-.include "sound/voicegroups/run_run_run.inc"
+.include "sound/voicegroups/xc2_garfont_mercernaries.inc"
+.include "sound/voicegroups/xc2_torigoth_night.inc"
 
 @ FRLG
 .include "sound/voicegroups/rg_follow_me.inc"

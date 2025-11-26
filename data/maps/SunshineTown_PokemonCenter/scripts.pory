@@ -140,7 +140,7 @@ script SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient {
     delay(1)
     call(SunshineTown_PokemonCenter_Eventscript_EveryonePin)
     waitmovement(0)
-    playbgm(MUS_RUN_RUN_RUN, TRUE)
+    playbgm(MUS_P3_CALAMITY, TRUE)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     applymovement(LOCALID_PLAYER, faceleft)
     applymovement(7, faceright)

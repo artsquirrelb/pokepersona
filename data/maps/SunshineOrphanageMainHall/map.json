@@ -2,7 +2,7 @@
   "id": "MAP_SUNSHINE_ORPHANAGE_MAIN_HALL",
   "name": "SunshineOrphanageMainHall",
   "layout": "LAYOUT_SUNSHINE_ORPHANAGE_MAIN_HALL",
-  "music": "MUS_SUNSHINE_ORPHANAGE",
+  "music": "MUS_XC2_GARFONT_MERCERNARIES",
   "region_map_section": "MAPSEC_SUNSHINE_ORPHANAGE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

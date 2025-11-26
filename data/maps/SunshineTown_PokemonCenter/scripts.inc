@@ -268,7 +268,7 @@ SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient::
 # 142 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	waitmovement 0
 # 143 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	playbgm MUS_RUN_RUN_RUN, TRUE
+	playbgm MUS_P3_CALAMITY, TRUE
 # 144 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
 # 145 "data/maps/SunshineTown_PokemonCenter/scripts.pory"

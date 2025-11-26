@@ -1,4 +1,4 @@
-voice_group kirijos_mansion
+voice_group xc2_torigoth_night
     voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_keysplit voicegroup193, KeySplitTable6
 	voice_keysplit voicegroup194, KeySplitTable6

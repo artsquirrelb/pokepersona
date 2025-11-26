@@ -54,7 +54,7 @@
       "flag": "FLAG_ITEM_THUNDERSHARDS_CAVE_1F_TM_THUNDER_WAVE"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
+      "graphics_id": "OBJ_EVENT_GFX_MINING_ROCK",
       "x": 17,
       "y": 10,
       "elevation": 0,
@@ -63,8 +63,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "script": "ThundershardsCave_1F_EventScript_MiningRock",
+      "flag": "FLAG_DAILY_MINING_ROCK2_THUNDERSHARDS_CAVE_1F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",

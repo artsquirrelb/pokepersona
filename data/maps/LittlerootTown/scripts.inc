@@ -79,7 +79,7 @@ LittlerootTown_OnTransition:
 # 41 "data/maps/LittlerootTown/scripts.pory"
 	call_if_eq VAR_LITTLEROOT_INTRO_STATE, 2, LittlerootTown_EventScript_MoveMomToMaysDoor
 # 42 "data/maps/LittlerootTown/scripts.pory"
-	call_if_unset FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_SetTwinPos
+	call_if_unset FLAG_RECEIVED_MINING_KIT, LittlerootTown_EventScript_SetTwinPos
 # 43 "data/maps/LittlerootTown/scripts.pory"
 	call_if_eq VAR_LITTLEROOT_TOWN_STATE, 3, LittlerootTown_EventScript_SetMomStandingInFrontOfDoorPos
 # 44 "data/maps/LittlerootTown/scripts.pory"
@@ -507,7 +507,7 @@ LittlerootTown_EventScript_Twin::
 # 255 "data/maps/LittlerootTown/scripts.pory"
 	goto_if_set FLAG_ADVENTURE_STARTED, LittlerootTown_EventScript_GoodLuck
 # 256 "data/maps/LittlerootTown/scripts.pory"
-	goto_if_set FLAG_RESCUED_BIRCH, LittlerootTown_EventScript_YouSavedBirch
+	goto_if_set FLAG_RECEIVED_MINING_KIT, LittlerootTown_EventScript_YouSavedBirch
 # 257 "data/maps/LittlerootTown/scripts.pory"
 	goto_if_ne VAR_LITTLEROOT_TOWN_STATE, 0, LittlerootTown_EventScript_GoSaveBirch
 # 258 "data/maps/LittlerootTown/scripts.pory"

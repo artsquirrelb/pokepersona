@@ -95,7 +95,7 @@
 // Scripts
 #define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
 #define FLAG_SET_WALL_CLOCK                      0x51
-#define FLAG_RESCUED_BIRCH                       0x52
+#define FLAG_RECEIVED_MINING_KIT                 0x52
 #define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
 
 #define FLAG_UNUSED_0x054                    0x54  // Unused Flag
@@ -1594,7 +1594,7 @@
 #define FLAG_DAILY_APPRENTICE_LEAVES                (DAILY_FLAGS_START + 0x14)
 
 #define FLAG_DAILY_MINING_ROCK_THUNDERSHARDS_CAVE_1F      (DAILY_FLAGS_START + 0x15) // Was Unused Flag
-#define FLAG_UNUSED_0x936                           (DAILY_FLAGS_START + 0x16) // Unused Flag
+#define FLAG_DAILY_MINING_ROCK2_THUNDERSHARDS_CAVE_1F     (DAILY_FLAGS_START + 0x16) // Was Unused Flag
 #define FLAG_UNUSED_0x937                           (DAILY_FLAGS_START + 0x17) // Unused Flag
 #define FLAG_UNUSED_0x938                           (DAILY_FLAGS_START + 0x18) // Unused Flag
 #define FLAG_UNUSED_0x939                           (DAILY_FLAGS_START + 0x19) // Unused Flag

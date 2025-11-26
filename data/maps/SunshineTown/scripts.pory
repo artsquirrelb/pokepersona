@@ -7,7 +7,7 @@ mapscripts SunshineTown_MapScripts {
             setobjectxyperm(6, 23, 3)
             setobjectmovementtype(6, MOVEMENT_TYPE_FACE_LEFT)
         }
-        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 16){
+        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 16 && var(VAR_MITSURUS_INTRO_STATE)!= 19){
             setflag(FLAG_TEMP_1)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 16 || var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18) {
@@ -26,11 +26,52 @@ mapscripts SunshineTown_MapScripts {
             setobjectxyperm(2, 3, 6)
             setobjectxyperm(1, 3, 7)
         }
+        if (var(VAR_MITSURUS_INTRO_STATE) != 20){
+            setflag(FLAG_TEMP_3)
+        }
+        if(var(VAR_MITSURUS_INTRO_STATE) == 20){
+            setflag(FLAG_TEMP_4)
+        }
+        if (var(VAR_MITSURUS_INTRO_STATE) == 19 || var(VAR_MITSURUS_INTRO_STATE) == 20 ){
+            setobjectxyperm(3, 13, 6)
+            setobjectmovementtype(3, MOVEMENT_TYPE_FACE_LEFT)
+            setobjectxyperm(24, 14, 7)
+            setobjectmovementtype(24, MOVEMENT_TYPE_FACE_LEFT)
+            setobjectxyperm(22, 31, 16)
+            setobjectmovementtype(22, MOVEMENT_TYPE_FACE_DOWN)
+            setobjectxyperm(23, 31, 17)
+            setobjectmovementtype(23, MOVEMENT_TYPE_FACE_UP)
+            setobjectxyperm(1, 8, 4)
+            setobjectmovementtype(1, MOVEMENT_TYPE_FACE_DOWN)
+        }
     } 
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 16: SunshineTown_Eventscript_OnFrame16
         VAR_AKIHIKOS_INTRO_STATE, 23: SunshineTown_Eventscript_OnFrame23
+        ///////
+        VAR_MITSURUS_INTRO_STATE, 18: SunshineTown_Eventscript_MitsuruOnFrame18
+        VAR_MITSURUS_INTRO_STATE, 19: SunshineTown_Eventscript_MitsuruOnFrame19
     ]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_MITSURUS_INTRO_STATE, 19: SunshineTown_Eventscript_MitsuruOnWarp19
+    ]
+}
+
+script SunshineTown_Eventscript_MitsuruOnWarp19 {
+    applymovement(1, invisible)
+    applymovement(LOCALID_PLAYER, faceright)    
+}
+
+script SunshineTown_Eventscript_MitsuruOnFrame18 {
+    call(Eventscript_CutsceneStarts)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
+    setvar(VAR_MITSURUS_INTRO_STATE, 19)
+    warpsilent(MAP_SUNSHINE_TOWN, 4, 6)
+    end
+}
+
+script SunshineTown_Eventscript_MitsuruOnFrame19 {
+    goto(SunshineTown_Eventscript_MitsuruSeeingPoliceRunning)
 }
 
 script SunshineTown_Eventscript_Kurosawa {
@@ -385,4 +426,62 @@ script makecharagrayout{
     setvar(VAR_TEMP_1, 0)
     setvar(VAR_TEMP_2, 0)
     setvar(VAR_TEMP_3, 0)
+}
+
+script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
+    lockall
+    applymovement(LOCALID_PLAYER, moves(player_run_right*3, walk_right*2, emote_exclamation_mark))
+    delay(48)
+    applymovement(3, moves(walk_fast_left*13))
+    delay(4)
+    applymovement(24, moves(walk_fast_left*13))
+    delay(20)
+    applymovement(LOCALID_PLAYER, moves(face_down, lock_facing_direction, walk_fast_up, unlock_facing_direction, delay_16, face_left))
+    waitmovement
+    delay(30)
+    removeobject(3)
+    removeobject(24)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(The police? How did they arrive this fast?
+    The explosion happened just a few minutes ago.)\p
+    (Not to mention, if I remember correctly, the nearest station is in the opposite direction of Sunshine Town.)"))
+    closemessage
+    delay(20)
+    playse(SE_SLIDING_DOOR)
+    waitse
+    applymovement(1, moves(set_visible, walk_fast_down*2, walk_fast_right))
+    waitmovement
+    applymovement(LOCALID_PLAYER, facedown)
+    waitmovement
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, walkright)
+    applymovement(1, moves(walk_fast_right*2))
+    waitmovement
+    applymovement(LOCALID_PLAYER, faceright)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Excuse me. Did something happen? Everyone in town looks on edge."))
+    closemessage
+    applymovement(1, faceleft)
+    waitmovement
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    fadenewbgm(MUS_RUN_RUN_RUN)
+    setspeaker("Kojima")
+    msgbox(format("There was an explosion at the orphanage west of town, didn't you hear?\p
+    Lots of people were injured and the town people are trying to help.\p
+    Now excuse me, I gotta bring these medicines to the injured."))
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, walkleft)
+    special(RemoveCameraObject)
+    applymovement(1, moves(walk_fast_right*3, walk_fast_down*6, set_invisible))
+    delay(20)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(The orphanage was exploded?)\p
+    (Damn it! How am I so naive. Of course they would do that to erase the proofs and traces.)\p
+    {CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}(It was all my fault... If only I acted sooner.)\p
+    ...........\p
+    {CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(I should go check and help the injured as well.)"))
+    closemessage
+    setvar(VAR_MITSURUS_INTRO_STATE, 20)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
+    call(Eventscript_CutsceneEnds)
+    releaseall
+    end
 }

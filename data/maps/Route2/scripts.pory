@@ -104,7 +104,7 @@ script Route2_Eventscript_AkishinjiGettingBlockedBySusMen {
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_STRUGGLED}What the hell??"))
     closemessage
     delay(30)
-    playbgm(MUS_ABNORMAL_WEATHER, TRUE)
+    playbgm(MUS_MENTAL_BREAKDOWN, TRUE)
     setspeaker("Man In Black 1")
     applymovement(4, walkinplaceright)
     waitmovement(0)

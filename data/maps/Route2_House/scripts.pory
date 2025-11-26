@@ -603,7 +603,8 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
     Perhaps I should put it like this."))
     closemessage
     delay(50)
-    playbgm(MUS_ABNORMAL_WEATHER, TRUE)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    playbgm(MUS_MENTAL_BREAKDOWN, TRUE)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}What if I say, there's a way for a trainer to become one with their Pokémon?\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Huh? What do you mean?\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}In the most literal way possible.\p
@@ -636,7 +637,6 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}.....\p
     Very well. I suppose that's a logical idea."))
     closemessage
-    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     applymovement(1, faceup)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraPansUpToClock)
     waitmovement(0)
@@ -647,7 +647,6 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
     applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesBackToCenterOfTheRoom)
     waitmovement(0)
     fadenewbgm(MUS_RG_SS_ANNE)
-    savebgm(MUS_RG_SS_ANNE)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     delay (60)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}For now, I suggest we rest for the night.
@@ -818,7 +817,6 @@ script Route2_House_Eventscript_AkihikoOnFrame39 {
 script Route2_House_Eventscript_AkihikoCantSleep {
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fadenewbgm(MUS_OCEANIC_MUSEUM)
-    savebgm(MUS_OCEANIC_MUSEUM)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     delay(60)
     applymovement(LOCALID_PLAYER, emotepensive)

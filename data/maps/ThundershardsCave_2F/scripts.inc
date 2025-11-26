@@ -144,459 +144,463 @@ ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff2::
 # 64 "data/maps/ThundershardsCave_2F/scripts.pory"
 	delay 30
 # 65 "data/maps/ThundershardsCave_2F/scripts.pory"
-	fadenewbgm MUS_ABNORMAL_WEATHER
+	fadenewbgm MUS_MENTAL_BREAKDOWN
 # 66 "data/maps/ThundershardsCave_2F/scripts.pory"
-	goto ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff
+	setflag FLAG_DONT_TRANSITION_MUSIC
 # 67 "data/maps/ThundershardsCave_2F/scripts.pory"
+	goto ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff
+# 68 "data/maps/ThundershardsCave_2F/scripts.pory"
 	release
 	return
 
 
-# 70 "data/maps/ThundershardsCave_2F/scripts.pory"
-walkinplaceleft:
 # 71 "data/maps/ThundershardsCave_2F/scripts.pory"
+walkinplaceleft:
+# 72 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_in_place_left
 	step_end
 
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff::
-# 75 "data/maps/ThundershardsCave_2F/scripts.pory"
-	lock
 # 76 "data/maps/ThundershardsCave_2F/scripts.pory"
-	special SpawnCameraObject
+	lock
 # 77 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_0
+	special SpawnCameraObject
 # 78 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement 0
+	applymovement OBJ_EVENT_ID_CAMERA, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_0
 # 79 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 14, walkinplaceleft
+	waitmovement 0
 # 80 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement
+	applymovement 14, walkinplaceleft
 # 81 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setspeaker ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_0
-# 82 "data/maps/ThundershardsCave_2F/scripts.pory"
-	msgbox ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_1
-# 87 "data/maps/ThundershardsCave_2F/scripts.pory"
-	closemessage
-# 88 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 12, walkinplaceright
-# 89 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement 0
-# 90 "data/maps/ThundershardsCave_2F/scripts.pory"
-	msgbox ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_2
-# 91 "data/maps/ThundershardsCave_2F/scripts.pory"
-	closemessage
-# 92 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 14, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_1
-# 93 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 50
-# 94 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_2
-# 95 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement 0
-# 96 "data/maps/ThundershardsCave_2F/scripts.pory"
-	removeobject 14
-# 97 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setflag FLAG_TEMP_2
-# 98 "data/maps/ThundershardsCave_2F/scripts.pory"
-	special RemoveCameraObject
-# 99 "data/maps/ThundershardsCave_2F/scripts.pory"
-	bufferleadmonspeciesname STR_VAR_1
-# 100 "data/maps/ThundershardsCave_2F/scripts.pory"
-	msgbox ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_3
-# 102 "data/maps/ThundershardsCave_2F/scripts.pory"
-	closemessage
-# 103 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playfirstmoncry
-# 104 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmoncry
-# 105 "data/maps/ThundershardsCave_2F/scripts.pory"
 	waitmovement
+# 82 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setspeaker ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_0
+# 83 "data/maps/ThundershardsCave_2F/scripts.pory"
+	msgbox ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_1
+# 88 "data/maps/ThundershardsCave_2F/scripts.pory"
+	closemessage
+# 89 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement 12, walkinplaceright
+# 90 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement 0
+# 91 "data/maps/ThundershardsCave_2F/scripts.pory"
+	msgbox ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_2
+# 92 "data/maps/ThundershardsCave_2F/scripts.pory"
+	closemessage
+# 93 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement 14, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_1
+# 94 "data/maps/ThundershardsCave_2F/scripts.pory"
+	delay 50
+# 95 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_2
+# 96 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement 0
+# 97 "data/maps/ThundershardsCave_2F/scripts.pory"
+	removeobject 14
+# 98 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setflag FLAG_TEMP_2
+# 99 "data/maps/ThundershardsCave_2F/scripts.pory"
+	special RemoveCameraObject
+# 100 "data/maps/ThundershardsCave_2F/scripts.pory"
+	bufferleadmonspeciesname STR_VAR_1
+# 101 "data/maps/ThundershardsCave_2F/scripts.pory"
+	msgbox ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_3
+# 103 "data/maps/ThundershardsCave_2F/scripts.pory"
+	closemessage
+# 104 "data/maps/ThundershardsCave_2F/scripts.pory"
+	playfirstmoncry
+# 105 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmoncry
 # 106 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement
+# 107 "data/maps/ThundershardsCave_2F/scripts.pory"
 	release
 	end
 
 
 ThundershardsCave_2F_Eventscript_LetsJumpKGStaff::
-# 111 "data/maps/ThundershardsCave_2F/scripts.pory"
-	lock
 # 112 "data/maps/ThundershardsCave_2F/scripts.pory"
-	msgbox ThundershardsCave_2F_Eventscript_LetsJumpKGStaff_Text_0
+	lock
 # 113 "data/maps/ThundershardsCave_2F/scripts.pory"
-	closemessage
+	msgbox ThundershardsCave_2F_Eventscript_LetsJumpKGStaff_Text_0
 # 114 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement LOCALID_PLAYER, walkup
+	closemessage
 # 115 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, walkup
 # 116 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement 0
+# 117 "data/maps/ThundershardsCave_2F/scripts.pory"
 	release
 	return
 
 
 ThundershardsCave_2F_Eventscript_KirijoGenesisStaff::
-# 120 "data/maps/ThundershardsCave_2F/scripts.pory"
-	hidetalkbutton
 # 121 "data/maps/ThundershardsCave_2F/scripts.pory"
-	lock
+	hidetalkbutton
 # 122 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playse SE_PIN
+	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 123 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 12, ThundershardsCave_2F_Eventscript_KirijoGenesisStaff_Movement_0
+	lock
 # 124 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement 0
-# 125 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 4
-# 126 "data/maps/ThundershardsCave_2F/scripts.pory"
 	playse SE_PIN
-# 127 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 13, ThundershardsCave_2F_Eventscript_KirijoGenesisStaff_Movement_0
-# 128 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 125 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement 12, ThundershardsCave_2F_Eventscript_KirijoGenesisStaff_Movement_0
+# 126 "data/maps/ThundershardsCave_2F/scripts.pory"
 	waitmovement 0
+# 127 "data/maps/ThundershardsCave_2F/scripts.pory"
+	delay 4
+# 128 "data/maps/ThundershardsCave_2F/scripts.pory"
+	playse SE_PIN
 # 129 "data/maps/ThundershardsCave_2F/scripts.pory"
-	bufferpartymonnick STR_VAR_1, 0
+	applymovement 13, ThundershardsCave_2F_Eventscript_KirijoGenesisStaff_Movement_0
 # 130 "data/maps/ThundershardsCave_2F/scripts.pory"
-	bufferpartymonnick STR_VAR_2, 1
+	waitmovement 0
 # 131 "data/maps/ThundershardsCave_2F/scripts.pory"
-	msgbox ThundershardsCave_2F_Eventscript_KirijoGenesisStaff_Text_0
+	bufferpartymonnick STR_VAR_1, 0
+# 132 "data/maps/ThundershardsCave_2F/scripts.pory"
+	bufferpartymonnick STR_VAR_2, 1
 # 133 "data/maps/ThundershardsCave_2F/scripts.pory"
-	closemessage
-# 134 "data/maps/ThundershardsCave_2F/scripts.pory"
-	trainerbattle_two_trainers TRAINER_KG_STAFF_M_THUNDERSHARDS_CAVE_1F, KG_Staff_M_defeated, TRAINER_KG_STAFF_F_THUNDERSHARDS_CAVE_1F, KG_Staff_F_defeated
+	msgbox ThundershardsCave_2F_Eventscript_KirijoGenesisStaff_Text_0
 # 135 "data/maps/ThundershardsCave_2F/scripts.pory"
-	goto ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle
+	closemessage
 # 136 "data/maps/ThundershardsCave_2F/scripts.pory"
+	trainerbattle_two_trainers TRAINER_KG_STAFF_M_THUNDERSHARDS_CAVE_1F, KG_Staff_M_defeated, TRAINER_KG_STAFF_F_THUNDERSHARDS_CAVE_1F, KG_Staff_F_defeated
+# 137 "data/maps/ThundershardsCave_2F/scripts.pory"
+	goto ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle
+# 138 "data/maps/ThundershardsCave_2F/scripts.pory"
 	release
 	return
 
 
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle::
-# 140 "data/maps/ThundershardsCave_2F/scripts.pory"
-	lock
-# 141 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 20
 # 142 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 13, faceup
+	lock
 # 143 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement 0
+	delay 20
 # 144 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 4
+	applymovement 13, faceup
 # 145 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 12, facedown
-# 146 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement
-# 147 "data/maps/ThundershardsCave_2F/scripts.pory"
-	msgbox ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Text_0
-# 150 "data/maps/ThundershardsCave_2F/scripts.pory"
-	closemessage
-# 151 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 13, ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Movement_0
-# 152 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 8
-# 153 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 12, ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Movement_1
-# 154 "data/maps/ThundershardsCave_2F/scripts.pory"
 	waitmovement 0
+# 146 "data/maps/ThundershardsCave_2F/scripts.pory"
+	delay 4
+# 147 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement 12, facedown
+# 148 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement
+# 149 "data/maps/ThundershardsCave_2F/scripts.pory"
+	msgbox ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Text_0
+# 152 "data/maps/ThundershardsCave_2F/scripts.pory"
+	closemessage
+# 153 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement 13, ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Movement_0
+# 154 "data/maps/ThundershardsCave_2F/scripts.pory"
+	delay 8
 # 155 "data/maps/ThundershardsCave_2F/scripts.pory"
-	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+	applymovement 12, ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Movement_1
 # 156 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement 0
+# 157 "data/maps/ThundershardsCave_2F/scripts.pory"
+	getplayerxy VAR_TEMP_0, VAR_TEMP_1
+# 158 "data/maps/ThundershardsCave_2F/scripts.pory"
 	compare VAR_TEMP_0, 27
 	goto_if_eq ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_3
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_1:
-# 160 "data/maps/ThundershardsCave_2F/scripts.pory"
-	msgbox ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Text_1
-# 161 "data/maps/ThundershardsCave_2F/scripts.pory"
-	closemessage
 # 162 "data/maps/ThundershardsCave_2F/scripts.pory"
-	goto ThundershardsCave_2F_Eventscript_FreezingKGStaff
+	msgbox ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Text_1
 # 163 "data/maps/ThundershardsCave_2F/scripts.pory"
+	closemessage
+# 164 "data/maps/ThundershardsCave_2F/scripts.pory"
+	goto ThundershardsCave_2F_Eventscript_FreezingKGStaff
+# 165 "data/maps/ThundershardsCave_2F/scripts.pory"
 	release
 	return
 
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_2:
-# 157 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 159 "data/maps/ThundershardsCave_2F/scripts.pory"
 	applymovement LOCALID_PLAYER, ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Movement_2
-# 158 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 160 "data/maps/ThundershardsCave_2F/scripts.pory"
 	waitmovement
 	goto ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_1
 
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_3:
-# 156 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 158 "data/maps/ThundershardsCave_2F/scripts.pory"
 	compare VAR_TEMP_1, 7
 	goto_if_eq ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_2
 	goto ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_1
 
 
 ThundershardsCave_2F_Eventscript_FreezingKGStaff::
-# 167 "data/maps/ThundershardsCave_2F/scripts.pory"
-	clearflag FLAG_TEMP_4
-# 168 "data/maps/ThundershardsCave_2F/scripts.pory"
-	addobject 21, MAP_THUNDERSHARDS_CAVE_2F
 # 169 "data/maps/ThundershardsCave_2F/scripts.pory"
-	showobjectat 21, MAP_THUNDERSHARDS_CAVE_2F
+	clearflag FLAG_TEMP_4
 # 170 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 21, ThundershardsCave_2F_Eventscript_FreezingKGStaff_Movement_0
+	addobject 21, MAP_THUNDERSHARDS_CAVE_2F
 # 171 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 8
+	showobjectat 21, MAP_THUNDERSHARDS_CAVE_2F
 # 172 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playse SE_LEDGE
+	applymovement 21, ThundershardsCave_2F_Eventscript_FreezingKGStaff_Movement_0
 # 173 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement 21
-# 174 "data/maps/ThundershardsCave_2F/scripts.pory"
-	special SpawnCameraObject
-# 175 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, ThundershardsCave_2F_Eventscript_FreezingKGStaff_Movement_1
-# 176 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement 0
-# 177 "data/maps/ThundershardsCave_2F/scripts.pory"
-	fadescreenswapbuffers FADE_TO_WHITE, 1
-# 178 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 20
-# 179 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 180 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmoncry
-# 181 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playse SE_M_BUBBLE_BEAM
-# 182 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitse
-# 183 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playmoncry SPECIES_VULPIX, CRY_MODE_NORMAL
-# 184 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmoncry
-# 185 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playse SE_M_ICY_WIND
-# 186 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitse
-# 187 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 12, invisible
-# 188 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 13, invisible
-# 189 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement 0
-# 190 "data/maps/ThundershardsCave_2F/scripts.pory"
-	removeobject 12
-# 191 "data/maps/ThundershardsCave_2F/scripts.pory"
-	removeobject 13
-# 192 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setflag FLAG_TEMP_1
-# 193 "data/maps/ThundershardsCave_2F/scripts.pory"
-	clearflag FLAG_TEMP_3
-# 194 "data/maps/ThundershardsCave_2F/scripts.pory"
-	addobject 19
-# 195 "data/maps/ThundershardsCave_2F/scripts.pory"
-	addobject 20
-# 196 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement 0
-# 197 "data/maps/ThundershardsCave_2F/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_WHITE
-# 198 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 20
-# 199 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 19, shakehorizontal
-# 200 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playse SE_M_HARDEN
-# 201 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 4
-# 202 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 20, shakehorizontal
-# 203 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playse SE_M_HARDEN
-# 204 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitse
-# 205 "data/maps/ThundershardsCave_2F/scripts.pory"
 	delay 8
-# 206 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_2
-# 207 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 174 "data/maps/ThundershardsCave_2F/scripts.pory"
+	playse SE_LEDGE
+# 175 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement 21
+# 176 "data/maps/ThundershardsCave_2F/scripts.pory"
+	special SpawnCameraObject
+# 177 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, ThundershardsCave_2F_Eventscript_FreezingKGStaff_Movement_1
+# 178 "data/maps/ThundershardsCave_2F/scripts.pory"
 	waitmovement 0
-# 208 "data/maps/ThundershardsCave_2F/scripts.pory"
-	special RemoveCameraObject
-# 209 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 179 "data/maps/ThundershardsCave_2F/scripts.pory"
+	fadescreenswapbuffers FADE_TO_WHITE, 1
+# 180 "data/maps/ThundershardsCave_2F/scripts.pory"
 	delay 20
+# 181 "data/maps/ThundershardsCave_2F/scripts.pory"
+	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
+# 182 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmoncry
+# 183 "data/maps/ThundershardsCave_2F/scripts.pory"
+	playse SE_M_BUBBLE_BEAM
+# 184 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitse
+# 185 "data/maps/ThundershardsCave_2F/scripts.pory"
+	playmoncry SPECIES_VULPIX, CRY_MODE_NORMAL
+# 186 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmoncry
+# 187 "data/maps/ThundershardsCave_2F/scripts.pory"
+	playse SE_M_ICY_WIND
+# 188 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitse
+# 189 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement 12, invisible
+# 190 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement 13, invisible
+# 191 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement 0
+# 192 "data/maps/ThundershardsCave_2F/scripts.pory"
+	removeobject 12
+# 193 "data/maps/ThundershardsCave_2F/scripts.pory"
+	removeobject 13
+# 194 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setflag FLAG_TEMP_1
+# 195 "data/maps/ThundershardsCave_2F/scripts.pory"
+	clearflag FLAG_TEMP_3
+# 196 "data/maps/ThundershardsCave_2F/scripts.pory"
+	addobject 19
+# 197 "data/maps/ThundershardsCave_2F/scripts.pory"
+	addobject 20
+# 198 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement 0
+# 199 "data/maps/ThundershardsCave_2F/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_WHITE
+# 200 "data/maps/ThundershardsCave_2F/scripts.pory"
+	delay 20
+# 201 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement 19, shakehorizontal
+# 202 "data/maps/ThundershardsCave_2F/scripts.pory"
+	playse SE_M_HARDEN
+# 203 "data/maps/ThundershardsCave_2F/scripts.pory"
+	delay 4
+# 204 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement 20, shakehorizontal
+# 205 "data/maps/ThundershardsCave_2F/scripts.pory"
+	playse SE_M_HARDEN
+# 206 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitse
+# 207 "data/maps/ThundershardsCave_2F/scripts.pory"
+	delay 8
+# 208 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_2
+# 209 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement 0
 # 210 "data/maps/ThundershardsCave_2F/scripts.pory"
-	bufferleadmonspeciesname STR_VAR_1
+	special RemoveCameraObject
 # 211 "data/maps/ThundershardsCave_2F/scripts.pory"
-	msgbox ThundershardsCave_2F_Eventscript_FreezingKGStaff_Text_0
+	delay 20
+# 212 "data/maps/ThundershardsCave_2F/scripts.pory"
+	bufferleadmonspeciesname STR_VAR_1
 # 213 "data/maps/ThundershardsCave_2F/scripts.pory"
-	closemessage
-# 214 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 21, ThundershardsCave_2F_Eventscript_FreezingKGStaff_Movement_2
+	msgbox ThundershardsCave_2F_Eventscript_FreezingKGStaff_Text_0
 # 215 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement
+	closemessage
 # 216 "data/maps/ThundershardsCave_2F/scripts.pory"
-	removeobject 21
+	applymovement 21, ThundershardsCave_2F_Eventscript_FreezingKGStaff_Movement_2
 # 217 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setflag FLAG_TEMP_4
+	waitmovement
 # 218 "data/maps/ThundershardsCave_2F/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	removeobject 21
 # 219 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setflag FLAG_TEMP_4
+# 220 "data/maps/ThundershardsCave_2F/scripts.pory"
+	clearflag FLAG_HIDE_TALK_BUTTON
+# 221 "data/maps/ThundershardsCave_2F/scripts.pory"
 	release
 	end
 
 
 ThundershardsCave_2F_Eventscript_FrozenStaff::
-# 232 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 234 "data/maps/ThundershardsCave_2F/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 14
 	goto_if_eq ThundershardsCave_2F_Eventscript_FrozenStaff_1
 	return
 
 ThundershardsCave_2F_Eventscript_FrozenStaff_1:
-# 233 "data/maps/ThundershardsCave_2F/scripts.pory"
-	lock
-# 234 "data/maps/ThundershardsCave_2F/scripts.pory"
-	msgbox ThundershardsCave_2F_Eventscript_FrozenStaff_Text_0
 # 235 "data/maps/ThundershardsCave_2F/scripts.pory"
-	closemessage
+	lock
 # 236 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playse SE_SELECT
+	msgbox ThundershardsCave_2F_Eventscript_FrozenStaff_Text_0
 # 237 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 19, ThundershardsCave_2F_Eventscript_FrozenStaff_Movement_0
+	closemessage
 # 238 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement 20, ThundershardsCave_2F_Eventscript_FrozenStaff_Movement_0
+	playse SE_SELECT
 # 239 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement 0
+	applymovement 19, ThundershardsCave_2F_Eventscript_FrozenStaff_Movement_0
 # 240 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playse SE_CLICK
+	applymovement 20, ThundershardsCave_2F_Eventscript_FrozenStaff_Movement_0
 # 241 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitse
+	waitmovement 0
 # 242 "data/maps/ThundershardsCave_2F/scripts.pory"
-	msgbox ThundershardsCave_2F_Eventscript_FrozenStaff_Text_1
+	playse SE_CLICK
 # 243 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 15
+	waitse
 # 244 "data/maps/ThundershardsCave_2F/scripts.pory"
+	msgbox ThundershardsCave_2F_Eventscript_FrozenStaff_Text_1
+# 245 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 15
+# 246 "data/maps/ThundershardsCave_2F/scripts.pory"
 	release
 	return
 
 
 ShakeScreenNoSound::
-# 249 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 20
-# 250 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8004, 2
 # 251 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8005, 4
+	delay 20
 # 252 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8006, 6
+	setvar VAR_0x8004, 2
 # 253 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8005, 4
 # 254 "data/maps/ThundershardsCave_2F/scripts.pory"
-	special ShakeCamera
+	setvar VAR_0x8006, 6
 # 255 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitstate
+	setvar VAR_0x8007, 4
 # 256 "data/maps/ThundershardsCave_2F/scripts.pory"
+	special ShakeCamera
+# 257 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitstate
+# 258 "data/maps/ThundershardsCave_2F/scripts.pory"
 	delay 20
 	return
 
 
 ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave::
-# 260 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playse SE_INTRO_BLAST
-# 261 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8004, 2
 # 262 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8005, 4
+	playse SE_INTRO_BLAST
 # 263 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8006, 6
+	setvar VAR_0x8004, 2
 # 264 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8007, 4
+	setvar VAR_0x8005, 4
 # 265 "data/maps/ThundershardsCave_2F/scripts.pory"
-	special ShakeCamera
+	setvar VAR_0x8006, 6
 # 266 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setfieldeffectargument 0, 37
+	setvar VAR_0x8007, 4
 # 267 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setfieldeffectargument 1, 7
+	special ShakeCamera
 # 268 "data/maps/ThundershardsCave_2F/scripts.pory"
-	dofieldeffect FLDEFF_EXPLOSION
+	setfieldeffectargument 0, 37
 # 269 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement LOCALID_PLAYER, ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Movement_0
+	setfieldeffectargument 1, 7
 # 270 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitfieldeffect FLDEFF_EXPLOSION
-# 271 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement
-# 272 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 10
-# 273 "data/maps/ThundershardsCave_2F/scripts.pory"
-	special SpawnCameraObject
-# 274 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, walkup
-# 275 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement
-# 276 "data/maps/ThundershardsCave_2F/scripts.pory"
-	call ShakeScreenNoSound
-# 277 "data/maps/ThundershardsCave_2F/scripts.pory"
-	msgbox ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Text_0
-# 279 "data/maps/ThundershardsCave_2F/scripts.pory"
-	closemessage
-# 280 "data/maps/ThundershardsCave_2F/scripts.pory"
-	call ShakeScreenNoSound
-# 281 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, walkdown
-# 282 "data/maps/ThundershardsCave_2F/scripts.pory"
-	waitmovement
-# 283 "data/maps/ThundershardsCave_2F/scripts.pory"
-	special RemoveCameraObject
-# 284 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 30
-# 285 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playse SE_INTRO_BLAST
-# 286 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8004, 2
-# 287 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8005, 4
-# 288 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8006, 6
-# 289 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_0x8007, 4
-# 290 "data/maps/ThundershardsCave_2F/scripts.pory"
-	special ShakeCamera
-# 291 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setfieldeffectargument 0, 29
-# 292 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setfieldeffectargument 1, 10
-# 293 "data/maps/ThundershardsCave_2F/scripts.pory"
 	dofieldeffect FLDEFF_EXPLOSION
-# 294 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 271 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement LOCALID_PLAYER, ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Movement_0
+# 272 "data/maps/ThundershardsCave_2F/scripts.pory"
 	waitfieldeffect FLDEFF_EXPLOSION
-# 295 "data/maps/ThundershardsCave_2F/scripts.pory"
-	playse SE_PIN
-# 296 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement LOCALID_PLAYER, ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Movement_1
-# 297 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 273 "data/maps/ThundershardsCave_2F/scripts.pory"
 	waitmovement
-# 298 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 30
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
-	applymovement LOCALID_PLAYER, ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Movement_2
-# 300 "data/maps/ThundershardsCave_2F/scripts.pory"
-	delay 20
-# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
-	call ShakeScreenNoSound
-# 302 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 274 "data/maps/ThundershardsCave_2F/scripts.pory"
 	delay 10
-# 303 "data/maps/ThundershardsCave_2F/scripts.pory"
-	fadescreenswapbuffers FADE_TO_WHITE
-# 304 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 275 "data/maps/ThundershardsCave_2F/scripts.pory"
+	special SpawnCameraObject
+# 276 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, walkup
+# 277 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement
+# 278 "data/maps/ThundershardsCave_2F/scripts.pory"
+	call ShakeScreenNoSound
+# 279 "data/maps/ThundershardsCave_2F/scripts.pory"
+	msgbox ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Text_0
+# 281 "data/maps/ThundershardsCave_2F/scripts.pory"
+	closemessage
+# 282 "data/maps/ThundershardsCave_2F/scripts.pory"
+	call ShakeScreenNoSound
+# 283 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, walkdown
+# 284 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement
+# 285 "data/maps/ThundershardsCave_2F/scripts.pory"
+	special RemoveCameraObject
+# 286 "data/maps/ThundershardsCave_2F/scripts.pory"
+	delay 30
+# 287 "data/maps/ThundershardsCave_2F/scripts.pory"
 	playse SE_INTRO_BLAST
-# 305 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 288 "data/maps/ThundershardsCave_2F/scripts.pory"
 	setvar VAR_0x8004, 2
-# 306 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 289 "data/maps/ThundershardsCave_2F/scripts.pory"
 	setvar VAR_0x8005, 4
-# 307 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 290 "data/maps/ThundershardsCave_2F/scripts.pory"
 	setvar VAR_0x8006, 6
-# 308 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 291 "data/maps/ThundershardsCave_2F/scripts.pory"
 	setvar VAR_0x8007, 4
-# 309 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 292 "data/maps/ThundershardsCave_2F/scripts.pory"
 	special ShakeCamera
+# 293 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setfieldeffectargument 0, 29
+# 294 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setfieldeffectargument 1, 10
+# 295 "data/maps/ThundershardsCave_2F/scripts.pory"
+	dofieldeffect FLDEFF_EXPLOSION
+# 296 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitfieldeffect FLDEFF_EXPLOSION
+# 297 "data/maps/ThundershardsCave_2F/scripts.pory"
+	playse SE_PIN
+# 298 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement LOCALID_PLAYER, ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Movement_1
+# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitmovement
+# 300 "data/maps/ThundershardsCave_2F/scripts.pory"
+	delay 30
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
+	applymovement LOCALID_PLAYER, ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Movement_2
+# 302 "data/maps/ThundershardsCave_2F/scripts.pory"
+	delay 20
+# 303 "data/maps/ThundershardsCave_2F/scripts.pory"
+	call ShakeScreenNoSound
+# 304 "data/maps/ThundershardsCave_2F/scripts.pory"
+	delay 10
+# 305 "data/maps/ThundershardsCave_2F/scripts.pory"
+	fadescreenswapbuffers FADE_TO_WHITE
+# 306 "data/maps/ThundershardsCave_2F/scripts.pory"
+	playse SE_INTRO_BLAST
+# 307 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setvar VAR_0x8004, 2
+# 308 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setvar VAR_0x8005, 4
+# 309 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setvar VAR_0x8006, 6
 # 310 "data/maps/ThundershardsCave_2F/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
+	setvar VAR_0x8007, 4
 # 311 "data/maps/ThundershardsCave_2F/scripts.pory"
-	fadenewbgm MUS_DUMMY
+	special ShakeCamera
 # 312 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setflag FLAG_DONT_TRANSITION_MUSIC
+	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 313 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setflag FLAG_HIDE_MAP_NAME_POPUP
+	fadenewbgm MUS_DUMMY
 # 314 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 17
+	setflag FLAG_DONT_TRANSITION_MUSIC
 # 315 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setflag FLAG_HIDE_MAP_NAME_POPUP
+# 316 "data/maps/ThundershardsCave_2F/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 17
+# 317 "data/maps/ThundershardsCave_2F/scripts.pory"
 	warp MAP_SUNSHINE_MEADOW, 11, 3
 	return
 
@@ -631,182 +635,182 @@ ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff2_Movement_0:
 	face_left
 	step_end
 
-# 77 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 78 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_0:
-# 77 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 78 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_right
-# 77 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 78 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_right
 	step_end
 
-# 92 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 93 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_1:
-# 92 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 93 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_right
-# 92 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 93 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_right
-# 92 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 93 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_right
-# 92 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 93 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_right
-# 92 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 93 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_right
-# 92 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 93 "data/maps/ThundershardsCave_2F/scripts.pory"
 	set_invisible
 	step_end
 
-# 94 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 95 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Movement_2:
-# 94 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 95 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_left
-# 94 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 95 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_left
 	step_end
 
-# 123 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 125 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_KirijoGenesisStaff_Movement_0:
-# 123 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 125 "data/maps/ThundershardsCave_2F/scripts.pory"
 	emote_exclamation_mark
-# 123 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 125 "data/maps/ThundershardsCave_2F/scripts.pory"
 	face_left
 	step_end
 
-# 151 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 153 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Movement_0:
-# 151 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 153 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
-# 151 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 153 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
-# 151 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 153 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 153 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 155 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Movement_1:
-# 153 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 155 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
-# 153 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 155 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_down
-# 153 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 155 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 157 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 159 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Movement_2:
-# 157 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 159 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_down
-# 157 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 159 "data/maps/ThundershardsCave_2F/scripts.pory"
 	face_right
 	step_end
 
-# 170 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 172 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_FreezingKGStaff_Movement_0:
-# 170 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 172 "data/maps/ThundershardsCave_2F/scripts.pory"
 	set_visible
-# 170 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 172 "data/maps/ThundershardsCave_2F/scripts.pory"
 	jump_right
 	step_end
 
-# 175 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 177 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_FreezingKGStaff_Movement_1:
-# 175 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 177 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
-# 175 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 177 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 214 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 216 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_FreezingKGStaff_Movement_2:
-# 214 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 216 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_left
-# 214 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 216 "data/maps/ThundershardsCave_2F/scripts.pory"
 	set_invisible
 	step_end
 
-# 237 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 239 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_FrozenStaff_Movement_0:
-# 237 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 239 "data/maps/ThundershardsCave_2F/scripts.pory"
 	lock_facing_direction
-# 237 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 239 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
-# 237 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 239 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
-# 237 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 239 "data/maps/ThundershardsCave_2F/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 269 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 271 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Movement_0:
-# 269 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 271 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 269 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 271 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 269 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 271 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 269 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 271 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 269 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 271 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 269 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 271 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 269 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 271 "data/maps/ThundershardsCave_2F/scripts.pory"
 	face_up
 	step_end
 
-# 296 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 298 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Movement_1:
-# 296 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 298 "data/maps/ThundershardsCave_2F/scripts.pory"
 	emote_exclamation_mark
-# 296 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 298 "data/maps/ThundershardsCave_2F/scripts.pory"
 	face_down
 	step_end
 
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Movement_2:
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_up
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_up
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_left
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_down
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_down
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_down
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_down
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_down
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_down
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_down
-# 299 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 301 "data/maps/ThundershardsCave_2F/scripts.pory"
 	player_run_down
 	step_end
 
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_0:
-# 81 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 82 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "Scientist$"
 
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_1:
-# 82 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 83 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "The subjects were successfully\n"
 	.string "transported to the new lab.\p"
 	.string "There's only a few leftover reports I\n"
@@ -819,60 +823,60 @@ ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_1:
 	.string "rocks on the floor below.$"
 
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_2:
-# 90 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 91 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_MIB}Don't worry sir. That's our job.$"
 
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_3:
-# 100 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 101 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}.........\p"
 	.string "({STR_VAR_1}, are you ready?)$"
 
 ThundershardsCave_2F_Eventscript_LetsJumpKGStaff_Text_0:
-# 112 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 113 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(They haven't noticed me yet. Let's\n"
 	.string "surprise those people.)$"
 
 ThundershardsCave_2F_Eventscript_KirijoGenesisStaff_Text_0:
-# 131 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 133 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_WIB}What the- Why are you here-\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}{STR_VAR_1}, {STR_VAR_2}.$"
 
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Text_0:
-# 147 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 149 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_MIB}(Should we report to the manager?)\p"
 	.string "{SPEAKER NAME_WIB}(She beat both of us out of nowhere,\n"
 	.string "she must be here for trouble.)\p"
 	.string "{SPEAKER NAME_MIB}(Exactly, let's go.)$"
 
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Text_1:
-# 160 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 162 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Not so fast.$"
 
 ThundershardsCave_2F_Eventscript_FreezingKGStaff_Text_0:
-# 211 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 213 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Don't worry, you'll thaw out in about 20\n"
 	.string "minutes.\p"
 	.string "Let's go, {STR_VAR_1}, Inteleon.$"
 
 ThundershardsCave_2F_Eventscript_FrozenStaff_Text_0:
-# 234 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 236 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(I should be able to push them.)$"
 
 ThundershardsCave_2F_Eventscript_FrozenStaff_Text_1:
-# 242 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 244 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}(Magnifique.)$"
 
 ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Text_0:
-# 277 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 279 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Looks like those two managed to\n"
 	.string "escape.\p"
 	.string "That's a relief.)$"
 
 KG_Staff_M_defeated::
-# 223 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 225 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "Dammit. I knew she graduated the\n"
 	.string "Ranger School early but still-$"
 
 KG_Staff_F_defeated::
-# 227 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 229 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "Why is the Kirijo young lady here?$"

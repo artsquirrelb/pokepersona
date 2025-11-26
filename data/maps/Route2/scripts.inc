@@ -249,7 +249,7 @@ Route2_Eventscript_AkishinjiGettingBlockedBySusMen::
 # 106 "data/maps/Route2/scripts.pory"
 	delay 30
 # 107 "data/maps/Route2/scripts.pory"
-	playbgm MUS_ABNORMAL_WEATHER, TRUE
+	playbgm MUS_MENTAL_BREAKDOWN, TRUE
 # 108 "data/maps/Route2/scripts.pory"
 	setspeaker Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_1
 # 109 "data/maps/Route2/scripts.pory"

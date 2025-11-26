@@ -11,7 +11,7 @@ mapscripts ThundershardsCliff_2F_Exterior_MapScripts {
 
 script ThundershardsCave_2F_Eventscript_Warning {
     lock
-    msgbox(format("Important scene ahead. Do you want to proceed?"), MSGBOX_YESNO)
+    msgbox(format("{COLOR RED}Important scene ahead. Do you want to proceed?"), MSGBOX_YESNO)
     if (var(VAR_RESULT) == FALSE){
         closemessage
         applymovement(LOCALID_PLAYER, walkleft)
@@ -68,6 +68,7 @@ script ThundershardsCliff_2F_Exterior_Eventscript_MitsuruApproaching_CaveEntranc
 script ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave {
     lock
     setflag(FLAG_HIDE_TALK_BUTTON)
+    fadenewbgm(MUS_MENTAL_BREAKDOWN)
     delay(20)
     clearflag(FLAG_TEMP_1)
     addobject(8)
@@ -148,7 +149,7 @@ script ThundershardsCliff_2F_Exterior_Eventscript_LabExploding {
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, face_right, lock_facing_direction, jump_left, unlock_facing_direction))
     waitmovement
-    playbgm(MUS_HELP, FALSE)
+    playbgm(MUS_RUN_RUN_RUN, FALSE)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}What the-"))
     closemessage

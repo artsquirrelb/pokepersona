@@ -395,7 +395,7 @@ Mansion_MitsurusRoom2F_Eventscript_Piano_2:
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_5:
 # 215 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	playbgm MUS_SUNSHINE_ORPHANAGE, FALSE
+	playbgm MUS_SUNSHINE_ORPHANAGE_SLOW, FALSE
 # 216 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	delay 1800
 # 217 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"

@@ -257,7 +257,7 @@ ThundershardsCliff_2F_Exterior_Eventscript_LabExploding::
 # 150 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	waitmovement
 # 151 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	playbgm MUS_HELP, FALSE
+	playbgm MUS_RUN_RUN_RUN, FALSE
 # 152 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
 # 153 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"

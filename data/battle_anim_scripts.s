@@ -38065,4 +38065,8 @@ gBattleAnimGeneral_DynamaxGrowth:: @ PORTED FROM CFRU
 	waitforvisualfinish
 	end
 
+
+	
+	
+
 	

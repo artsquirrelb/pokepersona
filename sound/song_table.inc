@@ -612,8 +612,11 @@ gSongTable::
 	song ph_nurse_held, 2, 2
 	song ph_nurse_solo, 2, 2
 	song mus_sunshine_orphanage, 0, 0
+	song mus_sunshine_orphanage_slow, 0, 0
 	song mus_kirijos_mansion, 0, 0
-	
+	song mus_run_run_run, 0, 0
+	song mus_mental_breakdown, 0, 0
+
 	.align 2
 dummy_song_header:
 	.byte 0, 0, 0, 0

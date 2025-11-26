@@ -129,7 +129,7 @@ bool8 ScrCmd_end(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1);
 
-    FlagClear(FLAG_SAFE_FOLLOWER_MOVEMENT);
+    //FlagClear(FLAG_SAFE_FOLLOWER_MOVEMENT);
     StopScript(ctx);
     return FALSE;
 }

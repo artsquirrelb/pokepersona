@@ -63,7 +63,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ThundershardsCave_1F_EventScript_MiningRock",
+      "script": "Common_EventScript_MiningRock",
       "flag": "FLAG_DAILY_MINING_ROCK2_THUNDERSHARDS_CAVE_1F"
     },
     {
@@ -115,7 +115,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ThundershardsCave_1F_EventScript_MiningRock",
+      "script": "Common_EventScript_MiningRock",
       "flag": "FLAG_DAILY_MINING_ROCK_THUNDERSHARDS_CAVE_1F"
     }
   ],

@@ -205,7 +205,7 @@ static const struct WindowTemplate sWindowTemplate_QuestButton = {
     .tilemapTop = 15,
     .width = 7,
     .height = 2,
-    .paletteNum = 15,
+    .paletteNum = 13,
     .baseBlock = 148
 };
 
@@ -215,7 +215,7 @@ static const struct WindowTemplate sWindowTemplate_CompanionsButton = {
     .tilemapTop = 15,
     .width = 9,
     .height = 2,
-    .paletteNum = 15,
+    .paletteNum = 13,
     .baseBlock = 148 +(7*2)
 };
 
@@ -225,7 +225,7 @@ static const struct WindowTemplate sWindowTemplate_MapButton = {
     .tilemapTop = 15,
     .width = 6,
     .height = 2,
-    .paletteNum = 15,
+    .paletteNum = 13,
     .baseBlock = 148 +(7*2) +(9*2)
 };
 
@@ -235,7 +235,7 @@ static const struct WindowTemplate sWindowTemplate_StartClock = {
   .tilemapTop = 17, 
   .width = 12, // If you want to shorten the dates to Sat., Sun., etc., change this to 9
   .height = 2, 
-  .paletteNum = 15,
+  .paletteNum = 13,
   .baseBlock = 148 +(7*2) +(9*2) + (6*2)
 };
 
@@ -245,7 +245,7 @@ static const struct WindowTemplate sWindowTemplate_MenuName = {
   .tilemapTop = 17, 
   .width = 7, 
   .height = 2, 
-  .paletteNum = 15,
+  .paletteNum = 13,
   .baseBlock = 148 +(7*2) +(9*2) + (6*2) + (12*2)
 };
 
@@ -255,7 +255,7 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .tilemapTop = 1,
     .width = 7,
     .height = 4,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 148 +(7*2) +(9*2) + (6*2) + (12*2) +(7*2)
 };
 
@@ -635,9 +635,9 @@ static const u8 gText_CurrentTimeAMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VA
 static const u8 gText_CurrentTimePM[]    = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1}:{STR_VAR_2} PM");
 static const u8 gText_CurrentTimePMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1} {STR_VAR_2} PM");
 
-static const u8 gText_QuestButton[]  = _("  {L_BUTTON} Quest");
-static const u8 gText_MapButton[]    = _("  Map {R_BUTTON}");
-static const u8 gText_CompanionsButton[] = _("{SELECT_BUTTON} Companion");
+static const u8 gText_QuestButton[]  = _("  {COLOR 15}{L_BUTTON} {COLOR 1}Quest");
+static const u8 gText_MapButton[]    = _("  Map {COLOR 15}{R_BUTTON}");
+static const u8 gText_CompanionsButton[] = _("{COLOR 15}{SELECT_BUTTON}{COLOR 1} Companion");
 
 static void SetSelectedMenu(void) {
   if (FlagGet(DN_FLAG_DEXNAV_GET) == TRUE) {
@@ -821,7 +821,7 @@ static void HeatStartMenu_ShowQuestButtons (void)
     sHeatStartMenu->sQuestButtonWindowId = AddWindow(&sWindowTemplate_QuestButton);
     FillWindowPixelBuffer(sHeatStartMenu->sQuestButtonWindowId, PIXEL_FILL(0));
     PutWindowTilemap(sHeatStartMenu->sQuestButtonWindowId);
-    AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 0, 0, 0x1, 0x0, 0x2);
+    AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 0, 0, 0x1, 0x0, 15);
     CopyWindowToVram(sHeatStartMenu->sQuestButtonWindowId, COPYWIN_FULL);
   }
 }
@@ -832,7 +832,7 @@ static void HeatStartMenu_ShowCompanionsButtons (void)
     sHeatStartMenu->sCompanionsButonWindowId = AddWindow(&sWindowTemplate_CompanionsButton);
     FillWindowPixelBuffer(sHeatStartMenu->sCompanionsButonWindowId, PIXEL_FILL(0));
     PutWindowTilemap(sHeatStartMenu->sCompanionsButonWindowId);
-    AddTextPrinterParameterized2(sHeatStartMenu->sCompanionsButonWindowId, FONT_SMALL, gText_CompanionsButton, 0, 0, 0x1, 0x0, 0x2);
+    AddTextPrinterParameterized2(sHeatStartMenu->sCompanionsButonWindowId, FONT_SMALL, gText_CompanionsButton, 0, 0, 0x1, 0x0, 15);
     CopyWindowToVram(sHeatStartMenu->sCompanionsButonWindowId, COPYWIN_FULL);
   }
 }
@@ -842,7 +842,7 @@ static void HeatStartMenu_ShowMapButtons (void)
   sHeatStartMenu->sMapButtonWindowId = AddWindow(&sWindowTemplate_MapButton);
   FillWindowPixelBuffer(sHeatStartMenu->sMapButtonWindowId, PIXEL_FILL(0));
   PutWindowTilemap(sHeatStartMenu->sMapButtonWindowId);
-  AddTextPrinterParameterized2(sHeatStartMenu->sMapButtonWindowId, FONT_SMALL, gText_MapButton, 0, 0, 0x1, 0x0, 0x2);
+  AddTextPrinterParameterized2(sHeatStartMenu->sMapButtonWindowId, FONT_SMALL, gText_MapButton, 0, 0, 0x1, 0x0, 15);
   CopyWindowToVram(sHeatStartMenu->sMapButtonWindowId, COPYWIN_FULL);
 }
 
@@ -871,7 +871,7 @@ static void HeatStartMenu_ShowTimeWindow(void)
         else
             StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  
     
-	AddTextPrinterParameterized6(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 0x2, 0x0, 0x0);
+	AddTextPrinterParameterized6(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 0x2, 0x0, 15);
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }
 
@@ -933,28 +933,28 @@ static void HeatStartMenu_UpdateMenuName(void) {
 
   switch(menuSelected) {
     case MENU_POKETCH:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Poketch, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Poketch, 1, 0, 0xFF, NULL, 0x2, 0x0, 15);
       break;
     case MENU_POKEDEX:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL, 0x2, 0x0, 15);
       break;
     case MENU_PARTY:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL, 0x2, 0x0, 15);
       break;
     case MENU_BAG:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL, 0x2, 0x0, 15);
       break;
     case MENU_TRAINER_CARD:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL, 0x2, 0x0, 15);
       break;
     case MENU_SAVE:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL, 0x2, 0x0, 15);
       break;
     case MENU_OPTIONS:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL, 0x2, 0x0, 15);
       break;
     case MENU_FLAG:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL, 0x2, 0x0, 0x0);
+      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL, 0x2, 0x0, 15);
       break;
   }
   CopyWindowToVram(sHeatStartMenu->sMenuNameWindowId, COPYWIN_GFX);

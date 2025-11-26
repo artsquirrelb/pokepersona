@@ -4,6 +4,7 @@
 #include "battle_anim.h"
 #include "battle_pyramid.h"
 #include "battle_pyramid_bag.h"
+#include "battle_tower.h"
 #include "berry.h"
 #include "berry_pouch.h"
 #include "berry_powder.h"
@@ -1669,7 +1670,29 @@ void ItemUseOutOfBattle_CampGears(u8 taskId)
             
 }
 
-
+void ItemUseOutOfBattle_CandyJar(u8 taskId)
+{
+    
+    PlaySE(SE_EXP_MAX);
+    s32 highestlevel = GetHighestLevelInPlayerParty();
+    s32 i;
+    u32 arg;
+    arg = highestlevel -1;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL)
+            && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_EGG)
+        {
+            s32 level = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL, NULL);
+            if (level < highestlevel)
+                SetMonData(&gPlayerParty[i], MON_DATA_LEVEL, &arg);
+        }
+    }
+    if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
+        DisplayItemMessageOnField(taskId, gText_KeyCandy, Task_CloseCantUseKeyItemMessage);
+    else
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_KeyCandy, CloseItemMessage);
+}
 
 void ItemUseOutOfBattle_OutfitBox(u8 taskId)
 {

@@ -538,6 +538,10 @@ extern const u32 gItemIcon_ExpCandyM[];
 extern const u32 gItemIcon_ExpCandyL[];
 extern const u32 gItemIcon_ExpCandyXL[];
 extern const u16 gItemIconPalette_ExpCandies[];
+
+extern const u32 gItemIcon_CandyJar[];
+extern const u16 gItemIconPalette_CandyJar[];
+
 extern const u32 gItemIcon_DynamaxCandy[];
 extern const u16 gItemIconPalette_DynamaxCandy[];
 // Medicinal Flutes
@@ -1641,6 +1645,9 @@ extern const u16 gItemIconPalette_Tea[];
 extern const u32 gItemIcon_Gem[];
 extern const u16 gItemIconPalette_Ruby[];
 extern const u16 gItemIconPalette_Sapphire[];
+
+extern const u32 gItemIcon_MiningKit[];
+extern const u16 gItemIconPalette_MiningKit[];
 
 // GEN IX ITEMS
 extern const u32 gItemIcon_AbilityShield[];

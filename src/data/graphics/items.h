@@ -265,6 +265,9 @@ const u32 gItemIcon_ExpCandyL[] = INCBIN_U32("graphics/items/icons/exp_candy_l.4
 const u32 gItemIcon_ExpCandyXL[] = INCBIN_U32("graphics/items/icons/exp_candy_xl.4bpp.smol");
 const u16 gItemIconPalette_ExpCandies[] = INCBIN_U16("graphics/items/icon_palettes/exp_candies.gbapal");
 
+const u32 gItemIcon_CandyJar[] = INCBIN_U32("graphics/items/icons/candy_jar.4bpp.smol");
+const u16 gItemIconPalette_CandyJar[] = INCBIN_U16("graphics/items/icon_palettes/candy_jar.gbapal");
+
 const u32 gItemIcon_DynamaxCandy[] = INCBIN_U32("graphics/items/icons/dynamax_candy.4bpp.smol");
 const u16 gItemIconPalette_DynamaxCandy[] = INCBIN_U16("graphics/items/icon_palettes/dynamax_candy.gbapal");
 
@@ -2009,6 +2012,9 @@ const u16 gItemIconPalette_TeraOrb[] = INCBIN_U16("graphics/items/icon_palettes/
 
 const u32 gItemIcon_TinyBambooShoot[] = INCBIN_U32("graphics/items/icons/tiny_bamboo_shoot.4bpp.smol");
 const u16 gItemIconPalette_TinyBambooShoot[] = INCBIN_U16("graphics/items/icon_palettes/tiny_bamboo_shoot.gbapal");
+
+const u32 gItemIcon_MiningKit[] = INCBIN_U32("graphics/items/icons/mining_kit.4bpp.smol");
+const u16 gItemIconPalette_MiningKit[] = INCBIN_U16("graphics/items/icon_palettes/mining_kit.gbapal");
 
 // Tera Shards
 

@@ -2680,7 +2680,7 @@ extern const u8 gText_TellHimTheWords[];
 extern const u8 gText_ExpShareAll[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
-
+extern const u8 gText_KeyCandy[];
 extern const u8 gText_BasePointsResetToZero[];
 
 // Map name pop-up

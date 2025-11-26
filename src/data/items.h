@@ -16114,6 +16114,36 @@ const struct Item gItemsInfo[] =
 	    .iconPic = gItemIcon_OutfitBox,
 	    .iconPalette = gItemIconPalette_OutfitBox,
     },
+
+    [ITEM_CANDY_JAR] =
+    {
+        .name = ITEM_NAME("Candy Jar"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Raises the level of\n"
+            "all party Pokémon\n"
+            "to the highest -1."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CandyJar,
+        .iconPic = gItemIcon_CandyJar,
+        .iconPalette = gItemIconPalette_CandyJar,
+    },
+
+        [ITEM_MINING_KIT] =
+    {
+        .name = ITEM_NAME("Mining Kit"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Durable tools for\n"
+            "mining hard rocks."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_MiningKit,
+        .iconPalette = gItemIconPalette_MiningKit,
+    },
 };
 
 #undef ITEM_NAME

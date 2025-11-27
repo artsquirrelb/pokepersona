@@ -3,7 +3,7 @@ SunshineWoods_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION
 # 37 "data/maps/SunshineWoods/scripts.pory"
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, SunshineWoods_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
-# 39 "data/maps/SunshineWoods/scripts.pory"
+# 41 "data/maps/SunshineWoods/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SunshineWoods_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
@@ -24,7 +24,7 @@ SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 	compare VAR_MITSURUS_INTRO_STATE, 21
 	goto_if_ne SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_11
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_10:
-# 19 "data/maps/SunshineWoods/scripts.pory"
+# 20 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 21
 	goto_if_eq SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_14
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_13:
@@ -59,19 +59,19 @@ SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
 	setflag FLAG_TEMP_5
 # 17 "data/maps/SunshineWoods/scripts.pory"
 	setflag FLAG_TEMP_6
+# 18 "data/maps/SunshineWoods/scripts.pory"
+	setflag FLAG_TEMP_7
 	goto SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_10
 
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_14:
-# 20 "data/maps/SunshineWoods/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 21 "data/maps/SunshineWoods/scripts.pory"
-	setflag FLAG_TEMP_5
+	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 22 "data/maps/SunshineWoods/scripts.pory"
 	setflag FLAG_TEMP_6
 # 23 "data/maps/SunshineWoods/scripts.pory"
-	hideobjectat 14, MAP_SUNSHINE_WOODS
+	setflag FLAG_TEMP_5
 # 24 "data/maps/SunshineWoods/scripts.pory"
-	hideobjectat 15, MAP_SUNSHINE_WOODS
+	setflag FLAG_TEMP_7
 # 25 "data/maps/SunshineWoods/scripts.pory"
 	setobjectmovementtype 7, MOVEMENT_TYPE_FACE_UP
 # 26 "data/maps/SunshineWoods/scripts.pory"
@@ -92,532 +92,530 @@ SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_16:
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 38 "data/maps/SunshineWoods/scripts.pory"
 	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 6, SunshineWoods_Eventscript_OnWarp6
+# 39 "data/maps/SunshineWoods/scripts.pory"
+	map_script_2 VAR_MITSURUS_INTRO_STATE, 21, SunshineWoods_Eventscript_MitsuruOnWarp21
 	.2byte 0
 
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-# 40 "data/maps/SunshineWoods/scripts.pory"
+# 42 "data/maps/SunshineWoods/scripts.pory"
 	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 6, SunshineWoods_Eventscript_OnFrame6
 	.2byte 0
 
 
 SunshineWoods_Eventscript_OnWarp6::
-# 45 "data/maps/SunshineWoods/scripts.pory"
+# 47 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, faceright
-# 46 "data/maps/SunshineWoods/scripts.pory"
+# 48 "data/maps/SunshineWoods/scripts.pory"
 	hideobjectat 4, MAP_SUNSHINE_WOODS
 	return
 
 
-# 48 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_MitsuruOnWarp21::
+	return
+
+
+# 54 "data/maps/SunshineWoods/scripts.pory"
 playerfaceright:
-# 49 "data/maps/SunshineWoods/scripts.pory"
+# 55 "data/maps/SunshineWoods/scripts.pory"
 	face_right
 	step_end
 
 SunshineWoods_Eventscript_DoNotEnterTheGrass::
-# 53 "data/maps/SunshineWoods/scripts.pory"
+# 59 "data/maps/SunshineWoods/scripts.pory"
 	lock
-# 54 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 2, facedown
-# 55 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 3, facedown
-# 56 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement 0
-# 57 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_DoNotEnterTheGrass_Text_0
 # 60 "data/maps/SunshineWoods/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	applymovement 2, facedown
 # 61 "data/maps/SunshineWoods/scripts.pory"
-	release
+	applymovement 3, facedown
 # 62 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 6
+	waitmovement 0
 # 63 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_DoNotEnterTheGrass_Text_0
+# 66 "data/maps/SunshineWoods/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 67 "data/maps/SunshineWoods/scripts.pory"
+	release
+# 68 "data/maps/SunshineWoods/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 6
+# 69 "data/maps/SunshineWoods/scripts.pory"
 	setflag FLAG_HIDE_TALK_BUTTON
-# 64 "data/maps/SunshineWoods/scripts.pory"
+# 70 "data/maps/SunshineWoods/scripts.pory"
 	warpsilent MAP_SUNSHINE_WOODS, 3, 5
 	return
 
 
 SunshineWoods_Eventscript_OnFrame6::
-# 68 "data/maps/SunshineWoods/scripts.pory"
+# 74 "data/maps/SunshineWoods/scripts.pory"
 	goto SunshineWoods_Eventscript_PlayingInTheWoods
 	return
 
 
 SunshineWoods_Eventscript_PlayingInTheWoods::
-# 72 "data/maps/SunshineWoods/scripts.pory"
+# 78 "data/maps/SunshineWoods/scripts.pory"
 	lock
-# 73 "data/maps/SunshineWoods/scripts.pory"
+# 79 "data/maps/SunshineWoods/scripts.pory"
 	delay 60
-# 74 "data/maps/SunshineWoods/scripts.pory"
+# 80 "data/maps/SunshineWoods/scripts.pory"
 	applymovement 3, SunshineWoods_Eventscript_MikiFoundSomething
-# 75 "data/maps/SunshineWoods/scripts.pory"
+# 81 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement 0
-# 76 "data/maps/SunshineWoods/scripts.pory"
+# 82 "data/maps/SunshineWoods/scripts.pory"
 	goto SunshineWoods_Eventscript_PawmisCry
-# 77 "data/maps/SunshineWoods/scripts.pory"
+# 83 "data/maps/SunshineWoods/scripts.pory"
 	release
 	end
 
 
-# 81 "data/maps/SunshineWoods/scripts.pory"
+# 87 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_MikiFoundSomething:
-# 82 "data/maps/SunshineWoods/scripts.pory"
-	walk_up
-# 83 "data/maps/SunshineWoods/scripts.pory"
-	delay_16
-# 84 "data/maps/SunshineWoods/scripts.pory"
-	walk_down
-# 85 "data/maps/SunshineWoods/scripts.pory"
-	delay_16
-# 86 "data/maps/SunshineWoods/scripts.pory"
-	emote_music
-# 87 "data/maps/SunshineWoods/scripts.pory"
-	jump_in_place_right
-# 87 "data/maps/SunshineWoods/scripts.pory"
-	jump_in_place_right
 # 88 "data/maps/SunshineWoods/scripts.pory"
+	walk_up
+# 89 "data/maps/SunshineWoods/scripts.pory"
+	delay_16
+# 90 "data/maps/SunshineWoods/scripts.pory"
+	walk_down
+# 91 "data/maps/SunshineWoods/scripts.pory"
+	delay_16
+# 92 "data/maps/SunshineWoods/scripts.pory"
+	emote_music
+# 93 "data/maps/SunshineWoods/scripts.pory"
+	jump_in_place_right
+# 93 "data/maps/SunshineWoods/scripts.pory"
+	jump_in_place_right
+# 94 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_left
 	step_end
 
 SunshineWoods_Eventscript_PawmisCry::
-# 92 "data/maps/SunshineWoods/scripts.pory"
+# 98 "data/maps/SunshineWoods/scripts.pory"
 	lock
-# 93 "data/maps/SunshineWoods/scripts.pory"
+# 99 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Eventscript_PawmisCry_Text_0
-# 95 "data/maps/SunshineWoods/scripts.pory"
+# 101 "data/maps/SunshineWoods/scripts.pory"
 	release
-# 96 "data/maps/SunshineWoods/scripts.pory"
+# 102 "data/maps/SunshineWoods/scripts.pory"
 	goto SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown
 	return
 
 
 SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown::
-# 100 "data/maps/SunshineWoods/scripts.pory"
-	lock
-# 101 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 3, faceup
-# 102 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement 0
-# 103 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown_Text_0
-# 105 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
 # 106 "data/maps/SunshineWoods/scripts.pory"
-	release
+	lock
 # 107 "data/maps/SunshineWoods/scripts.pory"
+	applymovement 3, faceup
+# 108 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement 0
+# 109 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown_Text_0
+# 111 "data/maps/SunshineWoods/scripts.pory"
+	closemessage
+# 112 "data/maps/SunshineWoods/scripts.pory"
+	release
+# 113 "data/maps/SunshineWoods/scripts.pory"
 	goto SunshineWoods_Eventscript_PawmiCries
 	return
 
 
 SunshineWoods_Eventscript_PawmiCries::
-# 111 "data/maps/SunshineWoods/scripts.pory"
-	lock
-# 112 "data/maps/SunshineWoods/scripts.pory"
-	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
-# 113 "data/maps/SunshineWoods/scripts.pory"
-	waitmoncry
-# 114 "data/maps/SunshineWoods/scripts.pory"
-	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoAlerted
-# 115 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 2, SunshineWoods_Eventscript_ShinjiroAlerted
-# 116 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 3, SunshineWoods_Eventscript_MikiAlerted
 # 117 "data/maps/SunshineWoods/scripts.pory"
-	delay 30
+	lock
 # 118 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
+	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
 # 119 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_PawmiCries_Text_0
+	waitmoncry
+# 120 "data/maps/SunshineWoods/scripts.pory"
+	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoAlerted
 # 121 "data/maps/SunshineWoods/scripts.pory"
-	waitmessage
+	applymovement 2, SunshineWoods_Eventscript_ShinjiroAlerted
 # 122 "data/maps/SunshineWoods/scripts.pory"
-	release
+	applymovement 3, SunshineWoods_Eventscript_MikiAlerted
 # 123 "data/maps/SunshineWoods/scripts.pory"
+	delay 30
+# 124 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
+# 125 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_PawmiCries_Text_0
+# 127 "data/maps/SunshineWoods/scripts.pory"
+	waitmessage
+# 128 "data/maps/SunshineWoods/scripts.pory"
+	release
+# 129 "data/maps/SunshineWoods/scripts.pory"
 	goto SunshineWoods_Eventscript_PawmiAppears
 	return
 
 
-# 126 "data/maps/SunshineWoods/scripts.pory"
-SunshineWoods_Eventscript_AkihikoAlerted:
-# 127 "data/maps/SunshineWoods/scripts.pory"
-	emote_exclamation_mark
-# 128 "data/maps/SunshineWoods/scripts.pory"
-	delay_16
-# 129 "data/maps/SunshineWoods/scripts.pory"
-	delay_16
-# 130 "data/maps/SunshineWoods/scripts.pory"
-	face_left
-# 131 "data/maps/SunshineWoods/scripts.pory"
-	delay_16
 # 132 "data/maps/SunshineWoods/scripts.pory"
-	delay_16
+SunshineWoods_Eventscript_AkihikoAlerted:
 # 133 "data/maps/SunshineWoods/scripts.pory"
-	face_right
-	step_end
-
-# 135 "data/maps/SunshineWoods/scripts.pory"
-SunshineWoods_Eventscript_ShinjiroAlerted:
-# 136 "data/maps/SunshineWoods/scripts.pory"
 	emote_exclamation_mark
+# 134 "data/maps/SunshineWoods/scripts.pory"
+	delay_16
+# 135 "data/maps/SunshineWoods/scripts.pory"
+	delay_16
+# 136 "data/maps/SunshineWoods/scripts.pory"
+	face_left
 # 137 "data/maps/SunshineWoods/scripts.pory"
 	delay_16
 # 138 "data/maps/SunshineWoods/scripts.pory"
-	face_up
+	delay_16
 # 139 "data/maps/SunshineWoods/scripts.pory"
-	delay_16
-# 140 "data/maps/SunshineWoods/scripts.pory"
 	face_right
+	step_end
+
 # 141 "data/maps/SunshineWoods/scripts.pory"
-	delay_16
+SunshineWoods_Eventscript_ShinjiroAlerted:
 # 142 "data/maps/SunshineWoods/scripts.pory"
+	emote_exclamation_mark
+# 143 "data/maps/SunshineWoods/scripts.pory"
+	delay_16
+# 144 "data/maps/SunshineWoods/scripts.pory"
+	face_up
+# 145 "data/maps/SunshineWoods/scripts.pory"
+	delay_16
+# 146 "data/maps/SunshineWoods/scripts.pory"
+	face_right
+# 147 "data/maps/SunshineWoods/scripts.pory"
+	delay_16
+# 148 "data/maps/SunshineWoods/scripts.pory"
 	face_down
 	step_end
 
-# 144 "data/maps/SunshineWoods/scripts.pory"
+# 150 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_MikiAlerted:
-# 145 "data/maps/SunshineWoods/scripts.pory"
+# 151 "data/maps/SunshineWoods/scripts.pory"
 	emote_exclamation_mark
-# 146 "data/maps/SunshineWoods/scripts.pory"
+# 152 "data/maps/SunshineWoods/scripts.pory"
 	jump_in_place_left
 	step_end
 
-# 149 "data/maps/SunshineWoods/scripts.pory"
+# 155 "data/maps/SunshineWoods/scripts.pory"
 jumpright:
-# 150 "data/maps/SunshineWoods/scripts.pory"
+# 156 "data/maps/SunshineWoods/scripts.pory"
 	jump_right
 	step_end
 
 SunshineWoods_Eventscript_PawmiAppears::
-# 154 "data/maps/SunshineWoods/scripts.pory"
-	lock
-# 155 "data/maps/SunshineWoods/scripts.pory"
-	showobjectat 4, MAP_SUNSHINE_WOODS
-# 156 "data/maps/SunshineWoods/scripts.pory"
-	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
-# 157 "data/maps/SunshineWoods/scripts.pory"
-	waitmoncry
-# 158 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 4, jumpright
-# 159 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 3, SunshineWoods_Eventscript_Stayback
 # 160 "data/maps/SunshineWoods/scripts.pory"
-	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_Stayback
+	lock
 # 161 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 2, SunshineWoods_Eventscript_OnGuard
+	showobjectat 4, MAP_SUNSHINE_WOODS
 # 162 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
+	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
 # 163 "data/maps/SunshineWoods/scripts.pory"
-	release
+	waitmoncry
 # 164 "data/maps/SunshineWoods/scripts.pory"
+	applymovement 4, jumpright
+# 165 "data/maps/SunshineWoods/scripts.pory"
+	applymovement 3, SunshineWoods_Eventscript_Stayback
+# 166 "data/maps/SunshineWoods/scripts.pory"
+	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_Stayback
+# 167 "data/maps/SunshineWoods/scripts.pory"
+	applymovement 2, SunshineWoods_Eventscript_OnGuard
+# 168 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
+# 169 "data/maps/SunshineWoods/scripts.pory"
+	release
+# 170 "data/maps/SunshineWoods/scripts.pory"
 	goto SunshineWoods_Eventscript_PawmisInjured
 	return
 
 
-# 167 "data/maps/SunshineWoods/scripts.pory"
+# 173 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_Stayback:
-# 168 "data/maps/SunshineWoods/scripts.pory"
+# 174 "data/maps/SunshineWoods/scripts.pory"
 	emote_exclamation_mark
-# 169 "data/maps/SunshineWoods/scripts.pory"
+# 175 "data/maps/SunshineWoods/scripts.pory"
 	face_left
-# 170 "data/maps/SunshineWoods/scripts.pory"
+# 176 "data/maps/SunshineWoods/scripts.pory"
 	lock_facing_direction
-# 171 "data/maps/SunshineWoods/scripts.pory"
+# 177 "data/maps/SunshineWoods/scripts.pory"
 	jump_right
-# 172 "data/maps/SunshineWoods/scripts.pory"
+# 178 "data/maps/SunshineWoods/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 174 "data/maps/SunshineWoods/scripts.pory"
+# 180 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_OnGuard:
-# 175 "data/maps/SunshineWoods/scripts.pory"
+# 181 "data/maps/SunshineWoods/scripts.pory"
 	emote_exclamation_mark
-# 176 "data/maps/SunshineWoods/scripts.pory"
+# 182 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_down
-# 177 "data/maps/SunshineWoods/scripts.pory"
+# 183 "data/maps/SunshineWoods/scripts.pory"
 	face_left
 	step_end
 
 SunshineWoods_Eventscript_PawmisInjured::
-# 181 "data/maps/SunshineWoods/scripts.pory"
-	lock
-# 182 "data/maps/SunshineWoods/scripts.pory"
-	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
-# 183 "data/maps/SunshineWoods/scripts.pory"
-	waitmoncry
-# 184 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 4, SunshineWoods_Eventscript_PawmiIsWeak
-# 185 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
-# 186 "data/maps/SunshineWoods/scripts.pory"
-	delay 16
 # 187 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_PawmisInjured_Text_0
+	lock
+# 188 "data/maps/SunshineWoods/scripts.pory"
+	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
+# 189 "data/maps/SunshineWoods/scripts.pory"
+	waitmoncry
+# 190 "data/maps/SunshineWoods/scripts.pory"
+	applymovement 4, SunshineWoods_Eventscript_PawmiIsWeak
 # 191 "data/maps/SunshineWoods/scripts.pory"
-	release
+	waitmovement
 # 192 "data/maps/SunshineWoods/scripts.pory"
+	delay 16
+# 193 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_PawmisInjured_Text_0
+# 197 "data/maps/SunshineWoods/scripts.pory"
+	release
+# 198 "data/maps/SunshineWoods/scripts.pory"
 	goto TakePawmiToHeal
 	return
 
 
-# 195 "data/maps/SunshineWoods/scripts.pory"
+# 201 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_PawmiIsWeak:
-# 196 "data/maps/SunshineWoods/scripts.pory"
+# 202 "data/maps/SunshineWoods/scripts.pory"
 	emote_poisoned
-# 197 "data/maps/SunshineWoods/scripts.pory"
+# 203 "data/maps/SunshineWoods/scripts.pory"
 	shake_vertical
-# 198 "data/maps/SunshineWoods/scripts.pory"
+# 204 "data/maps/SunshineWoods/scripts.pory"
 	delay_16
-# 199 "data/maps/SunshineWoods/scripts.pory"
+# 205 "data/maps/SunshineWoods/scripts.pory"
 	shake_vertical
-# 200 "data/maps/SunshineWoods/scripts.pory"
+# 206 "data/maps/SunshineWoods/scripts.pory"
 	delay_16
 	step_end
 
 TakePawmiToHeal::
-# 204 "data/maps/SunshineWoods/scripts.pory"
-	lock
-# 205 "data/maps/SunshineWoods/scripts.pory"
-	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi
-# 206 "data/maps/SunshineWoods/scripts.pory"
-	msgbox TakePawmiToHeal_Text_0
-# 207 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
-# 208 "data/maps/SunshineWoods/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 209 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 7
 # 210 "data/maps/SunshineWoods/scripts.pory"
-	removeobject 4
+	lock
 # 211 "data/maps/SunshineWoods/scripts.pory"
-	removeobject 2
+	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi
 # 212 "data/maps/SunshineWoods/scripts.pory"
-	removeobject 3
+	msgbox TakePawmiToHeal_Text_0
 # 213 "data/maps/SunshineWoods/scripts.pory"
-	setflag FLAG_TEMP_1
+	closemessage
 # 214 "data/maps/SunshineWoods/scripts.pory"
-	warpsilent MAP_BLANK_MAP, 0, 0
+	fadescreenswapbuffers FADE_TO_BLACK
 # 215 "data/maps/SunshineWoods/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 7
+# 216 "data/maps/SunshineWoods/scripts.pory"
+	removeobject 4
+# 217 "data/maps/SunshineWoods/scripts.pory"
+	removeobject 2
+# 218 "data/maps/SunshineWoods/scripts.pory"
+	removeobject 3
+# 219 "data/maps/SunshineWoods/scripts.pory"
+	setflag FLAG_TEMP_1
+# 220 "data/maps/SunshineWoods/scripts.pory"
+	warpsilent MAP_BLANK_MAP, 0, 0
+# 221 "data/maps/SunshineWoods/scripts.pory"
 	release
 	return
 
 
-# 224 "data/maps/SunshineWoods/scripts.pory"
+# 230 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi:
-# 225 "data/maps/SunshineWoods/scripts.pory"
+# 231 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
 	step_end
 
 OW_Chewtle::
-# 229 "data/maps/SunshineWoods/scripts.pory"
+# 235 "data/maps/SunshineWoods/scripts.pory"
 	lock
-# 230 "data/maps/SunshineWoods/scripts.pory"
+# 236 "data/maps/SunshineWoods/scripts.pory"
 	faceplayer
-# 231 "data/maps/SunshineWoods/scripts.pory"
+# 237 "data/maps/SunshineWoods/scripts.pory"
 	startoverworldencounter 5
-# 232 "data/maps/SunshineWoods/scripts.pory"
+# 238 "data/maps/SunshineWoods/scripts.pory"
 	removeobject 6
-# 233 "data/maps/SunshineWoods/scripts.pory"
+# 239 "data/maps/SunshineWoods/scripts.pory"
 	setflag FLAG_TEMP_2
-# 234 "data/maps/SunshineWoods/scripts.pory"
+# 240 "data/maps/SunshineWoods/scripts.pory"
 	release
 	end
 
 
 SunshineWoods_Eventscript_DirectionSign::
-# 239 "data/maps/SunshineWoods/scripts.pory"
+# 245 "data/maps/SunshineWoods/scripts.pory"
 	lock
-# 240 "data/maps/SunshineWoods/scripts.pory"
+# 246 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Eventscript_DirectionSign_Text_0
-# 242 "data/maps/SunshineWoods/scripts.pory"
+# 248 "data/maps/SunshineWoods/scripts.pory"
 	release
 	return
 
 
 SunshineWoods_Eventscript_IkeBattle::
-# 246 "data/maps/SunshineWoods/scripts.pory"
+# 252 "data/maps/SunshineWoods/scripts.pory"
 	checkplayergender
-# 247 "data/maps/SunshineWoods/scripts.pory"
+# 253 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq SunshineWoods_Eventscript_IkeBattle_2
-# 251 "data/maps/SunshineWoods/scripts.pory"
+# 257 "data/maps/SunshineWoods/scripts.pory"
 	trainerbattle_single TRAINER_IKE_2, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated
 SunshineWoods_Eventscript_IkeBattle_1:
-# 253 "data/maps/SunshineWoods/scripts.pory"
+# 259 "data/maps/SunshineWoods/scripts.pory"
 	setspeaker SunshineWoods_Eventscript_IkeBattle_Text_0
-# 254 "data/maps/SunshineWoods/scripts.pory"
+# 260 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Text_IkePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SunshineWoods_Eventscript_IkeBattle_2:
-# 248 "data/maps/SunshineWoods/scripts.pory"
+# 254 "data/maps/SunshineWoods/scripts.pory"
 	trainerbattle_single TRAINER_IKE, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated
 	goto SunshineWoods_Eventscript_IkeBattle_1
 
 
 SunshineWoods_Eventscript_HotaruBattle::
-# 259 "data/maps/SunshineWoods/scripts.pory"
+# 265 "data/maps/SunshineWoods/scripts.pory"
 	checkplayergender
-# 260 "data/maps/SunshineWoods/scripts.pory"
+# 266 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq SunshineWoods_Eventscript_HotaruBattle_2
-# 264 "data/maps/SunshineWoods/scripts.pory"
+# 270 "data/maps/SunshineWoods/scripts.pory"
 	trainerbattle_single TRAINER_HOTARU_2, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated
 SunshineWoods_Eventscript_HotaruBattle_1:
-# 266 "data/maps/SunshineWoods/scripts.pory"
+# 272 "data/maps/SunshineWoods/scripts.pory"
 	setspeaker SunshineWoods_Eventscript_HotaruBattle_Text_0
-# 267 "data/maps/SunshineWoods/scripts.pory"
+# 273 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Text_HotaruPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SunshineWoods_Eventscript_HotaruBattle_2:
-# 261 "data/maps/SunshineWoods/scripts.pory"
+# 267 "data/maps/SunshineWoods/scripts.pory"
 	trainerbattle_single TRAINER_HOTARU, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated
 	goto SunshineWoods_Eventscript_HotaruBattle_1
 
 
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage1::
-# 298 "data/maps/SunshineWoods/scripts.pory"
+# 304 "data/maps/SunshineWoods/scripts.pory"
 	setspeaker SunshineWoods_Eventscript_PolicemenBlockingOrphanage1_Text_0
-# 299 "data/maps/SunshineWoods/scripts.pory"
+# 305 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 22
 	goto_if_eq SunshineWoods_Eventscript_PolicemenBlockingOrphanage1_2
-# 303 "data/maps/SunshineWoods/scripts.pory"
+# 309 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Eventscript_PolicemenBlockingOrphanage1_Text_2
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage1_1:
-# 305 "data/maps/SunshineWoods/scripts.pory"
+# 311 "data/maps/SunshineWoods/scripts.pory"
 	closemessage
 	return
 
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage1_2:
-# 300 "data/maps/SunshineWoods/scripts.pory"
+# 306 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Eventscript_PolicemenBlockingOrphanage1_Text_1
 	goto SunshineWoods_Eventscript_PolicemenBlockingOrphanage1_1
 
 
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage2::
-# 309 "data/maps/SunshineWoods/scripts.pory"
+# 315 "data/maps/SunshineWoods/scripts.pory"
 	setspeaker SunshineWoods_Eventscript_PolicemenBlockingOrphanage2_Text_0
-# 310 "data/maps/SunshineWoods/scripts.pory"
+# 316 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 22
 	goto_if_eq SunshineWoods_Eventscript_PolicemenBlockingOrphanage2_2
-# 314 "data/maps/SunshineWoods/scripts.pory"
+# 320 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Eventscript_PolicemenBlockingOrphanage1_Text_2
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage2_1:
-# 316 "data/maps/SunshineWoods/scripts.pory"
+# 322 "data/maps/SunshineWoods/scripts.pory"
 	closemessage
 	return
 
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage2_2:
-# 311 "data/maps/SunshineWoods/scripts.pory"
+# 317 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Eventscript_PolicemenBlockingOrphanage2_Text_1
 	goto SunshineWoods_Eventscript_PolicemenBlockingOrphanage2_1
 
 
 SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger2::
-# 320 "data/maps/SunshineWoods/scripts.pory"
+# 326 "data/maps/SunshineWoods/scripts.pory"
 	lock
-# 321 "data/maps/SunshineWoods/scripts.pory"
+# 327 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger2_Movement_0
-# 322 "data/maps/SunshineWoods/scripts.pory"
+# 328 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
-# 323 "data/maps/SunshineWoods/scripts.pory"
+# 329 "data/maps/SunshineWoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_FOLLOWER, SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger2_Movement_1
-# 324 "data/maps/SunshineWoods/scripts.pory"
+# 330 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
-# 325 "data/maps/SunshineWoods/scripts.pory"
+# 331 "data/maps/SunshineWoods/scripts.pory"
 	goto SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji
 	return
 
 
 SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger3::
-# 328 "data/maps/SunshineWoods/scripts.pory"
+# 334 "data/maps/SunshineWoods/scripts.pory"
 	lock
-# 329 "data/maps/SunshineWoods/scripts.pory"
+# 335 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger3_Movement_0
-# 330 "data/maps/SunshineWoods/scripts.pory"
+# 336 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
-# 331 "data/maps/SunshineWoods/scripts.pory"
+# 337 "data/maps/SunshineWoods/scripts.pory"
 	applymovement OBJ_EVENT_ID_FOLLOWER, SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger2_Movement_1
-# 332 "data/maps/SunshineWoods/scripts.pory"
+# 338 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
-# 333 "data/maps/SunshineWoods/scripts.pory"
+# 339 "data/maps/SunshineWoods/scripts.pory"
 	goto SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji
 	return
 
 
 SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji::
-# 337 "data/maps/SunshineWoods/scripts.pory"
-	special SpawnCameraObject
-# 338 "data/maps/SunshineWoods/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_0
-# 339 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
-# 340 "data/maps/SunshineWoods/scripts.pory"
-	delay 20
-# 341 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 11, walkinplacedown
-# 342 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
 # 343 "data/maps/SunshineWoods/scripts.pory"
-	setspeaker SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_0
+	special SpawnCameraObject
 # 344 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_1
+	applymovement OBJ_EVENT_ID_CAMERA, SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_0
 # 345 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 12, walkinplaceup
-# 346 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
+# 346 "data/maps/SunshineWoods/scripts.pory"
+	delay 20
 # 347 "data/maps/SunshineWoods/scripts.pory"
-	setspeaker SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_2
+	applymovement 11, walkinplacedown
 # 348 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_3
+	waitmovement
 # 349 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
+	setspeaker SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_0
 # 350 "data/maps/SunshineWoods/scripts.pory"
-	delay 20
+	msgbox SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_1
 # 351 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 12, SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_1
+	applymovement 12, walkinplaceup
 # 352 "data/maps/SunshineWoods/scripts.pory"
-	delay 4
+	waitmovement
 # 353 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 11, SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_2
+	setspeaker SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_2
 # 354 "data/maps/SunshineWoods/scripts.pory"
-	delay 30
+	msgbox SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_3
 # 355 "data/maps/SunshineWoods/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_3
+	closemessage
 # 356 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
-# 357 "data/maps/SunshineWoods/scripts.pory"
 	delay 20
+# 357 "data/maps/SunshineWoods/scripts.pory"
+	applymovement 12, SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_1
 # 358 "data/maps/SunshineWoods/scripts.pory"
-	special RemoveCameraObject
+	delay 4
 # 359 "data/maps/SunshineWoods/scripts.pory"
-	setobjectxyperm 12, 12, 17
+	applymovement 11, SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_2
 # 360 "data/maps/SunshineWoods/scripts.pory"
-	setobjectxy 12, 12, 17
+	delay 30
 # 361 "data/maps/SunshineWoods/scripts.pory"
-	setobjectnewmovementtype 12, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
+	applymovement OBJ_EVENT_ID_CAMERA, SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_3
 # 362 "data/maps/SunshineWoods/scripts.pory"
-	setobjectxyperm 11, 20, 10
+	waitmovement OBJ_EVENT_ID_CAMERA
 # 363 "data/maps/SunshineWoods/scripts.pory"
-	setobjectxy 11, 20, 10
+	delay 20
 # 364 "data/maps/SunshineWoods/scripts.pory"
-	setobjectnewmovementtype 11, MOVEMENT_TYPE_WANDER_AROUND
+	special RemoveCameraObject
 # 365 "data/maps/SunshineWoods/scripts.pory"
-	release
+	setobjectxyperm 12, 12, 17
 # 366 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 22
+	setobjectxy 12, 12, 17
 # 367 "data/maps/SunshineWoods/scripts.pory"
+	setobjectnewmovementtype 12, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT
+# 368 "data/maps/SunshineWoods/scripts.pory"
+	setobjectxyperm 11, 20, 10
+# 369 "data/maps/SunshineWoods/scripts.pory"
+	setobjectxy 11, 20, 10
+# 370 "data/maps/SunshineWoods/scripts.pory"
+	setobjectnewmovementtype 11, MOVEMENT_TYPE_WANDER_AROUND
+# 371 "data/maps/SunshineWoods/scripts.pory"
+	release
+# 372 "data/maps/SunshineWoods/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 22
+# 373 "data/maps/SunshineWoods/scripts.pory"
 	clearflag FLAG_HIDE_TALK_BUTTON
 	end
-
-
-SunshineWoods_Eventscript_KGStaff1::
-# 373 "data/maps/SunshineWoods/scripts.pory"
-	goto_if_not_defeated TRAINER_KG_STAFF_SUNSHINE_WOODS_1, SunshineWoods_Eventscript_KGStaff1_Battle
-# 374 "data/maps/SunshineWoods/scripts.pory"
-	goto_if_defeated TRAINER_KG_STAFF_SUNSHINE_WOODS_1, SunshineWoods_Eventscript_KGStaff1_PostBattle
-	return
 
 
 SunshineWoods_Eventscript_KGStaff1_Battle::
@@ -667,72 +665,94 @@ SunshineWoods_Eventscript_KGStaff1_Battle_1:
 # 406 "data/maps/SunshineWoods/scripts.pory"
 	removeobject 12
 # 407 "data/maps/SunshineWoods/scripts.pory"
-	addobject 14
+	clearflag FLAG_TEMP_5
 # 408 "data/maps/SunshineWoods/scripts.pory"
+	addobject 14, MAP_SUNSHINE_WOODS
+# 409 "data/maps/SunshineWoods/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 410 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_SOUTH
 	goto_if_eq SunshineWoods_Eventscript_KGStaff1_Battle_8
-# 412 "data/maps/SunshineWoods/scripts.pory"
+# 414 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_4
 SunshineWoods_Eventscript_KGStaff1_Battle_7:
-# 414 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
-# 415 "data/maps/SunshineWoods/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
 # 416 "data/maps/SunshineWoods/scripts.pory"
-	delay 20
+	waitmovement
 # 417 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_KGStaff1_Battle_Text_2
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 418 "data/maps/SunshineWoods/scripts.pory"
+	delay 20
 # 419 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
-# 420 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_SUDOWOODO_SHAKE
+	msgbox SunshineWoods_Eventscript_KGStaff1_Battle_Text_2
 # 421 "data/maps/SunshineWoods/scripts.pory"
+	closemessage
+# 422 "data/maps/SunshineWoods/scripts.pory"
+	playse SE_SUDOWOODO_SHAKE
+# 423 "data/maps/SunshineWoods/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 424 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_SOUTH
 	goto_if_eq SunshineWoods_Eventscript_KGStaff1_Battle_12
-# 424 "data/maps/SunshineWoods/scripts.pory"
+# 427 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_EAST
 	goto_if_eq SunshineWoods_Eventscript_KGStaff1_Battle_13
-# 428 "data/maps/SunshineWoods/scripts.pory"
+# 431 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_7
 SunshineWoods_Eventscript_KGStaff1_Battle_11:
-# 430 "data/maps/SunshineWoods/scripts.pory"
+# 433 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
-# 431 "data/maps/SunshineWoods/scripts.pory"
-	giveitem ITEM_EXP_CANDY_XS, 10
-# 432 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_KGStaff1_Battle_Text_3
 # 434 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
+	giveitem ITEM_EXP_CANDY_XS, 10
 # 435 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_SUDOWOODO_SHAKE
+	playse SE_M_SCRATCH
 # 436 "data/maps/SunshineWoods/scripts.pory"
-	waitse
+	setvar VAR_0x8000, PIC_AKIHIKO
 # 437 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_KGStaff1_Battle_Text_4
+	callnative DrawMugshot
 # 438 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
+	msgbox SunshineWoods_Eventscript_KGStaff1_Battle_Text_3
 # 439 "data/maps/SunshineWoods/scripts.pory"
+	closemessage
+# 440 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_KGStaff1_Battle_Text_4
+# 441 "data/maps/SunshineWoods/scripts.pory"
+	closemessage
+# 442 "data/maps/SunshineWoods/scripts.pory"
+	callnative ClearMugshot
+# 443 "data/maps/SunshineWoods/scripts.pory"
+	playse SE_SUDOWOODO_SHAKE
+# 444 "data/maps/SunshineWoods/scripts.pory"
+	applymovement LOCALID_PLAYER, emotepensive
+# 445 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
+# 446 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_KGStaff1_Battle_Text_5
+# 447 "data/maps/SunshineWoods/scripts.pory"
+	closemessage
+# 448 "data/maps/SunshineWoods/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 449 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_SOUTH
 	goto_if_eq SunshineWoods_Eventscript_KGStaff1_Battle_18
-# 442 "data/maps/SunshineWoods/scripts.pory"
+# 452 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_EAST
 	goto_if_eq SunshineWoods_Eventscript_KGStaff1_Battle_19
-# 446 "data/maps/SunshineWoods/scripts.pory"
+# 456 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_10
 SunshineWoods_Eventscript_KGStaff1_Battle_17:
-# 448 "data/maps/SunshineWoods/scripts.pory"
+# 458 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
-# 449 "data/maps/SunshineWoods/scripts.pory"
+# 459 "data/maps/SunshineWoods/scripts.pory"
 	removeobject INTELEON_T_SW
-# 450 "data/maps/SunshineWoods/scripts.pory"
+# 460 "data/maps/SunshineWoods/scripts.pory"
 	setflag FLAG_TEMP_6
-# 451 "data/maps/SunshineWoods/scripts.pory"
+# 461 "data/maps/SunshineWoods/scripts.pory"
 	setvar VAR_RESULT, 0
-# 452 "data/maps/SunshineWoods/scripts.pory"
+# 462 "data/maps/SunshineWoods/scripts.pory"
 	setvar VAR_0x8001, 0
-# 453 "data/maps/SunshineWoods/scripts.pory"
+# 463 "data/maps/SunshineWoods/scripts.pory"
 	addvar VAR_TEMP_1, 1
-# 454 "data/maps/SunshineWoods/scripts.pory"
+# 464 "data/maps/SunshineWoods/scripts.pory"
 	release
 	end
 
@@ -751,414 +771,433 @@ SunshineWoods_Eventscript_KGStaff1_Battle_3:
 	goto SunshineWoods_Eventscript_KGStaff1_Battle_1
 
 SunshineWoods_Eventscript_KGStaff1_Battle_8:
-# 409 "data/maps/SunshineWoods/scripts.pory"
+# 411 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_3
 	goto SunshineWoods_Eventscript_KGStaff1_Battle_7
 
 SunshineWoods_Eventscript_KGStaff1_Battle_12:
-# 422 "data/maps/SunshineWoods/scripts.pory"
+# 425 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_5
 	goto SunshineWoods_Eventscript_KGStaff1_Battle_11
 
 SunshineWoods_Eventscript_KGStaff1_Battle_13:
-# 425 "data/maps/SunshineWoods/scripts.pory"
+# 428 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_6
 	goto SunshineWoods_Eventscript_KGStaff1_Battle_11
 
 SunshineWoods_Eventscript_KGStaff1_Battle_18:
-# 440 "data/maps/SunshineWoods/scripts.pory"
+# 450 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_8
 	goto SunshineWoods_Eventscript_KGStaff1_Battle_17
 
 SunshineWoods_Eventscript_KGStaff1_Battle_19:
-# 443 "data/maps/SunshineWoods/scripts.pory"
+# 453 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_9
 	goto SunshineWoods_Eventscript_KGStaff1_Battle_17
 
 
 SunshineWoods_Eventscript_KGStaff1_PostBattle::
-# 459 "data/maps/SunshineWoods/scripts.pory"
+# 469 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Eventscript_KGStaff1_PostBattle_Text_0
-# 460 "data/maps/SunshineWoods/scripts.pory"
+# 470 "data/maps/SunshineWoods/scripts.pory"
 	closemessage
-	return
-
-
-SunshineWoods_Eventscript_KGStaff2::
-# 464 "data/maps/SunshineWoods/scripts.pory"
-	getplayerxy VAR_RESULT, VAR_0x8001
-# 465 "data/maps/SunshineWoods/scripts.pory"
-	setobjectxy INTELEON_T_SW, VAR_RESULT, VAR_0x8001
-# 466 "data/maps/SunshineWoods/scripts.pory"
-	goto_if_not_defeated TRAINER_KG_STAFF_SUNSHINE_WOODS_2, SunshineWoods_Eventscript_KGStaff2_Battle
-# 467 "data/maps/SunshineWoods/scripts.pory"
-	goto_if_defeated TRAINER_KG_STAFF_SUNSHINE_WOODS_2, SunshineWoods_Eventscript_KGStaff2_PostBattle
 	return
 
 
 SunshineWoods_Eventscript_KGStaff2_Battle::
-# 471 "data/maps/SunshineWoods/scripts.pory"
-	lock
-# 472 "data/maps/SunshineWoods/scripts.pory"
-	faceplayer
-# 473 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_KGStaff2_Battle_Text_0
 # 474 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
+	lock
 # 475 "data/maps/SunshineWoods/scripts.pory"
-	getplayerxy VAR_0x8000, VAR_0x8001
+	faceplayer
 # 476 "data/maps/SunshineWoods/scripts.pory"
-	setobjectxy INTELEON_T_SW, VAR_0x8000, VAR_0x8001
+	msgbox SunshineWoods_Eventscript_KGStaff2_Battle_Text_0
 # 477 "data/maps/SunshineWoods/scripts.pory"
-	setobjectxyperm INTELEON_T_SW, VAR_0x8000, VAR_0x8001
+	closemessage
 # 478 "data/maps/SunshineWoods/scripts.pory"
-	trainerbattle_no_intro TRAINER_KG_STAFF_SUNSHINE_WOODS_2, SunshineWoods_Eventscript_KGStaff2_Battle_Text_1
+	getplayerxy VAR_0x8000, VAR_0x8001
 # 479 "data/maps/SunshineWoods/scripts.pory"
-	clearflag FLAG_TEMP_6
+	setobjectxy INTELEON_T_SW, VAR_0x8000, VAR_0x8001
 # 480 "data/maps/SunshineWoods/scripts.pory"
-	addobject INTELEON_T_SW
+	setobjectxyperm INTELEON_T_SW, VAR_0x8000, VAR_0x8001
 # 481 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_LEDGE
+	trainerbattle_no_intro TRAINER_KG_STAFF_SUNSHINE_WOODS_2, SunshineWoods_Eventscript_KGStaff2_Battle_Text_1
 # 482 "data/maps/SunshineWoods/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
+	clearflag FLAG_TEMP_6
 # 483 "data/maps/SunshineWoods/scripts.pory"
+	addobject INTELEON_T_SW
+# 484 "data/maps/SunshineWoods/scripts.pory"
+	playse SE_LEDGE
+# 485 "data/maps/SunshineWoods/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 486 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_SOUTH
 	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_2
-# 486 "data/maps/SunshineWoods/scripts.pory"
+# 489 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_WEST
 	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_3
-# 489 "data/maps/SunshineWoods/scripts.pory"
+# 492 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_EAST
 	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_4
-# 493 "data/maps/SunshineWoods/scripts.pory"
+# 496 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_2
 SunshineWoods_Eventscript_KGStaff2_Battle_1:
-# 495 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
-# 496 "data/maps/SunshineWoods/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 497 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_M_TAKE_DOWN
 # 498 "data/maps/SunshineWoods/scripts.pory"
-	waitse
+	waitmovement
 # 499 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_M_COMET_PUNCH
+	fadescreenswapbuffers FADE_TO_BLACK
 # 500 "data/maps/SunshineWoods/scripts.pory"
-	waitse
+	playse SE_M_TAKE_DOWN
 # 501 "data/maps/SunshineWoods/scripts.pory"
-	removeobject 11
-# 502 "data/maps/SunshineWoods/scripts.pory"
-	addobject 15
-# 503 "data/maps/SunshineWoods/scripts.pory"
-	compare VAR_RESULT, DIR_SOUTH
-	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_10
-# 507 "data/maps/SunshineWoods/scripts.pory"
-	compare VAR_RESULT, DIR_WEST
-	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_11
-# 511 "data/maps/SunshineWoods/scripts.pory"
-	compare VAR_RESULT, DIR_EAST
-	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_12
-# 516 "data/maps/SunshineWoods/scripts.pory"
-	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_4
-# 517 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
-SunshineWoods_Eventscript_KGStaff2_Battle_9:
-# 520 "data/maps/SunshineWoods/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-# 521 "data/maps/SunshineWoods/scripts.pory"
-	delay 20
-# 522 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_KGStaff2_Battle_Text_2
-# 524 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
-# 525 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_SUDOWOODO_SHAKE
-# 526 "data/maps/SunshineWoods/scripts.pory"
-	compare VAR_RESULT, DIR_SOUTH
-	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_18
-# 529 "data/maps/SunshineWoods/scripts.pory"
-	compare VAR_RESULT, DIR_EAST
-	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_19
-# 532 "data/maps/SunshineWoods/scripts.pory"
-	compare VAR_RESULT, DIR_WEST
-	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_20
-# 536 "data/maps/SunshineWoods/scripts.pory"
-	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_7
-SunshineWoods_Eventscript_KGStaff2_Battle_17:
-# 538 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
-# 539 "data/maps/SunshineWoods/scripts.pory"
-	giveitem ITEM_EXP_CANDY_XS, 10
-# 540 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_KGStaff2_Battle_Text_3
-# 542 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
-# 543 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_SUDOWOODO_SHAKE
-# 544 "data/maps/SunshineWoods/scripts.pory"
 	waitse
-# 545 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_KGStaff2_Battle_Text_4
-# 546 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
-# 547 "data/maps/SunshineWoods/scripts.pory"
+# 502 "data/maps/SunshineWoods/scripts.pory"
+	playse SE_M_COMET_PUNCH
+# 503 "data/maps/SunshineWoods/scripts.pory"
+	waitse
+# 504 "data/maps/SunshineWoods/scripts.pory"
+	removeobject 11
+# 505 "data/maps/SunshineWoods/scripts.pory"
+	clearflag FLAG_TEMP_7
+# 506 "data/maps/SunshineWoods/scripts.pory"
+	addobject 15, MAP_SUNSHINE_WOODS
+# 507 "data/maps/SunshineWoods/scripts.pory"
+	compare VAR_TEMP_1, 0
+	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_10
+SunshineWoods_Eventscript_KGStaff2_Battle_9:
+# 510 "data/maps/SunshineWoods/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 511 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_SOUTH
-	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_26
-# 550 "data/maps/SunshineWoods/scripts.pory"
-	compare VAR_RESULT, DIR_EAST
-	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_27
-# 553 "data/maps/SunshineWoods/scripts.pory"
+	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_13
+# 515 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_WEST
-	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_28
+	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_14
+# 519 "data/maps/SunshineWoods/scripts.pory"
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_15
+# 524 "data/maps/SunshineWoods/scripts.pory"
+	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_4
+# 525 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
+SunshineWoods_Eventscript_KGStaff2_Battle_12:
+# 528 "data/maps/SunshineWoods/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 529 "data/maps/SunshineWoods/scripts.pory"
+	delay 20
+# 530 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_KGStaff2_Battle_Text_2
+# 532 "data/maps/SunshineWoods/scripts.pory"
+	closemessage
+# 533 "data/maps/SunshineWoods/scripts.pory"
+	playse SE_SUDOWOODO_SHAKE
+# 534 "data/maps/SunshineWoods/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 535 "data/maps/SunshineWoods/scripts.pory"
+	compare VAR_RESULT, DIR_SOUTH
+	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_21
+# 538 "data/maps/SunshineWoods/scripts.pory"
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_22
+# 541 "data/maps/SunshineWoods/scripts.pory"
+	compare VAR_RESULT, DIR_WEST
+	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_23
+# 545 "data/maps/SunshineWoods/scripts.pory"
+	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_7
+SunshineWoods_Eventscript_KGStaff2_Battle_20:
+# 547 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
+# 548 "data/maps/SunshineWoods/scripts.pory"
+	giveitem ITEM_EXP_CANDY_XS, 10
+# 549 "data/maps/SunshineWoods/scripts.pory"
+	playse SE_M_SCRATCH
+# 550 "data/maps/SunshineWoods/scripts.pory"
+	setvar VAR_0x8000, PIC_SHINJIRO
+# 551 "data/maps/SunshineWoods/scripts.pory"
+	callnative DrawMugshot
+# 552 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_KGStaff2_Battle_Text_3
+# 553 "data/maps/SunshineWoods/scripts.pory"
+	closemessage
+# 554 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_KGStaff2_Battle_Text_4
+# 555 "data/maps/SunshineWoods/scripts.pory"
+	closemessage
+# 556 "data/maps/SunshineWoods/scripts.pory"
+	callnative ClearMugshot
 # 557 "data/maps/SunshineWoods/scripts.pory"
-	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_10
-SunshineWoods_Eventscript_KGStaff2_Battle_25:
+	playse SE_SUDOWOODO_SHAKE
+# 558 "data/maps/SunshineWoods/scripts.pory"
+	applymovement LOCALID_PLAYER, emotepensive
 # 559 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
 # 560 "data/maps/SunshineWoods/scripts.pory"
-	removeobject INTELEON_T_SW
+	msgbox SunshineWoods_Eventscript_KGStaff2_Battle_Text_5
 # 561 "data/maps/SunshineWoods/scripts.pory"
-	setflag FLAG_TEMP_6
+	closemessage
 # 562 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_0x8000, 0
+	specialvar VAR_RESULT, GetPlayerFacingDirection
 # 563 "data/maps/SunshineWoods/scripts.pory"
+	compare VAR_RESULT, DIR_SOUTH
+	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_29
+# 566 "data/maps/SunshineWoods/scripts.pory"
+	compare VAR_RESULT, DIR_EAST
+	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_30
+# 569 "data/maps/SunshineWoods/scripts.pory"
+	compare VAR_RESULT, DIR_WEST
+	goto_if_eq SunshineWoods_Eventscript_KGStaff2_Battle_31
+# 573 "data/maps/SunshineWoods/scripts.pory"
+	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_10
+SunshineWoods_Eventscript_KGStaff2_Battle_28:
+# 575 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
+# 576 "data/maps/SunshineWoods/scripts.pory"
+	removeobject INTELEON_T_SW
+# 577 "data/maps/SunshineWoods/scripts.pory"
+	setflag FLAG_TEMP_6
+# 578 "data/maps/SunshineWoods/scripts.pory"
+	setvar VAR_0x8000, 0
+# 579 "data/maps/SunshineWoods/scripts.pory"
 	setvar VAR_0x8001, 0
-# 564 "data/maps/SunshineWoods/scripts.pory"
+# 580 "data/maps/SunshineWoods/scripts.pory"
 	addvar VAR_TEMP_1, 1
-# 565 "data/maps/SunshineWoods/scripts.pory"
+# 581 "data/maps/SunshineWoods/scripts.pory"
 	release
 	end
 
 SunshineWoods_Eventscript_KGStaff2_Battle_2:
-# 484 "data/maps/SunshineWoods/scripts.pory"
+# 487 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_0
 	goto SunshineWoods_Eventscript_KGStaff2_Battle_1
 
 SunshineWoods_Eventscript_KGStaff2_Battle_3:
-# 487 "data/maps/SunshineWoods/scripts.pory"
+# 490 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff2_Battle_Movement_0
 	goto SunshineWoods_Eventscript_KGStaff2_Battle_1
 
 SunshineWoods_Eventscript_KGStaff2_Battle_4:
-# 490 "data/maps/SunshineWoods/scripts.pory"
+# 493 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_1
 	goto SunshineWoods_Eventscript_KGStaff2_Battle_1
 
 SunshineWoods_Eventscript_KGStaff2_Battle_10:
-# 504 "data/maps/SunshineWoods/scripts.pory"
-	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_3
-# 505 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
-	goto SunshineWoods_Eventscript_KGStaff2_Battle_9
-
-SunshineWoods_Eventscript_KGStaff2_Battle_11:
 # 508 "data/maps/SunshineWoods/scripts.pory"
-	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff2_Battle_Movement_1
-# 509 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
+	removeobject 14
 	goto SunshineWoods_Eventscript_KGStaff2_Battle_9
 
-SunshineWoods_Eventscript_KGStaff2_Battle_12:
+SunshineWoods_Eventscript_KGStaff2_Battle_13:
 # 512 "data/maps/SunshineWoods/scripts.pory"
-	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff2_Battle_Movement_2
+	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_3
 # 513 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
-	goto SunshineWoods_Eventscript_KGStaff2_Battle_9
+	goto SunshineWoods_Eventscript_KGStaff2_Battle_12
 
-SunshineWoods_Eventscript_KGStaff2_Battle_18:
-# 527 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_KGStaff2_Battle_14:
+# 516 "data/maps/SunshineWoods/scripts.pory"
+	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff2_Battle_Movement_1
+# 517 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
+	goto SunshineWoods_Eventscript_KGStaff2_Battle_12
+
+SunshineWoods_Eventscript_KGStaff2_Battle_15:
+# 520 "data/maps/SunshineWoods/scripts.pory"
+	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff2_Battle_Movement_2
+# 521 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
+	goto SunshineWoods_Eventscript_KGStaff2_Battle_12
+
+SunshineWoods_Eventscript_KGStaff2_Battle_21:
+# 536 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_5
-	goto SunshineWoods_Eventscript_KGStaff2_Battle_17
+	goto SunshineWoods_Eventscript_KGStaff2_Battle_20
 
-SunshineWoods_Eventscript_KGStaff2_Battle_19:
-# 530 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_KGStaff2_Battle_22:
+# 539 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_6
-	goto SunshineWoods_Eventscript_KGStaff2_Battle_17
+	goto SunshineWoods_Eventscript_KGStaff2_Battle_20
 
-SunshineWoods_Eventscript_KGStaff2_Battle_20:
-# 533 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_KGStaff2_Battle_23:
+# 542 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_KGStaff2_Battle_Movement_3
-	goto SunshineWoods_Eventscript_KGStaff2_Battle_17
+	goto SunshineWoods_Eventscript_KGStaff2_Battle_20
 
-SunshineWoods_Eventscript_KGStaff2_Battle_26:
-# 548 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_KGStaff2_Battle_29:
+# 564 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff1_Battle_Movement_8
-	goto SunshineWoods_Eventscript_KGStaff2_Battle_25
+	goto SunshineWoods_Eventscript_KGStaff2_Battle_28
 
-SunshineWoods_Eventscript_KGStaff2_Battle_27:
-# 551 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_KGStaff2_Battle_30:
+# 567 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff2_Battle_Movement_4
-	goto SunshineWoods_Eventscript_KGStaff2_Battle_25
+	goto SunshineWoods_Eventscript_KGStaff2_Battle_28
 
-SunshineWoods_Eventscript_KGStaff2_Battle_28:
-# 554 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_KGStaff2_Battle_31:
+# 570 "data/maps/SunshineWoods/scripts.pory"
 	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff2_Battle_Movement_5
-	goto SunshineWoods_Eventscript_KGStaff2_Battle_25
+	goto SunshineWoods_Eventscript_KGStaff2_Battle_28
 
 
 SunshineWoods_Eventscript_KGStaff2_PostBattle::
-# 570 "data/maps/SunshineWoods/scripts.pory"
+# 586 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Eventscript_KGStaff2_PostBattle_Text_0
-# 571 "data/maps/SunshineWoods/scripts.pory"
+# 587 "data/maps/SunshineWoods/scripts.pory"
 	closemessage
 	return
 
 
 SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown::
-# 575 "data/maps/SunshineWoods/scripts.pory"
+# 591 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_TEMP_1, 2
 	goto_if_lt SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_2
-# 584 "data/maps/SunshineWoods/scripts.pory"
+# 600 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_TEMP_1, 2
 	goto_if_eq SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_4
 	return
 
 SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_2:
-# 576 "data/maps/SunshineWoods/scripts.pory"
+# 592 "data/maps/SunshineWoods/scripts.pory"
 	lock
-# 577 "data/maps/SunshineWoods/scripts.pory"
+# 593 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, walkright
-# 578 "data/maps/SunshineWoods/scripts.pory"
+# 594 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
-# 579 "data/maps/SunshineWoods/scripts.pory"
+# 595 "data/maps/SunshineWoods/scripts.pory"
 	msgbox SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_0
-# 580 "data/maps/SunshineWoods/scripts.pory"
+# 596 "data/maps/SunshineWoods/scripts.pory"
 	closemessage
-# 581 "data/maps/SunshineWoods/scripts.pory"
+# 597 "data/maps/SunshineWoods/scripts.pory"
 	release
 	end
 
 SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_4:
-# 585 "data/maps/SunshineWoods/scripts.pory"
-	lock
-# 586 "data/maps/SunshineWoods/scripts.pory"
-	applymovement LOCALID_PLAYER, faceright
-# 587 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
-# 588 "data/maps/SunshineWoods/scripts.pory"
-	hidefollower
-# 589 "data/maps/SunshineWoods/scripts.pory"
-	getplayerxy VAR_0x8000, VAR_0x8001
-# 590 "data/maps/SunshineWoods/scripts.pory"
-	setobjectxy INTELEON_T_SW, VAR_0x8000, VAR_0x8001
-# 591 "data/maps/SunshineWoods/scripts.pory"
-	setobjectxyperm INTELEON_T_SW, VAR_0x8000, VAR_0x8001
-# 592 "data/maps/SunshineWoods/scripts.pory"
-	clearflag FLAG_TEMP_6
-# 593 "data/maps/SunshineWoods/scripts.pory"
-	addobject INTELEON_T_SW
-# 594 "data/maps/SunshineWoods/scripts.pory"
-	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff2_Battle_Movement_2
-# 595 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
-# 596 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_1
-# 598 "data/maps/SunshineWoods/scripts.pory"
-	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 599 "data/maps/SunshineWoods/scripts.pory"
-	applymovement INTELEON_T_SW, shakehorizontal
-# 600 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
 # 601 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_2
-# 604 "data/maps/SunshineWoods/scripts.pory"
-	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 605 "data/maps/SunshineWoods/scripts.pory"
-	applymovement INTELEON_T_SW, walkinplaceleft
-# 606 "data/maps/SunshineWoods/scripts.pory"
+	lock
+# 602 "data/maps/SunshineWoods/scripts.pory"
+	applymovement LOCALID_PLAYER, faceright
+# 603 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
+# 604 "data/maps/SunshineWoods/scripts.pory"
+	hidefollower
+# 605 "data/maps/SunshineWoods/scripts.pory"
+	getplayerxy VAR_0x8000, VAR_0x8001
+# 606 "data/maps/SunshineWoods/scripts.pory"
+	setobjectxy INTELEON_T_SW, VAR_0x8000, VAR_0x8001
 # 607 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_3
+	setobjectxyperm INTELEON_T_SW, VAR_0x8000, VAR_0x8001
+# 608 "data/maps/SunshineWoods/scripts.pory"
+	clearflag FLAG_TEMP_6
 # 609 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
+	addobject INTELEON_T_SW
 # 610 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 22
+	applymovement INTELEON_T_SW, SunshineWoods_Eventscript_KGStaff2_Battle_Movement_2
 # 611 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_RESULT, 0
+	waitmovement
 # 612 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_1
+# 614 "data/maps/SunshineWoods/scripts.pory"
+	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
+# 615 "data/maps/SunshineWoods/scripts.pory"
+	applymovement INTELEON_T_SW, shakehorizontal
+# 616 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
+# 617 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_2
+# 620 "data/maps/SunshineWoods/scripts.pory"
+	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
+# 621 "data/maps/SunshineWoods/scripts.pory"
+	applymovement INTELEON_T_SW, walkinplaceleft
+# 622 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
+# 623 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_3
+# 625 "data/maps/SunshineWoods/scripts.pory"
+	closemessage
+# 626 "data/maps/SunshineWoods/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 22
+# 627 "data/maps/SunshineWoods/scripts.pory"
+	setvar VAR_RESULT, 0
+# 628 "data/maps/SunshineWoods/scripts.pory"
 	setvar VAR_0x8001, 0
-# 613 "data/maps/SunshineWoods/scripts.pory"
-	warp MAP_ROUTE2_2
+# 629 "data/maps/SunshineWoods/scripts.pory"
+	warp MAP_ROUTE2_HOUSE
 	return
 
 
-# 321 "data/maps/SunshineWoods/scripts.pory"
+# 327 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger2_Movement_0:
-# 321 "data/maps/SunshineWoods/scripts.pory"
+# 327 "data/maps/SunshineWoods/scripts.pory"
 	player_run_up
-# 321 "data/maps/SunshineWoods/scripts.pory"
+# 327 "data/maps/SunshineWoods/scripts.pory"
 	face_left
 	step_end
 
-# 323 "data/maps/SunshineWoods/scripts.pory"
+# 329 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger2_Movement_1:
-# 323 "data/maps/SunshineWoods/scripts.pory"
+# 329 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 323 "data/maps/SunshineWoods/scripts.pory"
+# 329 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 323 "data/maps/SunshineWoods/scripts.pory"
+# 329 "data/maps/SunshineWoods/scripts.pory"
 	face_right
 	step_end
 
-# 329 "data/maps/SunshineWoods/scripts.pory"
+# 335 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger3_Movement_0:
-# 329 "data/maps/SunshineWoods/scripts.pory"
+# 335 "data/maps/SunshineWoods/scripts.pory"
 	player_run_up
-# 329 "data/maps/SunshineWoods/scripts.pory"
+# 335 "data/maps/SunshineWoods/scripts.pory"
 	player_run_up
-# 329 "data/maps/SunshineWoods/scripts.pory"
+# 335 "data/maps/SunshineWoods/scripts.pory"
 	face_left
 	step_end
 
-# 338 "data/maps/SunshineWoods/scripts.pory"
+# 344 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_0:
-# 338 "data/maps/SunshineWoods/scripts.pory"
+# 344 "data/maps/SunshineWoods/scripts.pory"
 	walk_right
-# 338 "data/maps/SunshineWoods/scripts.pory"
+# 344 "data/maps/SunshineWoods/scripts.pory"
 	walk_diag_southeast
 	step_end
 
-# 351 "data/maps/SunshineWoods/scripts.pory"
+# 357 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_1:
-# 351 "data/maps/SunshineWoods/scripts.pory"
+# 357 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_down
-# 351 "data/maps/SunshineWoods/scripts.pory"
+# 357 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_down
-# 351 "data/maps/SunshineWoods/scripts.pory"
+# 357 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_down
-# 351 "data/maps/SunshineWoods/scripts.pory"
+# 357 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_down
-# 351 "data/maps/SunshineWoods/scripts.pory"
+# 357 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_down
-# 351 "data/maps/SunshineWoods/scripts.pory"
+# 357 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 353 "data/maps/SunshineWoods/scripts.pory"
+# 359 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_2:
-# 353 "data/maps/SunshineWoods/scripts.pory"
+# 359 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_right
-# 353 "data/maps/SunshineWoods/scripts.pory"
+# 359 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_right
-# 353 "data/maps/SunshineWoods/scripts.pory"
+# 359 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_right
-# 353 "data/maps/SunshineWoods/scripts.pory"
+# 359 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_right
-# 353 "data/maps/SunshineWoods/scripts.pory"
+# 359 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_right
-# 353 "data/maps/SunshineWoods/scripts.pory"
+# 359 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_right
-# 353 "data/maps/SunshineWoods/scripts.pory"
+# 359 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_right
-# 353 "data/maps/SunshineWoods/scripts.pory"
+# 359 "data/maps/SunshineWoods/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 355 "data/maps/SunshineWoods/scripts.pory"
+# 361 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Movement_3:
-# 355 "data/maps/SunshineWoods/scripts.pory"
+# 361 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 355 "data/maps/SunshineWoods/scripts.pory"
+# 361 "data/maps/SunshineWoods/scripts.pory"
 	walk_diag_northwest
 	step_end
 
@@ -1180,158 +1219,158 @@ SunshineWoods_Eventscript_KGStaff1_Battle_Movement_2:
 	jump_up
 	step_end
 
-# 409 "data/maps/SunshineWoods/scripts.pory"
+# 411 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff1_Battle_Movement_3:
-# 409 "data/maps/SunshineWoods/scripts.pory"
+# 411 "data/maps/SunshineWoods/scripts.pory"
 	walk_down
-# 409 "data/maps/SunshineWoods/scripts.pory"
+# 411 "data/maps/SunshineWoods/scripts.pory"
 	face_up
 	step_end
 
-# 412 "data/maps/SunshineWoods/scripts.pory"
+# 414 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff1_Battle_Movement_4:
-# 412 "data/maps/SunshineWoods/scripts.pory"
+# 414 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 412 "data/maps/SunshineWoods/scripts.pory"
+# 414 "data/maps/SunshineWoods/scripts.pory"
 	face_down
 	step_end
 
-# 422 "data/maps/SunshineWoods/scripts.pory"
+# 425 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff1_Battle_Movement_5:
-# 422 "data/maps/SunshineWoods/scripts.pory"
+# 425 "data/maps/SunshineWoods/scripts.pory"
 	walk_in_place_down
 	step_end
 
-# 425 "data/maps/SunshineWoods/scripts.pory"
+# 428 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff1_Battle_Movement_6:
-# 425 "data/maps/SunshineWoods/scripts.pory"
+# 428 "data/maps/SunshineWoods/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 428 "data/maps/SunshineWoods/scripts.pory"
+# 431 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff1_Battle_Movement_7:
-# 428 "data/maps/SunshineWoods/scripts.pory"
+# 431 "data/maps/SunshineWoods/scripts.pory"
 	walk_in_place_up
 	step_end
 
-# 440 "data/maps/SunshineWoods/scripts.pory"
+# 450 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff1_Battle_Movement_8:
-# 440 "data/maps/SunshineWoods/scripts.pory"
+# 450 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 440 "data/maps/SunshineWoods/scripts.pory"
+# 450 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 440 "data/maps/SunshineWoods/scripts.pory"
+# 450 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 440 "data/maps/SunshineWoods/scripts.pory"
+# 450 "data/maps/SunshineWoods/scripts.pory"
 	walk_right
-# 440 "data/maps/SunshineWoods/scripts.pory"
+# 450 "data/maps/SunshineWoods/scripts.pory"
 	set_invisible
 	step_end
 
-# 443 "data/maps/SunshineWoods/scripts.pory"
+# 453 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff1_Battle_Movement_9:
-# 443 "data/maps/SunshineWoods/scripts.pory"
+# 453 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 443 "data/maps/SunshineWoods/scripts.pory"
+# 453 "data/maps/SunshineWoods/scripts.pory"
 	walk_down
-# 443 "data/maps/SunshineWoods/scripts.pory"
+# 453 "data/maps/SunshineWoods/scripts.pory"
 	set_invisible
 	step_end
 
-# 446 "data/maps/SunshineWoods/scripts.pory"
+# 456 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff1_Battle_Movement_10:
-# 446 "data/maps/SunshineWoods/scripts.pory"
+# 456 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 446 "data/maps/SunshineWoods/scripts.pory"
+# 456 "data/maps/SunshineWoods/scripts.pory"
 	walk_down
-# 446 "data/maps/SunshineWoods/scripts.pory"
+# 456 "data/maps/SunshineWoods/scripts.pory"
 	walk_down
-# 446 "data/maps/SunshineWoods/scripts.pory"
+# 456 "data/maps/SunshineWoods/scripts.pory"
 	walk_right
-# 446 "data/maps/SunshineWoods/scripts.pory"
+# 456 "data/maps/SunshineWoods/scripts.pory"
 	set_invisible
 	step_end
 
-# 487 "data/maps/SunshineWoods/scripts.pory"
+# 490 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff2_Battle_Movement_0:
-# 487 "data/maps/SunshineWoods/scripts.pory"
+# 490 "data/maps/SunshineWoods/scripts.pory"
 	jump_left
 	step_end
 
-# 508 "data/maps/SunshineWoods/scripts.pory"
+# 516 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff2_Battle_Movement_1:
-# 508 "data/maps/SunshineWoods/scripts.pory"
+# 516 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 508 "data/maps/SunshineWoods/scripts.pory"
+# 516 "data/maps/SunshineWoods/scripts.pory"
 	face_right
 	step_end
 
-# 512 "data/maps/SunshineWoods/scripts.pory"
+# 520 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff2_Battle_Movement_2:
-# 512 "data/maps/SunshineWoods/scripts.pory"
+# 520 "data/maps/SunshineWoods/scripts.pory"
 	walk_right
-# 512 "data/maps/SunshineWoods/scripts.pory"
+# 520 "data/maps/SunshineWoods/scripts.pory"
 	face_left
 	step_end
 
-# 533 "data/maps/SunshineWoods/scripts.pory"
+# 542 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff2_Battle_Movement_3:
-# 533 "data/maps/SunshineWoods/scripts.pory"
+# 542 "data/maps/SunshineWoods/scripts.pory"
 	walk_in_place_left
 	step_end
 
-# 551 "data/maps/SunshineWoods/scripts.pory"
+# 567 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff2_Battle_Movement_4:
-# 551 "data/maps/SunshineWoods/scripts.pory"
+# 567 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 551 "data/maps/SunshineWoods/scripts.pory"
+# 567 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 551 "data/maps/SunshineWoods/scripts.pory"
+# 567 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 551 "data/maps/SunshineWoods/scripts.pory"
+# 567 "data/maps/SunshineWoods/scripts.pory"
 	walk_down
-# 551 "data/maps/SunshineWoods/scripts.pory"
+# 567 "data/maps/SunshineWoods/scripts.pory"
 	set_invisible
 	step_end
 
-# 554 "data/maps/SunshineWoods/scripts.pory"
+# 570 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_KGStaff2_Battle_Movement_5:
-# 554 "data/maps/SunshineWoods/scripts.pory"
+# 570 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 554 "data/maps/SunshineWoods/scripts.pory"
+# 570 "data/maps/SunshineWoods/scripts.pory"
 	walk_right
-# 554 "data/maps/SunshineWoods/scripts.pory"
+# 570 "data/maps/SunshineWoods/scripts.pory"
 	walk_right
-# 554 "data/maps/SunshineWoods/scripts.pory"
+# 570 "data/maps/SunshineWoods/scripts.pory"
 	walk_down
-# 554 "data/maps/SunshineWoods/scripts.pory"
+# 570 "data/maps/SunshineWoods/scripts.pory"
 	set_invisible
 	step_end
 
 SunshineWoods_Eventscript_DoNotEnterTheGrass_Text_0:
-# 57 "data/maps/SunshineWoods/scripts.pory"
+# 63 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Alright, we're here.\p"
 	.string "Don't enter the tall grass, okay?\p"
 	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Okay!$"
 
 SunshineWoods_Eventscript_PawmisCry_Text_0:
-# 93 "data/maps/SunshineWoods/scripts.pory"
+# 99 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MIKI}Big bro! Look! I just made this flower\n"
 	.string "crown! It's for you!\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}It's very pretty! Thank you, Miki!$"
 
 SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown_Text_0:
-# 103 "data/maps/SunshineWoods/scripts.pory"
+# 109 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Will you make one for me too, Miki?\p"
 	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Of course!$"
 
 SunshineWoods_Eventscript_PawmiCries_Text_0:
-# 119 "data/maps/SunshineWoods/scripts.pory"
+# 125 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that?\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Could be a wild Pokémon. Be careful!$"
 
 SunshineWoods_Eventscript_PawmisInjured_Text_0:
-# 187 "data/maps/SunshineWoods/scripts.pory"
+# 193 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Wait...\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}It looks heavily injured.\p"
 	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}We should take it back to the\n"
@@ -1339,68 +1378,68 @@ SunshineWoods_Eventscript_PawmisInjured_Text_0:
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Yeah!$"
 
 TakePawmiToHeal_Text_0:
-# 206 "data/maps/SunshineWoods/scripts.pory"
+# 212 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Come on, lil' guy.$"
 
 SunshineWoods_Eventscript_DirectionSign_Text_0:
-# 240 "data/maps/SunshineWoods/scripts.pory"
+# 246 "data/maps/SunshineWoods/scripts.pory"
 	.string "Sunshine Orphanage {UP_ARROW}\n"
 	.string "Sunshine Town {LEFT_ARROW}$"
 
 SunshineWoods_Eventscript_IkeBattle_Text_0:
-# 253 "data/maps/SunshineWoods/scripts.pory"
+# 259 "data/maps/SunshineWoods/scripts.pory"
 	.string "Ike$"
 
 SunshineWoods_Eventscript_HotaruBattle_Text_0:
-# 266 "data/maps/SunshineWoods/scripts.pory"
+# 272 "data/maps/SunshineWoods/scripts.pory"
 	.string "Hotaru$"
 
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage1_Text_0:
-# 298 "data/maps/SunshineWoods/scripts.pory"
+# 304 "data/maps/SunshineWoods/scripts.pory"
 	.string "Police Officer 1$"
 
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage1_Text_1:
-# 300 "data/maps/SunshineWoods/scripts.pory"
+# 306 "data/maps/SunshineWoods/scripts.pory"
 	.string "Who the hell would explode an\n"
 	.string "orphanage? Are they even human?$"
 
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage1_Text_2:
-# 303 "data/maps/SunshineWoods/scripts.pory"
+# 309 "data/maps/SunshineWoods/scripts.pory"
 	.string "Our apologies but Sunshine Orphanage\n"
 	.string "is currently off-limits.$"
 
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage2_Text_0:
-# 309 "data/maps/SunshineWoods/scripts.pory"
+# 315 "data/maps/SunshineWoods/scripts.pory"
 	.string "Police Officer 2$"
 
 SunshineWoods_Eventscript_PolicemenBlockingOrphanage2_Text_1:
-# 311 "data/maps/SunshineWoods/scripts.pory"
+# 317 "data/maps/SunshineWoods/scripts.pory"
 	.string "Maybe this is what Kurosawa-san was\n"
 	.string "talking about... If only the higher-ups\l"
 	.string "listened to him.$"
 
 SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_0:
-# 343 "data/maps/SunshineWoods/scripts.pory"
+# 349 "data/maps/SunshineWoods/scripts.pory"
 	.string "Man In Black 1$"
 
 SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_1:
-# 344 "data/maps/SunshineWoods/scripts.pory"
+# 350 "data/maps/SunshineWoods/scripts.pory"
 	.string "Keep your eyes peeled. One has silver\n"
 	.string "hair and the other wears a black-red\l"
 	.string "beanie.$"
 
 SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_2:
-# 347 "data/maps/SunshineWoods/scripts.pory"
+# 353 "data/maps/SunshineWoods/scripts.pory"
 	.string "Man In Black 2$"
 
 SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji_Text_3:
-# 348 "data/maps/SunshineWoods/scripts.pory"
+# 354 "data/maps/SunshineWoods/scripts.pory"
 	.string "You should cover the east. I'll search\n"
 	.string "the south.$"
 
 SunshineWoods_Eventscript_KGStaff1_Battle_Text_0:
 # 383 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_MIB}Wait, you're...$"
+	.string "{SPEAKER NAME_MIB}Wait, you're...!$"
 
 SunshineWoods_Eventscript_KGStaff1_Battle_Text_1:
 # 384 "data/maps/SunshineWoods/scripts.pory"
@@ -1408,65 +1447,71 @@ SunshineWoods_Eventscript_KGStaff1_Battle_Text_1:
 	.string "manager.$"
 
 SunshineWoods_Eventscript_KGStaff1_Battle_Text_2:
-# 417 "data/maps/SunshineWoods/scripts.pory"
+# 419 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Great teamwork, Inteleon.\p"
 	.string "Now let's check if he has any useful\n"
 	.string "information.$"
 
 SunshineWoods_Eventscript_KGStaff1_Battle_Text_3:
-# 432 "data/maps/SunshineWoods/scripts.pory"
+# 438 "data/maps/SunshineWoods/scripts.pory"
 	.string "Besides the Exp candies, there's also a\n"
-	.string "picture of a silver-haired boy.\p"
+	.string "picture of a silver-haired boy.$"
+
+SunshineWoods_Eventscript_KGStaff1_Battle_Text_4:
+# 440 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}So this is one of the boys they're\n"
 	.string "searching for?$"
 
-SunshineWoods_Eventscript_KGStaff1_Battle_Text_4:
-# 437 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_KGStaff1_Battle_Text_5:
+# 446 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}There's nothing else here, let's go,\n"
 	.string "Inteleon.$"
 
 SunshineWoods_Eventscript_KGStaff1_PostBattle_Text_0:
-# 459 "data/maps/SunshineWoods/scripts.pory"
+# 469 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(He's out cold. There's no further\n"
 	.string "information I can get out of him.)$"
 
 SunshineWoods_Eventscript_KGStaff2_Battle_Text_0:
-# 473 "data/maps/SunshineWoods/scripts.pory"
+# 476 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MIB}The Kirijo Young Lady?$"
 
 SunshineWoods_Eventscript_KGStaff2_Battle_Text_1:
-# 478 "data/maps/SunshineWoods/scripts.pory"
+# 481 "data/maps/SunshineWoods/scripts.pory"
 	.string "What are you doing here?$"
 
 SunshineWoods_Eventscript_KGStaff2_Battle_Text_2:
-# 522 "data/maps/SunshineWoods/scripts.pory"
+# 530 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Great job, Inteleon.\p"
 	.string "Now let's see...$"
 
 SunshineWoods_Eventscript_KGStaff2_Battle_Text_3:
-# 540 "data/maps/SunshineWoods/scripts.pory"
-	.string "Besides the Exp candies, there's also a\n"
+# 552 "data/maps/SunshineWoods/scripts.pory"
+	.string "In another pocket, there's also a\n"
 	.string "picture of a boy wearing black-red\l"
-	.string "beanie.\p"
+	.string "beanie.$"
+
+SunshineWoods_Eventscript_KGStaff2_Battle_Text_4:
+# 554 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Magnifique. Now I know how one of their\n"
 	.string "targets looks like.$"
 
-SunshineWoods_Eventscript_KGStaff2_Battle_Text_4:
-# 545 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_KGStaff2_Battle_Text_5:
+# 560 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}There's nothing else here, time to go.$"
 
 SunshineWoods_Eventscript_KGStaff2_PostBattle_Text_0:
-# 570 "data/maps/SunshineWoods/scripts.pory"
+# 586 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(He's fainted. Inteleon hit him a little\n"
 	.string "too hard but he should be fine.)$"
 
 SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_0:
-# 579 "data/maps/SunshineWoods/scripts.pory"
+# 595 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Let's check the men in black for\n"
 	.string "information.)$"
 
 SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_1:
-# 596 "data/maps/SunshineWoods/scripts.pory"
+# 612 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Can you go help the rescue at the\n"
 	.string "orphanage, Inteleon?\p"
 	.string "Don't worry about me, I'll just go back\n"
@@ -1475,42 +1520,42 @@ SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_1:
 	.string "interested in.$"
 
 SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_2:
-# 601 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon doesn't look like it agrees.)\p"
+# 617 "data/maps/SunshineWoods/scripts.pory"
+	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon shaked its head.)\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}Sigh... Then how about after I get to\n"
 	.string "the house safely?\p"
 	.string "I promise I'll stay there until you\n"
 	.string "return.$"
 
 SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_3:
-# 607 "data/maps/SunshineWoods/scripts.pory"
+# 623 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon reluctantly agreed.)\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}C'est magnifique. Let's move out.$"
 
 SunshineWoods_Text_IkeIntro::
-# 271 "data/maps/SunshineWoods/scripts.pory"
+# 277 "data/maps/SunshineWoods/scripts.pory"
 	.string "Hey! If you have a Pokémon, let's\n"
 	.string "battle!$"
 
 SunshineWoods_Text_IkeDefeated::
-# 276 "data/maps/SunshineWoods/scripts.pory"
+# 282 "data/maps/SunshineWoods/scripts.pory"
 	.string "Woah! You're quite good!$"
 
 SunshineWoods_Text_IkePostBattle::
-# 280 "data/maps/SunshineWoods/scripts.pory"
+# 286 "data/maps/SunshineWoods/scripts.pory"
 	.string "Your Pokémon looks... kinda different.$"
 
 SunshineWoods_Text_HotaruIntro::
-# 284 "data/maps/SunshineWoods/scripts.pory"
+# 290 "data/maps/SunshineWoods/scripts.pory"
 	.string "I have cute Pokémon!$"
 
 SunshineWoods_Text_HotaruDefeated::
-# 288 "data/maps/SunshineWoods/scripts.pory"
+# 294 "data/maps/SunshineWoods/scripts.pory"
 	.string "They'll look even cuter when evolved. I\n"
 	.string "even have them hold Soothe Bells!$"
 
 SunshineWoods_Text_HotaruPostBattle::
-# 292 "data/maps/SunshineWoods/scripts.pory"
+# 298 "data/maps/SunshineWoods/scripts.pory"
 	.string "You want to know where I got the items?\p"
 	.string "A grandma in Sunshine Town gave them to\n"
 	.string "me after I played with her Pokémon.$"

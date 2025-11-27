@@ -69,6 +69,8 @@
 #include "constants/field_mugshots.h"
 #include "constants/quests.h"
 #include "constants/new_shop.h"
+#include "constants/mugshots.h"
+
 	.include "asm/macros.inc"
 	.include "asm/macros/event.inc"
 	.include "constants/constants.inc"

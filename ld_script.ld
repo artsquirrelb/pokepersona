@@ -342,6 +342,7 @@ SECTIONS {
         src/ui_main_menu.o(.text);
         src/quests.o(.text);
         src/ui_stat_editor.o(.text);
+        src/mugshot.o(.text);
     } > ROM =0
 
 
@@ -708,6 +709,7 @@ SECTIONS {
         src/ui_main_menu.o(.rodata);
         src/quests.o(.rodata);
         src/ui_stat_editor.o(.rodata);
+        src/mugshot.o(.rodata);
     } > ROM =0
 
     song_data :

@@ -2210,7 +2210,6 @@
 	special CreateEnemyEventMon
 	.endm
 
-
 	@ example_usage:
 	@ 	createfieldmugshot MUGSHOT_TEST, EMOTE_NORMAL
 	@ 	msgbox test

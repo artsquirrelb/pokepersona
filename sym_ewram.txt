@@ -49,6 +49,7 @@
 	.include "src/sound.o"
 	.include "src/battle_anim.o"
 	.include "src/battle_anim_mons.o"
+	
 
 	.space 0xC
 	.include "src/field_weather.o"
@@ -153,3 +154,4 @@
 	.include "src/field_mugshot.o"
 	.include "src/quests.o"
 	.include "src/ui_stat_editor.o"
+	.include "src/mugshot.o"

@@ -617,6 +617,7 @@ gSongTable::
 	song mus_p5_run_run_run, 0, 0
 	song mus_p5_mental_breakdown, 0, 0
 	song mus_p3_calamity, 0, 0
+	song mus_p3r_fearful_experience, 0, 0
 
 	.align 2
 dummy_song_header:

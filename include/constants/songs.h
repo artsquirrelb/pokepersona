@@ -551,8 +551,9 @@
 #define MUS_P5_RUN_RUN_RUN             613
 #define MUS_P5_MENTAL_BREAKDOWN        614
 #define MUS_P3_CALAMITY                615
+#define MUS_P3R_FEARFUL_EXPERIENCE     616
 
-#define END_MUS                     MUS_P3_CALAMITY
+#define END_MUS                     MUS_P3R_FEARFUL_EXPERIENCE
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

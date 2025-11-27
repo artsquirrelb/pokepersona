@@ -1249,6 +1249,8 @@ SECTIONS {
         sound/songs/midi/mus_p5_run_run_run.o(.rodata);
         sound/songs/midi/mus_p5_mental_breakdown.o(.rodata);
         sound/songs/midi/mus_p3_calamity.o(.rodata);
+        sound/songs/midi/mus_p3r_fearful_experience.o(.rodata);
+
     } > ROM =0
 
     lib_rodata :

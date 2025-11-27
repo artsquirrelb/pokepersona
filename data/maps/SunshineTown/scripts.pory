@@ -28,19 +28,19 @@ mapscripts SunshineTown_MapScripts {
         }
         if (var(VAR_MITSURUS_INTRO_STATE) != 20){
             setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_5)
         }
-        if(var(VAR_MITSURUS_INTRO_STATE) == 20){
+        if(var(VAR_MITSURUS_INTRO_STATE) >= 20){
             setflag(FLAG_TEMP_4)
+            setflag(FLAG_TEMP_5)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) == 19 || var(VAR_MITSURUS_INTRO_STATE) == 20 ){
+        if (var(VAR_MITSURUS_INTRO_STATE) >= 18 && var(VAR_MITSURUS_INTRO_STATE) <= 21 ){
             setobjectxyperm(3, 13, 6)
             setobjectmovementtype(3, MOVEMENT_TYPE_FACE_LEFT)
             setobjectxyperm(24, 14, 7)
             setobjectmovementtype(24, MOVEMENT_TYPE_FACE_LEFT)
-            setobjectxyperm(22, 31, 16)
-            setobjectmovementtype(22, MOVEMENT_TYPE_FACE_DOWN)
-            setobjectxyperm(23, 31, 17)
-            setobjectmovementtype(23, MOVEMENT_TYPE_FACE_UP)
+            setobjectmovementtype(2, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
+            setobjectmovementtype(5, MOVEMENT_TYPE_FACE_DOWN)
             setobjectxyperm(1, 8, 4)
             setobjectmovementtype(1, MOVEMENT_TYPE_FACE_DOWN)
         }
@@ -169,10 +169,16 @@ script SunshineTown_Eventscript_Boy {
         {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}The orphanage!"))
         setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
     }
+    if (var(VAR_MITSURUS_INTRO_STATE) >= 18 && var(VAR_MITSURUS_INTRO_STATE) <= 21){
+        msgbox(format("My brother is a fire fighter and he's at the burning orphanage right now.\p
+        I'm so worried I can't stay still, I hope there's not many casualties.\p
+        If only I had a Pokémon that can deal with fire to help but I only have a Poltchageist."))
+    }
     else {
-        msgbox(format("One of the richest families in the region lived on this island.\p
+        msgbox(format("One of the richest families in the region lives on this island.\p
     I heard their mansion was at the south end of Route 1."))
     }
+    closemessage
     release
 }
 
@@ -270,7 +276,7 @@ script SunshineTown_Eventscript_WarpToBurningOrphanage2 {
 
 script SunshineTown_Eventscript_OW_Happiny{
     lockall
-    if (var(VAR_AKIHIKOS_INTRO_STATE) < 24){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) < 24 || (var(VAR_MITSURUS_INTRO_STATE) >= 18 && var(VAR_MITSURUS_INTRO_STATE) <= 21)){
         msgbox(format("The Happiny is looking through the door. It won't budge no matter what."))
         closemessage
         releaseall
@@ -373,7 +379,24 @@ script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfAct
 }
 
 script SunshineTown_Eventscript_ExpertF_PreQuest {
-    msgbox("Where did I put my key again...?")
+    if (var(VAR_MITSURUS_INTRO_STATE) >= 18 && var(VAR_MITSURUS_INTRO_STATE) <= 21){
+        faceplayer
+        msgbox(format("I lent my Lucario to the police to help them with the rescue.\p
+        The Riolus are still too young and I have to keep them safe here."))
+        closemessage
+        release
+        end
+    }
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18){
+        faceplayer
+        msgbox(format("Did you hear a loud sound or was it because of my ears acting up again?"))
+        closemessage
+        release
+        end
+    }
+    else{
+        msgbox("Where did I put my key again...?")
+    }
     closemessage
     release
     end
@@ -430,12 +453,12 @@ script makecharagrayout{
 }
 
 script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
-    lockall
+    lock
     applymovement(LOCALID_PLAYER, moves(player_run_right*3, walk_right*2, emote_exclamation_mark))
-    delay(48)
-    applymovement(3, moves(walk_fast_left*13))
-    delay(4)
+    delay(36)
     applymovement(24, moves(walk_fast_left*13))
+    delay(4)
+    applymovement(3, moves(walk_fast_left*13))
     delay(20)
     applymovement(LOCALID_PLAYER, moves(face_down, lock_facing_direction, walk_fast_up, unlock_facing_direction, delay_16, face_left))
     waitmovement
@@ -447,6 +470,8 @@ script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
     (Not to mention, if I remember correctly, the nearest station is in the opposite direction of Sunshine Town.)"))
     closemessage
     delay(20)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    fadenewbgm(MUS_DUMMY)
     playse(SE_SLIDING_DOOR)
     waitse
     special(SpawnCameraObject)
@@ -460,11 +485,9 @@ script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
     closemessage
     applymovement(1, faceleft)
     waitmovement
-    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     setspeaker("Kojima")
-    msgbox(format("There was an explosion at the orphanage west of town, didn't you hear?"), MSGBOX_AUTOCLOSE)
-    fadenewbgm(MUS_P3_CALAMITY)
-    setspeaker("Kojima")
+    msgbox(format("There was an explosion at the orphanage east of town, didn't you hear?"))
+    playbgm(MUS_P3_CALAMITY, TRUE)
     msgbox(format("Lots of people were injured and the town people are trying to help.\p
     Now excuse me, I gotta bring these medicines to the injured."))
     closemessage
@@ -482,6 +505,80 @@ script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
     setvar(VAR_MITSURUS_INTRO_STATE, 20)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     call(Eventscript_CutsceneEnds)
+    clearflag(FLAG_TEMP_3)
+    addobject(22)
+    addobject(23)
+    applymovement(22, invisible)
+    waitmovement
     releaseall
     end
+}
+
+script SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger18 {
+    lock
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, face_right, delay_16, delay_8, player_run_left, player_run_up, face_left))
+    waitmovement
+    applymovement(OBJ_EVENT_ID_FOLLOWER, moves(walk_left, walk_up, face_right))
+    waitmovement
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right, walk_diag_southeast))
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    goto(SunshineTown_Eventscript_KGStaffAtWoodsEntrance)
+}
+
+script SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger19 {
+    lock
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, face_right, delay_16, delay_8, player_run_left, player_run_up*2, face_left))
+    waitmovement
+    applymovement(OBJ_EVENT_ID_FOLLOWER, moves(walk_left, walk_up, face_right))
+    waitmovement
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right, walk_diag_southeast))
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    goto(SunshineTown_Eventscript_KGStaffAtWoodsEntrance)
+}
+
+script SunshineTown_Eventscript_KGStaffAtWoodsEntrance {
+    delay(20)
+    playse(SE_EXIT)
+    clearflag(FLAG_TEMP_5)
+    addobject(22, MAP_SUNSHINE_TOWN)
+    delay(20)
+    applymovement(22, walkinplacedown)
+    waitmovement
+    setspeaker("Man In Black 1")
+    msgbox(format("Have you seen those boys?"))
+    applymovement(23, walkinplaceup)
+    waitmovement
+    setspeaker("Man In Black 2")
+    msgbox(format("No, I've been standing here the whole time but I didn't see them.\p
+    This is the only exit to safety. Where could they be?"))
+    applymovement(22, walkinplacedown)
+    waitmovement
+    setspeaker("Man In Black 1")
+    msgbox(format("Maybe they're still in the woods?\p
+    Let's go search for them."))
+    closemessage
+    delay(20)
+    applymovement(22, moves(face_right, delay_8, set_invisible))
+    waitmovement
+    playse(SE_EXIT)
+    delay(4)
+    applymovement(23, moves(face_right, delay_8, set_invisible))
+    waitmovement
+    playse(SE_EXIT)
+    delay(20)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left, walk_diag_northwest))
+    waitmovement
+    special(RemoveCameraObject)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(They're searching for some boys... Ones of the orphan kids, perhaps?)\p
+    (I should tail them and see what they're up to.)"))
+    closemessage
+    removeobject(22)
+    removeobject(23)
+    setflag(FLAG_TEMP_3)
+    setvar(VAR_MITSURUS_INTRO_STATE, 21)
+    release
 }

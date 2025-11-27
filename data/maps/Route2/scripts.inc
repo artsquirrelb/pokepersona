@@ -249,7 +249,7 @@ Route2_Eventscript_AkishinjiGettingBlockedBySusMen::
 # 106 "data/maps/Route2/scripts.pory"
 	delay 30
 # 107 "data/maps/Route2/scripts.pory"
-	playbgm MUS_P5_MENTAL_BREAKDOWN, TRUE
+	playbgm MUS_P3R_FEARFUL_EXPERIENCE, TRUE
 # 108 "data/maps/Route2/scripts.pory"
 	setspeaker Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_1
 # 109 "data/maps/Route2/scripts.pory"
@@ -389,7 +389,7 @@ Route2_Eventscript_StartBattleWithSusMen::
 # 179 "data/maps/Route2/scripts.pory"
 	closemessage
 # 180 "data/maps/Route2/scripts.pory"
-	trainerbattle_no_intro TRAINER_GRUNT_ROUTE2, SusMenFightDefeated
+	trainerbattle_no_intro TRAINER_KG_STAFF_ROUTE2, SusMenFightDefeated
 # 181 "data/maps/Route2/scripts.pory"
 	goto Route2_Eventscript_PostBattleWithSusMen
 # 182 "data/maps/Route2/scripts.pory"

@@ -32,6 +32,14 @@ mapscripts MansionsGarden_MapScripts {
             setobjectxyperm(INDEEDEE_F, 38, 23)
             setobjectmovementtype(INDEEDEE_F, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
         }
+        if (var(VAR_MITSURUS_INTRO_STATE) == 4){
+            setobjectxyperm(KIKUNO, 38, 20)
+            setobjectnewmovementtype(KIKUNO, MOVEMENT_TYPE_FACE_RIGHT)
+            setobjectxyperm(INDEEDEE_F, 38, 21)
+            setobjectnewmovementtype(INDEEDEE_F, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+            setobjectxyperm(FENNEKIN, 39, 21)
+            setobjectnewmovementtype(FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+        }
         if (var(VAR_MITSURUS_INTRO_STATE) == 5) {
             setflag(FLAG_TEMP_2)
             setobjectxyperm(KIKUNO, 44, 18)
@@ -98,6 +106,7 @@ script MansionsGarden_Eventscript_SlowlyShowTheMap {
 
 
 script MansionsGarden_Eventscript_KikunoVSFennekin {
+    setflag(FLAG_HIDE_TALK_BUTTON)
     delay(20)
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*2))

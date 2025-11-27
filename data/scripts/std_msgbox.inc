@@ -14,7 +14,7 @@ Std_MsgboxSign:
 	waitmessage
 	waitbuttonpress
 	releaseall
-	clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
+	//clearflag FLAG_SAFE_FOLLOWER_MOVEMENT
 	return
 
 Std_MsgboxDefault:

@@ -40,9 +40,11 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     closemessage
     applymovement(7, walkleft)
     waitmovement
+    setspeaker("Rock-loving Big Man?")
     msgbox(format("Here, your can have this. I got it from mining the rock just now."))
     closemessage
     giveitem(ITEM_PEARL)
+    setspeaker("Rock-loving Big Man?")
     msgbox(format("I'd love to give you a tools to mine rocks on your own.\p
     Unfortunately I only have this old mining kit with me and it's my lucky charm.\p
     If you visit my house in Coralport I can give you a new one."))

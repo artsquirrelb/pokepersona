@@ -51,7 +51,7 @@ script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff1 {
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, delay_16, delay_16, player_run_right*2, face_left))
     waitmovement
     delay(30)
-    fadenewbgm(MUS_P5_MENTAL_BREAKDOWN)
+    fadenewbgm(MUS_P3R_FEARFUL_EXPERIENCE)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     goto(ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff)
     release
@@ -65,7 +65,7 @@ script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff2 {
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, delay_16, delay_16, player_run_right, face_left))
     waitmovement
     delay(30)
-    fadenewbgm(MUS_P5_MENTAL_BREAKDOWN)
+    fadenewbgm(MUS_P3R_FEARFUL_EXPERIENCE)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     goto(ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff)
     release
@@ -77,6 +77,7 @@ movement walkinplaceleft {
 
 script ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff {
     lock
+    setflag(FLAG_HIDE_TALK_BUTTON)
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
     waitmovement(0)

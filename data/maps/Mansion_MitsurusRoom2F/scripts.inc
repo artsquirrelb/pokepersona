@@ -376,10 +376,12 @@ Mansion_MitsurusRoom2F_Eventscript_Piano::
 # 210 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	compare VAR_TEMP_0, 0
 	goto_if_eq Mansion_MitsurusRoom2F_Eventscript_Piano_2
-# 225 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 226 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_Piano_Text_2
 Mansion_MitsurusRoom2F_Eventscript_Piano_1:
-# 227 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 228 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	clearflag FLAG_HIDE_TALK_BUTTON
+# 229 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	release
 	return
 
@@ -395,54 +397,56 @@ Mansion_MitsurusRoom2F_Eventscript_Piano_2:
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_5:
 # 215 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	playbgm MUS_XC2_GARFONT_MERCERNARIES_NIGHT, FALSE
+	setflag FLAG_HIDE_TALK_BUTTON
 # 216 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	delay 1800
+	playbgm MUS_XC2_GARFONT_MERCERNARIES_NIGHT, FALSE
 # 217 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	fadenewbgm MUS_XC2_TORIGOTH_NIGHT
+	delay 1800
 # 218 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	savebgm MUS_XC2_TORIGOTH_NIGHT
+	fadenewbgm MUS_XC2_TORIGOTH_NIGHT
 # 219 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox Mansion_MitsurusRoom2F_Eventscript_Piano_Text_1
+	savebgm MUS_XC2_TORIGOTH_NIGHT
 # 220 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	closemessage
+	msgbox Mansion_MitsurusRoom2F_Eventscript_Piano_Text_1
 # 221 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	closemessage
+# 222 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	setvar VAR_TEMP_0, 1
 	goto Mansion_MitsurusRoom2F_Eventscript_Piano_1
 
 
 Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft::
-# 231 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 234 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	lock
-# 232 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft_Text_0
 # 235 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	msgbox Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft_Text_0
+# 238 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
-# 236 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 239 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	release
 	end
 
 
 Mansion_MitsurusRoom2F_Eventscript_BookshelfRight::
-# 241 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	lock
-# 242 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	msgbox Mansion_MitsurusRoom2F_Eventscript_BookshelfRight_Text_0
-# 243 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	closemessage
 # 244 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	lock
+# 245 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	msgbox Mansion_MitsurusRoom2F_Eventscript_BookshelfRight_Text_0
+# 246 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	closemessage
+# 247 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	release
 	end
 
 
 Mansion_MitsurusRoom2F_Eventscript_Notebooks::
-# 249 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 252 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	lock
-# 250 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 253 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	msgbox Mansion_MitsurusRoom2F_Eventscript_Notebooks_Text_0
-# 254 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 257 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	closemessage
-# 255 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 258 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	release
 	return
 
@@ -613,15 +617,15 @@ Mansion_MitsurusRoom2F_Eventscript_Piano_Text_0:
 	.string "seconds.)$"
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_Text_1:
-# 219 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 220 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(It's time to go.)$"
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_Text_2:
-# 225 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 226 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I really need to get going.)$"
 
 Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft_Text_0:
-# 232 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 235 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "Documents about various big companies\n"
 	.string "in Kitoha region.\p"
 	.string "Eleki Express's is circled in red. Beside\n"
@@ -630,13 +634,13 @@ Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft_Text_0:
 	.string "They seem to be in a mountain area.$"
 
 Mansion_MitsurusRoom2F_Eventscript_BookshelfRight_Text_0:
-# 242 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 245 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "Various books about human's and\n"
 	.string "Pokémon's biology, geology and\l"
 	.string "genealogy.$"
 
 Mansion_MitsurusRoom2F_Eventscript_Notebooks_Text_0:
-# 250 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+# 253 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "College materials from the previous\n"
 	.string "term.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Luckily, it's summer break right now.\p"

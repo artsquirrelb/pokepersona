@@ -1249,7 +1249,7 @@ SunshineMeadow_Eventscript_MitsuruLookingOverCollapsedCave::
 # 708 "data/maps/SunshineMeadow/scripts.pory"
 	setflag FLAG_TEMP_1
 # 709 "data/maps/SunshineMeadow/scripts.pory"
-	call Eventscript_CutsceneEnds
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
 # 710 "data/maps/SunshineMeadow/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 711 "data/maps/SunshineMeadow/scripts.pory"
@@ -1259,6 +1259,8 @@ SunshineMeadow_Eventscript_MitsuruLookingOverCollapsedCave::
 # 713 "data/maps/SunshineMeadow/scripts.pory"
 	special ShowMapNamePopup
 # 714 "data/maps/SunshineMeadow/scripts.pory"
+	clearflag FLAG_HIDE_TALK_BUTTON
+# 715 "data/maps/SunshineMeadow/scripts.pory"
 	release
 	end
 

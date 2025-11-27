@@ -183,55 +183,43 @@ SPECIES_BUIZEL
 Level: 11
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-=== TRAINER_GRUNT_SEAFLOOR_CAVERN_3 ===
-Name: GRUNT
-Class: Team Magma
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Zubat
-Level: 36
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
-
-=== TRAINER_GABRIELLE_1 ===
-Name: GABRIELLE
-Class: Pkmn Breeder
-Pic: Pokemon Breeder F
+=== TRAINER_HOTARU_2 ===
+Name: Hotaru
+Class: Lass
+Pic: Lass
 Gender: Female
 Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Skitty
-Level: 26
+Azurill
+Level: 9
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Poochyena
-Level: 26
+Pichu
+Level: 9
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Zigzagoon
-Level: 26
+=== TRAINER_IKE_2 ===
+Name: Ike
+Class: Bug Catcher
+Pic: Bug Catcher
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move
+
+Beedrill
+Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Lotad
-Level: 26
+SPECIES_CHEWTLE
+Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Seedot
-Level: 26
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
-
-Taillow
-Level: 26
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
-
-=== TRAINER_GRUNT_ROUTE2 ===
-Name: GRUNT
-Class: Team Magma
+=== TRAINER_KG_STAFF_ROUTE2 ===
+Name: Riki
+Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
@@ -327,35 +315,47 @@ Smoliv
 Level: 12
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-=== TRAINER_GRUNT_RUSTURF_TUNNEL ===
-Name: GRUNT
-Class: Team Magma
+=== TRAINER_KG_STAFF_SUNSHINE_WOODS_1 ===
+Name: Dango
+Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Poochyena
-Level: 11
+Meditite
+Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-=== TRAINER_GRUNT_WEATHER_INST_1 ===
-Name: GRUNT
-Class: Team Magma
+Jynx
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+=== TRAINER_KG_STAFF_SUNSHINE_WOODS_2 ===
+Name: Magane
+Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Check Bad Move
 
-Zubat
-Level: 27
+Abra
+Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Confusion
+- Round
+- Light Screen
+- Shock Wave
 
-Poochyena
-Level: 27
+Inkay
+Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Psybeam
+- Disable
+- Fake Tears
+- Round
 
 === TRAINER_GRUNT_WEATHER_INST_2 ===
 Name: GRUNT

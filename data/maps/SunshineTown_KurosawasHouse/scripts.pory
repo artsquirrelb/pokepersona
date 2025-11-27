@@ -10,6 +10,9 @@ mapscripts SunshineTown_KurosawasHouse_MapScripts {
         if (var(VAR_AKIHIKOS_INTRO_STATE) >= 24){
             setflag(FLAG_TEMP_1)
         }
+        if (var(VAR_MITSURUS_INTRO_STATE) <=50){
+            setflag(FLAG_TEMP_2)
+        }
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 23: SunshineTown_KurosawasHouse_OnFrame23

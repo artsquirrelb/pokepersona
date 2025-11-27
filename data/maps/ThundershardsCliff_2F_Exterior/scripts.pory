@@ -68,8 +68,7 @@ script ThundershardsCliff_2F_Exterior_Eventscript_MitsuruApproaching_CaveEntranc
 script ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave {
     lock
     setflag(FLAG_HIDE_TALK_BUTTON)
-    fadenewbgm(MUS_P5_MENTAL_BREAKDOWN)
-    setflag(FLAG_DONT_TRANSITION_MUSIC)
+    fadenewbgm(MUS_P3R_FEARFUL_EXPERIENCE)
     delay(20)
     clearflag(FLAG_TEMP_1)
     addobject(8)
@@ -92,6 +91,8 @@ script ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave {
     And you're not going anywhere either.\p
     Let's go, {STR_VAR_1}."))
     closemessage
+    playbgm(MUS_P5_MENTAL_BREAKDOWN, FALSE)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
     trainerbattle_no_intro(TRAINER_KG_STAFF_SCIENTIST_THUNDERSHARDS_CAVE_2F_EXTERIOR, KGScientist_Defeated)
     goto(ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat)
 }

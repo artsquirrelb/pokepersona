@@ -1602,6 +1602,8 @@ bool8 ScrCmd_lockall(struct ScriptContext *ctx)
     }
     else
     {
+        FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
+        FlagSet(FLAG_HIDE_TALK_BUTTON);
         struct ObjectEvent *followerObj = GetFollowerObject();
         FreezeObjects_WaitForPlayer();
         SetupNativeScript(ctx, IsFreezePlayerFinished);
@@ -1622,7 +1624,9 @@ bool8 ScrCmd_lock(struct ScriptContext *ctx)
         return FALSE;
     }
     else
-    {
+    {   
+        FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
+        FlagSet(FLAG_HIDE_TALK_BUTTON);
         struct ObjectEvent *followerObj = GetFollowerObject();
         if (gObjectEvents[gSelectedObjectEvent].active)
         {

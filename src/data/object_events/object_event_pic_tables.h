@@ -473,6 +473,10 @@ static const struct SpriteFrameImage sPicTable_AquaMemberF[] = {
     overworld_ascending_frames(gObjectEventPic_AquaMemberF, 4, 4),
 };
 
+static const struct SpriteFrameImage sPicTable_KGStaffM_Fainted[] = {
+    overworld_ascending_frames(gObjectEventPic_KGStaffM_Fainted, 4, 4),
+};
+
 static const struct SpriteFrameImage sPicTable_MagmaMemberM[] = {
     overworld_ascending_frames(gObjectEventPic_MagmaMemberM, 2, 4),
 };
@@ -1421,6 +1425,14 @@ const struct SpriteFrameImage gObjectEventPicTable_Miki[] = {
 };
 
 const struct SpriteFrameImage gObjectEventPicTable_Frozen[] = {
+    overworld_frame(gObjectEventPic_Frozen, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Frozen, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Frozen, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Frozen, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Frozen, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Frozen, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Frozen, 4, 4, 0),
+    overworld_frame(gObjectEventPic_Frozen, 4, 4, 0),
     overworld_frame(gObjectEventPic_Frozen, 4, 4, 0),
 };
 

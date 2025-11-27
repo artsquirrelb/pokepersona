@@ -104,7 +104,7 @@ script Route2_Eventscript_AkishinjiGettingBlockedBySusMen {
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_STRUGGLED}What the hell??"))
     closemessage
     delay(30)
-    playbgm(MUS_P5_MENTAL_BREAKDOWN, TRUE)
+    playbgm(MUS_P3R_FEARFUL_EXPERIENCE, TRUE)
     setspeaker("Man In Black 1")
     applymovement(4, walkinplaceright)
     waitmovement(0)
@@ -177,7 +177,7 @@ script Route2_Eventscript_StartBattleWithSusMen {
     setflag(FLAG_NO_WHITEOUT)
     msgbox(SusMenFightIntro)
     closemessage
-    trainerbattle_no_intro(TRAINER_GRUNT_ROUTE2, SusMenFightDefeated)
+    trainerbattle_no_intro(TRAINER_KG_STAFF_ROUTE2, SusMenFightDefeated)
     goto(Route2_Eventscript_PostBattleWithSusMen)
     release
     end

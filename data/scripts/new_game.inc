@@ -276,4 +276,5 @@ EventScript_ResetAllMapFlags::
 	@ More set up
 	call EventScript_NewGameSetUp
 	call EventScript_ResetAllBerries
-	end
+	
+	

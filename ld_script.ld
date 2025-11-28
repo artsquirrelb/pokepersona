@@ -1252,6 +1252,7 @@ SECTIONS {
         sound/songs/midi/mus_p5_mental_breakdown.o(.rodata);
         sound/songs/midi/mus_p3_calamity.o(.rodata);
         sound/songs/midi/mus_p3r_fearful_experience.o(.rodata);
+        sound/songs/midi/mus_p3fes_iwatodai_dorm.o(.rodata);
 
     } > ROM =0
 

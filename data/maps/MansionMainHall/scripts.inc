@@ -39,508 +39,514 @@ MansionMainHall_Eventscript_OnFrame2::
 
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru::
 # 20 "data/maps/MansionMainHall/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 3
+	lock
 # 21 "data/maps/MansionMainHall/scripts.pory"
-	delay 10
+	setvar VAR_MITSURUS_INTRO_STATE, 3
 # 22 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_0
+	delay 10
 # 23 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_0
 # 24 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_0
+	waitmovement 0
 # 25 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
+	msgbox MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_0
 # 26 "data/maps/MansionMainHall/scripts.pory"
-	playse SE_PIN
+	closemessage
 # 27 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, emoteexclamation
+	playse SE_PIN
 # 28 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, emoteexclamation
 # 29 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, faceleft
+	waitmovement 0
 # 30 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_TAKEHARU, MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_1
+	applymovement LOCALID_PLAYER, faceleft
 # 31 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_INTELEON, MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_2
+	applymovement LOCALID_TAKEHARU, MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_1
 # 32 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_INTELEON, MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_2
 # 33 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
+# 34 "data/maps/MansionMainHall/scripts.pory"
 	msgbox MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_1
-# 44 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
 # 45 "data/maps/MansionMainHall/scripts.pory"
-	delay 20
+	closemessage
 # 46 "data/maps/MansionMainHall/scripts.pory"
-	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
+	delay 20
 # 47 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_INTELEON, walkinplaceright
-# 48 "data/maps/MansionMainHall/scripts.pory"
-	waitmoncry
-# 49 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
-# 50 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_2
-# 52 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
-# 53 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_TAKEHARU, faceup
-# 54 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_INTELEON, facedown
-# 55 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
-# 56 "data/maps/MansionMainHall/scripts.pory"
-	delay 60
-# 57 "data/maps/MansionMainHall/scripts.pory"
 	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 58 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_INTELEON, walkinplacedown
-# 59 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
-# 60 "data/maps/MansionMainHall/scripts.pory"
+# 48 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_INTELEON, walkinplaceright
+# 49 "data/maps/MansionMainHall/scripts.pory"
 	waitmoncry
+# 50 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
+# 51 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_2
+# 53 "data/maps/MansionMainHall/scripts.pory"
+	closemessage
+# 54 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_TAKEHARU, faceup
+# 55 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_INTELEON, facedown
+# 56 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
+# 57 "data/maps/MansionMainHall/scripts.pory"
+	delay 60
+# 58 "data/maps/MansionMainHall/scripts.pory"
+	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
+# 59 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_INTELEON, walkinplacedown
+# 60 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
 # 61 "data/maps/MansionMainHall/scripts.pory"
-	delay 30
+	waitmoncry
 # 62 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_INTELEON, MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_3
+	delay 30
 # 63 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_TAKEHARU, faceright
+	applymovement LOCALID_INTELEON, MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_3
 # 64 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_TAKEHARU, faceright
 # 65 "data/maps/MansionMainHall/scripts.pory"
-	delay 30
-# 66 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_3
-# 70 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
-# 71 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_INTELEON, MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_4
-# 72 "data/maps/MansionMainHall/scripts.pory"
 	waitmovement 0
-# 73 "data/maps/MansionMainHall/scripts.pory"
-	removeobject LOCALID_INTELEON
-# 74 "data/maps/MansionMainHall/scripts.pory"
-	setflag FLAG_TEMP_1
-# 75 "data/maps/MansionMainHall/scripts.pory"
+# 66 "data/maps/MansionMainHall/scripts.pory"
 	delay 30
-# 76 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_4
-# 79 "data/maps/MansionMainHall/scripts.pory"
+# 67 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_3
+# 71 "data/maps/MansionMainHall/scripts.pory"
 	closemessage
-# 80 "data/maps/MansionMainHall/scripts.pory"
-	setflag FLAG_HIDE_MAP_NAME_POPUP
-# 81 "data/maps/MansionMainHall/scripts.pory"
-	setflag FLAG_COMPANION_MENU
+# 72 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_INTELEON, MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_4
+# 73 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
+# 74 "data/maps/MansionMainHall/scripts.pory"
+	removeobject LOCALID_INTELEON
+# 75 "data/maps/MansionMainHall/scripts.pory"
+	setflag FLAG_TEMP_1
+# 76 "data/maps/MansionMainHall/scripts.pory"
+	delay 30
+# 77 "data/maps/MansionMainHall/scripts.pory"
+	playfanfare MUS_OBTAIN_TMHM
+# 78 "data/maps/MansionMainHall/scripts.pory"
+	waitfanfare
+# 79 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_4
 # 82 "data/maps/MansionMainHall/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
+	closemessage
 # 83 "data/maps/MansionMainHall/scripts.pory"
-	unlockcharacter CHARACTER_INTELEON_T
+	setflag FLAG_HIDE_MAP_NAME_POPUP
 # 84 "data/maps/MansionMainHall/scripts.pory"
-	makecharaAvailable CHARACTER_INTELEON_T
+	setflag FLAG_COMPANION_MENU
 # 85 "data/maps/MansionMainHall/scripts.pory"
-	release
+	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 86 "data/maps/MansionMainHall/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	unlockcharacter CHARACTER_INTELEON_T
+# 87 "data/maps/MansionMainHall/scripts.pory"
+	makecharaAvailable CHARACTER_INTELEON_T
+# 88 "data/maps/MansionMainHall/scripts.pory"
+	fwdtime 22, 45
+# 89 "data/maps/MansionMainHall/scripts.pory"
+	release
 	end
 
 
 MansionMainHall_Eventscript_Takeharu::
-# 91 "data/maps/MansionMainHall/scripts.pory"
+# 94 "data/maps/MansionMainHall/scripts.pory"
 	lock
-# 92 "data/maps/MansionMainHall/scripts.pory"
+# 95 "data/maps/MansionMainHall/scripts.pory"
 	faceplayer
-# 93 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_Takeharu_Text_0
 # 96 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_Takeharu_Text_0
+# 99 "data/maps/MansionMainHall/scripts.pory"
 	closemessage
-# 97 "data/maps/MansionMainHall/scripts.pory"
+# 100 "data/maps/MansionMainHall/scripts.pory"
 	release
-	return
+	end
 
 
 MansionMainHall_Eventscript_Butler::
-# 101 "data/maps/MansionMainHall/scripts.pory"
+# 105 "data/maps/MansionMainHall/scripts.pory"
 	lock
-# 102 "data/maps/MansionMainHall/scripts.pory"
+# 106 "data/maps/MansionMainHall/scripts.pory"
 	faceplayer
-# 103 "data/maps/MansionMainHall/scripts.pory"
+# 107 "data/maps/MansionMainHall/scripts.pory"
 	setspeaker MansionMainHall_Eventscript_Butler_Text_0
-# 104 "data/maps/MansionMainHall/scripts.pory"
+# 108 "data/maps/MansionMainHall/scripts.pory"
 	compare VAR_TEMP_0, 0
 	goto_if_eq MansionMainHall_Eventscript_Butler_2
-# 124 "data/maps/MansionMainHall/scripts.pory"
+# 128 "data/maps/MansionMainHall/scripts.pory"
 	msgbox MansionMainHall_Eventscript_Butler_Text_4
-# 127 "data/maps/MansionMainHall/scripts.pory"
+# 131 "data/maps/MansionMainHall/scripts.pory"
 	closemessage
 MansionMainHall_Eventscript_Butler_1:
-# 129 "data/maps/MansionMainHall/scripts.pory"
+# 133 "data/maps/MansionMainHall/scripts.pory"
 	release
 	end
 
 MansionMainHall_Eventscript_Butler_2:
-# 105 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_Butler_Text_1
-# 107 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
-# 108 "data/maps/MansionMainHall/scripts.pory"
-	playse SE_FAINT
 # 109 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_BUTLER, MansionMainHall_Eventscript_Butler_Movement_0
-# 110 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
+	msgbox MansionMainHall_Eventscript_Butler_Text_1
 # 111 "data/maps/MansionMainHall/scripts.pory"
-	waitse
-# 112 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_Butler_Text_2
-# 113 "data/maps/MansionMainHall/scripts.pory"
-	setspeaker MansionMainHall_Eventscript_Butler_Text_0
-# 114 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_Butler_Text_3
-# 115 "data/maps/MansionMainHall/scripts.pory"
 	closemessage
-# 116 "data/maps/MansionMainHall/scripts.pory"
-	playse SE_M_BUBBLE
-# 117 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, emotesweat
-# 118 "data/maps/MansionMainHall/scripts.pory"
-	waitse
-# 119 "data/maps/MansionMainHall/scripts.pory"
+# 112 "data/maps/MansionMainHall/scripts.pory"
+	playse SE_FAINT
+# 113 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_BUTLER, MansionMainHall_Eventscript_Butler_Movement_0
+# 114 "data/maps/MansionMainHall/scripts.pory"
 	waitmovement 0
+# 115 "data/maps/MansionMainHall/scripts.pory"
+	waitse
+# 116 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_Butler_Text_2
+# 117 "data/maps/MansionMainHall/scripts.pory"
+	setspeaker MansionMainHall_Eventscript_Butler_Text_0
+# 118 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_Butler_Text_3
+# 119 "data/maps/MansionMainHall/scripts.pory"
+	closemessage
 # 120 "data/maps/MansionMainHall/scripts.pory"
+	playse SE_M_BUBBLE
+# 121 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_PLAYER, emotesweat
+# 122 "data/maps/MansionMainHall/scripts.pory"
+	waitse
+# 123 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
+# 124 "data/maps/MansionMainHall/scripts.pory"
 	setvar VAR_TEMP_0, 1
 	goto MansionMainHall_Eventscript_Butler_1
 
 
 MansionMainHall_Eventscript_WaiterHaruma::
-# 134 "data/maps/MansionMainHall/scripts.pory"
+# 138 "data/maps/MansionMainHall/scripts.pory"
 	lock
-# 135 "data/maps/MansionMainHall/scripts.pory"
+# 139 "data/maps/MansionMainHall/scripts.pory"
 	setspeaker MansionMainHall_Eventscript_WaiterHaruma_Text_0
-# 136 "data/maps/MansionMainHall/scripts.pory"
+# 140 "data/maps/MansionMainHall/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_eq MansionMainHall_Eventscript_WaiterHaruma_2
-# 154 "data/maps/MansionMainHall/scripts.pory"
+# 158 "data/maps/MansionMainHall/scripts.pory"
 	msgbox MansionMainHall_Eventscript_WaiterHaruma_Text_4
-# 156 "data/maps/MansionMainHall/scripts.pory"
+# 160 "data/maps/MansionMainHall/scripts.pory"
 	closemessage
 MansionMainHall_Eventscript_WaiterHaruma_1:
-# 158 "data/maps/MansionMainHall/scripts.pory"
+# 162 "data/maps/MansionMainHall/scripts.pory"
 	release
 	end
 
 MansionMainHall_Eventscript_WaiterHaruma_2:
-# 137 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_WaiterHaruma_Text_1
-# 138 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
-# 139 "data/maps/MansionMainHall/scripts.pory"
-	playse SE_PIN
-# 140 "data/maps/MansionMainHall/scripts.pory"
-	applymovement 7, MansionMainHall_Eventscript_WaiterHaruma_Movement_0
 # 141 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
+	msgbox MansionMainHall_Eventscript_WaiterHaruma_Text_1
 # 142 "data/maps/MansionMainHall/scripts.pory"
-	setspeaker MansionMainHall_Eventscript_WaiterHaruma_Text_0
-# 143 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_WaiterHaruma_Text_2
-# 145 "data/maps/MansionMainHall/scripts.pory"
-	setspeaker MansionMainHall_Eventscript_WaiterHaruma_Text_0
-# 146 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_WaiterHaruma_Text_3
-# 148 "data/maps/MansionMainHall/scripts.pory"
 	closemessage
-# 149 "data/maps/MansionMainHall/scripts.pory"
-	applymovement 7, faceleft
-# 150 "data/maps/MansionMainHall/scripts.pory"
+# 143 "data/maps/MansionMainHall/scripts.pory"
+	playse SE_PIN
+# 144 "data/maps/MansionMainHall/scripts.pory"
+	applymovement 7, MansionMainHall_Eventscript_WaiterHaruma_Movement_0
+# 145 "data/maps/MansionMainHall/scripts.pory"
 	waitmovement 0
-# 151 "data/maps/MansionMainHall/scripts.pory"
+# 146 "data/maps/MansionMainHall/scripts.pory"
+	setspeaker MansionMainHall_Eventscript_WaiterHaruma_Text_0
+# 147 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_WaiterHaruma_Text_2
+# 149 "data/maps/MansionMainHall/scripts.pory"
+	setspeaker MansionMainHall_Eventscript_WaiterHaruma_Text_0
+# 150 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_WaiterHaruma_Text_3
+# 152 "data/maps/MansionMainHall/scripts.pory"
+	closemessage
+# 153 "data/maps/MansionMainHall/scripts.pory"
+	applymovement 7, faceleft
+# 154 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
+# 155 "data/maps/MansionMainHall/scripts.pory"
 	setvar VAR_TEMP_1, 1
 	goto MansionMainHall_Eventscript_WaiterHaruma_1
 
 
 MansionMainHall_Eventscript_WaitressMinori::
-# 163 "data/maps/MansionMainHall/scripts.pory"
-	lock
-# 164 "data/maps/MansionMainHall/scripts.pory"
-	faceplayer
-# 165 "data/maps/MansionMainHall/scripts.pory"
-	setspeaker MansionMainHall_Eventscript_WaitressMinori_Text_0
-# 166 "data/maps/MansionMainHall/scripts.pory"
-	msgbox AlertingWildPokemonGotInside
 # 167 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
+	lock
 # 168 "data/maps/MansionMainHall/scripts.pory"
+	faceplayer
+# 169 "data/maps/MansionMainHall/scripts.pory"
+	setspeaker MansionMainHall_Eventscript_WaitressMinori_Text_0
+# 170 "data/maps/MansionMainHall/scripts.pory"
+	msgbox AlertingWildPokemonGotInside
+# 171 "data/maps/MansionMainHall/scripts.pory"
+	closemessage
+# 172 "data/maps/MansionMainHall/scripts.pory"
 	release
 	end
 
 
 MansionMainHall_Eventscript_BlockingEastHall::
-# 181 "data/maps/MansionMainHall/scripts.pory"
-	lock
-# 182 "data/maps/MansionMainHall/scripts.pory"
-	applymovement 4, facedown
-# 183 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, faceup
-# 184 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
 # 185 "data/maps/MansionMainHall/scripts.pory"
-	setspeaker MansionMainHall_Eventscript_WaitressMinori_Text_0
+	lock
 # 186 "data/maps/MansionMainHall/scripts.pory"
-	msgbox AlertingWildPokemonGotInside
+	applymovement 4, facedown
 # 187 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
+	applymovement LOCALID_PLAYER, faceup
 # 188 "data/maps/MansionMainHall/scripts.pory"
-	applymovement 4, faceleft
-# 189 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, walkleft
-# 190 "data/maps/MansionMainHall/scripts.pory"
 	waitmovement 0
+# 189 "data/maps/MansionMainHall/scripts.pory"
+	setspeaker MansionMainHall_Eventscript_WaitressMinori_Text_0
+# 190 "data/maps/MansionMainHall/scripts.pory"
+	msgbox AlertingWildPokemonGotInside
 # 191 "data/maps/MansionMainHall/scripts.pory"
+	closemessage
+# 192 "data/maps/MansionMainHall/scripts.pory"
+	applymovement 4, faceleft
+# 193 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_PLAYER, walkleft
+# 194 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
+# 195 "data/maps/MansionMainHall/scripts.pory"
 	release
 	end
 
 
 MansionMainHall_Eventscript_WaitressKoharu::
-# 196 "data/maps/MansionMainHall/scripts.pory"
-	lock
-# 197 "data/maps/MansionMainHall/scripts.pory"
-	faceplayer
-# 198 "data/maps/MansionMainHall/scripts.pory"
-	setspeaker MansionMainHall_Eventscript_WaitressKoharu_Text_0
-# 199 "data/maps/MansionMainHall/scripts.pory"
-	msgbox TakeharusOffice
 # 200 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
+	lock
 # 201 "data/maps/MansionMainHall/scripts.pory"
+	faceplayer
+# 202 "data/maps/MansionMainHall/scripts.pory"
+	setspeaker MansionMainHall_Eventscript_WaitressKoharu_Text_0
+# 203 "data/maps/MansionMainHall/scripts.pory"
+	msgbox TakeharusOffice
+# 204 "data/maps/MansionMainHall/scripts.pory"
+	closemessage
+# 205 "data/maps/MansionMainHall/scripts.pory"
 	release
 	end
 
 
 MansionMainHall_Eventscript_BlockingTakeharusOffice::
-# 213 "data/maps/MansionMainHall/scripts.pory"
-	lock
-# 214 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, faceright
-# 215 "data/maps/MansionMainHall/scripts.pory"
-	applymovement 6, faceleft
-# 216 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
 # 217 "data/maps/MansionMainHall/scripts.pory"
-	setspeaker MansionMainHall_Eventscript_WaitressKoharu_Text_0
+	lock
 # 218 "data/maps/MansionMainHall/scripts.pory"
-	msgbox TakeharusOffice
+	applymovement LOCALID_PLAYER, faceright
 # 219 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
+	applymovement 6, faceleft
 # 220 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, facedown
-# 221 "data/maps/MansionMainHall/scripts.pory"
-	applymovement 6, facedown
-# 222 "data/maps/MansionMainHall/scripts.pory"
 	waitmovement 0
+# 221 "data/maps/MansionMainHall/scripts.pory"
+	setspeaker MansionMainHall_Eventscript_WaitressKoharu_Text_0
+# 222 "data/maps/MansionMainHall/scripts.pory"
+	msgbox TakeharusOffice
 # 223 "data/maps/MansionMainHall/scripts.pory"
+	closemessage
+# 224 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_PLAYER, facedown
+# 225 "data/maps/MansionMainHall/scripts.pory"
+	applymovement 6, facedown
+# 226 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
+# 227 "data/maps/MansionMainHall/scripts.pory"
 	release
 	end
 
 
 MansionMainHall_Eventscript_WaiterAoi::
-# 228 "data/maps/MansionMainHall/scripts.pory"
+# 232 "data/maps/MansionMainHall/scripts.pory"
 	lock
-# 229 "data/maps/MansionMainHall/scripts.pory"
+# 233 "data/maps/MansionMainHall/scripts.pory"
 	setspeaker MansionMainHall_Eventscript_WaiterAoi_Text_0
-# 230 "data/maps/MansionMainHall/scripts.pory"
+# 234 "data/maps/MansionMainHall/scripts.pory"
 	compare VAR_TEMP_2, 1
 	goto_if_eq MansionMainHall_Eventscript_WaiterAoi_2
-# 245 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_WaiterAoi_Text_3
-# 247 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
-# 248 "data/maps/MansionMainHall/scripts.pory"
-	playse SE_PIN
 # 249 "data/maps/MansionMainHall/scripts.pory"
-	applymovement 5, MansionMainHall_Eventscript_WaiterHaruma_Movement_0
-# 250 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
+	msgbox MansionMainHall_Eventscript_WaiterAoi_Text_3
 # 251 "data/maps/MansionMainHall/scripts.pory"
-	setspeaker MansionMainHall_Eventscript_WaiterAoi_Text_0
+	closemessage
 # 252 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_WaiterAoi_Text_4
-# 256 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
-# 257 "data/maps/MansionMainHall/scripts.pory"
 	playse SE_PIN
-# 258 "data/maps/MansionMainHall/scripts.pory"
-	applymovement 5, emoteexclamation
-# 259 "data/maps/MansionMainHall/scripts.pory"
+# 253 "data/maps/MansionMainHall/scripts.pory"
+	applymovement 5, MansionMainHall_Eventscript_WaiterHaruma_Movement_0
+# 254 "data/maps/MansionMainHall/scripts.pory"
 	waitmovement 0
-# 260 "data/maps/MansionMainHall/scripts.pory"
-	delay 20
-# 261 "data/maps/MansionMainHall/scripts.pory"
-	playse SE_M_CHARM
-# 262 "data/maps/MansionMainHall/scripts.pory"
-	waitse
-# 263 "data/maps/MansionMainHall/scripts.pory"
-	playse SE_M_CHARM
-# 264 "data/maps/MansionMainHall/scripts.pory"
-	applymovement 5, MansionMainHall_Eventscript_WaiterAoi_Movement_0
-# 265 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
-# 266 "data/maps/MansionMainHall/scripts.pory"
+# 255 "data/maps/MansionMainHall/scripts.pory"
 	setspeaker MansionMainHall_Eventscript_WaiterAoi_Text_0
-# 267 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_WaiterAoi_Text_5
-# 268 "data/maps/MansionMainHall/scripts.pory"
+# 256 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_WaiterAoi_Text_4
+# 260 "data/maps/MansionMainHall/scripts.pory"
 	closemessage
-# 269 "data/maps/MansionMainHall/scripts.pory"
-	playse SE_M_BUBBLE
-# 270 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, emotesweat
-# 271 "data/maps/MansionMainHall/scripts.pory"
+# 261 "data/maps/MansionMainHall/scripts.pory"
+	playse SE_PIN
+# 262 "data/maps/MansionMainHall/scripts.pory"
+	applymovement 5, emoteexclamation
+# 263 "data/maps/MansionMainHall/scripts.pory"
 	waitmovement 0
-# 272 "data/maps/MansionMainHall/scripts.pory"
+# 264 "data/maps/MansionMainHall/scripts.pory"
 	delay 20
-# 273 "data/maps/MansionMainHall/scripts.pory"
-	applymovement 5, facedown
-# 274 "data/maps/MansionMainHall/scripts.pory"
+# 265 "data/maps/MansionMainHall/scripts.pory"
+	playse SE_M_CHARM
+# 266 "data/maps/MansionMainHall/scripts.pory"
+	waitse
+# 267 "data/maps/MansionMainHall/scripts.pory"
+	playse SE_M_CHARM
+# 268 "data/maps/MansionMainHall/scripts.pory"
+	applymovement 5, MansionMainHall_Eventscript_WaiterAoi_Movement_0
+# 269 "data/maps/MansionMainHall/scripts.pory"
 	waitmovement 0
+# 270 "data/maps/MansionMainHall/scripts.pory"
+	setspeaker MansionMainHall_Eventscript_WaiterAoi_Text_0
+# 271 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_WaiterAoi_Text_5
+# 272 "data/maps/MansionMainHall/scripts.pory"
+	closemessage
+# 273 "data/maps/MansionMainHall/scripts.pory"
+	playse SE_M_BUBBLE
+# 274 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_PLAYER, emotesweat
 # 275 "data/maps/MansionMainHall/scripts.pory"
-	setvar VAR_TEMP_2, 1
+	waitmovement 0
+# 276 "data/maps/MansionMainHall/scripts.pory"
+	delay 20
 # 277 "data/maps/MansionMainHall/scripts.pory"
+	applymovement 5, facedown
+# 278 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
+# 279 "data/maps/MansionMainHall/scripts.pory"
+	setvar VAR_TEMP_2, 1
+# 281 "data/maps/MansionMainHall/scripts.pory"
 	release
 	end
 
 MansionMainHall_Eventscript_WaiterAoi_2:
-# 231 "data/maps/MansionMainHall/scripts.pory"
-	applymovement 5, shakehorizontal
-# 232 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
-# 233 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_WaiterAoi_Text_1
-# 234 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
 # 235 "data/maps/MansionMainHall/scripts.pory"
-	playse SE_M_BUBBLE
+	applymovement 5, shakehorizontal
 # 236 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, emotesweat
-# 237 "data/maps/MansionMainHall/scripts.pory"
 	waitmovement 0
+# 237 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_WaiterAoi_Text_1
 # 238 "data/maps/MansionMainHall/scripts.pory"
-	delay 20
-# 239 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_WaiterAoi_Text_2
-# 240 "data/maps/MansionMainHall/scripts.pory"
 	closemessage
+# 239 "data/maps/MansionMainHall/scripts.pory"
+	playse SE_M_BUBBLE
+# 240 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_PLAYER, emotesweat
 # 241 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
+# 242 "data/maps/MansionMainHall/scripts.pory"
+	delay 20
+# 243 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_WaiterAoi_Text_2
+# 244 "data/maps/MansionMainHall/scripts.pory"
+	closemessage
+# 245 "data/maps/MansionMainHall/scripts.pory"
 	release
 	end
 
 
 MansionMainHall_Eventscript_EmptyGuestRoom::
-# 282 "data/maps/MansionMainHall/scripts.pory"
+# 286 "data/maps/MansionMainHall/scripts.pory"
 	lock
-# 283 "data/maps/MansionMainHall/scripts.pory"
+# 287 "data/maps/MansionMainHall/scripts.pory"
 	msgbox MansionMainHall_Eventscript_EmptyGuestRoom_Text_0
-# 284 "data/maps/MansionMainHall/scripts.pory"
+# 288 "data/maps/MansionMainHall/scripts.pory"
 	closemessage
-# 285 "data/maps/MansionMainHall/scripts.pory"
+# 289 "data/maps/MansionMainHall/scripts.pory"
 	release
 	end
 
 
 MansionMainHall_Eventscript_NotTheWayOutToMainGarden::
-# 290 "data/maps/MansionMainHall/scripts.pory"
-	lock
-# 291 "data/maps/MansionMainHall/scripts.pory"
-	msgbox MansionMainHall_Eventscript_NotTheWayOutToMainGarden_Text_0
-# 292 "data/maps/MansionMainHall/scripts.pory"
-	closemessage
-# 293 "data/maps/MansionMainHall/scripts.pory"
-	applymovement LOCALID_PLAYER, walkright
 # 294 "data/maps/MansionMainHall/scripts.pory"
-	waitmovement 0
+	lock
 # 295 "data/maps/MansionMainHall/scripts.pory"
+	msgbox MansionMainHall_Eventscript_NotTheWayOutToMainGarden_Text_0
+# 296 "data/maps/MansionMainHall/scripts.pory"
+	closemessage
+# 297 "data/maps/MansionMainHall/scripts.pory"
+	applymovement LOCALID_PLAYER, walkright
+# 298 "data/maps/MansionMainHall/scripts.pory"
+	waitmovement 0
+# 299 "data/maps/MansionMainHall/scripts.pory"
 	release
 	end
 
 
-# 22 "data/maps/MansionMainHall/scripts.pory"
+# 23 "data/maps/MansionMainHall/scripts.pory"
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_0:
-# 22 "data/maps/MansionMainHall/scripts.pory"
+# 23 "data/maps/MansionMainHall/scripts.pory"
 	walk_down
-# 22 "data/maps/MansionMainHall/scripts.pory"
+# 23 "data/maps/MansionMainHall/scripts.pory"
 	walk_down
-# 22 "data/maps/MansionMainHall/scripts.pory"
+# 23 "data/maps/MansionMainHall/scripts.pory"
 	walk_down
 	step_end
 
-# 30 "data/maps/MansionMainHall/scripts.pory"
+# 31 "data/maps/MansionMainHall/scripts.pory"
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_1:
-# 30 "data/maps/MansionMainHall/scripts.pory"
+# 31 "data/maps/MansionMainHall/scripts.pory"
 	walk_down
-# 30 "data/maps/MansionMainHall/scripts.pory"
+# 31 "data/maps/MansionMainHall/scripts.pory"
 	walk_down
-# 30 "data/maps/MansionMainHall/scripts.pory"
+# 31 "data/maps/MansionMainHall/scripts.pory"
 	walk_down
-# 30 "data/maps/MansionMainHall/scripts.pory"
+# 31 "data/maps/MansionMainHall/scripts.pory"
 	walk_right
 	step_end
 
-# 31 "data/maps/MansionMainHall/scripts.pory"
+# 32 "data/maps/MansionMainHall/scripts.pory"
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_2:
-# 31 "data/maps/MansionMainHall/scripts.pory"
+# 32 "data/maps/MansionMainHall/scripts.pory"
 	walk_down
-# 31 "data/maps/MansionMainHall/scripts.pory"
+# 32 "data/maps/MansionMainHall/scripts.pory"
 	walk_down
-# 31 "data/maps/MansionMainHall/scripts.pory"
+# 32 "data/maps/MansionMainHall/scripts.pory"
 	walk_right
-# 31 "data/maps/MansionMainHall/scripts.pory"
+# 32 "data/maps/MansionMainHall/scripts.pory"
 	walk_right
 	step_end
 
-# 62 "data/maps/MansionMainHall/scripts.pory"
+# 63 "data/maps/MansionMainHall/scripts.pory"
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_3:
-# 62 "data/maps/MansionMainHall/scripts.pory"
+# 63 "data/maps/MansionMainHall/scripts.pory"
 	walk_right
-# 62 "data/maps/MansionMainHall/scripts.pory"
+# 63 "data/maps/MansionMainHall/scripts.pory"
 	walk_right
-# 62 "data/maps/MansionMainHall/scripts.pory"
+# 63 "data/maps/MansionMainHall/scripts.pory"
 	face_left
 	step_end
 
-# 71 "data/maps/MansionMainHall/scripts.pory"
+# 72 "data/maps/MansionMainHall/scripts.pory"
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_4:
-# 71 "data/maps/MansionMainHall/scripts.pory"
+# 72 "data/maps/MansionMainHall/scripts.pory"
 	walk_down
-# 71 "data/maps/MansionMainHall/scripts.pory"
+# 72 "data/maps/MansionMainHall/scripts.pory"
 	set_invisible
 	step_end
 
-# 109 "data/maps/MansionMainHall/scripts.pory"
+# 113 "data/maps/MansionMainHall/scripts.pory"
 MansionMainHall_Eventscript_Butler_Movement_0:
-# 109 "data/maps/MansionMainHall/scripts.pory"
+# 113 "data/maps/MansionMainHall/scripts.pory"
 	emote_cry
-# 109 "data/maps/MansionMainHall/scripts.pory"
+# 113 "data/maps/MansionMainHall/scripts.pory"
 	shake_horizontal
 	step_end
 
-# 140 "data/maps/MansionMainHall/scripts.pory"
+# 144 "data/maps/MansionMainHall/scripts.pory"
 MansionMainHall_Eventscript_WaiterHaruma_Movement_0:
-# 140 "data/maps/MansionMainHall/scripts.pory"
+# 144 "data/maps/MansionMainHall/scripts.pory"
 	emote_exclamation_mark
-# 140 "data/maps/MansionMainHall/scripts.pory"
+# 144 "data/maps/MansionMainHall/scripts.pory"
 	face_player
 	step_end
 
-# 264 "data/maps/MansionMainHall/scripts.pory"
+# 268 "data/maps/MansionMainHall/scripts.pory"
 MansionMainHall_Eventscript_WaiterAoi_Movement_0:
-# 264 "data/maps/MansionMainHall/scripts.pory"
+# 268 "data/maps/MansionMainHall/scripts.pory"
 	emote_heart
 	step_end
 
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_0:
-# 24 "data/maps/MansionMainHall/scripts.pory"
+# 25 "data/maps/MansionMainHall/scripts.pory"
 	.string "{SPEAKER NAME_TAKEHARU}Mitsuru.$"
 
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_1:
-# 33 "data/maps/MansionMainHall/scripts.pory"
+# 34 "data/maps/MansionMainHall/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Father...\p"
 	.string "{SPEAKER NAME_TAKEHARU}{DESTROY_MUGSHOT}So you really intend to go, no matter\n"
 	.string "what I say.\p"
@@ -563,108 +569,108 @@ MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_1:
 	.string "can look over you in my stead.$"
 
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_2:
-# 50 "data/maps/MansionMainHall/scripts.pory"
+# 51 "data/maps/MansionMainHall/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Father.....\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}If that'll put your mind more at ease,\n"
 	.string "I'll do so.$"
 
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_3:
-# 66 "data/maps/MansionMainHall/scripts.pory"
+# 67 "data/maps/MansionMainHall/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I must go now.\p"
 	.string "Please take care, Father.\p"
 	.string "{SPEAKER NAME_TAKEHARU}{DESTROY_MUGSHOT}Stay safe, and come back to me, Mitsuru.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}I fully intend to.$"
 
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_4:
-# 76 "data/maps/MansionMainHall/scripts.pory"
+# 79 "data/maps/MansionMainHall/scripts.pory"
 	.string "Inteleon is now your Companion.\n"
 	.string "{COLOR GREEN}Tips: Companion Menu is now unlocked.\n"
 	.string "You can open it in {START_BUTTON} Menu {RIGHT_ARROW} {SELECT_BUTTON}.$"
 
 MansionMainHall_Eventscript_Takeharu_Text_0:
-# 93 "data/maps/MansionMainHall/scripts.pory"
+# 96 "data/maps/MansionMainHall/scripts.pory"
 	.string "{SPEAKER NAME_TAKEHARU}If you need anything on your journey,\n"
 	.string "just make a call home.\p"
 	.string "I'll be sure to assist you whenever.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That is assuring. Thank you, Father.$"
 
 MansionMainHall_Eventscript_Butler_Text_0:
-# 103 "data/maps/MansionMainHall/scripts.pory"
+# 107 "data/maps/MansionMainHall/scripts.pory"
 	.string "Butler Yuuma$"
 
 MansionMainHall_Eventscript_Butler_Text_1:
-# 105 "data/maps/MansionMainHall/scripts.pory"
+# 109 "data/maps/MansionMainHall/scripts.pory"
 	.string "So you decided to go after all...\p"
 	.string "I will miss you so much, Young Ladyyyy.$"
 
 MansionMainHall_Eventscript_Butler_Text_2:
-# 112 "data/maps/MansionMainHall/scripts.pory"
+# 116 "data/maps/MansionMainHall/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Y-Yuuma-san, please don't cry. I'll\n"
 	.string "definitely be back in no time!$"
 
 MansionMainHall_Eventscript_Butler_Text_3:
-# 114 "data/maps/MansionMainHall/scripts.pory"
+# 118 "data/maps/MansionMainHall/scripts.pory"
 	.string "{DESTROY_MUGSHOT}-sniff sniff-$"
 
 MansionMainHall_Eventscript_Butler_Text_4:
-# 124 "data/maps/MansionMainHall/scripts.pory"
+# 128 "data/maps/MansionMainHall/scripts.pory"
 	.string "-sniff sniff-\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}P-Please stop crying, Yuuma-san...\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(Sigh, how do I comfort a person in\n"
 	.string "distress...?)$"
 
 MansionMainHall_Eventscript_WaiterHaruma_Text_0:
-# 135 "data/maps/MansionMainHall/scripts.pory"
+# 139 "data/maps/MansionMainHall/scripts.pory"
 	.string "Haruma$"
 
 MansionMainHall_Eventscript_WaiterHaruma_Text_1:
-# 137 "data/maps/MansionMainHall/scripts.pory"
+# 141 "data/maps/MansionMainHall/scripts.pory"
 	.string "That dang kid Aoi better not be\n"
 	.string "slacking off and leaving me to finish\l"
 	.string "cleaning these statues on my own.$"
 
 MansionMainHall_Eventscript_WaiterHaruma_Text_2:
-# 143 "data/maps/MansionMainHall/scripts.pory"
+# 147 "data/maps/MansionMainHall/scripts.pory"
 	.string "Young Lady, what can I do for you?\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I don't see Kikuno anywhere. Do you\n"
 	.string "know where she went off to?$"
 
 MansionMainHall_Eventscript_WaiterHaruma_Text_3:
-# 146 "data/maps/MansionMainHall/scripts.pory"
+# 150 "data/maps/MansionMainHall/scripts.pory"
 	.string "{DESTROY_MUGSHOT}I saw her go outside to the main garden\n"
 	.string "a bit earlier.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you, Haruma.$"
 
 MansionMainHall_Eventscript_WaiterHaruma_Text_4:
-# 154 "data/maps/MansionMainHall/scripts.pory"
+# 158 "data/maps/MansionMainHall/scripts.pory"
 	.string "Kikuno-san just went outside to the\n"
 	.string "main garden.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you, Haruma.$"
 
 MansionMainHall_Eventscript_WaitressMinori_Text_0:
-# 165 "data/maps/MansionMainHall/scripts.pory"
+# 169 "data/maps/MansionMainHall/scripts.pory"
 	.string "Minori$"
 
 MansionMainHall_Eventscript_WaitressKoharu_Text_0:
-# 198 "data/maps/MansionMainHall/scripts.pory"
+# 202 "data/maps/MansionMainHall/scripts.pory"
 	.string "Koharu$"
 
 MansionMainHall_Eventscript_WaiterAoi_Text_0:
-# 229 "data/maps/MansionMainHall/scripts.pory"
+# 233 "data/maps/MansionMainHall/scripts.pory"
 	.string "Aoi$"
 
 MansionMainHall_Eventscript_WaiterAoi_Text_1:
-# 233 "data/maps/MansionMainHall/scripts.pory"
+# 237 "data/maps/MansionMainHall/scripts.pory"
 	.string "I have to work harder. FOR OUR YOUNG\n"
 	.string "LADY!!$"
 
 MansionMainHall_Eventscript_WaiterAoi_Text_2:
-# 239 "data/maps/MansionMainHall/scripts.pory"
+# 243 "data/maps/MansionMainHall/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I better leave him alone... with the\n"
 	.string "statues.)$"
 
 MansionMainHall_Eventscript_WaiterAoi_Text_3:
-# 245 "data/maps/MansionMainHall/scripts.pory"
+# 249 "data/maps/MansionMainHall/scripts.pory"
 	.string "Ugh, why are these statues so big... And\n"
 	.string "why are there so many of them in this\l"
 	.string "mansion...\p"
@@ -672,30 +678,30 @@ MansionMainHall_Eventscript_WaiterAoi_Text_3:
 	.string "to clean tonight.$"
 
 MansionMainHall_Eventscript_WaiterAoi_Text_4:
-# 252 "data/maps/MansionMainHall/scripts.pory"
+# 256 "data/maps/MansionMainHall/scripts.pory"
 	.string "Y-Young Lady! How can I help?\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Oh, it's nothing.\p"
 	.string ".......\p"
 	.string "You've worked hard, Aoi.$"
 
 MansionMainHall_Eventscript_WaiterAoi_Text_5:
-# 267 "data/maps/MansionMainHall/scripts.pory"
+# 271 "data/maps/MansionMainHall/scripts.pory"
 	.string "T-This is nothing, Young Lady!! I can\n"
 	.string "still work harder!!$"
 
 MansionMainHall_Eventscript_EmptyGuestRoom_Text_0:
-# 283 "data/maps/MansionMainHall/scripts.pory"
+# 287 "data/maps/MansionMainHall/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(It's my guest room. I don't have any\n"
 	.string "guest visiting right now so it must be\l"
 	.string "empty.)$"
 
 MansionMainHall_Eventscript_NotTheWayOutToMainGarden_Text_0:
-# 291 "data/maps/MansionMainHall/scripts.pory"
+# 295 "data/maps/MansionMainHall/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I have no business in the Berry Garden\n"
 	.string "right now.$"
 
 AlertingWildPokemonGotInside::
-# 172 "data/maps/MansionMainHall/scripts.pory"
+# 176 "data/maps/MansionMainHall/scripts.pory"
 	.string "Earlier some wild Pokémon got inside the\n"
 	.string "east hall and made a mess.\p"
 	.string "The matter was resolved but we're still\n"
@@ -707,7 +713,7 @@ AlertingWildPokemonGotInside::
 	.string "Thank you for your hard work.$"
 
 TakeharusOffice::
-# 205 "data/maps/MansionMainHall/scripts.pory"
+# 209 "data/maps/MansionMainHall/scripts.pory"
 	.string "Master Kirijo told us to not let anyone\n"
 	.string "in his office.\p"
 	.string "I'll go ask him if you want to, Young\n"

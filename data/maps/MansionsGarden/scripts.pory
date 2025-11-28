@@ -63,21 +63,24 @@ script EventScript_NewGameSetUp {
     setflag(FLAG_HIDE_TALK_BUTTON)
     setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 
-
     checkplayergender
     if (var(VAR_RESULT) == MALE){
-        manuallysettime(WEEKDAY_WED, 16, 30, 0)
+        
         setvar(VAR_MITSURUS_INTRO_STATE, 50) // will be reset to 0 if player choose to play mitsuru's prologue after doing akihiko's
     }
     else{
-        manuallysettime(WEEKDAY_THU, 22, 30, 0)
+        
         setvar(VAR_AKIHIKOS_INTRO_STATE, 50) // will be reset to 0 if player choose to play akihiko's prologue after doing mitsuru's
     }
+    
 	pausefakertc // pauses the time so that we can do our scripting part
 }
 
 
 script MansionsGarden_Eventscript_OnFrame0 {
+    manuallysettime(WEEKDAY_WED, 22, 30, 0)
+    setflag(FLAG_SET_WALL_CLOCK)
+    setflag(FLAG_SYS_CLOCK_SET)
     goto(MansionsGarden_Eventscript_SlowlyShowTheMap)
 }
 
@@ -202,7 +205,7 @@ script MansionsGarden_Eventscript_VSFennekin {
     msgbox(format("{SPEAKER NAME_KIKUNO}Looks like it wants to go with you?\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Good timing. I do want a fire type in my team."))
     closemessage
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    fwdtime(23, 0)
     end
 }
 
@@ -242,7 +245,6 @@ script MansionsGarden_Eventscript_Fennekin {
         }
         warpsilent(MAP_BLANK_MAP, 0, 0)
         release
-        end
     }
     else{
         playse(SE_PIN)
@@ -250,7 +252,8 @@ script MansionsGarden_Eventscript_Fennekin {
         waitmovement(0)
         msgbox(format("Fennekin looks confused, but it's still waiting for you."))
         closemessage
-        clearflag(FLAG_HIDE_TALK_BUTTON)
+        release
+        end
     }
 }
 
@@ -358,7 +361,7 @@ script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     clearflag(FLAG_HIDE_TALK_BUTTON)
     clearflag(FLAG_HIDE_MAP_NAME_POPUP)
-    fwdtime(22, 45)
+    fwdtime(23, 15)
     release
     end
 }

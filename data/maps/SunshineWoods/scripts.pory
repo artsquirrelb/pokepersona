@@ -81,7 +81,6 @@ script SunshineWoods_Eventscript_PlayingInTheWoods {
     waitmovement(0)
     goto (SunshineWoods_Eventscript_PawmisCry)
     release
-    end
 }
 
 movement SunshineWoods_Eventscript_MikiFoundSomething {
@@ -246,6 +245,7 @@ script SunshineWoods_Eventscript_DirectionSign {
     msgbox(format("Sunshine Orphanage {UP_ARROW}\n
     Sunshine Town {LEFT_ARROW}"))
     release
+    end
 }
 
 script SunshineWoods_Eventscript_IkeBattle{
@@ -258,7 +258,6 @@ script SunshineWoods_Eventscript_IkeBattle{
     }
     setspeaker("Ike")
     msgbox(SunshineWoods_Text_IkePostBattle, MSGBOX_AUTOCLOSE)
-    end
 }
 
 script SunshineWoods_Eventscript_HotaruBattle {
@@ -271,7 +270,6 @@ script SunshineWoods_Eventscript_HotaruBattle {
     }
     setspeaker("Hotaru")
     msgbox(SunshineWoods_Text_HotaruPostBattle, MSGBOX_AUTOCLOSE)
-    end
 }
 
 text SunshineWoods_Text_IkeIntro{
@@ -370,7 +368,7 @@ script SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji {
     setobjectnewmovementtype(11, MOVEMENT_TYPE_WANDER_AROUND)
     release
     setvar(VAR_MITSURUS_INTRO_STATE, 22)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    fwdtime(9, 45)
     end
 }
 
@@ -461,7 +459,7 @@ script SunshineWoods_Eventscript_KGStaff1_Battle {
     setvar(VAR_RESULT, 0)
     setvar(VAR_0x8001, 0)
     addvar(VAR_TEMP_1, 1)
-    release
+    release //10:05 or 10:25
     end
 }
 
@@ -578,7 +576,7 @@ script SunshineWoods_Eventscript_KGStaff2_Battle {
     setvar(VAR_0x8000, 0)
     setvar(VAR_0x8001, 0)
     addvar(VAR_TEMP_1, 1)
-    release
+    release //10:05 or 10:25
     end
 }
 
@@ -624,8 +622,9 @@ script SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown {
         {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}C'est magnifique. Let's move out."))
         closemessage
         setvar(VAR_MITSURUS_INTRO_STATE, 22)
-        setvar(VAR_RESULT, 0)
+        setvar(VAR_0x8000, 0)
         setvar(VAR_0x8001, 0)
+        fwdtime(15, 05)
         warp(MAP_ROUTE2_HOUSE, 5, 3)
     }
 }

@@ -40,3 +40,9 @@ script EventScript_CampGears{
     end
     }
 }
+
+script EventScript_TellTheTimeDayHourMinute{
+	callnative (Script_CalculateTime)
+	msgbox(format("{STR_VAR_1}, {STR_VAR_2}:{STR_VAR_3}.\n"))
+	closemessage
+}

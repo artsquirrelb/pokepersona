@@ -9,6 +9,7 @@ script Route1_Eventscript_NotTheWayToMeadow {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(If I remember correctly, Sunshine Meadow is in the north of Route 2.)"))
     closemessage
     release
+    end
 }
 
 script Route1_Eventscript_Touma {
@@ -17,7 +18,6 @@ script Route1_Eventscript_Touma {
     }
     elif(var(VAR_MITSURUS_INTRO_STATE) < 50){
         trainerbattle_single(TRAINER_TOUMA, Route1_ToumaIntro, Route1_ToumaDefeated)
-        fwdtime(23, 50)
     }
     setspeaker("Touma")
     faceplayer
@@ -34,6 +34,7 @@ script Route1_Eventscript_Touma {
     closemessage
     setvar(VAR_TEMP_0, 1)
     }
+    release
     end
 }
 
@@ -62,7 +63,6 @@ script Route1_Eventscript_Miyu {
     }
     elif(var(VAR_MITSURUS_INTRO_STATE) < 50){                                           //mitsuru pre chapter 1
         trainerbattle_single(TRAINER_MIYU, Route1_MiyuIntro, Route1_MiyuIntro_A)
-        fwdtime(23, 10)
     }
     else{
         trainerbattle_single(TRAINER_MIYU_2, Route1_MiyuIntro, Route1_MiyuDefeated)     //have finished both prologues (probly unecessary)
@@ -96,14 +96,12 @@ text Route1_MiyuIntro_A {
 script Route1_Eventscript_RouteSign {
     msgbox("Route 1.")
     closemessage
-    end
 }
 
 script Route1_Eventscript_DirectionSign {
     msgbox(format("Route 2 {UP_ARROW}\n
     Kirijo's Mansion {DOWN_ARROW}"))
     closemessage
-    end
 }
 
 script Route1_Eventscript_HiddenGrotto {
@@ -157,7 +155,6 @@ script Route1_Eventscript_Ichigo {
     }
     elif(var(VAR_MITSURUS_INTRO_STATE) < 50){                                           //mitsuru pre chapter 1
         trainerbattle_single(TRAINER_ICHIGO, Route1_IchigoIntro, Route1_IchigoDefeated)
-        fwdtime(23, 30)
     }
     else
     {

@@ -119,9 +119,9 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites1::
 # 67 "data/maps/ThundershardsCave_1F/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 13
 # 68 "data/maps/ThundershardsCave_1F/scripts.pory"
-	release
+	fwdtime 8, 05
 # 69 "data/maps/ThundershardsCave_1F/scripts.pory"
-	showtalkbutton
+	release
 	end
 
 
@@ -227,54 +227,54 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites2::
 # 129 "data/maps/ThundershardsCave_1F/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 13
 # 130 "data/maps/ThundershardsCave_1F/scripts.pory"
+	fwdtime 8, 05
+# 131 "data/maps/ThundershardsCave_1F/scripts.pory"
 	release
 	end
 
 
 Common_EventScript_MiningRock::
-# 135 "data/maps/ThundershardsCave_1F/scripts.pory"
-	lock
 # 136 "data/maps/ThundershardsCave_1F/scripts.pory"
+	lock
+# 137 "data/maps/ThundershardsCave_1F/scripts.pory"
 	goto_if_set FLAG_RECEIVED_MINING_KIT, Common_EventScript_MiningRock_2
-# 152 "data/maps/ThundershardsCave_1F/scripts.pory"
+# 153 "data/maps/ThundershardsCave_1F/scripts.pory"
 	msgbox Common_EventScript_MiningRock_Text_1
 Common_EventScript_MiningRock_1:
-# 154 "data/maps/ThundershardsCave_1F/scripts.pory"
-	closemessage
 # 155 "data/maps/ThundershardsCave_1F/scripts.pory"
-	release
+	closemessage
 # 156 "data/maps/ThundershardsCave_1F/scripts.pory"
-	showtalkbutton
+	release
 	end
 
 Common_EventScript_MiningRock_2:
-# 137 "data/maps/ThundershardsCave_1F/scripts.pory"
-	msgbox Common_EventScript_MiningRock_Text_0, MSGBOX_YESNO
 # 138 "data/maps/ThundershardsCave_1F/scripts.pory"
+	msgbox Common_EventScript_MiningRock_Text_0, MSGBOX_YESNO
+# 139 "data/maps/ThundershardsCave_1F/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Common_EventScript_MiningRock_5
 	goto Common_EventScript_MiningRock_1
 
 Common_EventScript_MiningRock_5:
-# 139 "data/maps/ThundershardsCave_1F/scripts.pory"
-	closemessage
 # 140 "data/maps/ThundershardsCave_1F/scripts.pory"
-	dotimebasedevents
+	closemessage
 # 141 "data/maps/ThundershardsCave_1F/scripts.pory"
-	fadescreen FADE_TO_BLACK
+	dotimebasedevents
 # 142 "data/maps/ThundershardsCave_1F/scripts.pory"
-	special StartMining
+	fadescreen FADE_TO_BLACK
 # 143 "data/maps/ThundershardsCave_1F/scripts.pory"
-	waitstate
+	special StartMining
 # 144 "data/maps/ThundershardsCave_1F/scripts.pory"
-	hidetalkbutton
+	waitstate
 # 145 "data/maps/ThundershardsCave_1F/scripts.pory"
-	playse SE_M_ROCK_THROW
+	hidetalkbutton
 # 146 "data/maps/ThundershardsCave_1F/scripts.pory"
-	applymovement VAR_LAST_TALKED, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_2
+	playse SE_M_ROCK_THROW
 # 147 "data/maps/ThundershardsCave_1F/scripts.pory"
-	waitmovement
+	applymovement VAR_LAST_TALKED, ThundershardsCave_1F_EventScript_NeckBeardInvites1_Movement_2
 # 148 "data/maps/ThundershardsCave_1F/scripts.pory"
+	waitmovement
+# 149 "data/maps/ThundershardsCave_1F/scripts.pory"
 	removeobject VAR_LAST_TALKED
 	goto Common_EventScript_MiningRock_1
 
@@ -467,10 +467,10 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites1_Text_8:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I should go on with my mission.)$"
 
 Common_EventScript_MiningRock_Text_0:
-# 137 "data/maps/ThundershardsCave_1F/scripts.pory"
+# 138 "data/maps/ThundershardsCave_1F/scripts.pory"
 	.string "Start mining this rock?$"
 
 Common_EventScript_MiningRock_Text_1:
-# 152 "data/maps/ThundershardsCave_1F/scripts.pory"
+# 153 "data/maps/ThundershardsCave_1F/scripts.pory"
 	.string "You don't have tools to break this\n"
 	.string "mining rock.$"

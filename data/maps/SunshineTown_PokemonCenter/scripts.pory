@@ -155,7 +155,7 @@ script SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient {
     removeobject(7)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 15)
     setflag(FLAG_TEMP_1)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    fwdtime(9, 30)
     release
     end
 }

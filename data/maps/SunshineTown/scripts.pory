@@ -47,6 +47,7 @@ mapscripts SunshineTown_MapScripts {
     }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
         VAR_MITSURUS_INTRO_STATE, 19: SunshineTown_Eventscript_MitsuruOnWarp19
+        VAR_MITSURUS_INTRO_STATE, 24: SunshineTown_Eventscript_MitsuruOnWarp24
     ]
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 16: SunshineTown_Eventscript_OnFrame16
@@ -54,6 +55,8 @@ mapscripts SunshineTown_MapScripts {
         ///////
         VAR_MITSURUS_INTRO_STATE, 18: SunshineTown_Eventscript_MitsuruOnFrame18
         VAR_MITSURUS_INTRO_STATE, 19: SunshineTown_Eventscript_MitsuruOnFrame19
+        VAR_MITSURUS_INTRO_STATE, 23: SunshineTown_Eventscript_MitsuruOnFrame23
+        VAR_MITSURUS_INTRO_STATE, 24: SunshineTown_Eventscript_MitsuruOnFrame24
     ]
     
 }
@@ -63,12 +66,27 @@ script SunshineTown_Eventscript_MitsuruOnWarp19 {
     applymovement(LOCALID_PLAYER, moves(face_right))    
 }
 
+script SunshineTown_Eventscript_MitsuruOnFrame23 {
+    lock
+    setvar(VAR_MITSURUS_INTRO_STATE, 24)
+    warpsilent(MAP_SUNSHINE_TOWN, 3, 7)
+    waitstate
+}
+
+script SunshineTown_Eventscript_MitsuruOnWarp24 {
+    applymovement(LOCALID_PLAYER, faceright)
+}
+
+script SunshineTown_Eventscript_MitsuruOnFrame24{
+    goto(SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji)
+}
+
 script SunshineTown_Eventscript_MitsuruOnFrame18 {
     call(Eventscript_CutsceneStarts)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     setvar(VAR_MITSURUS_INTRO_STATE, 19)
     warpsilent(MAP_SUNSHINE_TOWN, 4, 6)
-    end
+    waitstate
 }
 
 script SunshineTown_Eventscript_MitsuruOnFrame19 {
@@ -95,6 +113,7 @@ script SunshineTown_Eventscript_Kurosawa {
         setflag(FLAG_TEMP_1)
     }
     release
+    end
 }
 
 movement KurosawaNoticed {
@@ -146,11 +165,14 @@ script SunshineTown_Eventscript_FatMan {
         msgbox(format("The policeman living here ran toward the woods after hearing that explosion.\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should hurry up!"))
         setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
+        release
+        end
     }
     else{
     msgbox(format("Technology is amazing.\p
     Now you can do so many things with decomps."))}
     release
+    end
 }
 
 script SunshineTown_Eventscript_Boy {
@@ -168,6 +190,8 @@ script SunshineTown_Eventscript_Boy {
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DARKENED}Could it be...\p
         {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}The orphanage!"))
         setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
+        release
+        end
     }
     if (var(VAR_MITSURUS_INTRO_STATE) >= 18 && var(VAR_MITSURUS_INTRO_STATE) <= 21){
         msgbox(format("My brother is a fire fighter and he's at the burning orphanage right now.\p
@@ -180,6 +204,7 @@ script SunshineTown_Eventscript_Boy {
     }
     closemessage
     release
+    end
 }
 
 script SunshineTown_Eventscript_DirerctionSign {
@@ -187,12 +212,14 @@ script SunshineTown_Eventscript_DirerctionSign {
     msgbox(format("Sunshine Riverbank {DOWN_ARROW}\n
     Route 2 {LEFT_ARROW}"))
     release
+    end
 }
 
 script SunshineTown_Eventscript_TownSign {
     lock
     msgbox(format("Welcome to Sunshine Town!"))
     release
+    end
 }
 
 script SunshineTown_Eventscript_OnFrame16 {
@@ -214,8 +241,9 @@ script SunshineTown_Eventscript_ExitingPC {
     removeobject(4)
     setflag(FLAG_TEMP_2)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 17)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    fwdtime(9, 35)
     releaseall
+    end
 }
 
 movement SunshineTown_Eventscript_AkihikoExitingPC {
@@ -237,6 +265,7 @@ script SunshineTown_Eventscript_DontLeaveTown {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should ask people in town about that explosion sound!"))
     closemessage
     releaseall
+    end
 }
 
 script SunshineTown_Eventscript_WarpToBurningOrphanage{
@@ -244,7 +273,7 @@ script SunshineTown_Eventscript_WarpToBurningOrphanage{
     playse(SE_EXIT)
     setflag(FLAG_HIDE_TALK_BUTTON)
     warp(MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23)
-    delay(30)
+    waitstate
     release
 }
 
@@ -254,6 +283,7 @@ script SunshineTown_Eventscript_NoPointEnteringPC {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to be dawdling around!)"))
     closemessage
     release
+    end
 }
 
 script SunshineTown_Eventscript_NoPointLeavingTown {
@@ -262,6 +292,7 @@ script SunshineTown_Eventscript_NoPointLeavingTown {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to be dawdling around!)"))
     closemessage
     release
+    end
 }
 
 script SunshineTown_Eventscript_WarpToBurningOrphanage2 {
@@ -270,7 +301,7 @@ script SunshineTown_Eventscript_WarpToBurningOrphanage2 {
     setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
     setflag(FLAG_HIDE_TALK_BUTTON)
     warp(MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23)
-    delay(30)
+    waitstate
     release
 }
 
@@ -304,7 +335,6 @@ script SunshineTown_Eventscript_OnFrame23{
     clearflag(FLAG_HIDE_QUEST_ICON)
     setflag(FLAG_SYS_QUEST_MENU_GET)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 24)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
     release
     end
 }
@@ -314,8 +344,6 @@ script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL{
     setspeaker("Fumiko")
     if (flag(FLAG_SYS_QUEST_MENU_GET) == FALSE){
         goto (SunshineTown_Eventscript_ExpertF_PreQuest)
-        release
-        end
     }
     else {
         faceplayer
@@ -409,9 +437,10 @@ script SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24 {
         applymovement(LOCALID_PLAYER, walkright)
         waitmovement(0)
         release
+        end
     }
     else{
-        setflag(FLAG_HIDE_TALK_BUTTON)
+        fwdtime(11, 0)
         warpsilent(MAP_BLANK_MAP, 0, 0)
     }
 }
@@ -580,5 +609,84 @@ script SunshineTown_Eventscript_KGStaffAtWoodsEntrance {
     removeobject(23)
     setflag(FLAG_TEMP_3)
     setvar(VAR_MITSURUS_INTRO_STATE, 21)
+    fwdtime(9, 40)
     release
+    end
+}
+
+script SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji {
+    lock
+    applymovement(LOCALID_PLAYER, moves(player_run_right*3, walk_right*2, delay_16))
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(This man... He was helping the orphanage so he could've known something about those boys.)"))
+    closemessage
+    applymovement(LOCALID_PLAYER, moves(walk_down, walk_right*2))
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Excuse me. Have you seen these boys?"))
+    setspeaker("Kojima")
+    msgbox(format("Oh them! I saw the policeman living in this town carried them to his house.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Really? When was it?"))
+    setspeaker("Kojima")
+    msgbox(format("{DESTROY_MUGSHOT}I think it was around an hour after the explosion at the orphanage happened?\p
+    After that I've only seen the black-red beanie boy going out of the house a few times.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}May I ask where this policeman's house is?"))
+    closemessage
+    applymovement(1, facedown)
+    delay(4)
+    applymovement(LOCALID_PLAYER, facedown)
+    delay(8)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down, walk_diag_southwest*4, walk_left*2))
+    waitmovement
+    setspeaker("Kojima")
+    msgbox(format("It's the house over there.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you so much for your help."))
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_diag_northeast*5, walk_right))
+    waitmovement
+    special(RemoveCameraObject)
+    setvar(VAR_MITSURUS_INTRO_STATE, 24)
+    fwdtime(17, 20)
+    release
+    end
+}
+
+script SunshineTown_Eventscript_MitsuruOverheardAkiShinji {
+    lock
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, emoteexclamation)
+    setspeaker("???????")
+    msgbox(format("Aki! At least eat something before you go find her! You haven't eaten since yesterday!"))
+    setspeaker("Aki?")
+    msgbox(format("How do you expect I can eat anything when Miki is still out there missing!?\p
+    What do you know anyway? It's not like she's your sister."))
+    closemessage
+    playse(SE_M_DOUBLE_SLAP)
+    call(Eventscript_BlockShakeCamera)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, emoteexclamation)
+    waitmovement
+    setspeaker("???????")
+    msgbox(format("Cool your ass and sit down.\p
+    Even if you find her, do you think she'll be happy seeing you in this state?\p
+    Looking like a rotten walking zombie?"))
+    setspeaker("Aki?")
+    msgbox(format(".......... Fuck you, Shinji. Fine."))
+    closemessage
+    delay(20)
+    setspeaker("Shinji?")
+    msgbox(format("Eat first. Then we'll go find her together, okay?"))
+    setspeaker("Aki?")
+    msgbox(format("........Okay."))
+    closemessage
+    delay(20)
+    applymovement(LOCALID_PLAYER, facedown)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}....... (His sister's missing after the explosion, I suppose.)\p
+    (I should go to the orphanage and help the searching.)"))
+    closemessage
+    applymovement(LOCALID_PLAYER, moves(player_run_right*9, player_run_up*2, face_down))
+    delay(40)
+    setvar(VAR_MITSURUS_INTRO_STATE, 25)
+    warpsilent(MAP_BLANK_MAP)
 }

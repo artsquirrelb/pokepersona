@@ -2,33 +2,30 @@ mapscripts SunshineOrphanage2FHallway_MapScripts {}
 
 script Girls_Hallway2F{
     lock
-    
-    msgbox( format(
-        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
-        "It's the way to the girls' hallway. I have no business there right now."
-    ))
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "It's the way to the girls' hallway. I have no business there right now."))
     release
+    end
 }
 
 script Restroom2F {
     lock
-    msgbox(format (
-        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
-        "It's the restroom. I'm good for now."
-    ))
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "It's the restroom. I'm good for now."))
     release
+    end
 }
 
 script BOY_1_2F {
     lock
     faceplayer
     setspeaker ("Kuro")
-    msgbox(format(
-        "I wish the orphanage let us have Pokémon.\p"
+    msgbox(format("I wish the orphanage let us have Pokémon.\p"
         "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
         "I do too but I guess it'll be harder for the staff.\p They're already busy enough."
         ))
     release
+    end
 }
 
 script BOY_2_2F {
@@ -50,10 +47,12 @@ script BOY_2_2F {
         I think it's the one I saw a few days ago."))
     }
     release
+    end
 } 
 
 script TrashcanEmpty {
     lock
     msgbox("It's empty.")
     release
+    end
 }

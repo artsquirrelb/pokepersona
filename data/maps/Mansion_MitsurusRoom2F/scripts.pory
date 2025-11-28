@@ -20,9 +20,7 @@ script Mansion_MitsurusRoom2F_Eventscript_OnWarp0 {
 script Mansion_MitsurusRoom2F_Eventscript_OnFrame0 {
     setvar(VAR_MITSURUS_INTRO_STATE, 1)
     lock
-    msgbox(format("Thursday, 10:30PM"))
-    closemessage
-    pausefakertc
+    call(EventScript_TellTheTimeDayHourMinute)
     goto(Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking)
 }
 
@@ -92,12 +90,10 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     release
     msgbox(Eventscript_StarterPokemonTips)
     closemessage
-    clearflag(FLAG_HIDE_TALK_BUTTON)
     end
 }
 
 script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
-    setflag(FLAG_HIDE_TALK_BUTTON)
     lock
     msgbox ("Hold out the Pokéball to Vulpix?", MSGBOX_YESNO)
     closemessage
@@ -129,9 +125,7 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It's already 10:32PM.\p
     If I don't go now, I won't be arriving at the cliff's foot before midnight."))
     closemessage
-    manuallysettime(WEEKDAY_THU, 22, 32, 0)
-    setflag(FLAG_SET_WALL_CLOCK)
-    setflag(FLAG_SYS_CLOCK_SET)
+    fwdtime(22, 32)
     msgbox(format("{COLOR GREEN}{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Tips: Check your bag for various QoL items."))
     updatefollowingmon
     closemessage
@@ -144,7 +138,6 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
         closemessage
     }
     closemessage
-    clearflag(FLAG_HIDE_TALK_BUTTON)
     release
     end
 }
@@ -176,10 +169,10 @@ script Mansion_MitsurusRoom2F_Eventscript_DollAlolanVulpix {
     (This reminds me of how my Vulpix used to look...)"))
     closemessage
     release
+    end
 }
 
 script Mansion_MitsurusRoom2F_Eventscript_PC {
-    setflag(FLAG_HIDE_TALK_BUTTON)
     lock
     checkplayergender
     if (var(VAR_RESULT) == FEMALE){
@@ -189,7 +182,6 @@ script Mansion_MitsurusRoom2F_Eventscript_PC {
         call (Mansion_MitsurusRoom2F_Eventscript_RivalPC)
     }
     release
-    clearflag(FLAG_HIDE_TALK_BUTTON)
     end
 }
 
@@ -219,15 +211,15 @@ script Mansion_MitsurusRoom2F_Eventscript_Piano {
             savebgm(MUS_XC2_TORIGOTH_NIGHT)
             msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(It's time to go.)"))
             closemessage
+            addtime(0, 0, 10)
             setvar(VAR_TEMP_0, 1)
         }}
     else
     {
         msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I really need to get going.)"))
     }
-    clearflag(FLAG_HIDE_TALK_BUTTON)
     release
-    
+    end
 }
 
 script Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft {
@@ -256,4 +248,5 @@ script Mansion_MitsurusRoom2F_Eventscript_Notebooks {
     Well, I figure I can always request a leave of absence until this matter is sorted out.)"))
     closemessage
     release
+    end
 }

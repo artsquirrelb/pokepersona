@@ -3,7 +3,7 @@ SunshineTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION
 # 48 "data/maps/SunshineTown/scripts.pory"
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, SunshineTown_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE
-# 51 "data/maps/SunshineTown/scripts.pory"
+# 52 "data/maps/SunshineTown/scripts.pory"
 	map_script MAP_SCRIPT_ON_FRAME_TABLE, SunshineTown_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
 
@@ -153,121 +153,121 @@ SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_35:
 SunshineTown_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 49 "data/maps/SunshineTown/scripts.pory"
 	map_script_2 VAR_MITSURUS_INTRO_STATE, 19, SunshineTown_Eventscript_MitsuruOnWarp19
+# 50 "data/maps/SunshineTown/scripts.pory"
+	map_script_2 VAR_MITSURUS_INTRO_STATE, 24, SunshineTown_Eventscript_MitsuruOnWarp24
 	.2byte 0
 
 SunshineTown_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
-# 52 "data/maps/SunshineTown/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 16, SunshineTown_Eventscript_OnFrame16
 # 53 "data/maps/SunshineTown/scripts.pory"
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 16, SunshineTown_Eventscript_OnFrame16
+# 54 "data/maps/SunshineTown/scripts.pory"
 	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 23, SunshineTown_Eventscript_OnFrame23
-# 55 "data/maps/SunshineTown/scripts.pory"
-	map_script_2 VAR_MITSURUS_INTRO_STATE, 18, SunshineTown_Eventscript_MitsuruOnFrame18
 # 56 "data/maps/SunshineTown/scripts.pory"
+	map_script_2 VAR_MITSURUS_INTRO_STATE, 18, SunshineTown_Eventscript_MitsuruOnFrame18
+# 57 "data/maps/SunshineTown/scripts.pory"
 	map_script_2 VAR_MITSURUS_INTRO_STATE, 19, SunshineTown_Eventscript_MitsuruOnFrame19
+# 58 "data/maps/SunshineTown/scripts.pory"
+	map_script_2 VAR_MITSURUS_INTRO_STATE, 23, SunshineTown_Eventscript_MitsuruOnFrame23
+# 59 "data/maps/SunshineTown/scripts.pory"
+	map_script_2 VAR_MITSURUS_INTRO_STATE, 24, SunshineTown_Eventscript_MitsuruOnFrame24
 	.2byte 0
 
 
 SunshineTown_Eventscript_MitsuruOnWarp19::
-# 62 "data/maps/SunshineTown/scripts.pory"
+# 65 "data/maps/SunshineTown/scripts.pory"
 	applymovement 1, SunshineTown_Eventscript_MitsuruOnWarp19_Movement_0
-# 63 "data/maps/SunshineTown/scripts.pory"
+# 66 "data/maps/SunshineTown/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruOnWarp19_Movement_1
 	return
 
 
-SunshineTown_Eventscript_MitsuruOnFrame18::
-# 67 "data/maps/SunshineTown/scripts.pory"
-	call Eventscript_CutsceneStarts
-# 68 "data/maps/SunshineTown/scripts.pory"
-	setflag FLAG_DONT_TRANSITION_MUSIC
-# 69 "data/maps/SunshineTown/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 19
+SunshineTown_Eventscript_MitsuruOnFrame23::
 # 70 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 71 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 24
+# 72 "data/maps/SunshineTown/scripts.pory"
+	warpsilent MAP_SUNSHINE_TOWN, 3, 7
+# 73 "data/maps/SunshineTown/scripts.pory"
+	waitstate
+	return
+
+
+SunshineTown_Eventscript_MitsuruOnWarp24::
+# 77 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, faceright
+	return
+
+
+SunshineTown_Eventscript_MitsuruOnFrame24::
+# 81 "data/maps/SunshineTown/scripts.pory"
+	goto SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji
+	return
+
+
+SunshineTown_Eventscript_MitsuruOnFrame18::
+# 85 "data/maps/SunshineTown/scripts.pory"
+	call Eventscript_CutsceneStarts
+# 86 "data/maps/SunshineTown/scripts.pory"
+	setflag FLAG_DONT_TRANSITION_MUSIC
+# 87 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 19
+# 88 "data/maps/SunshineTown/scripts.pory"
 	warpsilent MAP_SUNSHINE_TOWN, 4, 6
-	end
+# 89 "data/maps/SunshineTown/scripts.pory"
+	waitstate
+	return
 
 
 SunshineTown_Eventscript_MitsuruOnFrame19::
-# 75 "data/maps/SunshineTown/scripts.pory"
+# 93 "data/maps/SunshineTown/scripts.pory"
 	goto SunshineTown_Eventscript_MitsuruSeeingPoliceRunning
 	return
 
 
 SunshineTown_Eventscript_Kurosawa::
-# 79 "data/maps/SunshineTown/scripts.pory"
+# 97 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 80 "data/maps/SunshineTown/scripts.pory"
+# 98 "data/maps/SunshineTown/scripts.pory"
 	setspeaker SP_NAME_KUROSAWA
-# 81 "data/maps/SunshineTown/scripts.pory"
+# 99 "data/maps/SunshineTown/scripts.pory"
 	goto_if_set FLAG_TEMP_1, SunshineTown_Eventscript_Kurosawa_2
-# 87 "data/maps/SunshineTown/scripts.pory"
+# 105 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_Kurosawa_Text_1
-# 88 "data/maps/SunshineTown/scripts.pory"
+# 106 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 89 "data/maps/SunshineTown/scripts.pory"
+# 107 "data/maps/SunshineTown/scripts.pory"
 	playse SE_PIN
-# 90 "data/maps/SunshineTown/scripts.pory"
+# 108 "data/maps/SunshineTown/scripts.pory"
 	applymovement 3, KurosawaNoticed
-# 91 "data/maps/SunshineTown/scripts.pory"
+# 109 "data/maps/SunshineTown/scripts.pory"
 	waitmovement 0
-# 92 "data/maps/SunshineTown/scripts.pory"
+# 110 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_Kurosawa_Text_2
-# 95 "data/maps/SunshineTown/scripts.pory"
+# 113 "data/maps/SunshineTown/scripts.pory"
 	setflag FLAG_TEMP_1
 SunshineTown_Eventscript_Kurosawa_1:
-# 97 "data/maps/SunshineTown/scripts.pory"
+# 115 "data/maps/SunshineTown/scripts.pory"
 	release
-	return
+	end
 
 SunshineTown_Eventscript_Kurosawa_2:
-# 82 "data/maps/SunshineTown/scripts.pory"
+# 100 "data/maps/SunshineTown/scripts.pory"
 	faceplayer
-# 83 "data/maps/SunshineTown/scripts.pory"
+# 101 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_Kurosawa_Text_0
 	goto SunshineTown_Eventscript_Kurosawa_1
 
 
-# 100 "data/maps/SunshineTown/scripts.pory"
+# 119 "data/maps/SunshineTown/scripts.pory"
 KurosawaNoticed:
-# 101 "data/maps/SunshineTown/scripts.pory"
+# 120 "data/maps/SunshineTown/scripts.pory"
 	emote_exclamation_mark
-# 102 "data/maps/SunshineTown/scripts.pory"
+# 121 "data/maps/SunshineTown/scripts.pory"
 	face_player
 	step_end
 
 SunshineTown_Eventscript_GoGetPackage0::
-# 106 "data/maps/SunshineTown/scripts.pory"
-	lockall
-# 107 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_GoGetPackage0_Text_0
-# 108 "data/maps/SunshineTown/scripts.pory"
-	closemessage
-# 109 "data/maps/SunshineTown/scripts.pory"
-	applymovement LOCALID_PLAYER, walkright
-# 110 "data/maps/SunshineTown/scripts.pory"
-	waitmovement 0
-# 111 "data/maps/SunshineTown/scripts.pory"
-	releaseall
-	end
-
-
-# 115 "data/maps/SunshineTown/scripts.pory"
-SunshineTown_Eventscript_ShinjiroPreventFromLeaving0:
-# 116 "data/maps/SunshineTown/scripts.pory"
-	walk_left
-# 117 "data/maps/SunshineTown/scripts.pory"
-	face_right
-	step_end
-
-# 119 "data/maps/SunshineTown/scripts.pory"
-SunshineTown_Eventscript_ShinjiroJoinsback0:
-# 120 "data/maps/SunshineTown/scripts.pory"
-	walk_up
-# 121 "data/maps/SunshineTown/scripts.pory"
-	walk_right
-	step_end
-
-SunshineTown_Eventscript_GoGetPackage1::
 # 125 "data/maps/SunshineTown/scripts.pory"
 	lockall
 # 126 "data/maps/SunshineTown/scripts.pory"
@@ -279,1080 +279,1332 @@ SunshineTown_Eventscript_GoGetPackage1::
 # 129 "data/maps/SunshineTown/scripts.pory"
 	waitmovement 0
 # 130 "data/maps/SunshineTown/scripts.pory"
+	releaseall
+	end
+
+
+# 134 "data/maps/SunshineTown/scripts.pory"
+SunshineTown_Eventscript_ShinjiroPreventFromLeaving0:
+# 135 "data/maps/SunshineTown/scripts.pory"
+	walk_left
+# 136 "data/maps/SunshineTown/scripts.pory"
+	face_right
+	step_end
+
+# 138 "data/maps/SunshineTown/scripts.pory"
+SunshineTown_Eventscript_ShinjiroJoinsback0:
+# 139 "data/maps/SunshineTown/scripts.pory"
+	walk_up
+# 140 "data/maps/SunshineTown/scripts.pory"
+	walk_right
+	step_end
+
+SunshineTown_Eventscript_GoGetPackage1::
+# 144 "data/maps/SunshineTown/scripts.pory"
+	lockall
+# 145 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_GoGetPackage0_Text_0
+# 146 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 147 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, walkright
+# 148 "data/maps/SunshineTown/scripts.pory"
+	waitmovement 0
+# 149 "data/maps/SunshineTown/scripts.pory"
 	removeobject 4
-# 131 "data/maps/SunshineTown/scripts.pory"
+# 150 "data/maps/SunshineTown/scripts.pory"
 	releaseall
 	end
 
 
 SunshineTown_Eventscript_FatMan::
-# 136 "data/maps/SunshineTown/scripts.pory"
+# 155 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 137 "data/maps/SunshineTown/scripts.pory"
+# 156 "data/maps/SunshineTown/scripts.pory"
 	setspeaker SunshineTown_Eventscript_FatMan_Text_0
-# 138 "data/maps/SunshineTown/scripts.pory"
+# 157 "data/maps/SunshineTown/scripts.pory"
 	faceplayer
-# 139 "data/maps/SunshineTown/scripts.pory"
+# 158 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 12
 	goto_if_ge SunshineTown_Eventscript_FatMan_3
 SunshineTown_Eventscript_FatMan_1:
-# 145 "data/maps/SunshineTown/scripts.pory"
+# 164 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 17
 	goto_if_eq SunshineTown_Eventscript_FatMan_7
-# 145 "data/maps/SunshineTown/scripts.pory"
+# 164 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 18
 	goto_if_eq SunshineTown_Eventscript_FatMan_7
-# 151 "data/maps/SunshineTown/scripts.pory"
+# 172 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_FatMan_Text_3
-SunshineTown_Eventscript_FatMan_6:
-# 153 "data/maps/SunshineTown/scripts.pory"
+# 174 "data/maps/SunshineTown/scripts.pory"
 	release
-	return
+	end
 
 SunshineTown_Eventscript_FatMan_2:
-# 140 "data/maps/SunshineTown/scripts.pory"
+# 159 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_FatMan_Text_1
-# 141 "data/maps/SunshineTown/scripts.pory"
+# 160 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 142 "data/maps/SunshineTown/scripts.pory"
+# 161 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 SunshineTown_Eventscript_FatMan_3:
-# 139 "data/maps/SunshineTown/scripts.pory"
+# 158 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 16
 	goto_if_le SunshineTown_Eventscript_FatMan_2
 	goto SunshineTown_Eventscript_FatMan_1
 
 SunshineTown_Eventscript_FatMan_7:
-# 146 "data/maps/SunshineTown/scripts.pory"
+# 165 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_FatMan_Text_2
-# 148 "data/maps/SunshineTown/scripts.pory"
+# 167 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 18
-	goto SunshineTown_Eventscript_FatMan_6
+# 168 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
 
 
 SunshineTown_Eventscript_Boy::
-# 157 "data/maps/SunshineTown/scripts.pory"
+# 179 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 158 "data/maps/SunshineTown/scripts.pory"
+# 180 "data/maps/SunshineTown/scripts.pory"
 	faceplayer
-# 159 "data/maps/SunshineTown/scripts.pory"
+# 181 "data/maps/SunshineTown/scripts.pory"
 	setspeaker SunshineTown_Eventscript_Boy_Text_0
-# 160 "data/maps/SunshineTown/scripts.pory"
+# 182 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 12
 	goto_if_ge SunshineTown_Eventscript_Boy_3
 SunshineTown_Eventscript_Boy_1:
-# 166 "data/maps/SunshineTown/scripts.pory"
+# 188 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 17
 	goto_if_eq SunshineTown_Eventscript_Boy_7
-# 166 "data/maps/SunshineTown/scripts.pory"
+# 188 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 18
 	goto_if_eq SunshineTown_Eventscript_Boy_7
-SunshineTown_Eventscript_Boy_6:
-# 172 "data/maps/SunshineTown/scripts.pory"
+# 196 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 18
 	goto_if_ge SunshineTown_Eventscript_Boy_14
 SunshineTown_Eventscript_Boy_13:
-# 178 "data/maps/SunshineTown/scripts.pory"
+# 202 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_Boy_Text_4
 SunshineTown_Eventscript_Boy_11:
-# 181 "data/maps/SunshineTown/scripts.pory"
+# 205 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 182 "data/maps/SunshineTown/scripts.pory"
+# 206 "data/maps/SunshineTown/scripts.pory"
 	release
-	return
+	end
 
 SunshineTown_Eventscript_Boy_2:
-# 161 "data/maps/SunshineTown/scripts.pory"
+# 183 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_Boy_Text_1
-# 162 "data/maps/SunshineTown/scripts.pory"
+# 184 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 163 "data/maps/SunshineTown/scripts.pory"
+# 185 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 SunshineTown_Eventscript_Boy_3:
-# 160 "data/maps/SunshineTown/scripts.pory"
+# 182 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 16
 	goto_if_le SunshineTown_Eventscript_Boy_2
 	goto SunshineTown_Eventscript_Boy_1
 
 SunshineTown_Eventscript_Boy_7:
-# 167 "data/maps/SunshineTown/scripts.pory"
+# 189 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_Boy_Text_2
-# 170 "data/maps/SunshineTown/scripts.pory"
+# 192 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 18
-	goto SunshineTown_Eventscript_Boy_6
+# 193 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
 
 SunshineTown_Eventscript_Boy_12:
-# 173 "data/maps/SunshineTown/scripts.pory"
+# 197 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_Boy_Text_3
 	goto SunshineTown_Eventscript_Boy_11
 
 SunshineTown_Eventscript_Boy_14:
-# 172 "data/maps/SunshineTown/scripts.pory"
+# 196 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 21
 	goto_if_le SunshineTown_Eventscript_Boy_12
 	goto SunshineTown_Eventscript_Boy_13
 
 
 SunshineTown_Eventscript_DirerctionSign::
-# 186 "data/maps/SunshineTown/scripts.pory"
+# 211 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 187 "data/maps/SunshineTown/scripts.pory"
+# 212 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_DirerctionSign_Text_0
-# 189 "data/maps/SunshineTown/scripts.pory"
+# 214 "data/maps/SunshineTown/scripts.pory"
 	release
-	return
+	end
 
 
 SunshineTown_Eventscript_TownSign::
-# 193 "data/maps/SunshineTown/scripts.pory"
+# 219 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 194 "data/maps/SunshineTown/scripts.pory"
+# 220 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_TownSign_Text_0
-# 195 "data/maps/SunshineTown/scripts.pory"
+# 221 "data/maps/SunshineTown/scripts.pory"
 	release
-	return
+	end
 
 
 SunshineTown_Eventscript_OnFrame16::
-# 199 "data/maps/SunshineTown/scripts.pory"
+# 226 "data/maps/SunshineTown/scripts.pory"
 	lockall
-# 200 "data/maps/SunshineTown/scripts.pory"
+# 227 "data/maps/SunshineTown/scripts.pory"
 	goto SunshineTown_Eventscript_ExitingPC
-# 201 "data/maps/SunshineTown/scripts.pory"
+# 228 "data/maps/SunshineTown/scripts.pory"
 	releaseall
 	return
 
 
 SunshineTown_Eventscript_ExitingPC::
-# 205 "data/maps/SunshineTown/scripts.pory"
+# 232 "data/maps/SunshineTown/scripts.pory"
 	lockall
-# 206 "data/maps/SunshineTown/scripts.pory"
+# 233 "data/maps/SunshineTown/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_AkihikoExitingPC
-# 207 "data/maps/SunshineTown/scripts.pory"
+# 234 "data/maps/SunshineTown/scripts.pory"
 	applymovement 4, SunshineTown_Eventscript_ShinjiroExitingPC
-# 208 "data/maps/SunshineTown/scripts.pory"
+# 235 "data/maps/SunshineTown/scripts.pory"
 	waitmovement 0
-# 209 "data/maps/SunshineTown/scripts.pory"
+# 236 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_ExitingPC_Text_0
-# 211 "data/maps/SunshineTown/scripts.pory"
+# 238 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 212 "data/maps/SunshineTown/scripts.pory"
+# 239 "data/maps/SunshineTown/scripts.pory"
 	applymovement 4, walkup
-# 213 "data/maps/SunshineTown/scripts.pory"
+# 240 "data/maps/SunshineTown/scripts.pory"
 	waitmovement 0
-# 214 "data/maps/SunshineTown/scripts.pory"
+# 241 "data/maps/SunshineTown/scripts.pory"
 	removeobject 4
-# 215 "data/maps/SunshineTown/scripts.pory"
+# 242 "data/maps/SunshineTown/scripts.pory"
 	setflag FLAG_TEMP_2
-# 216 "data/maps/SunshineTown/scripts.pory"
+# 243 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 17
-# 217 "data/maps/SunshineTown/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
-# 218 "data/maps/SunshineTown/scripts.pory"
+# 244 "data/maps/SunshineTown/scripts.pory"
+	fwdtime 9, 35
+# 245 "data/maps/SunshineTown/scripts.pory"
 	releaseall
-	return
+	end
 
 
-# 221 "data/maps/SunshineTown/scripts.pory"
+# 249 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_AkihikoExitingPC:
-# 222 "data/maps/SunshineTown/scripts.pory"
+# 250 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 223 "data/maps/SunshineTown/scripts.pory"
+# 251 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 223 "data/maps/SunshineTown/scripts.pory"
+# 251 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 224 "data/maps/SunshineTown/scripts.pory"
+# 252 "data/maps/SunshineTown/scripts.pory"
 	face_down
 	step_end
 
-# 227 "data/maps/SunshineTown/scripts.pory"
+# 255 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_ShinjiroExitingPC:
-# 228 "data/maps/SunshineTown/scripts.pory"
+# 256 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 228 "data/maps/SunshineTown/scripts.pory"
+# 256 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 228 "data/maps/SunshineTown/scripts.pory"
+# 256 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 229 "data/maps/SunshineTown/scripts.pory"
+# 257 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 229 "data/maps/SunshineTown/scripts.pory"
+# 257 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 230 "data/maps/SunshineTown/scripts.pory"
+# 258 "data/maps/SunshineTown/scripts.pory"
 	face_up
 	step_end
 
 SunshineTown_Eventscript_DontLeaveTown::
-# 234 "data/maps/SunshineTown/scripts.pory"
+# 262 "data/maps/SunshineTown/scripts.pory"
 	lockall
-# 235 "data/maps/SunshineTown/scripts.pory"
+# 263 "data/maps/SunshineTown/scripts.pory"
 	applymovement LOCALID_PLAYER, walkright
-# 236 "data/maps/SunshineTown/scripts.pory"
+# 264 "data/maps/SunshineTown/scripts.pory"
 	waitmovement 0
-# 237 "data/maps/SunshineTown/scripts.pory"
+# 265 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_DontLeaveTown_Text_0
-# 238 "data/maps/SunshineTown/scripts.pory"
+# 266 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 239 "data/maps/SunshineTown/scripts.pory"
+# 267 "data/maps/SunshineTown/scripts.pory"
 	releaseall
-	return
+	end
 
 
 SunshineTown_Eventscript_WarpToBurningOrphanage::
-# 243 "data/maps/SunshineTown/scripts.pory"
+# 272 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 244 "data/maps/SunshineTown/scripts.pory"
+# 273 "data/maps/SunshineTown/scripts.pory"
 	playse SE_EXIT
-# 245 "data/maps/SunshineTown/scripts.pory"
+# 274 "data/maps/SunshineTown/scripts.pory"
 	setflag FLAG_HIDE_TALK_BUTTON
-# 246 "data/maps/SunshineTown/scripts.pory"
+# 275 "data/maps/SunshineTown/scripts.pory"
 	warp MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23
-# 247 "data/maps/SunshineTown/scripts.pory"
-	delay 30
-# 248 "data/maps/SunshineTown/scripts.pory"
+# 276 "data/maps/SunshineTown/scripts.pory"
+	waitstate
+# 277 "data/maps/SunshineTown/scripts.pory"
 	release
 	return
 
 
 SunshineTown_Eventscript_NoPointEnteringPC::
-# 252 "data/maps/SunshineTown/scripts.pory"
+# 281 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 253 "data/maps/SunshineTown/scripts.pory"
+# 282 "data/maps/SunshineTown/scripts.pory"
 	applymovement LOCALID_PLAYER, walkdown
-# 254 "data/maps/SunshineTown/scripts.pory"
+# 283 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_NoPointEnteringPC_Text_0
-# 255 "data/maps/SunshineTown/scripts.pory"
+# 284 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 256 "data/maps/SunshineTown/scripts.pory"
+# 285 "data/maps/SunshineTown/scripts.pory"
 	release
-	return
+	end
 
 
 SunshineTown_Eventscript_NoPointLeavingTown::
-# 260 "data/maps/SunshineTown/scripts.pory"
+# 290 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 261 "data/maps/SunshineTown/scripts.pory"
+# 291 "data/maps/SunshineTown/scripts.pory"
 	applymovement LOCALID_PLAYER, walkright
-# 262 "data/maps/SunshineTown/scripts.pory"
+# 292 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_NoPointEnteringPC_Text_0
-# 263 "data/maps/SunshineTown/scripts.pory"
+# 293 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 264 "data/maps/SunshineTown/scripts.pory"
+# 294 "data/maps/SunshineTown/scripts.pory"
 	release
-	return
+	end
 
 
 SunshineTown_Eventscript_WarpToBurningOrphanage2::
-# 268 "data/maps/SunshineTown/scripts.pory"
+# 299 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 269 "data/maps/SunshineTown/scripts.pory"
+# 300 "data/maps/SunshineTown/scripts.pory"
 	playse SE_EXIT
-# 270 "data/maps/SunshineTown/scripts.pory"
+# 301 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 18
-# 271 "data/maps/SunshineTown/scripts.pory"
+# 302 "data/maps/SunshineTown/scripts.pory"
 	setflag FLAG_HIDE_TALK_BUTTON
-# 272 "data/maps/SunshineTown/scripts.pory"
+# 303 "data/maps/SunshineTown/scripts.pory"
 	warp MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23
-# 273 "data/maps/SunshineTown/scripts.pory"
-	delay 30
-# 274 "data/maps/SunshineTown/scripts.pory"
+# 304 "data/maps/SunshineTown/scripts.pory"
+	waitstate
+# 305 "data/maps/SunshineTown/scripts.pory"
 	release
 	return
 
 
 SunshineTown_Eventscript_OW_Happiny::
-# 278 "data/maps/SunshineTown/scripts.pory"
+# 309 "data/maps/SunshineTown/scripts.pory"
 	lockall
-# 279 "data/maps/SunshineTown/scripts.pory"
+# 310 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 24
 	goto_if_lt SunshineTown_Eventscript_OW_Happiny_1
-# 279 "data/maps/SunshineTown/scripts.pory"
+# 310 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 18
 	goto_if_ge SunshineTown_Eventscript_OW_Happiny_5
 SunshineTown_Eventscript_OW_Happiny_2:
-# 286 "data/maps/SunshineTown/scripts.pory"
+# 317 "data/maps/SunshineTown/scripts.pory"
 	faceplayer
-# 287 "data/maps/SunshineTown/scripts.pory"
+# 318 "data/maps/SunshineTown/scripts.pory"
 	playmoncry SPECIES_HAPPINY, CRY_MODE_NORMAL
-# 288 "data/maps/SunshineTown/scripts.pory"
+# 319 "data/maps/SunshineTown/scripts.pory"
 	startoverworldencounter 6
-# 289 "data/maps/SunshineTown/scripts.pory"
+# 320 "data/maps/SunshineTown/scripts.pory"
 	removeobject 6
-# 290 "data/maps/SunshineTown/scripts.pory"
+# 321 "data/maps/SunshineTown/scripts.pory"
 	setflag FLAG_TEMP_A
-# 291 "data/maps/SunshineTown/scripts.pory"
+# 322 "data/maps/SunshineTown/scripts.pory"
 	releaseall
 	end
 
 SunshineTown_Eventscript_OW_Happiny_1:
-# 280 "data/maps/SunshineTown/scripts.pory"
+# 311 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_OW_Happiny_Text_0
-# 281 "data/maps/SunshineTown/scripts.pory"
+# 312 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 282 "data/maps/SunshineTown/scripts.pory"
+# 313 "data/maps/SunshineTown/scripts.pory"
 	releaseall
 	end
 
 SunshineTown_Eventscript_OW_Happiny_5:
-# 279 "data/maps/SunshineTown/scripts.pory"
+# 310 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 21
 	goto_if_le SunshineTown_Eventscript_OW_Happiny_1
 	goto SunshineTown_Eventscript_OW_Happiny_2
 
 
 SunshineTown_Eventscript_OnFrame23::
-# 298 "data/maps/SunshineTown/scripts.pory"
+# 329 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 299 "data/maps/SunshineTown/scripts.pory"
+# 330 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_OnFrame23_Text_0
-# 303 "data/maps/SunshineTown/scripts.pory"
+# 334 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 304 "data/maps/SunshineTown/scripts.pory"
+# 335 "data/maps/SunshineTown/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
-# 305 "data/maps/SunshineTown/scripts.pory"
+# 336 "data/maps/SunshineTown/scripts.pory"
 	setflag FLAG_SYS_QUEST_MENU_GET
-# 306 "data/maps/SunshineTown/scripts.pory"
+# 337 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 24
-# 307 "data/maps/SunshineTown/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
-# 308 "data/maps/SunshineTown/scripts.pory"
+# 338 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL::
-# 313 "data/maps/SunshineTown/scripts.pory"
+# 343 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 314 "data/maps/SunshineTown/scripts.pory"
+# 344 "data/maps/SunshineTown/scripts.pory"
 	setspeaker SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0
-# 315 "data/maps/SunshineTown/scripts.pory"
+# 345 "data/maps/SunshineTown/scripts.pory"
 	goto_if_unset FLAG_SYS_QUEST_MENU_GET, SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_2
-# 321 "data/maps/SunshineTown/scripts.pory"
+# 349 "data/maps/SunshineTown/scripts.pory"
 	faceplayer
-# 322 "data/maps/SunshineTown/scripts.pory"
+# 350 "data/maps/SunshineTown/scripts.pory"
 	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
-# 323 "data/maps/SunshineTown/scripts.pory"
+# 351 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_5
-# 327 "data/maps/SunshineTown/scripts.pory"
+# 355 "data/maps/SunshineTown/scripts.pory"
 	call SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_1:
-# 330 "data/maps/SunshineTown/scripts.pory"
+# 358 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_2:
-# 316 "data/maps/SunshineTown/scripts.pory"
+# 346 "data/maps/SunshineTown/scripts.pory"
 	goto SunshineTown_Eventscript_ExpertF_PreQuest
-# 317 "data/maps/SunshineTown/scripts.pory"
-	release
-	end
+	goto SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_1
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_5:
-# 324 "data/maps/SunshineTown/scripts.pory"
+# 352 "data/maps/SunshineTown/scripts.pory"
 	call SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted
 	goto SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_1
 
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted::
-# 335 "data/maps/SunshineTown/scripts.pory"
+# 363 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted_Text_0
-# 336 "data/maps/SunshineTown/scripts.pory"
+# 364 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 337 "data/maps/SunshineTown/scripts.pory"
+# 365 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward::
-# 343 "data/maps/SunshineTown/scripts.pory"
+# 371 "data/maps/SunshineTown/scripts.pory"
 	questmenu QUEST_MENU_CHECK_REWARD, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
-# 344 "data/maps/SunshineTown/scripts.pory"
+# 372 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_1
-# 353 "data/maps/SunshineTown/scripts.pory"
+# 381 "data/maps/SunshineTown/scripts.pory"
 	call SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive
 	return
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_1:
-# 345 "data/maps/SunshineTown/scripts.pory"
+# 373 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_Text_0
-# 346 "data/maps/SunshineTown/scripts.pory"
+# 374 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 347 "data/maps/SunshineTown/scripts.pory"
+# 375 "data/maps/SunshineTown/scripts.pory"
 	giveitem ITEM_SOOTHE_BELL, 1
-# 348 "data/maps/SunshineTown/scripts.pory"
+# 376 "data/maps/SunshineTown/scripts.pory"
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
-# 349 "data/maps/SunshineTown/scripts.pory"
+# 377 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive::
-# 358 "data/maps/SunshineTown/scripts.pory"
+# 386 "data/maps/SunshineTown/scripts.pory"
 	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
-# 359 "data/maps/SunshineTown/scripts.pory"
+# 387 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_1
-# 366 "data/maps/SunshineTown/scripts.pory"
+# 394 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_1
-# 368 "data/maps/SunshineTown/scripts.pory"
+# 396 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 369 "data/maps/SunshineTown/scripts.pory"
+# 397 "data/maps/SunshineTown/scripts.pory"
 	setspeaker SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0
-# 370 "data/maps/SunshineTown/scripts.pory"
+# 398 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_2
-# 373 "data/maps/SunshineTown/scripts.pory"
+# 401 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 374 "data/maps/SunshineTown/scripts.pory"
+# 402 "data/maps/SunshineTown/scripts.pory"
 	questmenu QUEST_MENU_SET_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL
-# 375 "data/maps/SunshineTown/scripts.pory"
+# 403 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_1:
-# 360 "data/maps/SunshineTown/scripts.pory"
+# 388 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_0
-# 361 "data/maps/SunshineTown/scripts.pory"
+# 389 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 362 "data/maps/SunshineTown/scripts.pory"
+# 390 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 
 SunshineTown_Eventscript_ExpertF_PreQuest::
-# 382 "data/maps/SunshineTown/scripts.pory"
+# 410 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 18
 	goto_if_ge SunshineTown_Eventscript_ExpertF_PreQuest_3
 SunshineTown_Eventscript_ExpertF_PreQuest_1:
-# 390 "data/maps/SunshineTown/scripts.pory"
+# 418 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 17
 	goto_if_eq SunshineTown_Eventscript_ExpertF_PreQuest_7
-# 390 "data/maps/SunshineTown/scripts.pory"
+# 418 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 18
 	goto_if_eq SunshineTown_Eventscript_ExpertF_PreQuest_7
-# 398 "data/maps/SunshineTown/scripts.pory"
+# 426 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_ExpertF_PreQuest_Text_2
-# 400 "data/maps/SunshineTown/scripts.pory"
+# 428 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 401 "data/maps/SunshineTown/scripts.pory"
+# 429 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 SunshineTown_Eventscript_ExpertF_PreQuest_2:
-# 383 "data/maps/SunshineTown/scripts.pory"
+# 411 "data/maps/SunshineTown/scripts.pory"
 	faceplayer
-# 384 "data/maps/SunshineTown/scripts.pory"
+# 412 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_ExpertF_PreQuest_Text_0
-# 386 "data/maps/SunshineTown/scripts.pory"
+# 414 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 387 "data/maps/SunshineTown/scripts.pory"
+# 415 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 SunshineTown_Eventscript_ExpertF_PreQuest_3:
-# 382 "data/maps/SunshineTown/scripts.pory"
+# 410 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 21
 	goto_if_le SunshineTown_Eventscript_ExpertF_PreQuest_2
 	goto SunshineTown_Eventscript_ExpertF_PreQuest_1
 
 SunshineTown_Eventscript_ExpertF_PreQuest_7:
-# 391 "data/maps/SunshineTown/scripts.pory"
+# 419 "data/maps/SunshineTown/scripts.pory"
 	faceplayer
-# 392 "data/maps/SunshineTown/scripts.pory"
+# 420 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_ExpertF_PreQuest_Text_1
-# 393 "data/maps/SunshineTown/scripts.pory"
+# 421 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 394 "data/maps/SunshineTown/scripts.pory"
+# 422 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 
 SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24::
-# 406 "data/maps/SunshineTown/scripts.pory"
+# 434 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 407 "data/maps/SunshineTown/scripts.pory"
+# 435 "data/maps/SunshineTown/scripts.pory"
 	msgbox SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_Text_0, MSGBOX_YESNO
-# 408 "data/maps/SunshineTown/scripts.pory"
+# 436 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_1
-# 414 "data/maps/SunshineTown/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
-# 415 "data/maps/SunshineTown/scripts.pory"
+# 443 "data/maps/SunshineTown/scripts.pory"
+	fwdtime 11, 0
+# 444 "data/maps/SunshineTown/scripts.pory"
 	warpsilent MAP_BLANK_MAP, 0, 0
 	return
 
 SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_1:
-# 409 "data/maps/SunshineTown/scripts.pory"
+# 437 "data/maps/SunshineTown/scripts.pory"
 	applymovement LOCALID_PLAYER, walkright
-# 410 "data/maps/SunshineTown/scripts.pory"
+# 438 "data/maps/SunshineTown/scripts.pory"
 	waitmovement 0
-# 411 "data/maps/SunshineTown/scripts.pory"
+# 439 "data/maps/SunshineTown/scripts.pory"
 	release
-	return
+	end
 
 
 SunshineTown_Eventscript_HiddenGrotto::
-# 420 "data/maps/SunshineTown/scripts.pory"
+# 449 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 421 "data/maps/SunshineTown/scripts.pory"
+# 450 "data/maps/SunshineTown/scripts.pory"
 	msgbox Eventscript_HiddenGrotto, MSGBOX_YESNO
-# 422 "data/maps/SunshineTown/scripts.pory"
+# 451 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 423 "data/maps/SunshineTown/scripts.pory"
+# 452 "data/maps/SunshineTown/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq SunshineTown_Eventscript_HiddenGrotto_2
 SunshineTown_Eventscript_HiddenGrotto_1:
-# 426 "data/maps/SunshineTown/scripts.pory"
+# 455 "data/maps/SunshineTown/scripts.pory"
 	release
 	end
 
 SunshineTown_Eventscript_HiddenGrotto_2:
-# 424 "data/maps/SunshineTown/scripts.pory"
+# 453 "data/maps/SunshineTown/scripts.pory"
 	warp MAP_SUNSHINE_TOWN_HIDDEN_GROTTO, 0
 	goto SunshineTown_Eventscript_HiddenGrotto_1
 
 
 unlockcharacters::
-# 433 "data/maps/SunshineTown/scripts.pory"
+# 462 "data/maps/SunshineTown/scripts.pory"
 	msgbox unlockcharacters_Text_0
-# 434 "data/maps/SunshineTown/scripts.pory"
+# 463 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 435 "data/maps/SunshineTown/scripts.pory"
+# 464 "data/maps/SunshineTown/scripts.pory"
 	unlockcharacter CHARACTER_MITSURU
-# 436 "data/maps/SunshineTown/scripts.pory"
+# 465 "data/maps/SunshineTown/scripts.pory"
 	unlockcharacter CHARACTER_SHINJIRO
-# 437 "data/maps/SunshineTown/scripts.pory"
+# 466 "data/maps/SunshineTown/scripts.pory"
 	unlockcharacter CHARACTER_AKIHIKO
-# 438 "data/maps/SunshineTown/scripts.pory"
+# 467 "data/maps/SunshineTown/scripts.pory"
 	makecharaAvailable CHARACTER_MITSURU
-# 439 "data/maps/SunshineTown/scripts.pory"
+# 468 "data/maps/SunshineTown/scripts.pory"
 	makecharaAvailable CHARACTER_AKIHIKO
-# 440 "data/maps/SunshineTown/scripts.pory"
+# 469 "data/maps/SunshineTown/scripts.pory"
 	makecharaAvailable CHARACTER_SHINJIRO
 	end
 
 
 makecharagrayout::
-# 445 "data/maps/SunshineTown/scripts.pory"
+# 474 "data/maps/SunshineTown/scripts.pory"
 	msgbox makecharagrayout_Text_0
-# 446 "data/maps/SunshineTown/scripts.pory"
+# 475 "data/maps/SunshineTown/scripts.pory"
 	closemessage
-# 447 "data/maps/SunshineTown/scripts.pory"
+# 476 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 100
-# 448 "data/maps/SunshineTown/scripts.pory"
+# 477 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 100
-# 449 "data/maps/SunshineTown/scripts.pory"
+# 478 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_TEMP_0, 0
-# 450 "data/maps/SunshineTown/scripts.pory"
+# 479 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_TEMP_1, 0
-# 451 "data/maps/SunshineTown/scripts.pory"
+# 480 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_TEMP_2, 0
-# 452 "data/maps/SunshineTown/scripts.pory"
+# 481 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_TEMP_3, 0
 	return
 
 
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning::
-# 456 "data/maps/SunshineTown/scripts.pory"
-	lock
-# 457 "data/maps/SunshineTown/scripts.pory"
-	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_0
-# 458 "data/maps/SunshineTown/scripts.pory"
-	delay 36
-# 459 "data/maps/SunshineTown/scripts.pory"
-	applymovement 24, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_1
-# 460 "data/maps/SunshineTown/scripts.pory"
-	delay 4
-# 461 "data/maps/SunshineTown/scripts.pory"
-	applymovement 3, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_1
-# 462 "data/maps/SunshineTown/scripts.pory"
-	delay 20
-# 463 "data/maps/SunshineTown/scripts.pory"
-	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_2
-# 464 "data/maps/SunshineTown/scripts.pory"
-	waitmovement
-# 465 "data/maps/SunshineTown/scripts.pory"
-	delay 50
-# 466 "data/maps/SunshineTown/scripts.pory"
-	removeobject 3
-# 467 "data/maps/SunshineTown/scripts.pory"
-	removeobject 24
-# 468 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_0
-# 471 "data/maps/SunshineTown/scripts.pory"
-	closemessage
-# 472 "data/maps/SunshineTown/scripts.pory"
-	delay 20
-# 473 "data/maps/SunshineTown/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 474 "data/maps/SunshineTown/scripts.pory"
-	fadenewbgm MUS_DUMMY
-# 475 "data/maps/SunshineTown/scripts.pory"
-	playse SE_SLIDING_DOOR
-# 476 "data/maps/SunshineTown/scripts.pory"
-	waitse
-# 477 "data/maps/SunshineTown/scripts.pory"
-	special SpawnCameraObject
-# 478 "data/maps/SunshineTown/scripts.pory"
-	applymovement 1, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_3
-# 479 "data/maps/SunshineTown/scripts.pory"
-	delay 4
-# 480 "data/maps/SunshineTown/scripts.pory"
-	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_4
-# 481 "data/maps/SunshineTown/scripts.pory"
-	delay 4
-# 482 "data/maps/SunshineTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_5
-# 483 "data/maps/SunshineTown/scripts.pory"
-	waitmovement
-# 484 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_1
 # 485 "data/maps/SunshineTown/scripts.pory"
-	closemessage
+	lock
 # 486 "data/maps/SunshineTown/scripts.pory"
-	applymovement 1, faceleft
+	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_0
 # 487 "data/maps/SunshineTown/scripts.pory"
-	waitmovement
+	delay 36
 # 488 "data/maps/SunshineTown/scripts.pory"
-	setspeaker SunshineTown_Eventscript_FatMan_Text_0
+	applymovement 24, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_1
 # 489 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_2
+	delay 4
 # 490 "data/maps/SunshineTown/scripts.pory"
-	playbgm MUS_P3_CALAMITY, TRUE
+	applymovement 3, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_1
 # 491 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_3
-# 493 "data/maps/SunshineTown/scripts.pory"
-	closemessage
-# 494 "data/maps/SunshineTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, walkleft
-# 495 "data/maps/SunshineTown/scripts.pory"
-	waitmovement
-# 496 "data/maps/SunshineTown/scripts.pory"
-	special RemoveCameraObject
-# 497 "data/maps/SunshineTown/scripts.pory"
-	applymovement 1, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_6
-# 498 "data/maps/SunshineTown/scripts.pory"
 	delay 20
-# 499 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_4
-# 504 "data/maps/SunshineTown/scripts.pory"
+# 492 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_2
+# 493 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 494 "data/maps/SunshineTown/scripts.pory"
+	delay 50
+# 495 "data/maps/SunshineTown/scripts.pory"
+	removeobject 3
+# 496 "data/maps/SunshineTown/scripts.pory"
+	removeobject 24
+# 497 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_0
+# 500 "data/maps/SunshineTown/scripts.pory"
 	closemessage
+# 501 "data/maps/SunshineTown/scripts.pory"
+	delay 20
+# 502 "data/maps/SunshineTown/scripts.pory"
+	clearflag FLAG_DONT_TRANSITION_MUSIC
+# 503 "data/maps/SunshineTown/scripts.pory"
+	fadenewbgm MUS_DUMMY
+# 504 "data/maps/SunshineTown/scripts.pory"
+	playse SE_SLIDING_DOOR
 # 505 "data/maps/SunshineTown/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 20
+	waitse
 # 506 "data/maps/SunshineTown/scripts.pory"
-	setflag FLAG_DONT_TRANSITION_MUSIC
+	special SpawnCameraObject
 # 507 "data/maps/SunshineTown/scripts.pory"
-	call Eventscript_CutsceneEnds
+	applymovement 1, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_3
 # 508 "data/maps/SunshineTown/scripts.pory"
-	clearflag FLAG_TEMP_3
+	delay 4
 # 509 "data/maps/SunshineTown/scripts.pory"
-	addobject 22
+	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_4
 # 510 "data/maps/SunshineTown/scripts.pory"
-	addobject 23
+	delay 4
 # 511 "data/maps/SunshineTown/scripts.pory"
-	applymovement 22, invisible
+	applymovement OBJ_EVENT_ID_CAMERA, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_5
 # 512 "data/maps/SunshineTown/scripts.pory"
 	waitmovement
 # 513 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_1
+# 514 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 515 "data/maps/SunshineTown/scripts.pory"
+	applymovement 1, faceleft
+# 516 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 517 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_FatMan_Text_0
+# 518 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_2
+# 519 "data/maps/SunshineTown/scripts.pory"
+	playbgm MUS_P3_CALAMITY, TRUE
+# 520 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_3
+# 522 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 523 "data/maps/SunshineTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, walkleft
+# 524 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 525 "data/maps/SunshineTown/scripts.pory"
+	special RemoveCameraObject
+# 526 "data/maps/SunshineTown/scripts.pory"
+	applymovement 1, SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_6
+# 527 "data/maps/SunshineTown/scripts.pory"
+	delay 20
+# 528 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_4
+# 533 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 534 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 20
+# 535 "data/maps/SunshineTown/scripts.pory"
+	setflag FLAG_DONT_TRANSITION_MUSIC
+# 536 "data/maps/SunshineTown/scripts.pory"
+	call Eventscript_CutsceneEnds
+# 537 "data/maps/SunshineTown/scripts.pory"
+	clearflag FLAG_TEMP_3
+# 538 "data/maps/SunshineTown/scripts.pory"
+	addobject 22
+# 539 "data/maps/SunshineTown/scripts.pory"
+	addobject 23
+# 540 "data/maps/SunshineTown/scripts.pory"
+	applymovement 22, invisible
+# 541 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 542 "data/maps/SunshineTown/scripts.pory"
 	releaseall
 	end
 
 
 SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger18::
-# 518 "data/maps/SunshineTown/scripts.pory"
+# 547 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 519 "data/maps/SunshineTown/scripts.pory"
+# 548 "data/maps/SunshineTown/scripts.pory"
 	playse SE_PIN
-# 520 "data/maps/SunshineTown/scripts.pory"
+# 549 "data/maps/SunshineTown/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger18_Movement_0
-# 521 "data/maps/SunshineTown/scripts.pory"
+# 550 "data/maps/SunshineTown/scripts.pory"
 	waitmovement
-# 522 "data/maps/SunshineTown/scripts.pory"
+# 551 "data/maps/SunshineTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_FOLLOWER, SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger18_Movement_1
-# 523 "data/maps/SunshineTown/scripts.pory"
+# 552 "data/maps/SunshineTown/scripts.pory"
 	waitmovement
-# 524 "data/maps/SunshineTown/scripts.pory"
+# 553 "data/maps/SunshineTown/scripts.pory"
 	special SpawnCameraObject
-# 525 "data/maps/SunshineTown/scripts.pory"
+# 554 "data/maps/SunshineTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger18_Movement_2
-# 526 "data/maps/SunshineTown/scripts.pory"
+# 555 "data/maps/SunshineTown/scripts.pory"
 	waitmovement OBJ_EVENT_ID_CAMERA
-# 527 "data/maps/SunshineTown/scripts.pory"
+# 556 "data/maps/SunshineTown/scripts.pory"
 	goto SunshineTown_Eventscript_KGStaffAtWoodsEntrance
 	return
 
 
 SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger19::
-# 531 "data/maps/SunshineTown/scripts.pory"
+# 560 "data/maps/SunshineTown/scripts.pory"
 	lock
-# 532 "data/maps/SunshineTown/scripts.pory"
+# 561 "data/maps/SunshineTown/scripts.pory"
 	playse SE_PIN
-# 533 "data/maps/SunshineTown/scripts.pory"
+# 562 "data/maps/SunshineTown/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger19_Movement_0
-# 534 "data/maps/SunshineTown/scripts.pory"
+# 563 "data/maps/SunshineTown/scripts.pory"
 	waitmovement
-# 535 "data/maps/SunshineTown/scripts.pory"
+# 564 "data/maps/SunshineTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_FOLLOWER, SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger18_Movement_1
-# 536 "data/maps/SunshineTown/scripts.pory"
+# 565 "data/maps/SunshineTown/scripts.pory"
 	waitmovement
-# 537 "data/maps/SunshineTown/scripts.pory"
+# 566 "data/maps/SunshineTown/scripts.pory"
 	special SpawnCameraObject
-# 538 "data/maps/SunshineTown/scripts.pory"
+# 567 "data/maps/SunshineTown/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger18_Movement_2
-# 539 "data/maps/SunshineTown/scripts.pory"
+# 568 "data/maps/SunshineTown/scripts.pory"
 	waitmovement OBJ_EVENT_ID_CAMERA
-# 540 "data/maps/SunshineTown/scripts.pory"
+# 569 "data/maps/SunshineTown/scripts.pory"
 	goto SunshineTown_Eventscript_KGStaffAtWoodsEntrance
 	return
 
 
 SunshineTown_Eventscript_KGStaffAtWoodsEntrance::
-# 544 "data/maps/SunshineTown/scripts.pory"
-	delay 20
-# 545 "data/maps/SunshineTown/scripts.pory"
-	playse SE_EXIT
-# 546 "data/maps/SunshineTown/scripts.pory"
-	clearflag FLAG_TEMP_5
-# 547 "data/maps/SunshineTown/scripts.pory"
-	addobject 22, MAP_SUNSHINE_TOWN
-# 548 "data/maps/SunshineTown/scripts.pory"
-	delay 20
-# 549 "data/maps/SunshineTown/scripts.pory"
-	applymovement 22, walkinplacedown
-# 550 "data/maps/SunshineTown/scripts.pory"
-	waitmovement
-# 551 "data/maps/SunshineTown/scripts.pory"
-	setspeaker SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_0
-# 552 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_1
-# 553 "data/maps/SunshineTown/scripts.pory"
-	applymovement 23, walkinplaceup
-# 554 "data/maps/SunshineTown/scripts.pory"
-	waitmovement
-# 555 "data/maps/SunshineTown/scripts.pory"
-	setspeaker SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_2
-# 556 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_3
-# 558 "data/maps/SunshineTown/scripts.pory"
-	applymovement 22, walkinplacedown
-# 559 "data/maps/SunshineTown/scripts.pory"
-	waitmovement
-# 560 "data/maps/SunshineTown/scripts.pory"
-	setspeaker SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_0
-# 561 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_4
-# 563 "data/maps/SunshineTown/scripts.pory"
-	closemessage
-# 564 "data/maps/SunshineTown/scripts.pory"
-	delay 20
-# 565 "data/maps/SunshineTown/scripts.pory"
-	applymovement 22, SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Movement_0
-# 566 "data/maps/SunshineTown/scripts.pory"
-	waitmovement
-# 567 "data/maps/SunshineTown/scripts.pory"
-	playse SE_EXIT
-# 568 "data/maps/SunshineTown/scripts.pory"
-	delay 4
-# 569 "data/maps/SunshineTown/scripts.pory"
-	applymovement 23, SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Movement_0
-# 570 "data/maps/SunshineTown/scripts.pory"
-	waitmovement
-# 571 "data/maps/SunshineTown/scripts.pory"
-	playse SE_EXIT
-# 572 "data/maps/SunshineTown/scripts.pory"
-	delay 20
 # 573 "data/maps/SunshineTown/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Movement_1
+	delay 20
 # 574 "data/maps/SunshineTown/scripts.pory"
-	waitmovement
+	playse SE_EXIT
 # 575 "data/maps/SunshineTown/scripts.pory"
-	special RemoveCameraObject
+	clearflag FLAG_TEMP_5
 # 576 "data/maps/SunshineTown/scripts.pory"
-	msgbox SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_5
+	addobject 22, MAP_SUNSHINE_TOWN
+# 577 "data/maps/SunshineTown/scripts.pory"
+	delay 20
 # 578 "data/maps/SunshineTown/scripts.pory"
-	closemessage
+	applymovement 22, walkinplacedown
 # 579 "data/maps/SunshineTown/scripts.pory"
-	removeobject 22
+	waitmovement
 # 580 "data/maps/SunshineTown/scripts.pory"
-	removeobject 23
+	setspeaker SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_0
 # 581 "data/maps/SunshineTown/scripts.pory"
-	setflag FLAG_TEMP_3
+	msgbox SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_1
 # 582 "data/maps/SunshineTown/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 21
+	applymovement 23, walkinplaceup
 # 583 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 584 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_2
+# 585 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_3
+# 587 "data/maps/SunshineTown/scripts.pory"
+	applymovement 22, walkinplacedown
+# 588 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 589 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_0
+# 590 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_4
+# 592 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 593 "data/maps/SunshineTown/scripts.pory"
+	delay 20
+# 594 "data/maps/SunshineTown/scripts.pory"
+	applymovement 22, SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Movement_0
+# 595 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 596 "data/maps/SunshineTown/scripts.pory"
+	playse SE_EXIT
+# 597 "data/maps/SunshineTown/scripts.pory"
+	delay 4
+# 598 "data/maps/SunshineTown/scripts.pory"
+	applymovement 23, SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Movement_0
+# 599 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 600 "data/maps/SunshineTown/scripts.pory"
+	playse SE_EXIT
+# 601 "data/maps/SunshineTown/scripts.pory"
+	delay 20
+# 602 "data/maps/SunshineTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Movement_1
+# 603 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 604 "data/maps/SunshineTown/scripts.pory"
+	special RemoveCameraObject
+# 605 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_5
+# 607 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 608 "data/maps/SunshineTown/scripts.pory"
+	removeobject 22
+# 609 "data/maps/SunshineTown/scripts.pory"
+	removeobject 23
+# 610 "data/maps/SunshineTown/scripts.pory"
+	setflag FLAG_TEMP_3
+# 611 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 21
+# 612 "data/maps/SunshineTown/scripts.pory"
+	fwdtime 9, 40
+# 613 "data/maps/SunshineTown/scripts.pory"
 	release
+	end
+
+
+SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji::
+# 618 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 619 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Movement_0
+# 620 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 621 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_0
+# 622 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 623 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Movement_1
+# 624 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 625 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_1
+# 626 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_FatMan_Text_0
+# 627 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_2
+# 629 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_FatMan_Text_0
+# 630 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_3
+# 633 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 634 "data/maps/SunshineTown/scripts.pory"
+	applymovement 1, facedown
+# 635 "data/maps/SunshineTown/scripts.pory"
+	delay 4
+# 636 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, facedown
+# 637 "data/maps/SunshineTown/scripts.pory"
+	delay 8
+# 638 "data/maps/SunshineTown/scripts.pory"
+	special SpawnCameraObject
+# 639 "data/maps/SunshineTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Movement_2
+# 640 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 641 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_FatMan_Text_0
+# 642 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_4
+# 644 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 645 "data/maps/SunshineTown/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Movement_3
+# 646 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 647 "data/maps/SunshineTown/scripts.pory"
+	special RemoveCameraObject
+# 648 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 24
+# 649 "data/maps/SunshineTown/scripts.pory"
+	fwdtime 17, 20
+# 650 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji::
+# 655 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 656 "data/maps/SunshineTown/scripts.pory"
+	playse SE_PIN
+# 657 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, emoteexclamation
+# 658 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_0
+# 659 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_1
+# 660 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_2
+# 661 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_3
+# 663 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 664 "data/maps/SunshineTown/scripts.pory"
+	playse SE_M_DOUBLE_SLAP
+# 665 "data/maps/SunshineTown/scripts.pory"
+	call Eventscript_BlockShakeCamera
+# 666 "data/maps/SunshineTown/scripts.pory"
+	playse SE_PIN
+# 667 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, emoteexclamation
+# 668 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 669 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_0
+# 670 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_4
+# 673 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_2
+# 674 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_5
+# 675 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 676 "data/maps/SunshineTown/scripts.pory"
+	delay 20
+# 677 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_6
+# 678 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_7
+# 679 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_2
+# 680 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_8
+# 681 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 682 "data/maps/SunshineTown/scripts.pory"
+	delay 20
+# 683 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, facedown
+# 684 "data/maps/SunshineTown/scripts.pory"
+	waitmovement
+# 685 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_9
+# 687 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 688 "data/maps/SunshineTown/scripts.pory"
+	applymovement LOCALID_PLAYER, SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Movement_0
+# 689 "data/maps/SunshineTown/scripts.pory"
+	delay 40
+# 690 "data/maps/SunshineTown/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 25
+# 691 "data/maps/SunshineTown/scripts.pory"
+	warpsilent MAP_BLANK_MAP
 	return
 
 
-# 62 "data/maps/SunshineTown/scripts.pory"
+# 65 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruOnWarp19_Movement_0:
-# 62 "data/maps/SunshineTown/scripts.pory"
+# 65 "data/maps/SunshineTown/scripts.pory"
 	set_invisible
 	step_end
 
-# 63 "data/maps/SunshineTown/scripts.pory"
+# 66 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruOnWarp19_Movement_1:
-# 63 "data/maps/SunshineTown/scripts.pory"
+# 66 "data/maps/SunshineTown/scripts.pory"
 	face_right
 	step_end
 
-# 457 "data/maps/SunshineTown/scripts.pory"
+# 486 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_0:
-# 457 "data/maps/SunshineTown/scripts.pory"
+# 486 "data/maps/SunshineTown/scripts.pory"
 	player_run_right
-# 457 "data/maps/SunshineTown/scripts.pory"
+# 486 "data/maps/SunshineTown/scripts.pory"
 	player_run_right
-# 457 "data/maps/SunshineTown/scripts.pory"
+# 486 "data/maps/SunshineTown/scripts.pory"
 	player_run_right
-# 457 "data/maps/SunshineTown/scripts.pory"
+# 486 "data/maps/SunshineTown/scripts.pory"
 	walk_right
-# 457 "data/maps/SunshineTown/scripts.pory"
+# 486 "data/maps/SunshineTown/scripts.pory"
 	walk_right
-# 457 "data/maps/SunshineTown/scripts.pory"
+# 486 "data/maps/SunshineTown/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_1:
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
-# 459 "data/maps/SunshineTown/scripts.pory"
+# 488 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 463 "data/maps/SunshineTown/scripts.pory"
+# 492 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_2:
-# 463 "data/maps/SunshineTown/scripts.pory"
+# 492 "data/maps/SunshineTown/scripts.pory"
 	face_down
-# 463 "data/maps/SunshineTown/scripts.pory"
+# 492 "data/maps/SunshineTown/scripts.pory"
 	lock_facing_direction
-# 463 "data/maps/SunshineTown/scripts.pory"
+# 492 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_up
-# 463 "data/maps/SunshineTown/scripts.pory"
+# 492 "data/maps/SunshineTown/scripts.pory"
 	unlock_facing_direction
-# 463 "data/maps/SunshineTown/scripts.pory"
+# 492 "data/maps/SunshineTown/scripts.pory"
 	delay_16
-# 463 "data/maps/SunshineTown/scripts.pory"
+# 492 "data/maps/SunshineTown/scripts.pory"
 	face_left
 	step_end
 
-# 478 "data/maps/SunshineTown/scripts.pory"
+# 507 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_3:
-# 478 "data/maps/SunshineTown/scripts.pory"
+# 507 "data/maps/SunshineTown/scripts.pory"
 	set_visible
-# 478 "data/maps/SunshineTown/scripts.pory"
+# 507 "data/maps/SunshineTown/scripts.pory"
 	delay_8
-# 478 "data/maps/SunshineTown/scripts.pory"
+# 507 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 478 "data/maps/SunshineTown/scripts.pory"
+# 507 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 478 "data/maps/SunshineTown/scripts.pory"
+# 507 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 478 "data/maps/SunshineTown/scripts.pory"
+# 507 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 478 "data/maps/SunshineTown/scripts.pory"
+# 507 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 480 "data/maps/SunshineTown/scripts.pory"
+# 509 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_4:
-# 480 "data/maps/SunshineTown/scripts.pory"
+# 509 "data/maps/SunshineTown/scripts.pory"
 	face_down
-# 480 "data/maps/SunshineTown/scripts.pory"
+# 509 "data/maps/SunshineTown/scripts.pory"
 	delay_16
-# 480 "data/maps/SunshineTown/scripts.pory"
+# 509 "data/maps/SunshineTown/scripts.pory"
 	face_right
 	step_end
 
-# 482 "data/maps/SunshineTown/scripts.pory"
+# 511 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_5:
-# 482 "data/maps/SunshineTown/scripts.pory"
+# 511 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 497 "data/maps/SunshineTown/scripts.pory"
+# 526 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Movement_6:
-# 497 "data/maps/SunshineTown/scripts.pory"
+# 526 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 497 "data/maps/SunshineTown/scripts.pory"
+# 526 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 497 "data/maps/SunshineTown/scripts.pory"
+# 526 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_right
-# 497 "data/maps/SunshineTown/scripts.pory"
+# 526 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 497 "data/maps/SunshineTown/scripts.pory"
+# 526 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 497 "data/maps/SunshineTown/scripts.pory"
+# 526 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 497 "data/maps/SunshineTown/scripts.pory"
+# 526 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 497 "data/maps/SunshineTown/scripts.pory"
+# 526 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 497 "data/maps/SunshineTown/scripts.pory"
+# 526 "data/maps/SunshineTown/scripts.pory"
 	walk_fast_down
-# 497 "data/maps/SunshineTown/scripts.pory"
+# 526 "data/maps/SunshineTown/scripts.pory"
 	set_invisible
 	step_end
 
-# 520 "data/maps/SunshineTown/scripts.pory"
+# 549 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger18_Movement_0:
-# 520 "data/maps/SunshineTown/scripts.pory"
+# 549 "data/maps/SunshineTown/scripts.pory"
 	emote_exclamation_mark
-# 520 "data/maps/SunshineTown/scripts.pory"
+# 549 "data/maps/SunshineTown/scripts.pory"
 	face_right
-# 520 "data/maps/SunshineTown/scripts.pory"
+# 549 "data/maps/SunshineTown/scripts.pory"
 	delay_16
-# 520 "data/maps/SunshineTown/scripts.pory"
+# 549 "data/maps/SunshineTown/scripts.pory"
 	delay_8
-# 520 "data/maps/SunshineTown/scripts.pory"
+# 549 "data/maps/SunshineTown/scripts.pory"
 	player_run_left
-# 520 "data/maps/SunshineTown/scripts.pory"
+# 549 "data/maps/SunshineTown/scripts.pory"
 	player_run_up
-# 520 "data/maps/SunshineTown/scripts.pory"
+# 549 "data/maps/SunshineTown/scripts.pory"
 	face_left
 	step_end
 
-# 522 "data/maps/SunshineTown/scripts.pory"
+# 551 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger18_Movement_1:
-# 522 "data/maps/SunshineTown/scripts.pory"
+# 551 "data/maps/SunshineTown/scripts.pory"
 	walk_left
-# 522 "data/maps/SunshineTown/scripts.pory"
+# 551 "data/maps/SunshineTown/scripts.pory"
 	walk_up
-# 522 "data/maps/SunshineTown/scripts.pory"
+# 551 "data/maps/SunshineTown/scripts.pory"
 	face_right
 	step_end
 
-# 525 "data/maps/SunshineTown/scripts.pory"
+# 554 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger18_Movement_2:
-# 525 "data/maps/SunshineTown/scripts.pory"
+# 554 "data/maps/SunshineTown/scripts.pory"
 	walk_right
-# 525 "data/maps/SunshineTown/scripts.pory"
+# 554 "data/maps/SunshineTown/scripts.pory"
 	walk_diag_southeast
 	step_end
 
-# 533 "data/maps/SunshineTown/scripts.pory"
+# 562 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger19_Movement_0:
-# 533 "data/maps/SunshineTown/scripts.pory"
+# 562 "data/maps/SunshineTown/scripts.pory"
 	emote_exclamation_mark
-# 533 "data/maps/SunshineTown/scripts.pory"
+# 562 "data/maps/SunshineTown/scripts.pory"
 	face_right
-# 533 "data/maps/SunshineTown/scripts.pory"
+# 562 "data/maps/SunshineTown/scripts.pory"
 	delay_16
-# 533 "data/maps/SunshineTown/scripts.pory"
+# 562 "data/maps/SunshineTown/scripts.pory"
 	delay_8
-# 533 "data/maps/SunshineTown/scripts.pory"
+# 562 "data/maps/SunshineTown/scripts.pory"
 	player_run_left
-# 533 "data/maps/SunshineTown/scripts.pory"
+# 562 "data/maps/SunshineTown/scripts.pory"
 	player_run_up
-# 533 "data/maps/SunshineTown/scripts.pory"
+# 562 "data/maps/SunshineTown/scripts.pory"
 	player_run_up
-# 533 "data/maps/SunshineTown/scripts.pory"
+# 562 "data/maps/SunshineTown/scripts.pory"
 	face_left
 	step_end
 
-# 565 "data/maps/SunshineTown/scripts.pory"
+# 594 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Movement_0:
-# 565 "data/maps/SunshineTown/scripts.pory"
+# 594 "data/maps/SunshineTown/scripts.pory"
 	face_right
-# 565 "data/maps/SunshineTown/scripts.pory"
+# 594 "data/maps/SunshineTown/scripts.pory"
 	delay_8
-# 565 "data/maps/SunshineTown/scripts.pory"
+# 594 "data/maps/SunshineTown/scripts.pory"
 	set_invisible
 	step_end
 
-# 573 "data/maps/SunshineTown/scripts.pory"
+# 602 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Movement_1:
-# 573 "data/maps/SunshineTown/scripts.pory"
+# 602 "data/maps/SunshineTown/scripts.pory"
 	walk_left
-# 573 "data/maps/SunshineTown/scripts.pory"
+# 602 "data/maps/SunshineTown/scripts.pory"
 	walk_diag_northwest
 	step_end
 
+# 619 "data/maps/SunshineTown/scripts.pory"
+SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Movement_0:
+# 619 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 619 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 619 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 619 "data/maps/SunshineTown/scripts.pory"
+	walk_right
+# 619 "data/maps/SunshineTown/scripts.pory"
+	walk_right
+# 619 "data/maps/SunshineTown/scripts.pory"
+	delay_16
+	step_end
+
+# 623 "data/maps/SunshineTown/scripts.pory"
+SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Movement_1:
+# 623 "data/maps/SunshineTown/scripts.pory"
+	walk_down
+# 623 "data/maps/SunshineTown/scripts.pory"
+	walk_right
+# 623 "data/maps/SunshineTown/scripts.pory"
+	walk_right
+	step_end
+
+# 639 "data/maps/SunshineTown/scripts.pory"
+SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Movement_2:
+# 639 "data/maps/SunshineTown/scripts.pory"
+	walk_down
+# 639 "data/maps/SunshineTown/scripts.pory"
+	walk_diag_southwest
+# 639 "data/maps/SunshineTown/scripts.pory"
+	walk_diag_southwest
+# 639 "data/maps/SunshineTown/scripts.pory"
+	walk_diag_southwest
+# 639 "data/maps/SunshineTown/scripts.pory"
+	walk_diag_southwest
+# 639 "data/maps/SunshineTown/scripts.pory"
+	walk_left
+# 639 "data/maps/SunshineTown/scripts.pory"
+	walk_left
+	step_end
+
+# 645 "data/maps/SunshineTown/scripts.pory"
+SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Movement_3:
+# 645 "data/maps/SunshineTown/scripts.pory"
+	walk_diag_northeast
+# 645 "data/maps/SunshineTown/scripts.pory"
+	walk_diag_northeast
+# 645 "data/maps/SunshineTown/scripts.pory"
+	walk_diag_northeast
+# 645 "data/maps/SunshineTown/scripts.pory"
+	walk_diag_northeast
+# 645 "data/maps/SunshineTown/scripts.pory"
+	walk_diag_northeast
+# 645 "data/maps/SunshineTown/scripts.pory"
+	walk_right
+	step_end
+
+# 688 "data/maps/SunshineTown/scripts.pory"
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Movement_0:
+# 688 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 688 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 688 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 688 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 688 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 688 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 688 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 688 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 688 "data/maps/SunshineTown/scripts.pory"
+	player_run_right
+# 688 "data/maps/SunshineTown/scripts.pory"
+	player_run_up
+# 688 "data/maps/SunshineTown/scripts.pory"
+	player_run_up
+# 688 "data/maps/SunshineTown/scripts.pory"
+	face_down
+	step_end
+
 SunshineTown_Eventscript_Kurosawa_Text_0:
-# 83 "data/maps/SunshineTown/scripts.pory"
+# 101 "data/maps/SunshineTown/scripts.pory"
 	.string "Hm?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-we'll get going now!$"
 
 SunshineTown_Eventscript_Kurosawa_Text_1:
-# 87 "data/maps/SunshineTown/scripts.pory"
+# 105 "data/maps/SunshineTown/scripts.pory"
 	.string "If only the higher-ups allowed us-$"
 
 SunshineTown_Eventscript_Kurosawa_Text_2:
-# 92 "data/maps/SunshineTown/scripts.pory"
+# 110 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_KUROSAWA}Do you need some help, kids?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Oh nothing! Sorry for bothering you,\n"
 	.string "sir.\p"
 	.string "(He looks so intimidating!)$"
 
 SunshineTown_Eventscript_GoGetPackage0_Text_0:
-# 107 "data/maps/SunshineTown/scripts.pory"
+# 126 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The Pokémon Center is right there, Aki.$"
 
 SunshineTown_Eventscript_FatMan_Text_0:
-# 137 "data/maps/SunshineTown/scripts.pory"
+# 156 "data/maps/SunshineTown/scripts.pory"
 	.string "Kojima$"
 
 SunshineTown_Eventscript_FatMan_Text_1:
-# 140 "data/maps/SunshineTown/scripts.pory"
+# 159 "data/maps/SunshineTown/scripts.pory"
 	.string "Sorry, I lost my wallet around here and\n"
 	.string "Yoshida is helping me finding it.$"
 
 SunshineTown_Eventscript_FatMan_Text_2:
-# 146 "data/maps/SunshineTown/scripts.pory"
+# 165 "data/maps/SunshineTown/scripts.pory"
 	.string "The policeman living here ran toward\n"
 	.string "the woods after hearing that explosion.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should hurry up!$"
 
 SunshineTown_Eventscript_FatMan_Text_3:
-# 151 "data/maps/SunshineTown/scripts.pory"
+# 172 "data/maps/SunshineTown/scripts.pory"
 	.string "Technology is amazing.\p"
 	.string "Now you can do so many things with\n"
 	.string "decomps.$"
 
 SunshineTown_Eventscript_Boy_Text_0:
-# 159 "data/maps/SunshineTown/scripts.pory"
+# 181 "data/maps/SunshineTown/scripts.pory"
 	.string "Yoshida$"
 
 SunshineTown_Eventscript_Boy_Text_1:
-# 161 "data/maps/SunshineTown/scripts.pory"
+# 183 "data/maps/SunshineTown/scripts.pory"
 	.string "I'm helping Kojima find his wallet. Sigh...\n"
 	.string "He's always losing important stuff.$"
 
 SunshineTown_Eventscript_Boy_Text_2:
-# 167 "data/maps/SunshineTown/scripts.pory"
+# 189 "data/maps/SunshineTown/scripts.pory"
 	.string "I think something exploded in the\n"
 	.string "woods.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DARKENED}Could it be...\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}The orphanage!$"
 
 SunshineTown_Eventscript_Boy_Text_3:
-# 173 "data/maps/SunshineTown/scripts.pory"
+# 197 "data/maps/SunshineTown/scripts.pory"
 	.string "My brother is a fire fighter and he's at\n"
 	.string "the burning orphanage right now.\p"
 	.string "I'm so worried I can't stay still, I hope\n"
@@ -1362,42 +1614,42 @@ SunshineTown_Eventscript_Boy_Text_3:
 	.string "Poltchageist.$"
 
 SunshineTown_Eventscript_Boy_Text_4:
-# 178 "data/maps/SunshineTown/scripts.pory"
+# 202 "data/maps/SunshineTown/scripts.pory"
 	.string "One of the richest families in the\n"
 	.string "region lives on this island.\p"
 	.string "I heard their mansion was at the south\n"
 	.string "end of Route 1.$"
 
 SunshineTown_Eventscript_DirerctionSign_Text_0:
-# 187 "data/maps/SunshineTown/scripts.pory"
+# 212 "data/maps/SunshineTown/scripts.pory"
 	.string "Sunshine Riverbank {DOWN_ARROW}\n"
 	.string "Route 2 {LEFT_ARROW}$"
 
 SunshineTown_Eventscript_TownSign_Text_0:
-# 194 "data/maps/SunshineTown/scripts.pory"
+# 220 "data/maps/SunshineTown/scripts.pory"
 	.string "Welcome to Sunshine Town!$"
 
 SunshineTown_Eventscript_ExitingPC_Text_0:
-# 209 "data/maps/SunshineTown/scripts.pory"
+# 236 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Let's ask around what happened.\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}Yeah.$"
 
 SunshineTown_Eventscript_DontLeaveTown_Text_0:
-# 237 "data/maps/SunshineTown/scripts.pory"
+# 265 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should ask people in town about that\n"
 	.string "explosion sound!$"
 
 SunshineTown_Eventscript_NoPointEnteringPC_Text_0:
-# 254 "data/maps/SunshineTown/scripts.pory"
+# 283 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to be dawdling around!)$"
 
 SunshineTown_Eventscript_OW_Happiny_Text_0:
-# 280 "data/maps/SunshineTown/scripts.pory"
+# 311 "data/maps/SunshineTown/scripts.pory"
 	.string "The Happiny is looking through the\n"
 	.string "door. It won't budge no matter what.$"
 
 SunshineTown_Eventscript_OnFrame23_Text_0:
-# 299 "data/maps/SunshineTown/scripts.pory"
+# 330 "data/maps/SunshineTown/scripts.pory"
 	.string "{COLOR GREEN}Tips: Quest System is now unlocked.\p"
 	.string "Check around for quest givers with a\n"
 	.string "light blue exclamation mark.\p"
@@ -1405,33 +1657,33 @@ SunshineTown_Eventscript_OnFrame23_Text_0:
 	.string "{START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}.$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Text_0:
-# 314 "data/maps/SunshineTown/scripts.pory"
+# 344 "data/maps/SunshineTown/scripts.pory"
 	.string "Fumiko$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted_Text_0:
-# 335 "data/maps/SunshineTown/scripts.pory"
+# 363 "data/maps/SunshineTown/scripts.pory"
 	.string "Soothe Bell can help you befriend\n"
 	.string "Pokémon faster.$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward_Text_0:
-# 345 "data/maps/SunshineTown/scripts.pory"
+# 373 "data/maps/SunshineTown/scripts.pory"
 	.string "My Riolu was very happy. Please take\n"
 	.string "this as a thank-you for doing me a\l"
 	.string "favor.$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_0:
-# 360 "data/maps/SunshineTown/scripts.pory"
+# 388 "data/maps/SunshineTown/scripts.pory"
 	.string "You can find my poor Riolu on the\n"
 	.string "second floor.$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_1:
-# 366 "data/maps/SunshineTown/scripts.pory"
+# 394 "data/maps/SunshineTown/scripts.pory"
 	.string "Excuse me, young men. Can you do me a\n"
 	.string "favor?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure, ma'am. What can we do for you?$"
 
 SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_2:
-# 370 "data/maps/SunshineTown/scripts.pory"
+# 398 "data/maps/SunshineTown/scripts.pory"
 	.string "One of the Pokémon caretakers I hired\n"
 	.string "couldn't show up today.\p"
 	.string "Can you go play with my poor baby Riolu?\n"
@@ -1439,37 +1691,37 @@ SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Tex
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Leave it to us!$"
 
 SunshineTown_Eventscript_ExpertF_PreQuest_Text_0:
-# 384 "data/maps/SunshineTown/scripts.pory"
+# 412 "data/maps/SunshineTown/scripts.pory"
 	.string "I lent my Lucario to the police to help\n"
 	.string "them with the rescue.\p"
 	.string "The Riolus are still too young and I\n"
 	.string "have to keep them safe here.$"
 
 SunshineTown_Eventscript_ExpertF_PreQuest_Text_1:
-# 392 "data/maps/SunshineTown/scripts.pory"
+# 420 "data/maps/SunshineTown/scripts.pory"
 	.string "Did you hear a loud sound or was it\n"
 	.string "because of my ears acting up again?$"
 
 SunshineTown_Eventscript_ExpertF_PreQuest_Text_2:
-# 398 "data/maps/SunshineTown/scripts.pory"
+# 426 "data/maps/SunshineTown/scripts.pory"
 	.string "Where did I put my key again...?$"
 
 SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24_Text_0:
-# 407 "data/maps/SunshineTown/scripts.pory"
+# 435 "data/maps/SunshineTown/scripts.pory"
 	.string "{COLOR RED}Important scene ahead. Do you want to\n"
 	.string "proceed?$"
 
 unlockcharacters_Text_0:
-# 433 "data/maps/SunshineTown/scripts.pory"
+# 462 "data/maps/SunshineTown/scripts.pory"
 	.string "unlocked & made available all charas$"
 
 makecharagrayout_Text_0:
-# 445 "data/maps/SunshineTown/scripts.pory"
+# 474 "data/maps/SunshineTown/scripts.pory"
 	.string "Marking prologue to completed & reset\n"
 	.string "all temp vars$"
 
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_0:
-# 468 "data/maps/SunshineTown/scripts.pory"
+# 497 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(The police? How did they arrive this\n"
 	.string "fast? The explosion happened just a\l"
 	.string "few minutes ago.)\p"
@@ -1478,25 +1730,25 @@ SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_0:
 	.string "opposite direction of Sunshine Town.)$"
 
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_1:
-# 484 "data/maps/SunshineTown/scripts.pory"
+# 513 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Excuse me. Did something happen?\n"
 	.string "Everyone in town looks on edge.$"
 
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_2:
-# 489 "data/maps/SunshineTown/scripts.pory"
+# 518 "data/maps/SunshineTown/scripts.pory"
 	.string "There was an explosion at the\n"
 	.string "orphanage east of town, didn't you\l"
 	.string "hear?$"
 
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_3:
-# 491 "data/maps/SunshineTown/scripts.pory"
+# 520 "data/maps/SunshineTown/scripts.pory"
 	.string "Lots of people were injured and the\n"
 	.string "town people are trying to help.\p"
 	.string "Now excuse me, I gotta bring these\n"
 	.string "medicines to the injured.$"
 
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_4:
-# 499 "data/maps/SunshineTown/scripts.pory"
+# 528 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(The orphanage was exploded?)\p"
 	.string "(Damn it! How am I so naive. Of course\n"
 	.string "they would do that to erase the proofs\l"
@@ -1508,32 +1760,115 @@ SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_4:
 	.string "as well.)$"
 
 SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_0:
-# 551 "data/maps/SunshineTown/scripts.pory"
+# 580 "data/maps/SunshineTown/scripts.pory"
 	.string "Man In Black 1$"
 
 SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_1:
-# 552 "data/maps/SunshineTown/scripts.pory"
+# 581 "data/maps/SunshineTown/scripts.pory"
 	.string "Have you seen those boys?$"
 
 SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_2:
-# 555 "data/maps/SunshineTown/scripts.pory"
+# 584 "data/maps/SunshineTown/scripts.pory"
 	.string "Man In Black 2$"
 
 SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_3:
-# 556 "data/maps/SunshineTown/scripts.pory"
+# 585 "data/maps/SunshineTown/scripts.pory"
 	.string "No, I've been standing here the whole\n"
 	.string "time but I didn't see them.\p"
 	.string "This is the only exit to safety. Where\n"
 	.string "could they be?$"
 
 SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_4:
-# 561 "data/maps/SunshineTown/scripts.pory"
+# 590 "data/maps/SunshineTown/scripts.pory"
 	.string "Maybe they're still in the woods?\p"
 	.string "Let's go search for them.$"
 
 SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_5:
-# 576 "data/maps/SunshineTown/scripts.pory"
+# 605 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(They're searching for some boys... Ones\n"
 	.string "of the orphan kids, perhaps?)\p"
 	.string "(I should tail them and see what they're\n"
 	.string "up to.)$"
+
+SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_0:
+# 621 "data/maps/SunshineTown/scripts.pory"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(This man... He was helping the\n"
+	.string "orphanage so he could've known\l"
+	.string "something about those boys.)$"
+
+SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_1:
+# 625 "data/maps/SunshineTown/scripts.pory"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Excuse me. Have you seen these boys?$"
+
+SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_2:
+# 627 "data/maps/SunshineTown/scripts.pory"
+	.string "Oh them! I saw the policeman living in\n"
+	.string "this town carried them to his house.\p"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Really? When was it?$"
+
+SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_3:
+# 630 "data/maps/SunshineTown/scripts.pory"
+	.string "{DESTROY_MUGSHOT}I think it was around an hour after the\n"
+	.string "explosion at the orphanage happened?\p"
+	.string "After that I've only seen the black-red\n"
+	.string "beanie boy going out of the house a few\l"
+	.string "times.\p"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}May I ask where this policeman's house\n"
+	.string "is?$"
+
+SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_4:
+# 642 "data/maps/SunshineTown/scripts.pory"
+	.string "It's the house over there.\p"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you so much for your help.$"
+
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_0:
+# 658 "data/maps/SunshineTown/scripts.pory"
+	.string "???????$"
+
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_1:
+# 659 "data/maps/SunshineTown/scripts.pory"
+	.string "Aki! At least eat something before you\n"
+	.string "go find her! You haven't eaten since\l"
+	.string "yesterday!$"
+
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_2:
+# 660 "data/maps/SunshineTown/scripts.pory"
+	.string "Aki?$"
+
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_3:
+# 661 "data/maps/SunshineTown/scripts.pory"
+	.string "How do you expect I can eat anything\n"
+	.string "when Miki is still out there missing!?\p"
+	.string "What do you know anyway? It's not like\n"
+	.string "she's your sister.$"
+
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_4:
+# 670 "data/maps/SunshineTown/scripts.pory"
+	.string "Cool your ass and sit down.\p"
+	.string "Even if you find her, do you think she'll\n"
+	.string "be happy seeing you in this state?\p"
+	.string "Looking like a rotten walking zombie?$"
+
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_5:
+# 674 "data/maps/SunshineTown/scripts.pory"
+	.string ".......... Fuck you, Shinji. Fine.$"
+
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_6:
+# 677 "data/maps/SunshineTown/scripts.pory"
+	.string "Shinji?$"
+
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_7:
+# 678 "data/maps/SunshineTown/scripts.pory"
+	.string "Eat first. Then we'll go find her\n"
+	.string "together, okay?$"
+
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_8:
+# 680 "data/maps/SunshineTown/scripts.pory"
+	.string "........Okay.$"
+
+SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_9:
+# 685 "data/maps/SunshineTown/scripts.pory"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}....... (His sister's missing after the\n"
+	.string "explosion, I suppose.)\p"
+	.string "(I should go to the orphanage and help\n"
+	.string "the searching.)$"

@@ -292,7 +292,7 @@ SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient::
 # 157 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setflag FLAG_TEMP_1
 # 158 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	fwdtime 9, 30
 # 159 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	release
 	end

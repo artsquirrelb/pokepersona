@@ -19,6 +19,9 @@ mapscripts SunshineOrphanage_MapScripts {
 }
 
 script SunshineOrphanageOnFrame0 {
+    manuallysettime(WEEKDAY_WED, 16, 30, 0)
+    setflag(FLAG_SET_WALL_CLOCK)
+    setflag(FLAG_SYS_CLOCK_SET)
     goto (SunshineOrphanage_Eventscript_ShowTheMap)}
 
 script SunshineOrphanage_Eventscript_ShowTheMap {
@@ -83,12 +86,11 @@ script Shinjiro_and_Miki_Join_Party {
     waitmovement(0)
     removeobject (4)
     removeobject(3)
-    setflag(FLAG_HIDE_MIKI)
-    setflag(FLAG_HIDE_SHINJIRO)
     setflag(FLAG_TEMP_1)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 5)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    fwdtime(16, 40)
     release
+    end
 }
 movement Shinjiro_joins {
     walk_right
@@ -105,6 +107,7 @@ script Boy_1_OrphanageEntrance {
     msgbox(format("Can I grow tall like these sunflowers?\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Just drink lots of milk!"))
     release
+    end
 }
 
 script Girl_OrphanageEntrance {
@@ -113,16 +116,17 @@ script Girl_OrphanageEntrance {
     setspeaker("Yuko")
     msgbox(format("Sometimes I see people wearing black accompanying a man in a white coat speaking with our teachers.\p 
     I wonder who they are...\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I asked Ms. Kobayashi once and she said they donated a lot to the orphanage."
-    ))
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I asked Ms. Kobayashi once and she said they donated a lot to the orphanage."))
     release
+    end
 }
 
 script Sunshine_Orphanage_Direction_Sign {
     lock
-    msgbox("Sunshine Woods {DOWN_ARROW}\nBeware of wild Pokémon!"
-    )
+    msgbox("Sunshine Woods {DOWN_ARROW}\n
+    Beware of wild Pokémon!")
     release
+    end
 }
 
 script Welcome_To_Sunshine_Orphanage {
@@ -130,6 +134,7 @@ script Welcome_To_Sunshine_Orphanage {
     msgbox (format("Welcome to Sunshine Orphanage!\p
     If you have any questions, feel free to ask the staff at the main hall counter."))
     release
+    end
 }
 
 script Donors_List {
@@ -139,6 +144,7 @@ script Donors_List {
     --- Kirijo --- --- ---
     --- Ryota --- --- Takuya"))
     release
+    end
 }
 
 script Sunflora_NPC {
@@ -146,6 +152,7 @@ script Sunflora_NPC {
     faceplayer
     playmoncry(SPECIES_SUNFLORA, CRY_MODE_NORMAL)
     release
+    end
 }
 
 script Budew_NPC {
@@ -153,4 +160,5 @@ script Budew_NPC {
     faceplayer
     playmoncry(SPECIES_BUDEW, CRY_MODE_NORMAL)
     release
+    end
 }

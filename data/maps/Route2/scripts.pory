@@ -402,9 +402,7 @@ script Route2_Eventscript_Yuuka {
         trainerbattle_single (TRAINER_YUUKA, Route2_YuukaIntro, Route2_YuukaDefeated)
     }
     else{
-        trainerbattle_single (TRAINER_YUUKA, Route2_YuukaIntro_M, Route2_YuukaDefeated)
-        fwdtime(0, 20)
-    }
+        trainerbattle_single (TRAINER_YUUKA, Route2_YuukaIntro_M, Route2_YuukaDefeated)    }
     setspeaker("Yuuka")
     msgbox(Route2_YuukaPostBattle)
     closemessage
@@ -560,7 +558,7 @@ script Route2_Eventscript_AkihikoNoticingShinjiroOutside {
     waitmovement(0)
     special(RemoveCameraObject)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 41)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    end
 }
 
 movement AkihikoNoticingShinjiroOutside {
@@ -632,8 +630,6 @@ script Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle {
             goto(Route2_Eventscript_SelectingPartyShinjiroFirstBattle)
             release
         }
-        closemessage
-        end
     }
     elif (var(VAR_RESULT) >= 3){
         playse(SE_SHINY)
@@ -660,7 +656,6 @@ script Route2_Eventscript_InitShinjiroFirstBattle2 {
     waitmovement(0)
     goto(Route2_Eventscript_InitShinjiroFirstBattle)
     release
-    end
 }
 
 script Route2_Eventscript_InitShinjiroFirstBattle3 {
@@ -671,7 +666,6 @@ script Route2_Eventscript_InitShinjiroFirstBattle3 {
     waitmovement(0)
     goto(Route2_Eventscript_InitShinjiroFirstBattle)
     release
-    end
 }
 
 script Route2_Eventscript_SelectingPartyShinjiroFirstBattle {
@@ -830,6 +824,8 @@ script Route2_Eventscript_Himari {
         msgbox(format("Thank you for letting me pet your Rockruff!\p
         Its fur is surprisingly soft!"))
         closemessage
+        release
+        end
     }
     else{
     msgbox(format("Rockruff in Kitoha region can evolve into Midday, Midnight or Dusk form Lycanroc regardless of its Ability.\p
@@ -843,6 +839,8 @@ script Route2_Eventscript_Himari {
         msgbox(format("Whoa! You have a Rockruff! It's so cute!"))
         closemessage
         setvar(VAR_TEMP_0, 1)
+        release
+        end
     }
 }}
 

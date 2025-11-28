@@ -10,16 +10,12 @@ mapscripts SunshineOrphanage_Burning_MapScripts {
 script SunshineOrphanage_Burning_OnWarp18 {
     applymovement(LOCALID_PLAYER, faceup)
     hideobjectat(8, MAP_SUNSHINE_ORPHANAGE_BURNING)
-    //hideobjectat(11, MAP_SUNSHINE_ORPHANAGE_BURNING)
-    //hideobjectat(12, MAP_SUNSHINE_ORPHANAGE_BURNING)
-    //hideobjectat(13, MAP_SUNSHINE_ORPHANAGE_BURNING)
 }
 
 script SunshineOrphanage_Burning_OnFrame18{
     lockall
     goto(SunshineOrphanage_Burning_Eventscript_AkihikoNoticesTheFire)
     releaseall
-    end
 }
 
 script SunshineOrphanage_Burning_Eventscript_AkihikoNoticesTheFire {
@@ -286,6 +282,7 @@ script SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver {
     setflag(FLAG_HIDE_MIKI)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fadescreenswapbuffers(FADE_TO_BLACK)
+    fwdtime(10, 05)
     warpsilent(MAP_BLANK_MAP, 0, 0)
 }
 

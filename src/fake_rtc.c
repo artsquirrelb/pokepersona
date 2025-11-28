@@ -138,3 +138,21 @@ void Script_ToggleFakeRtc(void)
 
     FlagToggle(OW_FLAG_PAUSE_TIME);
 }
+
+static const u8 *const gDayNameStringsTable1[WEEKDAY_COUNT] = {
+    COMPOUND_STRING("Sunday"),
+    COMPOUND_STRING("Monday"),
+    COMPOUND_STRING("Tuesday"),
+    COMPOUND_STRING("Wednesday"),
+    COMPOUND_STRING("Thursday"),
+    COMPOUND_STRING("Friday"),
+    COMPOUND_STRING("Saturday"),
+};
+
+void Script_CalculateTime(struct ScriptContext *ctx)
+{
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+    StringExpandPlaceholders(gStringVar1, gDayNameStringsTable1[rtc->dayOfWeek]);
+    ConvertIntToDecimalStringN(gStringVar2, rtc->hour, STR_CONV_MODE_LEFT_ALIGN, 3);
+    ConvertIntToDecimalStringN(gStringVar3, rtc->minute, STR_CONV_MODE_LEADING_ZEROS, 2);
+}

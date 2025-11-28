@@ -47,7 +47,7 @@ script AkihikosRoom2F_Cutscene1 {
     goto (AkihikosRoom2F_Eventscript_MikiAppears)}
 
 movement Miki_Appears {
-    walk_fast_up *3
+    walk_fast_up *4
     jump_in_place_up *2
     
 }
@@ -131,24 +131,15 @@ movement StepBack {
 
 script SetWallclock {
     lock
-    if (flag(FLAG_SET_WALL_CLOCK) == TRUE){
-        goto (PlayersHouse_2F_EventScript_CheckWallClock)
-    }
-    else{
     manuallysettime(WEEKDAY_WED, 16, 32, 0)
-    pausefakertc
-    setflag(FLAG_SET_WALL_CLOCK)
-    setflag(FLAG_SYS_CLOCK_SET)
 	msgbox(format("The clock isn't working.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Let's see... The current time is... 4:32PM."))
     closemessage
-	//call(PlayersHouse_2F_EventScript_SetWallClock)
 	delay(30)
     createfieldmugshot(MUGSHOT_AKIHIKO EMOTE_NORMAL)
     setspeaker ("Akihiko")
     msgbox ("All done.")
 	setvar(VAR_AKIHIKOS_INTRO_STATE, 3)
-    }
     release
 	end
 }
@@ -176,6 +167,7 @@ script RunningShoesToggleManual {
     lock
     msgbox(format("{COLOR GREEN}Tips: You can toggle various settings in Options Menu."))
     release
+    end
 }
 
 script AkihikosPC {
@@ -216,6 +208,7 @@ script BookshelfLeft {
     msgbox(format("A book of how to draw anime characters.\p {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
     Miki often asks me to draw her favorite character from the game Persona 3."))
     releaseall
+    end
 }
 
 script BookshelfRight {
@@ -223,6 +216,7 @@ script BookshelfRight {
     msgbox(format("A book about Pokémon species in their natural habitats.\p"
     "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}{SPEAKER NAME_AKIHIKO} I hope I can get my own Pokémon soon."))
     releaseall
+    end
 }
 
 script ChoresList {
@@ -231,6 +225,7 @@ script ChoresList {
     setspeaker(SP_NAME_AKIHIKO)
     msgbox("Shinji and my chores list.")
     release
+    end
 }
 
 script Calendar {
@@ -240,6 +235,7 @@ script Calendar {
     The Sanadas and the Aragakis look like they are good people.\p 
     {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}I'll miss everyone here..."))
     release
+    end
 }
 
 script TrashcanEmptyAkihikoRoom {
@@ -247,6 +243,7 @@ script TrashcanEmptyAkihikoRoom {
     msgbox(format ("It's empty.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Shinji just took out the trash."))
     release
+    end
 }
 
 script SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi {
@@ -273,6 +270,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKoba
     setvar(VAR_AKIHIKOS_INTRO_STATE, 10)
     setvar(VAR_TEMP_1, 1)}
     release
+    end
 }
 
 movement SunshineOrphanage_AkihikosRoom2F_Eventscript_PawmiGreetsBack {
@@ -295,6 +293,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji1 {
     setflag(FLAG_TEMP_2)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
     release
+    end
 }
 
 script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji2 {
@@ -310,6 +309,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji2 {
     setflag(FLAG_TEMP_2)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
     release
+    end
 }
 
 movement SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin1 {
@@ -322,10 +322,9 @@ movement SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiAsksToJoin2 {
 }
 
 script SunshineOrphanage_AkihikosRoom2F_Eventscript_Shinjijoinexit {
-    lock
     applymovement(2, walkdown)
     waitmovement(0)
-    release
+    fwdtime(8,35)
 }
 
 script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1{
@@ -342,6 +341,7 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1{
     setflag(FLAG_TEMP_2)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
     release
+    end
 }
 
 script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2 {
@@ -358,5 +358,6 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2 {
     setflag(FLAG_TEMP_2)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 11)
     release
+    end
 }
 

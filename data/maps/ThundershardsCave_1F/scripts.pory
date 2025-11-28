@@ -65,8 +65,8 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement
     setvar(VAR_MITSURUS_INTRO_STATE, 13)
+    fwdtime(8, 05)
     release
-    showtalkbutton
     end
 }
 
@@ -127,6 +127,7 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites2 {
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement
     setvar(VAR_MITSURUS_INTRO_STATE, 13)
+    fwdtime(8, 05)
     release
     end
 }
@@ -153,6 +154,5 @@ script Common_EventScript_MiningRock{
     }
     closemessage
     release
-    showtalkbutton
     end
 }

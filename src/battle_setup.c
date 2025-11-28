@@ -10,6 +10,7 @@
 #include "script.h"
 #include "event_data.h"
 #include "metatile_behavior.h"
+#include "fake_rtc.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
 #include "field_mugshot.h"
@@ -1306,7 +1307,7 @@ static void HandleBattleVariantEndParty(void)
 static void CB2_EndTrainerBattle(void)
 {
     HandleBattleVariantEndParty();
-
+    FakeRtc_AdvanceTimeBy(0, 0, 20, 0);
     if (FollowerNPCIsBattlePartner())
     {
         RestorePartyAfterFollowerNPCBattle();

@@ -83,6 +83,22 @@ EventScript_CampGears_8:
 	goto EventScript_CampGears_4
 
 
+EventScript_TellTheTimeDayHourMinute::
+# 45 "data/scripts/newbagitems.pory"
+	callnative Script_CalculateTime
+# 46 "data/scripts/newbagitems.pory"
+	msgbox EventScript_TellTheTimeDayHourMinute_Text_0
+# 47 "data/scripts/newbagitems.pory"
+	closemessage
+	return
+
+
 EventScript_CampGears_Text_0:
 # 4 "data/scripts/newbagitems.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping).$"
+
+EventScript_TellTheTimeDayHourMinute_Text_0:
+# 46 "data/scripts/newbagitems.pory"
+	.string "{STR_VAR_1},\n"
+	.string "{STR_VAR_2}:{STR_VAR_3}.\n"
+	.string "$"

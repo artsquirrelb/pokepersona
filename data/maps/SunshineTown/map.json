@@ -584,6 +584,15 @@
       "var": "VAR_MITSURUS_INTRO_STATE",
       "var_value": "20",
       "script": "SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger19"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_MITSURUS_INTRO_STATE",
+      "var_value": "24",
+      "script": "NULL"
     }
   ],
   "bg_events": [

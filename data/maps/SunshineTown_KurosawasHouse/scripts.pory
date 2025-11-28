@@ -10,7 +10,7 @@ mapscripts SunshineTown_KurosawasHouse_MapScripts {
         if (var(VAR_AKIHIKOS_INTRO_STATE) >= 24){
             setflag(FLAG_TEMP_1)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) <=50){
+        if (var(VAR_MITSURUS_INTRO_STATE) <50){
             setflag(FLAG_TEMP_2)
         }
     }
@@ -166,12 +166,11 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     {SPEAKER NAME_KUROSAWA}{DESTROY_MUGSHOT}Stay safe, kids. I'll keep you updated with our search."))
     closemessage
     delay(20)
-    fwdtime(9, 30)
+    fwdtime(10, 30)
     fwdweekday(WEEKDAY_SUN)
-    //pausefakertc
-    warp(MAP_SUNSHINE_TOWN, 3, 14)
     setflag(FLAG_SYS_QUEST_MENU_GET)
-    end
+    warp(MAP_SUNSHINE_TOWN, 3, 14)
+    waitstate
 }
 
 movement KurosawaGettingTheSleepingBags {
@@ -225,18 +224,14 @@ script SunshineTown_KurosawasHouse_Eventscript_KurosawaInHisHouse {
         closemessage
         setflag(FLAG_TEMP_2)
     }
+    release
+    end
 }
 
 script SunshineTown_KurosawasHouse_Eventscript_TrashcanItem {
     lock
-    if (flag(FLAG_HIDDEN_ITEM_SUNSHINE_ORPHANAGE_ANTIDOTE) == TRUE){
-        msgbox("It's empty.")
-        closemessage
-    }
-    else{
-    giveitem(ITEM_ANTIDOTE, 1)
-    setflag(FLAG_HIDDEN_ITEM_SUNSHINE_ORPHANAGE_ANTIDOTE)
-    }
+    msgbox("It's empty.")
+    closemessage
     release
     end
 }

@@ -15,14 +15,14 @@ Route1_Eventscript_NotTheWayToMeadow::
 	closemessage
 # 11 "data/maps/Route1/scripts.pory"
 	release
-	return
+	end
 
 
 Route1_Eventscript_Touma::
-# 15 "data/maps/Route1/scripts.pory"
+# 16 "data/maps/Route1/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 100
 	goto_if_eq Route1_Eventscript_Touma_2
-# 18 "data/maps/Route1/scripts.pory"
+# 19 "data/maps/Route1/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 50
 	goto_if_lt Route1_Eventscript_Touma_3
 Route1_Eventscript_Touma_1:
@@ -45,18 +45,18 @@ Route1_Eventscript_Touma_1:
 	closemessage
 # 35 "data/maps/Route1/scripts.pory"
 	setvar VAR_TEMP_0, 1
+# 37 "data/maps/Route1/scripts.pory"
+	release
 	end
 
 Route1_Eventscript_Touma_2:
-# 16 "data/maps/Route1/scripts.pory"
+# 17 "data/maps/Route1/scripts.pory"
 	trainerbattle_single TRAINER_TOUMA_2, Route1_ToumaIntro_A, Route1_ToumaDefeated
 	goto Route1_Eventscript_Touma_1
 
 Route1_Eventscript_Touma_3:
-# 19 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_TOUMA, Route1_ToumaIntro, Route1_ToumaDefeated
 # 20 "data/maps/Route1/scripts.pory"
-	fwdtime 23, 50
+	trainerbattle_single TRAINER_TOUMA, Route1_ToumaIntro, Route1_ToumaDefeated
 	goto Route1_Eventscript_Touma_1
 
 Route1_Eventscript_Touma_7:
@@ -68,10 +68,10 @@ Route1_Eventscript_Touma_7:
 
 
 Route1_Eventscript_Miyu::
-# 60 "data/maps/Route1/scripts.pory"
+# 61 "data/maps/Route1/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 100
 	goto_if_eq Route1_Eventscript_Miyu_2
-# 63 "data/maps/Route1/scripts.pory"
+# 64 "data/maps/Route1/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 50
 	goto_if_lt Route1_Eventscript_Miyu_3
 # 68 "data/maps/Route1/scripts.pory"
@@ -88,15 +88,13 @@ Route1_Eventscript_Miyu_1:
 	end
 
 Route1_Eventscript_Miyu_2:
-# 61 "data/maps/Route1/scripts.pory"
+# 62 "data/maps/Route1/scripts.pory"
 	trainerbattle_single TRAINER_MIYU_2, Route1_MiyuIntro_A, Route1_MiyuDefeated
 	goto Route1_Eventscript_Miyu_1
 
 Route1_Eventscript_Miyu_3:
-# 64 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_MIYU, Route1_MiyuIntro, Route1_MiyuIntro_A
 # 65 "data/maps/Route1/scripts.pory"
-	fwdtime 23, 10
+	trainerbattle_single TRAINER_MIYU, Route1_MiyuIntro, Route1_MiyuIntro_A
 	goto Route1_Eventscript_Miyu_1
 
 
@@ -105,122 +103,120 @@ Route1_Eventscript_RouteSign::
 	msgbox Route1_Eventscript_RouteSign_Text_0
 # 98 "data/maps/Route1/scripts.pory"
 	closemessage
-	end
+	return
 
 
 Route1_Eventscript_DirectionSign::
-# 103 "data/maps/Route1/scripts.pory"
+# 102 "data/maps/Route1/scripts.pory"
 	msgbox Route1_Eventscript_DirectionSign_Text_0
-# 105 "data/maps/Route1/scripts.pory"
+# 104 "data/maps/Route1/scripts.pory"
 	closemessage
-	end
+	return
 
 
 Route1_Eventscript_HiddenGrotto::
-# 110 "data/maps/Route1/scripts.pory"
+# 108 "data/maps/Route1/scripts.pory"
 	lock
-# 111 "data/maps/Route1/scripts.pory"
+# 109 "data/maps/Route1/scripts.pory"
 	msgbox Eventscript_HiddenGrotto, MSGBOX_YESNO
-# 112 "data/maps/Route1/scripts.pory"
+# 110 "data/maps/Route1/scripts.pory"
 	closemessage
-# 113 "data/maps/Route1/scripts.pory"
+# 111 "data/maps/Route1/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route1_Eventscript_HiddenGrotto_2
 Route1_Eventscript_HiddenGrotto_1:
-# 116 "data/maps/Route1/scripts.pory"
+# 114 "data/maps/Route1/scripts.pory"
 	release
 	end
 
 Route1_Eventscript_HiddenGrotto_2:
-# 114 "data/maps/Route1/scripts.pory"
+# 112 "data/maps/Route1/scripts.pory"
 	warp MAP_ROUTE1_HIDDEN_GROTTO, 0
 	goto Route1_Eventscript_HiddenGrotto_1
 
 
 Route1_Eventscript_Twins::
-# 125 "data/maps/Route1/scripts.pory"
+# 123 "data/maps/Route1/scripts.pory"
 	lock
-# 126 "data/maps/Route1/scripts.pory"
+# 124 "data/maps/Route1/scripts.pory"
 	applymovement 4, Route1_Eventscript_Twins_Movement_0
-# 127 "data/maps/Route1/scripts.pory"
+# 125 "data/maps/Route1/scripts.pory"
 	applymovement 6, Route1_Eventscript_Twins_Movement_0
-# 128 "data/maps/Route1/scripts.pory"
+# 126 "data/maps/Route1/scripts.pory"
 	waitmovement 0
-# 129 "data/maps/Route1/scripts.pory"
+# 127 "data/maps/Route1/scripts.pory"
 	setspeaker Route1_Eventscript_Twins_Text_0
-# 130 "data/maps/Route1/scripts.pory"
+# 128 "data/maps/Route1/scripts.pory"
 	msgbox Route1_Eventscript_Twins_Text_1
-# 132 "data/maps/Route1/scripts.pory"
+# 130 "data/maps/Route1/scripts.pory"
 	closemessage
-# 133 "data/maps/Route1/scripts.pory"
+# 131 "data/maps/Route1/scripts.pory"
 	release
 	end
 
 
 Route1_Eventscript_Teddiursa::
-# 138 "data/maps/Route1/scripts.pory"
+# 136 "data/maps/Route1/scripts.pory"
 	lock
-# 139 "data/maps/Route1/scripts.pory"
+# 137 "data/maps/Route1/scripts.pory"
 	faceplayer
-# 140 "data/maps/Route1/scripts.pory"
+# 138 "data/maps/Route1/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 20
 	goto_if_gt Route1_Eventscript_Teddiursa_2
-# 140 "data/maps/Route1/scripts.pory"
+# 138 "data/maps/Route1/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 100
 	goto_if_eq Route1_Eventscript_Teddiursa_2
-# 146 "data/maps/Route1/scripts.pory"
+# 144 "data/maps/Route1/scripts.pory"
 	startoverworldencounter 7
 Route1_Eventscript_Teddiursa_1:
-# 148 "data/maps/Route1/scripts.pory"
+# 146 "data/maps/Route1/scripts.pory"
 	removeobject 12
-# 149 "data/maps/Route1/scripts.pory"
+# 147 "data/maps/Route1/scripts.pory"
 	setflag FLAG_TEMP_1
-# 150 "data/maps/Route1/scripts.pory"
+# 148 "data/maps/Route1/scripts.pory"
 	release
 	end
 
 Route1_Eventscript_Teddiursa_2:
-# 142 "data/maps/Route1/scripts.pory"
+# 140 "data/maps/Route1/scripts.pory"
 	startoverworldencounter 12
 	goto Route1_Eventscript_Teddiursa_1
 
 
 Route1_Eventscript_Ichigo::
-# 155 "data/maps/Route1/scripts.pory"
+# 153 "data/maps/Route1/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 100
 	goto_if_eq Route1_Eventscript_Ichigo_2
-# 158 "data/maps/Route1/scripts.pory"
+# 156 "data/maps/Route1/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 50
 	goto_if_lt Route1_Eventscript_Ichigo_3
-# 164 "data/maps/Route1/scripts.pory"
+# 161 "data/maps/Route1/scripts.pory"
 	trainerbattle_single TRAINER_MIYU_2, Route1_IchigoIntro_A, Route1_IchigoDefeated
 Route1_Eventscript_Ichigo_1:
-# 166 "data/maps/Route1/scripts.pory"
+# 163 "data/maps/Route1/scripts.pory"
 	setspeaker Route1_Eventscript_Ichigo_Text_0
-# 167 "data/maps/Route1/scripts.pory"
+# 164 "data/maps/Route1/scripts.pory"
 	faceplayer
-# 168 "data/maps/Route1/scripts.pory"
+# 165 "data/maps/Route1/scripts.pory"
 	msgbox Route1_Eventscript_Ichigo_Text_1
-# 170 "data/maps/Route1/scripts.pory"
+# 167 "data/maps/Route1/scripts.pory"
 	closemessage
 	end
 
 Route1_Eventscript_Ichigo_2:
-# 156 "data/maps/Route1/scripts.pory"
+# 154 "data/maps/Route1/scripts.pory"
 	trainerbattle_single TRAINER_MIYU_2, Route1_IchigoIntro_A, Route1_IchigoDefeated
 	goto Route1_Eventscript_Ichigo_1
 
 Route1_Eventscript_Ichigo_3:
-# 159 "data/maps/Route1/scripts.pory"
+# 157 "data/maps/Route1/scripts.pory"
 	trainerbattle_single TRAINER_ICHIGO, Route1_IchigoIntro, Route1_IchigoDefeated
-# 160 "data/maps/Route1/scripts.pory"
-	fwdtime 23, 30
 	goto Route1_Eventscript_Ichigo_1
 
 
-# 126 "data/maps/Route1/scripts.pory"
+# 124 "data/maps/Route1/scripts.pory"
 Route1_Eventscript_Twins_Movement_0:
-# 126 "data/maps/Route1/scripts.pory"
+# 124 "data/maps/Route1/scripts.pory"
 	face_player
 	step_end
 
@@ -251,16 +247,16 @@ Route1_Eventscript_RouteSign_Text_0:
 	.string "Route 1.$"
 
 Route1_Eventscript_DirectionSign_Text_0:
-# 103 "data/maps/Route1/scripts.pory"
+# 102 "data/maps/Route1/scripts.pory"
 	.string "Route 2 {UP_ARROW}\n"
 	.string "Kirijo's Mansion {DOWN_ARROW}$"
 
 Route1_Eventscript_Twins_Text_0:
-# 129 "data/maps/Route1/scripts.pory"
+# 127 "data/maps/Route1/scripts.pory"
 	.string "Mio & Miu$"
 
 Route1_Eventscript_Twins_Text_1:
-# 130 "data/maps/Route1/scripts.pory"
+# 128 "data/maps/Route1/scripts.pory"
 	.string "Shhh! We heard a Pokémon's cry on that\n"
 	.string "narrow path over there.\p"
 	.string "Our mother said we shouldn't be\n"
@@ -268,27 +264,27 @@ Route1_Eventscript_Twins_Text_1:
 	.string "stay here.$"
 
 Route1_Eventscript_Ichigo_Text_0:
-# 166 "data/maps/Route1/scripts.pory"
+# 163 "data/maps/Route1/scripts.pory"
 	.string "Ichigo$"
 
 Route1_Eventscript_Ichigo_Text_1:
-# 168 "data/maps/Route1/scripts.pory"
+# 165 "data/maps/Route1/scripts.pory"
 	.string "By the way, there's a nice guy who's\n"
 	.string "giving out Old Rods in Coralport.\p"
 	.string "That's how I got my Buizel.$"
 
 Route1_ToumaIntro::
-# 40 "data/maps/Route1/scripts.pory"
+# 41 "data/maps/Route1/scripts.pory"
 	.string "Um, can you please battle me...?\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Sigh... I really don't have time for\n"
 	.string "this.)$"
 
 Route1_ToumaDefeated::
-# 45 "data/maps/Route1/scripts.pory"
+# 46 "data/maps/Route1/scripts.pory"
 	.string "Aw... I knew that you looked strong.$"
 
 Route1_ToumaPostBattle::
-# 49 "data/maps/Route1/scripts.pory"
+# 50 "data/maps/Route1/scripts.pory"
 	.string "I don't do very well in my Pokémon\n"
 	.string "battle classes.\p"
 	.string "But it's okay because I want to become\n"
@@ -297,7 +293,7 @@ Route1_ToumaPostBattle::
 	.string "wish you the best of luck.$"
 
 Route1_ToumaIntro_A::
-# 55 "data/maps/Route1/scripts.pory"
+# 56 "data/maps/Route1/scripts.pory"
 	.string "Um, do you want a battle...?$"
 
 Route1_MiyuIntro::
@@ -319,22 +315,22 @@ Route1_MiyuIntro_A::
 	.string "route. Have you seen it?$"
 
 Eventscript_HiddenGrotto::
-# 120 "data/maps/Route1/scripts.pory"
+# 118 "data/maps/Route1/scripts.pory"
 	.string "There's a narrow path leading further\n"
 	.string "to the woods. Do you want to proceed?$"
 
 Route1_IchigoIntro::
-# 174 "data/maps/Route1/scripts.pory"
+# 171 "data/maps/Route1/scripts.pory"
 	.string "Hehe, you can't escape me!\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(... Let's just get this over with.)$"
 
 Route1_IchigoIntro_A::
-# 179 "data/maps/Route1/scripts.pory"
+# 176 "data/maps/Route1/scripts.pory"
 	.string "You can't escape me!\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Well, I'm not intended to!\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Sigh... Aki...$"
 
 Route1_IchigoDefeated::
-# 185 "data/maps/Route1/scripts.pory"
+# 182 "data/maps/Route1/scripts.pory"
 	.string "Aw, maybe having 2 water Pokémon in a\n"
 	.string "team isn't the best choice.$"

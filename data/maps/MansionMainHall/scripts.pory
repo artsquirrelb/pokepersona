@@ -17,6 +17,7 @@ script MansionMainHall_Eventscript_OnFrame2 {
 }
 
 script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
+    lock
     setvar(VAR_MITSURUS_INTRO_STATE, 3)
     delay(10)
     applymovement(LOCALID_PLAYER, moves(walk_down*3))
@@ -73,6 +74,8 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     removeobject(LOCALID_INTELEON)
     setflag(FLAG_TEMP_1)
     delay(30)
+    playfanfare(MUS_OBTAIN_TMHM)
+    waitfanfare
     msgbox(format("Inteleon is now your Companion.\n
     {COLOR GREEN}Tips: Companion Menu is now unlocked.\n
     You can open it in {START_BUTTON} Menu {RIGHT_ARROW} {SELECT_BUTTON}."))
@@ -82,8 +85,8 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     unlockcharacter(CHARACTER_INTELEON_T)
     makecharaAvailable(CHARACTER_INTELEON_T)
+    fwdtime(22, 45)
     release
-    clearflag(FLAG_HIDE_TALK_BUTTON)
     end
 }
 
@@ -95,6 +98,7 @@ script MansionMainHall_Eventscript_Takeharu {
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That is assuring. Thank you, Father."))
     closemessage
     release
+    end
 }
 
 script MansionMainHall_Eventscript_Butler {
@@ -102,22 +106,22 @@ script MansionMainHall_Eventscript_Butler {
     faceplayer
     setspeaker("Butler Yuuma")
     if (var(VAR_TEMP_0) == 0){
-    msgbox(format("So you decided to go after all...\p
-    I will miss you so much, Young Ladyyyy."))
-    closemessage
-    playse(SE_FAINT)
-    applymovement(LOCALID_BUTLER, moves(emote_cry, shake_horizontal))
-    waitmovement(0)
-    waitse
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Y-Yuuma-san, please don't cry. I'll definitely be back in no time!"))
-    setspeaker("Butler Yuuma")
-    msgbox(format("{DESTROY_MUGSHOT}-sniff sniff-"))
-    closemessage
-    playse(SE_M_BUBBLE)
-    applymovement(LOCALID_PLAYER, emotesweat)
-    waitse
-    waitmovement(0)
-    setvar(VAR_TEMP_0, 1)
+        msgbox(format("So you decided to go after all...\p
+        I will miss you so much, Young Ladyyyy."))
+        closemessage
+        playse(SE_FAINT)
+        applymovement(LOCALID_BUTLER, moves(emote_cry, shake_horizontal))
+        waitmovement(0)
+        waitse
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Y-Yuuma-san, please don't cry. I'll definitely be back in no time!"))
+        setspeaker("Butler Yuuma")
+        msgbox(format("{DESTROY_MUGSHOT}-sniff sniff-"))
+        closemessage
+        playse(SE_M_BUBBLE)
+        applymovement(LOCALID_PLAYER, emotesweat)
+        waitse
+        waitmovement(0)
+        setvar(VAR_TEMP_0, 1)
     }
     else
     {
@@ -134,21 +138,21 @@ script MansionMainHall_Eventscript_WaiterHaruma {
     lock
     setspeaker("Haruma")
     if (var(VAR_TEMP_1) == 0){
-    msgbox(format("That dang kid Aoi better not be slacking off and leaving me to finish cleaning these statues on my own."))
-    closemessage
-    playse(SE_PIN)
-    applymovement(7, moves(emote_exclamation_mark, face_player))
-    waitmovement(0)
-    setspeaker("Haruma")
-    msgbox(format("Young Lady, what can I do for you?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I don't see Kikuno anywhere. Do you know where she went off to?"))
-    setspeaker("Haruma")
-    msgbox(format("{DESTROY_MUGSHOT}I saw her go outside to the main garden a bit earlier.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you, Haruma."))
-    closemessage
-    applymovement(7, faceleft)
-    waitmovement(0)
-    setvar(VAR_TEMP_1, 1)
+        msgbox(format("That dang kid Aoi better not be slacking off and leaving me to finish cleaning these statues on my own."))
+        closemessage
+        playse(SE_PIN)
+        applymovement(7, moves(emote_exclamation_mark, face_player))
+        waitmovement(0)
+        setspeaker("Haruma")
+        msgbox(format("Young Lady, what can I do for you?\p
+        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I don't see Kikuno anywhere. Do you know where she went off to?"))
+        setspeaker("Haruma")
+        msgbox(format("{DESTROY_MUGSHOT}I saw her go outside to the main garden a bit earlier.\p
+        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you, Haruma."))
+        closemessage
+        applymovement(7, faceleft)
+        waitmovement(0)
+        setvar(VAR_TEMP_1, 1)
     }
     else {
         msgbox(format("Kikuno-san just went outside to the main garden.\p

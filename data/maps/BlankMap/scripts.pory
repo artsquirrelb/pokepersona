@@ -2,7 +2,6 @@ mapscripts BlankMap_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_SPAWN_INVISIBLE)
         if (var(VAR_MITSURU_RELATIONSHIP_POINTS) == 0){
-           setflag(FLAG_SPAWN_INVISIBLE)
            playbgm(MUS_END, TRUE) 
         }
     
@@ -26,6 +25,7 @@ mapscripts BlankMap_MapScripts {
         VAR_MITSURUS_INTRO_STATE, 4: MansionsGarden_Eventscript_Onframe4
         VAR_MITSURUS_INTRO_STATE, 7: SunshineMeadow_Eventscript_MitsuruOnframe7
         VAR_MITSURUS_INTRO_STATE, 9: Route2_House_Eventscript_MitsuruOnFrame9
+        VAR_MITSURUS_INTRO_STATE, 25: SunshineTown_Eventscript_MitsuruOnFrame25
 
         ]
 }
@@ -79,7 +79,6 @@ script SunshineTownRiverbank_Eventscript_OnFrame22 {
     closemessage
     setvar(VAR_AKIHIKOS_INTRO_STATE, 23)
     warpsilent(MAP_SUNSHINE_TOWN_KUROSAWAS_HOUSE, 4, 4)
-    clearflag(FLAG_SPAWN_INVISIBLE)
     
 }
 
@@ -170,17 +169,22 @@ script MansionsGarden_Eventscript_Onframe4 {
 
 script SunshineMeadow_Eventscript_MitsuruOnframe7 {
     setvar(VAR_MITSURUS_INTRO_STATE, 8)
-    fwdtime(0, 40)
     warpsilent(MAP_SUNSHINE_MEADOW, 15, 15)
 }
 
 script Route2_House_Eventscript_MitsuruOnFrame9 {
-    fwdtime(6, 25)
+    fwdtime(7, 50)
     setvar(VAR_MITSURUS_INTRO_STATE, 10)
     playse(MUS_HEAL)
     special(HealPlayerParty)
     delay(50)
     warpsilent(MAP_ROUTE2_HOUSE, 4, 4)
     setrespawn(HEAL_LOCATION_ROUTE2_HOUSE)
+}
 
+script SunshineTown_Eventscript_MitsuruOnFrame25 {
+    setvar(VAR_MITSURUS_INTRO_STATE, 26)
+    msgbox(format("A few days later."))
+    closemessage
+    warpsilent(MAP_ROUTE2_HOUSE, 5, 3)
 }

@@ -45,7 +45,6 @@ script ThundershardsCave_2F_Eventscript_OnFrame16 {
 
 script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff1 {
     lock
-    hidetalkbutton
     setvar(VAR_MITSURUS_INTRO_STATE, 14)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, delay_16, delay_16, player_run_right*2, face_left))
@@ -59,7 +58,6 @@ script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff1 {
 
 script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff2 {
     lock
-    hidetalkbutton
     setvar(VAR_MITSURUS_INTRO_STATE, 14)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, delay_16, delay_16, player_run_right, face_left))
@@ -77,7 +75,6 @@ movement walkinplaceleft {
 
 script ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff {
     lock
-    setflag(FLAG_HIDE_TALK_BUTTON)
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
     waitmovement(0)
@@ -106,7 +103,7 @@ script ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff {
     ({STR_VAR_1}, are you ready?)"))
     closemessage
     playfirstmoncry
-    waitmoncry
+    applymovement(OBJ_EVENT_ID_FOLLOWER, moves(jump_in_place_right))
     waitmovement
     release
     end
@@ -119,10 +116,10 @@ script ThundershardsCave_2F_Eventscript_LetsJumpKGStaff {
     applymovement(LOCALID_PLAYER, walkup)
     waitmovement(0)
     release
+    end
 }
 
 script ThundershardsCave_2F_Eventscript_KirijoGenesisStaff {
-    hidetalkbutton
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     lock
     playse(SE_PIN)
@@ -221,7 +218,7 @@ script ThundershardsCave_2F_Eventscript_FreezingKGStaff {
     waitmovement
     removeobject(21)
     setflag(FLAG_TEMP_4)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    fwdtime(8, 40)
     release
     end
 }
@@ -248,6 +245,7 @@ script ThundershardsCave_2F_Eventscript_FrozenStaff {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}(Magnifique.)"))
     setvar(VAR_MITSURUS_INTRO_STATE, 15)
     release
+    end
     }
 }
 
@@ -318,5 +316,6 @@ script ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave {
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     setflag(FLAG_HIDE_MAP_NAME_POPUP)
     setvar(VAR_MITSURUS_INTRO_STATE, 17)
+    fwdtime(9, 35)
     warp(MAP_SUNSHINE_MEADOW, 11, 3)
 }

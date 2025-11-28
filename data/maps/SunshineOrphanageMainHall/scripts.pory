@@ -131,8 +131,9 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
     msgbox(Eventscript_StarterPokemonTips)
     closemessage
     setvar(VAR_AKIHIKOS_INTRO_STATE, 8)
-    clearflag(FLAG_HIDE_TALK_BUTTON)}
+    fwdtime(20, 10)}
     release
+    end
 }
 
 text Eventscript_StarterPokemonTips{
@@ -147,6 +148,7 @@ script SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi {
     faceplayer
     msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Go on, Pawmi is waiting for you."))
     release
+    end
 }
 
 script SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi {
@@ -154,6 +156,7 @@ script SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi {
     faceplayer
     msgbox(format("{SPEAKER NAME_MIKI}Let's give Pawmi a home, big bro!"))
     release
+    end
 }
 
 movement HeartPawmi {
@@ -168,7 +171,7 @@ movement MikiHappy {
 }
 
 script SunshineOrphanageMainHall_Eventscript_GetPawmiStarter {
-    lockall
+    lock
     msgbox ("Let Pawmi in the Cherish Ball?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         setflag(FLAG_SYS_POKEMON_GET)
@@ -199,8 +202,7 @@ script SunshineOrphanageMainHall_Eventscript_GetPawmiStarter {
         msgbox(NewLabTest_NotChosen)
     }
     waitmessage
-    releaseall
-    end
+    release
 }
 
 movement PawmiDisappointed {
@@ -208,7 +210,6 @@ movement PawmiDisappointed {
 }
 
 script SunshineOrphanageMainHall_Eventscript_GoToSleep {
-    setflag(FLAG_HIDE_TALK_BUTTON)
     lock
     delay(20)
     applymovement (4, TeacherFacingAkihiko)
@@ -225,11 +226,9 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     removeobject(14)
     removeobject(15)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
-    fwdtime(8, 30)
-    fwdweekday (WEEKDAY_THU)
+    fwdtime(8, 30) //thursday
     warpsilent(MAP_BLANK_MAP, 0, 0)
     release
-    end
 }
 
 movement TeacherFacingAkihiko {
@@ -245,6 +244,7 @@ script Boy_1_MainHall {
     msgbox(format("
     I really like the omelet rice the chef cooks for us."))
     release
+    end
 }
 
 
@@ -256,6 +256,7 @@ script Girl_1_MainHall {
     msgbox(format(
         "When I graduate and get a job I'll contribute back to our orphanage."))
     release
+    end
 }
 
 script Boy_2_MainHall {
@@ -265,6 +266,7 @@ script Boy_2_MainHall {
     msgbox(format(
         "They don't allow us children to have Pokémon of our own but we can still play with the staff's Pokémon."))
     release
+    end
 }
 
 script Girl_2_MainHall {
@@ -278,6 +280,7 @@ script Girl_2_MainHall {
     My future adoptive parents are talking with my teacher right now.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}That's great! Congrats!"))}
     release
+    end
 }
 
 script RichMan_MainHall {
@@ -286,6 +289,7 @@ script RichMan_MainHall {
     setspeaker("Kind-looking Man")
     msgbox(format("We decided to adopt a daughter because my wife wanted one.\p If she's happy then I'm happy."))
     release
+    end
 }
 
 script RichLady_MainHall {
@@ -295,6 +299,7 @@ script RichLady_MainHall {
     msgbox(format(
         "We will raise Momo with love and care."))
     release
+    end
 }
 
 script Teacher_MainHall {
@@ -319,6 +324,7 @@ script Teacher_MainHall {
         faceplayer
         msgbox("Take care of Pawmi, okay dear?")}
     release
+    end
 }
 
 script Boy_3_MainHall {
@@ -336,6 +342,7 @@ script Boy_3_MainHall {
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Pawmi is rare?"))
     }
     release
+    end
 }
 
 script DiningRoom {
@@ -343,6 +350,7 @@ script DiningRoom {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}
     It's the dining room. The pancakes here are the best."))
     release
+    end
 }
 
 script BackyardDoor {
@@ -350,6 +358,7 @@ script BackyardDoor {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
     Outside is the backyard. We grow crops there."))
     release
+    end
 }
 
 script Girls_HallwayMainHall {
@@ -357,18 +366,21 @@ script Girls_HallwayMainHall {
     msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
     It's the way to the girls' hallway. I have no business there right now."))
     release
+    end
 }
 
 script RestroomMainHall {
     lock
     msgbox(format ("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}It's the restroom. I'm good for now."))
     release
+    end
 }
 
 script PokeballShelf {
     lock
     msgbox(format ("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Those belong to the staff. I shouldn't touch them."))
     release
+    end
 }
 
 script Porygon_PC {
@@ -430,7 +442,8 @@ script Blissey_Heal {
         msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
         Blissey is very good at healing. I can ask it for help when I have an injured Pokémon."))
         releaseall
-    } 
+    }
+    end
 }
 
 script BlisseyHealedPawmi{
@@ -440,6 +453,7 @@ script BlisseyHealedPawmi{
     applymovement(11, BlisseyHappy)
     waitmovement(0)
     releaseall
+    end
 }
 movement BlisseyHappy {
     walk_in_place_slow_down
@@ -451,6 +465,7 @@ script Minccino_NPC {
     faceplayer
     playmoncry(SPECIES_MINCCINO, CRY_MODE_NORMAL)
     release
+    end
 }
 
 
@@ -504,8 +519,9 @@ script SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage{
     setflag(FLAG_TEMP_3)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 12)
     setrespawn(HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL)
+    fwdtime(8, 40)
     release
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    end
 }
 
 movement SunshineOrphanageMainHall_Eventscript_MsKobayashiMoveRight {

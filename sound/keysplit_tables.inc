@@ -34,7 +34,7 @@ keysplit french_horn, 36
 	split 0, 66
 	split 1, 108
 
-.set KeySplitTable6, . - 0
+.set KeySplitTable6Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -164,7 +164,7 @@ keysplit french_horn, 36
 	.byte 23
 	.byte 23
 
-.set KeySplitTable7, . - 0
+.set KeySplitTable7Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -294,7 +294,7 @@ keysplit french_horn, 36
 	.byte 14
 	.byte 14
 
-.set KeySplitTable8, . - 0
+.set KeySplitTable8Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -424,7 +424,7 @@ keysplit french_horn, 36
 	.byte 9
 	.byte 9
 
-.set KeySplitTable9, . - 0
+.set KeySplitTable9Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -554,7 +554,7 @@ keysplit french_horn, 36
 	.byte 17
 	.byte 17
 
-.set KeySplitTable10, . - 0
+.set KeySplitTable10Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -684,7 +684,7 @@ keysplit french_horn, 36
 	.byte 7
 	.byte 7
 
-.set KeySplitTable11, . - 0
+.set KeySplitTable11Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -814,7 +814,7 @@ keysplit french_horn, 36
 	.byte 5
 	.byte 5
 
-.set KeySplitTable12, . - 0
+.set KeySplitTable12Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -944,7 +944,7 @@ keysplit french_horn, 36
 	.byte 4
 	.byte 4
 
-.set KeySplitTable13, . - 0
+.set KeySplitTable13Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -1074,7 +1074,7 @@ keysplit french_horn, 36
 	.byte 14
 	.byte 14
 
-.set KeySplitTable14, . - 0
+.set KeySplitTable14Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -1204,7 +1204,7 @@ keysplit french_horn, 36
 	.byte 7
 	.byte 7
 
-.set KeySplitTable15, . - 0
+.set KeySplitTable15Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -1334,7 +1334,7 @@ keysplit french_horn, 36
 	.byte 4
 	.byte 4
 
-.set KeySplitTable16, . - 0
+.set KeySplitTable16Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -1464,7 +1464,7 @@ keysplit french_horn, 36
 	.byte 4
 	.byte 4
 
-.set KeySplitTable17, . - 0
+.set KeySplitTable17Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -1594,7 +1594,7 @@ keysplit french_horn, 36
 	.byte 7
 	.byte 7
 
-.set KeySplitTable18, . - 0
+.set KeySplitTable18Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -1724,7 +1724,7 @@ keysplit french_horn, 36
 	.byte 6
 	.byte 6
 
-.set KeySplitTable19, . - 0
+.set KeySplitTable19Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -1854,7 +1854,7 @@ keysplit french_horn, 36
 	.byte 23
 	.byte 23
 
-.set KeySplitTable20, . - 0
+.set KeySplitTable20Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -1984,7 +1984,7 @@ keysplit french_horn, 36
 	.byte 15
 	.byte 15
 
-.set KeySplitTable21, . - 0
+.set KeySplitTable21Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -2114,7 +2114,7 @@ keysplit french_horn, 36
 	.byte 19
 	.byte 19
 
-.set KeySplitTable22, . - 0
+.set KeySplitTable22Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -2244,7 +2244,7 @@ keysplit french_horn, 36
 	.byte 21
 	.byte 21
 
-.set KeySplitTable23, . - 0
+.set KeySplitTable23Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -2374,7 +2374,7 @@ keysplit french_horn, 36
 	.byte 7
 	.byte 7
 
-.set KeySplitTable24, . - 0
+.set KeySplitTable24Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -2504,7 +2504,7 @@ keysplit french_horn, 36
 	.byte 9
 	.byte 9
 
-.set KeySplitTable25, . - 0
+.set KeySplitTable25Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -2634,7 +2634,7 @@ keysplit french_horn, 36
 	.byte 24
 	.byte 24
 
-.set KeySplitTable26, . - 0
+.set KeySplitTable26Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -2764,7 +2764,7 @@ keysplit french_horn, 36
 	.byte 16
 	.byte 16
 
-.set KeySplitTable27, . - 0
+.set KeySplitTable27Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -2894,7 +2894,7 @@ keysplit french_horn, 36
 	.byte 22
 	.byte 22
 
-.set KeySplitTable28, . - 0
+.set KeySplitTable28Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -3024,7 +3024,7 @@ keysplit french_horn, 36
 	.byte 6
 	.byte 6
 
-.set KeySplitTable29, . - 0
+.set KeySplitTable29Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -3154,7 +3154,7 @@ keysplit french_horn, 36
 	.byte 9
 	.byte 9
 
-.set KeySplitTable30, . - 0
+.set KeySplitTable30Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -3284,7 +3284,7 @@ keysplit french_horn, 36
 	.byte 16
 	.byte 16
 
-.set KeySplitTable31, . - 0
+.set KeySplitTable31Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -3414,7 +3414,7 @@ keysplit french_horn, 36
 	.byte 5
 	.byte 5
 
-.set KeySplitTable32, . - 0
+.set KeySplitTable32Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -3544,7 +3544,7 @@ keysplit french_horn, 36
 	.byte 5
 	.byte 5
 
-.set KeySplitTable33, . - 0
+.set KeySplitTable33Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -3674,7 +3674,7 @@ keysplit french_horn, 36
 	.byte 4
 	.byte 4
 
-.set KeySplitTable34, . - 0
+.set KeySplitTable34Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -3804,7 +3804,7 @@ keysplit french_horn, 36
 	.byte 4
 	.byte 4
 
-.set KeySplitTable35, . - 0
+.set KeySplitTable35Universal, . - 0
 	.byte 0
 	.byte 0
 	.byte 0
@@ -3933,3 +3933,12 @@ keysplit french_horn, 36
 	.byte 9
 	.byte 9
 	.byte 9
+
+keysplit dp_pizzicato_music_box, 0 @ .set KeySplitTable25, . - 0    @ | 71
+	split 0, 71
+	split 1, 127
+
+keysplit dp_banjo, 0               @ .set KeySplitTable34, . - 0    @ | 57
+	split 0, 57
+	split 1, 127
+

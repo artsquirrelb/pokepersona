@@ -320,3 +320,10 @@
 .include "sound/voicegroups/voicegroup300.inc"
 .include "sound/voicegroups/voicegroup301.inc"
 .include "sound/voicegroups/voicegroup302.inc"
+
+@ Start DPPt HGSS voicegroups
+.include "sound/voicegroups/drumsets/allkeysplit_dppt_drum_1.inc"                     @ .include "sound/voicegroups/voicegroup192.inc"
+.include "sound/voicegroups/keysplits/keysplit_dp_music_box.inc"                      @ .include "sound/voicegroups/voicegroup227.inc"
+.include "sound/voicegroups/keysplits/keysplit_dp_banjo.inc"                          @ .include "sound/voicegroups/voicegroup228.inc"
+
+

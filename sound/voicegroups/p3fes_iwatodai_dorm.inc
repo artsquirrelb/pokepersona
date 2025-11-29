@@ -128,4 +128,5 @@ voice_group p3fes_iwatodai_dorm
 	voice_keysplit_all voicegroup301
 	voice_keysplit_all voicegroup302
 
-	
+
+

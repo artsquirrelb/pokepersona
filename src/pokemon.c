@@ -6131,7 +6131,7 @@ u16 GetBattleBGM(void)
     }
     else
     {
-        return MUS_VS_WILD;
+        return MUS_P3R_ITS_GOING_DOWN_NOW;//MUS_VS_WILD;
     }
 }
 

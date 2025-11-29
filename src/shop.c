@@ -895,7 +895,7 @@ static u16 ItemId_GetBpPrice(u16 itemId)
     else if( MARTMOVE)
         return gMovesInfo[itemId].price;
     else
-        return gItemsInfo[SanitizeItemId(itemId)].bpPrice;
+        return gItemsInfo[SanitizeItemId(itemId)].bpCost;
 }
 
 static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)

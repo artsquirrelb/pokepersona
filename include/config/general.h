@@ -90,8 +90,6 @@
 
 
 #define MUDSKIP_OUTFIT_SYSTEM
-// Config to toggle using the new shop menu.
-#define MUDSKIP_SHOP_UI
 
 #endif // GUARD_CONFIG_GENERAL_H
 

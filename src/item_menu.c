@@ -52,7 +52,6 @@
 #include "window.h"
 #include "apprentice.h"
 #include "battle_pike.h"
-#include "new_shop.h"
 #include "constants/items.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
@@ -832,11 +831,7 @@ void ChooseBerryForMachine(MainCallback exitCallback)
 
 void CB2_GoToSellMenu(void)
 {
-    #ifdef MUDSKIP_SHOP_UI
-    GoToBagMenu(ITEMMENULOCATION_SHOP, POCKETS_COUNT, CB2_ExitSellNewShopMenu);
-    #else
     GoToBagMenu(ITEMMENULOCATION_SHOP, POCKETS_COUNT, CB2_ExitSellMenu);
-    #endif // MUDSKIP_SHOP_UI
 }
 
 void CB2_GoToItemDepositMenu(void)

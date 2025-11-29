@@ -9,7 +9,6 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
         if (var(VAR_AKIHIKOS_INTRO_STATE) >= 11){
             setflag(FLAG_TEMP_2)
             setflag(FLAG_TEMP_1)
-            setflag(FLAG_TEMP_3)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 7) {
             setflag(FLAG_HIDE_TALK_BUTTON)
@@ -24,6 +23,7 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
             setobjectmovementtype (13, MOVEMENT_TYPE_FACE_LEFT)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) > 11) {
+            setflag(FLAG_TEMP_3)
             setobjectxyperm (4, 6, 22)
             setobjectmovementtype (4, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
         }

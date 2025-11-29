@@ -554,8 +554,10 @@
 #define MUS_P3R_FEARFUL_EXPERIENCE     616
 #define MUS_P3FES_IWATODAI_DORM        617
 #define MUS_P3R_ITS_GOING_DOWN_NOW     618
+#define MUS_P3R_MEMORIES_OF_THE_CITY   619
 
-#define END_MUS                     MUS_P3R_ITS_GOING_DOWN_NOW
+
+#define END_MUS                     MUS_P3R_MEMORIES_OF_THE_CITY
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

@@ -1254,6 +1254,7 @@ SECTIONS {
         sound/songs/midi/mus_p3r_fearful_experience.o(.rodata);
         sound/songs/midi/mus_p3fes_iwatodai_dorm.o(.rodata);
         sound/songs/midi/mus_p3r_its_going_down_now.o(.rodata);
+        sound/songs/midi/mus_p3r_memories_of_the_city.o(.rodata);
     } > ROM =0
 
     lib_rodata :

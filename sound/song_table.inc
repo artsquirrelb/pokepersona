@@ -620,6 +620,7 @@ gSongTable::
 	song mus_p3r_fearful_experience, 0, 0
 	song mus_p3fes_iwatodai_dorm, 0, 0
 	song mus_p3r_its_going_down_now, 0, 0
+	song mus_p3r_memories_of_the_city, 0, 0
 	.align 2
 dummy_song_header:
 	.byte 0, 0, 0, 0

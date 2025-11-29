@@ -51,9 +51,9 @@ mapscripts Route2_House_MapScripts {
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 39){
             setflag(FLAG_HIDE_TALK_BUTTON)
-            hideobjectat(1, MAP_ROUTE2_HOUSE)
+            setflag(FLAG_TEMP_1)
             setobjectxyperm(5, 4, 4)
-            setobjectmovementtype(5, MOVEMENT_TYPE_FACE_UP)
+            setobjectmovementtype(4, MOVEMENT_TYPE_FACE_UP)
             setobjectxyperm(4, 4, 7)
             setobjectmovementtype(5, MOVEMENT_TYPE_FACE_LEFT)
             setobjectxyperm(6, 11, 6)
@@ -414,6 +414,7 @@ script Route2_House_Eventscript_Shinjiro {
     waitmovement(0)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 30)
     release
+    end
 }
 
 movement ShinjiroJoinsAndVanish {

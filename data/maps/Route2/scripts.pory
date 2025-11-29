@@ -127,7 +127,6 @@ script Route2_Eventscript_AkishinjiGettingBlockedBySusMen {
     closemessage
     goto(Route2_Eventscript_StartBattleWithSusMen)
     release
-    end
 }
 
 movement walkinplaceright {
@@ -180,7 +179,6 @@ script Route2_Eventscript_StartBattleWithSusMen {
     trainerbattle_no_intro(TRAINER_KG_STAFF_ROUTE2, SusMenFightDefeated)
     goto(Route2_Eventscript_PostBattleWithSusMen)
     release
-    end
 }
 
 movement lockfacing {
@@ -226,7 +224,6 @@ script Route2_Eventscript_PostBattleWithSusMen{
     waitmovement(0)
     goto (Route2_Eventscript_AkishinjiAsleep)
     release
-    end
 }
 
 movement DrowzeeAppears {
@@ -263,7 +260,6 @@ script Route2_Eventscript_AkishinjiAsleep {
     waitmovement(0)
     goto(Route2_Eventscript_MitsuruDisruptsTheMen)
     release
-    end
 }
 
 movement emoteasleep {
@@ -308,7 +304,7 @@ script Route2_Eventscript_MitsuruDisruptsTheMen {
     waitmovement(0)
     goto(Route2_Eventscript_MitsuruAppears)
     release
-    end
+    
 }
 
 movement DrowzeeRunsAway {
@@ -356,7 +352,7 @@ script Route2_Eventscript_MitsuruAppears {
     warpsilent(MAP_BLANK_MAP, 0, 0)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 26)
     release
-    end
+
 }
 
 movement walkinplacedown {
@@ -603,7 +599,6 @@ script Route2_Eventscript_InitShinjiroFirstBattle {
         }
         goto(Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle)
         release
-        end
     }
 }
 script Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle {

@@ -16,15 +16,15 @@ SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 	compare VAR_AKIHIKOS_INTRO_STATE, 11
 	goto_if_ge SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
-# 14 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 13 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 7
 	goto_if_eq SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_8
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
-# 19 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 18 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 11
 	goto_if_eq SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_11
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_10:
-# 26 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 25 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 11
 	goto_if_gt SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_13
 	return
@@ -41,35 +41,35 @@ SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 	setflag FLAG_TEMP_2
 # 11 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setflag FLAG_TEMP_1
-# 12 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setflag FLAG_TEMP_3
 	goto SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
 
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
-# 15 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 14 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setflag FLAG_HIDE_TALK_BUTTON
-# 16 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 15 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectxyperm 4, 11, 23
-# 17 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 16 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_RIGHT
-# 18 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 17 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	hideobjectat 15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL
 	goto SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
-# 20 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 19 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setflag FLAG_HIDE_TALK_BUTTON
-# 21 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 20 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectxyperm 4, 12, 5
-# 22 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 21 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectmovementtype 4, MOVEMENT_TYPE_FACE_DOWN
-# 23 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 22 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectxyperm 13, 18, 6
-# 24 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+# 23 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectmovementtype 13, MOVEMENT_TYPE_FACE_LEFT
 	goto SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_10
 
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_13:
+# 26 "data/maps/SunshineOrphanageMainHall/scripts.pory"
+	setflag FLAG_TEMP_3
 # 27 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectxyperm 4, 6, 22
 # 28 "data/maps/SunshineOrphanageMainHall/scripts.pory"

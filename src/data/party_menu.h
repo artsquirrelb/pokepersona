@@ -114,7 +114,7 @@ static const u8 sPartyMenuSpriteCoords[PARTY_LAYOUT_COUNT][PARTY_SIZE][4 * 2] =
         {104,  66, 108,  76, 136,  75, 102,  73},
         {104,  90, 108, 100, 136,  99, 102,  97},
         {104, 114, 108, 124, 136, 123, 102, 121},*/
-         { 24,  14,  38,  33, 26,   33,  24,  18},
+        { 24,  14,  38,  33, 26,   33,  24,  18},
         {136,  22, 150,  41, 138,  41, 136,  26},
         { 24,  54,  38,  73, 26,   73,  24,  58},
         {136,  62, 150,  81, 138,  81, 136,  66},
@@ -141,7 +141,7 @@ static const u8 sPartyMenuSpriteCoords[PARTY_LAYOUT_COUNT][PARTY_SIZE][4 * 2] =
     },
     [PARTY_LAYOUT_MULTI_SHOWCASE] =
     {
-         { 24,  14,  38,  33, 26,   33,  24,  18},
+        { 24,  14,  38,  33, 26,   33,  24,  18},
         { 24,  94,  38, 113, 26,  113,  24,  98},
         { 24,  54,  38,  73, 26,   73,  24,  58},
         {136,  22, 150,  41, 138,  41, 136,  26},
@@ -357,7 +357,7 @@ static const struct WindowTemplate sDoublePartyMenuWindowTemplate[] =
         .width = 14,
         .height = 5,
         .paletteNum = 8,
-        .baseBlock = 0x191,
+        .baseBlock = 0x1C1, //0x181,
     },
     //[WIN_MSG] = {
     {

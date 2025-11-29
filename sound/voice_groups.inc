@@ -139,6 +139,8 @@
 .include "sound/voicegroups/unused_2.inc" @ used by unused GSC radio tower takeover test track in RS
 .include "sound/voicegroups/xc2_garfont_mercernaries.inc"
 .include "sound/voicegroups/xc2_torigoth_night.inc"
+.include "sound/voicegroups/p3fes_iwatodai_dorm.inc"
+.include "sound/voicegroups/p3r_its_going_down_now.inc"
 
 @ FRLG
 .include "sound/voicegroups/rg_follow_me.inc"

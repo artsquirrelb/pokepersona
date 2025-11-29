@@ -1,5 +1,5 @@
 voice_group p5_run_run_run
-    voice_keysplit_all voicegroup_allkeysplit_dppt_drum_1
+    voice_keysplit_all voicegroup_rs_drumset
     voice_keysplit voicegroup193, KeySplitTable6
 	voice_keysplit voicegroup194, KeySplitTable6
 	voice_keysplit voicegroup195, KeySplitTable7

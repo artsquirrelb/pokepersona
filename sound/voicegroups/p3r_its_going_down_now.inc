@@ -1,5 +1,5 @@
 voice_group p3r_its_going_down_now
-    voice_keysplit_all voicegroup_rs_drumset
+    voice_keysplit_all voicegroup602										@Golden Sun drummset
     voice_keysplit voicegroup193, KeySplitTable6
 	voice_keysplit voicegroup194, KeySplitTable6
 	voice_keysplit voicegroup195, KeySplitTable7

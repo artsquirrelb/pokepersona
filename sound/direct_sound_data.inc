@@ -8243,3 +8243,206 @@ DirectSoundWaveData_1165b49::
 	.incbin "sound/direct_sound_samples/1165b49.bin"
 
 @ End universal voicegroup instrument samples
+
+@ Start Golden Sun 2 Instruments
+
+    .align 2
+DirectSoundSynth_golden_sun_2_01::
+    .4byte 0x40000000  @ Recognized as a looping Direct Sound wave sample in a voicegroup
+    .4byte 0x01058920  @ Frequency/Pitch control
+    .4byte 0x00000000  @ Supposedly a loop point, but in this case is solid 0
+    .4byte 0x00000000  @ Supposedly sample size, but in this case is solid 0
+    .byte  0x80        @ Unknown
+    .byte  0x00        @ Type 00 requires parameters, 0x01 and 0x02 straight to padding
+    .byte  0x10        @ Parameter 1
+    .byte  0xF0        @ Parameter 2
+    .byte  0xE0        @ Parameter 3
+    .byte  0x80        @ Parameter 4 
+    .2byte 0x0000      @ Padding
+
+    .align 2
+DirectSoundSynth_golden_sun_2_02::
+    .4byte 0x40000000  @ Recognized as a looping Direct Sound wave sample in a voicegroup
+    .4byte 0x01058920  @ Frequency/Pitch control
+    .4byte 0x00000000  @ Supposedly a loop point, but in this case is solid 0
+    .4byte 0x00000000  @ Supposedly sample size, but in this case is solid 0
+    .byte  0x80        @ Unknown
+    .byte  0x00        @ Type 00 requires parameters, 0x01 and 0x02 straight to padding
+    .byte  0x60        @ Parameter 1
+    .byte  0x20        @ Parameter 2
+    .byte  0x40        @ Parameter 3
+    .byte  0x80        @ Parameter 4 
+    .2byte 0x0000      @ Padding
+
+    .align 2
+DirectSoundSynth_golden_sun_2_03::
+    .4byte 0x40000000  @ Recognized as a looping Direct Sound wave sample in a voicegroup
+    .4byte 0x01058920  @ Frequency/Pitch control
+    .4byte 0x00000000  @ Supposedly a loop point, but in this case is solid 0
+    .4byte 0x00000000  @ Supposedly sample size, but in this case is solid 0
+    .byte  0x80        @ Unknown
+    .byte  0x00        @ Type 00 requires parameters, 0x01 and 0x02 straight to padding
+    .byte  0x80        @ Parameter 1
+    .byte  0x40        @ Parameter 2
+    .byte  0x40        @ Parameter 3
+    .byte  0x40        @ Parameter 4 
+    .2byte 0x0000      @ Padding
+
+    .align 2
+DirectSoundSynth_golden_sun_2_04::
+    .4byte 0x40000000  @ Recognized as a looping Direct Sound wave sample in a voicegroup
+    .4byte 0x01058920  @ Frequency/Pitch control
+    .4byte 0x00000000  @ Supposedly a loop point, but in this case is solid 0
+    .4byte 0x00000000  @ Supposedly sample size, but in this case is solid 0
+    .byte  0x80        @ Unknown
+    .byte  0x01        @ Type 00 requires parameters, 0x01 and 0x02 straight to padding
+    .2byte 0x0000      @ Padding
+
+    .align 2
+DirectSoundSynth_golden_sun_2_05::
+    .4byte 0x40000000  @ Recognized as a looping Direct Sound wave sample in a voicegroup
+    .4byte 0x01058920  @ Frequiency/Pitch control
+    .4byte 0x00000000  @ Supposedly a loop point, but in this case is solid 0
+    .4byte 0x00000000  @ Supposedly sample size, but in this case is solid 0
+    .byte  0x80        @ Unknown
+    .byte  0x02        @ Type 00 requires parameters, 0x01 and 0x02 straight to padding
+    .2byte 0x0000      @ Padding
+
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_xylophone::
+    .incbin "sound/direct_sound_samples/golden_sun_2_xylophone.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_indian_raag_effect::
+    .incbin "sound/direct_sound_samples/golden_sun_2_indian_raag_effect.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_wood_block::
+    .incbin "sound/direct_sound_samples/golden_sun_2_wood_block.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_woh_voice_effect::
+    .incbin "sound/direct_sound_samples/golden_sun_2_woh_voice_effect.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_asian_gamelan_part1::
+    .incbin "sound/direct_sound_samples/golden_sun_2_asian_gamelan_part1.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_asian_gamelan_part2::
+    .incbin "sound/direct_sound_samples/golden_sun_2_asian_gamelan_part2.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_indian_sarod::
+    .incbin "sound/direct_sound_samples/golden_sun_2_indian_sarod.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_beat_loop1::
+    .incbin "sound/direct_sound_samples/golden_sun_2_beat_loop1.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_beat_loop2::
+    .incbin "sound/direct_sound_samples/golden_sun_2_beat_loop2.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_tropical_piano::
+    .incbin "sound/direct_sound_samples/golden_sun_2_tropical_piano.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_taiko::
+    .incbin "sound/direct_sound_samples/golden_sun_2_taiko.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_conga::
+    .incbin "sound/direct_sound_samples/golden_sun_2_conga.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_rnd_kick::
+    .incbin "sound/direct_sound_samples/golden_sun_2_rnd_kick.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_rim::
+    .incbin "sound/direct_sound_samples/golden_sun_2_rim.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_snare::
+    .incbin "sound/direct_sound_samples/golden_sun_2_snare.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_handclap::
+    .incbin "sound/direct_sound_samples/golden_sun_2_handclap.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_kick::
+    .incbin "sound/direct_sound_samples/golden_sun_2_kick.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_tom::
+    .incbin "sound/direct_sound_samples/golden_sun_2_tom.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_ride_cymbal::
+    .incbin "sound/direct_sound_samples/golden_sun_2_ride_cymbal.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_close_hihat::
+    .incbin "sound/direct_sound_samples/golden_sun_2_close_hihat.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_cymbal_crash::
+    .incbin "sound/direct_sound_samples/golden_sun_2_cymbal_crash.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_open_hihat::
+    .incbin "sound/direct_sound_samples/golden_sun_2_open_hihat.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_unknown_wave::
+    .incbin "sound/direct_sound_samples/golden_sun_2_unknown_wave.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_earthquake_effect::
+    .incbin "sound/direct_sound_samples/golden_sun_2_earthquake_effect.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_explosion_effect::
+    .incbin "sound/direct_sound_samples/golden_sun_2_explosion_effect.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_psynergy_effect::
+    .incbin "sound/direct_sound_samples/golden_sun_2_psynergy_effect.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_monster_cry::
+    .incbin "sound/direct_sound_samples/golden_sun_2_monster_cry.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_thunder_effect::
+    .incbin "sound/direct_sound_samples/golden_sun_2_thunder_effect.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_gunshot1::
+    .incbin "sound/direct_sound_samples/golden_sun_2_gunshot1.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_gunshot2::
+    .incbin "sound/direct_sound_samples/golden_sun_2_gunshot2.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_crash_down_effect::
+    .incbin "sound/direct_sound_samples/golden_sun_2_crash_down_effect.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_triangle::
+    .incbin "sound/direct_sound_samples/golden_sun_2_triangle.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_crystal_effect::
+    .incbin "sound/direct_sound_samples/golden_sun_2_crystal_effect.bin"
+
+    .align 2
+DirectSoundWaveData_golden_sun_2_applause::
+    .incbin "sound/direct_sound_samples/golden_sun_2_applause.bin"
+
+@ End Golden Sun 2 Instruments

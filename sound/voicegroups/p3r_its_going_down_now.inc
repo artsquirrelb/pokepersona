@@ -26,10 +26,10 @@ voice_group p3r_its_going_down_now
 	voice_keysplit voicegroup215, KeySplitTable9Universal
 	voice_keysplit voicegroup216, KeySplitTable19Universal
 	voice_keysplit voicegroup217, KeySplitTable9Universal
-	voice_keysplit voicegroup218, KeySplitTable19Universal
+	voice_keysplit voicegroup217, KeySplitTable9Universal
 	voice_keysplit voicegroup219, KeySplitTable20Universal
 	voice_keysplit voicegroup220, KeySplitTable21Universal
-	voice_keysplit voicegroup221, KeySplitTable22Universal
+	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_high, 255, 165, 154, 165
 	voice_keysplit voicegroup222, KeySplitTable16Universal
 	voice_keysplit voicegroup223, KeySplitTable13Universal
 	voice_keysplit voicegroup224, KeySplitTable10Universal

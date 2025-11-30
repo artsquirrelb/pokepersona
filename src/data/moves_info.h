@@ -8387,7 +8387,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_FAKE_TEARS] =
     {
         .name = COMPOUND_STRING("Fake Tears"),
-        .price = 100,
+        .price = 1000,
         .description = COMPOUND_STRING(
             "Feigns crying to sharply\n"
             "lower the foe's Sp. Def."),

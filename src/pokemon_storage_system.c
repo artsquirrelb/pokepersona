@@ -2,6 +2,7 @@
 #include "malloc.h"
 #include "bg.h"
 #include "bw_summary_screen.h"
+#include "swsh_summary_screen.h"
 #include "data.h"
 #include "decompress.h"
 #include "dma3.h"
@@ -3778,6 +3779,8 @@ static void Task_ChangeScreen(u8 taskId)
         {
             if (BW_SUMMARY_SCREEN)
                 ShowPokemonSummaryScreenHandleDeoxys_BW(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
+            else if (SWSH_SUMMARY_SCREEN)
+                ShowPokemonSummaryScreenHandleDeoxys_SwSh(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
             else
                 ShowPokemonSummaryScreenHandleDeoxys(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
         }
@@ -3785,8 +3788,10 @@ static void Task_ChangeScreen(u8 taskId)
         {            
             if (BW_SUMMARY_SCREEN)
                 ShowPokemonSummaryScreen_BW(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
+            else if (SWSH_SUMMARY_SCREEN)
+                ShowPokemonSummaryScreen_SwSh(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
             else
-                ShowPokemonSummaryScreen(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
+                    ShowPokemonSummaryScreen(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
         }
         break;
     case SCREEN_CHANGE_NAME_BOX:

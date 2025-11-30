@@ -3,6 +3,7 @@
 #include "battle_factory_screen.h"
 #include "battle_factory.h"
 #include "bw_summary_screen.h"
+#include "swsh_summary_screen.h"
 #include "sprite.h"
 #include "event_data.h"
 #include "overworld.h"
@@ -1491,6 +1492,8 @@ static void Select_Task_OpenSummaryScreen(u8 taskId)
 
         if (BW_SUMMARY_SCREEN)
             ShowPokemonSummaryScreen_BW(SUMMARY_MODE_LOCK_MOVES, sFactorySelectMons, currMonId, SELECTABLE_MONS_COUNT - 1, CB2_InitSelectScreen);
+        else if (SWSH_SUMMARY_SCREEN)
+            ShowPokemonSummaryScreen_SwSh(SUMMARY_MODE_LOCK_MOVES, sFactorySelectMons, currMonId, SELECTABLE_MONS_COUNT - 1, CB2_InitSelectScreen);
         else
             ShowPokemonSummaryScreen(SUMMARY_MODE_LOCK_MOVES, sFactorySelectMons, currMonId, SELECTABLE_MONS_COUNT - 1, CB2_InitSelectScreen);
         break;
@@ -2388,6 +2391,8 @@ static void Swap_Task_OpenSummaryScreen(u8 taskId)
         sFactorySwapScreen->speciesNameColorBackup = gPlttBufferUnfaded[BG_PLTT_ID(PALNUM_TEXT) + 4];
         if (BW_SUMMARY_SCREEN)
             ShowPokemonSummaryScreen_BW(SUMMARY_MODE_NORMAL, gPlayerParty, sFactorySwapScreen->cursorPos, FRONTIER_PARTY_SIZE - 1, CB2_InitSwapScreen);
+        else if (SWSH_SUMMARY_SCREEN)
+            ShowPokemonSummaryScreen_SwSh(SUMMARY_MODE_NORMAL, gPlayerParty, sFactorySwapScreen->cursorPos, FRONTIER_PARTY_SIZE - 1, CB2_InitSwapScreen);
         else
             ShowPokemonSummaryScreen(SUMMARY_MODE_NORMAL, gPlayerParty, sFactorySwapScreen->cursorPos, FRONTIER_PARTY_SIZE - 1, CB2_InitSwapScreen);
         break;

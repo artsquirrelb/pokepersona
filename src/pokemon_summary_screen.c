@@ -8,6 +8,7 @@
 #include "battle_factory.h"
 #include "bg.h"
 #include "bw_summary_screen.h"
+#include "swsh_summary_screen.h"
 #include "contest.h"
 #include "contest_effect.h"
 #include "data.h"
@@ -2853,6 +2854,8 @@ u8 GetMoveSlotToReplace(void)
 {
     if (BW_SUMMARY_SCREEN)
         return GetMoveSlotToReplace_BW();
+    else if (SWSH_SUMMARY_SCREEN)
+        return GetMoveSlotToReplace_SwSh();
     else
         return sMoveSlotToReplace;
 }
@@ -4636,6 +4639,8 @@ void SummaryScreen_SetAnimDelayTaskId(u8 taskId)
 {
     if (BW_SUMMARY_SCREEN)
         SummaryScreen_SetAnimDelayTaskId_BW(taskId);
+    else if (SWSH_SUMMARY_SCREEN)
+        SummaryScreen_SetAnimDelayTaskId_SwSh(taskId);
     else
         sAnimDelayTaskId = taskId;
 }

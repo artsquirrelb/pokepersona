@@ -555,9 +555,11 @@
 #define MUS_P3FES_IWATODAI_DORM        617
 #define MUS_P3R_ITS_GOING_DOWN_NOW     618
 #define MUS_P3R_MEMORIES_OF_THE_CITY   619
+#define MUS_P5_BLOOMING_VILLAIN        620
+#define MUS_XC2_TORNA_BATTLE           621
 
 
-#define END_MUS                     MUS_P3R_MEMORIES_OF_THE_CITY
+#define END_MUS                     MUS_XC2_TORNA_BATTLE
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

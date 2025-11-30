@@ -143,6 +143,8 @@
 .include "sound/voicegroups/p3_calamity.inc"
 .include "sound/voicegroups/p3fes_iwatodai_dorm.inc"
 .include "sound/voicegroups/p3r_its_going_down_now.inc"
+.include "sound/voicegroups/p5_blooming_villain.inc"
+.include "sound/voicegroups/xc2_torna_battle.inc"
 
 @ FRLG
 .include "sound/voicegroups/rg_follow_me.inc"

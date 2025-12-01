@@ -36,7 +36,7 @@ enum
 {
     MENUITEM_GENERAL_INSTANTTEXT,
     MENUITEM_GENERAL_STARTMENUPAL,
-    //MENUITEM_GENERAL_BUTTONMODE,
+    MENUITEM_GENERAL_BUTTONMODE,
     //MENUITEM_GENERAL_FRAMETYPE,
     MENUITEM_GENERAL_FOLLOWERS,
     MENUITEM_GENERAL_AUTORUN,
@@ -194,7 +194,7 @@ static void UNUSED DrawChoices_Options_Four(const u8 *const *const strings, int 
 static void ReDrawAll(void);
 static void InstantText_DrawChoices(int selection, int y);
 static void StartMenuPal_DrawChoices(int selection, int y);
-//static void ButtonMode_DrawChoices(int selection, int y);
+static void ButtonMode_DrawChoices(int selection, int y);
 //static void FrameType_DrawChoices(int selection, int y);
 static void Followers_DrawChoices(int selection, int y);
 static void AutoRun_DrawChoices(int selection, int y);
@@ -255,7 +255,7 @@ static const MenuItemFunctions sItemFunctionsGeneral[MENUITEM_GENERAL_COUNT] =
 {
     [MENUITEM_GENERAL_INSTANTTEXT]  = {InstantText_DrawChoices,   TwoOptions_ProcessInput},
     [MENUITEM_GENERAL_STARTMENUPAL] = {StartMenuPal_DrawChoices,  FourOptions_ProcessInput},
-    //[MENUITEM_GENERAL_BUTTONMODE]   = {ButtonMode_DrawChoices,    ThreeOptions_ProcessInput},
+    [MENUITEM_GENERAL_BUTTONMODE]   = {ButtonMode_DrawChoices,    ThreeOptions_ProcessInput},
     //[MENUITEM_GENERAL_FRAMETYPE]    = {FrameType_DrawChoices,     FrameType_ProcessInput},
     [MENUITEM_GENERAL_FOLLOWERS]    = {Followers_DrawChoices,     TwoOptions_ProcessInput},
     [MENUITEM_GENERAL_AUTORUN]      = {AutoRun_DrawChoices,       TwoOptions_ProcessInput},
@@ -287,7 +287,7 @@ static const u8 *const sOptionMenuItemsNamesGeneral[MENUITEM_GENERAL_COUNT] =
 {
     [MENUITEM_GENERAL_INSTANTTEXT]  = gText_InstantText,
     [MENUITEM_GENERAL_STARTMENUPAL]  = gText_StartMenuPal,
-    //[MENUITEM_GENERAL_BUTTONMODE]   = gText_ButtonMode,
+    [MENUITEM_GENERAL_BUTTONMODE]   = gText_ButtonMode,
     //[MENUITEM_GENERAL_FRAMETYPE]    = gText_Frame,
     [MENUITEM_GENERAL_FOLLOWERS]    = gText_Followers,
     [MENUITEM_GENERAL_AUTORUN]      = gText_AutoRun,
@@ -341,7 +341,7 @@ static bool8 CheckConditions(int selection)
             return FlagGet(FLAG_SYS_B_DASH);
         case MENUITEM_GENERAL_INSTANTTEXT:
         case MENUITEM_GENERAL_STARTMENUPAL:
-        //case MENUITEM_GENERAL_BUTTONMODE:
+        case MENUITEM_GENERAL_BUTTONMODE:
         //case MENUITEM_GENERAL_FRAMETYPE:
         case MENUITEM_GENERAL_FOLLOWERS:
         //case MENUITEM_GENERAL_MATCHCALL:
@@ -387,9 +387,9 @@ static const u8 sText_Desc_StartMenuPal1[]     = _("Bubble themed Start Menu.");
 static const u8 sText_Desc_StartMenuPal2[]     = _("Flat blue Start Menu.");
 static const u8 sText_Desc_StartMenuPal3[]     = _("Flat red Start Menu.");
 static const u8 sText_Desc_StartMenuPal4[]     = _("Blue-ish gray Start Menu.");
-//static const u8 sText_Desc_ButtonMode[]         = _("All buttons work as normal.");
-//static const u8 sText_Desc_ButtonMode_LR[]      = _("On some screens the L and R buttons\nact as left and right.");
-//static const u8 sText_Desc_ButtonMode_LA[]      = _("The L button acts as another A\nbutton for one-handed play.");
+static const u8 sText_Desc_ButtonMode[]         = _("All buttons work as normal.");
+static const u8 sText_Desc_ButtonMode_LR[]      = _("On some screens the L and R buttons\nact as left and right.");
+static const u8 sText_Desc_ButtonMode_LA[]      = _("The L button acts as another A\nbutton for one-handed play.");
 //static const u8 sText_Desc_FrameType[]          = _("Choose the frame surrounding the\nwindows.");
 //static const u8 sText_Desc_MatchCallOn[]        = _("TRAINERs will be able to call you,\noffering rematches and info.");
 //static const u8 sText_Desc_MatchCallOff[]       = _("You will not receive calls.\nSpecial events will still occur.");
@@ -429,7 +429,7 @@ static const u8 *const sOptionMenuItemDescriptionsGeneral[MENUITEM_GENERAL_COUNT
 {
     [MENUITEM_GENERAL_INSTANTTEXT] = {sText_Desc_InstantTextOn,        sText_Desc_InstantTextOff,       sText_Empty,                sText_Empty},
     [MENUITEM_GENERAL_STARTMENUPAL] = {sText_Desc_StartMenuPal1,        sText_Desc_StartMenuPal2,       sText_Desc_StartMenuPal3,   sText_Desc_StartMenuPal4},
-    //[MENUITEM_GENERAL_BUTTONMODE]  = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,        sText_Desc_ButtonMode_LA},
+    [MENUITEM_GENERAL_BUTTONMODE]  = {sText_Desc_ButtonMode,           sText_Desc_ButtonMode_LR,        sText_Desc_ButtonMode_LA},
     //[MENUITEM_GENERAL_FRAMETYPE]   = {sText_Desc_FrameType,            sText_Empty,                     sText_Empty},
     [MENUITEM_GENERAL_FOLLOWERS]   = {sText_Desc_FollowersOn,          sText_Desc_FollowersOff,         sText_Empty,                sText_Empty},
     [MENUITEM_GENERAL_AUTORUN]     = {sText_Desc_AutoRunOn,            sText_Desc_AutoRunOff,           sText_Empty,                sText_Empty},
@@ -465,7 +465,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledGeneral[MENUITEM_GENER
 {
     [MENUITEM_GENERAL_INSTANTTEXT] = sText_Desc_Disabled_Textspeed,
     [MENUITEM_GENERAL_STARTMENUPAL] = sText_Empty,
-    //[MENUITEM_GENERAL_BUTTONMODE]  = sText_Empty,
+    [MENUITEM_GENERAL_BUTTONMODE]  = sText_Empty,
     //[MENUITEM_GENERAL_FRAMETYPE]   = sText_Empty,
     [MENUITEM_GENERAL_FOLLOWERS]   = sText_Empty,
     [MENUITEM_GENERAL_AUTORUN]     = sText_Desc_Disabled_AutoRun,
@@ -818,7 +818,7 @@ void CB2_InitOptionPlusMenu(void)
     case 6:
         sOptions->sel_general[MENUITEM_GENERAL_INSTANTTEXT] = gSaveBlock2Ptr->optionsInstantTextOff;
         sOptions->sel_general[MENUITEM_GENERAL_STARTMENUPAL] = gSaveBlock2Ptr->optionsStartMenuPalette;
-        //sOptions->sel_general[MENUITEM_GENERAL_BUTTONMODE]  = gSaveBlock2Ptr->optionsButtonMode;
+        sOptions->sel_general[MENUITEM_GENERAL_BUTTONMODE]  = gSaveBlock2Ptr->optionsButtonMode;
         //sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE]   = gSaveBlock2Ptr->optionsWindowFrameType;
         sOptions->sel_general[MENUITEM_GENERAL_FOLLOWERS]   = gSaveBlock2Ptr->optionsFollowersOff;
         sOptions->sel_general[MENUITEM_GENERAL_AUTORUN]     = gSaveBlock2Ptr->optionsAutoRunOff;
@@ -1055,7 +1055,7 @@ static void Task_OptionMenuSave(u8 taskId)
 {
     gSaveBlock2Ptr->optionsInstantTextOff   = sOptions->sel_general[MENUITEM_GENERAL_INSTANTTEXT];
     gSaveBlock2Ptr->optionsStartMenuPalette = sOptions->sel_general[MENUITEM_GENERAL_STARTMENUPAL];
-    //gSaveBlock2Ptr->optionsButtonMode       = sOptions->sel_general[MENUITEM_GENERAL_BUTTONMODE];
+    gSaveBlock2Ptr->optionsButtonMode       = sOptions->sel_general[MENUITEM_GENERAL_BUTTONMODE];
     //gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE];
     gSaveBlock2Ptr->optionsFollowersOff     = sOptions->sel_general[MENUITEM_GENERAL_FOLLOWERS];
     gSaveBlock2Ptr->optionsAutoRunOff       = sOptions->sel_general[MENUITEM_GENERAL_AUTORUN];
@@ -1344,7 +1344,7 @@ static void StartMenuPal_DrawChoices(int selection, int y)
     DrawOptionMenuChoice(gText_StartMenuPal4, 202 - width4x, y, styles[3], active);
 }
 
-/*static void ButtonMode_DrawChoices(int selection, int y)
+static void ButtonMode_DrawChoices(int selection, int y)
 {
     bool8 active = CheckConditions(MENUITEM_GENERAL_BUTTONMODE);
     u8 styles[3] = {0};
@@ -1354,7 +1354,7 @@ static void StartMenuPal_DrawChoices(int selection, int y)
     DrawOptionMenuChoice(gText_ButtonTypeNormal, 104, y, styles[0], active);
     DrawOptionMenuChoice(gText_ButtonTypeLR, xMid, y, styles[1], active);
     DrawOptionMenuChoice(gText_ButtonTypeLEqualsA, GetStringRightAlignXOffset(1, gText_ButtonTypeLEqualsA, 202), y, styles[2], active);
-}*/
+}
 
 /*static void FrameType_DrawChoices(int selection, int y)
 {

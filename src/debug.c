@@ -695,7 +695,7 @@ static const struct WindowTemplate sDebugMenuWindowTemplateMain =
     .tilemapTop = 1,
     .width = DEBUG_MENU_WIDTH_MAIN,
     .height = 2 * DEBUG_MENU_HEIGHT_MAIN,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 1,
 };
 
@@ -706,7 +706,7 @@ static const struct WindowTemplate sDebugMenuWindowTemplateExtra =
     .tilemapTop = 1,
     .width = DEBUG_MENU_WIDTH_EXTRA,
     .height = 2 * DEBUG_MENU_HEIGHT_EXTRA,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 1,
 };
 
@@ -717,7 +717,7 @@ static const struct WindowTemplate sDebugMenuWindowTemplateWeather =
     .tilemapTop = 1,
     .width = DEBUG_MENU_WIDTH_WEATHER,
     .height = 2 * DEBUG_MENU_HEIGHT_WEATHER,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 1,
 };
 
@@ -728,7 +728,7 @@ static const struct WindowTemplate sDebugMenuWindowTemplateSound =
     .tilemapTop = 1,
     .width = DEBUG_MENU_WIDTH_SOUND,
     .height = DEBUG_MENU_HEIGHT_SOUND,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 1,
 };
 
@@ -849,8 +849,8 @@ static void Debug_ShowMenu(DebugFunc HandleInput, const struct DebugMenuOption *
     menuTemplate.item_X = 8;
     menuTemplate.cursor_X = 0;
     menuTemplate.upText_Y = 1;
-    menuTemplate.cursorPal = 2;
-    menuTemplate.fillValue = 1;
+    menuTemplate.cursorPal = 1;
+    menuTemplate.fillValue = 3;
     menuTemplate.cursorShadowPal = 3;
     menuTemplate.lettersSpacing = 1;
     menuTemplate.itemVerticalPadding = 0;
@@ -1133,8 +1133,8 @@ static void Debug_RefreshListMenu(u8 taskId)
     gMultiuseListMenuTemplate.item_X = 8;
     gMultiuseListMenuTemplate.cursor_X = 0;
     gMultiuseListMenuTemplate.upText_Y = 1;
-    gMultiuseListMenuTemplate.cursorPal = 2;
-    gMultiuseListMenuTemplate.fillValue = 1;
+    gMultiuseListMenuTemplate.cursorPal = 1;
+    gMultiuseListMenuTemplate.fillValue = 3;
     gMultiuseListMenuTemplate.cursorShadowPal = 3;
     gMultiuseListMenuTemplate.lettersSpacing = 1;
     gMultiuseListMenuTemplate.itemVerticalPadding = 0;

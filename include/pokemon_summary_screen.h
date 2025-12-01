@@ -59,5 +59,6 @@ void ShowRelearnPrompt(void);
 void TryUpdateRelearnType(enum IncrDecrUpdateValues delta);
 u32 GetCurrentRelearnMovesCount(void);
 u32 GetRelearnMovesCount(enum MoveRelearnerStates state);
+bool32 NoMovesAvailableToRelearn(void);
 
 #endif // GUARD_POKEMON_SUMMARY_SCREEN_H

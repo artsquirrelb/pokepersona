@@ -609,9 +609,9 @@ static void ListMenuPrint(struct ListMenu *list, const u8 *str, u8 x, u8 y)
         u32 fontId = list->template.fontId;
         if (list->template.textNarrowWidth)
             fontId = GetFontIdToFit(str, fontId, list->template.lettersSpacing, list->template.textNarrowWidth);
-        colors[0] = list->template.fillValue;
-        colors[1] = list->template.cursorPal;
-        colors[2] = list->template.cursorShadowPal;
+        colors[0] = 0;//list->template.fillValue;
+        colors[1] = 1;//list->template.cursorPal;
+        colors[2] = 0;//list->template.cursorShadowPal;
         AddTextPrinterParameterized4(list->template.windowId,
                                      fontId,
                                      x, y,

@@ -702,9 +702,9 @@ bool8 ScrCmd_checkpcitem(struct ScriptContext *ctx)
 
 bool8 ScrCmd_adddecoration(struct ScriptContext *ctx)
 {
-    u32 decorId = VarGet(ScriptReadHalfword(ctx));
+    //u32 decorId = VarGet(ScriptReadHalfword(ctx));
 
-    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    //Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
     //gSpecialVar_Result = DecorationAdd(decorId);
     return FALSE;
@@ -712,9 +712,9 @@ bool8 ScrCmd_adddecoration(struct ScriptContext *ctx)
 
 bool8 ScrCmd_removedecoration(struct ScriptContext *ctx)
 {
-    u32 decorId = VarGet(ScriptReadHalfword(ctx));
+    //u32 decorId = VarGet(ScriptReadHalfword(ctx));
 
-    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    //Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
     //gSpecialVar_Result = DecorationRemove(decorId);
     return FALSE;
@@ -722,9 +722,9 @@ bool8 ScrCmd_removedecoration(struct ScriptContext *ctx)
 
 bool8 ScrCmd_checkdecorspace(struct ScriptContext *ctx)
 {
-    u32 decorId = VarGet(ScriptReadHalfword(ctx));
+    //u32 decorId = VarGet(ScriptReadHalfword(ctx));
 
-    Script_RequestEffects(SCREFF_V1);
+    //Script_RequestEffects(SCREFF_V1);
 
     //gSpecialVar_Result = DecorationCheckSpace(decorId);
     return FALSE;
@@ -732,9 +732,9 @@ bool8 ScrCmd_checkdecorspace(struct ScriptContext *ctx)
 
 bool8 ScrCmd_checkdecor(struct ScriptContext *ctx)
 {
-    u32 decorId = VarGet(ScriptReadHalfword(ctx));
+    //u32 decorId = VarGet(ScriptReadHalfword(ctx));
 
-    Script_RequestEffects(SCREFF_V1);
+    //Script_RequestEffects(SCREFF_V1);
 
     //gSpecialVar_Result = CheckHasDecoration(decorId);
     return FALSE;
@@ -2578,24 +2578,24 @@ bool8 ScrCmd_pokemart(struct ScriptContext *ctx)
 
 bool8 ScrCmd_pokemartdecoration(struct ScriptContext *ctx)
 {
-    const void *ptr = (void *)ScriptReadWord(ctx);
+    //const void *ptr = (void *)ScriptReadWord(ctx);
 
-    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+    //Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
     //NewShop_CreateDecorationShop1Menu(ptr);
-    ScriptContext_Stop();
+    //ScriptContext_Stop();
     return TRUE;
 }
 
 // Changes clerk dialogue slightly from above. See MART_TYPE_DECOR2
 bool8 ScrCmd_pokemartdecoration2(struct ScriptContext *ctx)
 {
-    const void *ptr = (void *)ScriptReadWord(ctx);
+    //const void *ptr = (void *)ScriptReadWord(ctx);
 
-    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+    //Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
     //NewShop_CreateDecorationShop2Menu(ptr);
-    ScriptContext_Stop();
+    //ScriptContext_Stop();
     return TRUE;
 }
 

@@ -324,9 +324,9 @@ static const struct ListMenuTemplate sListMenuTemplate_ItemStorage =
     .item_X = 8,
     .cursor_X = 0,
     .upText_Y = 9,
-    .cursorPal = 2,
-    .fillValue = 3,
-    .cursorShadowPal = 3,
+    .cursorPal = 1,
+    .fillValue = 0,
+    .cursorShadowPal = 0,
     .lettersSpacing = FALSE,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
@@ -1103,6 +1103,9 @@ void ItemStorage_RefreshListMenu(void)
     gMultiuseListMenuTemplate.totalItems = gPlayerPCItemPageInfo.count;
     gMultiuseListMenuTemplate.items = sItemStorageMenu->listItems;
     gMultiuseListMenuTemplate.maxShowed = gPlayerPCItemPageInfo.pageItems;
+    gMultiuseListMenuTemplate.cursorPal = 1;
+    gMultiuseListMenuTemplate.fillValue = 3;
+    gMultiuseListMenuTemplate.cursorShadowPal = 0;
 }
 
 void CopyItemName_PlayerPC(u8 *string, u16 itemId)
@@ -1185,7 +1188,7 @@ static void ItemStorage_DrawSwapArrow(u8 y, u8 b, u8 speed)
 {
     u8 windowId = sItemStorageMenu->windowIds[ITEMPC_WIN_LIST];
     if (b == 0xFF)
-        FillWindowPixelRect(windowId, PIXEL_FILL(1), 0, y, GetMenuCursorDimensionByFont(FONT_NORMAL, 0), GetMenuCursorDimensionByFont(FONT_NORMAL, 1));
+        FillWindowPixelRect(windowId, PIXEL_FILL(3), 0, y, GetMenuCursorDimensionByFont(FONT_NORMAL, 0), GetMenuCursorDimensionByFont(FONT_NORMAL, 1));
     else
         AddTextPrinterParameterized4(windowId, FONT_NORMAL, 0, y, 0, 0, sSwapArrowTextColors, speed, gText_SelectorArrow2);
 }

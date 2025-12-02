@@ -2541,7 +2541,7 @@ static void Task_HandleInput(u8 taskId)
                 gSpecialVar_0x8004 = sMonSummaryScreen->curMonIndex;
                 gRelearnMode = sMonSummaryScreen->currPageIndex;
                 StopPokemonAnimations();
-                PlaySE(SE_SELECT);
+                PlaySE(SE_POKENAV_ON);
                 BeginCloseSummaryScreen(taskId);
             }  
         }        
@@ -2557,7 +2557,7 @@ static void Task_HandleInput(u8 taskId)
             if (P_SUMMARY_SCREEN_MOVE_RELEARNER && (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES))
             {
                 TryUpdateRelearnType_SWSH(TRY_INCREMENT);
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BAG_CURSOR);
                 ShowMoveRelearner();
             }
         }
@@ -2566,7 +2566,7 @@ static void Task_HandleInput(u8 taskId)
             if (P_SUMMARY_SCREEN_MOVE_RELEARNER && (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES))
             {
                 TryUpdateRelearnType_SWSH(TRY_DECREMENT);
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BAG_CURSOR);
                 ShowMoveRelearner();
             }
         }

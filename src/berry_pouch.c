@@ -842,9 +842,9 @@ static void SetUpListMenuTemplate(void)
     gMultiuseListMenuTemplate.upText_Y = 2;
     gMultiuseListMenuTemplate.maxShowed = sBerryPouchDynamicResources->listMenuMaxShowed;
     gMultiuseListMenuTemplate.fontId = FONT_SHORT;
-    gMultiuseListMenuTemplate.cursorPal = TEXT_COLOR_BP_DARK_GRAY;
-    gMultiuseListMenuTemplate.fillValue = TEXT_COLOR_BP_TRANSPARENT;
-    gMultiuseListMenuTemplate.cursorShadowPal = TEXT_COLOR_BP_LIGHT_GRAY;
+    gMultiuseListMenuTemplate.cursorPal = 2;
+    gMultiuseListMenuTemplate.fillValue = 0;
+    gMultiuseListMenuTemplate.cursorShadowPal = 0;
     gMultiuseListMenuTemplate.moveCursorFunc = BerryPouchMoveCursorFunc;
     gMultiuseListMenuTemplate.itemPrintFunc = BerryPouchItemPrintFunc;
     gMultiuseListMenuTemplate.cursorKind = 0;

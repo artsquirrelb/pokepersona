@@ -1028,7 +1028,7 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
             if (data->battleEnvironment == BATTLE_ENVIRONMENT_PLAIN)
                 data->battleBgType += 1;
             else if (data->battleEnvironment == BATTLE_ENVIRONMENT_SNOW)
-                data->battleEnvironment == 0;
+                data->battleEnvironment = 0;
             else
                 data->battleEnvironment += 1;
         }
@@ -1036,7 +1036,7 @@ static void UpdateBattleBg(u8 taskId, bool8 increment)
         {
             if (data->battleEnvironment == BATTLE_ENVIRONMENT_GRASS)
                 //data->battleBgType = MAP_BATTLE_SCENE_RAYQUAZA;
-                data->battleEnvironment == BATTLE_ENVIRONMENT_SNOW;
+                data->battleEnvironment = BATTLE_ENVIRONMENT_SNOW;
             else if (data->battleEnvironment == BATTLE_ENVIRONMENT_SNOW)
                 data->battleBgType = MAP_BATTLE_SCENE_RAYQUAZA;
             else

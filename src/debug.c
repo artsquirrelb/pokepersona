@@ -856,7 +856,7 @@ static void Debug_ShowMenu(DebugFunc HandleInput, const struct DebugMenuOption *
     menuTemplate.itemVerticalPadding = 0;
     menuTemplate.scrollMultiple = LIST_NO_MULTIPLE_SCROLL;
     menuTemplate.fontId = DEBUG_MENU_FONT;
-    menuTemplate.cursorKind = 0;
+    menuTemplate.cursorKind = CURSOR_BLACK_ARROW;
     menuTaskId = ListMenuInit(&menuTemplate, 0, 0);
 
     // create input handler task

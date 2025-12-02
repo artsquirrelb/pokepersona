@@ -722,9 +722,9 @@ static void InitTMCaseListMenuItems(void)
     gMultiuseListMenuTemplate.upText_Y = 2;
     gMultiuseListMenuTemplate.maxShowed = sTMCaseDynamicResources->maxTMsShown;
     gMultiuseListMenuTemplate.fontId = FONT_SHORT_NARROW;
-    gMultiuseListMenuTemplate.cursorPal = TEXT_COLOR_TMCASE_DARK_GRAY;
-    gMultiuseListMenuTemplate.fillValue = TEXT_COLOR_TMCASE_TRANSPARENT;
-    gMultiuseListMenuTemplate.cursorShadowPal = TEXT_COLOR_TMCASE_LIGHT_GRAY;
+    gMultiuseListMenuTemplate.cursorPal = 2;
+    gMultiuseListMenuTemplate.fillValue = 0;
+    gMultiuseListMenuTemplate.cursorShadowPal = 0;
     gMultiuseListMenuTemplate.moveCursorFunc = List_MoveCursorFunc;
     gMultiuseListMenuTemplate.itemPrintFunc = List_ItemPrintFunc;
     gMultiuseListMenuTemplate.cursorKind = 0;
@@ -766,7 +766,7 @@ static void List_MoveCursorFunc(s32 itemIndex, bool8 onInit, struct ListMenu *li
 
     if (onInit != TRUE)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BAG_CURSOR);
         //SwapDisc(sTMCaseDynamicResources->discSpriteId, itemId);
     }
     PrintDescription(itemIndex);

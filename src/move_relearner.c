@@ -893,7 +893,7 @@ static void HandleInput(bool8 showContest)
         if (!(JOY_NEW(DPAD_LEFT | DPAD_RIGHT)) && !GetLRKeysPressed())
             break;
 
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BAG_CURSOR);
 
         if (showContest == FALSE)
         {
@@ -915,7 +915,7 @@ static void HandleInput(bool8 showContest)
 
         break;
     case LIST_CANCEL:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_POKENAV_OFF);
         RemoveScrollArrows();
         sMoveRelearnerStruct->state = MENU_STATE_PRINT_GIVE_UP_PROMPT;
         StringExpandPlaceholders(gStringVar4, gText_MoveRelearnerGiveUp);

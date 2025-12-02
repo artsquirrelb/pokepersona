@@ -252,7 +252,7 @@ static const struct WindowTemplate sWindowTemplates[WIN_COUNT + 1] =
         .tilemapTop = 6,
         .width = 17,
         .height = 2,
-        .paletteNum = 10,
+        .paletteNum = 15,
         .baseBlock = 0x030
     },
     [WIN_TEXT_ENTRY_BOX] = {
@@ -261,7 +261,7 @@ static const struct WindowTemplate sWindowTemplates[WIN_COUNT + 1] =
         .tilemapTop = 4,
         .width = 17,
         .height = 2,
-        .paletteNum = 10,
+        .paletteNum = 15,
         .baseBlock = 0x052
     },
     [WIN_BANNER] = {
@@ -270,7 +270,7 @@ static const struct WindowTemplate sWindowTemplates[WIN_COUNT + 1] =
         .tilemapTop = 0,
         .width = DISPLAY_TILE_WIDTH,
         .height = 2,
-        .paletteNum = 11,
+        .paletteNum = 14,
         .baseBlock = 0x074
     },
     DUMMY_WIN_TEMPLATE
@@ -1757,7 +1757,7 @@ static void HandleDpadMovement(struct Task *task)
 static void DrawNormalTextEntryBox(void)
 {
     FillWindowPixelBuffer(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], PIXEL_FILL(1));
-    AddTextPrinterParameterized(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], FONT_NORMAL, sNamingScreen->template->title, 8, 1, 0, 0);
+    AddTextPrinterParameterized6(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], FONT_NORMAL, sNamingScreen->template->title, 8, 1, 0, 0, 2, 0, 0);
     PutWindowTilemap(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX]);
 }
 
@@ -1769,7 +1769,7 @@ static void DrawMonTextEntryBox(void)
     WrapFontIdToFit(buffer, end, FONT_NORMAL, 128 - 64);
     StringAppendN(end, sNamingScreen->template->title, 15);
     FillWindowPixelBuffer(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], PIXEL_FILL(1));
-    AddTextPrinterParameterized(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], FONT_NORMAL, buffer, 8, 1, 0, 0);
+    AddTextPrinterParameterized6(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX], FONT_NORMAL, buffer, 8, 1, 0, 0, 2, 0, 0);
     PutWindowTilemap(sNamingScreen->windows[WIN_TEXT_ENTRY_BOX]);
 }
 
@@ -1809,8 +1809,8 @@ static void DummyGenderIcon(void)
 
 static const u8 sGenderColors[2][3] =
 {
-    {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_BLUE, TEXT_COLOR_BLUE},
-    {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_RED, TEXT_COLOR_RED}
+    {TEXT_COLOR_TRANSPARENT, 12, 0},
+    {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_RED, 0}
 };
 
 static void DrawGenderIcon(void)
@@ -1966,7 +1966,7 @@ static void DrawTextEntry(void)
         temp[1] = gText_ExpandedPlaceholder_Empty[0];
         extraWidth = (IsWideLetter(temp[0]) == TRUE) ? 2 : 0;
 
-        AddTextPrinterParameterized(sNamingScreen->windows[WIN_TEXT_ENTRY], FONT_NORMAL, temp, i * 8 + x + extraWidth, 1, TEXT_SKIP_DRAW, NULL);
+        AddTextPrinterParameterized6(sNamingScreen->windows[WIN_TEXT_ENTRY], FONT_NORMAL, temp, i * 8 + x + extraWidth, 1, TEXT_SKIP_DRAW, NULL, 2, 0, 0);
     }
 
     TryDrawGenderIcon();
@@ -1982,17 +1982,17 @@ struct TextColor   // Needed because of alignment
 static const struct TextColor sTextColorStruct =
 {
     {
-        {TEXT_DYNAMIC_COLOR_4, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY},
-        {TEXT_DYNAMIC_COLOR_5, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY},
-        {TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY}
+        {14, 1, 0},
+        {14, 1, 0},
+        {14, 1, 0}
     }
 };
 
 static const u8 sFillValues[KBPAGE_COUNT] =
 {
     [KEYBOARD_LETTERS_LOWER] = PIXEL_FILL(14),
-    [KEYBOARD_LETTERS_UPPER] = PIXEL_FILL(13),
-    [KEYBOARD_SYMBOLS]       = PIXEL_FILL(15)
+    [KEYBOARD_LETTERS_UPPER] = PIXEL_FILL(14),
+    [KEYBOARD_SYMBOLS]       = PIXEL_FILL(14)
 };
 
 static const u8 *const sKeyboardTextColors[KBPAGE_COUNT] =
@@ -2052,9 +2052,9 @@ static void DrawKeyboardPageOnDeck(void)
 
 static void PrintControls(void)
 {
-    const u8 color[3] = { TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY };
+    const u8 color[3] = { 0, 1, 0 };
 
-    FillWindowPixelBuffer(sNamingScreen->windows[WIN_BANNER], PIXEL_FILL(15));
+    FillWindowPixelBuffer(sNamingScreen->windows[WIN_BANNER], PIXEL_FILL(14));
     AddTextPrinterParameterized3(sNamingScreen->windows[WIN_BANNER], FONT_SMALL, 2, 1, color, 0, gText_MoveOkBack);
     PutWindowTilemap(sNamingScreen->windows[WIN_BANNER]);
     CopyWindowToVram(sNamingScreen->windows[WIN_BANNER], COPYWIN_FULL);

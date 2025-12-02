@@ -1475,7 +1475,7 @@ static void HeatStartMenu_HandleInput_DPADDOWN(void) {
       break;
     default:
       menuSelected++;
-      PlaySE(SE_SELECT);
+      PlaySE(SE_RG_BAG_CURSOR);
       if (FlagGet(DN_FLAG_DEXNAV_GET) == FALSE && menuSelected == MENU_POKETCH) {
         menuSelected++;
       } else if (FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_PARTY) {
@@ -1494,7 +1494,7 @@ static void HeatStartMenu_HandleInput_DPADUP(void) {
       menuSelected = MENU_OPTIONS;
       break;
     default:
-      PlaySE(SE_SELECT);
+      PlaySE(SE_RG_BAG_CURSOR);
       if (FlagGet(DN_FLAG_DEXNAV_GET) == FALSE && menuSelected == MENU_TRAINER_CARD) {
         menuSelected -= 2;
       } else if ((FlagGet(FLAG_SYS_POKEMON_GET) == FALSE && menuSelected == MENU_BAG) || (FlagGet(FLAG_SYS_POKEDEX_GET) == FALSE && menuSelected == MENU_PARTY)) {
@@ -1573,7 +1573,7 @@ static void HeatStartMenu_SafariZone_HandleInput_DPADDOWN(void) {
       menuSelected = MENU_FLAG;
       break;
     default:
-      PlaySE(SE_SELECT);
+      PlaySE(SE_RG_BAG_CURSOR);
       if (menuSelected == MENU_FLAG) {
         menuSelected = MENU_POKEDEX;
       } else if (menuSelected == MENU_BAG) {
@@ -1596,7 +1596,7 @@ static void HeatStartMenu_SafariZone_HandleInput_DPADUP(void) {
       menuSelected = MENU_OPTIONS;
       break;
     default:
-      PlaySE(SE_SELECT);
+      PlaySE(SE_RG_BAG_CURSOR);
       if (menuSelected == MENU_POKEDEX) {
         menuSelected = MENU_FLAG;
       } else if (menuSelected == MENU_OPTIONS) {

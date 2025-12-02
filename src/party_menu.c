@@ -300,7 +300,7 @@ static void PartyPaletteBufferCopy(u8);
 static void DisplayPartyPokemonDataForMultiBattle(u8);
 static void LoadPartyBoxPalette(struct PartyMenuBox *, u8);
 static void DrawEmptySlot(u8 windowId);
-static void DrawEmptySlot_Equal(u8 windowId); //Custom party menu
+//static void DrawEmptySlot_Equal(u8 windowId); //Custom party menu
 static void DisplayPartyPokemonDataForRelearner(u8);
 static void DisplayPartyPokemonDataForContest(u8);
 static void DisplayPartyPokemonDataForChooseHalf(u8);
@@ -399,7 +399,7 @@ static void Task_SwitchItemsYesNo(u8);
 static void Task_HandleSwitchItemsYesNoInput(u8);
 //static void Task_WriteMailToGiveMonAfterText(u8);
 //static void CB2_ReturnToPartyMenuFromWritingMail(void);
-static void Task_DisplayGaveMailFromPartyMessage(u8);
+//static void Task_DisplayGaveMailFromPartyMessage(u8);
 static void UpdatePartyMonHeldItemSprite(struct Pokemon *, struct PartyMenuBox *);
 static void Task_TossHeldItemYesNo(u8 taskId);
 static void Task_HandleTossHeldItemYesNoInput(u8);
@@ -477,7 +477,7 @@ static void Task_UpdateHeldItemSpriteAndClosePartyMenu(u8);
 //static void CB2_ReturnToPartyOrBagMenuFromWritingMail(void);
 static void RemoveItemToGiveFromBag(u16 item);
 static bool8 ReturnGiveItemToBagOrPC(u16);
-static void Task_DisplayGaveMailFromBagMessage(u8);
+//static void Task_DisplayGaveMailFromBagMessage(u8);
 static void Task_HandleSwitchItemsFromBagYesNoInput(u8);
 static void Task_ValidateChosenHalfParty(u8);
 static bool8 GetBattleEntryEligibility(struct Pokemon *);
@@ -1804,7 +1804,7 @@ static void UpdateCurrentPartySelection(s8 *slotPtr, s8 movementDir)
     UpdatePartySelectionSingleLayout(slotPtr, movementDir);
     if (*slotPtr != newSlotId)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BAG_CURSOR);
         AnimatePartySlot(newSlotId, 0);
         AnimatePartySlot(*slotPtr, 1);
     }
@@ -2559,10 +2559,10 @@ static void DrawEmptySlot(u8 windowId)
         BlitBitmapToPartyWindow(windowId, sSlotTilemap_WideEmpty, 18, 0, 0, 18, 3);
 }
 
-static void DrawEmptySlot_Equal(u8 windowId)
+/*static void DrawEmptySlot_Equal(u8 windowId)
 {
     BlitBitmapToPartyWindow(windowId, sEqualEmptySlotTileNums, 14, 0, 0, 14, 5);
-}//
+}*/
 
 /*#define LOAD_PARTY_BOX_PAL(paletteIds, paletteOffsets)                                                    \
 {                                                                                                         \
@@ -3017,12 +3017,12 @@ static u8 DisplaySelectionWindow(u8 windowType) //Summary/Switch/Item/Cancel men
     for (i = 0; i < sPartyMenuInternal->numActions; i++)
     {
         const u8 *text;
-        u8 fontColorsId = 3;
+        //u8 fontColorsId = 3;
 
-        if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
-            fontColorsId = 4;
-        if (sPartyMenuInternal->actions[i] >= MENU_LEVEL_UP_MOVES && sPartyMenuInternal->actions[i] <= MENU_SUB_MOVES)
-            fontColorsId = 6;
+        //if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
+        //    fontColorsId = 4;
+        //if (sPartyMenuInternal->actions[i] >= MENU_LEVEL_UP_MOVES && sPartyMenuInternal->actions[i] <= MENU_SUB_MOVES)
+        //    fontColorsId = 6;
 
         if (sPartyMenuInternal->actions[i] >= MENU_FIELD_MOVES)
             text = GetMoveName(FieldMove_GetMoveId(sPartyMenuInternal->actions[i] - MENU_FIELD_MOVES));
@@ -3087,7 +3087,7 @@ static void SetPartyMonSelectionActions(struct Pokemon *mons, u8 slotId, u8 acti
 
 static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 {
-    u8 i, j;
+    //u8 i, j;
 
     sPartyMenuInternal->numActions = 0;
     AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
@@ -3915,7 +3915,7 @@ static void Task_HandleSwitchItemsYesNoInput(u8 taskId)
 }*/
 
 // Nearly redundant with Task_DisplayGaveMailFromBagMessgae
-static void Task_DisplayGaveMailFromPartyMessage(u8 taskId)
+/*static void Task_DisplayGaveMailFromPartyMessage(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
@@ -3925,7 +3925,7 @@ static void Task_DisplayGaveMailFromPartyMessage(u8 taskId)
             DisplaySwitchedHeldItemMessage(gSpecialVar_ItemId, sPartyMenuItemId, FALSE);
         gTasks[taskId].func = Task_UpdateHeldItemSprite;
     }
-}
+}*/
 
 static void Task_UpdateHeldItemSprite(u8 taskId)
 {
@@ -7733,7 +7733,7 @@ static void Task_UpdateHeldItemSpriteAndClosePartyMenu(u8 taskId)
     {
         InitPartyMenu(gPartyMenu.menuType, KEEP_PARTY_LAYOUT, gPartyMenu.action, TRUE, PARTY_MSG_NONE, Task_DisplayGaveMailFromBagMessage, gPartyMenu.exitCallback);
     }
-}*/
+}
 
 static void Task_DisplayGaveMailFromBagMessage(u8 taskId)
 {
@@ -7745,7 +7745,7 @@ static void Task_DisplayGaveMailFromBagMessage(u8 taskId)
             DisplayGaveHeldItemMessage(&gPlayerParty[gPartyMenu.slotId], gPartyMenu.bagItem, FALSE, 1);
         gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
     }
-}
+}*/
 
 static void Task_SwitchItemsFromBagYesNo(u8 taskId)
 {

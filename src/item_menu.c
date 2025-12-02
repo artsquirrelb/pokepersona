@@ -234,7 +234,7 @@ static const u8 sText_DepositHowManyVar1[] = _("Deposit how many\n{STR_VAR_1}?")
 static const u8 sText_DepositedVar2Var1s[] = _("Deposited {STR_VAR_2}\n{STR_VAR_1}.");
 static const u8 sText_NoRoomForItems[] = _("There's no room to\nstore items.");
 static const u8 sText_CantStoreImportantItems[] = _("Important items\ncan't be stored in\nthe PC!");
-static const u8 sText_BlueText[] = _("{COLOR 12}{STR_VAR_2}");
+static const u8 sText_BlueText[] = _("{COLOR 5}{STR_VAR_2}");
 
 static void Task_LoadBagSortOptions(u8 taskId);
 static void ItemMenu_SortByName(u8 taskId);
@@ -303,7 +303,7 @@ static const struct ListMenuTemplate sItemListMenu =
     .upText_Y = 1,
     .cursorPal = 1,
     .fillValue = 0,
-    .cursorShadowPal = 2, //was 3
+    .cursorShadowPal = 0, //was 3
     .lettersSpacing = 0,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
@@ -615,7 +615,7 @@ static const u8 sFontColorTable[][3] = {
     [COLORID_GRAY_CURSOR] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_GRAY, TEXT_COLOR_GREEN},
     [COLORID_UNUSED]      = {TEXT_COLOR_DARK_GRAY,   TEXT_COLOR_WHITE,      TEXT_COLOR_LIGHT_GRAY},
     */
-    [COLORID_NORMAL]      = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_NORMAL]      = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      0},
     [COLORID_POCKET_NAME] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      0},
     [COLORID_GRAY_CURSOR] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
     [COLORID_UNUSED]      = {TEXT_COLOR_DARK_GRAY,   TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
@@ -631,7 +631,7 @@ static const struct WindowTemplate sDefaultBagWindows[] =
         .tilemapTop = 2,
         .width = 15,
         .height = 16,
-        .paletteNum = 0, //was 1
+        .paletteNum = 13, //was 1
         .baseBlock = 0x27,
     },
     [WIN_DESCRIPTION] = {
@@ -1205,7 +1205,7 @@ static void BagMenu_MoveCursorCallback(s32 itemIndex, bool8 onInit, struct ListM
 {
     if (onInit != TRUE)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BAG_CURSOR);
         ShakeBagSprite();
     }
     if (gBagMenu->toSwapPos == NOT_SWAPPING)
@@ -1610,12 +1610,12 @@ static u8 GetSwitchBagPocketDirection(void)
     LRKeys = GetLRKeysPressed();
     if (JOY_NEW(DPAD_LEFT) || LRKeys == MENU_L_PRESSED)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BAG_POCKET);
         return SWITCH_POCKET_LEFT;
     }
     if (JOY_NEW(DPAD_RIGHT) || LRKeys == MENU_R_PRESSED)
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BAG_POCKET);
         return SWITCH_POCKET_RIGHT;
     }
     return SWITCH_POCKET_NONE;
@@ -2065,7 +2065,7 @@ static void Task_ItemContext_MultipleRows(u8 taskId)
         {
             if (cursorPos > 0 && IsValidContextMenuPos(cursorPos - 2))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BAG_CURSOR);
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_NONE, MENU_CURSOR_DELTA_UP);
             }
         }
@@ -2073,7 +2073,7 @@ static void Task_ItemContext_MultipleRows(u8 taskId)
         {
             if (cursorPos < (gBagMenu->contextMenuNumItems - 2) && IsValidContextMenuPos(cursorPos + 2))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BAG_CURSOR);
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_NONE, MENU_CURSOR_DELTA_DOWN);
             }
         }
@@ -2081,7 +2081,7 @@ static void Task_ItemContext_MultipleRows(u8 taskId)
         {
             if ((cursorPos & 1) && IsValidContextMenuPos(cursorPos - 1))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BAG_CURSOR);
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_LEFT, MENU_CURSOR_DELTA_NONE);
             }
         }
@@ -2089,7 +2089,7 @@ static void Task_ItemContext_MultipleRows(u8 taskId)
         {
             if (!(cursorPos & 1) && IsValidContextMenuPos(cursorPos + 1))
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BAG_CURSOR);
                 ChangeMenuGridCursorPosition(MENU_CURSOR_DELTA_RIGHT, MENU_CURSOR_DELTA_NONE);
             }
         }

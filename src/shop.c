@@ -155,15 +155,15 @@ static void BuyMenuSetListEntry(struct ListMenuItem *, u16, u8 *);
 static void BuyMenuAddItemIcon(u16, u8);
 static void BuyMenuRemoveItemIcon(u16, u8);
 static void BuyMenuPrint(u8 windowId, const u8 *text, u8 x, u8 y, s8 speed, u8 colorSet);
-static void BuyMenuDrawMapGraphics(void);
-static void BuyMenuCopyMenuBgToBg1TilemapBuffer(void);
-static void BuyMenuCollectObjectEventData(void);
-static void BuyMenuDrawObjectEvents(void);
-static void BuyMenuDrawMapBg(void);
-static bool8 BuyMenuCheckForOverlapWithMenuBg(int, int);
-static void BuyMenuDrawMapMetatile(s16 x, s16 y, const u16 *src, u8 metatileLayerType);
-static void BuyMenuDrawMapMetatileLayer(u16 *dest, s16 offset1, s16 offset2, const u16 *src);
-static bool8 BuyMenuCheckIfObjectEventOverlapsMenuBg(s16 *);
+//static void BuyMenuDrawMapGraphics(void);
+//static void BuyMenuCopyMenuBgToBg1TilemapBuffer(void);
+//static void BuyMenuCollectObjectEventData(void);
+//static void BuyMenuDrawObjectEvents(void);
+//static void BuyMenuDrawMapBg(void);
+//static bool8 BuyMenuCheckForOverlapWithMenuBg(int, int);
+//static void BuyMenuDrawMapMetatile(s16 x, s16 y, const u16 *src, u8 metatileLayerType);
+//static void BuyMenuDrawMapMetatileLayer(u16 *dest, s16 offset1, s16 offset2, const u16 *src);
+//static bool8 BuyMenuCheckIfObjectEventOverlapsMenuBg(s16 *);
 static void ExitBuyMenu(u8 taskId);
 static void Task_ExitBuyMenu(u8 taskId);
 static void BuyMenuTryMakePurchase(u8 taskId);
@@ -1140,7 +1140,7 @@ static void BuyMenuDrawGraphics(void)
     ScheduleBgCopyTilemapToVram(3);
 }
 
-static void BuyMenuDrawMapGraphics(void)
+/*static void BuyMenuDrawMapGraphics(void)
 {
     BuyMenuCollectObjectEventData();
     BuyMenuDrawObjectEvents();
@@ -1323,7 +1323,7 @@ static bool8 BuyMenuCheckIfObjectEventOverlapsMenuBg(s16 *object)
         return FALSE;
 }
 
-static void BuyMenuCopyMenuBgToBg1TilemapBuffer(void)
+/*static void BuyMenuCopyMenuBgToBg1TilemapBuffer(void)
 {
     s16 i;
     u16 *dest = sShopData->tilemapBuffers[1];
@@ -1349,7 +1349,7 @@ static bool8 BuyMenuCheckForOverlapWithMenuBg(int x, int y)
         return TRUE;
 
     return FALSE;
-}
+}*/
 
 static void Task_BuyMenu(u8 taskId)
 {

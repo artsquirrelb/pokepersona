@@ -148,7 +148,6 @@ enum SwShSummarySprites
     SPRITE_ARR_ID_SPE_GRADE,
     SPRITE_ARR_ID_RELEARN_PROMPT,
     SPRITE_ARR_ID_RELEARN_PROMPT_MULTI,
-    SPRITE_ARR_ID_LR_BUTTON,
     SPRITE_ARR_ID_INFO_PROMPT,
     SPRITE_ARR_ID_TERA_TYPE,
     SPRITE_ARR_ID_TYPE, // 2 for mon types, 5 for move types(4 moves and 1 to learn), used interchangeably, because mon types and move types aren't shown on the same screen
@@ -392,11 +391,11 @@ void TryUpdateRelearnType_SWSH(enum IncrDecrUpdateValues delta);
 // const rom data
 
 static const u8 sMemoNatureTextColor[]              = _("{COLOR DYNAMIC_COLOR2}{SHADOW DYNAMIC_COLOR3}");
-static const u8 sMemoMiscTextColor[]                = _("{COLOR WHITE}{SHADOW DARK_GRAY}");
+static const u8 sMemoMiscTextColor[]                = _("{COLOR WHITE}");
 static const u8 sStatsHPLayout[]                    = _("{DYNAMIC 0}/{DYNAMIC 1}");
 static const u8 sStatsHPIVEVLayout[]                = _("{DYNAMIC 0}");
 static const u8 sStatsNonHPLayout[]                 = _("{DYNAMIC 0}\n{DYNAMIC 1}\n{DYNAMIC 2}\n{DYNAMIC 3}\n{DYNAMIC 4}");
-static const u8 sMovesPPLayout[]                    = _("{DYNAMIC 0}/{DYNAMIC 1}");
+static const u8 sMovesPPLayout[]                    = _("{DYNAMIC 1}/{DYNAMIC 0}");
 static const u8 sEggStepsLayout[]                   = _("{DYNAMIC 0} steps");
 
 static const u8 sText_Empty[]                       = _("");
@@ -422,6 +421,7 @@ static const u8 sText_Egg[]                         = _("Egg");
 // bg gfx
 const u32 sSummaryScreen_Gfx[]                      = INCBIN_U32("graphics/summary_screen/swsh/tiles.4bpp.lz");
 const u16 sSummaryScreen_Pal[]                      = INCBIN_U16("graphics/summary_screen/swsh/tiles.gbapal");
+const u16 sSummaryScreenF_Pal[]                     = INCBIN_U16("graphics/summary_screen/swsh/tiles_f.gbapal");
 const u32 sSummaryPage_ScrollBG_Tilemap[]           = INCBIN_U32("graphics/summary_screen/swsh/scroll_bg.bin.lz");
 const u32 sSummaryPage_Info_Tilemap[]               = INCBIN_U32("graphics/summary_screen/swsh/page_info.bin.lz");
 const u32 sSummaryPage_Skills_Tilemap[]             = INCBIN_U32("graphics/summary_screen/swsh/page_skills.bin.lz");
@@ -447,8 +447,10 @@ static const u8 sButtons_Gfx[][4 * TILE_SIZE_4BPP] = {
 static const u32 sTeraTypes_Gfx[]                   = INCBIN_U32("graphics/types_swsh_summary_screen/tera/tera_types_swsh.4bpp.lz");
 static const u32 sHeldItemBox_Gfx[]                 = INCBIN_U32("graphics/summary_screen/swsh/held_item_box.4bpp.lz");
 static const u16 sHeldItemBox_Pal[]                 = INCBIN_U16("graphics/summary_screen/swsh/held_item_box.gbapal");
+static const u16 sHeldItemBoxF_Pal[]                 = INCBIN_U16("graphics/summary_screen/swsh/held_item_box_f.gbapal");
 static const u32 sSummaryMoveSelect_Gfx[]           = INCBIN_U32("graphics/summary_screen/swsh/move_select.4bpp.lz");
 static const u16 sSummaryMoveSelect_Pal[]           = INCBIN_U16("graphics/summary_screen/swsh/move_select.gbapal");
+static const u16 sSummaryMoveSelectF_Pal[]           = INCBIN_U16("graphics/summary_screen/swsh/move_select_f.gbapal");
 static const u16 sMarkings_Pal[]                    = INCBIN_U16("graphics/summary_screen/swsh/markings.gbapal");
 static const u32 sShinyIcon_Gfx[]                   = INCBIN_U32("graphics/summary_screen/swsh/shiny_icon.4bpp.lz");
 static const u32 sPokerusCuredIcon_Gfx[]            = INCBIN_U32("graphics/summary_screen/swsh/pokerus_cured_icon.4bpp.lz");
@@ -732,19 +734,19 @@ static const struct WindowTemplate sPageMovesTemplate[] = // This is used for bo
 };
 static const u8 sTextColors[][3] =
 {
-    {0, 1, 2},
-    {0, 3, 4},
-    {0, 5, 6},
-    {0, 7, 8},
-    {0, 9, 10},
-    {0, 11, 12},
-    {0, 13, 14},
-    {0, 7, 8},
-    {13, 15, 14},
-    {0, 1, 2},
-    {0, 3, 4},
-    {0, 5, 6},
-    {0, 7, 8},
+    {0, 1, 0},
+    {0, 3, 0},
+    {0, 6, 0},
+    {0, 7, 0},
+    {0, 9, 0},
+    {0, 12, 0},
+    {0, 14, 0},
+    {0, 7, 0},
+    {13, 15, 0},
+    {0, 1, 0},
+    {0, 3, 0},
+    {0, 5, 0},
+    {0, 7, 0},
 };
 
 static void (*const sTextPrinterFunctions[])(void) =
@@ -1424,6 +1426,12 @@ static const struct SpritePalette sMoveSelectorSpritePal =
     .tag = TAG_MOVE_SELECTOR
 };
 
+static const struct SpritePalette sMoveSelectorFSpritePal =
+{
+    .data = sSummaryMoveSelectF_Pal,
+    .tag = TAG_MOVE_SELECTOR
+};
+
 static const struct SpriteTemplate sMoveSelectorSpriteTemplate =
 {
     .tileTag = TAG_MOVE_SELECTOR,
@@ -1482,6 +1490,12 @@ static const struct CompressedSpriteSheet sSpriteSheet_HeldItemBox =
 static const struct SpritePalette sSpritePal_HeldItemBox =
 {
     .data = sHeldItemBox_Pal,
+    .tag = TAG_HELD_ITEM_BOX,
+};
+
+static const struct SpritePalette sSpritePal_HeldItemBoxF = 
+{
+    .data = sHeldItemBoxF_Pal,
     .tag = TAG_HELD_ITEM_BOX,
 };
 
@@ -2121,7 +2135,10 @@ static bool8 DecompressGraphics(void)
         sMonSummaryScreen->switchCounter++;
         break;
     case 6:
-        LoadPalette(sSummaryScreen_Pal, BG_PLTT_ID(0), 8 * PLTT_SIZE_4BPP);
+        if (gSaveBlock2Ptr->playerGender == MALE)
+            LoadPalette(sSummaryScreen_Pal, BG_PLTT_ID(0), 8 * PLTT_SIZE_4BPP);
+        else
+            LoadPalette(sSummaryScreenF_Pal, BG_PLTT_ID(0), 8 * PLTT_SIZE_4BPP);
         LoadPalette(&sSummaryScreen_PPTextPalette, BG_PLTT_ID(8) + 1, PLTT_SIZEOF(16 - 1));
         sMonSummaryScreen->switchCounter++;
         break;
@@ -2150,7 +2167,10 @@ static bool8 DecompressGraphics(void)
         sMonSummaryScreen->switchCounter++;
         break;
     case 13:
-        LoadSpritePalette(&sMoveSelectorSpritePal);
+        if (gSaveBlock2Ptr->playerGender == MALE)
+            LoadSpritePalette(&sMoveSelectorSpritePal);
+        else
+            LoadSpritePalette(&sMoveSelectorFSpritePal);
         sMonSummaryScreen->switchCounter++;
         break;
     case 14:
@@ -2208,7 +2228,10 @@ static bool8 DecompressGraphics(void)
         sMonSummaryScreen->switchCounter++;
         break;
     case 24:
-        LoadSpritePalette(&sSpritePal_HeldItemBox);
+        if (gSaveBlock2Ptr->playerGender == MALE)
+            LoadSpritePalette(&sSpritePal_HeldItemBox);
+        else
+            LoadSpritePalette(&sSpritePal_HeldItemBoxF);
         sMonSummaryScreen->switchCounter = 0;
         return TRUE;
     }
@@ -2449,8 +2472,6 @@ static void Task_HandleInput(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     u8 defaultSkillsState = SKILL_STATE_STATS;
-    u8 state = 0;
-    u8 attempts = MOVE_RELEARNER_COUNT;
     
     if (MenuHelpers_ShouldWaitForLinkRecv() != TRUE && !gPaletteFade.active)
     {
@@ -2476,6 +2497,18 @@ static void Task_HandleInput(u8 taskId)
         }
         else if (JOY_NEW(A_BUTTON))
         {
+            if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO && ShouldShowRename())
+                {
+                    if (ShouldShowRename())
+                    {
+                        sMonSummaryScreen->callback = CB2_PssChangePokemonNickname;
+                        gSpecialVar_0x8004 = sMonSummaryScreen->curMonIndex;
+                    }
+
+                    StopPokemonAnimations();
+                    PlaySE(SE_SELECT);
+                    BeginCloseSummaryScreen(taskId);
+                }
             if (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES)
             {
                 PlaySE(SE_SELECT);
@@ -2501,18 +2534,6 @@ static void Task_HandleInput(u8 taskId)
         }  
         else if (JOY_NEW(START_BUTTON))
         {
-            if (sMonSummaryScreen->currPageIndex == PSS_PAGE_INFO && ShouldShowRename())
-                {
-                    if (ShouldShowRename())
-                    {
-                        sMonSummaryScreen->callback = CB2_PssChangePokemonNickname;
-                        gSpecialVar_0x8004 = sMonSummaryScreen->curMonIndex;
-                    }
-
-                    StopPokemonAnimations();
-                    PlaySE(SE_SELECT);
-                    BeginCloseSummaryScreen(taskId);
-                }
             if (ShouldShowMoveRelearner()
                 && (sMonSummaryScreen->currPageIndex == PSS_PAGE_BATTLE_MOVES))
             {
@@ -3110,6 +3131,7 @@ static void Task_HandleInput_MoveSelect(u8 taskId)
                 PlaySE(SE_SELECT);
                 SwitchToMovePositionSwitchMode(taskId);
                 HideInfoPrompt();
+                HideMoveRelearner();
             }
             else
             {
@@ -4017,11 +4039,11 @@ static void PrintMonDexNumberSpecies(void)
 
     if (sMonSummaryScreen->summary.isEgg)
     {
-        PrintTextOnWindow(windowId, gText_FiveMarks, 0, 3, 0, 0);
+        PrintTextOnWindow(windowId, gText_FiveMarks, 0, 3, 0, 1);
     }
     else
     {
-        PrintTextOnWindow(windowId, GetSpeciesName(summary->species2), 0, 3, 0, 0);
+        PrintTextOnWindow(windowId, GetSpeciesName(summary->species2), 0, 3, 0, 1);
         
         if (dexNum != 0xFFFF)
         {
@@ -4034,7 +4056,7 @@ static void PrintMonDexNumberSpecies(void)
 
             if (!IsMonShiny(mon))
             {
-                PrintTextOnWindow(windowId, gStringVar1, 76, 3, 0, 0);
+                PrintTextOnWindow(windowId, gStringVar1, 76, 3, 0, 1);
             }
             else
             {
@@ -4051,7 +4073,10 @@ static void PrintMonOTName(void)
     // int windowId = AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_OT_OTID);
     if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
     {
-        PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 0, 37, 0, 0);
+        if (sMonSummaryScreen->summary.OTGender == MALE)
+            PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 0, 37, 0, 3);
+        else
+            PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 0, 37, 0, 2);
         // if (sMonSummaryScreen->summary.OTGender == 0)
         //     PrintTextOnWindow(windowId, sMonSummaryScreen->summary.OTName, 0, 0, 0, 5);
         // else
@@ -4060,7 +4085,7 @@ static void PrintMonOTName(void)
     else
     {
         StringCopy(gStringVar1, sText_RentalPkmn);
-        PrintTextOnWindow(windowId, gStringVar1, 0, 37, 0, 0);
+        PrintTextOnWindow(windowId, gStringVar1, 0, 37, 0, 1);
     }
 }
 
@@ -4069,7 +4094,7 @@ static void PrintMonOTID(void)
     if (InBattleFactory() != TRUE && InSlateportBattleTent() != TRUE)
     {
         ConvertIntToDecimalStringN(gStringVar1, (u16)sMonSummaryScreen->summary.OTID, STR_CONV_MODE_LEADING_ZEROS, 5);
-        PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES), gStringVar1, 71, 37, 0, 0);
+        PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_SPECIES), gStringVar1, 71, 37, 0, 1);
     }
 }
 
@@ -4084,13 +4109,13 @@ static void PrintMonNature(void)
 static void PrintMonAbilityName(void)
 {
     u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].name, 48, 5, 0, 0);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].name, 48, 5, 0, 1);
 }
 
 static void PrintMonAbilityDescription(void)
 {
     u16 ability = GetAbilityBySpecies(sMonSummaryScreen->summary.species, sMonSummaryScreen->summary.abilityNum);
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].description, 0, 22, 0, 0);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_ABILITY), gAbilitiesInfo[ability].description, 0, 22, 0, 1);
 }
 
 static void UNUSED BufferMonTrainerMemo(void)
@@ -4153,7 +4178,7 @@ static void UNUSED BufferMonTrainerMemo(void)
 
 static void UNUSED PrintMonTrainerMemo(void)
 {
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO), gStringVar4, 16, 4, 0, 0);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO), gStringVar4, 16, 4, 0, 1);
 }
 
 static void BufferNatureString(void)
@@ -4255,7 +4280,7 @@ static void UNUSED PrintEggState(void)
         text = gText_EggWillTakeALongTime;
     text = gText_EmptyString5;
 
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ITEM), text, 16, 4, 0, 0);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_ITEM), text, 16, 4, 0, 1);
 }
 
 static void UNUSED PrintEggMemo(void)
@@ -4279,7 +4304,7 @@ static void UNUSED PrintEggMemo(void)
         text = gText_OddEggFoundByCouple;
     }
 
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO), text, 16, 28, 0, 0);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageInfoTemplate, PSS_DATA_WINDOW_INFO_MEMO), text, 16, 28, 0, 1);
 }
 
 static void PrintSkillsPageText(void)
@@ -4362,10 +4387,10 @@ static void PrintHeldItemInfo(void)
     }
 
     fontId = GetFontIdToFit(text, FONT_SHORT_NARROW, 0, 72);
-    PrintTextOnWindowWithFont(windowId, text, 74, 5, 0, 0, fontId);
+    PrintTextOnWindowWithFont(windowId, text, 74, 5, 0, 1, fontId);
     
     fontId = FormatTextByWidth(desc, 144, FONT_SHORT_NARROW, description, GetFontAttribute(FONT_SHORT_NARROW, FONTATTR_LETTER_SPACING));
-    PrintTextOnWindowWithFont(windowId, desc, 0, 23, 1, 0, fontId);
+    PrintTextOnWindowWithFont(windowId, desc, 0, 23, 1, 1, fontId);
 }
 
 static void UNUSED PrintRibbonCount(void)
@@ -4385,7 +4410,7 @@ static void UNUSED PrintRibbonCount(void)
     }
 
     x = GetStringCenterAlignXOffset(FONT_NORMAL, text, 70) + 6;
-    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT), text, x, 1, 0, 0);
+    PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT), text, x, 1, 0, 1);
 }
 
 
@@ -4496,7 +4521,7 @@ static void BufferHPStats(void)
 static void PrintHPStats(u8 mode)
 {
     u8 windowId = AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS);
-    PrintTextOnWindow(windowId, gStringVar4, 72 - GetStringWidth(FONT_SHORT_NARROW, gStringVar4, 0), 0, 0, 0);
+    PrintTextOnWindow(windowId, gStringVar4, 72 - GetStringWidth(FONT_SHORT_NARROW, gStringVar4, 0), 0, 0, 1);
 }
 
 
@@ -4515,19 +4540,19 @@ static void PrintNonHPStats(void)
 {
     u8 windowId = AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_STATS);
     
-    PrintTextOnWindow(windowId, gStringVar1, 144 - GetStringWidth(FONT_SHORT_NARROW, gStringVar1, 0), 0, 0, 0);
-    PrintTextOnWindow(windowId, gStringVar2, 72 - GetStringWidth(FONT_SHORT_NARROW, gStringVar2, 0), 16, 0, 0);
-    PrintTextOnWindow(windowId, gStringVar3, 144 - GetStringWidth(FONT_SHORT_NARROW, gStringVar3, 0), 16, 0, 0);
-    PrintTextOnWindow(windowId, gStringVar4, 72 - GetStringWidth(FONT_SHORT_NARROW, gStringVar4, 0), 32, 0, 0);
-    PrintTextOnWindow(windowId, sStringVar5, 144 - GetStringWidth(FONT_SHORT_NARROW, sStringVar5, 0), 32, 0, 0);
+    PrintTextOnWindow(windowId, gStringVar1, 144 - GetStringWidth(FONT_SHORT_NARROW, gStringVar1, 0), 0, 0, 1);
+    PrintTextOnWindow(windowId, gStringVar2, 72 - GetStringWidth(FONT_SHORT_NARROW, gStringVar2, 0), 16, 0, 1);
+    PrintTextOnWindow(windowId, gStringVar3, 144 - GetStringWidth(FONT_SHORT_NARROW, gStringVar3, 0), 16, 0, 1);
+    PrintTextOnWindow(windowId, gStringVar4, 72 - GetStringWidth(FONT_SHORT_NARROW, gStringVar4, 0), 32, 0, 1);
+    PrintTextOnWindow(windowId, sStringVar5, 144 - GetStringWidth(FONT_SHORT_NARROW, sStringVar5, 0), 32, 0, 1);
 }
 
 static void PrintColoredStatLabel(u8 windowId, s8 statIndex, const u8 *text, u8 x, u8 y, 
                                   u8 natureUpStat, u8 natureDownStat, u8 *coloredLabel)
 {
-    static const u8 sTextNatureDown[] = _("{COLOR}{07}{SHADOW}{08}");
-    static const u8 sTextNatureUp[] = _("{COLOR}{05}{SHADOW}{06}");
-    static const u8 sTextNatureNeutral[] = _("{COLOR}{01}");
+    static const u8 sTextNatureDown[] = _("{COLOR}{08}");
+    static const u8 sTextNatureUp[] = _("{COLOR}{06}");
+    static const u8 sTextNatureNeutral[] = _("{COLOR}{03}");
     
     const u8 *color;
     
@@ -4559,7 +4584,7 @@ static void PrintStatLabels(void)
     u8 natureDownStat = gNaturesInfo[sMonSummaryScreen->summary.mintNature].statDown;
 
     // Print HP label
-    PrintTextOnWindow(windowId, sText_HP_Title, 8, 0, 0, 0);
+    PrintTextOnWindow(windowId, sText_HP_Title, 8, 0, 0, 1);
     
     // Print non-HP stat labels (colored)
     PrintColoredStatLabel(windowId, STAT_ATK, sText_Attack_Title, 80, 0, natureUpStat, natureDownStat, coloredLabel);
@@ -4577,8 +4602,8 @@ static void PrintExpPointsNextLevel(void)
 
     // print exp
     ConvertIntToDecimalStringN(gStringVar1, sum->exp, STR_CONV_MODE_RIGHT_ALIGN, 7);
-    PrintTextOnWindow(windowId, sText_Exp, 8, 0, 0, 0);
-    PrintTextOnWindow(windowId, gStringVar1, 72 - GetStringWidth(FONT_SHORT_NARROW, gStringVar1, 0), 0, 0, 0);
+    PrintTextOnWindow(windowId, sText_Exp, 8, 0, 0, 1);
+    PrintTextOnWindow(windowId, gStringVar1, 72 - GetStringWidth(FONT_SHORT_NARROW, gStringVar1, 0), 0, 0, 1);
     
 
     // print exp to next level
@@ -4587,9 +4612,9 @@ static void PrintExpPointsNextLevel(void)
     else
         expToNextLevel = 0;
 
-    PrintTextOnWindow(windowId, sText_NextLv, 80, 0, 0, 0);
+    PrintTextOnWindow(windowId, sText_NextLv, 80, 0, 0, 1);
     ConvertIntToDecimalStringN(gStringVar1, expToNextLevel, STR_CONV_MODE_RIGHT_ALIGN, 5);
-    PrintTextOnWindow(windowId, gStringVar1, 144 - GetStringWidth(FONT_SHORT_NARROW, gStringVar1, 0), 0, 0, 0);
+    PrintTextOnWindow(windowId, gStringVar1, 144 - GetStringWidth(FONT_SHORT_NARROW, gStringVar1, 0), 0, 0, 1);
 }
 
 static void PrintBattleMoves(void)
@@ -4671,7 +4696,7 @@ static void PrintMoveNameAndPP(u8 moveIndex)
 
     if (move != 0)
     {
-        PrintTextOnWindowToFitPx_WithFont(moveNameWindowId, GetMoveName(move), 4, moveIndex * 18 + 4, 0, 4, FONT_SMALL, WindowWidthPx(moveNameWindowId) - 3);
+        PrintTextOnWindowToFitPx_WithFont(moveNameWindowId, GetMoveName(move), 4, moveIndex * 18 + 4, 0, 1, FONT_SMALL, WindowWidthPx(moveNameWindowId) - 3);
         pp = CalculatePPWithBonus(move, summary->ppBonuses, moveIndex);
         ConvertIntToDecimalStringN(gStringVar1, summary->pp[moveIndex], STR_CONV_MODE_RIGHT_ALIGN, 2);
         ConvertIntToDecimalStringN(gStringVar2, pp, STR_CONV_MODE_RIGHT_ALIGN, 2);
@@ -4684,7 +4709,7 @@ static void PrintMoveNameAndPP(u8 moveIndex)
     }
     else
     {
-        PrintTextOnWindow(moveNameWindowId, gText_ThreeDashes, 4, moveIndex * 18 + 4, 0, 4);
+        PrintTextOnWindow(moveNameWindowId, gText_ThreeDashes, 4, moveIndex * 18 + 4, 0, 1);
         text = gText_TwoDashes;
         ppState = 3;
     }
@@ -4710,7 +4735,7 @@ static void PrintMovePowerAndAccuracy(u16 moveIndex)
             text = gStringVar1;
         }
         xPos = 22 - GetStringWidth(FONT_SHORT_NARROW, text, 0);
-        PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, xPos, 2, 0, 0);
+        PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, xPos, 2, 0, 1);
 
         if (gMovesInfo[moveIndex].accuracy == 0)
         {
@@ -4722,12 +4747,12 @@ static void PrintMovePowerAndAccuracy(u16 moveIndex)
             text = gStringVar1;
         }
         xPos = 22 - GetStringWidth(FONT_SHORT_NARROW, text, 0);
-        PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, xPos, 22, 0, 0);
+        PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, xPos, 22, 0, 1);
     } else {
         text = gText_ThreeDashes;
         xPos = 22 - GetStringWidth(FONT_SHORT_NARROW, text, 0);
-        PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, xPos, 2, 0, 0);
-        PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, xPos, 22, 0, 0);
+        PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, xPos, 2, 0, 1);
+        PrintTextOnWindow(PSS_LABEL_WINDOW_MOVES_POWER_ACC, text, xPos, 22, 0, 1);
     }
 }
 
@@ -4755,14 +4780,14 @@ static void PrintMoveDescription(u16 move)
                 else
                     descFontId = FormatTextByWidth(desc, 136, FONT_SHORT_NARROW, gNotDoneYetDescription, GetFontAttribute(FONT_SHORT_NARROW, FONTATTR_LETTER_SPACING));
 
-                PrintTextOnWindowWithFont(windowId, desc, 0, 4, 1, 0, descFontId);
+                PrintTextOnWindowWithFont(windowId, desc, 0, 4, 1, 1, descFontId);
             }
             else
             {
                 if (gMovesInfo[move].effect != EFFECT_PLACEHOLDER)
-                    PrintTextOnWindow(windowId, gMovesInfo[move].description, 0, 4, 1, 0);
+                    PrintTextOnWindow(windowId, gMovesInfo[move].description, 0, 4, 1, 1);
                 else
-                    PrintTextOnWindow(windowId, gNotDoneYetDescription, 0, 4, 1, 0);
+                    PrintTextOnWindow(windowId, gNotDoneYetDescription, 0, 4, 1, 1);
             }
 
         }
@@ -5611,7 +5636,7 @@ static void ShowMoveRelearner(void)
     }
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]].invisible = FALSE;
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI]].invisible = FALSE;
-    gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_LR_BUTTON]].invisible = FALSE;
+    
     switch (gMoveRelearnerState)
     {
         case MOVE_RELEARNER_LEVEL_UP_MOVES:
@@ -5635,12 +5660,10 @@ static void ShowMoveRelearner(void)
 static void HideMoveRelearner(void)
 {
     if (sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] != SPRITE_NONE
-    && sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI] != SPRITE_NONE
-    && sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_LR_BUTTON] != SPRITE_NONE)
+    && sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI] != SPRITE_NONE)
     {   
         gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]].invisible = TRUE;
         gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI]].invisible = TRUE;
-        gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_LR_BUTTON]].invisible = TRUE;
     }
 }
 
@@ -5679,10 +5702,10 @@ static void ShowCancelOrRenamePrompt(void)
     
     if (ShouldShowRename())
     {
-        iconXPos = stringXPos - 31;
+        iconXPos = stringXPos - 11;
         if (iconXPos < 0)
             iconXPos = 0;
-        PrintButtonIcon(PSS_LABEL_WINDOW_PROMPT_CANCEL, BUTTON_START, iconXPos, 4);
+        PrintButtonIcon(PSS_LABEL_WINDOW_PROMPT_CANCEL, BUTTON_A, iconXPos, 4);
         PrintTextOnWindowWithFont(PSS_LABEL_WINDOW_PROMPT_CANCEL, promptText, stringXPos, 0, 0, 1, FONT_SMALL);
     }
     else 

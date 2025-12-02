@@ -417,7 +417,7 @@ script SunshineWoods_Eventscript_KGStaff1_Battle {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Great teamwork, Inteleon.\p
     Now let's check if he has any useful information."))
     closemessage
-    playse(SE_SUDOWOODO_SHAKE)
+    playse(SE_RG_CARD_FLIPPING)
     specialvar(VAR_RESULT, GetPlayerFacingDirection)
     if (var(VAR_RESULT) == DIR_SOUTH){
         applymovement(LOCALID_PLAYER, moves(walk_in_place_down))
@@ -438,7 +438,7 @@ script SunshineWoods_Eventscript_KGStaff1_Battle {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}So this is one of the boys they're searching for?"))
     closemessage
     callnative(ClearMugshot)
-    playse(SE_SUDOWOODO_SHAKE)
+    playse(SE_RG_CARD_FLIPPING)
     applymovement(LOCALID_PLAYER, emotepensive)
     waitmovement
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}There's nothing else here, let's go, Inteleon."))
@@ -528,7 +528,7 @@ script SunshineWoods_Eventscript_KGStaff2_Battle {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Great job, Inteleon.\p
     Now let's see..."))
     closemessage
-    playse(SE_SUDOWOODO_SHAKE)
+    playse(SE_RG_CARD_FLIPPING)
     specialvar(VAR_RESULT, GetPlayerFacingDirection)
     if (var(VAR_RESULT) == DIR_SOUTH){
         applymovement(LOCALID_PLAYER, moves(walk_in_place_down))
@@ -552,7 +552,7 @@ script SunshineWoods_Eventscript_KGStaff2_Battle {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Magnifique. Now I know how one of their targets looks like."))
     closemessage
     callnative(ClearMugshot)
-    playse(SE_SUDOWOODO_SHAKE)
+    playse(SE_RG_CARD_FLIPPING)
     applymovement(LOCALID_PLAYER, emotepensive)
     waitmovement
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}There's nothing else here, time to go."))

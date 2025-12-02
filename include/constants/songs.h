@@ -557,9 +557,10 @@
 #define MUS_P3R_MEMORIES_OF_THE_CITY   619
 #define MUS_P5_BLOOMING_VILLAIN        620
 #define MUS_XC2_TORNA_BATTLE           621
+#define MUS_XC2_INCOMING               622
 
 
-#define END_MUS                     MUS_XC2_TORNA_BATTLE
+#define END_MUS                     MUS_XC2_INCOMING
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

@@ -628,6 +628,8 @@ gSongTable::
 	song mus_p3r_memories_of_the_city, MUSIC_PLAYER_BGM, 0
 	song mus_p5_blooming_villain, MUSIC_PLAYER_BGM, 0
 	song mus_xc2_torna_battle, MUSIC_PLAYER_BGM, 0
+	song mus_xc2_incoming, MUSIC_PLAYER_BGM, 0
+
 	.align 2
 dummy_song_header:
 	.byte 0, 0, 0, 0

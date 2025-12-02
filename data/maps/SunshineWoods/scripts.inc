@@ -687,7 +687,7 @@ SunshineWoods_Eventscript_KGStaff1_Battle_7:
 # 419 "data/maps/SunshineWoods/scripts.pory"
 	closemessage
 # 420 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_SUDOWOODO_SHAKE
+	playse SE_RG_CARD_FLIPPING
 # 421 "data/maps/SunshineWoods/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
 # 422 "data/maps/SunshineWoods/scripts.pory"
@@ -720,7 +720,7 @@ SunshineWoods_Eventscript_KGStaff1_Battle_11:
 # 440 "data/maps/SunshineWoods/scripts.pory"
 	callnative ClearMugshot
 # 441 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_SUDOWOODO_SHAKE
+	playse SE_RG_CARD_FLIPPING
 # 442 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, emotepensive
 # 443 "data/maps/SunshineWoods/scripts.pory"
@@ -888,7 +888,7 @@ SunshineWoods_Eventscript_KGStaff2_Battle_12:
 # 530 "data/maps/SunshineWoods/scripts.pory"
 	closemessage
 # 531 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_SUDOWOODO_SHAKE
+	playse SE_RG_CARD_FLIPPING
 # 532 "data/maps/SunshineWoods/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
 # 533 "data/maps/SunshineWoods/scripts.pory"
@@ -924,7 +924,7 @@ SunshineWoods_Eventscript_KGStaff2_Battle_20:
 # 554 "data/maps/SunshineWoods/scripts.pory"
 	callnative ClearMugshot
 # 555 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_SUDOWOODO_SHAKE
+	playse SE_RG_CARD_FLIPPING
 # 556 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, emotepensive
 # 557 "data/maps/SunshineWoods/scripts.pory"

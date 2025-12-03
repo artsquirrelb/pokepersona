@@ -61,7 +61,7 @@ static void PikeDummy2(void);
 static void GetRoomInflictedStatus(void);
 static void GetRoomInflictedStatusMon(void);
 static void HealOneOrTwoMons(void);
-static void BufferNPCMessage(void);
+//static void BufferNPCMessage(void);
 static void StatusInflictionScreenFlash(void);
 static void GetInBattlePike(void);
 static void SetHintedRoom(void);

@@ -63,7 +63,7 @@
 #define FLAG_HEAL_AFTER_FOLLOWER_BATTLE 0x31 // //NPC followers //was Unused Flag
 #define FLAG_SMART_WILD_AI              0x32 // Was Unused Flag
 #define FLAG_NO_BAG_USE                 0x33 // Was Unused Flag
-#define FLAG_BPMARTMOVE                     0x34 // Was Unused Flag
+#define FLAG_BPMARTMOVE                 0x34 // Was Unused Flag
 #define FLAG_PARTNER_WILD_BATTLES       0x35 // Was Unused Flag
 #define FLAG_FORCE_DOUBLE_WILD          0x36 // Was Unused Flag
 #define FLAG_EGG_MOVES                  0x37 // Was Unused Flag

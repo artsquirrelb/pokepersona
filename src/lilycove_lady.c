@@ -27,7 +27,7 @@ static void ResetQuizLadyForRecordMix(void);
 static void ResetFavorLadyForRecordMix(void);
 static void ResetContestLadyForRecordMix(void);
 static u8 BufferQuizAuthorName(void);
-static bool8 IsQuizTrainerIdNotPlayer(void);
+//static bool8 IsQuizTrainerIdNotPlayer(void);
 static u8 GetPlayerNameLength(const u8 *);
 
 static EWRAM_DATA struct LilycoveLadyFavor *sFavorLadyPtr = NULL;
@@ -422,7 +422,7 @@ static u8 BufferQuizAuthorName(void)
     return authorNameId;
 }
 
-static bool8 IsQuizTrainerIdNotPlayer(void)
+/*static bool8 IsQuizTrainerIdNotPlayer(void)
 {
     bool8 notPlayer;
     u8 i;
@@ -438,7 +438,7 @@ static bool8 IsQuizTrainerIdNotPlayer(void)
         }
     }
     return notPlayer;
-}
+}*/
 
 static u8 GetPlayerNameLength(const u8 *playerName)
 {

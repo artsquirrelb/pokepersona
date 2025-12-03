@@ -2936,7 +2936,7 @@ u32 Rogue_GetBattleSpeedScale(bool32 forHealthbar)
         if(InBattleChoosingMoves())
             return 1;
 
-        // When battle anims are turned off, it's a bit too hard to read text, so force running at normal speed
+            // When battle anims are turned off, it's a bit too hard to read text, so force running at normal speed
         if(!forHealthbar && battleSceneOff == TRUE && InBattleRunningActions())
             return 1;
     }

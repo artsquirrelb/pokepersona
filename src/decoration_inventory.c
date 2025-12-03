@@ -23,12 +23,12 @@ void SetDecorationInventoriesPointers(void)
     InitDecorationContextItems();*/
 }
 
-static void ClearDecorationInventory(u8 category)
+/*static void ClearDecorationInventory(u8 category)
 {
-    /*u8 i;
+    u8 i;
     for (i = 0; i < gDecorationInventories[category].size; i ++)
-        gDecorationInventories[category].items[i] = DECOR_NONE;*/
-}
+        gDecorationInventories[category].items[i] = DECOR_NONE;
+}*/
 
 //void ClearDecorationInventories(void)
 //{

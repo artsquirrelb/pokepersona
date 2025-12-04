@@ -145,7 +145,7 @@ static void Task_SpinPokenavIcon(u8);
 static void InitMatchCallTextPrinter(int, const u8 *);
 static bool32 RunMatchCallTextPrinter(int);
 static const struct MatchCallText *GetSameRouteMatchCallText(int, u8 *);
-static const struct MatchCallText *GetDifferentRouteMatchCallText(int, u8 *);
+//static const struct MatchCallText *GetDifferentRouteMatchCallText(int, u8 *);
 static const struct MatchCallText *GetBattleMatchCallText(int, u8 *);
 static const struct MatchCallText *GetGeneralMatchCallText(int, u8 *);
 //static bool32 ShouldTrainerRequestBattle(int);

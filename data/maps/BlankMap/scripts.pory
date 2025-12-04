@@ -25,7 +25,8 @@ mapscripts BlankMap_MapScripts {
         VAR_MITSURUS_INTRO_STATE, 4: MansionsGarden_Eventscript_Onframe4
         VAR_MITSURUS_INTRO_STATE, 7: SunshineMeadow_Eventscript_MitsuruOnframe7
         VAR_MITSURUS_INTRO_STATE, 9: Route2_House_Eventscript_MitsuruOnFrame9
-        VAR_MITSURUS_INTRO_STATE, 25: SunshineTown_Eventscript_MitsuruOnFrame25
+        VAR_MITSURUS_INTRO_STATE, 26: SunshineTown_Eventscript_MitsuruOnFrame26
+        VAR_MITSURUS_INTRO_STATE, 32: Route2_House_Eventscript_MitsuruOnFrame32Warp
 
         ]
 }
@@ -179,12 +180,21 @@ script Route2_House_Eventscript_MitsuruOnFrame9 {
     special(HealPlayerParty)
     delay(50)
     warpsilent(MAP_ROUTE2_HOUSE, 4, 4)
-    setrespawn(HEAL_LOCATION_ROUTE2_HOUSE)
 }
 
-script SunshineTown_Eventscript_MitsuruOnFrame25 {
-    setvar(VAR_MITSURUS_INTRO_STATE, 26)
+script SunshineTown_Eventscript_MitsuruOnFrame26 {
     msgbox(format("A few days later."))
     closemessage
     warpsilent(MAP_ROUTE2_HOUSE, 5, 3)
+    waitstate
+}
+
+script Route2_House_Eventscript_MitsuruOnFrame32Warp {
+    setvar(VAR_MITSURUS_INTRO_STATE, 33)
+    fwdtime(6,20)
+    fwdweekday(WEEKDAY_MON)
+    delay(60)
+    msgbox(format("The next morning..."))
+    warpsilent(MAP_ROUTE2_HOUSE, 5,5)
+    waitstate
 }

@@ -30,7 +30,7 @@ mapscripts SunshineTown_MapScripts {
             setflag(FLAG_TEMP_3)
             setflag(FLAG_TEMP_5)
         }
-        if(var(VAR_MITSURUS_INTRO_STATE) >= 20){
+        if(var(VAR_MITSURUS_INTRO_STATE) >= 20 && var(VAR_MITSURUS_INTRO_STATE) < 23){
             setflag(FLAG_TEMP_4)
             setflag(FLAG_TEMP_5)
         }
@@ -327,19 +327,24 @@ script SunshineTown_Eventscript_OW_Happiny{
 
 script SunshineTown_Eventscript_OnFrame23{
     lock
-    msgbox(format("{COLOR GREEN}Tips: Quest System is now unlocked.\p
-    Check around for quest givers with a light blue exclamation mark.\p
-    You can open quest menu in\n
-    {START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}."))
-    closemessage
-    clearflag(FLAG_HIDE_QUEST_ICON)
-    setflag(FLAG_SYS_QUEST_MENU_GET)
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, MITSURUS_PROLOGUE)
+    if (var(VAR_RESULT) == FALSE)
+    {
+        msgbox(format("{COLOR GREEN}Tips: Quest System is now unlocked.\p
+        Check around for quest givers with a light blue exclamation mark.\p
+        You can open quest menu in\n
+        {START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}."))
+        closemessage
+        clearflag(FLAG_HIDE_QUEST_ICON)
+        setflag(FLAG_SYS_QUEST_MENU_GET)
+        questmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS)
+    }
     setvar(VAR_AKIHIKOS_INTRO_STATE, 24)
     release
     end
 }
 
-script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL{
+script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL{
     lock
     setspeaker("Fumiko")
     if (flag(FLAG_SYS_QUEST_MENU_GET) == FALSE){
@@ -347,19 +352,19 @@ script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL{
     }
     else {
         faceplayer
-        questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+        questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
         if (var(VAR_RESULT) == TRUE){
-            call(SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted)
+            call(SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted)
         }
         else{
-            call(SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward)
+            call(SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward)
         }
     }
     release
     end
 }
 
-script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted {
+script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCompleted {
     msgbox(format("Soothe Bell can help you befriend Pokémon faster."))
     closemessage
     release
@@ -367,23 +372,23 @@ script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasCo
 }
 
 
-script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward {
-    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward {
+    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
     if (var(VAR_RESULT) == TRUE){
         msgbox(format("My Riolu was very happy. Please take this as a thank-you for doing me a favor."))
         closemessage
         giveitem(ITEM_SOOTHE_BELL, 1)
-        questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+        questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
         release
         end
     }
     else {
-        call(SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive)
+        call(SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive)
     }
 }
 
-script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive {
-    questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive {
+    questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
     if (var(VAR_RESULT) == TRUE){
         msgbox(format("You can find my poor Riolu on the second floor."))
         closemessage
@@ -391,15 +396,29 @@ script SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfAct
         end
     }
     else {
-        msgbox(format("Excuse me, young men. Can you do me a favor?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure, ma'am. What can we do for you?"))
-        closemessage
-        setspeaker("Fumiko")
-        msgbox(format("One of the Pokémon caretakers I hired couldn't show up today.\p
-        Can you go play with my poor baby Riolu? He's on the second floor.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Leave it to us!"))
-        closemessage
-        questmenu(QUEST_MENU_SET_ACTIVE, QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
+        checkplayergender
+        if (var(VAR_RESULT) == MALE)
+        {
+            msgbox(format("Excuse me, young men. Can you do me a favor?\p
+            {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure, ma'am. What can we do for you?"))
+            closemessage
+            setspeaker("Fumiko")
+            msgbox(format("One of the Pokémon caretakers I hired couldn't show up today.\p
+            Can you go play with my poor baby Riolu? He's on the second floor.\p
+            {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Leave it to us!"))
+            closemessage
+        }
+        else{
+            msgbox(format("Excuse me, young lass. Can you do me a favor?\p
+            {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Certainly, ma'am. What do you need?"))
+            closemessage
+            setspeaker("Fumiko")
+            msgbox(format("One of the Pokémon caretakers I hired couldn't show up today.\p
+            Can you go play with my poor baby Riolu? He's on the second floor.\p
+            {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll be happy to help."))
+            closemessage
+        }
+        questmenu(QUEST_MENU_SET_ACTIVE, QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
         release
         end
     }
@@ -624,7 +643,7 @@ script SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji {
     waitmovement
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Excuse me. Have you seen these boys?"))
     setspeaker("Kojima")
-    msgbox(format("Oh them! I saw the policeman living in this town carried them to his house.\p
+    msgbox(format("{DESTROY_MUGSHOT}Oh them! I saw the policeman living in this town carried them to his house.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Really? When was it?"))
     setspeaker("Kojima")
     msgbox(format("{DESTROY_MUGSHOT}I think it was around an hour after the explosion at the orphanage happened?\p
@@ -645,7 +664,7 @@ script SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji {
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_diag_northeast*5, walk_right))
     waitmovement
     special(RemoveCameraObject)
-    setvar(VAR_MITSURUS_INTRO_STATE, 24)
+    setvar(VAR_MITSURUS_INTRO_STATE, 25)
     fwdtime(17, 20)
     release
     end
@@ -653,6 +672,7 @@ script SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji {
 
 script SunshineTown_Eventscript_MitsuruOverheardAkiShinji {
     lock
+    fadenewbgm(MUS_DUMMY)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, emoteexclamation)
     setspeaker("???????")
@@ -687,6 +707,6 @@ script SunshineTown_Eventscript_MitsuruOverheardAkiShinji {
     closemessage
     applymovement(LOCALID_PLAYER, moves(player_run_right*9, player_run_up*2, face_down))
     delay(40)
-    setvar(VAR_MITSURUS_INTRO_STATE, 25)
+    setvar(VAR_MITSURUS_INTRO_STATE, 26)
     warpsilent(MAP_BLANK_MAP)
 }

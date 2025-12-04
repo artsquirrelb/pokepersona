@@ -87,6 +87,7 @@ static void ItemUseOnFieldCB_Honey(u8 taskId);
 static bool32 IsValidLocationForVsSeeker(void);
 static void CB2_OpenOutfitBoxFromBag(void);
 static void Task_OpenRegisteredOutfitBox(u8 taskId);
+static u32 GetMonTargetExpAtCurrentHighestLevelMinusOne(struct Pokemon *mon);
 
 static const u8 sText_CantDismountBike[] = _("You can't dismount your Bike here.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_ItemFinderNearby[] = _("Huh?\nThe Itemfinder's responding!\pThere's an item buried around here!{PAUSE_UNTIL_PRESS}");
@@ -1687,29 +1688,42 @@ void ItemUseOutOfBattle_CampGears(u8 taskId)
             
 }
 
+static u32 GetMonTargetExpAtCurrentHighestLevelMinusOne(struct Pokemon *mon)
+{
+    return gExperienceTables[gSpeciesInfo[GetMonData(mon, MON_DATA_SPECIES)].growthRate][GetHighestLevelInPlayerParty()-1];
+}
+
 void ItemUseOutOfBattle_CandyJar(u8 taskId)
 {
     
     PlaySE(SE_EXP_MAX);
     s32 highestlevel = GetHighestLevelInPlayerParty();
     s32 i;
-    u32 arg;
-    arg = highestlevel -1;
+
     for (i = 0; i < PARTY_SIZE; i++)
     {
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL)
             && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_EGG)
         {
             s32 level = GetMonData(&gPlayerParty[i], MON_DATA_LEVEL, NULL);
-            if (level < highestlevel)
-                SetMonData(&gPlayerParty[i], MON_DATA_LEVEL, &arg);
+            if (level < highestlevel-1) //no need to set the mon at highest level -1
+            {
+                u32 targetexperience = GetMonTargetExpAtCurrentHighestLevelMinusOne(&gPlayerParty[i]);
+
+                SetMonData(&gPlayerParty[i], MON_DATA_LEVEL, &highestlevel-1);
+                SetMonData(&gPlayerParty[i], MON_DATA_EXP, &targetexperience);
+                TryIncrementMonLevel(&gPlayerParty[i]);
+                CalculateMonStats(&gPlayerParty[i]);
+            }
         }
     }
     if (!gTasks[taskId].data[2]) // to account for pressing select in the overworld
-        DisplayItemMessageOnField(taskId, gText_KeyCandy, Task_CloseCantUseKeyItemMessage);
+        DisplayItemMessageOnField(taskId, gText_CandyJar, Task_CloseCantUseKeyItemMessage);
     else
-        DisplayItemMessage(taskId, FONT_NORMAL, gText_KeyCandy, CloseItemMessage);
+        DisplayItemMessage(taskId, FONT_NORMAL, gText_CandyJar, CloseItemMessage);
 }
+
+
 
 void ItemUseOutOfBattle_OutfitBox(u8 taskId)
 {

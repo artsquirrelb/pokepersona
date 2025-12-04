@@ -30,6 +30,7 @@
 #include "gpu_regs.h"
 #include "item.h"
 #include "lilycove_lady.h"
+#include "load_save.h"
 #include "main.h"
 #include "menu.h"
 #include "money.h"
@@ -3164,6 +3165,24 @@ bool8 ScrCmd_pokemartoutfit(struct ScriptContext *ctx)
     return TRUE;
 }
 
+void Script_SwitchMainCharacter(void)
+{
+    SavePlayerParty();
+                        
+    if (gSaveBlock2Ptr->playerGender == MALE)
+    {
+        gSaveBlock2Ptr->currOutfitId = CHARACTER_MITSURU;
+        gSaveBlock2Ptr->playerGender = FEMALE;
+    }
+    else
+    {
+        gSaveBlock2Ptr->currOutfitId = CHARACTER_AKIHIKO;
+        gSaveBlock2Ptr->playerGender = MALE;
+    }
+
+    LoadPlayerParty();
+}
+
 void ScriptSetDoubleBattleFlag(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1);
@@ -3174,12 +3193,13 @@ void ScriptSetDoubleBattleFlag(struct ScriptContext *ctx)
 bool8 ScrCmd_removeallitem(struct ScriptContext *ctx)
 {
     u32 itemId = VarGet(ScriptReadHalfword(ctx));
-
+    u32 varId = ScriptReadHalfword(ctx);
+    u16 *varpointer = GetVarPointer(varId);
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
     u32 count = CountTotalItemQuantityInBag(itemId);
-    gSpecialVar_Result = count;
     RemoveBagItem(itemId, count);
+    *varpointer = count;
 
     return FALSE;
 }
@@ -3273,6 +3293,16 @@ bool8 Scrcmd_changespecies(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
     SetMonSpecies (&gPlayerParty[monIndex], targetspecies);
+    return FALSE;
+}
+
+bool8 Scrcmd_setfriendship(struct ScriptContext *ctx)
+{
+    u16 targetfriendshippoint = VarGet(ScriptReadHalfword(ctx));
+    u16 monIndex = VarGet(ScriptReadHalfword(ctx));
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    SetMonFriendship (&gPlayerParty[monIndex], targetfriendshippoint);
     return FALSE;
 }
 

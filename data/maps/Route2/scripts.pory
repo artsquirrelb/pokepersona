@@ -10,13 +10,15 @@ mapscripts Route2_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 40: Route2_Eventscript_AkihikoOnWarp40
         ////////////////
         VAR_MITSURUS_INTRO_STATE, 8: Route2_Eventscript_MitsuruOnWarp8
+        VAR_MITSURUS_INTRO_STATE, 27: Route2_Eventscript_MitsuruOnWarp27
     ]
     MAP_SCRIPT_ON_TRANSITION{
         if (var(VAR_AKIHIKOS_INTRO_STATE) < 40){
             setflag(FLAG_TEMP_3)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) > 25 || var(VAR_MITSURUS_INTRO_STATE) < 20){
+        if ((var(VAR_AKIHIKOS_INTRO_STATE) > 25 || var(VAR_MITSURUS_INTRO_STATE) < 20) &&  var(VAR_MITSURUS_INTRO_STATE) !=27){
             setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_6)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) > 25 && var(VAR_AKIHIKOS_INTRO_STATE) < 33){
             setflag(FLAG_TEMP_2)
@@ -42,10 +44,21 @@ mapscripts Route2_MapScripts {
             setflag(FLAG_TEMP_2)
             setflag(FLAG_TEMP_3)
         }
-        if((var(VAR_AKIHIKOS_INTRO_STATE) == 100) || (var(VAR_MITSURUS_INTRO_STATE) > 20 && var(VAR_MITSURUS_INTRO_STATE) < 50)){
+        if((var(VAR_AKIHIKOS_INTRO_STATE) == 100) || (var(VAR_MITSURUS_INTRO_STATE) == 100)){
             setflag(FLAG_TEMP_4)
             setobjectxyperm(TAROU, 7, 18)
         }
+        if (var(VAR_MITSURUS_INTRO_STATE) != 27){
+            setflag(FLAG_TEMP_5)
+        }
+        if (var(VAR_MITSURUS_INTRO_STATE) == 27){
+            setflag(FLAG_TEMP_6)
+            setobjectxyperm(13, 19, 10)
+            setobjectmovementtype(13, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
+            setobjectxyperm(5, 12, 11)
+            setobjectxyperm(12, 24, 14)
+        }
+        
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 25: Route2_Eventscript_AkihikoOnFrame25
@@ -53,6 +66,7 @@ mapscripts Route2_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 40: Route2_Eventscript_AkihikoOnFrame40
         ////////////
         VAR_MITSURUS_INTRO_STATE, 8: Route2_Eventscript_MitsuruOnFrame8
+        VAR_MITSURUS_INTRO_STATE, 29: Route2_Eventscript_MitsuruOnFrame29
     ]
 }
 
@@ -78,12 +92,20 @@ script Route2_Eventscript_MitsuruOnWarp8 {
     applymovement(LOCALID_PLAYER, faceleft)    
 }
 
+script Route2_Eventscript_MitsuruOnWarp27 {
+    applymovement(5, invisible)
+}
+
 script Route2_Eventscript_AkihikoOnFrame25 {
     goto(Route2_Eventscript_AkishinjiGettingBlockedBySusMen)
 }
 
 script Route2_Eventscript_MitsuruOnFrame8 {
     goto(Route2_Eventscript_MitsuruApproachingRoute2House)
+}
+
+script Route2_Eventscript_MitsuruOnFrame29 {
+    goto(Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting)
 }
 
 script Route2_Eventscript_AkishinjiGettingBlockedBySusMen {
@@ -289,6 +311,7 @@ script Route2_Eventscript_MitsuruDisruptsTheMen {
     applymovement(4, invisible)
     removeobject(3)
     removeobject(4)
+    clearflag(FLAG_TEMP_6)
     applymovement(10, visible)
     applymovement(11, visible)
     waitmovement(0)
@@ -899,4 +922,318 @@ script Route2_Eventscript_HouseLocked{
         release
         end
     }
+}
+
+script Route2_Eventscript_MitsuruPreAkiShinjiGettingAmbushed_TriggerUp {
+    lock
+    call(Route2_Eventscript_MitsuruOnTriggerHideNPCs)
+    applymovement(LOCALID_PLAYER, moves(player_run_right*5)) //pos 28, 13
+    waitmovement
+    goto(Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed)
+}
+
+script Route2_Eventscript_MitsuruPreAkiShinjiGettingAmbushed_TriggerDown {
+    lock
+    call(Route2_Eventscript_MitsuruOnTriggerHideNPCs)
+    applymovement(LOCALID_PLAYER, moves(player_run_up, player_run_right*4)) //pos 28, 13
+    waitmovement
+    goto(Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed)
+}
+
+script Route2_Eventscript_MitsuruOnTriggerHideNPCs {
+    if (var(VAR_RESULT) == TRUE){
+        hidefollowernpc
+    }
+    addobject(7)
+    addobject(8)
+    addobject(9) 
+    hideobjectat(7, MAP_ROUTE2)
+    hideobjectat(8, MAP_ROUTE2)
+    hideobjectat(9, MAP_ROUTE2)
+
+}
+
+script Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed {
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark))
+    waitmovement
+    fadenewbgm(MUS_P3R_FEARFUL_EXPERIENCE)
+    delay(8)
+    applymovement(LOCALID_PLAYER, moves(player_run_left*4, player_run_down, face_right))
+    waitmovement
+    applymovement(OBJ_EVENT_ID_FOLLOWER, moves(walk_left, walk_down, face_right))
+    waitmovement
+    clearflag(FLAG_TEMP_6)
+    addobject(12)
+    addobject(11)
+    addobject(10)
+    applymovement(10, invisible)
+    applymovement(11, invisible)
+    waitmovement
+    delay(20)
+    applymovement(12, moves(walk_up, face_down))
+    waitmovement
+    applymovement(LOCALID_PLAYER, faceup)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}It's those men from the Genesis Group. I have to know what they're plotting.\p
+    Can you cover the north, Inteleon?"))
+    closemessage
+    playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
+    applymovement(12, walkinplacedown)
+    waitmovement
+    delay(20)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_fast_up*6))
+    applymovement(12, moves(walk_fast_up*6, set_invisible))
+    waitmovement
+    playse(SE_EXIT)
+    delay(20)
+    applymovement(12, moves(walk_fast_right*7))
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_diag_southeast*5))
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    goto (Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV)
+}
+
+script Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV {
+    delay(30)
+    addobject(6)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_diag_northeast*2))
+    applymovement(19, AkishinjiGettingBlockedBySusMen)
+    delay(8)
+    applymovement(6, AkishinjiGettingBlockedBySusMen)
+    applymovement(4, SusMenBlockingAkiShinji)
+    delay(8)
+    applymovement(3, SusMenBlockingAkiShinji)
+    waitmovement(3)
+    call(Eventscript_BlockShakeCamera)
+    delay(20)
+    applymovement(19, AkiShinjiStepBack)
+    applymovement (6, AkiShinjiStepBack)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}Ouch!\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_STRUGGLED}What the hell??"))
+    closemessage
+    delay(30)
+    setspeaker("Man In Black 1")
+    applymovement(4, walkinplaceright)
+    waitmovement(0)
+    msgbox(format("That stupid cop is finally out of picture."))
+    closemessage
+    setspeaker("Man In Black 2")
+    applymovement(3, walkinplaceright)
+    waitmovement(0)
+    msgbox(format("You two are coming with us. Like it or not.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}What?"))
+    closemessage
+    applymovement(4, SusMan1ApproachingAkihiko)
+    waitmovement(0)
+    applymovement(19, shakehorizontal)
+    call(Eventscript_BlockShakeCamera)
+    applymovement(4, SusMan1StepBack)
+    waitmovement(0)
+    delay(20)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}No way! Who even are you!?"))
+    closemessage
+    setspeaker("Man In Black 1")
+    applymovement(4, walkinplaceright)
+    waitmovement(0)
+    msgbox(format("Tch.\p
+    I hate disobedient kids."))
+    msgbox(SusMenFightIntro)
+    closemessage
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    playse(SE_EFFECTIVE)
+    waitse
+    playmoncry(SPECIES_PAWMI, CRY_MODE_NORMAL)
+    waitmoncry
+    playse(SE_M_THUNDER_WAVE)
+    waitse
+    playse(SE_EFFECTIVE)
+    waitse
+    applymovement(LOCALID_PLAYER, faceright)
+    waitmovement
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(!)\n
+    (Sanada won.)\p
+    (His battling skill is quite good.)"))
+    closemessage
+    applymovement(4, walkinplaceright)
+    waitmovement
+    setspeaker("Man In Black 1")
+    msgbox(format("You aren't half bad. However...\p
+    Resistance is futile."))
+    closemessage
+    delay(8)
+    playse(SE_EXIT)
+    showobjectat(7, MAP_ROUTE2)
+    applymovement(7, DrowzeeAppears)
+    waitmovement(0)
+    applymovement(19, facedown)
+    applymovement(6, facedown)
+    waitmovement(0)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Huh?"))
+    closemessage
+    setspeaker("Man In Black 2")
+    applymovement(3, walkinplaceright)
+    waitmovement(0)
+    msgbox(format("Drowzee, Hypnosis."))
+    closemessage
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    playmoncry(SPECIES_DROWZEE, CRY_MODE_NORMAL)
+    waitmoncry
+    delay(30)
+    applymovement(19, invisible)
+    applymovement(6, invisible)
+    waitmovement(0)
+    goto (Route2_Eventscript_AkishinjiAsleepMitsuruPOV)
+}
+
+script Route2_Eventscript_AkishinjiAsleepMitsuruPOV {
+    showobjectat(8, MAP_ROUTE2)
+    showobjectat(9, MAP_ROUTE2)
+    waitmovement(0)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    delay(20)
+    playse(SE_M_SNORE)
+    applymovement(8, emoteasleep)
+    delay(8)
+    playse(SE_M_SNORE)
+    applymovement(9, emoteasleep)
+    waitmovement(0)
+    delay(20)
+    setspeaker("Man In Black 2")
+    applymovement(3, walkinplaceright)
+    waitmovement(0)
+    msgbox("That's more like it.")
+    closemessage
+    applymovement(3, walkright)
+    waitmovement(0)
+    delay(20)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Now! Inteleon, Vulpix!"))
+    closemessage
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    delay(20)
+    playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
+    waitmoncry
+    playse(SE_M_BUBBLE_BEAM)
+    waitse
+    playmoncry(SPECIES_VULPIX, CRY_MODE_NORMAL)
+    waitmoncry
+    playse(SE_M_ICY_WIND)
+    waitse
+    applymovement(3, invisible)
+    applymovement(4, invisible)
+    removeobject(3)
+    removeobject(4)
+    clearflag(FLAG_TEMP_6)
+    applymovement(10, visible)
+    applymovement(11, visible)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    delay(20)
+    applymovement(10, shakehorizontal)
+    playse(SE_M_HARDEN)
+    delay(4)
+    applymovement(11, shakehorizontal)
+    playse(SE_M_HARDEN)
+    waitse
+    applymovement(7, emoteexclamation)
+    waitmovement(0)
+    goto(Route2_Eventscript_MitsuruAppearsMitsuruPOV)
+}
+
+script Route2_Eventscript_MitsuruAppearsMitsuruPOV {
+    delay(40)
+    addobject(5)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left, walk_down))
+    applymovement(LOCALID_PLAYER, MitsuruAppears)
+    applymovement(OBJ_EVENT_ID_FOLLOWER, MitsuruAppears)
+    waitmovement(0)
+    applymovement(7, DrowzeeRunsAway)
+    delay (52)
+    playse(SE_BOO)
+    waitmovement(0)
+    waitse
+    playse(SE_EXIT)
+    waitse
+    delay(30)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}...\p
+    Inteleon, let's get these two out of here first.\p
+    The ice can only hold them off for so long."))
+    closemessage
+    playse(SE_EXIT)
+    applymovement(12, InteleonWalksOut)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraToInteleon)
+    waitmovement(0)
+    delay(20)
+    playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
+    applymovement(12, walkinplacedown)
+    waitmovement(0)
+    fadenewbgm(MUS_DUMMY)
+    setvar(VAR_MITSURUS_INTRO_STATE, 28)
+    setflag(FLAG_HIDE_MAP_NAME_POPUP)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
+    delay(30)
+    warpsilent(MAP_ROUTE2_HOUSE, 5, 3)
+}
+
+script Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting {
+    lock
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(There's still time before the promised hour.)\p
+    (Maybe I can wander around the town to gather more information.)"))
+    closemessage
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
+    if (var(VAR_RESULT) == FALSE)
+    {
+        msgbox(format("{COLOR GREEN}Tips: Quest System is now unlocked.\p
+        Check around for quest givers with a light blue exclamation mark.\p
+        You can open quest menu in\n
+        {START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}."))
+        closemessage
+        clearflag(FLAG_HIDE_QUEST_ICON)
+        setflag(FLAG_SYS_QUEST_MENU_GET)
+        questmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS)
+    }
+    setvar(VAR_MITSURUS_INTRO_STATE, 30)
+    release
+    end
+}
+
+script Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight {
+    lock
+    playse(SE_PIN)
+    applymovement(13, moves(emote_exclamation_mark, walk_fast_left, face_down))
+    waitmovement
+    setspeaker("Yuuka")
+    msgbox(format("I'm sorry but I dropped an important note around here. Could you please come back after I find it?"))
+    closemessage
+    applymovement(13, walkdown)
+    applymovement(LOCALID_PLAYER, moves(lock_facing_direction, walk_down, unlock_facing_direction))
+    applymovement(OBJ_EVENT_ID_FOLLOWER, moves(lock_facing_direction, walk_down, unlock_facing_direction))
+    waitmovement
+    applymovement(13, moves(walk_fast_up, walk_fast_right, face_left))
+    waitmovement
+    lock
+    setobjectnewmovementtype(13, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
+    release
+    end
+}
+
+script Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft {
+    lock
+    playse(SE_PIN)
+    applymovement(13, moves(emote_exclamation_mark, walk_fast_left*2, face_down))
+    waitmovement
+    setspeaker("Yuuka")
+    msgbox(format("I'm sorry but I dropped an important note around here. Could you please come back after I find it?"))
+    closemessage
+    applymovement(13, walkdown)
+    applymovement(LOCALID_PLAYER, moves(lock_facing_direction, walk_down, unlock_facing_direction))
+    applymovement(OBJ_EVENT_ID_FOLLOWER, moves(lock_facing_direction, walk_down, unlock_facing_direction))
+    waitmovement
+    applymovement(13, moves(walk_fast_up, walk_fast_right*2, face_left))
+    waitmovement
+    lock
+    setobjectnewmovementtype(13, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
+    release
+    end
 }

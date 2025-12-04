@@ -660,6 +660,8 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
             return BATTLE_ENVIRONMENT_POND;
         return BATTLE_ENVIRONMENT_CAVE;
     case MAP_TYPE_INDOOR:
+        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SUNSHINE_TOWN_HIDDEN_GROTTO))
+            return BATTLE_ENVIRONMENT_LONG_GRASS;
     case MAP_TYPE_SECRET_BASE:
         return BATTLE_ENVIRONMENT_BUILDING;
     case MAP_TYPE_UNDERWATER:

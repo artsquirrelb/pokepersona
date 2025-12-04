@@ -87,9 +87,9 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SunshineTown_Eventscript_QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL",
+      "script": "SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL",
       "flag": "0",
-      "quest_id": 0
+      "quest_id": 1
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(HAPPINY)",
@@ -591,8 +591,8 @@
       "y": 14,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "24",
-      "script": "NULL"
+      "var_value": "25",
+      "script": "SunshineTown_Eventscript_MitsuruOverheardAkiShinji"
     }
   ],
   "bg_events": [

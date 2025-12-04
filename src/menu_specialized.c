@@ -862,7 +862,7 @@ void MoveRelearnerPrintMessage(u8 *str)
     FillWindowPixelBuffer(RELEARNERWIN_MSG, PIXEL_FILL(3));
     gTextFlags.canABSpeedUpPrint = TRUE;
     speed = GetPlayerTextSpeedDelay();
-    AddTextPrinterParameterized2(RELEARNERWIN_MSG, FONT_NORMAL, str, speed, NULL, 1, 0, 0);
+    AddTextPrinterParameterized2(RELEARNERWIN_MSG, FONT_NORMAL, str, speed, NULL, 1, 3, 3);
 }
 
 bool16 MoveRelearnerRunTextPrinters(void)

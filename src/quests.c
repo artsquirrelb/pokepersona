@@ -259,20 +259,20 @@ static const struct SubQuest sSubQuests1[QUEST_1_SUB_COUNT] =
 	      0,
 	      gText_SubQuest1_Name1,
 	      gText_SubQuest1_Desc1,
-	      gText_SideQuestMap1,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SubQuest1_Map1,
+	      OBJ_EVENT_GFX_MAY_NORMAL,
 	      OBJECT,
-	      sText_Found
+	      sText_Complete
 	),
 
 	sub_quest(
 	      1,
 	      gText_SubQuest1_Name2,
 	      gText_SubQuest1_Desc2,
-	      gText_SideQuestMap2,
-	      OBJ_EVENT_GFX_WALLY,
+	      gText_SubQuest1_Map2,
+	      OBJ_EVENT_GFX_BRENDAN_NORMAL,
 	      OBJECT,
-	      sText_Found
+	      sText_Complete
 	),
 
 	sub_quest(
@@ -576,20 +576,20 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 	      gText_SideQuestDesc_1,
 	      gText_SideQuestDoneDesc_1,
 	      gText_SideQuestMap1,
-	      OBJ_EVENT_GFX_EXPERT_F,
+	      OBJ_EVENT_GFX_MAY_NORMAL,
 	      OBJECT,
-	      NULL,
-	      0
+	      sSubQuests1,
+	      QUEST_1_SUB_COUNT
 	),
 	side_quest(
 	      gText_SideQuestName_2,
 	      gText_SideQuestDesc_2,
 	      gText_SideQuestDoneDesc_2,
 	      gText_SideQuestMap2,
-	      OBJ_EVENT_GFX_WALLY,
+	      OBJ_EVENT_GFX_EXPERT_F,
 	      OBJECT,
-	      sSubQuests1,
-	      QUEST_1_SUB_COUNT
+	      NULL,
+	      0
 	),
 	side_quest(
 	      gText_SideQuestName_3,

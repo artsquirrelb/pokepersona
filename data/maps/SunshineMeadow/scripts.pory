@@ -20,6 +20,7 @@ mapscripts SunshineMeadow_MapScripts {
         VAR_MITSURUS_INTRO_STATE, 6: SunshineMeadow_Eventscript_MitsuruOnFrame6
         VAR_MITSURUS_INTRO_STATE, 8: SunshineMeadow_Eventscript_MitsuruOnFrame8
         VAR_MITSURUS_INTRO_STATE, 17: SunshineMeadow_Eventscript_MitsuruOnFrame17
+        VAR_MITSURUS_INTRO_STATE, 31: SunshineMeadow_Eventscript_MitsuruOnFrame31
     ]
     MAP_SCRIPT_ON_TRANSITION{
         if(var(VAR_AKIHIKOS_INTRO_STATE) == 34){
@@ -37,7 +38,7 @@ mapscripts SunshineMeadow_MapScripts {
             setobjectxyperm(4, 7, 11)
             setobjectxyperm(5, 9, 14)
         }
-        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 38 && var(VAR_MITSURUS_INTRO_STATE) != 17){
+        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 38 && var(VAR_MITSURUS_INTRO_STATE) != 17 && var(VAR_MITSURUS_INTRO_STATE) != 31){
             setflag(FLAG_TEMP_1)
             setflag(FLAG_TEMP_2)
         }
@@ -56,6 +57,10 @@ mapscripts SunshineMeadow_MapScripts {
             setobjectmovementtype(2, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
             setobjectxyperm(3, 10, 10)
             setobjectmovementtype(3, MOVEMENT_TYPE_FACE_UP)
+        }
+        if (var(VAR_MITSURUS_INTRO_STATE) == 31)
+        {
+            setobjectxyperm(5, 9, 17)
         }
     }
 }
@@ -705,5 +710,267 @@ script SunshineMeadow_Eventscript_MitsuruLookingOverCollapsedCave {
     setvar(VAR_MITSURUS_INTRO_STATE, 18)
     special(ShowMapNamePopup)
     release
+    end
+}
+
+script SunshineMeadow_Eventscript_MitsuruPreFirstBattleWithAkihiko_Trigger {
+    lock
+    msgbox(format("{COLOR RED}Important battle ahead. Do you want to proceed?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == FALSE){
+        applymovement(LOCALID_PLAYER, walkdown)
+        waitmovement
+        release
+        end
+    }
+    else{
+        specialvar(VAR_RESULT, CountPartyNonEggMons)
+        if (var(VAR_RESULT) < 3){
+            msgbox(format("{COLOR 2}You don't have at least 3 Pokémon for the battle."))
+            closemessage
+            applymovement(LOCALID_PLAYER, walkdown)
+            waitmovement
+            release
+            end
+        }
+        else{
+            setvar(VAR_MITSURUS_INTRO_STATE, 31)
+            fwdtime(18, 0)
+            warpsilent(MAP_SUNSHINE_MEADOW, 9, 11)
+            waitstate
+        }
+    }
+}
+
+script SunshineMeadow_Eventscript_MitsuruOnFrame31 {
+    goto(SunshineMeadow_Eventscript_MitsuruPreparingForAkiMitsuFirstBattle)
+}
+
+script SunshineMeadow_Eventscript_MitsuruPreparingForAkiMitsuFirstBattle {
+    delay(30)
+    playse(SE_EXIT)
+    clearflag(FLAG_TEMP_2)
+    addobject(5)
+    addobject(4)
+    applymovement(1, invisible)
+    applymovement(4, invisible)
+    applymovement(5, moves(player_run_up*2, walk_up*2))
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for our first battle?\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}You bet I am!\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Very well. Shall we start?"))
+    closemessage
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, walkright)
+    applymovement(LOCALID_PLAYER, moves(walk_right*3, face_left))
+    applymovement(2, moves(walk_down, walk_right*2, face_left))
+    delay(4)
+    applymovement(3, moves(walk_right*3, face_down))
+    applymovement(5, moves(player_run_left*2, player_run_up*2, face_right))
+    waitmovement
+    delay(20)
+    lock
+    setobjectnewmovementtype(2, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+    release
+    delay(40)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraPansDownToShinjiroMitsuruFirstFight)
+    playse(SE_EXIT)
+    waitse
+    applymovement(4, ShinjiroComesInTime)
+    waitmovement
+    applymovement(5, AkiMitsuNoticeShinjiro)
+    delay(8)
+    applymovement(LOCALID_PLAYER, AkiMitsuNoticeShinjiro)
+    waitmovement
+    delay(10)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Shinji! You made it!\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_STRUGGLED}Damn, you two are already at it, huh?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Not quite, you're just in time. We're starting."))
+    closemessage
+    applymovement(5, faceright)
+    applymovement(OBJ_EVENT_ID_CAMERA, CameraPansBackUpToArenaMitsuruFirstFight)
+    delay(8)
+    applymovement(LOCALID_PLAYER, faceleft)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    delay(60)
+    applymovement(OBJ_EVENT_ID_CAMERA, walkup)
+    waitmovement(0)
+    delay(20)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Not gonna use your Inteleon?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}It wouldn't be a fair fight if I do.\p
+    Beside, he's not mine. He's only here to watch over me.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Huh, if you said so.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Alright then. Let's go, Kirijo."))
+    closemessage
+    applymovement (OBJ_EVENT_ID_CAMERA, walkdown)
+    waitmovement(0)
+    special(RemoveCameraObject)
+    delay(30)
+    goto(SunshineMeadow_Eventscript_ChoosingPartyForAkihikoFirstBattle)
+}
+
+script SunshineMeadow_Eventscript_ChoosingPartyForAkihikoFirstBattle {
+    setflag(FLAG_NO_WHITEOUT)
+    setflag(FLAG_NO_BAG_USE)
+    special(ChooseHalfPartyForBattle) //Choose 3 mons to fight
+    waitstate()
+    if (var(VAR_RESULT) == FALSE){
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Let's pick 3 Pokémon to fight.)"))
+        closemessage
+        goto (SunshineMeadow_Eventscript_ChoosingPartyForAkihikoFirstBattle)
+    }
+    else {
+        special(ReducePlayerPartyToSelectedMons)
+        setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SET_DATA)
+	    setvar (VAR_0x8005, FRONTIER_DATA_SELECTED_MON_ORDER)
+        special (CallFrontierUtilFunc)
+        setvar (VAR_0x8004, SPECIAL_BATTLE_MULTI)
+        setvar (VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS)
+        trainerbattle_no_intro(TRAINER_AKIHIKO_SUNSHINE_MEADOW, AkihikoFirstBattleDefeated)
+        fwdtime(18, 30)
+        setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SAVE_PARTY)
+        special (CallFrontierUtilFunc)
+	    special (LoadPlayerParty)
+        goto (SunshineMeadow_Eventscript_AkihikoFirstBattleResult)  
+    }
+}
+
+text AkihikoFirstBattleDefeated {
+    format("You... are so strong.")
+}
+
+script SunshineMeadow_Eventscript_AkihikoFirstBattleResult {
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON){
+        msgbox(SunshineMeadow_Eventscript_WonInAkihikoFirstBattle)
+    }
+    else{
+        addvar(VAR_TEMP_0, 1)
+        msgbox(SunshineMeadow_Eventscript_LostInAkihikoFirstBattle)
+    }
+    closemessage
+    goto (SunshineMeadow_Eventscript_PostAkihikoFirstBattle)
+}
+
+text SunshineMeadow_Eventscript_WonInAkihikoFirstBattle {
+    format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That was a very good fight. I've learned better of how you battle.\p
+    Don't be discouraged. It's proof that you can still get so much more stronger.\p
+    {CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}(He's indeed a very clever trainer. Good reflex and precision, however, a little too reckless.)")
+}
+
+text SunshineMeadow_Eventscript_LostInAkihikoFirstBattle {
+    format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}To be honest, althought I didn't use my full team,
+    it's still very impressive that you managed to beat me, Sanada-kun.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}It was so close, though. I only managed to win by sheer luck.")
+}
+
+script SunshineMeadow_Eventscript_PostAkihikoFirstBattle {
+    delay(20)
+    applymovement(LOCALID_PLAYER, moves(walk_left*4))
+    waitmovement (0)
+    special(HealPlayerParty)
+    playse(MUS_HEAL)
+    waitse
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Alright, I've healed your party."))
+    closemessage
+    applymovement(LOCALID_PLAYER, moves(walk_right *2, face_down))
+    waitmovement(0)
+    special(SpawnCameraObject)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}It's your turn now, Aragaki-kun.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Aight. I'll show you what I've got."))
+    closemessage
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
+    applymovement(LOCALID_PLAYER, MitsuruGoesBackToStartBattle)
+    waitmovement(0)
+    delay(8)
+    applymovement(5, AkihikoGetsOutOfBattleSpace)
+    delay(8)
+    applymovement(4, ShinjiroGoesToStartBattle)
+    waitmovement(0)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Are you ready?\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Whenever you are."))
+    closemessage
+    special(RemoveCameraObject)
+    goto(SunshineMeadow_Eventscript_ChoosingPartyForShinjiroFirstBattle)
+}
+
+script SunshineMeadow_Eventscript_ChoosingPartyForShinjiroFirstBattle {
+    special(ChooseHalfPartyForBattle) //Choose 3 mons to fight
+    waitstate()
+    if (var(VAR_RESULT) == FALSE){
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Let's pick 3 Pokémon to fight.)"))
+        closemessage
+        goto (SunshineMeadow_Eventscript_ChoosingPartyForShinjiroFirstBattle)
+    }
+    else {
+        special(ReducePlayerPartyToSelectedMons)
+        setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SET_DATA)
+	    setvar (VAR_0x8005, FRONTIER_DATA_SELECTED_MON_ORDER)
+        special (CallFrontierUtilFunc)
+        setvar (VAR_0x8004, SPECIAL_BATTLE_MULTI)
+        setvar (VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS)
+        trainerbattle_no_intro(TRAINER_SHINJIRO_ROUTE_2, ShinjiroMFirstBattleDefeated)
+        fwdtime(18, 30)
+        setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SAVE_PARTY)
+        special (CallFrontierUtilFunc)
+	    special (LoadPlayerParty)
+        goto (SunshineMeadow_Eventscript_ShinjiroFirstBattleResult)  
+    }
+}
+
+text ShinjiroMFirstBattleDefeated{
+    format("Damn, you're tough.")
+}
+
+script SunshineMeadow_Eventscript_ShinjiroFirstBattleResult {
+    specialvar(VAR_RESULT, GetBattleOutcome)
+        if (var(VAR_RESULT) == B_OUTCOME_WON){
+            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I appreciate the compliment."))
+        }
+        else{
+            addvar(VAR_TEMP_0, 1)
+            if (var(VAR_TEMP_0) == 2){
+                fadescreen(FADE_TO_WHITE)
+                setvar(VAR_MITSURUS_INTRO_STATE, 30)
+                clearflag(FLAG_NO_WHITEOUT)
+                clearflag(FLAG_NO_BAG_USE)
+                special(SetCB2WhiteOut)
+                waitstate
+            }
+            else
+            {
+                msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Well fought. Looks like I still have much to learn."))
+            }
+        }
+    closemessage
+    applymovement(4, ShinjiroGoesBackToPlacePostShinjiMitsuFirstBattle)
+    special(SpawnCameraObject)
+    applymovement(LOCALID_PLAYER, moves(walk_left*3, walk_down))
+    applymovement(2, moves(walk_left*2, face_down))
+    applymovement(3, facedown)
+    waitmovement(LOCALID_PLAYER)
+    applymovement(OBJ_EVENT_ID_CAMERA,  moves(walk_down*2))
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Now that I get a clearer vision of how both of you fare in battle,\p
+    I'll be counting on you, Sanada-kun and Aragaki-kun.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}Huh?\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}You mean...\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Yes, both of you are coming with me. You two have great potential.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}YESSS!!\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Heh. Just you wait. I'll win against you in no time.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Same here!\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'm looking forward to that."))
+    closemessage
+    delay(30)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Anyway, back to business.\p
+    I suppose you both want to know further about those men.\p
+    Let's go back to the house on Route 2, I'll explain our objective."))
+    closemessage
+    setvar(VAR_MITSURUS_INTRO_STATE, 32)
+    clearflag(FLAG_NO_WHITEOUT)
+    clearflag(FLAG_NO_BAG_USE)
+    fwdtime(19, 50)
+    warpsilent(MAP_ROUTE2, 10, 13)
+    waitstate
     end
 }

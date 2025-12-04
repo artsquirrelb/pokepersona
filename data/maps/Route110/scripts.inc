@@ -416,7 +416,7 @@ Route110_EventScript_MayBattleTorchic::
 	end
 
 Route110_EventScript_MayBattleMudkip::
-	trainerbattle_no_intro TRAINER_MAY_ROUTE_110_MUDKIP, Route110_Text_MayDefeated
+	//trainerbattle_no_intro TRAINER_AKIHIKO_SUNSHINE_MEADOW, Route110_Text_MayDefeated
 	goto Route110_EventScript_MayDefeated
 	end
 

@@ -16,8 +16,8 @@
 
 // quest number defines
 #define QUEST_NONE                                      0xFFFF
-#define QUEST_1_PLAY_WITH_PKM_FOR_SOOTHE_BELL           0
-#define QUEST_2           1
+#define STORY_QUESTS                                    0
+#define QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL             1
 #define QUEST_3                                         2
 #define QUEST_4          3
 #define QUEST_5          4
@@ -48,8 +48,8 @@
 #define QUEST_30        29
 #define QUEST_COUNT     (QUEST_30 + 1)
 
-#define SUB_QUEST_1          0
-#define SUB_QUEST_2          1
+#define MITSURUS_PROLOGUE          0
+#define AKIHIKOS_PROLOGUE          1
 #define SUB_QUEST_3          2
 #define SUB_QUEST_4          3
 #define SUB_QUEST_5          4

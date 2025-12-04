@@ -214,6 +214,24 @@
       "var": "VAR_MITSURUS_INTRO_STATE",
       "var_value": "11",
       "script": "SunshineMeadow_Eventscript_MitsuruPlansToJumpOverTheFence"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_MITSURUS_INTRO_STATE",
+      "var_value": "30",
+      "script": "SunshineMeadow_Eventscript_MitsuruPreFirstBattleWithAkihiko_Trigger"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 26,
+      "elevation": 0,
+      "var": "VAR_MITSURUS_INTRO_STATE",
+      "var_value": "30",
+      "script": "SunshineMeadow_Eventscript_MitsuruPreFirstBattleWithAkihiko_Trigger"
     }
   ],
   "bg_events": [

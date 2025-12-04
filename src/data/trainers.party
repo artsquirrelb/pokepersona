@@ -9557,7 +9557,6 @@ Ability: Intimidate
 - Work Up
 - Double Kick
 - Aqua Jet
-- Tackle
 
 === TRAINER_BRENDAN_ROUTE_110_MUDKIP ===
 Name: BRENDAN
@@ -9756,26 +9755,50 @@ Ability: Ice Scales
 - Chilling Water
 
 
-=== TRAINER_MAY_ROUTE_110_MUDKIP ===
-Name: MAY
+=== TRAINER_AKIHIKO_SUNSHINE_MEADOW ===
+Name: Akihiko
 Class: Rival
-Pic: May
-Gender: Female
-Music: Female
+Pic: Brendan
+Gender: Male
+Music: Male
 Double Battle: No
-AI: Basic Trainer
+AI: Smart Trainer / Prefer Highest Damage Move
+Mugshot: Blue
 
-Wingull
-Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_LITLEO (F) @ITEM_ORAN_BERRY
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 20 SpA / 20 Spe
+Ability: Rivalry
+- Round
+- Incinerate
+- Yawn
+- Fire Spin
 
-Slugma
-Level: 18
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+SPECIES_ROCKRUFF @ITEM_ORAN_BERRY
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 20 Atk / 20 Spe
+Nature: Adamant
+Ability: Own Tempo
+- Rock Throw
+- Bite
+- Howl
+- Trailblaze
 
-Grovyle
-Level: 20
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+SPECIES_PAWMI_DELTA (M) @ITEM_ORAN_BERRY
+Ball: Cherish Ball
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 40 Atk
+Nature: Adamant
+Ability: Fur Coat
+- Nuzzle
+- Zappy Shock
+- Mach Punch
+- Metal Claw
+
+
 
 === TRAINER_MAY_ROUTE_119_MUDKIP ===
 Name: MAY

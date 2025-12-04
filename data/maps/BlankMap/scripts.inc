@@ -54,308 +54,326 @@ BlankMap_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 27 "data/maps/BlankMap/scripts.pory"
 	map_script_2 VAR_MITSURUS_INTRO_STATE, 9, Route2_House_Eventscript_MitsuruOnFrame9
 # 28 "data/maps/BlankMap/scripts.pory"
-	map_script_2 VAR_MITSURUS_INTRO_STATE, 25, SunshineTown_Eventscript_MitsuruOnFrame25
+	map_script_2 VAR_MITSURUS_INTRO_STATE, 26, SunshineTown_Eventscript_MitsuruOnFrame26
+# 29 "data/maps/BlankMap/scripts.pory"
+	map_script_2 VAR_MITSURUS_INTRO_STATE, 32, Route2_House_Eventscript_MitsuruOnFrame32Warp
 	.2byte 0
 
 
 SunshineWoods_Eventscript_WarpBackToOrphanage::
-# 35 "data/maps/BlankMap/scripts.pory"
-	lock
 # 36 "data/maps/BlankMap/scripts.pory"
-	msgbox SunshineWoods_Eventscript_WarpBackToOrphanage_Text_0
+	lock
 # 37 "data/maps/BlankMap/scripts.pory"
-	closemessage
+	msgbox SunshineWoods_Eventscript_WarpBackToOrphanage_Text_0
 # 38 "data/maps/BlankMap/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK, 0
+	closemessage
 # 39 "data/maps/BlankMap/scripts.pory"
-	warp MAP_SUNSHINE_ORPHANAGE_MAIN_HALL, 12, 22
+	fadescreenswapbuffers FADE_TO_BLACK, 0
 # 40 "data/maps/BlankMap/scripts.pory"
-	clearflag FLAG_SPAWN_INVISIBLE
+	warp MAP_SUNSHINE_ORPHANAGE_MAIN_HALL, 12, 22
 # 41 "data/maps/BlankMap/scripts.pory"
+	clearflag FLAG_SPAWN_INVISIBLE
+# 42 "data/maps/BlankMap/scripts.pory"
 	release
 	return
 
 
 SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom::
-# 45 "data/maps/BlankMap/scripts.pory"
-	lockall
 # 46 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 3, 7
+	lockall
 # 47 "data/maps/BlankMap/scripts.pory"
-	clearflag FLAG_SPAWN_INVISIBLE
+	warpsilent MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 3, 7
 # 48 "data/maps/BlankMap/scripts.pory"
+	clearflag FLAG_SPAWN_INVISIBLE
+# 49 "data/maps/BlankMap/scripts.pory"
 	releaseall
 	return
 
 
 SunshineTown_PokemonCenter_Eventscript_Onframe13::
-# 52 "data/maps/BlankMap/scripts.pory"
-	lock
 # 53 "data/maps/BlankMap/scripts.pory"
-	msgbox SunshineTown_PokemonCenter_Eventscript_Onframe13_Text_0
+	lock
 # 54 "data/maps/BlankMap/scripts.pory"
-	closemessage
+	msgbox SunshineTown_PokemonCenter_Eventscript_Onframe13_Text_0
 # 55 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 14
+	closemessage
 # 56 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_SUNSHINE_TOWN_POKEMON_CENTER, 11, 8
+	setvar VAR_AKIHIKOS_INTRO_STATE, 14
 # 57 "data/maps/BlankMap/scripts.pory"
-	clearflag FLAG_SPAWN_INVISIBLE
+	warpsilent MAP_SUNSHINE_TOWN_POKEMON_CENTER, 11, 8
 # 58 "data/maps/BlankMap/scripts.pory"
+	clearflag FLAG_SPAWN_INVISIBLE
+# 59 "data/maps/BlankMap/scripts.pory"
 	release
 	return
 
 
 SunshineOrphanage_Burning_Eventscript_OnFrame19::
-# 62 "data/maps/BlankMap/scripts.pory"
-	lock
 # 63 "data/maps/BlankMap/scripts.pory"
-	delay 30
+	lock
 # 64 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_SUNSHINE_TOWN_RIVERBANK, 13, 5
+	delay 30
 # 65 "data/maps/BlankMap/scripts.pory"
-	clearflag FLAG_SPAWN_INVISIBLE
+	warpsilent MAP_SUNSHINE_TOWN_RIVERBANK, 13, 5
 # 66 "data/maps/BlankMap/scripts.pory"
+	clearflag FLAG_SPAWN_INVISIBLE
+# 67 "data/maps/BlankMap/scripts.pory"
 	release
 	return
 
 
 SunshineTownRiverbank_Eventscript_OnFrame20::
-# 70 "data/maps/BlankMap/scripts.pory"
-	lock
 # 71 "data/maps/BlankMap/scripts.pory"
-	delay 30
+	lock
 # 72 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 21
+	delay 30
 # 73 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_SUNSHINE_TOWN_RIVERBANK, 13, 0
+	setvar VAR_AKIHIKOS_INTRO_STATE, 21
 # 74 "data/maps/BlankMap/scripts.pory"
+	warpsilent MAP_SUNSHINE_TOWN_RIVERBANK, 13, 0
+# 75 "data/maps/BlankMap/scripts.pory"
 	clearflag FLAG_SPAWN_INVISIBLE
 	return
 
 
 SunshineTownRiverbank_Eventscript_OnFrame22::
-# 78 "data/maps/BlankMap/scripts.pory"
-	msgbox SunshineTownRiverbank_Eventscript_OnFrame22_Text_0
 # 79 "data/maps/BlankMap/scripts.pory"
-	closemessage
+	msgbox SunshineTownRiverbank_Eventscript_OnFrame22_Text_0
 # 80 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 23
+	closemessage
 # 81 "data/maps/BlankMap/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 23
+# 82 "data/maps/BlankMap/scripts.pory"
 	warpsilent MAP_SUNSHINE_TOWN_KUROSAWAS_HOUSE, 4, 4
 	return
 
 
 Route2_Eventscript_AkihikoOnFrame24::
-# 86 "data/maps/BlankMap/scripts.pory"
-	lock
 # 87 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_ROUTE2, 37, 11
+	lock
 # 88 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 25
+	warpsilent MAP_ROUTE2, 37, 11
 # 89 "data/maps/BlankMap/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 25
+# 90 "data/maps/BlankMap/scripts.pory"
 	release
 	return
 
 
 Route2_Eventscript_AkihikoOnFrame26::
-# 93 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 27
 # 94 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_ROUTE2_HOUSE, 5, 3
+	setvar VAR_AKIHIKOS_INTRO_STATE, 27
 # 95 "data/maps/BlankMap/scripts.pory"
+	warpsilent MAP_ROUTE2_HOUSE, 5, 3
+# 96 "data/maps/BlankMap/scripts.pory"
 	clearflag FLAG_SPAWN_INVISIBLE
 	return
 
 
 Route2_House_Eventscript_AkihikoOnFrame28::
-# 99 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 29
 # 100 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_ROUTE2_HOUSE, 4, 7
+	setvar VAR_AKIHIKOS_INTRO_STATE, 29
 # 101 "data/maps/BlankMap/scripts.pory"
+	warpsilent MAP_ROUTE2_HOUSE, 4, 7
+# 102 "data/maps/BlankMap/scripts.pory"
 	clearflag FLAG_SPAWN_INVISIBLE
 	return
 
 
 Route2_House_Eventscript_AkihikoOnFrame31::
-# 105 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 32
 # 106 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_ROUTE2_HOUSE, 4, 7
+	setvar VAR_AKIHIKOS_INTRO_STATE, 32
 # 107 "data/maps/BlankMap/scripts.pory"
+	warpsilent MAP_ROUTE2_HOUSE, 4, 7
+# 108 "data/maps/BlankMap/scripts.pory"
 	clearflag FLAG_SPAWN_INVISIBLE
 	return
 
 
 SunshineMeadow_Eventscript_AkihikoOnFrame34::
-# 111 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 35
 # 112 "data/maps/BlankMap/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 35
+# 113 "data/maps/BlankMap/scripts.pory"
 	warpsilent MAP_SUNSHINE_MEADOW, 10, 8
 	return
 
 
 SunshineMeadow_Eventscript_AkihikoOnFrame36::
-# 116 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 37
 # 117 "data/maps/BlankMap/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 37
+# 118 "data/maps/BlankMap/scripts.pory"
 	compare VAR_MITSURU_RELATIONSHIP_POINTS, 0
 	goto_if_eq SunshineMeadow_Eventscript_AkihikoOnFrame36_2
-# 121 "data/maps/BlankMap/scripts.pory"
+# 122 "data/maps/BlankMap/scripts.pory"
 	msgbox SunshineMeadow_Eventscript_AkihikoOnFrame36_Text_1
 SunshineMeadow_Eventscript_AkihikoOnFrame36_1:
-# 123 "data/maps/BlankMap/scripts.pory"
+# 124 "data/maps/BlankMap/scripts.pory"
 	warpsilent MAP_SUNSHINE_MEADOW, 10, 11
 	return
 
 SunshineMeadow_Eventscript_AkihikoOnFrame36_2:
-# 118 "data/maps/BlankMap/scripts.pory"
+# 119 "data/maps/BlankMap/scripts.pory"
 	msgbox SunshineMeadow_Eventscript_AkihikoOnFrame36_Text_0
 	goto SunshineMeadow_Eventscript_AkihikoOnFrame36_1
 
 
 Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38::
-# 127 "data/maps/BlankMap/scripts.pory"
+# 128 "data/maps/BlankMap/scripts.pory"
 	compare VAR_MITSURU_RELATIONSHIP_POINTS, 0
 	goto_if_eq Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38_2
-# 131 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 39
 # 132 "data/maps/BlankMap/scripts.pory"
-	fwdtime 22, 30
+	setvar VAR_AKIHIKOS_INTRO_STATE, 39
 # 133 "data/maps/BlankMap/scripts.pory"
-	msgbox Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38_Text_0
+	fwdtime 22, 30
 # 134 "data/maps/BlankMap/scripts.pory"
-	closemessage
+	msgbox Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38_Text_0
 # 135 "data/maps/BlankMap/scripts.pory"
+	closemessage
+# 136 "data/maps/BlankMap/scripts.pory"
 	warpsilent MAP_ROUTE2_HOUSE, 3, 11
 	return
 
 Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38_2:
-# 128 "data/maps/BlankMap/scripts.pory"
+# 129 "data/maps/BlankMap/scripts.pory"
 	goto SunshineMeadow_Eventscript_GameOver
 	end
 
 
 Route2_Eventscript_AkihikoOnFrame42::
-# 139 "data/maps/BlankMap/scripts.pory"
-	fwdtime 6, 20
 # 140 "data/maps/BlankMap/scripts.pory"
-	fwdweekday WEEKDAY_MON
+	fwdtime 6, 20
 # 141 "data/maps/BlankMap/scripts.pory"
-	delay 60
+	fwdweekday WEEKDAY_MON
 # 142 "data/maps/BlankMap/scripts.pory"
+	delay 60
+# 143 "data/maps/BlankMap/scripts.pory"
 	msgbox Route2_Eventscript_AkihikoOnFrame42_Text_0
-# 144 "data/maps/BlankMap/scripts.pory"
+# 145 "data/maps/BlankMap/scripts.pory"
 	warpsilent MAP_ROUTE2_HOUSE, 3, 11
 	return
 
 
 SunshineMeadow_Eventscript_GameOver::
-# 148 "data/maps/BlankMap/scripts.pory"
-	lock
 # 149 "data/maps/BlankMap/scripts.pory"
+	lock
+# 150 "data/maps/BlankMap/scripts.pory"
 	msgbox SunshineMeadow_Eventscript_GameOver_Text_0
-# 152 "data/maps/BlankMap/scripts.pory"
-	closemessage
 # 153 "data/maps/BlankMap/scripts.pory"
-	delay 30
-# 154 "data/maps/BlankMap/scripts.pory"
-	msgbox SunshineMeadow_Eventscript_GameOver_Text_1
-# 157 "data/maps/BlankMap/scripts.pory"
 	closemessage
+# 154 "data/maps/BlankMap/scripts.pory"
+	delay 30
+# 155 "data/maps/BlankMap/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_GameOver_Text_1
 # 158 "data/maps/BlankMap/scripts.pory"
-	setflag FLAG_DONT_TRANSITION_MUSIC
+	closemessage
 # 159 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_GAME_OVER, 0, 5
+	setflag FLAG_DONT_TRANSITION_MUSIC
 # 160 "data/maps/BlankMap/scripts.pory"
-	waitstate
+	warpsilent MAP_GAME_OVER, 0, 5
 # 161 "data/maps/BlankMap/scripts.pory"
+	waitstate
+# 162 "data/maps/BlankMap/scripts.pory"
 	release
 	end
 
 
 MansionsGarden_Eventscript_Onframe4::
-# 166 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 5
 # 167 "data/maps/BlankMap/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 5
+# 168 "data/maps/BlankMap/scripts.pory"
 	warpsilent MAP_MANSIONS_GARDEN, 43, 18
 	return
 
 
 SunshineMeadow_Eventscript_MitsuruOnframe7::
-# 171 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 8
 # 172 "data/maps/BlankMap/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 8
+# 173 "data/maps/BlankMap/scripts.pory"
 	warpsilent MAP_SUNSHINE_MEADOW, 15, 15
 	return
 
 
 Route2_House_Eventscript_MitsuruOnFrame9::
-# 176 "data/maps/BlankMap/scripts.pory"
-	fwdtime 7, 50
 # 177 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 10
+	fwdtime 7, 50
 # 178 "data/maps/BlankMap/scripts.pory"
-	playse MUS_HEAL
+	setvar VAR_MITSURUS_INTRO_STATE, 10
 # 179 "data/maps/BlankMap/scripts.pory"
-	special HealPlayerParty
+	playse MUS_HEAL
 # 180 "data/maps/BlankMap/scripts.pory"
-	delay 50
+	special HealPlayerParty
 # 181 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_ROUTE2_HOUSE, 4, 4
+	delay 50
 # 182 "data/maps/BlankMap/scripts.pory"
-	setrespawn HEAL_LOCATION_ROUTE2_HOUSE
+	warpsilent MAP_ROUTE2_HOUSE, 4, 4
 	return
 
 
-SunshineTown_Eventscript_MitsuruOnFrame25::
+SunshineTown_Eventscript_MitsuruOnFrame26::
 # 186 "data/maps/BlankMap/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 26
-# 187 "data/maps/BlankMap/scripts.pory"
 	msgbox SunshineTownRiverbank_Eventscript_OnFrame22_Text_0
-# 188 "data/maps/BlankMap/scripts.pory"
+# 187 "data/maps/BlankMap/scripts.pory"
 	closemessage
-# 189 "data/maps/BlankMap/scripts.pory"
+# 188 "data/maps/BlankMap/scripts.pory"
 	warpsilent MAP_ROUTE2_HOUSE, 5, 3
+# 189 "data/maps/BlankMap/scripts.pory"
+	waitstate
+	return
+
+
+Route2_House_Eventscript_MitsuruOnFrame32Warp::
+# 193 "data/maps/BlankMap/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 33
+# 194 "data/maps/BlankMap/scripts.pory"
+	fwdtime 6, 20
+# 195 "data/maps/BlankMap/scripts.pory"
+	fwdweekday WEEKDAY_MON
+# 196 "data/maps/BlankMap/scripts.pory"
+	delay 60
+# 197 "data/maps/BlankMap/scripts.pory"
+	msgbox Route2_Eventscript_AkihikoOnFrame42_Text_0
+# 198 "data/maps/BlankMap/scripts.pory"
+	warpsilent MAP_ROUTE2_HOUSE, 5, 5
+# 199 "data/maps/BlankMap/scripts.pory"
+	waitstate
 	return
 
 
 SunshineWoods_Eventscript_WarpBackToOrphanage_Text_0:
-# 36 "data/maps/BlankMap/scripts.pory"
+# 37 "data/maps/BlankMap/scripts.pory"
 	.string "{DESTROY_MUGSHOT} Akihiko picked up the Pawmi and hurried\n"
 	.string "back to the orphanage.$"
 
 SunshineTown_PokemonCenter_Eventscript_Onframe13_Text_0:
-# 53 "data/maps/BlankMap/scripts.pory"
+# 54 "data/maps/BlankMap/scripts.pory"
 	.string "10 minutes later...$"
 
 SunshineTownRiverbank_Eventscript_OnFrame22_Text_0:
-# 78 "data/maps/BlankMap/scripts.pory"
+# 79 "data/maps/BlankMap/scripts.pory"
 	.string "A few days later.$"
 
 SunshineMeadow_Eventscript_AkihikoOnFrame36_Text_0:
-# 118 "data/maps/BlankMap/scripts.pory"
+# 119 "data/maps/BlankMap/scripts.pory"
 	.string "Shinjiro didn't stand a slightest\n"
 	.string "chance and was completely wiped out by\l"
 	.string "Mitsuru.$"
 
 SunshineMeadow_Eventscript_AkihikoOnFrame36_Text_1:
-# 121 "data/maps/BlankMap/scripts.pory"
+# 122 "data/maps/BlankMap/scripts.pory"
 	.string "Shinjiro managed to knock out one of\n"
 	.string "Mitsuru's Pokémon before getting wiped\l"
 	.string "out by her Vulpix.$"
 
 Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38_Text_0:
-# 133 "data/maps/BlankMap/scripts.pory"
+# 134 "data/maps/BlankMap/scripts.pory"
 	.string "Later that night...$"
 
 Route2_Eventscript_AkihikoOnFrame42_Text_0:
-# 142 "data/maps/BlankMap/scripts.pory"
+# 143 "data/maps/BlankMap/scripts.pory"
 	.string "The next morning...$"
 
 SunshineMeadow_Eventscript_GameOver_Text_0:
-# 149 "data/maps/BlankMap/scripts.pory"
+# 150 "data/maps/BlankMap/scripts.pory"
 	.string "Mitsuru Kirijo walked away without\n"
 	.string "turning back.\p"
 	.string "Her Vulpix trotted along her lonesome\n"
@@ -365,7 +383,7 @@ SunshineMeadow_Eventscript_GameOver_Text_0:
 	.string "behind its two companions.$"
 
 SunshineMeadow_Eventscript_GameOver_Text_1:
-# 154 "data/maps/BlankMap/scripts.pory"
+# 155 "data/maps/BlankMap/scripts.pory"
 	.string "You and Shinjiro continued your search\n"
 	.string "for Miki to no avail.\p"
 	.string "Not long after, both of you ended up\n"

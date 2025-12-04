@@ -2,6 +2,7 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 7: SunshineOrphanageMainHall_OnWarp7]
     MAP_SCRIPT_ON_TRANSITION {
+        setrespawn(HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL)
         if (var(VAR_AKIHIKOS_INTRO_STATE) <7){
             setflag(FLAG_TEMP_2)
             setflag(FLAG_TEMP_3)
@@ -518,7 +519,6 @@ script SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage{
     removeobject(13)
     setflag(FLAG_TEMP_3)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 12)
-    setrespawn(HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL)
     fwdtime(8, 40)
     release
     end

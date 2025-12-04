@@ -1345,7 +1345,7 @@ const u8 gText_Berries[] = _("Berries");
 const u8 gText_ExpShareAll[] = _("Exp. Share");
 const u8 gText_ExpShareOn[] = _("The Exp. Share has been turned on.{PAUSE_UNTIL_PRESS}");
 const u8 gText_ExpShareOff[] = _("The Exp. Share has been turned off.{PAUSE_UNTIL_PRESS}");
-const u8 gText_KeyCandy[] = _("All Pokemon in party have been leveled to\nthe current highest level - 1.{PAUSE_UNTIL_PRESS}");
+const u8 gText_CandyJar[] = _("All Pokemon in party have been leveled to\nthe current highest level - 1.{PAUSE_UNTIL_PRESS}");
 const u8 gText_BasePointsResetToZero[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
 const u8 gText_AM[] = _("AM");
 const u8 gText_PM[] = _("PM");
@@ -1367,8 +1367,8 @@ const u8 gText_QuestComplete[] =_("complete");
 const u8 gText_QuestActive[] =_("active");
 
 //names
-const u8 gText_SideQuestName_1[] = _("My Pokémon Wants To Play!");
-const u8 gText_SideQuestName_2[] = _("Side Quest 2");
+const u8 gText_SideQuestName_1[] = _("Story Quests");
+const u8 gText_SideQuestName_2[] = _("My Pokémon Wants To Play!");
 const u8 gText_SideQuestName_3[] = _("Side Quest 3");
 const u8 gText_SideQuestName_4[] = _("Side Quest 4");
 const u8 gText_SideQuestName_5[] = _("Side Quest 5");
@@ -1399,8 +1399,8 @@ const u8 gText_SideQuestName_29[] = _("Side Quest 29");
 const u8 gText_SideQuestName_30[] = _("Side Quest 30");
 
 //descriptions
-const u8 gText_SideQuestDesc_1[] = _("Play with the Riolu on 2F.");
-const u8 gText_SideQuestDesc_2[] = _("Description 2");
+const u8 gText_SideQuestDesc_1[] = _("Description 1");
+const u8 gText_SideQuestDesc_2[] = _("Play with the Riolu on 2F.");
 const u8 gText_SideQuestDesc_3[] = _("Description 3");
 const u8 gText_SideQuestDesc_4[] = _("Description 4");
 const u8 gText_SideQuestDesc_5[] = _("Description 5");
@@ -1431,8 +1431,8 @@ const u8 gText_SideQuestDesc_29[] = _("Description 29");
 const u8 gText_SideQuestDesc_30[] = _("Description 30");
 
 //completed quest description
-const u8 gText_SideQuestDoneDesc_1[] = _("Completed Quest My Pokémon\nWants To Play!");
-const u8 gText_SideQuestDoneDesc_2[] = _("Completed Quest 2");
+const u8 gText_SideQuestDoneDesc_1[] = _("Completed Quest 1");
+const u8 gText_SideQuestDoneDesc_2[] = _("Completed Quest My Pokémon\nWants To Play!");
 const u8 gText_SideQuestDoneDesc_3[] = _("Completed Quest 3");
 const u8 gText_SideQuestDoneDesc_4[] = _("Completed Quest 4");
 const u8 gText_SideQuestDoneDesc_5[] = _("Completed Quest 5");
@@ -1463,8 +1463,8 @@ const u8 gText_SideQuestDoneDesc_29[] = _("Completed Quest 29");
 const u8 gText_SideQuestDoneDesc_30[] = _("Completed Quest 30");
 
 //map
-const u8 gText_SideQuestMap1[] = _("Sunshine Town");
-const u8 gText_SideQuestMap2[] = _("Map 2");
+const u8 gText_SideQuestMap1[] = _("Kirijo's Mansion");
+const u8 gText_SideQuestMap2[] = _("Sunshine Town");
 const u8 gText_SideQuestMap3[] = _("Map 3");
 const u8 gText_SideQuestMap4[] = _("Map 4");
 const u8 gText_SideQuestMap5[] = _("Map 5");
@@ -1495,16 +1495,16 @@ const u8 gText_SideQuestMap29[] = _("Map 29");
 const u8 gText_SideQuestMap30[] = _("Map 30");
 
 //subquests
-const u8 gText_SubQuest1_Name1[] = _("Part 1");
-const u8 gText_SubQuest1_Name2[] = _("Part 2");
-const u8 gText_SubQuest1_Name3[] = _("Part 3");
-const u8 gText_SubQuest1_Name4[] = _("Part 4");
-const u8 gText_SubQuest1_Name5[] = _("Part 5");
-const u8 gText_SubQuest1_Name6[] = _("Part 6");
-const u8 gText_SubQuest1_Name7[] = _("Part 7");
-const u8 gText_SubQuest1_Name8[] = _("Part 8");
-const u8 gText_SubQuest1_Name9[] = _("Part 9");
-const u8 gText_SubQuest1_Name10[] = _("Part 10");
+const u8 gText_SubQuest1_Name1[] = _("Mitsuru's Prologue");
+const u8 gText_SubQuest1_Name2[] = _("Akihiko's Prologue");
+const u8 gText_SubQuest1_Name3[] = _("Chapter 1");
+const u8 gText_SubQuest1_Name4[] = _("Chapter 2");
+const u8 gText_SubQuest1_Name5[] = _("Chapter 3");
+const u8 gText_SubQuest1_Name6[] = _("Chapter 4");
+const u8 gText_SubQuest1_Name7[] = _("Chapter 5");
+const u8 gText_SubQuest1_Name8[] = _("Chapter 6");
+const u8 gText_SubQuest1_Name9[] = _("Chapter 7");
+const u8 gText_SubQuest1_Name10[] = _("Chapter 8");
 
 const u8 gText_SubQuest2_Name1[] = _("Part 1");
 const u8 gText_SubQuest2_Name2[] = _("Part 2");
@@ -1558,6 +1558,9 @@ const u8 gText_SubQuest2_Desc17[] = _("Description Sub 17");
 const u8 gText_SubQuest2_Desc18[] = _("Description Sub 18");
 const u8 gText_SubQuest2_Desc19[] = _("Description Sub 19");
 const u8 gText_SubQuest2_Desc20[] = _("Description Sub 20");
+
+const u8 gText_SubQuest1_Map1[] = _("Kirijo's Mansion");
+const u8 gText_SubQuest1_Map2[] = _("Sunshine Town");
 // Camp Gears
 const u8 gText_WaitUntilTime[] = _("Wait until?");
 const u8 gText_WaitUntilMorning[] = _("Morning (6AM)");

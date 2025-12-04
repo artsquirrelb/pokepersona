@@ -10553,7 +10553,9 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_ENDEAVOR",
       "MOVE_THROAT_CHOP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_ROCK_SMASH",
+      "MOVE_STRENGTH"
     ],
     "EggMoves": [
       "MOVE_CURSE",
@@ -36426,7 +36428,9 @@
       "MOVE_ROAR",
       "MOVE_CHARGE",
       "MOVE_DOUBLE_EDGE",
-      "MOVE_ELECTROWEB"
+      "MOVE_ELECTROWEB",
+      "MOVE_KNOCK_OFF",
+      "MOVE_TAUNT"
     ],
     "EggMoves": [
       "MOVE_BABY_DOLL_EYES",
@@ -36537,7 +36541,9 @@
       "MOVE_ROAR",
       "MOVE_CHARGE",
       "MOVE_DOUBLE_EDGE",
-      "MOVE_ELECTROWEB"
+      "MOVE_ELECTROWEB",
+      "MOVE_KNOCK_OFF",
+      "MOVE_TAUNT"
     ],
     "EggMoves": [
       "MOVE_BABY_DOLL_EYES",
@@ -36658,7 +36664,9 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_SUPERCELL_SLAM",
       "MOVE_ELECTROWEB",
-      "MOVE_THROAT_CHOP"
+      "MOVE_THROAT_CHOP",
+      "MOVE_KNOCK_OFF",
+      "MOVE_TAUNT"
     ],
     "EggMoves": [
       "MOVE_BABY_DOLL_EYES",
@@ -95762,7 +95770,9 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_ENDEAVOR",
       "MOVE_THROAT_CHOP",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_ROCK_SMASH",
+      "MOVE_STRENGTH"
     ],
     "EggMoves": [
       "MOVE_CURSE",
@@ -95877,7 +95887,9 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_ENDEAVOR",
       "MOVE_TEMPER_FLARE",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_ROCK_SMASH",
+      "MOVE_STRENGTH"
     ],
     "EggMoves": [
       "MOVE_CURSE",
@@ -95989,7 +96001,9 @@
       "MOVE_DOUBLE_EDGE",
       "MOVE_ENDEAVOR",
       "MOVE_WHIRLPOOL",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_ROCK_SMASH",
+      "MOVE_STRENGTH"
     ],
     "EggMoves": [
       "MOVE_CURSE",

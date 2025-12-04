@@ -1,5 +1,6 @@
 mapscripts SunshineWoods_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
+        setflag(FLAG_TEMP_7)
         if (var(VAR_AKIHIKOS_INTRO_STATE) < 22){
             setflag(FLAG_TEMP_3)
         }
@@ -39,8 +40,18 @@ mapscripts SunshineWoods_MapScripts {
         VAR_MITSURUS_INTRO_STATE, 21: SunshineWoods_Eventscript_MitsuruOnWarp21
     ]
     MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_TEMP_8, 0: SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru
         VAR_AKIHIKOS_INTRO_STATE, 6: SunshineWoods_Eventscript_OnFrame6
        ]
+}
+
+script SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru {
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
+    if (var(VAR_RESULT) == FALSE && var(VAR_MITSURUS_INTRO_STATE) == 100){
+        clearflag(FLAG_TEMP_7)
+        clearflag(FLAG_HIDE_QUEST_ICON)
+    }
+    setvar(VAR_TEMP_8, 1)
 }
 
 script  SunshineWoods_Eventscript_OnWarp6 {
@@ -625,6 +636,107 @@ script SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown {
         setvar(VAR_0x8000, 0)
         setvar(VAR_0x8001, 0)
         fwdtime(15, 05)
-        warp(MAP_ROUTE2_HOUSE, 5, 3)
+        warp(MAP_ROUTE2_HOUSE, 3, 11)
     }
+}
+
+script SunshineWoods_Eventscript_AkihikoPrologueStart {
+    hidefollower
+    hidefollowernpc
+    lock
+    msgbox(format("{COLOR RED}Tips: From this point onward, the choices you made thorough the game will ultimately affect the story outcome."))
+    closemessage
+    faceplayer
+    setflag(FLAG_HIDE_QUEST_ICON)
+    if (var(VAR_TEMP_0) == 1){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}.......{PAUSE 60}
+        Sorry, I want to be alone for a while. Can we talk later?"))
+        closemessage
+        release
+        end
+    }
+    else{
+        fadenewbgm(MUS_XC2_GARFONT_MERCERNARIES)
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}So this is where you are.\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Hey, Kirijo. Have a seat."))
+        closemessage
+        specialvar(VAR_RESULT, GetPlayerFacingDirection)
+        if(var(VAR_RESULT) == DIR_NORTH){
+            applymovement(LOCALID_PLAYER, moves(walk_left*2, walk_up*4, face_down))
+            applymovement(16, moves(walk_left, walk_up*3, face_down))
+        }
+        elif(var(VAR_RESULT) == DIR_EAST){
+            applymovement(LOCALID_PLAYER, moves(walk_left, walk_up*3, face_down))
+            applymovement(16, moves(walk_left, walk_up*3, face_down))
+        }
+        elif(var(VAR_RESULT) == DIR_WEST){
+            applymovement(16, moves(walk_left, walk_up*3, face_down))
+            delay(8)
+            applymovement(LOCALID_PLAYER, moves(walk_left*3, walk_up*3, face_down))
+        }
+        else{
+            applymovement(LOCALID_PLAYER, moves(walk_left*2, walk_up*2, face_down))
+            delay(8)
+            applymovement(16, moves(walk_left, walk_up*3, face_down))
+        }
+        waitmovement
+        delay(60)
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}What are you doing here, if I may ask?\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Just... {PAUSE 60}reminiscing,{PAUSE 60} I guess.\p
+        This was where I, my sis and Shinji used to hang out.\p
+        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That sounded like good times."))
+        closemessage
+        delay(30)
+        applymovement(16, emotepensive)
+        waitmovement
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Kirjo, uh...{PAUSE 60}
+        This is kinda sudden but I guess I just want to talk about this to someone."))
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Would you listen?
+        {COLOR GREEN}(Begin Akihiko's prologue quest?)"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == FALSE){
+            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Oh, okay......"))
+            closemessage
+            playse(SE_M_STAT_DECREASE)
+            applymovement(16, pointdown3)
+            waitmovement
+            subvar(VAR_AKIHIKO_RELATIONSHIP_POINTS, 3)
+            setvar(VAR_TEMP_0, 1)
+            release
+            end
+        }
+        else
+        {
+            closemessage
+            playse(SE_SHINY)
+            applymovement(16, pointup3)
+            waitmovement
+            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thanks!"))
+            closemessage
+            fadescreenswapbuffers(FADE_TO_BLACK)
+            callnative(Script_SwitchMainCharacter)
+            setvar(VAR_AKIHIKOS_INTRO_STATE, 0)
+            unlockcharacter(CHARACTER_AKIHIKO)
+            makecharaAvailable(CHARACTER_AKIHIKO)
+            makecharaUnavailable(CHARACTER_MITSURU)
+            makecharaUnavailable(CHARACTER_INTELEON_T)
+            makecharaUnavailable(CHARACTER_SHINJIRO)
+            clearflag(FLAG_SYS_B_DASH)
+            clearflag(FLAG_SYS_POKEDEX_GET)
+            clearflag(FLAG_SYS_POKEMON_GET)
+            removeitem(ITEM_EXP_SHARE)
+            removeitem(ITEM_CAMP_GEARS)
+            removeitem(ITEM_ESCAPE_ROPE)
+            removeitem(ITEM_MACH_BIKE)
+            removeallitem(ITEM_POKE_BALL, VAR_0x800A)
+            removeallitem(ITEM_GREAT_BALL, VAR_0x800B)
+            destroyfollowernpc
+            manuallysettime(WEEKDAY_WED, 16, 30)
+            warpsilent(MAP_SUNSHINE_ORPHANAGE, 13, 18)
+            waitstate
+        }
+    }
+}
+
+movement pointup3 {
+    point_up_3
 }

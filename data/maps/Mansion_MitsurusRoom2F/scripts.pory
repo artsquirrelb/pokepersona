@@ -40,8 +40,11 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     And the map to Thundershards Cliff."))
     closemessage
     setcaughtmon(SPECIES_VULPIX_DELTA)
+    setflag(FLAG_ADVENTURE_STARTED)
     setflag(FLAG_SYS_POKEMON_GET)
     setflag(FLAG_SYS_POKEDEX_GET)
+    special(SetUnlockedPokedexFlags)
+    setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
     setflag(FLAG_SYS_NATIONAL_DEX)
     special(EnableNationalPokedex)
     applymovement(LOCALID_PLAYER, emotepensive)
@@ -58,14 +61,18 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     applymovement(LOCALID_VULPIX, faceleft)
     waitmovement(LOCALID_PLAYER)
     delay(40)
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
+    if (var(VAR_RESULT) == FALSE)
+    {
+        additem(ITEM_MACH_BIKE) // will give to 1st MC akihiko later
+    }
     giveitem(ITEM_CAMP_GEARS)
-    additem(ITEM_MACH_BIKE)
     additem(ITEM_ESCAPE_ROPE)
     additem(ITEM_EXP_SHARE)
+    setflag(FLAG_EXP_SHARE)
     additem(ITEM_POKE_BALL, 20)
     additem(ITEM_POTION, 2)
     additem(ITEM_REPEL, 5)
-    setflag(FLAG_EXP_SHARE)
     addmoney(15000)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll definitely need this while outdoors.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hmm, that should be everything."))
@@ -121,14 +128,14 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
         }
         else{
             msgbox("Party full.")}
-
+    setfriendship(0, 200)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It's already 10:32PM.\p
     If I don't go now, I won't be arriving at the cliff's foot before midnight."))
     closemessage
     fwdtime(22, 32)
     msgbox(format("{COLOR GREEN}{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Tips: Check your bag for various QoL items."))
-    updatefollowingmon
     closemessage
+    updatefollowingmon
     }
     else{
         playse(SE_PIN)

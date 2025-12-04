@@ -13,5 +13,6 @@ void Script_GetChosenMonDefensiveEVs(void);
 void Script_GetChosenMonOffensiveIVs(void);
 void Script_GetChosenMonDefensiveIVs(void);
 void SetMonSpecies(struct Pokemon *mon, u16 species);
+void SetMonFriendship(struct Pokemon *mon, u8 friendshippoint);
 
 #endif // GUARD_SCRIPT_POKEMON_UTIL_H

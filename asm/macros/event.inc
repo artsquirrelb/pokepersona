@@ -2579,10 +2579,11 @@
 	callnative ScriptHideItemDescription, requests_effects=1
 	.endm
 
-	@ Remove all of specified item from the player's bag and return the number of removed items to VAR_RESULT
-	.macro removeallitem itemId:req
+	@ Remove all of specified item from the player's bag and return the number of removed items to varId
+	.macro removeallitem itemId:req, varId:req
 	callnative ScrCmd_removeallitem, requests_effects=1
 	.2byte \itemId
+	.4byte \varId
 	.endm
 
 	@ Stores the position of the given object in destX and destY. Mode CURRENT_POSITION will take the object's current position. Mode TEMPLATE_POSITION will take the object's template position.
@@ -2668,6 +2669,13 @@
 	callnative Scrcmd_changespecies, requests_effects=1
 	.2byte \speciesId
 	.endm 
+
+	@Change the friendship of the pokemon in the party slot index
+	.macro setfriendship index:req, point:req
+	callnative Scrcmd_setfriendship, requests_effects=1
+	.byte \index
+	.byte \point
+	.endm
 
 	@ Gets the facing direction of a given event object and stores it in the variable dest.
 	.macro getobjectfacingdirection localId:req, dest:req
@@ -2901,7 +2909,8 @@
     special SetObjectMovementType
     .endm
 
-.macro questmenu case:req, questId:req
+@Quest menu
+	.macro questmenu case:req, questId:req
     .byte SCR_OP_QUESTMENU
     .byte \case
     .byte \questId

@@ -2637,6 +2637,9 @@ extern const u8 gText_SubQuest2_Desc18[];
 extern const u8 gText_SubQuest2_Desc19[];
 extern const u8 gText_SubQuest2_Desc20[];
 
+extern const u8 gText_SubQuest1_Map1[];
+extern const u8 gText_SubQuest1_Map2[];
+
 // Berry Blender
 extern const u8 gText_SavingDontTurnOff2[];
 extern const u8 gText_BlenderMaxSpeedRecord[];
@@ -2680,7 +2683,7 @@ extern const u8 gText_TellHimTheWords[];
 extern const u8 gText_ExpShareAll[];
 extern const u8 gText_ExpShareOn[];
 extern const u8 gText_ExpShareOff[];
-extern const u8 gText_KeyCandy[];
+extern const u8 gText_CandyJar[];
 extern const u8 gText_BasePointsResetToZero[];
 
 // Map name pop-up

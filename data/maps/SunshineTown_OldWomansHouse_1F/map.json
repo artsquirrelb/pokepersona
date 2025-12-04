@@ -2,7 +2,7 @@
   "id": "MAP_SUNSHINE_TOWN_OLD_WOMANS_HOUSE_1F",
   "name": "SunshineTown_OldWomansHouse_1F",
   "layout": "LAYOUT_SUNSHINE_TOWN_OLD_WOMANS_HOUSE_1F",
-  "music": "MUS_XC2_GARFONT_MERCERNARIES",
+  "music": "MUS_RG_SEVII_67",
   "region_map_section": "MAPSEC_SUNSHINETOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

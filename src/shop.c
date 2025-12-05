@@ -909,7 +909,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
         {
             ConvertIntToDecimalStringN(
                 gStringVar1,
-                GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT),
+                GetItemPrice(itemId),
                 STR_CONV_MODE_LEFT_ALIGN,
                 6);
         }
@@ -933,7 +933,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, u32 itemId, u8 y)
                 //6);
         //}
 
-        if ((GetItemImportance(itemId) && sMartInfo.martType != MART_TYPE_MOVE_TUTOR && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1))) || GetOutfitStatus(itemId))
+        if (GetItemImportance(itemId) && sMartInfo.martType != MART_TYPE_MOVE_TUTOR && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1)))// || GetOutfitStatus(itemId))
             StringCopy(gStringVar4, gText_SoldOut);
         else
         {
@@ -1401,7 +1401,7 @@ static void Task_BuyMenu(u8 taskId)
             BuyMenuPrintCursor(tListTaskId, COLORID_GRAY_CURSOR);
 
             if (sMartInfo.martType == MART_TYPE_NORMAL)
-                sShopData->totalCost = (GetItemPrice(itemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT));
+                sShopData->totalCost = (GetItemPrice(itemId));
             else if (sMartInfo.martType == MART_TYPE_OUTFIT)
                 sShopData->totalCost = GetOutfitPrice(itemId);
             else //if (MARTBP || MARTMOVE)
@@ -1409,7 +1409,7 @@ static void Task_BuyMenu(u8 taskId)
             //else
                 //sShopData->totalCost = gDecorations[itemId].price;
 
-            if ((GetItemImportance(itemId) && sMartInfo.martType != MART_TYPE_MOVE_TUTOR && (CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1))) || GetOutfitStatus(itemId))
+            if (    GetItemImportance(itemId) && sMartInfo.martType != MART_TYPE_MOVE_TUTOR && (    CheckBagHasItem(itemId, 1) || CheckPCHasItem(itemId, 1) )    )// || GetOutfitStatus(itemId))
                 BuyMenuDisplayMessage(taskId, gText_ThatItemIsSoldOut, BuyMenuReturnToItemList);
             else if (!IsEnoughMoney(&gSaveBlock1Ptr->money, sShopData->totalCost))
             {
@@ -1429,7 +1429,7 @@ static void Task_BuyMenu(u8 taskId)
                         ConvertIntToDecimalStringN(gStringVar2, sShopData->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
                         StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
                         tItemCount = 1;
-                        sShopData->totalCost = (GetItemPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+                        sShopData->totalCost = (GetItemPrice(tItemId)) * tItemCount;
                         BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                     }
                     else if (GetItemPocket(itemId) == POCKET_TM_HM)
@@ -1552,7 +1552,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
         if (MARTBP || MARTMOVE)
             sShopData->totalCost = ItemId_GetBpPrice(tItemId) * tItemCount;
         else
-            sShopData->totalCost = (GetItemPrice(tItemId) >> IsPokeNewsActive(POKENEWS_SLATEPORT)) * tItemCount;
+            sShopData->totalCost = (GetItemPrice(tItemId)) * tItemCount;
         BuyMenuPrintItemQuantityAndPrice(taskId);
     }
     else

@@ -544,7 +544,7 @@ SunshineMeadow_Eventscript_ChoosingPartyForMitsuruFirstBattle::
 # 283 "data/maps/SunshineMeadow/scripts.pory"
 	setvar VAR_0x8004, SPECIAL_BATTLE_MULTI
 # 284 "data/maps/SunshineMeadow/scripts.pory"
-	setvar VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS
+	setvar VAR_0x8005, 3
 # 285 "data/maps/SunshineMeadow/scripts.pory"
 	trainerbattle_no_intro TRAINER_MITSURU_SUNSHINE_MEADOW, MitsuruFirstBattleDefeated
 # 286 "data/maps/SunshineMeadow/scripts.pory"
@@ -1452,7 +1452,7 @@ SunshineMeadow_Eventscript_ChoosingPartyForAkihikoFirstBattle::
 # 826 "data/maps/SunshineMeadow/scripts.pory"
 	setvar VAR_0x8004, SPECIAL_BATTLE_MULTI
 # 827 "data/maps/SunshineMeadow/scripts.pory"
-	setvar VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS
+	setvar VAR_0x8005, 3
 # 828 "data/maps/SunshineMeadow/scripts.pory"
 	trainerbattle_no_intro TRAINER_AKIHIKO_SUNSHINE_MEADOW, AkihikoFirstBattleDefeated
 # 829 "data/maps/SunshineMeadow/scripts.pory"
@@ -1575,7 +1575,7 @@ SunshineMeadow_Eventscript_ChoosingPartyForShinjiroFirstBattle::
 # 910 "data/maps/SunshineMeadow/scripts.pory"
 	setvar VAR_0x8004, SPECIAL_BATTLE_MULTI
 # 911 "data/maps/SunshineMeadow/scripts.pory"
-	setvar VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS
+	setvar VAR_0x8005, 3
 # 912 "data/maps/SunshineMeadow/scripts.pory"
 	trainerbattle_no_intro TRAINER_SHINJIRO_ROUTE_2, ShinjiroMFirstBattleDefeated
 # 913 "data/maps/SunshineMeadow/scripts.pory"

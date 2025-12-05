@@ -1311,6 +1311,7 @@ script Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji {
     (Well, on paper at least, I suppose?)\p
     (Otherwise those men wouldn't have been searching for him near the orphanage.)\p
     (Already has a standard trainer card... issued a week ago.)"))
+    playse(SE_M_SCRATCH)
     setvar(VAR_0x8000, PIC_SHINJIRO)
     callnative(DrawMugshot)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(And this one is Aragaki Shinjiro.)\p

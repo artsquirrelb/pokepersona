@@ -1234,40 +1234,44 @@ SunshineWoods_Eventscript_AkihikoPrologueStart_4:
 # 717 "data/maps/SunshineWoods/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 0
 # 718 "data/maps/SunshineWoods/scripts.pory"
-	unlockcharacter CHARACTER_AKIHIKO
+	setvar VAR_MITSURUS_INTRO_STATE, 101
 # 719 "data/maps/SunshineWoods/scripts.pory"
-	makecharaAvailable CHARACTER_AKIHIKO
+	unlockcharacter CHARACTER_AKIHIKO
 # 720 "data/maps/SunshineWoods/scripts.pory"
-	makecharaUnavailable CHARACTER_MITSURU
+	makecharaAvailable CHARACTER_AKIHIKO
 # 721 "data/maps/SunshineWoods/scripts.pory"
-	makecharaUnavailable CHARACTER_INTELEON_T
+	makecharaUnavailable CHARACTER_MITSURU
 # 722 "data/maps/SunshineWoods/scripts.pory"
-	makecharaUnavailable CHARACTER_SHINJIRO
+	makecharaUnavailable CHARACTER_INTELEON_T
 # 723 "data/maps/SunshineWoods/scripts.pory"
-	clearflag FLAG_SYS_B_DASH
+	makecharaUnavailable CHARACTER_SHINJIRO
 # 724 "data/maps/SunshineWoods/scripts.pory"
-	clearflag FLAG_SYS_POKEDEX_GET
+	clearflag FLAG_SYS_B_DASH
 # 725 "data/maps/SunshineWoods/scripts.pory"
-	clearflag FLAG_SYS_POKEMON_GET
+	clearflag FLAG_SYS_POKEDEX_GET
 # 726 "data/maps/SunshineWoods/scripts.pory"
-	removeitem ITEM_EXP_SHARE
+	clearflag FLAG_SYS_POKEMON_GET
 # 727 "data/maps/SunshineWoods/scripts.pory"
-	removeitem ITEM_CAMP_GEARS
+	removeitem ITEM_EXP_SHARE
 # 728 "data/maps/SunshineWoods/scripts.pory"
-	removeitem ITEM_ESCAPE_ROPE
+	removeitem ITEM_CAMP_GEARS
 # 729 "data/maps/SunshineWoods/scripts.pory"
-	removeitem ITEM_MACH_BIKE
+	removeitem ITEM_ESCAPE_ROPE
 # 730 "data/maps/SunshineWoods/scripts.pory"
-	removeallitem ITEM_POKE_BALL, VAR_0x800A
+	removeitem ITEM_MACH_BIKE
 # 731 "data/maps/SunshineWoods/scripts.pory"
-	removeallitem ITEM_GREAT_BALL, VAR_0x800B
+	removeallitem ITEM_POKE_BALL, VAR_0x800A
 # 732 "data/maps/SunshineWoods/scripts.pory"
-	destroyfollowernpc
+	removeallitem ITEM_GREAT_BALL, VAR_0x800B
 # 733 "data/maps/SunshineWoods/scripts.pory"
-	manuallysettime WEEKDAY_WED, 16, 30
+	destroyfollowernpc
 # 734 "data/maps/SunshineWoods/scripts.pory"
-	warpsilent MAP_SUNSHINE_ORPHANAGE, 13, 18
+	manuallysettime WEEKDAY_WED, 16, 30
 # 735 "data/maps/SunshineWoods/scripts.pory"
+	warpsilent MAP_SUNSHINE_ORPHANAGE, 13, 18
+# 736 "data/maps/SunshineWoods/scripts.pory"
+	special DrawWholeMapView
+# 737 "data/maps/SunshineWoods/scripts.pory"
 	waitstate
 	return
 
@@ -1323,9 +1327,9 @@ SunshineWoods_Eventscript_AkihikoPrologueStart_12:
 	end
 
 
-# 740 "data/maps/SunshineWoods/scripts.pory"
+# 742 "data/maps/SunshineWoods/scripts.pory"
 pointup3:
-# 741 "data/maps/SunshineWoods/scripts.pory"
+# 743 "data/maps/SunshineWoods/scripts.pory"
 	point_up_3
 	step_end
 

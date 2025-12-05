@@ -715,6 +715,7 @@ script SunshineWoods_Eventscript_AkihikoPrologueStart {
             fadescreenswapbuffers(FADE_TO_BLACK)
             callnative(Script_SwitchMainCharacter)
             setvar(VAR_AKIHIKOS_INTRO_STATE, 0)
+            setvar(VAR_MITSURUS_INTRO_STATE, 101)
             unlockcharacter(CHARACTER_AKIHIKO)
             makecharaAvailable(CHARACTER_AKIHIKO)
             makecharaUnavailable(CHARACTER_MITSURU)
@@ -732,6 +733,7 @@ script SunshineWoods_Eventscript_AkihikoPrologueStart {
             destroyfollowernpc
             manuallysettime(WEEKDAY_WED, 16, 30)
             warpsilent(MAP_SUNSHINE_ORPHANAGE, 13, 18)
+            special(DrawWholeMapView)
             waitstate
         }
     }

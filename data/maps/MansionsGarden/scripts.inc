@@ -819,36 +819,40 @@ MansionsGarden_Eventscript_MitsuruPrologueStart::
 # 485 "data/maps/MansionsGarden/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 0
 # 486 "data/maps/MansionsGarden/scripts.pory"
-	unlockcharacter CHARACTER_MITSURU
+	setvar VAR_AKIHIKOS_INTRO_STATE, 101
 # 487 "data/maps/MansionsGarden/scripts.pory"
-	makecharaAvailable CHARACTER_MITSURU
+	unlockcharacter CHARACTER_MITSURU
 # 488 "data/maps/MansionsGarden/scripts.pory"
-	makecharaUnavailable CHARACTER_AKIHIKO
+	makecharaAvailable CHARACTER_MITSURU
 # 489 "data/maps/MansionsGarden/scripts.pory"
-	makecharaUnavailable CHARACTER_INTELEON_T
+	makecharaUnavailable CHARACTER_AKIHIKO
 # 490 "data/maps/MansionsGarden/scripts.pory"
-	makecharaUnavailable CHARACTER_SHINJIRO
+	makecharaUnavailable CHARACTER_INTELEON_T
 # 491 "data/maps/MansionsGarden/scripts.pory"
-	destroyfollowernpc
+	makecharaUnavailable CHARACTER_SHINJIRO
 # 492 "data/maps/MansionsGarden/scripts.pory"
-	clearflag FLAG_SYS_B_DASH
+	destroyfollowernpc
 # 493 "data/maps/MansionsGarden/scripts.pory"
-	clearflag FLAG_SYS_POKEDEX_GET
+	clearflag FLAG_SYS_B_DASH
 # 494 "data/maps/MansionsGarden/scripts.pory"
-	clearflag FLAG_SYS_POKEMON_GET
+	clearflag FLAG_SYS_POKEDEX_GET
 # 495 "data/maps/MansionsGarden/scripts.pory"
-	removeitem ITEM_EXP_SHARE
+	clearflag FLAG_SYS_POKEMON_GET
 # 496 "data/maps/MansionsGarden/scripts.pory"
-	removeitem ITEM_CAMP_GEARS
+	removeitem ITEM_EXP_SHARE
 # 497 "data/maps/MansionsGarden/scripts.pory"
-	removeitem ITEM_ESCAPE_ROPE
+	removeitem ITEM_CAMP_GEARS
 # 498 "data/maps/MansionsGarden/scripts.pory"
-	removeitem ITEM_MACH_BIKE
+	removeitem ITEM_ESCAPE_ROPE
 # 499 "data/maps/MansionsGarden/scripts.pory"
-	manuallysettime WEEKDAY_WED, 22, 30, 0
+	removeitem ITEM_MACH_BIKE
 # 500 "data/maps/MansionsGarden/scripts.pory"
-	warpsilent MAP_MANSIONS_GARDEN, 43, 27
+	manuallysettime WEEKDAY_WED, 22, 30, 0
 # 501 "data/maps/MansionsGarden/scripts.pory"
+	warpsilent MAP_MANSIONS_GARDEN, 43, 27
+# 502 "data/maps/MansionsGarden/scripts.pory"
+	special DrawWholeMapView
+# 503 "data/maps/MansionsGarden/scripts.pory"
 	waitstate
 	return
 
@@ -1283,8 +1287,8 @@ MansionsGarden_Eventscript_MitsuruPrologueStart_Text_1:
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}But enough about me, I actually want to\n"
 	.string "ask you something.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'm all ears.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}How did you know about me and Shinji?{PAUSE_UNTIL_PRESS} {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I\n"
-	.string "mean, we're just 2 random orphan kids.\p"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}How did you know about me and Shinji?{PAUSE_UNTIL_PRESS}\n"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I mean, we're just 2 random orphan kids.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}..........$"
 
 MansionsGarden_Eventscript_MitsuruPrologueStart_Text_2:

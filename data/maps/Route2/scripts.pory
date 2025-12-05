@@ -703,7 +703,7 @@ script Route2_Eventscript_SelectingPartyShinjiroFirstBattle {
 	    setvar (VAR_0x8005, FRONTIER_DATA_SELECTED_MON_ORDER)
         special (CallFrontierUtilFunc)
         setvar (VAR_0x8004, SPECIAL_BATTLE_MULTI)
-        setvar (VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS)
+        setvar (VAR_0x8005, 3) // minimum number of mon
         clearflag(FLAG_DONT_TRANSITION_MUSIC)
         trainerbattle_no_intro(TRAINER_SHINJIRO_ROUTE_2, ShinjiroFirstBattleDefeated)
         fwdtime(23, 20)
@@ -1189,10 +1189,10 @@ script Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting {
         You can open quest menu in\n
         {START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}."))
         closemessage
-        clearflag(FLAG_HIDE_QUEST_ICON)
         setflag(FLAG_SYS_QUEST_MENU_GET)
         questmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS)
     }
+    clearflag(FLAG_HIDE_QUEST_ICON)
     setvar(VAR_MITSURUS_INTRO_STATE, 30)
     release
     end

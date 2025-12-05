@@ -335,10 +335,10 @@ script SunshineTown_Eventscript_OnFrame23{
         You can open quest menu in\n
         {START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}."))
         closemessage
-        clearflag(FLAG_HIDE_QUEST_ICON)
         setflag(FLAG_SYS_QUEST_MENU_GET)
         questmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS)
     }
+    clearflag(FLAG_HIDE_QUEST_ICON)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 24)
     release
     end
@@ -550,6 +550,7 @@ script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
     ...........\p
     {CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(I should go check and help the injured as well.)"))
     closemessage
+    removeobject(1)
     setvar(VAR_MITSURUS_INTRO_STATE, 20)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     call(Eventscript_CutsceneEnds)

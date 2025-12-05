@@ -456,7 +456,7 @@ script MansionsGarden_Eventscript_MitsuruPrologueStart {
         'Cause you know, I want my life before the explosion back.\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}But enough about me, I actually want to ask you something.\p
         {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'm all ears.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}How did you know about me and Shinji?{PAUSE_UNTIL_PRESS}
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}How did you know about me and Shinji?{PAUSE_UNTIL_PRESS}\n
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I mean, we're just 2 random orphan kids.\p
         {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}.........."))
         msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}It's a long story. Do you still want to listen? {COLOR GREEN}(Begin Mitsuru's prologue quest?)"), MSGBOX_YESNO)
@@ -483,6 +483,7 @@ script MansionsGarden_Eventscript_MitsuruPrologueStart {
             fadescreenswapbuffers(FADE_TO_BLACK)
             callnative(Script_SwitchMainCharacter)
             setvar(VAR_MITSURUS_INTRO_STATE, 0)
+            setvar(VAR_AKIHIKOS_INTRO_STATE, 101)
             unlockcharacter(CHARACTER_MITSURU)
             makecharaAvailable(CHARACTER_MITSURU)
             makecharaUnavailable(CHARACTER_AKIHIKO)
@@ -498,6 +499,7 @@ script MansionsGarden_Eventscript_MitsuruPrologueStart {
             removeitem(ITEM_MACH_BIKE)
             manuallysettime(WEEKDAY_WED, 22, 30, 0)
             warpsilent(MAP_MANSIONS_GARDEN, 43, 27)
+            special(DrawWholeMapView)
             waitstate
         }
     }

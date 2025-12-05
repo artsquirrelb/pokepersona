@@ -281,7 +281,7 @@ script SunshineMeadow_Eventscript_ChoosingPartyForMitsuruFirstBattle {
 	    setvar (VAR_0x8005, FRONTIER_DATA_SELECTED_MON_ORDER)
         special (CallFrontierUtilFunc)
         setvar (VAR_0x8004, SPECIAL_BATTLE_MULTI)
-        setvar (VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS)
+        setvar (VAR_0x8005, 3) // minimum number of mon
         trainerbattle_no_intro(TRAINER_MITSURU_SUNSHINE_MEADOW, MitsuruFirstBattleDefeated)
         fwdtime(18, 30)
         setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SAVE_PARTY)
@@ -824,7 +824,7 @@ script SunshineMeadow_Eventscript_ChoosingPartyForAkihikoFirstBattle {
 	    setvar (VAR_0x8005, FRONTIER_DATA_SELECTED_MON_ORDER)
         special (CallFrontierUtilFunc)
         setvar (VAR_0x8004, SPECIAL_BATTLE_MULTI)
-        setvar (VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS)
+        setvar (VAR_0x8005, 3) // minimum number of mon
         trainerbattle_no_intro(TRAINER_AKIHIKO_SUNSHINE_MEADOW, AkihikoFirstBattleDefeated)
         fwdtime(18, 30)
         setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SAVE_PARTY)
@@ -908,7 +908,7 @@ script SunshineMeadow_Eventscript_ChoosingPartyForShinjiroFirstBattle {
 	    setvar (VAR_0x8005, FRONTIER_DATA_SELECTED_MON_ORDER)
         special (CallFrontierUtilFunc)
         setvar (VAR_0x8004, SPECIAL_BATTLE_MULTI)
-        setvar (VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS)
+        setvar (VAR_0x8005, 3) // minimum number of mon
         trainerbattle_no_intro(TRAINER_SHINJIRO_ROUTE_2, ShinjiroMFirstBattleDefeated)
         fwdtime(18, 30)
         setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SAVE_PARTY)

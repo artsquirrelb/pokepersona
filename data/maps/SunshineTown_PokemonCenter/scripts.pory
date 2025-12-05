@@ -74,7 +74,7 @@ script SunshineTown_PokemonCenter_Eventscript_MartLady {
 	elif (flag(FLAG_SYS_POKEDEX_GET) == TRUE && var(VAR_AKIHIKOS_INTRO_STATE) < 100) {
         pokemart (GeneralMart_Prologue)
     }
-    elif (var(VAR_AKIHIKOS_INTRO_STATE) == 100){
+    elif (var(VAR_AKIHIKOS_INTRO_STATE) >= 100){
         pokemart (GeneralMart_C1_1)
     }
     msgbox(gText_PleaseComeAgain)
@@ -82,35 +82,37 @@ script SunshineTown_PokemonCenter_Eventscript_MartLady {
     end
 }
 
-raw`
-	.align 2
-GeneralMart_PreDex:
-	.2byte ITEM_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	pokemartlistend
+mart GeneralMart_PreDex
+{
+    ITEM_POTION
+	ITEM_ANTIDOTE
+	ITEM_PARALYZE_HEAL
+	ITEM_AWAKENING
+	ITEM_NONE
+}
 
-	.align 2
-GeneralMart_Prologue:
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	pokemartlistend
+mart GeneralMart_Prologue
+{
+	ITEM_POKE_BALL
+	ITEM_POTION
+	ITEM_ANTIDOTE
+	ITEM_PARALYZE_HEAL
+	ITEM_AWAKENING
+    ITEM_NONE
+}
 
-    .align 2
-GeneralMart_C1_1:
-    .2byte ITEM_POKE_BALL
-    .2byte ITEM_POTION
-    .2byte ITEM_ANTIDOTE
-    .2byte ITEM_PARALYZE_HEAL
-    .2byte ITEM_AWAKENING
-    .2byte ITEM_BURN_HEAL
-    .2byte ITEM_ICE_HEAL
-    .2byte ITEM_MIN_REVIVE
-`
+mart GeneralMart_C1_1
+{    
+    ITEM_POKE_BALL
+    ITEM_POTION
+    ITEM_ANTIDOTE
+    ITEM_PARALYZE_HEAL
+    ITEM_AWAKENING
+    ITEM_BURN_HEAL
+    ITEM_ICE_HEAL
+    ITEM_MIN_REVIVE
+    ITEM_NONE
+}
 
 movement SunshineTown_PokemonCenter_Eventscript_ShinjiroFacesTheMart {
     walk_up

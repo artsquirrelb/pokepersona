@@ -403,31 +403,17 @@ script MartLady {
 	faceplayer
     setspeaker ("Ms. Tanaba")
 	msgbox (format("Hi Akihiko, what should I get you?"))
-	if(flag(FLAG_SYS_POKEDEX_GET) == TRUE) {pokemart (Orphanage_Mart_Expanded)}
-	else {pokemart(Orphanage_Mart_Basic)}
+	if(flag(FLAG_SYS_POKEDEX_GET) == TRUE) {
+        pokemart (GeneralMart_Prologue)
+    }
+	else {
+        pokemart(GeneralMart_PreDex)
+    }
 	msgbox(format("Play safe okay, child?"))
 	release
 	end
 }
 
-raw`
-	.align 2
-Orphanage_Mart_Basic:
-	.2byte ITEM_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	pokemartlistend
-    
-	.align 2
-Orphanage_Mart_Expanded:
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	pokemartlistend
-`
 script Blissey_Heal {
     lockall
     faceplayer

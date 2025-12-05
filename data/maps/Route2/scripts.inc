@@ -1264,7 +1264,7 @@ Route2_Eventscript_SelectingPartyShinjiroFirstBattle::
 # 705 "data/maps/Route2/scripts.pory"
 	setvar VAR_0x8004, SPECIAL_BATTLE_MULTI
 # 706 "data/maps/Route2/scripts.pory"
-	setvar VAR_0x8005, MULTI_BATTLE_CHOOSE_MONS
+	setvar VAR_0x8005, 3
 # 707 "data/maps/Route2/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 708 "data/maps/Route2/scripts.pory"
@@ -2099,6 +2099,8 @@ Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting::
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_2
 Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_1:
+# 1195 "data/maps/Route2/scripts.pory"
+	clearflag FLAG_HIDE_QUEST_ICON
 # 1196 "data/maps/Route2/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 30
 # 1197 "data/maps/Route2/scripts.pory"
@@ -2111,10 +2113,8 @@ Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_2:
 # 1191 "data/maps/Route2/scripts.pory"
 	closemessage
 # 1192 "data/maps/Route2/scripts.pory"
-	clearflag FLAG_HIDE_QUEST_ICON
-# 1193 "data/maps/Route2/scripts.pory"
 	setflag FLAG_SYS_QUEST_MENU_GET
-# 1194 "data/maps/Route2/scripts.pory"
+# 1193 "data/maps/Route2/scripts.pory"
 	questmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS
 	goto Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_1
 

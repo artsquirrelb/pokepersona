@@ -1191,6 +1191,8 @@ script Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting {
         closemessage
         setflag(FLAG_SYS_QUEST_MENU_GET)
         questmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS)
+        setvar(VAR_STORY_QUESTS_STATE, 0)
+        subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, MITSURUS_PROLOGUE)
     }
     clearflag(FLAG_HIDE_QUEST_ICON)
     setvar(VAR_MITSURUS_INTRO_STATE, 30)

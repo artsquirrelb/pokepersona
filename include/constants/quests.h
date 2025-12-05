@@ -18,7 +18,7 @@
 #define QUEST_NONE                                      0xFFFF
 #define STORY_QUESTS                                    0
 #define QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL             1
-#define QUEST_3                                         2
+#define QUEST_FIND_FISHERMANS_DAUGHTER                  2 //for old rod
 #define QUEST_4          3
 #define QUEST_5          4
 #define QUEST_6          5
@@ -48,9 +48,10 @@
 #define QUEST_30        29
 #define QUEST_COUNT     (QUEST_30 + 1)
 
-#define MITSURUS_PROLOGUE          0
-#define AKIHIKOS_PROLOGUE          1
-#define SUB_QUEST_3          2
+//subquest id
+#define MITSURUS_PROLOGUE           0
+#define AKIHIKOS_PROLOGUE           1
+#define CHAPTER_1                   2
 #define SUB_QUEST_4          3
 #define SUB_QUEST_5          4
 #define SUB_QUEST_6          5
@@ -79,9 +80,36 @@
 #define SUB_QUEST_29        28
 #define SUB_QUEST_30        29
 
-#define QUEST_1_SUB_COUNT 10
+#define STORY_QUESTS_SUB_COUNT 10
 #define QUEST_2_SUB_COUNT 20
-#define SUB_QUEST_COUNT (QUEST_1_SUB_COUNT + QUEST_2_SUB_COUNT)
+#define SUB_QUEST_COUNT (STORY_QUESTS_SUB_COUNT + QUEST_2_SUB_COUNT)
+
+//complexe quest
+
+//////////////////////////////////////////
+////////////BEGIN QUEST NUMS//////////////
+enum StoryQuests_Enum{
+    STORY_QUESTS_STATE_0, //PROLOGUES
+    STORY_QUESTS_STATE_1,
+    STORY_QUESTS_STATE_2,
+    STORY_QUESTS_STATE_3,
+    STORY_QUESTS_STATE_4,
+    STORY_QUESTS_STATE_5,
+    STORY_QUESTS_STATE_6,
+    STORY_QUESTS_STATE_7,
+    STORY_QUESTS_STATE_8,
+    STORY_QUESTS_TOTAL_STATES,
+};
+
+enum Quest3_Enum{
+    QUEST_3_STATE_1,
+    QUEST_3_STATE_2,
+    QUEST_3_STATE_3,
+    QUEST_3_TOTAL_STATES,
+};
+
+/////////////END QUEST NUMS/////////////
+////////////////////////////////////////
 
 #define QUEST_ARRAY_COUNT (SUB_QUEST_COUNT > QUEST_COUNT ? SUB_QUEST_COUNT : QUEST_COUNT)
 #endif // GUARD_CONSTANTS_QUESTS_H

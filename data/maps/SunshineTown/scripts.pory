@@ -337,6 +337,8 @@ script SunshineTown_Eventscript_OnFrame23{
         closemessage
         setflag(FLAG_SYS_QUEST_MENU_GET)
         questmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS)
+        setvar(VAR_STORY_QUESTS_STATE, 1)
+        subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
     }
     clearflag(FLAG_HIDE_QUEST_ICON)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 24)

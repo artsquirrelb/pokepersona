@@ -269,6 +269,7 @@ script SunshineWoods_Eventscript_IkeBattle{
     }
     setspeaker("Ike")
     msgbox(SunshineWoods_Text_IkePostBattle, MSGBOX_AUTOCLOSE)
+    end
 }
 
 script SunshineWoods_Eventscript_HotaruBattle {
@@ -281,6 +282,7 @@ script SunshineWoods_Eventscript_HotaruBattle {
     }
     setspeaker("Hotaru")
     msgbox(SunshineWoods_Text_HotaruPostBattle, MSGBOX_AUTOCLOSE)
+    end
 }
 
 text SunshineWoods_Text_IkeIntro{
@@ -318,6 +320,7 @@ script SunshineWoods_Eventscript_PolicemenBlockingOrphanage1 {
         msgbox(format("Our apologies but Sunshine Orphanage is currently off-limits."))
     }
     closemessage
+    end
 }
 
 script SunshineWoods_Eventscript_PolicemenBlockingOrphanage2 {
@@ -329,6 +332,7 @@ script SunshineWoods_Eventscript_PolicemenBlockingOrphanage2 {
         msgbox(format("Our apologies but Sunshine Orphanage is currently off-limits."))
     }
     closemessage
+    end
 }
 
 script SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger2 {
@@ -732,6 +736,8 @@ script SunshineWoods_Eventscript_AkihikoPrologueStart {
             removeallitem(ITEM_GREAT_BALL, VAR_0x800B)
             destroyfollowernpc
             manuallysettime(WEEKDAY_WED, 16, 30)
+            subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
+            setvar(VAR_STORY_QUESTS_STATE, 1)
             warpsilent(MAP_SUNSHINE_ORPHANAGE, 13, 18)
             special(DrawWholeMapView)
             waitstate

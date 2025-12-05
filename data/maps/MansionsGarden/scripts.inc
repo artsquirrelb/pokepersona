@@ -849,10 +849,14 @@ MansionsGarden_Eventscript_MitsuruPrologueStart::
 # 500 "data/maps/MansionsGarden/scripts.pory"
 	manuallysettime WEEKDAY_WED, 22, 30, 0
 # 501 "data/maps/MansionsGarden/scripts.pory"
-	warpsilent MAP_MANSIONS_GARDEN, 43, 27
+	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, MITSURUS_PROLOGUE
 # 502 "data/maps/MansionsGarden/scripts.pory"
-	special DrawWholeMapView
+	setvar VAR_STORY_QUESTS_STATE, 0
 # 503 "data/maps/MansionsGarden/scripts.pory"
+	warpsilent MAP_MANSIONS_GARDEN, 43, 27
+# 504 "data/maps/MansionsGarden/scripts.pory"
+	special DrawWholeMapView
+# 505 "data/maps/MansionsGarden/scripts.pory"
 	waitstate
 	return
 

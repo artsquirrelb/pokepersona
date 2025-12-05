@@ -2099,11 +2099,11 @@ Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting::
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_2
 Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_1:
-# 1195 "data/maps/Route2/scripts.pory"
-	clearflag FLAG_HIDE_QUEST_ICON
-# 1196 "data/maps/Route2/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 30
 # 1197 "data/maps/Route2/scripts.pory"
+	clearflag FLAG_HIDE_QUEST_ICON
+# 1198 "data/maps/Route2/scripts.pory"
+	setvar VAR_MITSURUS_INTRO_STATE, 30
+# 1199 "data/maps/Route2/scripts.pory"
 	release
 	end
 
@@ -2116,77 +2116,81 @@ Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_2:
 	setflag FLAG_SYS_QUEST_MENU_GET
 # 1193 "data/maps/Route2/scripts.pory"
 	questmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS
+# 1194 "data/maps/Route2/scripts.pory"
+	setvar VAR_STORY_QUESTS_STATE, 0
+# 1195 "data/maps/Route2/scripts.pory"
+	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, MITSURUS_PROLOGUE
 	goto Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_1
 
 
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight::
-# 1202 "data/maps/Route2/scripts.pory"
-	lock
-# 1203 "data/maps/Route2/scripts.pory"
-	playse SE_PIN
 # 1204 "data/maps/Route2/scripts.pory"
-	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_0
+	lock
 # 1205 "data/maps/Route2/scripts.pory"
-	waitmovement
+	playse SE_PIN
 # 1206 "data/maps/Route2/scripts.pory"
-	setspeaker Route2_Eventscript_Yuuka_Text_0
+	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_0
 # 1207 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Text_0
-# 1208 "data/maps/Route2/scripts.pory"
-	closemessage
-# 1209 "data/maps/Route2/scripts.pory"
-	applymovement 13, walkdown
-# 1210 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
-# 1211 "data/maps/Route2/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
-# 1212 "data/maps/Route2/scripts.pory"
 	waitmovement
+# 1208 "data/maps/Route2/scripts.pory"
+	setspeaker Route2_Eventscript_Yuuka_Text_0
+# 1209 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Text_0
+# 1210 "data/maps/Route2/scripts.pory"
+	closemessage
+# 1211 "data/maps/Route2/scripts.pory"
+	applymovement 13, walkdown
+# 1212 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_PLAYER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
 # 1213 "data/maps/Route2/scripts.pory"
-	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_2
+	applymovement OBJ_EVENT_ID_FOLLOWER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
 # 1214 "data/maps/Route2/scripts.pory"
 	waitmovement
 # 1215 "data/maps/Route2/scripts.pory"
-	lock
+	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_2
 # 1216 "data/maps/Route2/scripts.pory"
-	setobjectnewmovementtype 13, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT
+	waitmovement
 # 1217 "data/maps/Route2/scripts.pory"
+	lock
+# 1218 "data/maps/Route2/scripts.pory"
+	setobjectnewmovementtype 13, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT
+# 1219 "data/maps/Route2/scripts.pory"
 	release
 	end
 
 
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft::
-# 1222 "data/maps/Route2/scripts.pory"
-	lock
-# 1223 "data/maps/Route2/scripts.pory"
-	playse SE_PIN
 # 1224 "data/maps/Route2/scripts.pory"
-	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft_Movement_0
+	lock
 # 1225 "data/maps/Route2/scripts.pory"
-	waitmovement
+	playse SE_PIN
 # 1226 "data/maps/Route2/scripts.pory"
-	setspeaker Route2_Eventscript_Yuuka_Text_0
+	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft_Movement_0
 # 1227 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Text_0
-# 1228 "data/maps/Route2/scripts.pory"
-	closemessage
-# 1229 "data/maps/Route2/scripts.pory"
-	applymovement 13, walkdown
-# 1230 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
-# 1231 "data/maps/Route2/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
-# 1232 "data/maps/Route2/scripts.pory"
 	waitmovement
+# 1228 "data/maps/Route2/scripts.pory"
+	setspeaker Route2_Eventscript_Yuuka_Text_0
+# 1229 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Text_0
+# 1230 "data/maps/Route2/scripts.pory"
+	closemessage
+# 1231 "data/maps/Route2/scripts.pory"
+	applymovement 13, walkdown
+# 1232 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_PLAYER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
 # 1233 "data/maps/Route2/scripts.pory"
-	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft_Movement_1
+	applymovement OBJ_EVENT_ID_FOLLOWER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
 # 1234 "data/maps/Route2/scripts.pory"
 	waitmovement
 # 1235 "data/maps/Route2/scripts.pory"
-	lock
+	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft_Movement_1
 # 1236 "data/maps/Route2/scripts.pory"
-	setobjectnewmovementtype 13, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT
+	waitmovement
 # 1237 "data/maps/Route2/scripts.pory"
+	lock
+# 1238 "data/maps/Route2/scripts.pory"
+	setobjectnewmovementtype 13, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT
+# 1239 "data/maps/Route2/scripts.pory"
 	release
 	end
 
@@ -2415,57 +2419,57 @@ Route2_Eventscript_MitsuruAppearsMitsuruPOV_Movement_0:
 	walk_down
 	step_end
 
-# 1204 "data/maps/Route2/scripts.pory"
+# 1206 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_0:
-# 1204 "data/maps/Route2/scripts.pory"
+# 1206 "data/maps/Route2/scripts.pory"
 	emote_exclamation_mark
-# 1204 "data/maps/Route2/scripts.pory"
+# 1206 "data/maps/Route2/scripts.pory"
 	walk_fast_left
-# 1204 "data/maps/Route2/scripts.pory"
+# 1206 "data/maps/Route2/scripts.pory"
 	face_down
 	step_end
 
-# 1210 "data/maps/Route2/scripts.pory"
+# 1212 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1:
-# 1210 "data/maps/Route2/scripts.pory"
+# 1212 "data/maps/Route2/scripts.pory"
 	lock_facing_direction
-# 1210 "data/maps/Route2/scripts.pory"
+# 1212 "data/maps/Route2/scripts.pory"
 	walk_down
-# 1210 "data/maps/Route2/scripts.pory"
+# 1212 "data/maps/Route2/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 1213 "data/maps/Route2/scripts.pory"
+# 1215 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_2:
-# 1213 "data/maps/Route2/scripts.pory"
+# 1215 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 1213 "data/maps/Route2/scripts.pory"
+# 1215 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 1213 "data/maps/Route2/scripts.pory"
+# 1215 "data/maps/Route2/scripts.pory"
 	face_left
 	step_end
 
-# 1224 "data/maps/Route2/scripts.pory"
+# 1226 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft_Movement_0:
-# 1224 "data/maps/Route2/scripts.pory"
+# 1226 "data/maps/Route2/scripts.pory"
 	emote_exclamation_mark
-# 1224 "data/maps/Route2/scripts.pory"
+# 1226 "data/maps/Route2/scripts.pory"
 	walk_fast_left
-# 1224 "data/maps/Route2/scripts.pory"
+# 1226 "data/maps/Route2/scripts.pory"
 	walk_fast_left
-# 1224 "data/maps/Route2/scripts.pory"
+# 1226 "data/maps/Route2/scripts.pory"
 	face_down
 	step_end
 
-# 1233 "data/maps/Route2/scripts.pory"
+# 1235 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft_Movement_1:
-# 1233 "data/maps/Route2/scripts.pory"
+# 1235 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 1233 "data/maps/Route2/scripts.pory"
+# 1235 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 1233 "data/maps/Route2/scripts.pory"
+# 1235 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 1233 "data/maps/Route2/scripts.pory"
+# 1235 "data/maps/Route2/scripts.pory"
 	face_left
 	step_end
 
@@ -2771,7 +2775,7 @@ Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_Text_1:
 	.string "{START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}.$"
 
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Text_0:
-# 1207 "data/maps/Route2/scripts.pory"
+# 1209 "data/maps/Route2/scripts.pory"
 	.string "I'm sorry but I dropped an important\n"
 	.string "note around here. Could you please come\l"
 	.string "back after I find it?$"

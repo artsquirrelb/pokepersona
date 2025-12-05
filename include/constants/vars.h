@@ -97,7 +97,7 @@
 #define VAR_POKELOT_PRIZE_PLACE                          0x404D
 #define VAR_AKIHIKOS_INTRO_STATE                         0x404E // Akihiko's intro plot, ends at 44 but set to 100 after completing
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
-#define VAR_LITTLEROOT_TOWN_STATE                        0x4050
+#define VAR_STORY_QUESTS_STATE                           0x4050 // was VAR_LITTLEROOT_TOWN_STATE
 #define VAR_OLDALE_TOWN_STATE                            0x4051
 #define DN_VAR_SPECIES                                   0x4052 // Registered DexNav species
 #define VAR_LAVARIDGE_TOWN_STATE                         0x4053

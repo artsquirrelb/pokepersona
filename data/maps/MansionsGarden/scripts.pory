@@ -498,6 +498,8 @@ script MansionsGarden_Eventscript_MitsuruPrologueStart {
             removeitem(ITEM_ESCAPE_ROPE)
             removeitem(ITEM_MACH_BIKE)
             manuallysettime(WEEKDAY_WED, 22, 30, 0)
+            subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, MITSURUS_PROLOGUE)
+            setvar(VAR_STORY_QUESTS_STATE, 0)
             warpsilent(MAP_MANSIONS_GARDEN, 43, 27)
             special(DrawWholeMapView)
             waitstate

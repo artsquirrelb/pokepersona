@@ -3037,6 +3037,11 @@
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
 
+	.macro startsubquest quest:req, subquest:req
+	closemessage
+	subquestmenu QUEST_MENU_SET_ACTIVE, \quest, \subquest
+	.endm
+
 	.macro completesubquest quest:req, subquest:req
 	closemessage
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, \quest, \subquest
@@ -3061,6 +3066,27 @@
     subquestmenu QUEST_MENU_CHECK_COMPLETE \parent \child
     call_if_eq VAR_RESULT, FALSE, \dest
     .endm
+
+	.macro goto_if_subquest_active parent:req,child:req, dest:req
+    subquestmenu QUEST_MENU_CHECK_ACTIVE \parent \child
+    goto_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+    .macro call_if_subquest_active parent:req,child:req, dest:req
+    subquestmenu QUEST_MENU_CHECK_ACTIVE \parent \child
+    call_if_eq VAR_RESULT, FALSE, \dest
+    .endm
+
+	@ Updates the complex quest's variable to give it its next state.
+	.macro updatequest quest:req, questvar:req
+	addvar \questvar, 1
+	questmenu QUEST_MENU_BUFFER_QUEST_NAME \quest
+	bufferstring 1 gText_QuestUpdate
+	playse SE_PIN
+	msgbox gText_QuestUpdate, MSGBOX_DEFAULT
+	waitse
+	.endm
+
 
 	.macro iscurrentmap map:req
     callnative ScrCmd_IsCurrentMap

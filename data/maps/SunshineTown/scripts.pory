@@ -11,6 +11,7 @@ mapscripts SunshineTown_MapScripts {
             setflag(FLAG_TEMP_1)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 16 || var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18) {
+            playbgm(MUS_P3_CALAMITY, TRUE)
             setflag(FLAG_HIDE_TALK_BUTTON)
             setobjectxyperm(2, 14, 11)
             setobjectmovementtype (2, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)

@@ -285,9 +285,9 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	      gText_Chapter1_Name,
 	      gText_Chapter1_Desc,
 	      gText_Chapter1_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Complete
 	),
 
 	sub_quest(
@@ -295,9 +295,9 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	      gText_Chapter2_Name,
 	      gText_Chapter2_Desc,
 	      gText_Chapter2_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Complete
 	),
 
 	sub_quest(
@@ -305,9 +305,9 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	      gText_Chapter3_Name,
 	      gText_Chapter3_Desc,
 	      gText_Chapter3_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Complete
 	),
 
 	sub_quest(
@@ -315,9 +315,9 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	      gText_Chapter4_Name,
 	      gText_Chapter4_Desc,
 	      gText_Chapter4_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Complete
 	),
 
 	sub_quest(
@@ -325,9 +325,9 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	      gText_Chapter5_Name,
 	      gText_Chapter5_Desc,
 	      gText_Chapter5_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Complete
 	),
 
 	sub_quest(
@@ -335,9 +335,9 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	      gText_Chapter6_Name,
 	      gText_Chapter6_Desc,
 	      gText_Chapter6_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Complete
 	),
 
 	sub_quest(
@@ -345,9 +345,9 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	      gText_Chapter7_Name,
 	      gText_Chapter7_Desc,
 	      gText_Chapter7_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Complete
 	),
 
 	sub_quest(
@@ -355,9 +355,9 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	      gText_Chapter8_Name,
 	      gText_Chapter8_Desc,
 	      gText_Chapter8_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
-	      sText_Found
+	      ITEM_NONE,
+	      ITEM,
+	      sText_Complete
 	),
 };
 
@@ -368,8 +368,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name1,
 	      gText_SubQuest2_Desc1,
 	      gText_SideQuest1_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -378,8 +378,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name2,
 	      gText_SubQuest2_Desc2,
 	      gText_SideQuest2_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -388,8 +388,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name3,
 	      gText_SubQuest2_Desc3,
 	      gText_Chapter1_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -398,8 +398,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name4,
 	      gText_SubQuest2_Desc4,
 	      gText_Chapter2_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -408,8 +408,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name5,
 	      gText_SubQuest2_Desc5,
 	      gText_Chapter3_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -418,8 +418,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name6,
 	      gText_SubQuest2_Desc6,
 	      gText_Chapter4_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -428,8 +428,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name7,
 	      gText_SubQuest2_Desc7,
 	      gText_Chapter5_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -438,8 +438,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name8,
 	      gText_SubQuest2_Desc8,
 	      gText_Chapter6_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -448,8 +448,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name9,
 	      gText_SubQuest2_Desc9,
 	      gText_Chapter7_Map,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -469,8 +469,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name11,
 	      gText_SubQuest2_Desc11,
 	      gText_SideQuestMap11,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -479,8 +479,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name12,
 	      gText_SubQuest2_Desc12,
 	      gText_SideQuestMap12,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -489,8 +489,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name13,
 	      gText_SubQuest2_Desc13,
 	      gText_SideQuestMap13,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -499,8 +499,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name14,
 	      gText_SubQuest2_Desc14,
 	      gText_SideQuestMap14,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -509,8 +509,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name15,
 	      gText_SubQuest2_Desc15,
 	      gText_SideQuestMap15,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -519,8 +519,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name16,
 	      gText_SubQuest2_Desc16,
 	      gText_SideQuestMap16,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -529,8 +529,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name17,
 	      gText_SubQuest2_Desc17,
 	      gText_SideQuestMap17,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -539,8 +539,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name18,
 	      gText_SubQuest2_Desc18,
 	      gText_SideQuestMap18,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -549,8 +549,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name19,
 	      gText_SubQuest2_Desc19,
 	      gText_SideQuestMap19,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -559,8 +559,8 @@ static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
 	      gText_SubQuest2_Name20,
 	      gText_SubQuest2_Desc20,
 	      gText_SideQuestMap20,
-	      OBJ_EVENT_GFX_WALLY,
-	      OBJECT,
+	      ITEM_NONE,
+	      ITEM,
 	      sText_Found
 	),
 
@@ -593,32 +593,40 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		},
 		.donedesc = COMPOUND_STRING("Story Quests completed."),
 		.map = {
-			COMPOUND_STRING("Kirijo's Mansion"),
-			COMPOUND_STRING("Sunshine Orphanage"),
+			gText_MitsurusPrologue_Map,
+			gText_AkihikosPrologue_Map,
+			gText_Chapter1_Map,
+			gText_Chapter2_Map,
+			gText_Chapter3_Map,
+			gText_Chapter4_Map,
+			gText_Chapter5_Map,
+			gText_Chapter6_Map,
+			gText_Chapter7_Map,
+			gText_Chapter8_Map,
 		},
 		.sprite = {
 			OBJ_EVENT_GFX_MAY_NORMAL,
 			OBJ_EVENT_GFX_BRENDAN_NORMAL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
+			ITEM_NONE,
+			ITEM_NONE,
+			ITEM_NONE,
+			ITEM_NONE,
+			ITEM_NONE,
+			ITEM_NONE,
+			ITEM_NONE,
+			ITEM_NONE,
 		},
 		.spritetype = {
 			OBJECT,
 			OBJECT,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
-			NULL,
+			ITEM,
+			ITEM,
+			ITEM,
+			ITEM,
+			ITEM,
+			ITEM,
+			ITEM,
+			ITEM,
 		},
 		.subquests = sStoryQuests_Sub,
 		.numSubquests = STORY_QUESTS_SUB_COUNT,
@@ -657,8 +665,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_4},
 		.donedesc = gText_SideQuestDoneDesc_4,
 		.map = {gText_Chapter2_Map},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -670,8 +678,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_5},
 		.donedesc = gText_SideQuestDoneDesc_5,
 		.map = {gText_Chapter3_Map},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -683,8 +691,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_6},
 		.donedesc = gText_SideQuestDoneDesc_6,
 		.map = {gText_Chapter4_Map},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -696,8 +704,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_7},
 		.donedesc = gText_SideQuestDoneDesc_7,
 		.map = {gText_Chapter5_Map},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -709,8 +717,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_8},
 		.donedesc = gText_SideQuestDoneDesc_8,
 		.map = {gText_Chapter6_Map},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -722,8 +730,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_9},
 		.donedesc = gText_SideQuestDoneDesc_9,
 		.map = {gText_Chapter7_Map},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -735,8 +743,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_10},
 		.donedesc = gText_SideQuestDoneDesc_10,
 		.map = {gText_Chapter8_Map},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -748,8 +756,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_11},
 		.donedesc = gText_SideQuestDoneDesc_11,
 		.map = {gText_SideQuestMap11},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -761,8 +769,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_12},
 		.donedesc = gText_SideQuestDoneDesc_12,
 		.map = {gText_SideQuestMap12},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -774,8 +782,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_13},
 		.donedesc = gText_SideQuestDoneDesc_13,
 		.map = {gText_SideQuestMap13},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -787,8 +795,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_14},
 		.donedesc = gText_SideQuestDoneDesc_14,
 		.map = {gText_SideQuestMap14},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -800,8 +808,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_15},
 		.donedesc = gText_SideQuestDoneDesc_15,
 		.map = {gText_SideQuestMap15},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -813,8 +821,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_16},
 		.donedesc = gText_SideQuestDoneDesc_16,
 		.map = {gText_SideQuestMap16},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -826,8 +834,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_17},
 		.donedesc = gText_SideQuestDoneDesc_17,
 		.map = {gText_SideQuestMap17},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -839,8 +847,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_18},
 		.donedesc = gText_SideQuestDoneDesc_18,
 		.map = {gText_SideQuestMap18},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -852,8 +860,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_19},
 		.donedesc = gText_SideQuestDoneDesc_19,
 		.map = {gText_SideQuestMap19},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -865,8 +873,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_20},
 		.donedesc = gText_SideQuestDoneDesc_20,
 		.map = {gText_SideQuestMap20},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -878,8 +886,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_21},
 		.donedesc = gText_SideQuestDoneDesc_21,
 		.map = {gText_SideQuestMap21},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -891,8 +899,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_22},
 		.donedesc = gText_SideQuestDoneDesc_22,
 		.map = {gText_SideQuestMap22},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -904,8 +912,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_23},
 		.donedesc = gText_SideQuestDoneDesc_23,
 		.map = {gText_SideQuestMap23},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -917,8 +925,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_24},
 		.donedesc = gText_SideQuestDoneDesc_24,
 		.map = {gText_SideQuestMap24},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -930,8 +938,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_25},
 		.donedesc = gText_SideQuestDoneDesc_25,
 		.map = {gText_SideQuestMap25},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -943,8 +951,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_26},
 		.donedesc = gText_SideQuestDoneDesc_26,
 		.map = {gText_SideQuestMap26},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -956,8 +964,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_27},
 		.donedesc = gText_SideQuestDoneDesc_27,
 		.map = {gText_SideQuestMap27},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -969,8 +977,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_28},
 		.donedesc = gText_SideQuestDoneDesc_28,
 		.map = {gText_SideQuestMap28},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -982,8 +990,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_29},
 		.donedesc = gText_SideQuestDoneDesc_29,
 		.map = {gText_SideQuestMap29},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -995,8 +1003,8 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.desc = {gText_SideQuestDesc_30},
 		.donedesc = gText_SideQuestDoneDesc_30,
 		.map = {gText_SideQuestMap30},
-		.sprite = {OBJ_EVENT_GFX_WALLY},
-		.spritetype = {OBJECT},
+		.sprite = {ITEM_NONE},
+		.spritetype = {ITEM},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,	
@@ -1619,7 +1627,7 @@ static void BuildMenuTemplate(void)
 	gMultiuseListMenuTemplate.itemVerticalPadding = 2;
 	gMultiuseListMenuTemplate.upText_Y = 2;
 	gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
-	gMultiuseListMenuTemplate.fontId = 2;
+	gMultiuseListMenuTemplate.fontId = FONT_SHORT;
 	gMultiuseListMenuTemplate.cursorPal = 2;
 	gMultiuseListMenuTemplate.fillValue = 0;
 	gMultiuseListMenuTemplate.cursorShadowPal = 0;
@@ -1771,12 +1779,44 @@ u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 {
 
 	u8 uniqueId = sSideQuests[quest].subquests[childQuest].id;
-	u8  index = uniqueId / 8; //8 bits per byte
-	u8	bit = uniqueId % 8;
-	u8	mask = 1 << bit;
+	u8  index = uniqueId *SUBQUEST_STATES / 8; //8 bits per byte
+	u8	bit = uniqueId *SUBQUEST_STATES % 8;
+	u8	mask = 0;
+	
+	// 0 : locked
+	// 1 : activated
+	// 2 : completed
 
 	switch (caseId)
 	{
+		case FLAG_GET_UNLOCKED:
+		case FLAG_SET_UNLOCKED:
+			break;
+		case FLAG_GET_INACTIVE:
+		case FLAG_GET_ACTIVE:
+		case FLAG_SET_ACTIVE:
+		case FLAG_REMOVE_ACTIVE:
+			bit += 1;
+			break;
+		case FLAG_GET_COMPLETED:
+		case FLAG_SET_COMPLETED:
+			bit += 2;
+			break;
+	}
+	if (bit >= 8)
+	{
+		index += 1;
+		bit %= 8;
+	}
+	mask = 1 << bit;
+
+	switch (caseId)
+	{
+		case FLAG_GET_ACTIVE:
+			return gSaveBlock2Ptr->subQuests[index] & mask;
+		case FLAG_SET_ACTIVE:
+			gSaveBlock2Ptr->subQuests[index] |= mask;
+			return 1;
 		case FLAG_GET_COMPLETED:
 			return gSaveBlock2Ptr->subQuests[index] & mask;
 		case FLAG_SET_COMPLETED:
@@ -1789,13 +1829,13 @@ u8 QuestMenu_GetSetSubquestState(u8 quest, u8 caseId, u8 childQuest)
 
 u8 QuestMenu_GetSetQuestState(u8 quest, u8 caseId)
 {
-	u8 index = quest * 5 / 8;
-	u8 bit = quest * 5 % 8;
+	u8 index = quest * QUEST_STATES / 8;
+	u8 bit = quest * QUEST_STATES % 8;
 	u8 mask = 0, index2 = 0, bit2 = 0, index3 = 0, bit3 = 0, mask2 = 0,
 	   mask3 = 0;
 
 	// 0 : locked
-	// 1 : actived
+	// 1 : activated
 	// 2 : rewarded
 	// 3 : completed
 	// 4 : favorited
@@ -1926,14 +1966,29 @@ u8 CountInactiveQuests(void)
 u8 CountActiveQuests(void)
 {
 	u8 q = 0, i = 0;
+	u8 parentQuest = sStateDataPtr->parentQuest;
 
-	for (i = 0; i < QUEST_COUNT; i++)
+	if (IsSubquestMode())
 	{
-		if (QuestMenu_GetSetQuestState(i, FLAG_GET_ACTIVE))
+		for (i = 0; i < sSideQuests[parentQuest].numSubquests; i++)
 		{
-			q++;
+			if (QuestMenu_GetSetSubquestState(parentQuest, FLAG_GET_ACTIVE, i))
+			{
+				q++;
+			}
 		}
 	}
+	else
+	{
+		for (i = 0; i < QUEST_COUNT; i++)
+		{
+			if (QuestMenu_GetSetQuestState(i, FLAG_GET_ACTIVE))
+			{
+				q++;
+			}
+		}
+	}
+	
 	return q;
 }
 
@@ -2353,14 +2408,14 @@ static void QuestMenu_CreateSprite(u16 itemId, u8 idx, u8 spriteType)
 		{
 			case OBJECT:
 				spriteId = CreateObjectGraphicsSprite(itemId, SpriteCallbackDummy, 20,
-				                                      132, 0);
+				                                      136, 0);
 				break;
 			case ITEM:
 				spriteId = AddItemIconSprite(102 + idx, 102 + idx, itemId);
 				break;
 			case PKMN:
 				LoadMonIconPalettes();
-				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 20, 132, 0, 1);
+				spriteId = CreateMonIcon(itemId, SpriteCallbackDummy, 20, 136, 0, 1);
 				break;
 			default:
 				spriteId = SPRITE_NONE;
@@ -2465,13 +2520,18 @@ u8 GenerateSubquestState(u8 questId)
 	                                  questId))
 	{
 		StringCopy(gStringVar4, sSideQuests[parentQuest].subquests[questId].type);
+		return 2;
+	}
+	else if (QuestMenu_GetSetSubquestState(parentQuest, FLAG_GET_ACTIVE, questId))
+	{
+		StringCopy(gStringVar4, sText_Active);
+		return 3;
 	}
 	else
 	{
 		StringCopy(gStringVar4, sText_Empty);
+		return 0;
 	}
-
-	return 2;
 }
 
 u8 GenerateQuestState(u8 questId)

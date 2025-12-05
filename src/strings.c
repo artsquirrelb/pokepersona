@@ -1401,8 +1401,8 @@ const u8 gText_SideQuestName_29[] = _("Side Quest 29");
 const u8 gText_SideQuestName_30[] = _("Side Quest 30");
 
 //descriptions
-const u8 gText_StoryQuestsDesc1[] = _("Currently: Mitsuru's Prologue\nReward: Unlock Companion Mitsuru\nand Inteleon.");
-const u8 gText_StoryQuestsDesc2[] = _("Currently: Akihiko's Prologue\nReward: Unlock Companion Akihiko\nand Shinjiro.");
+const u8 gText_StoryQuestsDesc1[] = _("Currently: Mitsuru's Prologue\nReward: Unlock Companion Mitsuru and\nInteleon.");
+const u8 gText_StoryQuestsDesc2[] = _("Currently: Akihiko's Prologue\nReward: Unlock Companion Akihiko and\nShinjiro.");
 const u8 gText_StoryQuestsDesc3[] = _("Currently: Chapter 1");
 const u8 gText_StoryQuestsDesc4[] = _("Currently: Chapter 2");
 const u8 gText_StoryQuestsDesc5[] = _("Currently: Chapter 3");
@@ -1443,8 +1443,8 @@ const u8 gText_SideQuestDesc_30[] = _("Description 30");
 
 //completed quest description
 const u8 gText_StoryQuestsDone[]        = _("Story Quests completed.");
-const u8 gText_SideQuest1_DoneDesc[]    = _("Riolu is satisfied and fell\nasleep.");
-const u8 gText_SideQuest2_DoneDesc[]    = _("The daughter has been found\nsafely.");
+const u8 gText_SideQuest1_DoneDesc[]    = _("Riolu is satisfied and fell\nasleep.\nReward: Soothe Bell x1.");
+const u8 gText_SideQuest2_DoneDesc[]    = _("The daughter has been found\nsafely.\nReward: Old Rod.");
 const u8 gText_SideQuestDoneDesc_4[]    = _("Completed Quest 4");
 const u8 gText_SideQuestDoneDesc_5[]    = _("Completed Quest 5");
 const u8 gText_SideQuestDoneDesc_6[] = _("Completed Quest 6");
@@ -1530,9 +1530,9 @@ const u8 gText_SubQuest2_Name18[] = _("Part 18");
 const u8 gText_SubQuest2_Name19[] = _("Part 19");
 const u8 gText_SubQuest2_Name20[] = _("Part 20");
 
-const u8 gText_MitsurusPrologue_Desc[] = _("The Kirijo young lady begins the\nmission to clean her family's name.");
-const u8 gText_AkihikosPrologue_Desc[] = _("An orphan boy setting on a journey\nto find his sister.");
-const u8 gText_Chapter1_Desc[] = _("Mitsuru, Akihiko, Shinjiro and Inteleon\n are making their way to Goldenwings\nMountain.");
+const u8 gText_MitsurusPrologue_Desc[] = _("The Kirijo young lady begins the\nmission to clear her family's name.");
+const u8 gText_AkihikosPrologue_Desc[] = _("An orphan boy setting on a journey to\nfind his sister.");
+const u8 gText_Chapter1_Desc[] = _("Mitsuru, Akihiko, Shinjiro and Inteleon\nare making their way to Goldenwings\nMountain.");
 const u8 gText_Chapter2_Desc[] = _("Description Sub 4");
 const u8 gText_Chapter3_Desc[] = _("Description Sub 5");
 const u8 gText_Chapter4_Desc[] = _("Description Sub 6");
@@ -1563,7 +1563,7 @@ const u8 gText_SubQuest2_Desc19[] = _("Description Sub 19");
 const u8 gText_SubQuest2_Desc20[] = _("Description Sub 20");
 
 const u8 gText_MitsurusPrologue_Map[] = _("Kirijo's Mansion");
-const u8 gText_AkihikosPrologue_Map[] = _("Sunshine Town");
+const u8 gText_AkihikosPrologue_Map[] = _("Sunshine Orphanage");
 const u8 gText_Chapter1_Map[] = _("Goldenwings Mountain");
 const u8 gText_Chapter2_Map[] = _("Paulownia City");
 const u8 gText_Chapter3_Map[] = _("Tenere Town");
@@ -1599,8 +1599,8 @@ const u8 gComplexQuest_Quest3Map_3[] = _("Content 3");
 const u8 gText_WaitUntilTime[] = _("Wait until?");
 const u8 gText_WaitUntilMorning[] = _("Morning (6AM)");
 const u8 gText_WaitUntilDay[] = _("Day (10AM)");
-const u8 gText_WaitUntilEvening[] = _("Evening (7PM)");
-const u8 gText_WaitUntilNight[] = _("Night (8PM)");
+const u8 gText_WaitUntilEvening[] = _("Evening (6PM)");
+const u8 gText_WaitUntilNight[] = _("Night (9PM)");
 
 // MULTI_FURFROU_STYLE strings
 const u8 gText_FURFROU_NATURAL[]    = _("Natural");

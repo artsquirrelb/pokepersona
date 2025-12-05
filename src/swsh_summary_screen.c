@@ -747,6 +747,7 @@ static const u8 sTextColors[][3] =
     {0, 3, 0},
     {0, 5, 0},
     {0, 7, 0},
+    {0, 11, 0},
 };
 
 static void (*const sTextPrinterFunctions[])(void) =
@@ -4829,7 +4830,7 @@ static void PrintNewMoveDetailsOrCancelText(void)
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(0, gStringVar1);
         DynamicPlaceholderTextUtil_SetPlaceholderPtr(1, gStringVar1);
         DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sMovesPPLayout);
-        PrintTextOnWindowWithFont(windowId1, gStringVar4, 121, moveIndex * 18 + 4, 0, 3, FONT_SMALL);
+        PrintTextOnWindowWithFont(windowId1, gStringVar4, 121, moveIndex * 18 + 4, 0, 13, FONT_SMALL);
     }
 }
 

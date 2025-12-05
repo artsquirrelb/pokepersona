@@ -3531,12 +3531,21 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
     u8 childId = VarGet(ScriptReadHalfword(ctx));
 
     switch (caseId)
-    {
+    {   
+        case QUEST_MENU_SET_ACTIVE:
+            QuestMenu_GetSetSubquestState(parentId, FLAG_SET_ACTIVE, childId);
+            break;
+        case QUEST_MENU_CHECK_ACTIVE:
+            if (QuestMenu_GetSetSubquestState(parentId, FLAG_GET_ACTIVE, childId))
+                gSpecialVar_Result = TRUE;
+            else
+                gSpecialVar_Result = FALSE;
+            break;
         case QUEST_MENU_COMPLETE_QUEST:
-            QuestMenu_GetSetSubquestState(parentId ,FLAG_SET_COMPLETED,childId);
+            QuestMenu_GetSetSubquestState(parentId, FLAG_SET_COMPLETED, childId);
             break;
         case QUEST_MENU_CHECK_COMPLETE:
-            if (QuestMenu_GetSetSubquestState(parentId ,FLAG_GET_COMPLETED,childId))
+            if (QuestMenu_GetSetSubquestState(parentId, FLAG_GET_COMPLETED, childId))
                 gSpecialVar_Result = TRUE;
             else
                 gSpecialVar_Result = FALSE;

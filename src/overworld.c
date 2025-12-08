@@ -1552,9 +1552,9 @@ void CB1_Overworld(void)
 
 const struct BlendSettings gTimeOfDayBlend[] =
 {
-    [TIME_MORNING] = {.coeff = 4,  .blendColor = 0xA8B0E0,   .isTint = TRUE},
+    [TIME_MORNING] = {.coeff = 4,  .blendColor = 0xCF9D74,   .isTint = TRUE}, //0xA8B0E0 somehow morning and evening swapped in game
     [TIME_DAY]     = {.coeff = 0,  .blendColor = 0,          .isTint = FALSE},
-    [TIME_EVENING] = {.coeff = 6,  .blendColor = 0xCF9D74,   .isTint = TRUE},
+    [TIME_EVENING] = {.coeff = 6,  .blendColor = 0xA8B0E0,   .isTint = TRUE}, //0xCF9D74
     [TIME_NIGHT]   = {.coeff = 10, .blendColor = TINT_NIGHT, .isTint = TRUE},
 };
 
@@ -1566,7 +1566,7 @@ const struct BlendSettings gTimeOfDayBlend[] =
 void UpdateTimeOfDay(void)
 {
     s32 hours, minutes;
-    RtcCalcLocalTime();
+    RtcCalcLocalTime(); //already accounts for fake rtc
     hours = sHoursOverride ? sHoursOverride : gLocalTime.hours;
     minutes = sHoursOverride ? 0 : gLocalTime.minutes;
 
@@ -1594,7 +1594,7 @@ void UpdateTimeOfDay(void)
         gTimeBlend.altWeight = gTimeBlend.weight / 2 + (DEFAULT_WEIGHT / 2);
         gTimeOfDay = TIME_EVENING;
     }
-    else if (IsBetweenHours(hours, NIGHT_HOUR_BEGIN, NIGHT_HOUR_BEGIN + 1)) // evening->night
+    else if (IsBetweenHours(hours, NIGHT_HOUR_BEGIN, NIGHT_HOUR_BEGIN))// + 1)) // evening->night
     {
         gTimeBlend.startBlend = gTimeOfDayBlend[TIME_EVENING];
         gTimeBlend.endBlend = gTimeOfDayBlend[TIME_NIGHT];
@@ -1682,14 +1682,16 @@ void UpdatePalettesWithTime(u32 palettes)
     palettes &= PALETTES_MAP | PALETTES_OBJECTS; // Don't blend UI pals
     if (!palettes)
         return;
-    TimeMixPalettes(palettes, gPlttBufferUnfaded, gPlttBufferFaded, &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight);
+    //TimeMixPalettes(palettes, gPlttBufferUnfaded, gPlttBufferFaded, &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight);
+    TimeMixPalettes(palettes, gPlttBufferUnfaded, gPlttBufferFaded, &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight, 100);
 }
 
 u8 UpdateSpritePaletteWithTime(u8 paletteNum)
 {
     if (MapHasNaturalLight(gMapHeader.mapType)
      && !IS_BLEND_IMMUNE_TAG(GetSpritePaletteTagByPaletteNum(paletteNum)))
-        TimeMixPalettes(1, &gPlttBufferUnfaded[OBJ_PLTT_ID(paletteNum)], &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight);
+        //TimeMixPalettes(1, &gPlttBufferUnfaded[OBJ_PLTT_ID(paletteNum)], &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight);
+        TimeMixPalettes(1, &gPlttBufferUnfaded[OBJ_PLTT_ID(paletteNum)], &gPlttBufferFaded[OBJ_PLTT_ID(paletteNum)], &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight, 100);
     return paletteNum;
 }
 

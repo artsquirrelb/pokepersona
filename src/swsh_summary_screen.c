@@ -5304,7 +5304,7 @@ static void CreateCaughtBallSprite(struct Pokemon *mon)
 {
     u8 ball = ItemIdToBallId(GetMonData(mon, MON_DATA_POKEBALL));
 
-    LoadBallGfx(ball);
+    LoadBallGfx(ball, FALSE);
     sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_BALL] = CreateSprite(&gBallSpriteTemplates[ball], 95, 16, 6);
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_BALL]].callback = SpriteCallbackDummy;
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_BALL]].oam.priority = 1;

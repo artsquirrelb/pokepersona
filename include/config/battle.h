@@ -367,7 +367,7 @@
 #define B_SHOW_EFFECTIVENESS        SHOW_EFFECTIVENESS_SEEN // If not SHOW_EFFECTIVENESS_NEVER, the PP string is replaced by a type effectiveness indicator based off the moves and the opposing side.
 
 // Pokémon battle sprite settings
-#define B_ENEMY_MON_SHADOW_STYLE        GEN_LATEST // In Gen4+, all enemy Pokemon will have a shadow drawn beneath them.
+#define B_ENEMY_MON_SHADOW_STYLE        GEN_3 // In Gen4+, all enemy Pokemon will have a shadow drawn beneath them.
 
 //  Battle UI settings
 #define B_MOVE_REARRANGEMENT_IN_BATTLE  2  // In Gen 4+ move slots cannot be rearranged in battle.
@@ -383,6 +383,10 @@
 #define B_POOL_RULE_MEGA_STONE_CLAUSE       FALSE    // Pick only 1 mon with mega stone
 #define B_POOL_RULE_Z_CRYSTAL_CLAUSE        FALSE    // Pick only 1 mon with Z-crystal
 
-//#define B_BATTLE_SPEED                      VAR_BATTLE_SPEED // Usage with a variable
+// DNS for battle background settings
+
+#define B_APPLY_DNS_TO_BACKGROUND           TRUE     // Applies the day and night system to the background during battles (assuming the current map is also affected)
+#define B_APPLY_DNS_TO_SPRITES              TRUE     // Applies the day and night system to the Pokémon, trainer, and ball sprites during battles. Not vanilla game behavior
+#define B_SPRITE_BRIGHTNESS                 120      // Controls how bright the sprites will appear. 100 is the default DNS blending, 120 is 20% brighter
 
 #endif // GUARD_CONFIG_BATTLE_H

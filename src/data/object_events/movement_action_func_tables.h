@@ -514,7 +514,9 @@ u8 (*const gMovementActionFuncs_WalkFastDiagonalUpLeft[])(struct ObjectEvent *, 
 u8 (*const gMovementActionFuncs_WalkFastDiagonalUpRight[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_WalkFastDiagonalDownLeft[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_WalkFastDiagonalDownRight[])(struct ObjectEvent *, struct Sprite *);
-
+// pathfinding
+u8 (*const gMovementActionFuncs_GeneratedBegin[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_GeneratedEnd[])(struct ObjectEvent *, struct Sprite *);
 
 u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *) = {
     [MOVEMENT_ACTION_FACE_DOWN] = gMovementActionFuncs_FaceDown,
@@ -712,7 +714,10 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_POINT_DOWN_1] = gMovementActionFuncs_PointDown1,
     [MOVEMENT_ACTION_POINT_DOWN_2] = gMovementActionFuncs_PointDown2,
     [MOVEMENT_ACTION_POINT_DOWN_3] = gMovementActionFuncs_PointDown3,
-    [MOVEMENT_ACTION_EMOTE_HAPPY] = gMovementActionFuncs_EmoteHappy,
+    [MOVEMENT_ACTION_EMOTE_HAPPY] = gMovementActionFuncs_EmoteHappy,    // pathfinding
+    [MOVEMENT_ACTION_GENERATED_BEGIN] = gMovementActionFuncs_GeneratedBegin,
+    [MOVEMENT_ACTION_GENERATED_END] = gMovementActionFuncs_GeneratedEnd,
+
 };
 
 u8 (*const gMovementActionFuncs_FaceDown[])(struct ObjectEvent *, struct Sprite *) = {
@@ -1863,5 +1868,11 @@ u8 (*const gMovementActionFuncs_PointDown2[])(struct ObjectEvent *, struct Sprit
 
 u8 (*const gMovementActionFuncs_PointDown3[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_PointDown3_Step0,
+    MovementAction_Finish,
+};u8 (*const gMovementActionFuncs_GeneratedBegin[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_GeneratedEnd[])(struct ObjectEvent *, struct Sprite *) = {
     MovementAction_Finish,
 };

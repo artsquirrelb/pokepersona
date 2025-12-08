@@ -281,8 +281,10 @@
 #define MOVEMENT_ACTION_POINT_DOWN_2                    0xC1
 #define MOVEMENT_ACTION_POINT_DOWN_3                    0xC2
 #define MOVEMENT_ACTION_EMOTE_HAPPY                     0xC3
+// For path finder generated scripts
+#define MOVEMENT_ACTION_GENERATED_BEGIN                 0xC4
+#define MOVEMENT_ACTION_GENERATED_END                   0xC5
 
-//fast diagonal movement
 
 
 #define MOVEMENT_ACTION_STEP_END 0xFE

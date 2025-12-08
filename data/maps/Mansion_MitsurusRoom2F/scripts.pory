@@ -128,7 +128,6 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
         }
         else{
             msgbox("Party full.")}
-    setfriendship(0, 200)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It's already 10:32PM.\p
     If I don't go now, I won't be arriving at the cliff's foot before midnight."))
     closemessage

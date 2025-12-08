@@ -64,6 +64,8 @@
 #include "malloc.h"
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
+#include "constants/vars.h"
+#include "constants/flags.h"
 #include "quests.h"
 
 
@@ -2244,6 +2246,29 @@ bool8 ScrCmd_bufferstring(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1);
 
     StringCopy(sScriptStringVars[stringVarIndex], text);
+    return FALSE;
+}
+
+bool8 ScrCmd_bufferTimeResetAttempts(struct ScriptContext *ctx)
+{
+    u8 stringVarIndex = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+
+    u8 *dest = sScriptStringVars[stringVarIndex];
+    ConvertIntToDecimalStringN(dest, VarGet(VAR_TIME_RESET_ATTEMPTS), STR_CONV_MODE_LEADING_ZEROS, 2);
+    return FALSE;
+}
+
+bool8 ScrCmd_bufferDaysLeft(struct ScriptContext *ctx)
+{
+    u8 stringVarIndex = ScriptReadByte(ctx);
+
+    Script_RequestEffects(SCREFF_V1);
+
+    u8 *dest = sScriptStringVars[stringVarIndex];
+    ConvertIntToDecimalStringN(dest, VarGet(VAR_DAYS_LEFT), STR_CONV_MODE_LEADING_ZEROS, 2);
+    
     return FALSE;
 }
 

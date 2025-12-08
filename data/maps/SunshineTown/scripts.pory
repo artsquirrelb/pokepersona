@@ -714,3 +714,20 @@ script SunshineTown_Eventscript_MitsuruOverheardAkiShinji {
     setvar(VAR_MITSURUS_INTRO_STATE, 26)
     warpsilent(MAP_BLANK_MAP)
 }
+
+script testbuffer{
+    lock
+    msgbox(format("Checking if deadline is missed..."))
+    closemessage
+    if (var(VAR_DAYS_LEFT) > 1)
+    {
+        bufferdaysleft(STR_VAR_1)
+        msgbox(format("Days left: {STR_VAR_1}."))
+        closemessage
+    }
+    else{
+        call(EventScript_CheckDaysLeft)
+    }
+    release
+    end
+}

@@ -7,6 +7,7 @@
 #include "fake_rtc.h"
 #include "event_data.h"
 #include "script.h"
+#include "constants/vars.h"
 
 static void FakeRtc_CalcTimeDifference(struct Time *result, struct SiiRtcInfo *t1, struct Time *t2);
 
@@ -78,6 +79,7 @@ void FakeRtc_ForwardTimeTo(u32 hour, u32 minute, u32 second)
 
 static void FakeRtc_CalcTimeDifference(struct Time *result, struct SiiRtcInfo *t1, struct Time *t2)
 {
+    u32 daysleft = VarGet(VAR_DAYS_LEFT);
     result->seconds = t2->seconds - t1->second;
     result->minutes = t2->minutes - t1->minute;
     result->hours = t2->hours - t1->hour;
@@ -99,6 +101,8 @@ static void FakeRtc_CalcTimeDifference(struct Time *result, struct SiiRtcInfo *t
     {
         result->hours += HOURS_PER_DAY;
         --result->days;
+        if (VarGet(VAR_AKIHIKOS_INTRO_STATE) == 100 || VarGet(VAR_MITSURUS_INTRO_STATE) == 100)
+            VarSet(VAR_DAYS_LEFT, daysleft - 1);
     }
 }
 
@@ -155,4 +159,12 @@ void Script_CalculateTime(struct ScriptContext *ctx)
     StringExpandPlaceholders(gStringVar1, gDayNameStringsTable1[rtc->dayOfWeek]);
     ConvertIntToDecimalStringN(gStringVar2, rtc->hour, STR_CONV_MODE_LEFT_ALIGN, 3);
     ConvertIntToDecimalStringN(gStringVar3, rtc->minute, STR_CONV_MODE_LEADING_ZEROS, 2);
+}
+
+void Script_Rewind3Days(struct ScriptContext *ctx)
+{
+    struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
+    u32 daysToAdd = 0;
+    daysToAdd = ((0 -3 - rtc->dayOfWeek) + WEEKDAY_COUNT) % WEEKDAY_COUNT;
+    FakeRtc_AdvanceTimeBy(daysToAdd, 0, 0, 0);
 }

@@ -59,6 +59,7 @@
 #include "event_object_movement.h"
 #include "gba/isagbprint.h"
 #include "constants/flags.h"
+#include "constants/vars.h"
 #include "quests.h"
 #include "constants/songs.h"
 
@@ -86,6 +87,7 @@ static void HeatStartMenu_ShowQuestButtons(void);
 static void HeatStartMenu_ShowMapButtons(void);
 static void HeatStartMenu_ShowCompanionsButtons(void);
 static void HeatStartMenu_ShowTimeWindow(void);
+static void HeatStartMenu_ShowDaysLeftWindow(void);
 //static void HeatStartMenu_UpdateClockDisplay(void);
 static void HeatStartMenu_UpdateMenuName(void);
 static u8 RunSaveCallback(void);
@@ -139,6 +141,7 @@ struct HeatStartMenu {
   u32 sQuestButtonWindowId;
   u32 sMapButtonWindowId;
   u32 sCompanionsButonWindowId;
+  u32 sDaysLeftWindowId;
   u32 flag; // some u32 holding values for controlling the sprite anims and lifetime
   
   u32 spriteIdPoketch;
@@ -213,7 +216,7 @@ static const struct WindowTemplate sWindowTemplate_CompanionsButton = {
     .bg = 0,
     .tilemapLeft = 8,
     .tilemapTop = 15,
-    .width = 9,
+    .width = 10,
     .height = 2,
     .paletteNum = 14,
     .baseBlock = 148 +(7*2)
@@ -226,7 +229,7 @@ static const struct WindowTemplate sWindowTemplate_MapButton = {
     .width = 6,
     .height = 2,
     .paletteNum = 14,
-    .baseBlock = 148 +(7*2) +(9*2)
+    .baseBlock = 148 +(7*2) +(10*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_StartClock = {
@@ -236,7 +239,7 @@ static const struct WindowTemplate sWindowTemplate_StartClock = {
   .width = 12, // If you want to shorten the dates to Sat., Sun., etc., change this to 9
   .height = 2, 
   .paletteNum = 14,
-  .baseBlock = 148 +(7*2) +(9*2) + (6*2)
+  .baseBlock = 148 +(7*2) +(10*2) + (6*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_MenuName = {
@@ -246,7 +249,7 @@ static const struct WindowTemplate sWindowTemplate_MenuName = {
   .width = 7, 
   .height = 2, 
   .paletteNum = 14,
-  .baseBlock = 148 +(7*2) +(9*2) + (6*2) + (12*2)
+  .baseBlock = 148 +(7*2) +(10*2) + (6*2) + (12*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
@@ -256,7 +259,17 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .width = 7,
     .height = 4,
     .paletteNum = 14,
-    .baseBlock = 148 +(7*2) +(9*2) + (6*2) + (12*2) +(7*2)
+    .baseBlock = 148 +(7*2) +(10*2) + (6*2) + (12*2) +(7*2)
+};
+
+static const struct WindowTemplate sWindowTemplate_DaysLeft = {
+    .bg = 0,
+    .tilemapLeft = 0,
+    .tilemapTop = 0,
+    .width = 15,
+    .height = 4,
+    .paletteNum = 15,
+    .baseBlock = 148 +(7*2) +(10*2) + (6*2) + (12*2) +(7*2)
 };
 
 static const struct SpritePalette sSpritePal_Icon[] =
@@ -635,9 +648,11 @@ static const u8 gText_CurrentTimeAMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VA
 static const u8 gText_CurrentTimePM[]    = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1}:{STR_VAR_2} PM");
 static const u8 gText_CurrentTimePMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1} {STR_VAR_2} PM");
 
-static const u8 gText_QuestButton[]  = _("{L_BUTTON} Quest");
+static const u8 gText_QuestButton[]  = _("  {L_BUTTON} Quest");
 static const u8 gText_MapButton[]    = _("  Map {R_BUTTON}");
-static const u8 gText_CompanionsButton[] = _("{SELECT_BUTTON} Companion");
+static const u8 gText_CompanionsButton[] = _(" {SELECT_BUTTON} Companion");
+static const u8 gText_DaysLeft[] = _(" Days left:");
+static const u8 gText_NumberofDays [] = _("");
 
 static void SetSelectedMenu(void) {
   if (FlagGet(DN_FLAG_DEXNAV_GET) == TRUE) {
@@ -706,6 +721,7 @@ void HeatStartMenu_Init(void) {
     HeatStartMenu_ShowMapButtons();
     HeatStartMenu_ShowCompanionsButtons();
     HeatStartMenu_ShowTimeWindow();
+    HeatStartMenu_ShowDaysLeftWindow();
     sHeatStartMenu->sMenuNameWindowId = AddWindow(&sWindowTemplate_MenuName);
     HeatStartMenu_UpdateMenuName();
     CreateTask(Task_HeatStartMenu_HandleMainInput, 0);
@@ -834,6 +850,24 @@ static void HeatStartMenu_ShowCompanionsButtons (void)
     PutWindowTilemap(sHeatStartMenu->sCompanionsButonWindowId);
     AddTextPrinterParameterized2(sHeatStartMenu->sCompanionsButonWindowId, FONT_SMALL, gText_CompanionsButton, 0, 0, 0x1, 0x0, 14);
     CopyWindowToVram(sHeatStartMenu->sCompanionsButonWindowId, COPYWIN_FULL);
+  }
+}
+
+static void HeatStartMenu_ShowDaysLeftWindow (void)
+{
+  if (VarGet(VAR_AKIHIKOS_INTRO_STATE) == 100 || VarGet(VAR_MITSURUS_INTRO_STATE) == 100){
+    sHeatStartMenu->sDaysLeftWindowId = AddWindow(&sWindowTemplate_DaysLeft);
+    FillWindowPixelBuffer(sHeatStartMenu->sDaysLeftWindowId, PIXEL_FILL(0));
+    PutWindowTilemap(sHeatStartMenu->sDaysLeftWindowId);
+    ConvertIntToDecimalStringN(gStringVar1, VarGet(VAR_DAYS_LEFT), STR_CONV_MODE_LEADING_ZEROS, 2);
+
+    AddTextPrinterParameterized6(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gText_DaysLeft, 0, 1, 0, 0, 0x1, 0x0, 2);
+    if (VarGet(VAR_DAYS_LEFT) <= 3)
+      AddTextPrinterParameterized6(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gStringVar1, 52, 1, 0, 0, 4, 0x0, 5);
+    else
+      AddTextPrinterParameterized6(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gStringVar1, 52, 1, 0, 0, 1, 0x0, 2);
+
+    CopyWindowToVram(sHeatStartMenu->sDaysLeftWindowId, COPYWIN_FULL);
   }
 }
 

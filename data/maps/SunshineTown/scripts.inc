@@ -1298,6 +1298,33 @@ SunshineTown_Eventscript_MitsuruOverheardAkiShinji::
 	return
 
 
+testbuffer::
+# 719 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 720 "data/maps/SunshineTown/scripts.pory"
+	msgbox testbuffer_Text_0
+# 721 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+# 722 "data/maps/SunshineTown/scripts.pory"
+	compare VAR_DAYS_LEFT, 1
+	goto_if_gt testbuffer_2
+# 729 "data/maps/SunshineTown/scripts.pory"
+	call EventScript_CheckDaysLeft
+testbuffer_1:
+# 731 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+testbuffer_2:
+# 724 "data/maps/SunshineTown/scripts.pory"
+	bufferdaysleft STR_VAR_1
+# 725 "data/maps/SunshineTown/scripts.pory"
+	msgbox testbuffer_Text_1
+# 726 "data/maps/SunshineTown/scripts.pory"
+	closemessage
+	goto testbuffer_1
+
+
 # 66 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruOnWarp19_Movement_0:
 # 66 "data/maps/SunshineTown/scripts.pory"
@@ -1932,3 +1959,11 @@ SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_9:
 	.string "explosion, I suppose.)\p"
 	.string "(I should go to the orphanage and help\n"
 	.string "the searching.)$"
+
+testbuffer_Text_0:
+# 720 "data/maps/SunshineTown/scripts.pory"
+	.string "Checking if deadline is missed...$"
+
+testbuffer_Text_1:
+# 725 "data/maps/SunshineTown/scripts.pory"
+	.string "Days left: {STR_VAR_1}.$"

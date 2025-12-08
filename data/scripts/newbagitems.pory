@@ -1,5 +1,6 @@
 script EventScript_CampGears{
 	lock
+    
     if (var(VAR_AKIHIKOS_INTRO_STATE) < 100 && var(VAR_MITSURUS_INTRO_STATE) < 100){
         msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping)."))
         closemessage
@@ -40,6 +41,7 @@ script EventScript_CampGears{
             playse(SE_PC_OFF)
             waitse
         }
+    call(EventScript_CheckDaysLeft)
     release
     end
     }
@@ -49,4 +51,15 @@ script EventScript_TellTheTimeDayHourMinute{
 	callnative (Script_CalculateTime)
 	msgbox(format("{STR_VAR_1}, {STR_VAR_2}:{STR_VAR_3}.\n"))
 	closemessage
+}
+
+script EventScript_CheckDaysLeft {
+    if (var(VAR_DAYS_LEFT) == 1){
+        msgbox(format("{COLOR GREEN}YOU HAVE {COLOR RED}ONE DAY LEFT {COLOR GREEN}TO COMPLETE THE CURRENT STORY QUEST."))
+        closemessage
+    }
+    if (var(VAR_DAYS_LEFT) == 0){ 
+        warpsilent(MAP_GAME_OVER, 0, 5)
+        waitstate
+    }
 }

@@ -95,24 +95,24 @@
 #define VAR_POKELOT_RND1                                 0x404B
 #define VAR_POKELOT_RND2                                 0x404C
 #define VAR_POKELOT_PRIZE_PLACE                          0x404D
-#define VAR_AKIHIKOS_INTRO_STATE                         0x404E // Akihiko's intro plot, ends at 44 but set to 100 after completing
-#define VAR_LOTAD_SIZE_RECORD                            0x404F
+#define VAR_AKIHIKOS_INTRO_STATE                         0x404E // Akihiko's intro plot, set to 100 after completedd and 50 while in Mitsuru's prologue
+#define VAR_MITSURUS_INTRO_STATE                         0x404F // Mitsuru's intro plot, set t0 100 after completed and 50 while in Akihiko's prologue
 #define VAR_STORY_QUESTS_STATE                           0x4050 // was VAR_LITTLEROOT_TOWN_STATE
-#define VAR_OLDALE_TOWN_STATE                            0x4051
-#define DN_VAR_SPECIES                                   0x4052 // Registered DexNav species
-#define VAR_LAVARIDGE_TOWN_STATE                         0x4053
+#define VAR_TIME_RESET_ATTEMPTS                          0x4051 // was VAR_OLDALE_TOWN_STATE
+#define VAR_SPECIES_DN                                   0x4052 // Registered DexNav species
+#define VAR_STEP_COUNTER                                 0x4053 // Was VAR_LAVARIDGE_TOWN_STATE // Steps for finding hidden pokemon
 #define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
-#define DN_VAR_STEP_COUNTER                              0x4055 // Steps for finding hidden pokemon
+#define VAR_DAYS_LEFT                                    0x4055 
 #define VAR_CURRENT_LEVEL_CAP                            0x4056 // Set current level cap
-#define VAR_PETALBURG_CITY_STATE                         0x4057
-#define VAR_SLATEPORT_CITY_STATE                         0x4058
+#define VAR_MITSURU_RELATIONSHIP_POINTS                  0x4057
+#define VAR_AKIHIKO_RELATIONSHIP_POINTS                  0x4058
 #define VAR_SHINJIRO_RELATIONSHIP_POINTS                 0x4059 // Was Unused Var
-#define VAR_RUSTBORO_CITY_STATE                          0x405A
-#define VAR_MITSURU_RELATIONSHIP_POINTS                  0x405B // Was Unused Var
-#define VAR_AKIHIKO_RELATIONSHIP_POINTS                  0x405C // Was Unused Var
+#define VAR_CHAPTER_1_STATE                              0x405A // Was VAR_RUSTBORO_CITY_STATE
+#define VAR_PETALBURG_CITY_STATE                         0x405B // Was Unused Var
+#define VAR_SLATEPORT_CITY_STATE                         0x405C // Was Unused Var
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
-#define VAR_MITSURUS_INTRO_STATE                         0x405F // Was Unused Var
+#define VAR_LOTAD_SIZE_RECORD                            0x405F // Was Unused Var
 #define VAR_ROUTE101_STATE                               0x4060
 #define VAR_CURRENT_EV_CAP                               0x4061 // Was Unused Var
 #define VAR_ROUTE103_STATE                               0x4062 // Unused Var

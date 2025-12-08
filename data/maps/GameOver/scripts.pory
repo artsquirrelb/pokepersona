@@ -1,11 +1,11 @@
 mapscripts GameOver_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
-        if (flag(FLAG_DONT_TRANSITION_MUSIC) == TRUE){
-            setflag(FLAG_SPAWN_INVISIBLE)
-        }
+        setflag(FLAG_SPAWN_INVISIBLE)
+        clearflag(FLAG_DONT_TRANSITION_MUSIC)
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_AKIHIKOS_INTRO_STATE, 38: Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle
+        VAR_DAYS_LEFT, 0: Eventscript_GAMEOVERFromMissingDeadline
     ]
 }
 
@@ -14,7 +14,9 @@ script Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle {
     applymovement(LOCALID_PLAYER, SlowlyShowGameOver)
     waitmovement(0)
     delay(180)
-    msgbox(format("Do you want to rewind the time to a safe plot point?"), MSGBOX_YESNO)
+    buffertimeresetattempts(STR_VAR_1)
+    msgbox(format("Do you want to rewind the time to a safe plot point?\p
+    {COLOR GREEN}Time rewind attempt(s) left: {COLOR RED}{STR_VAR_1}{COLOR 2}."), MSGBOX_YESNO)
     closemessage
     if (var(VAR_RESULT) == TRUE){
         playse(SE_USE_ITEM)
@@ -26,8 +28,8 @@ script Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle {
         setvar(VAR_AKIHIKOS_INTRO_STATE, 34)
         setvar(VAR_MITSURU_RELATIONSHIP_POINTS, 100)
         clearflag(FLAG_DONT_TRANSITION_MUSIC)
-        clearflag(FLAG_HIDE_TALK_BUTTON)
-        warpsilent(MAP_ROUTE2, 8, 12)
+        subvar(VAR_TIME_RESET_ATTEMPTS, 1)
+        special(SetCB2WhiteOut)
         releaseall
         end
     }
@@ -36,10 +38,57 @@ script Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle {
         closemessage
         fadescreenswapbuffers(FADE_TO_BLACK)
         clearflag(FLAG_DONT_TRANSITION_MUSIC)
-        playbgm(MUS_NONE, TRUE)
+        fadenewbgm(MUS_NONE)
     }
 }
 
 movement SlowlyShowGameOver {
     walk_right *9
+}
+
+script Eventscript_GAMEOVERFromMissingDeadline {
+    lockall
+    applymovement(LOCALID_PLAYER, SlowlyShowGameOver)
+    waitmovement(0)
+    delay(180)
+    if (var(VAR_TIME_RESET_ATTEMPTS) == 0){
+        goto(Eventscript_GAMEOVER_FR)
+    }
+    buffertimeresetattempts(STR_VAR_1)
+    msgbox(format("Do you want to rewind the time to 3 days left before the deadline?"))
+    closemessage
+    msgbox(format("{COLOR GREEN}Time rewind attempt(s) left: {COLOR RED}{STR_VAR_1}{COLOR 2}."), MSGBOX_YESNO)
+    closemessage
+    if (var(VAR_RESULT) == TRUE){
+        playse(SE_USE_ITEM)
+        waitse
+        delay(20)
+        msgbox(format("Make your choice wisely this time."))
+        closemessage
+        special(HealPlayerParty)
+        rewind3days
+        subvar(VAR_TIME_RESET_ATTEMPTS, 1)
+        special(SetCB2WhiteOut)
+        releaseall
+        end
+    }
+    else{
+        msgbox(format("Enjoy the eternal darkness."))
+        closemessage
+        fadescreenswapbuffers(FADE_TO_BLACK)
+        clearflag(FLAG_DONT_TRANSITION_MUSIC)
+        fadenewbgm(MUS_NONE)
+    }
+}
+
+script Eventscript_GAMEOVER_FR {
+    lockall
+    applymovement(LOCALID_PLAYER, moves(walk_slow_right*10))
+    delay(180)
+    msgbox(format("You have {COLOR RED}0 {COLOR 2}time rewind attempt left.\n
+    Enjoy the eternal darkness."))
+    closemessage
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    fadenewbgm(MUS_NONE)
+    waitstate
 }

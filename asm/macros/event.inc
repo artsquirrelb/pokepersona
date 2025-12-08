@@ -1237,6 +1237,25 @@
 	.4byte \text
 	.endm
 
+	@ Buffer the time reset attempts to a stringVarId.
+	.macro buffertimeresetattempts stringVarId:req
+	callnative ScrCmd_bufferTimeResetAttempts
+	stringvar \stringVarId
+	.endm
+
+	@ Buffer the number of days left until gameover to a stringVarId.
+	.macro bufferdaysleft stringVarId:req
+	callnative ScrCmd_bufferDaysLeft
+	stringvar \stringVarId
+	.endm
+
+	@ Rewind 3 days prior to gameover
+	.macro rewind3days
+	callnative Script_Rewind3Days
+	setvar VAR_DAYS_LEFT 3
+	.endm
+
+
 	@ Opens the Pokemart system, offering the specified products for sale.
 	@ Products should be a list of .2byte item values preceded by an .align 2
 	.macro pokemart products:req

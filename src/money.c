@@ -155,7 +155,28 @@ void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
 
     if (numDigits > 8)
         PrependFontIdToFit(gStringVar4, txtPtr + 1 + numDigits, FONT_NARROW, 54);
-    AddTextPrinterParameterized6(windowId, FONT_NARROW, gStringVar4, x, y, speed, NULL, 1, 0x0, 0);
+    AddTextPrinterParameterized6(windowId, FONT_NARROW, gStringVar4, x, y, speed, NULL, 1, 3, 3);
+}
+
+void PrintMoneyAmountNoBGShadow(u8 windowId, u8 x, u8 y, int amount, u8 speed)
+{
+    u8 *txtPtr = gStringVar4;
+    u32 numDigits = CountDigits(amount);
+    u32 maxDigits = (numDigits > 6) ? MAX_MONEY_DIGITS: 6;
+    u32 leadingSpaces;
+
+    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, maxDigits);
+
+    leadingSpaces = CalculateLeadingSpacesForMoney(numDigits);
+
+    while (leadingSpaces-- > 0)
+        *(txtPtr++) = CHAR_SPACER;
+
+    StringExpandPlaceholders(txtPtr, gText_PokedollarVar1);
+
+    if (numDigits > 8)
+        PrependFontIdToFit(gStringVar4, txtPtr + 1 + numDigits, FONT_NARROW, 54);
+    AddTextPrinterParameterized6(windowId, FONT_NARROW, gStringVar4, x, y, speed, NULL, 1, 0, 0);
 }
 
 void PrintMoneyAmountInMoneyBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete, int amount)

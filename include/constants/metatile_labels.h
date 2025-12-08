@@ -204,6 +204,12 @@
 #define METATILE_Fortree_WoodBridge1_Bottom                0x29F
 #define METATILE_Fortree_WoodBridge1_Top                   0x297
 
+// gTileset_Gen4General
+#define METATILE_Gen4General_DONT_OVERIDE  0x0FB
+
+// gTileset_Gen4Indoor
+#define METATILE_Gen4Indoor_DONT_OVERIDE  0x003
+
 // gTileset_General
 #define METATILE_General_BlueCaveIndent        0x1B0
 #define METATILE_General_BlueCaveOpen          0x1B1

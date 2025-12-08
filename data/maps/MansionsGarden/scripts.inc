@@ -819,7 +819,7 @@ MansionsGarden_Eventscript_MitsuruPrologueStart::
 # 485 "data/maps/MansionsGarden/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 0
 # 486 "data/maps/MansionsGarden/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 101
+	setvar VAR_AKIHIKOS_INTRO_STATE, 50
 # 487 "data/maps/MansionsGarden/scripts.pory"
 	unlockcharacter CHARACTER_MITSURU
 # 488 "data/maps/MansionsGarden/scripts.pory"

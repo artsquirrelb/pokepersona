@@ -1006,3 +1006,36 @@ const struct Tileset gTileset_StoneCave =
     .metatileAttributes = gMetatileAttributes_StoneCave,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Coralport =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Coralport,
+    .palettes = gTilesetPalettes_Coralport,
+    .metatiles = gMetatiles_Coralport,
+    .metatileAttributes = gMetatileAttributes_Coralport,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Coralport_Lighthouse =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Coralport_Lighthouse,
+    .palettes = gTilesetPalettes_Coralport_Lighthouse,
+    .metatiles = gMetatiles_Coralport_Lighthouse,
+    .metatileAttributes = gMetatileAttributes_Coralport_Lighthouse,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Gatehouse =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Gatehouse,
+    .palettes = gTilesetPalettes_Gatehouse,
+    .metatiles = gMetatiles_Gatehouse,
+    .metatileAttributes = gMetatileAttributes_Gatehouse,
+    .callback = NULL,
+};

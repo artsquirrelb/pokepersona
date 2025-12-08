@@ -1206,6 +1206,9 @@ script Route2_House_Eventscript_TheFirstMorning2 {
         closemessage
         subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, MITSURUS_PROLOGUE)
     }
+    else{
+        setvar(VAR_MITSURUS_INTRO_STATE, 100)
+    }
     setflag(FLAG_TEMP_1)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 100) //complete akihiko's prologue
     setvar(VAR_CURRENT_LEVEL_CAP, 18)
@@ -1861,11 +1864,13 @@ script Route2_House_Eventscript_TheFirstMorning2MitsuruPOV {
     subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, CHAPTER_1)
     
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
-    if (var(VAR_RESULT) == FALSE)
-    {
+    if (var(VAR_RESULT) == FALSE){
         msgbox(format("{COLOR RED}Akihiko's Prologue {COLOR GREEN}unlocked. Check Quest Menu for more details."))
         closemessage
         subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
+    }
+    else{
+        setvar(VAR_AKIHIKOS_INTRO_STATE, 100)
     }
     setflag(FLAG_TEMP_1)
     setvar(VAR_MITSURUS_INTRO_STATE, 100) //complete mitsuru's prologue

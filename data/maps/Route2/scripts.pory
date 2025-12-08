@@ -46,7 +46,7 @@ mapscripts Route2_MapScripts {
         }
         if((var(VAR_AKIHIKOS_INTRO_STATE) == 100) || (var(VAR_MITSURUS_INTRO_STATE) == 100)){
             setflag(FLAG_TEMP_4)
-            setobjectxyperm(TAROU, 7, 18)
+            setobjectxyperm(TAROU, 9, 19)
         }
         if (var(VAR_MITSURUS_INTRO_STATE) != 27){
             setflag(FLAG_TEMP_5)

@@ -1938,3 +1938,60 @@ const u16 gTilesetPalettes_StoneCave[][16] =
 };
 
 const u32 gTilesetTiles_StoneCave[] = INCBIN_U32("data/tilesets/secondary/stone_cave/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Coralport[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Coralport[] = INCBIN_U32("data/tilesets/secondary/coralport/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Coralport_Lighthouse[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Coralport_Lighthouse[] = INCBIN_U32("data/tilesets/secondary/coralport_lighthouse/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Gatehouse[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Gatehouse[] = INCBIN_U32("data/tilesets/secondary/gatehouse/tiles.4bpp.lz");

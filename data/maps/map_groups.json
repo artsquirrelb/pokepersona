@@ -38,7 +38,8 @@
     "gMapGroup_IndoorSunshineTown",
     "gMapGroup_IndoorRoute2",
     "gMapGroup_HiddenGrottos",
-    "gMapGroup_KirijoMansionIndoor"
+    "gMapGroup_KirijoMansionIndoor",
+    "gMapGroup_IndoorCoralport"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -109,7 +110,9 @@
     "Route2_2",
     "MansionsGarden",
     "ThundershardsMtSunshineMeadow",
-    "ThundershardsCliff_2F_Exterior"
+    "ThundershardsCliff_2F_Exterior",
+    "Coralport",
+    "Route3"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -658,7 +661,8 @@
     "SunshineTown_House1"
   ],
   "gMapGroup_IndoorRoute2": [
-    "Route2_House"
+    "Route2_House",
+    "Route2_Gatehouse"
   ],
   "gMapGroup_HiddenGrottos": [
     "Route1_HiddenGrotto",
@@ -668,5 +672,6 @@
     "MansionMainHall",
     "Mansion_MitsurusRoom2F",
     "MansionTrainingHouse"
-  ]
+  ],
+  "gMapGroup_IndoorCoralport": []
 }

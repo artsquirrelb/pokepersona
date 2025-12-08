@@ -1,2 +1,39 @@
 Route2_2_MapScripts::
 	.byte 0
+
+
+Route2_2_Eventscript_BerrySign::
+# 6 "data/maps/Route2_2/scripts.pory"
+	lock
+# 7 "data/maps/Route2_2/scripts.pory"
+	msgbox Route2_2_Eventscript_BerrySign_Text_0
+# 10 "data/maps/Route2_2/scripts.pory"
+	closemessage
+# 11 "data/maps/Route2_2/scripts.pory"
+	release
+	end
+
+
+Route2_2_Eventscript_DirectionSign::
+# 16 "data/maps/Route2_2/scripts.pory"
+	lock
+# 17 "data/maps/Route2_2/scripts.pory"
+	msgbox Route2_2_Eventscript_DirectionSign_Text_0
+# 19 "data/maps/Route2_2/scripts.pory"
+	closemessage
+# 20 "data/maps/Route2_2/scripts.pory"
+	release
+	end
+
+
+Route2_2_Eventscript_BerrySign_Text_0:
+# 7 "data/maps/Route2_2/scripts.pory"
+	.string "If you pick the berries, please plant\n"
+	.string "back some!\p"
+	.string "Let's spread the greens!\n"
+	.string "{CLEAR_TO 80}-BRG$"
+
+Route2_2_Eventscript_DirectionSign_Text_0:
+# 17 "data/maps/Route2_2/scripts.pory"
+	.string "Coralport {LEFT_ARROW}\n"
+	.string "Sunshine Town {RIGHT_ARROW}$"

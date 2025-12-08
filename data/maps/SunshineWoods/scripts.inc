@@ -1234,7 +1234,7 @@ SunshineWoods_Eventscript_AkihikoPrologueStart_4:
 # 721 "data/maps/SunshineWoods/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 0
 # 722 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 101
+	setvar VAR_MITSURUS_INTRO_STATE, 50
 # 723 "data/maps/SunshineWoods/scripts.pory"
 	unlockcharacter CHARACTER_AKIHIKO
 # 724 "data/maps/SunshineWoods/scripts.pory"

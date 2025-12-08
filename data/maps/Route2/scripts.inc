@@ -151,7 +151,7 @@ Route2_MapScripts_MAP_SCRIPT_ON_TRANSITION_37:
 # 48 "data/maps/Route2/scripts.pory"
 	setflag FLAG_TEMP_4
 # 49 "data/maps/Route2/scripts.pory"
-	setobjectxyperm TAROU, 7, 18
+	setobjectxyperm TAROU, 9, 19
 	goto Route2_MapScripts_MAP_SCRIPT_ON_TRANSITION_36
 
 Route2_MapScripts_MAP_SCRIPT_ON_TRANSITION_42:

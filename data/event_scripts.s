@@ -1233,3 +1233,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/ThundershardsCave_2F/scripts.inc"
 
 	.include "data/maps/ThundershardsCliff_2F_Exterior/scripts.inc"
+
+	.include "data/maps/Coralport/scripts.inc"
+
+	.include "data/maps/Route3/scripts.inc"
+
+	.include "data/maps/Route2_Gatehouse/scripts.inc"

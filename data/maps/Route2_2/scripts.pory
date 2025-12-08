@@ -1,0 +1,22 @@
+mapscripts Route2_2_MapScripts {
+    
+}
+
+script Route2_2_Eventscript_BerrySign {
+    lock
+    msgbox(format("If you pick the berries, please plant back some!\p
+    Let's spread the greens!\n
+    {CLEAR_TO 80}-BRG"))
+    closemessage
+    release
+    end
+}
+
+script Route2_2_Eventscript_DirectionSign {
+    lock
+    msgbox(format("Coralport {LEFT_ARROW}\n
+    Sunshine Town {RIGHT_ARROW}"))
+    closemessage
+    release
+    end
+}

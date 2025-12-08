@@ -255,3 +255,12 @@ const u16 gMetatileAttributes_Dungeon[] = INCBIN_U16("data/tilesets/primary/dung
 
 const u16 gMetatiles_StoneCave[] = INCBIN_U16("data/tilesets/secondary/stone_cave/metatiles.bin");
 const u16 gMetatileAttributes_StoneCave[] = INCBIN_U16("data/tilesets/secondary/stone_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_Coralport[] = INCBIN_U16("data/tilesets/secondary/coralport/metatiles.bin");
+const u16 gMetatileAttributes_Coralport[] = INCBIN_U16("data/tilesets/secondary/coralport/metatile_attributes.bin");
+
+const u16 gMetatiles_Coralport_Lighthouse[] = INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/metatiles.bin");
+const u16 gMetatileAttributes_Coralport_Lighthouse[] = INCBIN_U16("data/tilesets/secondary/coralport_lighthouse/metatile_attributes.bin");
+
+const u16 gMetatiles_Gatehouse[] = INCBIN_U16("data/tilesets/secondary/gatehouse/metatiles.bin");
+const u16 gMetatileAttributes_Gatehouse[] = INCBIN_U16("data/tilesets/secondary/gatehouse/metatile_attributes.bin");

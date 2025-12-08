@@ -719,7 +719,7 @@ script SunshineWoods_Eventscript_AkihikoPrologueStart {
             fadescreenswapbuffers(FADE_TO_BLACK)
             callnative(Script_SwitchMainCharacter)
             setvar(VAR_AKIHIKOS_INTRO_STATE, 0)
-            setvar(VAR_MITSURUS_INTRO_STATE, 101)
+            setvar(VAR_MITSURUS_INTRO_STATE, 50)
             unlockcharacter(CHARACTER_AKIHIKO)
             makecharaAvailable(CHARACTER_AKIHIKO)
             makecharaUnavailable(CHARACTER_MITSURU)

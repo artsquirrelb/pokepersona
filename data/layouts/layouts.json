@@ -5548,7 +5548,7 @@
     {
       "id": "LAYOUT_ROUTE2_2",
       "name": "Route2_2_Layout",
-      "width": 36,
+      "width": 28,
       "height": 26,
       "border_width": 2,
       "border_height": 2,
@@ -5688,6 +5688,42 @@
       "secondary_tileset": "gTileset_Forest",
       "border_filepath": "data/layouts/ThundershardsCliff_2F_Exterior/border.bin",
       "blockdata_filepath": "data/layouts/ThundershardsCliff_2F_Exterior/map.bin"
+    },
+    {
+      "id": "LAYOUT_CORALPORT",
+      "name": "Coralport_Layout",
+      "width": 52,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_Coralport",
+      "border_filepath": "data/layouts/Coralport/border.bin",
+      "blockdata_filepath": "data/layouts/Coralport/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE3",
+      "name": "Route3_Layout",
+      "width": 40,
+      "height": 58,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_Coralport_Lighthouse",
+      "border_filepath": "data/layouts/Route3/border.bin",
+      "blockdata_filepath": "data/layouts/Route3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE2_GATEHOUSE",
+      "name": "Route2_Gatehouse_Layout",
+      "width": 23,
+      "height": 16,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_Gatehouse",
+      "border_filepath": "data/layouts/Route2_Gatehouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route2_Gatehouse/map.bin"
     }
   ]
 }

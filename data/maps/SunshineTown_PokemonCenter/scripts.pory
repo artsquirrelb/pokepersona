@@ -16,10 +16,10 @@ mapscripts SunshineTown_PokemonCenter_MapScripts {
     ]
 }
 
-script PokemonCenter_Eventscript_Nurse {
+script SunshineTown_PokemonCenter_Eventscript_Nurse {
     lock
     faceplayer
-    setspeaker("Nurse")
+    setspeaker("Nurse Juria")
     msgbox(format("Hello and welcome to the Pokémon Center.\p
     Let me heal your tired Pokémon."))
     hidefollower
@@ -49,7 +49,7 @@ script PCStorage {
 script SunshineTown_PokemonCenter_Eventscript_MartLady {
     lock
     faceplayer
-    setspeaker("Mart Employee")
+    setspeaker("Mart Employee Fusayo")
     msgbox(format("
         Hello. What can I do for you?"))
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 12){

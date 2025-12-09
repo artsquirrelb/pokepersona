@@ -1,6 +1,4 @@
 script EventScript_CampGears{
-	lock
-    
     if (var(VAR_AKIHIKOS_INTRO_STATE) < 100 && var(VAR_MITSURUS_INTRO_STATE) < 100){
         msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping)."))
         closemessage
@@ -42,7 +40,6 @@ script EventScript_CampGears{
             waitse
         }
     call(EventScript_CheckDaysLeft)
-    release
     end
     }
 }

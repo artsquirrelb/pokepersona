@@ -1,1 +1,196 @@
-mapscripts Coralport_MapScripts {}
+mapscripts Coralport_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        setflag(FLAG_VISITED_CORALPORT)
+    }
+}
+
+script Coralport_Eventscript_DirectionSign {
+    lock
+    msgbox(format("Route 3 {LEFT_ARROW}\n
+    Route 2 {RIGHT_ARROW}"))
+    closemessage
+    release
+    end
+}
+
+script Coralport_Eventscript_TownSign {
+    lock
+    msgbox(format("{CLEAR_TO 30}Welcome to Coralport!\n
+    {CLEAR_TO 20}“Home of the sea breeze.”"))
+    closemessage
+    release
+    end
+}
+
+script Coralport_Eventscript_PoliceStationSign {
+    lock
+    msgbox(format("{CLEAR_TO 30}Coralport Police Station\n
+    {CLEAR_TO 40}“For the people.”"))
+    closemessage
+    release
+    end
+}
+
+script Coralport_Eventscript_CandyShopSign {
+    lock
+    msgbox(format("{CLEAR_TO 30}AmeAme Candy Shop\n
+    {CLEAR_TO 16}“Welcome all the sweet lovers!”"))
+    closemessage
+    release
+    end
+}
+
+script Coralport_Eventscript_Policeman {
+    lock
+    faceplayer
+    setspeaker("Takagi")
+    msgbox(format("Welcome to Coralport!\n If you have any problem, please let us know.\p
+    We'd be happy to help."))
+    closemessage
+    release
+    end
+}
+
+script Coralport_Eventscript_OldMan {
+    lock
+    faceplayer
+    setspeaker("Tomoki")
+    msgbox(format("I and my darling have been travelling around the world.\p
+    Coralport has this special charm to it that made us want to spend the rest of our days here."))
+    closemessage
+    release
+    end
+}
+
+script Coralport_Eventscript_OldWoman {
+    lock
+    faceplayer
+    setspeaker("Yukine")
+    msgbox(format("This guy said to me one day “Let's travel the world!”\p
+    We were still so young and I agreed.\n Then he brought us to all kind of beautiful places.\p
+    It was only until last year that he proposed, just on the beach over there.\p
+    That was quite late now that I think about it.\p
+    Although it also kind of slipped out of my mind, since I was having so much fun being around him."))
+    closemessage
+    release
+    end
+}
+
+script Coralport_Eventscript_SailorOnBreak {
+    lock
+    faceplayer
+    setspeaker("Etsuo")
+    msgbox(format("Please don't talk to me. I'm on break.\p
+    If you need help, talk to the sailors on the harbor."))
+    closemessage
+    applymovement(VAR_LAST_TALKED, facedown)
+    waitmovement
+    release
+    end
+}
+
+script Coralport_Eventscript_Machamp {
+    lockall
+    faceplayer
+    playmoncry(SPECIES_MACHAMP, CRY_MODE_NORMAL)
+    waitmoncry
+    setseenmon(SPECIES_MACHAMP)
+    releaseall
+    end
+}
+
+script Coralport_Eventscript_Vigoroth {
+    lockall
+    faceplayer
+    playmoncry(SPECIES_VIGOROTH, CRY_MODE_NORMAL)
+    waitmoncry
+    setseenmon(SPECIES_VIGOROTH)
+    releaseall
+    end
+}
+
+script Coralport_Eventscript_SailorOnHarbor {
+    lock
+    faceplayer
+    setspeaker("Chikatake")
+    msgbox(format("We have to move these barrels onto the board before departure.\p
+    Please excuse us, we're very busy."))
+    closemessage
+    release
+    end
+}
+
+script Coralport_Eventscript_SailorOnGuard {
+    lock
+    faceplayer
+    setspeaker("Umito")
+    if (var(VAR_CHAPTER_1_STATE) < 1){
+        msgbox(format("This ship will departs for Windward Port at 9AM.\p
+        Please come back later when it's boarding time at 8:30AM."))
+        closemessage
+        release
+        end
+    }
+}
+
+script Coralport_Eventscript_TuberM {
+    lock
+    faceplayer
+    setspeaker("Ujou")
+    msgbox(format("Sometimes when I poke the sand castles, they move!"))
+    closemessage
+    release
+    end
+}
+
+script Coralport_Eventscript_Sandygast {
+    lock
+    playmoncry(SPECIES_SANDYGAST, CRY_MODE_NORMAL)
+    setwildbattle(SPECIES_SANDYGAST, 10)
+    dowildbattle
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    setmetatile(11, 29, 0x246, FALSE)
+    special(DrawWholeMapView)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    release
+    end
+}
+
+script Coralport_Eventscript_Beauty {
+    lock
+    faceplayer
+    setspeaker("Harehina")
+    msgbox(format("I bought two tickets for this vacation but my damned ex cheated on me so I brought my younger brother instead.\p
+    I'm enjoying this a lot more than I thought.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Good for you."))
+    setspeaker("Harehina")
+    msgbox(format("Oh? Wait, you're just my type. How old are you?\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}W-what?\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}(Hey! Let's just bail!)"))
+    closemessage
+    moveobjecttocoords(LOCALID_PLAYER, 22, 29, DIR_NORTH)
+    waitmovement
+    release
+    end
+}
+
+script Coralport_Eventscript_Fisherman {
+    lock
+    faceplayer
+    setspeaker("Jumaro")
+    msgbox(format("I'm waiting for a friend of mine.\n
+    We promised to go fishing together but he's taking so long.\p
+    I wonder what's wrong."))
+    closemessage
+    release
+    end
+}
+
+script Coralport_Eventscript_Krabby {
+    lockall
+    startoverworldencounter(10)
+    setflag(FLAG_TEMP_1)
+    removeobject(VAR_LAST_TALKED)
+    releaseall
+    end
+}

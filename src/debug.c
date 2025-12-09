@@ -984,7 +984,7 @@ static void DebugNativeStep_CloseDebugWindow(u8 taskId)
 static const u16 sLocationFlags[] =
 {
     FLAG_VISITED_SUNSHINE_TOWN,
-    FLAG_VISITED_OLDALE_TOWN,
+    FLAG_VISITED_CORALPORT,
     FLAG_VISITED_DEWFORD_TOWN,
     FLAG_VISITED_LAVARIDGE_TOWN,
     FLAG_VISITED_FALLARBOR_TOWN,

@@ -214,6 +214,12 @@
       "map": "MAP_ROUTE2_HOUSE",
       "x": 4,
       "y": 4
+    },
+    {
+      "id": "HEAL_LOCATION_ROUTE2_GATEHOUSE",
+      "map": "MAP_ROUTE2_GATEHOUSE",
+      "x": 9,
+      "y": 8
     }
   ]
 }

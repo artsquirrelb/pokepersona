@@ -52,7 +52,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
       "x": 3,
       "y": 14,
       "elevation": 0,
@@ -326,7 +326,7 @@
       "flag": "FLAG_TEMP_3"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
       "x": 31,
       "y": 24,
       "elevation": 0,

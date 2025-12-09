@@ -40,6 +40,7 @@
 #include "outfit_menu.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "pokemon.h"
 #include "pokedex.h"
 #include "pokemon_storage_system.h"
 #include "random.h"
@@ -3323,11 +3324,12 @@ bool8 Scrcmd_changespecies(struct ScriptContext *ctx)
 
 bool8 Scrcmd_setfriendship(struct ScriptContext *ctx)
 {
-    u16 targetfriendshippoint = VarGet(ScriptReadHalfword(ctx));
-    u16 monIndex = VarGet(ScriptReadHalfword(ctx));
+    u8 partyIndex = ScriptReadByte(ctx);
+    //u8 friendship = GetMonData(&gPlayerParty[partyIndex], MON_DATA_FRIENDSHIP);
+    u8 friendship = ScriptReadByte(ctx);;
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
-    SetMonFriendship (&gPlayerParty[monIndex], targetfriendshippoint);
+    SetMonData(&gPlayerParty[partyIndex], MON_DATA_FRIENDSHIP, &friendship);
     return FALSE;
 }
 

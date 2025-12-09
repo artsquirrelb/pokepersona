@@ -9,7 +9,7 @@ SunshineWoods_MapScripts::
 
 SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/SunshineWoods/scripts.pory"
-	setflag FLAG_TEMP_7
+	setflag FLAG_TEMP_8
 # 4 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 22
 	goto_if_lt SunshineWoods_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
@@ -119,7 +119,7 @@ SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru_1:
 
 SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru_2:
 # 51 "data/maps/SunshineWoods/scripts.pory"
-	clearflag FLAG_TEMP_7
+	clearflag FLAG_TEMP_8
 # 52 "data/maps/SunshineWoods/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
 	goto SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru_1

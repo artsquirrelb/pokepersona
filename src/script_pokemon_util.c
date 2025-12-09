@@ -175,11 +175,6 @@ void SetMonSpecies(struct Pokemon *mon, u16 species)
     SetMonData(mon, MON_DATA_SPECIES, &species);
 }
 
-void SetMonFriendship(struct Pokemon *mon, u8 friendshippoint)
-{
-    SetMonData(mon, MON_DATA_FRIENDSHIP, &friendshippoint);
-}
-
 void ChooseHalfPartyForBattle(void)
 {
     gMain.savedCallback = CB2_ReturnFromChooseHalfParty;

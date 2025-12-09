@@ -36,6 +36,7 @@
 #include "pokeblock.h"
 #include "pokedex.h"
 #include "pokemon.h"
+#include "swsh_summary_screen.h"
 #include "pokemon_storage_system.h"
 #include "pokemon_summary_screen.h"
 #include "random.h"
@@ -4519,9 +4520,19 @@ static void Task_ShowSummaryScreenToForgetBoxMonMove(u8 taskId)
     {
         DestroyTask(taskId);
         if(gSpecialVar_MonBoxId == 0xFF)
-            ShowSelectMovePokemonSummaryScreen(gPlayerParty, gSpecialVar_MonBoxPos, gPlayerPartyCount - 1, CB2_ReturnToFieldWhileLearningMove, gSpecialVar_ItemId);
+        {
+            if (SWSH_SUMMARY_SCREEN)
+                ShowSelectMovePokemonSummaryScreen_SwSh(gPlayerParty, gSpecialVar_MonBoxPos, gPlayerPartyCount - 1, CB2_ReturnToFieldWhileLearningMove, gSpecialVar_ItemId);
+            else
+                ShowSelectMovePokemonSummaryScreen(gPlayerParty, gSpecialVar_MonBoxPos, gPlayerPartyCount - 1, CB2_ReturnToFieldWhileLearningMove, gSpecialVar_ItemId);
+        }
         else
-            ShowSelectMoveBoxPokemonSummaryScreen(GetBoxedMonPtr(StorageGetCurrentBox(), 0), gSpecialVar_MonBoxPos, IN_BOX_COUNT - 1, CB2_ReturnToFieldWhileLearningMove, gSpecialVar_ItemId);
+        {
+            if (SWSH_SUMMARY_SCREEN)
+                ShowSelectMoveBoxPokemonSummaryScreen_SwSh(GetBoxedMonPtr(StorageGetCurrentBox(), 0), gSpecialVar_MonBoxPos, IN_BOX_COUNT - 1, CB2_ReturnToFieldWhileLearningMove, gSpecialVar_ItemId);
+            else
+                ShowSelectMoveBoxPokemonSummaryScreen(GetBoxedMonPtr(StorageGetCurrentBox(), 0), gSpecialVar_MonBoxPos, IN_BOX_COUNT - 1, CB2_ReturnToFieldWhileLearningMove, gSpecialVar_ItemId);
+        }
     }
 }
 

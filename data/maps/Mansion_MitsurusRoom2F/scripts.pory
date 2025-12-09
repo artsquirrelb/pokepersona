@@ -132,6 +132,7 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
     fwdtime(22, 32)
     msgbox(format("{COLOR GREEN}{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Tips: Check your bag for various QoL items."))
     closemessage
+    setfriendship(0, 200)
     updatefollowingmon
     }
     else{

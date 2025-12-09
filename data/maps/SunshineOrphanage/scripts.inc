@@ -308,11 +308,11 @@ SunshineOrphanage_Eventscript_MetalClawTutor_2:
 # 181 "data/maps/SunshineOrphanage/scripts.pory"
 	closemessage
 # 182 "data/maps/SunshineOrphanage/scripts.pory"
-	setvar VAR_ITEM_ID, MOVE_METAL_CLAW
+	setvar VAR_0x8005, MOVE_GRASS_PLEDGE
 # 183 "data/maps/SunshineOrphanage/scripts.pory"
-	buffermovename STR_VAR_1, MOVE_METAL_CLAW
+	buffermovename STR_VAR_2, MOVE_GRASS_PLEDGE
 # 184 "data/maps/SunshineOrphanage/scripts.pory"
-	call MoveTutor_EventScript_OpenBox
+	call MoveTutor_EventScript_OpenPartyMenu
 # 185 "data/maps/SunshineOrphanage/scripts.pory"
 	compare VAR_RESULT, 4
 	goto_if_eq SunshineOrphanage_Eventscript_MetalClawTutor_8

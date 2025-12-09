@@ -179,9 +179,9 @@ script SunshineOrphanage_Eventscript_MetalClawTutor {
         }
         msgbox(format("Which Pokémon should I teach {COLOR BLUE}Metal Claw {COLOR 2}to?"))
         closemessage
-	    setvar (VAR_ITEM_ID, MOVE_METAL_CLAW)
-	    buffermovename (STR_VAR_1, MOVE_METAL_CLAW)
-	    call (MoveTutor_EventScript_OpenBox)
+	    setvar (VAR_0x8005, MOVE_GRASS_PLEDGE)
+	    buffermovename (STR_VAR_2, MOVE_GRASS_PLEDGE)
+	    call (MoveTutor_EventScript_OpenPartyMenu)
 	    if (var(VAR_RESULT) == 4) {
             goto(SunshineOrphanage_Eventscript_MetalClawDeclined)
         }

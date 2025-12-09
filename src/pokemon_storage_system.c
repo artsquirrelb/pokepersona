@@ -3809,7 +3809,7 @@ static void Task_ChangeScreen(u8 taskId)
             else if (SWSH_SUMMARY_SCREEN)
                 ShowPokemonSummaryScreen_SwSh(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
             else
-                    ShowPokemonSummaryScreen(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
+                ShowPokemonSummaryScreen(mode, boxMons, monIndex, maxMonIndex, CB2_ReturnToPokeStorage);
         }
         break;
     case SCREEN_CHANGE_NAME_BOX:

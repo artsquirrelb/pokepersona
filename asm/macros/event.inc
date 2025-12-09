@@ -2689,11 +2689,11 @@
 	.2byte \speciesId
 	.endm 
 
-	@Change the friendship of the pokemon in the party slot index
-	.macro setfriendship index:req, point:req
+	@Change index mon friendship to value
+	.macro setfriendship partyIndex:req, friendship:req
 	callnative Scrcmd_setfriendship, requests_effects=1
-	.byte \index
-	.byte \point
+	.byte \partyIndex
+	.byte \friendship
 	.endm
 
 	@ Gets the facing direction of a given event object and stores it in the variable dest.

@@ -1,0 +1,49 @@
+{
+  "id": "MAP_SUNSHINE_ORPHANAGE_ROOM1F",
+  "name": "SunshineOrphanage_Room1F",
+  "layout": "LAYOUT_SUNSHINE_ORPHANAGE_ROOM1F",
+  "music": "MUS_XC2_GARFONT_MERCERNARIES",
+  "region_map_section": "MAPSEC_SUNSHINE_ORPHANAGE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "x": 8,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_WILL_O_WISP",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_SUNSHINE_ORPHANAGE_1F_TM_WILL_O_WISP"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_SUNSHINE_ORPHANAGE1FHALLWAY",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 6,
+      "y": 11,
+      "elevation": 0,
+      "dest_map": "MAP_SUNSHINE_ORPHANAGE1FHALLWAY",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

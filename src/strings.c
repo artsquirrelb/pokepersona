@@ -1598,7 +1598,7 @@ const u8 gComplexQuest_Quest3Map_3[] = _("Content 3");
 // Camp Gears
 const u8 gText_WaitUntilTime[] = _("Wait until?");
 const u8 gText_WaitUntilMorning[] = _("Morning (6AM)");
-const u8 gText_WaitUntilDay[] = _("Day (10AM)");
+const u8 gText_WaitUntilDay[] = _("Day (9AM)");
 const u8 gText_WaitUntilEvening[] = _("Evening (6PM)");
 const u8 gText_WaitUntilNight[] = _("Night (9PM)");
 

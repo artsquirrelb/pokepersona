@@ -6,7 +6,7 @@ script Route2_2_Eventscript_BerrySign {
     lock
     msgbox(format("If you pick the berries, please plant back some!\p
     Let's spread the greens!\n
-    {CLEAR_TO 80}-BRG"))
+    {CLEAR_TO 150}-BRG"))
     closemessage
     release
     end
@@ -18,5 +18,14 @@ script Route2_2_Eventscript_DirectionSign {
     Sunshine Town {RIGHT_ARROW}"))
     closemessage
     release
+    end
+}
+
+script Route2_2_Eventscript_Pansage {
+    lockall
+    startoverworldencounter(12)
+    setflag(FLAG_TEMP_1)
+    removeobject(VAR_LAST_TALKED)
+    releaseall
     end
 }

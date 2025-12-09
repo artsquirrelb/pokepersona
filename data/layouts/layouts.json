@@ -5724,6 +5724,18 @@
       "secondary_tileset": "gTileset_Gatehouse",
       "border_filepath": "data/layouts/Route2_Gatehouse/border.bin",
       "blockdata_filepath": "data/layouts/Route2_Gatehouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNSHINE_ORPHANAGE_ROOM1F",
+      "name": "SunshineOrphanage_Room1F_Layout",
+      "width": 12,
+      "height": 13,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_SunshineOrphanageIndoor",
+      "border_filepath": "data/layouts/SunshineOrphanage_Room1F/border.bin",
+      "blockdata_filepath": "data/layouts/SunshineOrphanage_Room1F/map.bin"
     }
   ]
 }

@@ -31,7 +31,7 @@ Route2_2_Eventscript_BerrySign_Text_0:
 	.string "If you pick the berries, please plant\n"
 	.string "back some!\p"
 	.string "Let's spread the greens!\n"
-	.string "{CLEAR_TO 80}-BRG$"
+	.string "{CLEAR_TO 150}-BRG$"
 
 Route2_2_Eventscript_DirectionSign_Text_0:
 # 17 "data/maps/Route2_2/scripts.pory"

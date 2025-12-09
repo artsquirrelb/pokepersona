@@ -1055,12 +1055,12 @@
 #define FLAG_ITEM_SUNSHINE_WOODS_BEEDRILLITE                        0x3EA
 #define FLAG_ITEM_SUNSHINE_WOODS_TM_SCALD                           0x3EB
 #define FLAG_ITEM_SUNSHINE_TOWN_TM_ROCK_SMASH                       0x3EC
-#define FLAG_ITEM_THUNDERSHARDS_CAVE_1F_TM_THUNDER_WAVE              0x3ED
+#define FLAG_ITEM_THUNDERSHARDS_CAVE_1F_TM_THUNDER_WAVE             0x3ED
 #define FLAG_ITEM_THUNDERSHARDS_CAVE_2F_AGGRONITE                   0x3EE
-#define FLAG_THUNDERSHARDS_CAVE_2F_TM_THUNDERBOLT                                0x3EF
+#define FLAG_THUNDERSHARDS_CAVE_2F_TM_THUNDERBOLT                   0x3EF
 #define FLAG_ITEM_ROUTE_111_TM_SANDSTORM                            0x3F0
-#define FLAG_ITEM_THUNDERSHARDS_CAVE_2F_EXTERIOR_AERODACTYLITE                                0x3F1
-#define FLAG_ITEM_ROUTE_111_HP_UP                                   0x3F2
+#define FLAG_ITEM_THUNDERSHARDS_CAVE_2F_EXTERIOR_AERODACTYLITE      0x3F1
+#define FLAG_ITEM_SUNSHINE_ORPHANAGE_1F_TM_WILL_O_WISP              0x3F2
 #define FLAG_ITEM_ROUTE_112_NUGGET                                  0x3F3
 #define FLAG_ITEM_ROUTE_113_MAX_ETHER                               0x3F4
 #define FLAG_ITEM_THUNDERSHARD_CAVE_1F_CALCIUM                      0x3F5

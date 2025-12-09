@@ -997,6 +997,7 @@ script Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed {
 script Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV {
     delay(30)
     addobject(6)
+    addobject(19)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_diag_northeast*2))
     applymovement(19, AkishinjiGettingBlockedBySusMen)
     delay(8)

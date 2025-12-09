@@ -4,6 +4,27 @@ mapscripts MansionTrainingHouse_MapScripts {
     }
 }
 
+script MansionTrainingHouse_Eventscript_Nurse {
+    lock
+    faceplayer
+    setspeaker("Nurse Emily")
+    msgbox(format("Hello and welcome to Kirijo's Training House.\p
+    Let me heal your tired Pokémon."))
+    hidefollower
+    playse(MUS_HEAL)
+    waitse
+    special(HealPlayerParty)
+    updatefollowingmon
+    msgbox(format("
+    Thank you for waiting. We have restored your tired Pokémon to full health.\p
+    We hope to see you again."))
+    closemessage
+    applymovement(LOCALID_PLAYER, facedown)
+    waitmovement(0)
+	release
+	end
+}
+
 script MansionTrainingHouse_Eventscript_MoveTutor {
     lock
     checkplayergender

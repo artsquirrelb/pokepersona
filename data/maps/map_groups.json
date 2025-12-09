@@ -651,7 +651,8 @@
     "SunshineOrphanage_AkihikosRoom2F",
     "SunshineOrphanage2FHallway",
     "SunshineOrphanage1FHallway",
-    "SunshineOrphanageMainHall"
+    "SunshineOrphanageMainHall",
+    "SunshineOrphanage_Room1F"
   ],
   "gMapGroup_IndoorSunshineTown": [
     "SunshineTown_PokemonCenter",

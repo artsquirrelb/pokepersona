@@ -1239,3 +1239,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route3/scripts.inc"
 
 	.include "data/maps/Route2_Gatehouse/scripts.inc"
+
+	.include "data/maps/SunshineOrphanage_Room1F/scripts.inc"

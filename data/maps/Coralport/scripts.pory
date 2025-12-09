@@ -1,6 +1,9 @@
 mapscripts Coralport_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
         setflag(FLAG_VISITED_CORALPORT)
+        if (var(VAR_CHAPTER_1_STATE) == 0){
+            manuallysettime(WEEKDAY_MON, 8, 0, 0)
+        }
     }
 }
 
@@ -15,8 +18,8 @@ script Coralport_Eventscript_DirectionSign {
 
 script Coralport_Eventscript_TownSign {
     lock
-    msgbox(format("{CLEAR_TO 30}Welcome to Coralport!\n
-    {CLEAR_TO 20}“Home of the sea breeze.”"))
+    msgbox(format("{CLEAR_TO 45}Welcome to Coralport!\n
+    {CLEAR_TO 30}“Home of the sea breeze.”"))
     closemessage
     release
     end
@@ -24,8 +27,8 @@ script Coralport_Eventscript_TownSign {
 
 script Coralport_Eventscript_PoliceStationSign {
     lock
-    msgbox(format("{CLEAR_TO 30}Coralport Police Station\n
-    {CLEAR_TO 40}“For the people.”"))
+    msgbox(format("{CLEAR_TO 45}Coralport Police Station\n
+    {CLEAR_TO 60}“For the people.”"))
     closemessage
     release
     end
@@ -33,8 +36,8 @@ script Coralport_Eventscript_PoliceStationSign {
 
 script Coralport_Eventscript_CandyShopSign {
     lock
-    msgbox(format("{CLEAR_TO 30}AmeAme Candy Shop\n
-    {CLEAR_TO 16}“Welcome all the sweet lovers!”"))
+    msgbox(format("{CLEAR_TO 60}AmeAme Candy Shop\n
+    {CLEAR_TO 24}“Welcome all the sweet lovers!”"))
     closemessage
     release
     end
@@ -92,9 +95,12 @@ script Coralport_Eventscript_SailorOnBreak {
 script Coralport_Eventscript_Machamp {
     lockall
     faceplayer
+    showmonpic(SPECIES_MACHAMP, 18, 5)
     playmoncry(SPECIES_MACHAMP, CRY_MODE_NORMAL)
     waitmoncry
+    delay (30)
     setseenmon(SPECIES_MACHAMP)
+    hidemonpic
     releaseall
     end
 }
@@ -102,9 +108,12 @@ script Coralport_Eventscript_Machamp {
 script Coralport_Eventscript_Vigoroth {
     lockall
     faceplayer
+    showmonpic(SPECIES_VIGOROTH, 18, 5)
     playmoncry(SPECIES_VIGOROTH, CRY_MODE_NORMAL)
     waitmoncry
     setseenmon(SPECIES_VIGOROTH)
+    delay (30)
+    hidemonpic
     releaseall
     end
 }
@@ -124,13 +133,13 @@ script Coralport_Eventscript_SailorOnGuard {
     lock
     faceplayer
     setspeaker("Umito")
-    if (var(VAR_CHAPTER_1_STATE) < 1){
+    
         msgbox(format("This ship will departs for Windward Port at 9AM.\p
         Please come back later when it's boarding time at 8:30AM."))
         closemessage
         release
         end
-    }
+    
 }
 
 script Coralport_Eventscript_TuberM {
@@ -146,7 +155,7 @@ script Coralport_Eventscript_TuberM {
 script Coralport_Eventscript_Sandygast {
     lock
     playmoncry(SPECIES_SANDYGAST, CRY_MODE_NORMAL)
-    setwildbattle(SPECIES_SANDYGAST, 10)
+    setwildbattle(SPECIES_SANDYGAST, 12)
     dowildbattle
     fadescreenswapbuffers(FADE_TO_BLACK)
     setmetatile(11, 29, 0x246, FALSE)
@@ -188,7 +197,7 @@ script Coralport_Eventscript_Fisherman {
 
 script Coralport_Eventscript_Krabby {
     lockall
-    startoverworldencounter(10)
+    startoverworldencounter(12)
     setflag(FLAG_TEMP_1)
     removeobject(VAR_LAST_TALKED)
     releaseall

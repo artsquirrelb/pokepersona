@@ -1043,168 +1043,174 @@ Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru::
 # 576 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_EXP_SHARE
 # 577 "data/maps/Route2_House/scripts.pory"
-	setflag FLAG_ADVENTURE_STARTED
-# 578 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_SYS_POKEDEX_GET
-# 579 "data/maps/Route2_House/scripts.pory"
+# 578 "data/maps/Route2_House/scripts.pory"
 	special SetUnlockedPokedexFlags
-# 580 "data/maps/Route2_House/scripts.pory"
-	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
-# 581 "data/maps/Route2_House/scripts.pory"
+# 579 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_SYS_NATIONAL_DEX
-# 582 "data/maps/Route2_House/scripts.pory"
+# 580 "data/maps/Route2_House/scripts.pory"
 	special EnableNationalPokedex
-# 583 "data/maps/Route2_House/scripts.pory"
+# 581 "data/maps/Route2_House/scripts.pory"
 	additem ITEM_POKE_BALL, 20
-# 584 "data/maps/Route2_House/scripts.pory"
+# 582 "data/maps/Route2_House/scripts.pory"
 	additem ITEM_POKE_BALL, VAR_0x800A
-# 585 "data/maps/Route2_House/scripts.pory"
+# 583 "data/maps/Route2_House/scripts.pory"
 	additem ITEM_GREAT_BALL, VAR_0x800B
-# 586 "data/maps/Route2_House/scripts.pory"
+# 584 "data/maps/Route2_House/scripts.pory"
 	additem ITEM_EXP_CANDY_XS, 20
-# 587 "data/maps/Route2_House/scripts.pory"
+# 585 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_0x800A, 0
-# 588 "data/maps/Route2_House/scripts.pory"
+# 586 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_0x800B, 0
-# 589 "data/maps/Route2_House/scripts.pory"
+# 587 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, stepbackup
-# 590 "data/maps/Route2_House/scripts.pory"
+# 588 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 591 "data/maps/Route2_House/scripts.pory"
+# 589 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_6
-# 594 "data/maps/Route2_House/scripts.pory"
+# 592 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 595 "data/maps/Route2_House/scripts.pory"
+# 593 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruGoesBackToCenter
-# 596 "data/maps/Route2_House/scripts.pory"
+# 594 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 597 "data/maps/Route2_House/scripts.pory"
+# 595 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_7
-# 600 "data/maps/Route2_House/scripts.pory"
+# 598 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 601 "data/maps/Route2_House/scripts.pory"
+# 599 "data/maps/Route2_House/scripts.pory"
 	special SpawnCameraObject
-# 602 "data/maps/Route2_House/scripts.pory"
+# 600 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraPansToLowerHalfOfRoom
-# 603 "data/maps/Route2_House/scripts.pory"
+# 601 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruExitsTheHouse
-# 604 "data/maps/Route2_House/scripts.pory"
+# 602 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceright
-# 605 "data/maps/Route2_House/scripts.pory"
+# 603 "data/maps/Route2_House/scripts.pory"
 	waitmovement LOCALID_PLAYER
-# 606 "data/maps/Route2_House/scripts.pory"
+# 604 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, faceleft
-# 607 "data/maps/Route2_House/scripts.pory"
+# 605 "data/maps/Route2_House/scripts.pory"
 	waitmovement 6
-# 608 "data/maps/Route2_House/scripts.pory"
+# 606 "data/maps/Route2_House/scripts.pory"
 	delay 16
-# 609 "data/maps/Route2_House/scripts.pory"
+# 607 "data/maps/Route2_House/scripts.pory"
 	applymovement 5, VulpixFollowsMitsuruExit
-# 610 "data/maps/Route2_House/scripts.pory"
+# 608 "data/maps/Route2_House/scripts.pory"
 	delay 4
-# 611 "data/maps/Route2_House/scripts.pory"
+# 609 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, InteleonFollowsMitsuruExit
-# 612 "data/maps/Route2_House/scripts.pory"
+# 610 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, facedown
-# 613 "data/maps/Route2_House/scripts.pory"
+# 611 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, facedown
-# 614 "data/maps/Route2_House/scripts.pory"
+# 612 "data/maps/Route2_House/scripts.pory"
 	waitmovement 1
+# 613 "data/maps/Route2_House/scripts.pory"
+	playse SE_EXIT
+# 614 "data/maps/Route2_House/scripts.pory"
+	waitse
 # 615 "data/maps/Route2_House/scripts.pory"
-	playse SE_EXIT
-# 616 "data/maps/Route2_House/scripts.pory"
-	waitse
-# 617 "data/maps/Route2_House/scripts.pory"
 	waitmovement 5
-# 618 "data/maps/Route2_House/scripts.pory"
+# 616 "data/maps/Route2_House/scripts.pory"
 	playse SE_EXIT
-# 619 "data/maps/Route2_House/scripts.pory"
+# 617 "data/maps/Route2_House/scripts.pory"
 	waitse
-# 620 "data/maps/Route2_House/scripts.pory"
+# 618 "data/maps/Route2_House/scripts.pory"
 	waitmovement 4
-# 621 "data/maps/Route2_House/scripts.pory"
+# 619 "data/maps/Route2_House/scripts.pory"
 	playse SE_EXIT
-# 622 "data/maps/Route2_House/scripts.pory"
+# 620 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraFromLowerHalfRoomBackToAkihiko
-# 623 "data/maps/Route2_House/scripts.pory"
+# 621 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 624 "data/maps/Route2_House/scripts.pory"
+# 622 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 625 "data/maps/Route2_House/scripts.pory"
+# 623 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_8
-# 628 "data/maps/Route2_House/scripts.pory"
+# 626 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 629 "data/maps/Route2_House/scripts.pory"
+# 627 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, ShinjiroJoinsPostPokedex
-# 630 "data/maps/Route2_House/scripts.pory"
+# 628 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 631 "data/maps/Route2_House/scripts.pory"
+# 629 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_TEMP_1
-# 632 "data/maps/Route2_House/scripts.pory"
+# 630 "data/maps/Route2_House/scripts.pory"
 	removeobject 1
-# 633 "data/maps/Route2_House/scripts.pory"
+# 631 "data/maps/Route2_House/scripts.pory"
 	removeobject 4
-# 634 "data/maps/Route2_House/scripts.pory"
+# 632 "data/maps/Route2_House/scripts.pory"
 	removeobject 5
-# 635 "data/maps/Route2_House/scripts.pory"
+# 633 "data/maps/Route2_House/scripts.pory"
 	removeobject 6
-# 636 "data/maps/Route2_House/scripts.pory"
+# 634 "data/maps/Route2_House/scripts.pory"
 	special RemoveCameraObject
-# 637 "data/maps/Route2_House/scripts.pory"
+# 635 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 33
-# 638 "data/maps/Route2_House/scripts.pory"
+# 636 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 639 "data/maps/Route2_House/scripts.pory"
+# 637 "data/maps/Route2_House/scripts.pory"
 	fwdtime 13, 30
-# 640 "data/maps/Route2_House/scripts.pory"
+# 638 "data/maps/Route2_House/scripts.pory"
 	makecharaAvailable CHARACTER_SHINJIRO
-# 641 "data/maps/Route2_House/scripts.pory"
+# 639 "data/maps/Route2_House/scripts.pory"
 	release
 	end
 
 
-# 645 "data/maps/Route2_House/scripts.pory"
+# 643 "data/maps/Route2_House/scripts.pory"
 MitsuruLookingAtShinjiro:
-# 646 "data/maps/Route2_House/scripts.pory"
+# 644 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 647 "data/maps/Route2_House/scripts.pory"
+# 645 "data/maps/Route2_House/scripts.pory"
 	face_down
 	step_end
 
-# 650 "data/maps/Route2_House/scripts.pory"
+# 648 "data/maps/Route2_House/scripts.pory"
 stepbackup:
-# 651 "data/maps/Route2_House/scripts.pory"
+# 649 "data/maps/Route2_House/scripts.pory"
 	lock_facing_direction
-# 652 "data/maps/Route2_House/scripts.pory"
+# 650 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 653 "data/maps/Route2_House/scripts.pory"
+# 651 "data/maps/Route2_House/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 655 "data/maps/Route2_House/scripts.pory"
+# 653 "data/maps/Route2_House/scripts.pory"
 MitsuruGivingAkihikoPokedex:
-# 656 "data/maps/Route2_House/scripts.pory"
+# 654 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 656 "data/maps/Route2_House/scripts.pory"
+# 654 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 657 "data/maps/Route2_House/scripts.pory"
+# 655 "data/maps/Route2_House/scripts.pory"
 	walk_down
 	step_end
 
-# 659 "data/maps/Route2_House/scripts.pory"
+# 657 "data/maps/Route2_House/scripts.pory"
 MitsuruGoesBackToCenter:
-# 660 "data/maps/Route2_House/scripts.pory"
+# 658 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 661 "data/maps/Route2_House/scripts.pory"
+# 659 "data/maps/Route2_House/scripts.pory"
 	face_down
 	step_end
 
-# 663 "data/maps/Route2_House/scripts.pory"
+# 661 "data/maps/Route2_House/scripts.pory"
 MitsuruExitsTheHouse:
-# 664 "data/maps/Route2_House/scripts.pory"
+# 662 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 664 "data/maps/Route2_House/scripts.pory"
+# 662 "data/maps/Route2_House/scripts.pory"
 	walk_down
+# 662 "data/maps/Route2_House/scripts.pory"
+	walk_down
+# 662 "data/maps/Route2_House/scripts.pory"
+	walk_down
+# 662 "data/maps/Route2_House/scripts.pory"
+	walk_down
+# 663 "data/maps/Route2_House/scripts.pory"
+	walk_right
+# 663 "data/maps/Route2_House/scripts.pory"
+	walk_right
 # 664 "data/maps/Route2_House/scripts.pory"
 	walk_down
 # 664 "data/maps/Route2_House/scripts.pory"
@@ -1212,2330 +1218,2320 @@ MitsuruExitsTheHouse:
 # 664 "data/maps/Route2_House/scripts.pory"
 	walk_down
 # 665 "data/maps/Route2_House/scripts.pory"
-	walk_right
-# 665 "data/maps/Route2_House/scripts.pory"
-	walk_right
-# 666 "data/maps/Route2_House/scripts.pory"
-	walk_down
-# 666 "data/maps/Route2_House/scripts.pory"
-	walk_down
-# 666 "data/maps/Route2_House/scripts.pory"
-	walk_down
+	set_invisible
+	step_end
+
 # 667 "data/maps/Route2_House/scripts.pory"
-	set_invisible
-	step_end
-
-# 669 "data/maps/Route2_House/scripts.pory"
 CameraPansToLowerHalfOfRoom:
-# 670 "data/maps/Route2_House/scripts.pory"
+# 668 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 670 "data/maps/Route2_House/scripts.pory"
+# 668 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 670 "data/maps/Route2_House/scripts.pory"
+# 668 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 671 "data/maps/Route2_House/scripts.pory"
+# 669 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 671 "data/maps/Route2_House/scripts.pory"
+# 669 "data/maps/Route2_House/scripts.pory"
 	walk_right
 	step_end
 
-# 674 "data/maps/Route2_House/scripts.pory"
+# 672 "data/maps/Route2_House/scripts.pory"
 VulpixFollowsMitsuruExit:
-# 675 "data/maps/Route2_House/scripts.pory"
+# 673 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 675 "data/maps/Route2_House/scripts.pory"
+# 673 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 675 "data/maps/Route2_House/scripts.pory"
+# 673 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 675 "data/maps/Route2_House/scripts.pory"
+# 673 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 676 "data/maps/Route2_House/scripts.pory"
+# 674 "data/maps/Route2_House/scripts.pory"
 	walk_down
+# 674 "data/maps/Route2_House/scripts.pory"
+	walk_down
+# 674 "data/maps/Route2_House/scripts.pory"
+	walk_down
+# 675 "data/maps/Route2_House/scripts.pory"
+	walk_right
+# 675 "data/maps/Route2_House/scripts.pory"
+	walk_right
 # 676 "data/maps/Route2_House/scripts.pory"
 	walk_down
 # 676 "data/maps/Route2_House/scripts.pory"
 	walk_down
 # 677 "data/maps/Route2_House/scripts.pory"
-	walk_right
-# 677 "data/maps/Route2_House/scripts.pory"
-	walk_right
-# 678 "data/maps/Route2_House/scripts.pory"
-	walk_down
-# 678 "data/maps/Route2_House/scripts.pory"
-	walk_down
-# 679 "data/maps/Route2_House/scripts.pory"
 	set_invisible
 	step_end
 
-# 682 "data/maps/Route2_House/scripts.pory"
+# 680 "data/maps/Route2_House/scripts.pory"
 InteleonFollowsMitsuruExit:
+# 681 "data/maps/Route2_House/scripts.pory"
+	walk_down
+# 682 "data/maps/Route2_House/scripts.pory"
+	walk_right
+# 682 "data/maps/Route2_House/scripts.pory"
+	walk_right
+# 682 "data/maps/Route2_House/scripts.pory"
+	walk_right
+# 682 "data/maps/Route2_House/scripts.pory"
+	walk_right
+# 683 "data/maps/Route2_House/scripts.pory"
+	walk_down
+# 683 "data/maps/Route2_House/scripts.pory"
+	walk_down
 # 683 "data/maps/Route2_House/scripts.pory"
 	walk_down
 # 684 "data/maps/Route2_House/scripts.pory"
 	walk_right
 # 684 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 684 "data/maps/Route2_House/scripts.pory"
-	walk_right
-# 684 "data/maps/Route2_House/scripts.pory"
-	walk_right
-# 685 "data/maps/Route2_House/scripts.pory"
-	walk_down
 # 685 "data/maps/Route2_House/scripts.pory"
 	walk_down
 # 685 "data/maps/Route2_House/scripts.pory"
 	walk_down
 # 686 "data/maps/Route2_House/scripts.pory"
-	walk_right
-# 686 "data/maps/Route2_House/scripts.pory"
-	walk_right
-# 687 "data/maps/Route2_House/scripts.pory"
-	walk_down
-# 687 "data/maps/Route2_House/scripts.pory"
-	walk_down
-# 688 "data/maps/Route2_House/scripts.pory"
 	set_invisible
 	step_end
 
-# 691 "data/maps/Route2_House/scripts.pory"
+# 689 "data/maps/Route2_House/scripts.pory"
 CameraFromLowerHalfRoomBackToAkihiko:
-# 692 "data/maps/Route2_House/scripts.pory"
+# 690 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 692 "data/maps/Route2_House/scripts.pory"
+# 690 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 692 "data/maps/Route2_House/scripts.pory"
+# 690 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 693 "data/maps/Route2_House/scripts.pory"
+# 691 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 693 "data/maps/Route2_House/scripts.pory"
+# 691 "data/maps/Route2_House/scripts.pory"
 	walk_left
 	step_end
 
-# 696 "data/maps/Route2_House/scripts.pory"
+# 694 "data/maps/Route2_House/scripts.pory"
 ShinjiroJoinsPostPokedex:
-# 697 "data/maps/Route2_House/scripts.pory"
+# 695 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 697 "data/maps/Route2_House/scripts.pory"
+# 695 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 698 "data/maps/Route2_House/scripts.pory"
+# 696 "data/maps/Route2_House/scripts.pory"
 	set_invisible
 	step_end
 
 Route2_House_Eventscript_AkihikoOnFrame38::
-# 702 "data/maps/Route2_House/scripts.pory"
+# 700 "data/maps/Route2_House/scripts.pory"
 	goto Route2_House_Eventscript_MitsuruExplainingObjectives
 	return
 
 
 Route2_House_Eventscript_MitsuruExplainingObjectives::
-# 706 "data/maps/Route2_House/scripts.pory"
+# 704 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, AkihikoWalksToListenToMitsuru
-# 707 "data/maps/Route2_House/scripts.pory"
+# 705 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 708 "data/maps/Route2_House/scripts.pory"
+# 706 "data/maps/Route2_House/scripts.pory"
 	special SpawnCameraObject
-# 709 "data/maps/Route2_House/scripts.pory"
+# 707 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraFromAkiToCenter
-# 710 "data/maps/Route2_House/scripts.pory"
+# 708 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, facedown
-# 711 "data/maps/Route2_House/scripts.pory"
+# 709 "data/maps/Route2_House/scripts.pory"
 	delay 8
-# 712 "data/maps/Route2_House/scripts.pory"
+# 710 "data/maps/Route2_House/scripts.pory"
 	applymovement 5, facedown
-# 713 "data/maps/Route2_House/scripts.pory"
+# 711 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 714 "data/maps/Route2_House/scripts.pory"
+# 712 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruExplainingObjectives_Text_0
-# 723 "data/maps/Route2_House/scripts.pory"
+# 721 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 724 "data/maps/Route2_House/scripts.pory"
+# 722 "data/maps/Route2_House/scripts.pory"
 	delay 50
-# 725 "data/maps/Route2_House/scripts.pory"
+# 723 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 726 "data/maps/Route2_House/scripts.pory"
+# 724 "data/maps/Route2_House/scripts.pory"
 	playbgm MUS_P3R_FEARFUL_EXPERIENCE, TRUE
-# 727 "data/maps/Route2_House/scripts.pory"
+# 725 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruExplainingObjectives_Text_1
-# 740 "data/maps/Route2_House/scripts.pory"
+# 738 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 741 "data/maps/Route2_House/scripts.pory"
+# 739 "data/maps/Route2_House/scripts.pory"
 	delay 40
-# 742 "data/maps/Route2_House/scripts.pory"
+# 740 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruExplainingObjectives_Text_2
-# 744 "data/maps/Route2_House/scripts.pory"
+# 742 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 745 "data/maps/Route2_House/scripts.pory"
+# 743 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 746 "data/maps/Route2_House/scripts.pory"
+# 744 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, emotepensive
-# 747 "data/maps/Route2_House/scripts.pory"
+# 745 "data/maps/Route2_House/scripts.pory"
 	delay 10
-# 748 "data/maps/Route2_House/scripts.pory"
+# 746 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, emotepensive
-# 749 "data/maps/Route2_House/scripts.pory"
+# 747 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 750 "data/maps/Route2_House/scripts.pory"
+# 748 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 751 "data/maps/Route2_House/scripts.pory"
+# 749 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruExplainingObjectives_Text_3
-# 758 "data/maps/Route2_House/scripts.pory"
+# 756 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 759 "data/maps/Route2_House/scripts.pory"
+# 757 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, faceup
-# 760 "data/maps/Route2_House/scripts.pory"
+# 758 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraPansUpToClock
+# 759 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
+# 760 "data/maps/Route2_House/scripts.pory"
+	applymovement 1, emotepensive
 # 761 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
 # 762 "data/maps/Route2_House/scripts.pory"
-	applymovement 1, emotepensive
-# 763 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
-# 764 "data/maps/Route2_House/scripts.pory"
 	delay 90
-# 765 "data/maps/Route2_House/scripts.pory"
+# 763 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, facedown
-# 766 "data/maps/Route2_House/scripts.pory"
+# 764 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraGoesBackToCenterOfTheRoom
-# 767 "data/maps/Route2_House/scripts.pory"
+# 765 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 768 "data/maps/Route2_House/scripts.pory"
+# 766 "data/maps/Route2_House/scripts.pory"
 	fadenewbgm MUS_RG_SS_ANNE
-# 769 "data/maps/Route2_House/scripts.pory"
+# 767 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
-# 770 "data/maps/Route2_House/scripts.pory"
+# 768 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 771 "data/maps/Route2_House/scripts.pory"
+# 769 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruExplainingObjectives_Text_4
-# 774 "data/maps/Route2_House/scripts.pory"
+# 772 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 775 "data/maps/Route2_House/scripts.pory"
+# 773 "data/maps/Route2_House/scripts.pory"
 	goto Route2_House_Eventscript_StayingTheNight
 	return
 
 
-# 778 "data/maps/Route2_House/scripts.pory"
+# 776 "data/maps/Route2_House/scripts.pory"
 CameraFromAkiToCenter:
+# 777 "data/maps/Route2_House/scripts.pory"
+	walk_up
+	step_end
+
 # 779 "data/maps/Route2_House/scripts.pory"
-	walk_up
-	step_end
-
-# 781 "data/maps/Route2_House/scripts.pory"
 AkihikoWalksToListenToMitsuru:
-# 782 "data/maps/Route2_House/scripts.pory"
+# 780 "data/maps/Route2_House/scripts.pory"
 	player_run_up
-# 782 "data/maps/Route2_House/scripts.pory"
+# 780 "data/maps/Route2_House/scripts.pory"
 	player_run_up
-# 782 "data/maps/Route2_House/scripts.pory"
+# 780 "data/maps/Route2_House/scripts.pory"
 	player_run_up
-# 782 "data/maps/Route2_House/scripts.pory"
+# 780 "data/maps/Route2_House/scripts.pory"
 	player_run_up
-# 783 "data/maps/Route2_House/scripts.pory"
+# 781 "data/maps/Route2_House/scripts.pory"
 	player_run_left
-# 783 "data/maps/Route2_House/scripts.pory"
+# 781 "data/maps/Route2_House/scripts.pory"
 	player_run_left
-# 784 "data/maps/Route2_House/scripts.pory"
+# 782 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 784 "data/maps/Route2_House/scripts.pory"
+# 782 "data/maps/Route2_House/scripts.pory"
 	walk_up
 	step_end
 
-# 787 "data/maps/Route2_House/scripts.pory"
+# 785 "data/maps/Route2_House/scripts.pory"
 CameraPansUpToClock:
-# 788 "data/maps/Route2_House/scripts.pory"
+# 786 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 788 "data/maps/Route2_House/scripts.pory"
+# 786 "data/maps/Route2_House/scripts.pory"
 	walk_up
 	step_end
 
-# 791 "data/maps/Route2_House/scripts.pory"
+# 789 "data/maps/Route2_House/scripts.pory"
 CameraGoesBackToCenterOfTheRoom:
-# 792 "data/maps/Route2_House/scripts.pory"
+# 790 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 792 "data/maps/Route2_House/scripts.pory"
+# 790 "data/maps/Route2_House/scripts.pory"
 	walk_down
 	step_end
 
 Route2_House_Eventscript_StayingTheNight::
-# 796 "data/maps/Route2_House/scripts.pory"
+# 794 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 797 "data/maps/Route2_House/scripts.pory"
+# 795 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, AkihikoLookingAtTheBed
-# 798 "data/maps/Route2_House/scripts.pory"
+# 796 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 799 "data/maps/Route2_House/scripts.pory"
+# 797 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_0
-# 800 "data/maps/Route2_House/scripts.pory"
+# 798 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 801 "data/maps/Route2_House/scripts.pory"
+# 799 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruLookingAtTheBed
-# 802 "data/maps/Route2_House/scripts.pory"
+# 800 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 803 "data/maps/Route2_House/scripts.pory"
+# 801 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_1
-# 807 "data/maps/Route2_House/scripts.pory"
+# 805 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 808 "data/maps/Route2_House/scripts.pory"
+# 806 "data/maps/Route2_House/scripts.pory"
 	playse SE_PIN
-# 809 "data/maps/Route2_House/scripts.pory"
+# 807 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, AKihikoRemembersCampGears
-# 810 "data/maps/Route2_House/scripts.pory"
+# 808 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 811 "data/maps/Route2_House/scripts.pory"
+# 809 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_2
-# 812 "data/maps/Route2_House/scripts.pory"
+# 810 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 813 "data/maps/Route2_House/scripts.pory"
+# 811 "data/maps/Route2_House/scripts.pory"
 	playse SE_M_BUBBLE3
-# 814 "data/maps/Route2_House/scripts.pory"
+# 812 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, ShinjiroSweat
-# 815 "data/maps/Route2_House/scripts.pory"
+# 813 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 816 "data/maps/Route2_House/scripts.pory"
+# 814 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_3
+# 816 "data/maps/Route2_House/scripts.pory"
+	closemessage
+# 817 "data/maps/Route2_House/scripts.pory"
+	playse SE_FAILURE
 # 818 "data/maps/Route2_House/scripts.pory"
-	closemessage
-# 819 "data/maps/Route2_House/scripts.pory"
-	playse SE_FAILURE
-# 820 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, AkihikoBickering
-# 821 "data/maps/Route2_House/scripts.pory"
+# 819 "data/maps/Route2_House/scripts.pory"
 	delay 10
-# 822 "data/maps/Route2_House/scripts.pory"
+# 820 "data/maps/Route2_House/scripts.pory"
 	playse SE_FAILURE
-# 823 "data/maps/Route2_House/scripts.pory"
+# 821 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, ShinjiroBickering
+# 822 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
+# 823 "data/maps/Route2_House/scripts.pory"
+	lock
 # 824 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
+	setobjectnewmovementtype LOCALID_PLAYER, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT
 # 825 "data/maps/Route2_House/scripts.pory"
-	lock
+	setobjectnewmovementtype 6, MOVEMENT_TYPE_RUN_IN_PLACE_LEFT
 # 826 "data/maps/Route2_House/scripts.pory"
-	setobjectnewmovementtype LOCALID_PLAYER, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT
+	release
 # 827 "data/maps/Route2_House/scripts.pory"
-	setobjectnewmovementtype 6, MOVEMENT_TYPE_RUN_IN_PLACE_LEFT
+	delay 30
 # 828 "data/maps/Route2_House/scripts.pory"
-	release
-# 829 "data/maps/Route2_House/scripts.pory"
-	delay 30
-# 830 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, jumpinplaceright
-# 831 "data/maps/Route2_House/scripts.pory"
+# 829 "data/maps/Route2_House/scripts.pory"
 	delay 10
-# 832 "data/maps/Route2_House/scripts.pory"
+# 830 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, jumpinplaceleft
-# 833 "data/maps/Route2_House/scripts.pory"
+# 831 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 834 "data/maps/Route2_House/scripts.pory"
+# 832 "data/maps/Route2_House/scripts.pory"
 	lock
-# 835 "data/maps/Route2_House/scripts.pory"
+# 833 "data/maps/Route2_House/scripts.pory"
 	setobjectnewmovementtype LOCALID_PLAYER, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT
-# 836 "data/maps/Route2_House/scripts.pory"
+# 834 "data/maps/Route2_House/scripts.pory"
 	setobjectnewmovementtype 6, MOVEMENT_TYPE_RUN_IN_PLACE_LEFT
-# 837 "data/maps/Route2_House/scripts.pory"
+# 835 "data/maps/Route2_House/scripts.pory"
 	release
-# 838 "data/maps/Route2_House/scripts.pory"
+# 836 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 839 "data/maps/Route2_House/scripts.pory"
+# 837 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, shakehorizontal
-# 840 "data/maps/Route2_House/scripts.pory"
+# 838 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 841 "data/maps/Route2_House/scripts.pory"
+# 839 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_4
-# 842 "data/maps/Route2_House/scripts.pory"
+# 840 "data/maps/Route2_House/scripts.pory"
 	playse SE_SHINY
-# 843 "data/maps/Route2_House/scripts.pory"
+# 841 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, emotemusic
-# 844 "data/maps/Route2_House/scripts.pory"
+# 842 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 845 "data/maps/Route2_House/scripts.pory"
+# 843 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_5
-# 846 "data/maps/Route2_House/scripts.pory"
+# 844 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 847 "data/maps/Route2_House/scripts.pory"
+# 845 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceup
-# 848 "data/maps/Route2_House/scripts.pory"
+# 846 "data/maps/Route2_House/scripts.pory"
 	delay 10
-# 849 "data/maps/Route2_House/scripts.pory"
+# 847 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, faceup
-# 850 "data/maps/Route2_House/scripts.pory"
+# 848 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 851 "data/maps/Route2_House/scripts.pory"
+# 849 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 852 "data/maps/Route2_House/scripts.pory"
+# 850 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_6
-# 853 "data/maps/Route2_House/scripts.pory"
+# 851 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 854 "data/maps/Route2_House/scripts.pory"
+# 852 "data/maps/Route2_House/scripts.pory"
 	playse SE_SHINY
-# 855 "data/maps/Route2_House/scripts.pory"
+# 853 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, emotemusic
-# 856 "data/maps/Route2_House/scripts.pory"
+# 854 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, emotemusic
-# 857 "data/maps/Route2_House/scripts.pory"
+# 855 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 858 "data/maps/Route2_House/scripts.pory"
+# 856 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_7
-# 860 "data/maps/Route2_House/scripts.pory"
+# 858 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 861 "data/maps/Route2_House/scripts.pory"
+# 859 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraSlowlyPansUpFadeScreen
-# 862 "data/maps/Route2_House/scripts.pory"
+# 860 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 863 "data/maps/Route2_House/scripts.pory"
+# 861 "data/maps/Route2_House/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 864 "data/maps/Route2_House/scripts.pory"
+# 862 "data/maps/Route2_House/scripts.pory"
 	delay 80
-# 865 "data/maps/Route2_House/scripts.pory"
+# 863 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 866 "data/maps/Route2_House/scripts.pory"
+# 864 "data/maps/Route2_House/scripts.pory"
 	warpsilent MAP_BLANK_MAP, 0, 0
 	return
 
 
-# 869 "data/maps/Route2_House/scripts.pory"
+# 867 "data/maps/Route2_House/scripts.pory"
 AkihikoLookingAtTheBed:
-# 870 "data/maps/Route2_House/scripts.pory"
+# 868 "data/maps/Route2_House/scripts.pory"
 	face_left
-# 871 "data/maps/Route2_House/scripts.pory"
+# 869 "data/maps/Route2_House/scripts.pory"
 	emote_pensive
+# 870 "data/maps/Route2_House/scripts.pory"
+	delay_16
+# 871 "data/maps/Route2_House/scripts.pory"
+	delay_16
 # 872 "data/maps/Route2_House/scripts.pory"
 	delay_16
 # 873 "data/maps/Route2_House/scripts.pory"
 	delay_16
 # 874 "data/maps/Route2_House/scripts.pory"
-	delay_16
-# 875 "data/maps/Route2_House/scripts.pory"
-	delay_16
-# 876 "data/maps/Route2_House/scripts.pory"
 	face_up
 	step_end
 
-# 879 "data/maps/Route2_House/scripts.pory"
+# 877 "data/maps/Route2_House/scripts.pory"
 MitsuruLookingAtTheBed:
-# 880 "data/maps/Route2_House/scripts.pory"
+# 878 "data/maps/Route2_House/scripts.pory"
 	face_left
+# 879 "data/maps/Route2_House/scripts.pory"
+	delay_16
+# 880 "data/maps/Route2_House/scripts.pory"
+	emote_pensive
 # 881 "data/maps/Route2_House/scripts.pory"
 	delay_16
 # 882 "data/maps/Route2_House/scripts.pory"
-	emote_pensive
+	delay_16
 # 883 "data/maps/Route2_House/scripts.pory"
 	delay_16
 # 884 "data/maps/Route2_House/scripts.pory"
-	delay_16
-# 885 "data/maps/Route2_House/scripts.pory"
-	delay_16
-# 886 "data/maps/Route2_House/scripts.pory"
 	face_down
 	step_end
 
-# 889 "data/maps/Route2_House/scripts.pory"
+# 887 "data/maps/Route2_House/scripts.pory"
 AKihikoRemembersCampGears:
-# 890 "data/maps/Route2_House/scripts.pory"
+# 888 "data/maps/Route2_House/scripts.pory"
 	emote_exclamation_mark
-# 891 "data/maps/Route2_House/scripts.pory"
+# 889 "data/maps/Route2_House/scripts.pory"
 	face_right
 	step_end
 
-# 894 "data/maps/Route2_House/scripts.pory"
+# 892 "data/maps/Route2_House/scripts.pory"
 ShinjiroSweat:
-# 895 "data/maps/Route2_House/scripts.pory"
+# 893 "data/maps/Route2_House/scripts.pory"
 	emote_sweat
-# 896 "data/maps/Route2_House/scripts.pory"
+# 894 "data/maps/Route2_House/scripts.pory"
 	face_left
 	step_end
 
-# 899 "data/maps/Route2_House/scripts.pory"
+# 897 "data/maps/Route2_House/scripts.pory"
 jumpinplaceleft:
-# 900 "data/maps/Route2_House/scripts.pory"
+# 898 "data/maps/Route2_House/scripts.pory"
 	jump_in_place_left
 	step_end
 
-# 903 "data/maps/Route2_House/scripts.pory"
+# 901 "data/maps/Route2_House/scripts.pory"
 AkihikoBickering:
-# 904 "data/maps/Route2_House/scripts.pory"
+# 902 "data/maps/Route2_House/scripts.pory"
 	jump_in_place_right
-# 905 "data/maps/Route2_House/scripts.pory"
+# 903 "data/maps/Route2_House/scripts.pory"
 	emote_upset
+# 904 "data/maps/Route2_House/scripts.pory"
+	delay_16
+# 905 "data/maps/Route2_House/scripts.pory"
+	delay_16
 # 906 "data/maps/Route2_House/scripts.pory"
-	delay_16
-# 907 "data/maps/Route2_House/scripts.pory"
-	delay_16
-# 908 "data/maps/Route2_House/scripts.pory"
 	shake_horizontal
+# 907 "data/maps/Route2_House/scripts.pory"
+	emote_x
+# 908 "data/maps/Route2_House/scripts.pory"
+	delay_16
 # 909 "data/maps/Route2_House/scripts.pory"
-	emote_x
-# 910 "data/maps/Route2_House/scripts.pory"
-	delay_16
-# 911 "data/maps/Route2_House/scripts.pory"
 	delay_16
 	step_end
 
-# 914 "data/maps/Route2_House/scripts.pory"
+# 912 "data/maps/Route2_House/scripts.pory"
 ShinjiroBickering:
-# 915 "data/maps/Route2_House/scripts.pory"
+# 913 "data/maps/Route2_House/scripts.pory"
 	jump_in_place_left
-# 916 "data/maps/Route2_House/scripts.pory"
+# 914 "data/maps/Route2_House/scripts.pory"
 	emote_x
+# 915 "data/maps/Route2_House/scripts.pory"
+	delay_16
+# 916 "data/maps/Route2_House/scripts.pory"
+	delay_16
 # 917 "data/maps/Route2_House/scripts.pory"
-	delay_16
-# 918 "data/maps/Route2_House/scripts.pory"
-	delay_16
-# 919 "data/maps/Route2_House/scripts.pory"
 	shake_vertical
-# 920 "data/maps/Route2_House/scripts.pory"
+# 918 "data/maps/Route2_House/scripts.pory"
 	emote_angry
-# 921 "data/maps/Route2_House/scripts.pory"
+# 919 "data/maps/Route2_House/scripts.pory"
 	delay_16
-# 922 "data/maps/Route2_House/scripts.pory"
+# 920 "data/maps/Route2_House/scripts.pory"
 	delay_16
 	step_end
 
-# 925 "data/maps/Route2_House/scripts.pory"
+# 923 "data/maps/Route2_House/scripts.pory"
 emotemusic:
-# 926 "data/maps/Route2_House/scripts.pory"
+# 924 "data/maps/Route2_House/scripts.pory"
 	emote_music
 	step_end
 
-# 928 "data/maps/Route2_House/scripts.pory"
+# 926 "data/maps/Route2_House/scripts.pory"
 CameraSlowlyPansUpFadeScreen:
-# 929 "data/maps/Route2_House/scripts.pory"
+# 927 "data/maps/Route2_House/scripts.pory"
 	walk_slow_up
-# 929 "data/maps/Route2_House/scripts.pory"
+# 927 "data/maps/Route2_House/scripts.pory"
 	walk_slow_up
-# 929 "data/maps/Route2_House/scripts.pory"
+# 927 "data/maps/Route2_House/scripts.pory"
 	walk_slow_up
 	step_end
 
 Route2_House_Eventscript_AkihikoOnFrame39::
-# 933 "data/maps/Route2_House/scripts.pory"
+# 931 "data/maps/Route2_House/scripts.pory"
 	goto Route2_House_Eventscript_AkihikoCantSleep
 	return
 
 
 Route2_House_Eventscript_AkihikoCantSleep::
-# 937 "data/maps/Route2_House/scripts.pory"
+# 935 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 938 "data/maps/Route2_House/scripts.pory"
+# 936 "data/maps/Route2_House/scripts.pory"
 	fadenewbgm MUS_OCEANIC_MUSEUM
-# 939 "data/maps/Route2_House/scripts.pory"
+# 937 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
-# 940 "data/maps/Route2_House/scripts.pory"
+# 938 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 941 "data/maps/Route2_House/scripts.pory"
+# 939 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, emotepensive
-# 942 "data/maps/Route2_House/scripts.pory"
+# 940 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 943 "data/maps/Route2_House/scripts.pory"
+# 941 "data/maps/Route2_House/scripts.pory"
 	delay 40
-# 944 "data/maps/Route2_House/scripts.pory"
+# 942 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkihikoCantSleep_Text_0
-# 950 "data/maps/Route2_House/scripts.pory"
+# 948 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 951 "data/maps/Route2_House/scripts.pory"
+# 949 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceup
-# 952 "data/maps/Route2_House/scripts.pory"
+# 950 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 953 "data/maps/Route2_House/scripts.pory"
+# 951 "data/maps/Route2_House/scripts.pory"
 	special SpawnCameraObject
-# 954 "data/maps/Route2_House/scripts.pory"
+# 952 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Route2_House_Eventscript_AkihikoCantSleep_Movement_0
-# 955 "data/maps/Route2_House/scripts.pory"
+# 953 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 956 "data/maps/Route2_House/scripts.pory"
+# 954 "data/maps/Route2_House/scripts.pory"
 	applymovement 7, emoteasleep
-# 957 "data/maps/Route2_House/scripts.pory"
+# 955 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 958 "data/maps/Route2_House/scripts.pory"
+# 956 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 959 "data/maps/Route2_House/scripts.pory"
+# 957 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkihikoCantSleep_Text_1
-# 960 "data/maps/Route2_House/scripts.pory"
+# 958 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 961 "data/maps/Route2_House/scripts.pory"
+# 959 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 962 "data/maps/Route2_House/scripts.pory"
+# 960 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Route2_House_Eventscript_AkihikoCantSleep_Movement_1
-# 963 "data/maps/Route2_House/scripts.pory"
+# 961 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, facedown
-# 964 "data/maps/Route2_House/scripts.pory"
+# 962 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 965 "data/maps/Route2_House/scripts.pory"
+# 963 "data/maps/Route2_House/scripts.pory"
 	playse SE_PIN
-# 966 "data/maps/Route2_House/scripts.pory"
+# 964 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, emoteexclamation
+# 965 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
+# 966 "data/maps/Route2_House/scripts.pory"
+	delay 30
 # 967 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
-# 968 "data/maps/Route2_House/scripts.pory"
-	delay 30
-# 969 "data/maps/Route2_House/scripts.pory"
 	playse SE_M_DETECT
-# 970 "data/maps/Route2_House/scripts.pory"
+# 968 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, shakehorizontal
-# 971 "data/maps/Route2_House/scripts.pory"
+# 969 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 972 "data/maps/Route2_House/scripts.pory"
+# 970 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkihikoCantSleep_Text_2
-# 973 "data/maps/Route2_House/scripts.pory"
+# 971 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 974 "data/maps/Route2_House/scripts.pory"
+# 972 "data/maps/Route2_House/scripts.pory"
 	playse SE_M_BUBBLE3
-# 975 "data/maps/Route2_House/scripts.pory"
+# 973 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, emotesweat
-# 976 "data/maps/Route2_House/scripts.pory"
+# 974 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 977 "data/maps/Route2_House/scripts.pory"
+# 975 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkihikoCantSleep_Text_3
-# 979 "data/maps/Route2_House/scripts.pory"
+# 977 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 980 "data/maps/Route2_House/scripts.pory"
+# 978 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceright
-# 981 "data/maps/Route2_House/scripts.pory"
+# 979 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraGoesRight2
-# 982 "data/maps/Route2_House/scripts.pory"
+# 980 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 983 "data/maps/Route2_House/scripts.pory"
+# 981 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 984 "data/maps/Route2_House/scripts.pory"
+# 982 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkihikoCantSleep_Text_4
-# 986 "data/maps/Route2_House/scripts.pory"
+# 984 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 987 "data/maps/Route2_House/scripts.pory"
+# 985 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraGoesLeft2
+# 986 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
+# 987 "data/maps/Route2_House/scripts.pory"
+	applymovement LOCALID_PLAYER, faceup
 # 988 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
 # 989 "data/maps/Route2_House/scripts.pory"
-	applymovement LOCALID_PLAYER, faceup
-# 990 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
-# 991 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkihikoCantSleep_Text_5
-# 992 "data/maps/Route2_House/scripts.pory"
+# 990 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 993 "data/maps/Route2_House/scripts.pory"
+# 991 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 994 "data/maps/Route2_House/scripts.pory"
+# 992 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraGoesDown2
-# 995 "data/maps/Route2_House/scripts.pory"
+# 993 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 996 "data/maps/Route2_House/scripts.pory"
+# 994 "data/maps/Route2_House/scripts.pory"
 	special RemoveCameraObject
-# 997 "data/maps/Route2_House/scripts.pory"
+# 995 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, AkihikoExitTheRoom
-# 998 "data/maps/Route2_House/scripts.pory"
+# 996 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 999 "data/maps/Route2_House/scripts.pory"
+# 997 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 40
-# 1000 "data/maps/Route2_House/scripts.pory"
+# 998 "data/maps/Route2_House/scripts.pory"
 	fwdtime 22, 40
-# 1001 "data/maps/Route2_House/scripts.pory"
+# 999 "data/maps/Route2_House/scripts.pory"
 	warp MAP_ROUTE2, 10, 12
 	return
 
 
-# 1004 "data/maps/Route2_House/scripts.pory"
+# 1002 "data/maps/Route2_House/scripts.pory"
 emotesweat:
-# 1005 "data/maps/Route2_House/scripts.pory"
+# 1003 "data/maps/Route2_House/scripts.pory"
 	emote_sweat
 	step_end
 
-# 1008 "data/maps/Route2_House/scripts.pory"
+# 1006 "data/maps/Route2_House/scripts.pory"
 CameraGoesUp2:
-# 1009 "data/maps/Route2_House/scripts.pory"
+# 1007 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1009 "data/maps/Route2_House/scripts.pory"
+# 1007 "data/maps/Route2_House/scripts.pory"
 	walk_up
 	step_end
 
-# 1012 "data/maps/Route2_House/scripts.pory"
+# 1010 "data/maps/Route2_House/scripts.pory"
 CameraGoesDown2:
-# 1013 "data/maps/Route2_House/scripts.pory"
+# 1011 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 1013 "data/maps/Route2_House/scripts.pory"
+# 1011 "data/maps/Route2_House/scripts.pory"
 	walk_down
 	step_end
 
-# 1016 "data/maps/Route2_House/scripts.pory"
+# 1014 "data/maps/Route2_House/scripts.pory"
 AkihikoExitTheRoom:
-# 1017 "data/maps/Route2_House/scripts.pory"
+# 1015 "data/maps/Route2_House/scripts.pory"
 	player_run_right
-# 1017 "data/maps/Route2_House/scripts.pory"
+# 1015 "data/maps/Route2_House/scripts.pory"
 	player_run_right
-# 1017 "data/maps/Route2_House/scripts.pory"
+# 1015 "data/maps/Route2_House/scripts.pory"
 	player_run_right
-# 1017 "data/maps/Route2_House/scripts.pory"
+# 1015 "data/maps/Route2_House/scripts.pory"
 	player_run_right
-# 1018 "data/maps/Route2_House/scripts.pory"
+# 1016 "data/maps/Route2_House/scripts.pory"
 	player_run_down
-# 1018 "data/maps/Route2_House/scripts.pory"
+# 1016 "data/maps/Route2_House/scripts.pory"
 	player_run_down
 	step_end
 
 TakeARest::
-# 1022 "data/maps/Route2_House/scripts.pory"
+# 1020 "data/maps/Route2_House/scripts.pory"
 	lock
-# 1023 "data/maps/Route2_House/scripts.pory"
+# 1021 "data/maps/Route2_House/scripts.pory"
 	msgbox TakeARest_Text_0, MSGBOX_YESNO
-# 1024 "data/maps/Route2_House/scripts.pory"
+# 1022 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1025 "data/maps/Route2_House/scripts.pory"
+# 1023 "data/maps/Route2_House/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq TakeARest_2
 TakeARest_1:
 	end
 
 TakeARest_2:
-# 1026 "data/maps/Route2_House/scripts.pory"
+# 1024 "data/maps/Route2_House/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 1027 "data/maps/Route2_House/scripts.pory"
+# 1025 "data/maps/Route2_House/scripts.pory"
 	special HealPlayerParty
-# 1028 "data/maps/Route2_House/scripts.pory"
+# 1026 "data/maps/Route2_House/scripts.pory"
 	playse MUS_HEAL
-# 1029 "data/maps/Route2_House/scripts.pory"
+# 1027 "data/maps/Route2_House/scripts.pory"
 	waitse
-# 1030 "data/maps/Route2_House/scripts.pory"
+# 1028 "data/maps/Route2_House/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
 	goto TakeARest_1
 
 
 Route2_House_Eventscript_Bathroom::
-# 1037 "data/maps/Route2_House/scripts.pory"
+# 1035 "data/maps/Route2_House/scripts.pory"
 	lock
-# 1038 "data/maps/Route2_House/scripts.pory"
+# 1036 "data/maps/Route2_House/scripts.pory"
 	compare VAR_TEMP_0, 0
 	goto_if_eq Route2_House_Eventscript_Bathroom_2
-# 1087 "data/maps/Route2_House/scripts.pory"
+# 1085 "data/maps/Route2_House/scripts.pory"
 	compare VAR_TEMP_0, 1
 	goto_if_eq Route2_House_Eventscript_Bathroom_3
-# 1107 "data/maps/Route2_House/scripts.pory"
+# 1105 "data/maps/Route2_House/scripts.pory"
 	compare VAR_TEMP_0, 2
 	goto_if_eq Route2_House_Eventscript_Bathroom_4
-# 1118 "data/maps/Route2_House/scripts.pory"
+# 1116 "data/maps/Route2_House/scripts.pory"
 	compare VAR_TEMP_0, 3
 	goto_if_eq Route2_House_Eventscript_Bathroom_5
 Route2_House_Eventscript_Bathroom_1:
-# 1124 "data/maps/Route2_House/scripts.pory"
+# 1122 "data/maps/Route2_House/scripts.pory"
 	release
 	end
 
 Route2_House_Eventscript_Bathroom_2:
-# 1039 "data/maps/Route2_House/scripts.pory"
+# 1037 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_Bathroom_Text_0, MSGBOX_YESNO
-# 1040 "data/maps/Route2_House/scripts.pory"
+# 1038 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1041 "data/maps/Route2_House/scripts.pory"
+# 1039 "data/maps/Route2_House/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route2_House_Eventscript_Bathroom_10
-# 1075 "data/maps/Route2_House/scripts.pory"
+# 1073 "data/maps/Route2_House/scripts.pory"
 	checkplayergender
-# 1076 "data/maps/Route2_House/scripts.pory"
+# 1074 "data/maps/Route2_House/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Route2_House_Eventscript_Bathroom_22
-# 1080 "data/maps/Route2_House/scripts.pory"
+# 1078 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_Bathroom_Text_4
 Route2_House_Eventscript_Bathroom_21:
-# 1082 "data/maps/Route2_House/scripts.pory"
+# 1080 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1083 "data/maps/Route2_House/scripts.pory"
+# 1081 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceleft
-# 1084 "data/maps/Route2_House/scripts.pory"
+# 1082 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
 	goto Route2_House_Eventscript_Bathroom_1
 
 Route2_House_Eventscript_Bathroom_3:
-# 1088 "data/maps/Route2_House/scripts.pory"
+# 1086 "data/maps/Route2_House/scripts.pory"
 	checkplayergender
-# 1089 "data/maps/Route2_House/scripts.pory"
+# 1087 "data/maps/Route2_House/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Route2_House_Eventscript_Bathroom_14
-# 1093 "data/maps/Route2_House/scripts.pory"
+# 1091 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_Bathroom_Text_6
 Route2_House_Eventscript_Bathroom_13:
-# 1095 "data/maps/Route2_House/scripts.pory"
+# 1093 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1096 "data/maps/Route2_House/scripts.pory"
+# 1094 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceleft
-# 1097 "data/maps/Route2_House/scripts.pory"
+# 1095 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1098 "data/maps/Route2_House/scripts.pory"
+# 1096 "data/maps/Route2_House/scripts.pory"
 	checkplayergender
-# 1099 "data/maps/Route2_House/scripts.pory"
+# 1097 "data/maps/Route2_House/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Route2_House_Eventscript_Bathroom_27
 Route2_House_Eventscript_Bathroom_25:
-# 1103 "data/maps/Route2_House/scripts.pory"
+# 1101 "data/maps/Route2_House/scripts.pory"
 	release
 	end
 
 Route2_House_Eventscript_Bathroom_4:
-# 1108 "data/maps/Route2_House/scripts.pory"
+# 1106 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_Bathroom_Text_7
-# 1113 "data/maps/Route2_House/scripts.pory"
+# 1111 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1114 "data/maps/Route2_House/scripts.pory"
+# 1112 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceleft
-# 1115 "data/maps/Route2_House/scripts.pory"
+# 1113 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1116 "data/maps/Route2_House/scripts.pory"
+# 1114 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_TEMP_0, 3
 	goto Route2_House_Eventscript_Bathroom_1
 
 Route2_House_Eventscript_Bathroom_5:
-# 1119 "data/maps/Route2_House/scripts.pory"
+# 1117 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_Bathroom_Text_8
-# 1120 "data/maps/Route2_House/scripts.pory"
+# 1118 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1121 "data/maps/Route2_House/scripts.pory"
+# 1119 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceleft
-# 1122 "data/maps/Route2_House/scripts.pory"
+# 1120 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
 	goto Route2_House_Eventscript_Bathroom_1
 
 Route2_House_Eventscript_Bathroom_10:
-# 1042 "data/maps/Route2_House/scripts.pory"
+# 1040 "data/maps/Route2_House/scripts.pory"
 	hidefollowernpc
-# 1043 "data/maps/Route2_House/scripts.pory"
+# 1041 "data/maps/Route2_House/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 1044 "data/maps/Route2_House/scripts.pory"
+# 1042 "data/maps/Route2_House/scripts.pory"
 	destroyfollowernpc
-# 1045 "data/maps/Route2_House/scripts.pory"
+# 1043 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_FOLLOWERS_DISABLED
-# 1046 "data/maps/Route2_House/scripts.pory"
+# 1044 "data/maps/Route2_House/scripts.pory"
 	playse SE_DOOR
+# 1045 "data/maps/Route2_House/scripts.pory"
+	waitse
+# 1046 "data/maps/Route2_House/scripts.pory"
+	playse SE_M_SURF
 # 1047 "data/maps/Route2_House/scripts.pory"
 	waitse
 # 1048 "data/maps/Route2_House/scripts.pory"
-	playse SE_M_SURF
+	delay 30
 # 1049 "data/maps/Route2_House/scripts.pory"
-	waitse
-# 1050 "data/maps/Route2_House/scripts.pory"
-	delay 30
-# 1051 "data/maps/Route2_House/scripts.pory"
 	playse SE_DOOR
-# 1052 "data/maps/Route2_House/scripts.pory"
+# 1050 "data/maps/Route2_House/scripts.pory"
 	waitse
-# 1053 "data/maps/Route2_House/scripts.pory"
+# 1051 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceleft
-# 1054 "data/maps/Route2_House/scripts.pory"
+# 1052 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1055 "data/maps/Route2_House/scripts.pory"
+# 1053 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1056 "data/maps/Route2_House/scripts.pory"
+# 1054 "data/maps/Route2_House/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 1057 "data/maps/Route2_House/scripts.pory"
+# 1055 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1058 "data/maps/Route2_House/scripts.pory"
+# 1056 "data/maps/Route2_House/scripts.pory"
 	playse SE_SHINY
-# 1059 "data/maps/Route2_House/scripts.pory"
+# 1057 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, emotemusic
-# 1060 "data/maps/Route2_House/scripts.pory"
+# 1058 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1061 "data/maps/Route2_House/scripts.pory"
+# 1059 "data/maps/Route2_House/scripts.pory"
 	checkplayergender
-# 1062 "data/maps/Route2_House/scripts.pory"
+# 1060 "data/maps/Route2_House/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Route2_House_Eventscript_Bathroom_18
-# 1067 "data/maps/Route2_House/scripts.pory"
+# 1065 "data/maps/Route2_House/scripts.pory"
 	addtime 0, 0, 40
-# 1068 "data/maps/Route2_House/scripts.pory"
+# 1066 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_Bathroom_Text_2
 Route2_House_Eventscript_Bathroom_17:
-# 1070 "data/maps/Route2_House/scripts.pory"
+# 1068 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1071 "data/maps/Route2_House/scripts.pory"
+# 1069 "data/maps/Route2_House/scripts.pory"
 	special HealPlayerParty
-# 1072 "data/maps/Route2_House/scripts.pory"
+# 1070 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_TEMP_0, 1
 	goto Route2_House_Eventscript_Bathroom_1
 
 Route2_House_Eventscript_Bathroom_14:
-# 1090 "data/maps/Route2_House/scripts.pory"
+# 1088 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_Bathroom_Text_5
 	goto Route2_House_Eventscript_Bathroom_13
 
 Route2_House_Eventscript_Bathroom_18:
-# 1063 "data/maps/Route2_House/scripts.pory"
+# 1061 "data/maps/Route2_House/scripts.pory"
 	addtime 0, 0, 10
-# 1064 "data/maps/Route2_House/scripts.pory"
+# 1062 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_Bathroom_Text_1
 	goto Route2_House_Eventscript_Bathroom_17
 
 Route2_House_Eventscript_Bathroom_22:
-# 1077 "data/maps/Route2_House/scripts.pory"
+# 1075 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_Bathroom_Text_3
 	goto Route2_House_Eventscript_Bathroom_21
 
 Route2_House_Eventscript_Bathroom_26:
-# 1101 "data/maps/Route2_House/scripts.pory"
+# 1099 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_TEMP_0, 2
 	goto Route2_House_Eventscript_Bathroom_25
 
 Route2_House_Eventscript_Bathroom_27:
-# 1099 "data/maps/Route2_House/scripts.pory"
+# 1097 "data/maps/Route2_House/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 42
 	goto_if_ge Route2_House_Eventscript_Bathroom_26
 	goto Route2_House_Eventscript_Bathroom_25
 
 
 Route2_House_Eventscript_AkihikoOnFrame42::
-# 1129 "data/maps/Route2_House/scripts.pory"
+# 1127 "data/maps/Route2_House/scripts.pory"
 	goto Route2_House_Eventscript_TheFirstMorning
 	return
 
 
 Route2_House_Eventscript_AkihikoOnFrame43::
-# 1133 "data/maps/Route2_House/scripts.pory"
+# 1131 "data/maps/Route2_House/scripts.pory"
 	goto Route2_House_Eventscript_TheFirstMorning2
 	return
 
 
 Route2_House_Eventscript_TheFirstMorning::
-# 1136 "data/maps/Route2_House/scripts.pory"
+# 1134 "data/maps/Route2_House/scripts.pory"
 	lock
-# 1137 "data/maps/Route2_House/scripts.pory"
+# 1135 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 43
-# 1138 "data/maps/Route2_House/scripts.pory"
+# 1136 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1139 "data/maps/Route2_House/scripts.pory"
+# 1137 "data/maps/Route2_House/scripts.pory"
 	playse SE_M_YAWN
-# 1140 "data/maps/Route2_House/scripts.pory"
+# 1138 "data/maps/Route2_House/scripts.pory"
 	waitse
-# 1141 "data/maps/Route2_House/scripts.pory"
+# 1139 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TheFirstMorning_Text_0
+# 1141 "data/maps/Route2_House/scripts.pory"
+	closemessage
+# 1142 "data/maps/Route2_House/scripts.pory"
+	delay 30
 # 1143 "data/maps/Route2_House/scripts.pory"
-	closemessage
-# 1144 "data/maps/Route2_House/scripts.pory"
-	delay 30
-# 1145 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TheFirstMorning_Text_1
-# 1146 "data/maps/Route2_House/scripts.pory"
+# 1144 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1147 "data/maps/Route2_House/scripts.pory"
+# 1145 "data/maps/Route2_House/scripts.pory"
 	special SpawnCameraObject
-# 1148 "data/maps/Route2_House/scripts.pory"
+# 1146 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraPansToMitsuruTheFirstMorning
-# 1149 "data/maps/Route2_House/scripts.pory"
+# 1147 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1150 "data/maps/Route2_House/scripts.pory"
+# 1148 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, AkihikoGoesToPlaceTheFirstMorning
-# 1151 "data/maps/Route2_House/scripts.pory"
+# 1149 "data/maps/Route2_House/scripts.pory"
 	delay 4
-# 1152 "data/maps/Route2_House/scripts.pory"
+# 1150 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, ShinjiroGoesToPlaceTheFirstMorning
-# 1153 "data/maps/Route2_House/scripts.pory"
+# 1151 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1154 "data/maps/Route2_House/scripts.pory"
+# 1152 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1155 "data/maps/Route2_House/scripts.pory"
+# 1153 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TheFirstMorning_Text_2
-# 1156 "data/maps/Route2_House/scripts.pory"
+# 1154 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1157 "data/maps/Route2_House/scripts.pory"
+# 1155 "data/maps/Route2_House/scripts.pory"
 	goto EventScript_RegionMap
-# 1158 "data/maps/Route2_House/scripts.pory"
+# 1156 "data/maps/Route2_House/scripts.pory"
 	release
 	return
 
 
 Route2_House_Eventscript_TheFirstMorning2::
-# 1162 "data/maps/Route2_House/scripts.pory"
+# 1160 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1163 "data/maps/Route2_House/scripts.pory"
+# 1161 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TheFirstMorning2_Text_0
-# 1175 "data/maps/Route2_House/scripts.pory"
+# 1173 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1176 "data/maps/Route2_House/scripts.pory"
+# 1174 "data/maps/Route2_House/scripts.pory"
 	applymovement 5, walkleft
-# 1177 "data/maps/Route2_House/scripts.pory"
+# 1175 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, walkleft
-# 1178 "data/maps/Route2_House/scripts.pory"
+# 1176 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1179 "data/maps/Route2_House/scripts.pory"
+# 1177 "data/maps/Route2_House/scripts.pory"
 	removeobject 5
-# 1180 "data/maps/Route2_House/scripts.pory"
+# 1178 "data/maps/Route2_House/scripts.pory"
 	removeobject 6
-# 1181 "data/maps/Route2_House/scripts.pory"
+# 1179 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruJoinsTheFirstMorning
-# 1182 "data/maps/Route2_House/scripts.pory"
+# 1180 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, InteleonJoinsTheFirstMorning
-# 1183 "data/maps/Route2_House/scripts.pory"
+# 1181 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1184 "data/maps/Route2_House/scripts.pory"
+# 1182 "data/maps/Route2_House/scripts.pory"
 	removeobject 1
-# 1185 "data/maps/Route2_House/scripts.pory"
+# 1183 "data/maps/Route2_House/scripts.pory"
 	removeobject 4
-# 1186 "data/maps/Route2_House/scripts.pory"
+# 1184 "data/maps/Route2_House/scripts.pory"
 	special SpawnCameraObject
-# 1187 "data/maps/Route2_House/scripts.pory"
+# 1185 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Route2_House_Eventscript_TheFirstMorning2_Movement_0
-# 1188 "data/maps/Route2_House/scripts.pory"
+# 1186 "data/maps/Route2_House/scripts.pory"
 	waitmovement OBJ_EVENT_ID_CAMERA
-# 1189 "data/maps/Route2_House/scripts.pory"
+# 1187 "data/maps/Route2_House/scripts.pory"
 	special RemoveCameraObject
-# 1190 "data/maps/Route2_House/scripts.pory"
+# 1188 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1191 "data/maps/Route2_House/scripts.pory"
+# 1189 "data/maps/Route2_House/scripts.pory"
 	playfanfare MUS_OBTAIN_TMHM
-# 1192 "data/maps/Route2_House/scripts.pory"
+# 1190 "data/maps/Route2_House/scripts.pory"
 	waitfanfare
-# 1193 "data/maps/Route2_House/scripts.pory"
+# 1191 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TheFirstMorning2_Text_1
-# 1197 "data/maps/Route2_House/scripts.pory"
+# 1195 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1198 "data/maps/Route2_House/scripts.pory"
+# 1196 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_STORY_QUESTS_STATE, 2
-# 1199 "data/maps/Route2_House/scripts.pory"
+# 1197 "data/maps/Route2_House/scripts.pory"
 	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, CHAPTER_1
-# 1201 "data/maps/Route2_House/scripts.pory"
+# 1199 "data/maps/Route2_House/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, MITSURUS_PROLOGUE
-# 1202 "data/maps/Route2_House/scripts.pory"
+# 1200 "data/maps/Route2_House/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route2_House_Eventscript_TheFirstMorning2_2
-# 1210 "data/maps/Route2_House/scripts.pory"
+# 1208 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 100
 Route2_House_Eventscript_TheFirstMorning2_1:
-# 1212 "data/maps/Route2_House/scripts.pory"
+# 1210 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_TEMP_1
-# 1213 "data/maps/Route2_House/scripts.pory"
+# 1211 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 100
-# 1214 "data/maps/Route2_House/scripts.pory"
+# 1212 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_CURRENT_LEVEL_CAP, 18
-# 1215 "data/maps/Route2_House/scripts.pory"
+# 1213 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_CURRENT_EV_CAP, 80
-# 1216 "data/maps/Route2_House/scripts.pory"
+# 1214 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_DAYS_LEFT, 15
-# 1217 "data/maps/Route2_House/scripts.pory"
+# 1215 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_HIDE_TALK_BUTTON
-# 1218 "data/maps/Route2_House/scripts.pory"
+# 1216 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, facedown
-# 1219 "data/maps/Route2_House/scripts.pory"
+# 1217 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1220 "data/maps/Route2_House/scripts.pory"
+# 1218 "data/maps/Route2_House/scripts.pory"
 	makecharaAvailable CHARACTER_AKIHIKO
-# 1221 "data/maps/Route2_House/scripts.pory"
+# 1219 "data/maps/Route2_House/scripts.pory"
 	makecharaAvailable CHARACTER_SHINJIRO
-# 1222 "data/maps/Route2_House/scripts.pory"
+# 1220 "data/maps/Route2_House/scripts.pory"
 	unlockcharacter CHARACTER_MITSURU
-# 1223 "data/maps/Route2_House/scripts.pory"
+# 1221 "data/maps/Route2_House/scripts.pory"
 	unlockcharacter CHARACTER_INTELEON_T
-# 1224 "data/maps/Route2_House/scripts.pory"
+# 1222 "data/maps/Route2_House/scripts.pory"
 	completesubquest STORY_QUESTS, AKIHIKOS_PROLOGUE
-# 1225 "data/maps/Route2_House/scripts.pory"
+# 1223 "data/maps/Route2_House/scripts.pory"
 	release
 	end
 
 Route2_House_Eventscript_TheFirstMorning2_2:
-# 1204 "data/maps/Route2_House/scripts.pory"
+# 1202 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TheFirstMorning2_Text_2
-# 1206 "data/maps/Route2_House/scripts.pory"
+# 1204 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1207 "data/maps/Route2_House/scripts.pory"
+# 1205 "data/maps/Route2_House/scripts.pory"
 	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, MITSURUS_PROLOGUE
 	goto Route2_House_Eventscript_TheFirstMorning2_1
 
 
-# 1229 "data/maps/Route2_House/scripts.pory"
+# 1227 "data/maps/Route2_House/scripts.pory"
 CameraPansToMitsuruTheFirstMorning:
-# 1230 "data/maps/Route2_House/scripts.pory"
+# 1228 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1230 "data/maps/Route2_House/scripts.pory"
+# 1228 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1231 "data/maps/Route2_House/scripts.pory"
+# 1229 "data/maps/Route2_House/scripts.pory"
 	walk_diag_northeast
-# 1231 "data/maps/Route2_House/scripts.pory"
+# 1229 "data/maps/Route2_House/scripts.pory"
 	walk_diag_northeast
-# 1232 "data/maps/Route2_House/scripts.pory"
+# 1230 "data/maps/Route2_House/scripts.pory"
 	walk_up
 	step_end
 
-# 1235 "data/maps/Route2_House/scripts.pory"
+# 1233 "data/maps/Route2_House/scripts.pory"
 AkihikoGoesToPlaceTheFirstMorning:
-# 1236 "data/maps/Route2_House/scripts.pory"
+# 1234 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1236 "data/maps/Route2_House/scripts.pory"
+# 1234 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1236 "data/maps/Route2_House/scripts.pory"
+# 1234 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1236 "data/maps/Route2_House/scripts.pory"
+# 1234 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1237 "data/maps/Route2_House/scripts.pory"
+# 1235 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 1237 "data/maps/Route2_House/scripts.pory"
+# 1235 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 1238 "data/maps/Route2_House/scripts.pory"
+# 1236 "data/maps/Route2_House/scripts.pory"
 	face_up
 	step_end
 
-# 1240 "data/maps/Route2_House/scripts.pory"
+# 1238 "data/maps/Route2_House/scripts.pory"
 ShinjiroGoesToPlaceTheFirstMorning:
-# 1241 "data/maps/Route2_House/scripts.pory"
+# 1239 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 1241 "data/maps/Route2_House/scripts.pory"
+# 1239 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 1242 "data/maps/Route2_House/scripts.pory"
+# 1240 "data/maps/Route2_House/scripts.pory"
 	walk_up
 	step_end
 
-# 1245 "data/maps/Route2_House/scripts.pory"
+# 1243 "data/maps/Route2_House/scripts.pory"
 MitsuruJoinsTheFirstMorning:
-# 1246 "data/maps/Route2_House/scripts.pory"
+# 1244 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 1246 "data/maps/Route2_House/scripts.pory"
+# 1244 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 1247 "data/maps/Route2_House/scripts.pory"
+# 1245 "data/maps/Route2_House/scripts.pory"
 	set_invisible
 	step_end
 
-# 1249 "data/maps/Route2_House/scripts.pory"
+# 1247 "data/maps/Route2_House/scripts.pory"
 InteleonJoinsTheFirstMorning:
-# 1250 "data/maps/Route2_House/scripts.pory"
+# 1248 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 1250 "data/maps/Route2_House/scripts.pory"
+# 1248 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 1250 "data/maps/Route2_House/scripts.pory"
+# 1248 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 1250 "data/maps/Route2_House/scripts.pory"
+# 1248 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 1251 "data/maps/Route2_House/scripts.pory"
+# 1249 "data/maps/Route2_House/scripts.pory"
 	set_invisible
 	step_end
 
 Route2_House_Eventscript_MitsuruOnWarp8::
-# 1255 "data/maps/Route2_House/scripts.pory"
+# 1253 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceup
 	return
 
 
 Route2_House_Eventscript_MitsuruRestForTheNight::
-# 1259 "data/maps/Route2_House/scripts.pory"
+# 1257 "data/maps/Route2_House/scripts.pory"
 	lock
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_House_Eventscript_MitsuruRestForTheNight_Movement_0
-# 1261 "data/maps/Route2_House/scripts.pory"
+# 1259 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1262 "data/maps/Route2_House/scripts.pory"
+# 1260 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1263 "data/maps/Route2_House/scripts.pory"
+# 1261 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruRestForTheNight_Text_0
-# 1264 "data/maps/Route2_House/scripts.pory"
+# 1262 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1265 "data/maps/Route2_House/scripts.pory"
+# 1263 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 9
-# 1266 "data/maps/Route2_House/scripts.pory"
+# 1264 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_HIDE_TALK_BUTTON
-# 1267 "data/maps/Route2_House/scripts.pory"
+# 1265 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
-# 1268 "data/maps/Route2_House/scripts.pory"
+# 1266 "data/maps/Route2_House/scripts.pory"
 	warpsilent MAP_BLANK_MAP
 	return
 
 
 Route2_House_Eventscript_MitsuruOnFrame10::
-# 1272 "data/maps/Route2_House/scripts.pory"
+# 1270 "data/maps/Route2_House/scripts.pory"
 	lock
-# 1273 "data/maps/Route2_House/scripts.pory"
+# 1271 "data/maps/Route2_House/scripts.pory"
 	call EventScript_TellTheTimeDayHourMinute
-# 1274 "data/maps/Route2_House/scripts.pory"
+# 1272 "data/maps/Route2_House/scripts.pory"
 	goto Route2_House_Eventscript_MitsuruPostRest
 	return
 
 
 Route2_House_Eventscript_MitsuruPostRest::
-# 1278 "data/maps/Route2_House/scripts.pory"
+# 1276 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1279 "data/maps/Route2_House/scripts.pory"
+# 1277 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceup
-# 1280 "data/maps/Route2_House/scripts.pory"
+# 1278 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1281 "data/maps/Route2_House/scripts.pory"
+# 1279 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruPostRest_Text_0
-# 1282 "data/maps/Route2_House/scripts.pory"
+# 1280 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1283 "data/maps/Route2_House/scripts.pory"
+# 1281 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 11
-# 1284 "data/maps/Route2_House/scripts.pory"
+# 1282 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_HIDE_TALK_BUTTON
-# 1285 "data/maps/Route2_House/scripts.pory"
+# 1283 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 1286 "data/maps/Route2_House/scripts.pory"
+# 1284 "data/maps/Route2_House/scripts.pory"
 	release
 	end
 
 
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji::
-# 1291 "data/maps/Route2_House/scripts.pory"
+# 1289 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1292 "data/maps/Route2_House/scripts.pory"
+# 1290 "data/maps/Route2_House/scripts.pory"
 	call EventScript_TellTheTimeDayHourMinute
-# 1293 "data/maps/Route2_House/scripts.pory"
+# 1291 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, emotepensive
+# 1292 "data/maps/Route2_House/scripts.pory"
+	waitmovement
+# 1293 "data/maps/Route2_House/scripts.pory"
+	playse SE_DEX_SCROLL
 # 1294 "data/maps/Route2_House/scripts.pory"
 	waitmovement
 # 1295 "data/maps/Route2_House/scripts.pory"
-	playse SE_DEX_SCROLL
+	delay 20
 # 1296 "data/maps/Route2_House/scripts.pory"
-	waitmovement
+	playse SE_DEX_SCROLL
 # 1297 "data/maps/Route2_House/scripts.pory"
-	delay 20
+	waitmovement
 # 1298 "data/maps/Route2_House/scripts.pory"
-	playse SE_DEX_SCROLL
+	delay 20
 # 1299 "data/maps/Route2_House/scripts.pory"
-	waitmovement
+	playse SE_DEX_SCROLL
 # 1300 "data/maps/Route2_House/scripts.pory"
-	delay 20
+	waitmovement
 # 1301 "data/maps/Route2_House/scripts.pory"
-	playse SE_DEX_SCROLL
+	delay 20
 # 1302 "data/maps/Route2_House/scripts.pory"
-	waitmovement
+	playse SE_DEX_SCROLL
 # 1303 "data/maps/Route2_House/scripts.pory"
-	delay 20
+	waitmovement
 # 1304 "data/maps/Route2_House/scripts.pory"
-	playse SE_DEX_SCROLL
+	delay 20
 # 1305 "data/maps/Route2_House/scripts.pory"
-	waitmovement
-# 1306 "data/maps/Route2_House/scripts.pory"
-	delay 20
-# 1307 "data/maps/Route2_House/scripts.pory"
 	playse SE_DEX_SCROLL
+# 1306 "data/maps/Route2_House/scripts.pory"
+	waitmovement
+# 1307 "data/maps/Route2_House/scripts.pory"
+	delay 20
 # 1308 "data/maps/Route2_House/scripts.pory"
-	waitmovement
-# 1309 "data/maps/Route2_House/scripts.pory"
-	delay 20
-# 1310 "data/maps/Route2_House/scripts.pory"
 	playse SE_SUCCESS
-# 1311 "data/maps/Route2_House/scripts.pory"
+# 1309 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, emoteexclamation
+# 1310 "data/maps/Route2_House/scripts.pory"
+	waitmovement
+# 1311 "data/maps/Route2_House/scripts.pory"
+	delay 20
 # 1312 "data/maps/Route2_House/scripts.pory"
-	waitmovement
+	playse SE_M_SCRATCH
 # 1313 "data/maps/Route2_House/scripts.pory"
-	delay 20
-# 1314 "data/maps/Route2_House/scripts.pory"
-	playse SE_M_SCRATCH
-# 1315 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_0x8000, PIC_AKIHIKO
-# 1316 "data/maps/Route2_House/scripts.pory"
+# 1314 "data/maps/Route2_House/scripts.pory"
 	callnative DrawMugshot
-# 1317 "data/maps/Route2_House/scripts.pory"
+# 1315 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_0
-# 1322 "data/maps/Route2_House/scripts.pory"
+# 1320 "data/maps/Route2_House/scripts.pory"
 	playse SE_M_SCRATCH
-# 1323 "data/maps/Route2_House/scripts.pory"
+# 1321 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_0x8000, PIC_SHINJIRO
-# 1324 "data/maps/Route2_House/scripts.pory"
+# 1322 "data/maps/Route2_House/scripts.pory"
 	callnative DrawMugshot
-# 1325 "data/maps/Route2_House/scripts.pory"
+# 1323 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_1
-# 1327 "data/maps/Route2_House/scripts.pory"
+# 1325 "data/maps/Route2_House/scripts.pory"
 	callnative ClearMugshot
-# 1328 "data/maps/Route2_House/scripts.pory"
+# 1326 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_2
+# 1329 "data/maps/Route2_House/scripts.pory"
+	closemessage
+# 1330 "data/maps/Route2_House/scripts.pory"
+	delay 20
 # 1331 "data/maps/Route2_House/scripts.pory"
-	closemessage
-# 1332 "data/maps/Route2_House/scripts.pory"
-	delay 20
-# 1333 "data/maps/Route2_House/scripts.pory"
 	special SpawnCameraObject
-# 1334 "data/maps/Route2_House/scripts.pory"
+# 1332 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Movement_0
-# 1335 "data/maps/Route2_House/scripts.pory"
+# 1333 "data/maps/Route2_House/scripts.pory"
 	playse SE_EXIT
-# 1336 "data/maps/Route2_House/scripts.pory"
+# 1334 "data/maps/Route2_House/scripts.pory"
 	showobjectat 4, MAP_ROUTE2_HOUSE
-# 1337 "data/maps/Route2_House/scripts.pory"
+# 1335 "data/maps/Route2_House/scripts.pory"
 	delay 8
-# 1338 "data/maps/Route2_House/scripts.pory"
+# 1336 "data/maps/Route2_House/scripts.pory"
 	playse SE_PIN
-# 1339 "data/maps/Route2_House/scripts.pory"
+# 1337 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceright
-# 1340 "data/maps/Route2_House/scripts.pory"
+# 1338 "data/maps/Route2_House/scripts.pory"
 	delay 4
-# 1341 "data/maps/Route2_House/scripts.pory"
+# 1339 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Movement_1
-# 1342 "data/maps/Route2_House/scripts.pory"
+# 1340 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1343 "data/maps/Route2_House/scripts.pory"
+# 1341 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_3
+# 1344 "data/maps/Route2_House/scripts.pory"
+	closemessage
+# 1345 "data/maps/Route2_House/scripts.pory"
+	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
 # 1346 "data/maps/Route2_House/scripts.pory"
-	closemessage
-# 1347 "data/maps/Route2_House/scripts.pory"
-	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 1348 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, shakehorizontal
-# 1349 "data/maps/Route2_House/scripts.pory"
+# 1347 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1350 "data/maps/Route2_House/scripts.pory"
+# 1348 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_4
-# 1353 "data/maps/Route2_House/scripts.pory"
+# 1351 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1354 "data/maps/Route2_House/scripts.pory"
+# 1352 "data/maps/Route2_House/scripts.pory"
 	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 1355 "data/maps/Route2_House/scripts.pory"
+# 1353 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, walkinplaceleft
-# 1356 "data/maps/Route2_House/scripts.pory"
+# 1354 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1357 "data/maps/Route2_House/scripts.pory"
+# 1355 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Movement_2
-# 1358 "data/maps/Route2_House/scripts.pory"
+# 1356 "data/maps/Route2_House/scripts.pory"
 	applymovement 5, Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Movement_3
-# 1359 "data/maps/Route2_House/scripts.pory"
+# 1357 "data/maps/Route2_House/scripts.pory"
 	delay 8
-# 1360 "data/maps/Route2_House/scripts.pory"
+# 1358 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Movement_4
-# 1361 "data/maps/Route2_House/scripts.pory"
+# 1359 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1362 "data/maps/Route2_House/scripts.pory"
+# 1360 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1363 "data/maps/Route2_House/scripts.pory"
+# 1361 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_TEMP_4
-# 1364 "data/maps/Route2_House/scripts.pory"
+# 1362 "data/maps/Route2_House/scripts.pory"
 	removeobject 4
-# 1365 "data/maps/Route2_House/scripts.pory"
+# 1363 "data/maps/Route2_House/scripts.pory"
 	removeobject 5
-# 1366 "data/maps/Route2_House/scripts.pory"
+# 1364 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, walkinplaceleft
-# 1367 "data/maps/Route2_House/scripts.pory"
+# 1365 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1368 "data/maps/Route2_House/scripts.pory"
+# 1366 "data/maps/Route2_House/scripts.pory"
 	playse SE_PC_OFF
+# 1367 "data/maps/Route2_House/scripts.pory"
+	waitse
+# 1368 "data/maps/Route2_House/scripts.pory"
+	playse SE_RG_BAG_POCKET
 # 1369 "data/maps/Route2_House/scripts.pory"
 	waitse
 # 1370 "data/maps/Route2_House/scripts.pory"
-	playse SE_RG_BAG_POCKET
-# 1371 "data/maps/Route2_House/scripts.pory"
-	waitse
-# 1372 "data/maps/Route2_House/scripts.pory"
 	setmetatile 2, 10, 0x22A, TRUE
-# 1373 "data/maps/Route2_House/scripts.pory"
+# 1371 "data/maps/Route2_House/scripts.pory"
 	setmetatile 2, 11, 0x232, TRUE
-# 1374 "data/maps/Route2_House/scripts.pory"
+# 1372 "data/maps/Route2_House/scripts.pory"
 	special DrawWholeMapView
-# 1375 "data/maps/Route2_House/scripts.pory"
+# 1373 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceright
-# 1376 "data/maps/Route2_House/scripts.pory"
+# 1374 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1377 "data/maps/Route2_House/scripts.pory"
+# 1375 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 23
-# 1378 "data/maps/Route2_House/scripts.pory"
+# 1376 "data/maps/Route2_House/scripts.pory"
 	fwdtime 17, 15
-# 1379 "data/maps/Route2_House/scripts.pory"
+# 1377 "data/maps/Route2_House/scripts.pory"
 	special RemoveCameraObject
-# 1380 "data/maps/Route2_House/scripts.pory"
+# 1378 "data/maps/Route2_House/scripts.pory"
 	special ShowMapNamePopup
-# 1381 "data/maps/Route2_House/scripts.pory"
+# 1379 "data/maps/Route2_House/scripts.pory"
 	release
 	end
 
 
 Route2_House_Eventscript_MitsuruCallingTakeharuForHelp::
-# 1386 "data/maps/Route2_House/scripts.pory"
+# 1384 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1387 "data/maps/Route2_House/scripts.pory"
+# 1385 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_0
-# 1389 "data/maps/Route2_House/scripts.pory"
+# 1387 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1390 "data/maps/Route2_House/scripts.pory"
+# 1388 "data/maps/Route2_House/scripts.pory"
 	playse SE_POKENAV_OFF
-# 1391 "data/maps/Route2_House/scripts.pory"
+# 1389 "data/maps/Route2_House/scripts.pory"
 	waitse
-# 1392 "data/maps/Route2_House/scripts.pory"
+# 1390 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1393 "data/maps/Route2_House/scripts.pory"
+# 1391 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, walkdown
-# 1394 "data/maps/Route2_House/scripts.pory"
+# 1392 "data/maps/Route2_House/scripts.pory"
 	applymovement 5, faceright
-# 1395 "data/maps/Route2_House/scripts.pory"
+# 1393 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, faceleft
-# 1396 "data/maps/Route2_House/scripts.pory"
+# 1394 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1397 "data/maps/Route2_House/scripts.pory"
+# 1395 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_1
-# 1401 "data/maps/Route2_House/scripts.pory"
+# 1399 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, faceright
-# 1402 "data/maps/Route2_House/scripts.pory"
+# 1400 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1403 "data/maps/Route2_House/scripts.pory"
+# 1401 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_2
-# 1407 "data/maps/Route2_House/scripts.pory"
+# 1405 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1408 "data/maps/Route2_House/scripts.pory"
+# 1406 "data/maps/Route2_House/scripts.pory"
 	playmoncry SPECIES_VULPIX, CRY_MODE_NORMAL
-# 1409 "data/maps/Route2_House/scripts.pory"
+# 1407 "data/maps/Route2_House/scripts.pory"
 	delay 4
-# 1410 "data/maps/Route2_House/scripts.pory"
+# 1408 "data/maps/Route2_House/scripts.pory"
 	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 1411 "data/maps/Route2_House/scripts.pory"
+# 1409 "data/maps/Route2_House/scripts.pory"
 	applymovement 5, Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Movement_0
-# 1412 "data/maps/Route2_House/scripts.pory"
+# 1410 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Movement_1
-# 1413 "data/maps/Route2_House/scripts.pory"
+# 1411 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1414 "data/maps/Route2_House/scripts.pory"
+# 1412 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1415 "data/maps/Route2_House/scripts.pory"
+# 1413 "data/maps/Route2_House/scripts.pory"
 	removeobject 4
-# 1416 "data/maps/Route2_House/scripts.pory"
+# 1414 "data/maps/Route2_House/scripts.pory"
 	removeobject 5
-# 1417 "data/maps/Route2_House/scripts.pory"
+# 1415 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_TEMP_4
-# 1418 "data/maps/Route2_House/scripts.pory"
+# 1416 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 27
-# 1419 "data/maps/Route2_House/scripts.pory"
+# 1417 "data/maps/Route2_House/scripts.pory"
 	fwdtime 10, 55
-# 1420 "data/maps/Route2_House/scripts.pory"
+# 1418 "data/maps/Route2_House/scripts.pory"
 	fwdweekday WEEKDAY_SUN
-# 1421 "data/maps/Route2_House/scripts.pory"
+# 1419 "data/maps/Route2_House/scripts.pory"
 	release
 	end
 
 
 Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV::
-# 1426 "data/maps/Route2_House/scripts.pory"
+# 1424 "data/maps/Route2_House/scripts.pory"
 	lock
-# 1427 "data/maps/Route2_House/scripts.pory"
+# 1425 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1428 "data/maps/Route2_House/scripts.pory"
+# 1426 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV_Movement_0
+# 1427 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
+# 1428 "data/maps/Route2_House/scripts.pory"
+	delay 30
 # 1429 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
-# 1430 "data/maps/Route2_House/scripts.pory"
-	delay 30
-# 1431 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV_Text_0
+# 1430 "data/maps/Route2_House/scripts.pory"
+	closemessage
+# 1431 "data/maps/Route2_House/scripts.pory"
+	delay 30
 # 1432 "data/maps/Route2_House/scripts.pory"
-	closemessage
-# 1433 "data/maps/Route2_House/scripts.pory"
-	delay 30
-# 1434 "data/maps/Route2_House/scripts.pory"
 	applymovement 2, shakehorizontal
-# 1435 "data/maps/Route2_House/scripts.pory"
+# 1433 "data/maps/Route2_House/scripts.pory"
 	delay 4
-# 1436 "data/maps/Route2_House/scripts.pory"
+# 1434 "data/maps/Route2_House/scripts.pory"
 	applymovement 3, shakehorizontal
-# 1437 "data/maps/Route2_House/scripts.pory"
+# 1435 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1438 "data/maps/Route2_House/scripts.pory"
+# 1436 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1439 "data/maps/Route2_House/scripts.pory"
+# 1437 "data/maps/Route2_House/scripts.pory"
 	applymovement 2, invisible
-# 1440 "data/maps/Route2_House/scripts.pory"
+# 1438 "data/maps/Route2_House/scripts.pory"
 	playse SE_PIN
-# 1441 "data/maps/Route2_House/scripts.pory"
+# 1439 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_TEMP_5
-# 1442 "data/maps/Route2_House/scripts.pory"
+# 1440 "data/maps/Route2_House/scripts.pory"
 	addobject 8
-# 1443 "data/maps/Route2_House/scripts.pory"
+# 1441 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, AkiShinjiWakesUp
-# 1444 "data/maps/Route2_House/scripts.pory"
+# 1442 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1445 "data/maps/Route2_House/scripts.pory"
+# 1443 "data/maps/Route2_House/scripts.pory"
 	delay 4
-# 1446 "data/maps/Route2_House/scripts.pory"
+# 1444 "data/maps/Route2_House/scripts.pory"
 	applymovement 3, invisible
-# 1447 "data/maps/Route2_House/scripts.pory"
+# 1445 "data/maps/Route2_House/scripts.pory"
 	playse SE_PIN
-# 1448 "data/maps/Route2_House/scripts.pory"
+# 1446 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, AkiShinjiWakesUp
+# 1447 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
+# 1448 "data/maps/Route2_House/scripts.pory"
+	delay 30
 # 1449 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
-# 1450 "data/maps/Route2_House/scripts.pory"
-	delay 30
-# 1451 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, AkihikoLookingAround
-# 1452 "data/maps/Route2_House/scripts.pory"
+# 1450 "data/maps/Route2_House/scripts.pory"
 	delay 8
-# 1453 "data/maps/Route2_House/scripts.pory"
+# 1451 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, ShinjiroLookingAround
-# 1454 "data/maps/Route2_House/scripts.pory"
+# 1452 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1455 "data/maps/Route2_House/scripts.pory"
+# 1453 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1456 "data/maps/Route2_House/scripts.pory"
+# 1454 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, jumpinplaceup
-# 1457 "data/maps/Route2_House/scripts.pory"
+# 1455 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1458 "data/maps/Route2_House/scripts.pory"
+# 1456 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiWakingUp_Text_2
-# 1460 "data/maps/Route2_House/scripts.pory"
+# 1458 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV_Text_1
-# 1463 "data/maps/Route2_House/scripts.pory"
+# 1461 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1464 "data/maps/Route2_House/scripts.pory"
+# 1462 "data/maps/Route2_House/scripts.pory"
 	goto Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV
 	return
 
 
 Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV::
-# 1468 "data/maps/Route2_House/scripts.pory"
+# 1466 "data/maps/Route2_House/scripts.pory"
 	lock
-# 1469 "data/maps/Route2_House/scripts.pory"
+# 1467 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1470 "data/maps/Route2_House/scripts.pory"
+# 1468 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_0
-# 1473 "data/maps/Route2_House/scripts.pory"
+# 1471 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1474 "data/maps/Route2_House/scripts.pory"
+# 1472 "data/maps/Route2_House/scripts.pory"
 	delay 30
+# 1473 "data/maps/Route2_House/scripts.pory"
+	applymovement 8, faceright
+# 1474 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
 # 1475 "data/maps/Route2_House/scripts.pory"
-	applymovement 8, faceright
-# 1476 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
-# 1477 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_1
+# 1476 "data/maps/Route2_House/scripts.pory"
+	closemessage
+# 1477 "data/maps/Route2_House/scripts.pory"
+	applymovement 6, faceleft
 # 1478 "data/maps/Route2_House/scripts.pory"
-	closemessage
+	waitmovement 0
 # 1479 "data/maps/Route2_House/scripts.pory"
-	applymovement 6, faceleft
-# 1480 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
-# 1481 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_2
+# 1482 "data/maps/Route2_House/scripts.pory"
+	delay 20
+# 1483 "data/maps/Route2_House/scripts.pory"
+	applymovement 8, faceup
 # 1484 "data/maps/Route2_House/scripts.pory"
-	delay 20
+	delay 8
 # 1485 "data/maps/Route2_House/scripts.pory"
-	applymovement 8, faceup
+	applymovement 6, faceup
 # 1486 "data/maps/Route2_House/scripts.pory"
-	delay 8
+	waitmovement 0
 # 1487 "data/maps/Route2_House/scripts.pory"
-	applymovement 6, faceup
-# 1488 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
-# 1489 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_3
+# 1500 "data/maps/Route2_House/scripts.pory"
+	closemessage
+# 1501 "data/maps/Route2_House/scripts.pory"
+	delay 20
 # 1502 "data/maps/Route2_House/scripts.pory"
-	closemessage
-# 1503 "data/maps/Route2_House/scripts.pory"
-	delay 20
-# 1504 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, faceleft
-# 1505 "data/maps/Route2_House/scripts.pory"
+# 1503 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1506 "data/maps/Route2_House/scripts.pory"
+# 1504 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_4
-# 1508 "data/maps/Route2_House/scripts.pory"
+# 1506 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1509 "data/maps/Route2_House/scripts.pory"
+# 1507 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, facedown
-# 1510 "data/maps/Route2_House/scripts.pory"
+# 1508 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1511 "data/maps/Route2_House/scripts.pory"
+# 1509 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_5
-# 1513 "data/maps/Route2_House/scripts.pory"
+# 1511 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1514 "data/maps/Route2_House/scripts.pory"
+# 1512 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruPickingAkihiko
-# 1515 "data/maps/Route2_House/scripts.pory"
+# 1513 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1516 "data/maps/Route2_House/scripts.pory"
+# 1514 "data/maps/Route2_House/scripts.pory"
 	delay 8
-# 1517 "data/maps/Route2_House/scripts.pory"
+# 1515 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_6
+# 1516 "data/maps/Route2_House/scripts.pory"
+	closemessage
+# 1517 "data/maps/Route2_House/scripts.pory"
+	playse SE_PIN
 # 1518 "data/maps/Route2_House/scripts.pory"
-	closemessage
+	waitse
 # 1519 "data/maps/Route2_House/scripts.pory"
-	playse SE_PIN
-# 1520 "data/maps/Route2_House/scripts.pory"
-	waitse
-# 1521 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, emoteexclamation
-# 1522 "data/maps/Route2_House/scripts.pory"
+# 1520 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, emoteexclamation
-# 1523 "data/maps/Route2_House/scripts.pory"
+# 1521 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1524 "data/maps/Route2_House/scripts.pory"
+# 1522 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_7
+# 1529 "data/maps/Route2_House/scripts.pory"
+	closemessage
+# 1530 "data/maps/Route2_House/scripts.pory"
+	applymovement 8, faceright
 # 1531 "data/maps/Route2_House/scripts.pory"
-	closemessage
+	delay 16
 # 1532 "data/maps/Route2_House/scripts.pory"
-	applymovement 8, faceright
-# 1533 "data/maps/Route2_House/scripts.pory"
-	delay 16
-# 1534 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, faceleft
+# 1533 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
+# 1534 "data/maps/Route2_House/scripts.pory"
+	delay 60
 # 1535 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
+	applymovement 8, faceup
 # 1536 "data/maps/Route2_House/scripts.pory"
-	delay 60
-# 1537 "data/maps/Route2_House/scripts.pory"
-	applymovement 8, faceup
-# 1538 "data/maps/Route2_House/scripts.pory"
 	delay 16
+# 1537 "data/maps/Route2_House/scripts.pory"
+	applymovement 6, faceup
+# 1538 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
 # 1539 "data/maps/Route2_House/scripts.pory"
-	applymovement 6, faceup
-# 1540 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
-# 1541 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_8
-# 1545 "data/maps/Route2_House/scripts.pory"
+# 1543 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1546 "data/maps/Route2_House/scripts.pory"
+# 1544 "data/maps/Route2_House/scripts.pory"
 	playse SE_PIN
-# 1547 "data/maps/Route2_House/scripts.pory"
+# 1545 "data/maps/Route2_House/scripts.pory"
 	waitse
-# 1548 "data/maps/Route2_House/scripts.pory"
+# 1546 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, ShinjiroSurprisedAtAkihikoChoice
-# 1549 "data/maps/Route2_House/scripts.pory"
+# 1547 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1550 "data/maps/Route2_House/scripts.pory"
+# 1548 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_9
-# 1551 "data/maps/Route2_House/scripts.pory"
+# 1549 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1552 "data/maps/Route2_House/scripts.pory"
+# 1550 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, ShinjiroDisruptsAkiMitsu
-# 1553 "data/maps/Route2_House/scripts.pory"
+# 1551 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, faceright
-# 1554 "data/maps/Route2_House/scripts.pory"
+# 1552 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1555 "data/maps/Route2_House/scripts.pory"
+# 1553 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_10
-# 1557 "data/maps/Route2_House/scripts.pory"
+# 1555 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1558 "data/maps/Route2_House/scripts.pory"
+# 1556 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, faceup
-# 1559 "data/maps/Route2_House/scripts.pory"
+# 1557 "data/maps/Route2_House/scripts.pory"
 	delay 8
-# 1560 "data/maps/Route2_House/scripts.pory"
+# 1558 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, faceup
-# 1561 "data/maps/Route2_House/scripts.pory"
+# 1559 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1562 "data/maps/Route2_House/scripts.pory"
+# 1560 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 1563 "data/maps/Route2_House/scripts.pory"
+# 1561 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TriosFirstGreeting_Text_11
-# 1564 "data/maps/Route2_House/scripts.pory"
+# 1562 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1565 "data/maps/Route2_House/scripts.pory"
+# 1563 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruGoesBackToPlace
-# 1566 "data/maps/Route2_House/scripts.pory"
+# 1564 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1567 "data/maps/Route2_House/scripts.pory"
+# 1565 "data/maps/Route2_House/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 1568 "data/maps/Route2_House/scripts.pory"
+# 1566 "data/maps/Route2_House/scripts.pory"
 	delay 40
-# 1569 "data/maps/Route2_House/scripts.pory"
+# 1567 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV_Movement_0
-# 1570 "data/maps/Route2_House/scripts.pory"
+# 1568 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV_Movement_1
-# 1571 "data/maps/Route2_House/scripts.pory"
+# 1569 "data/maps/Route2_House/scripts.pory"
 	applymovement 5, Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV_Movement_2
-# 1572 "data/maps/Route2_House/scripts.pory"
+# 1570 "data/maps/Route2_House/scripts.pory"
 	waitmovement 5
-# 1573 "data/maps/Route2_House/scripts.pory"
+# 1571 "data/maps/Route2_House/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 1574 "data/maps/Route2_House/scripts.pory"
+# 1572 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1575 "data/maps/Route2_House/scripts.pory"
+# 1573 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_Mitsuru_Text_1
-# 1577 "data/maps/Route2_House/scripts.pory"
+# 1575 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1578 "data/maps/Route2_House/scripts.pory"
+# 1576 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV_Movement_3
-# 1579 "data/maps/Route2_House/scripts.pory"
+# 1577 "data/maps/Route2_House/scripts.pory"
 	waitmovement 8
-# 1580 "data/maps/Route2_House/scripts.pory"
+# 1578 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1581 "data/maps/Route2_House/scripts.pory"
+# 1579 "data/maps/Route2_House/scripts.pory"
 	goto Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuruPOV
 	return
 
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuruPOV::
-# 1585 "data/maps/Route2_House/scripts.pory"
+# 1583 "data/maps/Route2_House/scripts.pory"
 	lock
-# 1586 "data/maps/Route2_House/scripts.pory"
+# 1584 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1587 "data/maps/Route2_House/scripts.pory"
+# 1585 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_0
-# 1589 "data/maps/Route2_House/scripts.pory"
+# 1587 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1590 "data/maps/Route2_House/scripts.pory"
+# 1588 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruLookingAtShinjiro
-# 1591 "data/maps/Route2_House/scripts.pory"
+# 1589 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1592 "data/maps/Route2_House/scripts.pory"
+# 1590 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_1
-# 1602 "data/maps/Route2_House/scripts.pory"
+# 1600 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1603 "data/maps/Route2_House/scripts.pory"
+# 1601 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, walkdown
-# 1604 "data/maps/Route2_House/scripts.pory"
+# 1602 "data/maps/Route2_House/scripts.pory"
 	waitmessage
-# 1605 "data/maps/Route2_House/scripts.pory"
+# 1603 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_2
+# 1604 "data/maps/Route2_House/scripts.pory"
+	applymovement 1, stepbackup
+# 1605 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
 # 1606 "data/maps/Route2_House/scripts.pory"
-	applymovement 1, stepbackup
-# 1607 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
-# 1608 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_3
-# 1612 "data/maps/Route2_House/scripts.pory"
+# 1610 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1613 "data/maps/Route2_House/scripts.pory"
+# 1611 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruGivingAkihikoPokedex
-# 1614 "data/maps/Route2_House/scripts.pory"
+# 1612 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1615 "data/maps/Route2_House/scripts.pory"
+# 1613 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_4
-# 1616 "data/maps/Route2_House/scripts.pory"
+# 1614 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1617 "data/maps/Route2_House/scripts.pory"
+# 1615 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_5
-# 1619 "data/maps/Route2_House/scripts.pory"
+# 1617 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1620 "data/maps/Route2_House/scripts.pory"
+# 1618 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, stepbackup
-# 1621 "data/maps/Route2_House/scripts.pory"
+# 1619 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1622 "data/maps/Route2_House/scripts.pory"
+# 1620 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_6
-# 1625 "data/maps/Route2_House/scripts.pory"
+# 1623 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1626 "data/maps/Route2_House/scripts.pory"
+# 1624 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruGoesBackToCenter
-# 1627 "data/maps/Route2_House/scripts.pory"
+# 1625 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1628 "data/maps/Route2_House/scripts.pory"
+# 1626 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_7
-# 1631 "data/maps/Route2_House/scripts.pory"
+# 1629 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1632 "data/maps/Route2_House/scripts.pory"
+# 1630 "data/maps/Route2_House/scripts.pory"
 	special SpawnCameraObject
-# 1633 "data/maps/Route2_House/scripts.pory"
+# 1631 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraPansToLowerHalfOfRoom
-# 1634 "data/maps/Route2_House/scripts.pory"
+# 1632 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruExitsTheHouse
-# 1635 "data/maps/Route2_House/scripts.pory"
+# 1633 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, faceright
-# 1636 "data/maps/Route2_House/scripts.pory"
+# 1634 "data/maps/Route2_House/scripts.pory"
 	waitmovement 8
-# 1637 "data/maps/Route2_House/scripts.pory"
+# 1635 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, faceleft
-# 1638 "data/maps/Route2_House/scripts.pory"
+# 1636 "data/maps/Route2_House/scripts.pory"
 	waitmovement 6
-# 1639 "data/maps/Route2_House/scripts.pory"
+# 1637 "data/maps/Route2_House/scripts.pory"
 	delay 16
-# 1640 "data/maps/Route2_House/scripts.pory"
+# 1638 "data/maps/Route2_House/scripts.pory"
 	applymovement 5, VulpixFollowsMitsuruExit
-# 1641 "data/maps/Route2_House/scripts.pory"
+# 1639 "data/maps/Route2_House/scripts.pory"
 	delay 4
-# 1642 "data/maps/Route2_House/scripts.pory"
+# 1640 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, InteleonFollowsMitsuruExit
-# 1643 "data/maps/Route2_House/scripts.pory"
+# 1641 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, facedown
-# 1644 "data/maps/Route2_House/scripts.pory"
+# 1642 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, facedown
-# 1645 "data/maps/Route2_House/scripts.pory"
+# 1643 "data/maps/Route2_House/scripts.pory"
 	waitmovement 1
+# 1644 "data/maps/Route2_House/scripts.pory"
+	playse SE_EXIT
+# 1645 "data/maps/Route2_House/scripts.pory"
+	waitse
 # 1646 "data/maps/Route2_House/scripts.pory"
-	playse SE_EXIT
-# 1647 "data/maps/Route2_House/scripts.pory"
-	waitse
-# 1648 "data/maps/Route2_House/scripts.pory"
 	waitmovement 5
-# 1649 "data/maps/Route2_House/scripts.pory"
+# 1647 "data/maps/Route2_House/scripts.pory"
 	playse SE_EXIT
-# 1650 "data/maps/Route2_House/scripts.pory"
+# 1648 "data/maps/Route2_House/scripts.pory"
 	waitse
-# 1651 "data/maps/Route2_House/scripts.pory"
+# 1649 "data/maps/Route2_House/scripts.pory"
 	waitmovement 4
-# 1652 "data/maps/Route2_House/scripts.pory"
+# 1650 "data/maps/Route2_House/scripts.pory"
 	playse SE_EXIT
-# 1653 "data/maps/Route2_House/scripts.pory"
+# 1651 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 29
-# 1654 "data/maps/Route2_House/scripts.pory"
+# 1652 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 1655 "data/maps/Route2_House/scripts.pory"
+# 1653 "data/maps/Route2_House/scripts.pory"
 	fwdtime 13, 30
-# 1656 "data/maps/Route2_House/scripts.pory"
+# 1654 "data/maps/Route2_House/scripts.pory"
 	warpsilent MAP_ROUTE2, 10, 11
 	return
 
 
 Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV::
-# 1660 "data/maps/Route2_House/scripts.pory"
+# 1658 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1661 "data/maps/Route2_House/scripts.pory"
+# 1659 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV_Movement_0
-# 1662 "data/maps/Route2_House/scripts.pory"
+# 1660 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1663 "data/maps/Route2_House/scripts.pory"
+# 1661 "data/maps/Route2_House/scripts.pory"
 	special SpawnCameraObject
-# 1664 "data/maps/Route2_House/scripts.pory"
+# 1662 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV_Movement_1
-# 1665 "data/maps/Route2_House/scripts.pory"
+# 1663 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, facedown
-# 1666 "data/maps/Route2_House/scripts.pory"
+# 1664 "data/maps/Route2_House/scripts.pory"
 	delay 8
-# 1667 "data/maps/Route2_House/scripts.pory"
+# 1665 "data/maps/Route2_House/scripts.pory"
 	applymovement 5, facedown
-# 1668 "data/maps/Route2_House/scripts.pory"
+# 1666 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, faceup
-# 1669 "data/maps/Route2_House/scripts.pory"
+# 1667 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 1670 "data/maps/Route2_House/scripts.pory"
+# 1668 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruExplainingObjectives_Text_0
-# 1679 "data/maps/Route2_House/scripts.pory"
+# 1677 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1680 "data/maps/Route2_House/scripts.pory"
+# 1678 "data/maps/Route2_House/scripts.pory"
 	delay 50
-# 1681 "data/maps/Route2_House/scripts.pory"
+# 1679 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 1682 "data/maps/Route2_House/scripts.pory"
+# 1680 "data/maps/Route2_House/scripts.pory"
 	playbgm MUS_P3R_FEARFUL_EXPERIENCE, TRUE
-# 1683 "data/maps/Route2_House/scripts.pory"
+# 1681 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruExplainingObjectives_Text_1
-# 1696 "data/maps/Route2_House/scripts.pory"
+# 1694 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1697 "data/maps/Route2_House/scripts.pory"
+# 1695 "data/maps/Route2_House/scripts.pory"
 	delay 40
-# 1698 "data/maps/Route2_House/scripts.pory"
+# 1696 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruExplainingObjectives_Text_2
-# 1700 "data/maps/Route2_House/scripts.pory"
+# 1698 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1701 "data/maps/Route2_House/scripts.pory"
+# 1699 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1702 "data/maps/Route2_House/scripts.pory"
+# 1700 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, emotepensive
-# 1703 "data/maps/Route2_House/scripts.pory"
+# 1701 "data/maps/Route2_House/scripts.pory"
 	delay 10
-# 1704 "data/maps/Route2_House/scripts.pory"
+# 1702 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, emotepensive
-# 1705 "data/maps/Route2_House/scripts.pory"
+# 1703 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1706 "data/maps/Route2_House/scripts.pory"
+# 1704 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 1707 "data/maps/Route2_House/scripts.pory"
+# 1705 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruExplainingObjectives_Text_3
-# 1714 "data/maps/Route2_House/scripts.pory"
+# 1712 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1715 "data/maps/Route2_House/scripts.pory"
+# 1713 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, faceup
-# 1716 "data/maps/Route2_House/scripts.pory"
+# 1714 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraPansUpToClock
+# 1715 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
+# 1716 "data/maps/Route2_House/scripts.pory"
+	applymovement 1, emotepensive
 # 1717 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
 # 1718 "data/maps/Route2_House/scripts.pory"
-	applymovement 1, emotepensive
-# 1719 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
-# 1720 "data/maps/Route2_House/scripts.pory"
 	delay 90
-# 1721 "data/maps/Route2_House/scripts.pory"
+# 1719 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, facedown
-# 1722 "data/maps/Route2_House/scripts.pory"
+# 1720 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraGoesBackToCenterOfTheRoom
-# 1723 "data/maps/Route2_House/scripts.pory"
+# 1721 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1724 "data/maps/Route2_House/scripts.pory"
+# 1722 "data/maps/Route2_House/scripts.pory"
 	fadenewbgm MUS_RG_SS_ANNE
-# 1725 "data/maps/Route2_House/scripts.pory"
+# 1723 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 1726 "data/maps/Route2_House/scripts.pory"
+# 1724 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_MitsuruExplainingObjectives_Text_4
-# 1729 "data/maps/Route2_House/scripts.pory"
+# 1727 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1730 "data/maps/Route2_House/scripts.pory"
+# 1728 "data/maps/Route2_House/scripts.pory"
 	goto Route2_House_Eventscript_StayingTheNightMitsuruPOV
 	return
 
 
 Route2_House_Eventscript_StayingTheNightMitsuruPOV::
-# 1734 "data/maps/Route2_House/scripts.pory"
+# 1732 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 1735 "data/maps/Route2_House/scripts.pory"
+# 1733 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, AkihikoLookingAtTheBed
-# 1736 "data/maps/Route2_House/scripts.pory"
+# 1734 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1737 "data/maps/Route2_House/scripts.pory"
+# 1735 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_0
-# 1738 "data/maps/Route2_House/scripts.pory"
+# 1736 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1739 "data/maps/Route2_House/scripts.pory"
+# 1737 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruLookingAtTheBed
-# 1740 "data/maps/Route2_House/scripts.pory"
+# 1738 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1741 "data/maps/Route2_House/scripts.pory"
+# 1739 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_1
-# 1745 "data/maps/Route2_House/scripts.pory"
+# 1743 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1746 "data/maps/Route2_House/scripts.pory"
+# 1744 "data/maps/Route2_House/scripts.pory"
 	playse SE_PIN
-# 1747 "data/maps/Route2_House/scripts.pory"
+# 1745 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, AKihikoRemembersCampGears
-# 1748 "data/maps/Route2_House/scripts.pory"
+# 1746 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1749 "data/maps/Route2_House/scripts.pory"
+# 1747 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_2
-# 1750 "data/maps/Route2_House/scripts.pory"
+# 1748 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1751 "data/maps/Route2_House/scripts.pory"
+# 1749 "data/maps/Route2_House/scripts.pory"
 	playse SE_M_BUBBLE3
-# 1752 "data/maps/Route2_House/scripts.pory"
+# 1750 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, ShinjiroSweat
-# 1753 "data/maps/Route2_House/scripts.pory"
+# 1751 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1754 "data/maps/Route2_House/scripts.pory"
+# 1752 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_3
+# 1754 "data/maps/Route2_House/scripts.pory"
+	closemessage
+# 1755 "data/maps/Route2_House/scripts.pory"
+	playse SE_FAILURE
 # 1756 "data/maps/Route2_House/scripts.pory"
-	closemessage
-# 1757 "data/maps/Route2_House/scripts.pory"
-	playse SE_FAILURE
-# 1758 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, AkihikoBickering
-# 1759 "data/maps/Route2_House/scripts.pory"
+# 1757 "data/maps/Route2_House/scripts.pory"
 	delay 10
-# 1760 "data/maps/Route2_House/scripts.pory"
+# 1758 "data/maps/Route2_House/scripts.pory"
 	playse SE_FAILURE
-# 1761 "data/maps/Route2_House/scripts.pory"
+# 1759 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, ShinjiroBickering
+# 1760 "data/maps/Route2_House/scripts.pory"
+	waitmovement 0
+# 1761 "data/maps/Route2_House/scripts.pory"
+	lock
 # 1762 "data/maps/Route2_House/scripts.pory"
-	waitmovement 0
+	setobjectnewmovementtype 8, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT
 # 1763 "data/maps/Route2_House/scripts.pory"
-	lock
+	setobjectnewmovementtype 6, MOVEMENT_TYPE_RUN_IN_PLACE_LEFT
 # 1764 "data/maps/Route2_House/scripts.pory"
-	setobjectnewmovementtype 8, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT
+	release
 # 1765 "data/maps/Route2_House/scripts.pory"
-	setobjectnewmovementtype 6, MOVEMENT_TYPE_RUN_IN_PLACE_LEFT
+	delay 30
 # 1766 "data/maps/Route2_House/scripts.pory"
-	release
-# 1767 "data/maps/Route2_House/scripts.pory"
-	delay 30
-# 1768 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, jumpinplaceright
-# 1769 "data/maps/Route2_House/scripts.pory"
+# 1767 "data/maps/Route2_House/scripts.pory"
 	delay 10
-# 1770 "data/maps/Route2_House/scripts.pory"
+# 1768 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, jumpinplaceleft
-# 1771 "data/maps/Route2_House/scripts.pory"
+# 1769 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1772 "data/maps/Route2_House/scripts.pory"
+# 1770 "data/maps/Route2_House/scripts.pory"
 	lock
-# 1773 "data/maps/Route2_House/scripts.pory"
+# 1771 "data/maps/Route2_House/scripts.pory"
 	setobjectnewmovementtype 8, MOVEMENT_TYPE_RUN_IN_PLACE_RIGHT
-# 1774 "data/maps/Route2_House/scripts.pory"
+# 1772 "data/maps/Route2_House/scripts.pory"
 	setobjectnewmovementtype 6, MOVEMENT_TYPE_RUN_IN_PLACE_LEFT
-# 1775 "data/maps/Route2_House/scripts.pory"
+# 1773 "data/maps/Route2_House/scripts.pory"
 	release
-# 1776 "data/maps/Route2_House/scripts.pory"
+# 1774 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1777 "data/maps/Route2_House/scripts.pory"
+# 1775 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, shakehorizontal
-# 1778 "data/maps/Route2_House/scripts.pory"
+# 1776 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1779 "data/maps/Route2_House/scripts.pory"
+# 1777 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_4
-# 1780 "data/maps/Route2_House/scripts.pory"
+# 1778 "data/maps/Route2_House/scripts.pory"
 	playse SE_SHINY
-# 1781 "data/maps/Route2_House/scripts.pory"
+# 1779 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, emotemusic
-# 1782 "data/maps/Route2_House/scripts.pory"
+# 1780 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1783 "data/maps/Route2_House/scripts.pory"
+# 1781 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_5
-# 1784 "data/maps/Route2_House/scripts.pory"
+# 1782 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1785 "data/maps/Route2_House/scripts.pory"
+# 1783 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, faceup
-# 1786 "data/maps/Route2_House/scripts.pory"
+# 1784 "data/maps/Route2_House/scripts.pory"
 	delay 10
-# 1787 "data/maps/Route2_House/scripts.pory"
+# 1785 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, faceup
-# 1788 "data/maps/Route2_House/scripts.pory"
+# 1786 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1789 "data/maps/Route2_House/scripts.pory"
+# 1787 "data/maps/Route2_House/scripts.pory"
 	delay 60
-# 1790 "data/maps/Route2_House/scripts.pory"
+# 1788 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_6
-# 1791 "data/maps/Route2_House/scripts.pory"
+# 1789 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1792 "data/maps/Route2_House/scripts.pory"
+# 1790 "data/maps/Route2_House/scripts.pory"
 	playse SE_SHINY
-# 1793 "data/maps/Route2_House/scripts.pory"
+# 1791 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, emotemusic
-# 1794 "data/maps/Route2_House/scripts.pory"
+# 1792 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, emotemusic
-# 1795 "data/maps/Route2_House/scripts.pory"
+# 1793 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1796 "data/maps/Route2_House/scripts.pory"
+# 1794 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_StayingTheNight_Text_7
-# 1798 "data/maps/Route2_House/scripts.pory"
+# 1796 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1799 "data/maps/Route2_House/scripts.pory"
+# 1797 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraSlowlyPansUpFadeScreen
-# 1800 "data/maps/Route2_House/scripts.pory"
+# 1798 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1801 "data/maps/Route2_House/scripts.pory"
+# 1799 "data/maps/Route2_House/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 1802 "data/maps/Route2_House/scripts.pory"
+# 1800 "data/maps/Route2_House/scripts.pory"
 	delay 80
-# 1803 "data/maps/Route2_House/scripts.pory"
+# 1801 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1804 "data/maps/Route2_House/scripts.pory"
+# 1802 "data/maps/Route2_House/scripts.pory"
 	warpsilent MAP_BLANK_MAP, 0, 0
-# 1805 "data/maps/Route2_House/scripts.pory"
+# 1803 "data/maps/Route2_House/scripts.pory"
 	waitstate
 	return
 
 
 Route2_House_Eventscript_TheFirstMorningMitsuruPOV::
-# 1809 "data/maps/Route2_House/scripts.pory"
+# 1807 "data/maps/Route2_House/scripts.pory"
 	lock
-# 1810 "data/maps/Route2_House/scripts.pory"
+# 1808 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1811 "data/maps/Route2_House/scripts.pory"
+# 1809 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TheFirstMorning_Text_1
-# 1812 "data/maps/Route2_House/scripts.pory"
+# 1810 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1813 "data/maps/Route2_House/scripts.pory"
+# 1811 "data/maps/Route2_House/scripts.pory"
 	special SpawnCameraObject
-# 1814 "data/maps/Route2_House/scripts.pory"
+# 1812 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, walkdown
-# 1815 "data/maps/Route2_House/scripts.pory"
+# 1813 "data/maps/Route2_House/scripts.pory"
 	addobject 8
-# 1816 "data/maps/Route2_House/scripts.pory"
+# 1814 "data/maps/Route2_House/scripts.pory"
 	applymovement 8, AkihikoGoesToPlaceTheFirstMorning
-# 1817 "data/maps/Route2_House/scripts.pory"
+# 1815 "data/maps/Route2_House/scripts.pory"
 	delay 4
-# 1818 "data/maps/Route2_House/scripts.pory"
+# 1816 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, ShinjiroGoesToPlaceTheFirstMorning
-# 1819 "data/maps/Route2_House/scripts.pory"
+# 1817 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1820 "data/maps/Route2_House/scripts.pory"
+# 1818 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1821 "data/maps/Route2_House/scripts.pory"
+# 1819 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 34
-# 1822 "data/maps/Route2_House/scripts.pory"
+# 1820 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TheFirstMorning_Text_2
-# 1823 "data/maps/Route2_House/scripts.pory"
+# 1821 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1824 "data/maps/Route2_House/scripts.pory"
+# 1822 "data/maps/Route2_House/scripts.pory"
 	special RemoveCameraObject
-# 1825 "data/maps/Route2_House/scripts.pory"
+# 1823 "data/maps/Route2_House/scripts.pory"
 	call EventScript_RegionMap
 	return
 
 
 Route2_House_Eventscript_TheFirstMorning2MitsuruPOV::
-# 1829 "data/maps/Route2_House/scripts.pory"
+# 1827 "data/maps/Route2_House/scripts.pory"
 	delay 30
-# 1830 "data/maps/Route2_House/scripts.pory"
+# 1828 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TheFirstMorning2_Text_0
-# 1842 "data/maps/Route2_House/scripts.pory"
+# 1840 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1843 "data/maps/Route2_House/scripts.pory"
+# 1841 "data/maps/Route2_House/scripts.pory"
 	applymovement 5, walkleft
-# 1844 "data/maps/Route2_House/scripts.pory"
+# 1842 "data/maps/Route2_House/scripts.pory"
 	applymovement 6, walkleft
-# 1845 "data/maps/Route2_House/scripts.pory"
+# 1843 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1846 "data/maps/Route2_House/scripts.pory"
+# 1844 "data/maps/Route2_House/scripts.pory"
 	removeobject 5
-# 1847 "data/maps/Route2_House/scripts.pory"
+# 1845 "data/maps/Route2_House/scripts.pory"
 	removeobject 6
-# 1848 "data/maps/Route2_House/scripts.pory"
+# 1846 "data/maps/Route2_House/scripts.pory"
 	special SpawnCameraObject
-# 1849 "data/maps/Route2_House/scripts.pory"
+# 1847 "data/maps/Route2_House/scripts.pory"
 	applymovement 1, MitsuruJoinsTheFirstMorning
-# 1850 "data/maps/Route2_House/scripts.pory"
+# 1848 "data/maps/Route2_House/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, walkup
-# 1851 "data/maps/Route2_House/scripts.pory"
+# 1849 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_Movement_0
-# 1852 "data/maps/Route2_House/scripts.pory"
+# 1850 "data/maps/Route2_House/scripts.pory"
 	applymovement 4, InteleonJoinsTheFirstMorning
-# 1853 "data/maps/Route2_House/scripts.pory"
+# 1851 "data/maps/Route2_House/scripts.pory"
 	waitmovement 0
-# 1854 "data/maps/Route2_House/scripts.pory"
+# 1852 "data/maps/Route2_House/scripts.pory"
 	removeobject 1
-# 1855 "data/maps/Route2_House/scripts.pory"
+# 1853 "data/maps/Route2_House/scripts.pory"
 	removeobject 4
-# 1856 "data/maps/Route2_House/scripts.pory"
+# 1854 "data/maps/Route2_House/scripts.pory"
 	removeobject 8
-# 1857 "data/maps/Route2_House/scripts.pory"
+# 1855 "data/maps/Route2_House/scripts.pory"
 	delay 20
-# 1858 "data/maps/Route2_House/scripts.pory"
+# 1856 "data/maps/Route2_House/scripts.pory"
 	playfanfare MUS_OBTAIN_TMHM
-# 1859 "data/maps/Route2_House/scripts.pory"
+# 1857 "data/maps/Route2_House/scripts.pory"
 	waitfanfare
-# 1860 "data/maps/Route2_House/scripts.pory"
+# 1858 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_Text_0
-# 1864 "data/maps/Route2_House/scripts.pory"
+# 1862 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1865 "data/maps/Route2_House/scripts.pory"
+# 1863 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_STORY_QUESTS_STATE, 2
-# 1866 "data/maps/Route2_House/scripts.pory"
+# 1864 "data/maps/Route2_House/scripts.pory"
 	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, CHAPTER_1
-# 1868 "data/maps/Route2_House/scripts.pory"
+# 1866 "data/maps/Route2_House/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE
-# 1869 "data/maps/Route2_House/scripts.pory"
+# 1867 "data/maps/Route2_House/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_2
-# 1875 "data/maps/Route2_House/scripts.pory"
+# 1873 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 100
 Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_1:
-# 1877 "data/maps/Route2_House/scripts.pory"
+# 1875 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_TEMP_1
-# 1878 "data/maps/Route2_House/scripts.pory"
+# 1876 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 100
-# 1879 "data/maps/Route2_House/scripts.pory"
+# 1877 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_CURRENT_LEVEL_CAP, 18
-# 1880 "data/maps/Route2_House/scripts.pory"
+# 1878 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_CURRENT_EV_CAP, 80
-# 1881 "data/maps/Route2_House/scripts.pory"
+# 1879 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_DAYS_LEFT, 15
-# 1882 "data/maps/Route2_House/scripts.pory"
+# 1880 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, facedown
-# 1883 "data/maps/Route2_House/scripts.pory"
+# 1881 "data/maps/Route2_House/scripts.pory"
 	waitmovement
-# 1884 "data/maps/Route2_House/scripts.pory"
+# 1882 "data/maps/Route2_House/scripts.pory"
 	unlockcharacter CHARACTER_AKIHIKO
-# 1885 "data/maps/Route2_House/scripts.pory"
+# 1883 "data/maps/Route2_House/scripts.pory"
 	unlockcharacter CHARACTER_SHINJIRO
-# 1886 "data/maps/Route2_House/scripts.pory"
+# 1884 "data/maps/Route2_House/scripts.pory"
 	makecharaAvailable CHARACTER_INTELEON_T
-# 1887 "data/maps/Route2_House/scripts.pory"
+# 1885 "data/maps/Route2_House/scripts.pory"
 	makecharaAvailable CHARACTER_MITSURU
-# 1888 "data/maps/Route2_House/scripts.pory"
+# 1886 "data/maps/Route2_House/scripts.pory"
 	completesubquest STORY_QUESTS, MITSURUS_PROLOGUE
-# 1889 "data/maps/Route2_House/scripts.pory"
+# 1887 "data/maps/Route2_House/scripts.pory"
 	special RemoveCameraObject
-# 1890 "data/maps/Route2_House/scripts.pory"
+# 1888 "data/maps/Route2_House/scripts.pory"
 	release
 	end
 
 Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_2:
-# 1870 "data/maps/Route2_House/scripts.pory"
+# 1868 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_Text_1
-# 1871 "data/maps/Route2_House/scripts.pory"
+# 1869 "data/maps/Route2_House/scripts.pory"
 	closemessage
-# 1872 "data/maps/Route2_House/scripts.pory"
+# 1870 "data/maps/Route2_House/scripts.pory"
 	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, AKIHIKOS_PROLOGUE
 	goto Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_1
 
 
-# 954 "data/maps/Route2_House/scripts.pory"
+# 952 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_AkihikoCantSleep_Movement_0:
-# 954 "data/maps/Route2_House/scripts.pory"
+# 952 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 954 "data/maps/Route2_House/scripts.pory"
+# 952 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 954 "data/maps/Route2_House/scripts.pory"
+# 952 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 954 "data/maps/Route2_House/scripts.pory"
+# 952 "data/maps/Route2_House/scripts.pory"
 	walk_up
 	step_end
 
-# 962 "data/maps/Route2_House/scripts.pory"
+# 960 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_AkihikoCantSleep_Movement_1:
-# 962 "data/maps/Route2_House/scripts.pory"
+# 960 "data/maps/Route2_House/scripts.pory"
 	walk_fast_down
-# 962 "data/maps/Route2_House/scripts.pory"
+# 960 "data/maps/Route2_House/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 1187 "data/maps/Route2_House/scripts.pory"
+# 1185 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_TheFirstMorning2_Movement_0:
-# 1187 "data/maps/Route2_House/scripts.pory"
+# 1185 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 1187 "data/maps/Route2_House/scripts.pory"
+# 1185 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 1187 "data/maps/Route2_House/scripts.pory"
+# 1185 "data/maps/Route2_House/scripts.pory"
 	walk_down
 	step_end
 
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_MitsuruRestForTheNight_Movement_0:
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	delay_16
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	delay_16
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	face_right
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	delay_16
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	delay_16
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	face_up
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	delay_16
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	delay_16
-# 1260 "data/maps/Route2_House/scripts.pory"
+# 1258 "data/maps/Route2_House/scripts.pory"
 	face_left
 	step_end
 
-# 1334 "data/maps/Route2_House/scripts.pory"
+# 1332 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Movement_0:
-# 1334 "data/maps/Route2_House/scripts.pory"
+# 1332 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 1334 "data/maps/Route2_House/scripts.pory"
+# 1332 "data/maps/Route2_House/scripts.pory"
 	walk_right
 	step_end
 
-# 1341 "data/maps/Route2_House/scripts.pory"
+# 1339 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Movement_1:
-# 1341 "data/maps/Route2_House/scripts.pory"
+# 1339 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1341 "data/maps/Route2_House/scripts.pory"
+# 1339 "data/maps/Route2_House/scripts.pory"
 	walk_up
-# 1341 "data/maps/Route2_House/scripts.pory"
+# 1339 "data/maps/Route2_House/scripts.pory"
 	walk_left
 	step_end
 
-# 1357 "data/maps/Route2_House/scripts.pory"
+# 1355 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Movement_2:
-# 1357 "data/maps/Route2_House/scripts.pory"
+# 1355 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 1357 "data/maps/Route2_House/scripts.pory"
+# 1355 "data/maps/Route2_House/scripts.pory"
 	walk_left
 	step_end
 
-# 1358 "data/maps/Route2_House/scripts.pory"
+# 1356 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Movement_3:
-# 1358 "data/maps/Route2_House/scripts.pory"
+# 1356 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 1358 "data/maps/Route2_House/scripts.pory"
+# 1356 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 1358 "data/maps/Route2_House/scripts.pory"
+# 1356 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 1358 "data/maps/Route2_House/scripts.pory"
+# 1356 "data/maps/Route2_House/scripts.pory"
 	set_invisible
 	step_end
 
-# 1360 "data/maps/Route2_House/scripts.pory"
+# 1358 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Movement_4:
-# 1360 "data/maps/Route2_House/scripts.pory"
+# 1358 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 1360 "data/maps/Route2_House/scripts.pory"
+# 1358 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 1360 "data/maps/Route2_House/scripts.pory"
+# 1358 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 1360 "data/maps/Route2_House/scripts.pory"
+# 1358 "data/maps/Route2_House/scripts.pory"
 	set_invisible
 	step_end
 
-# 1411 "data/maps/Route2_House/scripts.pory"
+# 1409 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Movement_0:
-# 1411 "data/maps/Route2_House/scripts.pory"
+# 1409 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 1411 "data/maps/Route2_House/scripts.pory"
+# 1409 "data/maps/Route2_House/scripts.pory"
 	set_invisible
 	step_end
 
-# 1412 "data/maps/Route2_House/scripts.pory"
+# 1410 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Movement_1:
-# 1412 "data/maps/Route2_House/scripts.pory"
+# 1410 "data/maps/Route2_House/scripts.pory"
 	walk_in_place_left
-# 1412 "data/maps/Route2_House/scripts.pory"
+# 1410 "data/maps/Route2_House/scripts.pory"
 	delay_16
-# 1412 "data/maps/Route2_House/scripts.pory"
+# 1410 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 1412 "data/maps/Route2_House/scripts.pory"
+# 1410 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 1412 "data/maps/Route2_House/scripts.pory"
+# 1410 "data/maps/Route2_House/scripts.pory"
 	set_invisible
 	step_end
 
-# 1428 "data/maps/Route2_House/scripts.pory"
+# 1426 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV_Movement_0:
-# 1428 "data/maps/Route2_House/scripts.pory"
+# 1426 "data/maps/Route2_House/scripts.pory"
 	walk_slow_down
-# 1428 "data/maps/Route2_House/scripts.pory"
+# 1426 "data/maps/Route2_House/scripts.pory"
 	walk_slow_down
-# 1428 "data/maps/Route2_House/scripts.pory"
+# 1426 "data/maps/Route2_House/scripts.pory"
 	walk_slow_down
 	step_end
 
-# 1569 "data/maps/Route2_House/scripts.pory"
+# 1567 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV_Movement_0:
-# 1569 "data/maps/Route2_House/scripts.pory"
+# 1567 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 1569 "data/maps/Route2_House/scripts.pory"
+# 1567 "data/maps/Route2_House/scripts.pory"
 	walk_up
 	step_end
 
-# 1570 "data/maps/Route2_House/scripts.pory"
+# 1568 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV_Movement_1:
-# 1570 "data/maps/Route2_House/scripts.pory"
+# 1568 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 1570 "data/maps/Route2_House/scripts.pory"
+# 1568 "data/maps/Route2_House/scripts.pory"
 	face_up
 	step_end
 
-# 1571 "data/maps/Route2_House/scripts.pory"
+# 1569 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV_Movement_2:
-# 1571 "data/maps/Route2_House/scripts.pory"
+# 1569 "data/maps/Route2_House/scripts.pory"
 	walk_fast_down
-# 1571 "data/maps/Route2_House/scripts.pory"
+# 1569 "data/maps/Route2_House/scripts.pory"
 	walk_fast_down
-# 1571 "data/maps/Route2_House/scripts.pory"
+# 1569 "data/maps/Route2_House/scripts.pory"
 	walk_fast_down
-# 1571 "data/maps/Route2_House/scripts.pory"
+# 1569 "data/maps/Route2_House/scripts.pory"
 	walk_fast_left
-# 1571 "data/maps/Route2_House/scripts.pory"
+# 1569 "data/maps/Route2_House/scripts.pory"
 	walk_fast_left
-# 1571 "data/maps/Route2_House/scripts.pory"
+# 1569 "data/maps/Route2_House/scripts.pory"
 	walk_fast_left
-# 1571 "data/maps/Route2_House/scripts.pory"
+# 1569 "data/maps/Route2_House/scripts.pory"
 	walk_fast_left
-# 1571 "data/maps/Route2_House/scripts.pory"
+# 1569 "data/maps/Route2_House/scripts.pory"
 	walk_fast_left
-# 1571 "data/maps/Route2_House/scripts.pory"
+# 1569 "data/maps/Route2_House/scripts.pory"
 	face_right
 	step_end
 
-# 1578 "data/maps/Route2_House/scripts.pory"
+# 1576 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV_Movement_3:
-# 1578 "data/maps/Route2_House/scripts.pory"
+# 1576 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 1578 "data/maps/Route2_House/scripts.pory"
+# 1576 "data/maps/Route2_House/scripts.pory"
 	walk_left
-# 1578 "data/maps/Route2_House/scripts.pory"
+# 1576 "data/maps/Route2_House/scripts.pory"
 	face_up
 	step_end
 
-# 1661 "data/maps/Route2_House/scripts.pory"
+# 1659 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV_Movement_0:
-# 1661 "data/maps/Route2_House/scripts.pory"
+# 1659 "data/maps/Route2_House/scripts.pory"
 	walk_diag_northwest
-# 1661 "data/maps/Route2_House/scripts.pory"
+# 1659 "data/maps/Route2_House/scripts.pory"
 	walk_diag_northwest
-# 1661 "data/maps/Route2_House/scripts.pory"
+# 1659 "data/maps/Route2_House/scripts.pory"
 	walk_slow_up
-# 1661 "data/maps/Route2_House/scripts.pory"
+# 1659 "data/maps/Route2_House/scripts.pory"
 	walk_slow_up
-# 1661 "data/maps/Route2_House/scripts.pory"
+# 1659 "data/maps/Route2_House/scripts.pory"
 	walk_slow_up
-# 1661 "data/maps/Route2_House/scripts.pory"
+# 1659 "data/maps/Route2_House/scripts.pory"
 	walk_slow_up
 	step_end
 
-# 1664 "data/maps/Route2_House/scripts.pory"
+# 1662 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV_Movement_1:
-# 1664 "data/maps/Route2_House/scripts.pory"
+# 1662 "data/maps/Route2_House/scripts.pory"
 	walk_slow_up
 	step_end
 
-# 1851 "data/maps/Route2_House/scripts.pory"
+# 1849 "data/maps/Route2_House/scripts.pory"
 Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_Movement_0:
-# 1851 "data/maps/Route2_House/scripts.pory"
+# 1849 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 1851 "data/maps/Route2_House/scripts.pory"
+# 1849 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 1851 "data/maps/Route2_House/scripts.pory"
+# 1849 "data/maps/Route2_House/scripts.pory"
 	set_visible
 	step_end
 
@@ -3759,7 +3755,7 @@ Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_5:
 	.string "Items.$"
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_6:
-# 591 "data/maps/Route2_House/scripts.pory"
+# 589 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}To be honest, I'd also like to have a\n"
 	.string "battle with you, Sanada-kun.\p"
 	.string "It's better to personally see how you\n"
@@ -3767,22 +3763,22 @@ Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_6:
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Heh, sure.$"
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_7:
-# 597 "data/maps/Route2_House/scripts.pory"
+# 595 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Alright. I'll be waiting for both of you\n"
 	.string "in Sunshine Meadow.\p"
 	.string "{COLOR RED}We'll be having 3-vs-3 Pokémon battles\n"
-	.string "and items are not allowed so plan your\l"
-	.string "party accordingly.\p"
+	.string "and bag items are not allowed so plan\l"
+	.string "your party accordingly.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}{COLOR DARK_GRAY}Good luck, you'll need it.$"
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_8:
-# 625 "data/maps/Route2_House/scripts.pory"
+# 623 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Bossy.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Heh. She's one weird rich girl.\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go.$"
 
 Route2_House_Eventscript_MitsuruExplainingObjectives_Text_0:
-# 714 "data/maps/Route2_House/scripts.pory"
+# 712 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Alright, everyone's here.\p"
 	.string "Before I start, I'd like to ask you two a\n"
 	.string "question.\p"
@@ -3798,7 +3794,7 @@ Route2_House_Eventscript_MitsuruExplainingObjectives_Text_0:
 	.string "Perhaps I should put it like this.$"
 
 Route2_House_Eventscript_MitsuruExplainingObjectives_Text_1:
-# 727 "data/maps/Route2_House/scripts.pory"
+# 725 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}What if I say, there's a way for a\n"
 	.string "trainer to become one with their\l"
 	.string "Pokémon?\p"
@@ -3825,14 +3821,14 @@ Route2_House_Eventscript_MitsuruExplainingObjectives_Text_1:
 	.string "thought the same.$"
 
 Route2_House_Eventscript_MitsuruExplainingObjectives_Text_2:
-# 742 "data/maps/Route2_House/scripts.pory"
+# 740 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}In any case, I already told you the goal\n"
 	.string "of those men.\p"
 	.string "You're free to not believe me. We can\n"
 	.string "simply just part ways right here.$"
 
 Route2_House_Eventscript_MitsuruExplainingObjectives_Text_3:
-# 751 "data/maps/Route2_House/scripts.pory"
+# 749 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Look, Princess. It's not like we don't\n"
 	.string "want to believe you.\p"
 	.string "It all just sounds too much like\n"
@@ -3847,7 +3843,7 @@ Route2_House_Eventscript_MitsuruExplainingObjectives_Text_3:
 	.string "idea.$"
 
 Route2_House_Eventscript_MitsuruExplainingObjectives_Text_4:
-# 771 "data/maps/Route2_House/scripts.pory"
+# 769 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}For now, I suggest we rest for the\n"
 	.string "night. It's late and we're all tired from\l"
 	.string "the battles.\p"
@@ -3855,12 +3851,12 @@ Route2_House_Eventscript_MitsuruExplainingObjectives_Text_4:
 	.string "you two may want to stay here.$"
 
 Route2_House_Eventscript_StayingTheNight_Text_0:
-# 799 "data/maps/Route2_House/scripts.pory"
+# 797 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Uhhh you sure about that? There's only\n"
 	.string "one bed.$"
 
 Route2_House_Eventscript_StayingTheNight_Text_1:
-# 803 "data/maps/Route2_House/scripts.pory"
+# 801 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}M-my apologies, it slipped my mind that\n"
 	.string "this house doesn't have guest rooms.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}You two can take the bed. I'm okay with\n"
@@ -3871,34 +3867,34 @@ Route2_House_Eventscript_StayingTheNight_Text_1:
 	.string "sleeping bags.$"
 
 Route2_House_Eventscript_StayingTheNight_Text_2:
-# 811 "data/maps/Route2_House/scripts.pory"
+# 809 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Oh, right! Kurosawa-san gave us the\n"
 	.string "Camping Gears.$"
 
 Route2_House_Eventscript_StayingTheNight_Text_3:
-# 816 "data/maps/Route2_House/scripts.pory"
+# 814 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Dumbass, you weren't kidding!?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Stop calling me dumb!$"
 
 Route2_House_Eventscript_StayingTheNight_Text_4:
-# 841 "data/maps/Route2_House/scripts.pory"
+# 839 "data/maps/Route2_House/scripts.pory"
 	.string "Pft-$"
 
 Route2_House_Eventscript_StayingTheNight_Text_5:
-# 845 "data/maps/Route2_House/scripts.pory"
+# 843 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_HAPPY}Hehehe.$"
 
 Route2_House_Eventscript_StayingTheNight_Text_6:
-# 852 "data/maps/Route2_House/scripts.pory"
+# 850 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}...$"
 
 Route2_House_Eventscript_StayingTheNight_Text_7:
-# 858 "data/maps/Route2_House/scripts.pory"
+# 856 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Hehe.\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Hmph.$"
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_0:
-# 944 "data/maps/Route2_House/scripts.pory"
+# 942 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}(Dang... I can't sleep at all.)\p"
 	.string "(Gotta admit, what Kirijo said earlier\n"
 	.string "does bug me.)\p"
@@ -3912,63 +3908,63 @@ Route2_House_Eventscript_AkihikoCantSleep_Text_0:
 	.string "bit.)$"
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_1:
-# 959 "data/maps/Route2_House/scripts.pory"
+# 957 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Kirijo is already sleeping soundly. She\n"
 	.string "won't know if I sneak out.)$"
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_2:
-# 972 "data/maps/Route2_House/scripts.pory"
+# 970 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}-Hiss-$"
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_3:
-# 977 "data/maps/Route2_House/scripts.pory"
+# 975 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}(And this Inteleon keeps looking\n"
 	.string "daggers at me...)\p"
 	.string "(What did I even do?)$"
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_4:
-# 984 "data/maps/Route2_House/scripts.pory"
+# 982 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Where's Shinji, though?)\p"
 	.string "(Maybe he's outside.)$"
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_5:
-# 991 "data/maps/Route2_House/scripts.pory"
+# 989 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I uh... just gonna go outside for a bit.$"
 
 TakeARest_Text_0:
-# 1023 "data/maps/Route2_House/scripts.pory"
+# 1021 "data/maps/Route2_House/scripts.pory"
 	.string "Let's take a quick rest.$"
 
 Route2_House_Eventscript_Bathroom_Text_0:
-# 1039 "data/maps/Route2_House/scripts.pory"
+# 1037 "data/maps/Route2_House/scripts.pory"
 	.string "Do you want to use the bathroom?$"
 
 Route2_House_Eventscript_Bathroom_Text_1:
-# 1064 "data/maps/Route2_House/scripts.pory"
+# 1062 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}(All refreshed.)$"
 
 Route2_House_Eventscript_Bathroom_Text_2:
-# 1068 "data/maps/Route2_House/scripts.pory"
+# 1066 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}(That really freshened me up.)$"
 
 Route2_House_Eventscript_Bathroom_Text_3:
-# 1077 "data/maps/Route2_House/scripts.pory"
+# 1075 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Nah, I think I'm good.)$"
 
 Route2_House_Eventscript_Bathroom_Text_4:
-# 1080 "data/maps/Route2_House/scripts.pory"
+# 1078 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Let's do it later.)$"
 
 Route2_House_Eventscript_Bathroom_Text_5:
-# 1090 "data/maps/Route2_House/scripts.pory"
+# 1088 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(I just used the bathroom.)$"
 
 Route2_House_Eventscript_Bathroom_Text_6:
-# 1093 "data/maps/Route2_House/scripts.pory"
+# 1091 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Let's not waste time any further.)$"
 
 Route2_House_Eventscript_Bathroom_Text_7:
-# 1108 "data/maps/Route2_House/scripts.pory"
+# 1106 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(That reminds me, Kirijo took a really\n"
 	.string "long bath yesterday.)\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}I don't understand. What's so fun in the\n"
@@ -3979,26 +3975,26 @@ Route2_House_Eventscript_Bathroom_Text_7:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}?$"
 
 Route2_House_Eventscript_Bathroom_Text_8:
-# 1119 "data/maps/Route2_House/scripts.pory"
+# 1117 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(I should get going.)$"
 
 Route2_House_Eventscript_TheFirstMorning_Text_0:
-# 1141 "data/maps/Route2_House/scripts.pory"
+# 1139 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}-yawn- (Gosh, I'm still feeling sleepy.)\p"
 	.string "(Maybe doing night battle wasn't a good\n"
 	.string "choice.)$"
 
 Route2_House_Eventscript_TheFirstMorning_Text_1:
-# 1145 "data/maps/Route2_House/scripts.pory"
+# 1143 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Everyone, please gather around. I'll\n"
 	.string "explain our plan route.$"
 
 Route2_House_Eventscript_TheFirstMorning_Text_2:
-# 1155 "data/maps/Route2_House/scripts.pory"
+# 1153 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Please take a look at the map.$"
 
 Route2_House_Eventscript_TheFirstMorning2_Text_0:
-# 1163 "data/maps/Route2_House/scripts.pory"
+# 1161 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I believe our destination is around the\n"
 	.string "base of Goldenwings Mountain.\p"
 	.string "To get there we can take a ship from\n"
@@ -4019,27 +4015,27 @@ Route2_House_Eventscript_TheFirstMorning2_Text_0:
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright! Let's head out then!$"
 
 Route2_House_Eventscript_TheFirstMorning2_Text_1:
-# 1193 "data/maps/Route2_House/scripts.pory"
+# 1191 "data/maps/Route2_House/scripts.pory"
 	.string "Akihiko's Prologue: Sunshine Memories\n"
 	.string "{COLOR GREEN}{CLEAR_TO 64}COMPLETE\p"
 	.string "{COLOR DARK_GRAY}{CLEAR_TO 32}Chapter 1: Under The Rubbles\n"
 	.string "{COLOR GREEN}{CLEAR_TO 64}Level cap: 18$"
 
 Route2_House_Eventscript_TheFirstMorning2_Text_2:
-# 1204 "data/maps/Route2_House/scripts.pory"
+# 1202 "data/maps/Route2_House/scripts.pory"
 	.string "{COLOR RED}Mitsuru's Prologue {COLOR GREEN}unlocked.\n"
 	.string "Check Quest Menu for more details.$"
 
 Route2_House_Eventscript_MitsuruRestForTheNight_Text_0:
-# 1263 "data/maps/Route2_House/scripts.pory"
+# 1261 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Not too shabby. This will do.$"
 
 Route2_House_Eventscript_MitsuruPostRest_Text_0:
-# 1281 "data/maps/Route2_House/scripts.pory"
+# 1279 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(The sun's up. Time to move out.)$"
 
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_0:
-# 1317 "data/maps/Route2_House/scripts.pory"
+# 1315 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(So this boy is... Akihiko Sanada.)\p"
 	.string "(He got adopted a few days ago, along\n"
 	.string "with his younger sister Miki.)\p"
@@ -4051,13 +4047,13 @@ Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_0:
 	.string "issued a week ago.)$"
 
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_1:
-# 1325 "data/maps/Route2_House/scripts.pory"
+# 1323 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(And this one is Aragaki Shinjiro.)\p"
 	.string "(He's also adopted on paper and has a\n"
 	.string "standard trainer card.)$"
 
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_2:
-# 1328 "data/maps/Route2_House/scripts.pory"
+# 1326 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Considering how eagerly the Genesis\n"
 	.string "staff were searching for them)\p"
 	.string "(I guess they must be ones of their\n"
@@ -4066,7 +4062,7 @@ Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_2:
 	.string "the Genesis group does.)$"
 
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_3:
-# 1343 "data/maps/Route2_House/scripts.pory"
+# 1341 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Inteleon, you're back. Just about time.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I'd love to give you a rest but we really\n"
 	.string "have to act right now.\p"
@@ -4074,7 +4070,7 @@ Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_3:
 	.string "return to the Pokéball.$"
 
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_4:
-# 1350 "data/maps/Route2_House/scripts.pory"
+# 1348 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon shaked its head, looking\n"
 	.string "determined to accompany Mitsuru.)\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}If that's what you want, alright. Let's\n"
@@ -4083,12 +4079,12 @@ Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_4:
 	.string "Town for these two boys.$"
 
 Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_0:
-# 1387 "data/maps/Route2_House/scripts.pory"
+# 1385 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes, Father. That'd be great.\p"
 	.string "Yes. I'll talk to you later.$"
 
 Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_1:
-# 1397 "data/maps/Route2_House/scripts.pory"
+# 1395 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}(It's been days and the girl still hasn't\n"
 	.string "been found.)\p"
 	.string "(There's a great chance that the\n"
@@ -4098,7 +4094,7 @@ Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_1:
 	.string "........$"
 
 Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_2:
-# 1403 "data/maps/Route2_House/scripts.pory"
+# 1401 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}I've been avoidant about confronting\n"
 	.string "the boys.\p"
 	.string "I don't know how to face them after\n"
@@ -4110,11 +4106,11 @@ Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_2:
 	.string "Vulpix, Inteleon.$"
 
 Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV_Text_0:
-# 1431 "data/maps/Route2_House/scripts.pory"
+# 1429 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}...$"
 
 Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV_Text_1:
-# 1460 "data/maps/Route2_House/scripts.pory"
+# 1458 "data/maps/Route2_House/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Apologies, but this is the best shelter\n"
 	.string "I could provide in this situation.\p"
 	.string "This is the house of my butler's\n"
@@ -4124,13 +4120,13 @@ Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV_Text_1:
 	.string "safe here.$"
 
 Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_Text_0:
-# 1860 "data/maps/Route2_House/scripts.pory"
+# 1858 "data/maps/Route2_House/scripts.pory"
 	.string "{CLEAR_TO 10}Mitsuru's Prologue: Responsibilities\n"
 	.string "{COLOR GREEN}{CLEAR_TO 64}COMPLETE\p"
 	.string "{COLOR DARK_GRAY}{CLEAR_TO 32}Chapter 1: Under The Rubbles\n"
 	.string "{COLOR GREEN}{CLEAR_TO 64}Level cap: 18$"
 
 Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_Text_1:
-# 1870 "data/maps/Route2_House/scripts.pory"
+# 1868 "data/maps/Route2_House/scripts.pory"
 	.string "{COLOR RED}Akihiko's Prologue {COLOR GREEN}unlocked. Check\n"
 	.string "Quest Menu for more details.$"

@@ -593,7 +593,7 @@ script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru {
     applymovement(1, MitsuruGoesBackToCenter)
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Alright. I'll be waiting for both of you in Sunshine Meadow.\p
-    {COLOR RED}We'll be having 3-vs-3 Pokémon battles and items are not allowed so plan your party accordingly.\p
+    {COLOR RED}We'll be having 3-vs-3 Pokémon battles and bag items are not allowed so plan your party accordingly.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}{COLOR DARK_GRAY}Good luck, you'll need it."))
     closemessage
     special(SpawnCameraObject)
@@ -1624,7 +1624,7 @@ script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuruPOV {
     applymovement(1, MitsuruGoesBackToCenter)
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Alright. I'll be waiting for both of you in Sunshine Meadow.\p
-    {COLOR RED}We'll be having 3-vs-3 Pokémon battles and items are not allowed so plan your party accordingly.\p
+    {COLOR RED}We'll be having 3-vs-3 Pokémon battles and bag items are not allowed so plan your party accordingly.\p
     {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}{COLOR DARK_GRAY}Good luck, you'll need it."))
     closemessage
     special(SpawnCameraObject)

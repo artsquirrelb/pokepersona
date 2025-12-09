@@ -162,3 +162,44 @@ script Budew_NPC {
     release
     end
 }
+
+script SunshineOrphanage_Eventscript_MetalClawTutor {
+    lock
+    faceplayer
+    msgbox(format("I'm interested in Steel-type Pokémon and recently
+    learned how to teach the move {COLOR BLUE}Metal Claw {COLOR 2}to a Pokémon.\p
+    Do you want me to?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT) == TRUE){
+        specialvar(VAR_RESULT, CountPartyNonEggMons)
+        if (var(VAR_RESULT) == 0){
+            msgbox(format("But you don't have any Pokémon..."))
+            closemessage
+            release
+            end
+        }
+        msgbox(format("Which Pokémon should I teach {COLOR BLUE}Metal Claw {COLOR 2}to?"))
+        closemessage
+	    setvar (VAR_ITEM_ID, MOVE_METAL_CLAW)
+	    buffermovename (STR_VAR_1, MOVE_METAL_CLAW)
+	    call (MoveTutor_EventScript_OpenBox)
+	    if (var(VAR_RESULT) == 4) {
+            goto(SunshineOrphanage_Eventscript_MetalClawDeclined)
+        }
+        else{
+            msgbox(format("Just speak to me if you want me to teach {COLOR BLUE}Metal Claw {COLOR 2}to a Pokémon!"))
+            closemessage
+        }
+    }
+    else{
+        goto(SunshineOrphanage_Eventscript_MetalClawDeclined)
+    }
+    release
+	end
+}
+
+script SunshineOrphanage_Eventscript_MetalClawDeclined {
+    msgbox(format("Aw... Okay."))
+    closemessage
+    release
+    end
+}

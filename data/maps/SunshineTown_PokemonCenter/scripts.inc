@@ -45,15 +45,15 @@ SunshineTown_PokemonCenter_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 	.2byte 0
 
 
-PokemonCenter_Eventscript_Nurse::
+SunshineTown_PokemonCenter_Eventscript_Nurse::
 # 20 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	lock
 # 21 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	faceplayer
 # 22 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setspeaker PokemonCenter_Eventscript_Nurse_Text_0
+	setspeaker SunshineTown_PokemonCenter_Eventscript_Nurse_Text_0
 # 23 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	msgbox PokemonCenter_Eventscript_Nurse_Text_1
+	msgbox SunshineTown_PokemonCenter_Eventscript_Nurse_Text_1
 # 25 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	hidefollower
 # 26 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
@@ -65,7 +65,7 @@ PokemonCenter_Eventscript_Nurse::
 # 29 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	callnative UpdateFollowingPokemon
 # 30 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	msgbox PokemonCenter_Eventscript_Nurse_Text_2
+	msgbox SunshineTown_PokemonCenter_Eventscript_Nurse_Text_2
 # 33 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	closemessage
 # 34 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
@@ -132,9 +132,9 @@ SunshineTown_PokemonCenter_Eventscript_MartLady_2:
 # 63 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	closemessage
 # 64 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_0
+	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_3
 # 65 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	msgbox SunshineTown_PokemonCenter_Eventscript_MartLady_Text_3
+	msgbox SunshineTown_PokemonCenter_Eventscript_MartLady_Text_4
 # 66 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 13
 # 67 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
@@ -506,7 +506,7 @@ SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene0::
 # 276 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay 30
 # 277 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_0
+	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_3
 # 278 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 6, walkleft
 # 279 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
@@ -544,7 +544,7 @@ SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene1::
 # 297 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay 30
 # 298 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_0
+	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_3
 # 299 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 6, walkleft
 # 300 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
@@ -608,17 +608,17 @@ SunshineTown_PokemonCenter_Eventscript_CameraToMartLady1:
 	walk_right
 	step_end
 
-PokemonCenter_Eventscript_Nurse_Text_0:
+SunshineTown_PokemonCenter_Eventscript_Nurse_Text_0:
 # 22 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.string "Nurse$"
+	.string "Nurse Juria$"
 
-PokemonCenter_Eventscript_Nurse_Text_1:
+SunshineTown_PokemonCenter_Eventscript_Nurse_Text_1:
 # 23 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "Hello and welcome to the Pokémon\n"
 	.string "Center.\p"
 	.string "Let me heal your tired Pokémon.$"
 
-PokemonCenter_Eventscript_Nurse_Text_2:
+SunshineTown_PokemonCenter_Eventscript_Nurse_Text_2:
 # 30 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "Thank you for waiting. We have restored\n"
 	.string "your tired Pokémon to full health.\p"
@@ -626,7 +626,7 @@ PokemonCenter_Eventscript_Nurse_Text_2:
 
 SunshineTown_PokemonCenter_Eventscript_MartLady_Text_0:
 # 52 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.string "Mart Employee$"
+	.string "Mart Employee Fusayo$"
 
 SunshineTown_PokemonCenter_Eventscript_MartLady_Text_1:
 # 53 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
@@ -639,6 +639,10 @@ SunshineTown_PokemonCenter_Eventscript_MartLady_Text_2:
 	.string "It should have arrived today.$"
 
 SunshineTown_PokemonCenter_Eventscript_MartLady_Text_3:
+# 64 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
+	.string "Mart Employee$"
+
+SunshineTown_PokemonCenter_Eventscript_MartLady_Text_4:
 # 65 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "One moment, please.$"
 

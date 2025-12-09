@@ -13,10 +13,10 @@ script Route1_Eventscript_NotTheWayToMeadow {
 }
 
 script Route1_Eventscript_Touma {
-    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){
+    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){                           //post prologue
         trainerbattle_single(TRAINER_TOUMA_2, Route1_ToumaIntro_A, Route1_ToumaDefeated)
     }
-    elif(var(VAR_MITSURUS_INTRO_STATE) < 50){
+    else{
         trainerbattle_single(TRAINER_TOUMA, Route1_ToumaIntro, Route1_ToumaDefeated)
     }
     setspeaker("Touma")
@@ -58,15 +58,11 @@ text Route1_ToumaIntro_A {
 }
 
 script Route1_Eventscript_Miyu {
-    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){      //akihiko prologue post mitsuru's 1st battle
+    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){      //post prologue
     trainerbattle_single(TRAINER_MIYU_2, Route1_MiyuIntro_A, Route1_MiyuDefeated)
     }
-    elif(var(VAR_MITSURUS_INTRO_STATE) < 50){                                           //mitsuru pre chapter 1
+    else{                                           //mitsuru pre chapter 1
         trainerbattle_single(TRAINER_MIYU, Route1_MiyuIntro, Route1_MiyuIntro_A)
-    }
-    else{
-        trainerbattle_single(TRAINER_MIYU_2, Route1_MiyuIntro, Route1_MiyuDefeated)     //have finished both prologues (probly unecessary)
-
     }
     setspeaker("Miyu")
     faceplayer
@@ -150,15 +146,11 @@ script Route1_Eventscript_Teddiursa {
 }
 
 script Route1_Eventscript_Ichigo {
-    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){      //akihiko prologue post mitsuru's 1st battle
-        trainerbattle_single(TRAINER_MIYU_2, Route1_IchigoIntro_A, Route1_IchigoDefeated)
+    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){      //post prologue
+        trainerbattle_single(TRAINER_ICHIGO_2, Route1_IchigoIntro_A, Route1_IchigoDefeated)
     }
-    elif(var(VAR_MITSURUS_INTRO_STATE) < 50){                                           //mitsuru pre chapter 1
+    else{                                           //mitsuru pre chapter 1
         trainerbattle_single(TRAINER_ICHIGO, Route1_IchigoIntro, Route1_IchigoDefeated)
-    }
-    else
-    {
-        trainerbattle_single(TRAINER_MIYU_2, Route1_IchigoIntro_A, Route1_IchigoDefeated)     //have finished both prologues (probly unecessary)
     }
     setspeaker("Ichigo")
     faceplayer
@@ -174,9 +166,7 @@ text Route1_IchigoIntro {
 }
 
 text Route1_IchigoIntro_A {
-    format("You can't escape me!\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Well, I'm not intended to!\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Sigh... Aki...")
+    format("You can't escape me!")
 }
 
 text Route1_IchigoDefeated {

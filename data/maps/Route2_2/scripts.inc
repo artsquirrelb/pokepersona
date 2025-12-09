@@ -26,6 +26,20 @@ Route2_2_Eventscript_DirectionSign::
 	end
 
 
+Route2_2_Eventscript_Pansage::
+# 25 "data/maps/Route2_2/scripts.pory"
+	lockall
+# 26 "data/maps/Route2_2/scripts.pory"
+	startoverworldencounter 12
+# 27 "data/maps/Route2_2/scripts.pory"
+	setflag FLAG_TEMP_1
+# 28 "data/maps/Route2_2/scripts.pory"
+	removeobject VAR_LAST_TALKED
+# 29 "data/maps/Route2_2/scripts.pory"
+	releaseall
+	end
+
+
 Route2_2_Eventscript_BerrySign_Text_0:
 # 7 "data/maps/Route2_2/scripts.pory"
 	.string "If you pick the berries, please plant\n"

@@ -8892,6 +8892,29 @@ static inline uq4_12_t CalcTypeEffectivenessMultiplierInternal(struct BattleCont
         MulByTypeEffectiveness(ctx, &modifier, types[2]);
     if (ctx->moveType == TYPE_FIRE && gDisableStructs[ctx->battlerDef].tarShot)
         modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
+    if (GetMonData(GetBattlerMon(ctx->battlerDef), MON_DATA_SPECIES) == SPECIES_VULPIX_DELTA
+        || GetMonData(GetBattlerMon(ctx->battlerDef), MON_DATA_SPECIES) == SPECIES_NINETALES_DELTA)
+    {
+        if (ctx->moveType == TYPE_ROCK || ctx->moveType == TYPE_STEEL || ctx->moveType == TYPE_POISON)
+            modifier = UQ_4_12(1.0);
+    }
+
+    if (GetMonData(GetBattlerMon(ctx->battlerDef), MON_DATA_SPECIES) == SPECIES_PAWMI_DELTA
+        || GetMonData(GetBattlerMon(ctx->battlerDef), MON_DATA_SPECIES) == SPECIES_PAWMO_DELTA
+        || GetMonData(GetBattlerMon(ctx->battlerDef), MON_DATA_SPECIES) == SPECIES_PAWMOT_DELTA)
+    {
+        if (ctx->moveType == TYPE_GROUND || ctx->moveType == TYPE_PSYCHIC || ctx->moveType == TYPE_FAIRY)
+            modifier = UQ_4_12(1.0);
+        if (ctx->moveType == TYPE_ICE)
+            modifier = UQ_4_12(2.0);
+    }
+    
+    if (GetMonData(GetBattlerMon(ctx->battlerDef), MON_DATA_SPECIES) == SPECIES_FERROSEED_DELTA
+        || GetMonData(GetBattlerMon(ctx->battlerDef), MON_DATA_SPECIES) == SPECIES_FERROTHORN_DELTA)
+    {
+        if (ctx->moveType == TYPE_FIRE || ctx->moveType == TYPE_FIGHTING)
+            modifier = UQ_4_12(1.0);
+    }
 
     if (ctx->updateFlags && (illusionSpecies = GetIllusionMonSpecies(ctx->battlerDef)))
         TryNoticeIllusionInTypeEffectiveness(ctx->move, ctx->moveType, ctx->battlerAtk, ctx->battlerDef, modifier, illusionSpecies);

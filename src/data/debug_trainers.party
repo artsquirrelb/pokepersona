@@ -12,57 +12,69 @@ Start Debug Battle action is selected.
 */
 
 === DEBUG_TRAINER_PLAYER ===
-Name: Player
+Name: Akihiko
 Class: Companion
 Pic: Brendan
 Gender: Male
 Music: Male
 
-Buffie (Wobbuffet)
-Brave Nature
-Level: 100
+SPECIES_PAWMI_DELTA
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Earthquake
-- Flamethrower
-- Celebrate
-- Celebrate
+EVs: 252 Atk / 252 Spe / 6 SpD
+- Metal Claw
+- Fire Fang
+- Rock Tomb
+- Liquidation
+
+SPECIES_VULPIX_DELTA
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 SpA / 252 Spe / 4 Def
+- Ice Beam
+- Psychic
+- Earth Power
+
+SPECIES_FERROSEED_DELTA
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 6 Def / 252 SpD
+- Toxic
+- Leech Seed
+- Spiky Shield
+- Iron Head
 
 === DEBUG_TRAINER_AI ===
-Name: Debugger
+Name: Mitsuru
 AI: Basic Trainer
 Class: Rival
 Battle Type: Singles
-Pic: Steven
-Gender: Male
-Music: Male
+Pic: May
+Gender: Female
+Music: Female
 
-Metang
-Brave Nature
-Level: 42
+SPECIES_VULPIX_DELTA
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 Def / 6 SpA
-- Light Screen
+EVs: 252 SpA / 252 Spe / 4 Def
+- Ice Beam
 - Psychic
-- Reflect
-- Metal Claw
+- Earth Power
 
-Skarmory
-Impish Nature
-Level: 43
+SPECIES_FERROSEED_DELTA
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 6 SpA / 252 SpD
+EVs: 252 HP / 6 Def / 252 SpD
 - Toxic
-- Aerial Ace
-- Protect
-- Steel Wing
+- Leech Seed
+- Spiky Shield
+- Iron Head
 
-Aggron
-Adamant Nature
-Level: 44
+SPECIES_PAWMI_DELTA
+Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 Atk / 252 SpA / 6 SpD
-- Thunder
-- Protect
-- Solar Beam
-- Dragon Claw
+EVs: 252 Atk / 252 Spe / 6 SpD
+- Metal Claw
+- Fire Fang
+- Rock Tomb
+- Liquidation

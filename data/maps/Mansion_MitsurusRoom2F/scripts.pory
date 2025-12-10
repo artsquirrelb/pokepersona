@@ -28,7 +28,9 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     delay(30)
     applymovement(LOCALID_PLAYER, moves(emote_pensive))
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I'll need this... and a spare pair of boots..."))
+    setspeaker(SP_NAME_MITSURU)
+    createfieldmugshot(MUGSHOT_MITSURU, EMOTE_NORMAL)
+    msgbox(format("I'll need this... and a spare pair of boots..."))
     closemessage
     setflag(FLAG_SYS_B_DASH)
     delay(30)
@@ -36,7 +38,8 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     delay(40)
     applymovement(LOCALID_VULPIX, moves(face_left, face_up))
     waitmovement(LOCALID_PLAYER)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}My Pokédex, wallet... Repels...\p
+    createfieldmugshot(MUGSHOT_MITSURU, EMOTE_NORMAL)
+    msgbox(format("{SPEAKER NAME_MITSURU}My Pokédex, wallet... Repels...\p
     And the map to Thundershards Cliff."))
     closemessage
     setcaughtmon(SPECIES_VULPIX_DELTA)
@@ -47,7 +50,8 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     special(EnableNationalPokedex)
     applymovement(LOCALID_PLAYER, emotepensive)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}What else..."))
+    setspeaker(SP_NAME_MITSURU)
+    msgbox(format("{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}What else..."))
     closemessage
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, emoteexclamation)

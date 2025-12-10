@@ -386,7 +386,6 @@ u8 *StringExpandPlaceholders(u8 *dest, const u8 *src)
             case EXT_CTRL_CODE_RESUME_MUSIC:
                 break;
             case EXT_CTRL_CODE_COLOR_HIGHLIGHT_SHADOW:
-            case EXT_CTRL_CODE_TEXT_COLORS:
                 *dest++ = *src++;
             case EXT_CTRL_CODE_PLAY_BGM:
                 *dest++ = *src++;
@@ -626,31 +625,23 @@ u32 StringLength_Multibyte(const u8 *str)
     return length;
 }
 
-u8 *WriteColorChangeControlCode(u8 *dest, enum TextColorType colorType, u8 color)
+u8 *WriteColorChangeControlCode(u8 *dest, u32 colorType, u8 color)
 {
     *dest = EXT_CTRL_CODE_BEGIN;
     dest++;
 
     switch (colorType)
     {
-    case TEXT_COLOR_TYPE_FOREGROUND:
+    case 0:
         *dest = EXT_CTRL_CODE_COLOR;
         dest++;
         break;
-    case TEXT_COLOR_TYPE_SHADOW:
+    case 1:
         *dest = EXT_CTRL_CODE_SHADOW;
         dest++;
         break;
-    case TEXT_COLOR_TYPE_HIGHLIGHT:
+    case 2:
         *dest = EXT_CTRL_CODE_HIGHLIGHT;
-        dest++;
-        break;
-    case TEXT_COLOR_TYPE_ACCENT:
-        *dest = EXT_CTRL_CODE_ACCENT;
-        dest++;
-        break;
-    case TEXT_COLOR_TYPE_BACKGROUND:
-        *dest = EXT_CTRL_CODE_BACKGROUND;
         dest++;
         break;
     }
@@ -721,9 +712,6 @@ u8 GetExtCtrlCodeLength(u8 code)
         [EXT_CTRL_CODE_CREATE_MUGSHOT]         = 3,
         [EXT_CTRL_CODE_DESTROY_MUGSHOT]        = 1,
         [EXT_CTRL_CODE_SPEAKER]                = 1,
-        [EXT_CTRL_CODE_ACCENT]                 = 2,
-        [EXT_CTRL_CODE_BACKGROUND]             = 2,
-        [EXT_CTRL_CODE_TEXT_COLORS]            = 4,
     };
 
     u8 length = 0;

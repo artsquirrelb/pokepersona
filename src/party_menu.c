@@ -3031,7 +3031,7 @@ static u8 DisplaySelectionWindow(u8 windowType) //Summary/Switch/Item/Cancel men
             text = sCursorOptions[sPartyMenuInternal->actions[i]].text;
 
         //AddTextPrinterParameterized4(sPartyMenuInternal->windowId[0], FONT_NORMAL, cursorDimension, (i * 16) + 1, letterSpacing, 0, sFontColorTable[fontColorsId], 0, text);
-        AddTextPrinterParameterized6(sPartyMenuInternal->windowId[0], FONT_NORMAL, text, cursorDimension, (i * 16) + 1, 0, 0, 1, 0x0, 0x0);
+        AddTextPrinterParameterizedCustom(sPartyMenuInternal->windowId[0], FONT_NORMAL, text, cursorDimension, (i * 16) + 1, 0, 0, 1, 0x0, 0x0);
     }
 
     InitMenuInUpperLeftCorner(sPartyMenuInternal->windowId[0], sPartyMenuInternal->numActions, 0, TRUE);

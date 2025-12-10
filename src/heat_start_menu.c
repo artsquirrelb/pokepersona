@@ -861,11 +861,11 @@ static void HeatStartMenu_ShowDaysLeftWindow (void)
     PutWindowTilemap(sHeatStartMenu->sDaysLeftWindowId);
     ConvertIntToDecimalStringN(gStringVar1, VarGet(VAR_DAYS_LEFT), STR_CONV_MODE_LEADING_ZEROS, 2);
 
-    AddTextPrinterParameterized6(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gText_DaysLeft, 0, 1, 0, 0, 0x1, 0x0, 2);
+    AddTextPrinterParameterizedCustom(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gText_DaysLeft, 0, 1, 0, 0, 0x1, 0x0, 2);
     if (VarGet(VAR_DAYS_LEFT) <= 3)
-      AddTextPrinterParameterized6(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gStringVar1, 52, 1, 0, 0, 4, 0x0, 5);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gStringVar1, 52, 1, 0, 0, 4, 0x0, 5);
     else
-      AddTextPrinterParameterized6(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gStringVar1, 52, 1, 0, 0, 1, 0x0, 2);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gStringVar1, 52, 1, 0, 0, 1, 0x0, 2);
 
     CopyWindowToVram(sHeatStartMenu->sDaysLeftWindowId, COPYWIN_FULL);
   }
@@ -905,7 +905,7 @@ static void HeatStartMenu_ShowTimeWindow(void)
         else
             StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  
     
-	AddTextPrinterParameterized6(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 14, 0x0, 0);
+	AddTextPrinterParameterizedCustom(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 14, 0x0, 0);
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }
 
@@ -947,7 +947,7 @@ static void HeatStartMenu_ShowTimeWindow(void)
                 StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAMOff);  
     }
     
-	AddTextPrinterParameterized6(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 0x2, 0x0, 0x0);
+	AddTextPrinterParameterizedCustom(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 0x2, 0x0, 0x0);
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }*/
 
@@ -967,28 +967,28 @@ static void HeatStartMenu_UpdateMenuName(void) {
 
   switch(menuSelected) {
     case MENU_POKETCH:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Poketch, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Poketch, 1, 0, 0xFF, NULL, 14, 0x0, 0);
       break;
     case MENU_POKEDEX:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL, 14, 0x0, 0);
       break;
     case MENU_PARTY:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL, 14, 0x0, 0);
       break;
     case MENU_BAG:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL, 14, 0x0, 0);
       break;
     case MENU_TRAINER_CARD:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL, 14, 0x0, 0);
       break;
     case MENU_SAVE:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL, 14, 0x0, 0);
       break;
     case MENU_OPTIONS:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL, 14, 0x0, 0);
       break;
     case MENU_FLAG:
-      AddTextPrinterParameterized6(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL, 14, 0x0, 0);
       break;
   }
   CopyWindowToVram(sHeatStartMenu->sMenuNameWindowId, COPYWIN_GFX);
@@ -1347,25 +1347,25 @@ static void ShowSaveInfoWindow(void) {
     
     BufferSaveMenuText(SAVE_MENU_LOCATION, gStringVar4, 0x0);
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NARROW, gStringVar4, 8, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
+    AddTextPrinterParameterizedCustom(sSaveInfoWindowId, FONT_NARROW, gStringVar4, 8, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
 
     // Print player name
     yOffset += 16;
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPlayer, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPlayer, 0, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
+    AddTextPrinterParameterizedCustom(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPlayer, 0, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
     BufferSaveMenuText(SAVE_MENU_NAME, gStringVar4, 0x0);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     //PrintPlayerNameOnWindow(sSaveInfoWindowId, gStringVar4, xOffset, yOffset);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, color, 0x0, 0x0);
+    AddTextPrinterParameterizedCustom(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, color, 0x0, 0x0);
     
     // Print badge count
     yOffset += 16;
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingBadges, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingBadges, 0, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
+    AddTextPrinterParameterizedCustom(sSaveInfoWindowId, FONT_NORMAL, gText_SavingBadges, 0, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
     BufferSaveMenuText(SAVE_MENU_BADGES, gStringVar4, 0x0);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 0x1, 0x0, 0x0);
+    AddTextPrinterParameterizedCustom(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 0x1, 0x0, 0x0);
 
 
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
@@ -1373,22 +1373,22 @@ static void ShowSaveInfoWindow(void) {
         // Print pokedex count
         yOffset += 16;
         //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
+        AddTextPrinterParameterizedCustom(sSaveInfoWindowId, FONT_NORMAL, gText_SavingPokedex, 0, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
         BufferSaveMenuText(SAVE_MENU_CAUGHT, gStringVar4, 0x0);
         xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
         //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
+        AddTextPrinterParameterizedCustom(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
   
     }
 
     // Print play time
     yOffset += 16;
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gText_SavingTime, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gText_SavingTime, 0, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
+    AddTextPrinterParameterizedCustom(sSaveInfoWindowId, FONT_NORMAL, gText_SavingTime, 0, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
     BufferSaveMenuText(SAVE_MENU_PLAY_TIME, gStringVar4, 0x0);
     xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 0x70);
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterized6(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
+    AddTextPrinterParameterizedCustom(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, xOffset, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
 
     CopyWindowToVram(sSaveInfoWindowId, COPYWIN_GFX);
 }

@@ -1096,7 +1096,7 @@ void RedrawMenuCursor(u8 oldPos, u8 newPos)
     height = GetMenuCursorDimensionByFont(sMenu.fontId, 1);
     FillWindowPixelRect(sMenu.windowId, PIXEL_FILL(3), sMenu.left, sMenu.optionHeight * oldPos + sMenu.top, width, height);//fill was 1
     //AddTextPrinterParameterized(sMenu.windowId, sMenu.fontId, gText_SelectorArrow3, sMenu.left, sMenu.optionHeight * newPos + sMenu.top, 0, 0);
-    AddTextPrinterParameterized6(sMenu.windowId, sMenu.fontId, gText_SelectorArrow3, sMenu.left, sMenu.optionHeight * newPos + sMenu.top, 0, 0, 0x2, 0x0, 0x0);
+    AddTextPrinterParameterizedCustom(sMenu.windowId, sMenu.fontId, gText_SelectorArrow3, sMenu.left, sMenu.optionHeight * newPos + sMenu.top, 0, 0, 0x2, 0x0, 0x0);
 }
 
 u8 Menu_MoveCursor(s8 cursorDelta)
@@ -1476,7 +1476,7 @@ static void MoveMenuGridCursor(u8 oldCursorPos, u8 newCursorPos)
     xPos = (newCursorPos % sMenu.columns) * sMenu.optionWidth + sMenu.left;
     yPos = (newCursorPos / sMenu.columns) * sMenu.optionHeight + sMenu.top;
     //AddTextPrinterParameterized(sMenu.windowId, sMenu.fontId, gText_SelectorArrow3, xPos, yPos, 0, 0);
-    AddTextPrinterParameterized6(sMenu.windowId, sMenu.fontId, gText_SelectorArrow3, xPos, yPos, 0, 0, 0x2, 0x0, 0x0);
+    AddTextPrinterParameterizedCustom(sMenu.windowId, sMenu.fontId, gText_SelectorArrow3, xPos, yPos, 0, 0, 0x2, 0x0, 0x0);
 }
 
 u8 ChangeMenuGridCursorPosition(s8 deltaX, s8 deltaY)
@@ -1744,7 +1744,7 @@ void PrintMenuTable(u8 windowId, u8 itemCount, const struct MenuAction *menuActi
 
     for (i = 0; i < itemCount; i++)
         //AddTextPrinterParameterized(windowId, FONT_NORMAL, menuActions[i].text, 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL);
-        AddTextPrinterParameterized6(windowId, FONT_NORMAL, menuActions[i].text, 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL, 0x1, 0x0, 0x0);
+        AddTextPrinterParameterizedCustom(windowId, FONT_NORMAL, menuActions[i].text, 8, (i * 16) + 1, TEXT_SKIP_DRAW, NULL, 0x1, 0x0, 0x0);
     CopyWindowToVram(windowId, COPYWIN_GFX);
 }
 
@@ -2130,7 +2130,7 @@ void AddTextPrinterParameterized5(u8 windowId, u8 fontId, const u8 *str, u8 left
     AddTextPrinter(&printer, speed, callback);
 }
 
-u16 AddTextPrinterParameterized6(u8 windowId, u8 fontId, const u8 *str, u8 x, u8 y, u8 speed, void (*callback)(struct TextPrinterTemplate *, u16), u8 fgColor, u8 bgColor, u8 shadowColor)
+u16 AddTextPrinterParameterizedCustom(u8 windowId, u8 fontId, const u8 *str, u8 x, u8 y, u8 speed, void (*callback)(struct TextPrinterTemplate *, u16), u8 fgColor, u8 bgColor, u8 shadowColor)
 {
     struct TextPrinterTemplate printer;
 
@@ -2167,7 +2167,7 @@ void PrintPlayerNameOnWindow(u8 windowId, const u8 *src, u16 x, u16 y)
     }
 
     AddTextPrinterParameterized(windowId, FONT_NORMAL, gStringVar4, x, y, TEXT_SKIP_DRAW, 0);
-    //AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, x, y, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
+    //AddTextPrinterParameterizedCustom(windowId, FONT_NORMAL, gStringVar4, x, y, TEXT_SKIP_DRAW, 0, 0x2, 0x0, 0x0);
 }
 
 static void UNUSED UnusedBlitBitmapRect(const struct Bitmap *src, struct Bitmap *dst, u16 srcX, u16 srcY, u16 dstX, u16 dstY, u16 width, u16 height)

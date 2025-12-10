@@ -219,7 +219,7 @@ static void PrintRegionMapSecName(void)
     if (sFieldRegionMapHandler->regionMap.mapSecType != MAPSECTYPE_NONE)
     {
         FillWindowPixelBuffer(WIN_MAPSEC_NAME, PIXEL_FILL(3));
-        AddTextPrinterParameterized6(WIN_MAPSEC_NAME, FONT_NARROW, sFieldRegionMapHandler->regionMap.mapSecName, 0, 1, 0, NULL, 0x1, 0, 0x0);
+        AddTextPrinterParameterizedCustom(WIN_MAPSEC_NAME, FONT_NARROW, sFieldRegionMapHandler->regionMap.mapSecName, 0, 1, 0, NULL, 0x1, 0, 0x0);
         ScheduleBgCopyTilemapToVram(WIN_MAPSEC_NAME);
     }
     else
@@ -240,12 +240,12 @@ static void PrintTitleWindowText(void)
     if (sFieldRegionMapHandler->regionMap.mapSecType == MAPSECTYPE_CITY_CANFLY
         && FlagGet(OW_FLAG_POKE_RIDER) && Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
     {
-        AddTextPrinterParameterized6(WIN_TITLE, FONT_NORMAL, FlyPromptText, flyOffset, 1, 0, NULL, 0x1, 0, 0x0);
+        AddTextPrinterParameterizedCustom(WIN_TITLE, FONT_NORMAL, FlyPromptText, flyOffset, 1, 0, NULL, 0x1, 0, 0x0);
         ScheduleBgCopyTilemapToVram(WIN_TITLE);
     }
     else
     {
-        AddTextPrinterParameterized6(WIN_TITLE, FONT_NORMAL, gText_Hoenn, hoennOffset, 1, 0, NULL, 0x1, 0, 0x0);
+        AddTextPrinterParameterizedCustom(WIN_TITLE, FONT_NORMAL, gText_Hoenn, hoennOffset, 1, 0, NULL, 0x1, 0, 0x0);
         CopyWindowToVram(WIN_TITLE, COPYWIN_FULL);
     }
 }

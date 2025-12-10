@@ -1286,7 +1286,7 @@ static void DebugAction_Util_Warp_Warp(u8 taskId)
     StringExpandPlaceholders(gStringVar1, sDebugText_Util_WarpToMap_SelMax);
     StringCopy(gStringVar3, gText_DigitIndicator[0]);
     StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMapGroup);
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 
     gTasks[taskId].func = DebugAction_Util_Warp_SelectMapGroup;
     gTasks[taskId].tSubWindowId = windowId;
@@ -1309,7 +1309,7 @@ static void DebugAction_Util_Warp_SelectMapGroup(u8 taskId)
         StringExpandPlaceholders(gStringVar1, sDebugText_Util_WarpToMap_SelMax);
         StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
         StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMapGroup);
-        AddTextPrinterParameterized6(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+        AddTextPrinterParameterizedCustom(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
     }
 
     if (JOY_NEW(A_BUTTON))
@@ -1324,7 +1324,7 @@ static void DebugAction_Util_Warp_SelectMapGroup(u8 taskId)
         GetMapName(gStringVar2, Overworld_GetMapHeaderByGroupAndId(gTasks[taskId].tMapGroup, gTasks[taskId].tInput)->regionMapSectionId, 0);
         StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
         StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMap);
-        AddTextPrinterParameterized6(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+        AddTextPrinterParameterizedCustom(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 
         gTasks[taskId].func = DebugAction_Util_Warp_SelectMap;
     }
@@ -1350,7 +1350,7 @@ static void DebugAction_Util_Warp_SelectMap(u8 taskId)
         GetMapName(gStringVar2, Overworld_GetMapHeaderByGroupAndId(gTasks[taskId].tMapGroup, gTasks[taskId].tInput)->regionMapSectionId, 0);
         StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
         StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectMap);
-        AddTextPrinterParameterized6(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+        AddTextPrinterParameterizedCustom(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
     }
 
     if (JOY_NEW(A_BUTTON))
@@ -1362,7 +1362,7 @@ static void DebugAction_Util_Warp_SelectMap(u8 taskId)
         StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
         ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, 3);
         StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectWarp);
-        AddTextPrinterParameterized6(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+        AddTextPrinterParameterizedCustom(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
         gTasks[taskId].func = DebugAction_Util_Warp_SelectWarp;
     }
     else if (JOY_NEW(B_BUTTON))
@@ -1393,7 +1393,7 @@ static void DebugAction_Util_Warp_SelectWarp(u8 taskId)
         StringCopy(gStringVar3, gText_DigitIndicator[gTasks[taskId].tDigit]);
         ConvertIntToDecimalStringN(gStringVar1, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, 3);
         StringExpandPlaceholders(gStringVar4, sDebugText_Util_WarpToMap_SelectWarp);
-        AddTextPrinterParameterized6(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+        AddTextPrinterParameterizedCustom(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
     }
 
     if (JOY_NEW(A_BUTTON))
@@ -1555,7 +1555,7 @@ static void DebugAction_Util_Weather(u8 taskId)
     ConvertIntToDecimalStringN(gStringVar3, 1, STR_CONV_MODE_LEADING_ZEROS, 2);
     StringCopyPadded(gStringVar1, GetWeatherName(0), CHAR_SPACE, 30);
     StringExpandPlaceholders(gStringVar4, sDebugText_Util_Weather_ID);
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 
     gTasks[taskId].func = DebugAction_Util_Weather_SelectId;
     gTasks[taskId].tSubWindowId = windowId;
@@ -1576,7 +1576,7 @@ static void DebugAction_Util_Weather_SelectId(u8 taskId)
         StringCopyPadded(gStringVar1, GetWeatherName(gTasks[taskId].tInput), CHAR_SPACE, 30);
 
         StringExpandPlaceholders(gStringVar4, sDebugText_Util_Weather_ID);
-        AddTextPrinterParameterized6(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+        AddTextPrinterParameterizedCustom(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
     }
 
     if (JOY_NEW(A_BUTTON))
@@ -1697,7 +1697,7 @@ static void Debug_Display_FlagInfo(u32 flag, u32 digit, u8 windowId)
         StringCopyPadded(gStringVar2, sDebugText_False, CHAR_SPACE, 15);
     StringCopy(gStringVar3, gText_DigitIndicator[digit]);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Flag: {STR_VAR_1}{CLEAR_TO 90}\n{STR_VAR_2}{CLEAR_TO 90}\n{STR_VAR_3}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_FlagsVars_Flags(u8 taskId)
@@ -1769,7 +1769,7 @@ static void DebugAction_FlagsVars_Vars(u8 taskId)
     StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 15);
     StringCopy(gStringVar2, gText_DigitIndicator[0]);
     StringExpandPlaceholders(gStringVar4, sDebugText_FlagsVars_Variable);
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 
     gTasks[taskId].func = DebugAction_FlagsVars_Select;
     gTasks[taskId].tSubWindowId = windowId;
@@ -1798,7 +1798,7 @@ static void DebugAction_FlagsVars_Select(u8 taskId)
 
         //Combine str's to full window string
         StringExpandPlaceholders(gStringVar4, sDebugText_FlagsVars_Variable);
-        AddTextPrinterParameterized6(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+        AddTextPrinterParameterizedCustom(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
     }
 
     if (JOY_NEW(A_BUTTON))
@@ -1818,7 +1818,7 @@ static void DebugAction_FlagsVars_Select(u8 taskId)
         StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 15);
         StringCopy(gStringVar2, gText_DigitIndicator[gTasks[taskId].tDigit]);
         StringExpandPlaceholders(gStringVar4, sDebugText_FlagsVars_VariableValueSet);
-        AddTextPrinterParameterized6(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+        AddTextPrinterParameterizedCustom(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 
         gTasks[taskId].data[6] = gTasks[taskId].data[5]; //New value selector
         gTasks[taskId].func = DebugAction_FlagsVars_SetValue;
@@ -1886,7 +1886,7 @@ static void DebugAction_FlagsVars_SetValue(u8 taskId)
         StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 15);
         StringCopy(gStringVar2, gText_DigitIndicator[gTasks[taskId].tDigit]);
         StringExpandPlaceholders(gStringVar4, sDebugText_FlagsVars_VariableValueSet);
-        AddTextPrinterParameterized6(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+        AddTextPrinterParameterizedCustom(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
     }
 }
 
@@ -2137,7 +2137,7 @@ static void Debug_Display_ItemInfo(u32 itemId, u32 digit, u8 windowId)
     StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
     ConvertIntToDecimalStringN(gStringVar3, itemId, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Item ID: {STR_VAR_3}\n{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_Item(u8 taskId)
@@ -2181,7 +2181,7 @@ static void Debug_Display_ItemQuantity(u32 quantity, u32 digit, u8 windowId)
     ConvertIntToDecimalStringN(gStringVar1, quantity, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEM_QUANTITY);
     StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Quantity:{CLEAR_TO 90}\n{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_Item_SelectId(u8 taskId)
@@ -2277,7 +2277,7 @@ static void Debug_Display_SpeciesInfo(u32 species, u32 digit, u8 windowId)
     StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
     ConvertIntToDecimalStringN(gStringVar3, species, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Species: {STR_VAR_3}\n{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}{CLEAR_TO 90}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_PokemonSimple(u8 taskId)
@@ -2394,7 +2394,7 @@ static void Debug_Display_Level(u32 level, u32 digit, u8 windowId)
     ConvertIntToDecimalStringN(gStringVar1, level, STR_CONV_MODE_LEADING_ZEROS, 3);
     StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Level:{CLEAR_TO 90}\n{STR_VAR_1}{CLEAR_TO 90}\n{CLEAR_TO 90}\n{STR_VAR_2}{CLEAR_TO 90}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_Pokemon_SelectId(u8 taskId)
@@ -2449,7 +2449,7 @@ static void Debug_Display_TrueFalse(bool32 value, u8 windowId, const u8 *titleSt
     ConvertIntToDecimalStringN(gStringVar3, value, STR_CONV_MODE_LEADING_ZEROS, 0);
     StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 15);
     StringExpandPlaceholders(gStringVar4, titleStr);
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_Pokemon_SelectLevel(u8 taskId)
@@ -2500,7 +2500,7 @@ static void Debug_Display_Nature(u32 natureId, u32 digit, u8 windowId)
     StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 15);
     StringCopy(gStringVar1, gNaturesInfo[natureId].name);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Nature ID: {STR_VAR_3}{CLEAR_TO 90}\n{STR_VAR_1}{CLEAR_TO 90}\n{CLEAR_TO 90}\n{STR_VAR_2}{CLEAR_TO 90}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_Pokemon_SelectShiny(u8 taskId)
@@ -2536,7 +2536,7 @@ static void Debug_Display_Ability(enum Ability abilityId, u32 digit, u8 windowId
     u8 *end = StringCopy(gStringVar1, gAbilitiesInfo[abilityId].name);
     WrapFontIdToFit(gStringVar1, end, DEBUG_MENU_FONT, WindowWidthPx(windowId));
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Ability Num: {STR_VAR_3}{CLEAR_TO 90}\n{STR_VAR_1}{CLEAR_TO 90}\n{CLEAR_TO 90}\n{STR_VAR_2}{CLEAR_TO 90}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_Pokemon_SelectNature(u8 taskId)
@@ -2587,7 +2587,7 @@ static void Debug_Display_TeraType(u32 typeId, u32 digit, u8 windowId)
     StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 15);
     StringCopy(gStringVar1, gTypesInfo[typeId].name);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Tera Type: {STR_VAR_3}{CLEAR_TO 90}\n{STR_VAR_1}{CLEAR_TO 90}\n{CLEAR_TO 90}\n{STR_VAR_2}{CLEAR_TO 90}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_Pokemon_SelectAbility(u8 taskId)
@@ -2644,7 +2644,7 @@ static void Debug_Display_DynamaxLevel(u32 level, u32 digit, u8 windowId)
     ConvertIntToDecimalStringN(gStringVar1, level, STR_CONV_MODE_LEADING_ZEROS, 2);
     StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Dmax Lvl:{CLEAR_TO 90}\n{STR_VAR_1}{CLEAR_TO 90}\n{CLEAR_TO 90}\n{STR_VAR_2}{CLEAR_TO 90}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_Pokemon_SelectTeraType(u8 taskId)
@@ -2726,7 +2726,7 @@ static void Debug_Display_StatInfo(const u8* text, u32 stat, u32 value, u32 digi
     ConvertIntToDecimalStringN(gStringVar3, value, STR_CONV_MODE_LEADING_ZEROS, CountDigits(maxValue));
     StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 15);
     StringExpandPlaceholders(gStringVar4, text);
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_Pokemon_SelectGigantamaxFactor(u8 taskId)
@@ -2822,7 +2822,7 @@ static void Debug_Display_MoveInfo(u32 moveId, u32 iteration, u32 digit, u8 wind
     StringAppend(gStringVar4, COMPOUND_STRING("{CLEAR_TO 90}\n{CLEAR_TO 90}\n"));
     StringAppend(gStringVar4, gText_DigitIndicator[digit]);
     StringAppend(gStringVar4, COMPOUND_STRING("{CLEAR_TO 90}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_Pokemon_SelectEVs(u8 taskId)
@@ -3075,7 +3075,7 @@ static void Debug_Display_DecorationInfo(u32 itemId, u32 digit, u8 windowId)
     StringCopyPadded(gStringVar1, gStringVar1, CHAR_SPACE, 15);
     ConvertIntToDecimalStringN(gStringVar3, itemId, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Decor ID: {STR_VAR_3}\n{STR_VAR_1}{CLEAR_TO 90}\n\n{STR_VAR_2}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugAction_Give_Decoration(u8 taskId)
@@ -3382,7 +3382,7 @@ static void DebugAction_Sound_SE(u8 taskId)
     ConvertIntToDecimalStringN(gStringVar3, 1, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
     StringCopyPadded(gStringVar1, sSENames[0], CHAR_SPACE, 35);
     StringExpandPlaceholders(gStringVar4, sDebugText_Sound_SFX_ID);
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 
     StopMapMusic(); //Stop map music to better hear sounds
 
@@ -3407,7 +3407,7 @@ static void DebugAction_Sound_SE_SelectId(u8 taskId)
         StringCopyPadded(gStringVar1, seName, CHAR_SPACE, 35);
         ConvertIntToDecimalStringN(gStringVar3, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
         StringExpandPlaceholders(gStringVar4, sDebugText_Sound_SFX_ID);
-        AddTextPrinterParameterized6(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+        AddTextPrinterParameterizedCustom(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
     }
 
     if (JOY_NEW(A_BUTTON))
@@ -3447,7 +3447,7 @@ static void DebugAction_Sound_MUS(u8 taskId)
     ConvertIntToDecimalStringN(gStringVar3, START_MUS, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
     StringCopyPadded(gStringVar1, sBGMNames[0], CHAR_SPACE, 35);
     StringExpandPlaceholders(gStringVar4, sDebugText_Sound_Music_ID);
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 
     StopMapMusic(); //Stop map music to better hear new music
 
@@ -3472,7 +3472,7 @@ static void DebugAction_Sound_MUS_SelectId(u8 taskId)
         StringCopyPadded(gStringVar1, bgmName, CHAR_SPACE, 35);
         ConvertIntToDecimalStringN(gStringVar3, gTasks[taskId].tInput, STR_CONV_MODE_LEADING_ZEROS, DEBUG_NUMBER_DIGITS_ITEMS);
         StringExpandPlaceholders(gStringVar4, sDebugText_Sound_Music_ID);
-        AddTextPrinterParameterized6(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+        AddTextPrinterParameterizedCustom(gTasks[taskId].tSubWindowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
     }
 
     if (JOY_NEW(A_BUTTON))
@@ -4186,7 +4186,7 @@ static void Debug_Display_FriendshipInfo(s32 oldFriendship, s32 newFriendship, u
     ConvertIntToDecimalStringN(gStringVar2, newFriendship, STR_CONV_MODE_LEADING_ZEROS, 3);
     StringCopy(gStringVar3, gText_DigitIndicator[digit]);
     StringExpandPlaceholders(gStringVar4, COMPOUND_STRING("Friendship:\n{STR_VAR_1} {RIGHT_ARROW} {STR_VAR_2}\n\n{STR_VAR_3}"));
-    AddTextPrinterParameterized6(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, DEBUG_MENU_FONT, gStringVar4, 0, 0, 0, NULL, 1, 3, 3);
 }
 
 static void DebugNativeStep_Party_SetFriendshipSelect(u8 taskId)

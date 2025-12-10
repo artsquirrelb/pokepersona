@@ -756,16 +756,16 @@ static void MoveTutorLoadMoveInfo(u32 item)
     FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(3));
 
     str = gText_MoveRelearnerPower;
-    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 0, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "Power" text
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 0, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "Power" text
 
     str = gText_MoveRelearnerAccuracy;
-    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 13, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "Accuracy" text
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 13, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "Accuracy" text
 
     str = gText_MoveRelearnerPP;
-    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 26, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "PP" text
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 26, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "PP" text
 
     str = gTextSelect;
-    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 64, 0, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "select" text
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 64, 0, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "select" text
 
     if (item == LIST_CANCEL)
     {
@@ -776,7 +776,7 @@ static void MoveTutorLoadMoveInfo(u32 item)
     move = &gMovesInfo[item];
     str = gTypesInfo[move->type].name;
     x = GetStringRightAlignXOffset(FONT_NARROW, str, 0);
-    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds Type name
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds Type name
 
     str = gTypesInfo[move->type].name;
     x = GetStringWidth(FONT_NARROW, str, 0) + GetStringRightAlignXOffset(FONT_NARROW, str, 0);
@@ -792,11 +792,11 @@ static void MoveTutorLoadMoveInfo(u32 item)
             str = gText_TutorStatus;
             break;
     }
-    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0); // adds Physical/Special/Status text
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0); // adds Physical/Special/Status text
 
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerPP, 0);
     ConvertIntToDecimalStringN(buffer, move->pp, STR_CONV_MODE_LEFT_ALIGN, 2);
-    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, buffer, x, 26, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds PP value
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, buffer, x, 26, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds PP value
 
     if (move->power < 2)
     {
@@ -808,7 +808,7 @@ static void MoveTutorLoadMoveInfo(u32 item)
         str = buffer;
     }
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerPower, 0);
-    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 0, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds Power value
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 0, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds Power value
 
     if (move->accuracy == 0)
     {
@@ -820,7 +820,7 @@ static void MoveTutorLoadMoveInfo(u32 item)
         str = buffer;
     }
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerAccuracy, 0);
-    AddTextPrinterParameterized6(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 13, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds Accuracy value
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 13, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds Accuracy value
 
     str = gMovesInfo[item].description;
     AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 65, 0, NULL);

@@ -155,7 +155,7 @@ void PrintMoneyAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
 
     if (numDigits > 8)
         PrependFontIdToFit(gStringVar4, txtPtr + 1 + numDigits, FONT_NARROW, 54);
-    AddTextPrinterParameterized6(windowId, FONT_NARROW, gStringVar4, x, y, speed, NULL, 1, 3, 3);
+    AddTextPrinterParameterizedCustom(windowId, FONT_NARROW, gStringVar4, x, y, speed, NULL, 1, 3, 3);
 }
 
 void PrintMoneyAmountNoBGShadow(u8 windowId, u8 x, u8 y, int amount, u8 speed)
@@ -176,7 +176,7 @@ void PrintMoneyAmountNoBGShadow(u8 windowId, u8 x, u8 y, int amount, u8 speed)
 
     if (numDigits > 8)
         PrependFontIdToFit(gStringVar4, txtPtr + 1 + numDigits, FONT_NARROW, 54);
-    AddTextPrinterParameterized6(windowId, FONT_NARROW, gStringVar4, x, y, speed, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(windowId, FONT_NARROW, gStringVar4, x, y, speed, NULL, 1, 0, 0);
 }
 
 void PrintMoneyAmountInMoneyBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete, int amount)
@@ -237,5 +237,5 @@ void PrintBpBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete, int amount)
 void PrintBpAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
 {
     StringCopy(ConvertIntToDecimalStringN(gStringVar4, amount, STR_CONV_MODE_RIGHT_ALIGN, 4), gText_BP);
-    AddTextPrinterParameterized6(windowId, FONT_NORMAL, gStringVar4, x, y, 0, NULL, 1, 0x0, 0);
+    AddTextPrinterParameterizedCustom(windowId, FONT_NORMAL, gStringVar4, x, y, 0, NULL, 1, 0x0, 0);
 }

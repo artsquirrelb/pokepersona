@@ -112,7 +112,7 @@ u8 GetMapNamePopUpWindowId(void);
 u8 AddMapNamePopUpWindow(void);
 u16 AddWindowParameterized(u8, u8, u8, u8, u8, u8, u16);
 void AddTextPrinterParameterized5(u8 windowId, u8 fontId, const u8 *str, u8 left, u8 top, u8 speed, void (*callback)(struct TextPrinterTemplate *, u16), u8 letterSpacing, u8 lineSpacing);
-u16 AddTextPrinterParameterized6(u8 windowId, u8 fontId, const u8 *str, u8 x, u8 y, u8 speed, void (*callback)(struct TextPrinterTemplate *, u16), u8 fgColor, u8 bgColor, u8 shadowColor);
+u16 AddTextPrinterParameterizedCustom(u8 windowId, u8 fontId, const u8 *str, u8 x, u8 y, u8 speed, void (*callback)(struct TextPrinterTemplate *, u16), u8 fgColor, u8 bgColor, u8 shadowColor);
 void SetBgTilemapPalette(u8 bgId, u8 left, u8 top, u8 width, u8 height, u8 palette);
 void AddValToTilemapBuffer(void *ptr, int delta, int width, int height, bool32 isAffine);
 void EraseFieldMessageBox(bool8 copyToVram);

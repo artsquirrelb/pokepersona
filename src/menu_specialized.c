@@ -764,18 +764,18 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
     FillWindowPixelBuffer(RELEARNERWIN_DESC_BATTLE, PIXEL_FILL(3));
     str = gText_MoveRelearnerBattleMoves;
     x = GetStringCenterAlignXOffset(FONT_NORMAL, str, 128);
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, x, 1, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, x, 1, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
 
     str = gText_MoveRelearnerPP;
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 4, 41, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 4, 41, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
 
     str = gText_MoveRelearnerPower;
     x = GetStringRightAlignXOffset(FONT_NORMAL, str, 106);
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
 
     str = gText_MoveRelearnerAccuracy;
     x = GetStringRightAlignXOffset(FONT_NORMAL, str, 106);
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, x, 41, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, x, 41, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
     if (chosenMove == LIST_CANCEL)
     {
         // On "Cancel", skip printing move data
@@ -783,11 +783,11 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
         return;
     }
     str = gTypesInfo[GetMoveType(chosenMove)].name;
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 4, 25, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 4, 25, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
 
     x = 4 + GetStringWidth(FONT_NORMAL, gText_MoveRelearnerPP, 0);
     ConvertIntToDecimalStringN(buffer, GetMovePP(chosenMove), STR_CONV_MODE_LEFT_ALIGN, 2);
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, buffer, x, 41, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, buffer, x, 41, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
 
     if (GetMovePower(chosenMove) < 2)
     {
@@ -798,7 +798,7 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
         ConvertIntToDecimalStringN(buffer, GetMovePower(chosenMove), STR_CONV_MODE_LEFT_ALIGN, 3);
         str = buffer;
     }
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 106, 25, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 106, 25, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
 
     if (GetMoveAccuracy(chosenMove) == 0)
     {
@@ -809,8 +809,8 @@ static void MoveRelearnerLoadBattleMoveDescription(u32 chosenMove)
         ConvertIntToDecimalStringN(buffer, GetMoveAccuracy(chosenMove), STR_CONV_MODE_LEFT_ALIGN, 3);
         str = buffer;
     }
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 106, 41, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_BATTLE, FONT_NARROW, GetMoveDescription(chosenMove), 0, 65, 0, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_BATTLE, FONT_NORMAL, str, 106, 41, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_BATTLE, FONT_NARROW, GetMoveDescription(chosenMove), 0, 65, 0, NULL, 1, 0, 0);
 }
 
 static void MoveRelearnerMenuLoadContestMoveDescription(u32 chosenMove)
@@ -822,15 +822,15 @@ static void MoveRelearnerMenuLoadContestMoveDescription(u32 chosenMove)
     FillWindowPixelBuffer(RELEARNERWIN_DESC_CONTEST, PIXEL_FILL(3));
     str = gText_MoveRelearnerContestMovesTitle;
     x = GetStringCenterAlignXOffset(FONT_NORMAL, str, 128);
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, x, 1, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, x, 1, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
 
     str = gText_MoveRelearnerAppeal;
     x = GetStringRightAlignXOffset(FONT_NORMAL, str, 92);
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, x, 25, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
 
     str = gText_MoveRelearnerJam;
     x = GetStringRightAlignXOffset(FONT_NORMAL, str, 92);
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, x, 41, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, x, 41, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
 
     if (chosenMove == MENU_NOTHING_CHOSEN)
     {
@@ -839,10 +839,10 @@ static void MoveRelearnerMenuLoadContestMoveDescription(u32 chosenMove)
     }
 
     str = gContestCategoryInfo[GetMoveContestCategory(chosenMove)].name;
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, 4, 25, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_CONTEST, FONT_NORMAL, str, 4, 25, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
 
     str = gContestEffects[GetMoveContestEffect(chosenMove)].description;
-    AddTextPrinterParameterized6(RELEARNERWIN_DESC_CONTEST, FONT_NARROW, str, 0, 65, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
+    AddTextPrinterParameterizedCustom(RELEARNERWIN_DESC_CONTEST, FONT_NARROW, str, 0, 65, TEXT_SKIP_DRAW, NULL, 1, 0, 0);
 
     CopyWindowToVram(RELEARNERWIN_DESC_CONTEST, COPYWIN_GFX);
 }

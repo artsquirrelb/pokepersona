@@ -1995,3 +1995,60 @@ const u16 gTilesetPalettes_Gatehouse[][16] =
 };
 
 const u32 gTilesetTiles_Gatehouse[] = INCBIN_U32("data/tilesets/secondary/gatehouse/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_CoralportFishermansHouse[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_fishermans_house/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_CoralportFishermansHouse[] = INCBIN_U32("data/tilesets/secondary/coralport_fishermans_house/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_CoralportCandyShop[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_candy_shop/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_CoralportCandyShop[] = INCBIN_U32("data/tilesets/secondary/coralport_candy_shop/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Coralport_PoliceStation[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/coralport_police_station/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Coralport_PoliceStation[] = INCBIN_U32("data/tilesets/secondary/coralport_police_station/tiles.4bpp.lz");

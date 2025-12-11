@@ -1241,3 +1241,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route2_Gatehouse/scripts.inc"
 
 	.include "data/maps/SunshineOrphanage_Room1F/scripts.inc"
+
+	.include "data/maps/Coralport_FishermansHouse/scripts.inc"
+
+	.include "data/maps/CoralportCandyShop/scripts.inc"
+
+	.include "data/maps/CoralportPoliceStation/scripts.inc"

@@ -1,0 +1,507 @@
+mapscripts CoralportCandyShop_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        setflag(FLAG_TEMP_4)
+        if (var(VAR_AMEAME_CANDY_SHOP) != 0){
+            setflag(FLAG_TEMP_1)
+        }
+        if (var(VAR_AMEAME_CANDY_SHOP) == 1){
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setobjectxyperm(3, 9, 9)
+            setobjectmovementtype(3, MOVEMENT_TYPE_FACE_UP)
+        }
+        if (var(VAR_AMEAME_CANDY_SHOP) == 2){
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setobjectxyperm(5, 9, 9)
+            setobjectmovementtype(5, MOVEMENT_TYPE_FACE_UP)
+        }
+        if (var(VAR_AMEAME_CANDY_SHOP) == 3){
+            setflag(FLAG_SPAWN_INVISIBLE)
+            clearflag(FLAG_TEMP_4)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_AMEAME_CANDY_SHOP, 1: CoralportCandyShop_MapScripts_OnFrame1
+        VAR_AMEAME_CANDY_SHOP, 2: CoralportCandyShop_MapScripts_OnFrame2
+        VAR_AMEAME_CANDY_SHOP, 3: CoralportCandyShop_MapScripts_OnFrame3
+    ]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_AMEAME_CANDY_SHOP, 2: CoralportCandyShop_MapScripts_OnWarp2
+    ]
+}
+
+script CoralportCandyShop_MapScripts_OnWarp2 {
+    applymovement(LOCALID_PLAYER, faceright)    
+}
+
+script CoralportCandyShop_MapScripts_OnFrame1 {
+    goto(CoralportCandyShop_Eventscript_PartTimeCutscene_1) //akihiko
+}
+
+script CoralportCandyShop_MapScripts_OnFrame2 {
+    goto(CoralportCandyShop_Eventscript_PartTimeCutscene_2) //mitsuru
+}
+
+script CoralportCandyShop_MapScripts_OnFrame3 {
+    goto(CoralportCandyShop_Eventscript_PartTimeCutscene_3) //shinjiro
+}
+
+script CoralportCandyShop_Eventscript_ShopKeeperM {
+    lock
+    setspeaker("Kande")
+    msgbox(format("Welcome to AmeAme. How can I help you?"))
+    pokemart(AmeAmeCandy_C1)
+    if (flag(FLAG_AMEAME_PARTTIME_UNLOCKED) == TRUE){
+        msgbox(format("Thank you and please come again!"))
+    }
+    else{
+        msgbox(format("Thank you and please come again!\p
+        By the way, we're looking for a part-time worker.\p
+        If you're interest please speak to my wife over there."))
+    }
+    closemessage
+    release
+    end
+}
+
+mart AmeAmeCandy_C1{
+    ITEM_EXP_CANDY_XS
+    ITEM_EXP_CANDY_S
+    ITEM_SWEET_HEART
+    ITEM_CASTELIACONE
+    ITEM_SERIOUS_MINT
+    
+}
+
+mart AmeAmeCandy_C2 {
+    ITEM_EXP_CANDY_XS
+    ITEM_EXP_CANDY_S
+    ITEM_SWEET_HEART
+    ITEM_CASTELIACONE
+    ITEM_SERIOUS_MINT
+    ITEM_BOLD_MINT
+    ITEM_CALM_MINT
+    ITEM_IMPISH_MINT
+    ITEM_CAREFUL_MINT
+}
+
+script CoralportCandyShop_Eventscript_ShopKeeperF {
+    setflag(FLAG_HIDE_QUEST_ICON)
+    lock
+    faceplayer
+    setspeaker("Gumi")
+    if (flag(FLAG_AMEAME_PARTTIME_UNLOCKED) == FALSE){
+        msgbox(format("Welcome to AmeAme!"))
+        closemessage
+        playse(SE_PIN)
+        applymovement(1, emoteexclamation)
+        waitmovement
+        setspeaker("Gumi")
+        msgbox(format("Oh! Are you interested in working part-time here?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == TRUE){
+            setspeaker("Gumi")
+            msgbox(format("That's great! You can start working right away!\p
+            Your shift will last for {COLOR RED}6 hours{COLOR 2} and we'll pay you {COLOR RED}¥3000{COLOR 2}.\p
+            Simply check the time clock to start the work.\p
+            Oh, and you can only start your shift here between {COLOR BLUE}7AM and 3PM{COLOR 2}."))
+            closemessage
+            waitmovement
+            setflag(FLAG_AMEAME_PARTTIME_UNLOCKED)
+            questmenu(QUEST_MENU_SET_ACTIVE, QUEST_AMEAME_PARTTIME)
+            playfanfare(MUS_OBTAIN_SYMBOL)
+            waitfanfare
+            msgbox(format("{COLOR GREEN}You now can work part-time at {COLOR BLUE}AmeAme Candy Shop{COLOR GREEN}!"))
+            closemessage
+            release
+            clearflag(FLAG_HIDE_QUEST_ICON)
+            refreshquesticon
+            end
+        }
+        else{
+            setspeaker("Gumi")
+            msgbox(format("If you know someone who's willing to work for us, please let us know."))
+            closemessage
+        }
+    }
+    else{
+        questmenu(QUEST_MENU_CHECK_REWARD, QUEST_AMEAME_PARTTIME)
+        if (var(VAR_RESULT) == TRUE){
+            goto(CoralportCandyShop_Eventscript_QuestGiveReward)
+        }
+        else{
+        msgbox(format("Thank you so much for accepting the job.\p
+        We now can spend more time with our daughter."))
+        closemessage
+        }
+    }
+    release
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    end
+}
+
+script CoralportCandyShop_Eventscript_TimeClock {
+    lock
+    if (flag(FLAG_AMEAME_PARTTIME_UNLOCKED) == FALSE){
+        msgbox(format("“We're looking for part-time workers for our shop.\p
+        Please speak to Gumi for more information.”"))
+        closemessage
+        release
+        end
+    }
+    else{
+        msgbox(format("Start working at {COLOR BLUE}AmeAme Candy Shop{COLOR 2}?\p
+        Your shift will last for {COLOR RED}6 hours{COLOR 2} and you will be paid {COLOR RED}¥3000{COLOR 2}."), MSGBOX_YESNO)
+        closemessage
+        if (var(VAR_RESULT) == TRUE){
+            gettime //Sets the values of variables VAR_0x8000, VAR_0x8001, VAR_0x8002 and VAR_0x8003 to the current hour, minute, second and day of week.
+            if (var(VAR_0x8000) >= 8 && var(VAR_0x8000) <= 15){
+                goto(CoralportCandyShop_Eventscript_RandomizeCutscenes)
+            }
+            else{
+                msgbox(format("You can only start your shift here between 7AM and 3PM."))
+                closemessage
+                release
+                end
+            }
+        }
+    }
+    release
+    end
+}
+
+script CoralportCandyShop_Eventscript_RandomizeCutscenes {
+    random(3)
+    switch(var(VAR_RESULT)){
+    case 0:
+        goto(CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime)
+    case 1:
+        goto(CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime)
+    case 2:
+        goto(CoralportCandyShop_Eventscript_TryStartingShinjiroPartTime)
+    }
+}
+
+script CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime { //roll into akihiko cutscene
+    checkplayergender
+    if(var(VAR_RESULT) == FEMALE){                                 //if currently playing as mitsuru
+        getcharaAvailability(CHARACTER_AKIHIKO)
+        if (var(VAR_RESULT) == FALSE){                             //if akihiko is unavailable
+            goto(CoralportCandyShop_Eventscript_RandomizeCutscenes)//roll again
+        }
+        else{
+            switchmaincharacter                                    // if akihiko is available, switch to him
+        }
+    }
+    destroyfollowernpc
+    setvar(VAR_AMEAME_CANDY_SHOP, 1)
+    warpsilent(MAP_CORALPORT_CANDY_SHOP, 12, 3)
+}
+
+script CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime {
+    checkplayergender
+    if(var(VAR_RESULT) == MALE){
+        getcharaAvailability(CHARACTER_MITSURU)
+        if(var(VAR_RESULT) == FALSE)
+        {
+            goto(CoralportCandyShop_Eventscript_RandomizeCutscenes)
+        }
+        else{
+            switchmaincharacter
+        }
+    }
+    destroyfollowernpc
+    setvar(VAR_AMEAME_CANDY_SHOP, 2)
+    warpsilent(MAP_CORALPORT_CANDY_SHOP, 10, 6)
+}
+
+script CoralportCandyShop_Eventscript_TryStartingShinjiroPartTime {
+    destroyfollowernpc
+    setvar(VAR_AMEAME_CANDY_SHOP, 3)
+    warpsilent(MAP_CORALPORT_CANDY_SHOP, 5, 4)
+}
+
+script CoralportCandyShop_Eventscript_PartTimeCutscene_1 {//Akihiko
+    lock
+    delay(20)
+    playse(SE_BIKE_BELL)
+    clearflag(FLAG_TEMP_3)
+    addobject(3, MAP_CORALPORT_CANDY_SHOP)
+    delay(20)
+    applymovement(3, moves(walk_fast_up*3, walk_fast_right*5, walk_fast_up*2))
+    waitmovement
+    delay(30)
+    playse(SE_VEND)
+    waitse
+    applymovement(3, moves(walk_fast_down, walk_fast_left*2, face_up))
+    waitmovement
+    delay(30)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, moves(emote_happy, delay_16, delay_16, face_right, delay_16, delay_16, face_down))
+    waitmovement
+    playse(SE_SHOP)
+    waitse
+    delay(30)
+    applymovement(3, moves(walk_fast_down*3, walk_fast_left*3, walk_fast_down, set_invisible))
+    waitmovement
+    playse(SE_EXIT)
+    delay(20)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    applymovement(LOCALID_PLAYER, moves(walk_fast_left*3, walk_fast_down*2))
+    waitmovement
+    delay(30)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    addmoney(3000)
+    playfanfare(MUS_OBTAIN_ITEM)
+    waitfanfare
+    goto(CoralportCandyShop_Eventscript_PartTime_RandomizeReward)
+}
+
+script CoralportCandyShop_Eventscript_PartTimeCutscene_2 {//Mitsuru
+    delay(20)
+    applymovement(LOCALID_PLAYER, moves(walk_left, delay_16, delay_16, walk_right))
+    waitmovement
+    delay(20)
+    playse(SE_BIKE_BELL)
+    clearflag(FLAG_TEMP_2)
+    addobject(5, MAP_CORALPORT_CANDY_SHOP)
+    delay(8)
+    applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, face_down))
+    waitmovement
+    delay(20)
+    applymovement(LOCALID_PLAYER, moves(walk_left, face_down))
+    applymovement(5, moves(walk_up*2))
+    waitmovement
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(walk_left, walk_up*2))
+    delay(4)
+    applymovement(5, moves(walk_left*2, walk_up*3))
+    waitmovement
+    delay(40)
+    playse(SE_PIN)
+    applymovement(LOCALID_PLAYER, faceleft)
+    applymovement(5, moves(face_right, emote_happy))
+    waitmovement
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(emote_happy))
+    playse(SE_SHOP)
+    waitse
+    delay(30)
+    applymovement(LOCALID_PLAYER, facedown)
+    waitmovement
+    applymovement(5, moves(walk_down*4, walk_right*2, walk_down, set_invisible))
+    waitmovement
+    playse(SE_EXIT)
+    delay(30)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    moveobjecttocoords(LOCALID_PLAYER, 9, 5, DIR_SOUTH, 2)
+    waitmovement
+    delay(30)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    addmoney(3000)
+    playfanfare(MUS_OBTAIN_ITEM)
+    waitfanfare
+    goto(CoralportCandyShop_Eventscript_PartTime_RandomizeReward)
+}
+
+script CoralportCandyShop_Eventscript_PartTimeCutscene_3 {//Shinjiro
+    lock
+    delay(20)
+    applymovement(LOCALID_PLAYER, invisible)
+    applymovement(6, emotepensive)
+    waitmovement
+    applymovement(3, moves(walk_right*2))
+    waitmovement
+    applymovement(6, faceleft)
+    waitmovement
+    delay(30)
+    playse(SE_SHOP)
+    waitse
+    delay(30)
+    applymovement(6, facedown)
+    applymovement(3, moves(walk_down*3, walk_right*5, walk_down*2, set_invisible))
+    delay(60)
+    playse(SE_EXIT)
+    applymovement(6, moves(walk_right, walk_down*3))
+    applymovement(LOCALID_PLAYER, moves(walk_right, walk_down*3))
+    waitmovement
+    delay(30)
+    addobject(5)
+    applymovement(5, moves(walk_fast_left*7))
+    waitmovement
+    applymovement(6, faceright)
+    waitmovement
+    delay(20)
+    playse(SE_PIN)
+    applymovement(5, moves(emote_happy))
+    waitmovement
+    delay(20)
+    playse(SE_SHOP)
+    waitse
+    delay(30)
+    applymovement(5, moves(walk_fast_right*2, walk_fast_down*2, set_invisible))
+    waitmovement
+    playse(SE_EXIT)
+    waitse
+    delay(30)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    applymovement(LOCALID_PLAYER, moves(walk_right*3, walk_up*2))
+    applymovement(6, moves(walk_right*3, walk_up*2, face_down))
+    waitmovement
+    delay(30)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    addmoney(3000)
+    playfanfare(MUS_OBTAIN_ITEM)
+    waitfanfare
+    goto(CoralportCandyShop_Eventscript_PartTime_RandomizeReward)
+}
+
+
+script CoralportCandyShop_Eventscript_PartTime_RandomizeReward {
+    random(8)
+    switch(var(VAR_RESULT))
+    {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+            additem(ITEM_SERIOUS_MINT)
+            bufferitemname(STR_VAR_1, ITEM_SERIOUS_MINT)
+        case 4:
+            additem(ITEM_BOLD_MINT)
+            bufferitemname(STR_VAR_1, ITEM_BOLD_MINT)
+        case 5:
+            additem(ITEM_CALM_MINT)
+            bufferitemname(STR_VAR_1, ITEM_CALM_MINT)
+        case 6:
+            additem(ITEM_IMPISH_MINT)
+            bufferitemname(STR_VAR_1, ITEM_IMPISH_MINT)
+        case 7:
+            additem(ITEM_CAREFUL_MINT)
+            bufferitemname(STR_VAR_1, ITEM_CAREFUL_MINT)
+    }
+    if (var(VAR_AMEAME_CANDY_SHOP) == 1){
+        msgbox(format("Akihiko received ¥3000 for the job.\p
+        He also received a {STR_VAR_1} for his hard work."))
+        closemessage
+    }
+    elif(var(VAR_AMEAME_CANDY_SHOP) == 2)
+    {   
+        msgbox(format("Mitsuru received ¥3000 for the job.\p
+        She also received a {STR_VAR_1} for her hard work."))
+        closemessage
+    }
+    else{
+        msgbox(format("Shinjiro received ¥3000 for the job.\p
+        He also received a {STR_VAR_1} for his hard work."))
+        closemessage
+    }
+    setvar(VAR_AMEAME_CANDY_SHOP, 0)
+    addtime(0, 6, 0)
+    call(EventScript_CheckDaysLeft)
+    call(CoralportCandyShop_Eventscript_PartTime_QuestCheckDone)
+    warp(MAP_CORALPORT, 17, 17)
+    waitstate
+    release
+    end
+}
+
+script CoralportCandyShop_Eventscript_PartTime_QuestCheckDone {
+    if (var(VAR_AMEAME_CANDY_SHOP_QUEST_STATE) <10)
+    {
+        addvar(VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 1)
+    }
+    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_AMEAME_PARTTIME)
+    if (var(VAR_AMEAME_CANDY_SHOP_QUEST_STATE) == 10 && var(VAR_RESULT) == FALSE)
+    {
+        msgbox(format("{COLOR GREEN}You have worked part-time at AmeAme Candy Shop for at least 10 times.\p
+        Check back with Gumi for reward."))
+        closemessage
+        questmenu(QUEST_MENU_SET_REWARD, QUEST_AMEAME_PARTTIME)
+    }
+}
+
+script CoralportCandyShop_Eventscript_QuestGiveReward {
+    playse(SE_PIN)
+    setspeaker("Gumi")
+    msgbox(format("Hello {PLAYER}! here to start your shift?"))
+    applymovement(1, emoteexclamation)
+    waitmovement
+    setspeaker("Gumi")
+    msgbox(format("Oh my. Now that I think of it, you've been working for us for quite a while, right?\p
+    Here, you can have this. Just think it as a gift for helping us!"))
+    closemessage
+    giveitem(ITEM_CANDY_JAR)
+    msgbox(format("Feel free to come back anytime! We'll be very appreciated!"))
+    closemessage
+    questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_AMEAME_PARTTIME)
+    setvar(VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 11) // end quest
+    release
+    end
+}
+script CoralportCandyShop_Eventscript_Slurpuff {
+    lock
+    showmonpic(SPECIES_SLURPUFF, 18, 5)
+    playmoncry(SPECIES_SLURPUFF, CRY_MODE_NORMAL)
+    waitmoncry
+    setseenmon(SPECIES_SLURPUFF)
+    delay (30)
+    hidemonpic
+    release
+    end
+}
+
+script CoralportCandyShop_Eventscript_FatMan {
+    lock
+    faceplayer
+    setspeaker("Nozomi")
+    msgbox(format("I love that the candies from this shop aren't too sweet."))
+    closemessage
+    release
+    end
+}
+
+script CoralportCandyShop_Eventscript_Twin {
+    lock
+    faceplayer
+    setspeaker("Aiko")
+    if (flag(FLAG_CORALPORT_TRADED_SWEET_HEART) == FALSE){
+        msgbox(format("My Tinkatink back home loves {COLOR BLUE}Sweet Heart {COLOR 2}a lot. If you have one, do you mind trading it to me for a really cool item?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) == TRUE){
+            checkitem(ITEM_SWEET_HEART)
+            if (var(VAR_RESULT) == FALSE){
+                msgbox(format("But you don't have a {COLOR BLUE}Sweet Heart{COLOR 2}..."))
+                closemessage
+                release
+                end
+            }
+            else{
+                removeitem(ITEM_SWEET_HEART)
+                additem(ITEM_WHIPPED_DREAM)
+                playfanfare(MUS_OBTAIN_ITEM)
+                waitfanfare
+                msgbox(format("{PLAYER} traded a {COLOR BLUE}Sweet Heart{COLOR 2} for a {COLOR BLUE}Whipped Dream{COLOR 2}."))
+                closemessage
+                setspeaker("Aiko")
+                msgbox(format("Thank you!! My Tinkatink would be so happy!"))
+                closemessage
+                setflag(FLAG_CORALPORT_TRADED_SWEET_HEART)
+                release
+                end
+            }
+        }
+        else{
+            setspeaker("Aiko")
+            msgbox(format("Aw... I understand."))
+            closemessage
+        }
+
+    }
+    else{
+        msgbox(format("Thank you for making my Tinkatink happy!"))
+        closemessage
+    }
+    release
+    end
+}

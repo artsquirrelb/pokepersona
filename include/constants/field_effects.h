@@ -86,7 +86,7 @@
 #define FLDEFF_PENSIVE_ICON              81
 #define FLDEFF_POISONED_ICON             82
 #define FLDEFF_TRAINER_EXCLAMATION       83
-#define FLDEFF_QUEST_ICON                84
+#define FLDEFF_QUEST_ICON_EXCLAMATION    84
 #define FLDEFF_CRY_ICON                  85
 #define FLDEFF_SWEAT_ICON                86
 #define FLDEFF_ASLEEP_ICON               87
@@ -99,6 +99,9 @@
 #define FLDEFF_ORAS_DOWSE                94
 #define FLDEFF_HAPPY_ICON                95
 #define FLDEFF_EXPLOSION                 96
+#define FLDEFF_QUEST_ICON_3DOTS          97
+#define FLDEFF_QUEST_ICON_STAR           98
+
 
 #define FLDEFFOBJ_SHADOW_S              0
 #define FLDEFFOBJ_SHADOW_M              1

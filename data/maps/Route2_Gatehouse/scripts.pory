@@ -50,7 +50,7 @@ script Route2_Gatehouse_Eventscript_Man {
 script Route2_Gatehouse_Eventscript_OldMan {
     lock
     faceplayer
-    setspeaker("Takumi")
+    setspeaker("Okashi")
     msgbox(format("My daughter and her husband run a candy shop in Coralport.\p
     I usually bring their daughter outside to play when it gets busy."))
     closemessage

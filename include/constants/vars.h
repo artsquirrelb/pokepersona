@@ -90,7 +90,7 @@
 #define VAR_NATIONAL_DEX                                 0x4046
 #define VAR_SEEDOT_SIZE_RECORD                           0x4047
 #define VAR_ASH_GATHER_COUNT                             0x4048
-#define VAR_BIRCH_STATE                                  0x4049
+#define VAR_CURRENT_SECRET_BASE                                  0x4049
 #define VAR_CRUISE_STEP_COUNT                            0x404A
 #define VAR_POKELOT_RND1                                 0x404B
 #define VAR_POKELOT_RND2                                 0x404C
@@ -101,23 +101,23 @@
 #define VAR_TIME_RESET_ATTEMPTS                          0x4051 // was VAR_OLDALE_TOWN_STATE
 #define VAR_SPECIES_DN                                   0x4052 // Registered DexNav species
 #define VAR_STEP_COUNTER                                 0x4053 // Was VAR_LAVARIDGE_TOWN_STATE // Steps for finding hidden pokemon
-#define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
+#define VAR_CURRENT_EV_CAP                               0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
 #define VAR_DAYS_LEFT                                    0x4055 
 #define VAR_CURRENT_LEVEL_CAP                            0x4056 // Set current level cap
 #define VAR_MITSURU_RELATIONSHIP_POINTS                  0x4057
 #define VAR_AKIHIKO_RELATIONSHIP_POINTS                  0x4058
 #define VAR_SHINJIRO_RELATIONSHIP_POINTS                 0x4059 // Was Unused Var
 #define VAR_CHAPTER_1_STATE                              0x405A // Was VAR_RUSTBORO_CITY_STATE
-#define VAR_PETALBURG_CITY_STATE                         0x405B // Was Unused Var
-#define VAR_SLATEPORT_CITY_STATE                         0x405C // Was Unused Var
-#define VAR_MOSSDEEP_CITY_STATE                          0x405D
-#define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
-#define VAR_LOTAD_SIZE_RECORD                            0x405F // Was Unused Var
-#define VAR_ROUTE101_STATE                               0x4060
-#define VAR_CURRENT_EV_CAP                               0x4061 // Was Unused Var
-#define VAR_ROUTE103_STATE                               0x4062 // Unused Var
-#define VAR_ROUTE104_STATE                               0x4063
-#define VAR_ROUTE105_STATE                               0x4064 // Unused Var
+#define VAR_CHAPTER_2_STATE                              0x405B // Was Unused Var
+#define VAR_CHAPTER_3_STATE                              0x405C // Was Unused Var
+#define VAR_CHAPTER_4_STATE                              0x405D
+#define VAR_CHAPTER_5_STATE                              0x405E
+#define VAR_CHAPTER_6_STATE                              0x405F // Was Unused Var
+#define VAR_CHAPTER_7_STATE                              0x4060
+#define VAR_CHAPTER_8_STATE                              0x4061 // Was Unused Var
+#define VAR_UNUSED_0X4062                                0x4062 // Unused Var
+#define VAR_AMEAME_CANDY_SHOP                            0x4063
+#define VAR_AMEAME_CANDY_SHOP_QUEST_STATE                0x4064 // Unused Var
 #define VAR_ROUTE106_STATE                               0x4065 // Unused Var
 #define VAR_ROUTE107_STATE                               0x4066 // Unused Var
 #define VAR_ROUTE108_STATE                               0x4067 // Unused Var

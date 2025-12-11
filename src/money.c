@@ -199,13 +199,13 @@ void DrawMoneyBox(int amount, u8 x, u8 y)
 {
     struct WindowTemplate template;
 
-    SetWindowTemplateFields(&template, 0, x + 1, y + 1, 10, 2, 15, 8);
+    SetWindowTemplateFields(&template, 0, x + 1, y + 1, 10, 2, 14, 8);
     sMoneyBoxWindowId = AddWindow(&template);
-    FillWindowPixelBuffer(sMoneyBoxWindowId, PIXEL_FILL(0));
+    FillWindowPixelBuffer(sMoneyBoxWindowId, PIXEL_FILL(3));
     PutWindowTilemap(sMoneyBoxWindowId);
     CopyWindowToVram(sMoneyBoxWindowId, COPYWIN_MAP);
     PrintMoneyAmountInMoneyBoxWithBorder(sMoneyBoxWindowId, 0x214, 14, amount);
-    AddMoneyLabelObject((8 * x) + 19, (8 * y) + 11);
+    //AddMoneyLabelObject((8 * x) + 19, (8 * y) + 11);
 }
 
 void HideMoneyBox(void)

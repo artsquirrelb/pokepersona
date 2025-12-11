@@ -1039,3 +1039,36 @@ const struct Tileset gTileset_Gatehouse =
     .metatileAttributes = gMetatileAttributes_Gatehouse,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_CoralportFishermansHouse =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_CoralportFishermansHouse,
+    .palettes = gTilesetPalettes_CoralportFishermansHouse,
+    .metatiles = gMetatiles_CoralportFishermansHouse,
+    .metatileAttributes = gMetatileAttributes_CoralportFishermansHouse,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_CoralportCandyShop =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_CoralportCandyShop,
+    .palettes = gTilesetPalettes_CoralportCandyShop,
+    .metatiles = gMetatiles_CoralportCandyShop,
+    .metatileAttributes = gMetatileAttributes_CoralportCandyShop,
+    .callback = NULL,
+};
+
+const struct Tileset gTileset_Coralport_PoliceStation =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Coralport_PoliceStation,
+    .palettes = gTilesetPalettes_Coralport_PoliceStation,
+    .metatiles = gMetatiles_Coralport_PoliceStation,
+    .metatileAttributes = gMetatileAttributes_Coralport_PoliceStation,
+    .callback = NULL,
+};

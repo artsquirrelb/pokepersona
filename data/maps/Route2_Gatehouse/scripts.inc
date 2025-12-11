@@ -232,7 +232,7 @@ Route2_Gatehouse_Eventscript_Man_Text_1:
 
 Route2_Gatehouse_Eventscript_OldMan_Text_0:
 # 53 "data/maps/Route2_Gatehouse/scripts.pory"
-	.string "Takumi$"
+	.string "Okashi$"
 
 Route2_Gatehouse_Eventscript_OldMan_Text_1:
 # 54 "data/maps/Route2_Gatehouse/scripts.pory"

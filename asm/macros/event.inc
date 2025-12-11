@@ -1984,6 +1984,10 @@
 	.2byte \state
 	.endm
 
+	.macro switchmaincharacter
+	callnative Script_SwitchMainCharacter
+	.endm
+
 	@ Opens the Pokemart system, offering the specified products for sale.
 	@ Products should be a list of .2byte item values preceded by an .align 2
 	@ Uses BP as currency, with the prices based on the .bpCost value
@@ -2941,6 +2945,11 @@
     .2byte \parentId
     .2byte \childId
     .endm
+
+	@Refresh quest icon
+	.macro refreshquesticon
+	callnative ScrCmd_refreshquesticon, requests_effects=1
+	.endm
 
     @ Check the quest state and return a number associated with quest state
     .macro returnqueststate questId:req

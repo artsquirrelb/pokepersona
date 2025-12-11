@@ -1504,7 +1504,7 @@ static void PlaceHMTileInWindow(u8 windowId, u8 x, u8 y)
 static void PrintPlayersMoney(void)
 {
     PrintMoneyAmountInMoneyBoxWithBorder(WIN_MONEY, 120, 14, GetMoney(&gSaveBlock1Ptr->money));
-    AddMoneyLabelObject(19, 11);
+    //AddMoneyLabelObject(19, 11);
 }
 
 static void HandleCreateYesNoMenu(u8 taskId, const struct YesNoFuncTable *ptrs)

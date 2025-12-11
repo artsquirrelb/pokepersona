@@ -1,0 +1,6 @@
+mapscripts Coralport_FishermansHouse_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        setflag(FLAG_TEMP_1)
+        setflag(FLAG_TEMP_2)
+    }
+}

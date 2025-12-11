@@ -1446,3 +1446,19 @@ void SwitchPlayerAndFollower(void)
         VarSet(VAR_0x8000, OBJ_EVENT_GFX_BRENDAN_NORMAL);
     }
 }
+
+void Script_SwitchMainCharacter(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE){
+        SavePlayerParty();
+        gSaveBlock2Ptr->currOutfitId = CHARACTER_MITSURU;
+        gSaveBlock2Ptr->playerGender = FEMALE;
+        LoadPlayerParty();
+    }
+    else{
+        SavePlayerParty();
+        gSaveBlock2Ptr->currOutfitId = CHARACTER_AKIHIKO;
+        gSaveBlock2Ptr->playerGender = MALE;
+        LoadPlayerParty(); 
+    }
+}

@@ -714,7 +714,8 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     [MOVEMENT_ACTION_POINT_DOWN_1] = gMovementActionFuncs_PointDown1,
     [MOVEMENT_ACTION_POINT_DOWN_2] = gMovementActionFuncs_PointDown2,
     [MOVEMENT_ACTION_POINT_DOWN_3] = gMovementActionFuncs_PointDown3,
-    [MOVEMENT_ACTION_EMOTE_HAPPY] = gMovementActionFuncs_EmoteHappy,    // pathfinding
+    [MOVEMENT_ACTION_EMOTE_HAPPY] = gMovementActionFuncs_EmoteHappy,    
+    // pathfinding
     [MOVEMENT_ACTION_GENERATED_BEGIN] = gMovementActionFuncs_GeneratedBegin,
     [MOVEMENT_ACTION_GENERATED_END] = gMovementActionFuncs_GeneratedEnd,
 

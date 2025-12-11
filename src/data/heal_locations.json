@@ -220,6 +220,12 @@
       "map": "MAP_ROUTE2_GATEHOUSE",
       "x": 9,
       "y": 8
+    },
+    {
+      "id": "HEAL_LOCATION_CORALPORT",
+      "map": "MAP_CORALPORT",
+      "x": 31,
+      "y": 13
     }
   ]
 }

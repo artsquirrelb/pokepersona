@@ -674,5 +674,9 @@
     "Mansion_MitsurusRoom2F",
     "MansionTrainingHouse"
   ],
-  "gMapGroup_IndoorCoralport": []
+  "gMapGroup_IndoorCoralport": [
+    "Coralport_FishermansHouse",
+    "CoralportCandyShop",
+    "CoralportPoliceStation"
+  ]
 }

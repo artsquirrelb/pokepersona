@@ -1203,9 +1203,18 @@ script Route2_House_Eventscript_TheFirstMorning2 {
         Check Quest Menu for more details."))
         closemessage
         subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, MITSURUS_PROLOGUE)
+        unlockcharacter(CHARACTER_MITSURU)
+        unlockcharacter(CHARACTER_INTELEON_T)
+        makecharaUnavailable(CHARACTER_MITSURU)
+        makecharaUnavailable(CHARACTER_INTELEON_T)
     }
     else{
         setvar(VAR_MITSURUS_INTRO_STATE, 100)
+        unlockcharacter(CHARACTER_MITSURU)
+        unlockcharacter(CHARACTER_INTELEON_T)
+        makecharaAvailable(CHARACTER_MITSURU)
+        makecharaAvailable(CHARACTER_INTELEON_T)
+
     }
     setflag(FLAG_TEMP_1)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 100) //complete akihiko's prologue
@@ -1215,11 +1224,12 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     clearflag(FLAG_HIDE_TALK_BUTTON)
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement
+    unlockcharacter(CHARACTER_AKIHIKO)
+    unlockcharacter(CHARACTER_SHINJIRO)
     makecharaAvailable(CHARACTER_AKIHIKO)
     makecharaAvailable(CHARACTER_SHINJIRO)
-    unlockcharacter(CHARACTER_MITSURU)
-    unlockcharacter(CHARACTER_INTELEON_T)
     completesubquest(STORY_QUESTS, AKIHIKOS_PROLOGUE)
+    call(Eventscript_UnlockDeadlineSystem)
     release
     end
 }
@@ -1868,9 +1878,17 @@ script Route2_House_Eventscript_TheFirstMorning2MitsuruPOV {
         msgbox(format("{COLOR RED}Akihiko's Prologue {COLOR GREEN}unlocked. Check Quest Menu for more details."))
         closemessage
         subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
+        unlockcharacter(CHARACTER_AKIHIKO)
+        unlockcharacter(CHARACTER_SHINJIRO)
+        makecharaUnavailable(CHARACTER_AKIHIKO)
+        makecharaUnavailable(CHARACTER_SHINJIRO)
     }
     else{
         setvar(VAR_AKIHIKOS_INTRO_STATE, 100)
+        unlockcharacter(CHARACTER_AKIHIKO)
+        unlockcharacter(CHARACTER_SHINJIRO)
+        makecharaAvailable(CHARACTER_AKIHIKO)
+        makecharaAvailable(CHARACTER_SHINJIRO)
     }
     setflag(FLAG_TEMP_1)
     setvar(VAR_MITSURUS_INTRO_STATE, 100) //complete mitsuru's prologue
@@ -1879,12 +1897,24 @@ script Route2_House_Eventscript_TheFirstMorning2MitsuruPOV {
     setvar(VAR_DAYS_LEFT, 15)
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement
-    unlockcharacter(CHARACTER_AKIHIKO)
-    unlockcharacter(CHARACTER_SHINJIRO)
-    makecharaAvailable(CHARACTER_INTELEON_T)
+    unlockcharacter(CHARACTER_MITSURU)
+    unlockcharacter(CHARACTER_INTELEON_T)
     makecharaAvailable(CHARACTER_MITSURU)
+    makecharaAvailable(CHARACTER_INTELEON_T)
     completesubquest(STORY_QUESTS, MITSURUS_PROLOGUE)
     special(RemoveCameraObject)
+    call(Eventscript_UnlockDeadlineSystem)
     release
     end
+}
+
+script Eventscript_UnlockDeadlineSystem {
+    msgbox(format("{COLOR GREEN}From this point onward, there'll be a
+    {COLOR RED}DEADLINE {COLOR GREEN}for the main story quests' missions.\p
+    You can check the current deadline in the {START_BUTTON} Menu.\p
+    The clock will only tick forward when you perform certain actions such as:\p
+    using the {COLOR BLUE}Camp Gears{COLOR GREEN}, working at a part-time job
+    or spending time with your {COLOR BLUE}Companions{COLOR GREEN}, etc.\p
+    Exiting certain dungeons will also advance the clock."))
+    closemessage
 }

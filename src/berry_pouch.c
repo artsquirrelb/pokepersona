@@ -1859,7 +1859,7 @@ static void CreateSellYesNoMenu(u8 taskId, const struct YesNoFuncTable *ptrs)
 static void PrintMoneyInWin2(void)
 {
     PrintMoneyAmountInMoneyBoxWithBorder(GetOrCreateVariableWindow(BP_VAR_WINDOW_MONEY), 0x001, 14, GetMoney(&gSaveBlock1Ptr->money));
-    AddMoneyLabelObject(19, 11);
+    //AddMoneyLabelObject(19, 11);
 }
 
 static void CreateBerryPouchSprite(void)

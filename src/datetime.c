@@ -1,6 +1,9 @@
 #include "global.h"
 #include "datetime.h"
 #include "rtc.h"
+#include "event_data.h"
+#include "script.h"
+#include "constants/vars.h"
 
 
 const struct DateTime gGen3Epoch = 
@@ -16,6 +19,7 @@ const struct DateTime gGen3Epoch =
 
 void DateTime_AddDays(struct DateTime *dateTime, u32 days)
 {
+    u32 daysleft = VarGet(VAR_DAYS_LEFT);
     while (days > 0)
     {
         u32 remainingDaysInMonth = (sNumDaysInMonths[dateTime->month - 1] + (dateTime->month == MONTH_FEB && IsLeapYear(dateTime->year)) - dateTime->day);
@@ -29,13 +33,18 @@ void DateTime_AddDays(struct DateTime *dateTime, u32 days)
                 dateTime->month = MONTH_JAN;
                 dateTime->year++;
             }
+            if (VarGet(VAR_AKIHIKOS_INTRO_STATE) == 100 || VarGet(VAR_MITSURUS_INTRO_STATE) == 100)
+                VarSet(VAR_DAYS_LEFT, daysleft - days);
             days -= (remainingDaysInMonth + 1);
             dateTime->dayOfWeek = (dateTime->dayOfWeek + remainingDaysInMonth + 1) % WEEKDAY_COUNT;
+            
         }
         else
         {
             dateTime->day += days;
             dateTime->dayOfWeek = (dateTime->dayOfWeek + days) % WEEKDAY_COUNT;
+            if (VarGet(VAR_AKIHIKOS_INTRO_STATE) == 100 || VarGet(VAR_MITSURUS_INTRO_STATE) == 100)
+                VarSet(VAR_DAYS_LEFT, daysleft - days);
             days = 0;
         }
     }

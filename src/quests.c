@@ -209,8 +209,14 @@ static void Task_QuestMenuTurnOff1(u8 taskId);
 static void Task_QuestMenuTurnOff2(u8 taskId);
 
 // Quest icon functions
-static void SpawnQuestIconForObject(struct ObjectEvent*,  u32);
-static void RemoveQuestIconFieldEffect(struct ObjectEvent *objectEvent);
+static void SpawnQuestIconExclamationForObject(struct ObjectEvent*,  u32);
+static void SpawnQuestIcon3DotsForObject(struct ObjectEvent*,  u32);
+static void SpawnQuestIconStarForObject(struct ObjectEvent*,  u32);
+
+static void RemoveQuestIconExclamationFieldEffect(struct ObjectEvent *objectEvent);
+static void RemoveQuestIcon3DotsFieldEffect(struct ObjectEvent *objectEvent);
+static void RemoveQuestIconStarFieldEffect(struct ObjectEvent *objectEvent);
+
 static void SetQuestIconOnObject(struct ObjectEvent*);
 static bool32 ObjectEventAlreadyHasQuest(bool32);
 
@@ -659,17 +665,29 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.questVariable = 0,
 	},
 
-	[QUEST_4] = 
+	[QUEST_AMEAME_PARTTIME] = 
 	{
-		.name = gText_SideQuestName_4,
-		.desc = {gText_SideQuestDesc_4},
-		.donedesc = gText_SideQuestDoneDesc_4,
-		.map = {gText_Chapter2_Map},
-		.sprite = {ITEM_NONE},
-		.spritetype = {ITEM},
+		.name = gText_SideQuest3_Name,
+		.desc = {
+			gText_SideQuest3_Desc0,
+			gText_SideQuest3_Desc1,
+			gText_SideQuest3_Desc2,
+			gText_SideQuest3_Desc3,
+			gText_SideQuest3_Desc4,
+			gText_SideQuest3_Desc5,
+			gText_SideQuest3_Desc6,
+			gText_SideQuest3_Desc7,
+			gText_SideQuest3_Desc8,
+			gText_SideQuest3_Desc9,
+			gText_SideQuest3_Desc10,
+		},
+		.donedesc = gText_SideQuest3_DoneDesc,
+		.map = {COMPOUND_STRING("AmeAme Candy Shop")},
+		.sprite = {OBJ_EVENT_GFX_WOMAN_4},
+		.spritetype = {OBJECT},
 		.subquests = NULL,
 		.numSubquests = 0,
-		.questVariable = 0,
+		.questVariable = VAR_AMEAME_CANDY_SHOP_QUEST_STATE,
 	},
 
 	[QUEST_5] = 
@@ -1623,11 +1641,11 @@ static void BuildMenuTemplate(void)
 	gMultiuseListMenuTemplate.header_X = 0;
 	gMultiuseListMenuTemplate.cursor_X = 15;
 	gMultiuseListMenuTemplate.item_X = 23;
-	gMultiuseListMenuTemplate.lettersSpacing = 1;
+	gMultiuseListMenuTemplate.lettersSpacing = 0;
 	gMultiuseListMenuTemplate.itemVerticalPadding = 2;
 	gMultiuseListMenuTemplate.upText_Y = 2;
 	gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
-	gMultiuseListMenuTemplate.fontId = FONT_SHORT;
+	gMultiuseListMenuTemplate.fontId = FONT_SHORT_NARROW;
 	gMultiuseListMenuTemplate.cursorPal = 2;
 	gMultiuseListMenuTemplate.fillValue = 0;
 	gMultiuseListMenuTemplate.cursorShadowPal = 0;
@@ -2207,7 +2225,7 @@ void GenerateQuestLocation(s32 questId)
 void PrintQuestLocation(s32 questId)
 {
 	FillWindowPixelBuffer(1, 0);
-	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar4, 2, 3, 2, 0, 0,
+	QuestMenu_AddTextPrinterParameterized(1, FONT_SHORT_NARROW, gStringVar4, 2, 3, 2, 0, 0,
 	                                      4);
 }
 void GenerateQuestFlavorText(s32 questId)
@@ -3083,10 +3101,30 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 	if (obj->trainerType != TRAINER_TYPE_QUEST_GIVER)
         return;
 
-	// Remove icon if quest is completed
+	// Remove exclamation icon if quest is activated spawn 3dots icon
+	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_ACTIVE))
+	{
+		RemoveQuestIconExclamationFieldEffect(objectEvent);
+		if (!objectEvent->hasQuestIcon && !FieldEffectActiveListContains(FLDEFF_QUEST_ICON_3DOTS))
+			SpawnQuestIcon3DotsForObject(objectEvent, objectEventId);
+		return;
+	}
+
+	// Remove 3 dots icon if quest is available for reward and spawn star icon
+	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_REWARD))
+	{
+		RemoveQuestIcon3DotsFieldEffect(objectEvent);
+		if (!objectEvent->hasQuestIcon && !FieldEffectActiveListContains(FLDEFF_QUEST_ICON_STAR))
+			SpawnQuestIconStarForObject(objectEvent, objectEventId);
+		return;
+	}
+
+	// Remove all icons if quest is completed
 	if (QuestMenu_GetSetQuestState(questId, FLAG_GET_COMPLETED))
 	{
-		RemoveQuestIconFieldEffect(objectEvent);
+		RemoveQuestIconExclamationFieldEffect(objectEvent);
+		RemoveQuestIcon3DotsFieldEffect(objectEvent);
+		RemoveQuestIconStarFieldEffect(objectEvent);
 		return;
 	}
 
@@ -3094,36 +3132,74 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 	if (ObjectEventAlreadyHasQuest(objectEvent->hasQuestIcon))
         return;
 
-	// Add icon to NPCs who have quests
-	if (!objectEvent->hasQuestIcon && !FieldEffectActiveListContains(FLDEFF_QUEST_ICON))
-		SpawnQuestIconForObject(objectEvent, objectEventId);
+	// Add exclamation icon to NPCs who have quests
+	if (!objectEvent->hasQuestIcon && !FieldEffectActiveListContains(FLDEFF_QUEST_ICON_EXCLAMATION))
+		SpawnQuestIconExclamationForObject(objectEvent, objectEventId);
 }
 
-static void RemoveQuestIconFieldEffect(struct ObjectEvent *objectEvent)
+static void RemoveQuestIconExclamationFieldEffect(struct ObjectEvent *objectEvent)
 {
 	objectEvent->hasQuestIcon = FALSE;
 	
-	if (FieldEffectActiveListContains(FLDEFF_QUEST_ICON))
+	if (FieldEffectActiveListContains(FLDEFF_QUEST_ICON_EXCLAMATION))
 	{
 		u8 spriteId = objectEvent->spriteId;
 		struct Sprite *sprite = &gSprites[spriteId];
-		FieldEffectStop(sprite, FLDEFF_QUEST_ICON);
+		FieldEffectStop(sprite, FLDEFF_QUEST_ICON_EXCLAMATION);
+	}
+}
+
+static void RemoveQuestIcon3DotsFieldEffect(struct ObjectEvent *objectEvent)
+{
+	objectEvent->hasQuestIcon = FALSE;
+	
+	if (FieldEffectActiveListContains(FLDEFF_QUEST_ICON_3DOTS))
+	{
+		u8 spriteId = objectEvent->spriteId;
+		struct Sprite *sprite = &gSprites[spriteId];
+		FieldEffectStop(sprite, FLDEFF_QUEST_ICON_3DOTS);
+	}
+}
+
+static void RemoveQuestIconStarFieldEffect(struct ObjectEvent *objectEvent)
+{
+	objectEvent->hasQuestIcon = FALSE;
+	
+	if (FieldEffectActiveListContains(FLDEFF_QUEST_ICON_STAR))
+	{
+		u8 spriteId = objectEvent->spriteId;
+		struct Sprite *sprite = &gSprites[spriteId];
+		FieldEffectStop(sprite, FLDEFF_QUEST_ICON_STAR);
 	}
 }
 
 static bool32 ObjectEventAlreadyHasQuest(bool32 hasQuestIcon)
 {
-    if (!FieldEffectActiveListContains(FLDEFF_QUEST_ICON))
+    if (!FieldEffectActiveListContains(FLDEFF_QUEST_ICON_EXCLAMATION)
+	||!FieldEffectActiveListContains(FLDEFF_QUEST_ICON_3DOTS)
+	||!FieldEffectActiveListContains(FLDEFF_QUEST_ICON_STAR))
         return FALSE;
 
     return (hasQuestIcon);
 }
 
 
-static void SpawnQuestIconForObject(struct ObjectEvent *objectEvent, u32 objectEventId)
+static void SpawnQuestIconExclamationForObject(struct ObjectEvent *objectEvent, u32 objectEventId)
 {
 	SetQuestIconOnObject(objectEvent);
-	StartFieldEffectForObjectEvent(FLDEFF_QUEST_ICON, objectEvent);
+	StartFieldEffectForObjectEvent(FLDEFF_QUEST_ICON_EXCLAMATION, objectEvent);
+}
+
+static void SpawnQuestIcon3DotsForObject(struct ObjectEvent *objectEvent, u32 objectEventId)
+{
+	SetQuestIconOnObject(objectEvent);
+	StartFieldEffectForObjectEvent(FLDEFF_QUEST_ICON_3DOTS, objectEvent);
+}
+
+static void SpawnQuestIconStarForObject(struct ObjectEvent *objectEvent, u32 objectEventId)
+{
+	SetQuestIconOnObject(objectEvent);
+	StartFieldEffectForObjectEvent(FLDEFF_QUEST_ICON_STAR, objectEvent);
 }
 
 void ResetQuestIconOnObject(struct ObjectEvent *objectEvent)

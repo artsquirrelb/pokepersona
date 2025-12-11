@@ -378,11 +378,13 @@ script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_QuestWasComp
 script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfReward {
     questmenu(QUEST_MENU_CHECK_REWARD, QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
     if (var(VAR_RESULT) == TRUE){
+        setflag(FLAG_HIDE_QUEST_ICON)
         msgbox(format("My Riolu was very happy. Please take this as a thank-you for doing me a favor."))
         closemessage
         giveitem(ITEM_SOOTHE_BELL, 1)
         questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
         release
+        clearflag(FLAG_HIDE_QUEST_ICON)
         end
     }
     else {
@@ -391,11 +393,14 @@ script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfRewar
 }
 
 script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive {
+    setflag(FLAG_HIDE_QUEST_ICON)
     questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
     if (var(VAR_RESULT) == TRUE){
         msgbox(format("You can find my poor Riolu on the second floor."))
         closemessage
         release
+        clearflag(FLAG_HIDE_QUEST_ICON)
+        refreshquesticon
         end
     }
     else {
@@ -423,6 +428,8 @@ script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActiv
         }
         questmenu(QUEST_MENU_SET_ACTIVE, QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
         release
+        clearflag(FLAG_HIDE_QUEST_ICON)
+        refreshquesticon
         end
     }
     

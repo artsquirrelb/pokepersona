@@ -3191,24 +3191,6 @@ bool8 ScrCmd_pokemartoutfit(struct ScriptContext *ctx)
     return TRUE;
 }
 
-void Script_SwitchMainCharacter(void)
-{
-    SavePlayerParty();
-                        
-    if (gSaveBlock2Ptr->playerGender == MALE)
-    {
-        gSaveBlock2Ptr->currOutfitId = CHARACTER_MITSURU;
-        gSaveBlock2Ptr->playerGender = FEMALE;
-    }
-    else
-    {
-        gSaveBlock2Ptr->currOutfitId = CHARACTER_AKIHIKO;
-        gSaveBlock2Ptr->playerGender = MALE;
-    }
-
-    LoadPlayerParty();
-}
-
 void ScriptSetDoubleBattleFlag(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1);
@@ -3583,6 +3565,11 @@ bool8 ScrCmd_subquestmenu(struct ScriptContext *ctx)
     }
 
     return TRUE;
+}
+
+void ScrCmd_refreshquesticon (struct ScriptContext *ctx)
+{
+    RefreshQuestIcons();
 }
 
 void ScrCmd_IsCurrentMap(struct ScriptContext *ctx)

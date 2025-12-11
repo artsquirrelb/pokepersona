@@ -1,6 +1,8 @@
 mapscripts Coralport_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
         setflag(FLAG_VISITED_CORALPORT)
+        setflag(FLAG_TEMP_2)
+        setrespawn(HEAL_LOCATION_CORALPORT)
         if (var(VAR_CHAPTER_1_STATE) == 0){
             manuallysettime(WEEKDAY_MON, 8, 0, 0)
         }
@@ -133,13 +135,47 @@ script Coralport_Eventscript_SailorOnGuard {
     lock
     faceplayer
     setspeaker("Umito")
-    
-        msgbox(format("This ship will departs for Windward Port at 9AM.\p
-        Please come back later when it's boarding time at 8:30AM."))
+    if (var(VAR_CHAPTER_1_STATE) <2)
+    {
+        msgbox(format("This ship will depart for Windward Port.\p
+        Please come back later when it's boarding time."))
         closemessage
-        release
-        end
-    
+        if (var(VAR_CHAPTER_1_STATE) == 0){
+            delay(20)
+            clearflag(FLAG_TEMP_2)
+            addobject(S_CORAL)
+            addobject(A_CORAL)
+            addobject(M_CORAL)
+            applymovement(LOCALID_PLAYER, invisible)
+            waitmovement
+            applymovement(M_CORAL, facedown)
+            applymovement(S_CORAL, moves(walk_right, walk_down, face_up))
+            applymovement(A_CORAL, moves(walk_down, face_up))
+            waitmovement
+            delay(30)
+            msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}What now?\p
+            {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It appears that we have no other choice but to wait until boarding time.\p
+            {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Maybe we can pay the police station a visit?\p
+            I'd like to check if they've found anything about Miki.\p
+            {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes, let's do that."))
+            closemessage
+            applymovement(M_CORAL, walkdown)
+            delay(4)
+            applymovement(S_CORAL, walkleft)
+            applymovement(A_CORAL, facedown)
+            applymovement(LOCALID_PLAYER, moves(walk_down, set_visible))
+            waitmovement
+            removeobject(M_CORAL)
+            delay(1)
+            removeobject(A_CORAL)
+            delay(1)
+            removeobject(S_CORAL)
+            delay(1)
+            setvar(VAR_CHAPTER_1_STATE, 1)
+        }
+    }
+    release
+    end
 }
 
 script Coralport_Eventscript_TuberM {
@@ -155,7 +191,7 @@ script Coralport_Eventscript_TuberM {
 script Coralport_Eventscript_Sandygast {
     lock
     playmoncry(SPECIES_SANDYGAST, CRY_MODE_NORMAL)
-    setwildbattle(SPECIES_SANDYGAST, 12)
+    setwildbattle(SPECIES_SANDYGAST, 11)
     dowildbattle
     fadescreenswapbuffers(FADE_TO_BLACK)
     setmetatile(11, 29, 0x246, FALSE)
@@ -173,11 +209,11 @@ script Coralport_Eventscript_Beauty {
     I'm enjoying this a lot more than I thought.\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Good for you."))
     setspeaker("Harehina")
-    msgbox(format("Oh? Wait, you're just my type. How old are you?\p
+    msgbox(format("{DESTROY_MUGSHOT}Oh? Wait, you're just my type. How old are you?\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}W-what?\p
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}(Hey! Let's just bail!)"))
     closemessage
-    moveobjecttocoords(LOCALID_PLAYER, 22, 29, DIR_NORTH)
+    moveobjecttocoords(LOCALID_PLAYER, 22, 29, DIR_NORTH, 2)
     waitmovement
     release
     end
@@ -201,5 +237,33 @@ script Coralport_Eventscript_Krabby {
     setflag(FLAG_TEMP_1)
     removeobject(VAR_LAST_TALKED)
     releaseall
+    end
+}
+
+script Coralport_Eventscript_MustTalkToSailorOnGuard {
+    lock
+    applymovement(LOCALID_PLAYER, walkdown)
+    waitmovement
+    checkplayergender
+    if(var(VAR_RESULT) == MALE){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(It's not the time to wander around.\p
+        We need to board the ship to Windward Port.)"))
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(It's not the time to wander around.\p
+        We need to board the ship to Windward Port.)"))
+    }
+    closemessage
+    release
+    end
+}
+
+script setameamequestasreward {
+    lock
+    msgbox("set ameame quest state reward")
+    closemessage
+    setvar(VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 10)
+    questmenu(QUEST_MENU_SET_REWARD, QUEST_AMEAME_PARTTIME)
+    release
     end
 }

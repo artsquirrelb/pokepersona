@@ -90,7 +90,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_PensiveIcon           	@ FLDEFF_PENSIVE_ICON
 	.4byte gFieldEffectScript_PoisonedIcon          	@ FLDEFF_POISONED_ICON
 	.4byte gFieldEffectScript_TrainerExclamation       	@ FLDEFF_TRAINER_EXCLAMATION
-	.4byte gFieldEffectScript_QuestIcon					@ FLDEFF_QUEST_ICON
+	.4byte gFieldEffectScript_QuestIcon_Exclamation		@ FLDEFF_QUEST_ICON_EXCLAMATION
 	.4byte gFieldEffectScript_CryIcon          			@ FLDEFF_CRY_ICON
 	.4byte gFieldEffectScript_SweatIcon          		@ FLDEFF_SWEAT_ICON
 	.4byte gFieldEffectScript_AsleepIcon          		@ FLDEFF_ASLEEP_ICON
@@ -103,6 +103,8 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_ORASDowse                 @ FLDEFF_ORAS_DOWSE
 	.4byte gFieldEffectScript_HappyIcon                 @ FLDEFF_HAPPY_ICON
 	.4byte gFieldEffectScript_Explosion                 @ FLDEFF_EXPLOSION
+	.4byte gFieldEffectScript_QuestIcon_3Dots			@ FLDEFF_QUEST_ICON_3DOTS
+	.4byte gFieldEffectScript_QuestIcon_Star			@ FLDEFF_QUEST_ICON_STAR
 	
 gFieldEffectScript_Explosion::
 	field_eff_loadfadedpal_callnative gSpritePalette_ExplosionFieldEffect, FldEff_Explosion
@@ -492,6 +494,14 @@ gFieldEffectScript_ORASDowse::
 	field_eff_callnative FldEff_ORASDowsing
 	field_eff_end
 
-gFieldEffectScript_QuestIcon::
-	field_eff_callnative FldEff_QuestIcon
+gFieldEffectScript_QuestIcon_Exclamation::
+	field_eff_callnative FldEff_QuestIcon_Exclamation
+	field_eff_end
+
+gFieldEffectScript_QuestIcon_3Dots::
+	field_eff_callnative FldEff_QuestIcon_3Dots
+	field_eff_end
+
+gFieldEffectScript_QuestIcon_Star::
+	field_eff_callnative FldEff_QuestIcon_Star
 	field_eff_end

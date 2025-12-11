@@ -171,23 +171,45 @@ static const struct SpriteFrameImage sSpriteImageTable_HeartIcon[] =
     }
 };
 
-static const union AnimCmd sSpriteAnim_QuestIcon[] =
+static const union AnimCmd sSpriteAnim_QuestIcon_Exclamation[] =
 {
-    ANIMCMD_FRAME(0, 30),
-    ANIMCMD_FRAME(1, 25),
-    ANIMCMD_FRAME(0, 30),
+    ANIMCMD_FRAME(0*2, 30),
+    ANIMCMD_FRAME(0*2+1, 25),
+    ANIMCMD_FRAME(0*2, 30),
+    ANIMCMD_JUMP(0)
+};
+
+static const union AnimCmd sSpriteAnim_QuestIcon_ThreeDots[] =
+{
+    ANIMCMD_FRAME(1*2, 30),
+    ANIMCMD_FRAME(1*2+1, 25),
+    ANIMCMD_FRAME(1*2, 30),
+    ANIMCMD_JUMP(0)
+};
+
+static const union AnimCmd sSpriteAnim_QuestIcon_Star[] =
+{
+    ANIMCMD_FRAME(2*2, 30),
+    ANIMCMD_FRAME(2*2+1, 25),
+    ANIMCMD_FRAME(2*2, 30),
     ANIMCMD_JUMP(0)
 };
 
 static const union AnimCmd *const sSpriteAnimTable_QuestIcon[] =
 {
-    sSpriteAnim_QuestIcon
+    sSpriteAnim_QuestIcon_Exclamation,
+    sSpriteAnim_QuestIcon_ThreeDots,
+    sSpriteAnim_QuestIcon_Star,
 };
 
 static const struct SpriteFrameImage sSpriteImageTable_QuestIcon[] =
 {
-    overworld_frame(sQuest_Gfx, 2, 2, 0),
-    overworld_frame(sQuest_Gfx, 2, 2, 1),
+    overworld_frame(sQuest_Gfx, 2, 2, 0),   //Exclamation
+    overworld_frame(sQuest_Gfx, 2, 2, 1),   //Exclamation
+    overworld_frame(sQuest_Gfx, 2, 2, 2),   //3 Dots
+    overworld_frame(sQuest_Gfx, 2, 2, 3),   //3 Dots
+    overworld_frame(sQuest_Gfx, 2, 2, 4),   //Star
+    overworld_frame(sQuest_Gfx, 2, 2, 5),   //Star
 };
 
 static const struct SpriteFrameImage sSpriteImageTable_Emotes[] =
@@ -1180,14 +1202,14 @@ u8 FldEff_HeartIcon(void)
     if (spriteId != MAX_SPRITES)
     {
         //struct Sprite *sprite = &gSprites[spriteId];
-SetIconSpriteData(&gSprites[spriteId], FLDEFF_HEART_ICON, FOLLOWER_EMOTION_LOVE);
+        SetIconSpriteData(&gSprites[spriteId], FLDEFF_HEART_ICON, FOLLOWER_EMOTION_LOVE);
         UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, &gSprites[spriteId]);
     }
 
     return 0;
 }
 
-u8 FldEff_QuestIcon(void)
+u8 FldEff_QuestIcon_Exclamation(void)
 {
     u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Quest, 0, 0, 0x52);
     struct Sprite *sprite;
@@ -1196,7 +1218,35 @@ u8 FldEff_QuestIcon(void)
         return 0;
 
     sprite = &gSprites[spriteId];
-    SetIconSpriteData(sprite, FLDEFF_QUEST_ICON, 0);
+    SetIconSpriteData(sprite, FLDEFF_QUEST_ICON_EXCLAMATION, 0);
+    UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, sprite);
+    return 0;
+}
+
+u8 FldEff_QuestIcon_3Dots(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Quest, 0, 0, 0x52);
+    struct Sprite *sprite;
+    
+    if (spriteId == MAX_SPRITES)
+        return 0;
+
+    sprite = &gSprites[spriteId];
+    SetIconSpriteData(sprite, FLDEFF_QUEST_ICON_3DOTS, 1);
+    UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, sprite);
+    return 0;
+}
+
+u8 FldEff_QuestIcon_Star(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSpriteTemplate_Quest, 0, 0, 0x52);
+    struct Sprite *sprite;
+    
+    if (spriteId == MAX_SPRITES)
+        return 0;
+
+    sprite = &gSprites[spriteId];
+    SetIconSpriteData(sprite, FLDEFF_QUEST_ICON_STAR, 2);
     UpdateSpritePaletteByTemplate(&sSpriteTemplate_Emote, sprite);
     return 0;
 }

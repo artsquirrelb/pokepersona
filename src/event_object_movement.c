@@ -22,6 +22,7 @@
 #include "follower_helper.h"
 #include "gpu_regs.h"
 #include "graphics.h"
+#include "load_save.h"
 #include "mauville_old_man.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
@@ -45,6 +46,7 @@
 #include "constants/battle.h"
 #include "constants/event_objects.h"
 #include "constants/field_effects.h"
+#include "constants/flags.h"
 #include "constants/items.h"
 #include "constants/mauville_old_man.h"
 #include "constants/metatile_behaviors.h"
@@ -528,6 +530,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_MitsuruSleeping,   OBJ_EVENT_PAL_TAG_MITSURU_SLEEPING},
     {gObjectEventPalette_MiningRock,        OBJ_EVENT_PAL_TAG_MINING_ROCK},
     {gObjectEventPal_Npc5,                  OBJ_EVENT_PAL_TAG_NPC_5},
+    {gObjectEventPal_Npc6,                  OBJ_EVENT_PAL_TAG_NPC_6},
 
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
@@ -3074,6 +3077,31 @@ static void SetBerryTreeGraphicsById(struct ObjectEvent *objectEvent, u8 berryId
     sprite->y += 16 + sprite->centerToCornerVecY;
     if (objectEvent->trackedByCamera)
         CameraObjectReset();
+}
+
+void Script_SwitchMainCharacter(void)
+{
+    struct ObjectEvent *playerObj = &gObjectEvents[gPlayerAvatar.objectEventId];
+
+    if (gSaveBlock2Ptr->playerGender == MALE){
+        SavePlayerParty();
+        gSaveBlock2Ptr->currOutfitId = CHARACTER_MITSURU;
+        gSaveBlock2Ptr->playerGender = FEMALE;
+        LoadPlayerParty();
+        ObjectEventSetGraphicsId(playerObj, OBJ_EVENT_GFX_MAY_NORMAL);
+    }
+    else{
+        SavePlayerParty();
+        gSaveBlock2Ptr->currOutfitId = CHARACTER_AKIHIKO;
+        gSaveBlock2Ptr->playerGender = MALE;
+        LoadPlayerParty(); 
+        ObjectEventSetGraphicsId(playerObj, OBJ_EVENT_GFX_BRENDAN_NORMAL);
+    }
+    FlagClear(FLAG_SAFE_FOLLOWER_MOVEMENT);
+    ResetInitialPlayerAvatarState();
+    PlayerFaceDirection(GetPlayerFacingDirection());
+    UpdateFollowingPokemon();
+    FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
 }
 
 static void SetBerryTreeGraphics(struct ObjectEvent *objectEvent, struct Sprite *sprite)

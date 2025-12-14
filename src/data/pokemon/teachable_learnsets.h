@@ -16097,6 +16097,7 @@ static const u16 sDusclopsTeachableLearnset[] = {
     MOVE_FIRE_PUNCH,
     MOVE_FLASH,
     MOVE_FOCUS_PUNCH,
+    MOVE_FROSTBITE,
     MOVE_FUTURE_SIGHT,
     MOVE_HEX,
     MOVE_HYPER_BEAM,

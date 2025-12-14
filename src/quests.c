@@ -657,7 +657,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.name = gText_SideQuest2_Name,
 		.desc = {gText_SideQuest2_Desc},
 		.donedesc = gText_SideQuest2_DoneDesc,
-		.map = {gText_SideQuest2_Map},
+		.map = {COMPOUND_STRING("Coralport's Beach")},
 		.sprite = {OBJ_EVENT_GFX_FISHERMAN},
 		.spritetype = {OBJECT},
 		.subquests = NULL,
@@ -690,14 +690,14 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.questVariable = VAR_AMEAME_CANDY_SHOP_QUEST_STATE,
 	},
 
-	[QUEST_5] = 
+	[QUEST_BUY_SMILE_CANDY] = 
 	{
-		.name = gText_SideQuestName_5,
-		.desc = {gText_SideQuestDesc_5},
-		.donedesc = gText_SideQuestDoneDesc_5,
-		.map = {gText_Chapter3_Map},
-		.sprite = {ITEM_NONE},
-		.spritetype = {ITEM},
+		.name = gText_SideQuest4_Name,
+		.desc = {gText_SideQuest4_Desc},
+		.donedesc = gText_SideQuest4_DoneDesc,
+		.map = {COMPOUND_STRING("Coralport's Beach")},
+		.sprite = {OBJ_EVENT_GFX_LITTLE_GIRL},
+		.spritetype = {OBJECT},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,

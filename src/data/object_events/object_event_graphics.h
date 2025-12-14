@@ -55,6 +55,8 @@ const u32 gObjectEventPic_Butler[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Kikuno[] = INCBIN_U32("graphics/object_events/pics/people/kikuno.4bpp");
 const u32 gObjectEventPic_Receptionist_F[] = INCBIN_U32("graphics/object_events/pics/people/receptionist_f.4bpp");
 const u32 gObjectEventPic_NeckBeard[] = INCBIN_U32("graphics/object_events/pics/people/neckbeard.4bpp");
+const u32 gObjectEventPic_PoliceChief[] = INCBIN_U32("graphics/object_events/pics/people/police_chief.4bpp");
+const u16 gObjectEventPal_Npc6[] = INCBIN_U16("graphics/object_events/palettes/npc_blackblueyellow.gbapal");
 
 
 

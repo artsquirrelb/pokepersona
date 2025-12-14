@@ -131,7 +131,6 @@ bool8 ScrCmd_end(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1);
 
-    //FlagClear(FLAG_SAFE_FOLLOWER_MOVEMENT);
     FlagClear(FLAG_HIDE_TALK_BUTTON);
     ShowTalkButton();
     StopScript(ctx);
@@ -3582,6 +3581,17 @@ void ScrCmd_IsCurrentMap(struct ScriptContext *ctx)
         gSpecialVar_Result = FALSE;
 }
 
+void ScrCmd_CanNotUseCampGears(struct ScriptContext *ctx)
+{
+    if (    GetMapTypeByGroupAndId(gSaveBlock1Ptr->location.mapGroup, gSaveBlock1Ptr->location.mapNum) == MAP_TYPE_INDOOR
+        ||  gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING
+        ||  gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER )
+        
+        gSpecialVar_Result = TRUE;
+    else
+        gSpecialVar_Result = FALSE;
+}
+
 bool8 ScrCmd_debugprint(struct ScriptContext *ctx)
 {
     u16 num;
@@ -3649,4 +3659,21 @@ bool8 ScrCmd_istmrelearneractive(struct ScriptContext *ctx)
         ScriptCall(ctx, ptr);
 
     return FALSE;
+}
+
+void ScrCmd_iscurrentNPCFollower(struct ScriptContext *ctx)
+{
+    if (PlayerHasFollowerNPC() 
+     && gObjectEvents[GetFollowerNPCObjectId()].invisible == FALSE )
+    {
+        u32 currentNPCFollower = GetFollowerNPCData(FNPC_DATA_GFX_ID);
+        u32 gfxId = VarGet(ScriptReadHalfword(ctx));
+
+        Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+        if (gfxId == currentNPCFollower)
+            gSpecialVar_Result = TRUE;
+        else
+            gSpecialVar_Result = FALSE;
+    }
 }

@@ -2,146 +2,193 @@ EventScript_CampGears::
 # 2 "data/scripts/newbagitems.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 100
 	goto_if_lt EventScript_CampGears_3
-EventScript_CampGears_2:
-# 7 "data/scripts/newbagitems.pory"
-	msgbox gText_WaitUntilTime
-# 8 "data/scripts/newbagitems.pory"
-	multichoice 25, 4, MULTI_TIME_OF_DAY, 0
-# 9 "data/scripts/newbagitems.pory"
-	closemessage
-# 10 "data/scripts/newbagitems.pory"
+EventScript_CampGears_1:
+# 12 "data/scripts/newbagitems.pory"
+	callnative ScrCmd_CanNotUseCampGears
+# 13 "data/scripts/newbagitems.pory"
 	compare VAR_RESULT, 0
-	goto_if_eq EventScript_CampGears_7
-# 17 "data/scripts/newbagitems.pory"
+	goto_if_ne EventScript_CampGears_7
+# 25 "data/scripts/newbagitems.pory"
+	playse SE_SELECT
+# 26 "data/scripts/newbagitems.pory"
+	msgbox EventScript_CampGears_Text_4
+# 27 "data/scripts/newbagitems.pory"
+	multichoice 25, 4, MULTI_TIME_OF_DAY, 0
+# 28 "data/scripts/newbagitems.pory"
+	closemessage
+# 29 "data/scripts/newbagitems.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq EventScript_CampGears_18
+# 35 "data/scripts/newbagitems.pory"
 	compare VAR_RESULT, 1
-	goto_if_eq EventScript_CampGears_8
-# 24 "data/scripts/newbagitems.pory"
+	goto_if_eq EventScript_CampGears_19
+# 41 "data/scripts/newbagitems.pory"
 	compare VAR_RESULT, 2
-	goto_if_eq EventScript_CampGears_9
-# 31 "data/scripts/newbagitems.pory"
+	goto_if_eq EventScript_CampGears_20
+# 47 "data/scripts/newbagitems.pory"
 	compare VAR_RESULT, 3
-	goto_if_eq EventScript_CampGears_10
-# 39 "data/scripts/newbagitems.pory"
+	goto_if_eq EventScript_CampGears_21
+# 54 "data/scripts/newbagitems.pory"
 	playse SE_PC_OFF
-# 40 "data/scripts/newbagitems.pory"
+# 55 "data/scripts/newbagitems.pory"
 	waitse
 EventScript_CampGears_6:
-# 42 "data/scripts/newbagitems.pory"
-	call EventScript_CheckDaysLeft
+# 58 "data/scripts/newbagitems.pory"
+	updatefollowingmon
+# 59 "data/scripts/newbagitems.pory"
+	release
 	end
 
-EventScript_CampGears_1:
+EventScript_CampGears_2:
 # 3 "data/scripts/newbagitems.pory"
-	msgbox EventScript_CampGears_Text_0
+	checkplayergender
 # 4 "data/scripts/newbagitems.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq EventScript_CampGears_11
+# 8 "data/scripts/newbagitems.pory"
+	msgbox EventScript_CampGears_Text_1
+EventScript_CampGears_10:
+# 10 "data/scripts/newbagitems.pory"
 	closemessage
-	return
+	goto EventScript_CampGears_1
 
 EventScript_CampGears_3:
 # 2 "data/scripts/newbagitems.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 100
-	goto_if_lt EventScript_CampGears_1
-	goto EventScript_CampGears_2
+	goto_if_lt EventScript_CampGears_2
+	goto EventScript_CampGears_1
 
 EventScript_CampGears_7:
-# 11 "data/scripts/newbagitems.pory"
-	fwdtime MORNING_HOUR_BEGIN, 0
-# 12 "data/scripts/newbagitems.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 13 "data/scripts/newbagitems.pory"
-	delay 60
 # 14 "data/scripts/newbagitems.pory"
-	special DrawWholeMapView
+	playse SE_BOO
 # 15 "data/scripts/newbagitems.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-	goto EventScript_CampGears_6
-
-EventScript_CampGears_8:
-# 18 "data/scripts/newbagitems.pory"
-	fwdtime DAY_HOUR_BEGIN, 0
-# 19 "data/scripts/newbagitems.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	checkplayergender
+# 16 "data/scripts/newbagitems.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq EventScript_CampGears_15
 # 20 "data/scripts/newbagitems.pory"
-	delay 60
-# 21 "data/scripts/newbagitems.pory"
-	special DrawWholeMapView
+	msgbox EventScript_CampGears_Text_3
+EventScript_CampGears_14:
 # 22 "data/scripts/newbagitems.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	closemessage
 	goto EventScript_CampGears_6
 
-EventScript_CampGears_9:
-# 25 "data/scripts/newbagitems.pory"
-	fwdtime EVENING_HOUR_BEGIN, 0
-# 26 "data/scripts/newbagitems.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 27 "data/scripts/newbagitems.pory"
-	delay 60
-# 28 "data/scripts/newbagitems.pory"
-	special DrawWholeMapView
-# 29 "data/scripts/newbagitems.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-	goto EventScript_CampGears_6
+EventScript_CampGears_11:
+# 5 "data/scripts/newbagitems.pory"
+	msgbox EventScript_CampGears_Text_0
+	goto EventScript_CampGears_10
 
-EventScript_CampGears_10:
+EventScript_CampGears_15:
+# 17 "data/scripts/newbagitems.pory"
+	msgbox EventScript_CampGears_Text_2
+	goto EventScript_CampGears_14
+
+EventScript_CampGears_18:
+# 30 "data/scripts/newbagitems.pory"
+	fwdtime MORNING_HOUR_BEGIN, 0
+# 31 "data/scripts/newbagitems.pory"
+	special SetCB2LoadMap
 # 32 "data/scripts/newbagitems.pory"
-	fwdtime NIGHT_HOUR_BEGIN, 0
+	callnative RunOnResumeMapScript
 # 33 "data/scripts/newbagitems.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 34 "data/scripts/newbagitems.pory"
-	delay 60
-# 35 "data/scripts/newbagitems.pory"
-	special DrawWholeMapView
+	call EventScript_CheckDaysLeft
+	goto EventScript_CampGears_6
+
+EventScript_CampGears_19:
 # 36 "data/scripts/newbagitems.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	fwdtime DAY_HOUR_BEGIN, 0
+# 37 "data/scripts/newbagitems.pory"
+	special SetCB2LoadMap
+# 38 "data/scripts/newbagitems.pory"
+	callnative RunOnResumeMapScript
+# 39 "data/scripts/newbagitems.pory"
+	call EventScript_CheckDaysLeft
+	goto EventScript_CampGears_6
+
+EventScript_CampGears_20:
+# 42 "data/scripts/newbagitems.pory"
+	fwdtime EVENING_HOUR_BEGIN, 0
+# 43 "data/scripts/newbagitems.pory"
+	special SetCB2LoadMap
+# 44 "data/scripts/newbagitems.pory"
+	callnative RunOnResumeMapScript
+# 45 "data/scripts/newbagitems.pory"
+	call EventScript_CheckDaysLeft
+	goto EventScript_CampGears_6
+
+EventScript_CampGears_21:
+# 48 "data/scripts/newbagitems.pory"
+	fwdtime NIGHT_HOUR_BEGIN, 0
+# 49 "data/scripts/newbagitems.pory"
+	special SetCB2LoadMap
+# 50 "data/scripts/newbagitems.pory"
+	callnative RunOnResumeMapScript
+# 51 "data/scripts/newbagitems.pory"
+	call EventScript_CheckDaysLeft
 	goto EventScript_CampGears_6
 
 
 EventScript_TellTheTimeDayHourMinute::
-# 48 "data/scripts/newbagitems.pory"
+# 64 "data/scripts/newbagitems.pory"
 	callnative Script_CalculateTime
-# 49 "data/scripts/newbagitems.pory"
+# 65 "data/scripts/newbagitems.pory"
 	msgbox EventScript_TellTheTimeDayHourMinute_Text_0
-# 50 "data/scripts/newbagitems.pory"
+# 66 "data/scripts/newbagitems.pory"
 	closemessage
 	return
 
 
 EventScript_CheckDaysLeft::
-# 54 "data/scripts/newbagitems.pory"
+# 70 "data/scripts/newbagitems.pory"
 	compare VAR_DAYS_LEFT, 1
 	goto_if_eq EventScript_CheckDaysLeft_2
 EventScript_CheckDaysLeft_1:
-# 58 "data/scripts/newbagitems.pory"
+# 74 "data/scripts/newbagitems.pory"
 	compare VAR_DAYS_LEFT, 0
 	goto_if_eq EventScript_CheckDaysLeft_4
 	return
 
 EventScript_CheckDaysLeft_2:
-# 55 "data/scripts/newbagitems.pory"
+# 71 "data/scripts/newbagitems.pory"
 	msgbox EventScript_CheckDaysLeft_Text_0
-# 56 "data/scripts/newbagitems.pory"
+# 72 "data/scripts/newbagitems.pory"
 	closemessage
 	goto EventScript_CheckDaysLeft_1
 
 EventScript_CheckDaysLeft_4:
-# 59 "data/scripts/newbagitems.pory"
+# 75 "data/scripts/newbagitems.pory"
 	warpsilent MAP_GAME_OVER, 0, 5
-# 60 "data/scripts/newbagitems.pory"
+# 76 "data/scripts/newbagitems.pory"
 	waitstate
 	return
 
 
 EventScript_CampGears_Text_0:
-# 3 "data/scripts/newbagitems.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping).$"
+# 5 "data/scripts/newbagitems.pory"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping.)$"
+
+EventScript_CampGears_Text_1:
+# 8 "data/scripts/newbagitems.pory"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Now is not the time for camping.)$"
+
+EventScript_CampGears_Text_2:
+# 17 "data/scripts/newbagitems.pory"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}(I can't set up a camp here.)$"
+
+EventScript_CampGears_Text_3:
+# 20 "data/scripts/newbagitems.pory"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_GEEZ}(I shouldn't camp here.)$"
+
+EventScript_CampGears_Text_4:
+# 26 "data/scripts/newbagitems.pory"
+	.string "Set up camp and wait until?$"
 
 EventScript_TellTheTimeDayHourMinute_Text_0:
-# 49 "data/scripts/newbagitems.pory"
+# 65 "data/scripts/newbagitems.pory"
 	.string "{STR_VAR_1},\n"
-	.string "{STR_VAR_2}:{STR_VAR_3}.\n"
-	.string "$"
+	.string "{STR_VAR_2}:{STR_VAR_3}.$"
 
 EventScript_CheckDaysLeft_Text_0:
-# 55 "data/scripts/newbagitems.pory"
+# 71 "data/scripts/newbagitems.pory"
 	.string "{COLOR GREEN}YOU HAVE {COLOR RED}ONE DAY LEFT {COLOR GREEN}TO COMPLETE THE\n"
 	.string "CURRENT STORY QUEST.$"

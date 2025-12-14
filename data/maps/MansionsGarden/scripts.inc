@@ -686,7 +686,7 @@ MansionsGarden_Eventscript_SayingGoodbyeToKikuno::
 # 372 "data/maps/MansionsGarden/scripts.pory"
 	closemessage
 # 373 "data/maps/MansionsGarden/scripts.pory"
-	setrespawn HEAL_LOCATION_MANSION_TRAINING_HOUSE
+	setrespawn HEAL_LOCATION_MANSIONS_GARDEN
 # 374 "data/maps/MansionsGarden/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 375 "data/maps/MansionsGarden/scripts.pory"

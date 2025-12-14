@@ -250,6 +250,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Kikuno;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Receptionist_F;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeckBeard;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mitsuru_Sleeping;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PoliceChief;
 
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
@@ -531,7 +532,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_APRICORN_TREE] =            &gObjectEventGraphicsInfo_ApricornTree,
     [OBJ_EVENT_GFX_NECK_BEARD] =               &gObjectEventGraphicsInfo_NeckBeard,
     [OBJ_EVENT_GFX_MITSURU_SLEEPING] =         &gObjectEventGraphicsInfo_Mitsuru_Sleeping,
-    
+    [OBJ_EVENT_GFX_POLICE_CHIEF] =             &gObjectEventGraphicsInfo_PoliceChief,
     
 };
 

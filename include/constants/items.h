@@ -1079,8 +1079,9 @@
 #define ITEM_MIN_REVIVE 908
 #define ITEM_CANDY_JAR 909
 #define ITEM_MINING_KIT 910
+#define ITEM_SMILE_CANDY 911
 
-#define ITEMS_COUNT 911
+#define ITEMS_COUNT 912
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

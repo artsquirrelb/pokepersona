@@ -32188,7 +32188,8 @@
       "MOVE_PSYCH_UP",
       "MOVE_FUTURE_SIGHT",
       "MOVE_SKITTER_SMACK",
-      "MOVE_CURSE"
+      "MOVE_CURSE",
+      "MOVE_FROSTBITE"
     ],
     "EggMoves": [
       "MOVE_HAZE",

@@ -189,19 +189,9 @@
       "id": "HEAL_LOCATION_SUNSHINE_TOWN",
       "map": "MAP_SUNSHINE_TOWN",
       "x": 8,
-      "y": 5
-    },
-    {
-      "id": "HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL",
-      "map": "MAP_SUNSHINE_ORPHANAGE_MAIN_HALL",
-      "x": 13,
-      "y": 21
-    },
-    {
-      "id": "HEAL_LOCATION_MANSION_TRAINING_HOUSE",
-      "map": "MAP_MANSION_TRAINING_HOUSE",
-      "x": 16,
-      "y": 17
+      "y": 5,
+      "respawn_map": "MAP_SUNSHINE_TOWN_POKEMON_CENTER",
+      "respawn_npc": "LOCALID_SUNSHINETOWN_NURSE"
     },
     {
       "id": "HEAL_LOCATION_MANSION_MITSURUS_ROOM2F",
@@ -216,16 +206,34 @@
       "y": 4
     },
     {
-      "id": "HEAL_LOCATION_ROUTE2_GATEHOUSE",
-      "map": "MAP_ROUTE2_GATEHOUSE",
-      "x": 9,
-      "y": 8
-    },
-    {
       "id": "HEAL_LOCATION_CORALPORT",
       "map": "MAP_CORALPORT",
-      "x": 31,
-      "y": 13
+      "x": 23,
+      "y": 17,
+      "respawn_map": "MAP_ROUTE2_GATEHOUSE",
+      "respawn_npc": "LOCALID_ROUTE2_GATEHOUSE_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_MANSIONS_GARDEN",
+      "map": "MAP_MANSIONS_GARDEN",
+      "x": 3,
+      "y": 31,
+      "respawn_map": "MAP_MANSION_TRAINING_HOUSE",
+      "respawn_npc": "LOCALID_MANSION_TRAINING_HOUSE_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_ROUTE2_2",
+      "map": "MAP_ROUTE2_2",
+      "x": 21,
+      "y": 16
+    },
+    {
+      "id": "HEAL_LOCATION_SUNSHINE_ORPHANAGE",
+      "map": "MAP_SUNSHINE_ORPHANAGE",
+      "x": 13,
+      "y": 10,
+      "respawn_map": "MAP_SUNSHINE_ORPHANAGE_MAIN_HALL",
+      "respawn_npc": "LOCALID_SUNSHINE_ORPHANAGE_BLISSEY"
     }
   ]
 }

@@ -20,7 +20,7 @@
 #define QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL             1
 #define QUEST_FIND_FISHERMANS_DAUGHTER                  2 //for old rod
 #define QUEST_AMEAME_PARTTIME                           3 //for candy jar
-#define QUEST_5          4
+#define QUEST_BUY_SMILE_CANDY                           4 //unlocked after finishing QUEST_FIND_FISHERMANS_DAUGHTER // for good rod
 #define QUEST_6          5
 #define QUEST_7          6
 #define QUEST_8          7

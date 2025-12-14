@@ -5644,8 +5644,8 @@ static void ShowMoveRelearner(void)
     && sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI] == SPRITE_NONE
 )
     {
-        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] = CreateSprite(&sSpriteTemplate_RelearnPrompt, 105, 164, 0);
-        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI] = CreateSprite(&sSpriteTemplate_RelearnPromptMulti, 169, 164, 0);
+        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] = CreateSprite(&sSpriteTemplate_RelearnPrompt, 85, 164, 0);
+        sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI] = CreateSprite(&sSpriteTemplate_RelearnPromptMulti, 149, 164, 0);
     }
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]].invisible = FALSE;
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI]].invisible = FALSE;

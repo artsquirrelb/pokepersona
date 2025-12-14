@@ -1,0 +1,470 @@
+mapscripts CoralportCave_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        setflag(FLAG_TEMP_4)
+        if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) > 4){
+            setflag(FLAG_TEMP_1)
+            setflag(FLAG_TEMP_2)
+            setflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_5)
+            setflag(FLAG_TEMP_6)
+        }
+        if(var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 5){
+            setobjectxyperm(1, 36, 7)
+            setobjectmovementtype(1, MOVEMENT_TYPE_FACE_LEFT)
+            setobjectxyperm(2, 36, 6)
+            setobjectmovementtype(2, MOVEMENT_TYPE_FACE_LEFT)
+            setobjectxyperm(3, 34, 6)
+            setobjectmovementtype(3, MOVEMENT_TYPE_FACE_RIGHT)
+
+            setobjectxyperm(9, 35, 4)
+            setobjectmovementtype(9, MOVEMENT_TYPE_FACE_DOWN)
+            setobjectxyperm(11, 37, 5)
+            setobjectmovementtype(11, MOVEMENT_TYPE_FACE_LEFT)
+            setobjectxyperm(10, 37, 6)
+            setobjectmovementtype(10, MOVEMENT_TYPE_FACE_LEFT)
+
+            clearflag(FLAG_TEMP_1)
+            clearflag(FLAG_TEMP_2)
+            clearflag(FLAG_TEMP_4)
+            setflag(FLAG_SPAWN_INVISIBLE)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_TEMP_0, 0: CoralportCave_MapScripts_OnFrameTemp0
+        VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 5: CoralportCave_MapScripts_OnFrame5
+    ]
+}
+
+script CoralportCave_MapScripts_OnFrameTemp0 {
+    goto(CoralportCave_MapScripts_OnFrameTemp0_PlayerWalkleft)
+}
+
+script CoralportCave_MapScripts_OnFrameTemp0_PlayerWalkleft {
+    getplayerxy(VAR_0x8000, VAR_0x8001)
+    if (var(VAR_0x8000) == 37 && var(VAR_0x8001) == 5){
+        applymovement(LOCALID_PLAYER, walkleft)
+        waitmovement
+    }
+    setvar(VAR_TEMP_0, 1)
+    release
+}
+
+script CoralportCave_MapScripts_OnFrame5 {
+    goto(CoralportCave_Eventscript_MisaTakingInWooper)
+}
+
+script CoralportCave_Eventscript_LeavingConfirm {
+    lock
+    msgbox(format("{COLOR GREEN}Leaving the cave will fast forward the clock by {COLOR RED}4 hours{COLOR GREEN}.\p
+    Do you want to proceed?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_FISHERMANS_DAUGHTER)
+        if (!var(VAR_RESULT)){
+            setvar(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 4)
+        }
+        addtime(0, 4, 0)
+        warp(MAP_CORALPORT, 41, 24)
+        waitstate
+    }
+    else{
+        applymovement(LOCALID_PLAYER, walkleft)
+        waitmovement
+        release
+        end
+    }
+}
+
+script CoralportCave_Eventscript_Fisherman {
+    lock
+    setflag(FLAG_HIDE_QUEST_ICON)
+    setspeaker("Ikumi")
+    msgbox(format("My daughter should be in this cave. It's not too long but there are wild Pokémon.\p
+    I'm not good at battling so I'll be tailing behind you."))
+    closemessage
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script CoralportCave_Eventscript_DuskullTrigger1 {
+    if (!flag(FLAG_TEMP_3)){
+        lock
+        playse(SE_PIN)
+        applymovement(4, moves(emote_exclamation_mark, face_down, delay_16, walk_fast_down, face_right))
+        waitmovement
+        goto (CoralportCave_Eventscript_DuskullBattle)
+    }
+}
+
+script CoralportCave_Eventscript_DuskullTrigger2 {
+    if (!flag(FLAG_TEMP_3)){
+        lock
+        playse(SE_PIN)
+        applymovement(4, moves(emote_exclamation_mark, face_down, delay_16, walk_fast_down*2, face_right))
+        waitmovement 
+        goto (CoralportCave_Eventscript_DuskullBattle)
+    }
+}
+
+script CoralportCave_Eventscript_DuskullBattle {
+    delay(30)
+    setflag(FLAG_NO_RUNNING)
+    setwildbattle(SPECIES_DUSKULL, 10)
+    dowildbattle
+    clearflag(FLAG_NO_RUNNING)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(4)
+    setflag(FLAG_TEMP_3)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    delay(30)
+    release
+    end
+}
+
+script CoralportCave_Eventscript_DusclopsCutsceneTrigger1 {
+    checkplayergender
+    if (var(VAR_RESULT) == FEMALE){
+        applymovement(LOCALID_PLAYER, moves(walk_down, face_left))
+        waitmovement
+    }
+    goto(CoralportCave_Eventscript_DusclopsCutscene)
+}
+script CoralportCave_Eventscript_DusclopsCutscene {
+    lock
+    hidefollower
+    clearflag(FLAG_TEMP_4)
+    setflag(FLAG_HIDE_QUEST_ICON)
+    addobject(5)
+    addobject(6)
+    addobject(7)
+    addobject(10)
+    addobject(11)
+    applymovement(LOCALID_PLAYER, invisible)
+    waitmovement
+    addobject(9)
+    removeobject(1)
+    setobjectxyperm(1, 15, 3)
+    addobject(1)
+    delay(1)
+    applymovement(1, moves(walk_right, face_left))
+    waitmovement
+    release
+    fadenewbgm(MUS_P3R_FEARFUL_EXPERIENCE)
+    playse(SE_PIN)
+    applymovement(9, emoteexclamation)
+    applymovement(10, emoteexclamation)
+    applymovement(11, emoteexclamation)
+    applymovement(1, emoteexclamation)
+    waitmovement
+    release
+    applymovement(LOCALID_PLAYER, moves(walk_left*2, walk_diag_southwest*4)) //aki: 9,7 mitsu: 9,8
+    waitmovement
+    delay(40)
+    applymovement(2, moves(lock_facing_direction, walk_up, unlock_facing_direction))
+    delay(8)
+    applymovement(LOCALID_PLAYER, walkup)                                   //aki: 9,6 mitsu: 9,7
+    applymovement(3, moves(lock_facing_direction, walk_up, unlock_facing_direction))
+    waitmovement
+    setspeaker("Misa")
+    msgbox(format("Oh no... What should we do, Wooper?"))
+    closemessage
+    playmoncry(SPECIES_WOOPER, CRY_MODE_WEAK)
+    applymovement(3, moves(emote_sad, shake_horizontal))
+    waitmovement
+    waitmoncry
+    applymovement(5, walkup)
+    checkplayergender
+    if( var(VAR_RESULT) == FEMALE){
+        applymovement(LOCALID_PLAYER, walkup)   
+    }                                                                       //akimitsu: 9,6
+    delay(4)
+    applymovement(6, walkup)
+    delay(4)
+    applymovement(7, walkup)
+    delay(2)
+    lock
+    setobjectnewmovementtype(5, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+    setobjectnewmovementtype(6, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+    setobjectnewmovementtype(7, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+    release
+    applymovement(2, moves(lock_facing_direction, walk_up, unlock_facing_direction))
+    delay(8)
+    applymovement(3, moves(lock_facing_direction, walk_up, unlock_facing_direction))
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Sanada-kun, Aragaki-kun. Back me up.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Gotcha!\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}No need to ask!"))
+    closemessage
+    applymovement(11, moves(walk_fast_left*3, walk_fast_down*3, walk_fast_left*4, face_down))
+    delay(20)
+    applymovement(10, moves(walk_fast_left*5, walk_fast_down*2, walk_fast_left, face_down))
+    delay(4)
+    applymovement(9, moves(walk_fast_left*5, walk_fast_down*2, walk_left, face_down))
+    applymovement(1, moves(walk_fast_left*4, walk_fast_down*2, walk_fast_left*2, face_down))
+    waitmovement
+    delay(10)
+    applymovement(6, walkup)
+    delay(4)
+    applymovement(7, walkup)
+    delay(20)
+    setflag(FLAG_NO_WHITEOUT)
+    trainerbattle_no_intro(TRAINER_DUSCLOPS_HORDE, DusclopsDefeated)
+    goto(CoralportCave_Eventscript_PostDusclopsBattle)
+}
+
+text DusclopsDefeated {
+    format("...!")
+}
+
+script CoralportCave_Eventscript_PostDusclopsBattle {
+    clearflag(FLAG_NO_WHITEOUT)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    if (var(VAR_RESULT) == B_OUTCOME_WON){
+        goto(CoralportCave_Eventscript_TheReasonMisaEnteredTheCave)
+    }
+    else{   
+        setvar(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 3)
+        special(SetCB2WhiteOut)
+    }
+}
+script CoralportCave_Eventscript_TheReasonMisaEnteredTheCave {
+    delay(30)
+    playse(SE_BOO)
+    applymovement(6, moves(emote_sad))
+    waitmovement
+    delay(30)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    playse(SE_FLEE)
+    waitse
+    delay(30)
+    removeobject(5)
+    delay(1)
+    removeobject(6)
+    delay(1)
+    removeobject(7)
+    delay(1)
+    setflag(FLAG_TEMP_5)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    delay(40)
+    applymovement(2, faceright)
+    applymovement(1, faceleft)
+    applymovement(3, faceright)
+    delay(30)
+    applymovement(9, moves(walk_down, face_up))
+    delay(8)
+    applymovement(10, moves(walk_down, face_up))
+    delay(8)
+    applymovement(11, moves(walk_down, face_up))
+    delay(30)
+    setspeaker("Misa")
+    msgbox("Pa!")
+    setspeaker("Ikumi")
+    msgbox(format("Misa! Are you okay?!\p
+    Why did you sneak out without telling me?!{PAUSE_UNTIL_PRESS}
+    You made me so worried!"))
+    setspeaker("Misa")
+    msgbox("Oh... I'm sorry...")
+    delay(30)
+    applymovement(1, walkinplaceleft)
+    setspeaker("Ikumi")
+    msgbox(format("And that Wooper...\n
+    Isn't it the one you said you befriended?{PAUSE_UNTIL_PRESS}
+    Didn't it visit us a few days ago?"))
+    closemessage
+    applymovement(2, faceleft)
+    delay(30)
+    playmoncry(SPECIES_WOOPER, CRY_MODE_WEAK)
+    applymovement(3, moves(walk_in_place_slow_right, emote_sad))
+    waitmovement
+    delay(24)
+    applymovement(2, faceright)
+    waitmovement
+    setspeaker("Misa")
+    msgbox(format("Wooper came to our house early this morning.\p
+    It was so weak and looked like it was asking for help so I followed it here."))
+    delay(24)
+    applymovement(1, walkinplaceleft)
+    setspeaker("Ikumi")
+    msgbox(format("Misa...{PAUSE_UNTIL_PRESS}\n
+    It's good that you want to help a Pokémon in need.\p
+    However, next time, make sure to tell me before you run off alone, okay?"))
+    delay(20)
+    setspeaker("Misa")
+    msgbox(format("Yes, Pa... I'm sorry..."))
+    closemessage
+    delay(30)
+    applymovement(2, faceleft)
+    setspeaker("Misa")
+    msgbox(format("By the way, why did you bring me here, Wooper?"))
+    closemessage
+    playmoncry(SPECIES_WOOPER, CRY_MODE_WEAK)
+    applymovement(3, moves(walk_in_place_slow_right))
+    waitmovement
+    delay(30)
+    applymovement(1, facedown)
+    applymovement(2, facedown)
+    applymovement(3, moves(walk_down*4, delay_16, face_up))//8,9
+    delay(8)
+    applymovement(11, moves(walk_left, face_right))
+    applymovement(10, moves(face_left))
+    applymovement(9, moves(face_left))
+    delay(16)
+    applymovement(9, facedown)
+    applymovement(10, facedown)
+    applymovement(11, facedown)
+    applymovement(LOCALID_PLAYER, moves(walk_down*3))               //akimitsu: 9,9
+    waitmovement
+    delay(30)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}It looks like it wants us to follow it."))
+    closemessage
+    fadescreenswapbuffers(FADE_TO_BLACK, 1)
+    applymovement(LOCALID_PLAYER, moves(walk_down*7, walk_left*3))          //akimitsu: 6, 16
+    applymovement(2, moves(walk_fast_down*5, walk_fast_left*2, walk_down*5))           //misa 7, 15
+    delay(4)
+    applymovement(3, moves(walk_down*7, walk_left*2, face_down))            //wooper 6,16
+    applymovement(1, moves(walk_fast_down*3, walk_fast_left*2, walk_fast_down*5, walk_down*3, face_left))           //ikumi 8, 15
+    delay(4)
+    applymovement(10, moves(walk_fast_down*3, walk_fast_left*2, walk_down*4, walk_left, face_down))           //mitsu 6, 14    
+    applymovement(11, moves(walk_slow_down*4, walk_down*3))                                   //aki 7, 14
+    applymovement(9, moves(walk_down, walk_fast_left*2, walk_down*6))            //shinji 8, 14 
+    delay(80)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    delay(50)
+    fadenewbgm(MUS_END)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Is that... its parent?\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}It's... not moving."))
+    closemessage
+    applymovement(3, faceup)
+    playmoncry(SPECIES_WOOPER, CRY_MODE_WEAK)
+    waitmoncry
+    delay(30)
+    applymovement(3, facedown)
+    applymovement(2, walkdown) 
+    applymovement(10, moves(walk_down, walk_left, walk_down*2, face_right))
+    waitmovement
+    delay(40)
+    applymovement(10, emotepensive)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}......{PAUSE 60}It's too late...\p
+    Its life energy has already been all drained."))
+    closemessage
+    delay(20)
+    applymovement(2, moves(walk_in_place_slow_down))
+    setspeaker("Misa")
+    msgbox(format("No way...."))
+    closemessage
+    applymovement(3, moves(walk_in_place_slow_down))
+    playmoncry(SPECIES_WOOPER, CRY_MODE_FAINT)
+    waitmoncry
+    delay(40)
+    fadescreenspeed(FADE_TO_BLACK, 4)
+    delay(48)
+    msgbox(format("Wooper sat by its parent for a long while before Shinjiro
+    gently pat its head and offered to help burying the Clodsire."))
+    closemessage
+    delay(30)
+    setvar(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 5)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
+    warpsilent(MAP_CORALPORT_CAVE, 31, 6)
+    waitstate
+}
+
+script CoralportCave_Eventscript_MisaTakingInWooper {
+    applymovement(LOCALID_PLAYER, moves(walk_right*4)) //35,6
+    waitmovement
+    delay(30)
+    applymovement(3, walkinplaceright)
+    playmoncry(SPECIES_WOOPER, CRY_MODE_WEAK)
+    waitmoncry
+    delay(30)
+    applymovement(2, walkinplaceleft)
+    setspeaker("Misa")
+    msgbox(format("Wooper, do you want to come home with me?"))
+    closemessage
+    applymovement(3, moves(emote_question_mark))
+    playmoncry(SPECIES_WOOPER, CRY_MODE_WEAK)
+    waitmoncry
+    delay(30)
+    setspeaker("Misa")
+    msgbox(format("Just like you, I... {PAUSE 40}no longer have a mother...\p
+    I know how it feels...\n{PAUSE_UNTIL_PRESS}But I still have Pa.
+    And he's always\lbeen by my side.\p
+    So... {PAUSE 40}I want to be there for you too, Wooper."))
+    closemessage
+    delay(40)
+    setspeaker("Misa")
+    msgbox(format("Would you be our family, Wooper?"))
+    closemessage
+    delay(40)
+    applymovement(3, walkinplaceright)
+    playmoncry(SPECIES_WOOPER, CRY_MODE_NORMAL)
+    waitmoncry
+    delay(30)
+    applymovement(3, moves(emote_heart, jump_in_place_right))
+    playmoncry(SPECIES_WOOPER, CRY_MODE_NORMAL)
+    waitmoncry
+    delay(30)
+    applymovement(3, walkright)
+    waitmovement
+    playse(SE_PIN)
+    applymovement(2, moves(emote_happy))
+    waitmovement
+    delay(40)
+    playse(SE_PIN)
+    applymovement(2, emoteexclamation)
+    setspeaker("Misa")
+    msgbox(format("Oh!"))
+    closemessage
+    delay(30)
+    applymovement(2, facedown)
+    applymovement(1, faceup)
+    waitmovement
+    setspeaker("Misa")
+    msgbox(format("I forgot to ask for your permission...\p
+    How do you say, Pa? Can we take Wooper in?"))
+    closemessage
+    delay(30)
+    applymovement(1, walkinplaceup)
+    setspeaker("Ikumi")
+    msgbox(format("Totally, totally!"))
+    closemessage
+    applymovement(1, faceleft)
+    waitmovement
+    setspeaker("Ikumi")
+    msgbox(format("Welcome to the family, Wooper!"))
+    closemessage
+    applymovement(3, moves(emote_happy, walk_in_place_down))
+    playmoncry(SPECIES_WOOPER, CRY_MODE_NORMAL)
+    waitmoncry
+    delay(30)
+    applymovement(1, shakehorizontal)
+    waitmovement
+    setspeaker("Ikumi")
+    msgbox(format("-sob- (My daughter grew up so fast......)"))
+    closemessage
+    playse(SE_M_BUBBLE)
+    applymovement(1, emotecry)
+    waitmovement
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(walk_diag_northeast))
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}........"))
+    closemessage
+    delay(30)
+    applymovement(11, shakehorizontal)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CRY}-sniffle-"))
+    applymovement(9, faceright)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Hphm, crybaby.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CRY}Shut up. -sniffle-"))
+    closemessage
+    delay(30)
+    fadescreenspeed(FADE_TO_BLACK, 4)
+    delay(48)
+    setvar(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 6)
+    addtime(0, 6, 0)
+    warp(MAP_CORALPORT, 21, 8)
+    waitstate
+}

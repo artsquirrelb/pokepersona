@@ -145,6 +145,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_SUNSHINE_ORPHANAGE_BLISSEY",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BLISSEY)",
       "x": 12,
       "y": 21,

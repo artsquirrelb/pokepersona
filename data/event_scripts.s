@@ -609,11 +609,8 @@ EventScript_WhiteOut::
 EventScript_AfterWhiteOutHeal::
 	lockall
 	msgbox gText_FirstShouldRestoreMonsHealth
-	call EventScript_PkmnCenterNurse_TakeAndHealPkmn
-	call EventScript_AfterWhiteOutHealMsg
-	applymovement VAR_LAST_TALKED, Movement_PkmnCenterNurse_Bow
-	waitmovement 0
 	fadedefaultbgm
+	applymovement LOCALID_PLAYER Common_Movement_WalkInPlaceFasterDown
 	releaseall
 	end
 
@@ -941,7 +938,7 @@ gText_PlayerWhitedOut::
 	.string "Pokémon!\p{PLAYER} whited out!$"
 
 gText_FirstShouldRestoreMonsHealth::
-	.string "First, you should restore your\n"
+	.string "You have restored your\n"
 	.string "Pokémon to full health.$"
 
 gText_MonsHealedShouldBuyPotions::
@@ -1247,3 +1244,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/CoralportCandyShop/scripts.inc"
 
 	.include "data/maps/CoralportPoliceStation/scripts.inc"
+
+	.include "data/maps/CoralportCave/scripts.inc"
+
+	.include "data/maps/WindwardPort/scripts.inc"

@@ -34,7 +34,7 @@ void DateTime_AddDays(struct DateTime *dateTime, u32 days)
                 dateTime->year++;
             }
             if (VarGet(VAR_AKIHIKOS_INTRO_STATE) == 100 || VarGet(VAR_MITSURUS_INTRO_STATE) == 100)
-                VarSet(VAR_DAYS_LEFT, daysleft - days);
+                VarSet(VAR_DAYS_LEFT, daysleft - days +1);
             days -= (remainingDaysInMonth + 1);
             dateTime->dayOfWeek = (dateTime->dayOfWeek + remainingDaysInMonth + 1) % WEEKDAY_COUNT;
             
@@ -44,7 +44,7 @@ void DateTime_AddDays(struct DateTime *dateTime, u32 days)
             dateTime->day += days;
             dateTime->dayOfWeek = (dateTime->dayOfWeek + days) % WEEKDAY_COUNT;
             if (VarGet(VAR_AKIHIKOS_INTRO_STATE) == 100 || VarGet(VAR_MITSURUS_INTRO_STATE) == 100)
-                VarSet(VAR_DAYS_LEFT, daysleft - days);
+                VarSet(VAR_DAYS_LEFT, daysleft - days +1);
             days = 0;
         }
     }

@@ -1,1 +1,222 @@
-mapscripts CoralportPoliceStation_MapScripts {}
+mapscripts CoralportPoliceStation_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        setflag(FLAG_TEMP_1)
+        setflag(FLAG_TEMP_2)
+
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_CHAPTER_1_STATE, 1: CoralportPoliceStation_MapScripts_OnFrame1
+    ]
+}
+
+
+script CoralportPoliceStation_MapScripts_OnFrame1 {
+    goto(CoralportPoliceStation_Eventscript_OverhearingFishermansRequest)
+}
+
+script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
+    clearflag(FLAG_TEMP_2)
+    addobject(5)
+    applymovement(LOCALID_PLAYER, moves(player_run_up*3, walk_up*2))
+    waitmovement(LOCALID_PLAYER)
+    delay(20)
+    clearflag(FLAG_TEMP_1)
+    addobject(A_CORALP)
+    addobject(S_CORALP)
+    addobject(M_CORALP)
+    applymovement(A_CORALP, moves(walk_left, face_up))
+    applymovement(S_CORALP, moves(walk_right, face_up))
+    applymovement(LOCALID_PLAYER, invisible)
+    delay(20)
+    special(SpawnCameraObject)
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up, walk_diag_northwest))
+    waitmovement
+    delay(30)
+    applymovement(5, walkinplaceup)
+    setspeaker("Ikumi")
+    msgbox(format("Officer, please help me!\nMy daughter has gone missing!"))
+    lock
+    setobjectnewmovementtype(5, MOVEMENT_TYPE_RUN_IN_PLACE_UP)
+    release
+    applymovement(1, walkinplacedown)
+    setspeaker("Namake")
+    msgbox(format("When was the last time you saw her?"))
+    applymovement(5, walkinplaceup)
+    setspeaker("Ikumi")
+    msgbox(format("Since this morning! I woke up and she was already not in the house!\p
+    I've been searching for her everywhere!"))
+    applymovement(5, moves(walk_fast_right*2, walk_faster_left*2, walk_fast_right*2, walk_faster_left*2, walk_fast_right*2, walk_faster_left*2))
+    setspeaker("Ikumi")
+    message(format("Oh what do I do........{PAUSE 60}"))
+    waitmovement(5)
+    lock
+    setobjectnewmovementtype(5, MOVEMENT_TYPE_RUN_IN_PLACE_LEFT)
+    release
+    delay(40)
+    applymovement(1, walkinplacedown)
+    setspeaker("Namake")
+    msgbox(format("Please calm down, sir."))
+    applymovement(5, faceup)
+    setspeaker("Namake")
+    msgbox(format("It's still relatively recent that you last saw her and she could be playing around here somewhere.\p
+    We're currently short-handed due to the recent incident at Sunshine Orphanage.\p
+    I also can't really leave my post unless it's emergency.\p
+    However, I can lend you my Growlithe. It has a great sense of smell.\p
+    Do you have something that it can sniff?\l
+    Recently worn clothes of your daughter, for example."))
+    applymovement(5, walkinplaceup)
+    setspeaker("Ikumi")
+    msgbox(format("Of course! Please send your Growlithe to my house.\l
+    It's the one on the beach!"))
+    closemessage
+    delay(30)
+    applymovement(5, moves(walk_fast_right, walk_fast_down*7, set_invisible))
+    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_fast_right, walk_fast_down*3, walk_left))
+    delay(10)
+    applymovement(M_CORALP, moves(lock_facing_direction, walk_fast_down,
+    unlock_facing_direction, face_right, lock_facing_direction, walk_left, unlock_facing_direction))
+    applymovement(A_CORALP, faceright)
+    applymovement(S_CORALP, faceleft)
+    waitmovement(5)
+    playse(SE_EXIT)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}.......\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}... {PAUSE 40}(He's... also looking for a family member...)\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}....{PAUSE 40} Aki.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}...{PAUSE 40}
+    {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Uh- yeah?\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}If you want to ask about Miki, go ask.\p
+    If you want to help that man, go help him.\p Stop standing there and mopping around.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}R-right."))
+    closemessage
+    applymovement(LOCALID_PLAYER, moves(walk_left, face_up, set_visible))
+    applymovement(M_CORALP, moves(walk_up, set_invisible))
+    applymovement(S_CORALP, moves(walk_left*2, set_invisible))
+    applymovement(A_CORALP, moves(set_invisible))
+    applymovement(OBJ_EVENT_ID_CAMERA, walkup)
+    waitmovement(OBJ_EVENT_ID_CAMERA)
+    special(RemoveCameraObject)
+    delay(50)
+    removeobject(M_CORALP)
+    delay(1)
+    removeobject(A_CORALP)
+    delay(1)
+    removeobject(S_CORALP)
+    delay(1)
+    removeobject(5)
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_2)
+    setvar(VAR_CHAPTER_1_STATE, 2)
+    questmenu(QUEST_MENU_UNLOCK_QUEST, QUEST_FIND_FISHERMANS_DAUGHTER)
+    release
+    end
+}
+
+script CoralportPoliceStation_Eventscript_PolicemanReceptionist {
+    lock
+    setspeaker("Namake")
+    if (var(VAR_CHAPTER_1_STATE) == 2){
+        goto (CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki)
+    }
+    else{
+        msgbox(format("Welcome to Coralport Police Station."))
+    }
+    closemessage
+    release
+    end
+}
+
+script CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki {
+    hidefollower
+    setobjectxyperm(M_CORALP, 5, 16)
+    setobjectxyperm(A_CORALP, 5, 16)
+    setobjectxyperm(S_CORALP, 5, 16)
+    clearflag(FLAG_TEMP_1)
+    addobject(M_CORALP)
+    delay(1)
+    addobject(A_CORALP)
+    delay(1)
+    addobject(S_CORALP)
+    delay(1)
+    applymovement(LOCALID_PLAYER, invisible)
+    applymovement(M_CORALP, moves(walk_left, face_up))
+    applymovement(S_CORALP, moves(walk_right, face_up))
+    waitmovement
+    delay(30)
+    msgbox(format("Welcome to Coralport Police Station. How can we help you?\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Hello, have you found anything about Miki,
+    the missing girl from Sunshine Orphanage?"))
+    setspeaker("Namake")
+    msgbox(format("{DESTROY_MUGSHOT}Oh, you're her brother, I guess.\p
+    We're extremely sorry but we still haven't found anything new about her,
+    nor the reason for which the explosion happened.\p
+    We've been looking high and low but we still find no traces of her nor her body.\p
+    The investigation is still on-going so there's not much I can say further.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}I see..... Thanks."))
+    closemessage
+    applymovement(A_CORALP, walkdown)
+    applymovement(LOCALID_CAMERA, walkdown)
+    waitmovement
+    delay(8)
+    applymovement(S_CORALP, facedown)
+    delay(4)
+    applymovement(M_CORALP, facedown)
+    waitmovement
+    delay(30)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Let's go outside."))
+    setvar(VAR_CHAPTER_1_STATE, 3)
+    warp(MAP_CORALPORT, 13, 6)
+    waitstate
+}
+
+script CoralportPoliceStation_Eventscript_Klefki {
+    lock
+    faceplayer
+    showmonpic(SPECIES_KLEFKI, 18, 5)
+    playmoncry(SPECIES_KLEFKI, CRY_MODE_NORMAL)
+    waitmoncry
+    delay(60)
+    hidemonpic
+    setseenmon(SPECIES_KLEFKI)
+    release
+    end
+}
+
+script CoralportPoliceStation_Eventscript_Arcanine {
+    lock
+    faceplayer
+    showmonpic(SPECIES_ARCANINE, 18, 5)
+    playmoncry(SPECIES_ARCANINE, CRY_MODE_NORMAL)
+    waitmoncry
+    delay(60)
+    hidemonpic
+    setseenmon(SPECIES_ARCANINE)
+    release
+    end
+}
+
+script CoralportPoliceStation_Eventscript_PolicemanEast {
+    lock
+    faceplayer
+    setspeaker("Utaro")
+    msgbox(format("Almost everyone in the station have left to investigate the explosion case of Sunshine Orphanage.\p
+    Now all of these desk works are passed onto me... {PAUSE 40} Sigh...\p
+    Not gonna lie, I prefer field work."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(VAR_LAST_TALKED, moves(emote_sad))
+    waitmovement
+    release
+    end
+}
+
+script CoralportPoliceStation_Eventscript_Woman {
+    lock
+    faceplayer
+    setspeaker("Miku")
+    msgbox(format("I'm waiting for my registration paper to be processed.\l{PAUSE_UNTIL_PRESS}
+    It's taking so long..."))
+    closemessage
+    release
+    end
+}

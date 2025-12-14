@@ -16106,7 +16106,7 @@ const struct Item gItemsInfo[] =
              "A box for storing\n"
              "your collections of\n"
              "Outfits safely."),
-        .pocket = POCKET_KEY_ITEMS,
+        .pocket = POCKET_MEDICINES,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_OutfitBox,
 	    .iconPic = gItemIcon_OutfitBox,
@@ -16128,7 +16128,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_CandyJar,
     },
 
-        [ITEM_MINING_KIT] =
+    [ITEM_MINING_KIT] =
     {
         .name = ITEM_NAME("Mining Kit"),
         .price = 0,
@@ -16141,6 +16141,24 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_MiningKit,
         .iconPalette = gItemIconPalette_MiningKit,
+    },
+
+    [ITEM_SMILE_CANDY] =
+    {
+        .name = ITEM_NAME("Smile Candy"),
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "A delicious candy\n"
+            "that can make a {PKMN}\n"
+            "happier."),
+        .importance = 1,
+        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_SmileCandy,
+        .flingPower = 30,
+        .iconPic = gItemIcon_SmileCandy,
+        .iconPalette = gItemIconPalette_AspearBerry,
     },
 };
 

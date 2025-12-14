@@ -1,6 +1,6 @@
 mapscripts Route2_Gatehouse_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
-        setrespawn(HEAL_LOCATION_ROUTE2_GATEHOUSE)
+        setrespawn(HEAL_LOCATION_ROUTE2_2)
     }
 }
 

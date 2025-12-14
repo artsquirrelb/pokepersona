@@ -2848,6 +2848,7 @@ DefaultHash = '''E74F20C6'''
    '''SubtractMoneyFromVar5''',
    '''TryFieldPoisonWhiteOut''',
    '''SetCB2WhiteOut''',
+   '''SetCB2LoadMap''',
    '''RotatingGate_InitPuzzle''',
    '''RotatingGate_InitPuzzleAndGraphics''',
    '''SetSSTidalFlag''',

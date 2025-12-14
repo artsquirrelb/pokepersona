@@ -2,5 +2,338 @@ mapscripts Coralport_FishermansHouse_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
         setflag(FLAG_TEMP_1)
         setflag(FLAG_TEMP_2)
+        setflag(FLAG_TEMP_3)
+        if(var(VAR_CHAPTER_1_STATE) >= 2 && var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 0){
+            clearflag(FLAG_TEMP_1)
+            clearflag(FLAG_TEMP_3)
+            setobjectxyperm(1, 10, 3)
+            setobjectmovementtype(1, MOVEMENT_TYPE_FACE_RIGHT)
+        }
+        if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) >= 7){
+            clearflag(FLAG_TEMP_1)
+            clearflag(FLAG_TEMP_2)
+            addobject(1)
+            addobject(2)
+            addobject(3)
+        }
+        questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_BUY_SMILE_CANDY)
+        if (var(VAR_RESULT)){
+            setobjectmovementtype(3, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+        }
     }
+}
+
+script Coralport_FishermansHouse_Eventscript_FisherMan {
+    lock
+    setspeaker("Ikumi")
+    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_BUY_SMILE_CANDY)
+    if (var(VAR_RESULT)){
+        goto(Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_GetGoodRod)
+    }
+    questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_FISHERMANS_DAUGHTER)
+    if (var(VAR_RESULT)){
+        goto(Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Completed)
+    }
+    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_FIND_FISHERMANS_DAUGHTER)
+    if (var(VAR_RESULT)){
+        goto(Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Reward)
+    }
+    questmenu(QUEST_MENU_CHECK_UNLOCKED, QUEST_FIND_FISHERMANS_DAUGHTER)
+    if (var(VAR_RESULT)){
+        goto(Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start)
+    }
+}
+
+
+script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Completed {
+    faceplayer
+    msgbox(format("You're always welcomed here. You're literally our saviors."))
+    closemessage
+    release
+    end
+}
+
+script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Reward{
+    setflag(FLAG_HIDE_QUEST_ICON)
+    faceplayer
+    msgbox(format("Oh you finally came by! Thank you so much for helping us at Coralport Cave!\p
+    Please have this as thanks!"))
+    closemessage
+    giveitem(ITEM_OLD_ROD)
+    msgbox(format("If you need help with anything, please tell me!"))
+    closemessage
+    questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_FISHERMANS_DAUGHTER)
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start {
+    lock
+    applymovement(1, walkinplaceright)
+    applymovement(4, faceleft)
+    waitmovement
+    msgbox(format("Here's her clothes from yesterday, can you pick up something, Growlithe?"))
+    closemessage
+    applymovement(4, walkinplaceleft)
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+    waitmoncry
+    delay(30)
+    playse(SE_PIN)
+    applymovement(4, moves(emote_exclamation_mark, delay_16, delay_16, jump_in_place_left))
+    waitmovement
+    setspeaker("Ikumi")
+    msgbox(format("You do?? Thanks Arceus!"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(1, moves(emote_exclamation_mark, face_player))
+    waitmovement
+    setspeaker("Ikumi")
+    msgbox(format("Wait, who are you lots? What do you want? I'm busy-"))
+    checkplayergender
+    if (var(VAR_RESULT) == MALE){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}We're here to help you find your daughter.\p
+        We were at the police station when you went there asking for help."))
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Rest assured, sir. We're here to help you find your daughter.\p
+        We were at the police station when you went there asking for help."))
+    }
+    setspeaker("Ikumi")
+    msgbox(format("{DESTROY_MUGSHOT}Really? That's great! Thank you so much!"))
+    closemessage
+    delay(30)
+    applymovement(1, faceright)
+    waitmovement
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+    applymovement(4, moves(jump_in_place_left, delay_16, walk_right *2, face_left))
+    waitmovement
+    faceplayer
+    setspeaker("Ikumi")
+    msgbox(format("Looks like Growlithe has picked up her scent, let's follow it!"))
+    closemessage
+    special(SpawnCameraObject)
+    applymovement(4, moves(walk_fast_down*7, set_invisible))
+    applymovement(1, moves(walk_fast_right*3, walk_fast_down*7, set_invisible))
+    applymovement(LOCALID_CAMERA, moves(walk_diag_southeast*3))
+    waitmovement(4)
+    playse(SE_EXIT)
+    removeobject(4)
+    waitmovement(1)
+    playse(SE_EXIT)
+    removeobject(1)
+    delay(30)
+    applymovement(LOCALID_CAMERA, moves(walk_diag_northwest*3))
+    waitmovement
+    special(RemoveCameraObject)
+    delay(30)
+    questmenu(QUEST_MENU_SET_ACTIVE, QUEST_FIND_FISHERMANS_DAUGHTER)
+    setvar(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 1)
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_3)
+    setflag(FLAG_HIDE_MAP_NAME_POPUP)
+    release
+    end
+}
+
+script Coralport_FishermansHouse_Eventscript_Growlithe {
+    lock
+    faceplayer
+    showmonpic(SPECIES_GROWLITHE, 18, 5)
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+    waitmoncry
+    delay(30)
+    setseenmon(SPECIES_GROWLITHE)
+    hidemonpic
+    release
+    end
+}
+
+script Coralport_FishermansHouse_Eventscript_LittleGirl {
+    lock
+    setflag(FLAG_HIDE_QUEST_ICON)
+    faceplayer
+    setspeaker("Misa")
+    questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_BUY_SMILE_CANDY)
+    if (var(VAR_RESULT)){
+        goto (Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Completed)
+    }
+    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_BUY_SMILE_CANDY)
+    if (var(VAR_RESULT)){
+        goto (Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Reward)
+    }
+    questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_BUY_SMILE_CANDY)
+    if (var(VAR_RESULT)){
+        goto (Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Ongoing)
+    }
+    else{
+        goto (Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Start)
+    }
+}
+
+script Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Start {
+    msgbox(format("Thank you for saving me!\n{PAUSE_UNTIL_PRESS}
+    I'm a little worried that Wooper is still looking a bit sad, though.\p
+    I hope it would cheer up soon..."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(2, emoteexclamation)
+    waitmovement
+    setspeaker("Misa")
+    msgbox(format("Oh I know! How about I go buy a Smile Candy for it?\p
+    Oh, but they don't sell it in Sunshine Island... and Pa probably won't allow me to go.\p
+    I'm very sorry to ask for your help again but if you happen to see a Smile Candy on sale, please buy one for me?\p
+    Here, you can use the allowance money I've been saving up for it!"))
+    closemessage
+    playfanfare(MUS_OBTAIN_ITEM)
+    msgbox(format("{PLAYER} received 500 Pokedollars to buy a Smile Candy."))
+    closemessage
+    addmoney(500)
+    questmenu(QUEST_MENU_SET_ACTIVE, QUEST_BUY_SMILE_CANDY)
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Ongoing {
+    msgbox(format("I heard they sell Smile Candy in Paulownia City. Please get me one for Wooper!"))
+    closemessage
+    checkitem(ITEM_SMILE_CANDY)
+    if (var(VAR_RESULT)){
+        playse(SE_PIN)
+        applymovement(2, emoteexclamation)
+        waitmovement
+        setspeaker("Misa")
+        msgbox(format("Oh! That's a {COLOR BLUE}Smile Candy{COLOR 2}!\p
+        Did you buy it for me?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            removeitem(ITEM_SMILE_CANDY)
+            msgbox(format("{PLAYER} gave Misa a {COLOR BLUE}Smile Candy{COLOR 2}."))
+            setspeaker("Misa")
+            msgbox(format("I'll give it to Wooper right now!"))
+            closemessage
+            applymovement(2, faceleft)
+            waitmovement
+            delay(20)
+            playse(SE_USE_ITEM)
+            waitse
+            applymovement(3, moves(walk_in_place_right, delay_16, delay_16, emote_heart))
+            waitmovement
+            playse(SE_PIN)
+            waitse
+            delay(30)
+            applymovement(2, moves(face_down, emote_happy))
+            waitmovement
+            playse(SE_PIN)
+            waitse
+            setspeaker("Misa")
+            msgbox(format("Look at its big smile! Thank you for that!!\p
+            By the way, I asked Pa to make you a Good Rod!\n
+            Just speak to him, he'll give it to you!"))
+            closemessage
+            questmenu(QUEST_MENU_SET_REWARD, QUEST_BUY_SMILE_CANDY)
+            lock
+            setobjectnewmovementtype(3, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
+            release
+        }
+        else{
+            setspeaker("Misa")
+            msgbox(format("But- I... {PAUSE 60}I understand..."))
+            closemessage
+            playse(SE_BOO)
+            applymovement(2, moves(emote_sad))
+            waitmovement
+        }
+    }
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Reward {
+    msgbox(format("I asked Pa to make you a Good Rod!\n
+    Just speak to him, he'll give it to you!"))
+    closemessage
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_GetGoodRod {
+    msgbox(format("Misa asked me to make a Good Rod for you. I just got it done yesterday!\p
+    There you go!"))
+    closemessage
+    giveitem(ITEM_GOOD_ROD)
+    setspeaker("Ikumi")
+    msgbox(format("Thank you so much for fulfilling my daughter's wish. Our family owe you so much."))
+    closemessage
+    questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_BUY_SMILE_CANDY)
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Completed {
+    msgbox(format("Woope starts smiling more after eating the Smile Candy.\p
+    That makes me so happy!"))
+    closemessage
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script Coralport_FishermansHouse_Eventscript_Wooper {
+    lock
+    faceplayer
+    questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_FISHERMANS_DAUGHTER)
+    if (var(VAR_RESULT)){
+        playmoncry(SPECIES_WOOPER, CRY_MODE_NORMAL)
+        waitmoncry
+        msgbox(format("Wooper still looks depressed."))
+        closemessage
+        release
+        end
+    }
+    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_FIND_FISHERMANS_DAUGHTER)
+    if (var(VAR_RESULT)){
+        playmoncry(SPECIES_WOOPER, CRY_MODE_NORMAL)
+        waitmoncry
+        msgbox(format("Wooper still looks depressed."))
+        closemessage
+        release
+        end
+    }
+    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_BUY_SMILE_CANDY)
+    if (var(VAR_RESULT)){
+        playmoncry(SPECIES_WOOPER, CRY_MODE_NORMAL)
+        waitmoncry
+        msgbox(format("Wooper looks better than the last time you saw it."))
+        closemessage
+        release
+        end
+    }
+    else{
+        playmoncry(SPECIES_WOOPER, CRY_MODE_WEAK)
+        applymovement(3, moves(emote_heart))
+        waitmoncry
+        waitmovement
+        msgbox(format("Wooper is smiling brightly!"))
+    }
+    closemessage
+    release
+    end
+}
+
+script Coralport_FishermansHouse_Eventscript_LockedDoor {
+    lock
+    msgbox(format("It's locked."))
+    closemessage
+    release
+    end
 }

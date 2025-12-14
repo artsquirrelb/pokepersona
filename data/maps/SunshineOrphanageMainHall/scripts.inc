@@ -9,7 +9,7 @@ SunshineOrphanageMainHall_MapScripts::
 
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 5 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setrespawn HEAL_LOCATION_SUNSHINE_ORPHANAGE_MAIN_HALL
+	setrespawn HEAL_LOCATION_SUNSHINE_ORPHANAGE
 # 6 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 7
 	goto_if_lt SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_2

@@ -50,7 +50,7 @@ static bool8 IsCoordInIncomingConnectingMap(int coord, int srcMax, int destMax, 
 
 static inline u16 GetBorderBlockAt(int x, int y)
 {
-   u16 block;
+   //u16 block;
   s32 xPrime;
   s32 yPrime;
   

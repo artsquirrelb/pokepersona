@@ -112,7 +112,8 @@
     "ThundershardsMtSunshineMeadow",
     "ThundershardsCliff_2F_Exterior",
     "Coralport",
-    "Route3"
+    "Route3",
+    "WindwardPort"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -453,7 +454,8 @@
     "MeteorFalls_StevensCave",
     "ThundershardsCave_1F",
     "ThundershardsCave_1F_NorthRoom",
-    "ThundershardsCave_2F"
+    "ThundershardsCave_2F",
+    "CoralportCave"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

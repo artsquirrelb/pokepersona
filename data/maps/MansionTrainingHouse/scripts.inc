@@ -5,7 +5,7 @@ MansionTrainingHouse_MapScripts::
 
 MansionTrainingHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/MansionTrainingHouse/scripts.pory"
-	setrespawn HEAL_LOCATION_MANSION_TRAINING_HOUSE
+	setrespawn HEAL_LOCATION_MANSIONS_GARDEN
 	return
 
 

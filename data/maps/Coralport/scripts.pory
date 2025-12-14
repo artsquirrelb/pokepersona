@@ -2,10 +2,117 @@ mapscripts Coralport_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
         setflag(FLAG_VISITED_CORALPORT)
         setflag(FLAG_TEMP_2)
+        setflag(FLAG_TEMP_3)
+        setflag(FLAG_TEMP_4)
         setrespawn(HEAL_LOCATION_CORALPORT)
         if (var(VAR_CHAPTER_1_STATE) == 0){
             manuallysettime(WEEKDAY_MON, 8, 0, 0)
         }
+        if(var(VAR_CHAPTER_1_STATE) == 3){
+            setobjectxyperm(M_CORAL, 13, 10)
+            setobjectmovementtype(M_CORAL, MOVEMENT_TYPE_FACE_DOWN)
+
+            setobjectxyperm(S_CORAL, 11, 11)
+            setobjectmovementtype(S_CORAL, MOVEMENT_TYPE_FACE_LEFT)
+
+            setobjectxyperm(A_CORAL, 13, 13)
+            setobjectmovementtype(A_CORAL, MOVEMENT_TYPE_FACE_DOWN)
+            clearflag(FLAG_TEMP_2)
+            setflag(FLAG_SPAWN_INVISIBLE)
+        }
+        if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 1){
+            clearflag(FLAG_TEMP_3)
+            setobjectxyperm(27, 15, 29)
+            setobjectxyperm(28, 16, 29)
+            setobjectmovementtype(27, MOVEMENT_TYPE_FACE_RIGHT)
+            setobjectmovementtype(28, MOVEMENT_TYPE_FACE_RIGHT)
+        }
+        if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 2){
+            clearflag(FLAG_TEMP_3)
+            clearflag(FLAG_HIDE_TALK_BUTTON)
+        }
+        if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 3){ //lapras by the beach
+            clearflag(FLAG_TEMP_3)
+            clearflag(FLAG_TEMP_4)
+            setobjectxyperm(28, 36, 27)
+            setobjectxyperm(27, 36, 29)
+            setobjectxyperm(26, 36, 28)
+            setobjectmovementtype(28, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+            setobjectmovementtype(27, MOVEMENT_TYPE_FACE_LEFT)
+        }
+        if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 4){ //lapras by the cave entrace
+            clearflag(FLAG_TEMP_3)
+            clearflag(FLAG_TEMP_4)
+            setobjectxyperm(28, 36, 27) //growlithe stays on the beach
+            setobjectxyperm(27, 42, 26)
+            setobjectxyperm(26, 41, 26)
+            setobjectmovementtype(28, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+            setobjectmovementtype(27, MOVEMENT_TYPE_FACE_UP)
+            setobjectmovementtype(26, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+        }
+        if(var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 6){
+            clearflag(FLAG_TEMP_3)
+            clearflag(FLAG_TEMP_2)
+            setflag(FLAG_SPAWN_INVISIBLE)
+            setflag(FLAG_HIDE_QUEST_ICON)
+
+            setobjectxyperm(28, 20, 11)
+            setobjectmovementtype(28, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+
+            setobjectxyperm(27, 21, 11)
+            setobjectmovementtype(27, MOVEMENT_TYPE_FACE_DOWN)
+
+            setobjectxyperm(S_CORAL, 22, 13)
+            setobjectxyperm(M_CORAL, 21, 13)
+            setobjectxyperm(A_CORAL, 20, 13)
+        }
+    }
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        //VAR_TEMP_1, 0: Coralport_MapScripts_UpdatingShipState
+        VAR_CHAPTER_1_STATE, 3: Coralport_MapScripts_OnFrame3
+        VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 1: Coralport_MapScripts_QuestOldRodOnFrame1
+        VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 6: Coralport_MapScripts_QuestOldRodOnFrame6
+    ]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 3: Coralport_MapScripts_QuestOldRodOnWarp3
+        VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 4: Coralport_MapScripts_QuestOldRodOnWarp4
+    ]
+    MAP_SCRIPT_ON_RESUME: Coralport_MapScripts_UpdatingShipState
+}
+
+script Coralport_MapScripts_UpdatingShipState {
+    gettime
+    if (var(VAR_0x8000) < 7 || var(VAR_0x8000) >=17){
+        setflag(FLAG_TEMP_5)
+    }
+    else{
+        clearflag(FLAG_TEMP_5)
+    }
+}
+        
+script Coralport_MapScripts_OnFrame3 {
+    goto(Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp)
+}
+
+script Coralport_MapScripts_QuestOldRodOnFrame1 {
+    goto(Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast)
+}
+
+script Coralport_MapScripts_QuestOldRodOnFrame6 {
+    goto(Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe)
+}
+
+script Coralport_MapScripts_QuestOldRodOnWarp3 {
+    getplayerxy(VAR_0x8000, VAR_0x8001)
+    if (var(VAR_0x8000) == 36 && var(VAR_0x8001) == 28){
+        applymovement(LOCALID_PLAYER, faceleft)
+    }
+}
+
+script Coralport_MapScripts_QuestOldRodOnWarp4 {
+    getplayerxy(VAR_0x8000, VAR_0x8001)
+    if (var(VAR_0x8000) == 41 && var(VAR_0x8001) == 26){
+        applymovement(LOCALID_PLAYER, faceup)
     }
 }
 
@@ -135,13 +242,43 @@ script Coralport_Eventscript_SailorOnGuard {
     lock
     faceplayer
     setspeaker("Umito")
-    if (var(VAR_CHAPTER_1_STATE) <2)
+    if (var(VAR_CHAPTER_1_STATE) <4)
     {
         msgbox(format("This ship will depart for Windward Port.\p
         Please come back later when it's boarding time."))
         closemessage
         if (var(VAR_CHAPTER_1_STATE) == 0){
-            delay(20)
+            goto(Coralport_Eventscript_NotYetBoardingTime)
+        }
+    }
+    else
+    {
+        gettime
+        if(var(VAR_0x8000) >= 7 && var(VAR_0x8000) <= 17){
+            msgbox(format("This ship is departing for Windward Port.\p
+            Would you like to board the ship?"), MSGBOX_YESNO)
+            closemessage
+            if (var(VAR_RESULT)){
+                warp(MAP_WINDWARD_PORT, 39, 20)     //TODO
+            }
+        }
+        else{
+            goto(Coralport_Eventscript_ShipHasDeparted)
+        }
+    }
+    release
+    end
+}
+
+script Coralport_Eventscript_ShipHasDeparted {
+    msgbox(format("The ship has already departed for Windward Port.\p
+        If you want to board the ship, please come back between 7AM and 5PM."))
+    closemessage
+    release
+    end
+}
+script Coralport_Eventscript_NotYetBoardingTime {
+    delay(20)
             clearflag(FLAG_TEMP_2)
             addobject(S_CORAL)
             addobject(A_CORAL)
@@ -172,10 +309,6 @@ script Coralport_Eventscript_SailorOnGuard {
             removeobject(S_CORAL)
             delay(1)
             setvar(VAR_CHAPTER_1_STATE, 1)
-        }
-    }
-    release
-    end
 }
 
 script Coralport_Eventscript_TuberM {
@@ -264,6 +397,371 @@ script setameamequestasreward {
     closemessage
     setvar(VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 10)
     questmenu(QUEST_MENU_SET_REWARD, QUEST_AMEAME_PARTTIME)
+    release
+    end
+}
+
+script Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp {
+    delay(20)
+    applymovement(LOCALID_PLAYER, moves(walk_down*6))//13,12
+    waitmovement
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}......"))
+    closemessage
+    applymovement(A_CORAL, walkup) //13,12
+    applymovement(LOCALID_PLAYER, walkup)//13,11
+    waitmovement
+    delay(20)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Kirijo.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes, Sanada-kun?"))
+    applymovement(S_CORAL, faceright)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}If you know who's behind the explosion, why didn't you say anything to the police?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}I'd prefer not getting them involved.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}What?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Besides, I doubt they'd be any help, even if they knew.\p
+    Otherwise I wouldn't be here, asking you two to accompany me on this journey.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}But- why?\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Corruption shit or something like that?"))
+    closemessage
+    playse(SE_PIN)
+    applymovement(M_CORAL, moves(emote_exclamation_mark, face_left))
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Aragaki-kun, language.\p
+    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Tch."))
+    applymovement(S_CORAL, faceleft)
+    delay(4)
+    applymovement(M_CORAL, facedown)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}But indeed.\p
+    The illegal experiments have already proceeded to the state of producing successful prototypes.\p
+    Why do you think they haven't already been caught nor stopped?\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}......"))
+    closemessage
+    delay(30)
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}... But Kurosawa-san was really kind and tried really hard to help me and Shinji."))
+    applymovement(S_CORAL, faceright)
+    delay(20)
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Not all cops are the same.\p
+    I guess he also has a battle he's fighting on his own.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}......"))
+    closemessage
+    delay(30)
+    playse(SE_RG_SS_ANNE_HORN)
+    delay(30)
+    playse(SE_PIN)
+    applymovement(M_CORAL, emoteexclamation)
+    delay(4)
+    applymovement(A_CORAL, moves(emote_exclamation_mark, face_down))
+    delay(4)
+    applymovement(S_CORAL, moves(emote_exclamation_mark, face_down))
+    delay(60)
+    applymovement(A_CORAL, faceup)
+    delay(4)
+    applymovement(S_CORAL, faceright)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I suppose the ship is ready for boarding.\l
+    Let's move out."))
+    closemessage
+    applymovement(M_CORAL, walkdown)
+    applymovement(S_CORAL, moves(walk_right*2))
+    applymovement(A_CORAL, walkup)
+    applymovement(LOCALID_PLAYER, moves(face_down, set_visible))
+    waitmovement(S_CORAL)
+    removeobject(M_CORAL)
+    delay(1)
+    removeobject(S_CORAL)
+    delay(1)
+    removeobject(A_CORAL)
+    delay(1)
+    setflag(FLAG_TEMP_2)
+    setvar(VAR_CHAPTER_1_STATE, 4)
+    release
+    end
+}
+
+script Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast {
+    lock
+    delay(20)
+    special(SpawnCameraObject)
+    applymovement(LOCALID_CAMERA, moves(walk_diag_southeast*2))
+    waitmovement
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+    applymovement(28, jumpinplaceleft)
+    waitmovement
+    applymovement(28, moves(walk_fast_right*8))
+    delay(4)
+    playse(SE_PIN)
+    applymovement(27, moves(emote_exclamation_mark, delay_16, delay_16, walk_fast_right*8))
+    delay(60)
+    applymovement(LOCALID_CAMERA, moves(walk_diag_northwest*2))
+    waitmovement
+    special(RemoveCameraObject)
+    delay(30)
+    setvar(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 2)
+    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    warpsilent(MAP_CORALPORT, 13, 27)
+    waitstate
+}
+
+script Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER {
+    lock
+    setflag(FLAG_HIDE_QUEST_ICON)
+    setspeaker("Ikumi")
+    if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 2){
+        msgbox(format("{COLOR RED}Continuing this quest will fast forward the clock at least 4 hours.\p
+        Do you want to proceed?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            goto(Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start)
+        }
+    }
+    if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 3){
+        faceplayer
+        msgbox(format("You're back! Let's hop on my Lapras to go back to Coralport Cave entrance!"))
+        closemessage
+    }
+    if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 4){
+        faceplayer
+        msgbox(format("You need to stock up on healing items? Feel free to hop on my Lapras to go back to the main land.\p
+        Please come back soon, though.\l
+        My daughter is still in there."))
+    }
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start {
+    applymovement(27, walkinplaceright)
+    msgbox(format("How is it now, Growlithe?"))
+    closemessage
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+    applymovement(28, jumpinplaceleft)
+    waitmovement
+    delay(30)
+    applymovement(28, faceright)
+    special(SpawnCameraObject)
+    applymovement(LOCALID_CAMERA, moves(walk_diag_northeast*5))
+    waitmovement
+    delay(40)
+    applymovement(LOCALID_CAMERA, moves(walk_diag_southwest*5))
+    waitmovement
+    delay(20)
+    setspeaker("Ikumi")
+    msgbox(format("You mean Misa is in that cave over there?"))
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+    applymovement(28, jumpinplaceleft)
+    waitmovement
+    setspeaker("Ikumi")
+    msgbox(format("Alright!"))
+    closemessage
+    applymovement(27, walkright)
+    applymovement(28, moves(face_down, lock_facing_direction, walk_up, unlock_facing_direction))
+    waitmovement
+    delay(20)
+    clearflag(FLAG_TEMP_4)
+    playse(SE_BALL_OPEN)
+    addobject(26)
+    applymovement(26, moves(set_invisible, exit_pokeball, set_visible, face_left))
+    waitmovement
+    playmoncry(SPECIES_LAPRAS, CRY_MODE_NORMAL)
+    waitmoncry
+    lock
+    setobjectnewmovementtype(26, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
+    release
+    delay(30)
+    applymovement(27, moves(walk_left, face_player))
+    waitmovement
+    setspeaker("Ikumi")
+    msgbox(format("Lapras can carry all of us. Let us proceed then!"))
+    closemessage
+    applymovement(28, shakehorizontal)
+    waitmovement
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_WEAK)
+    waitmoncry
+    applymovement(27, faceright)
+    waitmovement
+    setspeaker("Ikumi")
+    msgbox(format("What's wrong, Growlithe?\p
+    Oh, right. You're scared of water, aren't you?\p
+    Well... I don't have your Pokéball and returning to your owner to get it would be time-wasting...\p
+    Can you wait for us here?"))
+    closemessage
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+    applymovement(28, walkinplacedown)
+    waitmovement
+    setspeaker("Ikumi")
+    msgbox(format("Thank you, you're such a good boy."))
+    applymovement(27, moves(face_player))
+    msgbox(format("Let's go, my daughter is waiting!"))
+    closemessage
+    setvar(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 4) //3 = lapras by the beach, 4 = lapras by the cave entrance
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    warp(MAP_CORALPORT_CAVE, 0)
+    waitstate
+}
+
+movement jumpinplacedown {
+    jump_in_place_down
+}
+
+script Coralport_Eventscript_Growlithe {
+    lock
+    if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 2){
+        setflag(FLAG_HIDE_QUEST_ICON)
+        msgbox(format("{COLOR RED}Continuing this quest will fast forward the clock at least 4 hours.\p
+        Do you want to proceed?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            applymovement(LOCALID_PLAYER, moves(walk_left, face_up))
+            waitmovement
+            goto(Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start)
+        }
+        else{
+            closemessage
+            clearflag(FLAG_HIDE_QUEST_ICON)
+            release
+            refreshquesticon
+            end
+        }
+    }
+    else{
+        playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+        waitmoncry
+        msgbox(format("Growlithe looks worried. It seems like it won't go back to its owner until you rescue Misa.\p
+        What a good boy!"))
+        closemessage
+    }
+    release
+    end
+}
+
+script Coralport_Eventscript_Lapras {
+    if(var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 3){ //by the beach
+        msgbox(format("Hop on Lapras and go to Coralport Cave entrance?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            playmoncry(SPECIES_LAPRAS, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(26, walkright)
+            waitmovement
+            delay(4)
+            applymovement(LOCALID_PLAYER, walkright)
+            waitmovement
+            setvar(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 4)
+            warpsilent(MAP_CORALPORT, 41, 25)
+            waitstate
+        }
+    }
+    if(var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) >= 4){ //by the cave entrance
+        msgbox(format("Hop on Lapras and go back to the main land?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            playmoncry(SPECIES_LAPRAS, CRY_MODE_NORMAL)
+            waitmoncry
+            applymovement(26, walkdown)
+            waitmovement
+            delay(4)
+            applymovement(LOCALID_PLAYER, walkdown)
+            waitmovement
+            setvar(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 3)
+            warpsilent(MAP_CORALPORT, 36, 28)
+            waitstate
+        }
+    }
+    end
+}
+
+script Coralport_Eventscript_ConfirmEnterCave {
+    lock
+    msgbox(format("{COLOR GREEN}Once you enter this cave, leaving it will fast forward the clock by {COLOR RED}4 hours{COLOR GREEN}.\p
+    Do you want to proceed?"), MSGBOX_YESNO)
+    if (!var(VAR_RESULT)){
+        applymovement(LOCALID_PLAYER, walkright)
+        waitmovement
+        release
+        end
+    }
+    else{
+        release
+        end
+    }
+}
+
+script Coralport_Eventscript_CaveSign {
+    lock
+    msgbox(format("{CLEAR_TO 60}Coralport Cave\n
+    {CLEAR_TO 45}{COLOR GREEN}Time forwarding: {COLOR RED}4 hours{COLOR GREEN}."))
+    closemessage
+    release
+    end
+}
+
+script Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe {
+    applymovement(LOCALID_PLAYER, moves(walk_slow_down*4))
+    waitmovement
+    delay(30)
+    applymovement(27, walkinplacedown)
+    waitmovement
+    setspeaker("Ikumi")
+    msgbox(format("Thank you so much for saving my family back there.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}You're welcome, Ikumi-san.\n
+    We're glad that Misa was found safely."))
+    setspeaker("Ikumi")
+    msgbox(format("{DESTROY_MUGSHOT}Indeed, indeed."))
+    closemessage
+    applymovement(27, faceleft)
+    applymovement(28, faceright)
+    setspeaker("Ikumi")
+    msgbox(format("Thanks to you too, Growlithe! Without you, I wouldn't even know where she went to."))
+    closemessage
+    playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+    applymovement(28, moves(emote_music, walk_in_place_right))
+    waitmovement
+    applymovement(28, facedown)
+    lock
+    setobjectnewmovementtype(28, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+    release
+    applymovement(27, facedown)
+    waitmovement
+    setspeaker("Ikumi")
+    msgbox(format("Now I have to return the Growlithe to the policeman.\p
+    Please make sure to come by my house later. I want to give you all something.\p
+    Misa and Wooper would also be really happy to see you.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}We will!"))
+    closemessage
+    applymovement(28, walkinplacedown)
+    waitmovement
+    delay(30)
+    applymovement(27, moves(walk_in_place_left, delay_16, delay_16, walk_up, set_invisible))
+    applymovement(28, moves(walk_in_place_right, delay_16, delay_16, walk_right, walk_up, set_invisible))
+    waitmovement(27)
+    playse(SE_EXIT)
+    waitmovement(28)
+    playse(SE_EXIT)
+    removeobject(27)
+    delay(1)
+    removeobject(28)
+    delay(30)
+    applymovement(LOCALID_PLAYER, moves(walk_down, set_visible))
+    applymovement(S_CORAL, moves(walk_left, set_invisible))
+    applymovement(A_CORAL, moves(walk_right, face_down, set_invisible))
+    applymovement(M_CORAL, moves(face_down, set_invisible))
+    waitmovement(LOCALID_PLAYER)
+    removeobject(S_CORAL)
+    delay(1)
+    removeobject(A_CORAL)
+    delay(1)
+    removeobject(M_CORAL)
+    delay(1)
+    setvar(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 7)
+    questmenu(QUEST_MENU_SET_REWARD, QUEST_FIND_FISHERMANS_DAUGHTER)
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    fadedefaultbgm
+    delay(30)
+    setseenmon(SPECIES_GROWLITHE)
+    setseenmon(SPECIES_WOOPER_PALDEA)
+    setseenmon(SPECIES_CLODSIRE)
+    special(ShowMapNamePopup)
     release
     end
 }

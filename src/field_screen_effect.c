@@ -452,14 +452,14 @@ static void Task_ExitNonDoor(u8 taskId)
     }
 }
 
-static void Task_WaitForFadeShowStartMenu(u8 taskId)
+/*static void Task_WaitForFadeShowStartMenu(u8 taskId)
 {
     if (WaitForWeatherFadeIn() == TRUE)
     {
         DestroyTask(taskId);
         CreateTask(Task_ShowStartMenu, 80);
     }
-}
+}*/
 
 void ReturnToFieldOpenStartMenu(void)
 {
@@ -1354,7 +1354,7 @@ static const struct WindowTemplate sWindowTemplate_WhiteoutText =
     .baseBlock = 1,
 };
 
-static const u8 sWhiteoutTextColors[] = { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY };
+static const u8 sWhiteoutTextColors[] = { TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, 0 };
 
 #define tState         data[0]
 #define tWindowId      data[1]
@@ -1421,8 +1421,6 @@ static void Task_RushInjuredPokemonToCenter(u8 taskId)
         FillWindowPixelBuffer(windowId, PIXEL_FILL(0));
         PutWindowTilemap(windowId);
         CopyWindowToVram(windowId, COPYWIN_FULL);
-
-        gTasks[taskId].tIsPlayerHouse = IsLastHealLocationPlayerHouse();
         gTasks[taskId].tState = WHITEOUT_CUTSCENE_PRINT_MSG;
         break;
     case WHITEOUT_CUTSCENE_PRINT_MSG:
@@ -1447,11 +1445,7 @@ static void Task_RushInjuredPokemonToCenter(u8 taskId)
     case WHITEOUT_CUTSCENE_HEAL_SCRIPT:
         if (WaitForWeatherFadeIn() == TRUE)
         {
-            DestroyTask(taskId);
-            if (gTasks[taskId].tIsPlayerHouse)
-                ScriptContext_SetupScript(EventScript_AfterWhiteOutMomHeal);
-            else
-                ScriptContext_SetupScript(EventScript_AfterWhiteOutHeal);
+            ScriptContext_SetupScript(EventScript_AfterWhiteOutHeal);
         }
         break;
     }

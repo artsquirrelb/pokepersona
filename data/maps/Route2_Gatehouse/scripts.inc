@@ -5,7 +5,7 @@ Route2_Gatehouse_MapScripts::
 
 Route2_Gatehouse_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/Route2_Gatehouse/scripts.pory"
-	setrespawn HEAL_LOCATION_ROUTE2_GATEHOUSE
+	setrespawn HEAL_LOCATION_ROUTE2_2
 	return
 
 

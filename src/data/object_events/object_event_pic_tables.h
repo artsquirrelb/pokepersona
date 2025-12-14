@@ -1471,3 +1471,7 @@ static const struct SpriteFrameImage gObjectEventPicTable_NeckBeard[] = {
 static const struct SpriteFrameImage gObjectEventPicTable_Mitsuru_Sleeping[] = {
     overworld_frame(gObjectEventPic_Mitsuru_Sleeping, 4, 4, 0),
 };
+
+static const struct SpriteFrameImage gObjectEventPicTable_PoliceChief[] = {
+    overworld_ascending_frames(gObjectEventPic_PoliceChief, 4, 4),
+};

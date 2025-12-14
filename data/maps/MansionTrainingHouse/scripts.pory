@@ -1,6 +1,6 @@
 mapscripts MansionTrainingHouse_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
-        setrespawn(HEAL_LOCATION_MANSION_TRAINING_HOUSE)
+        setrespawn(HEAL_LOCATION_MANSIONS_GARDEN)
     }
 }
 

@@ -118,7 +118,7 @@
 #define VAR_UNUSED_0X4062                                0x4062 // Unused Var
 #define VAR_AMEAME_CANDY_SHOP                            0x4063
 #define VAR_AMEAME_CANDY_SHOP_QUEST_STATE                0x4064 // Unused Var
-#define VAR_ROUTE106_STATE                               0x4065 // Unused Var
+#define VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE         0x4065 // Unused Var
 #define VAR_ROUTE107_STATE                               0x4066 // Unused Var
 #define VAR_ROUTE108_STATE                               0x4067 // Unused Var
 #define VAR_ROUTE109_STATE                               0x4068 // Unused Var

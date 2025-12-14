@@ -1478,6 +1478,10 @@
     {
       "id": "MAPSEC_THUNDERSHARDS_CLIFF_CAVE_2F",
       "name": "Thundershard Cave 2F"
+    },
+    {
+      "id": "MAPSEC_CORALPORT_CAVE",
+      "name": "Coralport Cave"
     }
   ]
 }

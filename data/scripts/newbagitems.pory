@@ -1,52 +1,68 @@
 script EventScript_CampGears{
     if (var(VAR_AKIHIKOS_INTRO_STATE) < 100 && var(VAR_MITSURUS_INTRO_STATE) < 100){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping)."))
+        checkplayergender
+        if(var(VAR_RESULT) == MALE){
+            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping.)"))
+        }
+        else{
+            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Now is not the time for camping.)"))
+        }
+        closemessage
+    }
+    callnative (ScrCmd_CanNotUseCampGears)
+    if (var(VAR_RESULT)){
+        playse(SE_BOO)
+        checkplayergender
+        if(var(VAR_RESULT) == MALE){
+            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}(I can't set up a camp here.)"))
+        }
+        else{
+            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_GEEZ}(I shouldn't camp here.)"))
+        }
         closemessage
     }
     else{
-	    msgbox (gText_WaitUntilTime)
+        playse(SE_SELECT)
+	    msgbox ("Set up camp and wait until?")
 	    multichoice (25, 4, MULTI_TIME_OF_DAY, 0)
 	    closemessage
         if (var(VAR_RESULT) == 0){
             fwdtime(MORNING_HOUR_BEGIN, 0)
-            fadescreenswapbuffers(FADE_TO_BLACK)
-            delay(60)
-            special(DrawWholeMapView)
-            fadescreenswapbuffers(FADE_FROM_BLACK)
+            special(SetCB2LoadMap)
+            callnative(RunOnResumeMapScript)
+            call(EventScript_CheckDaysLeft)
         }
         elif(var(VAR_RESULT) == 1){
             fwdtime(DAY_HOUR_BEGIN, 0)
-            fadescreenswapbuffers(FADE_TO_BLACK)
-            delay(60)
-            special(DrawWholeMapView)
-            fadescreenswapbuffers(FADE_FROM_BLACK)
+            special(SetCB2LoadMap)
+            callnative(RunOnResumeMapScript)
+            call(EventScript_CheckDaysLeft)
         }
         elif(var(VAR_RESULT) == 2){
             fwdtime(EVENING_HOUR_BEGIN, 0)
-            fadescreenswapbuffers(FADE_TO_BLACK)
-            delay(60)
-            special(DrawWholeMapView)
-            fadescreenswapbuffers(FADE_FROM_BLACK)
+            special(SetCB2LoadMap)
+            callnative(RunOnResumeMapScript)
+            call(EventScript_CheckDaysLeft)
         }
         elif(var(VAR_RESULT) == 3){
             fwdtime(NIGHT_HOUR_BEGIN, 0)
-            fadescreenswapbuffers(FADE_TO_BLACK)
-            delay(60)
-            special(DrawWholeMapView)
-            fadescreenswapbuffers(FADE_FROM_BLACK)
+            special(SetCB2LoadMap)
+            callnative(RunOnResumeMapScript)
+            call(EventScript_CheckDaysLeft)
         }
         else{
             playse(SE_PC_OFF)
             waitse
         }
-    call(EventScript_CheckDaysLeft)
-    end
     }
+    updatefollowingmon
+    release
+    end
 }
 
 script EventScript_TellTheTimeDayHourMinute{
 	callnative (Script_CalculateTime)
-	msgbox(format("{STR_VAR_1}, {STR_VAR_2}:{STR_VAR_3}.\n"))
+	msgbox(format("{STR_VAR_1}, {STR_VAR_2}:{STR_VAR_3}."))
 	closemessage
 }
 

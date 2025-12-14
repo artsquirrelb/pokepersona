@@ -21,7 +21,7 @@
 #define TRAINER_MIYU_2                       15
 #define TRAINER_KG_STAFF_SUNSHINE_WOODS_1         16
 #define TRAINER_KG_STAFF_SUNSHINE_WOODS_2         17
-#define TRAINER_GRUNT_WEATHER_INST_2         18
+#define TRAINER_DUSCLOPS_HORDE         18
 #define TRAINER_GRUNT_WEATHER_INST_3         19
 #define TRAINER_GRUNT_MUSEUM_1               20
 #define TRAINER_GRUNT_MUSEUM_2               21

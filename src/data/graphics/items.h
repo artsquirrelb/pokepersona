@@ -167,6 +167,8 @@ const u16 gItemIconPalette_SweetHeart[] = INCBIN_U16("graphics/items/icon_palett
 const u32 gItemIcon_MaxHoney[] = INCBIN_U32("graphics/items/icons/max_honey.4bpp.smol");
 const u16 gItemIconPalette_MaxHoney[] = INCBIN_U16("graphics/items/icon_palettes/max_honey.gbapal");
 
+const u32 gItemIcon_SmileCandy[] = INCBIN_U32("graphics/items/icons/smile_candy.4bpp.smol"); //use aspear_berry's palette
+
 // Regional Specialties
 
 const u32 gItemIcon_PewterCrunchies[] = INCBIN_U32("graphics/items/icons/pewter_crunchies.4bpp.smol");

@@ -255,7 +255,7 @@
 #define FLAG_RECEIVED_TM_ROAR                0xE7
 #define FLAG_RECEIVED_TM_GIGA_DRAIN          0xE8
 
-#define FLAG_HIDE_POLICEMEN_SUNSHINE_WOODS   0xE9 // Was Unused Flag
+#define FLAG_HIDE_POLICEMEN_SUNSHINE_WOODS   0xE9 // Unused Flag
 
 #define FLAG_RECEIVED_TM_REST                0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
@@ -1369,7 +1369,7 @@
 // Towns and Cities
 #define FLAG_VISITED_SUNSHINE_TOWN                  (SYSTEM_FLAGS + 0xF)
 #define FLAG_VISITED_CORALPORT                      (SYSTEM_FLAGS + 0x10)
-#define FLAG_VISITED_DEWFORD_TOWN                   (SYSTEM_FLAGS + 0x11)
+#define FLAG_VISITED_WINDWARD_PORT                   (SYSTEM_FLAGS + 0x11)
 #define FLAG_VISITED_LAVARIDGE_TOWN                 (SYSTEM_FLAGS + 0x12)
 #define FLAG_VISITED_FALLARBOR_TOWN                 (SYSTEM_FLAGS + 0x13)
 #define FLAG_VISITED_VERDANTURF_TOWN                (SYSTEM_FLAGS + 0x14)

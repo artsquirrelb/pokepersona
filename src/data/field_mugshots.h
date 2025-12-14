@@ -18,7 +18,7 @@ static const u32 sFieldMugshotGfx_MitsuruConfident[] = INCBIN_U32("graphics/fiel
 static const u32 sFieldMugshotGfx_MitsuruGeez[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/geez.4bpp.lz");
 
 static const u16 sFieldMugshotPal_MitsuruNormal[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/normal.gbapal");
-static const u16 sFieldMugshotPal_MitsuruHappy[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/happy.gbapal");
+/*static const u16 sFieldMugshotPal_MitsuruHappy[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/happy.gbapal");
 static const u16 sFieldMugshotPal_MitsuruSad[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/sad.gbapal");
 static const u16 sFieldMugshotPal_MitsuruMad[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/mad.gbapal");
 static const u16 sFieldMugshotPal_MitsuruSurprised[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/surprised.gbapal");
@@ -27,7 +27,9 @@ static const u16 sFieldMugshotPal_MitsuruSilhouette[] = INCBIN_U16("graphics/fie
 static const u16 sFieldMugshotPal_MitsuruStruggled[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/struggled.gbapal");
 static const u16 sFieldMugshotPal_MitsuruSerious[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/serious.gbapal");
 static const u16 sFieldMugshotPal_MitsuruConfident[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/confident.gbapal");
-static const u16 sFieldMugshotPal_MitsuruGeez[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/geez.gbapal");
+static const u16 sFieldMugshotPal_MitsuruGeez[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/geez.gbapal");*/ 
+
+//these all use the same palette smh
 
 
 //Akihiko
@@ -43,10 +45,11 @@ static const u32 sFieldMugshotGfx_AkihikoSmile[] = INCBIN_U32("graphics/field_mu
 static const u32 sFieldMugshotGfx_AkihikoStruggled[] = INCBIN_U32("graphics/field_mugshots/Akihiko/struggled.4bpp.lz");
 static const u32 sFieldMugshotGfx_AkihikoSerious[] = INCBIN_U32("graphics/field_mugshots/Akihiko/serious.4bpp.lz");
 static const u32 sFieldMugshotGfx_AkihikoConfident[] = INCBIN_U32("graphics/field_mugshots/Akihiko/confident.4bpp.lz");
+static const u32 sFieldMugshotGfx_AkihikoCry[] = INCBIN_U32("graphics/field_mugshots/Akihiko/cry.4bpp.lz");
 
 
 static const u16 sFieldMugshotPal_AkihikoNormal[] = INCBIN_U16("graphics/field_mugshots/Akihiko/normal.gbapal");
-static const u16 sFieldMugshotPal_AkihikoHappy[] = INCBIN_U16("graphics/field_mugshots/Akihiko/happy.gbapal");
+/*static const u16 sFieldMugshotPal_AkihikoHappy[] = INCBIN_U16("graphics/field_mugshots/Akihiko/happy.gbapal");
 static const u16 sFieldMugshotPal_AkihikoSad[] = INCBIN_U16("graphics/field_mugshots/Akihiko/sad.gbapal");
 static const u16 sFieldMugshotPal_AkihikoMad[] = INCBIN_U16("graphics/field_mugshots/Akihiko/mad.gbapal");
 static const u16 sFieldMugshotPal_AkihikoDoubt[] = INCBIN_U16("graphics/field_mugshots/Akihiko/doubt.gbapal");
@@ -56,7 +59,7 @@ static const u16 sFieldMugshotPal_AkihikoDarkened[] = INCBIN_U16("graphics/field
 static const u16 sFieldMugshotPal_AkihikoSmile[] = INCBIN_U16("graphics/field_mugshots/Akihiko/smile.gbapal");
 static const u16 sFieldMugshotPal_AkihikoStruggled[] = INCBIN_U16("graphics/field_mugshots/Akihiko/struggled.gbapal");
 static const u16 sFieldMugshotPal_AkihikoSerious[] = INCBIN_U16("graphics/field_mugshots/Akihiko/serious.gbapal");
-static const u16 sFieldMugshotPal_AkihikoConfident[] = INCBIN_U16("graphics/field_mugshots/Akihiko/confident.gbapal");
+static const u16 sFieldMugshotPal_AkihikoConfident[] = INCBIN_U16("graphics/field_mugshots/Akihiko/confident.gbapal");*/
 
 //Shinjiro
 static const u32 sFieldMugshotGfx_ShinjiroNormal[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/normal.4bpp.lz");
@@ -70,14 +73,14 @@ static const u32 sFieldMugshotGfx_ShinjiroConfident[] = INCBIN_U32("graphics/fie
 static const u32 sFieldMugshotGfx_ShinjiroGeez[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/geez.4bpp.lz");
 
 static const u16 sFieldMugshotPal_ShinjiroNormal[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/normal.gbapal");
-static const u16 sFieldMugshotPal_ShinjiroMad[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/mad.gbapal");
+/*static const u16 sFieldMugshotPal_ShinjiroMad[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/mad.gbapal");
 static const u16 sFieldMugshotPal_ShinjiroDoubt[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/doubt.gbapal");
 static const u16 sFieldMugshotPal_ShinjiroSurprised[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/surprised.gbapal");
 static const u16 sFieldMugshotPal_ShinjiroSmile[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/smile.gbapal");
 static const u16 sFieldMugshotPal_ShinjiroStruggled[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/struggled.gbapal");
 static const u16 sFieldMugshotPal_ShinjiroSerious[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/serious.gbapal");
 static const u16 sFieldMugshotPal_ShinjiroConfident[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/confident.gbapal");
-static const u16 sFieldMugshotPal_ShinjiroGeez[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/geez.gbapal");
+static const u16 sFieldMugshotPal_ShinjiroGeez[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/geez.gbapal");*/
 
 //Inteleon
 static const u32 sFieldMugshotGfx_InteleonNormal[] = INCBIN_U32("graphics/field_mugshots/Inteleon/normal.4bpp.lz");
@@ -85,8 +88,8 @@ static const u32 sFieldMugshotGfx_InteleonDoubt[] = INCBIN_U32("graphics/field_m
 static const u32 sFieldMugshotGfx_InteleonSerious[] = INCBIN_U32("graphics/field_mugshots/Inteleon/serious.4bpp.lz");
 
 static const u16 sFieldMugshotPal_InteleonNormal[] = INCBIN_U16("graphics/field_mugshots/Inteleon/normal.gbapal");
-static const u16 sFieldMugshotPal_InteleonDoubt[] = INCBIN_U16("graphics/field_mugshots/Inteleon/doubt.gbapal");
-static const u16 sFieldMugshotPal_InteleonSerious[] = INCBIN_U16("graphics/field_mugshots/Inteleon/serious.gbapal");
+/*static const u16 sFieldMugshotPal_InteleonDoubt[] = INCBIN_U16("graphics/field_mugshots/Inteleon/doubt.gbapal");
+static const u16 sFieldMugshotPal_InteleonSerious[] = INCBIN_U16("graphics/field_mugshots/Inteleon/serious.gbapal");*/
 
 struct MugshotGfx
 {
@@ -112,60 +115,60 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         [EMOTE_HAPPY] =
         {
             .gfx = sFieldMugshotGfx_MitsuruHappy,
-            .pal = sFieldMugshotPal_MitsuruHappy,
+            .pal = sFieldMugshotPal_MitsuruNormal,
         },
 
         [EMOTE_SAD] =
         {
             .gfx = sFieldMugshotGfx_MitsuruSad,
-            .pal = sFieldMugshotPal_MitsuruSad,
+            .pal = sFieldMugshotPal_MitsuruNormal,
         },
 
         [EMOTE_MAD] =
         {
             .gfx = sFieldMugshotGfx_MitsuruMad,
-            .pal = sFieldMugshotPal_MitsuruMad,
+            .pal = sFieldMugshotPal_MitsuruNormal,
         },
 
         [EMOTE_SURPRISED] =
         {
             .gfx = sFieldMugshotGfx_MitsuruSurprised,
-            .pal = sFieldMugshotPal_MitsuruSurprised,
+            .pal = sFieldMugshotPal_MitsuruNormal,
         },
 
         [EMOTE_SMILE] =
         {
             .gfx = sFieldMugshotGfx_MitsuruSmile,
-            .pal = sFieldMugshotPal_MitsuruSmile,
+            .pal = sFieldMugshotPal_MitsuruNormal,
         },
 
         [EMOTE_SILHOUETTE] =
         {
             .gfx = sFieldMugshotGfx_MitsuruSilhouette,
-            .pal = sFieldMugshotPal_MitsuruSilhouette,
+            .pal = sFieldMugshotPal_MitsuruNormal,
         },
 
         [EMOTE_STRUGGLED] =
         {
             .gfx = sFieldMugshotGfx_MitsuruStruggled,
-            .pal = sFieldMugshotPal_MitsuruStruggled,
+            .pal = sFieldMugshotPal_MitsuruNormal,
         },
 
         [EMOTE_SERIOUS] =
         {
             .gfx = sFieldMugshotGfx_MitsuruSerious,
-            .pal = sFieldMugshotPal_MitsuruSerious,
+            .pal = sFieldMugshotPal_MitsuruNormal,
         },
 
         [EMOTE_CONFIDENT] =
         {
             .gfx = sFieldMugshotGfx_MitsuruConfident,
-            .pal = sFieldMugshotPal_MitsuruConfident,
+            .pal = sFieldMugshotPal_MitsuruNormal,
         },
         [EMOTE_GEEZ] =
         {
             .gfx = sFieldMugshotGfx_MitsuruGeez,
-            .pal = sFieldMugshotPal_MitsuruGeez,
+            .pal = sFieldMugshotPal_MitsuruNormal,
         },
     },
     
@@ -181,67 +184,73 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         [EMOTE_HAPPY] =
         {
             .gfx = sFieldMugshotGfx_AkihikoHappy,
-            .pal = sFieldMugshotPal_AkihikoHappy,
+            .pal = sFieldMugshotPal_AkihikoNormal,
         },
 
         [EMOTE_SAD] =
         {
             .gfx = sFieldMugshotGfx_AkihikoSad,
-            .pal = sFieldMugshotPal_AkihikoSad,
+            .pal = sFieldMugshotPal_AkihikoNormal,
         },
 
         [EMOTE_MAD] =
         {
             .gfx = sFieldMugshotGfx_AkihikoMad,
-            .pal = sFieldMugshotPal_AkihikoMad,
+            .pal = sFieldMugshotPal_AkihikoNormal,
         },
 
         [EMOTE_TIRED] =
         {
             .gfx = sFieldMugshotGfx_AkihikoTired,
-            .pal = sFieldMugshotPal_AkihikoTired,
+            .pal = sFieldMugshotPal_AkihikoNormal,
         },
 
         [EMOTE_SURPRISED] =
         {
             .gfx = sFieldMugshotGfx_AkihikoSurprised,
-            .pal = sFieldMugshotPal_AkihikoSurprised,
+            .pal = sFieldMugshotPal_AkihikoNormal,
         },
 
         [EMOTE_DOUBT] =
         {
             .gfx = sFieldMugshotGfx_AkihikoDoubt,
-            .pal = sFieldMugshotPal_AkihikoDoubt,
+            .pal = sFieldMugshotPal_AkihikoNormal,
         },
 
         [EMOTE_DARKENED] =
         {
             .gfx = sFieldMugshotGfx_AkihikoDarkened,
-            .pal = sFieldMugshotPal_AkihikoDarkened,
+            .pal = sFieldMugshotPal_AkihikoNormal,
         },
 
         [EMOTE_SMILE] =
         {
             .gfx = sFieldMugshotGfx_AkihikoSmile,
-            .pal = sFieldMugshotPal_AkihikoSmile,
+            .pal = sFieldMugshotPal_AkihikoNormal,
         },
 
         [EMOTE_STRUGGLED] =
         {
             .gfx = sFieldMugshotGfx_AkihikoStruggled,
-            .pal = sFieldMugshotPal_AkihikoStruggled,
+            .pal = sFieldMugshotPal_AkihikoNormal,
         },
 
         [EMOTE_SERIOUS] =
         {
             .gfx = sFieldMugshotGfx_AkihikoSerious,
-            .pal = sFieldMugshotPal_AkihikoSerious,
+            .pal = sFieldMugshotPal_AkihikoNormal,
         },
 
         [EMOTE_CONFIDENT] =
         {
             .gfx = sFieldMugshotGfx_AkihikoConfident,
-            .pal = sFieldMugshotPal_AkihikoConfident,
+            .pal = sFieldMugshotPal_AkihikoNormal,
+        },
+
+        [EMOTE_CRY] =
+        {
+            .gfx = sFieldMugshotGfx_AkihikoCry,
+            .pal = sFieldMugshotPal_AkihikoNormal,
         },
     },
 
@@ -258,49 +267,49 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         [EMOTE_MAD] =
         {
             .gfx = sFieldMugshotGfx_ShinjiroMad,
-            .pal = sFieldMugshotPal_ShinjiroMad,
+            .pal = sFieldMugshotPal_ShinjiroNormal,
         },
 
         [EMOTE_SURPRISED] =
         {
             .gfx = sFieldMugshotGfx_ShinjiroSurprised,
-            .pal = sFieldMugshotPal_ShinjiroSurprised,
+            .pal = sFieldMugshotPal_ShinjiroNormal,
         },
 
         [EMOTE_DOUBT] =
         {
             .gfx = sFieldMugshotGfx_ShinjiroDoubt,
-            .pal = sFieldMugshotPal_ShinjiroDoubt,
+            .pal = sFieldMugshotPal_ShinjiroNormal,
         },
 
         [EMOTE_SMILE] =
         {
             .gfx = sFieldMugshotGfx_ShinjiroSmile,
-            .pal = sFieldMugshotPal_ShinjiroSmile,
+            .pal = sFieldMugshotPal_ShinjiroNormal,
         },
 
         [EMOTE_STRUGGLED] =
         {
             .gfx = sFieldMugshotGfx_ShinjiroStruggled,
-            .pal = sFieldMugshotPal_ShinjiroStruggled,
+            .pal = sFieldMugshotPal_ShinjiroNormal,
         },
 
         [EMOTE_SERIOUS] =
         {
             .gfx = sFieldMugshotGfx_ShinjiroSerious,
-            .pal = sFieldMugshotPal_ShinjiroSerious,
+            .pal = sFieldMugshotPal_ShinjiroNormal,
         },
 
         [EMOTE_CONFIDENT] =
         {
             .gfx = sFieldMugshotGfx_ShinjiroConfident,
-            .pal = sFieldMugshotPal_ShinjiroConfident,
+            .pal = sFieldMugshotPal_ShinjiroNormal,
         },
 
         [EMOTE_GEEZ] =
         {
             .gfx = sFieldMugshotGfx_ShinjiroGeez,
-            .pal = sFieldMugshotPal_ShinjiroGeez,
+            .pal = sFieldMugshotPal_ShinjiroNormal,
         },
     },
 
@@ -316,13 +325,13 @@ static const struct MugshotGfx sFieldMugshots[MUGSHOT_COUNT][EMOTE_COUNT] =
         [EMOTE_DOUBT] =
         {
             .gfx = sFieldMugshotGfx_InteleonDoubt,
-            .pal = sFieldMugshotPal_InteleonDoubt,
+            .pal = sFieldMugshotPal_InteleonNormal,
         },
 
         [EMOTE_SERIOUS] =
         {
             .gfx = sFieldMugshotGfx_InteleonSerious,
-            .pal = sFieldMugshotPal_InteleonSerious,
+            .pal = sFieldMugshotPal_InteleonNormal,
         },
     },
 };

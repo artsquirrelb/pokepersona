@@ -1373,7 +1373,7 @@ const u8 gText_StoryQuests[] = _("Story Quests");
 const u8 gText_SideQuest1_Name[] = _("My Pokémon Wants To Play!");
 const u8 gText_SideQuest2_Name[] = _("Please Help Me Find My Daughter!");
 const u8 gText_SideQuest3_Name[] = _("Working at AmeAme Candy Shop");
-const u8 gText_SideQuestName_5[] = _("Side Quest 5");
+const u8 gText_SideQuest4_Name[] = _("Buy a Smile Candy for Misa");
 const u8 gText_SideQuestName_6[] = _("Side Quest 6");
 const u8 gText_SideQuestName_7[] = _("Side Quest 7");
 const u8 gText_SideQuestName_8[] = _("Side Quest 8");
@@ -1411,8 +1411,10 @@ const u8 gText_StoryQuestsDesc7[] = _("Currently: Chapter 5");
 const u8 gText_StoryQuestsDesc8[] = _("Currently: Chapter 6");
 const u8 gText_StoryQuestsDesc9[] = _("Currently: Chapter 7");
 const u8 gText_StoryQuestsDesc10[] = _("Currently: Chapter 8");
+
 const u8 gText_SideQuest1_Desc[] = _("Play with the Riolu on 2F.\nReward: Soothe Bell x1.");
-const u8 gText_SideQuest2_Desc[] = _("The fisherman's daughter\nhas gone missing.\nReward: Old Rod.");
+
+const u8 gText_SideQuest2_Desc[] = _("Follow the Growlithe to find the\nfisherman's daughter!\nReward: Old Rod.");
 
 const u8 gText_SideQuest3_Desc0[] = _("Work part-time at AmeAme.\n0/10 time worked.\nReward: Candy Jar.");
 const u8 gText_SideQuest3_Desc1[] = _("Work part-time at AmeAme.\n1/10 time worked.\nReward: Candy Jar.");
@@ -1426,7 +1428,8 @@ const u8 gText_SideQuest3_Desc8[] = _("Work part-time at AmeAme.\n8/10 times wor
 const u8 gText_SideQuest3_Desc9[] = _("Work part-time at AmeAme.\n9/10 times worked.\nReward: Candy Jar.");
 const u8 gText_SideQuest3_Desc10[] = _("Work part-time at AmeAme.\n10/10 times worked.\nReward: Candy Jar.");
 
-const u8 gText_SideQuestDesc_5[] = _("Description 5");
+const u8 gText_SideQuest4_Desc[] = _("Help Misa cheer up her Wooper.\nA Smile Candy will do.\nReward: Good Rod.");
+
 const u8 gText_SideQuestDesc_6[] = _("Description 6");
 const u8 gText_SideQuestDesc_7[] = _("Description 7");
 const u8 gText_SideQuestDesc_8[] = _("Description 8");
@@ -1458,7 +1461,7 @@ const u8 gText_StoryQuestsDone[]        = _("Story Quests completed.");
 const u8 gText_SideQuest1_DoneDesc[]    = _("Riolu is satisfied and fell\nasleep.\nReceived: Soothe Bell x1.");
 const u8 gText_SideQuest2_DoneDesc[]    = _("The daughter has been found\nsafely.\nReceived: Old Rod.");
 const u8 gText_SideQuest3_DoneDesc[]    = _("You've been a great help. Feel free\nto continue working at AmeAme.\nReceived: Candy Jar.");
-const u8 gText_SideQuestDoneDesc_5[]    = _("Completed Quest 5");
+const u8 gText_SideQuest4_DoneDesc[]    = _("Wooper starts smiling more and\nMisa's also very happy.\nReceived: Good Rod.");
 const u8 gText_SideQuestDoneDesc_6[] = _("Completed Quest 6");
 const u8 gText_SideQuestDoneDesc_7[] = _("Completed Quest 7");
 const u8 gText_SideQuestDoneDesc_8[] = _("Completed Quest 8");

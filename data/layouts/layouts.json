@@ -5772,6 +5772,30 @@
       "secondary_tileset": "gTileset_Coralport_PoliceStation",
       "border_filepath": "data/layouts/CoralportPoliceStation/border.bin",
       "blockdata_filepath": "data/layouts/CoralportPoliceStation/map.bin"
+    },
+    {
+      "id": "LAYOUT_CORALPORT_CAVE",
+      "name": "CoralportCave_Layout",
+      "width": 40,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Dungeon",
+      "secondary_tileset": "gTileset_StoneCave",
+      "border_filepath": "data/layouts/CoralportCave/border.bin",
+      "blockdata_filepath": "data/layouts/CoralportCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDWARD_PORT",
+      "name": "WindwardPort_Layout",
+      "width": 40,
+      "height": 40,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_Coralport",
+      "border_filepath": "data/layouts/WindwardPort/border.bin",
+      "blockdata_filepath": "data/layouts/WindwardPort/map.bin"
     }
   ]
 }

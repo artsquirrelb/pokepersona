@@ -357,22 +357,47 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Fake Tears
 - Round
 
-=== TRAINER_GRUNT_WEATHER_INST_2 ===
-Name: GRUNT
-Class: Team Magma
-Pic: Aqua Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Basic Trainer
+=== TRAINER_DUSCLOPS_HORDE ===
+Name: Dusclops
+Class: Horde
+Pic: Dusclops Horde
+Music: Intense
+Double Battle: Yes
+AI: AI_FLAG_DOUBLE_BATTLE / AI_FLAG_SMART_TRAINER
 
-Poochyena
-Level: 27
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Duskull @ ITEM_WIDE_LENS
+Level: 11
+IVs: 15 HP / 15 Atk / 31 Def / 31 SpA / 31 SpD / 15 Spe
+- Will O Wisp
+- Disable
+- Shadow Sneak
+- Hex
 
-Carvanha
-Level: 27
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Duskull @ ITEM_WIDE_LENS
+Level: 11
+IVs: 15 HP / 15 Atk / 31 Def / 31 SpA / 31 SpD / 15 Spe
+- Frostbite
+- Disable
+- Shadow Sneak
+- Hex
+
+Duskull @ ITEM_WIDE_LENS
+Level: 11
+IVs: 15 HP / 15 Atk / 31 Def / 31 SpA / 31 SpD / 15 Spe
+- Disable
+- Helping Hand
+- Shadow Sneak
+- Hex
+
+Dusclops @ ITEM_LUM_BERRY
+Level: 12
+IVs: 31 HP / 31 Atk / 31 Def / 15 SpA / 31 SpD / 15 Spe
+EVs: 40 Atk
+- Fire Punch
+- Pain Split
+- Thunder Punch
+- Shadow Sneak
+
 
 === TRAINER_GRUNT_WEATHER_INST_3 ===
 Name: GRUNT

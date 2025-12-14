@@ -5777,7 +5777,7 @@
       "id": "LAYOUT_CORALPORT_CAVE",
       "name": "CoralportCave_Layout",
       "width": 40,
-      "height": 20,
+      "height": 24,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Dungeon",
@@ -5796,6 +5796,18 @@
       "secondary_tileset": "gTileset_Coralport",
       "border_filepath": "data/layouts/WindwardPort/border.bin",
       "blockdata_filepath": "data/layouts/WindwardPort/map.bin"
+    },
+    {
+      "id": "LAYOUT_CORALPORT_NECKBEARDS_HOUSE",
+      "name": "Coralport_NeckbeardsHouse_Layout",
+      "width": 16,
+      "height": 11,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_CoralportFishermansHouse",
+      "border_filepath": "data/layouts/Coralport_NeckbeardsHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Coralport_NeckbeardsHouse/map.bin"
     }
   ]
 }

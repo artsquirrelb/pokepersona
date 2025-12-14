@@ -703,14 +703,14 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.questVariable = 0,
 	},
 
-	[QUEST_6] = 
+	[QUEST_FIND_MINING_KIT] = 
 	{
-		.name = gText_SideQuestName_6,
-		.desc = {gText_SideQuestDesc_6},
-		.donedesc = gText_SideQuestDoneDesc_6,
+		.name = gText_SideQuest5_Name,
+		.desc = {gText_SideQuest5_Desc},
+		.donedesc = gText_SideQuest5_DoneDesc,
 		.map = {gText_Chapter4_Map},
-		.sprite = {ITEM_NONE},
-		.spritetype = {ITEM},
+		.sprite = {OBJ_EVENT_GFX_NECK_BEARD},
+		.spritetype = {OBJECT},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -2270,7 +2270,7 @@ void UpdateQuestFlavorText(s32 questId)
 }
 void PrintQuestFlavorText(s32 questId)
 {
-	QuestMenu_AddTextPrinterParameterized(1, 2, gStringVar3, 40, 19, 5, 0, 0,
+	QuestMenu_AddTextPrinterParameterized(1, FONT_SHORT_NARROW, gStringVar3, 40, 19, 5, 0, 0,
 	                                      4);
 }
 

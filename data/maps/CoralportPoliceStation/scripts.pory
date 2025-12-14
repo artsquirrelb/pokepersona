@@ -2,7 +2,10 @@ mapscripts CoralportPoliceStation_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
         setflag(FLAG_TEMP_1)
         setflag(FLAG_TEMP_2)
-
+        setflag(FLAG_TEMP_3)
+        if (var(VAR_QUEST_FIND_MINING_KIT_STATE) >= 1){
+            clearflag(FLAG_TEMP_3)
+        }
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
         VAR_CHAPTER_1_STATE, 1: CoralportPoliceStation_MapScripts_OnFrame1
@@ -118,6 +121,21 @@ script CoralportPoliceStation_Eventscript_PolicemanReceptionist {
     if (var(VAR_CHAPTER_1_STATE) == 2){
         goto (CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki)
     }
+    elif (var(VAR_QUEST_FIND_MINING_KIT_STATE) == 1){
+        msgbox(format("Welcome to Coralport Police Station."))
+        closemessage
+        playse(SE_PIN)
+        applymovement(1, emoteexclamation)
+        waitmovement
+        setspeaker("Namake")
+        msgbox(format("Oh! You're that kind trainer who volunteered to help the investigation of Nebe-san's stolen mining collection case.\p
+        To be honest, the Coralport Police Station is currently heavily short-handed so we'd like to express our biggest gratitude.\p
+        If you want to know further about the case, please kindly check the Information Board on your left."))
+        closemessage
+        setvar(VAR_QUEST_FIND_MINING_KIT_STATE, 2)
+        release
+        end
+    }
     else{
         msgbox(format("Welcome to Coralport Police Station."))
     }
@@ -214,8 +232,45 @@ script CoralportPoliceStation_Eventscript_Woman {
     lock
     faceplayer
     setspeaker("Miku")
-    msgbox(format("I'm waiting for my registration paper to be processed.\l{PAUSE_UNTIL_PRESS}
+    msgbox(format("I'm waiting for my registration paper to be processed.{PAUSE_UNTIL_PRESS}
     It's taking so long..."))
+    closemessage
+    release
+    end
+}
+
+script CoralportPoliceStation_Eventscript_QuestBoard_0 {
+    if (var(VAR_QUEST_FIND_MINING_KIT_STATE) == 0){
+        msgbox(format("There's currently no new case that you can accept.\p
+        (TODO: QUEST LIST for Coralport Police Station)"))
+        closemessage
+        release
+        end
+    }
+    else{
+        goto(CoralportPoliceStation_Eventscript_QuestBoard_1)
+    }
+}
+
+script CoralportPoliceStation_Eventscript_QuestBoard_1 {
+    lock
+    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_FIND_MINING_KIT)
+    if(var(VAR_RESULT)){
+        msgbox(format("This case has already been solved.\p
+        We sincerely thank you for your help."))
+        closemessage
+        release
+        end
+    }
+    questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_FIND_MINING_KIT)
+    if(var(VAR_RESULT)){
+        goto(CoralportPoliceStation_Eventscript_QuestBoard_1_QUEST_FIND_MINING_KIT_Report)
+    }
+}
+
+script CoralportPoliceStation_Eventscript_QuestBoard_1_QUEST_FIND_MINING_KIT_Report {
+    msgbox(format("There's no new clue about this case.\p
+    Please come back later (TODO lol)."))
     closemessage
     release
     end

@@ -258,6 +258,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ParkBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MegaStone;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScriptSparkle;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MiningRock;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_QuestBoard;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight;
 
@@ -345,6 +346,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_MEGA_STONE] =               &gObjectEventGraphicsInfo_MegaStone,
     [OBJ_EVENT_GFX_SPARKLE] =                  &gObjectEventGraphicsInfo_ScriptSparkle,
     [OBJ_EVENT_GFX_MINING_ROCK] =              &gObjectEventGraphicsInfo_MiningRock,
+    [OBJ_EVENT_GFX_QUEST_BOARD] =              &gObjectEventGraphicsInfo_QuestBoard,
     [OBJ_EVENT_GFX_BERRY_TREE] =               &gObjectEventGraphicsInfo_BerryTree,
     [OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES] =  &gObjectEventGraphicsInfo_BerryTreeEarlyStages,
     [OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES] =   &gObjectEventGraphicsInfo_BerryTreeLateStages,

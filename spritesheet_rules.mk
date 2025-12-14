@@ -5022,6 +5022,9 @@ $(OBJEVENTGFXDIR)/misc/script_sparkle.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/misc/mining_rock.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 
+$(OBJEVENTGFXDIR)/misc/quest_board.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 2 -mheight 2
+
 graphics/door_anims/battle_tower_multi_corridor.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 

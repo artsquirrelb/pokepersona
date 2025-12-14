@@ -21,7 +21,7 @@
 #define QUEST_FIND_FISHERMANS_DAUGHTER                  2 //for old rod
 #define QUEST_AMEAME_PARTTIME                           3 //for candy jar
 #define QUEST_BUY_SMILE_CANDY                           4 //unlocked after finishing QUEST_FIND_FISHERMANS_DAUGHTER // for good rod
-#define QUEST_6          5
+#define QUEST_FIND_MINING_KIT                           5 //unlocked after finishing Mitsuru's Prologue
 #define QUEST_7          6
 #define QUEST_8          7
 #define QUEST_9          8

@@ -387,7 +387,7 @@ const u32 gObjectEventPic_MegaStone[] = INCBIN_U32("graphics/object_events/pics/
 const u32 gObjectEventPic_ScriptSparkle[] = INCBIN_U32("graphics/object_events/pics/misc/script_sparkle.4bpp");
 const u32 gObjectEventPic_MiningRock[] = INCBIN_U32("graphics/object_events/pics/misc/mining_rock.4bpp");
 const u16 gObjectEventPalette_MiningRock[] = INCBIN_U16("graphics/object_events/pics/misc/mining_rock.gbapal");
-
+const u32 gObjectEventPic_QuestBoard[] = INCBIN_U32("graphics/object_events/pics/misc/quest_board.4bpp");
 
 const u32 gObjectEventPic_DeoxysOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/deoxys.4bpp");
 const u32 gObjectEventPic_MewOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/mew.4bpp");

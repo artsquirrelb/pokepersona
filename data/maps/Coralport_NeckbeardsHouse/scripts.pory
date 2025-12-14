@@ -1,0 +1,175 @@
+mapscripts Coralport_NeckbeardsHouse_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        if(var(VAR_QUEST_FIND_MINING_KIT_STATE) >= 1){
+            setobjectxyperm(1, 8, 4)
+        }
+    }
+}
+
+script Coralport_NeckbeardsHouse_Eventscript_Neckbeard {
+    lock
+    setflag(FLAG_HIDE_QUEST_ICON)
+    setspeaker("Nebe")
+    questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_MINING_KIT)
+    if (var(VAR_RESULT)){
+        faceplayer
+        goto(Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Completed)
+    }
+    questmenu(QUEST_MENU_CHECK_REWARD, QUEST_FIND_MINING_KIT)
+    if (var(VAR_RESULT)){
+        faceplayer
+        goto(Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Reward)
+    }
+    questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_FIND_MINING_KIT)
+    if (var(VAR_RESULT)){
+        goto(Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Ongoing)
+    }
+}
+
+script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Completed {
+    msgbox(format("Good day, {PLAYER}! Are you here to trade me some shards?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        msgbox(format("TO DO SHARDS TRADE MENU :')"))
+    }
+    setspeaker("Nebe")
+    msgbox(format("I wish you the best on your journey."))
+    closemessage
+    release
+    end    
+}
+
+script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Reward {
+    setflag(FLAG_HIDE_QUEST_ICON)
+    msgbox(format("Thank you for retrieving my mining tools! The kit I promised you is also among those.\p
+    Here it is!"))
+    closemessage
+    giveitem(ITEM_MINING_KIT)
+    setspeaker("Nebe")
+    msgbox(format("If you happen to find some colored shards while mining, please trade them to me!\p
+    I do have some items I collected while travelling the region that you may find interesting."))
+    closemessage
+    questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_MINING_KIT)
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Ongoing {
+    setflag(FLAG_HIDE_QUEST_ICON)
+    if (var(VAR_QUEST_FIND_MINING_KIT_STATE) == 1){
+        faceplayer
+        msgbox(format("I have reported the case to the police.\p
+        If there's any new progression, they'll let us know.\p
+        Sorry for the messy house, I'm still cleaning up."))
+        closemessage
+    }
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script Coralport_NeckbeardsHouse_TriggerLeft {
+    setvar(VAR_QUEST_FIND_MINING_KIT_STATE, 1)
+    applymovement(LOCALID_PLAYER, moves(walk_right, face_up))
+    waitmovement
+    applymovement(OBJ_EVENT_ID_FOLLOWER, moves(walk_down, walk_right, face_up))
+    waitmovement
+    delay(20)
+    goto(Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start)
+}
+
+script Coralport_NeckbeardsHouse_TriggerRight {
+    setvar(VAR_QUEST_FIND_MINING_KIT_STATE, 1)
+    goto(Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start)
+}
+script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start {
+    lock
+    setflag(FLAG_HIDE_QUEST_ICON)
+    msgbox(format("Oh Arceus... They aren't here..."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(1, moves(emote_exclamation_mark, face_down))
+    waitmovement
+    setspeaker("Nebe")
+    msgbox(format("Oh! You're... that young lady in Thundershard Cave."))
+    closemessage
+    delay(30)
+    applymovement(1, moves(emote_pensive, face_right, delay_16, delay_16, face_down))
+    waitmovement
+    setspeaker("Nebe")
+    msgbox(format("Well... This is awkward.\p
+    I did promise to give you a mining kit when you visit me...\p
+    But as you can see, some thieves have broken into my house and stole all of my tools,
+    as well as my rocks collection..."))
+    closemessage
+    delay(30)
+    playse(SE_M_BUBBLE)
+    applymovement(1, emotecry)
+    waitmovement
+    delay(30)
+    setspeaker("Nebe")
+    msgbox(format("Sorry, I'd love to give you a warm welcome but right now I probably should file a case to the police.\p
+    Now please excuse me."))
+    closemessage
+    delay(30)
+    applymovement(1, moves(walk_left, walk_down))
+    waitmovement
+    applymovement(LOCALID_PLAYER, walkinplaceleft)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Please wait, Nebe-san."))
+    closemessage
+    applymovement(1, faceright)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I'm very sorry for your loss.\p
+    I'd love to repay your kindness back then at the cave so is there anything I could help?\p
+    A picture of your toolbox or rocks collection perhaps?\p
+    I'm currently traveling through the region so I may happen to come across them."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(1, emoteexclamation)
+    setspeaker("Nebe")
+    msgbox(format("Oh that's very kind of you!\p
+    Hang on a moment, I do have some pictures of the stolen stuff."))
+    closemessage
+    applymovement(1, moves(walk_fast_up*2, walk_fast_left*5, walk_fast_up))
+    waitmovement
+    delay(30)
+    applymovement(1, walkinplaceup)
+    playse(SE_M_SCRATCH)
+    waitse
+    delay(10)
+    playse(SE_M_SCRATCH)
+    waitse
+    delay(10)
+    playse(SE_M_SCRATCH)
+    waitse
+    delay(30)
+    applymovement(1, moves(walk_fast_down, walk_fast_right*5, walk_fast_down*2, face_right))
+    waitmovement
+    setspeaker("Nebe")
+    msgbox(format("There they are!"))
+    closemessage
+    playfanfare(MUS_OBTAIN_ITEM)
+    msgbox(format("{PLAYER} received a bunch of photos of Nebe with his collections."))
+    closemessage
+    applymovement(1, walkinplaceright)
+    setspeaker("Nebe")
+    msgbox(format("Thank you very much for offering help! You're a kind young lady.\p
+    Now I'll go to the police station to report the case.\p
+    I'll also let them know that you'll be helping so you can ask them about the investigation's progress.\p
+    See you around and good luck on your journey, young lady."))
+    closemessage
+    delay(30)
+    applymovement(1, moves(walk_fast_down*3, set_invisible))
+    waitmovement
+    playse(SE_EXIT)
+    waitse
+    removeobject(1)
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    setflag(FLAG_TEMP_1)
+    questmenu(QUEST_MENU_SET_ACTIVE, QUEST_FIND_MINING_KIT)
+    release
+    end    
+}

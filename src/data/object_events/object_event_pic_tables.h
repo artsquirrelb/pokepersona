@@ -1135,6 +1135,9 @@ static const struct SpriteFrameImage sPicTable_MiningRock[] = {
     overworld_frame(gObjectEventPic_MiningRock, 2, 2, 2),
     overworld_frame(gObjectEventPic_MiningRock, 2, 2, 3),
 };
+static const struct SpriteFrameImage sPicTable_QuestBoard[] = {
+    overworld_frame(gObjectEventPic_QuestBoard, 2, 2, 0)
+};
 
 extern const struct SpriteFrameImage gFieldEffectObjectPicTable_BallLight[];
 

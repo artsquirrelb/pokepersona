@@ -1061,7 +1061,7 @@
 #define FLAG_ITEM_ROUTE_111_TM_SANDSTORM                            0x3F0
 #define FLAG_ITEM_THUNDERSHARDS_CAVE_2F_EXTERIOR_AERODACTYLITE      0x3F1
 #define FLAG_ITEM_SUNSHINE_ORPHANAGE_1F_TM_WILL_O_WISP              0x3F2
-#define FLAG_ITEM_ROUTE_112_NUGGET                                  0x3F3
+#define FLAG_ITEM_CORALPORT_CAVE_TM_ROCK_TOMB                       0x3F3
 #define FLAG_ITEM_ROUTE_113_MAX_ETHER                               0x3F4
 #define FLAG_ITEM_THUNDERSHARD_CAVE_1F_CALCIUM                      0x3F5
 #define FLAG_ITEM_ROUTE_114_RARE_CANDY                              0x3F6

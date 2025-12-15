@@ -70,22 +70,63 @@ script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Ongoing {
     end
 }
 
+script Coralport_NeckbeardsHouse_CheckIfMitsuru {
+    checkplayergender
+    if (var(VAR_RESULT) == MALE){
+        isfollowernpc(OBJ_EVENT_GFX_MAY_NORMAL)
+        if (var(VAR_RESULT)){
+            applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_up, walk_right, face_up))
+            applymovement(LOCALID_PLAYER, moves(walk_down, face_up))
+            waitmovement
+            goto(Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start)
+        }
+        else{
+            getcharaAvailability(CHARACTER_MITSURU)
+            if (var(VAR_RESULT)){
+                hidefollower
+                switchmaincharacter
+                updatefollowingmon
+                delay(20)
+                applymovement(LOCALID_PLAYER, walkinplaceup)
+                waitmovement
+                goto(Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start)
+            }
+            else{
+                setflag(FLAG_HIDE_QUEST_ICON)
+                playse(SE_PIN)
+                applymovement(1, moves(emote_exclamation_mark, face_down))
+                waitmovement
+                setspeaker("Nebe")
+                msgbox(format("Who are you kids?\p
+                Well, sorry but I'm not at the state to be welcoming strangers in my house right now, please kindly see yourselves out."))
+                closemessage
+                clearflag(FLAG_HIDE_QUEST_ICON)
+                warp(MAP_CORALPORT, 4)
+                waitstate
+            }
+        }
+    }
+    else{
+        goto(Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start)
+    }
+}
+
 script Coralport_NeckbeardsHouse_TriggerLeft {
-    setvar(VAR_QUEST_FIND_MINING_KIT_STATE, 1)
+    hidefollower
     applymovement(LOCALID_PLAYER, moves(walk_right, face_up))
     waitmovement
     applymovement(OBJ_EVENT_ID_FOLLOWER, moves(walk_down, walk_right, face_up))
     waitmovement
     delay(20)
-    goto(Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start)
+    goto(Coralport_NeckbeardsHouse_CheckIfMitsuru)
 }
 
 script Coralport_NeckbeardsHouse_TriggerRight {
-    setvar(VAR_QUEST_FIND_MINING_KIT_STATE, 1)
-    goto(Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start)
+    goto(Coralport_NeckbeardsHouse_CheckIfMitsuru)
 }
 script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start {
     lock
+    setvar(VAR_QUEST_FIND_MINING_KIT_STATE, 1)
     setflag(FLAG_HIDE_QUEST_ICON)
     msgbox(format("Oh Arceus... They aren't here..."))
     closemessage
@@ -116,7 +157,15 @@ script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start {
     delay(30)
     applymovement(1, moves(walk_left, walk_down))
     waitmovement
-    applymovement(LOCALID_PLAYER, walkinplaceleft)
+    isfollowernpc(OBJ_EVENT_GFX_MAY_NORMAL) //playing as akihiko
+    if (var(VAR_RESULT)){
+        applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, walkinplaceleft)
+        applymovement(LOCALID_PLAYER, walkinplaceleft)
+    }
+    else{   //playing as mitsuru
+        applymovement(LOCALID_PLAYER, walkinplaceleft)
+        applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right, face_left))
+    }
     waitmovement
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Please wait, Nebe-san."))
     closemessage

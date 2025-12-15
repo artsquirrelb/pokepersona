@@ -499,17 +499,6 @@ script unlockcharacters
     end
 }
 
-script makecharagrayout{
-    msgbox(format("Marking prologue to completed & reset all temp vars"))
-    closemessage
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 100)
-    setvar(VAR_MITSURUS_INTRO_STATE, 100)
-    setvar(VAR_TEMP_0, 0)
-    setvar(VAR_TEMP_1, 0)
-    setvar(VAR_TEMP_2, 0)
-    setvar(VAR_TEMP_3, 0)
-}
-
 script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
     lock
     applymovement(LOCALID_PLAYER, moves(player_run_right*3, walk_right*2, emote_exclamation_mark))

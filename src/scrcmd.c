@@ -3157,13 +3157,11 @@ bool8 ScrCmd_getoutfitstatus(struct ScriptContext *ctx)
     return TRUE;
 }
 
-bool8 ScrCmd_getcharaavailability(struct ScriptContext *ctx)
+void ScrCmd_getcharaavailability(struct ScriptContext *ctx)
 {
     u16 outfitId = VarGet(ScriptReadHalfword(ctx));
     
     gSpecialVar_Result = GetCharaAvailability(outfitId);
-    
-    return TRUE;
 }
 
 bool8 ScrCmd_bufferoutfitstr(struct ScriptContext *ctx)
@@ -3659,21 +3657,4 @@ bool8 ScrCmd_istmrelearneractive(struct ScriptContext *ctx)
         ScriptCall(ctx, ptr);
 
     return FALSE;
-}
-
-void ScrCmd_iscurrentNPCFollower(struct ScriptContext *ctx)
-{
-    if (PlayerHasFollowerNPC() 
-     && gObjectEvents[GetFollowerNPCObjectId()].invisible == FALSE )
-    {
-        u32 currentNPCFollower = GetFollowerNPCData(FNPC_DATA_GFX_ID);
-        u32 gfxId = VarGet(ScriptReadHalfword(ctx));
-
-        Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-
-        if (gfxId == currentNPCFollower)
-            gSpecialVar_Result = TRUE;
-        else
-            gSpecialVar_Result = FALSE;
-    }
 }

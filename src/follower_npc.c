@@ -1916,3 +1916,17 @@ void ScriptCheckBattlePartner(struct ScriptContext *ctx)
     else
         gSpecialVar_Result = FALSE;
 }
+
+void ScriptIsCurrentNPCFollower(struct ScriptContext *ctx)
+{
+    if (!FNPC_ENABLE_NPC_FOLLOWERS || !PlayerHasFollowerNPC())
+        return;
+        
+    gSpecialVar_Result = GetFollowerNPCData(FNPC_DATA_GFX_ID);
+    u32 gfxId = ScriptReadHalfword(ctx);
+
+    if (gfxId != gSpecialVar_Result)
+        gSpecialVar_Result = FALSE;
+    else
+        gSpecialVar_Result = TRUE;
+}

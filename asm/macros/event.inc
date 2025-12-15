@@ -2894,7 +2894,8 @@
 
 	@ Check if current follower npc is the gfxId and return result to VAR_RESULT.
 	.macro isfollowernpc gfxId:req
-	callnative ScrCmd_iscurrentNPCFollower
+	callnative ScriptIsCurrentNPCFollower
+	.2byte \gfxId
 	.endm
 
 	@ Updates Pokemon follower.

@@ -1477,76 +1477,160 @@ DebugEventScript_PrintWeekday_Text_0:
 
 Debug_EventScript_Script_1::
 # 742 "data/scripts/debug.pory"
+	msgbox Debug_EventScript_Script_1_Text_0
+# 743 "data/scripts/debug.pory"
+	closemessage
+# 744 "data/scripts/debug.pory"
+	getcharaAvailability CHARACTER_MITSURU
+# 745 "data/scripts/debug.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Debug_EventScript_Script_1_2
+# 749 "data/scripts/debug.pory"
+	makecharaAvailable CHARACTER_MITSURU
+Debug_EventScript_Script_1_1:
+# 751 "data/scripts/debug.pory"
 	release
 	end
+
+Debug_EventScript_Script_1_2:
+# 746 "data/scripts/debug.pory"
+	makecharaUnavailable CHARACTER_MITSURU
+	goto Debug_EventScript_Script_1_1
 
 
 Debug_EventScript_Script_2::
-# 747 "data/scripts/debug.pory"
+# 756 "data/scripts/debug.pory"
 	msgbox Debug_EventScript_Script_2_Text_0
-# 748 "data/scripts/debug.pory"
+# 757 "data/scripts/debug.pory"
 	closemessage
-# 749 "data/scripts/debug.pory"
-	switchmaincharacter
-# 750 "data/scripts/debug.pory"
+# 758 "data/scripts/debug.pory"
+	getcharaAvailability CHARACTER_AKIHIKO
+# 759 "data/scripts/debug.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Debug_EventScript_Script_2_2
+# 763 "data/scripts/debug.pory"
+	makecharaAvailable CHARACTER_AKIHIKO
+Debug_EventScript_Script_2_1:
+# 765 "data/scripts/debug.pory"
 	release
 	end
+
+Debug_EventScript_Script_2_2:
+# 760 "data/scripts/debug.pory"
+	makecharaUnavailable CHARACTER_AKIHIKO
+	goto Debug_EventScript_Script_2_1
 
 
 Debug_EventScript_Script_3::
-# 755 "data/scripts/debug.pory"
-	msgbox Debug_EventScript_Script_2_Text_0
-# 756 "data/scripts/debug.pory"
-	closemessage
-# 757 "data/scripts/debug.pory"
-	switchmaincharacter
-# 758 "data/scripts/debug.pory"
+# 770 "data/scripts/debug.pory"
 	msgbox Debug_EventScript_Script_3_Text_0
-# 759 "data/scripts/debug.pory"
+# 771 "data/scripts/debug.pory"
 	closemessage
-# 760 "data/scripts/debug.pory"
-	applymovement LOCALID_PLAYER, walkinplacedown
-# 761 "data/scripts/debug.pory"
-	waitmovement
-# 762 "data/scripts/debug.pory"
+# 772 "data/scripts/debug.pory"
+	getcharaAvailability CHARACTER_SHINJIRO
+# 773 "data/scripts/debug.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Debug_EventScript_Script_3_2
+# 777 "data/scripts/debug.pory"
+	makecharaAvailable CHARACTER_SHINJIRO
+Debug_EventScript_Script_3_1:
+# 779 "data/scripts/debug.pory"
 	release
 	end
+
+Debug_EventScript_Script_3_2:
+# 774 "data/scripts/debug.pory"
+	makecharaUnavailable CHARACTER_SHINJIRO
+	goto Debug_EventScript_Script_3_1
 
 
 Debug_EventScript_Script_4::
-# 767 "data/scripts/debug.pory"
+# 784 "data/scripts/debug.pory"
+	msgbox Debug_EventScript_Script_4_Text_0
+# 785 "data/scripts/debug.pory"
+	closemessage
+# 786 "data/scripts/debug.pory"
+	isfollowernpc OBJ_EVENT_GFX_MAY_NORMAL
+# 787 "data/scripts/debug.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne Debug_EventScript_Script_4_2
+# 791 "data/scripts/debug.pory"
+	msgbox Debug_EventScript_Script_4_Text_2
+Debug_EventScript_Script_4_1:
+# 793 "data/scripts/debug.pory"
+	closemessage
+# 794 "data/scripts/debug.pory"
 	release
 	end
 
+Debug_EventScript_Script_4_2:
+# 788 "data/scripts/debug.pory"
+	msgbox Debug_EventScript_Script_4_Text_1
+	goto Debug_EventScript_Script_4_1
+
 
 Debug_EventScript_Script_5::
-# 772 "data/scripts/debug.pory"
+# 799 "data/scripts/debug.pory"
+	msgbox Debug_EventScript_Script_5_Text_0
+# 800 "data/scripts/debug.pory"
+	closemessage
+# 801 "data/scripts/debug.pory"
+	isfollowernpc OBJ_EVENT_GFX_MAY_NORMAL
+# 802 "data/scripts/debug.pory"
+	msgbox Debug_EventScript_Script_5_Text_1
+# 803 "data/scripts/debug.pory"
+	closemessage
+# 804 "data/scripts/debug.pory"
 	release
 	end
 
 
 Debug_EventScript_Script_6::
-# 777 "data/scripts/debug.pory"
+# 809 "data/scripts/debug.pory"
 	release
 	end
 
 
 Debug_EventScript_Script_7::
-# 782 "data/scripts/debug.pory"
+# 814 "data/scripts/debug.pory"
 	release
 	end
 
 
 Debug_EventScript_Script_8::
-# 787 "data/scripts/debug.pory"
+# 819 "data/scripts/debug.pory"
 	release
 	end
 
 
+Debug_EventScript_Script_1_Text_0:
+# 742 "data/scripts/debug.pory"
+	.string "toggle mitsuru$"
+
 Debug_EventScript_Script_2_Text_0:
-# 747 "data/scripts/debug.pory"
-	.string "switching MC$"
+# 756 "data/scripts/debug.pory"
+	.string "toggle akihiko$"
 
 Debug_EventScript_Script_3_Text_0:
-# 758 "data/scripts/debug.pory"
-	.string "applying movement to MC$"
+# 770 "data/scripts/debug.pory"
+	.string "toggle shinjiro$"
+
+Debug_EventScript_Script_4_Text_0:
+# 784 "data/scripts/debug.pory"
+	.string "checking if follower npc is mitsuru$"
+
+Debug_EventScript_Script_4_Text_1:
+# 788 "data/scripts/debug.pory"
+	.string "follower is mitsuru$"
+
+Debug_EventScript_Script_4_Text_2:
+# 791 "data/scripts/debug.pory"
+	.string "follower isnt mitsuru$"
+
+Debug_EventScript_Script_5_Text_0:
+# 799 "data/scripts/debug.pory"
+	.string "checking if follower npc gfx$"
+
+Debug_EventScript_Script_5_Text_1:
+# 802 "data/scripts/debug.pory"
+	.string "follower gfx id is {STR_VAR_1}$"

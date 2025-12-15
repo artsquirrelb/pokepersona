@@ -739,31 +739,58 @@ DebugEventScript_PrintWeekday_Text_0:
 `
 
 script Debug_EventScript_Script_1{
+	msgbox(format("toggle mitsuru"))
+	closemessage
+	getcharaAvailability(CHARACTER_MITSURU)
+	if(var(VAR_RESULT)){//if mitsuru is available
+		makecharaUnavailable(CHARACTER_MITSURU)//gray out her
+	}
+	else{
+		makecharaAvailable(CHARACTER_MITSURU)
+	}
 	release
 	end
 }
 
 script Debug_EventScript_Script_2{
-    msgbox("switching MC")
-    closemessage
-    switchmaincharacter
+    msgbox(format("toggle akihiko"))
+	closemessage
+	getcharaAvailability(CHARACTER_AKIHIKO)
+	if(var(VAR_RESULT)){//if mitsuru is available
+		makecharaUnavailable(CHARACTER_AKIHIKO)//gray out her
+	}
+	else{
+		makecharaAvailable(CHARACTER_AKIHIKO)
+	}
 	release
 	end
 }
 
 script Debug_EventScript_Script_3{
-    msgbox("switching MC")
-    closemessage
-    switchmaincharacter
-    msgbox("applying movement to MC")
-    closemessage
-    applymovement(LOCALID_PLAYER, walkinplacedown)
-    waitmovement
+	msgbox(format("toggle shinjiro"))
+	closemessage
+	getcharaAvailability(CHARACTER_SHINJIRO)
+	if(var(VAR_RESULT)){//if mitsuru is available
+		makecharaUnavailable(CHARACTER_SHINJIRO)//gray out her
+	}
+	else{
+		makecharaAvailable(CHARACTER_SHINJIRO)
+	}
 	release
 	end
 }
 
 script Debug_EventScript_Script_4{
+	msgbox(format("checking if follower npc is mitsuru"))
+	closemessage
+	isfollowernpc(OBJ_EVENT_GFX_MAY_NORMAL)
+	if(var(VAR_RESULT)){
+		msgbox(format("follower is mitsuru"))
+	}
+	else{
+		msgbox(format("follower isnt mitsuru"))
+	}
+	closemessage
 	release
 	end
 }

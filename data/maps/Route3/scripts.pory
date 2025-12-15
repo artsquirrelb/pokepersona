@@ -2,7 +2,7 @@ mapscripts Route3_MapScripts {}
 
 script Route3_Eventscript_CoralportLightHouseDoorLocked {
     lock
-    msgbox(format("It's locked"))
+    msgbox(format("It's locked."))
     closemessage
     release
     end

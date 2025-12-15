@@ -1876,7 +1876,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_LOW_KICK] =
     {
         .name = COMPOUND_STRING("Low Kick"),
-        .bpCost = 0,
         #if B_UPDATED_MOVE_DATA >= GEN_3
             .description = COMPOUND_STRING(
                 "A kick that inflicts more\n"
@@ -4289,7 +4288,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_ROCK_SLIDE] =
     {
         .name = COMPOUND_STRING("Rock Slide"),
-        .bpCost = 48,
         #if B_UPDATED_MOVE_DATA >= GEN_2
             .description = COMPOUND_STRING(
                 "Large boulders are hurled.\n"

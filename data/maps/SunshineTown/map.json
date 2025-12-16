@@ -15,12 +15,17 @@
   "connections": [
     {
       "map": "MAP_SUNSHINE_TOWN_RIVERBANK",
-      "offset": 3,
+      "offset": 0,
       "direction": "down"
     },
     {
       "map": "MAP_ROUTE2",
       "offset": -5,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE1",
+      "offset": 21,
       "direction": "left"
     }
   ],

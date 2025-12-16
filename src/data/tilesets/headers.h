@@ -1072,3 +1072,14 @@ const struct Tileset gTileset_Coralport_PoliceStation =
     .metatileAttributes = gMetatileAttributes_Coralport_PoliceStation,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_WindwardPort =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_WindwardPort,
+    .palettes = gTilesetPalettes_WindwardPort,
+    .metatiles = gMetatiles_WindwardPort,
+    .metatileAttributes = gMetatileAttributes_WindwardPort,
+    .callback = NULL,
+};

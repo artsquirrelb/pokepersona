@@ -273,3 +273,6 @@ const u16 gMetatileAttributes_CoralportCandyShop[] = INCBIN_U16("data/tilesets/s
 
 const u16 gMetatiles_Coralport_PoliceStation[] = INCBIN_U16("data/tilesets/secondary/coralport_police_station/metatiles.bin");
 const u16 gMetatileAttributes_Coralport_PoliceStation[] = INCBIN_U16("data/tilesets/secondary/coralport_police_station/metatile_attributes.bin");
+
+const u16 gMetatiles_WindwardPort[] = INCBIN_U16("data/tilesets/secondary/windward_port/metatiles.bin");
+const u16 gMetatileAttributes_WindwardPort[] = INCBIN_U16("data/tilesets/secondary/windward_port/metatile_attributes.bin");

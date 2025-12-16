@@ -16,7 +16,7 @@ mapscripts SunshineTownRiverbank_MapScripts {
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 21){
             setflag(FLAG_SPAWN_INVISIBLE)
-            setobjectxyperm(4, 14, 0)
+            setobjectxyperm(4, 16, 0)
             playbgm(MUS_NONE, TRUE)
         }
         if(var(VAR_AKIHIKOS_INTRO_STATE) >= 22){
@@ -93,7 +93,7 @@ script SunshineTownRiverbank_Eventscript_KurosawaFindingAkiShinji {
     playse(SE_PIN)
     applymovement(3, emoteexclamation)
     waitmovement(0)
-    delay(20)
+    delay(30)
     applymovement(LOCALID_PLAYER, KurosawaFindingAkiShinji)
     applymovement(3, KurosawaFindingAkiShinji)
     waitmovement(0)
@@ -107,10 +107,12 @@ script SunshineTownRiverbank_Eventscript_KurosawaFindingAkiShinji {
 
 movement KurosawaFindingAkiShinji {
     walk_fast_down *4
+    walk_right
+    face_down
     delay_16
     delay_16
     delay_16
-    walk_right *2
+    walk_left *3
     face_down
     delay_16
     delay_16

@@ -16,4 +16,4 @@ Route3_Eventscript_CoralportLightHouseDoorLocked::
 
 Route3_Eventscript_CoralportLightHouseDoorLocked_Text_0:
 # 5 "data/maps/Route3/scripts.pory"
-	.string "It's locked$"
+	.string "It's locked.$"

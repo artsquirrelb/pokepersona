@@ -15,13 +15,28 @@
   "connections": [
     {
       "map": "MAP_ROUTE2",
-      "offset": 4,
+      "offset": 0,
       "direction": "up"
     },
     {
       "map": "MAP_MANSIONS_GARDEN",
       "offset": 12,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE2_2",
+      "offset": -26,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_SUNSHINE_TOWN",
+      "offset": -21,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_SUNSHINE_TOWN_RIVERBANK",
+      "offset": 4,
+      "direction": "right"
     }
   ],
   "object_events": [

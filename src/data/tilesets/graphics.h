@@ -2052,3 +2052,22 @@ const u16 gTilesetPalettes_Coralport_PoliceStation[][16] =
 };
 
 const u32 gTilesetTiles_Coralport_PoliceStation[] = INCBIN_U32("data/tilesets/secondary/coralport_police_station/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_WindwardPort[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/windward_port/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_WindwardPort[] = INCBIN_U32("data/tilesets/secondary/windward_port/tiles.4bpp.lz");

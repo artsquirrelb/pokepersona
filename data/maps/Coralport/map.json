@@ -17,6 +17,11 @@
       "map": "MAP_ROUTE3",
       "offset": -5,
       "direction": "left"
+    },
+    {
+      "map": "MAP_ROUTE2_2",
+      "offset": 3,
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -192,7 +197,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
       "x": 5,
-      "y": 27,
+      "y": 25,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
       "movement_range_x": 0,
@@ -257,7 +262,7 @@
     {
       "graphics_id": "OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX",
       "x": 3,
-      "y": 25,
+      "y": 23,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_LEFT",
       "movement_range_x": 0,
@@ -387,23 +392,35 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Growlithe",
       "flag": "FLAG_TEMP_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
+      "x": 38,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
+      "x": 38,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
     }
   ],
   "warp_events": [
-    {
-      "x": 31,
-      "y": 13,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE2_GATEHOUSE",
-      "dest_warp_id": "1"
-    },
-    {
-      "x": 31,
-      "y": 12,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE2_GATEHOUSE",
-      "dest_warp_id": "1"
-    },
     {
       "x": 21,
       "y": 10,

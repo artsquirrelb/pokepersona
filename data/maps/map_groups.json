@@ -113,7 +113,8 @@
     "ThundershardsCliff_2F_Exterior",
     "Coralport",
     "Route3",
-    "WindwardPort"
+    "WindwardPort",
+    "WindwardPort_Harbor"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

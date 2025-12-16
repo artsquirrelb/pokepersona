@@ -15,14 +15,19 @@
   "connections": [
     {
       "map": "MAP_SUNSHINE_TOWN",
-      "offset": -3,
+      "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_ROUTE1",
+      "offset": -4,
+      "direction": "left"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_AKIHIKO_FAINTED",
-      "x": 13,
+      "x": 15,
       "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -35,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO_FAINTED",
-      "x": 15,
+      "x": 18,
       "y": 5,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
@@ -48,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
-      "x": 13,
+      "x": 17,
       "y": 0,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -61,7 +66,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(AZUMARILL)",
-      "x": 14,
+      "x": 16,
       "y": 6,
       "elevation": 5,
       "movement_type": "MOVEMENT_TYPE_NONE",

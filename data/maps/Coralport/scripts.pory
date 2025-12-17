@@ -255,11 +255,33 @@ script Coralport_Eventscript_SailorOnGuard {
     {
         gettime
         if(var(VAR_0x8000) >= 7 && var(VAR_0x8000) <= 17){
+            showmoneybox(0, 0)
             msgbox(format("This ship is departing for Windward Port.\p
-            Would you like to board the ship?"), MSGBOX_YESNO)
+            It costs 100 Pokedollars per ticket. Would you like to board the ship?"), MSGBOX_YESNO)
             closemessage
             if (var(VAR_RESULT)){
-                warp(MAP_WINDWARD_PORT, 39, 20)     //TODO
+                checkmoney(300)
+                if (var(VAR_RESULT)){
+                    playse(SE_SHOP)
+                    removemoney(300)
+                    updatemoneybox
+                    setspeaker("Umito")
+                    msgbox(format("This way, please."))
+                    closemessage
+                    applymovement(10, walkinplaceup)
+                    waitmovement
+                    delay(30)
+                    warp(MAP_WINDWARD_PORT_HARBOR, 23, 27)
+                    waitstate
+                }
+                else{
+                    setspeaker("Umito")
+                    msgbox(format("I'm sorry but you don't have enough money for 3 tickets."))
+                    closemessage
+                    release
+                    end
+                }
+                
             }
         }
         else{

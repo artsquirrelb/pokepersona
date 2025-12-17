@@ -531,6 +531,7 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_MiningRock,        OBJ_EVENT_PAL_TAG_MINING_ROCK},
     {gObjectEventPal_Npc5,                  OBJ_EVENT_PAL_TAG_NPC_5},
     {gObjectEventPal_Npc6,                  OBJ_EVENT_PAL_TAG_NPC_6},
+    {gObjectEventPal_StatueWindward,        OBJ_EVENT_PAL_TAG_STATUE_WINDWARD},
 
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},

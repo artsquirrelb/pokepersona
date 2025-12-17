@@ -676,6 +676,18 @@ static const struct SpriteFrameImage sPicTable_SubmarineShadow[] = {
     obj_frame_tiles(gObjectEventPic_SubmarineShadow),
 };
 
+static const struct SpriteFrameImage sPicTable_StatueWindward[] = {
+    obj_frame_tiles(gObjectEventPic_StatueWindward),
+    obj_frame_tiles(gObjectEventPic_StatueWindward),
+    obj_frame_tiles(gObjectEventPic_StatueWindward),
+    obj_frame_tiles(gObjectEventPic_StatueWindward),
+    obj_frame_tiles(gObjectEventPic_StatueWindward),
+    obj_frame_tiles(gObjectEventPic_StatueWindward),
+    obj_frame_tiles(gObjectEventPic_StatueWindward),
+    obj_frame_tiles(gObjectEventPic_StatueWindward),
+    obj_frame_tiles(gObjectEventPic_StatueWindward),
+};
+
 static const struct SpriteFrameImage sPicTable_PichuDoll[] = {
     obj_frame_tiles(gObjectEventPic_PichuDoll),
 };
@@ -1477,4 +1489,12 @@ static const struct SpriteFrameImage gObjectEventPicTable_Mitsuru_Sleeping[] = {
 
 static const struct SpriteFrameImage gObjectEventPicTable_PoliceChief[] = {
     overworld_ascending_frames(gObjectEventPic_PoliceChief, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_RangerM[] = {
+    overworld_ascending_frames(gObjectEventPic_RangerM, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_RangerF[] = {
+    overworld_ascending_frames(gObjectEventPic_RangerF, 4, 4),
 };

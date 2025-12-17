@@ -19,14 +19,14 @@
       "direction": "right"
     },
     {
+      "map": "MAP_WINDWARD_PORT_HARBOR",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
       "map": "MAP_CORALPORT",
       "offset": 5,
       "direction": "right"
-    },
-    {
-      "map": "MAP_WINDWARD_PORT",
-      "offset": 0,
-      "direction": "left"
     }
   ],
   "object_events": [

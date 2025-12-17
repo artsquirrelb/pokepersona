@@ -57,7 +57,10 @@ const u32 gObjectEventPic_Receptionist_F[] = INCBIN_U32("graphics/object_events/
 const u32 gObjectEventPic_NeckBeard[] = INCBIN_U32("graphics/object_events/pics/people/neckbeard.4bpp");
 const u32 gObjectEventPic_PoliceChief[] = INCBIN_U32("graphics/object_events/pics/people/police_chief.4bpp");
 const u16 gObjectEventPal_Npc6[] = INCBIN_U16("graphics/object_events/palettes/npc_blackblueyellow.gbapal");
-
+const u32 gObjectEventPic_StatueWindward[] = INCBIN_U32("graphics/object_events/pics/misc/statue_windward.4bpp");
+const u16 gObjectEventPal_StatueWindward[] = INCBIN_U16("graphics/object_events/pics/misc/statue_windward.gbapal");
+const u32 gObjectEventPic_RangerM[] = INCBIN_U32("graphics/object_events/pics/people/ranger_m.4bpp");
+const u32 gObjectEventPic_RangerF[] = INCBIN_U32("graphics/object_events/pics/people/ranger_f.4bpp");
 
 
 const u16 gObjectEventPal_Null16[16] = {};

@@ -140,6 +140,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MayFishing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HotSpringsOldWoman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSTidal;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SubmarineShadow;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueWindward;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PichuDoll;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PikachuDoll;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MarillDoll;
@@ -251,6 +252,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Receptionis
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NeckBeard;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mitsuru_Sleeping;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PoliceChief;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerF;
 
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
@@ -430,6 +433,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN] =    &gObjectEventGraphicsInfo_HotSpringsOldWoman,
     [OBJ_EVENT_GFX_SS_TIDAL] =                 &gObjectEventGraphicsInfo_SSTidal,
     [OBJ_EVENT_GFX_SUBMARINE_SHADOW] =         &gObjectEventGraphicsInfo_SubmarineShadow,
+    [OBJ_EVENT_GFX_STATUE_WINDWARD] =          &gObjectEventGraphicsInfo_StatueWindward,
     [OBJ_EVENT_GFX_PICHU_DOLL] =               &gObjectEventGraphicsInfo_PichuDoll,
     [OBJ_EVENT_GFX_PIKACHU_DOLL] =             &gObjectEventGraphicsInfo_PikachuDoll,
     [OBJ_EVENT_GFX_MARILL_DOLL] =              &gObjectEventGraphicsInfo_MarillDoll,
@@ -535,6 +539,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_NECK_BEARD] =               &gObjectEventGraphicsInfo_NeckBeard,
     [OBJ_EVENT_GFX_MITSURU_SLEEPING] =         &gObjectEventGraphicsInfo_Mitsuru_Sleeping,
     [OBJ_EVENT_GFX_POLICE_CHIEF] =             &gObjectEventGraphicsInfo_PoliceChief,
+    [OBJ_EVENT_GFX_RANGER_M] =                 &gObjectEventGraphicsInfo_RangerM,
+    [OBJ_EVENT_GFX_RANGER_F] =                 &gObjectEventGraphicsInfo_RangerF,
     
 };
 

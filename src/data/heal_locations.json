@@ -216,8 +216,8 @@
     {
       "id": "HEAL_LOCATION_MANSIONS_GARDEN",
       "map": "MAP_MANSIONS_GARDEN",
-      "x": 3,
-      "y": 31,
+      "x": 39,
+      "y": 20,
       "respawn_map": "MAP_MANSION_TRAINING_HOUSE",
       "respawn_npc": "LOCALID_MANSION_TRAINING_HOUSE_NURSE"
     },
@@ -225,7 +225,9 @@
       "id": "HEAL_LOCATION_ROUTE2_2",
       "map": "MAP_ROUTE2_2",
       "x": 23,
-      "y": 16
+      "y": 16,
+      "respawn_map": "MAP_ROUTE2_GATEHOUSE",
+      "respawn_npc": "LOCALID_ROUTE2_GATEHOUSE_NURSE"
     },
     {
       "id": "HEAL_LOCATION_SUNSHINE_ORPHANAGE",

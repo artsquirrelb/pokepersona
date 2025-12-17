@@ -1,1 +1,5 @@
-mapscripts WindwardPort_Harbor_MapScripts {}
+mapscripts WindwardPort_Harbor_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        setflag(FLAG_VISITED_WINDWARD_PORT)
+    }
+}

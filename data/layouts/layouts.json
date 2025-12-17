@@ -5789,7 +5789,7 @@
       "id": "LAYOUT_WINDWARD_PORT",
       "name": "WindwardPort_Layout",
       "width": 52,
-      "height": 56,
+      "height": 41,
       "border_width": 4,
       "border_height": 4,
       "primary_tileset": "gTileset_Gen4General",
@@ -5813,13 +5813,37 @@
       "id": "LAYOUT_WINDWARD_PORT_HARBOR",
       "name": "WindwardPort_Harbor_Layout",
       "width": 37,
-      "height": 48,
+      "height": 41,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Gen4General",
       "secondary_tileset": "gTileset_WindwardPort",
       "border_filepath": "data/layouts/WindwardPort_Harbor/border.bin",
       "blockdata_filepath": "data/layouts/WindwardPort_Harbor/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDWARD_PORT_LIGHTHOUSE",
+      "name": "WindwardPort_Lighthouse_Layout",
+      "width": 24,
+      "height": 26,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_Coralport_Lighthouse",
+      "border_filepath": "data/layouts/WindwardPort_Lighthouse/border.bin",
+      "blockdata_filepath": "data/layouts/WindwardPort_Lighthouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDWARD_PORT_BEACH",
+      "name": "WindwardPort_Beach_Layout",
+      "width": 51,
+      "height": 30,
+      "border_width": 4,
+      "border_height": 4,
+      "primary_tileset": "gTileset_Gen4General",
+      "secondary_tileset": "gTileset_WindwardPort",
+      "border_filepath": "data/layouts/WindwardPort_Beach/border.bin",
+      "blockdata_filepath": "data/layouts/WindwardPort_Beach/map.bin"
     }
   ]
 }

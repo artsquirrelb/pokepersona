@@ -114,7 +114,9 @@
     "Coralport",
     "Route3",
     "WindwardPort",
-    "WindwardPort_Harbor"
+    "WindwardPort_Harbor",
+    "WindwardPort_Lighthouse",
+    "WindwardPort_Beach"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

@@ -206,9 +206,7 @@
       "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ROUTE2_GATEHOUSE",
-      "dest_warp_id": "0",
-      "respawn_map": "MAP_ROUTE2_GATEHOUSE",
-      "respawn_npc": "LOCALID_ROUTE2_GATEHOUSE_NURSE"
+      "dest_warp_id": "0"
     },
     {
       "x": 12,

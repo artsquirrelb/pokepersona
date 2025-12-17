@@ -1,4 +1,8 @@
-mapscripts WindwardPort_MapScripts {}
+mapscripts WindwardPort_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION{
+        setflag(FLAG_VISITED_WINDWARD_PORT)
+    }
+}
 
 
 script WindwardPort_Eventscript_SailorOnGuard {

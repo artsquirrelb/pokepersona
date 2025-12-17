@@ -1369,7 +1369,7 @@
 // Towns and Cities
 #define FLAG_VISITED_SUNSHINE_TOWN                  (SYSTEM_FLAGS + 0xF)
 #define FLAG_VISITED_CORALPORT                      (SYSTEM_FLAGS + 0x10)
-#define FLAG_VISITED_WINDWARD_PORT                   (SYSTEM_FLAGS + 0x11)
+#define FLAG_VISITED_WINDWARD_PORT                  (SYSTEM_FLAGS + 0x11)
 #define FLAG_VISITED_LAVARIDGE_TOWN                 (SYSTEM_FLAGS + 0x12)
 #define FLAG_VISITED_FALLARBOR_TOWN                 (SYSTEM_FLAGS + 0x13)
 #define FLAG_VISITED_VERDANTURF_TOWN                (SYSTEM_FLAGS + 0x14)

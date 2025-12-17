@@ -1252,3 +1252,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Coralport_NeckbeardsHouse/scripts.inc"
 
 	.include "data/maps/WindwardPort_Harbor/scripts.inc"
+
+	.include "data/maps/WindwardPort_Lighthouse/scripts.inc"
+
+	.include "data/maps/WindwardPort_Beach/scripts.inc"

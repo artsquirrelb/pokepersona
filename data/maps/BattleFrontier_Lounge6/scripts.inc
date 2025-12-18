@@ -11,8 +11,7 @@ BattleFrontier_Lounge6_EventScript_Trader::
 	copyvar VAR_0x8009, VAR_RESULT
 	msgbox BattleFrontier_Lounge6_Text_WouldYouLikeToTrade, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, BattleFrontier_Lounge6_EventScript_DeclineTrade
-	fadescreen FADE_TO_BLACK
-	special ChooseBoxMon
+	special ChoosePartyMon
 	waitstate
 	copyvar VAR_0x800A, VAR_0x8004
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, BattleFrontier_Lounge6_EventScript_DeclineTrade
@@ -47,7 +46,7 @@ BattleFrontier_Lounge6_EventScript_TradeCompleted::
 	end
 
 BattleFrontier_Lounge6_Text_WouldYouLikeToTrade:
-	.string "My Pokémon is a {STR_VAR_2}.\n"
+	.string "My POKéMON is a {STR_VAR_2}.\n"
 	.string "Do you know it?\l"
 	.string "It's quite cute and rather nice.\p"
 	.string "This little one, I could trade with\n"
@@ -74,5 +73,5 @@ BattleFrontier_Lounge6_Text_WellThatsFineToo:
 
 BattleFrontier_Lounge6_Text_SkittySoMuchCuterThanImagined:
 	.string "Giggle!\n"
-	.string "A Skitty is so much cuter than I had\l"
+	.string "A SKITTY is so much cuter than I had\l"
 	.string "imagined. I'm delighted!$"

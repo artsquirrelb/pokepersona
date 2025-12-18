@@ -13,7 +13,7 @@ Route110_TrickHousePuzzle7_OnResume:
 	end
 
 Route110_TrickHousePuzzle7_EventScript_UpdateSwitchMetatiles::
-	call_if_set FLAG_HIDE_SHINJIRO, Route110_TrickHousePuzzle7_EventScript_SetSwitch1MetatilesOn
+	call_if_set FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1, Route110_TrickHousePuzzle7_EventScript_SetSwitch1MetatilesOn
 	call_if_set FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2, Route110_TrickHousePuzzle7_EventScript_SetSwitch2MetatilesOn
 	call_if_set FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3, Route110_TrickHousePuzzle7_EventScript_SetSwitch3MetatilesOn
 	call_if_set FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4, Route110_TrickHousePuzzle7_EventScript_SetSwitch4MetatilesOn
@@ -73,7 +73,7 @@ Route110_TrickHousePuzzle7_EventScript_SetSwitch5MetatilesOff::
 
 Route110_TrickHousePuzzle7_OnTransition:
 	goto_if_eq VAR_TRICK_HOUSE_PUZZLE_7_STATE_2, 1, Route110_TrickHousePuzzle7_EventScript_TeleportedTransition
-	clearflag FLAG_HIDE_SHINJIRO
+	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1
 	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_2
 	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_3
 	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_4
@@ -119,12 +119,12 @@ Route110_TrickHousePuzzle7_EventScript_TeleportPad::
 Route110_TrickHousePuzzle7_EventScript_Switch1::
 	lockall
 	delay 32
-	call_if_unset FLAG_HIDE_SHINJIRO, Route110_TrickHousePuzzle7_EventScript_SetSwitch1MetatilesOn
-	call_if_set FLAG_HIDE_SHINJIRO, Route110_TrickHousePuzzle7_EventScript_SetSwitch1MetatilesOff
+	call_if_unset FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1, Route110_TrickHousePuzzle7_EventScript_SetSwitch1MetatilesOn
+	call_if_set FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1, Route110_TrickHousePuzzle7_EventScript_SetSwitch1MetatilesOff
 	special DrawWholeMapView
 	playse SE_CLICK
-	goto_if_unset FLAG_HIDE_SHINJIRO, Route110_TrickHousePuzzle7_EventScript_SetSwitch1On
-	goto_if_set FLAG_HIDE_SHINJIRO, Route110_TrickHousePuzzle7_EventScript_SetSwitch1Off
+	goto_if_unset FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1, Route110_TrickHousePuzzle7_EventScript_SetSwitch1On
+	goto_if_set FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1, Route110_TrickHousePuzzle7_EventScript_SetSwitch1Off
 	end
 
 Route110_TrickHousePuzzle7_EventScript_Switch2::
@@ -173,12 +173,12 @@ Route110_TrickHousePuzzle7_EventScript_Switch5::
 
 @ All the below switch scripts are unused leftover from R/S
 Route110_TrickHousePuzzle7_EventScript_SetSwitch1On::
-	setflag FLAG_HIDE_SHINJIRO
+	setflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1
 	releaseall
 	end
 
 Route110_TrickHousePuzzle7_EventScript_SetSwitch1Off::
-	clearflag FLAG_HIDE_SHINJIRO
+	clearflag FLAG_TRICK_HOUSE_PUZZLE_7_SWITCH_1
 	releaseall
 	end
 
@@ -317,12 +317,12 @@ Route110_TrickHousePuzzle7_EventScript_Everett::
 Route110_TrickHousePuzzle7_Text_WroteSecretCodeLockOpened::
 	.string "{PLAYER} wrote down the secret code\n"
 	.string "on the door.\p"
-	.string "“Trick Master is huggable.”\n"
+	.string "“TRICK MASTER is huggable.”\n"
 	.string "… … … … … … … …\p"
 	.string "The lock clicked open!$"
 
 Route110_TrickHousePuzzle7_Text_JoshuaIntro:
-	.string "The Trick Master always vanishes\n"
+	.string "The TRICK MASTER always vanishes\n"
 	.string "like smoke. How does he do it?$"
 
 Route110_TrickHousePuzzle7_Text_JoshuaDefeat:
@@ -355,7 +355,7 @@ Route110_TrickHousePuzzle7_Text_AlexisDefeat:
 
 Route110_TrickHousePuzzle7_Text_AlexisPostBattle:
 	.string "You're solving all the puzzles in the\n"
-	.string "Trick House. That's the feeling I get.$"
+	.string "TRICK HOUSE. That's the feeling I get.$"
 
 Route110_TrickHousePuzzle7_Text_MarielaIntro:
 	.string "Nufufufu, here at last!\n"

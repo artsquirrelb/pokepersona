@@ -18,7 +18,6 @@ BattleFrontier_BattleDomePreBattleRoom_OnFrame:
 
 BattleFrontier_BattleDomePreBattleRoom_EventScript_EnterRoom::
 	goto_if_eq VAR_0x8006, 1, BattleFrontier_BattleDomePreBattleRoom_EventScript_ReturnFromBattle
-	delay 1
 	frontier_set FRONTIER_DATA_RECORD_DISABLED, TRUE
 	setvar VAR_TEMP_0, 1
 	applymovement LOCALID_PLAYER, BattleFrontier_BattleDomePreBattleRoom_Movement_PlayerEnter
@@ -271,11 +270,11 @@ BattleFrontier_BattleDomePreBattleRoom_Movement_PlayerEnterDoor:
 	step_end
 
 BattleFrontier_BattleDomePreBattleRoom_Text_ReadyForRound1:
-	.string "Your first-round match is next.\n"
+	.string "Your 1st-round match is next.\n"
 	.string "Are you ready?$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_ReadyForRound2:
-	.string "Your second-round match is next.\n"
+	.string "Your 2nd-round match is next.\n"
 	.string "Are you ready?$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_ReadyForSemifinals:
@@ -287,7 +286,7 @@ BattleFrontier_BattleDomePreBattleRoom_Text_ReadyForFinals:
 	.string "Are you ready?$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_ChooseTwoMons:
-	.string "Please choose the two Pokémon\n"
+	.string "Please choose the two POKéMON\n"
 	.string "that are to appear in battle.$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_RightThisWay:
@@ -295,16 +294,16 @@ BattleFrontier_BattleDomePreBattleRoom_Text_RightThisWay:
 
 BattleFrontier_BattleDomePreBattleRoom_Text_RestoreMonsToFullHealth:
 	.string "Thank you for competing!\p"
-	.string "I'll restore your Pokémon to\n"
+	.string "I'll restore your POKéMON to\n"
 	.string "full health.$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_Round1Complete:
-	.string "All first-round matches have been\n"
+	.string "All 1st-round matches have been\n"
 	.string "completed.\p"
 	.string "These are the teams that advanced!$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_Round2Complete:
-	.string "All second-round matches have been\n"
+	.string "All 2nd-round matches have been\n"
 	.string "completed.\p"
 	.string "These are the teams that advanced!$"
 
@@ -316,8 +315,8 @@ BattleFrontier_BattleDomePreBattleRoom_Text_SemifinalsComplete:
 @ Unused
 BattleFrontier_BattleDomePreBattleRoom_Text_CongratsReadyForRound2:
 	.string "Congratulations for getting through\n"
-	.string "the first round.\p"
-	.string "The second round is next.\n"
+	.string "the 1st round.\p"
+	.string "The 2nd round is next.\n"
 	.string "Are you ready?$"
 
 @ Unused
@@ -336,13 +335,13 @@ BattleFrontier_BattleDomePreBattleRoom_Text_CongratsReadyForFinals:
 
 BattleFrontier_BattleDomePreBattleRoom_Text_PlayersNextOpponentIsTrainer:
 	.string "{PLAYER}'s next opponent\n"
-	.string "is this Trainer.$"
+	.string "is this TRAINER.$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_TourneyInRound1:
-	.string "The tournament is in the first round.$"
+	.string "The tournament is in the 1st round.$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_TourneyInRound2:
-	.string "The tournament is in the second round.$"
+	.string "The tournament is in the 2nd round.$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_TourneyInSemifinals:
 	.string "The tournament is in the semifinals.$"
@@ -364,13 +363,13 @@ BattleFrontier_BattleDomePreBattleRoom_Text_SavingDataPleaseWait:
 
 BattleFrontier_BattleDomePreBattleRoom_Text_RecordLastMatch:
 	.string "Should I record your last match\n"
-	.string "on your Frontier Pass?$"
+	.string "on your FRONTIER PASS?$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_ReadyForTuckerSilver:
 	.string "Congratulations for advancing\n"
 	.string "to the final match.\p"
 	.string "For the final match, you will challenge\n"
-	.string "the Dome Ace Tucker.\p"
+	.string "the DOME ACE TUCKER.\p"
 	.string "Are you ready?$"
 
 @ Identical to ReadyForTuckerSilver
@@ -378,15 +377,15 @@ BattleFrontier_BattleDomePreBattleRoom_Text_ReadyForTuckerGold:
 	.string "Congratulations for advancing\n"
 	.string "to the final match.\p"
 	.string "For the final match, you will challenge\n"
-	.string "the Dome Ace Tucker.\p"
+	.string "the DOME ACE TUCKER.\p"
 	.string "Are you ready?$"
 
 BattleFrontier_BattleDomePreBattleRoom_Text_ReadyForTuckerSilverShort:
-	.string "Your final battle against Tucker is\n"
+	.string "Your final battle against TUCKER is\n"
 	.string "next. Are you ready?$"
 
 @ Identical again
 BattleFrontier_BattleDomePreBattleRoom_Text_ReadyForTuckerGoldShort:
-	.string "Your final battle against Tucker is\n"
+	.string "Your final battle against TUCKER is\n"
 	.string "next. Are you ready?$"
 

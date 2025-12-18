@@ -143,6 +143,7 @@ Route121_EventScript_Pat::
 	end
 
 Route121_EventScript_Marcel::
+	trainerbattle_single TRAINER_MARCEL, Route121_Text_MarcelIntro, Route121_Text_MarcelDefeat
 	msgbox Route121_Text_MarcelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -169,19 +170,19 @@ Route121_EventScript_RematchCristin::
 
 Route121_Text_OkayMoveOutToMtPyre:
 	.string "Okay!\n"
-	.string "We're to move out to Mt. Pyre!$"
+	.string "We're to move out to MT. PYRE!$"
 
 Route121_Text_AheadLoomsMtPyre:
-	.string "Ahead looms Mt. Pyre…\p"
+	.string "Ahead looms MT. PYRE…\p"
 	.string "It is a natural monument to the spirits \n"
-	.string "of departed Pokémon…$"
+	.string "of departed POKéMON…$"
 
 Route121_Text_MtPyrePierSign:
-	.string "Mt. Pyre Pier\p"
+	.string "MT. PYRE PIER\p"
 	.string "…The sign is old and worn out.\n"
 	.string "The words are barely legible…$"
 
 Route121_Text_SafariZoneSign:
-	.string "“Filled with rare Pokémon!”\n"
-	.string "Safari Zone$"
+	.string "“Filled with rare POKéMON!”\n"
+	.string "SAFARI ZONE$"
 

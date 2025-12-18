@@ -4,6 +4,10 @@ DewfordTown_Hall_MapScripts::
 DewfordTown_Hall_EventScript_Girl::
 	lock
 	faceplayer
+	call Common_EventScript_BufferTrendyPhrase
+	special IsTrendyPhraseBoring
+	goto_if_eq VAR_RESULT, TRUE, DewfordTown_Hall_EventScript_GirlBoredOfTrend
+	msgbox DewfordTown_Hall_Text_CantImagineLifeWithoutTrend, MSGBOX_DEFAULT
 	release
 	end
 
@@ -21,7 +25,13 @@ DewfordTown_Hall_EventScript_Woman::
 	end
 
 DewfordTown_Hall_EventScript_Man::
-	
+	lock
+	faceplayer
+	call Common_EventScript_BufferTrendyPhrase
+	special BufferDeepLinkPhrase
+	msgbox DewfordTown_Hall_Text_DeepLinkBetweenXAndY, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, DewfordTown_Hall_EventScript_ConfirmTrendLink
+	goto_if_eq VAR_RESULT, NO, DewfordTown_Hall_EventScript_RejectTrendLink
 	end
 
 DewfordTown_Hall_EventScript_ConfirmTrendLink::
@@ -72,7 +82,18 @@ DewfordTown_Hall_EventScript_Bookshelf::
 	end
 
 DewfordTown_Hall_EventScript_Painting::
-	
+	lockall
+	call Common_EventScript_BufferTrendyPhrase
+	special GetDewfordHallPaintingNameIndex
+	switch VAR_RESULT
+	case 0, DewfordTown_Hall_EventScript_ScreamTitle
+	case 4, DewfordTown_Hall_EventScript_ScreamTitle
+	case 1, DewfordTown_Hall_EventScript_SmileTitle
+	case 5, DewfordTown_Hall_EventScript_ScreamTitle
+	case 2, DewfordTown_Hall_EventScript_LastTitle
+	case 6, DewfordTown_Hall_EventScript_LastTitle
+	case 3, DewfordTown_Hall_EventScript_BirthTitle
+	case 7, DewfordTown_Hall_EventScript_LastTitle
 	end
 
 DewfordTown_Hall_EventScript_ScreamTitle::
@@ -108,7 +129,17 @@ DewfordTown_Hall_EventScript_PsychicM::
 	end
 
 DewfordTown_Hall_EventScript_DoTrendDebate::
-	
+	call Common_EventScript_BufferTrendyPhrase
+	special GetDewfordHallPaintingNameIndex
+	switch VAR_RESULT
+	case 0, DewfordTown_Hall_EventScript_TrendDebate1
+	case 1, DewfordTown_Hall_EventScript_TrendDebate1
+	case 2, DewfordTown_Hall_EventScript_TrendDebate2
+	case 3, DewfordTown_Hall_EventScript_TrendDebate2
+	case 4, DewfordTown_Hall_EventScript_TrendDebate3
+	case 5, DewfordTown_Hall_EventScript_TrendDebate3
+	case 6, DewfordTown_Hall_EventScript_TrendDebate4
+	case 7, DewfordTown_Hall_EventScript_TrendDebate5
 	end
 
 DewfordTown_Hall_EventScript_TrendDebate1::
@@ -236,7 +267,7 @@ DewfordTown_Hall_Text_GettingBoredOfTrend:
 	.string "I should look for the next big thing.$"
 
 DewfordTown_Hall_Text_TeachingMonAboutTrend:
-	.string "I'm teaching my Pokémon about\n"
+	.string "I'm teaching my POKéMON about\n"
 	.string "“{STR_VAR_1},”\l"
 	.string "but it's not going well.\p"
 	.string "It's a bit too much, I think.$"
@@ -275,7 +306,7 @@ DewfordTown_Hall_Text_CollectTrendMerchandise:
 	.string "“{STR_VAR_1}”\l"
 	.string "licensed merchandise.\p"
 	.string "I have official\n"
-	.string "“{STR_VAR_1}” Dolls…\p"
+	.string "“{STR_VAR_1}” DOLLS…\p"
 	.string "Official “{STR_VAR_1}”\n"
 	.string "brand clothing…\p"
 	.string "And officially licensed\n"
@@ -285,31 +316,31 @@ DewfordTown_Hall_Text_CollectTrendMerchandise:
 	.string "I'm not sharing anything with you!$"
 
 DewfordTown_Hall_Text_BooksAboutTrend:
-	.string "Identifying Good\n"
+	.string "IDENTIFYING GOOD\n"
 	.string "“{STR_VAR_1}” &\l"
-	.string "Bad “{STR_VAR_1}”…\p"
-	.string "The Link Between\n"
-	.string "“{STR_VAR_1}” And\l"
-	.string "Pokémon…\p"
-	.string "Useful\n"
+	.string "BAD “{STR_VAR_1}”…\p"
+	.string "THE LINK BETWEEN\n"
+	.string "“{STR_VAR_1}” AND\l"
+	.string "POKéMON…\p"
+	.string "USEFUL\n"
 	.string "“{STR_VAR_1}”…\p"
 	.string "It's neatly jammed with books about\n"
 	.string "“{STR_VAR_1}.”$"
 
 DewfordTown_Hall_Text_TrendsScream:
-	.string "“{STR_VAR_1}'s\n"
-	.string "Scream” is the title.$"
+	.string "“{STR_VAR_1}'S\n"
+	.string "SCREAM” is the title.$"
 
 DewfordTown_Hall_Text_TrendsSmile:
-	.string "“{STR_VAR_1}'s\n"
-	.string "Smile” is the title.$"
+	.string "“{STR_VAR_1}'S\n"
+	.string "SMILE” is the title.$"
 
 DewfordTown_Hall_Text_LastTrend:
-	.string "It's titled “The Last\n"
+	.string "It's titled “THE LAST\n"
 	.string "{STR_VAR_1}”.$"
 
 DewfordTown_Hall_Text_BirthOfTrend:
-	.string "It's titled “The Birth of\n"
+	.string "It's titled “THE BIRTH OF\n"
 	.string "{STR_VAR_1}”.$"
 
 DewfordTown_Hall_Text_SawTrendCoolestThing:
@@ -379,7 +410,7 @@ DewfordTown_Hall_Text_TrendWeighsHeavilyOnMind:
 	.string "you're awake or asleep.\p"
 	.string "Absolutely, you're the\n"
 	.string "“{STR_VAR_1}”\l"
-	.string "Professor, old sport!$"
+	.string "PROFESSOR, old sport!$"
 
 DewfordTown_Hall_Text_IfWeTeamUpWellBeInvincible:
 	.string "If you and me team up as a combo,\n"
@@ -389,21 +420,21 @@ DewfordTown_Hall_Text_IfWeTeamUpWellBeInvincible:
 DewfordTown_Hall_Text_WellBeTrendDuo:
 	.string "Spot on, my friend!\p"
 	.string "We shall be the\n"
-	.string "“{STR_VAR_1}” Duo!\p"
+	.string "“{STR_VAR_1}” DUO!\p"
 	.string "Isn't that a ripe image?\n"
 	.string "Hahahah!$"
 
 DewfordTown_Hall_Text_GiveYouSludgeBomb:
-	.string "For me, Sludge Bomb is at the peak\n"
+	.string "For me, SLUDGE BOMB is at the peak\n"
 	.string "of popularity. It's the one.\p"
 	.string "Hunh? You're telling me that you don't\n"
-	.string "know about Sludge Bomb?\p"
+	.string "know about SLUDGE BOMB?\p"
 	.string "That's outright pitiful.\n"
 	.string "I'll give you one.$"
 
 DewfordTown_Hall_Text_LoveSludgeBombButTrendInToo:
-	.string "I love Sludge Bomb.\p"
-	.string "But Pokémon with the move\n"
+	.string "I love SLUDGE BOMB.\p"
+	.string "But POKéMON with the move\n"
 	.string "“{STR_VAR_1}”\l"
 	.string "are in, too.$"
 

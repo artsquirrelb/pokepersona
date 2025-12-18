@@ -75,7 +75,7 @@ AquaHideout_B1F_EventScript_DefeatedElectrode2::
 	end
 
 AquaHideout_B1F_EventScript_Grunt2::
-	//trainerbattle_single TRAINER_ICHIGO, AquaHideout_B1F_Text_Grunt2Intro, AquaHideout_B1F_Text_Grunt2Defeat, AquaHideout_B1F_EventScript_Grunt2Defeated
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_2, AquaHideout_B1F_Text_Grunt2Intro, AquaHideout_B1F_Text_Grunt2Defeat, AquaHideout_B1F_EventScript_Grunt2Defeated
 	msgbox AquaHideout_B1F_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -87,7 +87,7 @@ AquaHideout_B1F_EventScript_Grunt2Defeated::
 	end
 
 AquaHideout_B1F_EventScript_Grunt3::
-	//trainerbattle_single TRAINER_KG_STAFF_M_THUNDERSHARDS_CAVE_1F, AquaHideout_B1F_Text_Grunt3Intro, AquaHideout_B1F_Text_Grunt3Defeat, AquaHideout_B1F_EventScript_Grunt3Defeated
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_3, AquaHideout_B1F_Text_Grunt3Intro, AquaHideout_B1F_Text_Grunt3Defeat, AquaHideout_B1F_EventScript_Grunt3Defeated
 	msgbox AquaHideout_B1F_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -108,13 +108,13 @@ AquaHideout_B1F_EventScript_Grunt7::
 
 AquaHideout_B1F_Text_Grunt2Intro:
 	.string "If you want to know the secret about\n"
-	.string "our Hideout, you have me to beat!$"
+	.string "our HIDEOUT, you have me to beat!$"
 
 AquaHideout_B1F_Text_Grunt2Defeat:
 	.string "I can't win at all…$"
 
 AquaHideout_B1F_Text_Grunt2PostBattle:
-	.string "Our Hideout's secret?\p"
+	.string "Our HIDEOUT's secret?\p"
 	.string "Well, let's just say…\n"
 	.string "There's a submarine at the far end!\p"
 	.string "But, by now…\n"
@@ -136,21 +136,21 @@ AquaHideout_B1F_Text_Grunt3PostBattle:
 
 AquaHideout_B1F_Text_Grunt5Intro:
 	.string "Yawn… Keeping watch over the\n"
-	.string "Hideout bores me. I'll take you on.$"
+	.string "HIDEOUT bores me. I'll take you on.$"
 
 AquaHideout_B1F_Text_Grunt5Defeat:
 	.string "Yawn…\n"
 	.string "Oh, I lost…$"
 
 AquaHideout_B1F_Text_Grunt5PostBattle:
-	.string "If you scurry too much, other Team\n"
-	.string "Aqua members might get you.$"
+	.string "If you scurry too much, other TEAM\n"
+	.string "AQUA members might get you.$"
 
 AquaHideout_B1F_Text_Grunt7Intro:
 	.string "Hey!\n"
 	.string "You there!\p"
 	.string "Which do you think is cooler?\n"
-	.string "Team Aqua's uniform or Team Magma's?$"
+	.string "TEAM AQUA's uniform or TEAM MAGMA's?$"
 
 AquaHideout_B1F_Text_Grunt7Defeat:
 	.string "I lost in a cool way…$"

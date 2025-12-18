@@ -104,8 +104,8 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_NET_BALL",
-      "script": "Common_EventScript_FindItem",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MossdeepCity_EventScript_ItemNetBall",
       "flag": "FLAG_ITEM_MOSSDEEP_CITY_NET_BALL"
     },
     {
@@ -372,7 +372,7 @@
       "x": 42,
       "y": 21,
       "elevation": 5,
-      "var": "VAR_CHAPTER_4_STATE",
+      "var": "VAR_MOSSDEEP_CITY_STATE",
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     },
@@ -381,7 +381,7 @@
       "x": 41,
       "y": 22,
       "elevation": 5,
-      "var": "VAR_CHAPTER_4_STATE",
+      "var": "VAR_MOSSDEEP_CITY_STATE",
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     },
@@ -390,7 +390,7 @@
       "x": 41,
       "y": 23,
       "elevation": 5,
-      "var": "VAR_CHAPTER_4_STATE",
+      "var": "VAR_MOSSDEEP_CITY_STATE",
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     },
@@ -399,7 +399,7 @@
       "x": 41,
       "y": 24,
       "elevation": 5,
-      "var": "VAR_CHAPTER_4_STATE",
+      "var": "VAR_MOSSDEEP_CITY_STATE",
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     },
@@ -408,7 +408,7 @@
       "x": 40,
       "y": 25,
       "elevation": 5,
-      "var": "VAR_CHAPTER_4_STATE",
+      "var": "VAR_MOSSDEEP_CITY_STATE",
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     },
@@ -417,7 +417,7 @@
       "x": 40,
       "y": 26,
       "elevation": 5,
-      "var": "VAR_CHAPTER_4_STATE",
+      "var": "VAR_MOSSDEEP_CITY_STATE",
       "var_value": "1",
       "script": "MossdeepCity_EventScript_TeamMagmaEnterSpaceCenter"
     }

@@ -4,15 +4,15 @@ OldaleTown_MapScripts::
 
 OldaleTown_OnTransition:
 	call Common_EventScript_SetupRivalGfxId
-	setflag FLAG_VISITED_CORALPORT
+	setflag FLAG_VISITED_OLDALE_TOWN
 	call_if_unset FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_BlockWestEntrance
-	call_if_unset FLAG_RECEIVED_EXP_CANDIES_ROUTE2_GATEHOUSE, OldaleTown_EventScript_MoveMartEmployee
+	call_if_unset FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_MoveMartEmployee
 	call_if_set FLAG_ADVENTURE_STARTED, OldaleTown_EventScript_SetOldaleState
 	end
 
-@ This script seems pointless because nothing uses VAR_TIME_RESET_ATTEMPTS
+@ This script seems pointless because nothing uses VAR_OLDALE_TOWN_STATE
 OldaleTown_EventScript_SetOldaleState::
-	setvar VAR_TIME_RESET_ATTEMPTS, 1
+	setvar VAR_OLDALE_TOWN_STATE, 1
 	return
 
 OldaleTown_EventScript_BlockWestEntrance::
@@ -36,7 +36,7 @@ OldaleTown_EventScript_Girl::
 OldaleTown_EventScript_MartEmployee::
 	lock
 	faceplayer
-	goto_if_set FLAG_RECEIVED_EXP_CANDIES_ROUTE2_GATEHOUSE, OldaleTown_EventScript_ExplainPotion
+	goto_if_set FLAG_RECEIVED_POTION_OLDALE, OldaleTown_EventScript_ExplainPotion
 	goto_if_set FLAG_TEMP_1, OldaleTown_EventScript_ExplainPotion
 	setflag FLAG_TEMP_1
 	playbgm MUS_FOLLOW_ME, FALSE
@@ -74,7 +74,7 @@ OldaleTown_EventScript_ExplainPokemonMart::
 	giveitem ITEM_POTION
 	goto_if_eq VAR_RESULT, FALSE, OldaleTown_EventScript_BagIsFull
 	msgbox OldaleTown_Text_PotionExplanation, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_EXP_CANDIES_ROUTE2_GATEHOUSE
+	setflag FLAG_RECEIVED_POTION_OLDALE
 	fadedefaultbgm
 	release
 	end
@@ -345,53 +345,53 @@ OldaleTown_Text_SavingMyProgress:
 
 OldaleTown_Text_IWorkAtPokemonMart:
 	.string "Hi!\n"
-	.string "I work at a Poké Mart.\p"
+	.string "I work at a POKéMON MART.\p"
 	.string "Can I get you to come with me?$"
 
 OldaleTown_Text_ThisIsAPokemonMart:
-	.string "This is a Poké Mart.\n"
+	.string "This is a POKéMON MART.\n"
 	.string "Just look for our blue roof.\p"
 	.string "We sell a variety of goods including\n"
-	.string "Poké Balls for catching Pokémon.\p"
+	.string "POKé BALLS for catching POKéMON.\p"
 	.string "Here, I'd like you to have this as\n"
 	.string "a promotional item.$"
 
 OldaleTown_Text_PotionExplanation:
-	.string "A Potion can be used anytime, so it's\n"
-	.string "even more useful than a Pokémon Center\l"
+	.string "A POTION can be used anytime, so it's\n"
+	.string "even more useful than a POKéMON CENTER\l"
 	.string "in certain situations.$"
 
 OldaleTown_Text_WaitDontComeInHere:
 	.string "Aaaaah! Wait!\n"
 	.string "Please don't come in here.\p"
 	.string "I just discovered the footprints of\n"
-	.string "a rare Pokémon!\p"
+	.string "a rare POKéMON!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_DiscoveredFootprints:
 	.string "I just discovered the footprints of\n"
-	.string "a rare Pokémon!\p"
+	.string "a rare POKéMON!\p"
 	.string "Wait until I finish sketching\n"
 	.string "them, okay?$"
 
 OldaleTown_Text_FinishedSketchingFootprints:
 	.string "I finished sketching the footprints of\n"
-	.string "a rare Pokémon.\p"
+	.string "a rare POKéMON.\p"
 	.string "But it turns out they were only my\n"
 	.string "own footprints…$"
 
 OldaleTown_Text_MayLetsGoBack:
-	.string "May: {PLAYER}{KUN}!\n"
+	.string "MAY: {PLAYER}{KUN}!\n"
 	.string "Over here!\l"
 	.string "Let's hurry home!$"
 
 OldaleTown_Text_BrendanLetsGoBack:
-	.string "Brendan: I'm heading back to my dad's\n"
-	.string "Lab now.\l"
+	.string "BRENDAN: I'm heading back to my dad's\n"
+	.string "LAB now.\l"
 	.string "{PLAYER}, you should hustle back, too.$"
 
 OldaleTown_Text_TownSign:
-	.string "Oldale Town\n"
+	.string "OLDALE TOWN\n"
 	.string "“Where things start off scarce.”$"
 

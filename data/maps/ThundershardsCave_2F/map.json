@@ -3,7 +3,7 @@
   "name": "ThundershardsCave_2F",
   "layout": "LAYOUT_THUNDERSHARDS_CAVE_2F",
   "music": "MUS_MT_CHIMNEY",
-  "region_map_section": "MAPSEC_THUNDERSHARDS_CLIFF_2",
+  "region_map_section": "MAPSEC_THUNDERSHARDS_CAVE_2F",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_UNDERGROUND",

@@ -134,7 +134,7 @@ static const u8 sRegionMapPlayerIcon_MayGfx[] = INCBIN_U8("graphics/pokenav/regi
 
 static const mapsec_u16_t sRegionMap_SpecialPlaceLocations[][2] =
 {
-    {MAPSEC_UNDERWATER_105,             MAPSEC_ROUTE_105},
+    /*{MAPSEC_UNDERWATER_105,             MAPSEC_ROUTE_105},
     {MAPSEC_UNDERWATER_124,             MAPSEC_ROUTE_124},
     #ifdef BUGFIX
     {MAPSEC_UNDERWATER_125,             MAPSEC_ROUTE_125},
@@ -160,7 +160,8 @@ static const mapsec_u16_t sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_DESERT_UNDERPASS,           MAPSEC_ROUTE_114},
     {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},
     {MAPSEC_ARTISAN_CAVE,               MAPSEC_ROUTE_103},
-    {MAPSEC_ABANDONED_SHIP,             MAPSEC_ROUTE_108},
+    {MAPSEC_ABANDONED_SHIP,             MAPSEC_ROUTE_108},*/
+    {MAPSEC_CORALPORT_CAVE,             MAPSEC_CORALPORT},
     {MAPSEC_NONE,                       MAPSEC_NONE}
 };
 

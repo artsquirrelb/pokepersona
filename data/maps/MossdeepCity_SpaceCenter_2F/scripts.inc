@@ -4,7 +4,7 @@ MossdeepCity_SpaceCenter_2F_MapScripts::
 	.byte 0
 
 MossdeepCity_SpaceCenter_2F_OnTransition:
-	call_if_eq VAR_CHAPTER_4_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_MoveCivilians
+	call_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_MoveCivilians
 	call_if_eq VAR_MOSSDEEP_SPACE_CENTER_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_MoveDefeatedGrunts
 	end
 
@@ -95,8 +95,8 @@ MossdeepCity_SpaceCenter_2F_EventScript_Scientist::
 	lock
 	faceplayer
 	goto_if_set FLAG_SYS_GAME_CLEAR, MossdeepCity_SpaceCenter_2F_EventScript_ScientistNormal
-	goto_if_eq VAR_CHAPTER_4_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_ScientistMagma
-	goto_if_lt VAR_CHAPTER_4_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_ScientistNormal
+	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_ScientistMagma
+	goto_if_lt VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_ScientistNormal
 	goto MossdeepCity_SpaceCenter_2F_EventScript_ScientistMagma
 	end
 
@@ -114,8 +114,8 @@ MossdeepCity_SpaceCenter_2F_EventScript_Gentleman::
 	lock
 	faceplayer
 	goto_if_set FLAG_SYS_GAME_CLEAR, MossdeepCity_SpaceCenter_2F_EventScript_GentlemanNormal
-	goto_if_eq VAR_CHAPTER_4_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_GentlemanMagma
-	goto_if_lt VAR_CHAPTER_4_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_GentlemanNormal
+	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_GentlemanMagma
+	goto_if_lt VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_GentlemanNormal
 	goto MossdeepCity_SpaceCenter_2F_EventScript_GentlemanMagma
 	end
 
@@ -133,8 +133,8 @@ MossdeepCity_SpaceCenter_2F_EventScript_RichBoy::
 	lock
 	faceplayer
 	goto_if_set FLAG_SYS_GAME_CLEAR, MossdeepCity_SpaceCenter_2F_EventScript_RichBoyNormal
-	goto_if_eq VAR_CHAPTER_4_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_RichBoyMagma
-	goto_if_lt VAR_CHAPTER_4_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_RichBoyNormal
+	goto_if_eq VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_RichBoyMagma
+	goto_if_lt VAR_MOSSDEEP_CITY_STATE, 2, MossdeepCity_SpaceCenter_2F_EventScript_RichBoyNormal
 	goto MossdeepCity_SpaceCenter_2F_EventScript_RichBoyMagma
 	end
 
@@ -246,7 +246,14 @@ MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle::
 	goto MossdeepCity_SpaceCenter_2F_EventScript_ReadyForBattlePrompt
 
 MossdeepCity_SpaceCenter_2F_EventScript_DoStevenMultiBattle::
-	multi_2_vs_2 TRAINER_MAXIE_MOSSDEEP, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, TRAINER_TABITHA_MOSSDEEP, MossdeepCity_SpaceCenter_Text_TabithaDefeat, PARTNER_AKIHIKO_C1
+	special ReducePlayerPartyToSelectedMons
+	frontier_set FRONTIER_DATA_SELECTED_MON_ORDER
+	setvar VAR_0x8004, SPECIAL_BATTLE_STEVEN
+	setvar VAR_0x8005, 0
+	special DoSpecialTrainerBattle
+	waitstate
+	frontier_saveparty
+	special LoadPlayerParty
 	switch VAR_RESULT
 	case 1, MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha
 	fadescreen FADE_TO_BLACK
@@ -267,7 +274,7 @@ MossdeepCity_SpaceCenter_2F_EventScript_DefeatedMaxieTabitha::
 	delay 20
 	msgbox MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp, MSGBOX_DEFAULT
 	closemessage
-	setvar VAR_CHAPTER_4_STATE, 3
+	setvar VAR_MOSSDEEP_CITY_STATE, 3
 	fadedefaultbgm
 	fadescreen FADE_TO_BLACK
 	setvar VAR_MOSSDEEP_SPACE_CENTER_STATE, 3
@@ -321,6 +328,14 @@ MossdeepCity_SpaceCenter_2F_EventScript_StevenFacePlayerWest::
 	turnobject LOCALID_SPACE_CENTER_2F_STEVEN, DIR_EAST
 	return
 
+MossdeepCity_SpaceCenter_2F_EventScript_MaxieTrainer::
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_A, TRAINER_MAXIE_MOSSDEEP, LOCALID_NONE, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand, MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand
+	end
+
+MossdeepCity_SpaceCenter_2F_EventScript_TabithaTrainer::
+	trainerbattle TRAINER_BATTLE_SET_TRAINER_B, TRAINER_TABITHA_MOSSDEEP, LOCALID_NONE, MossdeepCity_SpaceCenter_Text_TabithaDefeat, MossdeepCity_SpaceCenter_Text_TabithaDefeat
+	end
+
 MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall::
 	lockall
 	checkplayergender
@@ -342,13 +357,13 @@ MossdeepCity_SpaceCenter_2F_EventScript_BrendanRayquazaCall::
 	return
 
 MossdeepCity_SpaceCenter_2F_Text_MossdeepIdealForRockets:
-	.string "Mossdeep has mainly sunny weather,\n"
+	.string "MOSSDEEP has mainly sunny weather,\n"
 	.string "and its winds are stable.\p"
 	.string "It's an ideal location for launching\n"
 	.string "rockets.$"
 
 MossdeepCity_SpaceCenter_2F_Text_WhyWouldMagmaStealRocketFuel:
-	.string "Why would Team Magma want to steal\n"
+	.string "Why would TEAM MAGMA want to steal\n"
 	.string "our rocket fuel in the first place?$"
 
 MossdeepCity_SpaceCenter_2F_Text_WouldveLikedToBeAstronaut:
@@ -358,7 +373,7 @@ MossdeepCity_SpaceCenter_2F_Text_WouldveLikedToBeAstronaut:
 	.string "I can and will try!$"
 
 MossdeepCity_SpaceCenter_2F_Text_MagmaCantGetAwayWithThis:
-	.string "If Team Magma takes the rocket fuel,\n"
+	.string "If TEAM MAGMA takes the rocket fuel,\n"
 	.string "I won't be able to go to space!\p"
 	.string "They can't be allowed to get away\n"
 	.string "with such an outrage!$"
@@ -368,7 +383,7 @@ MossdeepCity_SpaceCenter_2F_Text_WishOrdinaryPeopleCouldGoIntoSpace:
 	.string "space one day…$"
 
 MossdeepCity_SpaceCenter_2F_Text_DoesMagmaWantToGoToSpace:
-	.string "Team Magma…\n"
+	.string "TEAM MAGMA…\n"
 	.string "Do they want to go to space, too?$"
 
 MossdeepCity_SpaceCenter_2F_Text_YoureOutnumberedTakeUsOn:
@@ -424,33 +439,33 @@ MossdeepCity_SpaceCenter_2F_Text_WellTakeCareOfYou:
 	.string "we'll take care of you at the same time!$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieDontInterfere:
-	.string "Maxie: Clear out of the way!\n"
+	.string "MAXIE: Clear out of the way!\n"
 	.string "Don't you dare interfere!$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenWhyStealRocketFuel:
-	.string "Steven: Team Magma…\p"
+	.string "STEVEN: TEAM MAGMA…\p"
 	.string "What's the point of stealing rocket\n"
 	.string "fuel?$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieUseFuelToEruptVolcano:
-	.string "Maxie: Fufufu… Since you're so\n"
+	.string "MAXIE: Fufufu… Since you're so\n"
 	.string "curious, you deserve an explanation.\p"
 	.string "We're going to jettison the entire\n"
-	.string "load into Mt. Chimney!\p"
-	.string "With Groudon gone, we have no need\n"
+	.string "load into MT. CHIMNEY!\p"
+	.string "With GROUDON gone, we have no need\n"
 	.string "for that slag heap of a mountain!\p"
 	.string "So we'll use the fuel's power to make\n"
 	.string "the volcano erupt!\p"
 	.string "It will be savage!$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenAreYouReadyToBattle:
-	.string "Steven: {PLAYER}{KUN}!\n"
+	.string "STEVEN: {PLAYER}{KUN}!\n"
 	.string "You're going to help me?\p"
 	.string "Let's go into battle together!\n"
 	.string "Are you ready?$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenHurryGetReadyQuickly:
-	.string "Steven: Then, hurry!\n"
+	.string "STEVEN: Then, hurry!\n"
 	.string "Get ready quickly!$"
 
 MossdeepCity_SpaceCenter_2F_Text_JustWantToExpandLand:
@@ -461,32 +476,32 @@ MossdeepCity_SpaceCenter_Text_TabithaDefeat:
 	.string "I'm with our leader…$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieWeFailedIsAquaAlsoMisguided:
-	.string "Maxie: We failed to make the volcano\n"
+	.string "MAXIE: We failed to make the volcano\n"
 	.string "erupt…\p"
-	.string "We failed to control Groudon after\n"
+	.string "We failed to control GROUDON after\n"
 	.string "we had awoken it…\p"
 	.string "Is our goal to expand the land\n"
 	.string "misguided?\p"
 	.string "… … … … … …\n"
 	.string "… … … … … …\p"
 	.string "If…\n"
-	.string "If we, Team Magma, are wrong…\l"
+	.string "If we, TEAM MAGMA, are wrong…\l"
 	.string "… … … … … …\p"
-	.string "Then might Team Aqua's goal to expand\n"
+	.string "Then might TEAM AQUA's goal to expand\n"
 	.string "the sea also be equally misguided?$"
 
 MossdeepCity_SpaceCenter_2F_Text_MaxieWeWillGiveUp:
-	.string "Maxie: All right…\n"
+	.string "MAXIE: All right…\n"
 	.string "We will give up on the fuel…\p"
 	.string "There appear to be more important\n"
 	.string "matters that I must examine…$"
 
 MossdeepCity_SpaceCenter_2F_Text_StevenThankYouComeSeeMeAtHome:
-	.string "Steven: Whew, that was too tense.\n"
+	.string "STEVEN: Whew, that was too tense.\n"
 	.string "{PLAYER}{KUN}, thank you.\p"
 	.string "I have something to give you as\n"
 	.string "thanks for your support.\p"
 	.string "Please come see me at home\n"
 	.string "after this.\p"
-	.string "Oh, yes, I don't live in Rustboro City.\n"
+	.string "Oh, yes, I don't live in RUSTBORO CITY.\n"
 	.string "I live right here on this island.$"

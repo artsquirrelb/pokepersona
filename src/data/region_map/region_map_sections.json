@@ -1457,7 +1457,7 @@
     },
     {
       "id": "MAPSEC_THUNDERSHARDS_CLIFF_2",
-      "name": "Thundershards Cave 2F",
+      "name": "Thundershards Cliff",
       "x": 23,
       "y": 6,
       "width": 1,
@@ -1472,16 +1472,28 @@
       "height": 1
     },
     {
-      "id": "MAPSEC_THUNDERSHARDS_CLIFF_CAVE_1F",
-      "name": "Thundershard Cave 1F"
+      "id": "MAPSEC_THUNDERSHARDS_CAVE_1F",
+      "name": "Thundershard Cave 1F",
+      "x": 23,
+      "y": 6,
+      "width": 1,
+      "height": 1
     },
     {
-      "id": "MAPSEC_THUNDERSHARDS_CLIFF_CAVE_2F",
-      "name": "Thundershard Cave 2F"
+      "id": "MAPSEC_THUNDERSHARDS_CAVE_2F",
+      "name": "Thundershard Cave 2F",
+      "x": 23,
+      "y": 6,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_CORALPORT_CAVE",
-      "name": "Coralport Cave"
+      "name": "Coralport Cave",
+      "x": 19,
+      "y": 9,
+      "width": 1,
+      "height": 1
     }
   ]
 }

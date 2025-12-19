@@ -271,7 +271,7 @@ script Coralport_Eventscript_SailorOnGuard {
                     applymovement(10, walkinplaceup)
                     waitmovement
                     delay(30)
-                    warp(MAP_WINDWARD_PORT_HARBOR, 23, 27)
+                    warp(MAP_WINDWARD_PORT_HARBOR, 23, 20)
                     waitstate
                 }
                 else{

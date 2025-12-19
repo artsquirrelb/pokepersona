@@ -50,7 +50,7 @@
       "y": 34,
       "elevation": 3,
       "item": "ITEM_PEARL",
-      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_124_PEARL"
+      "flag": "FLAG_HIDDEN_ITEM_CORALPORT_PEARL"
     },
     {
       "type": "hidden_item",

@@ -2,12 +2,12 @@ SeafloorCavern_Room1_MapScripts::
 	.byte 0
 
 SeafloorCavern_Room1_EventScript_Grunt1::
-	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_1, SeafloorCavern_Room1_Text_Grunt1Intro, SeafloorCavern_Room1_Text_Grunt1Defeat
+	//trainerbattle_single TRAINER_KG_STAFF_SCIENTIST_THUNDERSHARDS_CAVE_2F_EXTERIOR, SeafloorCavern_Room1_Text_Grunt1Intro, SeafloorCavern_Room1_Text_Grunt1Defeat
 	msgbox SeafloorCavern_Room1_Text_Grunt1PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 SeafloorCavern_Room1_EventScript_Grunt2::
-	trainerbattle_single TRAINER_GRUNT_SEAFLOOR_CAVERN_2, SeafloorCavern_Room1_Text_Grunt2Intro, SeafloorCavern_Room1_Text_Grunt2Defeat
+	trainerbattle_single TRAINER_ICHIGO_2, SeafloorCavern_Room1_Text_Grunt2Intro, SeafloorCavern_Room1_Text_Grunt2Defeat
 	msgbox SeafloorCavern_Room1_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -20,7 +20,7 @@ SeafloorCavern_Room1_Text_Grunt1Defeat:
 
 SeafloorCavern_Room1_Text_Grunt1PostBattle:
 	.string "I want to get a promotion so I can\n"
-	.string "boss around the GRUNTS…$"
+	.string "boss around the Grunts…$"
 
 SeafloorCavern_Room1_Text_Grunt2Intro:
 	.string "That submarine… It's tiny inside.\n"

@@ -11,7 +11,8 @@ FortreeCity_House1_EventScript_Trader::
 	copyvar VAR_0x8009, VAR_RESULT
 	msgbox FortreeCity_House1_Text_YouWillTradeWontYou, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, FortreeCity_House1_EventScript_DeclineTrade
-	special ChoosePartyMon
+	fadescreen FADE_TO_BLACK
+	special ChooseBoxMon
 	waitstate
 	copyvar VAR_0x800A, VAR_0x8004
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, FortreeCity_House1_EventScript_DeclineTrade
@@ -84,15 +85,15 @@ FortreeCity_House1_Text_YouWontTradeMe:
 	.string "Even after I bared my heart to you?$"
 
 FortreeCity_House1_Text_GoingToMakeVolbeatStrong:
-	.string "I'm going to make VOLBEAT super\n"
+	.string "I'm going to make Volbeat super\n"
 	.string "strong from this moment on!\p"
-	.string "I hope you do the same with PLUSLE!$"
+	.string "I hope you do the same with Pluses!$"
 
 FortreeCity_House1_Text_TradingMemoriesWithOthers:
-	.string "Trading POKéMON with others…\p"
+	.string "Trading Pokémon with others…\p"
 	.string "It's as if you're trading your own\n"
 	.string "memories with other people.$"
 
 FortreeCity_House1_Text_Zigzagoon:
-	.string "ZIGZAGOON: Gumomoh?$"
+	.string "Zigzagoon: Gumomoh?$"
 

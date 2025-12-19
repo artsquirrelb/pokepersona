@@ -14,9 +14,10 @@ SlateportCity_BattleTentBattleRoom_OnTransition:
 	end
 
 SlateportCity_BattleTentBattleRoom_EventScript_SetPlayerGfx::
-	checkplayergender
-	goto_if_eq VAR_RESULT, MALE, SlateportCity_BattleTentBattleRoom_EventScript_SetPlayerGfxMale
-	goto_if_eq VAR_RESULT, FEMALE, SlateportCity_BattleTentBattleRoom_EventScript_SetPlayerGfxFemale
+	@ checkplayergender
+	@ goto_if_eq VAR_RESULT, MALE, SlateportCity_BattleTentBattleRoom_EventScript_SetPlayerGfxMale
+	@ goto_if_eq VAR_RESULT, FEMALE, SlateportCity_BattleTentBattleRoom_EventScript_SetPlayerGfxFemale
+	setoutfitgfxintovar VAR_OBJ_GFX_ID_1
 	return
 
 SlateportCity_BattleTentBattleRoom_EventScript_SetPlayerGfxMale::
@@ -47,6 +48,7 @@ SlateportCity_BattleTentBattleRoom_EventScript_EnterRoom::
 	factory_setopponentgfx
 	setobjectxyperm LOCALID_SLATEPORT_TENT_BATTLE_OPPONENT, 5, 1
 	removeobject LOCALID_SLATEPORT_TENT_BATTLE_OPPONENT
+	delay 1
 	addobject LOCALID_SLATEPORT_TENT_BATTLE_OPPONENT
 	applymovement LOCALID_SLATEPORT_TENT_BATTLE_OPPONENT, SlateportCity_BattleTentBattleRoom_Movement_OpponentEnter
 	waitmovement 0
@@ -56,9 +58,7 @@ SlateportCity_BattleTentBattleRoom_EventScript_EnterRoom::
 	waitmessage
 	closemessage
 	special HealPlayerParty
-	setvar VAR_0x8004, SPECIAL_BATTLE_FACTORY
-	setvar VAR_0x8005, 0
-	special DoSpecialTrainerBattle
+	dofacilitytrainerbattle FACILITY_BATTLE_FACTORY
 	waitstate
 	switch VAR_RESULT
 	case 1, SlateportCity_BattleTentBattleRoom_EventScript_DefeatedOpponent

@@ -11,7 +11,8 @@ PacifidlogTown_House3_EventScript_Trader::
 	copyvar VAR_0x8009, VAR_RESULT
 	msgbox PacifidlogTown_House3_Text_WillingToTradeIt, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, PacifidlogTown_House3_EventScript_DeclineTrade
-	special ChoosePartyMon
+	fadescreen FADE_TO_BLACK
+	special ChooseBoxMon
 	waitstate
 	copyvar VAR_0x800A, VAR_0x8004
 	goto_if_eq VAR_0x8004, PARTY_NOTHING_CHOSEN, PacifidlogTown_House3_EventScript_DeclineTrade
@@ -42,6 +43,7 @@ PacifidlogTown_House3_EventScript_NotRequestedMon::
 	end
 
 PacifidlogTown_House3_EventScript_TradeCompleted::
+	bufferspeciesname STR_VAR_1, VAR_0x8009
 	msgbox PacifidlogTown_House3_Text_ReallyWantedToGetBagon, MSGBOX_DEFAULT
 	release
 	end
@@ -78,12 +80,12 @@ PacifidlogTown_House3_Text_NotDesperateOrAnything:
 PacifidlogTown_House3_Text_ReallyWantedToGetBagon:
 	.string "I know I could go looking for one\n"
 	.string "on my own, but…\p"
-	.string "But I really wanted to get a BAGON\n"
-	.string "that another TRAINER caught…$"
+	.string "But I really wanted to get a {STR_VAR_1}\n"
+	.string "that another Trainer caught…$"
 
 PacifidlogTown_House3_Text_IsThatAPokedex:
-	.string "Is that a POKéDEX?\p"
+	.string "Is that a Pokédex?\p"
 	.string "Did you get to meet a lot of different\n"
-	.string "POKéMON?\p"
+	.string "Pokémon?\p"
 	.string "I wish I was like you.$"
 

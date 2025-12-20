@@ -55,13 +55,20 @@ const u32 gObjectEventPic_Butler[] = INCBIN_U32("graphics/object_events/pics/peo
 const u32 gObjectEventPic_Kikuno[] = INCBIN_U32("graphics/object_events/pics/people/kikuno.4bpp");
 const u32 gObjectEventPic_Receptionist_F[] = INCBIN_U32("graphics/object_events/pics/people/receptionist_f.4bpp");
 const u32 gObjectEventPic_NeckBeard[] = INCBIN_U32("graphics/object_events/pics/people/neckbeard.4bpp");
+const u32 gObjectEventPic_Policeman[] = INCBIN_U32("graphics/object_events/pics/people/policeman.4bpp");
 const u32 gObjectEventPic_PoliceChief[] = INCBIN_U32("graphics/object_events/pics/people/police_chief.4bpp");
 const u16 gObjectEventPal_Npc6[] = INCBIN_U16("graphics/object_events/palettes/npc_blackblueyellow.gbapal");
 const u32 gObjectEventPic_StatueWindward[] = INCBIN_U32("graphics/object_events/pics/misc/statue_windward.4bpp");
 const u16 gObjectEventPal_StatueWindward[] = INCBIN_U16("graphics/object_events/pics/misc/statue_windward.gbapal");
 const u32 gObjectEventPic_RangerM[] = INCBIN_U32("graphics/object_events/pics/people/ranger_m.4bpp");
 const u32 gObjectEventPic_RangerF[] = INCBIN_U32("graphics/object_events/pics/people/ranger_f.4bpp");
-
+const u32 gObjectEventPic_Motorcyclist[] = INCBIN_U32("graphics/object_events/pics/people/motocyclist.4bpp");
+const u32 gObjectEventPic_Socialite[] = INCBIN_U32("graphics/object_events/pics/people/socialite.4bpp");
+const u16 gObjectEventPal_Npc7[] = INCBIN_U16("graphics/object_events/palettes/npc_pinkblueyellow.gbapal");
+const u32 gObjectEventPic_ParasolLady[] = INCBIN_U32("graphics/object_events/pics/people/parasol_lady.4bpp");
+const u32 gObjectEventPic_Roughneck[] = INCBIN_U32("graphics/object_events/pics/people/roughneck.4bpp");
+const u32 gObjectEventPic_Worker[] = INCBIN_U32("graphics/object_events/pics/people/worker.4bpp");
+const u16 gObjectEventPal_Npc8[] = INCBIN_U16("graphics/object_events/palettes/npc_greenyellow.gbapal");
 
 const u16 gObjectEventPal_Null16[16] = {};
 const u16 gObjectEventPal_Null17[16] = {};

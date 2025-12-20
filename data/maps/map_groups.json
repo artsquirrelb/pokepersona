@@ -39,7 +39,8 @@
     "gMapGroup_IndoorRoute2",
     "gMapGroup_HiddenGrottos",
     "gMapGroup_KirijoMansionIndoor",
-    "gMapGroup_IndoorCoralport"
+    "gMapGroup_IndoorCoralport",
+    "gMapGroup_IndoorWindwardPort"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -684,5 +685,6 @@
     "CoralportCandyShop",
     "CoralportPoliceStation",
     "Coralport_NeckbeardsHouse"
-  ]
+  ],
+  "gMapGroup_IndoorWindwardPort": []
 }

@@ -3,3 +3,57 @@ mapscripts WindwardPort_Harbor_MapScripts {
         setflag(FLAG_VISITED_WINDWARD_PORT)
     }
 }
+
+script WindwardPort_Eventscript_SailorOnGuard {
+    lock
+    faceplayer
+    setspeaker("Anderson")
+    gettime
+    if(var(VAR_0x8000) < 7 || var(VAR_0x8000) >= 17){
+        showmoneybox(0, 0)
+        msgbox(format("This ship is departing for Coralport.\p
+        It will arrive at the destination in approximately {COLOR RED}3 hours{COLOR 2}.\p
+        It costs {COLOR GREEN}¥100 {COLOR 2}per ticket. Would you like to board the ship?"), MSGBOX_YESNO)
+        closemessage
+        if (var(VAR_RESULT)){
+            checkmoney(300)
+            if (var(VAR_RESULT)){
+                playse(SE_SHOP)
+                removemoney(300)
+                updatemoneybox
+                setspeaker("Anderson")
+                msgbox(format("This way, please."))
+                closemessage
+                applymovement(1, walkinplaceup)
+                waitmovement
+                hidemoneybox
+                delay(30)
+                addtime(0, 3, 0)
+                warp(MAP_CORALPORT, 4, 20)
+                waitstate
+            }
+            else{
+                setspeaker("Anderson")
+                msgbox(format("I'm sorry but you don't have enough money for 3 tickets."))
+                closemessage
+                release
+                end
+            }
+        }
+        else{
+            hidemoneybox
+        }
+    }
+    else{
+        goto(WindwardPort_Eventscript_ShipOutOfCommission)
+    }
+}
+
+script WindwardPort_Eventscript_ShipOutOfCommission {
+    msgbox(format("The ship to Coralport is currently out of commission.\p
+    Please come back between 5PM and 7AM."))
+}
+
+script MyScript {
+    
+}

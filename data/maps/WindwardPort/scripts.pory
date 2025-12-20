@@ -5,10 +5,3 @@ mapscripts WindwardPort_MapScripts {
 }
 
 
-script WindwardPort_Eventscript_SailorOnGuard {
-    lock
-    faceplayer
-    msgbox(format("Warp back to Coralport."))
-    warp(MAP_CORALPORT, 4, 20)
-    waitstate
-}

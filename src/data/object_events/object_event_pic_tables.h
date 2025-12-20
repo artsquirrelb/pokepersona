@@ -1487,6 +1487,10 @@ static const struct SpriteFrameImage gObjectEventPicTable_Mitsuru_Sleeping[] = {
     overworld_frame(gObjectEventPic_Mitsuru_Sleeping, 4, 4, 0),
 };
 
+static const struct SpriteFrameImage gObjectEventPicTable_Policeman[] = {
+    overworld_ascending_frames(gObjectEventPic_Policeman, 4, 4),
+};
+
 static const struct SpriteFrameImage gObjectEventPicTable_PoliceChief[] = {
     overworld_ascending_frames(gObjectEventPic_PoliceChief, 4, 4),
 };
@@ -1497,4 +1501,24 @@ static const struct SpriteFrameImage gObjectEventPicTable_RangerM[] = {
 
 static const struct SpriteFrameImage gObjectEventPicTable_RangerF[] = {
     overworld_ascending_frames(gObjectEventPic_RangerF, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_Motorcyclist[] = {
+    overworld_ascending_frames(gObjectEventPic_Motorcyclist, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_Socialite[] = {
+    overworld_ascending_frames(gObjectEventPic_Socialite, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_ParasolLady[] = {
+    overworld_ascending_frames(gObjectEventPic_ParasolLady, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_Roughneck[] = {
+    overworld_ascending_frames(gObjectEventPic_Roughneck, 4, 4),
+};
+
+static const struct SpriteFrameImage gObjectEventPicTable_Worker[] = {
+    overworld_ascending_frames(gObjectEventPic_Worker, 4, 4),
 };

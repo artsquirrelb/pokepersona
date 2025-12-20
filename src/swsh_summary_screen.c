@@ -257,7 +257,6 @@ static void CloseSummaryScreen(u8);
 static void Task_HandleInput(u8);
 static void ChangeSummaryPokemon(u8, s8);
 static void Task_ChangeSummaryMon(u8);
-static void GetSetMoveRelearnerVar(u8 *state);
 static s8 AdvanceMonIndex(s8);
 static s8 AdvanceMultiBattleMonIndex(s8);
 static bool8 IsValidToViewInMulti(struct Pokemon *);
@@ -2353,26 +2352,6 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         sum->ribbonCount = GetMonData(mon, MON_DATA_RIBBON_COUNT);        
         sum->teraType = GetMonData(mon, MON_DATA_TERA_TYPE);
         sum->isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
-        /*if (P_SUMMARY_SCREEN_MOVE_RELEARNER)
-        {
-            u8 state = 0;
-            GetSetMoveRelearnerVar(&state);
-            switch (state) // Changing the var here causes issues when teaching a move
-            {
-                case MOVE_RELEARNER_EGG_MOVES:
-                    sMonSummaryScreen->hasRelearnableMoves= GetRelearnerEggMoves(mon);
-                    break;
-                case MOVE_RELEARNER_TM_MOVES: 
-                    sMonSummaryScreen->hasRelearnableMoves= GetRelearnerTMMoves(mon);
-                    break;
-                case MOVE_RELEARNER_TUTOR_MOVES: 
-                    sMonSummaryScreen->hasRelearnableMoves= GetRelearnerTutorMoves(mon);
-                    break;
-                default:
-                    sMonSummaryScreen->hasRelearnableMoves= GetRelearnerLevelUpMoves(mon);
-                    break;
-            }
-        }*/
         return TRUE;
     }
     sMonSummaryScreen->switchCounter++;

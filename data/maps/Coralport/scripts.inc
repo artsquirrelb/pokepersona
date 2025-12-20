@@ -516,7 +516,7 @@ Coralport_Eventscript_SailorOnGuard_14:
 # 273 "data/maps/Coralport/scripts.pory"
 	delay 30
 # 274 "data/maps/Coralport/scripts.pory"
-	warp MAP_WINDWARD_PORT_HARBOR, 23, 27
+	warp MAP_WINDWARD_PORT_HARBOR, 23, 20
 # 275 "data/maps/Coralport/scripts.pory"
 	waitstate
 	goto Coralport_Eventscript_SailorOnGuard_1

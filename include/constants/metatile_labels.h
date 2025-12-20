@@ -205,7 +205,7 @@
 #define METATILE_Fortree_WoodBridge1_Top                   0x897
 
 // gTileset_Gen4General
-#define METATILE_Gen4General_DONT_OVERIDE  0x0FB
+#define METATILE_Gen4General_DONT_OVERIDE  0x08E
 
 // gTileset_Gen4Indoor
 #define METATILE_Gen4Indoor_DONT_OVERIDE  0x003

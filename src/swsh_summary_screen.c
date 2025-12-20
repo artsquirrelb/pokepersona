@@ -230,7 +230,7 @@ static EWRAM_DATA struct PokemonSummaryScreenData
     u8 secondMoveIndex;
     bool8 lockMovesFlag; // This is used to prevent the player from changing position of moves in a battle or when trading.
     u8 bgDisplayOrder; // unused
-    u8 relearnableMovesNum;
+    bool8 hasRelearnableMoves;
     u8 windowIds[8];
     u8 spriteIds[SPRITE_ARR_ID_COUNT];
     bool8 handleDeoxys;
@@ -2353,26 +2353,26 @@ static bool8 ExtractMonDataToSummaryStruct(struct Pokemon *mon)
         sum->ribbonCount = GetMonData(mon, MON_DATA_RIBBON_COUNT);        
         sum->teraType = GetMonData(mon, MON_DATA_TERA_TYPE);
         sum->isShiny = GetMonData(mon, MON_DATA_IS_SHINY);
-        if (P_SUMMARY_SCREEN_MOVE_RELEARNER)
+        /*if (P_SUMMARY_SCREEN_MOVE_RELEARNER)
         {
             u8 state = 0;
             GetSetMoveRelearnerVar(&state);
             switch (state) // Changing the var here causes issues when teaching a move
             {
                 case MOVE_RELEARNER_EGG_MOVES:
-                    sMonSummaryScreen->relearnableMovesNum = GetNumberOfEggMoves(mon);
+                    sMonSummaryScreen->hasRelearnableMoves= GetRelearnerEggMoves(mon);
                     break;
                 case MOVE_RELEARNER_TM_MOVES: 
-                    sMonSummaryScreen->relearnableMovesNum = GetNumberOfTMMoves(mon);
+                    sMonSummaryScreen->hasRelearnableMoves= GetRelearnerTMMoves(mon);
                     break;
                 case MOVE_RELEARNER_TUTOR_MOVES: 
-                    sMonSummaryScreen->relearnableMovesNum = GetNumberOfTutorMoves(mon);
+                    sMonSummaryScreen->hasRelearnableMoves= GetRelearnerTutorMoves(mon);
                     break;
                 default:
-                    sMonSummaryScreen->relearnableMovesNum = GetNumberOfLevelUpMoves(mon);
+                    sMonSummaryScreen->hasRelearnableMoves= GetRelearnerLevelUpMoves(mon);
                     break;
             }
-        }
+        }*/
         return TRUE;
     }
     sMonSummaryScreen->switchCounter++;
@@ -2590,28 +2590,23 @@ static void Task_HandleInput(u8 taskId)
 
 #define tSummaryState data[0]
 
-u32 GetRelearnMovesCount_SWSH(enum MoveRelearnerStates state)
+bool32 HasAnyRelearnableMoves_SwSh(enum MoveRelearnerStates state)
 {
     struct Pokemon *mon = &sMonSummaryScreen->currentMon;
 
     switch (state)
     {
         case MOVE_RELEARNER_EGG_MOVES:
-            return GetNumberOfEggMoves(mon);
+            return HasRelearnerEggMoves(mon);
         case MOVE_RELEARNER_TM_MOVES:
-            return GetNumberOfTMMoves(mon);
+            return HasRelearnerTMMoves(mon);
         case MOVE_RELEARNER_TUTOR_MOVES:
-            return GetNumberOfTutorMoves(mon);
+            return HasRelearnerTutorMoves(mon);
         case MOVE_RELEARNER_LEVEL_UP_MOVES:
-            return GetNumberOfLevelUpMoves(mon);
+            return HasRelearnerLevelUpMoves(mon);
         default:
-            return 0;
+            return FALSE;
     }
-}
-
-u32 GetCurrentRelearnMovesCount_SWSH(void)
-{
-    return GetRelearnMovesCount_SWSH(gMoveRelearnerState);
 }
 
 bool32 NoMovesAvailableToRelearn_SWSH(void)
@@ -2619,7 +2614,7 @@ bool32 NoMovesAvailableToRelearn_SWSH(void)
     u32 zeroCounter = 0;
     for (enum MoveRelearnerStates state = MOVE_RELEARNER_LEVEL_UP_MOVES; state < MOVE_RELEARNER_COUNT; state++)
     {
-        if (GetRelearnMovesCount_SWSH(state) == 0)
+        if (!HasAnyRelearnableMoves_SwSh(state))
             zeroCounter++;
     }
 
@@ -2648,7 +2643,7 @@ bool32 CheckRelearnerStateFlag_SWSH(enum MoveRelearnerStates state)
 
 void TryUpdateRelearnType_SWSH(enum IncrDecrUpdateValues delta)
 {
-    u32 moveCount =0;
+    bool32 hasRelearnableMoves = FALSE;
     u32 zeroCounter = 0;
     enum MoveRelearnerStates state = gMoveRelearnerState;
 
@@ -2658,7 +2653,7 @@ void TryUpdateRelearnType_SWSH(enum IncrDecrUpdateValues delta)
         && !FlagGet(P_FLAG_EGG_MOVES)
         && !FlagGet(P_FLAG_TUTOR_MOVES)))
     {
-        sMonSummaryScreen->relearnableMovesNum = GetRelearnMovesCount_SWSH(MOVE_RELEARNER_LEVEL_UP_MOVES);
+        sMonSummaryScreen->hasRelearnableMoves = HasAnyRelearnableMoves_SwSh(MOVE_RELEARNER_LEVEL_UP_MOVES);
         return;
     }
 
@@ -2668,15 +2663,15 @@ void TryUpdateRelearnType_SWSH(enum IncrDecrUpdateValues delta)
         {
         default:
         case TRY_SET_UPDATE:
-            moveCount = GetCurrentRelearnMovesCount_SWSH();
-            if (moveCount == 0)
+            hasRelearnableMoves = HasAnyRelearnableMoves_SwSh(gMoveRelearnerState);
+            if (!hasRelearnableMoves)
             {
                 delta = TRY_INCREMENT;
                 continue;
             }
             else
             {
-                sMonSummaryScreen->relearnableMovesNum = moveCount;
+                sMonSummaryScreen->hasRelearnableMoves = hasRelearnableMoves;
                 return;
             }
             // should never reach this, but just in case
@@ -2692,16 +2687,16 @@ void TryUpdateRelearnType_SWSH(enum IncrDecrUpdateValues delta)
         if (!CheckRelearnerStateFlag_SWSH(state))
             continue;
 
-        moveCount = GetRelearnMovesCount_SWSH(state);
-        if (moveCount != 0)
+        hasRelearnableMoves = HasAnyRelearnableMoves_SwSh(state);
+        if (hasRelearnableMoves)
         {
             gMoveRelearnerState = state;
-            sMonSummaryScreen->relearnableMovesNum = moveCount;
+            sMonSummaryScreen->hasRelearnableMoves = hasRelearnableMoves;
             return;
         }
         zeroCounter++;
         
-    } while (zeroCounter <= MOVE_RELEARNER_COUNT && moveCount == 0);
+    } while (zeroCounter <= MOVE_RELEARNER_COUNT && !hasRelearnableMoves);
 }
 
 static void ChangeSummaryPokemon(u8 taskId, s8 delta)
@@ -2876,23 +2871,23 @@ static void Task_ChangeSummaryMon(u8 taskId)
     tSummaryState++;
 }
 
-static void GetSetMoveRelearnerVar(u8 *state)
+/*static void GetSetMoveRelearnerVar(u8 *state)
 {
     struct Pokemon *mon = &sMonSummaryScreen->currentMon;
 
-    if (*state == MOVE_RELEARNER_LEVEL_UP_MOVES && !GetNumberOfLevelUpMoves(mon))
+    if (*state == MOVE_RELEARNER_LEVEL_UP_MOVES && !HasRelearnerLevelUpMoves(mon))
         *state = MOVE_RELEARNER_EGG_MOVES;
 
-    if (*state == MOVE_RELEARNER_EGG_MOVES && !GetNumberOfEggMoves(mon))
+    if (*state == MOVE_RELEARNER_EGG_MOVES && !HasRelearnerEggMoves(mon))
         *state = MOVE_RELEARNER_TM_MOVES;
     
-    if (*state == MOVE_RELEARNER_TM_MOVES && !GetNumberOfTMMoves(mon))
+    if (*state == MOVE_RELEARNER_TM_MOVES && !HasRelearnerTMMoves(mon))
         *state = MOVE_RELEARNER_TUTOR_MOVES;
 
-    if (*state == MOVE_RELEARNER_TUTOR_MOVES && !GetNumberOfTutorMoves(mon))
+    if (*state == MOVE_RELEARNER_TUTOR_MOVES && !HasRelearnerTutorMoves(mon))
     {
         *state = MOVE_RELEARNER_LEVEL_UP_MOVES;
-        sMonSummaryScreen->relearnableMovesNum = 0;
+        sMonSummaryScreen->hasRelearnableMoves= 0;
         HideMoveRelearner();
         return;
     }
@@ -2901,30 +2896,30 @@ static void GetSetMoveRelearnerVar(u8 *state)
     {
         case MOVE_RELEARNER_EGG_MOVES:
         {    
-            sMonSummaryScreen->relearnableMovesNum = GetNumberOfEggMoves(mon);
+            sMonSummaryScreen->hasRelearnableMoves= GetRelearnerEggMoves(mon);
             gMoveRelearnerState = *state;
         }
             break;
         case MOVE_RELEARNER_TM_MOVES:
         {    
-            sMonSummaryScreen->relearnableMovesNum = GetNumberOfTMMoves(mon);
+            sMonSummaryScreen->hasRelearnableMoves= GetRelearnerTMMoves(mon);
             gMoveRelearnerState = *state;
         }
             break;
         case MOVE_RELEARNER_TUTOR_MOVES:
         {   
-            sMonSummaryScreen->relearnableMovesNum = GetNumberOfTutorMoves(mon);
+            sMonSummaryScreen->hasRelearnableMoves= GetRelearnerTutorMoves(mon);
             gMoveRelearnerState = *state;
         }
             break;
         default: // MOVE_RELEARNER_LEVEL_UP_MOVES
         {
-            sMonSummaryScreen->relearnableMovesNum = GetNumberOfLevelUpMoves(mon);
+            sMonSummaryScreen->hasRelearnableMoves= GetRelearnerLevelUpMoves(mon);
             gMoveRelearnerState = *state;
         }
             break;
     }
-}
+}*/
 
 static s8 AdvanceMonIndex(s8 delta)
 {
@@ -3016,7 +3011,7 @@ static void ChangePage(u8 taskId, s8 delta)
     }
 
     // to prevent nothing showing 
-    if (sMonSummaryScreen->currPageIndex >= PSS_PAGE_BATTLE_MOVES && sMonSummaryScreen->relearnableMovesNum == 0)
+    if (sMonSummaryScreen->currPageIndex >= PSS_PAGE_BATTLE_MOVES && !sMonSummaryScreen->hasRelearnableMoves)
         TryUpdateRelearnType_SWSH(TRY_SET_UPDATE);
     else
         HideMoveRelearner();
@@ -5089,32 +5084,35 @@ static u8 LoadMonGfxAndSprite(struct Pokemon *mon, s16 *state, bool32 isShadow)
     case 0:
         if (gMain.inBattle)
         {
-            HandleLoadSpecialPokePic(TRUE,
+            HandleLoadSpecialPokePicIsEgg(TRUE,
                                      gMonSpritesGfxPtr->spritesGfx[B_POSITION_OPPONENT_LEFT],
-                                     summary->species2,
-                                     summary->pid);
+                                     summary->species,
+                                     summary->pid,
+                                     summary->isEgg);
         }
         else
         {
             if (gMonSpritesGfxPtr != NULL)
             {
-                HandleLoadSpecialPokePic(TRUE,
+                HandleLoadSpecialPokePicIsEgg(TRUE,
                                          gMonSpritesGfxPtr->spritesGfx[B_POSITION_OPPONENT_LEFT],
-                                         summary->species2,
-                                         summary->pid);
+                                         summary->species,
+                                         summary->pid,
+                                         summary->isEgg);
             }
             else
             {
-                HandleLoadSpecialPokePic(TRUE,
+                HandleLoadSpecialPokePicIsEgg(TRUE,
                                          MonSpritesGfxManager_GetSpritePtr(MON_SPR_GFX_MANAGER_A, B_POSITION_OPPONENT_LEFT),
-                                         summary->species2,
-                                         summary->pid);
+                                         summary->species,
+                                         summary->pid,
+                                         summary->isEgg);
             }
         }
         (*state)++;
         return 0xFF;
     case 1:
-        LoadSpritePaletteWithTag(GetMonSpritePalFromSpeciesAndPersonality(summary->species2, summary->isShiny, summary->pid), summary->species2);
+        LoadSpritePaletteWithTag(GetMonSpritePalFromSpeciesAndPersonalityIsEgg(summary->species, summary->isShiny, summary->pid, summary->isEgg), summary->species2);
         SetMultiuseSpriteTemplateToPokemon(summary->species2, B_POSITION_OPPONENT_LEFT);
         (*state)++;
         return 0xFF;
@@ -5631,7 +5629,7 @@ static inline bool32 ShouldShowMoveRelearner(void)
          && !sMonSummaryScreen->isBoxMon
          && sMonSummaryScreen->mode != SUMMARY_MODE_BOX
          && sMonSummaryScreen->mode != SUMMARY_MODE_BOX_CURSOR
-         && sMonSummaryScreen->relearnableMovesNum > 0
+         && sMonSummaryScreen->hasRelearnableMoves
          && !InBattleFactory()
          && !InSlateportBattleTent()
          && !NoMovesAvailableToRelearn_SWSH()
@@ -5641,14 +5639,16 @@ static inline bool32 ShouldShowMoveRelearner(void)
 static void ShowMoveRelearner(void)
 {
     if (sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] == SPRITE_NONE
-    && sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI] == SPRITE_NONE
-)
+    && sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI] == SPRITE_NONE)
     {
         sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT] = CreateSprite(&sSpriteTemplate_RelearnPrompt, 85, 164, 0);
         sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI] = CreateSprite(&sSpriteTemplate_RelearnPromptMulti, 149, 164, 0);
     }
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT]].invisible = FALSE;
     gSprites[sMonSummaryScreen->spriteIds[SPRITE_ARR_ID_RELEARN_PROMPT_MULTI]].invisible = FALSE;
+    
+    if (!HasAnyRelearnableMoves_SwSh(gMoveRelearnerState))
+        return;
     
     switch (gMoveRelearnerState)
     {

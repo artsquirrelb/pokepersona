@@ -255,7 +255,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PoliceChief
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Policeman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerF;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Motorcyclist;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Socialite;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ParasolLady;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Roughneck;
@@ -548,7 +548,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_POLICE_CHIEF] =             &gObjectEventGraphicsInfo_PoliceChief,
     [OBJ_EVENT_GFX_RANGER_M] =                 &gObjectEventGraphicsInfo_RangerM,
     [OBJ_EVENT_GFX_RANGER_F] =                 &gObjectEventGraphicsInfo_RangerF,
-    [OBJ_EVENT_GFX_MOTORCYCLIST] =             &gObjectEventGraphicsInfo_Motorcyclist,
+    [OBJ_EVENT_GFX_BIKER] =             &gObjectEventGraphicsInfo_Biker,
     [OBJ_EVENT_GFX_SOCIALITE] =                &gObjectEventGraphicsInfo_Socialite,
     [OBJ_EVENT_GFX_PARASOL_LADY] =             &gObjectEventGraphicsInfo_ParasolLady,
     [OBJ_EVENT_GFX_ROUGHNECK] =                &gObjectEventGraphicsInfo_Roughneck,

@@ -270,7 +270,7 @@
 #define OBJ_EVENT_GFX_STATUE_WINDWARD            263
 #define OBJ_EVENT_GFX_RANGER_M                   264
 #define OBJ_EVENT_GFX_RANGER_F                   265
-#define OBJ_EVENT_GFX_MOTORCYCLIST               266
+#define OBJ_EVENT_GFX_BIKER               266
 #define OBJ_EVENT_GFX_SOCIALITE                  267
 #define OBJ_EVENT_GFX_POLICEMAN                  268
 #define OBJ_EVENT_GFX_PARASOL_LADY               269

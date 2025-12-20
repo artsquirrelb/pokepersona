@@ -1503,8 +1503,8 @@ static const struct SpriteFrameImage gObjectEventPicTable_RangerF[] = {
     overworld_ascending_frames(gObjectEventPic_RangerF, 4, 4),
 };
 
-static const struct SpriteFrameImage gObjectEventPicTable_Motorcyclist[] = {
-    overworld_ascending_frames(gObjectEventPic_Motorcyclist, 4, 4),
+static const struct SpriteFrameImage gObjectEventPicTable_Biker[] = {
+    overworld_ascending_frames(gObjectEventPic_Biker, 4, 4),
 };
 
 static const struct SpriteFrameImage gObjectEventPicTable_Socialite[] = {

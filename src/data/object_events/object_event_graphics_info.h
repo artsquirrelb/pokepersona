@@ -4922,7 +4922,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RangerF = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Motorcyclist = { 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Biker = { 
     .tileTag = 0xFFFF,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -4937,7 +4937,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Motorcyclist = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = gObjectEventPicTable_Motorcyclist,
+    .images = gObjectEventPicTable_Biker,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 

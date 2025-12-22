@@ -24,7 +24,7 @@ WindwardPort_Eventscript_SailorOnGuard::
 # 12 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_0x8000, 17
 	goto_if_ge WindwardPort_Eventscript_SailorOnGuard_1
-# 48 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 49 "data/maps/WindwardPort_Harbor/scripts.pory"
 	goto WindwardPort_Eventscript_ShipOutOfCommission
 	return
 
@@ -38,7 +38,7 @@ WindwardPort_Eventscript_SailorOnGuard_1:
 # 18 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne WindwardPort_Eventscript_SailorOnGuard_6
-# 44 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 45 "data/maps/WindwardPort_Harbor/scripts.pory"
 	hidemoneybox
 	return
 
@@ -55,6 +55,8 @@ WindwardPort_Eventscript_SailorOnGuard_6:
 # 38 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
 # 39 "data/maps/WindwardPort_Harbor/scripts.pory"
+	hidemoneybox
+# 40 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
@@ -72,11 +74,11 @@ WindwardPort_Eventscript_SailorOnGuard_9:
 # 26 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
 # 27 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymovement 1, walkinplaceup
-# 28 "data/maps/WindwardPort_Harbor/scripts.pory"
-	waitmovement
-# 29 "data/maps/WindwardPort_Harbor/scripts.pory"
 	hidemoneybox
+# 28 "data/maps/WindwardPort_Harbor/scripts.pory"
+	applymovement 1, walkinplaceup
+# 29 "data/maps/WindwardPort_Harbor/scripts.pory"
+	waitmovement
 # 30 "data/maps/WindwardPort_Harbor/scripts.pory"
 	delay 30
 # 31 "data/maps/WindwardPort_Harbor/scripts.pory"
@@ -89,12 +91,12 @@ WindwardPort_Eventscript_SailorOnGuard_9:
 
 
 WindwardPort_Eventscript_ShipOutOfCommission::
-# 53 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 54 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Eventscript_ShipOutOfCommission_Text_0
 	return
 
 
-MyScript::
+WindwardPort_Eventscript_VeteranF::
 	return
 
 
@@ -120,7 +122,7 @@ WindwardPort_Eventscript_SailorOnGuard_Text_3:
 	.string "money for 3 tickets.$"
 
 WindwardPort_Eventscript_ShipOutOfCommission_Text_0:
-# 53 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 54 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "The ship to Coralport is currently out\n"
 	.string "of commission.\p"
 	.string "Please come back between 5PM and 7AM.$"

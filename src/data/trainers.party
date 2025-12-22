@@ -139,7 +139,7 @@ Ability: Levitate
 === TRAINER_KG_STAFF_SCIENTIST_THUNDERSHARDS_CAVE_2F_EXTERIOR ===
 Name: Norbert
 Class: Kirijo Genesis Staff
-Pic: Scientist
+Pic: Norbert
 Gender: Male
 Music: Aqua
 Double Battle: Yes
@@ -9743,7 +9743,7 @@ Gender: Female
 Music: Female
 Double Battle: No
 AI: Smart Trainer / Prefer Highest Damage Move
-Mugshot: Blue
+Mugshot: Red
 
 SPECIES_FENNEKIN (F) @ITEM_LUM_BERRY
 Level: 10

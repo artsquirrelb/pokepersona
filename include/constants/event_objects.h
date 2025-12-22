@@ -121,8 +121,8 @@
 #define OBJ_EVENT_GFX_CABLE_CAR                  114
 #define OBJ_EVENT_GFX_SCIENTIST_2                115
 #define OBJ_EVENT_GFX_DEVON_EMPLOYEE             116
-#define OBJ_EVENT_GFX_AQUA_MEMBER_M              117
-#define OBJ_EVENT_GFX_AQUA_MEMBER_F              118
+#define OBJ_EVENT_GFX_KG_STAFF_M                 117
+#define OBJ_EVENT_GFX_KG_STAFF_F                 118
 #define OBJ_EVENT_GFX_MAGMA_MEMBER_M             119
 #define OBJ_EVENT_GFX_MAGMA_MEMBER_F             120
 #define OBJ_EVENT_GFX_SIDNEY                     121
@@ -284,11 +284,14 @@
 #define OBJ_EVENT_GFX_RANCHER_F                  277
 #define OBJ_EVENT_GFX_VETERAN_M                  278
 #define OBJ_EVENT_GFX_VETERAN_F                  279
+#define OBJ_EVENT_GFX_TODDLER                    280
+#define OBJ_EVENT_GFX_NORBERT                    281
+#define OBJ_EVENT_GFX_KIMONO_GIRL                282
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        280
+#define NUM_OBJ_EVENT_GFX                        283
 
 
 // These are dynamic object gfx ids.
@@ -417,8 +420,8 @@
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
-#define OBJ_EVENT_PAL_SHINJIRO                    0x1124
-#define OBJ_EVENT_PAL_MIKI                        0x1125
+#define OBJ_EVENT_PAL_TAG_SHINJIRO                0x1124
+#define OBJ_EVENT_PAL_TAG_MIKI                    0x1125
 #define OBJ_EVENT_PAL_TAG_NPC_5                   0x1126 //used to be kurosawa
 #define OBJ_EVENT_PAL_TAG_MITSURU_SLEEPING        0x1127
 #define OBJ_EVENT_PAL_TAG_MINING_ROCK             0x1128
@@ -426,7 +429,9 @@
 #define OBJ_EVENT_PAL_TAG_STATUE_WINDWARD         0x1130
 #define OBJ_EVENT_PAL_TAG_NPC_7                   0x1131
 #define OBJ_EVENT_PAL_TAG_NPC_8                   0x1132
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1133
+#define OBJ_EVENT_PAL_TAG_NORBERT                 0x1133
+#define OBJ_EVENT_PAL_TAG_KIMONO_GIRL             0x1134
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1135
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

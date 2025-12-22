@@ -269,11 +269,10 @@ script Coralport_Eventscript_SailorOnGuard {
                     setspeaker("Umito")
                     msgbox(format("This way, please."))
                     closemessage
-
+                    hidemoneybox
                     applymovement(10, walkinplaceup)
                     waitmovement
                     delay(30)
-                    hidemoneybox
                     addtime(0, 3, 0)
                     warp(MAP_WINDWARD_PORT_HARBOR, 23, 20)
                     waitstate
@@ -282,6 +281,7 @@ script Coralport_Eventscript_SailorOnGuard {
                     setspeaker("Umito")
                     msgbox(format("I'm sorry but you don't have enough money for 3 tickets."))
                     closemessage
+                    hidemoneybox
                     release
                     end
                 }

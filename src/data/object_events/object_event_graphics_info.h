@@ -538,6 +538,24 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cook = {
     .images = sPicTable_Cook,
 };
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Toddler = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_2,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Toddler,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LinkReceptionist = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
@@ -2140,7 +2158,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DevonEmployee = {
     .images = sPicTable_DevonEmployee,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaMemberM = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KGStaffM = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_5,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -2155,10 +2173,10 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaMemberM = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_AquaMemberM,
+    .images = sPicTable_KGStaffM,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaMemberF = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KGStaffF = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_5,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -2173,7 +2191,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaMemberF = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_AquaMemberF,
+    .images = sPicTable_KGStaffF,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KGStaffM_Fainted = {
@@ -2192,6 +2210,24 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KGStaffM_Fainted =
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
     .images = sPicTable_KGStaffM_Fainted,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Norbert = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NORBERT,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Norbert,
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
@@ -4619,7 +4655,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BallLight = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shinjiro = { 
     .tileTag = 0xFFFF,
-    .paletteTag = OBJ_EVENT_PAL_SHINJIRO,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SHINJIRO,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -4638,7 +4674,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shinjiro = {
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shinjiro_Fainted = { 
     .tileTag = 0xFFFF,
-    .paletteTag = OBJ_EVENT_PAL_SHINJIRO,
+    .paletteTag = OBJ_EVENT_PAL_TAG_SHINJIRO,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -4676,7 +4712,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Akihiko_Fainted = 
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Miki = { 
     .tileTag = 0xFFFF,
-    .paletteTag = OBJ_EVENT_PAL_MIKI,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MIKI,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
@@ -5164,5 +5200,24 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VeteranF = {
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
     .images = gObjectEventPicTable_VeteranF,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KimonoGirl = { 
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_TAG_KIMONO_GIRL,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = gObjectEventPicTable_KimonoGirl,
     .affineAnims = gDummySpriteAffineAnimTable,
 };

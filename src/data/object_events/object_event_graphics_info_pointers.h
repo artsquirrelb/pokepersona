@@ -116,9 +116,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MovingBox;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_CableCar;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist2;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DevonEmployee;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaMemberM;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AquaMemberF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KGStaffM;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KGStaffF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KGStaffM_Fainted;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Norbert;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_KimonoGirl;
+
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MagmaMemberM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MagmaMemberF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sidney;
@@ -268,6 +271,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RancherM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RancherF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VeteranM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VeteranF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Toddler;
 
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
@@ -423,8 +427,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CABLE_CAR] =                &gObjectEventGraphicsInfo_CableCar,
     [OBJ_EVENT_GFX_SCIENTIST_2] =              &gObjectEventGraphicsInfo_Scientist2,
     [OBJ_EVENT_GFX_DEVON_EMPLOYEE] =           &gObjectEventGraphicsInfo_DevonEmployee,
-    [OBJ_EVENT_GFX_AQUA_MEMBER_M] =            &gObjectEventGraphicsInfo_AquaMemberM,
-    [OBJ_EVENT_GFX_AQUA_MEMBER_F] =            &gObjectEventGraphicsInfo_AquaMemberF,
+    [OBJ_EVENT_GFX_KG_STAFF_M] =            &gObjectEventGraphicsInfo_KGStaffM,
+    [OBJ_EVENT_GFX_KG_STAFF_F] =            &gObjectEventGraphicsInfo_KGStaffF,
     [OBJ_EVENT_GFX_KG_STAFF_M_FAINTED] =       &gObjectEventGraphicsInfo_KGStaffM_Fainted,
     [OBJ_EVENT_GFX_MAGMA_MEMBER_M] =           &gObjectEventGraphicsInfo_MagmaMemberM,
     [OBJ_EVENT_GFX_MAGMA_MEMBER_F] =           &gObjectEventGraphicsInfo_MagmaMemberF,
@@ -569,6 +573,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_RANCHER_F] =                &gObjectEventGraphicsInfo_RancherF,
     [OBJ_EVENT_GFX_VETERAN_M] =                &gObjectEventGraphicsInfo_VeteranM,
     [OBJ_EVENT_GFX_VETERAN_F] =                &gObjectEventGraphicsInfo_VeteranF,
+    [OBJ_EVENT_GFX_TODDLER] =                  &gObjectEventGraphicsInfo_Toddler,
+    [OBJ_EVENT_GFX_NORBERT] =                  &gObjectEventGraphicsInfo_Norbert,
+    [OBJ_EVENT_GFX_KIMONO_GIRL] =              &gObjectEventGraphicsInfo_KimonoGirl,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

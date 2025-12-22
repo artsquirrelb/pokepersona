@@ -488,12 +488,14 @@ Coralport_Eventscript_SailorOnGuard_12:
 # 265 "data/maps/Coralport/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Coralport_Eventscript_SailorOnGuard_15
-# 282 "data/maps/Coralport/scripts.pory"
+# 281 "data/maps/Coralport/scripts.pory"
 	setspeaker Coralport_Eventscript_SailorOnGuard_Text_0
-# 283 "data/maps/Coralport/scripts.pory"
+# 282 "data/maps/Coralport/scripts.pory"
 	msgbox Coralport_Eventscript_SailorOnGuard_Text_4
-# 284 "data/maps/Coralport/scripts.pory"
+# 283 "data/maps/Coralport/scripts.pory"
 	closemessage
+# 284 "data/maps/Coralport/scripts.pory"
+	hidemoneybox
 # 285 "data/maps/Coralport/scripts.pory"
 	release
 	end
@@ -511,6 +513,8 @@ Coralport_Eventscript_SailorOnGuard_15:
 	msgbox Coralport_Eventscript_SailorOnGuard_Text_3
 # 271 "data/maps/Coralport/scripts.pory"
 	closemessage
+# 272 "data/maps/Coralport/scripts.pory"
+	hidemoneybox
 # 273 "data/maps/Coralport/scripts.pory"
 	applymovement 10, walkinplaceup
 # 274 "data/maps/Coralport/scripts.pory"
@@ -518,12 +522,10 @@ Coralport_Eventscript_SailorOnGuard_15:
 # 275 "data/maps/Coralport/scripts.pory"
 	delay 30
 # 276 "data/maps/Coralport/scripts.pory"
-	hidemoneybox
-# 277 "data/maps/Coralport/scripts.pory"
 	addtime 0, 3, 0
-# 278 "data/maps/Coralport/scripts.pory"
+# 277 "data/maps/Coralport/scripts.pory"
 	warp MAP_WINDWARD_PORT_HARBOR, 23, 20
-# 279 "data/maps/Coralport/scripts.pory"
+# 278 "data/maps/Coralport/scripts.pory"
 	waitstate
 	goto Coralport_Eventscript_SailorOnGuard_1
 
@@ -1772,7 +1774,7 @@ Coralport_Eventscript_SailorOnGuard_Text_3:
 	.string "This way, please.$"
 
 Coralport_Eventscript_SailorOnGuard_Text_4:
-# 283 "data/maps/Coralport/scripts.pory"
+# 282 "data/maps/Coralport/scripts.pory"
 	.string "I'm sorry but you don't have enough\n"
 	.string "money for 3 tickets.$"
 

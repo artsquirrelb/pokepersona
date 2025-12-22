@@ -287,11 +287,15 @@ const u16 gTrainerPalette_Shinjiro[] = INCBIN_U16("graphics/trainers/front_pics/
 
 const u32 gTrainerFrontPic_Inteleon_T[] = INCBIN_U32("graphics/field_mugshots/Inteleon/serious.4bpp.lz");
 const u16 gTrainerPalette_Inteleon_T[] = INCBIN_U16("graphics/field_mugshots/Inteleon/serious.gbapal");
-const u32 gTrainerBackPic_Inteleon_T[] = INCBIN_U32("graphics/pokemon/inteleon/inteleon_t_back.4bpp");
-const u16 gTrainerBackPalette_Inteleon_T[] = INCBIN_U16("graphics/pokemon/inteleon/normal.gbapal");
 
-const u32 gTrainerFrontPic_Scientist[] = INCBIN_U32("graphics/trainers/front_pics/scientist.4bpp.smol");
-const u16 gTrainerPalette_Scientist[] = INCBIN_U16("graphics/trainers/front_pics/scientist.gbapal");
+const u32 gTrainerFrontPic_Scientist_1[] = INCBIN_U32("graphics/trainers/front_pics/scientist_1.4bpp.smol");
+const u16 gTrainerPalette_Scientist_1[] = INCBIN_U16("graphics/trainers/front_pics/scientist_1.gbapal");
+
+const u32 gTrainerFrontPic_Scientist_2[] = INCBIN_U32("graphics/trainers/front_pics/scientist_2.4bpp.smol");
+const u16 gTrainerPalette_Scientist_2[] = INCBIN_U16("graphics/trainers/front_pics/scientist_2.gbapal");
+
+const u32 gTrainerFrontPic_Norbert[] = INCBIN_U32("graphics/trainers/front_pics/norbert.4bpp.smol");
+const u16 gTrainerPalette_Norbert[] = INCBIN_U16("graphics/trainers/front_pics/norbert.gbapal");
 
 const u32 gTrainerFrontPic_DusclopsHorde[] = INCBIN_U32("graphics/trainers/front_pics/dusclops_horde.4bpp.smol");
 const u16 gTrainerPalette_DusclopsHorde[] = INCBIN_U16("graphics/trainers/front_pics/dusclops_horde.gbapal");
@@ -304,6 +308,8 @@ const u8 gTrainerBackPic_RubySapphireBrendan[] = INCBIN_U8("graphics/trainers/ba
 const u8 gTrainerBackPic_RubySapphireMay[] = INCBIN_U8("graphics/trainers/back_pics/may_rs.4bpp");
 const u8 gTrainerBackPic_Wally[] = INCBIN_U8("graphics/trainers/back_pics/wally.4bpp");
 const u8 gTrainerBackPic_Steven[] = INCBIN_U8("graphics/trainers/back_pics/steven.4bpp");
+const u32 gTrainerBackPic_Inteleon_T[] = INCBIN_U32("graphics/pokemon/inteleon/inteleon_t_back.4bpp");
+const u16 gTrainerBackPalette_Inteleon_T[] = INCBIN_U16("graphics/pokemon/inteleon/normal.gbapal");
 
 const u16 gTrainerBackPicPalette_Red[] = INCBIN_U16("graphics/trainers/back_pics/red.gbapal");
 const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pics/leaf.gbapal");
@@ -422,7 +428,9 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
     TRAINER_SPRITE(TRAINER_PIC_SHINJIRO, gTrainerFrontPic_Shinjiro, gTrainerPalette_Shinjiro),
     TRAINER_SPRITE(TRAINER_PIC_INTELEON_T, gTrainerFrontPic_Inteleon_T, gTrainerPalette_Inteleon_T),
-    TRAINER_SPRITE(TRAINER_PIC_SCIENTIST, gTrainerFrontPic_Scientist, gTrainerPalette_Scientist),
+    TRAINER_SPRITE(TRAINER_PIC_SCIENTIST_1, gTrainerFrontPic_Scientist_1, gTrainerPalette_Scientist_1),
+    TRAINER_SPRITE(TRAINER_PIC_SCIENTIST_2, gTrainerFrontPic_Scientist_2, gTrainerPalette_Scientist_2),
+    TRAINER_SPRITE(TRAINER_PIC_NORBERT, gTrainerFrontPic_Norbert, gTrainerPalette_Norbert),
     TRAINER_SPRITE(TRAINER_PIC_DUSCLOPS_HORDE, gTrainerFrontPic_DusclopsHorde, gTrainerPalette_DusclopsHorde),
     
 };

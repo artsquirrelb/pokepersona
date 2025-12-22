@@ -24,9 +24,9 @@ script WindwardPort_Eventscript_SailorOnGuard {
                 setspeaker("Anderson")
                 msgbox(format("This way, please."))
                 closemessage
+                hidemoneybox
                 applymovement(1, walkinplaceup)
                 waitmovement
-                hidemoneybox
                 delay(30)
                 addtime(0, 3, 0)
                 warp(MAP_CORALPORT, 4, 20)
@@ -36,6 +36,7 @@ script WindwardPort_Eventscript_SailorOnGuard {
                 setspeaker("Anderson")
                 msgbox(format("I'm sorry but you don't have enough money for 3 tickets."))
                 closemessage
+                hidemoneybox
                 release
                 end
             }
@@ -54,6 +55,6 @@ script WindwardPort_Eventscript_ShipOutOfCommission {
     Please come back between 5PM and 7AM."))
 }
 
-script MyScript {
+script WindwardPort_Eventscript_VeteranF {
     
 }

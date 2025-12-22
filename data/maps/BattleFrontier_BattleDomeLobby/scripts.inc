@@ -386,7 +386,7 @@ BattleFrontier_BattleDomeLobby_EventScript_Man::
 	end
 
 @ A few OutsideWest event scripts are inserted here instead, two of which are unused
-BattleFrontier_OutsideWest_EventScript_Man3::
+BattleFrontier_OutsideWest_EventScript_YoungMan::
 	msgbox BattleFrontier_OutsideWest_Text_LongDreamedAboutBattleFrontier, MSGBOX_NPC
 	end
 

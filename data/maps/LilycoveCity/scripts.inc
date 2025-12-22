@@ -50,7 +50,7 @@ LilycoveCity_EventScript_ReceivedBerry::
 	release
 	end
 
-LilycoveCity_EventScript_Man3::
+LilycoveCity_EventScript_YoungMan::
 	msgbox LilycoveCity_Text_ContestHallInTown, MSGBOX_NPC
 	end
 
@@ -84,20 +84,20 @@ LilycoveCity_EventScript_Sailor2AquaGone::
 	release
 	end
 
-LilycoveCity_EventScript_Woman2::
+LilycoveCity_EventScript_PokemonBreederF::
 	lock
 	faceplayer
-	goto_if_set FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, LilycoveCity_EventScript_Woman2AquaGone
+	goto_if_set FLAG_TEAM_AQUA_ESCAPED_IN_SUBMARINE, LilycoveCity_EventScript_PokemonBreederFAquaGone
 	msgbox LilycoveCity_Text_SomeoneStoleMyPokemon, MSGBOX_DEFAULT
 	release
 	end
 
-LilycoveCity_EventScript_Woman2AquaGone::
+LilycoveCity_EventScript_PokemonBreederFAquaGone::
 	msgbox LilycoveCity_Text_MissingPokemonCameBack, MSGBOX_DEFAULT
 	release
 	end
 
-LilycoveCity_EventScript_Man2::
+LilycoveCity_EventScript_PokemonBreederM::
 	msgbox LilycoveCity_Text_ImArtDealer, MSGBOX_NPC
 	end
 

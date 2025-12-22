@@ -352,7 +352,7 @@ MauvilleCity_GameCorner_EventScript_CancelTMSelect::
 	release
 	end
 
-MauvilleCity_GameCorner_EventScript_Woman2::
+MauvilleCity_GameCorner_EventScript_PokemonBreederF::
 	msgbox MauvilleCity_GameCorner_Text_CoinsAreNeededToPlay, MSGBOX_NPC
 	end
 

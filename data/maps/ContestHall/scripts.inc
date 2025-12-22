@@ -136,27 +136,27 @@ ContestHall_EventScript_GetRandomAudienceGfxId::
 	case 2, ContestHall_EventScript_RandomAudienceTwin
 	case 3, ContestHall_EventScript_RandomAudienceBoy1
 	case 4, ContestHall_EventScript_RandomAudienceGirl1
-	case 5, ContestHall_EventScript_RandomAudienceGirl2
+	case 5, ContestHall_EventScript_RandomAudienceAromaLady
 	case 6, ContestHall_EventScript_RandomAudienceLittleBoy
 	case 7, ContestHall_EventScript_RandomAudienceGirl
-	case 8, ContestHall_EventScript_RandomAudienceBoy3
-	case 9, ContestHall_EventScript_RandomAudienceGirl3
+	case 8, ContestHall_EventScript_RandomAudienceAceTrainerM
+	case 9, ContestHall_EventScript_RandomAudienceIdol
 	case 10, ContestHall_EventScript_RandomAudienceRichBoy
 	case 11, ContestHall_EventScript_RandomAudienceFatMan
 	case 12, ContestHall_EventScript_RandomAudiencePokefanF
 	case 13, ContestHall_EventScript_RandomAudienceMan1
-	case 14, ContestHall_EventScript_RandomAudienceWoman2
+	case 14, ContestHall_EventScript_RandomAudiencePokemonBreederF
 	case 15, ContestHall_EventScript_RandomAudienceExpertM
 	case 16, ContestHall_EventScript_RandomAudienceExpertF
 	case 17, ContestHall_EventScript_RandomAudiencePokefanM
-	case 18, ContestHall_EventScript_RandomAudienceWoman4
+	case 18, ContestHall_EventScript_RandomAudienceSchoolGirl
 	case 19, ContestHall_EventScript_RandomAudienceCook
 	case 20, ContestHall_EventScript_RandomAudienceLass
 	case 21, ContestHall_EventScript_RandomAudienceOldWoman
 	case 22, ContestHall_EventScript_RandomAudienceCamper
 	case 23, ContestHall_EventScript_RandomAudiencePicnicker
-	case 24, ContestHall_EventScript_RandomAudienceMan3
-	case 25, ContestHall_EventScript_RandomAudienceWoman5
+	case 24, ContestHall_EventScript_RandomAudienceYoungMan
+	case 25, ContestHall_EventScript_RandomAudienceYoungWoman
 	case 26, ContestHall_EventScript_RandomAudienceYoungster
 	case 27, ContestHall_EventScript_RandomAudienceBugCatcher
 	case 28, ContestHall_EventScript_RandomAudiencePsychicM
@@ -182,8 +182,8 @@ ContestHall_EventScript_RandomAudienceGirl1::
 	setvar VAR_TEMP_1, OBJ_EVENT_GFX_GIRL_1
 	return
 
-ContestHall_EventScript_RandomAudienceGirl2::
-	setvar VAR_TEMP_1, OBJ_EVENT_GFX_GIRL_2
+ContestHall_EventScript_RandomAudienceAromaLady::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_AROMA_LADY
 	return
 
 ContestHall_EventScript_RandomAudienceLittleBoy::
@@ -194,12 +194,12 @@ ContestHall_EventScript_RandomAudienceGirl::
 	setvar VAR_TEMP_1, OBJ_EVENT_GFX_LITTLE_GIRL
 	return
 
-ContestHall_EventScript_RandomAudienceBoy3::
-	setvar VAR_TEMP_1, OBJ_EVENT_GFX_BOY_3
+ContestHall_EventScript_RandomAudienceAceTrainerM::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_ACE_TRAINER_M
 	return
 
-ContestHall_EventScript_RandomAudienceGirl3::
-	setvar VAR_TEMP_1, OBJ_EVENT_GFX_GIRL_3
+ContestHall_EventScript_RandomAudienceIdol::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_IDOL
 	return
 
 ContestHall_EventScript_RandomAudienceRichBoy::
@@ -218,8 +218,8 @@ ContestHall_EventScript_RandomAudienceMan1::
 	setvar VAR_TEMP_1, OBJ_EVENT_GFX_MAN_1
 	return
 
-ContestHall_EventScript_RandomAudienceWoman2::
-	setvar VAR_TEMP_1, OBJ_EVENT_GFX_WOMAN_2
+ContestHall_EventScript_RandomAudiencePokemonBreederF::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_POKEMON_BREEDER_F
 	return
 
 ContestHall_EventScript_RandomAudienceExpertM::
@@ -234,8 +234,8 @@ ContestHall_EventScript_RandomAudiencePokefanM::
 	setvar VAR_TEMP_1, OBJ_EVENT_GFX_POKEFAN_M
 	return
 
-ContestHall_EventScript_RandomAudienceWoman4::
-	setvar VAR_TEMP_1, OBJ_EVENT_GFX_WOMAN_4
+ContestHall_EventScript_RandomAudienceSchoolGirl::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_SCHOOL_GIRL
 	return
 
 ContestHall_EventScript_RandomAudienceCook::
@@ -258,12 +258,12 @@ ContestHall_EventScript_RandomAudiencePicnicker::
 	setvar VAR_TEMP_1, OBJ_EVENT_GFX_PICNICKER
 	return
 
-ContestHall_EventScript_RandomAudienceMan3::
-	setvar VAR_TEMP_1, OBJ_EVENT_GFX_MAN_3
+ContestHall_EventScript_RandomAudienceYoungMan::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_YOUNG_MAN
 	return
 
-ContestHall_EventScript_RandomAudienceWoman5::
-	setvar VAR_TEMP_1, OBJ_EVENT_GFX_WOMAN_5
+ContestHall_EventScript_RandomAudienceYoungWoman::
+	setvar VAR_TEMP_1, OBJ_EVENT_GFX_YOUNG_WOMAN
 	return
 
 ContestHall_EventScript_RandomAudienceYoungster::
@@ -312,12 +312,12 @@ ContestHall_EventScript_CreateNormalContestAudience::
 
 ContestHall_EventScript_CreateSuperContestAudience::
 	createvobject OBJ_EVENT_GFX_BEAUTY, 0, 2, 3, 3, DIR_EAST
-	createvobject OBJ_EVENT_GFX_MAN_5, 1, 2, 4, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_GUITARIST, 1, 2, 4, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_HIKER, 2, 2, 7, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 3, 2, 8, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_NINJA_BOY, 10, 12, 3, 3, DIR_WEST
-	createvobject OBJ_EVENT_GFX_WOMAN_2, 11, 12, 4, 3, DIR_WEST
-	createvobject OBJ_EVENT_GFX_WOMAN_3, 12, 12, 7, 3, DIR_WEST
+	createvobject OBJ_EVENT_GFX_POKEMON_BREEDER_F, 11, 12, 4, 3, DIR_WEST
+	createvobject OBJ_EVENT_GFX_LADY, 12, 12, 7, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_LITTLE_GIRL, 13, 12, 8, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_LASS, 20, 3, 2, 3, DIR_SOUTH
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 24, 11, 2, 3, DIR_SOUTH
@@ -325,16 +325,16 @@ ContestHall_EventScript_CreateSuperContestAudience::
 
 ContestHall_EventScript_CreateHyperContestAudience::
 	createvobject OBJ_EVENT_GFX_BEAUTY, 0, 2, 3, 3, DIR_EAST
-	createvobject OBJ_EVENT_GFX_MAN_5, 1, 2, 4, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_GUITARIST, 1, 2, 4, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_HIKER, 2, 2, 7, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_GENTLEMAN, 3, 2, 8, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_NINJA_BOY, 10, 12, 3, 3, DIR_WEST
-	createvobject OBJ_EVENT_GFX_WOMAN_2, 11, 12, 4, 3, DIR_WEST
-	createvobject OBJ_EVENT_GFX_WOMAN_3, 12, 12, 7, 3, DIR_WEST
+	createvobject OBJ_EVENT_GFX_POKEMON_BREEDER_F, 11, 12, 4, 3, DIR_WEST
+	createvobject OBJ_EVENT_GFX_LADY, 12, 12, 7, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_BEAUTY, 13, 12, 8, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_EXPERT_F, 20, 3, 2, 3, DIR_SOUTH
-	createvobject OBJ_EVENT_GFX_MAN_2, 20, 6, 2, 3, DIR_SOUTH
-	createvobject OBJ_EVENT_GFX_WOMAN_5, 20, 7, 2, 3, DIR_SOUTH
+	createvobject OBJ_EVENT_GFX_POKEMON_BREEDER_M, 20, 6, 2, 3, DIR_SOUTH
+	createvobject OBJ_EVENT_GFX_YOUNG_WOMAN, 20, 7, 2, 3, DIR_SOUTH
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 24, 8, 2, 3, DIR_SOUTH
 	createvobject OBJ_EVENT_GFX_GENTLEMAN, 24, 11, 2, 3, DIR_SOUTH
 	createvobject OBJ_EVENT_GFX_LITTLE_BOY, 25, 3, 9, 3, DIR_NORTH
@@ -347,16 +347,16 @@ ContestHall_EventScript_CreateHyperContestAudience::
 
 ContestHall_EventScript_CreateMasterContestAudience::
 	createvobject OBJ_EVENT_GFX_BEAUTY, 0, 2, 3, 3, DIR_EAST
-	createvobject OBJ_EVENT_GFX_MAN_5, 1, 2, 4, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_GUITARIST, 1, 2, 4, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_HIKER, 2, 2, 7, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_LITTLE_GIRL, 3, 2, 8, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_MANIAC, 4, 1, 3, 3, DIR_EAST
-	createvobject OBJ_EVENT_GFX_WOMAN_5, 6, 1, 5, 3, DIR_EAST
-	createvobject OBJ_EVENT_GFX_WOMAN_4, 7, 1, 6, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_YOUNG_WOMAN, 6, 1, 5, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_SCHOOL_GIRL, 7, 1, 6, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_GENTLEMAN, 9, 1, 8, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_NINJA_BOY, 10, 12, 3, 3, DIR_WEST
-	createvobject OBJ_EVENT_GFX_WOMAN_2, 11, 12, 4, 3, DIR_WEST
-	createvobject OBJ_EVENT_GFX_WOMAN_3, 12, 12, 7, 3, DIR_WEST
+	createvobject OBJ_EVENT_GFX_POKEMON_BREEDER_F, 11, 12, 4, 3, DIR_WEST
+	createvobject OBJ_EVENT_GFX_LADY, 12, 12, 7, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_BEAUTY, 13, 12, 8, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_FISHERMAN, 14, 13, 3, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F, 15, 13, 4, 3, DIR_WEST
@@ -365,7 +365,7 @@ ContestHall_EventScript_CreateMasterContestAudience::
 	createvobject OBJ_EVENT_GFX_DEVON_EMPLOYEE, 19, 13, 8, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_POKEFAN_M, 20, 3, 2, 3, DIR_SOUTH
 	createvobject OBJ_EVENT_GFX_CAMPER, 21, 6, 2, 3, DIR_SOUTH
-	createvobject OBJ_EVENT_GFX_MAN_3, 22, 7, 2, 3, DIR_SOUTH
+	createvobject OBJ_EVENT_GFX_YOUNG_MAN, 22, 7, 2, 3, DIR_SOUTH
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 24, 11, 2, 3, DIR_SOUTH
 	createvobject OBJ_EVENT_GFX_SAILOR, 25, 3, 9, 3, DIR_NORTH
 	createvobject OBJ_EVENT_GFX_YOUNGSTER, 26, 4, 9, 3, DIR_NORTH
@@ -377,16 +377,16 @@ ContestHall_EventScript_CreateMasterContestAudience::
 
 ContestHall_EventScript_CreateWirelessContestAudience::
 	createvobject OBJ_EVENT_GFX_BEAUTY, 0, 2, 3, 3, DIR_EAST
-	createvobject OBJ_EVENT_GFX_MAN_5, 1, 2, 4, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_GUITARIST, 1, 2, 4, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_HIKER, 2, 2, 7, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_LITTLE_GIRL, 3, 2, 8, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_MANIAC, 4, 1, 3, 3, DIR_EAST
-	createvobject OBJ_EVENT_GFX_WOMAN_5, 6, 1, 5, 3, DIR_EAST
-	createvobject OBJ_EVENT_GFX_WOMAN_4, 7, 1, 6, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_YOUNG_WOMAN, 6, 1, 5, 3, DIR_EAST
+	createvobject OBJ_EVENT_GFX_SCHOOL_GIRL, 7, 1, 6, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_GENTLEMAN, 9, 1, 8, 3, DIR_EAST
 	createvobject OBJ_EVENT_GFX_NINJA_BOY, 10, 12, 3, 3, DIR_WEST
-	createvobject OBJ_EVENT_GFX_WOMAN_2, 11, 12, 4, 3, DIR_WEST
-	createvobject OBJ_EVENT_GFX_WOMAN_3, 12, 12, 7, 3, DIR_WEST
+	createvobject OBJ_EVENT_GFX_POKEMON_BREEDER_F, 11, 12, 4, 3, DIR_WEST
+	createvobject OBJ_EVENT_GFX_LADY, 12, 12, 7, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_BEAUTY, 13, 12, 8, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_FISHERMAN, 14, 13, 3, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F, 15, 13, 4, 3, DIR_WEST
@@ -395,7 +395,7 @@ ContestHall_EventScript_CreateWirelessContestAudience::
 	createvobject OBJ_EVENT_GFX_DEVON_EMPLOYEE, 19, 13, 8, 3, DIR_WEST
 	createvobject OBJ_EVENT_GFX_POKEFAN_M, 20, 3, 2, 3, DIR_SOUTH
 	createvobject OBJ_EVENT_GFX_CAMPER, 21, 6, 2, 3, DIR_SOUTH
-	createvobject OBJ_EVENT_GFX_MAN_3, 22, 7, 2, 3, DIR_SOUTH
+	createvobject OBJ_EVENT_GFX_YOUNG_MAN, 22, 7, 2, 3, DIR_SOUTH
 	createvobject OBJ_EVENT_GFX_SCIENTIST_1, 24, 11, 2, 3, DIR_SOUTH
 	return
 

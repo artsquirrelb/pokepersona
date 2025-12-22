@@ -752,11 +752,11 @@ SootopolisCity_EventScript_KiriLikeSeasonBornIn::
 	release
 	end
 
-SootopolisCity_EventScript_Woman2::
+SootopolisCity_EventScript_PokemonBreederF::
 	lockall
 	applymovement LOCALID_SOOTOPOLIS_WOMAN_2, Common_Movement_FacePlayer
 	waitmovement 0
-	goto_if_eq VAR_CHAPTER_5_STATE, 5, SootopolisCity_EventScript_Woman2Rayquaza
+	goto_if_eq VAR_CHAPTER_5_STATE, 5, SootopolisCity_EventScript_PokemonBreederFRayquaza
 	msgbox SootopolisCity_Text_WeatherWentWild, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_SOOTOPOLIS_WOMAN_2, Common_Movement_FaceOriginalDirection
@@ -764,7 +764,7 @@ SootopolisCity_EventScript_Woman2::
 	releaseall
 	end
 
-SootopolisCity_EventScript_Woman2Rayquaza::
+SootopolisCity_EventScript_PokemonBreederFRayquaza::
 	msgbox SootopolisCity_Text_YouBroughtFlyingMon, MSGBOX_DEFAULT
 	releaseall
 	end

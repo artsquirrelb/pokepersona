@@ -61,7 +61,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_Man3",
+      "script": "LilycoveCity_EventScript_YoungMan",
       "flag": "0"
     },
     {
@@ -78,7 +78,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_BREEDER_M",
       "x": 16,
       "y": 9,
       "elevation": 5,
@@ -87,11 +87,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_Man2",
+      "script": "LilycoveCity_EventScript_PokemonBreederM",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_BREEDER_F",
       "x": 35,
       "y": 27,
       "elevation": 3,
@@ -100,7 +100,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "LilycoveCity_EventScript_Woman2",
+      "script": "LilycoveCity_EventScript_PokemonBreederF",
       "flag": "0"
     },
     {
@@ -261,7 +261,7 @@
     },
     {
       "local_id": "LOCALID_LILYCOVE_WOMAN_1",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_LADY",
       "x": 41,
       "y": 25,
       "elevation": 3,
@@ -275,7 +275,7 @@
     },
     {
       "local_id": "LOCALID_LILYCOVE_MAN_1",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_BREEDER_M",
       "x": 40,
       "y": 25,
       "elevation": 3,

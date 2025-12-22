@@ -91,7 +91,7 @@ BattleFrontier_OutsideEast_EventScript_Twin::
 	msgbox BattleFrontier_OutsideEast_Text_BetterThanDaddyAtPokemon, MSGBOX_NPC
 	end
 
-BattleFrontier_OutsideEast_EventScript_Man2::
+BattleFrontier_OutsideEast_EventScript_PokemonBreederM::
 	lock
 	msgbox BattleFrontier_OutsideEast_Text_GoRackUpSomeWinsForDaddy, MSGBOX_DEFAULT
 	release
@@ -174,7 +174,7 @@ BattleFrontier_OutsideEast_EventScript_PsychicM::
 	msgbox BattleFrontier_OutsideEast_Text_LegendOfBattlePyramid, MSGBOX_NPC
 	end
 
-BattleFrontier_OutsideEast_EventScript_Man3::
+BattleFrontier_OutsideEast_EventScript_YoungMan::
 	msgbox BattleFrontier_OutsideEast_Text_GotWipedOut, MSGBOX_NPC
 	end
 
@@ -182,7 +182,7 @@ BattleFrontier_OutsideEast_EventScript_Woman1::
 	msgbox BattleFrontier_OutsideEast_Text_ToughTrainerInBattleTower, MSGBOX_NPC
 	end
 
-BattleFrontier_OutsideEast_EventScript_Woman2::
+BattleFrontier_OutsideEast_EventScript_PokemonBreederF::
 	msgbox BattleFrontier_OutsideEast_Text_EnoughBattlePointsForDoll, MSGBOX_NPC
 	end
 
@@ -196,7 +196,7 @@ BattleFrontier_OutsideEast_EventScript_Maniac2::
 	release
 	end
 
-BattleFrontier_OutsideEast_EventScript_Woman3::
+BattleFrontier_OutsideEast_EventScript_Lady::
 	lock
 	msgbox BattleFrontier_OutsideEast_Text_PowerOfOurLoveWillOvercome, MSGBOX_DEFAULT
 	release

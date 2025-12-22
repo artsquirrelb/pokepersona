@@ -196,7 +196,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy2 = {
     .images = sPicTable_Boy2,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl2 = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AromaLady = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -211,7 +211,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl2 = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Girl2,
+    .images = sPicTable_AromaLady,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleBoy = {
@@ -250,14 +250,14 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LittleGirl = {
     .images = sPicTable_LittleGirl,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy3 = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerM = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
     .height = 32,
-    .paletteSlot = PALSLOT_NPC_4,
+    .paletteSlot = PALSLOT_NPC_1,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .compressed = FALSE,
@@ -265,10 +265,28 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Boy3 = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Boy3,
+    .images = sPicTable_AceTrainerM,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl3 = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_AceTrainerF = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_1,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_AceTrainerF,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Idol = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -283,7 +301,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Girl3 = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Girl3,
+    .images = sPicTable_Idol,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RichBoy = {
@@ -376,7 +394,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man1 = {
     .images = sPicTable_Man1,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman2 = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonBreederF = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -391,7 +409,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman2 = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Woman2,
+    .images = sPicTable_PokemonBreederF,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExpertM = {
@@ -430,7 +448,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ExpertF = {
     .images = sPicTable_ExpertF,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man2 = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokemonBreederM = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -445,17 +463,17 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man2 = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Man2,
+    .images = sPicTable_PokemonBreederM,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman3 = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lady = {
     .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
     .size = 512,
     .width = 32,
     .height = 32,
-    .paletteSlot = PALSLOT_NPC_2,
+    .paletteSlot = PALSLOT_NPC_4,
     .shadowSize = SHADOW_SIZE_M,
     .inanimate = FALSE,
     .compressed = FALSE,
@@ -463,7 +481,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman3 = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Woman3,
+    .images = sPicTable_Lady,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanM = {
@@ -484,7 +502,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokefanM = {
     .images = sPicTable_PokefanM,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman4 = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolGirl = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -499,7 +517,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman4 = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Woman4,
+    .images = sPicTable_SchoolGirl,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cook = {
@@ -610,7 +628,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Picnicker = {
     .images = sPicTable_Picnicker,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man3 = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungMan = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -625,10 +643,10 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man3 = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Man3,
+    .images = sPicTable_YoungMan,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman5 = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoungWoman = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -643,7 +661,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Woman5 = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Woman5,
+    .images = sPicTable_YoungWoman,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Youngster = {
@@ -716,6 +734,24 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidM = {
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
     .images = sPicTable_SchoolKidM,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SchoolKidF = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_3,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_SchoolKidF,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Maniac = {
@@ -1168,7 +1204,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man4 = {
     .images = sPicTable_Man4,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man5 = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guitarist = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_2,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -1183,7 +1219,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Man5 = {
     .oam = &gObjectEventBaseOam_32x32,
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_Man5,
+    .images = sPicTable_Guitarist,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ReporterM = {
@@ -1291,7 +1327,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Storyteller = {
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_MauvilleOldMan2,
+    .images = sPicTable_MauvilleOldPokemonBreederM,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giddy = {
@@ -1309,7 +1345,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Giddy = {
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_MauvilleOldMan2,
+    .images = sPicTable_MauvilleOldPokemonBreederM,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan1 = {
@@ -1327,10 +1363,10 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldM
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_MauvilleOldMan2,
+    .images = sPicTable_MauvilleOldPokemonBreederM,
 };
 
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldMan2 = {
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldPokemonBreederM = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_4,
     .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
@@ -1345,7 +1381,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvilleOldM
     .oam = &gObjectEventBaseOam_16x32,
     .subspriteTables = sOamTables_16x32,
     .anims = sAnimTable_Standard,
-    .images = sPicTable_MauvilleOldMan2,
+    .images = sPicTable_MauvilleOldPokemonBreederM,
 };
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedNatuDoll = {
@@ -5014,5 +5050,119 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Worker = {
     .subspriteTables = sOamTables_32x32,
     .anims = sAnimTable_Standard,
     .images = gObjectEventPicTable_Worker,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PreschoolerM = { 
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_1,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = gObjectEventPicTable_PreschoolerM,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PreschoolerF = { 
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_1,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = gObjectEventPicTable_PreschoolerF,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RancherM = { 
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_1,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_1,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = gObjectEventPicTable_RancherM,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RancherF = { 
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_8,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = gObjectEventPicTable_RancherF,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VeteranM = { 
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_6,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = gObjectEventPicTable_VeteranM,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_VeteranF = { 
+    .tileTag = 0xFFFF,
+    .paletteTag = OBJ_EVENT_PAL_TAG_NPC_5,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Standard,
+    .images = gObjectEventPicTable_VeteranF,
     .affineAnims = gDummySpriteAffineAnimTable,
 };

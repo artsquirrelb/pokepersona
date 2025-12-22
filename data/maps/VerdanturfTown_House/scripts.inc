@@ -5,7 +5,7 @@ VerdanturfTown_House_EventScript_Woman1::
 	msgbox VerdanturfTown_House_Text_TrainersGatherAtPokemonLeague, MSGBOX_NPC
 	end
 
-VerdanturfTown_House_EventScript_Woman2::
+VerdanturfTown_House_EventScript_PokemonBreederF::
 	msgbox VerdanturfTown_House_Text_DefeatEliteFourInARow, MSGBOX_NPC
 	end
 

@@ -16,7 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_FLOWER_SHOP_OWNER",
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_BREEDER_F",
       "x": 0,
       "y": 3,
       "elevation": 3,
@@ -29,7 +29,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "graphics_id": "OBJ_EVENT_GFX_IDOL",
       "x": 7,
       "y": 3,
       "elevation": 3,

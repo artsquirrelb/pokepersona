@@ -221,7 +221,7 @@ LavaridgeTown_EventScript_HotSpringsOldWoman1::
 	msgbox LavaridgeTown_Text_IfPokemonInHotSprings, MSGBOX_NPC
 	end
 
-LavaridgeTown_EventScript_HotSpringsOldWoman2::
+LavaridgeTown_EventScript_HotSpringsOldPokemonBreederF::
 	msgbox LavaridgeTown_Text_HotSpringsClaims, MSGBOX_NPC
 	end
 

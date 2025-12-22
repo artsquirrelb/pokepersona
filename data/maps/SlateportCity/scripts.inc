@@ -322,7 +322,7 @@ SlateportCity_EventScript_ManiacSternInterview::
 	release
 	end
 
-SlateportCity_EventScript_Woman2::
+SlateportCity_EventScript_PokemonBreederF::
 	msgbox SlateportCity_Text_CantChangeTradeMonName, MSGBOX_NPC
 	end
 
@@ -338,7 +338,7 @@ SlateportCity_EventScript_PokefanF::
 	msgbox SlateportCity_Text_BuyTooMuch, MSGBOX_NPC
 	end
 
-SlateportCity_EventScript_Man2::
+SlateportCity_EventScript_PokemonBreederM::
 	msgbox SlateportCity_Text_BattleTentBuiltRecently, MSGBOX_NPC
 	end
 
@@ -699,7 +699,7 @@ SlateportCity_EventScript_Gabby::
 	msgbox SlateportCity_Text_MostInvaluableExperience, MSGBOX_SIGN
 	end
 
-SlateportCity_EventScript_Man3::
+SlateportCity_EventScript_YoungMan::
 	msgbox SlateportCity_Text_WonderIfLighthouseStartlesPokemon, MSGBOX_NPC
 	end
 

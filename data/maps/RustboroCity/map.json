@@ -31,7 +31,7 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_5",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNG_WOMAN",
       "x": 22,
       "y": 34,
       "elevation": 3,
@@ -96,7 +96,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNG_MAN",
       "x": 26,
       "y": 23,
       "elevation": 3,
@@ -138,7 +138,7 @@
     },
     {
       "local_id": "LOCALID_RUSTBORO_DEVON_EMPLOYEE",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_BREEDER_M",
       "x": 30,
       "y": 10,
       "elevation": 3,
@@ -200,7 +200,7 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "RustboroCity_EventScript_Man2",
+      "script": "RustboroCity_EventScript_PokemonBreederM",
       "flag": "0"
     },
     {

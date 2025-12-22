@@ -136,7 +136,7 @@ LilycoveCity_LilycoveMuseum_1F_EventScript_Woman1::
 	msgbox LilycoveCity_LilycoveMuseum_1F_Text_ThisPokemonIsAdorable, MSGBOX_SIGN
 	end
 
-LilycoveCity_LilycoveMuseum_1F_EventScript_Woman2::
+LilycoveCity_LilycoveMuseum_1F_EventScript_PokemonBreederF::
 	msgbox LilycoveCity_LilycoveMuseum_1F_Text_HeardMuseumGotNewPaintings, MSGBOX_NPC
 	end
 

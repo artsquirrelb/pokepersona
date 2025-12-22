@@ -388,7 +388,7 @@ Route111_EventScript_Man1::
 	msgbox Route111_Text_ToughToKeepWinningUpTheRanks, MSGBOX_NPC
 	end
 
-Route111_EventScript_Man2::
+Route111_EventScript_PokemonBreederM::
 	msgbox Route111_Text_WinstrateFamilyDestroyedMe, MSGBOX_NPC
 	end
 

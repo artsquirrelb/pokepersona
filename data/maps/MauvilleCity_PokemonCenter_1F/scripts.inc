@@ -23,7 +23,7 @@ MauvilleCity_PokemonCenter_1F_EventScript_Woman1::
 	msgbox MauvilleCity_PokemonCenter_1F_Text_ManOverThereSaysWeirdThings, MSGBOX_NPC
 	end
 
-MauvilleCity_PokemonCenter_1F_EventScript_Woman2::
+MauvilleCity_PokemonCenter_1F_EventScript_PokemonBreederF::
 	msgbox MauvilleCity_PokemonCenter_1F_Text_MyDataUpdatedFromRecordCorner, MSGBOX_NPC
 	end
 

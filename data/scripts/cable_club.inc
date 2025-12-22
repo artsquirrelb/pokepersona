@@ -1264,7 +1264,7 @@ CableClub_OnResume:
 	end
 .endif
 
-MossdeepCity_GameCorner_1F_EventScript_InfoMan2::
+MossdeepCity_GameCorner_1F_EventScript_InfoPokemonBreederM::
 	lock
 	faceplayer
 	message MossdeepCity_GameCorner_1F_Text_DescribeWhichGame
@@ -1292,7 +1292,7 @@ MossdeepCity_GameCorner_1F_EventScript_MinigameInfoExit::
 	release
 	end
 
-MossdeepCity_GameCorner_1F_EventScript_OldMan2::
+MossdeepCity_GameCorner_1F_EventScript_OldPokemonBreederM::
 	lock
 	faceplayer
 	message MossdeepCity_GameCorner_1F_Text_WelcomeCanYouWait

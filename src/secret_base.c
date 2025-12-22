@@ -165,13 +165,13 @@ static const u16 sSecretBaseOwnerGfxIds[10] =
     OBJ_EVENT_GFX_BUG_CATCHER,
     OBJ_EVENT_GFX_RICH_BOY,
     OBJ_EVENT_GFX_CAMPER,
-    OBJ_EVENT_GFX_MAN_3,
+    OBJ_EVENT_GFX_YOUNG_MAN,
     // Female
     OBJ_EVENT_GFX_LASS,
-    OBJ_EVENT_GFX_GIRL_3,
-    OBJ_EVENT_GFX_WOMAN_2,
+    OBJ_EVENT_GFX_IDOL,
+    OBJ_EVENT_GFX_POKEMON_BREEDER_F,
     OBJ_EVENT_GFX_PICNICKER,
-    OBJ_EVENT_GFX_WOMAN_5,
+    OBJ_EVENT_GFX_YOUNG_WOMAN,
 };
 
 static const struct WindowTemplate sRegistryWindowTemplates[] =

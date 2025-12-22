@@ -237,7 +237,10 @@ $(OBJEVENTGFXDIR)/people/boy_1.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/boy_2.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/boy_3.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/ace_trainer_m.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/ace_trainer_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/rich_boy.4bpp: %.4bpp: %.png
@@ -279,10 +282,10 @@ $(OBJEVENTGFXDIR)/people/gentleman.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/girl_1.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/girl_2.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/aroma_lady.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/girl_3.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/idol.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/hex_maniac.4bpp: %.4bpp: %.png
@@ -315,19 +318,19 @@ $(OBJEVENTGFXDIR)/people/little_girl.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/man_1.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/man_2.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/pokemon_breeder_m.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/pokefan_m.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/man_3.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/young_man.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/man_4.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/man_5.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/guitarist.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/devon_employee.4bpp: %.4bpp: %.png
@@ -405,6 +408,9 @@ $(OBJEVENTGFXDIR)/people/sailor.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/school_kid_m.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/school_kid_f.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/scientist_1.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
@@ -432,6 +438,12 @@ $(OBJEVENTGFXDIR)/people/tuber_f.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/tuber_m.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/preschooler_m.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/preschooler_f.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/tuber_m_swimming.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2
 
@@ -453,25 +465,35 @@ $(OBJEVENTGFXDIR)/people/woman_1.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/pokefan_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/woman_2.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/pokemon_breeder_f.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/woman_3.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/lady.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/woman_4.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/school_girl.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/link_receptionist.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 4
 
-$(OBJEVENTGFXDIR)/people/woman_5.4bpp: %.4bpp: %.png
+$(OBJEVENTGFXDIR)/people/young_woman.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/people/youngster.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/rancher_m.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/rancher_f.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/veteran_m.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
+$(OBJEVENTGFXDIR)/people/veteran_f.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 $(OBJEVENTGFXDIR)/pokemon_old/azumarill.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 2 -mheight 2

@@ -338,7 +338,7 @@ Route104_EventScript_ReceivedBulletSeed::
 	release
 	end
 
-Route104_EventScript_Girl2::
+Route104_EventScript_AromaLady::
 	msgbox Route104_Text_ImNotATrainer, MSGBOX_NPC
 	end
 

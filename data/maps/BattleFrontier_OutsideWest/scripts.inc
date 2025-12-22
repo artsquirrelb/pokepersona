@@ -212,7 +212,7 @@ BattleFrontier_OutsideWest_Movement_GirlShudderEast:
 	walk_in_place_faster_left
 	step_end
 
-BattleFrontier_OutsideWest_EventScript_Woman2::
+BattleFrontier_OutsideWest_EventScript_PokemonBreederF::
 	lock
 	faceplayer
 	msgbox BattleFrontier_OutsideWest_Text_LetsPlayRockPaperScissors, MSGBOX_DEFAULT
@@ -252,7 +252,7 @@ BattleFrontier_OutsideWest_EventScript_ExpertM::
 	msgbox BattleFrontier_OutsideWest_Text_WontLetGentlemenBeatMe, MSGBOX_NPC
 	end
 
-BattleFrontier_OutsideWest_EventScript_Man2::
+BattleFrontier_OutsideWest_EventScript_PokemonBreederM::
 	msgbox BattleFrontier_OutsideWest_Text_NothingHereNotLongAgo, MSGBOX_NPC
 	end
 
@@ -264,11 +264,11 @@ BattleFrontier_OutsideWest_EventScript_FatMan1::
 	msgbox BattleFrontier_OutsideWest_Text_SquareFilledWithToughPeople, MSGBOX_NPC
 	end
 
-BattleFrontier_OutsideWest_EventScript_FatMan2::
+BattleFrontier_OutsideWest_EventScript_FatPokemonBreederM::
 	msgbox BattleFrontier_OutsideWest_Text_MetOlderGirlAtPike, MSGBOX_NPC
 	end
 
-BattleFrontier_OutsideWest_EventScript_Woman3::
+BattleFrontier_OutsideWest_EventScript_Lady::
 	lock
 	msgbox BattleFrontier_OutsideWest_Text_LastTimeOurEyesMet, MSGBOX_DEFAULT
 	release

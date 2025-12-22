@@ -683,7 +683,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		},
 		.donedesc = gText_SideQuest3_DoneDesc,
 		.map = {COMPOUND_STRING("AmeAme Candy Shop")},
-		.sprite = {OBJ_EVENT_GFX_WOMAN_4},
+		.sprite = {OBJ_EVENT_GFX_SCHOOL_GIRL},
 		.spritetype = {OBJECT},
 		.subquests = NULL,
 		.numSubquests = 0,

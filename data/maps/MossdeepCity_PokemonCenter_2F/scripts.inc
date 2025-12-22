@@ -18,11 +18,11 @@ MossdeepCity_PokemonCenter_2F_EventScript_RecordCorner::
 	call CableClub_EventScript_RecordCorner
 	end
 
-MossdeepCity_PokemonCenter_2F_EventScript_Woman5::
-	msgbox MossdeepCity_PokemonCenter_2F_Text_Woman5, MSGBOX_NPC
+MossdeepCity_PokemonCenter_2F_EventScript_YoungWoman::
+	msgbox MossdeepCity_PokemonCenter_2F_Text_YoungWoman, MSGBOX_NPC
 	end
 
-MossdeepCity_PokemonCenter_2F_Text_Woman5:
+MossdeepCity_PokemonCenter_2F_Text_YoungWoman:
 	.string "If I win a whole lot of link battles\n"
 	.string "and show everyone how good I am,\l"
 	.string "I might get a fan following!$"

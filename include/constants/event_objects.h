@@ -14,36 +14,36 @@
 #define OBJ_EVENT_GFX_BOY_1                        7
 #define OBJ_EVENT_GFX_GIRL_1                       8
 #define OBJ_EVENT_GFX_BOY_2                        9
-#define OBJ_EVENT_GFX_GIRL_2                      10
+#define OBJ_EVENT_GFX_AROMA_LADY                  10
 #define OBJ_EVENT_GFX_LITTLE_BOY                  11
 #define OBJ_EVENT_GFX_LITTLE_GIRL                 12
-#define OBJ_EVENT_GFX_BOY_3                       13
-#define OBJ_EVENT_GFX_GIRL_3                      14
+#define OBJ_EVENT_GFX_ACE_TRAINER_M               13
+#define OBJ_EVENT_GFX_IDOL                        14
 #define OBJ_EVENT_GFX_RICH_BOY                    15
 #define OBJ_EVENT_GFX_WOMAN_1                     16
 #define OBJ_EVENT_GFX_FAT_MAN                     17
 #define OBJ_EVENT_GFX_POKEFAN_F                   18
 #define OBJ_EVENT_GFX_MAN_1                       19
-#define OBJ_EVENT_GFX_WOMAN_2                     20
+#define OBJ_EVENT_GFX_POKEMON_BREEDER_F           20
 #define OBJ_EVENT_GFX_EXPERT_M                    21
 #define OBJ_EVENT_GFX_EXPERT_F                    22
-#define OBJ_EVENT_GFX_MAN_2                       23
-#define OBJ_EVENT_GFX_WOMAN_3                     24
+#define OBJ_EVENT_GFX_POKEMON_BREEDER_M           23
+#define OBJ_EVENT_GFX_LADY                        24
 #define OBJ_EVENT_GFX_POKEFAN_M                   25
-#define OBJ_EVENT_GFX_WOMAN_4                     26
+#define OBJ_EVENT_GFX_SCHOOL_GIRL                 26
 #define OBJ_EVENT_GFX_COOK                        27
 #define OBJ_EVENT_GFX_LINK_RECEPTIONIST           28
 #define OBJ_EVENT_GFX_OLD_MAN                     29
 #define OBJ_EVENT_GFX_OLD_WOMAN                   30
 #define OBJ_EVENT_GFX_CAMPER                      31
 #define OBJ_EVENT_GFX_PICNICKER                   32
-#define OBJ_EVENT_GFX_MAN_3                       33
-#define OBJ_EVENT_GFX_WOMAN_5                     34
+#define OBJ_EVENT_GFX_YOUNG_MAN                   33
+#define OBJ_EVENT_GFX_YOUNG_WOMAN                 34
 #define OBJ_EVENT_GFX_YOUNGSTER                   35
 #define OBJ_EVENT_GFX_BUG_CATCHER                 36
 #define OBJ_EVENT_GFX_PSYCHIC_M                   37
 #define OBJ_EVENT_GFX_SCHOOL_KID_M                38
-#define OBJ_EVENT_GFX_BRENDAN_NORMAL                      39
+#define OBJ_EVENT_GFX_BRENDAN_NORMAL              39
 #define OBJ_EVENT_GFX_HEX_MANIAC                  40
 #define OBJ_EVENT_GFX_RAYQUAZA_STILL              41
 #define OBJ_EVENT_GFX_SWIMMER_M                   42
@@ -70,7 +70,7 @@
 #define OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE           63
 #define OBJ_EVENT_GFX_PROF_BIRCH                  64
 #define OBJ_EVENT_GFX_MAN_4                       65
-#define OBJ_EVENT_GFX_MAN_5                       66
+#define OBJ_EVENT_GFX_GUITARIST                   66
 #define OBJ_EVENT_GFX_REPORTER_M                  67
 #define OBJ_EVENT_GFX_REPORTER_F                  68
 #define OBJ_EVENT_GFX_BARD                        69
@@ -270,17 +270,25 @@
 #define OBJ_EVENT_GFX_STATUE_WINDWARD            263
 #define OBJ_EVENT_GFX_RANGER_M                   264
 #define OBJ_EVENT_GFX_RANGER_F                   265
-#define OBJ_EVENT_GFX_BIKER               266
+#define OBJ_EVENT_GFX_BIKER                      266
 #define OBJ_EVENT_GFX_SOCIALITE                  267
 #define OBJ_EVENT_GFX_POLICEMAN                  268
 #define OBJ_EVENT_GFX_PARASOL_LADY               269
 #define OBJ_EVENT_GFX_ROUGHNECK                  270
 #define OBJ_EVENT_GFX_WORKER                     271
+#define OBJ_EVENT_GFX_ACE_TRAINER_F              272
+#define OBJ_EVENT_GFX_SCHOOL_KID_F               273
+#define OBJ_EVENT_GFX_PRESCHOOLER_M              274
+#define OBJ_EVENT_GFX_PRESCHOOLER_F              275
+#define OBJ_EVENT_GFX_RANCHER_M                  276
+#define OBJ_EVENT_GFX_RANCHER_F                  277
+#define OBJ_EVENT_GFX_VETERAN_M                  278
+#define OBJ_EVENT_GFX_VETERAN_F                  279
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        272
+#define NUM_OBJ_EVENT_GFX                        280
 
 
 // These are dynamic object gfx ids.

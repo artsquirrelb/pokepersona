@@ -9566,7 +9566,6 @@ Ability: Poison Point
 
 SPECIES_FERROSEED_DELTA (M) @ ITEM_OCCA_BERRY
 Level: 10
-Shiny: Yes
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 EVs: 40 Atk
 Ability: Iron Barbs 

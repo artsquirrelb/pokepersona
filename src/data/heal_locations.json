@@ -224,7 +224,7 @@
     {
       "id": "HEAL_LOCATION_ROUTE2_2",
       "map": "MAP_ROUTE2_2",
-      "x": 23,
+      "x": 25,
       "y": 16,
       "respawn_map": "MAP_ROUTE2_GATEHOUSE",
       "respawn_npc": "LOCALID_ROUTE2_GATEHOUSE_NURSE"

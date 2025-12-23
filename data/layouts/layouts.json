@@ -5548,7 +5548,7 @@
     {
       "id": "LAYOUT_ROUTE2_2",
       "name": "Route2_2_Layout",
-      "width": 30,
+      "width": 32,
       "height": 39,
       "border_width": 2,
       "border_height": 2,
@@ -5692,7 +5692,7 @@
     {
       "id": "LAYOUT_CORALPORT",
       "name": "Coralport_Layout",
-      "width": 48,
+      "width": 46,
       "height": 42,
       "border_width": 2,
       "border_height": 2,

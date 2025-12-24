@@ -117,8 +117,8 @@ static void MainMenu_InitializeGPUWindows(void);
 
 static void CreateMugshot();
 static void DestroyMugshot();
-static void CreateIconShadow();
-static void DestroyIconShadow();
+//static void CreateIconShadow();
+//static void DestroyIconShadow();
 static u32 GetHPEggCyclePercent(u32 partyIndex);
 static void CreatePartyMonIcons();
 static void DestroyMonIcons();
@@ -423,7 +423,7 @@ static void MainMenu_FreeResources(void)
     try_free(sBg2TilemapBuffer);
     FreeAllWindowBuffers();
     DestroyMugshot();
-    DestroyIconShadow();
+    //DestroyIconShadow();
     DestroyMonIcons();
     DmaClearLarge16(3, (void *)VRAM, VRAM_SIZE, 0x1000);
 }
@@ -527,7 +527,7 @@ static bool8 MainMenu_DoGfxSetup(void)
         break;
     case 5: // Here is where the sprites are drawn and text is printed
         PrintToWindow(WINDOW_HEADER, FONT_WHITE);
-        CreateIconShadow();
+        //CreateIconShadow();
         CreatePartyMonIcons();
         CreateMugshot();
         CreateTask(Task_MainMenuWaitFadeIn, 0);
@@ -715,7 +715,7 @@ static void DestroyMugshot()
 #define ICON_BOX_1_START_Y          38
 #define ICON_BOX_X_DIFFERENCE       32
 #define ICON_BOX_Y_DIFFERENCE       32
-static void CreateIconShadow()
+/*static void CreateIconShadow()
 {
     u8 i = 0;
 
@@ -750,7 +750,7 @@ static void DestroyIconShadow()
         DestroySprite(&gSprites[sMainMenuDataPtr->iconBoxSpriteIds[i]]);
         sMainMenuDataPtr->iconBoxSpriteIds[i] = SPRITE_NONE;
     }
-}
+}*/
 
 static u32 GetHPEggCyclePercent(u32 partyIndex) // Random HP function from psf's hack written by Rioluwott
 {
@@ -832,7 +832,9 @@ static const u8 sText_DexNum[] = _("Dex: {STR_VAR_1}");
 static const u8 sText_Badges[] = _("Lv.Cap: {STR_VAR_1}");
 static void PrintToWindow(u8 windowId, u8 colorIdx)
 {
-    const u8 colors[3] = {0,  2,  0}; 
+    const u8 colors[3] = {0,  1,  0}; 
+    const u8 colors_m[3] = {0,  5,  0}; //akihiko
+    const u8 colors_f[3] = {0,  2,  0}; //mitsuru
     u8 mapDisplayHeader[24];
     u8 *withoutPrefixPtr, *playTimePtr;
     u16 dexCount = 0; u16 levelcap = 0;
@@ -847,14 +849,19 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     mapDisplayHeader[0] = EXT_CTRL_CODE_BEGIN;
     mapDisplayHeader[1] = EXT_CTRL_CODE_HIGHLIGHT;
     mapDisplayHeader[2] = TEXT_COLOR_TRANSPARENT;
-    AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NARROW, GetStringCenterAlignXOffset(FONT_NARROW, withoutPrefixPtr, 10 * 8), 1, 0, 0, colors, 0xFF, mapDisplayHeader);
-
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NARROW, GetStringCenterAlignXOffset(FONT_NARROW, withoutPrefixPtr, 10 * 8), 1, 0, 0, colors_m, 0xFF, mapDisplayHeader);
+    else
+        AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NARROW, GetStringCenterAlignXOffset(FONT_NARROW, withoutPrefixPtr, 10 * 8), 1, 0, 0, colors_f, 0xFF, mapDisplayHeader);
     // Print Playtime In Header
     playTimePtr = ConvertIntToDecimalStringN(gStringVar4, gSaveBlock2Ptr->playTimeHours, STR_CONV_MODE_LEFT_ALIGN, 3);
     *playTimePtr = 0xF0;
     ConvertIntToDecimalStringN(playTimePtr + 1, gSaveBlock2Ptr->playTimeMinutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NARROW, (104 - 12) + GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, (6*8)), 1, 0, 0, colors, TEXT_SKIP_DRAW, gStringVar4);
-
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NARROW, (104 - 12) + GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, (6*8)), 1, 0, 0, colors_m, TEXT_SKIP_DRAW, gStringVar4);
+    else
+        AddTextPrinterParameterized4(WINDOW_HEADER, FONT_NARROW, (104 - 12) + GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, (6*8)), 1, 0, 0, colors_f, TEXT_SKIP_DRAW, gStringVar4);
+   
     // Print Dex Numbers if You Have It
     if (FlagGet(FLAG_SYS_POKEDEX_GET) == TRUE)
     {

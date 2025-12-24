@@ -85,7 +85,7 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
         .tilemapTop = 0,
         .width = 30,
         .height = 2,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 2
     },
     {//WIN_OPTIONS
@@ -94,7 +94,7 @@ static const struct WindowTemplate sOptionMenuWinTemplates[] =
         .tilemapTop = 3,
         .width = 26,
         .height = 10,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 62
     },
     {//WIN_DESCRIPTION
@@ -628,15 +628,17 @@ static void DrawDescriptionText(void)
 
 static void DrawLeftSideOptionText(int selection, int y)
 {
-    u8 color_yellow[3];
-    u8 color_gray[3];
+    u8 color_yellow[4];
+    u8 color_gray[4];
 
     color_yellow[0] = TEXT_COLOR_TRANSPARENT;
-    color_yellow[1] = 1;//EXT_COLOR_WHITE;
+    color_yellow[1] = 1;//TEXT_COLOR_WHITE;
     color_yellow[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
+    color_yellow[3] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
     color_gray[0] = TEXT_COLOR_TRANSPARENT;
     color_gray[1] = 9;//TEXT_COLOR_WHITE;
     color_gray[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_SHADOW;
+    color_gray[3] = 0;//TEXT_COLOR_OPTIONS_GRAY_SHADOW;
 
     if (CheckConditions(selection))
         AddTextPrinterParameterized4(WIN_OPTIONS, FONT_NORMAL, 8, y, 0, 0, color_yellow, TEXT_SKIP_DRAW, OptionTextRight(selection));
@@ -652,19 +654,19 @@ static void DrawRightSideChoiceText(const u8 *text, int x, int y, bool8 choosen,
     if (active)
     {
         color_red[0] = TEXT_COLOR_TRANSPARENT;
-        color_red[1] = 12;//TEXT_COLOR_OPTIONS_ORANGE_FG;
+        color_red[1] = 4;//TEXT_COLOR_OPTIONS_ORANGE_FG;
         color_red[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
         color_gray[0] = TEXT_COLOR_TRANSPARENT;
-        color_gray[1] = 14;//TEXT_COLOR_OPTIONS_WHITE;
+        color_gray[1] = 2;//TEXT_COLOR_OPTIONS_WHITE;
         color_gray[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
     }
     else
     {
         color_red[0] = TEXT_COLOR_TRANSPARENT;
-        color_red[1] = 12;//TEXT_COLOR_OPTIONS_WHITE;
+        color_red[1] = 2;//TEXT_COLOR_OPTIONS_WHITE;
         color_red[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
         color_gray[0] = TEXT_COLOR_TRANSPARENT;
-        color_gray[1] = 14;//TEXT_COLOR_OPTIONS_WHITE;
+        color_gray[1] = 2;//TEXT_COLOR_OPTIONS_WHITE;
         color_gray[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
     }
 

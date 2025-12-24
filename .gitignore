@@ -61,3 +61,6 @@ __pycache__
 *.xlsx
 *.bak
 *.xcf
+notes/
+tools/poryscript/poryscript
+data/maps/**/scripts.inc

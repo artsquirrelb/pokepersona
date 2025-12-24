@@ -50,7 +50,7 @@ Route1_Eventscript_Touma_1:
 
 Route1_Eventscript_Touma_2:
 # 17 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_TOUMA_2, Route1_ToumaIntro_A, Route1_ToumaDefeated
+	trainerbattle_single TRAINER_TOUMA, Route1_ToumaIntro_A, Route1_ToumaDefeated
 	goto Route1_Eventscript_Touma_1
 
 Route1_Eventscript_Touma_6:
@@ -80,7 +80,7 @@ Route1_Eventscript_Miyu_1:
 
 Route1_Eventscript_Miyu_2:
 # 62 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_MIYU_2, Route1_MiyuIntro_A, Route1_MiyuDefeated
+	trainerbattle_single TRAINER_MIYU, Route1_MiyuIntro_A, Route1_MiyuDefeated
 	goto Route1_Eventscript_Miyu_1
 
 
@@ -188,7 +188,7 @@ Route1_Eventscript_Ichigo_1:
 
 Route1_Eventscript_Ichigo_2:
 # 150 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_ICHIGO_2, Route1_IchigoIntro_A, Route1_IchigoDefeated
+	trainerbattle_single TRAINER_ICHIGO, Route1_IchigoIntro_A, Route1_IchigoDefeated
 	goto Route1_Eventscript_Ichigo_1
 
 

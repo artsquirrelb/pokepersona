@@ -260,26 +260,14 @@ script SunshineWoods_Eventscript_DirectionSign {
 }
 
 script SunshineWoods_Eventscript_IkeBattle{
-    checkplayergender
-    if(var(VAR_RESULT) == MALE){
-        trainerbattle_single(TRAINER_IKE, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated)
-    }
-    else{
-        trainerbattle_single(TRAINER_IKE_2, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated)
-    }
+    trainerbattle_single(TRAINER_IKE, SunshineWoods_Text_IkeIntro, SunshineWoods_Text_IkeDefeated)
     setspeaker("Ike")
     msgbox(SunshineWoods_Text_IkePostBattle, MSGBOX_AUTOCLOSE)
     end
 }
 
 script SunshineWoods_Eventscript_HotaruBattle {
-    checkplayergender
-    if(var(VAR_RESULT) == MALE){
-        trainerbattle_single(TRAINER_HOTARU, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated)
-    }
-    else{
-        trainerbattle_single(TRAINER_HOTARU_2, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated)
-    }
+    trainerbattle_single(TRAINER_HOTARU, SunshineWoods_Text_HotaruIntro, SunshineWoods_Text_HotaruDefeated)
     setspeaker("Hotaru")
     msgbox(SunshineWoods_Text_HotaruPostBattle, MSGBOX_AUTOCLOSE)
     end

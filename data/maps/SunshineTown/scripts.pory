@@ -121,33 +121,26 @@ movement KurosawaNoticed {
     emote_exclamation_mark
     face_player
 }
-
-script SunshineTown_Eventscript_GoGetPackage0 {
+script SunshineTown_Eventscript_DontLeaveTownTrigger_Akihiko {//VAR_TEMP_F == 0
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 12){
+       goto(SunshineTown_Eventscript_GoGetPackage)
+    }
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 17){
+        goto(SunshineTown_Eventscript_DontLeaveTown)
+    }
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 18){
+        goto(SunshineTown_Eventscript_NoPointLeavingTown)
+    }
+    if(var(VAR_AKIHIKOS_INTRO_STATE) == 24){
+        goto(SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24)
+    }
+}
+script SunshineTown_Eventscript_GoGetPackage {
     lockall
     msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The Pokémon Center is right there, Aki."))
     closemessage
     applymovement(LOCALID_PLAYER, walkright)
     waitmovement(0)
-    releaseall
-    end
-}
-
-movement SunshineTown_Eventscript_ShinjiroPreventFromLeaving0 {
-    walk_left
-    face_right
-}
-movement SunshineTown_Eventscript_ShinjiroJoinsback0 {
-    walk_up
-    walk_right
-}
-
-script SunshineTown_Eventscript_GoGetPackage1{
-    lockall
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The Pokémon Center is right there, Aki."))
-    closemessage
-    applymovement(LOCALID_PLAYER, walkright)
-    waitmovement(0)
-    removeobject(4)
     releaseall
     end
 }
@@ -269,15 +262,6 @@ script SunshineTown_Eventscript_DontLeaveTown {
     end
 }
 
-script SunshineTown_Eventscript_WarpToBurningOrphanage{
-    lock
-    playse(SE_EXIT)
-    setflag(FLAG_HIDE_TALK_BUTTON)
-    warp(MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23)
-    waitstate
-    release
-}
-
 script SunshineTown_Eventscript_NoPointEnteringPC {
     lock
     applymovement(LOCALID_PLAYER, walkdown)
@@ -296,14 +280,16 @@ script SunshineTown_Eventscript_NoPointLeavingTown {
     end
 }
 
-script SunshineTown_Eventscript_WarpToBurningOrphanage2 {
-    lock
-    playse(SE_EXIT)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
-    setflag(FLAG_HIDE_TALK_BUTTON)
-    warp(MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23)
-    waitstate
-    release
+script SunshineTown_Eventscript_WarpToBurningOrphanage {//VAR_TEMP_F == 0
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18)
+    {
+        lock
+        playse(SE_EXIT)
+        setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
+        setflag(FLAG_HIDE_TALK_BUTTON)
+        warp(MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23)
+        waitstate
+    }
 }
 
 script SunshineTown_Eventscript_OW_Happiny{
@@ -711,19 +697,14 @@ script SunshineTown_Eventscript_MitsuruOverheardAkiShinji {
     warpsilent(MAP_BLANK_MAP)
 }
 
-script testbuffer{
-    lock
-    msgbox(format("Checking if deadline is missed..."))
-    closemessage
-    if (var(VAR_DAYS_LEFT) > 1)
-    {
-        bufferdaysleft(STR_VAR_1)
-        msgbox(format("Days left: {STR_VAR_1}."))
+script SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru {//VAR_TEMP_F == 0
+    if (var(VAR_MITSURUS_INTRO_STATE) >= 6 && var(VAR_MITSURUS_INTRO_STATE) <= 16){
+        lock
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Now is not the time to wander around in Sunshine Town.)"))
         closemessage
+        applymovement(LOCALID_PLAYER, walkleft)
+        waitmovement(0)
+        release
+        end
     }
-    else{
-        call(EventScript_CheckDaysLeft)
-    }
-    release
-    end
 }

@@ -8617,7 +8617,7 @@ static void DrawLevelUpBannerText(void)
     printerTemplate.lineSpacing = 0;
     printerTemplate.color.background = TEXT_COLOR_TRANSPARENT;
     printerTemplate.color.foreground = TEXT_COLOR_WHITE;
-    printerTemplate.color.shadow = TEXT_COLOR_DARK_GRAY;
+    printerTemplate.color.shadow = TEXT_COLOR_TRANSPARENT;
     printerTemplate.color.accent = TEXT_COLOR_TRANSPARENT;
 
     AddTextPrinter(&printerTemplate, TEXT_SKIP_DRAW, NULL);

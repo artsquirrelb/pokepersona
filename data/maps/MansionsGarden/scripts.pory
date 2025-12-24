@@ -2,20 +2,20 @@ mapscripts MansionsGarden_MapScripts {
     MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_TEMP_4)
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 100 || var(VAR_MITSURUS_INTRO_STATE) == 100){
-            setmetatile(12, 15, 0x311, FALSE)
-            setmetatile(13, 15, 0x312, FALSE)
-            setmetatile(14, 15, 0x313, FALSE)
-            setmetatile(15, 15, 0x314, FALSE)
+            setmetatile(12, 15, 0x911, FALSE)
+            setmetatile(13, 15, 0x912, FALSE)
+            setmetatile(14, 15, 0x913, FALSE)
+            setmetatile(15, 15, 0x914, FALSE)
 
-            setmetatile(12, 16, 0x319, TRUE)
-            setmetatile(13, 16, 0x31A, TRUE)
-            setmetatile(14, 16, 0x31B, TRUE)
-            setmetatile(15, 16, 0x31C, TRUE)
+            setmetatile(12, 16, 0x919, TRUE)
+            setmetatile(13, 16, 0x91A, TRUE)
+            setmetatile(14, 16, 0x91B, TRUE)
+            setmetatile(15, 16, 0x91C, TRUE)
 
-            setmetatile(12, 17, 0x321, TRUE)
-            setmetatile(13, 17, 0x322, TRUE)
-            setmetatile(14, 17, 0x323, TRUE)
-            setmetatile(15, 17, 0x324, TRUE)
+            setmetatile(12, 17, 0x921, TRUE)
+            setmetatile(13, 17, 0x922, TRUE)
+            setmetatile(14, 17, 0x923, TRUE)
+            setmetatile(15, 17, 0x924, TRUE)
             }
     }
     MAP_SCRIPT_ON_TRANSITION {

@@ -20,29 +20,29 @@ MansionsGarden_MapScripts_MAP_SCRIPT_ON_LOAD:
 
 MansionsGarden_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 # 5 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 12, 15, 0x311, FALSE
+	setmetatile 12, 15, 0x911, FALSE
 # 6 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 13, 15, 0x312, FALSE
+	setmetatile 13, 15, 0x912, FALSE
 # 7 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 14, 15, 0x313, FALSE
+	setmetatile 14, 15, 0x913, FALSE
 # 8 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 15, 15, 0x314, FALSE
+	setmetatile 15, 15, 0x914, FALSE
 # 10 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 12, 16, 0x319, TRUE
+	setmetatile 12, 16, 0x919, TRUE
 # 11 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 13, 16, 0x31A, TRUE
+	setmetatile 13, 16, 0x91A, TRUE
 # 12 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 14, 16, 0x31B, TRUE
+	setmetatile 14, 16, 0x91B, TRUE
 # 13 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 15, 16, 0x31C, TRUE
+	setmetatile 15, 16, 0x91C, TRUE
 # 15 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 12, 17, 0x321, TRUE
+	setmetatile 12, 17, 0x921, TRUE
 # 16 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 13, 17, 0x322, TRUE
+	setmetatile 13, 17, 0x922, TRUE
 # 17 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 14, 17, 0x323, TRUE
+	setmetatile 14, 17, 0x923, TRUE
 # 18 "data/maps/MansionsGarden/scripts.pory"
-	setmetatile 15, 17, 0x324, TRUE
+	setmetatile 15, 17, 0x924, TRUE
 	return
 
 MansionsGarden_MapScripts_MAP_SCRIPT_ON_TRANSITION:

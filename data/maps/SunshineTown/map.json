@@ -215,7 +215,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
-      "x": 2,
+      "x": 12,
       "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -228,8 +228,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
-      "x": 2,
-      "y": 7,
+      "x": 21,
+      "y": 9,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -415,44 +415,26 @@
       "x": 2,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "12",
-      "script": "SunshineTown_Eventscript_GoGetPackage0"
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SunshineTown_Eventscript_DontLeaveTownTrigger_Akihiko"
     },
     {
       "type": "trigger",
       "x": 2,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "12",
-      "script": "SunshineTown_Eventscript_GoGetPackage1"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "17",
-      "script": "SunshineTown_Eventscript_DontLeaveTown"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "17",
-      "script": "SunshineTown_Eventscript_DontLeaveTown"
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SunshineTown_Eventscript_DontLeaveTownTrigger_Akihiko"
     },
     {
       "type": "trigger",
       "x": 31,
       "y": 16,
       "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "18",
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
       "script": "SunshineTown_Eventscript_WarpToBurningOrphanage"
     },
     {
@@ -460,8 +442,8 @@
       "x": 31,
       "y": 17,
       "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "18",
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
       "script": "SunshineTown_Eventscript_WarpToBurningOrphanage"
     },
     {
@@ -484,93 +466,21 @@
     },
     {
       "type": "trigger",
-      "x": 2,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "18",
-      "script": "SunshineTown_Eventscript_NoPointLeavingTown"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
+      "x": 1,
       "y": 7,
       "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "18",
-      "script": "SunshineTown_Eventscript_NoPointLeavingTown"
-    },
-    {
-      "type": "trigger",
-      "x": 31,
-      "y": 16,
-      "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "17",
-      "script": "SunshineTown_Eventscript_WarpToBurningOrphanage2"
-    },
-    {
-      "type": "trigger",
-      "x": 31,
-      "y": 17,
-      "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "17",
-      "script": "SunshineTown_Eventscript_WarpToBurningOrphanage2"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "24",
-      "script": "SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "24",
-      "script": "SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24"
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
     },
     {
       "type": "trigger",
       "x": 1,
       "y": 6,
       "elevation": 0,
-      "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "6",
-      "script": "Route2_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
-    },
-    {
-      "type": "trigger",
-      "x": 1,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "6",
-      "script": "Route2_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
-    },
-    {
-      "type": "trigger",
-      "x": 1,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "11",
-      "script": "Route2_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
-    },
-    {
-      "type": "trigger",
-      "x": 1,
-      "y": 6,
-      "elevation": 0,
-      "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "11",
-      "script": "Route2_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru"
     },
     {
       "type": "trigger",

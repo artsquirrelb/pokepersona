@@ -257,7 +257,7 @@ static const struct WindowTemplate sWindowTemplates[] =
         .tilemapTop = 14,
         .width = 23,
         .height = 6,
-        .paletteNum = 13,
+        .paletteNum = 15,
         .baseBlock = 1,
     },
     [WIN_MSGBOX] =

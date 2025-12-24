@@ -91,11 +91,11 @@ Double Battle: No
 AI: Basic Trainer
 
 SPECIES_PANPOUR
-Level: 6
+Level: 11
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 SPECIES_BUIZEL
-Level: 6
+Level: 11
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_KG_STAFF_M_THUNDERSHARDS_CAVE_1F ===
@@ -257,11 +257,11 @@ Double Battle: No
 AI: Basic Trainer
 
 Bellsprout
-Level: 7
+Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Farfetch'd
-Level: 7
+Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_TOUMA_2 ===
@@ -17007,8 +17007,12 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Weedle
-Level: 4
+Beedrill
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+SPECIES_CHEWTLE
+Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_HOTARU ===
@@ -17021,11 +17025,11 @@ Double Battle: No
 AI: Basic Trainer
 
 Azurill
-Level: 4
+Level: 9
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Pichu
-Level: 4
+Level: 9
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 

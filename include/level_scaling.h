@@ -23,7 +23,7 @@ struct LevelScalingConfig
     s8 levelAugmentAdd;         // Add/subtract from calculated level (-128 to +127)
     u8 levelVariation;          // Random reduction range (0 = no variation)
     u8 minLevel;                // Minimum allowed level (0 = no minimum)
-    u8 maxLevel;                // Maximum allowed level (0 = no maximum, use MAX_LEVEL)
+    u32 maxLevel;                // Maximum allowed level (0 = no maximum, use MAX_LEVEL)
     bool8 manageEvolutions;     // Enable automatic evolution validation
     bool8 excludeFainted;       // For PARTY_* modes, exclude fainted mons
 };

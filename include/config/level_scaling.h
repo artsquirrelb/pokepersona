@@ -51,7 +51,7 @@
                                                      // Example: 3 means random(0-3) levels lower
                                                      //          Creates variety in wild encounters
 #define B_WILD_SCALING_MIN_LEVEL            0       // Minimum level (0 = no minimum)
-#define B_WILD_SCALING_MAX_LEVEL            0       // Maximum level (0 = no maximum)
+#define B_WILD_SCALING_MAX_LEVEL            VAR_CURRENT_LEVEL_CAP       // Maximum level (0 = no maximum)
 #define B_WILD_SCALING_MANAGE_EVOLUTIONS    TRUE    // Auto-devolve wild Pokémon if level too low
 #define B_WILD_SCALING_EXCLUDE_FAINTED      FALSE    // Exclude fainted Pokémon from PARTY_* calculations
 

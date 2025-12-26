@@ -367,209 +367,77 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	),
 };
 
-static const struct SubQuest sSubQuests2[QUEST_2_SUB_COUNT] =
+static const struct SubQuest sSubQuests2[QUEST_GHOST_BOY_SUB_COUNT] =
 {
 	sub_quest(
 	      10,
-	      gText_SubQuest2_Name1,
-	      gText_SubQuest2_Desc1,
-	      gText_SideQuest1_Map,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_GhostBoySub_Name1,
+	      gText_GhostBoySub_Desc1,
+	      gText_WindwardPort_Map,
+	      OBJ_EVENT_GFX_PRESCHOOLER_M,
+	      OBJECT,
 	      sText_Found
 	),
 
 	sub_quest(
 	      11,
-	      gText_SubQuest2_Name2,
-	      gText_SubQuest2_Desc2,
-	      gText_SideQuest2_Map,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_GhostBoySub_Name2,
+	      gText_GhostBoySub_Desc2,
+	      gText_WindwardPort_Map,
+	      OBJ_EVENT_GFX_PRESCHOOLER_M,
+	      OBJECT,
 	      sText_Found
 	),
 
 	sub_quest(
 	      12,
-	      gText_SubQuest2_Name3,
-	      gText_SubQuest2_Desc3,
-	      gText_Chapter1_Map,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_GhostBoySub_Name3,
+	      gText_GhostBoySub_Desc1,
+	      gText_WindwardPort_Map,
+	      OBJ_EVENT_GFX_PRESCHOOLER_M,
+	      OBJECT,
 	      sText_Found
 	),
 
 	sub_quest(
 	      13,
-	      gText_SubQuest2_Name4,
-	      gText_SubQuest2_Desc4,
-	      gText_Chapter2_Map,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_GhostBoySub_Name4,
+	      gText_GhostBoySub_Desc1,
+	      gText_WindwardPort_Map,
+	      OBJ_EVENT_GFX_PRESCHOOLER_M,
+	      OBJECT,
 	      sText_Found
 	),
 
 	sub_quest(
 	      14,
-	      gText_SubQuest2_Name5,
-	      gText_SubQuest2_Desc5,
-	      gText_Chapter3_Map,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_GhostBoySub_Name5,
+	      gText_GhostBoySub_Desc1,
+	      gText_WindwardPort_Map,
+	      OBJ_EVENT_GFX_PRESCHOOLER_M,
+	      OBJECT,
 	      sText_Found
 	),
 
 	sub_quest(
 	      15,
-	      gText_SubQuest2_Name6,
-	      gText_SubQuest2_Desc6,
-	      gText_Chapter4_Map,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_GhostBoySub_Name6,
+	      gText_GhostBoySub_Desc1,
+	      gText_WindwardPort_Map,
+	      OBJ_EVENT_GFX_PRESCHOOLER_M,
+	      OBJECT,
 	      sText_Found
 	),
 
 	sub_quest(
 	      16,
-	      gText_SubQuest2_Name7,
-	      gText_SubQuest2_Desc7,
-	      gText_Chapter5_Map,
-	      ITEM_NONE,
-	      ITEM,
+	      gText_GhostBoySub_Name7,
+	      gText_GhostBoySub_Desc1,
+	      gText_WindwardPort_Map,
+	      OBJ_EVENT_GFX_PRESCHOOLER_M,
+	      OBJECT,
 	      sText_Found
 	),
-
-	sub_quest(
-	      17,
-	      gText_SubQuest2_Name8,
-	      gText_SubQuest2_Desc8,
-	      gText_Chapter6_Map,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      18,
-	      gText_SubQuest2_Name9,
-	      gText_SubQuest2_Desc9,
-	      gText_Chapter7_Map,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      19,
-	      gText_SubQuest2_Name10,
-	      gText_SubQuest2_Desc10,
-	      gText_Chapter8_Map,
-	      SPECIES_HO_OH,
-	      PKMN,
-	      sText_Caught
-
-	),
-
-	sub_quest(
-	      20,
-	      gText_SubQuest2_Name11,
-	      gText_SubQuest2_Desc11,
-	      gText_SideQuestMap11,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      21,
-	      gText_SubQuest2_Name12,
-	      gText_SubQuest2_Desc12,
-	      gText_SideQuestMap12,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      22,
-	      gText_SubQuest2_Name13,
-	      gText_SubQuest2_Desc13,
-	      gText_SideQuestMap13,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      23,
-	      gText_SubQuest2_Name14,
-	      gText_SubQuest2_Desc14,
-	      gText_SideQuestMap14,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      24,
-	      gText_SubQuest2_Name15,
-	      gText_SubQuest2_Desc15,
-	      gText_SideQuestMap15,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      25,
-	      gText_SubQuest2_Name16,
-	      gText_SubQuest2_Desc16,
-	      gText_SideQuestMap16,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      26,
-	      gText_SubQuest2_Name17,
-	      gText_SubQuest2_Desc17,
-	      gText_SideQuestMap17,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      27,
-	      gText_SubQuest2_Name18,
-	      gText_SubQuest2_Desc18,
-	      gText_SideQuestMap18,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      28,
-	      gText_SubQuest2_Name19,
-	      gText_SubQuest2_Desc19,
-	      gText_SideQuestMap19,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
-	sub_quest(
-	      29,
-	      gText_SubQuest2_Name20,
-	      gText_SubQuest2_Desc20,
-	      gText_SideQuestMap20,
-	      ITEM_NONE,
-	      ITEM,
-	      sText_Found
-	),
-
 };
 
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
@@ -613,7 +481,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.sprite = {
 			OBJ_EVENT_GFX_MAY_NORMAL,
 			OBJ_EVENT_GFX_BRENDAN_NORMAL,
-			ITEM_NONE,
+			OBJ_EVENT_GFX_MAY_NORMAL,
 			ITEM_NONE,
 			ITEM_NONE,
 			ITEM_NONE,
@@ -625,7 +493,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.spritetype = {
 			OBJECT,
 			OBJECT,
-			ITEM,
+			OBJECT,
 			ITEM,
 			ITEM,
 			ITEM,
@@ -644,7 +512,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.name = gText_SideQuest1_Name,
 		.desc = {gText_SideQuest1_Desc},
 		.donedesc = gText_SideQuest1_DoneDesc,
-		.map = {gText_SideQuest1_Map},
+		.map = {gText_Sunshine_Town_Map},
 		.sprite = {OBJ_EVENT_GFX_EXPERT_F},
 		.spritetype = {OBJECT},
 		.subquests = NULL,
@@ -680,6 +548,26 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 			gText_SideQuest3_Desc8,
 			gText_SideQuest3_Desc9,
 			gText_SideQuest3_Desc10,
+			gText_SideQuest3_Desc11,
+			gText_SideQuest3_Desc12,
+			gText_SideQuest3_Desc13,
+			gText_SideQuest3_Desc14,
+			gText_SideQuest3_Desc15,
+			gText_SideQuest3_Desc16,
+			gText_SideQuest3_Desc17,
+			gText_SideQuest3_Desc18,
+			gText_SideQuest3_Desc19,
+			gText_SideQuest3_Desc20,
+			gText_SideQuest3_Desc21,
+			gText_SideQuest3_Desc22,
+			gText_SideQuest3_Desc23,
+			gText_SideQuest3_Desc24,
+			gText_SideQuest3_Desc25,
+			gText_SideQuest3_Desc26,
+			gText_SideQuest3_Desc27,
+			gText_SideQuest3_Desc28,
+			gText_SideQuest3_Desc29,
+			gText_SideQuest3_Desc30,
 		},
 		.donedesc = gText_SideQuest3_DoneDesc,
 		.map = {COMPOUND_STRING("AmeAme Candy Shop")},
@@ -708,7 +596,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.name = gText_SideQuest5_Name,
 		.desc = {gText_SideQuest5_Desc},
 		.donedesc = gText_SideQuest5_DoneDesc,
-		.map = {gText_Chapter4_Map},
+		.map = {COMPOUND_STRING("Coralport")},
 		.sprite = {OBJ_EVENT_GFX_NECK_BEARD},
 		.spritetype = {OBJECT},
 		.subquests = NULL,
@@ -716,14 +604,14 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.questVariable = 0,
 	},
 
-	[QUEST_7] = 
+	[QUEST_GHOST_BOY] = 
 	{
-		.name = gText_SideQuestName_7,
-		.desc = {gText_SideQuestDesc_7},
-		.donedesc = gText_SideQuestDoneDesc_7,
-		.map = {gText_Chapter5_Map},
-		.sprite = {ITEM_NONE},
-		.spritetype = {ITEM},
+		.name = gText_SideQuest6_Name,
+		.desc = {gText_SideQuest6_Desc},
+		.donedesc = gText_SideQuest6_DoneDesc,
+		.map = {COMPOUND_STRING("Windward Port")},
+		.sprite = {OBJ_EVENT_GFX_PRESCHOOLER_M},
+		.spritetype = {OBJECT},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,
@@ -773,7 +661,7 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.name = gText_SideQuestName_11,
 		.desc = {gText_SideQuestDesc_11},
 		.donedesc = gText_SideQuestDoneDesc_11,
-		.map = {gText_SideQuestMap11},
+		.map = {gText_WindwardPort_Map},
 		.sprite = {ITEM_NONE},
 		.spritetype = {ITEM},
 		.subquests = NULL,

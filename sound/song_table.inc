@@ -629,6 +629,8 @@ gSongTable::
 	song mus_p5_blooming_villain, MUSIC_PLAYER_BGM, 0
 	song mus_xc2_torna_battle, MUSIC_PLAYER_BGM, 0
 	song mus_xc2_incoming, MUSIC_PLAYER_BGM, 0
+	song mus_dp_lake_caverns, MUSIC_PLAYER_BGM, 0
+	song mus_dp_vs_uxie_mesprit_azelf, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

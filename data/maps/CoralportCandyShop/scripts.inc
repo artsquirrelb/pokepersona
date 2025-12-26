@@ -468,7 +468,7 @@ CoralportCandyShop_Eventscript_PartTimeCutscene_1::
 # 254 "data/maps/CoralportCandyShop/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
 # 255 "data/maps/CoralportCandyShop/scripts.pory"
-	addmoney 3000
+	addmoney 2000
 # 256 "data/maps/CoralportCandyShop/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 257 "data/maps/CoralportCandyShop/scripts.pory"
@@ -560,7 +560,7 @@ CoralportCandyShop_Eventscript_PartTimeCutscene_2::
 # 301 "data/maps/CoralportCandyShop/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
 # 302 "data/maps/CoralportCandyShop/scripts.pory"
-	addmoney 3000
+	addmoney 2000
 # 303 "data/maps/CoralportCandyShop/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 304 "data/maps/CoralportCandyShop/scripts.pory"
@@ -662,7 +662,7 @@ CoralportCandyShop_Eventscript_PartTimeCutscene_3::
 # 353 "data/maps/CoralportCandyShop/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
 # 354 "data/maps/CoralportCandyShop/scripts.pory"
-	addmoney 3000
+	addmoney 2000
 # 355 "data/maps/CoralportCandyShop/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 356 "data/maps/CoralportCandyShop/scripts.pory"
@@ -723,37 +723,37 @@ CoralportCandyShop_Eventscript_PartTime_RandomizeReward_8:
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_3:
 # 369 "data/maps/CoralportCandyShop/scripts.pory"
-	additem ITEM_SERIOUS_MINT
+	additem ITEM_EXP_CANDY_M
 # 370 "data/maps/CoralportCandyShop/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_SERIOUS_MINT
+	bufferitemname STR_VAR_1, ITEM_EXP_CANDY_M
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_1
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_4:
 # 372 "data/maps/CoralportCandyShop/scripts.pory"
-	additem ITEM_BOLD_MINT
+	additem ITEM_SERIOUS_MINT
 # 373 "data/maps/CoralportCandyShop/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_BOLD_MINT
+	bufferitemname STR_VAR_1, ITEM_SERIOUS_MINT
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_1
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_5:
 # 375 "data/maps/CoralportCandyShop/scripts.pory"
-	additem ITEM_CALM_MINT
+	additem ITEM_SWEET_HEART
 # 376 "data/maps/CoralportCandyShop/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_CALM_MINT
+	bufferitemname STR_VAR_1, ITEM_SWEET_HEART
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_1
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_6:
 # 378 "data/maps/CoralportCandyShop/scripts.pory"
-	additem ITEM_IMPISH_MINT
+	additem ITEM_EXP_CANDY_S
 # 379 "data/maps/CoralportCandyShop/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_IMPISH_MINT
+	bufferitemname STR_VAR_1, ITEM_EXP_CANDY_S
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_1
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_7:
 # 381 "data/maps/CoralportCandyShop/scripts.pory"
-	additem ITEM_CAREFUL_MINT
+	additem ITEM_LAVA_COOKIE
 # 382 "data/maps/CoralportCandyShop/scripts.pory"
-	bufferitemname STR_VAR_1, ITEM_CAREFUL_MINT
+	bufferitemname STR_VAR_1, ITEM_LAVA_COOKIE
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_1
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_9:
@@ -773,13 +773,13 @@ CoralportCandyShop_Eventscript_PartTime_RandomizeReward_10:
 
 CoralportCandyShop_Eventscript_PartTime_QuestCheckDone::
 # 411 "data/maps/CoralportCandyShop/scripts.pory"
-	compare VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 10
+	compare VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 30
 	goto_if_lt CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_2
 CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_1:
 # 415 "data/maps/CoralportCandyShop/scripts.pory"
 	questmenu QUEST_MENU_CHECK_REWARD, QUEST_AMEAME_PARTTIME
 # 416 "data/maps/CoralportCandyShop/scripts.pory"
-	compare VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 10
+	compare VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 30
 	goto_if_eq CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_5
 	return
 
@@ -830,7 +830,7 @@ CoralportCandyShop_Eventscript_QuestGiveReward::
 # 438 "data/maps/CoralportCandyShop/scripts.pory"
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_AMEAME_PARTTIME
 # 439 "data/maps/CoralportCandyShop/scripts.pory"
-	setvar VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 11
+	setvar VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 31
 # 440 "data/maps/CoralportCandyShop/scripts.pory"
 	release
 	end
@@ -1272,7 +1272,7 @@ CoralportCandyShop_Eventscript_ShopKeeperF_Text_3:
 	.string "That's great! You can start working\n"
 	.string "right away!\p"
 	.string "Your shift will last for {COLOR RED}6 hours{COLOR 2} and we'll\n"
-	.string "pay you {COLOR RED}¥3000{COLOR 2}.\p"
+	.string "pay you {COLOR RED}¥2000{COLOR 2}.\p"
 	.string "Simply check the time clock to start\n"
 	.string "the work.\p"
 	.string "Oh, and you can only start your shift\n"
@@ -1306,7 +1306,7 @@ CoralportCandyShop_Eventscript_TimeClock_Text_1:
 # 154 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Start working at {COLOR BLUE}AmeAme Candy Shop{COLOR 2}?\p"
 	.string "Your shift will last for {COLOR RED}6 hours{COLOR 2} and you\n"
-	.string "will be paid {COLOR RED}¥3000{COLOR 2}.$"
+	.string "will be paid {COLOR RED}¥2000{COLOR 2}.$"
 
 CoralportCandyShop_Eventscript_TimeClock_Text_2:
 # 163 "data/maps/CoralportCandyShop/scripts.pory"
@@ -1315,19 +1315,19 @@ CoralportCandyShop_Eventscript_TimeClock_Text_2:
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_0:
 # 385 "data/maps/CoralportCandyShop/scripts.pory"
-	.string "Akihiko received ¥3000 for the job.\p"
+	.string "Akihiko received ¥2000 for the job.\p"
 	.string "He also received a {STR_VAR_1} for\n"
 	.string "his hard work.$"
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_1:
 # 391 "data/maps/CoralportCandyShop/scripts.pory"
-	.string "Mitsuru received ¥3000 for the job.\p"
+	.string "Mitsuru received ¥2000 for the job.\p"
 	.string "She also received a {STR_VAR_1} for\n"
 	.string "her hard work.$"
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_2:
 # 396 "data/maps/CoralportCandyShop/scripts.pory"
-	.string "Shinjiro received ¥3000 for the job.\p"
+	.string "Shinjiro received ¥2000 for the job.\p"
 	.string "He also received a {STR_VAR_1} for\n"
 	.string "his hard work.$"
 

@@ -236,6 +236,12 @@
       "y": 10,
       "respawn_map": "MAP_SUNSHINE_ORPHANAGE_MAIN_HALL",
       "respawn_npc": "LOCALID_SUNSHINE_ORPHANAGE_BLISSEY"
+    },
+    {
+      "id": "HEAL_LOCATION_WINDWARD_PORT",
+      "map": "MAP_WINDWARD_PORT",
+      "x": 34,
+      "y": 23
     }
   ]
 }

@@ -82,6 +82,7 @@ void ItemUseCB_Mint(u8 taskId, TaskFunc task);
 void ItemUseCB_AbilityChanger(u8 taskId, TaskFunc task);
 void ItemUseCB_ResetEVs(u8 taskId, TaskFunc task);
 void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task);
+void ItemUseCB_SmileCandy(u8 taskId, TaskFunc task);
 void ItemUseCB_PPRecovery(u8 taskId, TaskFunc task);
 void ItemUseCB_PPUp(u8 taskId, TaskFunc task);
 u16 ItemIdToBattleMoveId(u16 item);

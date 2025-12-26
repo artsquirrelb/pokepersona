@@ -10,7 +10,7 @@
 #define TRAINER_KG_STAFF_M_THUNDERSHARDS_CAVE_1F          4
 #define TRAINER_KG_STAFF_F_THUNDERSHARDS_CAVE_1F          5
 #define TRAINER_NORBERT_THUNDERSHARDS_CAVE_2F_EXTERIOR       6
-#define TRAINER_ICHIGO_2                      7
+#define TRAINER_GHOSTBOY                      7
 #define TRAINER_HOTARU_2                      8
 #define TRAINER_IKE_2                   9
 #define TRAINER_KG_STAFF_ROUTE2                 10

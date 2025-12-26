@@ -107,6 +107,10 @@ const struct LevelScalingConfig gTrainerLevelScalingRules[TRAINERS_COUNT] =
     [TRAINER_AKIHIKO_SUNSHINE_MEADOW] = {
         .mode = LEVEL_SCALING_TO_LEVEL_CAP,
     },
+    
+    [TRAINER_GHOSTBOY] = LEVEL_SCALING_CONFIG_NONE,
+
+
     // Example configurations (commented out by default):
 
     /*

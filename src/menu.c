@@ -2146,7 +2146,7 @@ u16 AddTextPrinterParameterizedCustom(u8 windowId, u8 fontId, const u8 *str, u8 
     printer.color.foreground = fgColor;
     printer.color.background = bgColor;
     printer.color.shadow = shadowColor;
-    printer.color.accent = 0;
+    printer.color.accent = bgColor;
     return AddTextPrinter(&printer, speed, callback);
 }
 

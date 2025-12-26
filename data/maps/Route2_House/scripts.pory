@@ -17,6 +17,7 @@ mapscripts Route2_House_MapScripts {
         VAR_MITSURUS_INTRO_STATE, 22: Route2_House_Eventscript_MitsuruOnWarp22
         VAR_MITSURUS_INTRO_STATE, 26: Route2_House_Eventscript_MitsuruOnWarp26
         VAR_MITSURUS_INTRO_STATE, 28: Route2_House_Eventscript_MitsuruOnWarp28
+        
     ]
     MAP_SCRIPT_ON_TRANSITION{
         setrespawn(HEAL_LOCATION_ROUTE2_HOUSE)
@@ -138,6 +139,8 @@ mapscripts Route2_House_MapScripts {
         VAR_MITSURUS_INTRO_STATE, 32: Route2_House_Eventscript_MitsuruOnFrame32
         VAR_MITSURUS_INTRO_STATE, 33: Route2_House_Eventscript_MitsuruOnFrame33
         VAR_MITSURUS_INTRO_STATE, 34: Route2_House_Eventscript_MitsuruOnFrame34
+        ///////
+        VAR_WINDWARD_HARBOR_GHOST_BOY, 44: Route2_House_Eventscript_GhostBoyMadPostQuest
     ]
 }
 
@@ -1025,6 +1028,8 @@ script TakeARest {
         special(HealPlayerParty)
         playse(MUS_HEAL)
         waitse
+        clearflag(FLAG_TEMP_HIDE_FOLLOWER)
+        updatefollowingmon
         fadescreenswapbuffers(FADE_FROM_BLACK)
     }
     
@@ -1917,4 +1922,22 @@ script Eventscript_UnlockDeadlineSystem {
     or spending time with your {COLOR BLUE}Companions{COLOR GREEN}, etc.\p
     Exiting certain dungeons will also advance the clock."))
     closemessage
+}
+
+script Route2_House_Eventscript_GhostBoyMadPostQuest {
+    lock
+    msgbox(format("You woke up in a cold sweat.\p
+    Was that all a dream?\p
+    You took a look at your Pokémon party.\p
+    ...\p
+    ...\p
+    They were all fainted."))
+    closemessage
+    setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 101)
+    hidefollower
+    setflag(FLAG_TEMP_HIDE_FOLLOWER)
+    fwdtime(7, 0)
+    call(EventScript_CheckDaysLeft)
+    release
+    end
 }

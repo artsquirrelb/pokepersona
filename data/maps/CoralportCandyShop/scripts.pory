@@ -102,7 +102,7 @@ script CoralportCandyShop_Eventscript_ShopKeeperF {
         if (var(VAR_RESULT) == TRUE){
             setspeaker("Gumi")
             msgbox(format("That's great! You can start working right away!\p
-            Your shift will last for {COLOR RED}6 hours{COLOR 2} and we'll pay you {COLOR RED}¥3000{COLOR 2}.\p
+            Your shift will last for {COLOR RED}6 hours{COLOR 2} and we'll pay you {COLOR RED}¥2000{COLOR 2}.\p
             Simply check the time clock to start the work.\p
             Oh, and you can only start your shift here between {COLOR BLUE}7AM and 3PM{COLOR 2}."))
             closemessage
@@ -152,7 +152,7 @@ script CoralportCandyShop_Eventscript_TimeClock {
     }
     else{
         msgbox(format("Start working at {COLOR BLUE}AmeAme Candy Shop{COLOR 2}?\p
-        Your shift will last for {COLOR RED}6 hours{COLOR 2} and you will be paid {COLOR RED}¥3000{COLOR 2}."), MSGBOX_YESNO)
+        Your shift will last for {COLOR RED}6 hours{COLOR 2} and you will be paid {COLOR RED}¥2000{COLOR 2}."), MSGBOX_YESNO)
         closemessage
         if (var(VAR_RESULT) == TRUE){
             gettime //Sets the values of variables VAR_0x8000, VAR_0x8001, VAR_0x8002 and VAR_0x8003 to the current hour, minute, second and day of week.
@@ -252,7 +252,7 @@ script CoralportCandyShop_Eventscript_PartTimeCutscene_1 {//Akihiko
     waitmovement
     delay(30)
     fadescreenswapbuffers(FADE_FROM_BLACK)
-    addmoney(3000)
+    addmoney(2000)
     playfanfare(MUS_OBTAIN_ITEM)
     waitfanfare
     goto(CoralportCandyShop_Eventscript_PartTime_RandomizeReward)
@@ -299,7 +299,7 @@ script CoralportCandyShop_Eventscript_PartTimeCutscene_2 {//Mitsuru
     waitmovement
     delay(30)
     fadescreenswapbuffers(FADE_FROM_BLACK)
-    addmoney(3000)
+    addmoney(2000)
     playfanfare(MUS_OBTAIN_ITEM)
     waitfanfare
     goto(CoralportCandyShop_Eventscript_PartTime_RandomizeReward)
@@ -351,7 +351,7 @@ script CoralportCandyShop_Eventscript_PartTimeCutscene_3 {//Shinjiro
     waitmovement
     delay(30)
     fadescreenswapbuffers(FADE_FROM_BLACK)
-    addmoney(3000)
+    addmoney(2000)
     playfanfare(MUS_OBTAIN_ITEM)
     waitfanfare
     goto(CoralportCandyShop_Eventscript_PartTime_RandomizeReward)
@@ -366,34 +366,34 @@ script CoralportCandyShop_Eventscript_PartTime_RandomizeReward {
         case 1:
         case 2:
         case 3:
+            additem(ITEM_EXP_CANDY_M)
+            bufferitemname(STR_VAR_1, ITEM_EXP_CANDY_M)
+        case 4:
             additem(ITEM_SERIOUS_MINT)
             bufferitemname(STR_VAR_1, ITEM_SERIOUS_MINT)
-        case 4:
-            additem(ITEM_BOLD_MINT)
-            bufferitemname(STR_VAR_1, ITEM_BOLD_MINT)
         case 5:
-            additem(ITEM_CALM_MINT)
-            bufferitemname(STR_VAR_1, ITEM_CALM_MINT)
+            additem(ITEM_SWEET_HEART)
+            bufferitemname(STR_VAR_1, ITEM_SWEET_HEART)
         case 6:
-            additem(ITEM_IMPISH_MINT)
-            bufferitemname(STR_VAR_1, ITEM_IMPISH_MINT)
+            additem(ITEM_EXP_CANDY_S)
+            bufferitemname(STR_VAR_1, ITEM_EXP_CANDY_S)
         case 7:
-            additem(ITEM_CAREFUL_MINT)
-            bufferitemname(STR_VAR_1, ITEM_CAREFUL_MINT)
+            additem(ITEM_LAVA_COOKIE)
+            bufferitemname(STR_VAR_1, ITEM_LAVA_COOKIE)
     }
     if (var(VAR_AMEAME_CANDY_SHOP) == 1){
-        msgbox(format("Akihiko received ¥3000 for the job.\p
+        msgbox(format("Akihiko received ¥2000 for the job.\p
         He also received a {STR_VAR_1} for his hard work."))
         closemessage
     }
     elif(var(VAR_AMEAME_CANDY_SHOP) == 2)
     {   
-        msgbox(format("Mitsuru received ¥3000 for the job.\p
+        msgbox(format("Mitsuru received ¥2000 for the job.\p
         She also received a {STR_VAR_1} for her hard work."))
         closemessage
     }
     else{
-        msgbox(format("Shinjiro received ¥3000 for the job.\p
+        msgbox(format("Shinjiro received ¥2000 for the job.\p
         He also received a {STR_VAR_1} for his hard work."))
         closemessage
     }
@@ -408,12 +408,12 @@ script CoralportCandyShop_Eventscript_PartTime_RandomizeReward {
 }
 
 script CoralportCandyShop_Eventscript_PartTime_QuestCheckDone {
-    if (var(VAR_AMEAME_CANDY_SHOP_QUEST_STATE) <10)
+    if (var(VAR_AMEAME_CANDY_SHOP_QUEST_STATE) <30)
     {
         addvar(VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 1)
     }
     questmenu(QUEST_MENU_CHECK_REWARD, QUEST_AMEAME_PARTTIME)
-    if (var(VAR_AMEAME_CANDY_SHOP_QUEST_STATE) == 10 && var(VAR_RESULT) == FALSE)
+    if (var(VAR_AMEAME_CANDY_SHOP_QUEST_STATE) == 30 && var(VAR_RESULT) == FALSE)
     {
         msgbox(format("{COLOR GREEN}You have worked part-time at AmeAme Candy Shop for at least 10 times.\p
         Check back with Gumi for reward."))
@@ -436,7 +436,7 @@ script CoralportCandyShop_Eventscript_QuestGiveReward {
     msgbox(format("Feel free to come back anytime! We'll be very appreciated!"))
     closemessage
     questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_AMEAME_PARTTIME)
-    setvar(VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 11) // end quest
+    setvar(VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 31) // end quest
     release
     end
 }

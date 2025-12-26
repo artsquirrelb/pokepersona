@@ -16151,11 +16151,10 @@ const struct Item gItemsInfo[] =
             "A delicious candy\n"
             "that can make a {PKMN}\n"
             "happier."),
-        .importance = 1,
-        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .pocket = POCKET_MEDICINES,
+        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
         .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .effect = gItemEffect_SmileCandy,
+        .fieldUseFunc = ItemUseOutOfBattle_SmileCandy,
         .flingPower = 30,
         .iconPic = gItemIcon_SmileCandy,
         .iconPalette = gItemIconPalette_AspearBerry,

@@ -7,7 +7,6 @@ SeafloorCavern_Room1_EventScript_Grunt1::
 	end
 
 SeafloorCavern_Room1_EventScript_Grunt2::
-	trainerbattle_single TRAINER_ICHIGO_2, SeafloorCavern_Room1_Text_Grunt2Intro, SeafloorCavern_Room1_Text_Grunt2Defeat
 	msgbox SeafloorCavern_Room1_Text_Grunt2PostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -6252,6 +6252,10 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PIKE_QUEEN:
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
+        case TRAINER_CLASS_PRESCHOOLER:
+            if (SanitizeTrainerId(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_GHOSTBOY)
+                return MUS_DP_VS_UXIE;
+            return MUS_XC2_TORNA_BATTLE;
         default:
             return MUS_XC2_TORNA_BATTLE;
         }

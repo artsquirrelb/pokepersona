@@ -114,7 +114,9 @@
 #define TRAINER_PIC_SCIENTIST_2           96
 #define TRAINER_PIC_NORBERT               97
 #define TRAINER_PIC_DUSCLOPS_HORDE        98
-#define TRAINER_PIC_COUNT                 99
+#define TRAINER_PIC_PRESCHOOLER_M         99
+#define TRAINER_PIC_PRESCHOOLER_F         100
+#define TRAINER_PIC_COUNT                 101
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -361,6 +363,7 @@ enum TrainerClassID
     TRAINER_CLASS_PYRAMID_KING,
     TRAINER_CLASS_RS_PROTAG,
     TRAINER_CLASS_HORDE,
+    TRAINER_CLASS_PRESCHOOLER,
     TRAINER_CLASS_COUNT,
 };
 

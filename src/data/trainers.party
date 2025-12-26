@@ -165,23 +165,26 @@ Ability: Iron Barbs
 - Rollout
 - Zappy Shock
 
-=== TRAINER_ICHIGO_2 ===
-Name: Ichigo
-Class: Camper
-Pic: Camper
+=== TRAINER_GHOSTBOY ===
+Name: Yamaki?
+Class: Preschooler
+Pic: Preschooler M
 Gender: Male
-Music: Male
+Music: Intense
 Double Battle: No
 AI: Basic Trainer
 
 
-SPECIES_PANPOUR
-Level: 11
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+SPECIES_COFAGRIGUS
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 255 HP / 255 Atk / 255 Def / 255 SpA / 255 SpD / 255 Spe
+Nature: Modest
+- Shadow Ball
+- Dark Pulse
+- Energy Ball
+- Psychic
 
-SPECIES_BUIZEL
-Level: 11
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_HOTARU_2 ===
 Name: Hotaru

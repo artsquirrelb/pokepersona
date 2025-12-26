@@ -559,8 +559,10 @@
 #define MUS_XC2_TORNA_BATTLE           621
 #define MUS_XC2_INCOMING               622
 
+#define MUS_DP_LAKE_CAVERNS            623
+#define MUS_DP_VS_UXIE                 624
 
-#define END_MUS                     MUS_XC2_INCOMING
+#define END_MUS                     MUS_DP_VS_UXIE
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

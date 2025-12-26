@@ -1,7 +1,156 @@
 mapscripts WindwardPort_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
         setflag(FLAG_VISITED_WINDWARD_PORT)
+        setrespawn(HEAL_LOCATION_WINDWARD_PORT)
+        setflag(FLAG_TEMP_1)
+        setflag(FLAG_TEMP_2)
+    }
+    MAP_SCRIPT_ON_RESUME: WindwardPort_MapScripts_OnResume
+}
+
+script WindwardPort_MapScripts_OnResume {
+    gettime
+    if(var(VAR_0x8000) >= MORNING_HOUR_BEGIN && var(VAR_0x8000) < EVENING_HOUR_BEGIN){
+        clearflag(FLAG_TEMP_1)
+        setflag(FLAG_TEMP_2)
+    }
+    else{
+        clearflag(FLAG_TEMP_2)
+        setflag(FLAG_TEMP_1)
     }
 }
 
+script WindwardPort_Eventscript_ParasolLady {
+    lock
+    faceplayer
+    setspeaker("Tsugumi")
+    msgbox(format("I'm always wondering if Pokémon came first or their Egg came first.\p
+    Oh, that also reminds me, there's no Pokémon Daycare in Kitoha region.\p
+    I'll let you in a secret. {PAUSE_UNTIL_PRESS}Apparently, there's a store in Miharu Town that can turn a Pokémon “shiny”.\p
+    I heard it was all thanks to a special kind of herb that could only grow in their garden.\p
+    Of course, it won't be cheap to use their service.\p
+    We're all slaves to capitalism... {PAUSE_UNTIL_PRESS}Sigh..."))
+    closemessage
+    release
+    end
+}
 
+script WindwardPort_Eventscript_CyclistF {
+    lock
+    faceplayer
+    setspeaker("Demie")
+    msgbox(format("The road here is perfect to ride around on a bicycle.\p
+    Only in the daytime, though. I wouldn't want to stay outside at night.\p
+    Why? Because at night the Moonlight Gang hangs around and they're annoying."))
+    closemessage
+    release
+    end
+}
+
+script WindwardPort_Eventscript_CyclistM {
+    lock
+    faceplayer
+    setspeaker("Ouma")
+    msgbox(format("Windward Port is pretty and all but in my opinion, it's not a very ideal place to live in.\p
+    Too roburst for me, and there's gang activity when the sun goes down.\p
+    The Pokémon Rangers can't do anything about it because they only take care of Pokémon-related problems,
+    while the nearest police station is all the way in Paulownia City."))
+    closemessage
+    release
+    end
+}
+
+script WindwardPort_Eventscript_RancherM {
+    lock
+    faceplayer
+    setspeaker("Bunsaku")
+    msgbox(format("I delivered my crops here from Miharu.\p
+    It's a very beautiful town with pink blossoms all year.\p
+    You should visit us sometimes."))
+    closemessage
+    release
+    end
+}
+
+script WindwardPort_Eventscript_RangerF {
+    lock
+    faceplayer
+    setspeaker("Aiba")
+    msgbox(format("I'm on my break.\p
+    If you need help with a problem relating to Pokémon, talk to the staff inside."))
+    closemessage
+    release
+    end
+}
+
+script WindwardPort_Eventscript_BikerSouth {
+    lock
+    faceplayer
+    setspeaker("Robo")
+    msgbox(format("What are you looking at, brats? Scram!"))
+    closemessage
+    release
+    end
+}
+
+script WindwardPort_Eventscript_Socialite {
+    lock
+    faceplayer
+    setspeaker("Yukise")
+    msgbox(format("Hello, child. If you ever find yourself tired on your journey, just take a break.\p
+    Resting is just as important.\p
+    Feel free to sit down next to me. Who knows, you may find something pleasantly surprising."))
+    closemessage
+    release
+    end
+}
+
+script WindwardPort_Eventscript_RestingOnBench {
+    lock
+    dotimebasedevents
+    applymoveplayer(faceright)
+    msgbox(format("{PLAYER} decided to rest for a while."))
+    closemessage
+    delay(60)
+    if (flag(FLAG_DAILY_WINDWARDPORT_BENCH_ITEM)){
+        msgbox(format("It's time to go."))
+        closemessage
+        applymoveplayer(walkright)
+        release
+        end
+    }
+    else{
+        playse(SE_PIN)
+        applymoveplayer(emoteexclamation)
+        msgbox(format("Oh! There's something under the bench!"))
+        closemessage
+        random(3)
+        switch(var(VAR_RESULT)){
+            case 0: giveitem(ITEM_SUPER_POTION)
+            case 1: giveitem(ITEM_SODA_POP)
+            case 2: giveitem(ITEM_FULL_HEAL)
+        }
+        setflag(FLAG_DAILY_WINDWARDPORT_BENCH_ITEM)
+        msgbox(format("What a pleasant surpise!"))
+        closemessage
+        release
+        end
+    }   
+}
+script WindwardPort_Eventscript_Wartortle {
+    moncryscript(SPECIES_WARTORTLE)
+    releaseall
+    end
+}
+
+script WindwardPort_Eventscript_Youngster {
+    lock
+    faceplayer
+    setspeaker("Umaru")
+    msgbox(format("There's always some weird noise in that house at the south of the city.\p
+    I saw the owner visiting the Pokémon Ranger building once a week.\p
+    She wears lab coat so I assume she's a scientist or researcher?"))
+    closemessage
+    release
+    end
+}

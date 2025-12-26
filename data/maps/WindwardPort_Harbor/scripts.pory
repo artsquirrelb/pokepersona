@@ -1,10 +1,56 @@
 mapscripts WindwardPort_Harbor_MapScripts {
-    MAP_SCRIPT_ON_TRANSITION{
-        setflag(FLAG_VISITED_WINDWARD_PORT)
+    MAP_SCRIPT_ON_TRANSITION: WindwardPort_Harbor_MapScripts_OnTransition
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_CHAPTER_1_STATE, 4: WindwardPort_Harbor_MapScripts_OnFrame4
+    ]
+    MAP_SCRIPT_ON_RESUME: WindwardPort_Harbor_MapScripts_UpdatingNPCTime
+    
+}
+script WindwardPort_Harbor_MapScripts_OnTransition{
+    setflag(FLAG_VISITED_WINDWARD_PORT)
+    setrespawn(HEAL_LOCATION_WINDWARD_PORT)
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_2)
+    setflag(FLAG_TEMP_3)
+    if(var(VAR_CHAPTER_1_STATE) == 4){
+        clearflag(FLAG_TEMP_2)
+        setflag(FLAG_SPAWN_INVISIBLE)
+    }
+    gettime
+    if ((var(VAR_WINDWARD_HARBOR_GHOST_BOY) >= 0 && var(VAR_WINDWARD_HARBOR_GHOST_BOY) <= 20) || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 100)
+    {
+        if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 21){
+            fadenewbgm(MUS_DP_LAKE_CAVERNS)
+            savebgm(MUS_DP_LAKE_CAVERNS)
+            clearflag(FLAG_TEMP_3)
+        }
+    }
+    if(var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 1){
+        setobjectxyperm(GHOSTBOY, 17, 29)
+        setobjectmovementtype(GHOSTBOY, MOVEMENT_TYPE_FACE_RIGHT)
+    }
+}
+script WindwardPort_Harbor_MapScripts_OnFrame4 {
+    goto(WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab)
+}
+
+script WindwardPort_Harbor_MapScripts_UpdatingNPCTime {
+    gettime
+    if (var(VAR_0x8000) < 7 || var(VAR_0x8000) >= 17){
+        clearflag(FLAG_TEMP_1)
+    }
+    else{
+        setflag(FLAG_TEMP_1)
+    }
+    if (var(VAR_0x8000) < 7 || var(VAR_0x8000) >= 21){
+        setflag(FLAG_TEMP_4)
+    }
+    else{
+        clearflag(FLAG_TEMP_4)
     }
 }
 
-script WindwardPort_Eventscript_SailorOnGuard {
+script WindwardPort_Harbor_Eventscript_SailorOnGuard {
     lock
     faceplayer
     setspeaker("Anderson")
@@ -25,7 +71,7 @@ script WindwardPort_Eventscript_SailorOnGuard {
                 msgbox(format("This way, please."))
                 closemessage
                 hidemoneybox
-                applymovement(1, walkinplaceup)
+                applymovement(1, walkinplacedown)
                 waitmovement
                 delay(30)
                 addtime(0, 3, 0)
@@ -46,15 +92,401 @@ script WindwardPort_Eventscript_SailorOnGuard {
         }
     }
     else{
-        goto(WindwardPort_Eventscript_ShipOutOfCommission)
+        goto(WindwardPort_Harbor_Eventscript_ShipOutOfCommission)
     }
 }
 
-script WindwardPort_Eventscript_ShipOutOfCommission {
+script WindwardPort_Harbor_Eventscript_ShipOutOfCommission {
     msgbox(format("The ship to Coralport is currently out of commission.\p
     Please come back between 5PM and 7AM."))
 }
 
-script WindwardPort_Eventscript_VeteranF {
-    
+script WindwardPort_Harbor_Eventscript_VeteranF {
+    lock
+    faceplayer
+    setspeaker("Jura")
+    msgbox(format("Windward Port is in the center of the region so you would think it's the biggest.\p
+    In fact, the biggest port is the one next to Faeruma City, my hometown.\p
+    Faeruma Pharmacy factory produces most of the region's medicine supply and that's where Faeruma Port comes in."))
+    closemessage
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_Pelipper {
+    moncryscript(SPECIES_PELIPPER)
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_Gurdurr {
+    moncryscript(SPECIES_GURDURR)
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_Bewear {
+    moncryscript(SPECIES_BEWEAR)
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_Worker {
+    lock
+    faceplayer
+    setspeaker("Earu")
+    msgbox(format("I'm so glad my shift is in the daytime.\p
+    My co-workers said they kept hearing a weeping sound at night and honestly, I don't want to find out where that sound comes from."))
+    closemessage
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_Sign {
+    lock
+    msgbox(format("Please stay clear of the entrance."))
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab {
+    lock
+    delay(20)
+    applymovement(A_WP, faceleft)
+    applymovement(M_WP, moves(walk_left, face_right))
+    delay(4)
+    applymove(S_WP, moves(walk_down, face_left))
+    delay(20)
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}We're in Windward Port at last.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Let's visit my personal lab to pick up our items.\p
+    It's the house with the red square roof at the south of the city.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Sure."))
+    closemessage
+    delay(20)
+    clearflag(FLAG_SPAWN_INVISIBLE)
+    applymoveplayer(moves(face_left, set_visible), 1)
+    applymovement(M_WP, moves(walk_right, set_invisible))
+    applymovement(S_WP, moves(walk_up, set_invisible))
+    applymove(A_WP, invisible)
+    delay(30)
+    removeobject(A_WP)
+    delay(1)
+    removeobject(S_WP)
+    delay(1)
+    removeobject(M_WP)
+    delay(1)
+    setflag(FLAG_TEMP_2)
+    setvar(VAR_CHAPTER_1_STATE, 5)
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger { //VAR_TEMP_F == 0
+    gettime
+    if (var(VAR_0x8000) < 6 || var(VAR_0x8000) >= 21){
+        if (var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 0 || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 2
+        || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 4 || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 6
+        || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 8 || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 10
+        || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 12)
+        {
+            specialvar(VAR_RESULT, GetPlayerFacingDirection)
+            if(var(VAR_RESULT) == DIR_EAST){
+                lock
+                playse(SE_M_SWEET_SCENT)
+                waitse
+                msgbox(format("The wind is getting chilly."))
+                closemessage
+            }
+            release
+            end
+        }
+        if(var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 1 || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 3
+        || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 5 || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 7
+        || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 9 || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 11
+        || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 13)
+        {
+            lock
+            msgbox(format("Leave the harbor and ignore the kid?"), MSGBOX_YESNO)
+            if (var(VAR_RESULT)){
+                playse(SE_M_SWEET_SCENT)
+                waitse
+                msgbox(format("The wind is getting stronger and chillier."))
+                closemessage
+                setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 44)
+            }
+            else{
+                closemessage
+                applymoveplayer(walkright)
+            }
+        release
+        end
+        }
+    }
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_GhostBoyMad1{
+    lock
+    clearflag(FLAG_TEMP_3)
+    setobjectxyperm(GHOSTBOY, 0, 20)
+    setobjectxy(GHOSTBOY, 0, 20)
+    setobjectmovementtype(GHOSTBOY, MOVEMENT_TYPE_FACE_RIGHT)
+    addobject(GHOSTBOY)
+    goto(WindwardPort_Harbor_Eventscript_GhostBoyMad)
+}
+
+script WindwardPort_Harbor_Eventscript_GhostBoyMad2 {
+    lock
+    clearflag(FLAG_TEMP_3)
+    setobjectxyperm(GHOSTBOY, 0, 21)
+    setobjectxy(GHOSTBOY, 0, 21)
+    setobjectmovementtype(GHOSTBOY, MOVEMENT_TYPE_FACE_RIGHT)
+    addobject(GHOSTBOY)
+    goto(WindwardPort_Harbor_Eventscript_GhostBoyMad)
+}
+
+script WindwardPort_Harbor_Eventscript_GhostBoyMad {
+    special(StopMapMusic)
+    setspeaker("Yamaki?")
+    msgbox(format("Leaving a kid alone at night while he's waiting for you?\p
+    Do you know what people like you are called?\p
+    Yes, I'm talking to {COLOR RED}YOU{COLOR 2}. Not the characters {COLOR RED}YOU{COLOR 2}'re controlling.\p
+    They aren't scumbags like {COLOR RED}YOU{COLOR 2}."))
+    closemessage
+    playse(SE_M_SWEET_SCENT)
+    delay(30)
+    setspeaker("Yamaki?")
+    msgbox("Die.")
+    setflag(FLAG_NO_WHITEOUT)
+    trainerbattle_no_intro(TRAINER_GHOSTBOY, WindwardPort_Harbor_GhostBoy_Defeated)
+    msgbox(format("The air is getting colder and colder.\p
+    It's hard to open your eyes."))
+    closemessage
+    setspeaker("Yamaki?")
+    msgbox("Leave. And don't your dare come back.")
+    closemessage
+    clearflag(FLAG_NO_WHITEOUT)
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_GHOST_BOY)
+    warpwhitefade(MAP_ROUTE2_HOUSE, 4, 4)
+    waitstate
+}
+
+text WindwardPort_Harbor_GhostBoy_Defeated {
+    format("...")
+}
+
+script WindwardPort_Harbor_Eventscript_PreschoolerM {
+    setflag(FLAG_HIDE_QUEST_ICON)
+    if(var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 1){
+        goto(WindwardPort_Harbor_Eventscript_FoundGhostBoy1)
+    }
+    if(var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 2){
+        goto(WindwardPort_Harbor_Eventscript_StartTreasureHunt2)
+    }
+    if(var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 3){
+        goto(WindwardPort_Harbor_Eventscript_FoundTreasure)
+    }
+    lock
+    faceplayer
+    playse(SE_M_BUBBLE)
+    applymovement(GHOSTBOY, emotecry)
+    setspeaker("Yamaki")
+    msgbox(format("-sob- -sob-"))
+    closemessage
+    checkplayergender
+    if (var(VAR_RESULT) == MALE){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}What's wrong, little boy?\nWhy are you here alone?"))
+        setspeaker("Yamaki")
+        msgbox(format("{DESTROY_MUGSHOT}No one wants to play with me...\p
+        Will you play with me, mister?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure! Just for a little while, though.\p
+            After that you gotta go home, alright?"))
+            closemessage
+            goto(WindwardPort_Harbor_Eventscript_StartHideAndSeek)
+        }
+        else{
+            goto(WindwardPort_Harbor_Eventscript_HideAndSeekRejected)
+        }
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Why are you crying? Are you lost?"))
+        setspeaker("Yamaki")
+        msgbox(format("{DESTROY_MUGSHOT}No one wants to play with me...\p
+        Will you play with me, miss?"), MSGBOX_YESNO)
+        if(var(VAR_RESULT)){
+            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I don't see why not.\p
+            But promise me you'll go home after we're done playing?"))
+            setspeaker("Yamaki")
+            msgbox(format("{DESTROY_MUGSHOT}Promise!"))
+            closemessage
+            goto(WindwardPort_Harbor_Eventscript_StartHideAndSeek)
+        }
+        else{
+            goto(WindwardPort_Harbor_Eventscript_HideAndSeekRejected)
+        }
+    }
+}
+
+script WindwardPort_Harbor_Eventscript_HideAndSeekRejected {
+    setspeaker("Yamaki")
+    msgbox(format("Why does no one want to play with me?"))
+    closemessage
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_StartHideAndSeek {
+    playse(SE_SHINY)
+    applymove(GHOSTBOY, moves(emote_music))
+    setspeaker("Yamaki")
+    msgbox(format("Alright! Let's play a round of hide-and-seek!\p
+    I'll go hide! Don't worry, I won't leave this harbor!"))
+    closemessage
+    setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 1)
+    getobjectfacingdirection(GHOSTBOY, VAR_0x8002)
+    if(var(VAR_0x8002) == DIR_WEST){
+        applymove(GHOSTBOY, moves(walk_fast_down, walk_fast_left*4, walk_fast_down*6))
+    }
+    else{
+        applymove(GHOSTBOY, moves(walk_fast_left*4, walk_fast_down*7))
+    }
+    release
+    setobjectxy(GHOSTBOY, 17, 29)
+    setobjectxyperm(GHOSTBOY, 17, 29)
+    addobject(GHOSTBOY)
+    lock
+    setobjectnewmovementtype(GHOSTBOY, MOVEMENT_TYPE_FACE_RIGHT)
+    applymove(GHOSTBOY, faceright)
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_FoundGhostBoy1 {
+    lock
+    faceplayer
+    playse(SE_PIN)
+    applymove(GHOSTBOY, emoteexclamation)
+    setspeaker("Yamaki")
+    msgbox(format("Oh! You found me!\p
+    Hehehe, that makes me really happy. I thought you'd leave me alone.\p
+    I'll go home now. Let's play again some times!"))
+    closemessage
+    setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 2)
+    subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_GHOST_BOY, SUB_QUEST_GHOST_BOY_1)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(GHOSTBOY)
+    setflag(FLAG_TEMP_3)
+    delay(30)
+    fwdtime(7, 0)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    release
+    playse(SE_PIN)
+    applymoveplayer(emoteexclamation)
+    checkplayergender
+    if(var(VAR_RESULT) == MALE){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(Did he just vanish??)\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}(Maybe I'm getting tired. It's pretty late-)\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(Wait! Since when the sun's out??)"))
+        closemessage
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(Did my eyes play tricks on me? He just vanished.)\p
+        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(Perhaps I do need to go rest. It's late after all-)\p
+        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(Wait, it's already morning?)"))
+        closemessage
+    }
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    call(EventScript_CheckDaysLeft)
+    fadeinbgm(1)
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_StartTreasureHunt2 {
+    lock
+    faceplayer
+    setspeaker("Yamaki")
+    msgbox(format("Hello! We meet again!\p
+    Will you play with me today?"), MSGBOX_YESNO)
+    if (!var(VAR_RESULT)){
+        setspeaker("Yamaki")
+        msgbox(format("Understood. I'll play by myself then..."))
+        closemessage
+        clearflag(FLAG_HIDE_QUEST_ICON)
+        refreshquesticon
+        release
+        end
+    }
+    else{
+        playse(SE_SHINY)
+        applymove(GHOSTBOY, emotemusic)
+        setspeaker("Yamaki")
+        msgbox(format("Awesome!\p
+        So... Let's play treasure hunt today!\p
+        I've hidden a Revive within one of the cargo boxes in this harbor.\p
+        If you can find it and bring it back to me, I'll give you a gift!\p
+        Now off you go! I'll be waiting for you here until you find it."))
+        closemessage
+        setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 3)
+        clearflag(FLAG_HIDE_QUEST_ICON)
+        refreshquesticon
+        release
+        end
+    }
+}
+
+script WindwardPort_Harbor_Eventscript_FoundTreasure {
+    lock
+    faceplayer
+    checkplayergender
+    if(var(VAR_RESULT) == MALE){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}It's this one, right?"))
+        setspeaker("Yamaki")
+        msgbox(format("{DESTROY_MUGSHOT}Woah! You found it!\p
+        You're really good at games, mister!"))
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Is this the right one?"))
+        msgbox(format("{DESTROY_MUGSHOT}Woah! You found it!\p
+        You're really good at games, miss!"))
+    }
+    msgbox(format("I'll give you a gift as promised!"))
+    closemessage
+    giveitem(ITEM_CARBOS)
+    setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 4)
+    setspeaker("Yamaki")
+    msgbox(format("I have to go now.\p
+    I had fun today! Let's play again next time!"))
+    closemessage
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(GHOSTBOY)
+    setflag(FLAG_TEMP_3)
+    delay(30)
+    fwdtime(7, 0)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    release
+    playse(SE_PIN)
+    applymoveplayer(emoteexclamation)
+    checkplayergender
+    if(var(VAR_RESULT) == MALE){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(I swear he vanished into thin air again.)\p
+        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(What a weird boy.)"))
+        closemessage
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(He just vanished again.)\p
+        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(That's... quite weird.)"))
+        closemessage
+    }
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_GHOST_BOY, SUB_QUEST_GHOST_BOY_2)
+    call(EventScript_CheckDaysLeft)
+    fadeinbgm(1)
+    release
+    end
 }

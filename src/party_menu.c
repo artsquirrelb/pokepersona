@@ -5851,6 +5851,7 @@ void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task)
     }
 }
 
+
 static u16 ItemEffectToMonEv(struct Pokemon *mon, u8 effectType)
 {
     switch (effectType)
@@ -6671,6 +6672,71 @@ void ItemUseCB_DynamaxCandy(u8 taskId, TaskFunc task)
     gTasks[taskId].func = Task_DynamaxCandy;
 }
 
+void Task_SmileCandy(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    u16 friendship = GetMonData(&gPlayerParty[tMonId], MON_DATA_FRIENDSHIP);
+
+    switch (tState)
+    {
+    case 0:
+        // Can't use.
+        if (friendship == 255)
+        {
+            gPartyMenuUseExitCallback = FALSE;
+            PlaySE(SE_SELECT);
+            DisplayPartyMenuMessage(gText_WontHaveEffect, 1);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+            return;
+        }
+        gPartyMenuUseExitCallback = TRUE;
+        GetMonNickname(&gPlayerParty[tMonId], gStringVar1);
+        CopyItemName(gSpecialVar_ItemId, gStringVar2);
+        tState++;
+        break;
+    case 1:
+        PlaySE(SE_USE_ITEM);
+        StringExpandPlaceholders(gStringVar4, gText_PkmnFriendlier);
+        DisplayPartyMenuMessage(gStringVar4, 1);
+        ScheduleBgCopyTilemapToVram(2);
+        tState++;
+        break;
+    case 2:
+        if (!IsPartyMenuTextPrinterActive())
+            tState++;
+        break;
+    case 3:
+        u16 newfriendship = GetMonData(&gPlayerParty[tMonId], MON_DATA_FRIENDSHIP);
+        if (friendship < 100)
+            newfriendship = friendship + 50;
+
+        else if (friendship >= 100 && friendship < 200)
+            newfriendship = friendship + 25;
+        else{
+            newfriendship = friendship + 10;
+            if (newfriendship > 255)
+                newfriendship = 255;
+        }
+        SetMonData(&gPlayerParty[tMonId], MON_DATA_FRIENDSHIP, &newfriendship);
+        RemoveBagItem(gSpecialVar_ItemId, 1);
+        if (CheckBagHasItem(gSpecialVar_ItemId, 1))
+            gTasks[taskId].func = Task_ReturnToChooseMonAfterText;
+        else
+            gTasks[taskId].func = Task_ClosePartyMenu;
+        break;
+    }
+}
+
+void ItemUseCB_SmileCandy(u8 taskId, TaskFunc task)
+{
+    s16 *data = gTasks[taskId].data;
+
+    tState = 0;
+    tMonId = gPartyMenu.slotId;
+    SetWordTaskArg(taskId, tOldFunc, (uintptr_t)(gTasks[taskId].func));
+    gTasks[taskId].func = Task_SmileCandy;
+}
 #undef tState
 #undef tMonId
 #undef tDynamaxLevel

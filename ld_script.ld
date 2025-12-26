@@ -1257,6 +1257,8 @@ SECTIONS {
         sound/songs/midi/mus_p3r_memories_of_the_city.o(.rodata);
         sound/songs/midi/mus_p5_blooming_villain.o(.rodata);
         sound/songs/midi/mus_xc2_torna_battle.o(.rodata);
+        sound/songs/midi/mus_dp_lake_caverns.o(.rodata);
+        sound/songs/midi/mus_dp_vs_uxie_mesprit_azelf.o(.rodata);
 
     } > ROM =0
 

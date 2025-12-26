@@ -3198,3 +3198,48 @@
 	callnative ScrCmd_setstartingstatus
 	.byte \status
 	.endm
+
+	@ This replicates the typical OW NPC Pokemon script, which is:
+	@ release and end should follow this macro in most cases.
+	@ If mode is not provided, it will use CRY_MODE_NORMAL. Otherwise,
+	@ it'll use the CRY_MODE_* constants.
+	.macro moncryscript species:req, mode
+	lock
+	faceplayer
+	.ifb \mode
+		playmoncry \species, CRY_MODE_NORMAL
+	.else
+		playmoncry \species, \mode
+	.endif
+		showmonpic \species, 18, 5
+		waitmoncry
+		delay 30
+		setseenmon \species
+		hidemonpic
+	.endm
+
+	@ applymovement with waitmovement built-in.
+	@ If wait is not provided, waitmovement 0 is emitted.
+	@ If wait has a value, the emitted waitmovement will have that value.
+	@ i.e. if wait is 7, waitmovement 7 will be emitted.
+	@ If you don't want a waitmovement emitted, use applymovement instead.
+	.macro applymove localid:req, movements:req, wait
+	applymovement \localid, \movements
+	.ifb \wait
+		waitmovement 0
+	.else
+		waitmovement \wait
+	.endif
+	.endm
+
+	@ applymovement with LOCALID_PLAYER as the localid and a built-in waitmovement 0.
+	@ If wait is not provided, then waitmovement 0 is emitted.
+	@ If you don't want that emitted (ex: the player and another NPC are moving
+	@ at the same time), then provide any argument for wait.
+	.macro applymoveplayer movements:req, wait
+	applymovement LOCALID_PLAYER, \movements
+	.ifb \wait
+		waitmovement 0
+	.endif
+	.endm
+

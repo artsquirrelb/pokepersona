@@ -21,8 +21,8 @@
 #define QUEST_FIND_FISHERMANS_DAUGHTER                  2 //for old rod
 #define QUEST_AMEAME_PARTTIME                           3 //for candy jar
 #define QUEST_BUY_SMILE_CANDY                           4 //unlocked after finishing QUEST_FIND_FISHERMANS_DAUGHTER // for good rod
-#define QUEST_FIND_MINING_KIT                           5 //unlocked after finishing Mitsuru's Prologue
-#define QUEST_7          6
+#define QUEST_FIND_MINING_KIT                           5 //can only start after finishing Mitsuru's Prologue
+#define QUEST_GHOST_BOY                                 6
 #define QUEST_8          7
 #define QUEST_9          8
 #define QUEST_10         9
@@ -52,20 +52,20 @@
 #define MITSURUS_PROLOGUE           0
 #define AKIHIKOS_PROLOGUE           1
 #define CHAPTER_1                   2
-#define SUB_QUEST_4          3
-#define SUB_QUEST_5          4
-#define SUB_QUEST_6          5
-#define SUB_QUEST_7          6
-#define SUB_QUEST_8          7
-#define SUB_QUEST_9          8
-#define SUB_QUEST_10         9
-#define SUB_QUEST_11        10
-#define SUB_QUEST_12        11
-#define SUB_QUEST_13        12
-#define SUB_QUEST_14        13
-#define SUB_QUEST_15        14
-#define SUB_QUEST_16        15
-#define SUB_QUEST_17        16
+#define CHAPTER_2                   3
+#define CHAPTER_3                   4
+#define CHAPTER_4                   5
+#define CHAPTER_5                   6
+#define CHAPTER_6                   7
+#define CHAPTER_7                   8
+#define CHAPTER_8                   9
+#define SUB_QUEST_GHOST_BOY_1       10
+#define SUB_QUEST_GHOST_BOY_2       11
+#define SUB_QUEST_GHOST_BOY_3       12
+#define SUB_QUEST_GHOST_BOY_4       13
+#define SUB_QUEST_GHOST_BOY_5       14
+#define SUB_QUEST_GHOST_BOY_6       15
+#define SUB_QUEST_GHOST_BOY_7       16
 #define SUB_QUEST_18        17
 #define SUB_QUEST_19        18
 #define SUB_QUEST_20        19
@@ -81,8 +81,9 @@
 #define SUB_QUEST_30        29
 
 #define STORY_QUESTS_SUB_COUNT 10
-#define QUEST_2_SUB_COUNT 20
-#define SUB_QUEST_COUNT (STORY_QUESTS_SUB_COUNT + QUEST_2_SUB_COUNT)
+#define QUEST_GHOST_BOY_SUB_COUNT 7
+#define QUEST_3_SUB_COUNT 13
+#define SUB_QUEST_COUNT (STORY_QUESTS_SUB_COUNT + QUEST_GHOST_BOY_SUB_COUNT + QUEST_3_SUB_COUNT)
 
 //complexe quest
 

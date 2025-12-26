@@ -301,7 +301,7 @@ static const struct ListMenuTemplate sItemListMenu =
     .item_X = 8,
     .cursor_X = 0,
     .upText_Y = 1,
-    .cursorPal = 1,
+    .cursorPal = 2,
     .fillValue = 0,
     .cursorShadowPal = 0, //was 3
     .lettersSpacing = 0,
@@ -615,10 +615,10 @@ static const u8 sFontColorTable[][3] = {
     [COLORID_GRAY_CURSOR] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_LIGHT_GRAY, TEXT_COLOR_GREEN},
     [COLORID_UNUSED]      = {TEXT_COLOR_DARK_GRAY,   TEXT_COLOR_WHITE,      TEXT_COLOR_LIGHT_GRAY},
     */
-    [COLORID_NORMAL]      = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      0},
-    [COLORID_POCKET_NAME] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      0},
-    [COLORID_GRAY_CURSOR] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
-    [COLORID_UNUSED]      = {TEXT_COLOR_DARK_GRAY,   TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_NORMAL]      = {TEXT_COLOR_TRANSPARENT, 2,      0},
+    [COLORID_POCKET_NAME] = {TEXT_COLOR_TRANSPARENT, 2,      0},
+    [COLORID_GRAY_CURSOR] = {TEXT_COLOR_TRANSPARENT, 2,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_UNUSED]      = {TEXT_COLOR_DARK_GRAY,   2,      TEXT_COLOR_DARK_GRAY},
     [COLORID_TMHM_INFO]   = {TEXT_COLOR_TRANSPARENT, 15,  14},
     [COLORID_DESCRIPTION] = {0, 1, 0}
 };
@@ -2266,7 +2266,7 @@ static void ConfirmToss(u8 taskId)
     ConvertIntToDecimalStringN(gStringVar2, tItemCount, STR_CONV_MODE_LEFT_ALIGN, MAX_ITEM_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_ThrewAwayVar2Var1s);
     FillWindowPixelBuffer(WIN_DESCRIPTION, PIXEL_FILL(0));
-    BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, gStringVar4, 3, 1, 0, 0, 0, COLORID_NORMAL);
+    BagMenu_Print(WIN_DESCRIPTION, FONT_NORMAL, gStringVar4, 3, 1, 0, 0, 0, COLORID_DESCRIPTION);
     if (CurrentBattlePyramidLocation() != PYRAMID_LOCATION_NONE || FlagGet(FLAG_STORING_ITEMS_IN_PYRAMID_BAG) == TRUE)
         gTasks[taskId].func = Task_RemoveItemFromBag;
     else

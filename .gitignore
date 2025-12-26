@@ -63,4 +63,3 @@ __pycache__
 *.xcf
 notes/
 tools/poryscript/poryscript
-data/maps/**/scripts.inc

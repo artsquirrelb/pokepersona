@@ -951,6 +951,12 @@ void ItemUseOutOfBattle_DynamaxCandy(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_SmileCandy(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_SmileCandy;
+    SetUpItemUseCallback(taskId);
+}
+
 void ItemUseOutOfBattle_TMHM(u8 taskId)
 {
     if (GetItemTMHMIndex(gSpecialVar_ItemId) > NUM_TECHNICAL_MACHINES)

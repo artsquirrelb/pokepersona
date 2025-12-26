@@ -20,10 +20,10 @@ void DrawMugshot(void); //VAR_0x8000 = mugshot id
 void DrawMugshotAtPos(void); //VAR_0x8000 = mugshot id, VAR_0x8001 = x, VAR_0x8002 = y
 void ClearMugshot(void);
 
-static const u32 sMugshotImg_Akihiko[] = INCBIN_U32("graphics/mugshots/Akihiko/smile.4bpp.lz");
+static const u32 sMugshotImg_Akihiko[] = INCBIN_U32("graphics/mugshots/Akihiko/smile.4bpp.smol");
 static const u16 sMugshotPal_Akihiko[] = INCBIN_U16("graphics/mugshots/Akihiko/smile.gbapal");
 
-static const u32 sMugshotImg_Shinjiro[] = INCBIN_U32("graphics/mugshots/Shinjiro/normal.4bpp.lz");
+static const u32 sMugshotImg_Shinjiro[] = INCBIN_U32("graphics/mugshots/Shinjiro/normal.4bpp.smol");
 static const u16 sMugshotPal_Shinjiro[] = INCBIN_U16("graphics/mugshots/Shinjiro/normal.gbapal");
 
 

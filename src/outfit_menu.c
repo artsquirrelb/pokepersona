@@ -192,8 +192,8 @@ _(
 
 static const u16 sTiles[] = INCBIN_U16("graphics/outfit_menu/main.4bpp");
 static const u16 sPalette[] = INCBIN_U16("graphics/outfit_menu/main.gbapal");
-static const u32 sTilemap[] = INCBIN_U32("graphics/outfit_menu/main.bin.lz");
-static const u32 sScrollingBG_Tilemap[] = INCBIN_U32("graphics/outfit_menu/scroll.bin.lz");
+static const u32 sTilemap[] = INCBIN_U32("graphics/outfit_menu/main.bin.smolTM");
+static const u32 sScrollingBG_Tilemap[] = INCBIN_U32("graphics/outfit_menu/scroll.bin.smolTM");
 
 static const u16 sIndicatorSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/indicator.4bpp");
 static const u16 sIndicatorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/indicator.gbapal");

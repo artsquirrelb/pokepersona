@@ -285,7 +285,7 @@ const u16 gTrainerPalette_RubySapphireMay[] = INCBIN_U16("graphics/trainers/pale
 const u32 gTrainerFrontPic_Shinjiro[] = INCBIN_U32("graphics/trainers/front_pics/shinjiro.4bpp.smol");
 const u16 gTrainerPalette_Shinjiro[] = INCBIN_U16("graphics/trainers/front_pics/shinjiro.gbapal");
 
-const u32 gTrainerFrontPic_Inteleon_T[] = INCBIN_U32("graphics/field_mugshots/Inteleon/serious.4bpp.lz");
+const u32 gTrainerFrontPic_Inteleon_T[] = INCBIN_U32("graphics/field_mugshots/Inteleon/serious.4bpp.smol");
 const u16 gTrainerPalette_Inteleon_T[] = INCBIN_U16("graphics/field_mugshots/Inteleon/serious.gbapal");
 
 const u32 gTrainerFrontPic_Scientist_1[] = INCBIN_U32("graphics/trainers/front_pics/scientist_1.4bpp.smol");

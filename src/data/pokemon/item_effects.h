@@ -444,13 +444,3 @@ const u8 gItemEffect_TamatoBerry[10] = {
     [6] = ITEM6_SUBTRACT_EV,
     EV_BERRY_FRIENDSHIP_CHANGE,
 };
-
-const u8 gItemEffect_SmileCandy[10] = {
-    [5] = ITEM5_FRIENDSHIP_ALL,
-    [7] = 50, // Friendship change, low (<100)
-    [8] = 25, // Friendship change, mid (>=100 & <200)
-    [9] = 10, // Friendship change, high (>= 200, max 255)
-    //from 0 friendship, you'll need    2      + 4      + 6         = 12 Smile Candies to max friendship a mon
-                                    //(x50)   (x25)     (x10)
-                                    //=100     =200     =260->255
-};

@@ -1728,8 +1728,8 @@ const u32 gBagScreenFemale_Pal[] = INCBIN_U32("graphics/bag/menu.gbapal");
 const u32 gBagScreen_Gfx[] = INCBIN_U32("graphics/bag/menu.4bpp.smol");
 const u32 gBagScreen_GfxTileMap[] = INCBIN_U32("graphics/bag/menu.bin.smolTM");
 
-const u32 gBagScroll_Gfx[] = INCBIN_U32("graphics/bag/scroll_tiles.4bpp.lz");
-const u32 gBagScroll_GfxTileMap[] = INCBIN_U32("graphics/bag/scroll_tiles.bin.lz");
+const u32 gBagScroll_Gfx[] = INCBIN_U32("graphics/bag/scroll_tiles.4bpp.smol");
+const u32 gBagScroll_GfxTileMap[] = INCBIN_U32("graphics/bag/scroll_tiles.bin.smolTM");
 const u32 gBagScrollBgPalette[] = INCBIN_U16("graphics/bag/scroll_tiles.gbapal");
 
 const u32 gBattlePyramidBag_Gfx[]          = INCBIN_U32("graphics/bag/bag_pyramid.4bpp.smol");
@@ -1744,8 +1744,8 @@ const u32 gShopMenu_Gfx[] = INCBIN_U32("graphics/shop/menu.4bpp.smol");
 const u16 gShopMenu_Pal[] = INCBIN_U16("graphics/shop/menu.gbapal");
 const u32 gShopMenu_Tilemap[] = INCBIN_U32("graphics/shop/menu.bin.smolTM");
 const u32 gShopMenuMoney_Gfx[] = INCBIN_U32("graphics/shop/money.4bpp.smol");
-const u32 gShopMenu_ScrollGfx[] = INCBIN_U32("graphics/shop/scroll.4bpp.lz");
-const u32 gShopMenu_ScrollTilemap[] = INCBIN_U32("graphics/shop/scroll.bin.lz");
+const u32 gShopMenu_ScrollGfx[] = INCBIN_U32("graphics/shop/scroll.4bpp.smol");
+const u32 gShopMenu_ScrollTilemap[] = INCBIN_U32("graphics/shop/scroll.bin.smolTM");
 const u32 gShopMenu_Tilemap_MoveTutor[] = INCBIN_U32("graphics/shop/menu2.bin.smolTM");
 const u32 gShopMenu_Gfx_MoveTutor[] = INCBIN_U32("graphics/shop/menu2.4bpp.smol");
 

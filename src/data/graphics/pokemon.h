@@ -25016,9 +25016,9 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 
 #if P_DELTA_FORMS
-    const u32 gMonFrontPic_PawmiDelta[] = INCBIN_U32("graphics/pokemon/pawmi/delta/front.4bpp.lz");
+    const u32 gMonFrontPic_PawmiDelta[] = INCBIN_U32("graphics/pokemon/pawmi/delta/front.4bpp.smol");
     const u16 gMonPalette_PawmiDelta[] = INCBIN_U16("graphics/pokemon/pawmi/delta/normal.gbapal");
-    const u32 gMonBackPic_PawmiDelta[] = INCBIN_U32("graphics/pokemon/pawmi/delta/back.4bpp.lz");
+    const u32 gMonBackPic_PawmiDelta[] = INCBIN_U32("graphics/pokemon/pawmi/delta/back.4bpp.smol");
     const u16 gMonShinyPalette_PawmiDelta[] = INCBIN_U16("graphics/pokemon/pawmi/delta/shiny.gbapal");
     const u8 gMonIcon_PawmiDelta[] = INCBIN_U8("graphics/pokemon/pawmi/delta/icon.4bpp");
 #if OW_POKEMON_OBJECT_EVENTS
@@ -25030,9 +25030,9 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-const u32 gMonFrontPic_PawmoDelta[] = INCBIN_U32("graphics/pokemon/pawmo/delta/front.4bpp.lz");
+const u32 gMonFrontPic_PawmoDelta[] = INCBIN_U32("graphics/pokemon/pawmo/delta/front.4bpp.smol");
     const u16 gMonPalette_PawmoDelta[] = INCBIN_U16("graphics/pokemon/pawmo/delta/normal.gbapal");
-    const u32 gMonBackPic_PawmoDelta[] = INCBIN_U32("graphics/pokemon/pawmo/delta/back.4bpp.lz");
+    const u32 gMonBackPic_PawmoDelta[] = INCBIN_U32("graphics/pokemon/pawmo/delta/back.4bpp.smol");
     const u16 gMonShinyPalette_PawmoDelta[] = INCBIN_U16("graphics/pokemon/pawmo/delta/shiny.gbapal");
     const u8 gMonIcon_PawmoDelta[] = INCBIN_U8("graphics/pokemon/pawmo/delta/icon.4bpp");
 #if OW_POKEMON_OBJECT_EVENTS
@@ -25044,9 +25044,9 @@ const u32 gMonFrontPic_PawmoDelta[] = INCBIN_U32("graphics/pokemon/pawmo/delta/f
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 
-const u32 gMonFrontPic_PawmotDelta[] = INCBIN_U32("graphics/pokemon/pawmot/delta/front.4bpp.lz");
+const u32 gMonFrontPic_PawmotDelta[] = INCBIN_U32("graphics/pokemon/pawmot/delta/front.4bpp.smol");
     const u16 gMonPalette_PawmotDelta[] = INCBIN_U16("graphics/pokemon/pawmot/delta/normal.gbapal");
-    const u32 gMonBackPic_PawmotDelta[] = INCBIN_U32("graphics/pokemon/pawmot/delta/back.4bpp.lz");
+    const u32 gMonBackPic_PawmotDelta[] = INCBIN_U32("graphics/pokemon/pawmot/delta/back.4bpp.smol");
     const u16 gMonShinyPalette_PawmotDelta[] = INCBIN_U16("graphics/pokemon/pawmot/delta/shiny.gbapal");
     const u8 gMonIcon_PawmotDelta[] = INCBIN_U8("graphics/pokemon/pawmot/delta/icon.4bpp");
 #if OW_POKEMON_OBJECT_EVENTS

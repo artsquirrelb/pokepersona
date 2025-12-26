@@ -1,21 +1,21 @@
-/*static const u32 sFieldMugshotGfx_TestNormal[] = INCBIN_U32("graphics/field_mugshots/test/normal.4bpp.lz");
-static const u32 sFieldMugshotGfx_TestAlt[] = INCBIN_U32("graphics/field_mugshots/test/alt.4bpp.lz");
+/*static const u32 sFieldMugshotGfx_TestNormal[] = INCBIN_U32("graphics/field_mugshots/test/normal.4bpp.smol");
+static const u32 sFieldMugshotGfx_TestAlt[] = INCBIN_U32("graphics/field_mugshots/test/alt.4bpp.smol");
 static const u16 sFieldMugshotPal_TestNormal[] = INCBIN_U16("graphics/field_mugshots/test/normal.gbapal");
 static const u16 sFieldMugshotPal_TestAlt[] = INCBIN_U16("graphics/field_mugshots/test/alt.gbapal");
 */
 
 //Mitsuru
-static const u32 sFieldMugshotGfx_MitsuruNormal[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/normal.4bpp.lz");
-static const u32 sFieldMugshotGfx_MitsuruHappy[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/happy.4bpp.lz");
-static const u32 sFieldMugshotGfx_MitsuruSad[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/sad.4bpp.lz");
-static const u32 sFieldMugshotGfx_MitsuruMad[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/mad.4bpp.lz");
-static const u32 sFieldMugshotGfx_MitsuruSurprised[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/surprised.4bpp.lz");
-static const u32 sFieldMugshotGfx_MitsuruSmile[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/smile.4bpp.lz");
-static const u32 sFieldMugshotGfx_MitsuruSilhouette[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/silhouette.4bpp.lz");
-static const u32 sFieldMugshotGfx_MitsuruStruggled[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/struggled.4bpp.lz");
-static const u32 sFieldMugshotGfx_MitsuruSerious[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/serious.4bpp.lz");
-static const u32 sFieldMugshotGfx_MitsuruConfident[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/confident.4bpp.lz");
-static const u32 sFieldMugshotGfx_MitsuruGeez[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/geez.4bpp.lz");
+static const u32 sFieldMugshotGfx_MitsuruNormal[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/normal.4bpp.smol");
+static const u32 sFieldMugshotGfx_MitsuruHappy[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/happy.4bpp.smol");
+static const u32 sFieldMugshotGfx_MitsuruSad[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/sad.4bpp.smol");
+static const u32 sFieldMugshotGfx_MitsuruMad[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/mad.4bpp.smol");
+static const u32 sFieldMugshotGfx_MitsuruSurprised[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/surprised.4bpp.smol");
+static const u32 sFieldMugshotGfx_MitsuruSmile[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/smile.4bpp.smol");
+static const u32 sFieldMugshotGfx_MitsuruSilhouette[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/silhouette.4bpp.smol");
+static const u32 sFieldMugshotGfx_MitsuruStruggled[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/struggled.4bpp.smol");
+static const u32 sFieldMugshotGfx_MitsuruSerious[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/serious.4bpp.smol");
+static const u32 sFieldMugshotGfx_MitsuruConfident[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/confident.4bpp.smol");
+static const u32 sFieldMugshotGfx_MitsuruGeez[] = INCBIN_U32("graphics/field_mugshots/Mitsuru/geez.4bpp.smol");
 
 static const u16 sFieldMugshotPal_MitsuruNormal[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/normal.gbapal");
 /*static const u16 sFieldMugshotPal_MitsuruHappy[] = INCBIN_U16("graphics/field_mugshots/Mitsuru/happy.gbapal");
@@ -33,19 +33,19 @@ static const u16 sFieldMugshotPal_MitsuruGeez[] = INCBIN_U16("graphics/field_mug
 
 
 //Akihiko
-static const u32 sFieldMugshotGfx_AkihikoNormal[] = INCBIN_U32("graphics/field_mugshots/Akihiko/normal.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoHappy[] = INCBIN_U32("graphics/field_mugshots/Akihiko/happy.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoSad[] = INCBIN_U32("graphics/field_mugshots/Akihiko/sad.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoMad[] = INCBIN_U32("graphics/field_mugshots/Akihiko/mad.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoDoubt[] = INCBIN_U32("graphics/field_mugshots/Akihiko/doubt.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoSurprised[] = INCBIN_U32("graphics/field_mugshots/Akihiko/surprised.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoTired[] = INCBIN_U32("graphics/field_mugshots/Akihiko/tired.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoDarkened[] = INCBIN_U32("graphics/field_mugshots/Akihiko/darkened.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoSmile[] = INCBIN_U32("graphics/field_mugshots/Akihiko/smile.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoStruggled[] = INCBIN_U32("graphics/field_mugshots/Akihiko/struggled.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoSerious[] = INCBIN_U32("graphics/field_mugshots/Akihiko/serious.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoConfident[] = INCBIN_U32("graphics/field_mugshots/Akihiko/confident.4bpp.lz");
-static const u32 sFieldMugshotGfx_AkihikoCry[] = INCBIN_U32("graphics/field_mugshots/Akihiko/cry.4bpp.lz");
+static const u32 sFieldMugshotGfx_AkihikoNormal[] = INCBIN_U32("graphics/field_mugshots/Akihiko/normal.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoHappy[] = INCBIN_U32("graphics/field_mugshots/Akihiko/happy.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoSad[] = INCBIN_U32("graphics/field_mugshots/Akihiko/sad.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoMad[] = INCBIN_U32("graphics/field_mugshots/Akihiko/mad.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoDoubt[] = INCBIN_U32("graphics/field_mugshots/Akihiko/doubt.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoSurprised[] = INCBIN_U32("graphics/field_mugshots/Akihiko/surprised.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoTired[] = INCBIN_U32("graphics/field_mugshots/Akihiko/tired.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoDarkened[] = INCBIN_U32("graphics/field_mugshots/Akihiko/darkened.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoSmile[] = INCBIN_U32("graphics/field_mugshots/Akihiko/smile.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoStruggled[] = INCBIN_U32("graphics/field_mugshots/Akihiko/struggled.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoSerious[] = INCBIN_U32("graphics/field_mugshots/Akihiko/serious.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoConfident[] = INCBIN_U32("graphics/field_mugshots/Akihiko/confident.4bpp.smol");
+static const u32 sFieldMugshotGfx_AkihikoCry[] = INCBIN_U32("graphics/field_mugshots/Akihiko/cry.4bpp.smol");
 
 
 static const u16 sFieldMugshotPal_AkihikoNormal[] = INCBIN_U16("graphics/field_mugshots/Akihiko/normal.gbapal");
@@ -62,15 +62,15 @@ static const u16 sFieldMugshotPal_AkihikoSerious[] = INCBIN_U16("graphics/field_
 static const u16 sFieldMugshotPal_AkihikoConfident[] = INCBIN_U16("graphics/field_mugshots/Akihiko/confident.gbapal");*/
 
 //Shinjiro
-static const u32 sFieldMugshotGfx_ShinjiroNormal[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/normal.4bpp.lz");
-static const u32 sFieldMugshotGfx_ShinjiroMad[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/mad.4bpp.lz");
-static const u32 sFieldMugshotGfx_ShinjiroDoubt[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/doubt.4bpp.lz");
-static const u32 sFieldMugshotGfx_ShinjiroSurprised[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/surprised.4bpp.lz");
-static const u32 sFieldMugshotGfx_ShinjiroSmile[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/smile.4bpp.lz");
-static const u32 sFieldMugshotGfx_ShinjiroStruggled[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/struggled.4bpp.lz");
-static const u32 sFieldMugshotGfx_ShinjiroSerious[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/serious.4bpp.lz");
-static const u32 sFieldMugshotGfx_ShinjiroConfident[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/confident.4bpp.lz");
-static const u32 sFieldMugshotGfx_ShinjiroGeez[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/geez.4bpp.lz");
+static const u32 sFieldMugshotGfx_ShinjiroNormal[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/normal.4bpp.smol");
+static const u32 sFieldMugshotGfx_ShinjiroMad[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/mad.4bpp.smol");
+static const u32 sFieldMugshotGfx_ShinjiroDoubt[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/doubt.4bpp.smol");
+static const u32 sFieldMugshotGfx_ShinjiroSurprised[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/surprised.4bpp.smol");
+static const u32 sFieldMugshotGfx_ShinjiroSmile[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/smile.4bpp.smol");
+static const u32 sFieldMugshotGfx_ShinjiroStruggled[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/struggled.4bpp.smol");
+static const u32 sFieldMugshotGfx_ShinjiroSerious[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/serious.4bpp.smol");
+static const u32 sFieldMugshotGfx_ShinjiroConfident[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/confident.4bpp.smol");
+static const u32 sFieldMugshotGfx_ShinjiroGeez[] = INCBIN_U32("graphics/field_mugshots/Shinjiro/geez.4bpp.smol");
 
 static const u16 sFieldMugshotPal_ShinjiroNormal[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/normal.gbapal");
 /*static const u16 sFieldMugshotPal_ShinjiroMad[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/mad.gbapal");
@@ -83,9 +83,9 @@ static const u16 sFieldMugshotPal_ShinjiroConfident[] = INCBIN_U16("graphics/fie
 static const u16 sFieldMugshotPal_ShinjiroGeez[] = INCBIN_U16("graphics/field_mugshots/Shinjiro/geez.gbapal");*/
 
 //Inteleon
-static const u32 sFieldMugshotGfx_InteleonNormal[] = INCBIN_U32("graphics/field_mugshots/Inteleon/normal.4bpp.lz");
-static const u32 sFieldMugshotGfx_InteleonDoubt[] = INCBIN_U32("graphics/field_mugshots/Inteleon/doubt.4bpp.lz");
-static const u32 sFieldMugshotGfx_InteleonSerious[] = INCBIN_U32("graphics/field_mugshots/Inteleon/serious.4bpp.lz");
+static const u32 sFieldMugshotGfx_InteleonNormal[] = INCBIN_U32("graphics/field_mugshots/Inteleon/normal.4bpp.smol");
+static const u32 sFieldMugshotGfx_InteleonDoubt[] = INCBIN_U32("graphics/field_mugshots/Inteleon/doubt.4bpp.smol");
+static const u32 sFieldMugshotGfx_InteleonSerious[] = INCBIN_U32("graphics/field_mugshots/Inteleon/serious.4bpp.smol");
 
 static const u16 sFieldMugshotPal_InteleonNormal[] = INCBIN_U16("graphics/field_mugshots/Inteleon/normal.gbapal");
 /*static const u16 sFieldMugshotPal_InteleonDoubt[] = INCBIN_U16("graphics/field_mugshots/Inteleon/doubt.gbapal");

@@ -645,7 +645,9 @@ script Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle {
             msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Don't underestimate me."))
             closemessage
             subvar(VAR_SHINJIRO_RELATIONSHIP_POINTS, 3) //current point: 97
-            goto(Route2_Eventscript_SelectingPartyShinjiroFirstBattle)
+            trainerbattle_no_intro(TRAINER_SHINJIRO_ROUTE_2, ShinjiroFirstBattleDefeated)
+            specialvar(VAR_RESULT, GetBattleOutcome)
+            goto(Route2__Eventscript_ShinjiroFirstBattleResult)
             release
         }
     }
@@ -690,30 +692,13 @@ script Route2_Eventscript_SelectingPartyShinjiroFirstBattle {
     lock
     setflag(FLAG_NO_WHITEOUT)
     setflag(FLAG_NO_BAG_USE)
-    special(ChooseHalfPartyForBattle)
-    waitstate()
-    if (var(VAR_RESULT) == FALSE){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Let's pick 3 Pokémon to fight. Shinji is waiting.)"))
-        closemessage
-        goto (Route2_Eventscript_SelectingPartyShinjiroFirstBattle)
-    }
-    else {
-        special(ReducePlayerPartyToSelectedMons)
-        setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SET_DATA)
-	    setvar (VAR_0x8005, FRONTIER_DATA_SELECTED_MON_ORDER)
-        special (CallFrontierUtilFunc)
-        setvar (VAR_0x8004, SPECIAL_BATTLE_MULTI)
-        setvar (VAR_0x8005, 3) // minimum number of mon
-        clearflag(FLAG_DONT_TRANSITION_MUSIC)
-        trainerbattle_no_intro(TRAINER_SHINJIRO_ROUTE_2, ShinjiroFirstBattleDefeated)
-        fwdtime(23, 20)
-        fadenewbgm(MUS_OCEANIC_MUSEUM)
-        setvar (VAR_0x8004, FRONTIER_UTIL_FUNC_SAVE_PARTY)
-        special (CallFrontierUtilFunc)
-	    special (LoadPlayerParty)
-        goto (Route2__Eventscript_ShinjiroFirstBattleResult)       
-    }
-    release
+    clearflag(FLAG_DONT_TRANSITION_MUSIC)
+    trainerbattle_selectmons(TRAINER_SHINJIRO_ROUTE_2, ShinjiroFirstBattleDefeated, Route2_Eventscript_SelectingPartyShinjiroFirstBattle_Cancel, Route2__Eventscript_ShinjiroFirstBattleResult, 3)
+}
+script Route2_Eventscript_SelectingPartyShinjiroFirstBattle_Cancel{
+    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Let's pick 3 Pokémon to fight. Shinji is waiting.)"))
+    closemessage
+    goto (Route2_Eventscript_SelectingPartyShinjiroFirstBattle)
 }
 
 text ShinjiroFirstBattleDefeated {
@@ -721,26 +706,27 @@ text ShinjiroFirstBattleDefeated {
 }
 
 script Route2__Eventscript_ShinjiroFirstBattleResult {
+    fwdtime(23, 20)
+    playbgm(MUS_OCEANIC_MUSEUM, TRUE)
     lock
-    specialvar(VAR_RESULT, GetBattleOutcome)
-        if (var(VAR_RESULT) == B_OUTCOME_WON && var(VAR_SHINJIRO_RELATIONSHIP_POINTS) == 97){
-            msgbox (Route2_Eventscript_WonInShinjiroFirstBattlePointDown)
-            closemessage
-        }
-        elif (var(VAR_RESULT) == B_OUTCOME_WON && var(VAR_SHINJIRO_RELATIONSHIP_POINTS) == 103){
-            msgbox (Route2_Eventscript_WonInShinjiroFirstBattlePointUp)
-            closemessage
-        }
-        elif (var(VAR_RESULT) != B_OUTCOME_WON && var(VAR_SHINJIRO_RELATIONSHIP_POINTS) == 97){
-            bufferleadmonspeciesname(STR_VAR_1)
-            msgbox (Route2_Eventscript_LostInShinjiroFirstBattlePointDown)
-            closemessage
-        }
-        else{
-            bufferleadmonspeciesname(STR_VAR_1)
-            msgbox (Route2_Eventscript_LostInShinjiroFirstBattlePointUp)
-            closemessage
-        }
+    if (var(VAR_RESULT) == B_OUTCOME_WON && var(VAR_SHINJIRO_RELATIONSHIP_POINTS) == 97){
+        msgbox (Route2_Eventscript_WonInShinjiroFirstBattlePointDown)
+        closemessage
+    }
+    elif (var(VAR_RESULT) == B_OUTCOME_WON && var(VAR_SHINJIRO_RELATIONSHIP_POINTS) == 103){
+        msgbox (Route2_Eventscript_WonInShinjiroFirstBattlePointUp)
+        closemessage
+    }
+    elif (var(VAR_RESULT) != B_OUTCOME_WON && var(VAR_SHINJIRO_RELATIONSHIP_POINTS) == 97){
+        bufferleadmonspeciesname(STR_VAR_1)
+        msgbox (Route2_Eventscript_LostInShinjiroFirstBattlePointDown)
+        closemessage
+    }
+    else{
+        bufferleadmonspeciesname(STR_VAR_1)
+        msgbox (Route2_Eventscript_LostInShinjiroFirstBattlePointUp)
+        closemessage
+    }
     goto (Route2_Eventscript_PostShinjiroFirstBattle)
     release
 }

@@ -1,6 +1,7 @@
 #include "option_menu.h"
 #include "heat_start_menu.h"
 #include "global.h"
+#include "graphics.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
 #include "battle_pyramid_bag.h"
@@ -204,22 +205,22 @@ static const struct WindowTemplate sSaveInfoWindowTemplate = {
 
 static const struct WindowTemplate sWindowTemplate_QuestButton = {
     .bg = 0,
-    .tilemapLeft = 0,
+    .tilemapLeft = 10,
     .tilemapTop = 15,
-    .width = 7,
+    .width = 8,
     .height = 2,
-    .paletteNum = 14,
+    .paletteNum = 15,
     .baseBlock = 148
 };
 
 static const struct WindowTemplate sWindowTemplate_CompanionsButton = {
     .bg = 0,
-    .tilemapLeft = 8,
+    .tilemapLeft = 0,
     .tilemapTop = 15,
-    .width = 10,
+    .width = 9,
     .height = 2,
-    .paletteNum = 14,
-    .baseBlock = 148 +(7*2)
+    .paletteNum = 15,
+    .baseBlock = 148 +(8*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_MapButton = {
@@ -228,8 +229,8 @@ static const struct WindowTemplate sWindowTemplate_MapButton = {
     .tilemapTop = 15,
     .width = 6,
     .height = 2,
-    .paletteNum = 14,
-    .baseBlock = 148 +(7*2) +(10*2)
+    .paletteNum = 15,
+    .baseBlock = 148 +(8*2) +(9*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_StartClock = {
@@ -238,8 +239,8 @@ static const struct WindowTemplate sWindowTemplate_StartClock = {
   .tilemapTop = 17, 
   .width = 12, // If you want to shorten the dates to Sat., Sun., etc., change this to 9
   .height = 2, 
-  .paletteNum = 14,
-  .baseBlock = 148 +(7*2) +(10*2) + (6*2)
+  .paletteNum = 15,
+  .baseBlock = 148 +(8*2) +(9*2) + (6*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_MenuName = {
@@ -248,8 +249,8 @@ static const struct WindowTemplate sWindowTemplate_MenuName = {
   .tilemapTop = 17, 
   .width = 7, 
   .height = 2, 
-  .paletteNum = 14,
-  .baseBlock = 148 +(7*2) +(10*2) + (6*2) + (12*2)
+  .paletteNum = 15,
+  .baseBlock = 148 +(8*2) +(9*2) + (6*2) + (12*2)
 };
 
 static const struct WindowTemplate sWindowTemplate_SafariBalls = {
@@ -258,7 +259,7 @@ static const struct WindowTemplate sWindowTemplate_SafariBalls = {
     .tilemapTop = 1,
     .width = 7,
     .height = 4,
-    .paletteNum = 14,
+    .paletteNum = 15,
     .baseBlock = 148 +(7*2) +(10*2) + (6*2) + (12*2) +(7*2)
 };
 
@@ -648,11 +649,10 @@ static const u8 gText_CurrentTimeAMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VA
 static const u8 gText_CurrentTimePM[]    = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1}:{STR_VAR_2} PM");
 static const u8 gText_CurrentTimePMOff[] = _("  {STR_VAR_3} {CLEAR_TO 51}{STR_VAR_1} {STR_VAR_2} PM");
 
-static const u8 gText_QuestButton[]  = _("  {L_BUTTON} Quest");
+static const u8 gText_QuestButton[]  = _(" {SELECT_BUTTON} Quest");
 static const u8 gText_MapButton[]    = _("  Map {R_BUTTON}");
-static const u8 gText_CompanionsButton[] = _(" {SELECT_BUTTON} Companion");
+static const u8 gText_CompanionsButton[] = _(" {L_BUTTON} Companion");
 static const u8 gText_DaysLeft[] = _(" Days left:");
-static const u8 gText_NumberofDays [] = _("");
 
 static void SetSelectedMenu(void) {
   if (FlagGet(DN_FLAG_DEXNAV_GET) == TRUE) {
@@ -821,9 +821,9 @@ static void HeatStartMenu_LoadBgGfx(void) {
         DecompressDataWithHeaderWram(sStartMenuTilemapSafari, buf);
     }
 
-    // Load the standard menu palette
-    LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
-
+    // Load the field text box palette
+    //LoadPalette(gStandardMenuPalette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
+    LoadPalette(gMessageBox_Pal, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     // Load the start menu palette based on the persistent setting
     const u16 *selectedPalette = GetStartMenuPalette(gSaveBlock2Ptr->optionsStartMenuPalette);
     LoadPalette(selectedPalette, BG_PLTT_ID(14), PLTT_SIZE_4BPP);
@@ -837,18 +837,18 @@ static void HeatStartMenu_ShowQuestButtons (void)
     sHeatStartMenu->sQuestButtonWindowId = AddWindow(&sWindowTemplate_QuestButton);
     FillWindowPixelBuffer(sHeatStartMenu->sQuestButtonWindowId, PIXEL_FILL(0));
     PutWindowTilemap(sHeatStartMenu->sQuestButtonWindowId);
-    AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 0, 0, 0x1, 0x0, 14);
+    AddTextPrinterParameterized2(sHeatStartMenu->sQuestButtonWindowId, FONT_SMALL, gText_QuestButton, 0, 0, 2, 0x0, 1);
     CopyWindowToVram(sHeatStartMenu->sQuestButtonWindowId, COPYWIN_FULL);
   }
 }
 
 static void HeatStartMenu_ShowCompanionsButtons (void)
 {
-  if (FlagGet(FLAG_COMPANION_MENU) == TRUE){
+  if (FlagGet(FLAG_COMPANION_MENU_GET) == TRUE){
     sHeatStartMenu->sCompanionsButonWindowId = AddWindow(&sWindowTemplate_CompanionsButton);
     FillWindowPixelBuffer(sHeatStartMenu->sCompanionsButonWindowId, PIXEL_FILL(0));
     PutWindowTilemap(sHeatStartMenu->sCompanionsButonWindowId);
-    AddTextPrinterParameterized2(sHeatStartMenu->sCompanionsButonWindowId, FONT_SMALL, gText_CompanionsButton, 0, 0, 0x1, 0x0, 14);
+    AddTextPrinterParameterized2(sHeatStartMenu->sCompanionsButonWindowId, FONT_SMALL, gText_CompanionsButton, 0, 0, 2, 0x0, 1);
     CopyWindowToVram(sHeatStartMenu->sCompanionsButonWindowId, COPYWIN_FULL);
   }
 }
@@ -861,11 +861,11 @@ static void HeatStartMenu_ShowDaysLeftWindow (void)
     PutWindowTilemap(sHeatStartMenu->sDaysLeftWindowId);
     ConvertIntToDecimalStringN(gStringVar1, VarGet(VAR_DAYS_LEFT), STR_CONV_MODE_LEADING_ZEROS, 2);
 
-    AddTextPrinterParameterizedCustom(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gText_DaysLeft, 0, 1, 0, 0, 0x1, 0x0, 2);
+    AddTextPrinterParameterizedCustom(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gText_DaysLeft, 0, 1, 0, 0, 2, 0x0, 1);
     if (VarGet(VAR_DAYS_LEFT) <= 3)
       AddTextPrinterParameterizedCustom(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gStringVar1, 52, 1, 0, 0, 4, 0x0, 5);
     else
-      AddTextPrinterParameterizedCustom(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gStringVar1, 52, 1, 0, 0, 1, 0x0, 2);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sDaysLeftWindowId, FONT_SMALL_NARROW, gStringVar1, 52, 1, 0, 0, 2, 0x0, 1);
 
     CopyWindowToVram(sHeatStartMenu->sDaysLeftWindowId, COPYWIN_FULL);
   }
@@ -876,7 +876,7 @@ static void HeatStartMenu_ShowMapButtons (void)
   sHeatStartMenu->sMapButtonWindowId = AddWindow(&sWindowTemplate_MapButton);
   FillWindowPixelBuffer(sHeatStartMenu->sMapButtonWindowId, PIXEL_FILL(0));
   PutWindowTilemap(sHeatStartMenu->sMapButtonWindowId);
-  AddTextPrinterParameterized2(sHeatStartMenu->sMapButtonWindowId, FONT_SMALL, gText_MapButton, 0, 0, 0x1, 0x0, 14);
+  AddTextPrinterParameterized2(sHeatStartMenu->sMapButtonWindowId, FONT_SMALL, gText_MapButton, 0, 0, 2, 0x0, 1);
   CopyWindowToVram(sHeatStartMenu->sMapButtonWindowId, COPYWIN_FULL);
 }
 
@@ -888,7 +888,7 @@ static void HeatStartMenu_ShowTimeWindow(void)
   struct SiiRtcInfo *rtc = FakeRtc_GetCurrentTime();
       // print window
   sHeatStartMenu->sStartClockWindowId = AddWindow(&sWindowTemplate_StartClock);
-  FillWindowPixelBuffer(sHeatStartMenu->sStartClockWindowId, PIXEL_FILL(TEXT_COLOR_WHITE));
+  FillWindowPixelBuffer(sHeatStartMenu->sStartClockWindowId, PIXEL_FILL(1));
   PutWindowTilemap(sHeatStartMenu->sStartClockWindowId);
 	FlagSet(FLAG_TEMP_5);
 
@@ -905,7 +905,7 @@ static void HeatStartMenu_ShowTimeWindow(void)
         else
             StringExpandPlaceholders(gStringVar4, gText_CurrentTimeAM);  
     
-	AddTextPrinterParameterizedCustom(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 14, 0x0, 0);
+	AddTextPrinterParameterizedCustom(sHeatStartMenu->sStartClockWindowId, 1, gStringVar4, 0, 1, 0xFF, NULL, 2, 0x0, 0);
 	CopyWindowToVram(sHeatStartMenu->sStartClockWindowId, COPYWIN_GFX);
 }
 
@@ -967,28 +967,28 @@ static void HeatStartMenu_UpdateMenuName(void) {
 
   switch(menuSelected) {
     case MENU_POKETCH:
-      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Poketch, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Poketch, 1, 0, 0xFF, NULL, 2, 0x0, 0);
       break;
     case MENU_POKEDEX:
-      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Pokedex, 1, 0, 0xFF, NULL, 2, 0x0, 0);
       break;
     case MENU_PARTY:
-      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Party, 1, 0, 0xFF, NULL, 2, 0x0, 0);
       break;
     case MENU_BAG:
-      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Bag, 1, 0, 0xFF, NULL, 2, 0x0, 0);
       break;
     case MENU_TRAINER_CARD:
-      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Trainer, 1, 0, 0xFF, NULL, 2, 0x0, 0);
       break;
     case MENU_SAVE:
-      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Save, 1, 0, 0xFF, NULL, 2, 0x0, 0);
       break;
     case MENU_OPTIONS:
-      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Options, 1, 0, 0xFF, NULL, 2, 0x0, 0);
       break;
     case MENU_FLAG:
-      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL, 14, 0x0, 0);
+      AddTextPrinterParameterizedCustom(sHeatStartMenu->sMenuNameWindowId, 1, gText_Flag, 1, 0, 0xFF, NULL, 2, 0x0, 0);
       break;
   }
   CopyWindowToVram(sHeatStartMenu->sMenuNameWindowId, COPYWIN_GFX);
@@ -1558,18 +1558,18 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
       }
       sHeatStartMenu->loadState = 1;
     }
-  } else if (JOY_NEW(L_BUTTON) &&sHeatStartMenu->loadState == 0 && FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE) {
+  } else if (JOY_NEW(SELECT_BUTTON) &&sHeatStartMenu->loadState == 0 && FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE) {
     PlaySE(SE_SELECT);
     DestroyTask(taskId);
     HeatStartMenu_ExitAndClearTilemap();  
     FadeScreen(FADE_TO_BLACK, 0);
     QuestMenuCallback();
 
-  } else if (JOY_NEW(SELECT_BUTTON) &&sHeatStartMenu->loadState == 0 && FlagGet(FLAG_COMPANION_MENU) == TRUE) {
+  } else if (JOY_NEW(L_BUTTON) &&sHeatStartMenu->loadState == 0 && FlagGet(FLAG_COMPANION_MENU_GET) == TRUE) {
     PlaySE(SE_SELECT);
     DestroyTask(taskId);
     HeatStartMenu_ExitAndClearTilemap();
-    OpenOutfitMenu(CB2_ReturnToField);
+    OpenOutfitMenu(CB2_ReturnToFieldWithOpenMenu);
 
     } else if (JOY_NEW(R_BUTTON) &&sHeatStartMenu->loadState == 0) {
     PlaySE(SE_SELECT);

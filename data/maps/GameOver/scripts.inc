@@ -38,15 +38,13 @@ Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle::
 # 21 "data/maps/GameOver/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle_1
-# 37 "data/maps/GameOver/scripts.pory"
+# 36 "data/maps/GameOver/scripts.pory"
 	msgbox Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle_Text_2
-# 38 "data/maps/GameOver/scripts.pory"
+# 37 "data/maps/GameOver/scripts.pory"
 	closemessage
-# 39 "data/maps/GameOver/scripts.pory"
+# 38 "data/maps/GameOver/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 40 "data/maps/GameOver/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 41 "data/maps/GameOver/scripts.pory"
+# 39 "data/maps/GameOver/scripts.pory"
 	fadenewbgm MUS_NONE
 	return
 
@@ -68,146 +66,140 @@ Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle_1:
 # 29 "data/maps/GameOver/scripts.pory"
 	setvar VAR_MITSURU_RELATIONSHIP_POINTS, 100
 # 30 "data/maps/GameOver/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 31 "data/maps/GameOver/scripts.pory"
 	subvar VAR_TIME_RESET_ATTEMPTS, 1
-# 32 "data/maps/GameOver/scripts.pory"
+# 31 "data/maps/GameOver/scripts.pory"
 	special SetCB2WhiteOut
-# 33 "data/maps/GameOver/scripts.pory"
+# 32 "data/maps/GameOver/scripts.pory"
 	releaseall
 	end
 
 
-# 45 "data/maps/GameOver/scripts.pory"
+# 43 "data/maps/GameOver/scripts.pory"
 SlowlyShowGameOver:
-# 46 "data/maps/GameOver/scripts.pory"
+# 44 "data/maps/GameOver/scripts.pory"
 	walk_right
-# 46 "data/maps/GameOver/scripts.pory"
+# 44 "data/maps/GameOver/scripts.pory"
 	walk_right
-# 46 "data/maps/GameOver/scripts.pory"
+# 44 "data/maps/GameOver/scripts.pory"
 	walk_right
-# 46 "data/maps/GameOver/scripts.pory"
+# 44 "data/maps/GameOver/scripts.pory"
 	walk_right
-# 46 "data/maps/GameOver/scripts.pory"
+# 44 "data/maps/GameOver/scripts.pory"
 	walk_right
-# 46 "data/maps/GameOver/scripts.pory"
+# 44 "data/maps/GameOver/scripts.pory"
 	walk_right
-# 46 "data/maps/GameOver/scripts.pory"
+# 44 "data/maps/GameOver/scripts.pory"
 	walk_right
-# 46 "data/maps/GameOver/scripts.pory"
+# 44 "data/maps/GameOver/scripts.pory"
 	walk_right
-# 46 "data/maps/GameOver/scripts.pory"
+# 44 "data/maps/GameOver/scripts.pory"
 	walk_right
 	step_end
 
 Eventscript_GAMEOVERFromMissingDeadline::
-# 50 "data/maps/GameOver/scripts.pory"
+# 48 "data/maps/GameOver/scripts.pory"
 	lockall
-# 51 "data/maps/GameOver/scripts.pory"
+# 49 "data/maps/GameOver/scripts.pory"
 	applymovement LOCALID_PLAYER, SlowlyShowGameOver
-# 52 "data/maps/GameOver/scripts.pory"
+# 50 "data/maps/GameOver/scripts.pory"
 	waitmovement 0
-# 53 "data/maps/GameOver/scripts.pory"
+# 51 "data/maps/GameOver/scripts.pory"
 	delay 180
-# 54 "data/maps/GameOver/scripts.pory"
+# 52 "data/maps/GameOver/scripts.pory"
 	compare VAR_TIME_RESET_ATTEMPTS, 0
 	goto_if_eq Eventscript_GAMEOVERFromMissingDeadline_2
 Eventscript_GAMEOVERFromMissingDeadline_1:
-# 57 "data/maps/GameOver/scripts.pory"
+# 55 "data/maps/GameOver/scripts.pory"
 	buffertimeresetattempts STR_VAR_1
-# 58 "data/maps/GameOver/scripts.pory"
+# 56 "data/maps/GameOver/scripts.pory"
 	msgbox Eventscript_GAMEOVERFromMissingDeadline_Text_0
+# 57 "data/maps/GameOver/scripts.pory"
+	closemessage
+# 58 "data/maps/GameOver/scripts.pory"
+	msgbox Eventscript_GAMEOVERFromMissingDeadline_Text_1, MSGBOX_YESNO
 # 59 "data/maps/GameOver/scripts.pory"
 	closemessage
 # 60 "data/maps/GameOver/scripts.pory"
-	msgbox Eventscript_GAMEOVERFromMissingDeadline_Text_1, MSGBOX_YESNO
-# 61 "data/maps/GameOver/scripts.pory"
-	closemessage
-# 62 "data/maps/GameOver/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Eventscript_GAMEOVERFromMissingDeadline_4
-# 76 "data/maps/GameOver/scripts.pory"
+# 74 "data/maps/GameOver/scripts.pory"
 	msgbox Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle_Text_2
-# 77 "data/maps/GameOver/scripts.pory"
+# 75 "data/maps/GameOver/scripts.pory"
 	closemessage
-# 78 "data/maps/GameOver/scripts.pory"
+# 76 "data/maps/GameOver/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 79 "data/maps/GameOver/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 80 "data/maps/GameOver/scripts.pory"
+# 77 "data/maps/GameOver/scripts.pory"
 	fadenewbgm MUS_NONE
 	return
 
 Eventscript_GAMEOVERFromMissingDeadline_2:
-# 55 "data/maps/GameOver/scripts.pory"
+# 53 "data/maps/GameOver/scripts.pory"
 	goto Eventscript_GAMEOVER_FR
 	goto Eventscript_GAMEOVERFromMissingDeadline_1
 
 Eventscript_GAMEOVERFromMissingDeadline_4:
-# 63 "data/maps/GameOver/scripts.pory"
+# 61 "data/maps/GameOver/scripts.pory"
 	playse SE_USE_ITEM
-# 64 "data/maps/GameOver/scripts.pory"
+# 62 "data/maps/GameOver/scripts.pory"
 	waitse
-# 65 "data/maps/GameOver/scripts.pory"
+# 63 "data/maps/GameOver/scripts.pory"
 	delay 20
-# 66 "data/maps/GameOver/scripts.pory"
+# 64 "data/maps/GameOver/scripts.pory"
 	msgbox Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle_Text_1
-# 67 "data/maps/GameOver/scripts.pory"
+# 65 "data/maps/GameOver/scripts.pory"
 	closemessage
-# 68 "data/maps/GameOver/scripts.pory"
+# 66 "data/maps/GameOver/scripts.pory"
 	special HealPlayerParty
-# 69 "data/maps/GameOver/scripts.pory"
+# 67 "data/maps/GameOver/scripts.pory"
 	rewind3days
-# 70 "data/maps/GameOver/scripts.pory"
+# 68 "data/maps/GameOver/scripts.pory"
 	subvar VAR_TIME_RESET_ATTEMPTS, 1
-# 71 "data/maps/GameOver/scripts.pory"
+# 69 "data/maps/GameOver/scripts.pory"
 	special SetCB2WhiteOut
-# 72 "data/maps/GameOver/scripts.pory"
+# 70 "data/maps/GameOver/scripts.pory"
 	releaseall
 	end
 
 
 Eventscript_GAMEOVER_FR::
-# 85 "data/maps/GameOver/scripts.pory"
+# 82 "data/maps/GameOver/scripts.pory"
 	lockall
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 	applymovement LOCALID_PLAYER, Eventscript_GAMEOVER_FR_Movement_0
-# 87 "data/maps/GameOver/scripts.pory"
+# 84 "data/maps/GameOver/scripts.pory"
 	delay 180
-# 88 "data/maps/GameOver/scripts.pory"
+# 85 "data/maps/GameOver/scripts.pory"
 	msgbox Eventscript_GAMEOVER_FR_Text_0
-# 90 "data/maps/GameOver/scripts.pory"
+# 87 "data/maps/GameOver/scripts.pory"
 	closemessage
-# 91 "data/maps/GameOver/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 92 "data/maps/GameOver/scripts.pory"
+# 88 "data/maps/GameOver/scripts.pory"
 	fadenewbgm MUS_NONE
-# 93 "data/maps/GameOver/scripts.pory"
+# 89 "data/maps/GameOver/scripts.pory"
 	waitstate
 	return
 
 
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 Eventscript_GAMEOVER_FR_Movement_0:
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 	walk_slow_right
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 	walk_slow_right
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 	walk_slow_right
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 	walk_slow_right
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 	walk_slow_right
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 	walk_slow_right
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 	walk_slow_right
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 	walk_slow_right
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 	walk_slow_right
-# 86 "data/maps/GameOver/scripts.pory"
+# 83 "data/maps/GameOver/scripts.pory"
 	walk_slow_right
 	step_end
 
@@ -223,20 +215,20 @@ Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle_Text_1:
 	.string "Make your choice wisely this time.$"
 
 Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle_Text_2:
-# 37 "data/maps/GameOver/scripts.pory"
+# 36 "data/maps/GameOver/scripts.pory"
 	.string "Enjoy the eternal darkness.$"
 
 Eventscript_GAMEOVERFromMissingDeadline_Text_0:
-# 58 "data/maps/GameOver/scripts.pory"
+# 56 "data/maps/GameOver/scripts.pory"
 	.string "Do you want to rewind the time to 3 days\n"
 	.string "left before the deadline?$"
 
 Eventscript_GAMEOVERFromMissingDeadline_Text_1:
-# 60 "data/maps/GameOver/scripts.pory"
+# 58 "data/maps/GameOver/scripts.pory"
 	.string "{COLOR GREEN}Time rewind attempt(s) left:\n"
 	.string "{COLOR RED}{STR_VAR_1}{COLOR 2}.$"
 
 Eventscript_GAMEOVER_FR_Text_0:
-# 88 "data/maps/GameOver/scripts.pory"
+# 85 "data/maps/GameOver/scripts.pory"
 	.string "You have {COLOR RED}0 {COLOR 2}time rewind attempt left.\n"
 	.string "Enjoy the eternal darkness.$"

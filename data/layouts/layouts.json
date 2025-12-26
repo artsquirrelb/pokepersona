@@ -5541,7 +5541,7 @@
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_Gen4Indoor",
-      "secondary_tileset": "gTileset_InsideOfTruck",
+      "secondary_tileset": "gTileset_Unused1",
       "border_filepath": "data/layouts/GameOver/border.bin",
       "blockdata_filepath": "data/layouts/GameOver/map.bin"
     },

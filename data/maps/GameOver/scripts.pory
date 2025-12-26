@@ -27,7 +27,6 @@ script Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle {
         special(HealPlayerParty)
         setvar(VAR_AKIHIKOS_INTRO_STATE, 34)
         setvar(VAR_MITSURU_RELATIONSHIP_POINTS, 100)
-        clearflag(FLAG_DONT_TRANSITION_MUSIC)
         subvar(VAR_TIME_RESET_ATTEMPTS, 1)
         special(SetCB2WhiteOut)
         releaseall
@@ -37,7 +36,6 @@ script Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle {
         msgbox(format("Enjoy the eternal darkness."))
         closemessage
         fadescreenswapbuffers(FADE_TO_BLACK)
-        clearflag(FLAG_DONT_TRANSITION_MUSIC)
         fadenewbgm(MUS_NONE)
     }
 }
@@ -76,7 +74,6 @@ script Eventscript_GAMEOVERFromMissingDeadline {
         msgbox(format("Enjoy the eternal darkness."))
         closemessage
         fadescreenswapbuffers(FADE_TO_BLACK)
-        clearflag(FLAG_DONT_TRANSITION_MUSIC)
         fadenewbgm(MUS_NONE)
     }
 }
@@ -88,7 +85,6 @@ script Eventscript_GAMEOVER_FR {
     msgbox(format("You have {COLOR RED}0 {COLOR 2}time rewind attempt left.\n
     Enjoy the eternal darkness."))
     closemessage
-    clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fadenewbgm(MUS_NONE)
     waitstate
 }

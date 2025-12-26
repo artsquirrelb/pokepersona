@@ -207,7 +207,7 @@ SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow::
 # 117 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	closemessage
 # 118 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	setflag FLAG_COMPANION_MENU
+	setflag FLAG_COMPANION_MENU_GET
 # 119 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	unlockcharacter CHARACTER_SHINJIRO
 # 120 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"

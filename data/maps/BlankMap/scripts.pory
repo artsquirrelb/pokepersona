@@ -1,10 +1,6 @@
 mapscripts BlankMap_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_SPAWN_INVISIBLE)
-        if (var(VAR_MITSURU_RELATIONSHIP_POINTS) == 0){
-           playbgm(MUS_END, TRUE) 
-        }
-    
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 7: SunshineWoods_Eventscript_WarpBackToOrphanage
@@ -62,7 +58,7 @@ script SunshineTown_PokemonCenter_Eventscript_Onframe13 {
 script SunshineOrphanage_Burning_Eventscript_OnFrame19 {
     lock
     delay(30)
-    warpsilent(MAP_SUNSHINE_TOWN_RIVERBANK, 13, 5)
+    warpsilent(MAP_SUNSHINE_TOWN_RIVERBANK, 17, 5)
     clearflag(FLAG_SPAWN_INVISIBLE)
     release
 }
@@ -71,7 +67,7 @@ script SunshineTownRiverbank_Eventscript_OnFrame20 {
     lock
     delay(30)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 21)
-    warpsilent(MAP_SUNSHINE_TOWN_RIVERBANK, 13, 0)
+    warpsilent(MAP_SUNSHINE_TOWN_RIVERBANK, 17, 0)
     clearflag(FLAG_SPAWN_INVISIBLE)
 }
 

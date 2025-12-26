@@ -1004,7 +1004,7 @@ static const u8 sQuestMenuWindowFontColors[][4] =
 	{
 		//Footer flavor text
 		TEXT_COLOR_TRANSPARENT,
-		TEXT_COLOR_WHITE,
+		2,
 		TEXT_COLOR_TRANSPARENT
 	},
 };
@@ -1219,6 +1219,7 @@ static bool8 LoadGraphics(void)
 			break;
 		case 2:
 			LoadPalette(sQuestMenuBgPals, 0x00, 0x60);
+			LoadPalette(gMessageBox_Pal, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
 			sStateDataPtr->data[0]++;
 			break;
 		case 3:
@@ -1534,7 +1535,7 @@ static void BuildMenuTemplate(void)
 	gMultiuseListMenuTemplate.upText_Y = 2;
 	gMultiuseListMenuTemplate.maxShowed = sStateDataPtr->maxShowed;
 	gMultiuseListMenuTemplate.fontId = FONT_SHORT_NARROW;
-	gMultiuseListMenuTemplate.cursorPal = 2;
+	gMultiuseListMenuTemplate.cursorPal = 1;
 	gMultiuseListMenuTemplate.fillValue = 0;
 	gMultiuseListMenuTemplate.cursorShadowPal = 0;
 	gMultiuseListMenuTemplate.moveCursorFunc = MoveCursorFunc;

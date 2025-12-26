@@ -135,7 +135,7 @@ MansionMainHall_Eventscript_TakeharuStoppingMitsuru::
 # 83 "data/maps/MansionMainHall/scripts.pory"
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 # 84 "data/maps/MansionMainHall/scripts.pory"
-	setflag FLAG_COMPANION_MENU
+	setflag FLAG_COMPANION_MENU_GET
 # 85 "data/maps/MansionMainHall/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 86 "data/maps/MansionMainHall/scripts.pory"

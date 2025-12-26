@@ -3243,3 +3243,44 @@
 	.endif
 	.endm
 
+	@ Calls Common_Movement_WalkInPlaceFaster(Up/Down/Left/Right) for provided localid.
+	@ If wait is not provided, then waitmovement 0 is emitted. If you don't want that
+	@ emitted (ex: multiple NPCs are moving at the same time), then provide any
+	@ argument for wait.
+	.macro stepinplace localid:req, wait
+	getobjectfacingdirection \localid, VAR_0x8000
+	if (VAR_0x8000 == DIR_NORTH)
+		applymovement \localid, Common_Movement_WalkInPlaceFasterUp
+	else if (VAR_0x8000 == DIR_SOUTH)
+		applymovement \localid, Common_Movement_WalkInPlaceFasterDown
+	else if (VAR_0x8000 == DIR_WEST)
+		applymovement \localid, Common_Movement_WalkInPlaceFasterLeft
+	else if (VAR_0x8000 == DIR_EAST)
+		applymovement \localid, Common_Movement_WalkInPlaceFasterRight
+	.ifb \wait
+		waitmovement 0
+	.endif
+	.endm
+
+@ Starts a trainer battle where the player selects N Pokémon from their party.
+	@ num_pokemon: The number of Pokémon the player must choose (1-6).
+	@ The party is automatically saved/restored, and the script continues on loss.
+	@ The post_battle_script is called AFTER party restoration with VAR_RESULT set to battle outcome.
+	.macro trainerbattle_selectmons trainer:req, lose_text:req, select_cancel_script:req, post_battle_script:req, num_pokemon:req
+
+	    @ Save party to static backup (won't be overwritten by battle auto-save)
+	    special SaveSelectMonsParty
+	    fadescreen FADE_TO_BLACK
+	    setvar VAR_0x8004, \num_pokemon
+	    special ChoosePartyForStandardBattle
+	    waitstate
+	    goto_if_eq VAR_RESULT, 0, \select_cancel_script
+	    special ReducePlayerPartyToSelectedMons
+	    setvar VAR_0x8004, FRONTIER_UTIL_FUNC_SET_DATA
+	    setvar VAR_0x8005, FRONTIER_DATA_SELECTED_MON_ORDER
+	    special CallFrontierUtilFunc
+	    trainerbattle_no_intro \trainer, \lose_text
+		special LoadSelectMonsParty
+	    specialvar VAR_RESULT, GetBattleOutcome
+	    goto \post_battle_script
+	.endm

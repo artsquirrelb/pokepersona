@@ -1135,7 +1135,7 @@ Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle::
 # 630 "data/maps/Route2/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_lt Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle_1
-# 652 "data/maps/Route2/scripts.pory"
+# 654 "data/maps/Route2/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_ge Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle_2
 	return
@@ -1159,27 +1159,31 @@ Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle_1:
 # 647 "data/maps/Route2/scripts.pory"
 	subvar VAR_SHINJIRO_RELATIONSHIP_POINTS, 3
 # 648 "data/maps/Route2/scripts.pory"
-	goto Route2_Eventscript_SelectingPartyShinjiroFirstBattle
+	trainerbattle_no_intro TRAINER_SHINJIRO_ROUTE_2, ShinjiroFirstBattleDefeated
 # 649 "data/maps/Route2/scripts.pory"
+	specialvar VAR_RESULT, GetBattleOutcome
+# 650 "data/maps/Route2/scripts.pory"
+	goto Route2__Eventscript_ShinjiroFirstBattleResult
+# 651 "data/maps/Route2/scripts.pory"
 	release
 	return
 
 Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle_2:
-# 653 "data/maps/Route2/scripts.pory"
-	playse SE_SHINY
-# 654 "data/maps/Route2/scripts.pory"
-	applymovement 6, pointup2
 # 655 "data/maps/Route2/scripts.pory"
-	waitmovement 0
+	playse SE_SHINY
 # 656 "data/maps/Route2/scripts.pory"
-	addvar VAR_SHINJIRO_RELATIONSHIP_POINTS, 3
+	applymovement 6, pointup2
 # 657 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle_Text_3
+	waitmovement 0
+# 658 "data/maps/Route2/scripts.pory"
+	addvar VAR_SHINJIRO_RELATIONSHIP_POINTS, 3
 # 659 "data/maps/Route2/scripts.pory"
-	closemessage
-# 660 "data/maps/Route2/scripts.pory"
-	goto Route2_Eventscript_SelectingPartyShinjiroFirstBattle
+	msgbox Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle_Text_3
 # 661 "data/maps/Route2/scripts.pory"
+	closemessage
+# 662 "data/maps/Route2/scripts.pory"
+	goto Route2_Eventscript_SelectingPartyShinjiroFirstBattle
+# 663 "data/maps/Route2/scripts.pory"
 	release
 	return
 
@@ -1197,986 +1201,955 @@ Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle_5:
 	end
 
 
-# 665 "data/maps/Route2/scripts.pory"
+# 667 "data/maps/Route2/scripts.pory"
 emoteangry:
-# 666 "data/maps/Route2/scripts.pory"
+# 668 "data/maps/Route2/scripts.pory"
 	emote_angry
 	step_end
 
 Route2_Eventscript_InitShinjiroFirstBattle2::
-# 670 "data/maps/Route2/scripts.pory"
-	lock
-# 671 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, walkup
 # 672 "data/maps/Route2/scripts.pory"
-	waitmovement 0
+	lock
 # 673 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, faceright
+	applymovement LOCALID_PLAYER, walkup
 # 674 "data/maps/Route2/scripts.pory"
 	waitmovement 0
 # 675 "data/maps/Route2/scripts.pory"
-	goto Route2_Eventscript_InitShinjiroFirstBattle
+	applymovement LOCALID_PLAYER, faceright
 # 676 "data/maps/Route2/scripts.pory"
+	waitmovement 0
+# 677 "data/maps/Route2/scripts.pory"
+	goto Route2_Eventscript_InitShinjiroFirstBattle
+# 678 "data/maps/Route2/scripts.pory"
 	release
 	return
 
 
 Route2_Eventscript_InitShinjiroFirstBattle3::
-# 680 "data/maps/Route2/scripts.pory"
-	lock
-# 681 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, Route2_Eventscript_InitShinjiroFirstBattle3_Movement_0
 # 682 "data/maps/Route2/scripts.pory"
-	waitmovement 0
+	lock
 # 683 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, faceright
+	applymovement LOCALID_PLAYER, Route2_Eventscript_InitShinjiroFirstBattle3_Movement_0
 # 684 "data/maps/Route2/scripts.pory"
 	waitmovement 0
 # 685 "data/maps/Route2/scripts.pory"
-	goto Route2_Eventscript_InitShinjiroFirstBattle
+	applymovement LOCALID_PLAYER, faceright
 # 686 "data/maps/Route2/scripts.pory"
+	waitmovement 0
+# 687 "data/maps/Route2/scripts.pory"
+	goto Route2_Eventscript_InitShinjiroFirstBattle
+# 688 "data/maps/Route2/scripts.pory"
 	release
 	return
 
 
 Route2_Eventscript_SelectingPartyShinjiroFirstBattle::
-# 690 "data/maps/Route2/scripts.pory"
-	lock
-# 691 "data/maps/Route2/scripts.pory"
-	setflag FLAG_NO_WHITEOUT
 # 692 "data/maps/Route2/scripts.pory"
-	setflag FLAG_NO_BAG_USE
+	lock
 # 693 "data/maps/Route2/scripts.pory"
-	special ChooseHalfPartyForBattle
+	setflag FLAG_NO_WHITEOUT
 # 694 "data/maps/Route2/scripts.pory"
-	waitstate
+	setflag FLAG_NO_BAG_USE
 # 695 "data/maps/Route2/scripts.pory"
-	compare VAR_RESULT, FALSE
-	goto_if_eq Route2_Eventscript_SelectingPartyShinjiroFirstBattle_2
-# 701 "data/maps/Route2/scripts.pory"
-	special ReducePlayerPartyToSelectedMons
-# 702 "data/maps/Route2/scripts.pory"
-	setvar VAR_0x8004, FRONTIER_UTIL_FUNC_SET_DATA
-# 703 "data/maps/Route2/scripts.pory"
-	setvar VAR_0x8005, FRONTIER_DATA_SELECTED_MON_ORDER
-# 704 "data/maps/Route2/scripts.pory"
-	special CallFrontierUtilFunc
-# 705 "data/maps/Route2/scripts.pory"
-	setvar VAR_0x8004, SPECIAL_BATTLE_MULTI
-# 706 "data/maps/Route2/scripts.pory"
-	setvar VAR_0x8005, 3
-# 707 "data/maps/Route2/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
-# 708 "data/maps/Route2/scripts.pory"
-	trainerbattle_no_intro TRAINER_SHINJIRO_ROUTE_2, ShinjiroFirstBattleDefeated
-# 709 "data/maps/Route2/scripts.pory"
-	fwdtime 23, 20
-# 710 "data/maps/Route2/scripts.pory"
-	fadenewbgm MUS_OCEANIC_MUSEUM
-# 711 "data/maps/Route2/scripts.pory"
-	setvar VAR_0x8004, FRONTIER_UTIL_FUNC_SAVE_PARTY
-# 712 "data/maps/Route2/scripts.pory"
-	special CallFrontierUtilFunc
-# 713 "data/maps/Route2/scripts.pory"
-	special LoadPlayerParty
-# 714 "data/maps/Route2/scripts.pory"
-	goto Route2__Eventscript_ShinjiroFirstBattleResult
-Route2_Eventscript_SelectingPartyShinjiroFirstBattle_1:
-# 716 "data/maps/Route2/scripts.pory"
-	release
+# 696 "data/maps/Route2/scripts.pory"
+	trainerbattle_selectmons TRAINER_SHINJIRO_ROUTE_2, ShinjiroFirstBattleDefeated, Route2_Eventscript_SelectingPartyShinjiroFirstBattle_Cancel, Route2__Eventscript_ShinjiroFirstBattleResult, 3
 	return
 
-Route2_Eventscript_SelectingPartyShinjiroFirstBattle_2:
-# 696 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Eventscript_SelectingPartyShinjiroFirstBattle_Text_0
-# 697 "data/maps/Route2/scripts.pory"
+
+Route2_Eventscript_SelectingPartyShinjiroFirstBattle_Cancel::
+# 699 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Eventscript_SelectingPartyShinjiroFirstBattle_Cancel_Text_0
+# 700 "data/maps/Route2/scripts.pory"
 	closemessage
-# 698 "data/maps/Route2/scripts.pory"
+# 701 "data/maps/Route2/scripts.pory"
 	goto Route2_Eventscript_SelectingPartyShinjiroFirstBattle
-	goto Route2_Eventscript_SelectingPartyShinjiroFirstBattle_1
+	return
 
 
 Route2__Eventscript_ShinjiroFirstBattleResult::
-# 724 "data/maps/Route2/scripts.pory"
+# 709 "data/maps/Route2/scripts.pory"
+	fwdtime 23, 20
+# 710 "data/maps/Route2/scripts.pory"
+	playbgm MUS_OCEANIC_MUSEUM, TRUE
+# 711 "data/maps/Route2/scripts.pory"
 	lock
-# 725 "data/maps/Route2/scripts.pory"
-	specialvar VAR_RESULT, GetBattleOutcome
-# 726 "data/maps/Route2/scripts.pory"
+# 712 "data/maps/Route2/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq Route2__Eventscript_ShinjiroFirstBattleResult_12
 Route2__Eventscript_ShinjiroFirstBattleResult_10:
-# 730 "data/maps/Route2/scripts.pory"
+# 716 "data/maps/Route2/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_eq Route2__Eventscript_ShinjiroFirstBattleResult_9
 Route2__Eventscript_ShinjiroFirstBattleResult_7:
-# 734 "data/maps/Route2/scripts.pory"
+# 720 "data/maps/Route2/scripts.pory"
 	compare VAR_RESULT, B_OUTCOME_WON
 	goto_if_ne Route2__Eventscript_ShinjiroFirstBattleResult_6
 Route2__Eventscript_ShinjiroFirstBattleResult_5:
-# 740 "data/maps/Route2/scripts.pory"
+# 726 "data/maps/Route2/scripts.pory"
 	bufferleadmonspeciesname STR_VAR_1
-# 741 "data/maps/Route2/scripts.pory"
+# 727 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_LostInShinjiroFirstBattlePointUp
-# 742 "data/maps/Route2/scripts.pory"
+# 728 "data/maps/Route2/scripts.pory"
 	closemessage
 Route2__Eventscript_ShinjiroFirstBattleResult_1:
-# 744 "data/maps/Route2/scripts.pory"
+# 730 "data/maps/Route2/scripts.pory"
 	goto Route2_Eventscript_PostShinjiroFirstBattle
-# 745 "data/maps/Route2/scripts.pory"
+# 731 "data/maps/Route2/scripts.pory"
 	release
 	return
 
 Route2__Eventscript_ShinjiroFirstBattleResult_2:
-# 727 "data/maps/Route2/scripts.pory"
+# 713 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_WonInShinjiroFirstBattlePointDown
-# 728 "data/maps/Route2/scripts.pory"
+# 714 "data/maps/Route2/scripts.pory"
 	closemessage
 	goto Route2__Eventscript_ShinjiroFirstBattleResult_1
 
 Route2__Eventscript_ShinjiroFirstBattleResult_3:
-# 731 "data/maps/Route2/scripts.pory"
+# 717 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_WonInShinjiroFirstBattlePointUp
-# 732 "data/maps/Route2/scripts.pory"
+# 718 "data/maps/Route2/scripts.pory"
 	closemessage
 	goto Route2__Eventscript_ShinjiroFirstBattleResult_1
 
 Route2__Eventscript_ShinjiroFirstBattleResult_4:
-# 735 "data/maps/Route2/scripts.pory"
+# 721 "data/maps/Route2/scripts.pory"
 	bufferleadmonspeciesname STR_VAR_1
-# 736 "data/maps/Route2/scripts.pory"
+# 722 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_LostInShinjiroFirstBattlePointDown
-# 737 "data/maps/Route2/scripts.pory"
+# 723 "data/maps/Route2/scripts.pory"
 	closemessage
 	goto Route2__Eventscript_ShinjiroFirstBattleResult_1
 
 Route2__Eventscript_ShinjiroFirstBattleResult_6:
-# 734 "data/maps/Route2/scripts.pory"
+# 720 "data/maps/Route2/scripts.pory"
 	compare VAR_SHINJIRO_RELATIONSHIP_POINTS, 97
 	goto_if_eq Route2__Eventscript_ShinjiroFirstBattleResult_4
 	goto Route2__Eventscript_ShinjiroFirstBattleResult_5
 
 Route2__Eventscript_ShinjiroFirstBattleResult_9:
-# 730 "data/maps/Route2/scripts.pory"
+# 716 "data/maps/Route2/scripts.pory"
 	compare VAR_SHINJIRO_RELATIONSHIP_POINTS, 103
 	goto_if_eq Route2__Eventscript_ShinjiroFirstBattleResult_3
 	goto Route2__Eventscript_ShinjiroFirstBattleResult_7
 
 Route2__Eventscript_ShinjiroFirstBattleResult_12:
-# 726 "data/maps/Route2/scripts.pory"
+# 712 "data/maps/Route2/scripts.pory"
 	compare VAR_SHINJIRO_RELATIONSHIP_POINTS, 97
 	goto_if_eq Route2__Eventscript_ShinjiroFirstBattleResult_2
 	goto Route2__Eventscript_ShinjiroFirstBattleResult_10
 
 
 Route2_Eventscript_PostShinjiroFirstBattle::
-# 791 "data/maps/Route2/scripts.pory"
+# 777 "data/maps/Route2/scripts.pory"
 	lock
-# 792 "data/maps/Route2/scripts.pory"
+# 778 "data/maps/Route2/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 42
-# 793 "data/maps/Route2/scripts.pory"
+# 779 "data/maps/Route2/scripts.pory"
 	clearflag FLAG_NO_WHITEOUT
-# 794 "data/maps/Route2/scripts.pory"
+# 780 "data/maps/Route2/scripts.pory"
 	clearflag FLAG_NO_BAG_USE
-# 795 "data/maps/Route2/scripts.pory"
+# 781 "data/maps/Route2/scripts.pory"
 	playse SE_M_YAWN
-# 796 "data/maps/Route2/scripts.pory"
+# 782 "data/maps/Route2/scripts.pory"
 	applymovement 6, shakevertical
-# 797 "data/maps/Route2/scripts.pory"
+# 783 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 798 "data/maps/Route2/scripts.pory"
+# 784 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_PostShinjiroFirstBattle_Text_0
-# 802 "data/maps/Route2/scripts.pory"
+# 788 "data/maps/Route2/scripts.pory"
 	closemessage
-# 803 "data/maps/Route2/scripts.pory"
+# 789 "data/maps/Route2/scripts.pory"
 	special HealPlayerParty
-# 804 "data/maps/Route2/scripts.pory"
+# 790 "data/maps/Route2/scripts.pory"
 	warpsilent MAP_BLANK_MAP, 0, 0
 	return
 
 
-# 807 "data/maps/Route2/scripts.pory"
+# 793 "data/maps/Route2/scripts.pory"
 Route2ShinjiroGoesInsideHouse:
-# 808 "data/maps/Route2/scripts.pory"
+# 794 "data/maps/Route2/scripts.pory"
 	walk_down
-# 809 "data/maps/Route2/scripts.pory"
+# 795 "data/maps/Route2/scripts.pory"
 	walk_left
-# 809 "data/maps/Route2/scripts.pory"
+# 795 "data/maps/Route2/scripts.pory"
 	walk_left
-# 809 "data/maps/Route2/scripts.pory"
+# 795 "data/maps/Route2/scripts.pory"
 	walk_left
-# 810 "data/maps/Route2/scripts.pory"
+# 796 "data/maps/Route2/scripts.pory"
 	walk_up
-# 810 "data/maps/Route2/scripts.pory"
+# 796 "data/maps/Route2/scripts.pory"
 	walk_up
-# 810 "data/maps/Route2/scripts.pory"
+# 796 "data/maps/Route2/scripts.pory"
 	walk_up
 	step_end
 
 Route2_Eventscript_Himari::
-# 814 "data/maps/Route2/scripts.pory"
+# 800 "data/maps/Route2/scripts.pory"
 	lock
-# 815 "data/maps/Route2/scripts.pory"
+# 801 "data/maps/Route2/scripts.pory"
 	faceplayer
-# 816 "data/maps/Route2/scripts.pory"
+# 802 "data/maps/Route2/scripts.pory"
 	setspeaker Route2_Eventscript_Himari_Text_0
-# 817 "data/maps/Route2/scripts.pory"
+# 803 "data/maps/Route2/scripts.pory"
 	compare VAR_TEMP_0, 1
 	goto_if_eq Route2_Eventscript_Himari_1
-# 841 "data/maps/Route2/scripts.pory"
+# 827 "data/maps/Route2/scripts.pory"
 	compare VAR_TEMP_0, 2
 	goto_if_eq Route2_Eventscript_Himari_2
-# 849 "data/maps/Route2/scripts.pory"
+# 835 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_Himari_Text_5
-# 851 "data/maps/Route2/scripts.pory"
+# 837 "data/maps/Route2/scripts.pory"
 	closemessage
-# 852 "data/maps/Route2/scripts.pory"
+# 838 "data/maps/Route2/scripts.pory"
 	checkspecies SPECIES_ROCKRUFF, NOP_PARTY_SCREEN
-# 853 "data/maps/Route2/scripts.pory"
+# 839 "data/maps/Route2/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route2_Eventscript_Himari_9
 	return
 
 Route2_Eventscript_Himari_1:
-# 818 "data/maps/Route2/scripts.pory"
+# 804 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_Himari_Text_1, MSGBOX_YESNO
-# 819 "data/maps/Route2/scripts.pory"
+# 805 "data/maps/Route2/scripts.pory"
 	closemessage
-# 820 "data/maps/Route2/scripts.pory"
+# 806 "data/maps/Route2/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route2_Eventscript_Himari_6
-# 833 "data/maps/Route2/scripts.pory"
+# 819 "data/maps/Route2/scripts.pory"
 	playse SE_BOO
-# 834 "data/maps/Route2/scripts.pory"
+# 820 "data/maps/Route2/scripts.pory"
 	applymovement 15, emotecry
-# 835 "data/maps/Route2/scripts.pory"
+# 821 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 836 "data/maps/Route2/scripts.pory"
+# 822 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_Himari_Text_3
-# 837 "data/maps/Route2/scripts.pory"
+# 823 "data/maps/Route2/scripts.pory"
 	closemessage
-# 838 "data/maps/Route2/scripts.pory"
+# 824 "data/maps/Route2/scripts.pory"
 	release
 	end
 
 Route2_Eventscript_Himari_2:
-# 842 "data/maps/Route2/scripts.pory"
+# 828 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_Himari_Text_4
-# 844 "data/maps/Route2/scripts.pory"
+# 830 "data/maps/Route2/scripts.pory"
 	closemessage
-# 845 "data/maps/Route2/scripts.pory"
+# 831 "data/maps/Route2/scripts.pory"
 	release
 	end
 
 Route2_Eventscript_Himari_6:
-# 821 "data/maps/Route2/scripts.pory"
+# 807 "data/maps/Route2/scripts.pory"
 	playse SE_SHINY
-# 822 "data/maps/Route2/scripts.pory"
+# 808 "data/maps/Route2/scripts.pory"
 	applymovement 15, emotemusic
-# 823 "data/maps/Route2/scripts.pory"
+# 809 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_Himari_Text_2
-# 825 "data/maps/Route2/scripts.pory"
+# 811 "data/maps/Route2/scripts.pory"
 	closemessage
-# 826 "data/maps/Route2/scripts.pory"
+# 812 "data/maps/Route2/scripts.pory"
 	playmoncry SPECIES_ROCKRUFF, CRY_MODE_NORMAL
-# 827 "data/maps/Route2/scripts.pory"
+# 813 "data/maps/Route2/scripts.pory"
 	waitmoncry
-# 828 "data/maps/Route2/scripts.pory"
+# 814 "data/maps/Route2/scripts.pory"
 	setvar VAR_TEMP_0, 2
-# 829 "data/maps/Route2/scripts.pory"
+# 815 "data/maps/Route2/scripts.pory"
 	release
 	end
 
 Route2_Eventscript_Himari_9:
-# 854 "data/maps/Route2/scripts.pory"
+# 840 "data/maps/Route2/scripts.pory"
 	playse SE_PIN
-# 855 "data/maps/Route2/scripts.pory"
+# 841 "data/maps/Route2/scripts.pory"
 	applymovement 15, emoteexclamation
-# 856 "data/maps/Route2/scripts.pory"
+# 842 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 857 "data/maps/Route2/scripts.pory"
+# 843 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_Himari_Text_6
-# 858 "data/maps/Route2/scripts.pory"
+# 844 "data/maps/Route2/scripts.pory"
 	closemessage
-# 859 "data/maps/Route2/scripts.pory"
+# 845 "data/maps/Route2/scripts.pory"
 	setvar VAR_TEMP_0, 1
-# 860 "data/maps/Route2/scripts.pory"
+# 846 "data/maps/Route2/scripts.pory"
 	release
 	end
 
 
-# 865 "data/maps/Route2/scripts.pory"
+# 851 "data/maps/Route2/scripts.pory"
 emotecry:
-# 866 "data/maps/Route2/scripts.pory"
+# 852 "data/maps/Route2/scripts.pory"
 	emote_cry
 	step_end
 
 Route2_Eventscript_ShinjiroFirstBattleWarning::
-# 870 "data/maps/Route2/scripts.pory"
+# 856 "data/maps/Route2/scripts.pory"
 	lock
-# 871 "data/maps/Route2/scripts.pory"
+# 857 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_ShinjiroFirstBattleWarning_Text_0, MSGBOX_YESNO
-# 872 "data/maps/Route2/scripts.pory"
+# 858 "data/maps/Route2/scripts.pory"
 	closemessage
-# 873 "data/maps/Route2/scripts.pory"
+# 859 "data/maps/Route2/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route2_Eventscript_ShinjiroFirstBattleWarning_2
 Route2_Eventscript_ShinjiroFirstBattleWarning_1:
-# 877 "data/maps/Route2/scripts.pory"
+# 863 "data/maps/Route2/scripts.pory"
 	release
 	end
 
 Route2_Eventscript_ShinjiroFirstBattleWarning_2:
-# 874 "data/maps/Route2/scripts.pory"
+# 860 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, walkdown
-# 875 "data/maps/Route2/scripts.pory"
+# 861 "data/maps/Route2/scripts.pory"
 	waitmovement 0
 	goto Route2_Eventscript_ShinjiroFirstBattleWarning_1
 
 
 Route2_Eventscript_MitsuruApproachingRoute2House::
-# 882 "data/maps/Route2/scripts.pory"
+# 868 "data/maps/Route2/scripts.pory"
 	lock
-# 883 "data/maps/Route2/scripts.pory"
+# 869 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Eventscript_MitsuruApproachingRoute2House_Movement_0
-# 884 "data/maps/Route2/scripts.pory"
+# 870 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 885 "data/maps/Route2/scripts.pory"
+# 871 "data/maps/Route2/scripts.pory"
 	delay 40
-# 886 "data/maps/Route2/scripts.pory"
+# 872 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Eventscript_MitsuruApproachingRoute2House_Movement_1
+# 873 "data/maps/Route2/scripts.pory"
+	waitmovement
+# 874 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Eventscript_MitsuruApproachingRoute2House_Text_0
+# 877 "data/maps/Route2/scripts.pory"
+	closemessage
+# 878 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_PLAYER, faceup
+# 879 "data/maps/Route2/scripts.pory"
+	waitmovement
+# 880 "data/maps/Route2/scripts.pory"
+	delay 40
+# 881 "data/maps/Route2/scripts.pory"
+	playse SE_CLICK
+# 882 "data/maps/Route2/scripts.pory"
+	waitse
+# 883 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Eventscript_MitsuruApproachingRoute2House_Text_1
+# 884 "data/maps/Route2/scripts.pory"
+	closemessage
+# 885 "data/maps/Route2/scripts.pory"
+	delay 20
+# 886 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_PLAYER, walkup
 # 887 "data/maps/Route2/scripts.pory"
 	waitmovement
 # 888 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Eventscript_MitsuruApproachingRoute2House_Text_0
-# 891 "data/maps/Route2/scripts.pory"
-	closemessage
-# 892 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, faceup
-# 893 "data/maps/Route2/scripts.pory"
-	waitmovement
-# 894 "data/maps/Route2/scripts.pory"
-	delay 40
-# 895 "data/maps/Route2/scripts.pory"
-	playse SE_CLICK
-# 896 "data/maps/Route2/scripts.pory"
-	waitse
-# 897 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Eventscript_MitsuruApproachingRoute2House_Text_1
-# 898 "data/maps/Route2/scripts.pory"
-	closemessage
-# 899 "data/maps/Route2/scripts.pory"
-	delay 20
-# 900 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, walkup
-# 901 "data/maps/Route2/scripts.pory"
-	waitmovement
-# 902 "data/maps/Route2/scripts.pory"
 	playse SE_DOOR
-# 903 "data/maps/Route2/scripts.pory"
+# 889 "data/maps/Route2/scripts.pory"
 	warpsilent MAP_ROUTE2_HOUSE, 7, 12
-# 904 "data/maps/Route2/scripts.pory"
+# 890 "data/maps/Route2/scripts.pory"
 	waitstate
 	return
 
 
 Route2_Eventscript_HouseLocked::
-# 908 "data/maps/Route2/scripts.pory"
+# 894 "data/maps/Route2/scripts.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 10
 	goto_if_lt Route2_Eventscript_HouseLocked_1
 	return
 
 Route2_Eventscript_HouseLocked_1:
-# 909 "data/maps/Route2/scripts.pory"
+# 895 "data/maps/Route2/scripts.pory"
 	lock
-# 910 "data/maps/Route2/scripts.pory"
+# 896 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_HouseLocked_Text_0
-# 911 "data/maps/Route2/scripts.pory"
+# 897 "data/maps/Route2/scripts.pory"
 	closemessage
-# 912 "data/maps/Route2/scripts.pory"
+# 898 "data/maps/Route2/scripts.pory"
 	release
 	end
 
 
 Route2_Eventscript_MitsuruPreAkiShinjiGettingAmbushed_TriggerUp::
-# 918 "data/maps/Route2/scripts.pory"
+# 904 "data/maps/Route2/scripts.pory"
 	lock
-# 919 "data/maps/Route2/scripts.pory"
+# 905 "data/maps/Route2/scripts.pory"
 	call Route2_Eventscript_MitsuruOnTriggerHideNPCs
-# 920 "data/maps/Route2/scripts.pory"
+# 906 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Eventscript_MitsuruPreAkiShinjiGettingAmbushed_TriggerUp_Movement_0
-# 921 "data/maps/Route2/scripts.pory"
+# 907 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 922 "data/maps/Route2/scripts.pory"
+# 908 "data/maps/Route2/scripts.pory"
 	goto Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed
 	return
 
 
 Route2_Eventscript_MitsuruPreAkiShinjiGettingAmbushed_TriggerDown::
-# 926 "data/maps/Route2/scripts.pory"
+# 912 "data/maps/Route2/scripts.pory"
 	lock
-# 927 "data/maps/Route2/scripts.pory"
+# 913 "data/maps/Route2/scripts.pory"
 	call Route2_Eventscript_MitsuruOnTriggerHideNPCs
-# 928 "data/maps/Route2/scripts.pory"
+# 914 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Eventscript_MitsuruPreAkiShinjiGettingAmbushed_TriggerDown_Movement_0
-# 929 "data/maps/Route2/scripts.pory"
+# 915 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 930 "data/maps/Route2/scripts.pory"
+# 916 "data/maps/Route2/scripts.pory"
 	goto Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed
 	return
 
 
 Route2_Eventscript_MitsuruOnTriggerHideNPCs::
-# 934 "data/maps/Route2/scripts.pory"
+# 920 "data/maps/Route2/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route2_Eventscript_MitsuruOnTriggerHideNPCs_2
 Route2_Eventscript_MitsuruOnTriggerHideNPCs_1:
-# 937 "data/maps/Route2/scripts.pory"
+# 923 "data/maps/Route2/scripts.pory"
 	addobject 7
-# 938 "data/maps/Route2/scripts.pory"
+# 924 "data/maps/Route2/scripts.pory"
 	addobject 8
-# 939 "data/maps/Route2/scripts.pory"
+# 925 "data/maps/Route2/scripts.pory"
 	addobject 9
-# 940 "data/maps/Route2/scripts.pory"
+# 926 "data/maps/Route2/scripts.pory"
 	hideobjectat 7, MAP_ROUTE2
-# 941 "data/maps/Route2/scripts.pory"
+# 927 "data/maps/Route2/scripts.pory"
 	hideobjectat 8, MAP_ROUTE2
-# 942 "data/maps/Route2/scripts.pory"
+# 928 "data/maps/Route2/scripts.pory"
 	hideobjectat 9, MAP_ROUTE2
 	return
 
 Route2_Eventscript_MitsuruOnTriggerHideNPCs_2:
-# 935 "data/maps/Route2/scripts.pory"
+# 921 "data/maps/Route2/scripts.pory"
 	hidefollowernpc
 	goto Route2_Eventscript_MitsuruOnTriggerHideNPCs_1
 
 
 Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed::
-# 947 "data/maps/Route2/scripts.pory"
+# 933 "data/maps/Route2/scripts.pory"
 	playse SE_PIN
-# 948 "data/maps/Route2/scripts.pory"
+# 934 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_0
-# 949 "data/maps/Route2/scripts.pory"
+# 935 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 950 "data/maps/Route2/scripts.pory"
+# 936 "data/maps/Route2/scripts.pory"
 	fadenewbgm MUS_P3R_FEARFUL_EXPERIENCE
-# 951 "data/maps/Route2/scripts.pory"
+# 937 "data/maps/Route2/scripts.pory"
 	delay 8
-# 952 "data/maps/Route2/scripts.pory"
+# 938 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_1
+# 939 "data/maps/Route2/scripts.pory"
+	waitmovement
+# 940 "data/maps/Route2/scripts.pory"
+	applymovement OBJ_EVENT_ID_FOLLOWER, Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_2
+# 941 "data/maps/Route2/scripts.pory"
+	waitmovement
+# 942 "data/maps/Route2/scripts.pory"
+	clearflag FLAG_TEMP_6
+# 943 "data/maps/Route2/scripts.pory"
+	addobject 12
+# 944 "data/maps/Route2/scripts.pory"
+	addobject 11
+# 945 "data/maps/Route2/scripts.pory"
+	addobject 10
+# 946 "data/maps/Route2/scripts.pory"
+	applymovement 10, invisible
+# 947 "data/maps/Route2/scripts.pory"
+	applymovement 11, invisible
+# 948 "data/maps/Route2/scripts.pory"
+	waitmovement
+# 949 "data/maps/Route2/scripts.pory"
+	delay 20
+# 950 "data/maps/Route2/scripts.pory"
+	applymovement 12, Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_3
+# 951 "data/maps/Route2/scripts.pory"
+	waitmovement
+# 952 "data/maps/Route2/scripts.pory"
+	applymovement LOCALID_PLAYER, faceup
 # 953 "data/maps/Route2/scripts.pory"
 	waitmovement
 # 954 "data/maps/Route2/scripts.pory"
-	applymovement OBJ_EVENT_ID_FOLLOWER, Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_2
-# 955 "data/maps/Route2/scripts.pory"
-	waitmovement
-# 956 "data/maps/Route2/scripts.pory"
-	clearflag FLAG_TEMP_6
-# 957 "data/maps/Route2/scripts.pory"
-	addobject 12
-# 958 "data/maps/Route2/scripts.pory"
-	addobject 11
-# 959 "data/maps/Route2/scripts.pory"
-	addobject 10
-# 960 "data/maps/Route2/scripts.pory"
-	applymovement 10, invisible
-# 961 "data/maps/Route2/scripts.pory"
-	applymovement 11, invisible
-# 962 "data/maps/Route2/scripts.pory"
-	waitmovement
-# 963 "data/maps/Route2/scripts.pory"
-	delay 20
-# 964 "data/maps/Route2/scripts.pory"
-	applymovement 12, Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_3
-# 965 "data/maps/Route2/scripts.pory"
-	waitmovement
-# 966 "data/maps/Route2/scripts.pory"
-	applymovement LOCALID_PLAYER, faceup
-# 967 "data/maps/Route2/scripts.pory"
-	waitmovement
-# 968 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Text_0
-# 970 "data/maps/Route2/scripts.pory"
+# 956 "data/maps/Route2/scripts.pory"
 	closemessage
-# 971 "data/maps/Route2/scripts.pory"
+# 957 "data/maps/Route2/scripts.pory"
 	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 972 "data/maps/Route2/scripts.pory"
+# 958 "data/maps/Route2/scripts.pory"
 	applymovement 12, walkinplacedown
-# 973 "data/maps/Route2/scripts.pory"
+# 959 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 974 "data/maps/Route2/scripts.pory"
+# 960 "data/maps/Route2/scripts.pory"
 	delay 20
-# 975 "data/maps/Route2/scripts.pory"
+# 961 "data/maps/Route2/scripts.pory"
 	special SpawnCameraObject
-# 976 "data/maps/Route2/scripts.pory"
+# 962 "data/maps/Route2/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_4
-# 977 "data/maps/Route2/scripts.pory"
+# 963 "data/maps/Route2/scripts.pory"
 	applymovement 12, Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_5
-# 978 "data/maps/Route2/scripts.pory"
+# 964 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 979 "data/maps/Route2/scripts.pory"
+# 965 "data/maps/Route2/scripts.pory"
 	playse SE_EXIT
-# 980 "data/maps/Route2/scripts.pory"
+# 966 "data/maps/Route2/scripts.pory"
 	delay 20
-# 981 "data/maps/Route2/scripts.pory"
+# 967 "data/maps/Route2/scripts.pory"
 	applymovement 12, Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_6
-# 982 "data/maps/Route2/scripts.pory"
+# 968 "data/maps/Route2/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_7
-# 983 "data/maps/Route2/scripts.pory"
+# 969 "data/maps/Route2/scripts.pory"
 	waitmovement OBJ_EVENT_ID_CAMERA
-# 984 "data/maps/Route2/scripts.pory"
+# 970 "data/maps/Route2/scripts.pory"
 	goto Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV
 	return
 
 
 Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV::
-# 988 "data/maps/Route2/scripts.pory"
+# 974 "data/maps/Route2/scripts.pory"
 	delay 30
-# 989 "data/maps/Route2/scripts.pory"
+# 975 "data/maps/Route2/scripts.pory"
 	addobject 6
-# 990 "data/maps/Route2/scripts.pory"
+# 976 "data/maps/Route2/scripts.pory"
 	addobject 19
-# 991 "data/maps/Route2/scripts.pory"
+# 977 "data/maps/Route2/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV_Movement_0
-# 992 "data/maps/Route2/scripts.pory"
+# 978 "data/maps/Route2/scripts.pory"
 	applymovement 19, AkishinjiGettingBlockedBySusMen
-# 993 "data/maps/Route2/scripts.pory"
+# 979 "data/maps/Route2/scripts.pory"
 	delay 8
-# 994 "data/maps/Route2/scripts.pory"
+# 980 "data/maps/Route2/scripts.pory"
 	applymovement 6, AkishinjiGettingBlockedBySusMen
-# 995 "data/maps/Route2/scripts.pory"
+# 981 "data/maps/Route2/scripts.pory"
 	applymovement 4, SusMenBlockingAkiShinji
-# 996 "data/maps/Route2/scripts.pory"
+# 982 "data/maps/Route2/scripts.pory"
 	delay 8
-# 997 "data/maps/Route2/scripts.pory"
+# 983 "data/maps/Route2/scripts.pory"
 	applymovement 3, SusMenBlockingAkiShinji
-# 998 "data/maps/Route2/scripts.pory"
+# 984 "data/maps/Route2/scripts.pory"
 	waitmovement 3
-# 999 "data/maps/Route2/scripts.pory"
+# 985 "data/maps/Route2/scripts.pory"
 	call Eventscript_BlockShakeCamera
-# 1000 "data/maps/Route2/scripts.pory"
+# 986 "data/maps/Route2/scripts.pory"
 	delay 20
-# 1001 "data/maps/Route2/scripts.pory"
+# 987 "data/maps/Route2/scripts.pory"
 	applymovement 19, AkiShinjiStepBack
-# 1002 "data/maps/Route2/scripts.pory"
+# 988 "data/maps/Route2/scripts.pory"
 	applymovement 6, AkiShinjiStepBack
-# 1003 "data/maps/Route2/scripts.pory"
+# 989 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1004 "data/maps/Route2/scripts.pory"
+# 990 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_0
-# 1006 "data/maps/Route2/scripts.pory"
+# 992 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1007 "data/maps/Route2/scripts.pory"
+# 993 "data/maps/Route2/scripts.pory"
 	delay 30
-# 1008 "data/maps/Route2/scripts.pory"
+# 994 "data/maps/Route2/scripts.pory"
 	setspeaker Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_1
-# 1009 "data/maps/Route2/scripts.pory"
+# 995 "data/maps/Route2/scripts.pory"
 	applymovement 4, walkinplaceright
+# 996 "data/maps/Route2/scripts.pory"
+	waitmovement 0
+# 997 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_2
+# 998 "data/maps/Route2/scripts.pory"
+	closemessage
+# 999 "data/maps/Route2/scripts.pory"
+	setspeaker Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_3
+# 1000 "data/maps/Route2/scripts.pory"
+	applymovement 3, walkinplaceright
+# 1001 "data/maps/Route2/scripts.pory"
+	waitmovement 0
+# 1002 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_4
+# 1004 "data/maps/Route2/scripts.pory"
+	closemessage
+# 1005 "data/maps/Route2/scripts.pory"
+	applymovement 4, SusMan1ApproachingAkihiko
+# 1006 "data/maps/Route2/scripts.pory"
+	waitmovement 0
+# 1007 "data/maps/Route2/scripts.pory"
+	applymovement 19, shakehorizontal
+# 1008 "data/maps/Route2/scripts.pory"
+	call Eventscript_BlockShakeCamera
+# 1009 "data/maps/Route2/scripts.pory"
+	applymovement 4, SusMan1StepBack
 # 1010 "data/maps/Route2/scripts.pory"
 	waitmovement 0
 # 1011 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_2
-# 1012 "data/maps/Route2/scripts.pory"
-	closemessage
-# 1013 "data/maps/Route2/scripts.pory"
-	setspeaker Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_3
-# 1014 "data/maps/Route2/scripts.pory"
-	applymovement 3, walkinplaceright
-# 1015 "data/maps/Route2/scripts.pory"
-	waitmovement 0
-# 1016 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_4
-# 1018 "data/maps/Route2/scripts.pory"
-	closemessage
-# 1019 "data/maps/Route2/scripts.pory"
-	applymovement 4, SusMan1ApproachingAkihiko
-# 1020 "data/maps/Route2/scripts.pory"
-	waitmovement 0
-# 1021 "data/maps/Route2/scripts.pory"
-	applymovement 19, shakehorizontal
-# 1022 "data/maps/Route2/scripts.pory"
-	call Eventscript_BlockShakeCamera
-# 1023 "data/maps/Route2/scripts.pory"
-	applymovement 4, SusMan1StepBack
-# 1024 "data/maps/Route2/scripts.pory"
-	waitmovement 0
-# 1025 "data/maps/Route2/scripts.pory"
 	delay 20
-# 1026 "data/maps/Route2/scripts.pory"
+# 1012 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_5
-# 1027 "data/maps/Route2/scripts.pory"
+# 1013 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1028 "data/maps/Route2/scripts.pory"
+# 1014 "data/maps/Route2/scripts.pory"
 	setspeaker Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_1
-# 1029 "data/maps/Route2/scripts.pory"
+# 1015 "data/maps/Route2/scripts.pory"
 	applymovement 4, walkinplaceright
-# 1030 "data/maps/Route2/scripts.pory"
+# 1016 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1031 "data/maps/Route2/scripts.pory"
+# 1017 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_StartBattleWithSusMen_Text_0
-# 1033 "data/maps/Route2/scripts.pory"
+# 1019 "data/maps/Route2/scripts.pory"
 	msgbox SusMenFightIntro
-# 1034 "data/maps/Route2/scripts.pory"
+# 1020 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1035 "data/maps/Route2/scripts.pory"
+# 1021 "data/maps/Route2/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 1036 "data/maps/Route2/scripts.pory"
+# 1022 "data/maps/Route2/scripts.pory"
 	playse SE_EFFECTIVE
-# 1037 "data/maps/Route2/scripts.pory"
+# 1023 "data/maps/Route2/scripts.pory"
 	waitse
-# 1038 "data/maps/Route2/scripts.pory"
+# 1024 "data/maps/Route2/scripts.pory"
 	playmoncry SPECIES_PAWMI, CRY_MODE_NORMAL
-# 1039 "data/maps/Route2/scripts.pory"
+# 1025 "data/maps/Route2/scripts.pory"
 	waitmoncry
-# 1040 "data/maps/Route2/scripts.pory"
+# 1026 "data/maps/Route2/scripts.pory"
 	playse SE_M_THUNDER_WAVE
-# 1041 "data/maps/Route2/scripts.pory"
+# 1027 "data/maps/Route2/scripts.pory"
 	waitse
-# 1042 "data/maps/Route2/scripts.pory"
+# 1028 "data/maps/Route2/scripts.pory"
 	playse SE_EFFECTIVE
-# 1043 "data/maps/Route2/scripts.pory"
+# 1029 "data/maps/Route2/scripts.pory"
 	waitse
-# 1044 "data/maps/Route2/scripts.pory"
+# 1030 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, faceright
-# 1045 "data/maps/Route2/scripts.pory"
+# 1031 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 1046 "data/maps/Route2/scripts.pory"
+# 1032 "data/maps/Route2/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 1047 "data/maps/Route2/scripts.pory"
+# 1033 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV_Text_0
-# 1050 "data/maps/Route2/scripts.pory"
+# 1036 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1051 "data/maps/Route2/scripts.pory"
+# 1037 "data/maps/Route2/scripts.pory"
 	applymovement 4, walkinplaceright
-# 1052 "data/maps/Route2/scripts.pory"
+# 1038 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 1053 "data/maps/Route2/scripts.pory"
+# 1039 "data/maps/Route2/scripts.pory"
 	setspeaker Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_1
-# 1054 "data/maps/Route2/scripts.pory"
+# 1040 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV_Text_1
-# 1056 "data/maps/Route2/scripts.pory"
+# 1042 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1057 "data/maps/Route2/scripts.pory"
+# 1043 "data/maps/Route2/scripts.pory"
 	delay 8
-# 1058 "data/maps/Route2/scripts.pory"
+# 1044 "data/maps/Route2/scripts.pory"
 	playse SE_EXIT
-# 1059 "data/maps/Route2/scripts.pory"
+# 1045 "data/maps/Route2/scripts.pory"
 	showobjectat 7, MAP_ROUTE2
-# 1060 "data/maps/Route2/scripts.pory"
+# 1046 "data/maps/Route2/scripts.pory"
 	applymovement 7, DrowzeeAppears
-# 1061 "data/maps/Route2/scripts.pory"
+# 1047 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1062 "data/maps/Route2/scripts.pory"
+# 1048 "data/maps/Route2/scripts.pory"
 	applymovement 19, facedown
-# 1063 "data/maps/Route2/scripts.pory"
+# 1049 "data/maps/Route2/scripts.pory"
 	applymovement 6, facedown
+# 1050 "data/maps/Route2/scripts.pory"
+	waitmovement 0
+# 1051 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Eventscript_PostBattleWithSusMen_Text_1
+# 1052 "data/maps/Route2/scripts.pory"
+	closemessage
+# 1053 "data/maps/Route2/scripts.pory"
+	setspeaker Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_3
+# 1054 "data/maps/Route2/scripts.pory"
+	applymovement 3, walkinplaceright
+# 1055 "data/maps/Route2/scripts.pory"
+	waitmovement 0
+# 1056 "data/maps/Route2/scripts.pory"
+	msgbox Route2_Eventscript_PostBattleWithSusMen_Text_2
+# 1057 "data/maps/Route2/scripts.pory"
+	closemessage
+# 1058 "data/maps/Route2/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 1059 "data/maps/Route2/scripts.pory"
+	playmoncry SPECIES_DROWZEE, CRY_MODE_NORMAL
+# 1060 "data/maps/Route2/scripts.pory"
+	waitmoncry
+# 1061 "data/maps/Route2/scripts.pory"
+	delay 30
+# 1062 "data/maps/Route2/scripts.pory"
+	applymovement 19, invisible
+# 1063 "data/maps/Route2/scripts.pory"
+	applymovement 6, invisible
 # 1064 "data/maps/Route2/scripts.pory"
 	waitmovement 0
 # 1065 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Eventscript_PostBattleWithSusMen_Text_1
-# 1066 "data/maps/Route2/scripts.pory"
-	closemessage
-# 1067 "data/maps/Route2/scripts.pory"
-	setspeaker Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_3
-# 1068 "data/maps/Route2/scripts.pory"
-	applymovement 3, walkinplaceright
-# 1069 "data/maps/Route2/scripts.pory"
-	waitmovement 0
-# 1070 "data/maps/Route2/scripts.pory"
-	msgbox Route2_Eventscript_PostBattleWithSusMen_Text_2
-# 1071 "data/maps/Route2/scripts.pory"
-	closemessage
-# 1072 "data/maps/Route2/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 1073 "data/maps/Route2/scripts.pory"
-	playmoncry SPECIES_DROWZEE, CRY_MODE_NORMAL
-# 1074 "data/maps/Route2/scripts.pory"
-	waitmoncry
-# 1075 "data/maps/Route2/scripts.pory"
-	delay 30
-# 1076 "data/maps/Route2/scripts.pory"
-	applymovement 19, invisible
-# 1077 "data/maps/Route2/scripts.pory"
-	applymovement 6, invisible
-# 1078 "data/maps/Route2/scripts.pory"
-	waitmovement 0
-# 1079 "data/maps/Route2/scripts.pory"
 	goto Route2_Eventscript_AkishinjiAsleepMitsuruPOV
 	return
 
 
 Route2_Eventscript_AkishinjiAsleepMitsuruPOV::
-# 1083 "data/maps/Route2/scripts.pory"
+# 1069 "data/maps/Route2/scripts.pory"
 	showobjectat 8, MAP_ROUTE2
-# 1084 "data/maps/Route2/scripts.pory"
+# 1070 "data/maps/Route2/scripts.pory"
 	showobjectat 9, MAP_ROUTE2
-# 1085 "data/maps/Route2/scripts.pory"
+# 1071 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1086 "data/maps/Route2/scripts.pory"
+# 1072 "data/maps/Route2/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 1087 "data/maps/Route2/scripts.pory"
+# 1073 "data/maps/Route2/scripts.pory"
 	delay 20
-# 1088 "data/maps/Route2/scripts.pory"
+# 1074 "data/maps/Route2/scripts.pory"
 	playse SE_M_SNORE
-# 1089 "data/maps/Route2/scripts.pory"
+# 1075 "data/maps/Route2/scripts.pory"
 	applymovement 8, emoteasleep
-# 1090 "data/maps/Route2/scripts.pory"
+# 1076 "data/maps/Route2/scripts.pory"
 	delay 8
-# 1091 "data/maps/Route2/scripts.pory"
+# 1077 "data/maps/Route2/scripts.pory"
 	playse SE_M_SNORE
-# 1092 "data/maps/Route2/scripts.pory"
+# 1078 "data/maps/Route2/scripts.pory"
 	applymovement 9, emoteasleep
-# 1093 "data/maps/Route2/scripts.pory"
+# 1079 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1094 "data/maps/Route2/scripts.pory"
+# 1080 "data/maps/Route2/scripts.pory"
 	delay 20
-# 1095 "data/maps/Route2/scripts.pory"
+# 1081 "data/maps/Route2/scripts.pory"
 	setspeaker Route2_Eventscript_AkishinjiGettingBlockedBySusMen_Text_3
-# 1096 "data/maps/Route2/scripts.pory"
+# 1082 "data/maps/Route2/scripts.pory"
 	applymovement 3, walkinplaceright
-# 1097 "data/maps/Route2/scripts.pory"
+# 1083 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1098 "data/maps/Route2/scripts.pory"
+# 1084 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_AkishinjiAsleep_Text_0
-# 1099 "data/maps/Route2/scripts.pory"
+# 1085 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1100 "data/maps/Route2/scripts.pory"
+# 1086 "data/maps/Route2/scripts.pory"
 	applymovement 3, walkright
-# 1101 "data/maps/Route2/scripts.pory"
+# 1087 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1102 "data/maps/Route2/scripts.pory"
+# 1088 "data/maps/Route2/scripts.pory"
 	delay 20
-# 1103 "data/maps/Route2/scripts.pory"
+# 1089 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_AkishinjiAsleepMitsuruPOV_Text_0
-# 1104 "data/maps/Route2/scripts.pory"
+# 1090 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1105 "data/maps/Route2/scripts.pory"
+# 1091 "data/maps/Route2/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 1106 "data/maps/Route2/scripts.pory"
+# 1092 "data/maps/Route2/scripts.pory"
 	delay 20
-# 1107 "data/maps/Route2/scripts.pory"
+# 1093 "data/maps/Route2/scripts.pory"
 	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 1108 "data/maps/Route2/scripts.pory"
+# 1094 "data/maps/Route2/scripts.pory"
 	waitmoncry
-# 1109 "data/maps/Route2/scripts.pory"
+# 1095 "data/maps/Route2/scripts.pory"
 	playse SE_M_BUBBLE_BEAM
-# 1110 "data/maps/Route2/scripts.pory"
+# 1096 "data/maps/Route2/scripts.pory"
 	waitse
-# 1111 "data/maps/Route2/scripts.pory"
+# 1097 "data/maps/Route2/scripts.pory"
 	playmoncry SPECIES_VULPIX, CRY_MODE_NORMAL
-# 1112 "data/maps/Route2/scripts.pory"
+# 1098 "data/maps/Route2/scripts.pory"
 	waitmoncry
-# 1113 "data/maps/Route2/scripts.pory"
+# 1099 "data/maps/Route2/scripts.pory"
 	playse SE_M_ICY_WIND
-# 1114 "data/maps/Route2/scripts.pory"
+# 1100 "data/maps/Route2/scripts.pory"
 	waitse
-# 1115 "data/maps/Route2/scripts.pory"
+# 1101 "data/maps/Route2/scripts.pory"
 	applymovement 3, invisible
-# 1116 "data/maps/Route2/scripts.pory"
+# 1102 "data/maps/Route2/scripts.pory"
 	applymovement 4, invisible
-# 1117 "data/maps/Route2/scripts.pory"
+# 1103 "data/maps/Route2/scripts.pory"
 	removeobject 3
-# 1118 "data/maps/Route2/scripts.pory"
+# 1104 "data/maps/Route2/scripts.pory"
 	removeobject 4
-# 1119 "data/maps/Route2/scripts.pory"
+# 1105 "data/maps/Route2/scripts.pory"
 	clearflag FLAG_TEMP_6
-# 1120 "data/maps/Route2/scripts.pory"
+# 1106 "data/maps/Route2/scripts.pory"
 	applymovement 10, visible
-# 1121 "data/maps/Route2/scripts.pory"
+# 1107 "data/maps/Route2/scripts.pory"
 	applymovement 11, visible
-# 1122 "data/maps/Route2/scripts.pory"
+# 1108 "data/maps/Route2/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 1123 "data/maps/Route2/scripts.pory"
+# 1109 "data/maps/Route2/scripts.pory"
 	delay 20
-# 1124 "data/maps/Route2/scripts.pory"
+# 1110 "data/maps/Route2/scripts.pory"
 	applymovement 10, shakehorizontal
-# 1125 "data/maps/Route2/scripts.pory"
+# 1111 "data/maps/Route2/scripts.pory"
 	playse SE_M_HARDEN
-# 1126 "data/maps/Route2/scripts.pory"
+# 1112 "data/maps/Route2/scripts.pory"
 	delay 4
-# 1127 "data/maps/Route2/scripts.pory"
+# 1113 "data/maps/Route2/scripts.pory"
 	applymovement 11, shakehorizontal
-# 1128 "data/maps/Route2/scripts.pory"
+# 1114 "data/maps/Route2/scripts.pory"
 	playse SE_M_HARDEN
-# 1129 "data/maps/Route2/scripts.pory"
+# 1115 "data/maps/Route2/scripts.pory"
 	waitse
-# 1130 "data/maps/Route2/scripts.pory"
+# 1116 "data/maps/Route2/scripts.pory"
 	applymovement 7, emoteexclamation
-# 1131 "data/maps/Route2/scripts.pory"
+# 1117 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1132 "data/maps/Route2/scripts.pory"
+# 1118 "data/maps/Route2/scripts.pory"
 	goto Route2_Eventscript_MitsuruAppearsMitsuruPOV
 	return
 
 
 Route2_Eventscript_MitsuruAppearsMitsuruPOV::
-# 1136 "data/maps/Route2/scripts.pory"
+# 1122 "data/maps/Route2/scripts.pory"
 	delay 40
-# 1137 "data/maps/Route2/scripts.pory"
+# 1123 "data/maps/Route2/scripts.pory"
 	addobject 5
-# 1138 "data/maps/Route2/scripts.pory"
+# 1124 "data/maps/Route2/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, Route2_Eventscript_MitsuruAppearsMitsuruPOV_Movement_0
-# 1139 "data/maps/Route2/scripts.pory"
+# 1125 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, MitsuruAppears
-# 1140 "data/maps/Route2/scripts.pory"
+# 1126 "data/maps/Route2/scripts.pory"
 	applymovement OBJ_EVENT_ID_FOLLOWER, MitsuruAppears
-# 1141 "data/maps/Route2/scripts.pory"
+# 1127 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1142 "data/maps/Route2/scripts.pory"
+# 1128 "data/maps/Route2/scripts.pory"
 	applymovement 7, DrowzeeRunsAway
-# 1143 "data/maps/Route2/scripts.pory"
+# 1129 "data/maps/Route2/scripts.pory"
 	delay 52
-# 1144 "data/maps/Route2/scripts.pory"
+# 1130 "data/maps/Route2/scripts.pory"
 	playse SE_BOO
-# 1145 "data/maps/Route2/scripts.pory"
+# 1131 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1146 "data/maps/Route2/scripts.pory"
+# 1132 "data/maps/Route2/scripts.pory"
 	waitse
-# 1147 "data/maps/Route2/scripts.pory"
+# 1133 "data/maps/Route2/scripts.pory"
 	playse SE_EXIT
-# 1148 "data/maps/Route2/scripts.pory"
+# 1134 "data/maps/Route2/scripts.pory"
 	waitse
-# 1149 "data/maps/Route2/scripts.pory"
+# 1135 "data/maps/Route2/scripts.pory"
 	delay 30
-# 1150 "data/maps/Route2/scripts.pory"
+# 1136 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_MitsuruAppearsMitsuruPOV_Text_0
-# 1153 "data/maps/Route2/scripts.pory"
+# 1139 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1154 "data/maps/Route2/scripts.pory"
+# 1140 "data/maps/Route2/scripts.pory"
 	playse SE_EXIT
-# 1155 "data/maps/Route2/scripts.pory"
+# 1141 "data/maps/Route2/scripts.pory"
 	applymovement 12, InteleonWalksOut
-# 1156 "data/maps/Route2/scripts.pory"
+# 1142 "data/maps/Route2/scripts.pory"
 	applymovement OBJ_EVENT_ID_CAMERA, CameraToInteleon
-# 1157 "data/maps/Route2/scripts.pory"
+# 1143 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1158 "data/maps/Route2/scripts.pory"
+# 1144 "data/maps/Route2/scripts.pory"
 	delay 20
-# 1159 "data/maps/Route2/scripts.pory"
+# 1145 "data/maps/Route2/scripts.pory"
 	playmoncry SPECIES_INTELEON, CRY_MODE_NORMAL
-# 1160 "data/maps/Route2/scripts.pory"
+# 1146 "data/maps/Route2/scripts.pory"
 	applymovement 12, walkinplacedown
-# 1161 "data/maps/Route2/scripts.pory"
+# 1147 "data/maps/Route2/scripts.pory"
 	waitmovement 0
-# 1162 "data/maps/Route2/scripts.pory"
+# 1148 "data/maps/Route2/scripts.pory"
 	fadenewbgm MUS_DUMMY
-# 1163 "data/maps/Route2/scripts.pory"
+# 1149 "data/maps/Route2/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 28
-# 1164 "data/maps/Route2/scripts.pory"
+# 1150 "data/maps/Route2/scripts.pory"
 	setflag FLAG_HIDE_MAP_NAME_POPUP
-# 1165 "data/maps/Route2/scripts.pory"
+# 1151 "data/maps/Route2/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
-# 1166 "data/maps/Route2/scripts.pory"
+# 1152 "data/maps/Route2/scripts.pory"
 	delay 30
-# 1167 "data/maps/Route2/scripts.pory"
+# 1153 "data/maps/Route2/scripts.pory"
 	warpsilent MAP_ROUTE2_HOUSE, 5, 3
 	return
 
 
 Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting::
-# 1171 "data/maps/Route2/scripts.pory"
+# 1157 "data/maps/Route2/scripts.pory"
 	lock
-# 1172 "data/maps/Route2/scripts.pory"
+# 1158 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_Text_0
-# 1174 "data/maps/Route2/scripts.pory"
+# 1160 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1175 "data/maps/Route2/scripts.pory"
+# 1161 "data/maps/Route2/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE
-# 1176 "data/maps/Route2/scripts.pory"
+# 1162 "data/maps/Route2/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_2
 Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_1:
-# 1188 "data/maps/Route2/scripts.pory"
+# 1174 "data/maps/Route2/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
-# 1189 "data/maps/Route2/scripts.pory"
+# 1175 "data/maps/Route2/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 30
-# 1190 "data/maps/Route2/scripts.pory"
+# 1176 "data/maps/Route2/scripts.pory"
 	release
 	end
 
 Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_2:
-# 1178 "data/maps/Route2/scripts.pory"
+# 1164 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_Text_1
-# 1182 "data/maps/Route2/scripts.pory"
+# 1168 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1183 "data/maps/Route2/scripts.pory"
+# 1169 "data/maps/Route2/scripts.pory"
 	setflag FLAG_SYS_QUEST_MENU_GET
-# 1184 "data/maps/Route2/scripts.pory"
+# 1170 "data/maps/Route2/scripts.pory"
 	questmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS
-# 1185 "data/maps/Route2/scripts.pory"
+# 1171 "data/maps/Route2/scripts.pory"
 	setvar VAR_STORY_QUESTS_STATE, 0
-# 1186 "data/maps/Route2/scripts.pory"
+# 1172 "data/maps/Route2/scripts.pory"
 	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, MITSURUS_PROLOGUE
 	goto Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_1
 
 
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight::
-# 1195 "data/maps/Route2/scripts.pory"
+# 1181 "data/maps/Route2/scripts.pory"
 	lock
-# 1196 "data/maps/Route2/scripts.pory"
+# 1182 "data/maps/Route2/scripts.pory"
 	playse SE_PIN
-# 1197 "data/maps/Route2/scripts.pory"
+# 1183 "data/maps/Route2/scripts.pory"
 	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_0
-# 1198 "data/maps/Route2/scripts.pory"
+# 1184 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 1199 "data/maps/Route2/scripts.pory"
+# 1185 "data/maps/Route2/scripts.pory"
 	setspeaker Route2_Eventscript_Yuuka_Text_0
-# 1200 "data/maps/Route2/scripts.pory"
+# 1186 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Text_0
-# 1201 "data/maps/Route2/scripts.pory"
+# 1187 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1202 "data/maps/Route2/scripts.pory"
+# 1188 "data/maps/Route2/scripts.pory"
 	applymovement 13, walkdown
-# 1203 "data/maps/Route2/scripts.pory"
+# 1189 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
-# 1204 "data/maps/Route2/scripts.pory"
+# 1190 "data/maps/Route2/scripts.pory"
 	applymovement OBJ_EVENT_ID_FOLLOWER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
-# 1205 "data/maps/Route2/scripts.pory"
+# 1191 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 1206 "data/maps/Route2/scripts.pory"
+# 1192 "data/maps/Route2/scripts.pory"
 	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_2
-# 1207 "data/maps/Route2/scripts.pory"
+# 1193 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 1208 "data/maps/Route2/scripts.pory"
+# 1194 "data/maps/Route2/scripts.pory"
 	lock
-# 1209 "data/maps/Route2/scripts.pory"
+# 1195 "data/maps/Route2/scripts.pory"
 	setobjectnewmovementtype 13, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT
-# 1210 "data/maps/Route2/scripts.pory"
+# 1196 "data/maps/Route2/scripts.pory"
 	release
 	end
 
 
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft::
-# 1215 "data/maps/Route2/scripts.pory"
+# 1201 "data/maps/Route2/scripts.pory"
 	lock
-# 1216 "data/maps/Route2/scripts.pory"
+# 1202 "data/maps/Route2/scripts.pory"
 	playse SE_PIN
-# 1217 "data/maps/Route2/scripts.pory"
+# 1203 "data/maps/Route2/scripts.pory"
 	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft_Movement_0
-# 1218 "data/maps/Route2/scripts.pory"
+# 1204 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 1219 "data/maps/Route2/scripts.pory"
+# 1205 "data/maps/Route2/scripts.pory"
 	setspeaker Route2_Eventscript_Yuuka_Text_0
-# 1220 "data/maps/Route2/scripts.pory"
+# 1206 "data/maps/Route2/scripts.pory"
 	msgbox Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Text_0
-# 1221 "data/maps/Route2/scripts.pory"
+# 1207 "data/maps/Route2/scripts.pory"
 	closemessage
-# 1222 "data/maps/Route2/scripts.pory"
+# 1208 "data/maps/Route2/scripts.pory"
 	applymovement 13, walkdown
-# 1223 "data/maps/Route2/scripts.pory"
+# 1209 "data/maps/Route2/scripts.pory"
 	applymovement LOCALID_PLAYER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
-# 1224 "data/maps/Route2/scripts.pory"
+# 1210 "data/maps/Route2/scripts.pory"
 	applymovement OBJ_EVENT_ID_FOLLOWER, Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1
-# 1225 "data/maps/Route2/scripts.pory"
+# 1211 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 1226 "data/maps/Route2/scripts.pory"
+# 1212 "data/maps/Route2/scripts.pory"
 	applymovement 13, Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft_Movement_1
-# 1227 "data/maps/Route2/scripts.pory"
+# 1213 "data/maps/Route2/scripts.pory"
 	waitmovement
-# 1228 "data/maps/Route2/scripts.pory"
+# 1214 "data/maps/Route2/scripts.pory"
 	lock
-# 1229 "data/maps/Route2/scripts.pory"
+# 1215 "data/maps/Route2/scripts.pory"
 	setobjectnewmovementtype 13, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT
-# 1230 "data/maps/Route2/scripts.pory"
+# 1216 "data/maps/Route2/scripts.pory"
 	release
 	end
 
@@ -2221,241 +2194,241 @@ Route2_Eventscript_AkihikoNoticingShinjiroOutside_Movement_2:
 	walk_left
 	step_end
 
-# 681 "data/maps/Route2/scripts.pory"
+# 683 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_InitShinjiroFirstBattle3_Movement_0:
-# 681 "data/maps/Route2/scripts.pory"
+# 683 "data/maps/Route2/scripts.pory"
 	walk_up
-# 681 "data/maps/Route2/scripts.pory"
+# 683 "data/maps/Route2/scripts.pory"
 	walk_up
 	step_end
 
-# 883 "data/maps/Route2/scripts.pory"
+# 869 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruApproachingRoute2House_Movement_0:
-# 883 "data/maps/Route2/scripts.pory"
+# 869 "data/maps/Route2/scripts.pory"
 	player_run_left
-# 883 "data/maps/Route2/scripts.pory"
+# 869 "data/maps/Route2/scripts.pory"
 	player_run_left
-# 883 "data/maps/Route2/scripts.pory"
+# 869 "data/maps/Route2/scripts.pory"
 	player_run_left
-# 883 "data/maps/Route2/scripts.pory"
+# 869 "data/maps/Route2/scripts.pory"
 	walk_left
-# 883 "data/maps/Route2/scripts.pory"
+# 869 "data/maps/Route2/scripts.pory"
 	walk_left
-# 883 "data/maps/Route2/scripts.pory"
+# 869 "data/maps/Route2/scripts.pory"
 	walk_slow_left
-# 883 "data/maps/Route2/scripts.pory"
+# 869 "data/maps/Route2/scripts.pory"
 	face_up
 	step_end
 
-# 886 "data/maps/Route2/scripts.pory"
+# 872 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruApproachingRoute2House_Movement_1:
-# 886 "data/maps/Route2/scripts.pory"
+# 872 "data/maps/Route2/scripts.pory"
 	walk_up
-# 886 "data/maps/Route2/scripts.pory"
+# 872 "data/maps/Route2/scripts.pory"
 	face_right
 	step_end
 
-# 920 "data/maps/Route2/scripts.pory"
+# 906 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruPreAkiShinjiGettingAmbushed_TriggerUp_Movement_0:
-# 920 "data/maps/Route2/scripts.pory"
+# 906 "data/maps/Route2/scripts.pory"
 	player_run_right
-# 920 "data/maps/Route2/scripts.pory"
+# 906 "data/maps/Route2/scripts.pory"
 	player_run_right
-# 920 "data/maps/Route2/scripts.pory"
+# 906 "data/maps/Route2/scripts.pory"
 	player_run_right
-# 920 "data/maps/Route2/scripts.pory"
+# 906 "data/maps/Route2/scripts.pory"
 	player_run_right
-# 920 "data/maps/Route2/scripts.pory"
+# 906 "data/maps/Route2/scripts.pory"
 	player_run_right
 	step_end
 
-# 928 "data/maps/Route2/scripts.pory"
+# 914 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruPreAkiShinjiGettingAmbushed_TriggerDown_Movement_0:
-# 928 "data/maps/Route2/scripts.pory"
+# 914 "data/maps/Route2/scripts.pory"
 	player_run_up
-# 928 "data/maps/Route2/scripts.pory"
+# 914 "data/maps/Route2/scripts.pory"
 	player_run_right
-# 928 "data/maps/Route2/scripts.pory"
+# 914 "data/maps/Route2/scripts.pory"
 	player_run_right
-# 928 "data/maps/Route2/scripts.pory"
+# 914 "data/maps/Route2/scripts.pory"
 	player_run_right
-# 928 "data/maps/Route2/scripts.pory"
+# 914 "data/maps/Route2/scripts.pory"
 	player_run_right
 	step_end
 
-# 948 "data/maps/Route2/scripts.pory"
+# 934 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_0:
-# 948 "data/maps/Route2/scripts.pory"
+# 934 "data/maps/Route2/scripts.pory"
 	emote_exclamation_mark
 	step_end
 
-# 952 "data/maps/Route2/scripts.pory"
+# 938 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_1:
-# 952 "data/maps/Route2/scripts.pory"
+# 938 "data/maps/Route2/scripts.pory"
 	player_run_left
-# 952 "data/maps/Route2/scripts.pory"
+# 938 "data/maps/Route2/scripts.pory"
 	player_run_left
-# 952 "data/maps/Route2/scripts.pory"
+# 938 "data/maps/Route2/scripts.pory"
 	player_run_left
-# 952 "data/maps/Route2/scripts.pory"
+# 938 "data/maps/Route2/scripts.pory"
 	player_run_left
-# 952 "data/maps/Route2/scripts.pory"
+# 938 "data/maps/Route2/scripts.pory"
 	player_run_down
-# 952 "data/maps/Route2/scripts.pory"
+# 938 "data/maps/Route2/scripts.pory"
 	face_right
 	step_end
 
-# 954 "data/maps/Route2/scripts.pory"
+# 940 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_2:
-# 954 "data/maps/Route2/scripts.pory"
+# 940 "data/maps/Route2/scripts.pory"
 	walk_left
-# 954 "data/maps/Route2/scripts.pory"
+# 940 "data/maps/Route2/scripts.pory"
 	walk_down
-# 954 "data/maps/Route2/scripts.pory"
+# 940 "data/maps/Route2/scripts.pory"
 	face_right
 	step_end
 
-# 964 "data/maps/Route2/scripts.pory"
+# 950 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_3:
-# 964 "data/maps/Route2/scripts.pory"
+# 950 "data/maps/Route2/scripts.pory"
 	walk_up
-# 964 "data/maps/Route2/scripts.pory"
+# 950 "data/maps/Route2/scripts.pory"
 	face_down
 	step_end
 
-# 976 "data/maps/Route2/scripts.pory"
+# 962 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_4:
-# 976 "data/maps/Route2/scripts.pory"
+# 962 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 976 "data/maps/Route2/scripts.pory"
+# 962 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 976 "data/maps/Route2/scripts.pory"
+# 962 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 976 "data/maps/Route2/scripts.pory"
+# 962 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 976 "data/maps/Route2/scripts.pory"
+# 962 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 976 "data/maps/Route2/scripts.pory"
+# 962 "data/maps/Route2/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 977 "data/maps/Route2/scripts.pory"
+# 963 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_5:
-# 977 "data/maps/Route2/scripts.pory"
+# 963 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 977 "data/maps/Route2/scripts.pory"
+# 963 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 977 "data/maps/Route2/scripts.pory"
+# 963 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 977 "data/maps/Route2/scripts.pory"
+# 963 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 977 "data/maps/Route2/scripts.pory"
+# 963 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 977 "data/maps/Route2/scripts.pory"
+# 963 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 977 "data/maps/Route2/scripts.pory"
+# 963 "data/maps/Route2/scripts.pory"
 	set_invisible
 	step_end
 
-# 981 "data/maps/Route2/scripts.pory"
+# 967 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_6:
-# 981 "data/maps/Route2/scripts.pory"
+# 967 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 981 "data/maps/Route2/scripts.pory"
+# 967 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 981 "data/maps/Route2/scripts.pory"
+# 967 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 981 "data/maps/Route2/scripts.pory"
+# 967 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 981 "data/maps/Route2/scripts.pory"
+# 967 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 981 "data/maps/Route2/scripts.pory"
+# 967 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 981 "data/maps/Route2/scripts.pory"
+# 967 "data/maps/Route2/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 982 "data/maps/Route2/scripts.pory"
+# 968 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Movement_7:
-# 982 "data/maps/Route2/scripts.pory"
+# 968 "data/maps/Route2/scripts.pory"
 	walk_diag_southeast
-# 982 "data/maps/Route2/scripts.pory"
+# 968 "data/maps/Route2/scripts.pory"
 	walk_diag_southeast
-# 982 "data/maps/Route2/scripts.pory"
+# 968 "data/maps/Route2/scripts.pory"
 	walk_diag_southeast
-# 982 "data/maps/Route2/scripts.pory"
+# 968 "data/maps/Route2/scripts.pory"
 	walk_diag_southeast
-# 982 "data/maps/Route2/scripts.pory"
+# 968 "data/maps/Route2/scripts.pory"
 	walk_diag_southeast
 	step_end
 
-# 991 "data/maps/Route2/scripts.pory"
+# 977 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV_Movement_0:
-# 991 "data/maps/Route2/scripts.pory"
+# 977 "data/maps/Route2/scripts.pory"
 	walk_diag_northeast
-# 991 "data/maps/Route2/scripts.pory"
+# 977 "data/maps/Route2/scripts.pory"
 	walk_diag_northeast
 	step_end
 
-# 1138 "data/maps/Route2/scripts.pory"
+# 1124 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_MitsuruAppearsMitsuruPOV_Movement_0:
-# 1138 "data/maps/Route2/scripts.pory"
+# 1124 "data/maps/Route2/scripts.pory"
 	walk_left
-# 1138 "data/maps/Route2/scripts.pory"
+# 1124 "data/maps/Route2/scripts.pory"
 	walk_down
 	step_end
 
-# 1197 "data/maps/Route2/scripts.pory"
+# 1183 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_0:
-# 1197 "data/maps/Route2/scripts.pory"
+# 1183 "data/maps/Route2/scripts.pory"
 	emote_exclamation_mark
-# 1197 "data/maps/Route2/scripts.pory"
+# 1183 "data/maps/Route2/scripts.pory"
 	walk_fast_left
-# 1197 "data/maps/Route2/scripts.pory"
+# 1183 "data/maps/Route2/scripts.pory"
 	face_down
 	step_end
 
-# 1203 "data/maps/Route2/scripts.pory"
+# 1189 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_1:
-# 1203 "data/maps/Route2/scripts.pory"
+# 1189 "data/maps/Route2/scripts.pory"
 	lock_facing_direction
-# 1203 "data/maps/Route2/scripts.pory"
+# 1189 "data/maps/Route2/scripts.pory"
 	walk_down
-# 1203 "data/maps/Route2/scripts.pory"
+# 1189 "data/maps/Route2/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 1206 "data/maps/Route2/scripts.pory"
+# 1192 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Movement_2:
-# 1206 "data/maps/Route2/scripts.pory"
+# 1192 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 1206 "data/maps/Route2/scripts.pory"
+# 1192 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 1206 "data/maps/Route2/scripts.pory"
+# 1192 "data/maps/Route2/scripts.pory"
 	face_left
 	step_end
 
-# 1217 "data/maps/Route2/scripts.pory"
+# 1203 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft_Movement_0:
-# 1217 "data/maps/Route2/scripts.pory"
+# 1203 "data/maps/Route2/scripts.pory"
 	emote_exclamation_mark
-# 1217 "data/maps/Route2/scripts.pory"
+# 1203 "data/maps/Route2/scripts.pory"
 	walk_fast_left
-# 1217 "data/maps/Route2/scripts.pory"
+# 1203 "data/maps/Route2/scripts.pory"
 	walk_fast_left
-# 1217 "data/maps/Route2/scripts.pory"
+# 1203 "data/maps/Route2/scripts.pory"
 	face_down
 	step_end
 
-# 1226 "data/maps/Route2/scripts.pory"
+# 1212 "data/maps/Route2/scripts.pory"
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft_Movement_1:
-# 1226 "data/maps/Route2/scripts.pory"
+# 1212 "data/maps/Route2/scripts.pory"
 	walk_fast_up
-# 1226 "data/maps/Route2/scripts.pory"
+# 1212 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 1226 "data/maps/Route2/scripts.pory"
+# 1212 "data/maps/Route2/scripts.pory"
 	walk_fast_right
-# 1226 "data/maps/Route2/scripts.pory"
+# 1212 "data/maps/Route2/scripts.pory"
 	face_left
 	step_end
 
@@ -2635,17 +2608,17 @@ Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle_Text_2:
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Don't underestimate me.$"
 
 Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle_Text_3:
-# 657 "data/maps/Route2/scripts.pory"
+# 659 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Let's go.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}No holding back, alright?$"
 
-Route2_Eventscript_SelectingPartyShinjiroFirstBattle_Text_0:
-# 696 "data/maps/Route2/scripts.pory"
+Route2_Eventscript_SelectingPartyShinjiroFirstBattle_Cancel_Text_0:
+# 699 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Let's pick 3 Pokémon to fight. Shinji is\n"
 	.string "waiting.)$"
 
 Route2_Eventscript_PostShinjiroFirstBattle_Text_0:
-# 798 "data/maps/Route2/scripts.pory"
+# 784 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}-yawn- That battle took all the energy\n"
 	.string "out of me.\p"
 	.string "Let's go to bed. I don't want to hear\n"
@@ -2655,30 +2628,30 @@ Route2_Eventscript_PostShinjiroFirstBattle_Text_0:
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Yeah, I'm tired too.$"
 
 Route2_Eventscript_Himari_Text_0:
-# 816 "data/maps/Route2/scripts.pory"
+# 802 "data/maps/Route2/scripts.pory"
 	.string "Himari$"
 
 Route2_Eventscript_Himari_Text_1:
-# 818 "data/maps/Route2/scripts.pory"
+# 804 "data/maps/Route2/scripts.pory"
 	.string "Can I pet your Rockruff?$"
 
 Route2_Eventscript_Himari_Text_2:
-# 823 "data/maps/Route2/scripts.pory"
+# 809 "data/maps/Route2/scripts.pory"
 	.string "Thank you!\p"
 	.string "{SPEAKER NAME_NONE}Himari petted the Rockruff.$"
 
 Route2_Eventscript_Himari_Text_3:
-# 836 "data/maps/Route2/scripts.pory"
+# 822 "data/maps/Route2/scripts.pory"
 	.string "Aw... Okay...$"
 
 Route2_Eventscript_Himari_Text_4:
-# 842 "data/maps/Route2/scripts.pory"
+# 828 "data/maps/Route2/scripts.pory"
 	.string "Thank you for letting me pet your\n"
 	.string "Rockruff!\p"
 	.string "Its fur is surprisingly soft!$"
 
 Route2_Eventscript_Himari_Text_5:
-# 849 "data/maps/Route2/scripts.pory"
+# 835 "data/maps/Route2/scripts.pory"
 	.string "Rockruff in Kitoha region can evolve\n"
 	.string "into Midday, Midnight or Dusk form\l"
 	.string "Lycanroc regardless of its Ability.\p"
@@ -2687,53 +2660,53 @@ Route2_Eventscript_Himari_Text_5:
 	.string "their base stats spread.$"
 
 Route2_Eventscript_Himari_Text_6:
-# 857 "data/maps/Route2/scripts.pory"
+# 843 "data/maps/Route2/scripts.pory"
 	.string "Whoa! You have a Rockruff! It's so\n"
 	.string "cute!$"
 
 Route2_Eventscript_ShinjiroFirstBattleWarning_Text_0:
-# 871 "data/maps/Route2/scripts.pory"
+# 857 "data/maps/Route2/scripts.pory"
 	.string "{COLOR RED}Important battle ahead. Do you want to\n"
 	.string "proceed?$"
 
 Route2_Eventscript_MitsuruApproachingRoute2House_Text_0:
-# 888 "data/maps/Route2/scripts.pory"
+# 874 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Yuuma-san said the key is under the\n"
 	.string "pot of plant outside of the house.)\p"
 	.string "(Let's see..........)\p"
 	.string "(Found it.)$"
 
 Route2_Eventscript_MitsuruApproachingRoute2House_Text_1:
-# 897 "data/maps/Route2/scripts.pory"
+# 883 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Please excuse my intrusion.$"
 
 Route2_Eventscript_HouseLocked_Text_0:
-# 910 "data/maps/Route2/scripts.pory"
+# 896 "data/maps/Route2/scripts.pory"
 	.string "It's locked.$"
 
 Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed_Text_0:
-# 968 "data/maps/Route2/scripts.pory"
+# 954 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}It's those men from the Genesis Group.\n"
 	.string "I have to know what they're plotting.\p"
 	.string "Can you cover the north, Inteleon?$"
 
 Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV_Text_0:
-# 1047 "data/maps/Route2/scripts.pory"
+# 1033 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(!)\n"
 	.string "(Sanada won.)\p"
 	.string "(His battling skill is quite good.)$"
 
 Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV_Text_1:
-# 1054 "data/maps/Route2/scripts.pory"
+# 1040 "data/maps/Route2/scripts.pory"
 	.string "You aren't half bad. However...\p"
 	.string "Resistance is futile.$"
 
 Route2_Eventscript_AkishinjiAsleepMitsuruPOV_Text_0:
-# 1103 "data/maps/Route2/scripts.pory"
+# 1089 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Now! Inteleon, Vulpix!$"
 
 Route2_Eventscript_MitsuruAppearsMitsuruPOV_Text_0:
-# 1150 "data/maps/Route2/scripts.pory"
+# 1136 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}...\p"
 	.string "Inteleon, let's get these two out of\n"
 	.string "here first.\p"
@@ -2741,14 +2714,14 @@ Route2_Eventscript_MitsuruAppearsMitsuruPOV_Text_0:
 	.string "long.$"
 
 Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_Text_0:
-# 1172 "data/maps/Route2/scripts.pory"
+# 1158 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(There's still time before the promised\n"
 	.string "hour.)\p"
 	.string "(Maybe I can wander around the town to\n"
 	.string "gather more information.)$"
 
 Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_Text_1:
-# 1178 "data/maps/Route2/scripts.pory"
+# 1164 "data/maps/Route2/scripts.pory"
 	.string "{COLOR GREEN}Tips: Quest System is now unlocked.\p"
 	.string "Check around for quest givers with a\n"
 	.string "light blue exclamation mark.\p"
@@ -2756,7 +2729,7 @@ Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting_Text_1:
 	.string "{START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}.$"
 
 Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight_Text_0:
-# 1200 "data/maps/Route2/scripts.pory"
+# 1186 "data/maps/Route2/scripts.pory"
 	.string "I'm sorry but I dropped an important\n"
 	.string "note around here. Could you please come\l"
 	.string "back after I find it?$"
@@ -2803,11 +2776,11 @@ Route2_TarouPostBattle::
 	.string "off.$"
 
 ShinjiroFirstBattleDefeated::
-# 719 "data/maps/Route2/scripts.pory"
+# 704 "data/maps/Route2/scripts.pory"
 	.string "Whew, that was quite a work-out.$"
 
 Route2_Eventscript_WonInShinjiroFirstBattlePointUp::
-# 748 "data/maps/Route2/scripts.pory"
+# 734 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}-huff- -huff- (Did I win?)\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_STRUGGLED}-huff- Dang it, I was so close.\p"
 	.string "Looks like I lost to both of you, huh.\p"
@@ -2817,7 +2790,7 @@ Route2_Eventscript_WonInShinjiroFirstBattlePointUp::
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Heh, it is.$"
 
 Route2_Eventscript_WonInShinjiroFirstBattlePointDown::
-# 757 "data/maps/Route2/scripts.pory"
+# 743 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}-huff- -huff- (Did I win?)\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_STRUGGLED}-huff- Dang it, I was so close.\p"
 	.string "Looks like I lost to both of you, huh.\p"
@@ -2833,7 +2806,7 @@ Route2_Eventscript_WonInShinjiroFirstBattlePointDown::
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Apology accepted.$"
 
 Route2_Eventscript_LostInShinjiroFirstBattlePointUp::
-# 769 "data/maps/Route2/scripts.pory"
+# 755 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}Arg, I was so close!\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_STRUGGLED}-huff- Your {STR_VAR_1} did pack a\n"
 	.string "punch.\p"
@@ -2846,7 +2819,7 @@ Route2_Eventscript_LostInShinjiroFirstBattlePointUp::
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Pft, the look on your face.$"
 
 Route2_Eventscript_LostInShinjiroFirstBattlePointDown::
-# 780 "data/maps/Route2/scripts.pory"
+# 766 "data/maps/Route2/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}Arg, I lost...\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}...\p"
 	.string "Isn't that to be expected? Since you\n"

@@ -505,7 +505,6 @@ struct PokemonStorageSystemData
     struct Pokemon tempMon;
     s8 canReleaseMon;
     bool8 releaseStatusResolved;
-    //s8 releaseStoryStarters;
     s8 releaseCheckBoxId;
     s8 releaseCheckBoxPos;
     s8 releaseBoxId;
@@ -653,7 +652,6 @@ static void InitReleaseMon(void);
 static bool8 TryHideReleaseMon(void);
 static void InitCanReleaseMonVars(void);
 static void ReleaseMon(void);
-//static bool32 IsStoryStarterPokemon(void);
 static bool32 AtLeastThreeUsableMons(void);
 static s8 RunCanReleaseMon(void);
 static void SaveMovingMon(void);

@@ -341,7 +341,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 13,
         .width = 14,
         .height = 6,
-        .paletteNum = 14,
+        .paletteNum = 13,
         .baseBlock = 0x0122,
     },
     [WIN_QUANTITY_IN_BAG] = {
@@ -377,7 +377,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 5,
         .width = 11,
         .height = 7,
-        .paletteNum = 13,
+        .paletteNum = 14,
         .baseBlock = 0x0222,
     },
     DUMMY_WIN_TEMPLATE
@@ -738,7 +738,7 @@ static void MoveTutorLoadMonIcons(u32 item)
 {
     
     DestroyPartyMonIcons_Shop();
-    FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(3));
+    FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(11));
     AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, gTextSelect, 64, 0, TEXT_SKIP_DRAW, NULL); // adds "select" text
     DrawPartyMonIcons_Shop();
     TintPartyMonIcons_Shop(item);
@@ -753,19 +753,19 @@ static void MoveTutorLoadMoveInfo(u32 item)
     const u8 *str;
     extern const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES];
 
-    FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(3));
+    FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(11));
 
     str = gText_MoveRelearnerPower;
-    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 0, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "Power" text
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 0, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds "Power" text
 
     str = gText_MoveRelearnerAccuracy;
-    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 13, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "Accuracy" text
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 13, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds "Accuracy" text
 
     str = gText_MoveRelearnerPP;
-    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 26, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "PP" text
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 26, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds "PP" text
 
     str = gTextSelect;
-    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 64, 0, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds "select" text
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 64, 0, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds "select" text
 
     if (item == LIST_CANCEL)
     {
@@ -776,7 +776,7 @@ static void MoveTutorLoadMoveInfo(u32 item)
     move = &gMovesInfo[item];
     str = gTypesInfo[move->type].name;
     x = GetStringRightAlignXOffset(FONT_NARROW, str, 0);
-    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds Type name
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds Type name
 
     str = gTypesInfo[move->type].name;
     x = GetStringWidth(FONT_NARROW, str, 0) + GetStringRightAlignXOffset(FONT_NARROW, str, 0);
@@ -792,11 +792,11 @@ static void MoveTutorLoadMoveInfo(u32 item)
             str = gText_TutorStatus;
             break;
     }
-    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0); // adds Physical/Special/Status text
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 39, TEXT_SKIP_DRAW, NULL, 2, 0x0, 0); // adds Physical/Special/Status text
 
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerPP, 0);
     ConvertIntToDecimalStringN(buffer, move->pp, STR_CONV_MODE_LEFT_ALIGN, 2);
-    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, buffer, x, 26, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds PP value
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, buffer, x, 26, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds PP value
 
     if (move->power < 2)
     {
@@ -808,7 +808,7 @@ static void MoveTutorLoadMoveInfo(u32 item)
         str = buffer;
     }
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerPower, 0);
-    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 0, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds Power value
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 0, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds Power value
 
     if (move->accuracy == 0)
     {
@@ -820,10 +820,10 @@ static void MoveTutorLoadMoveInfo(u32 item)
         str = buffer;
     }
     x = 2 + GetStringWidth(FONT_NARROW, gText_MoveRelearnerAccuracy, 0);
-    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 13, TEXT_SKIP_DRAW, NULL, 1, 0, 0); // adds Accuracy value
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, x, 13, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds Accuracy value
 
     str = gMovesInfo[item].description;
-    AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 65, 0, NULL);
+    AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 65, 0, NULL, 2, 0, 0);
 }
 
 static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, struct ListMenu *list)
@@ -1369,7 +1369,7 @@ static void Task_BuyMenu(u8 taskId)
             {
                 sShowMonIcons = TRUE;
                 PlaySE(SE_SELECT);
-                FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(3));
+                FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(11));
                 AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, gTextSelect, 64, 0, TEXT_SKIP_DRAW, NULL); // adds "select" text
                 DrawPartyMonIcons_Shop();
                 TintPartyMonIcons_Shop(list->template.items[list->scrollOffset + list->selectedRow].id);
@@ -1379,7 +1379,7 @@ static void Task_BuyMenu(u8 taskId)
             {
                 sShowMonIcons = FALSE;
                 PlaySE(SE_SELECT);
-                FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(3));
+                FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(11));
                 DestroyPartyMonIcons_Shop();
                 MoveTutorLoadMoveInfo(list->template.items[list->scrollOffset + list->selectedRow].id);
             }

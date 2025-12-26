@@ -990,7 +990,6 @@ static void Task_PrintIsNowPlayer(u8 taskId)
 static inline void CloseOutfitMenu(u8 taskId)
 {
     PlaySE(SE_RG_HELP_CLOSE);
-    FlagClear(FLAG_HIDE_TALK_BUTTON);
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
     gTasks[taskId].func = Task_CloseOutfitMenu;
 }

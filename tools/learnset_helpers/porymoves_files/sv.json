@@ -99538,7 +99538,6 @@
       "MOVE_THUNDER_WAVE",
       "MOVE_REST",
       "MOVE_BODY_PRESS",
-      "MOVE_EERIE_IMPULSE",
       "MOVE_SUBSTITUTE",
       "MOVE_CRUNCH",
       "MOVE_ENCORE",
@@ -99576,7 +99575,9 @@
     ],
     "TutorMoves": [
       "MOVE_COACHING",
+      "MOVE_EERIE_IMPULSE",
       "MOVE_UPPER_HAND",
-      "MOVE_ZIPPY_ZAP"]
+      "MOVE_ZIPPY_ZAP"
+      ]
   }
 }

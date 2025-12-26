@@ -628,7 +628,7 @@ static const struct WindowTemplate sWhichMoveMsgWindowTemplate =
     .tilemapTop = 17,
     .width = 16,
     .height = 2,
-    .paletteNum = 13,
+    .paletteNum = 14,
     .baseBlock = 0x299,
 };
 
@@ -639,7 +639,7 @@ static const struct WindowTemplate sAlreadyHoldingOneMsgWindowTemplate =
     .tilemapTop = 15,
     .width = 20,
     .height = 4,
-    .paletteNum = 13,
+    .paletteNum = 14,
     .baseBlock = 0x299,
 };
 

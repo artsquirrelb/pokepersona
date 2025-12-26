@@ -2950,7 +2950,7 @@ void DisplayPartyMenuStdMessage(u32 stringId)
         DrawStdFrameWithCustomTileAndPalette(*windowPtr, FALSE, 0x4F, 13);
         StringExpandPlaceholders(gStringVar4, sActionStringTable[stringId]);
         //AddTextPrinterParameterized(*windowPtr, FONT_NORMAL, gStringVar4, 0, 1, 0, 0);
-        AddTextPrinterParameterized2(*windowPtr, FONT_NORMAL, gStringVar4, 0, 0, 1, 3, 0);
+        AddTextPrinterParameterized2(*windowPtr, FONT_NORMAL, gStringVar4, 0, 0, 1, 3, 3);
         ScheduleBgCopyTilemapToVram(2);
     }
 }
@@ -3045,7 +3045,7 @@ static void PrintMessage(const u8 *text)
 {
     DrawStdFrameWithCustomTileAndPalette(WIN_MSG, FALSE, 0x4F, 13);
     gTextFlags.canABSpeedUpPrint = TRUE;
-    AddTextPrinterParameterized2(WIN_MSG, FONT_NORMAL, text, GetPlayerTextSpeedDelay(), 0, 1, 3, 0);
+    AddTextPrinterParameterized2(WIN_MSG, FONT_NORMAL, text, GetPlayerTextSpeedDelay(), 0, 1, 3, 3);
 }
 
 static void PartyMenuDisplayYesNoMenu(void)

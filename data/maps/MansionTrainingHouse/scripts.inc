@@ -90,767 +90,755 @@ MansionTrainingHouse_MoveTutor:
 # 54 "data/maps/MansionTrainingHouse/scripts.pory"
 	.2byte MOVE_BULLET_SEED
 # 55 "data/maps/MansionTrainingHouse/scripts.pory"
-	.2byte MOVE_CHILLING_WATER
-# 56 "data/maps/MansionTrainingHouse/scripts.pory"
 	.2byte MOVE_FLAME_CHARGE
-# 57 "data/maps/MansionTrainingHouse/scripts.pory"
-	.2byte MOVE_THUNDER_WAVE
-# 58 "data/maps/MansionTrainingHouse/scripts.pory"
-	.2byte MOVE_ICY_WIND
-# 59 "data/maps/MansionTrainingHouse/scripts.pory"
+# 56 "data/maps/MansionTrainingHouse/scripts.pory"
 	.2byte MOVE_TRIPLE_KICK
-# 60 "data/maps/MansionTrainingHouse/scripts.pory"
+# 57 "data/maps/MansionTrainingHouse/scripts.pory"
 	.2byte MOVE_SMOG
-# 61 "data/maps/MansionTrainingHouse/scripts.pory"
-	.2byte MOVE_MUD_SHOT
-# 62 "data/maps/MansionTrainingHouse/scripts.pory"
+# 58 "data/maps/MansionTrainingHouse/scripts.pory"
 	.2byte MOVE_FEATHER_DANCE
-# 63 "data/maps/MansionTrainingHouse/scripts.pory"
+# 59 "data/maps/MansionTrainingHouse/scripts.pory"
 	.2byte MOVE_HEART_STAMP
-# 64 "data/maps/MansionTrainingHouse/scripts.pory"
+# 60 "data/maps/MansionTrainingHouse/scripts.pory"
 	.2byte MOVE_INFESTATION
-# 65 "data/maps/MansionTrainingHouse/scripts.pory"
+# 61 "data/maps/MansionTrainingHouse/scripts.pory"
 	.2byte MOVE_ROLLOUT
-# 66 "data/maps/MansionTrainingHouse/scripts.pory"
+# 62 "data/maps/MansionTrainingHouse/scripts.pory"
 	.2byte MOVE_CONFUSE_RAY
-# 67 "data/maps/MansionTrainingHouse/scripts.pory"
+# 63 "data/maps/MansionTrainingHouse/scripts.pory"
 	.2byte MOVE_FAKE_TEARS
-# 68 "data/maps/MansionTrainingHouse/scripts.pory"
-	.2byte MOVE_METAL_CLAW
-# 69 "data/maps/MansionTrainingHouse/scripts.pory"
-	.2byte MOVE_DRAINING_KISS
-# 70 "data/maps/MansionTrainingHouse/scripts.pory"
+# 64 "data/maps/MansionTrainingHouse/scripts.pory"
 	.2byte MOVE_NONE
 	.2byte ITEM_NONE
 
 MansionTrainingHouse_Eventscript_FurfrouStyleSetter::
-# 74 "data/maps/MansionTrainingHouse/scripts.pory"
+# 68 "data/maps/MansionTrainingHouse/scripts.pory"
 	lock
-# 75 "data/maps/MansionTrainingHouse/scripts.pory"
+# 69 "data/maps/MansionTrainingHouse/scripts.pory"
 	faceplayer
-# 76 "data/maps/MansionTrainingHouse/scripts.pory"
+# 70 "data/maps/MansionTrainingHouse/scripts.pory"
 	setspeaker MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_0
-# 77 "data/maps/MansionTrainingHouse/scripts.pory"
+# 71 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_1, MSGBOX_YESNO
-# 80 "data/maps/MansionTrainingHouse/scripts.pory"
+# 74 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 81 "data/maps/MansionTrainingHouse/scripts.pory"
+# 75 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq MansionTrainingHouse_Eventscript_FurfrouStyleSetter_1
-# 85 "data/maps/MansionTrainingHouse/scripts.pory"
+# 79 "data/maps/MansionTrainingHouse/scripts.pory"
 	setspeaker MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_0
-# 86 "data/maps/MansionTrainingHouse/scripts.pory"
+# 80 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_2
-# 87 "data/maps/MansionTrainingHouse/scripts.pory"
+# 81 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 88 "data/maps/MansionTrainingHouse/scripts.pory"
+# 82 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 MansionTrainingHouse_Eventscript_FurfrouStyleSetter_1:
-# 82 "data/maps/MansionTrainingHouse/scripts.pory"
+# 76 "data/maps/MansionTrainingHouse/scripts.pory"
 	call CheckIfHasFurfrou
 	return
 
 
 ShowMultiChoiceFurfrouStyle1::
-# 94 "data/maps/MansionTrainingHouse/scripts.pory"
+# 88 "data/maps/MansionTrainingHouse/scripts.pory"
 	setspeaker MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_0
-# 95 "data/maps/MansionTrainingHouse/scripts.pory"
+# 89 "data/maps/MansionTrainingHouse/scripts.pory"
 	multichoice 21, 3, MULTI_FURFROU_STYLE, 0
-# 96 "data/maps/MansionTrainingHouse/scripts.pory"
+# 90 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ShowMultiChoiceFurfrouStyle1_2
 ShowMultiChoiceFurfrouStyle1_1:
-# 99 "data/maps/MansionTrainingHouse/scripts.pory"
+# 93 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq ShowMultiChoiceFurfrouStyle1_4
-# 102 "data/maps/MansionTrainingHouse/scripts.pory"
+# 96 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq ShowMultiChoiceFurfrouStyle1_5
-# 105 "data/maps/MansionTrainingHouse/scripts.pory"
+# 99 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq ShowMultiChoiceFurfrouStyle1_6
-# 108 "data/maps/MansionTrainingHouse/scripts.pory"
+# 102 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 4
 	goto_if_eq ShowMultiChoiceFurfrouStyle1_7
-# 111 "data/maps/MansionTrainingHouse/scripts.pory"
+# 105 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 5
 	goto_if_eq ShowMultiChoiceFurfrouStyle1_8
-# 115 "data/maps/MansionTrainingHouse/scripts.pory"
+# 109 "data/maps/MansionTrainingHouse/scripts.pory"
 	setspeaker MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_0
-# 116 "data/maps/MansionTrainingHouse/scripts.pory"
+# 110 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowMultiChoiceFurfrouStyle1_Text_0
-# 118 "data/maps/MansionTrainingHouse/scripts.pory"
+# 112 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 119 "data/maps/MansionTrainingHouse/scripts.pory"
+# 113 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 ShowMultiChoiceFurfrouStyle1_2:
-# 97 "data/maps/MansionTrainingHouse/scripts.pory"
+# 91 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowFurfrouNatural
 	goto ShowMultiChoiceFurfrouStyle1_1
 
 ShowMultiChoiceFurfrouStyle1_4:
-# 100 "data/maps/MansionTrainingHouse/scripts.pory"
+# 94 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowFurfrouHeart
 	return
 
 ShowMultiChoiceFurfrouStyle1_5:
-# 103 "data/maps/MansionTrainingHouse/scripts.pory"
+# 97 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowFurfrouStar
 	return
 
 ShowMultiChoiceFurfrouStyle1_6:
-# 106 "data/maps/MansionTrainingHouse/scripts.pory"
+# 100 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowFurfrouDiamond
 	return
 
 ShowMultiChoiceFurfrouStyle1_7:
-# 109 "data/maps/MansionTrainingHouse/scripts.pory"
+# 103 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowFurfrouDebutante
 	return
 
 ShowMultiChoiceFurfrouStyle1_8:
-# 112 "data/maps/MansionTrainingHouse/scripts.pory"
+# 106 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle2
 	return
 
 
 ShowMultiChoiceFurfrouStyle2::
-# 125 "data/maps/MansionTrainingHouse/scripts.pory"
+# 119 "data/maps/MansionTrainingHouse/scripts.pory"
 	setspeaker MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_0
-# 126 "data/maps/MansionTrainingHouse/scripts.pory"
+# 120 "data/maps/MansionTrainingHouse/scripts.pory"
 	multichoice 21, 3, MULTI_FURFROU_STYLE_2, 0
-# 127 "data/maps/MansionTrainingHouse/scripts.pory"
+# 121 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq ShowMultiChoiceFurfrouStyle2_1
-# 130 "data/maps/MansionTrainingHouse/scripts.pory"
+# 124 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_eq ShowMultiChoiceFurfrouStyle2_2
-# 133 "data/maps/MansionTrainingHouse/scripts.pory"
+# 127 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 2
 	goto_if_eq ShowMultiChoiceFurfrouStyle2_3
-# 136 "data/maps/MansionTrainingHouse/scripts.pory"
+# 130 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 3
 	goto_if_eq ShowMultiChoiceFurfrouStyle2_4
-# 139 "data/maps/MansionTrainingHouse/scripts.pory"
+# 133 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 4
 	goto_if_eq ShowMultiChoiceFurfrouStyle2_5
-# 142 "data/maps/MansionTrainingHouse/scripts.pory"
+# 136 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, 5
 	goto_if_eq ShowMultiChoiceFurfrouStyle2_6
-# 146 "data/maps/MansionTrainingHouse/scripts.pory"
+# 140 "data/maps/MansionTrainingHouse/scripts.pory"
 	setspeaker MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_0
-# 147 "data/maps/MansionTrainingHouse/scripts.pory"
+# 141 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowMultiChoiceFurfrouStyle1_Text_0
-# 149 "data/maps/MansionTrainingHouse/scripts.pory"
+# 143 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 150 "data/maps/MansionTrainingHouse/scripts.pory"
+# 144 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 ShowMultiChoiceFurfrouStyle2_1:
-# 128 "data/maps/MansionTrainingHouse/scripts.pory"
+# 122 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowFurfrouMatron
 	return
 
 ShowMultiChoiceFurfrouStyle2_2:
-# 131 "data/maps/MansionTrainingHouse/scripts.pory"
+# 125 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowFurfrouDandy
 	return
 
 ShowMultiChoiceFurfrouStyle2_3:
-# 134 "data/maps/MansionTrainingHouse/scripts.pory"
+# 128 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowFurfrouLaReine
 	return
 
 ShowMultiChoiceFurfrouStyle2_4:
-# 137 "data/maps/MansionTrainingHouse/scripts.pory"
+# 131 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowFurfrouKabuki
 	return
 
 ShowMultiChoiceFurfrouStyle2_5:
-# 140 "data/maps/MansionTrainingHouse/scripts.pory"
+# 134 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowFurfrouPharaoh
 	return
 
 ShowMultiChoiceFurfrouStyle2_6:
-# 143 "data/maps/MansionTrainingHouse/scripts.pory"
+# 137 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle1
 	return
 
 
 ShowFurfrouNatural::
-# 156 "data/maps/MansionTrainingHouse/scripts.pory"
+# 150 "data/maps/MansionTrainingHouse/scripts.pory"
 	showmonpic SPECIES_FURFROU_NATURAL, 3, 3
-# 157 "data/maps/MansionTrainingHouse/scripts.pory"
+# 151 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowFurfrouNatural_Text_0, MSGBOX_YESNO
-# 158 "data/maps/MansionTrainingHouse/scripts.pory"
+# 152 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 159 "data/maps/MansionTrainingHouse/scripts.pory"
+# 153 "data/maps/MansionTrainingHouse/scripts.pory"
 	hidemonpic
-# 160 "data/maps/MansionTrainingHouse/scripts.pory"
+# 154 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ShowFurfrouNatural_1
-# 170 "data/maps/MansionTrainingHouse/scripts.pory"
+# 164 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle1
 	return
 
 ShowFurfrouNatural_1:
-# 161 "data/maps/MansionTrainingHouse/scripts.pory"
+# 155 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFurfrouToNatural
-# 162 "data/maps/MansionTrainingHouse/scripts.pory"
+# 156 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox FurfrouStyleChangedPerfectly
-# 163 "data/maps/MansionTrainingHouse/scripts.pory"
+# 157 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 164 "data/maps/MansionTrainingHouse/scripts.pory"
+# 158 "data/maps/MansionTrainingHouse/scripts.pory"
 	setvar VAR_0x8001, 0
-# 165 "data/maps/MansionTrainingHouse/scripts.pory"
+# 159 "data/maps/MansionTrainingHouse/scripts.pory"
 	updatefollowingmon
-# 166 "data/maps/MansionTrainingHouse/scripts.pory"
+# 160 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 
 ShowFurfrouHeart::
-# 175 "data/maps/MansionTrainingHouse/scripts.pory"
+# 169 "data/maps/MansionTrainingHouse/scripts.pory"
 	showmonpic SPECIES_FURFROU_HEART, 3, 3
-# 176 "data/maps/MansionTrainingHouse/scripts.pory"
+# 170 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowFurfrouHeart_Text_0, MSGBOX_YESNO
-# 177 "data/maps/MansionTrainingHouse/scripts.pory"
+# 171 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 178 "data/maps/MansionTrainingHouse/scripts.pory"
+# 172 "data/maps/MansionTrainingHouse/scripts.pory"
 	hidemonpic
-# 179 "data/maps/MansionTrainingHouse/scripts.pory"
+# 173 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ShowFurfrouHeart_1
-# 190 "data/maps/MansionTrainingHouse/scripts.pory"
+# 184 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle1
 	return
 
 ShowFurfrouHeart_1:
-# 181 "data/maps/MansionTrainingHouse/scripts.pory"
+# 175 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFurfrouToHeart
-# 182 "data/maps/MansionTrainingHouse/scripts.pory"
+# 176 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox FurfrouStyleChangedPerfectly
-# 183 "data/maps/MansionTrainingHouse/scripts.pory"
+# 177 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 184 "data/maps/MansionTrainingHouse/scripts.pory"
+# 178 "data/maps/MansionTrainingHouse/scripts.pory"
 	setvar VAR_0x8001, 0
-# 185 "data/maps/MansionTrainingHouse/scripts.pory"
+# 179 "data/maps/MansionTrainingHouse/scripts.pory"
 	updatefollowingmon
-# 186 "data/maps/MansionTrainingHouse/scripts.pory"
+# 180 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 
 ShowFurfrouStar::
-# 195 "data/maps/MansionTrainingHouse/scripts.pory"
+# 189 "data/maps/MansionTrainingHouse/scripts.pory"
 	showmonpic SPECIES_FURFROU_STAR, 3, 3
-# 196 "data/maps/MansionTrainingHouse/scripts.pory"
+# 190 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowFurfrouStar_Text_0, MSGBOX_YESNO
-# 197 "data/maps/MansionTrainingHouse/scripts.pory"
+# 191 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 198 "data/maps/MansionTrainingHouse/scripts.pory"
+# 192 "data/maps/MansionTrainingHouse/scripts.pory"
 	hidemonpic
-# 199 "data/maps/MansionTrainingHouse/scripts.pory"
+# 193 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ShowFurfrouStar_1
-# 209 "data/maps/MansionTrainingHouse/scripts.pory"
+# 203 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle1
 	return
 
 ShowFurfrouStar_1:
-# 200 "data/maps/MansionTrainingHouse/scripts.pory"
+# 194 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFurfrouToStar
-# 201 "data/maps/MansionTrainingHouse/scripts.pory"
+# 195 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox FurfrouStyleChangedPerfectly
-# 202 "data/maps/MansionTrainingHouse/scripts.pory"
+# 196 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 203 "data/maps/MansionTrainingHouse/scripts.pory"
+# 197 "data/maps/MansionTrainingHouse/scripts.pory"
 	setvar VAR_0x8001, 0
-# 204 "data/maps/MansionTrainingHouse/scripts.pory"
+# 198 "data/maps/MansionTrainingHouse/scripts.pory"
 	updatefollowingmon
-# 205 "data/maps/MansionTrainingHouse/scripts.pory"
+# 199 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 
 ShowFurfrouDiamond::
-# 213 "data/maps/MansionTrainingHouse/scripts.pory"
+# 207 "data/maps/MansionTrainingHouse/scripts.pory"
 	showmonpic SPECIES_FURFROU_DIAMOND, 3, 3
-# 214 "data/maps/MansionTrainingHouse/scripts.pory"
+# 208 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowFurfrouDiamond_Text_0, MSGBOX_YESNO
-# 215 "data/maps/MansionTrainingHouse/scripts.pory"
+# 209 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 216 "data/maps/MansionTrainingHouse/scripts.pory"
+# 210 "data/maps/MansionTrainingHouse/scripts.pory"
 	hidemonpic
-# 217 "data/maps/MansionTrainingHouse/scripts.pory"
+# 211 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ShowFurfrouDiamond_1
-# 228 "data/maps/MansionTrainingHouse/scripts.pory"
+# 222 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle1
 	return
 
 ShowFurfrouDiamond_1:
-# 219 "data/maps/MansionTrainingHouse/scripts.pory"
+# 213 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFurfrouToDiamond
-# 220 "data/maps/MansionTrainingHouse/scripts.pory"
+# 214 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox FurfrouStyleChangedPerfectly
-# 221 "data/maps/MansionTrainingHouse/scripts.pory"
+# 215 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 222 "data/maps/MansionTrainingHouse/scripts.pory"
+# 216 "data/maps/MansionTrainingHouse/scripts.pory"
 	setvar VAR_0x8001, 0
-# 223 "data/maps/MansionTrainingHouse/scripts.pory"
+# 217 "data/maps/MansionTrainingHouse/scripts.pory"
 	updatefollowingmon
-# 224 "data/maps/MansionTrainingHouse/scripts.pory"
+# 218 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 
 ShowFurfrouDebutante::
-# 233 "data/maps/MansionTrainingHouse/scripts.pory"
+# 227 "data/maps/MansionTrainingHouse/scripts.pory"
 	showmonpic SPECIES_FURFROU_DEBUTANTE, 3, 3
-# 234 "data/maps/MansionTrainingHouse/scripts.pory"
+# 228 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowFurfrouDebutante_Text_0, MSGBOX_YESNO
-# 235 "data/maps/MansionTrainingHouse/scripts.pory"
+# 229 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 236 "data/maps/MansionTrainingHouse/scripts.pory"
+# 230 "data/maps/MansionTrainingHouse/scripts.pory"
 	hidemonpic
-# 237 "data/maps/MansionTrainingHouse/scripts.pory"
+# 231 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ShowFurfrouDebutante_1
-# 248 "data/maps/MansionTrainingHouse/scripts.pory"
+# 242 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle1
 	return
 
 ShowFurfrouDebutante_1:
-# 239 "data/maps/MansionTrainingHouse/scripts.pory"
+# 233 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFurfrouToDebutante
-# 240 "data/maps/MansionTrainingHouse/scripts.pory"
+# 234 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox FurfrouStyleChangedPerfectly
-# 241 "data/maps/MansionTrainingHouse/scripts.pory"
+# 235 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 242 "data/maps/MansionTrainingHouse/scripts.pory"
+# 236 "data/maps/MansionTrainingHouse/scripts.pory"
 	setvar VAR_0x8001, 0
-# 243 "data/maps/MansionTrainingHouse/scripts.pory"
+# 237 "data/maps/MansionTrainingHouse/scripts.pory"
 	updatefollowingmon
-# 244 "data/maps/MansionTrainingHouse/scripts.pory"
+# 238 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 
 ShowFurfrouMatron::
-# 253 "data/maps/MansionTrainingHouse/scripts.pory"
+# 247 "data/maps/MansionTrainingHouse/scripts.pory"
 	showmonpic SPECIES_FURFROU_MATRON, 3, 3
-# 254 "data/maps/MansionTrainingHouse/scripts.pory"
+# 248 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowFurfrouMatron_Text_0, MSGBOX_YESNO
-# 255 "data/maps/MansionTrainingHouse/scripts.pory"
+# 249 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 256 "data/maps/MansionTrainingHouse/scripts.pory"
+# 250 "data/maps/MansionTrainingHouse/scripts.pory"
 	hidemonpic
-# 257 "data/maps/MansionTrainingHouse/scripts.pory"
+# 251 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ShowFurfrouMatron_1
-# 268 "data/maps/MansionTrainingHouse/scripts.pory"
+# 262 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle2
 	return
 
 ShowFurfrouMatron_1:
-# 259 "data/maps/MansionTrainingHouse/scripts.pory"
+# 253 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFurfrouToMatron
-# 260 "data/maps/MansionTrainingHouse/scripts.pory"
+# 254 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox FurfrouStyleChangedPerfectly
-# 261 "data/maps/MansionTrainingHouse/scripts.pory"
+# 255 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 262 "data/maps/MansionTrainingHouse/scripts.pory"
+# 256 "data/maps/MansionTrainingHouse/scripts.pory"
 	setvar VAR_0x8001, 0
-# 263 "data/maps/MansionTrainingHouse/scripts.pory"
+# 257 "data/maps/MansionTrainingHouse/scripts.pory"
 	updatefollowingmon
-# 264 "data/maps/MansionTrainingHouse/scripts.pory"
+# 258 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 
 ShowFurfrouDandy::
-# 273 "data/maps/MansionTrainingHouse/scripts.pory"
+# 267 "data/maps/MansionTrainingHouse/scripts.pory"
 	showmonpic SPECIES_FURFROU_DANDY, 3, 3
-# 274 "data/maps/MansionTrainingHouse/scripts.pory"
+# 268 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowFurfrouDandy_Text_0, MSGBOX_YESNO
-# 275 "data/maps/MansionTrainingHouse/scripts.pory"
+# 269 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 276 "data/maps/MansionTrainingHouse/scripts.pory"
+# 270 "data/maps/MansionTrainingHouse/scripts.pory"
 	hidemonpic
-# 277 "data/maps/MansionTrainingHouse/scripts.pory"
+# 271 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ShowFurfrouDandy_1
-# 287 "data/maps/MansionTrainingHouse/scripts.pory"
+# 281 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle2
 	return
 
 ShowFurfrouDandy_1:
-# 278 "data/maps/MansionTrainingHouse/scripts.pory"
+# 272 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFurfrouToDandy
-# 279 "data/maps/MansionTrainingHouse/scripts.pory"
+# 273 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox FurfrouStyleChangedPerfectly
-# 280 "data/maps/MansionTrainingHouse/scripts.pory"
+# 274 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 281 "data/maps/MansionTrainingHouse/scripts.pory"
+# 275 "data/maps/MansionTrainingHouse/scripts.pory"
 	setvar VAR_0x8001, 0
-# 282 "data/maps/MansionTrainingHouse/scripts.pory"
+# 276 "data/maps/MansionTrainingHouse/scripts.pory"
 	updatefollowingmon
-# 283 "data/maps/MansionTrainingHouse/scripts.pory"
+# 277 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 
 ShowFurfrouLaReine::
-# 292 "data/maps/MansionTrainingHouse/scripts.pory"
+# 286 "data/maps/MansionTrainingHouse/scripts.pory"
 	showmonpic SPECIES_FURFROU_LA_REINE, 3, 3
-# 293 "data/maps/MansionTrainingHouse/scripts.pory"
+# 287 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowFurfrouLaReine_Text_0, MSGBOX_YESNO
-# 294 "data/maps/MansionTrainingHouse/scripts.pory"
+# 288 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 295 "data/maps/MansionTrainingHouse/scripts.pory"
+# 289 "data/maps/MansionTrainingHouse/scripts.pory"
 	hidemonpic
-# 296 "data/maps/MansionTrainingHouse/scripts.pory"
+# 290 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ShowFurfrouLaReine_1
-# 306 "data/maps/MansionTrainingHouse/scripts.pory"
+# 300 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle2
 	return
 
 ShowFurfrouLaReine_1:
-# 297 "data/maps/MansionTrainingHouse/scripts.pory"
+# 291 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFurfrouToLaReine
-# 298 "data/maps/MansionTrainingHouse/scripts.pory"
+# 292 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox FurfrouStyleChangedPerfectly
-# 299 "data/maps/MansionTrainingHouse/scripts.pory"
+# 293 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 300 "data/maps/MansionTrainingHouse/scripts.pory"
+# 294 "data/maps/MansionTrainingHouse/scripts.pory"
 	setvar VAR_0x8001, 0
-# 301 "data/maps/MansionTrainingHouse/scripts.pory"
+# 295 "data/maps/MansionTrainingHouse/scripts.pory"
 	updatefollowingmon
-# 302 "data/maps/MansionTrainingHouse/scripts.pory"
+# 296 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 
 ShowFurfrouKabuki::
-# 311 "data/maps/MansionTrainingHouse/scripts.pory"
+# 305 "data/maps/MansionTrainingHouse/scripts.pory"
 	showmonpic SPECIES_FURFROU_KABUKI, 3, 3
-# 312 "data/maps/MansionTrainingHouse/scripts.pory"
+# 306 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowFurfrouKabuki_Text_0, MSGBOX_YESNO
-# 313 "data/maps/MansionTrainingHouse/scripts.pory"
+# 307 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 314 "data/maps/MansionTrainingHouse/scripts.pory"
+# 308 "data/maps/MansionTrainingHouse/scripts.pory"
 	hidemonpic
-# 315 "data/maps/MansionTrainingHouse/scripts.pory"
+# 309 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ShowFurfrouKabuki_1
-# 325 "data/maps/MansionTrainingHouse/scripts.pory"
+# 319 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle2
 	return
 
 ShowFurfrouKabuki_1:
-# 316 "data/maps/MansionTrainingHouse/scripts.pory"
+# 310 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFurfrouToKabuki
-# 317 "data/maps/MansionTrainingHouse/scripts.pory"
+# 311 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox FurfrouStyleChangedPerfectly
-# 318 "data/maps/MansionTrainingHouse/scripts.pory"
+# 312 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 319 "data/maps/MansionTrainingHouse/scripts.pory"
+# 313 "data/maps/MansionTrainingHouse/scripts.pory"
 	setvar VAR_0x8001, 0
-# 320 "data/maps/MansionTrainingHouse/scripts.pory"
+# 314 "data/maps/MansionTrainingHouse/scripts.pory"
 	updatefollowingmon
-# 321 "data/maps/MansionTrainingHouse/scripts.pory"
+# 315 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 
 ShowFurfrouPharaoh::
-# 330 "data/maps/MansionTrainingHouse/scripts.pory"
+# 324 "data/maps/MansionTrainingHouse/scripts.pory"
 	showmonpic SPECIES_FURFROU_PHARAOH, 3, 3
-# 331 "data/maps/MansionTrainingHouse/scripts.pory"
+# 325 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ShowFurfrouPharaoh_Text_0, MSGBOX_YESNO
-# 332 "data/maps/MansionTrainingHouse/scripts.pory"
+# 326 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 333 "data/maps/MansionTrainingHouse/scripts.pory"
+# 327 "data/maps/MansionTrainingHouse/scripts.pory"
 	hidemonpic
-# 334 "data/maps/MansionTrainingHouse/scripts.pory"
+# 328 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq ShowFurfrouPharaoh_1
-# 344 "data/maps/MansionTrainingHouse/scripts.pory"
+# 338 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle2
 	return
 
 ShowFurfrouPharaoh_1:
-# 335 "data/maps/MansionTrainingHouse/scripts.pory"
+# 329 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFurfrouToPharaoh
-# 336 "data/maps/MansionTrainingHouse/scripts.pory"
+# 330 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox FurfrouStyleChangedPerfectly
-# 337 "data/maps/MansionTrainingHouse/scripts.pory"
+# 331 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 338 "data/maps/MansionTrainingHouse/scripts.pory"
+# 332 "data/maps/MansionTrainingHouse/scripts.pory"
 	setvar VAR_0x8001, 0
-# 339 "data/maps/MansionTrainingHouse/scripts.pory"
+# 333 "data/maps/MansionTrainingHouse/scripts.pory"
 	updatefollowingmon
-# 340 "data/maps/MansionTrainingHouse/scripts.pory"
+# 334 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 
 ChangeFormFadeScreen::
-# 349 "data/maps/MansionTrainingHouse/scripts.pory"
+# 343 "data/maps/MansionTrainingHouse/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 350 "data/maps/MansionTrainingHouse/scripts.pory"
+# 344 "data/maps/MansionTrainingHouse/scripts.pory"
 	delay 30
-# 351 "data/maps/MansionTrainingHouse/scripts.pory"
+# 345 "data/maps/MansionTrainingHouse/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
 	return
 
 
 ChangeFurfrouToNatural::
-# 355 "data/maps/MansionTrainingHouse/scripts.pory"
+# 349 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ChangeFurfrouToNatural_Text_0
-# 356 "data/maps/MansionTrainingHouse/scripts.pory"
+# 350 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 357 "data/maps/MansionTrainingHouse/scripts.pory"
+# 351 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFormFadeScreen
-# 358 "data/maps/MansionTrainingHouse/scripts.pory"
+# 352 "data/maps/MansionTrainingHouse/scripts.pory"
 	changespecies SPECIES_FURFROU_NATURAL
 	return
 
 
 ChangeFurfrouToHeart::
-# 362 "data/maps/MansionTrainingHouse/scripts.pory"
+# 356 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ChangeFurfrouToNatural_Text_0
-# 363 "data/maps/MansionTrainingHouse/scripts.pory"
+# 357 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 364 "data/maps/MansionTrainingHouse/scripts.pory"
+# 358 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFormFadeScreen
-# 365 "data/maps/MansionTrainingHouse/scripts.pory"
+# 359 "data/maps/MansionTrainingHouse/scripts.pory"
 	changespecies SPECIES_FURFROU_HEART
 	return
 
 
 ChangeFurfrouToStar::
-# 369 "data/maps/MansionTrainingHouse/scripts.pory"
+# 363 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ChangeFurfrouToNatural_Text_0
-# 370 "data/maps/MansionTrainingHouse/scripts.pory"
+# 364 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 371 "data/maps/MansionTrainingHouse/scripts.pory"
+# 365 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFormFadeScreen
-# 372 "data/maps/MansionTrainingHouse/scripts.pory"
+# 366 "data/maps/MansionTrainingHouse/scripts.pory"
 	changespecies SPECIES_FURFROU_STAR
 	return
 
 
 ChangeFurfrouToDiamond::
-# 376 "data/maps/MansionTrainingHouse/scripts.pory"
+# 370 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ChangeFurfrouToNatural_Text_0
-# 377 "data/maps/MansionTrainingHouse/scripts.pory"
+# 371 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 378 "data/maps/MansionTrainingHouse/scripts.pory"
+# 372 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFormFadeScreen
-# 379 "data/maps/MansionTrainingHouse/scripts.pory"
+# 373 "data/maps/MansionTrainingHouse/scripts.pory"
 	changespecies SPECIES_FURFROU_DIAMOND
 	return
 
 
 ChangeFurfrouToDebutante::
-# 383 "data/maps/MansionTrainingHouse/scripts.pory"
+# 377 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ChangeFurfrouToNatural_Text_0
-# 384 "data/maps/MansionTrainingHouse/scripts.pory"
+# 378 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 385 "data/maps/MansionTrainingHouse/scripts.pory"
+# 379 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFormFadeScreen
-# 386 "data/maps/MansionTrainingHouse/scripts.pory"
+# 380 "data/maps/MansionTrainingHouse/scripts.pory"
 	changespecies SPECIES_FURFROU_DEBUTANTE
 	return
 
 
 ChangeFurfrouToMatron::
-# 390 "data/maps/MansionTrainingHouse/scripts.pory"
+# 384 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ChangeFurfrouToNatural_Text_0
-# 391 "data/maps/MansionTrainingHouse/scripts.pory"
+# 385 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 392 "data/maps/MansionTrainingHouse/scripts.pory"
+# 386 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFormFadeScreen
-# 393 "data/maps/MansionTrainingHouse/scripts.pory"
+# 387 "data/maps/MansionTrainingHouse/scripts.pory"
 	changespecies SPECIES_FURFROU_MATRON
 	return
 
 
 ChangeFurfrouToDandy::
-# 397 "data/maps/MansionTrainingHouse/scripts.pory"
+# 391 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ChangeFurfrouToNatural_Text_0
-# 398 "data/maps/MansionTrainingHouse/scripts.pory"
+# 392 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 399 "data/maps/MansionTrainingHouse/scripts.pory"
+# 393 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFormFadeScreen
-# 400 "data/maps/MansionTrainingHouse/scripts.pory"
+# 394 "data/maps/MansionTrainingHouse/scripts.pory"
 	changespecies SPECIES_FURFROU_DANDY
 	return
 
 
 ChangeFurfrouToLaReine::
-# 404 "data/maps/MansionTrainingHouse/scripts.pory"
+# 398 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ChangeFurfrouToNatural_Text_0
-# 405 "data/maps/MansionTrainingHouse/scripts.pory"
+# 399 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 406 "data/maps/MansionTrainingHouse/scripts.pory"
+# 400 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFormFadeScreen
-# 407 "data/maps/MansionTrainingHouse/scripts.pory"
+# 401 "data/maps/MansionTrainingHouse/scripts.pory"
 	changespecies SPECIES_FURFROU_LA_REINE
 	return
 
 
 ChangeFurfrouToKabuki::
-# 411 "data/maps/MansionTrainingHouse/scripts.pory"
+# 405 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ChangeFurfrouToNatural_Text_0
-# 412 "data/maps/MansionTrainingHouse/scripts.pory"
+# 406 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 413 "data/maps/MansionTrainingHouse/scripts.pory"
+# 407 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFormFadeScreen
-# 414 "data/maps/MansionTrainingHouse/scripts.pory"
+# 408 "data/maps/MansionTrainingHouse/scripts.pory"
 	changespecies SPECIES_FURFROU_KABUKI
 	return
 
 
 ChangeFurfrouToPharaoh::
-# 418 "data/maps/MansionTrainingHouse/scripts.pory"
+# 412 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox ChangeFurfrouToNatural_Text_0
-# 419 "data/maps/MansionTrainingHouse/scripts.pory"
+# 413 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 420 "data/maps/MansionTrainingHouse/scripts.pory"
+# 414 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ChangeFormFadeScreen
-# 421 "data/maps/MansionTrainingHouse/scripts.pory"
+# 415 "data/maps/MansionTrainingHouse/scripts.pory"
 	changespecies SPECIES_FURFROU_PHARAOH
 	return
 
 
 MansionTrainingHouse_Eventscript_Furfrou::
-# 430 "data/maps/MansionTrainingHouse/scripts.pory"
+# 424 "data/maps/MansionTrainingHouse/scripts.pory"
 	lock
-# 431 "data/maps/MansionTrainingHouse/scripts.pory"
+# 425 "data/maps/MansionTrainingHouse/scripts.pory"
 	faceplayer
-# 432 "data/maps/MansionTrainingHouse/scripts.pory"
+# 426 "data/maps/MansionTrainingHouse/scripts.pory"
 	playmoncry SPECIES_FURFROU, CRY_MODE_NORMAL
-# 433 "data/maps/MansionTrainingHouse/scripts.pory"
+# 427 "data/maps/MansionTrainingHouse/scripts.pory"
 	waitmoncry
-# 434 "data/maps/MansionTrainingHouse/scripts.pory"
+# 428 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
 
 CheckIfHasFurfrou::
-# 439 "data/maps/MansionTrainingHouse/scripts.pory"
+# 433 "data/maps/MansionTrainingHouse/scripts.pory"
 	checkspecies SPECIES_FURFROU_NATURAL
-# 440 "data/maps/MansionTrainingHouse/scripts.pory"
+# 434 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CheckIfHasFurfrou_2
 CheckIfHasFurfrou_1:
-# 443 "data/maps/MansionTrainingHouse/scripts.pory"
+# 437 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CheckIfHasFurfrou_5
 CheckIfHasFurfrou_4:
-# 446 "data/maps/MansionTrainingHouse/scripts.pory"
+# 440 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CheckIfHasFurfrou_8
 CheckIfHasFurfrou_7:
-# 449 "data/maps/MansionTrainingHouse/scripts.pory"
+# 443 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CheckIfHasFurfrou_11
 CheckIfHasFurfrou_10:
-# 452 "data/maps/MansionTrainingHouse/scripts.pory"
+# 446 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CheckIfHasFurfrou_14
 CheckIfHasFurfrou_13:
-# 455 "data/maps/MansionTrainingHouse/scripts.pory"
+# 449 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CheckIfHasFurfrou_17
 CheckIfHasFurfrou_16:
-# 458 "data/maps/MansionTrainingHouse/scripts.pory"
+# 452 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CheckIfHasFurfrou_20
 CheckIfHasFurfrou_19:
-# 461 "data/maps/MansionTrainingHouse/scripts.pory"
+# 455 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CheckIfHasFurfrou_23
 CheckIfHasFurfrou_22:
-# 464 "data/maps/MansionTrainingHouse/scripts.pory"
+# 458 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CheckIfHasFurfrou_26
 CheckIfHasFurfrou_25:
-# 467 "data/maps/MansionTrainingHouse/scripts.pory"
+# 461 "data/maps/MansionTrainingHouse/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CheckIfHasFurfrou_28
-# 475 "data/maps/MansionTrainingHouse/scripts.pory"
+# 469 "data/maps/MansionTrainingHouse/scripts.pory"
 	setspeaker MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_0
-# 476 "data/maps/MansionTrainingHouse/scripts.pory"
+# 470 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox CheckIfHasFurfrou_Text_1
-# 477 "data/maps/MansionTrainingHouse/scripts.pory"
+# 471 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 478 "data/maps/MansionTrainingHouse/scripts.pory"
+# 472 "data/maps/MansionTrainingHouse/scripts.pory"
 	call ShowMultiChoiceFurfrouStyle1
 	return
 
 CheckIfHasFurfrou_2:
-# 441 "data/maps/MansionTrainingHouse/scripts.pory"
+# 435 "data/maps/MansionTrainingHouse/scripts.pory"
 	checkspecies SPECIES_FURFROU_HEART
 	goto CheckIfHasFurfrou_1
 
 CheckIfHasFurfrou_5:
-# 444 "data/maps/MansionTrainingHouse/scripts.pory"
+# 438 "data/maps/MansionTrainingHouse/scripts.pory"
 	checkspecies SPECIES_FURFROU_STAR
 	goto CheckIfHasFurfrou_4
 
 CheckIfHasFurfrou_8:
-# 447 "data/maps/MansionTrainingHouse/scripts.pory"
+# 441 "data/maps/MansionTrainingHouse/scripts.pory"
 	checkspecies SPECIES_FURFROU_DIAMOND
 	goto CheckIfHasFurfrou_7
 
 CheckIfHasFurfrou_11:
-# 450 "data/maps/MansionTrainingHouse/scripts.pory"
+# 444 "data/maps/MansionTrainingHouse/scripts.pory"
 	checkspecies SPECIES_FURFROU_DEBUTANTE
 	goto CheckIfHasFurfrou_10
 
 CheckIfHasFurfrou_14:
-# 453 "data/maps/MansionTrainingHouse/scripts.pory"
+# 447 "data/maps/MansionTrainingHouse/scripts.pory"
 	checkspecies SPECIES_FURFROU_MATRON
 	goto CheckIfHasFurfrou_13
 
 CheckIfHasFurfrou_17:
-# 456 "data/maps/MansionTrainingHouse/scripts.pory"
+# 450 "data/maps/MansionTrainingHouse/scripts.pory"
 	checkspecies SPECIES_FURFROU_DANDY
 	goto CheckIfHasFurfrou_16
 
 CheckIfHasFurfrou_20:
-# 459 "data/maps/MansionTrainingHouse/scripts.pory"
+# 453 "data/maps/MansionTrainingHouse/scripts.pory"
 	checkspecies SPECIES_FURFROU_LA_REINE
 	goto CheckIfHasFurfrou_19
 
 CheckIfHasFurfrou_23:
-# 462 "data/maps/MansionTrainingHouse/scripts.pory"
+# 456 "data/maps/MansionTrainingHouse/scripts.pory"
 	checkspecies SPECIES_FURFROU_KABUKI
 	goto CheckIfHasFurfrou_22
 
 CheckIfHasFurfrou_26:
-# 465 "data/maps/MansionTrainingHouse/scripts.pory"
+# 459 "data/maps/MansionTrainingHouse/scripts.pory"
 	checkspecies SPECIES_FURFROU_PHARAOH
 	goto CheckIfHasFurfrou_25
 
 CheckIfHasFurfrou_28:
-# 468 "data/maps/MansionTrainingHouse/scripts.pory"
+# 462 "data/maps/MansionTrainingHouse/scripts.pory"
 	setspeaker MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_0
-# 469 "data/maps/MansionTrainingHouse/scripts.pory"
+# 463 "data/maps/MansionTrainingHouse/scripts.pory"
 	msgbox CheckIfHasFurfrou_Text_0
-# 470 "data/maps/MansionTrainingHouse/scripts.pory"
+# 464 "data/maps/MansionTrainingHouse/scripts.pory"
 	closemessage
-# 471 "data/maps/MansionTrainingHouse/scripts.pory"
+# 465 "data/maps/MansionTrainingHouse/scripts.pory"
 	release
 	end
 
@@ -894,11 +882,11 @@ MansionTrainingHouse_Eventscript_MoveTutor_Text_4:
 	.string "Good luck on your journey, {PLAYER}.$"
 
 MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_0:
-# 76 "data/maps/MansionTrainingHouse/scripts.pory"
+# 70 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "Yoshiaki$"
 
 MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_1:
-# 77 "data/maps/MansionTrainingHouse/scripts.pory"
+# 71 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "I'm saving money to open a salon of my\n"
 	.string "own.\p"
 	.string "Furfrou visits the mansion's garden\n"
@@ -909,72 +897,72 @@ MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_1:
 	.string "Furfrou too?$"
 
 MansionTrainingHouse_Eventscript_FurfrouStyleSetter_Text_2:
-# 86 "data/maps/MansionTrainingHouse/scripts.pory"
+# 80 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "If you ever want to style your Furfrou,\n"
 	.string "just ask me. I'll do it free of charge.$"
 
 ShowMultiChoiceFurfrouStyle1_Text_0:
-# 116 "data/maps/MansionTrainingHouse/scripts.pory"
+# 110 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "If you want to change your Furfrou's\n"
 	.string "style, feel free to ask me.\p"
 	.string "It's free of charge, I just want to\n"
 	.string "practice.$"
 
 ShowFurfrouNatural_Text_0:
-# 157 "data/maps/MansionTrainingHouse/scripts.pory"
+# 151 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "You want the Natural style?$"
 
 ShowFurfrouHeart_Text_0:
-# 176 "data/maps/MansionTrainingHouse/scripts.pory"
+# 170 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "You want the Heart style?$"
 
 ShowFurfrouStar_Text_0:
-# 196 "data/maps/MansionTrainingHouse/scripts.pory"
+# 190 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "You want the Star style?$"
 
 ShowFurfrouDiamond_Text_0:
-# 214 "data/maps/MansionTrainingHouse/scripts.pory"
+# 208 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "You want the Diamond style?$"
 
 ShowFurfrouDebutante_Text_0:
-# 234 "data/maps/MansionTrainingHouse/scripts.pory"
+# 228 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "You want the Debutante style?$"
 
 ShowFurfrouMatron_Text_0:
-# 254 "data/maps/MansionTrainingHouse/scripts.pory"
+# 248 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "You want the Matron style?$"
 
 ShowFurfrouDandy_Text_0:
-# 274 "data/maps/MansionTrainingHouse/scripts.pory"
+# 268 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "You want the Dandy style?$"
 
 ShowFurfrouLaReine_Text_0:
-# 293 "data/maps/MansionTrainingHouse/scripts.pory"
+# 287 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "You want the La Reine style?$"
 
 ShowFurfrouKabuki_Text_0:
-# 312 "data/maps/MansionTrainingHouse/scripts.pory"
+# 306 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "You want the Kabuki style?$"
 
 ShowFurfrouPharaoh_Text_0:
-# 331 "data/maps/MansionTrainingHouse/scripts.pory"
+# 325 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "You want the Pharaoh style?$"
 
 ChangeFurfrouToNatural_Text_0:
-# 355 "data/maps/MansionTrainingHouse/scripts.pory"
+# 349 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "Please wait a moment.$"
 
 CheckIfHasFurfrou_Text_0:
-# 469 "data/maps/MansionTrainingHouse/scripts.pory"
+# 463 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "But you don't have a Furfrou in party...$"
 
 CheckIfHasFurfrou_Text_1:
-# 476 "data/maps/MansionTrainingHouse/scripts.pory"
+# 470 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "Which style do you want for your\n"
 	.string "Furfrou?$"
 
 FurfrouStyleChangedPerfectly::
-# 424 "data/maps/MansionTrainingHouse/scripts.pory"
+# 418 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "All perfectly done!\p"
 	.string "If you want to change your Furfrou's\n"
 	.string "style again, feel free to ask me.$"

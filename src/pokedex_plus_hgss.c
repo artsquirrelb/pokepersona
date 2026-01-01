@@ -5332,6 +5332,45 @@ static void PrintStatsScreen_Moves_Top(u8 taskId)
         StringCopy(gStringVar4, gText_CommunicationError);
     }
 
+    //Calculate and retrieve correct move from the arrays
+    if (selected < sPokedexView->numEggMoves)
+    {
+        PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, gText_ThreeDashes, moves_x + 113, moves_y + 9);
+        item = ITEM_LUCKY_EGG;
+    }
+    else if (selected < (sPokedexView->numLevelUpMoves + sPokedexView->numEggMoves))
+    {
+        u32 level = GetSpeciesLevelUpLearnset(species)[selected - sPokedexView->numEggMoves].level;
+        ConvertIntToDecimalStringN(gStringVar1, level, STR_CONV_MODE_LEFT_ALIGN, 3); //Move learn lvl
+        PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, sText_Stats_MoveLevel, moves_x + 113, moves_y + 3); //Level text
+        PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, gStringVar1, moves_x + 113, moves_y + 14); //Print level
+        item = ITEM_RARE_CANDY;
+    }
+    else if (move)
+    {
+        u32 TMHMItemId = ITEM_NONE;
+        for (u32 i = 0; i < NUM_ALL_MACHINES; i++)
+        {
+            if (move == GetTMHMMoveId(i + 1))
+                TMHMItemId = GetTMHMItemId(i + 1);
+        }
+        if (TMHMItemId)
+        {
+            CopyItemName(TMHMItemId, gStringVar1); //TM name
+            PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, gStringVar1, moves_x + 113, moves_y + 9);
+            item = TMHMItemId;
+        }
+        else
+        {
+            PrintStatsScreenTextSmall(WIN_STATS_MOVES_TOP, gText_ThreeDashes, moves_x + 113, moves_y + 9);
+            item = ITEM_TEACHY_TV;
+        }
+    }
+    else
+    {
+        StringCopy(gStringVar4, gText_CommunicationError);
+    }
+
     //Move name
     StringCopy(gStringVar3, GetMoveName(move));
     StringCopyPadded(gStringVar3, gStringVar3, CHAR_SPACE, 20);
@@ -6468,6 +6507,9 @@ static u8 PrintPreEvolutions(u8 taskId, u16 species)
     //Calculate previous evolution
     for (i = 0; i < NUM_SPECIES; i++)
     {
+        if (!IsSpeciesEnabled(i))
+            continue;
+
         const struct Evolution *evolutions = GetSpeciesEvolutions(i);
         if (evolutions == NULL)
             continue;
@@ -6514,6 +6556,9 @@ static u8 PrintPreEvolutions(u8 taskId, u16 species)
     {
         for (i = 0; i < NUM_SPECIES; i++)
         {
+            if (!IsSpeciesEnabled(i))
+                continue;
+
             const struct Evolution *evolutions = GetSpeciesEvolutions(i);
             if (evolutions == NULL)
                 continue;
@@ -6639,10 +6684,12 @@ static void PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 dept
     //If there are evolutions find out which and print them 1 by 1
     for (i = 0; i < times; i++)
     {
-        int j;
+        targetSpecies = evolutions[i].targetSpecies;
+        if (!IsSpeciesEnabled(targetSpecies))
+            continue;
+
         left = !left;
 
-        targetSpecies = evolutions[i].targetSpecies;
         bool32 isAlcremie = IsSpeciesAlcremie(targetSpecies);
 
         u32 speciesNameWidthInChars = GetSpeciesNameWidthInChars(GetSpeciesName(targetSpecies));
@@ -6656,7 +6703,7 @@ static void PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 dept
         CreateCaughtBallEvolutionScreen(targetSpecies, base_x + depth_x*depth-9, base_y + base_y_offset*(*depth_i) + numLines, 0);
         HandleTargetSpeciesPrintText(targetSpecies, base_x + depth_x*depth, base_y, base_y_offset + numLines, *depth_i); //evolution mon name
 
-        for (j = 0; j < MAX_EVOLUTION_ICONS; j++)
+        for (u32 j = 0; j < MAX_EVOLUTION_ICONS; j++)
         {
             if (alreadyPrintedIcons[j] == targetSpecies)
                 break;
@@ -6723,7 +6770,7 @@ static void PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 dept
             }//Switch end
 
             // Check for additional conditions. Skips if there's no additional conditions.
-            for (j = 0; evolutions[i].params != NULL && evolutions[i].params[j].condition != CONDITIONS_END; j++)
+            for (u32 j = 0; evolutions[i].params != NULL && evolutions[i].params[j].condition != CONDITIONS_END; j++)
             {
                 if (j == 0)
                 {

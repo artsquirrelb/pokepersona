@@ -320,7 +320,7 @@ static void WindowFunc_DrawDialogueFrame(u8 bg, u8 left, u8 top, u8 width, u8 he
     FillMenuTilemapBufferRect(bg,  6, left + width,     top - 1,         1, 1);
     FillMenuTilemapBufferRect(bg,  7, left - 2,         top,             1, 5);
     FillMenuTilemapBufferRect(bg,  8, left - 1,         top,     width + 1, 5);
-    FillMenuTilemapBufferRect(bg, 9, left + width,     top,             1, 5);
+    FillMenuTilemapBufferRect(bg,  9, left + width,     top,             1, 5);
     FillMenuTilemapBufferRect(bg, 10, left - 2,         top + height,         1, 1);
     FillMenuTilemapBufferRect(bg, 11, left - 1,         top + height,         1, 1);
     FillMenuTilemapBufferRect(bg, BG_TILE_V_FLIP(2), left,             top + height, width - 1, 1);

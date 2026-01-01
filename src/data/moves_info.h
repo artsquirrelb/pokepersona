@@ -13539,6 +13539,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .explosion = B_UPDATED_MOVE_FLAGS <= GEN_5,
         .mirrorMoveBanned = TRUE,
         .parentalBondBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_GREAT_APPEAL_BUT_NO_MORE_MOVES,
@@ -18025,12 +18026,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "The user attacks twice. Two\n"
             "targets are hit once each."),
-        .effect = EFFECT_DRAGON_DARTS,
+        .effect = EFFECT_HIT,
         .power = 50,
         .type = TYPE_DRAGON,
         .accuracy = 100,
         .pp = 10,
-        .target = TARGET_SELECTED,
+        .target = TARGET_SMART,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .strikeCount = 2,

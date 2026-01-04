@@ -1,14 +1,6 @@
-// Add new IDs here
-enum {
-    HELP_START_MENU,
-    HELP_MEGA_EVOLUTION,
-    HELP_MASTER_BALL,
-    HELP_GIMMIGHOUL_COINS,
-    HELP_COUNT
-};
-
 // Add entries here
 // These entries are example entries which you can replace, but they exist to get you started.
+// Remember to modify include/constants/help_window.h to include identifiers so they can be used in event scripts.
 const struct HelpWindow gHelpWindowInfo[] =
 {
     [HELP_START_MENU] =

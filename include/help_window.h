@@ -4,6 +4,7 @@
 #include "global.h"
 #include "script.h"
 #include "text.h"
+#include "constants/help_window.h"
 
 struct HelpWindow
 {

@@ -3,6 +3,7 @@ enum {
     HELP_START_MENU,
     HELP_MEGA_EVOLUTION,
     HELP_MASTER_BALL,
+    HELP_GIMMIGHOUL_COINS,
     HELP_COUNT
 };
 
@@ -37,6 +38,16 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "you want to add to your team but are hard to\n"
                                 "catch, like a Fearow or Tentacruel!"
                             ),
+    },
+    [HELP_GIMMIGHOUL_COINS] =
+    {
+        .header = COMPOUND_STRING("Information: Evolving Gimmighoul into Gholdengo"),
+        .desc = COMPOUND_STRING("To evolve Gimmighoul into Gholdengo, you\n"
+                                "need to gather 999 {COLOR RED}Gimmighoul Coins{COLOR DARK_GRAY}.\n\n"
+                                "You can find Gimmighoul Coins scattered\n"
+                                "all around Paldea."
+                            ),
+        .headerFont = FONT_NARROWER,
     },
     // Add more entries
 };

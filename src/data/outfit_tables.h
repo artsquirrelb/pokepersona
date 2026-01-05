@@ -62,8 +62,8 @@ const struct Outfit gOutfits[CHARACTER_COUNT] =
             "A clever trainer and leader."),
 
         .trainerPics = {
-            [MALE] = { TRAINER_PIC_MAY, TRAINER_BACK_PIC_MAY, },
-            [FEMALE] =   { TRAINER_PIC_MAY, TRAINER_BACK_PIC_MAY, },
+            [MALE] = { TRAINER_PIC_FRONT_MAY, TRAINER_PIC_BACK_MAY, },
+            [FEMALE] =   { TRAINER_PIC_FRONT_MAY, TRAINER_PIC_BACK_MAY, },
         },
         .avatarGfxIds = {
             [MALE] = {
@@ -116,8 +116,8 @@ const struct Outfit gOutfits[CHARACTER_COUNT] =
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
         .trainerPics = {
-            [MALE] =   { TRAINER_PIC_BRENDAN, TRAINER_BACK_PIC_BRENDAN, },
-            [FEMALE] = { TRAINER_PIC_BRENDAN, TRAINER_BACK_PIC_BRENDAN, },
+            [MALE] =   { TRAINER_PIC_FRONT_BRENDAN, TRAINER_PIC_BACK_BRENDAN, },
+            [FEMALE] = { TRAINER_PIC_FRONT_BRENDAN, TRAINER_PIC_BACK_BRENDAN, },
         },
 
         //! DESC: overworld avatars, consisting of: walking, cycling,
@@ -174,8 +174,8 @@ const struct Outfit gOutfits[CHARACTER_COUNT] =
             "Akihiko's childhood best friend."),
 
         .trainerPics = {
-            [MALE] =   { TRAINER_PIC_SHINJIRO, TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN, },
-            [FEMALE] = { TRAINER_PIC_SHINJIRO, TRAINER_BACK_PIC_RUBY_SAPPHIRE_BRENDAN, },
+            [MALE] =   { TRAINER_PIC_FRONT_SHINJIRO, TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN, },
+            [FEMALE] = { TRAINER_PIC_FRONT_SHINJIRO, TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN, },
         },
         .avatarGfxIds = {
             [MALE] = {
@@ -220,8 +220,8 @@ const struct Outfit gOutfits[CHARACTER_COUNT] =
             "Mitsuru and acts like a mentor."),
 
         .trainerPics = {
-            [MALE] =   { TRAINER_PIC_INTELEON_T, TRAINER_BACK_PIC_INTELEON_T, },
-            [FEMALE] = { TRAINER_PIC_INTELEON_T, TRAINER_BACK_PIC_INTELEON_T, },
+            [MALE] =   { TRAINER_PIC_FRONT_INTELEON_T, TRAINER_PIC_BACK_INTELEON_T, },
+            [FEMALE] = { TRAINER_PIC_FRONT_INTELEON_T, TRAINER_PIC_BACK_INTELEON_T, },
         },
         .avatarGfxIds = {
             [MALE] = {

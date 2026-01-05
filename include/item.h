@@ -120,7 +120,7 @@ struct ALIGNED(2) BagPocket
 struct TmHmIndexKey
 {
     enum TMHMItemId itemId:16;
-    u16 moveId;
+    enum Move moveId;
 };
 
 extern const u8 gQuestionMarksItemName[];
@@ -152,7 +152,7 @@ static inline enum TMHMIndex GetItemTMHMIndex(u16 item)
     }
 }
 
-static inline u16 GetItemTMHMMoveId(u16 item)
+static inline enum Move GetItemTMHMMoveId(u16 item)
 {
     switch (item)
     {
@@ -169,7 +169,7 @@ static inline u16 GetItemTMHMMoveId(u16 item)
     }
 }
 
-static inline enum TMHMItemId GetTMHMItemIdFromMoveId(u16 move)
+static inline enum TMHMItemId GetTMHMItemIdFromMoveId(enum Move move)
 {
     switch (move)
     {

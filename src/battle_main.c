@@ -360,7 +360,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_YOUNG_COUPLE] = { _("Young Couple"), 8 },
     [TRAINER_CLASS_OLD_COUPLE] = { _("Old Couple"), 10 },
     [TRAINER_CLASS_SIS_AND_BRO] = { _("Sis and Bro"), 3 },
-    [TRAINER_CLASS_SALON_MAIDEN] = { _("Salon Maiden"), 0, BALL_ULTRA },
+    [TRAINER_CLASS_SALON_MAIDEN] = { _("Salon Maiden"), 5, BALL_ULTRA },
     [TRAINER_CLASS_DOME_ACE] = { _("Dome Ace") },
     [TRAINER_CLASS_PALACE_MAVEN] = { _("Palace Maven") },
     [TRAINER_CLASS_ARENA_TYCOON] = { _("Arena Tycoon") },
@@ -1966,8 +1966,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             s32 ball = -1;
             u32 personalityHash = GeneratePartyHash(trainer, i);
             const struct TrainerMon *partyData = trainer->party;
-            u32 otIdType = OT_ID_RANDOM_NO_SHINY;
-            u32 fixedOtId = 0;
+            struct OriginalTrainerId otId = OTID_STRUCT_RANDOM_NO_SHINY;
             u32 abilityNum = 0;
 
             if (trainer->battleType != TRAINER_BATTLE_TYPE_SINGLES)
@@ -1987,8 +1986,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             ModifyPersonalityForNature(&personalityValue, partyData[monIndex].nature);
             if (partyData[monIndex].isShiny)
             {
-                otIdType = OT_ID_PRESET;
-                fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
+                otId.method = OT_ID_PRESET;
+                otId.value = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
 
             // Apply level scaling
@@ -2003,9 +2002,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 // Validate species for the scaled level
                 scaledSpecies = ValidateSpeciesForLevel(partyData[monIndex].species, scaledLevel, config->manageEvolutions);
             }
-            CreateMon(&party[i], scaledSpecies, scaledLevel, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            CreateMon(&party[i], scaledSpecies, scaledLevel, personalityValue, otId);
             #else
-            CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, personalityValue, otId);
             #endif
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
 
@@ -4813,7 +4812,7 @@ u32 GetBattlerTotalSpeedStat(u32 battler, enum Ability ability, enum HoldEffect 
 
 s32 GetChosenMovePriority(u32 battler, enum Ability ability)
 {
-    u16 move;
+    enum Move move;
 
     gProtectStructs[battler].pranksterElevated = FALSE;
     if (gProtectStructs[battler].noValidMoves)
@@ -4824,7 +4823,7 @@ s32 GetChosenMovePriority(u32 battler, enum Ability ability)
     return GetBattleMovePriority(battler, ability, move);
 }
 
-s32 GetBattleMovePriority(u32 battler, enum Ability ability, u32 move)
+s32 GetBattleMovePriority(u32 battler, enum Ability ability, enum Move move)
 {
     s32 priority = 0;
 
@@ -5819,7 +5818,7 @@ void RunBattleScriptCommands(void)
         gBattleScriptingCommandsTable[gBattlescriptCurrInstr[0]]();
 }
 
-enum Type TrySetAteType(u32 move, u32 battlerAtk, enum Ability attackerAbility)
+enum Type TrySetAteType(enum Move move, u32 battlerAtk, enum Ability attackerAbility)
 {
     enum Type ateType = TYPE_NONE;
 
@@ -5867,7 +5866,7 @@ enum Type TrySetAteType(u32 move, u32 battlerAtk, enum Ability attackerAbility)
 }
 
 // Returns TYPE_NONE if type doesn't change.
-enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum MonState state)
+enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, u32 battler, enum MonState state)
 {
     enum Type moveType = GetMoveType(move);
     enum BattleMoveEffects moveEffect = GetMoveEffect(move);
@@ -6105,7 +6104,7 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
     return TYPE_NONE;
 }
 
-void SetTypeBeforeUsingMove(u32 move, u32 battler)
+void SetTypeBeforeUsingMove(enum Move move, u32 battler)
 {
     enum Type moveType;
     u32 heldItem = gBattleMons[battler].item;

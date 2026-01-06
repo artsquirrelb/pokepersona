@@ -559,7 +559,7 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
         SetMonData(&mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     else
         SetMonData(&mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->player2Name);
-    //SetMonData(&mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
+    SetMonData(&mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
 
     if (side == B_SIDE_PLAYER)
         return GiveScriptedMonToPlayer(&mon, slot);

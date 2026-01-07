@@ -462,7 +462,7 @@ void SetTeraType(struct ScriptContext *ctx)
  * if side/slot are assigned, it will create the mon at the assigned party location
  * if slot == PARTY_SIZE, it will give the mon to first available party or storage slot
  */
-static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u16 item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u16 *evs, u16 *ivs, u16 *moves, enum ShinyMode shinyMode, bool8 isStoryStarter, bool8 gmaxFactor, enum Type teraType, u8 dmaxLevel)
+static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u16 item, enum PokeBall ball, u8 nature, u8 abilityNum, u8 gender, u16 *evs, u16 *ivs, u16 *moves, enum ShinyMode shinyMode, bool8 gmaxFactor, enum Type teraType, u8 dmaxLevel, bool8 isStoryStarter)
 {
     struct Pokemon mon;
     u32 i;
@@ -518,7 +518,7 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
         }
         else if (moves[i] == MOVE_DEFAULT)
         {
-            GiveMonDefaultMove(&mon, slot);
+            GiveMonDefaultMove(&mon, i);
             continue;
         }
         else
@@ -679,10 +679,10 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     enum Move move3                = PARSE_FLAG(19, MOVE_DEFAULT);
     enum Move move4                = PARSE_FLAG(20, MOVE_DEFAULT);
     enum ShinyMode shinyMode = PARSE_FLAG(21, SHINY_MODE_RANDOM);
-    bool8 isStoryStarter     = PARSE_FLAG(22, FALSE);
-    bool8 gmaxFactor         = PARSE_FLAG(23, FALSE);
-    enum Type teraType       = PARSE_FLAG(24, NUMBER_OF_MON_TYPES);
-    u8 dmaxLevel             = PARSE_FLAG(25, 0);
+    bool8 gmaxFactor         = PARSE_FLAG(22, FALSE);
+    enum Type teraType       = PARSE_FLAG(23, NUMBER_OF_MON_TYPES);
+    u8 dmaxLevel             = PARSE_FLAG(24, 0);
+    bool8 isStoryStarter     = PARSE_FLAG(25, FALSE);
 
     enum Move moves[MAX_MON_MOVES];
     for (i = 0; i < MAX_MON_MOVES; i++)
@@ -716,7 +716,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     if (nature == NATURE_MAY_SYNCHRONIZE)
         nature = GetSynchronizedNature(origin, species);
         
-    gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, shinyMode, isStoryStarter, gmaxFactor, teraType, dmaxLevel);
+    gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, shinyMode, gmaxFactor, teraType, dmaxLevel, isStoryStarter);
 }
 
 #undef PARSE_FLAG

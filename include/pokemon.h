@@ -213,7 +213,6 @@ struct PokemonSubstruct3
     u32 earthRibbon:1;    // Given to teams that have beaten Mt. Battle's 100-battle challenge in Colosseum/XD.
     u32 worldRibbon:1;    // Distributed during Pokémon Festa '04 and '05 to tournament winners.
     u32 isShadow:1;
-    u32 isStoryStarter:1;
     u32 abilityNum:2;
 
     // The functionality of this bit changed in FRLG:
@@ -223,6 +222,7 @@ struct PokemonSubstruct3
     // Set for in-game event island legendaries, events distributed after a certain date, & Pokémon from XD: Gale of Darkness.
     // Not to be confused with METLOC_FATEFUL_ENCOUNTER.
     u32 modernFatefulEncounter:1;
+    u32 isStoryStarter:1;
 };
 
 // Number of bytes in the largest Pokémon substruct.

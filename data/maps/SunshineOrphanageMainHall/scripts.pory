@@ -176,7 +176,7 @@ script SunshineOrphanageMainHall_Eventscript_GetPawmiStarter {
     msgbox ("Let Pawmi in the Cherish Ball?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         setflag(FLAG_SYS_POKEMON_GET)
-        givemon(SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, 0, 0, 0, 0, SHINY_MODE_RANDOM, TRUE)
+        givemon(SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, isStoryStarter = TRUE)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             waitfanfare

@@ -1387,138 +1387,54 @@ Debug_EventScript_Script_1::
 # 696 "data/scripts/debug.pory"
 	closemessage
 # 697 "data/scripts/debug.pory"
-	getcharaAvailability CHARACTER_MITSURU
+	givemon SPECIES_FENNEKIN, 10
 # 698 "data/scripts/debug.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne Debug_EventScript_Script_1_2
-# 702 "data/scripts/debug.pory"
-	makecharaAvailable CHARACTER_MITSURU
-Debug_EventScript_Script_1_1:
-# 704 "data/scripts/debug.pory"
 	release
 	end
-
-Debug_EventScript_Script_1_2:
-# 699 "data/scripts/debug.pory"
-	makecharaUnavailable CHARACTER_MITSURU
-	goto Debug_EventScript_Script_1_1
 
 
 Debug_EventScript_Script_2::
-# 709 "data/scripts/debug.pory"
-	msgbox Debug_EventScript_Script_2_Text_0
-# 710 "data/scripts/debug.pory"
-	closemessage
-# 711 "data/scripts/debug.pory"
-	getcharaAvailability CHARACTER_AKIHIKO
-# 712 "data/scripts/debug.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne Debug_EventScript_Script_2_2
-# 716 "data/scripts/debug.pory"
-	makecharaAvailable CHARACTER_AKIHIKO
-Debug_EventScript_Script_2_1:
-# 718 "data/scripts/debug.pory"
+# 703 "data/scripts/debug.pory"
 	release
 	end
-
-Debug_EventScript_Script_2_2:
-# 713 "data/scripts/debug.pory"
-	makecharaUnavailable CHARACTER_AKIHIKO
-	goto Debug_EventScript_Script_2_1
 
 
 Debug_EventScript_Script_3::
-# 723 "data/scripts/debug.pory"
-	msgbox Debug_EventScript_Script_3_Text_0
-# 724 "data/scripts/debug.pory"
-	closemessage
-# 725 "data/scripts/debug.pory"
-	getcharaAvailability CHARACTER_SHINJIRO
-# 726 "data/scripts/debug.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne Debug_EventScript_Script_3_2
-# 730 "data/scripts/debug.pory"
-	makecharaAvailable CHARACTER_SHINJIRO
-Debug_EventScript_Script_3_1:
-# 732 "data/scripts/debug.pory"
+# 708 "data/scripts/debug.pory"
 	release
 	end
-
-Debug_EventScript_Script_3_2:
-# 727 "data/scripts/debug.pory"
-	makecharaUnavailable CHARACTER_SHINJIRO
-	goto Debug_EventScript_Script_3_1
 
 
 Debug_EventScript_Script_4::
-# 737 "data/scripts/debug.pory"
-	msgbox Debug_EventScript_Script_4_Text_0
-# 738 "data/scripts/debug.pory"
-	closemessage
-# 739 "data/scripts/debug.pory"
-	isfollowernpc OBJ_EVENT_GFX_MAY_NORMAL
-# 740 "data/scripts/debug.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne Debug_EventScript_Script_4_2
-# 744 "data/scripts/debug.pory"
-	msgbox Debug_EventScript_Script_4_Text_2
-Debug_EventScript_Script_4_1:
-# 746 "data/scripts/debug.pory"
-	closemessage
-# 747 "data/scripts/debug.pory"
+# 713 "data/scripts/debug.pory"
 	release
 	end
 
-Debug_EventScript_Script_4_2:
-# 741 "data/scripts/debug.pory"
-	msgbox Debug_EventScript_Script_4_Text_1
-	goto Debug_EventScript_Script_4_1
-
 
 Debug_EventScript_Script_5::
-# 752 "data/scripts/debug.pory"
+# 718 "data/scripts/debug.pory"
 	release
 	end
 
 
 Debug_EventScript_Script_6::
-# 757 "data/scripts/debug.pory"
+# 723 "data/scripts/debug.pory"
 	release
 	end
 
 
 Debug_EventScript_Script_7::
-# 762 "data/scripts/debug.pory"
+# 728 "data/scripts/debug.pory"
 	release
 	end
 
 
 Debug_EventScript_Script_8::
-# 767 "data/scripts/debug.pory"
+# 733 "data/scripts/debug.pory"
 	release
 	end
 
 
 Debug_EventScript_Script_1_Text_0:
 # 695 "data/scripts/debug.pory"
-	.string "toggle mitsuru$"
-
-Debug_EventScript_Script_2_Text_0:
-# 709 "data/scripts/debug.pory"
-	.string "toggle akihiko$"
-
-Debug_EventScript_Script_3_Text_0:
-# 723 "data/scripts/debug.pory"
-	.string "toggle shinjiro$"
-
-Debug_EventScript_Script_4_Text_0:
-# 737 "data/scripts/debug.pory"
-	.string "checking if follower npc is mitsuru$"
-
-Debug_EventScript_Script_4_Text_1:
-# 741 "data/scripts/debug.pory"
-	.string "follower is mitsuru$"
-
-Debug_EventScript_Script_4_Text_2:
-# 744 "data/scripts/debug.pory"
-	.string "follower isnt mitsuru$"
+	.string "give fennekin lvl 10$"

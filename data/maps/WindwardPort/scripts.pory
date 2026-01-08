@@ -154,3 +154,28 @@ script WindwardPort_Eventscript_Youngster {
     release
     end
 }
+
+script WindwardPort_Eventscript_Fisherman {
+    lock
+    faceplayer
+    setspeaker("Hibari")
+    msgbox(format("I love the sea breeze.\n
+    Sitting here while listening to the sound of the waves is my favorite activity of the day."))
+    closemessage
+    release
+    end
+}
+
+script WindwardPort_Eventscript_Corphish{
+    moncryscript(SPECIES_CORPHISH)
+    releaseall
+    end
+}
+
+script WindwardPort_Eventscript_CitySign{
+    lock
+    msgbox(format("Welcome to Windward Port!"))
+    closemessage
+    release
+    end
+}

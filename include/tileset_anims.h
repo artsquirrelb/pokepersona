@@ -34,6 +34,6 @@ void InitTilesetAnim_BattleDome(void);
 void InitTilesetAnim_BattlePyramid(void);
 void InitTilesetAnim_SunshineOrphanageEntrance(void);
 void InitTilesetAnim_MansionGarden(void); //make sure to add these InitTilesetAnim to \src\data\tilesets\headers.h
-
+void InitTilesetAnim_Coralport(void);
 
 #endif // GUARD_TILESET_ANIMS_H

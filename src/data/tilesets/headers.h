@@ -1015,7 +1015,7 @@ const struct Tileset gTileset_Coralport =
     .palettes = gTilesetPalettes_Coralport,
     .metatiles = gMetatiles_Coralport,
     .metatileAttributes = gMetatileAttributes_Coralport,
-    .callback = NULL,
+    .callback = InitTilesetAnim_Coralport,
 };
 
 const struct Tileset gTileset_Coralport_Lighthouse =
@@ -1081,5 +1081,5 @@ const struct Tileset gTileset_WindwardPort =
     .palettes = gTilesetPalettes_WindwardPort,
     .metatiles = gMetatiles_WindwardPort,
     .metatileAttributes = gMetatileAttributes_WindwardPort,
-    .callback = NULL,
+    .callback = InitTilesetAnim_Coralport,  //same sand water animation offset as coralport's
 };

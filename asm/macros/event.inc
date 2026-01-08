@@ -3289,3 +3289,22 @@
 	    specialvar VAR_RESULT, GetBattleOutcome
 	    goto \post_battle_script
 	.endm
+
+	@ Shows the message box containing the help window and its header and description.
+	.macro showhelpwindow id:req
+	callnative ShowHelpInfoWindow, requests_effects=1
+	.2byte \id
+	.endm
+	
+	@ Destroys the help window.
+	.macro hidehelpwindow
+	callnative HideHelpInfoWindow
+	.endm
+
+	@ Creates a help window.
+	.macro helpwindow id:req
+	showhelpwindow \id
+	waitbuttonpress
+	hidehelpwindow
+	closemessage
+	.endm

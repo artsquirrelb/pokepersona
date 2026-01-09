@@ -290,7 +290,7 @@ Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_7:
 
 Eventscript_CutsceneStarts::
 # 155 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 156 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	return
@@ -298,7 +298,7 @@ Eventscript_CutsceneStarts::
 
 Eventscript_CutsceneEnds::
 # 160 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 # 161 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 	return
@@ -398,7 +398,7 @@ Mansion_MitsurusRoom2F_Eventscript_Piano_2:
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_5:
 # 216 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 217 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	playbgm MUS_XC2_GARFONT_MERCERNARIES_NIGHT, FALSE
 # 218 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"

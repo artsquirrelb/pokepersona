@@ -9,11 +9,6 @@ Debug_ShowFieldMessageStringVar4::
 	special ShowFieldMessageStringVar4
 	goto Debug_MessageEnd
 
-Debug_CheatStart::
-	
-	release
-	end
-
 Debug_FlagsNotSetOverworldConfigMessage::
 	message Debug_FlagsNotSetOverworldConfigMessage_Text
 	goto Debug_MessageEnd
@@ -730,6 +725,60 @@ script Debug_EventScript_Script_7{
 }
 
 script Debug_EventScript_Script_8{
+	release
+	end
+}
+
+script Debug_CheatStart {
+	msgbox(format("Skipping Prologues."))
+	setflag(FLAG_SYS_POKEMON_GET)
+	setflag(FLAG_SYS_POKEDEX_GET)
+	setflag(FLAG_SYS_B_DASH)
+	setflag(FLAG_SYS_NATIONAL_DEX)
+	setflag(FLAG_SYS_QUEST_MENU_GET)
+	setflag(FLAG_COMPANION_MENU_GET)
+	setflag(FLAG_HELP_WINDOW_GET)
+	special(EnableNationalPokedex)
+	fwdtime(8, 0)
+	setvar(VAR_AKIHIKOS_INTRO_STATE, 100)
+	setvar(VAR_MITSURUS_INTRO_STATE, 100)
+	setvar(VAR_CURRENT_LEVEL_CAP, 18)
+	setvar(VAR_CURRENT_EV_CAP, 80)
+	setvar(VAR_DAYS_LEFT, 15)
+	unlockcharacter(CHARACTER_MITSURU)
+	unlockcharacter(CHARACTER_AKIHIKO)
+	unlockcharacter(CHARACTER_SHINJIRO)
+	unlockcharacter(CHARACTER_INTELEON_T)
+	makecharaAvailable(CHARACTER_MITSURU)
+	makecharaAvailable(CHARACTER_AKIHIKO)
+	makecharaAvailable(CHARACTER_SHINJIRO)
+	makecharaAvailable(CHARACTER_INTELEON_T)
+	questmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS)
+	subquestmenu(QUEST_MENU_COMPLETE_QUEST, STORY_QUESTS, MITSURUS_PROLOGUE)
+	subquestmenu(QUEST_MENU_COMPLETE_QUEST, STORY_QUESTS, AKIHIKOS_PROLOGUE)
+	subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, CHAPTER_1)
+	additem(ITEM_EXP_CANDY_XS, 40)
+	checkplayergender
+	if(var(VAR_RESULT) == MALE){
+		addmoney(15000)
+		additem(ITEM_POKE_BALL, 40)
+		additem(ITEM_CAMP_GEARS)
+        givemon(SPECIES_PAWMI_DELTA, 10, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_METAL_CLAW, isStoryStarter = TRUE)
+		switchmaincharacter
+		givemon(SPECIES_VULPIX_DELTA, 10, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ECHOED_VOICE, isStoryStarter = TRUE)
+    	givemon(SPECIES_FENNEKIN, 10, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_ALWAYS)
+
+	}
+	else{
+		additem(ITEM_POKE_BALL, 20)
+		addmoney(3000)
+		givemon(SPECIES_VULPIX_DELTA, 10, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ECHOED_VOICE, isStoryStarter = TRUE)
+		givemon(SPECIES_FENNEKIN, 10, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_ALWAYS)
+		switchmaincharacter
+        givemon(SPECIES_PAWMI_DELTA, 10, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, isStoryStarter = TRUE)
+	}
+	switchmaincharacter
+	warp(MAP_ROUTE2_GATEHOUSE, 9, 8)
 	release
 	end
 }

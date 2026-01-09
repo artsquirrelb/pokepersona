@@ -38,7 +38,7 @@ WindwardPort_Harbor_MapScripts_OnTransition_6:
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 100
 	goto_if_eq WindwardPort_Harbor_MapScripts_OnTransition_5
 WindwardPort_Harbor_MapScripts_OnTransition_4:
-# 28 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 29 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 1
 	goto_if_eq WindwardPort_Harbor_MapScripts_OnTransition_11
 	return
@@ -66,9 +66,9 @@ WindwardPort_Harbor_MapScripts_OnTransition_7:
 	goto WindwardPort_Harbor_MapScripts_OnTransition_6
 
 WindwardPort_Harbor_MapScripts_OnTransition_11:
-# 29 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setobjectxyperm GHOSTBOY, 17, 29
 # 30 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setobjectxyperm GHOSTBOY, 17, 29
+# 31 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setobjectmovementtype GHOSTBOY, MOVEMENT_TYPE_FACE_RIGHT
 	return
 
@@ -79,912 +79,1320 @@ WindwardPort_Harbor_MapScripts_OnTransition_13:
 	savebgm MUS_DP_LAKE_CAVERNS
 # 25 "data/maps/WindwardPort_Harbor/scripts.pory"
 	clearflag FLAG_TEMP_3
+# 26 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setflag FLAG_TEMP_5
 	goto WindwardPort_Harbor_MapScripts_OnTransition_4
 
 
 WindwardPort_Harbor_MapScripts_OnFrame4::
-# 34 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 35 "data/maps/WindwardPort_Harbor/scripts.pory"
 	goto WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab
 	return
 
 
 WindwardPort_Harbor_MapScripts_UpdatingNPCTime::
-# 38 "data/maps/WindwardPort_Harbor/scripts.pory"
-	gettime
 # 39 "data/maps/WindwardPort_Harbor/scripts.pory"
+	gettime
+# 40 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_0x8000, 7
 	goto_if_lt WindwardPort_Harbor_MapScripts_UpdatingNPCTime_2
-# 39 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 40 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_0x8000, 17
 	goto_if_ge WindwardPort_Harbor_MapScripts_UpdatingNPCTime_2
-# 43 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 44 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setflag FLAG_TEMP_1
 WindwardPort_Harbor_MapScripts_UpdatingNPCTime_1:
-# 45 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 46 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_0x8000, 7
 	goto_if_lt WindwardPort_Harbor_MapScripts_UpdatingNPCTime_7
-# 45 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 46 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_0x8000, 21
 	goto_if_ge WindwardPort_Harbor_MapScripts_UpdatingNPCTime_7
-# 49 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 50 "data/maps/WindwardPort_Harbor/scripts.pory"
 	clearflag FLAG_TEMP_4
 	return
 
 WindwardPort_Harbor_MapScripts_UpdatingNPCTime_2:
-# 40 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 41 "data/maps/WindwardPort_Harbor/scripts.pory"
 	clearflag FLAG_TEMP_1
 	goto WindwardPort_Harbor_MapScripts_UpdatingNPCTime_1
 
 WindwardPort_Harbor_MapScripts_UpdatingNPCTime_7:
-# 46 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 47 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setflag FLAG_TEMP_4
 	return
 
 
 WindwardPort_Harbor_Eventscript_SailorOnGuard::
-# 54 "data/maps/WindwardPort_Harbor/scripts.pory"
-	lock
 # 55 "data/maps/WindwardPort_Harbor/scripts.pory"
-	faceplayer
+	lock
 # 56 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setspeaker WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_0
+	faceplayer
 # 57 "data/maps/WindwardPort_Harbor/scripts.pory"
-	gettime
-# 58 "data/maps/WindwardPort_Harbor/scripts.pory"
-	compare VAR_0x8000, 7
-	goto_if_lt WindwardPort_Harbor_Eventscript_SailorOnGuard_1
-# 58 "data/maps/WindwardPort_Harbor/scripts.pory"
-	compare VAR_0x8000, 17
-	goto_if_ge WindwardPort_Harbor_Eventscript_SailorOnGuard_1
-# 95 "data/maps/WindwardPort_Harbor/scripts.pory"
-	goto WindwardPort_Harbor_Eventscript_ShipOutOfCommission
-	return
-
-WindwardPort_Harbor_Eventscript_SailorOnGuard_1:
-# 59 "data/maps/WindwardPort_Harbor/scripts.pory"
-	showmoneybox 0, 0
-# 60 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_1, MSGBOX_YESNO
-# 63 "data/maps/WindwardPort_Harbor/scripts.pory"
-	closemessage
-# 64 "data/maps/WindwardPort_Harbor/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne WindwardPort_Harbor_Eventscript_SailorOnGuard_6
-# 91 "data/maps/WindwardPort_Harbor/scripts.pory"
-	hidemoneybox
-	return
-
-WindwardPort_Harbor_Eventscript_SailorOnGuard_6:
-# 65 "data/maps/WindwardPort_Harbor/scripts.pory"
-	checkmoney 300
-# 66 "data/maps/WindwardPort_Harbor/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne WindwardPort_Harbor_Eventscript_SailorOnGuard_9
-# 82 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setspeaker WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_0
-# 83 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_3
-# 84 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 58 "data/maps/WindwardPort_Harbor/scripts.pory"
+	gettime
+# 59 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_0x8000, 7
+	goto_if_lt WindwardPort_Harbor_Eventscript_SailorOnGuard_2
+# 59 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_0x8000, 17
+	goto_if_ge WindwardPort_Harbor_Eventscript_SailorOnGuard_2
+# 96 "data/maps/WindwardPort_Harbor/scripts.pory"
+	call WindwardPort_Harbor_Eventscript_ShipOutOfCommission
+WindwardPort_Harbor_Eventscript_SailorOnGuard_1:
+# 98 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
-# 85 "data/maps/WindwardPort_Harbor/scripts.pory"
-	hidemoneybox
-# 86 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 99 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
-WindwardPort_Harbor_Eventscript_SailorOnGuard_9:
-# 67 "data/maps/WindwardPort_Harbor/scripts.pory"
-	playse SE_SHOP
-# 68 "data/maps/WindwardPort_Harbor/scripts.pory"
-	removemoney 300
-# 69 "data/maps/WindwardPort_Harbor/scripts.pory"
-	updatemoneybox
-# 70 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setspeaker WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_0
-# 71 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_2
-# 72 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_SailorOnGuard_2:
+# 60 "data/maps/WindwardPort_Harbor/scripts.pory"
+	showmoneybox 0, 0
+# 61 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_1, MSGBOX_YESNO
+# 64 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
-# 73 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 65 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne WindwardPort_Harbor_Eventscript_SailorOnGuard_7
+# 92 "data/maps/WindwardPort_Harbor/scripts.pory"
 	hidemoneybox
+	goto WindwardPort_Harbor_Eventscript_SailorOnGuard_1
+
+WindwardPort_Harbor_Eventscript_SailorOnGuard_7:
+# 66 "data/maps/WindwardPort_Harbor/scripts.pory"
+	checkmoney 300
+# 67 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne WindwardPort_Harbor_Eventscript_SailorOnGuard_10
+# 83 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_0
+# 84 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_3
+# 85 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 86 "data/maps/WindwardPort_Harbor/scripts.pory"
+	hidemoneybox
+# 87 "data/maps/WindwardPort_Harbor/scripts.pory"
+	release
+	end
+
+WindwardPort_Harbor_Eventscript_SailorOnGuard_10:
+# 68 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_SHOP
+# 69 "data/maps/WindwardPort_Harbor/scripts.pory"
+	removemoney 300
+# 70 "data/maps/WindwardPort_Harbor/scripts.pory"
+	updatemoneybox
+# 71 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_0
+# 72 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_2
+# 73 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
 # 74 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymovement 1, walkinplacedown
+	hidemoneybox
 # 75 "data/maps/WindwardPort_Harbor/scripts.pory"
-	waitmovement
+	applymovement 1, walkinplacedown
 # 76 "data/maps/WindwardPort_Harbor/scripts.pory"
-	delay 30
+	waitmovement
 # 77 "data/maps/WindwardPort_Harbor/scripts.pory"
-	addtime 0, 3, 0
+	delay 30
 # 78 "data/maps/WindwardPort_Harbor/scripts.pory"
-	warp MAP_CORALPORT, 4, 20
+	addtime 0, 3, 0
 # 79 "data/maps/WindwardPort_Harbor/scripts.pory"
+	warp MAP_CORALPORT, 4, 20
+# 80 "data/maps/WindwardPort_Harbor/scripts.pory"
 	waitstate
-	return
+	goto WindwardPort_Harbor_Eventscript_SailorOnGuard_1
 
 
 WindwardPort_Harbor_Eventscript_ShipOutOfCommission::
-# 100 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 104 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_ShipOutOfCommission_Text_0
 	return
 
 
 WindwardPort_Harbor_Eventscript_VeteranF::
-# 105 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 109 "data/maps/WindwardPort_Harbor/scripts.pory"
 	lock
-# 106 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 110 "data/maps/WindwardPort_Harbor/scripts.pory"
 	faceplayer
-# 107 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setspeaker WindwardPort_Harbor_Eventscript_VeteranF_Text_0
-# 108 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_VeteranF_Text_1
 # 111 "data/maps/WindwardPort_Harbor/scripts.pory"
-	closemessage
+	setspeaker WindwardPort_Harbor_Eventscript_VeteranF_Text_0
 # 112 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_VeteranF_Text_1
+# 115 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 116 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 
 WindwardPort_Harbor_Eventscript_Pelipper::
-# 117 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 121 "data/maps/WindwardPort_Harbor/scripts.pory"
 	moncryscript SPECIES_PELIPPER
-# 118 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 122 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 
 WindwardPort_Harbor_Eventscript_Gurdurr::
-# 123 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 127 "data/maps/WindwardPort_Harbor/scripts.pory"
 	moncryscript SPECIES_GURDURR
-# 124 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 128 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 
 WindwardPort_Harbor_Eventscript_Bewear::
-# 129 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 133 "data/maps/WindwardPort_Harbor/scripts.pory"
 	moncryscript SPECIES_BEWEAR
-# 130 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 134 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 
 WindwardPort_Harbor_Eventscript_Worker::
-# 135 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 139 "data/maps/WindwardPort_Harbor/scripts.pory"
 	lock
-# 136 "data/maps/WindwardPort_Harbor/scripts.pory"
-	faceplayer
-# 137 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setspeaker WindwardPort_Harbor_Eventscript_Worker_Text_0
-# 138 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_Worker_Text_1
 # 140 "data/maps/WindwardPort_Harbor/scripts.pory"
-	closemessage
+	faceplayer
 # 141 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_Worker_Text_0
+# 142 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_Worker_Text_1
+# 144 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 145 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 
 WindwardPort_Harbor_Eventscript_Sign::
-# 146 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 150 "data/maps/WindwardPort_Harbor/scripts.pory"
 	lock
-# 147 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 151 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_Sign_Text_0
-# 148 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 152 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 
 WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab::
-# 153 "data/maps/WindwardPort_Harbor/scripts.pory"
-	lock
-# 154 "data/maps/WindwardPort_Harbor/scripts.pory"
-	delay 20
-# 155 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymovement A_WP, faceleft
-# 156 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymovement M_WP, WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_0
 # 157 "data/maps/WindwardPort_Harbor/scripts.pory"
-	delay 4
+	lock
 # 158 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymove S_WP, WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_1
+	delay 20
 # 159 "data/maps/WindwardPort_Harbor/scripts.pory"
-	delay 20
+	applymovement A_WP, faceleft
 # 160 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Text_0
-# 164 "data/maps/WindwardPort_Harbor/scripts.pory"
-	closemessage
-# 165 "data/maps/WindwardPort_Harbor/scripts.pory"
+	applymovement M_WP, WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_0
+# 161 "data/maps/WindwardPort_Harbor/scripts.pory"
+	delay 4
+# 162 "data/maps/WindwardPort_Harbor/scripts.pory"
+	applymove S_WP, WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_1
+# 163 "data/maps/WindwardPort_Harbor/scripts.pory"
 	delay 20
-# 166 "data/maps/WindwardPort_Harbor/scripts.pory"
-	clearflag FLAG_SPAWN_INVISIBLE
-# 167 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymoveplayer WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_2, 1
+# 164 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Text_0
 # 168 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymovement M_WP, WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_3
+	closemessage
 # 169 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymovement S_WP, WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_4
+	delay 20
 # 170 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymove A_WP, invisible
+	clearflag FLAG_SPAWN_INVISIBLE
 # 171 "data/maps/WindwardPort_Harbor/scripts.pory"
-	delay 30
+	applymoveplayer WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_2, 1
 # 172 "data/maps/WindwardPort_Harbor/scripts.pory"
-	removeobject A_WP
+	applymovement M_WP, WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_3
 # 173 "data/maps/WindwardPort_Harbor/scripts.pory"
-	delay 1
+	applymovement S_WP, WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_4
 # 174 "data/maps/WindwardPort_Harbor/scripts.pory"
-	removeobject S_WP
+	applymove A_WP, invisible
 # 175 "data/maps/WindwardPort_Harbor/scripts.pory"
-	delay 1
+	delay 30
 # 176 "data/maps/WindwardPort_Harbor/scripts.pory"
-	removeobject M_WP
+	removeobject A_WP
 # 177 "data/maps/WindwardPort_Harbor/scripts.pory"
 	delay 1
 # 178 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setflag FLAG_TEMP_2
+	removeobject S_WP
 # 179 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 5
+	delay 1
 # 180 "data/maps/WindwardPort_Harbor/scripts.pory"
+	removeobject M_WP
+# 181 "data/maps/WindwardPort_Harbor/scripts.pory"
+	delay 1
+# 182 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setflag FLAG_TEMP_2
+# 183 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setvar VAR_CHAPTER_1_STATE, 5
+# 184 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger::
-# 185 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 189 "data/maps/WindwardPort_Harbor/scripts.pory"
 	gettime
-# 186 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 190 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_0x8000, 6
 	goto_if_lt WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_2
-# 186 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 190 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_0x8000, 21
 	goto_if_ge WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_2
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_1:
-# 225 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 229 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_2:
-# 187 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 191 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 0
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_7
-# 187 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 191 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 2
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_7
-# 188 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 192 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 4
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_7
-# 188 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 192 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 6
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_7
-# 189 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 193 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 8
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_7
-# 189 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 193 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 10
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_7
-# 190 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 194 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 12
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_7
-# 203 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 207 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 1
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_21
-# 203 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 207 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 3
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_21
-# 204 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 208 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 5
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_21
-# 204 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 208 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 7
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_21
-# 205 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 209 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 9
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_21
-# 205 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 209 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 11
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_21
-# 206 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 210 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 13
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_21
 	goto WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_1
 
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_7:
-# 192 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 196 "data/maps/WindwardPort_Harbor/scripts.pory"
 	specialvar VAR_RESULT, GetPlayerFacingDirection
-# 193 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 197 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_RESULT, DIR_EAST
 	goto_if_eq WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_36
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_35:
-# 200 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 204 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_21:
-# 208 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 212 "data/maps/WindwardPort_Harbor/scripts.pory"
 	lock
-# 209 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 213 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_Text_1, MSGBOX_YESNO
-# 210 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 214 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_39
-# 218 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 222 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
-# 219 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 223 "data/maps/WindwardPort_Harbor/scripts.pory"
 	applymoveplayer walkright
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_38:
-# 221 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 225 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_36:
-# 194 "data/maps/WindwardPort_Harbor/scripts.pory"
-	lock
-# 195 "data/maps/WindwardPort_Harbor/scripts.pory"
-	playse SE_M_SWEET_SCENT
-# 196 "data/maps/WindwardPort_Harbor/scripts.pory"
-	waitse
-# 197 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_Text_0
 # 198 "data/maps/WindwardPort_Harbor/scripts.pory"
+	lock
+# 199 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_M_SWEET_SCENT
+# 200 "data/maps/WindwardPort_Harbor/scripts.pory"
+	waitse
+# 201 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_Text_0
+# 202 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
 	goto WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_35
 
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_39:
-# 211 "data/maps/WindwardPort_Harbor/scripts.pory"
-	playse SE_M_SWEET_SCENT
-# 212 "data/maps/WindwardPort_Harbor/scripts.pory"
-	waitse
-# 213 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_Text_2
-# 214 "data/maps/WindwardPort_Harbor/scripts.pory"
-	closemessage
 # 215 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_M_SWEET_SCENT
+# 216 "data/maps/WindwardPort_Harbor/scripts.pory"
+	waitse
+# 217 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_Text_2
+# 218 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 219 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setvar VAR_WINDWARD_HARBOR_GHOST_BOY, 44
 	goto WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_38
 
 
 WindwardPort_Harbor_Eventscript_GhostBoyMad1::
-# 230 "data/maps/WindwardPort_Harbor/scripts.pory"
-	lock
-# 231 "data/maps/WindwardPort_Harbor/scripts.pory"
-	clearflag FLAG_TEMP_3
-# 232 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setobjectxyperm GHOSTBOY, 0, 20
-# 233 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setobjectxy GHOSTBOY, 0, 20
 # 234 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setobjectmovementtype GHOSTBOY, MOVEMENT_TYPE_FACE_RIGHT
+	lock
 # 235 "data/maps/WindwardPort_Harbor/scripts.pory"
-	addobject GHOSTBOY
+	clearflag FLAG_TEMP_3
 # 236 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setobjectxyperm GHOSTBOY, 0, 20
+# 237 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setobjectxy GHOSTBOY, 0, 20
+# 238 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setobjectmovementtype GHOSTBOY, MOVEMENT_TYPE_FACE_RIGHT
+# 239 "data/maps/WindwardPort_Harbor/scripts.pory"
+	addobject GHOSTBOY
+# 240 "data/maps/WindwardPort_Harbor/scripts.pory"
 	goto WindwardPort_Harbor_Eventscript_GhostBoyMad
 	return
 
 
 WindwardPort_Harbor_Eventscript_GhostBoyMad2::
-# 240 "data/maps/WindwardPort_Harbor/scripts.pory"
-	lock
-# 241 "data/maps/WindwardPort_Harbor/scripts.pory"
-	clearflag FLAG_TEMP_3
-# 242 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setobjectxyperm GHOSTBOY, 0, 21
-# 243 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setobjectxy GHOSTBOY, 0, 21
 # 244 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setobjectmovementtype GHOSTBOY, MOVEMENT_TYPE_FACE_RIGHT
+	lock
 # 245 "data/maps/WindwardPort_Harbor/scripts.pory"
-	addobject GHOSTBOY
+	clearflag FLAG_TEMP_3
 # 246 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setobjectxyperm GHOSTBOY, 0, 21
+# 247 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setobjectxy GHOSTBOY, 0, 21
+# 248 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setobjectmovementtype GHOSTBOY, MOVEMENT_TYPE_FACE_RIGHT
+# 249 "data/maps/WindwardPort_Harbor/scripts.pory"
+	addobject GHOSTBOY
+# 250 "data/maps/WindwardPort_Harbor/scripts.pory"
 	goto WindwardPort_Harbor_Eventscript_GhostBoyMad
 	return
 
 
 WindwardPort_Harbor_Eventscript_GhostBoyMad::
-# 250 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 254 "data/maps/WindwardPort_Harbor/scripts.pory"
 	special StopMapMusic
-# 251 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 255 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setspeaker WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_0
-# 252 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_1
 # 256 "data/maps/WindwardPort_Harbor/scripts.pory"
-	closemessage
-# 257 "data/maps/WindwardPort_Harbor/scripts.pory"
-	playse SE_M_SWEET_SCENT
-# 258 "data/maps/WindwardPort_Harbor/scripts.pory"
-	delay 30
-# 259 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setspeaker WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_0
+	msgbox WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_1
 # 260 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_2
+	closemessage
 # 261 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setflag FLAG_NO_WHITEOUT
+	playse SE_M_SWEET_SCENT
 # 262 "data/maps/WindwardPort_Harbor/scripts.pory"
-	trainerbattle_no_intro TRAINER_GHOSTBOY, WindwardPort_Harbor_GhostBoy_Defeated
+	delay 30
 # 263 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_3
-# 265 "data/maps/WindwardPort_Harbor/scripts.pory"
-	closemessage
-# 266 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setspeaker WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_0
+# 264 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_2
+# 265 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setflag FLAG_NO_WHITEOUT
+# 266 "data/maps/WindwardPort_Harbor/scripts.pory"
+	trainerbattle_no_intro TRAINER_GHOSTBOY, WindwardPort_Harbor_GhostBoy_Defeated
 # 267 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_4
-# 268 "data/maps/WindwardPort_Harbor/scripts.pory"
-	closemessage
+	msgbox WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_3
 # 269 "data/maps/WindwardPort_Harbor/scripts.pory"
-	clearflag FLAG_NO_WHITEOUT
+	closemessage
 # 270 "data/maps/WindwardPort_Harbor/scripts.pory"
-	clearflag FLAG_HIDE_QUEST_ICON
+	setspeaker WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_0
 # 271 "data/maps/WindwardPort_Harbor/scripts.pory"
-	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_GHOST_BOY
+	msgbox WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_4
 # 272 "data/maps/WindwardPort_Harbor/scripts.pory"
-	warpwhitefade MAP_ROUTE2_HOUSE, 4, 4
+	closemessage
 # 273 "data/maps/WindwardPort_Harbor/scripts.pory"
+	clearflag FLAG_NO_WHITEOUT
+# 274 "data/maps/WindwardPort_Harbor/scripts.pory"
+	clearflag FLAG_HIDE_QUEST_ICON
+# 275 "data/maps/WindwardPort_Harbor/scripts.pory"
+	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_GHOST_BOY
+# 276 "data/maps/WindwardPort_Harbor/scripts.pory"
+	warpwhitefade MAP_ROUTE2_HOUSE, 4, 4
+# 277 "data/maps/WindwardPort_Harbor/scripts.pory"
 	waitstate
 	return
 
 
 WindwardPort_Harbor_Eventscript_PreschoolerM::
-# 281 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 285 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setflag FLAG_HIDE_QUEST_ICON
-# 282 "data/maps/WindwardPort_Harbor/scripts.pory"
-	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 1
+# 286 "data/maps/WindwardPort_Harbor/scripts.pory"
+	lock
+# 287 "data/maps/WindwardPort_Harbor/scripts.pory"
+	faceplayer
+# 288 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 289 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 0
 	goto_if_eq WindwardPort_Harbor_Eventscript_PreschoolerM_2
 WindwardPort_Harbor_Eventscript_PreschoolerM_1:
-# 285 "data/maps/WindwardPort_Harbor/scripts.pory"
-	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 2
+# 292 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 1
 	goto_if_eq WindwardPort_Harbor_Eventscript_PreschoolerM_5
 WindwardPort_Harbor_Eventscript_PreschoolerM_4:
-# 288 "data/maps/WindwardPort_Harbor/scripts.pory"
-	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 3
+# 295 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 2
 	goto_if_eq WindwardPort_Harbor_Eventscript_PreschoolerM_8
 WindwardPort_Harbor_Eventscript_PreschoolerM_7:
-# 291 "data/maps/WindwardPort_Harbor/scripts.pory"
-	lock
-# 292 "data/maps/WindwardPort_Harbor/scripts.pory"
-	faceplayer
-# 293 "data/maps/WindwardPort_Harbor/scripts.pory"
-	playse SE_M_BUBBLE
-# 294 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymovement GHOSTBOY, emotecry
-# 295 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
-# 296 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_PreschoolerM_Text_1
-# 297 "data/maps/WindwardPort_Harbor/scripts.pory"
-	closemessage
 # 298 "data/maps/WindwardPort_Harbor/scripts.pory"
-	checkplayergender
-# 299 "data/maps/WindwardPort_Harbor/scripts.pory"
-	compare VAR_RESULT, MALE
-	goto_if_eq WindwardPort_Harbor_Eventscript_PreschoolerM_10
-# 315 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_PreschoolerM_Text_5
-# 316 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
-# 317 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_PreschoolerM_Text_6, MSGBOX_YESNO
-# 319 "data/maps/WindwardPort_Harbor/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne WindwardPort_Harbor_Eventscript_PreschoolerM_16
-# 328 "data/maps/WindwardPort_Harbor/scripts.pory"
-	goto WindwardPort_Harbor_Eventscript_HideAndSeekRejected
+	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 3
+	goto_if_eq WindwardPort_Harbor_Eventscript_PreschoolerM_11
+WindwardPort_Harbor_Eventscript_PreschoolerM_10:
+# 301 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 4
+	goto_if_eq WindwardPort_Harbor_Eventscript_PreschoolerM_13
 	return
 
 WindwardPort_Harbor_Eventscript_PreschoolerM_2:
-# 283 "data/maps/WindwardPort_Harbor/scripts.pory"
-	goto WindwardPort_Harbor_Eventscript_FoundGhostBoy1
+# 290 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto WindwardPort_Harbor_Eventscript_StartQuestGhosBoy
 	goto WindwardPort_Harbor_Eventscript_PreschoolerM_1
 
 WindwardPort_Harbor_Eventscript_PreschoolerM_5:
-# 286 "data/maps/WindwardPort_Harbor/scripts.pory"
-	goto WindwardPort_Harbor_Eventscript_StartTreasureHunt2
+# 293 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto WindwardPort_Harbor_Eventscript_FoundGhostBoy1
 	goto WindwardPort_Harbor_Eventscript_PreschoolerM_4
 
 WindwardPort_Harbor_Eventscript_PreschoolerM_8:
-# 289 "data/maps/WindwardPort_Harbor/scripts.pory"
-	goto WindwardPort_Harbor_Eventscript_FoundTreasure
+# 296 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto WindwardPort_Harbor_Eventscript_StartTreasureHunt2
 	goto WindwardPort_Harbor_Eventscript_PreschoolerM_7
 
-WindwardPort_Harbor_Eventscript_PreschoolerM_10:
-# 300 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_PreschoolerM_Text_2
-# 301 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+WindwardPort_Harbor_Eventscript_PreschoolerM_11:
+# 299 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto WindwardPort_Harbor_Eventscript_TreasureHint
+	goto WindwardPort_Harbor_Eventscript_PreschoolerM_10
+
+WindwardPort_Harbor_Eventscript_PreschoolerM_13:
 # 302 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_PreschoolerM_Text_3, MSGBOX_YESNO
-# 304 "data/maps/WindwardPort_Harbor/scripts.pory"
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_GHOST_BOY, SUB_QUEST_GHOST_BOY_2
+# 303 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_RESULT, 0
-	goto_if_ne WindwardPort_Harbor_Eventscript_PreschoolerM_13
-# 311 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto_if_eq WindwardPort_Harbor_Eventscript_PreschoolerM_15
+# 307 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto WindwardPort_Harbor_Eventscript_StartQuiz3
+	return
+
+WindwardPort_Harbor_Eventscript_PreschoolerM_15:
+# 304 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto WindwardPort_Harbor_Eventscript_FoundTreasure
+	return
+
+
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy::
+# 313 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_M_BUBBLE
+# 314 "data/maps/WindwardPort_Harbor/scripts.pory"
+	applymovement GHOSTBOY, emotecry
+# 315 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_0
+# 316 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 317 "data/maps/WindwardPort_Harbor/scripts.pory"
+	checkplayergender
+# 318 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_1
+# 334 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_4
+# 335 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 336 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_5, MSGBOX_YESNO
+# 338 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_7
+# 347 "data/maps/WindwardPort_Harbor/scripts.pory"
 	goto WindwardPort_Harbor_Eventscript_HideAndSeekRejected
 	return
 
-WindwardPort_Harbor_Eventscript_PreschoolerM_13:
-# 305 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_PreschoolerM_Text_4
-# 307 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_1:
+# 319 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_1
+# 320 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 321 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_2, MSGBOX_YESNO
+# 323 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_4
+# 330 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto WindwardPort_Harbor_Eventscript_HideAndSeekRejected
+	return
+
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_4:
+# 324 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_3
+# 326 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
-# 308 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 327 "data/maps/WindwardPort_Harbor/scripts.pory"
 	goto WindwardPort_Harbor_Eventscript_StartHideAndSeek
 	return
 
-WindwardPort_Harbor_Eventscript_PreschoolerM_16:
-# 320 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_PreschoolerM_Text_7
-# 322 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_7:
+# 339 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_6
+# 341 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
-# 323 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_PreschoolerM_Text_8
-# 324 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 342 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_7
+# 343 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
-# 325 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 344 "data/maps/WindwardPort_Harbor/scripts.pory"
 	goto WindwardPort_Harbor_Eventscript_StartHideAndSeek
 	return
 
 
 WindwardPort_Harbor_Eventscript_HideAndSeekRejected::
-# 334 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
-# 335 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 354 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_HideAndSeekRejected_Text_0
-# 336 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 355 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
-# 337 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
-# 338 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 357 "data/maps/WindwardPort_Harbor/scripts.pory"
 	refreshquesticon
-# 339 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 358 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 
 WindwardPort_Harbor_Eventscript_StartHideAndSeek::
-# 344 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 363 "data/maps/WindwardPort_Harbor/scripts.pory"
 	playse SE_SHINY
-# 345 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 364 "data/maps/WindwardPort_Harbor/scripts.pory"
 	applymove GHOSTBOY, WindwardPort_Harbor_Eventscript_StartHideAndSeek_Movement_0
-# 346 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 365 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
-# 347 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 366 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_StartHideAndSeek_Text_0
-# 349 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 368 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
-# 350 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 369 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setvar VAR_WINDWARD_HARBOR_GHOST_BOY, 1
-# 351 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 370 "data/maps/WindwardPort_Harbor/scripts.pory"
 	getobjectfacingdirection GHOSTBOY, VAR_0x8002
-# 352 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 371 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_0x8002, DIR_WEST
 	goto_if_eq WindwardPort_Harbor_Eventscript_StartHideAndSeek_2
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	applymove GHOSTBOY, WindwardPort_Harbor_Eventscript_StartHideAndSeek_Movement_2
 WindwardPort_Harbor_Eventscript_StartHideAndSeek_1:
-# 358 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 377 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
-# 359 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 378 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setobjectxy GHOSTBOY, 17, 29
-# 360 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 379 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setobjectxyperm GHOSTBOY, 17, 29
-# 361 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 380 "data/maps/WindwardPort_Harbor/scripts.pory"
 	addobject GHOSTBOY
-# 362 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 381 "data/maps/WindwardPort_Harbor/scripts.pory"
 	lock
-# 363 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 382 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setobjectnewmovementtype GHOSTBOY, MOVEMENT_TYPE_FACE_RIGHT
-# 364 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 383 "data/maps/WindwardPort_Harbor/scripts.pory"
 	applymove GHOSTBOY, faceright
-# 365 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 384 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 WindwardPort_Harbor_Eventscript_StartHideAndSeek_2:
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	applymove GHOSTBOY, WindwardPort_Harbor_Eventscript_StartHideAndSeek_Movement_1
 	goto WindwardPort_Harbor_Eventscript_StartHideAndSeek_1
 
 
 WindwardPort_Harbor_Eventscript_FoundGhostBoy1::
-# 370 "data/maps/WindwardPort_Harbor/scripts.pory"
-	lock
-# 371 "data/maps/WindwardPort_Harbor/scripts.pory"
-	faceplayer
-# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
-	playse SE_PIN
-# 373 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymove GHOSTBOY, emoteexclamation
-# 374 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
-# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
-	msgbox WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_0
-# 378 "data/maps/WindwardPort_Harbor/scripts.pory"
-	closemessage
-# 379 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setvar VAR_WINDWARD_HARBOR_GHOST_BOY, 2
-# 380 "data/maps/WindwardPort_Harbor/scripts.pory"
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_GHOST_BOY, SUB_QUEST_GHOST_BOY_1
-# 381 "data/maps/WindwardPort_Harbor/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
-# 382 "data/maps/WindwardPort_Harbor/scripts.pory"
-	removeobject GHOSTBOY
-# 383 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setflag FLAG_TEMP_3
-# 384 "data/maps/WindwardPort_Harbor/scripts.pory"
-	delay 30
-# 385 "data/maps/WindwardPort_Harbor/scripts.pory"
-	fwdtime 7, 0
-# 386 "data/maps/WindwardPort_Harbor/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
-# 387 "data/maps/WindwardPort_Harbor/scripts.pory"
-	release
-# 388 "data/maps/WindwardPort_Harbor/scripts.pory"
-	playse SE_PIN
 # 389 "data/maps/WindwardPort_Harbor/scripts.pory"
-	applymoveplayer emoteexclamation
+	playse SE_PIN
 # 390 "data/maps/WindwardPort_Harbor/scripts.pory"
-	checkplayergender
+	applymove GHOSTBOY, emoteexclamation
 # 391 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_0
+# 394 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 395 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setvar VAR_WINDWARD_HARBOR_GHOST_BOY, 2
+# 396 "data/maps/WindwardPort_Harbor/scripts.pory"
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_GHOST_BOY, SUB_QUEST_GHOST_BOY_1
+# 397 "data/maps/WindwardPort_Harbor/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 398 "data/maps/WindwardPort_Harbor/scripts.pory"
+	removeobject GHOSTBOY
+# 399 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setflag FLAG_TEMP_3
+# 400 "data/maps/WindwardPort_Harbor/scripts.pory"
+	delay 30
+# 401 "data/maps/WindwardPort_Harbor/scripts.pory"
+	fwdtime 7, 0
+# 402 "data/maps/WindwardPort_Harbor/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 403 "data/maps/WindwardPort_Harbor/scripts.pory"
+	release
+# 404 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_PIN
+# 405 "data/maps/WindwardPort_Harbor/scripts.pory"
+	applymoveplayer emoteexclamation
+# 406 "data/maps/WindwardPort_Harbor/scripts.pory"
+	checkplayergender
+# 407 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq WindwardPort_Harbor_Eventscript_FoundGhostBoy1_2
-# 398 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 414 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_2
-# 401 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 417 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
 WindwardPort_Harbor_Eventscript_FoundGhostBoy1_1:
-# 403 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 419 "data/maps/WindwardPort_Harbor/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
-# 404 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 420 "data/maps/WindwardPort_Harbor/scripts.pory"
 	call EventScript_CheckDaysLeft
-# 405 "data/maps/WindwardPort_Harbor/scripts.pory"
-	fadeinbgm 1
-# 406 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 421 "data/maps/WindwardPort_Harbor/scripts.pory"
+	special SetCB2LoadMap
+# 422 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 WindwardPort_Harbor_Eventscript_FoundGhostBoy1_2:
-# 392 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 408 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_1
-# 395 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 411 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
 	goto WindwardPort_Harbor_Eventscript_FoundGhostBoy1_1
 
 
 WindwardPort_Harbor_Eventscript_StartTreasureHunt2::
-# 411 "data/maps/WindwardPort_Harbor/scripts.pory"
-	lock
-# 412 "data/maps/WindwardPort_Harbor/scripts.pory"
-	faceplayer
-# 413 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
-# 414 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 427 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_StartTreasureHunt2_Text_0, MSGBOX_YESNO
-# 416 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 429 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq WindwardPort_Harbor_Eventscript_StartTreasureHunt2_1
-# 426 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 439 "data/maps/WindwardPort_Harbor/scripts.pory"
 	playse SE_SHINY
-# 427 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 440 "data/maps/WindwardPort_Harbor/scripts.pory"
 	applymove GHOSTBOY, emotemusic
-# 428 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 441 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
-# 429 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 442 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_StartTreasureHunt2_Text_2
-# 434 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 447 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
-# 435 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 448 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setvar VAR_WINDWARD_HARBOR_GHOST_BOY, 3
-# 436 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 449 "data/maps/WindwardPort_Harbor/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
-# 437 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 450 "data/maps/WindwardPort_Harbor/scripts.pory"
 	refreshquesticon
-# 438 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 451 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 WindwardPort_Harbor_Eventscript_StartTreasureHunt2_1:
-# 417 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 430 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
-# 418 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 431 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_StartTreasureHunt2_Text_1
-# 419 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 432 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
-# 420 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 433 "data/maps/WindwardPort_Harbor/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
-# 421 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 434 "data/maps/WindwardPort_Harbor/scripts.pory"
 	refreshquesticon
-# 422 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 435 "data/maps/WindwardPort_Harbor/scripts.pory"
+	release
+	end
+
+
+WindwardPort_Harbor_Eventscript_TreasureInBarrel::
+# 457 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_WINDWARD_HARBOR_GHOST_BOY, 3
+	goto_if_eq WindwardPort_Harbor_Eventscript_TreasureInBarrel_1
+	return
+
+WindwardPort_Harbor_Eventscript_TreasureInBarrel_1:
+# 459 "data/maps/WindwardPort_Harbor/scripts.pory"
+	lock
+# 460 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_PIN
+# 461 "data/maps/WindwardPort_Harbor/scripts.pory"
+	applymoveplayer emoteexclamation
+# 462 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_TreasureInBarrel_Text_0
+# 464 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 465 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setvar VAR_WINDWARD_HARBOR_GHOST_BOY, 4
+# 466 "data/maps/WindwardPort_Harbor/scripts.pory"
+	release
+	end
+
+
+WindwardPort_Harbor_Eventscript_TreasureHint::
+# 472 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_TreasureHint_Text_0
+# 474 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 475 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 
 WindwardPort_Harbor_Eventscript_FoundTreasure::
-# 444 "data/maps/WindwardPort_Harbor/scripts.pory"
-	lock
-# 445 "data/maps/WindwardPort_Harbor/scripts.pory"
-	faceplayer
-# 446 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 480 "data/maps/WindwardPort_Harbor/scripts.pory"
 	checkplayergender
-# 447 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 481 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq WindwardPort_Harbor_Eventscript_FoundTreasure_2
-# 454 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 488 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_FoundTreasure_Text_2
-# 455 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 489 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_FoundTreasure_Text_3
 WindwardPort_Harbor_Eventscript_FoundTreasure_1:
-# 458 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 492 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_FoundTreasure_Text_4
-# 459 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 493 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
-# 460 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 494 "data/maps/WindwardPort_Harbor/scripts.pory"
 	giveitem ITEM_CARBOS
-# 461 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setvar VAR_WINDWARD_HARBOR_GHOST_BOY, 4
-# 462 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 496 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
-# 463 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 497 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_FoundTreasure_Text_5
-# 465 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 499 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
-# 466 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 500 "data/maps/WindwardPort_Harbor/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 467 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 501 "data/maps/WindwardPort_Harbor/scripts.pory"
 	removeobject GHOSTBOY
-# 468 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 502 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setflag FLAG_TEMP_3
-# 469 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 503 "data/maps/WindwardPort_Harbor/scripts.pory"
 	delay 30
-# 470 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 504 "data/maps/WindwardPort_Harbor/scripts.pory"
 	fwdtime 7, 0
-# 471 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 505 "data/maps/WindwardPort_Harbor/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 472 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 506 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
-# 473 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 507 "data/maps/WindwardPort_Harbor/scripts.pory"
 	playse SE_PIN
-# 474 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 508 "data/maps/WindwardPort_Harbor/scripts.pory"
 	applymoveplayer emoteexclamation
-# 475 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 509 "data/maps/WindwardPort_Harbor/scripts.pory"
 	checkplayergender
-# 476 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 510 "data/maps/WindwardPort_Harbor/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq WindwardPort_Harbor_Eventscript_FoundTreasure_6
-# 482 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 516 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_FoundTreasure_Text_7
-# 484 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 518 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
 WindwardPort_Harbor_Eventscript_FoundTreasure_5:
-# 486 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 520 "data/maps/WindwardPort_Harbor/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
-# 487 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 521 "data/maps/WindwardPort_Harbor/scripts.pory"
 	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_GHOST_BOY, SUB_QUEST_GHOST_BOY_2
-# 488 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 522 "data/maps/WindwardPort_Harbor/scripts.pory"
 	call EventScript_CheckDaysLeft
-# 489 "data/maps/WindwardPort_Harbor/scripts.pory"
-	fadeinbgm 1
-# 490 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 523 "data/maps/WindwardPort_Harbor/scripts.pory"
+	special SetCB2LoadMap
+# 524 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_2:
-# 448 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 482 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_FoundTreasure_Text_0
-# 449 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 483 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
-# 450 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 484 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_FoundTreasure_Text_1
 	goto WindwardPort_Harbor_Eventscript_FoundTreasure_1
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_6:
-# 477 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 511 "data/maps/WindwardPort_Harbor/scripts.pory"
 	msgbox WindwardPort_Harbor_Eventscript_FoundTreasure_Text_6
-# 479 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 513 "data/maps/WindwardPort_Harbor/scripts.pory"
 	closemessage
 	goto WindwardPort_Harbor_Eventscript_FoundTreasure_5
 
 
-# 156 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuiz3::
+# 529 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_StartQuiz3_Text_0, MSGBOX_YESNO
+# 531 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne WindwardPort_Harbor_Eventscript_StartQuiz3_2
+# 542 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 543 "data/maps/WindwardPort_Harbor/scripts.pory"
+	applymove GHOSTBOY, WindwardPort_Harbor_Eventscript_StartQuiz3_Movement_1
+# 544 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 545 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_StartQuiz3_Text_2
+WindwardPort_Harbor_Eventscript_StartQuiz3_1:
+# 548 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 549 "data/maps/WindwardPort_Harbor/scripts.pory"
+	clearflag FLAG_HIDE_QUEST_ICON
+# 550 "data/maps/WindwardPort_Harbor/scripts.pory"
+	refreshquesticon
+# 551 "data/maps/WindwardPort_Harbor/scripts.pory"
+	release
+	end
+
+WindwardPort_Harbor_Eventscript_StartQuiz3_2:
+# 532 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 533 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setvar VAR_WINDWARD_HARBOR_GHOST_BOY, 5
+# 534 "data/maps/WindwardPort_Harbor/scripts.pory"
+	applymove GHOSTBOY, WindwardPort_Harbor_Eventscript_StartQuiz3_Movement_0
+# 535 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 536 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_StartQuiz3_Text_1
+	goto WindwardPort_Harbor_Eventscript_StartQuiz3_1
+
+
+WindwardPort_Harbor_Eventscript_QuizQuestions::
+# 556 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizQuestions_Text_0
+# 559 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_1, 0
+# 560 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_2, 1
+# 561 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_3, 2
+# 562 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultistack 18, 4, TRUE, 3, FALSE, 0, NULL
+# 563 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_2
+WindwardPort_Harbor_Eventscript_QuizQuestions_1:
+# 568 "data/maps/WindwardPort_Harbor/scripts.pory"
+	delay 20
+# 569 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 570 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizQuestions_Text_4
+# 571 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_5, 0
+# 572 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_6, 1
+# 573 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_7, 2
+# 574 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultistack 18, 4, TRUE, 3, FALSE, 0, NULL
+# 575 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_5
+WindwardPort_Harbor_Eventscript_QuizQuestions_4:
+# 580 "data/maps/WindwardPort_Harbor/scripts.pory"
+	delay 20
+# 581 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 582 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizQuestions_Text_8
+# 583 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_9, 0
+# 584 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_10, 1
+# 585 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_11, 2
+# 586 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_12, 3
+# 587 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultistack 18, 4, TRUE, 3, FALSE, 0, NULL
+# 588 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, 2
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_8
+WindwardPort_Harbor_Eventscript_QuizQuestions_7:
+# 593 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 594 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizQuestions_Text_13
+# 596 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_14, 0
+# 597 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_15, 1
+# 598 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_16, 2
+# 599 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultistack 18, 4, TRUE, 3, FALSE, 0, NULL
+# 600 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_11
+WindwardPort_Harbor_Eventscript_QuizQuestions_10:
+# 605 "data/maps/WindwardPort_Harbor/scripts.pory"
+	delay 20
+# 606 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 607 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizQuestions_Text_17
+# 609 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_18, 0
+# 610 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_19, 1
+# 611 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_20, 2
+# 612 "data/maps/WindwardPort_Harbor/scripts.pory"
+	dynmultipush WindwardPort_Harbor_Eventscript_QuizQuestions_Text_21, 3
+# 613 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_14
+# 613 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, 1
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_14
+WindwardPort_Harbor_Eventscript_QuizQuestions_13:
+# 618 "data/maps/WindwardPort_Harbor/scripts.pory"
+	delay 30
+# 619 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 620 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizQuestions_Text_22
+# 622 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_TEMP_F, 0
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_19
+WindwardPort_Harbor_Eventscript_QuizQuestions_18:
+# 629 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_TEMP_F, 1
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_22
+# 629 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_TEMP_F, 2
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_22
+WindwardPort_Harbor_Eventscript_QuizQuestions_21:
+# 638 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_TEMP_F, 3
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_27
+# 638 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_TEMP_F, 4
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_27
+WindwardPort_Harbor_Eventscript_QuizQuestions_26:
+# 648 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_TEMP_F, 5
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizQuestions_31
+	return
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_2:
+# 564 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_SUCCESS
+# 565 "data/maps/WindwardPort_Harbor/scripts.pory"
+	waitse
+# 566 "data/maps/WindwardPort_Harbor/scripts.pory"
+	addvar VAR_TEMP_F, 1
+	goto WindwardPort_Harbor_Eventscript_QuizQuestions_1
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_5:
+# 576 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_SUCCESS
+# 577 "data/maps/WindwardPort_Harbor/scripts.pory"
+	waitse
+# 578 "data/maps/WindwardPort_Harbor/scripts.pory"
+	addvar VAR_TEMP_F, 1
+	goto WindwardPort_Harbor_Eventscript_QuizQuestions_4
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_8:
+# 589 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_SUCCESS
+# 590 "data/maps/WindwardPort_Harbor/scripts.pory"
+	waitse
+# 591 "data/maps/WindwardPort_Harbor/scripts.pory"
+	addvar VAR_TEMP_F, 1
+	goto WindwardPort_Harbor_Eventscript_QuizQuestions_7
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_11:
+# 601 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_SUCCESS
+# 602 "data/maps/WindwardPort_Harbor/scripts.pory"
+	waitse
+# 603 "data/maps/WindwardPort_Harbor/scripts.pory"
+	addvar VAR_TEMP_F, 1
+	goto WindwardPort_Harbor_Eventscript_QuizQuestions_10
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_14:
+# 614 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_SUCCESS
+# 615 "data/maps/WindwardPort_Harbor/scripts.pory"
+	waitse
+# 616 "data/maps/WindwardPort_Harbor/scripts.pory"
+	addvar VAR_TEMP_F, 1
+	goto WindwardPort_Harbor_Eventscript_QuizQuestions_13
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_19:
+# 623 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizQuestions_Text_23
+# 625 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 626 "data/maps/WindwardPort_Harbor/scripts.pory"
+	giveitem ITEM_EXP_CANDY_S, 3
+# 627 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto WindwardPort_Harbor_Eventscript_QuizFinished
+	goto WindwardPort_Harbor_Eventscript_QuizQuestions_18
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_22:
+# 630 "data/maps/WindwardPort_Harbor/scripts.pory"
+	buffernumberstring STR_VAR_1, VAR_TEMP_F
+# 631 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizQuestions_Text_24
+# 633 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 634 "data/maps/WindwardPort_Harbor/scripts.pory"
+	giveitem ITEM_EXP_CANDY_S, 3
+# 635 "data/maps/WindwardPort_Harbor/scripts.pory"
+	giveitem ITEM_CAREFUL_MINT, 1
+# 636 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto WindwardPort_Harbor_Eventscript_QuizFinished
+	goto WindwardPort_Harbor_Eventscript_QuizQuestions_21
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_27:
+# 639 "data/maps/WindwardPort_Harbor/scripts.pory"
+	buffernumberstring STR_VAR_1, VAR_TEMP_F
+# 640 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizQuestions_Text_25
+# 642 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 643 "data/maps/WindwardPort_Harbor/scripts.pory"
+	giveitem ITEM_EXP_CANDY_S, 3
+# 644 "data/maps/WindwardPort_Harbor/scripts.pory"
+	giveitem ITEM_CAREFUL_MINT, 1
+# 645 "data/maps/WindwardPort_Harbor/scripts.pory"
+	giveitem ITEM_ABILITY_CHANGER, 1
+# 646 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto WindwardPort_Harbor_Eventscript_QuizFinished
+	goto WindwardPort_Harbor_Eventscript_QuizQuestions_26
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_31:
+# 649 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizQuestions_Text_26
+# 651 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 652 "data/maps/WindwardPort_Harbor/scripts.pory"
+	giveitem ITEM_EXP_CANDY_S, 3
+# 653 "data/maps/WindwardPort_Harbor/scripts.pory"
+	giveitem ITEM_CAREFUL_MINT, 1
+# 654 "data/maps/WindwardPort_Harbor/scripts.pory"
+	giveitem ITEM_ABILITY_CHANGER, 1
+# 655 "data/maps/WindwardPort_Harbor/scripts.pory"
+	giveitem ITEM_LUCKY_EGG, 1
+# 656 "data/maps/WindwardPort_Harbor/scripts.pory"
+	goto WindwardPort_Harbor_Eventscript_QuizFinished
+	return
+
+
+WindwardPort_Harbor_Eventscript_QuizFinished::
+# 661 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 662 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizFinished_Text_0
+# 664 "data/maps/WindwardPort_Harbor/scripts.pory"
+	checkplayergender
+# 665 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizFinished_2
+# 670 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizFinished_Text_2
+WindwardPort_Harbor_Eventscript_QuizFinished_1:
+# 673 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_SHINY
+# 674 "data/maps/WindwardPort_Harbor/scripts.pory"
+	applymove GHOSTBOY, emotemusic
+# 675 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setspeaker WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0
+# 676 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizFinished_Text_3
+# 678 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+# 679 "data/maps/WindwardPort_Harbor/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 680 "data/maps/WindwardPort_Harbor/scripts.pory"
+	removeobject GHOSTBOY
+# 681 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setflag FLAG_TEMP_3
+# 682 "data/maps/WindwardPort_Harbor/scripts.pory"
+	delay 30
+# 683 "data/maps/WindwardPort_Harbor/scripts.pory"
+	fwdtime 7, 0
+# 684 "data/maps/WindwardPort_Harbor/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 685 "data/maps/WindwardPort_Harbor/scripts.pory"
+	release
+# 686 "data/maps/WindwardPort_Harbor/scripts.pory"
+	playse SE_PIN
+# 687 "data/maps/WindwardPort_Harbor/scripts.pory"
+	applymoveplayer emoteexclamation
+# 688 "data/maps/WindwardPort_Harbor/scripts.pory"
+	checkplayergender
+# 689 "data/maps/WindwardPort_Harbor/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_eq WindwardPort_Harbor_Eventscript_QuizFinished_6
+# 695 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizFinished_Text_5
+# 697 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+WindwardPort_Harbor_Eventscript_QuizFinished_5:
+# 699 "data/maps/WindwardPort_Harbor/scripts.pory"
+	clearflag FLAG_HIDE_QUEST_ICON
+# 700 "data/maps/WindwardPort_Harbor/scripts.pory"
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, QUEST_GHOST_BOY, SUB_QUEST_GHOST_BOY_3
+# 701 "data/maps/WindwardPort_Harbor/scripts.pory"
+	setvar VAR_WINDWARD_HARBOR_GHOST_BOY, 6
+# 702 "data/maps/WindwardPort_Harbor/scripts.pory"
+	call EventScript_CheckDaysLeft
+# 703 "data/maps/WindwardPort_Harbor/scripts.pory"
+	special SetCB2LoadMap
+# 704 "data/maps/WindwardPort_Harbor/scripts.pory"
+	release
+	end
+
+WindwardPort_Harbor_Eventscript_QuizFinished_2:
+# 666 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizFinished_Text_1
+	goto WindwardPort_Harbor_Eventscript_QuizFinished_1
+
+WindwardPort_Harbor_Eventscript_QuizFinished_6:
+# 690 "data/maps/WindwardPort_Harbor/scripts.pory"
+	msgbox WindwardPort_Harbor_Eventscript_QuizFinished_Text_4
+# 692 "data/maps/WindwardPort_Harbor/scripts.pory"
+	closemessage
+	goto WindwardPort_Harbor_Eventscript_QuizFinished_5
+
+
+# 160 "data/maps/WindwardPort_Harbor/scripts.pory"
 WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_0:
-# 156 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 160 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_left
-# 156 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 160 "data/maps/WindwardPort_Harbor/scripts.pory"
 	face_right
 	step_end
 
-# 158 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 162 "data/maps/WindwardPort_Harbor/scripts.pory"
 WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_1:
-# 158 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 162 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_down
-# 158 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 162 "data/maps/WindwardPort_Harbor/scripts.pory"
 	face_left
 	step_end
 
-# 167 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 171 "data/maps/WindwardPort_Harbor/scripts.pory"
 WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_2:
-# 167 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 171 "data/maps/WindwardPort_Harbor/scripts.pory"
 	face_left
-# 167 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 171 "data/maps/WindwardPort_Harbor/scripts.pory"
 	set_visible
 	step_end
 
-# 168 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 172 "data/maps/WindwardPort_Harbor/scripts.pory"
 WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_3:
-# 168 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 172 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_right
-# 168 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 172 "data/maps/WindwardPort_Harbor/scripts.pory"
 	set_invisible
 	step_end
 
-# 169 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 173 "data/maps/WindwardPort_Harbor/scripts.pory"
 WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Movement_4:
-# 169 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 173 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_up
-# 169 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 173 "data/maps/WindwardPort_Harbor/scripts.pory"
 	set_invisible
 	step_end
 
-# 345 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 364 "data/maps/WindwardPort_Harbor/scripts.pory"
 WindwardPort_Harbor_Eventscript_StartHideAndSeek_Movement_0:
-# 345 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 364 "data/maps/WindwardPort_Harbor/scripts.pory"
 	emote_music
 	step_end
 
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 WindwardPort_Harbor_Eventscript_StartHideAndSeek_Movement_1:
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_left
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_left
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_left
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_left
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 353 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 372 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 WindwardPort_Harbor_Eventscript_StartHideAndSeek_Movement_2:
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_left
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_left
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_left
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_left
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
-# 356 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
 	walk_fast_down
+	step_end
+
+# 534 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuiz3_Movement_0:
+# 534 "data/maps/WindwardPort_Harbor/scripts.pory"
+	emote_happy
+	step_end
+
+# 543 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuiz3_Movement_1:
+# 543 "data/maps/WindwardPort_Harbor/scripts.pory"
+	emote_sad
 	step_end
 
 WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_0:
-# 56 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 57 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Anderson$"
 
 WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_1:
-# 60 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 61 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "This ship is departing for Coralport.\p"
 	.string "It will arrive at the destination in\n"
 	.string "approximately {COLOR RED}3 hours{COLOR 2}.\p"
@@ -992,26 +1400,26 @@ WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_1:
 	.string "to board the ship?$"
 
 WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_2:
-# 71 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 72 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "This way, please.$"
 
 WindwardPort_Harbor_Eventscript_SailorOnGuard_Text_3:
-# 83 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 84 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "I'm sorry but you don't have enough\n"
 	.string "money for 3 tickets.$"
 
 WindwardPort_Harbor_Eventscript_ShipOutOfCommission_Text_0:
-# 100 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 104 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "The ship to Coralport is currently out\n"
 	.string "of commission.\p"
 	.string "Please come back between 5PM and 7AM.$"
 
 WindwardPort_Harbor_Eventscript_VeteranF_Text_0:
-# 107 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 111 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Jura$"
 
 WindwardPort_Harbor_Eventscript_VeteranF_Text_1:
-# 108 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 112 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Windward Port is in the center of the\n"
 	.string "region so you would think it's the\l"
 	.string "biggest.\p"
@@ -1022,11 +1430,11 @@ WindwardPort_Harbor_Eventscript_VeteranF_Text_1:
 	.string "and that's where Faeruma Port comes in.$"
 
 WindwardPort_Harbor_Eventscript_Worker_Text_0:
-# 137 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 141 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Earu$"
 
 WindwardPort_Harbor_Eventscript_Worker_Text_1:
-# 138 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 142 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "I'm so glad my shift is in the daytime.\p"
 	.string "My co-workers said they kept hearing a\n"
 	.string "weeping sound at night and honestly, I\l"
@@ -1034,37 +1442,37 @@ WindwardPort_Harbor_Eventscript_Worker_Text_1:
 	.string "comes from.$"
 
 WindwardPort_Harbor_Eventscript_Sign_Text_0:
-# 147 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 151 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Please stay clear of the entrance.$"
 
 WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Text_0:
-# 160 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 164 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}We're in Windward Port at last.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Let's visit my personal lab to pick up\n"
-	.string "our items.\p"
-	.string "It's the house with the red square roof\n"
-	.string "at the south of the city.\p"
+	.string "our package.\p"
+	.string "It's the house with the tall red roof at\n"
+	.string "the south of the city.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Sure.$"
 
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_Text_0:
-# 197 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 201 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "The wind is getting chilly.$"
 
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_Text_1:
-# 209 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 213 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Leave the harbor and ignore the kid?$"
 
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_Text_2:
-# 213 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 217 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "The wind is getting stronger and\n"
 	.string "chillier.$"
 
 WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_0:
-# 251 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 255 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Yamaki?$"
 
 WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_1:
-# 252 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 256 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Leaving a kid alone at night while he's\n"
 	.string "waiting for you?\p"
 	.string "Do you know what people like you are\n"
@@ -1074,73 +1482,73 @@ WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_1:
 	.string "They aren't scumbags like {COLOR RED}YOU{COLOR 2}.$"
 
 WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_2:
-# 260 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 264 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Die.$"
 
 WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_3:
-# 263 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 267 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "The air is getting colder and colder.\p"
 	.string "It's hard to open your eyes.$"
 
 WindwardPort_Harbor_Eventscript_GhostBoyMad_Text_4:
-# 267 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 271 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Leave. And don't your dare come back.$"
 
 WindwardPort_Harbor_Eventscript_PreschoolerM_Text_0:
-# 295 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 288 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Yamaki$"
 
-WindwardPort_Harbor_Eventscript_PreschoolerM_Text_1:
-# 296 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_0:
+# 315 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "-sob- -sob-$"
 
-WindwardPort_Harbor_Eventscript_PreschoolerM_Text_2:
-# 300 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_1:
+# 319 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}What's wrong, little boy?\n"
 	.string "Why are you here alone?$"
 
-WindwardPort_Harbor_Eventscript_PreschoolerM_Text_3:
-# 302 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_2:
+# 321 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{DESTROY_MUGSHOT}No one wants to play with me...\p"
 	.string "Will you play with me, mister?$"
 
-WindwardPort_Harbor_Eventscript_PreschoolerM_Text_4:
-# 305 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_3:
+# 324 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure! Just for a little while, though.\p"
 	.string "After that you gotta go home, alright?$"
 
-WindwardPort_Harbor_Eventscript_PreschoolerM_Text_5:
-# 315 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_4:
+# 334 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Why are you crying? Are you lost?$"
 
-WindwardPort_Harbor_Eventscript_PreschoolerM_Text_6:
-# 317 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_5:
+# 336 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{DESTROY_MUGSHOT}No one wants to play with me...\p"
 	.string "Will you play with me, miss?$"
 
-WindwardPort_Harbor_Eventscript_PreschoolerM_Text_7:
-# 320 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_6:
+# 339 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I don't see why not.\p"
 	.string "But promise me you'll go home after\n"
 	.string "we're done playing?$"
 
-WindwardPort_Harbor_Eventscript_PreschoolerM_Text_8:
-# 323 "data/maps/WindwardPort_Harbor/scripts.pory"
+WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_7:
+# 342 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Promise!$"
 
 WindwardPort_Harbor_Eventscript_HideAndSeekRejected_Text_0:
-# 335 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 354 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Why does no one want to play with me?$"
 
 WindwardPort_Harbor_Eventscript_StartHideAndSeek_Text_0:
-# 347 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 366 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Alright! Let's play a round of\n"
 	.string "hide-and-seek!\p"
 	.string "I'll go hide! Don't worry, I won't leave\n"
 	.string "this harbor!$"
 
 WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_0:
-# 375 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 391 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Oh! You found me!\p"
 	.string "Hehehe, that makes me really happy. I\n"
 	.string "thought you'd leave me alone.\p"
@@ -1148,14 +1556,14 @@ WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_0:
 	.string "times!$"
 
 WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_1:
-# 392 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 408 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(Did he just vanish??)\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}(Maybe I'm getting tired. It's pretty\n"
 	.string "late-)\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(Wait! Since when the sun's out??)$"
 
 WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_2:
-# 398 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 414 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(Did my eyes play tricks on me? He just\n"
 	.string "vanished.)\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(Perhaps I do need to go rest. It's late\n"
@@ -1163,16 +1571,16 @@ WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_2:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(Wait, it's already morning?)$"
 
 WindwardPort_Harbor_Eventscript_StartTreasureHunt2_Text_0:
-# 414 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 427 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Hello! We meet again!\p"
 	.string "Will you play with me today?$"
 
 WindwardPort_Harbor_Eventscript_StartTreasureHunt2_Text_1:
-# 418 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 431 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Understood. I'll play by myself then...$"
 
 WindwardPort_Harbor_Eventscript_StartTreasureHunt2_Text_2:
-# 429 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 442 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "Awesome!\p"
 	.string "So... Let's play treasure hunt today!\p"
 	.string "I've hidden a Revive within one of the\n"
@@ -1182,45 +1590,242 @@ WindwardPort_Harbor_Eventscript_StartTreasureHunt2_Text_2:
 	.string "Now off you go! I'll be waiting for you\n"
 	.string "here until you find it.$"
 
+WindwardPort_Harbor_Eventscript_TreasureInBarrel_Text_0:
+# 462 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "There's something inside the barrel!\p"
+	.string "It's a Revive. It must be the hidden\n"
+	.string "treasure.$"
+
+WindwardPort_Harbor_Eventscript_TreasureHint_Text_0:
+# 472 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "You still haven't found it? Let me give\n"
+	.string "you a hint then!\p"
+	.string "It's inside a wooden barrel!$"
+
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_0:
-# 448 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 482 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}It's this one, right?$"
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_1:
-# 450 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 484 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Woah! You found it!\p"
 	.string "You're really good at games, mister!$"
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_2:
-# 454 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 488 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Is this the right one?$"
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_3:
-# 455 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 489 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Woah! You found it!\p"
 	.string "You're really good at games, miss!$"
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_4:
-# 458 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 492 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "I'll give you a gift as promised!$"
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_5:
-# 463 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 497 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "I have to go now.\p"
 	.string "I had fun today! Let's play again next\n"
 	.string "time!$"
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_6:
-# 477 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 511 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(I swear he vanished into thin air\n"
 	.string "again.)\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(What a weird boy.)$"
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_7:
-# 482 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 516 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(He just vanished again.)\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(That's... quite weird.)$"
 
+WindwardPort_Harbor_Eventscript_StartQuiz3_Text_0:
+# 529 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Oh! We meet again!\p"
+	.string "How about another game tonight?$"
+
+WindwardPort_Harbor_Eventscript_StartQuiz3_Text_1:
+# 536 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Awesome! It's a simple quiz of 5\n"
+	.string "questions this time!\n"
+	.string "I'll give you a small prize depending on\l"
+	.string "how many questions you answer\l"
+	.string "correctly!\p"
+	.string "You may want to take a look around the\n"
+	.string "harbor before attempting.\p"
+	.string "When you're ready for the quiz, talk to\n"
+	.string "me again!$"
+
+WindwardPort_Harbor_Eventscript_StartQuiz3_Text_2:
+# 545 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Oh, I guess you're busy then...$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_0:
+# 556 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Alright! Here we go!\p"
+	.string "Question 1: Not counting you, your\n"
+	.string "friends, people in the ships and the\l"
+	.string "Pokémon,\p"
+	.string "how many people are there when it's\n"
+	.string "daytime in this harbor?$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_1:
+# 559 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "5$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_2:
+# 560 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "4$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_3:
+# 561 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "3$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_4:
+# 570 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Question 2: How long does it take to\n"
+	.string "travel from Windward Port to Coralport\l"
+	.string "by ship?$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_5:
+# 571 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "3 hours$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_6:
+# 572 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "4 hours$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_7:
+# 573 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "5 hours$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_8:
+# 582 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Question 3: How many white barrels are\n"
+	.string "there in this harbor?$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_9:
+# 583 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "6$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_10:
+# 584 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "7$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_11:
+# 585 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "8$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_12:
+# 586 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "9$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_13:
+# 594 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Those questions were quite hard, right?\n"
+	.string "I'll give you an easier one this time.\p"
+	.string "Question 4: What type is Wynaut?$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_14:
+# 596 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Water$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_15:
+# 597 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Psychic$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_16:
+# 598 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Normal$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_17:
+# 607 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Alright, last question!\p"
+	.string "Question 5: Which one of these\n"
+	.string "abilities can a Gimmighoul normally\l"
+	.string "have?$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_18:
+# 609 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Run Away$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_19:
+# 610 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Rattled$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_20:
+# 611 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Cursed Body$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_21:
+# 612 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Good As Gold$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_22:
+# 620 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Whew, that was all of the questions!\p"
+	.string "Let's see how many correct answers you\n"
+	.string "got{PAUSE 30}.{PAUSE 30}.{PAUSE 30}.$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_23:
+# 623 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "Oof... Too bad, you got none...\p"
+	.string "I'll still give you a small prize for\n"
+	.string "spending time with me, though!$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_24:
+# 631 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "You got {COLOR BLUE}{STR_VAR_1}{COLOR 2} correct\n"
+	.string "answer(s)!\p"
+	.string "Here's the prize for that!$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_25:
+# 640 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "You got {COLOR BLUE}{STR_VAR_1}{COLOR 2} correct\n"
+	.string "answers!\p"
+	.string "Here's the prize for that!$"
+
+WindwardPort_Harbor_Eventscript_QuizQuestions_Text_26:
+# 649 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "You got everything right! That's\n"
+	.string "awesome!\p"
+	.string "Here, you can have all of these!$"
+
+WindwardPort_Harbor_Eventscript_QuizFinished_Text_0:
+# 662 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "It was fun today, too!\p"
+	.string "Oh right, I haven't learned your name.\n"
+	.string "If you don't mind, can I know it?$"
+
+WindwardPort_Harbor_Eventscript_QuizFinished_Text_1:
+# 666 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}I'm Akihiko!\p"
+	.string "Let's play again next time, Yamaki.$"
+
+WindwardPort_Harbor_Eventscript_QuizFinished_Text_2:
+# 670 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}You can call me Mitsuru.\p"
+	.string "We should play again next time, Yamaki.$"
+
+WindwardPort_Harbor_Eventscript_QuizFinished_Text_3:
+# 676 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "{DESTROY_MUGSHOT}Of course!\p"
+	.string "Gotta go now, bye-bye!$"
+
+WindwardPort_Harbor_Eventscript_QuizFinished_Text_4:
+# 690 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(He vanished again...)\p"
+	.string "(Wait a minute... Since when did I learn\n"
+	.string "that his name was Yamaki?)$"
+
+WindwardPort_Harbor_Eventscript_QuizFinished_Text_5:
+# 695 "data/maps/WindwardPort_Harbor/scripts.pory"
+	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(He vanished...)\p"
+	.string "(Wait... How did I know his name was\n"
+	.string "Yamaki? He never told me, didn't he?)$"
+
 WindwardPort_Harbor_GhostBoy_Defeated::
-# 276 "data/maps/WindwardPort_Harbor/scripts.pory"
+# 280 "data/maps/WindwardPort_Harbor/scripts.pory"
 	.string "...$"

@@ -147,7 +147,7 @@ void CreateOverworldTalkHUD(void)
 static void Task_DelayPrintOverworldTrainerHUD(u8 taskId)
 {
     if (!gPaletteFade.active)
-    {   if (FlagGet(FLAG_HIDE_TALK_BUTTON) == FALSE){
+    {   if (FlagGet(FLAG_HIDE_HELP_BUTTON) == FALSE){
         LoadCompressedSpriteSheet(&sSpriteSheet_TrainerCountHUD);
         LoadSpritePalette(&sSpritePal_TrainerCountHUD);
         gOWHUDSprite = SPRITE_NONE;
@@ -254,14 +254,14 @@ static void PrintTrainerCount(u32 spriteId, u32 bgColor, u32 startTile) // 0xbc0
     RemoveWindow(windowId);
 }*/
 
-void HideTalkButton (void)
+void HideHelpButton (void)
 {
     gSprites[gOWHUDSprite].invisible = TRUE;
 }
 
-void ShowTalkButton (void)
+void ShowHelpButton (void)
 {
-    if (FlagGet(FLAG_HIDE_TALK_BUTTON) == FALSE){
+    if (FlagGet(FLAG_HIDE_HELP_BUTTON) == FALSE){
         gSprites[gOWHUDSprite].invisible = FALSE;
     }
 }

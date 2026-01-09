@@ -77,7 +77,7 @@ script SunshineWoods_Eventscript_DoNotEnterTheGrass {
     fadescreenswapbuffers(FADE_TO_BLACK)
     release
     setvar(VAR_AKIHIKOS_INTRO_STATE, 6)
-    setflag(FLAG_HIDE_TALK_BUTTON) 
+    setflag(FLAG_HIDE_HELP_BUTTON) 
     warpsilent(MAP_SUNSHINE_WOODS, 3, 5)
 }
 

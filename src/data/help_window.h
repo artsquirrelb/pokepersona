@@ -5,18 +5,16 @@ const struct HelpWindow gHelpWindowInfo[] =
 {
     [HELP_START_MENU] =
     {
-        .header = COMPOUND_STRING("Information: Pokédex"),
+        .header = COMPOUND_STRING("             Pokédex"),
         .desc = COMPOUND_STRING("To access the Pokédex, press {START_BUTTON}\n"
-                                "while you're in the overworld!"
+                                "while you're in the overworld."
                             ),
-        .headerFont = FONT_NORMAL,
-        .descFont = FONT_NORMAL
     },
     [HELP_MEGA_EVOLUTION] =
     {
-        .header = COMPOUND_STRING("Information: Mega Evolution"),
+        .header = COMPOUND_STRING("             Mega Evolution"),
         .desc = COMPOUND_STRING("In battle, press {START_BUTTON} to Mega Evolve!\n\n"
-                                "The Pokémon must hold their Mega Stone\n"
+                                "The Pokémon must hold their Mega Stone to be \n"
                                 "to be able to Mega Evolve.\n"
                                 "You can only Mega Evolve once per battle."
                             ),

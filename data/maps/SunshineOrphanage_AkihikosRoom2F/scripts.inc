@@ -43,7 +43,7 @@ SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 
 SunshineOrphanage_AkihikosRoom2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
 # 14 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 # 15 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 	return
@@ -175,7 +175,7 @@ Miki_Inviting_Akihiko_To_Play::
 # 78 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 2
 # 79 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 # 80 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	removeobject 1
 # 81 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"

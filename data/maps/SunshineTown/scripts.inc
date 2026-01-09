@@ -80,7 +80,7 @@ SunshineTown_MapScripts_MAP_SCRIPT_ON_TRANSITION_10:
 # 14 "data/maps/SunshineTown/scripts.pory"
 	playbgm MUS_P3_CALAMITY, TRUE
 # 15 "data/maps/SunshineTown/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 16 "data/maps/SunshineTown/scripts.pory"
 	setobjectxyperm 2, 14, 11
 # 17 "data/maps/SunshineTown/scripts.pory"
@@ -593,7 +593,7 @@ SunshineTown_Eventscript_WarpToBurningOrphanage_1:
 # 288 "data/maps/SunshineTown/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 18
 # 289 "data/maps/SunshineTown/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 290 "data/maps/SunshineTown/scripts.pory"
 	warp MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23
 # 291 "data/maps/SunshineTown/scripts.pory"

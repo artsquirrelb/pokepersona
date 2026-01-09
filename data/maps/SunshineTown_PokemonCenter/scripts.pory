@@ -38,10 +38,10 @@ script SunshineTown_PokemonCenter_Eventscript_Nurse {
 }
 
 script PCStorage {
-    setflag(FLAG_HIDE_TALK_BUTTON)
+    setflag(FLAG_HIDE_HELP_BUTTON)
     lock
     call(EventScript_PC)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_HIDE_HELP_BUTTON)
     release
 
 }
@@ -53,7 +53,7 @@ script SunshineTown_PokemonCenter_Eventscript_MartLady {
     msgbox(format("
         Hello. What can I do for you?"))
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 12){
-        setflag(FLAG_HIDE_TALK_BUTTON)
+        setflag(FLAG_HIDE_HELP_BUTTON)
         setflag(FLAG_DONT_TRANSITION_MUSIC)
         applymovement(7, SunshineTown_PokemonCenter_Eventscript_ShinjiroFacesTheMart)
         waitmovement(0)

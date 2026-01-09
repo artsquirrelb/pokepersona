@@ -23,6 +23,7 @@ script WindwardPort_Harbor_MapScripts_OnTransition{
             fadenewbgm(MUS_DP_LAKE_CAVERNS)
             savebgm(MUS_DP_LAKE_CAVERNS)
             clearflag(FLAG_TEMP_3)
+            setflag(FLAG_TEMP_5)
         }
     }
     if(var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 1){
@@ -92,8 +93,11 @@ script WindwardPort_Harbor_Eventscript_SailorOnGuard {
         }
     }
     else{
-        goto(WindwardPort_Harbor_Eventscript_ShipOutOfCommission)
+        call(WindwardPort_Harbor_Eventscript_ShipOutOfCommission)
     }
+    closemessage
+    release
+    end
 }
 
 script WindwardPort_Harbor_Eventscript_ShipOutOfCommission {
@@ -158,8 +162,8 @@ script WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab {
     applymove(S_WP, moves(walk_down, face_left))
     delay(20)
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}We're in Windward Port at last.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Let's visit my personal lab to pick up our items.\p
-    It's the house with the red square roof at the south of the city.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Let's visit my personal lab to pick up our package.\p
+    It's the house with the tall red roof at the south of the city.\p
     {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Sure."))
     closemessage
     delay(20)
@@ -279,6 +283,12 @@ text WindwardPort_Harbor_GhostBoy_Defeated {
 
 script WindwardPort_Harbor_Eventscript_PreschoolerM {
     setflag(FLAG_HIDE_QUEST_ICON)
+    lock
+    faceplayer
+    setspeaker("Yamaki")
+    if(var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 0){
+        goto(WindwardPort_Harbor_Eventscript_StartQuestGhosBoy)
+    }
     if(var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 1){
         goto(WindwardPort_Harbor_Eventscript_FoundGhostBoy1)
     }
@@ -286,13 +296,22 @@ script WindwardPort_Harbor_Eventscript_PreschoolerM {
         goto(WindwardPort_Harbor_Eventscript_StartTreasureHunt2)
     }
     if(var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 3){
-        goto(WindwardPort_Harbor_Eventscript_FoundTreasure)
+        goto(WindwardPort_Harbor_Eventscript_TreasureHint)
     }
-    lock
-    faceplayer
+    if(var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 4){
+        subquestmenu(QUEST_MENU_CHECK_COMPLETE,QUEST_GHOST_BOY, SUB_QUEST_GHOST_BOY_2)
+        if (!var(VAR_RESULT)){
+            goto(WindwardPort_Harbor_Eventscript_FoundTreasure)
+        }
+        else{
+            goto(WindwardPort_Harbor_Eventscript_StartQuiz3)
+        }
+    }
+}
+
+script WindwardPort_Harbor_Eventscript_StartQuestGhosBoy {
     playse(SE_M_BUBBLE)
     applymovement(GHOSTBOY, emotecry)
-    setspeaker("Yamaki")
     msgbox(format("-sob- -sob-"))
     closemessage
     checkplayergender
@@ -367,11 +386,8 @@ script WindwardPort_Harbor_Eventscript_StartHideAndSeek {
 }
 
 script WindwardPort_Harbor_Eventscript_FoundGhostBoy1 {
-    lock
-    faceplayer
     playse(SE_PIN)
     applymove(GHOSTBOY, emoteexclamation)
-    setspeaker("Yamaki")
     msgbox(format("Oh! You found me!\p
     Hehehe, that makes me really happy. I thought you'd leave me alone.\p
     I'll go home now. Let's play again some times!"))
@@ -402,15 +418,12 @@ script WindwardPort_Harbor_Eventscript_FoundGhostBoy1 {
     }
     clearflag(FLAG_HIDE_QUEST_ICON)
     call(EventScript_CheckDaysLeft)
-    fadeinbgm(1)
+    special(SetCB2LoadMap)
     release
     end
 }
 
 script WindwardPort_Harbor_Eventscript_StartTreasureHunt2 {
-    lock
-    faceplayer
-    setspeaker("Yamaki")
     msgbox(format("Hello! We meet again!\p
     Will you play with me today?"), MSGBOX_YESNO)
     if (!var(VAR_RESULT)){
@@ -440,9 +453,30 @@ script WindwardPort_Harbor_Eventscript_StartTreasureHunt2 {
     }
 }
 
+script WindwardPort_Harbor_Eventscript_TreasureInBarrel {
+    if (var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 3)
+    {
+        lock
+        playse(SE_PIN)
+        applymoveplayer(emoteexclamation)
+        msgbox(format("There's something inside the barrel!\p
+        It's a Revive. It must be the hidden treasure."))
+        closemessage
+        setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 4)
+        release
+        end
+    }    
+}
+
+script WindwardPort_Harbor_Eventscript_TreasureHint {
+    msgbox(format("You still haven't found it? Let me give you a hint then!\p
+    It's inside a wooden barrel!"))
+    closemessage
+    release
+    end  
+}
+
 script WindwardPort_Harbor_Eventscript_FoundTreasure {
-    lock
-    faceplayer
     checkplayergender
     if(var(VAR_RESULT) == MALE){
         msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}It's this one, right?"))
@@ -458,7 +492,7 @@ script WindwardPort_Harbor_Eventscript_FoundTreasure {
     msgbox(format("I'll give you a gift as promised!"))
     closemessage
     giveitem(ITEM_CARBOS)
-    setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 4)
+    //setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 5)
     setspeaker("Yamaki")
     msgbox(format("I have to go now.\p
     I had fun today! Let's play again next time!"))
@@ -486,7 +520,187 @@ script WindwardPort_Harbor_Eventscript_FoundTreasure {
     clearflag(FLAG_HIDE_QUEST_ICON)
     subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_GHOST_BOY, SUB_QUEST_GHOST_BOY_2)
     call(EventScript_CheckDaysLeft)
-    fadeinbgm(1)
+    special(SetCB2LoadMap)
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_StartQuiz3 {
+    msgbox(format("Oh! We meet again!\p
+    How about another game tonight?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        closemessage
+        setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 5)
+        applymove(GHOSTBOY, moves(emote_happy))
+        setspeaker("Yamaki")
+        msgbox(format("Awesome! It's a simple quiz of 5 questions this time!\n
+        I'll give you a small prize depending on how many questions you answer correctly!\p
+        You may want to take a look around the harbor before attempting.\p
+        When you're ready for the quiz, talk to me again!"))
+    }
+    else{
+        closemessage
+        applymove(GHOSTBOY, moves(emote_sad))
+        setspeaker("Yamaki")
+        msgbox(format("Oh, I guess you're busy then..."))
+        
+    }
+    closemessage
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_QuizQuestions {
+    msgbox(format("Alright! Here we go!\p
+    Question 1: Not counting you, your friends, people in the ships and the Pokémon,\p
+    how many people are there when it's daytime in this harbor?"))
+    dynmultipush("5", 0)
+    dynmultipush("4", 1)
+    dynmultipush("3", 2)//
+    dynmultistack(18, 4, TRUE, 3, FALSE, 0, NULL)
+    if (var(VAR_RESULT) == 2){
+        playse(SE_SUCCESS)
+        waitse
+        addvar(VAR_TEMP_F, 1)
+    }
+    delay(20)
+    setspeaker("Yamaki")
+    msgbox(format("Question 2: How long does it take to travel from Windward Port to Coralport by ship?"))
+    dynmultipush("3 hours", 0)//
+    dynmultipush("4 hours", 1)
+    dynmultipush("5 hours", 2)
+    dynmultistack(18, 4, TRUE, 3, FALSE, 0, NULL)
+    if(var(VAR_RESULT) == 0){
+        playse(SE_SUCCESS)
+        waitse
+        addvar(VAR_TEMP_F, 1)
+    }
+    delay(20)
+    setspeaker("Yamaki")
+    msgbox(format("Question 3: How many white barrels are there in this harbor?"))
+    dynmultipush("6", 0)
+    dynmultipush("7", 1)
+    dynmultipush("8", 2)//
+    dynmultipush("9", 3)
+    dynmultistack(18, 4, TRUE, 3, FALSE, 0, NULL)
+    if (var(VAR_RESULT) == 2){
+        playse(SE_SUCCESS)
+        waitse
+        addvar(VAR_TEMP_F, 1)
+    }
+    setspeaker("Yamaki")
+    msgbox(format("Those questions were quite hard, right? I'll give you an easier one this time.\p
+    Question 4: What type is Wynaut?"))
+    dynmultipush("Water", 0)
+    dynmultipush("Psychic", 1)//
+    dynmultipush("Normal", 2)
+    dynmultistack(18, 4, TRUE, 3, FALSE, 0, NULL)
+    if (var(VAR_RESULT) == 1){
+        playse(SE_SUCCESS)
+        waitse
+        addvar(VAR_TEMP_F, 1)
+    }
+    delay(20)
+    setspeaker("Yamaki")
+    msgbox(format("Alright, last question!\p
+    Question 5: Which one of these abilities can a Gimmighoul normally have?"))
+    dynmultipush("Run Away", 0)//
+    dynmultipush("Rattled", 1)//
+    dynmultipush("Cursed Body", 2)
+    dynmultipush("Good As Gold", 3)
+    if (var(VAR_RESULT) == 0 || var(VAR_RESULT) == 1){
+        playse(SE_SUCCESS)
+        waitse
+        addvar(VAR_TEMP_F, 1)
+    }
+    delay(30)
+    setspeaker("Yamaki")
+    msgbox(format("Whew, that was all of the questions!\p
+    Let's see how many correct answers you got{PAUSE 30}.{PAUSE 30}.{PAUSE 30}."))
+    if (var(VAR_TEMP_F) == 0){
+        msgbox(format("Oof... Too bad, you got none...\p
+        I'll still give you a small prize for spending time with me, though!"))
+        closemessage
+        giveitem(ITEM_EXP_CANDY_S, 3)
+        goto(WindwardPort_Harbor_Eventscript_QuizFinished)
+    }
+    if (var(VAR_TEMP_F) == 1 || var(VAR_TEMP_F) == 2){
+        buffernumberstring(STR_VAR_1, VAR_TEMP_F)
+        msgbox(format("You got {COLOR BLUE}{STR_VAR_1}{COLOR 2} correct answer(s)!\p
+        Here's the prize for that!"))
+        closemessage
+        giveitem(ITEM_EXP_CANDY_S, 3)
+        giveitem(ITEM_CAREFUL_MINT, 1)
+        goto(WindwardPort_Harbor_Eventscript_QuizFinished)
+    }
+    if (var(VAR_TEMP_F) == 3 || var(VAR_TEMP_F) == 4){
+        buffernumberstring(STR_VAR_1, VAR_TEMP_F)
+        msgbox(format("You got {COLOR BLUE}{STR_VAR_1}{COLOR 2} correct answers!\p
+        Here's the prize for that!"))
+        closemessage
+        giveitem(ITEM_EXP_CANDY_S, 3)
+        giveitem(ITEM_CAREFUL_MINT, 1)
+        giveitem(ITEM_ABILITY_CHANGER, 1)
+        goto(WindwardPort_Harbor_Eventscript_QuizFinished)
+    }
+    if(var(VAR_TEMP_F) == 5){
+        msgbox(format("You got everything right! That's awesome!\p
+        Here, you can have all of these!"))
+        closemessage
+        giveitem(ITEM_EXP_CANDY_S, 3)
+        giveitem(ITEM_CAREFUL_MINT, 1)
+        giveitem(ITEM_ABILITY_CHANGER, 1)
+        giveitem(ITEM_LUCKY_EGG, 1)
+        goto(WindwardPort_Harbor_Eventscript_QuizFinished)
+    }
+}
+
+script WindwardPort_Harbor_Eventscript_QuizFinished {
+    setspeaker("Yamaki")
+    msgbox(format("It was fun today, too!\p
+    Oh right, I haven't learned your name. If you don't mind, can I know it?"))
+    checkplayergender
+    if (var(VAR_RESULT) == MALE){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}I'm Akihiko!\p
+        Let's play again next time, Yamaki."))
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}You can call me Mitsuru.\p
+        We should play again next time, Yamaki."))
+    }
+    playse(SE_SHINY)
+    applymove(GHOSTBOY, emotemusic)
+    setspeaker("Yamaki")
+    msgbox(format("{DESTROY_MUGSHOT}Of course!\p
+    Gotta go now, bye-bye!"))
+    closemessage
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(GHOSTBOY)
+    setflag(FLAG_TEMP_3)
+    delay(30)
+    fwdtime(7, 0)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    release
+    playse(SE_PIN)
+    applymoveplayer(emoteexclamation)
+    checkplayergender
+    if(var(VAR_RESULT) == MALE){
+        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(He vanished again...)\p
+        (Wait a minute... Since when did I learn that his name was Yamaki?)"))
+        closemessage
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(He vanished...)\p
+        (Wait... How did I know his name was Yamaki? He never told me, didn't he?)"))
+        closemessage
+    }
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_GHOST_BOY, SUB_QUEST_GHOST_BOY_3)
+    setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 6)
+    call(EventScript_CheckDaysLeft)
+    special(SetCB2LoadMap)
     release
     end
 }

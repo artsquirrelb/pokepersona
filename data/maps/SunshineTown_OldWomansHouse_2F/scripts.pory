@@ -64,7 +64,7 @@ script SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_
 }
 
 script SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene {
-    setflag(FLAG_HIDE_TALK_BUTTON)
+    setflag(FLAG_HIDE_HELP_BUTTON)
     faceplayer
     checkplayergender
     if (var(VAR_RESULT) == MALE)
@@ -95,7 +95,7 @@ script SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_
         msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That should do it. Time to report to the grandma."))
         closemessage
     }
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_HIDE_HELP_BUTTON)
 }
 script SunshineTown_OldWomansHouse_2F_Eventscript_Notebook {
     msgbox(format("A book of how to train Riolu into Lucario."))

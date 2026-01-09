@@ -1,6 +1,60 @@
 
-script EventScript_OverworldStoryTalk
+script EventScript_OverworldHelpButton
 {
+    if (!flag(FLAG_PARTTIME_GET) && !flag(FLAG_HELP_WINDOW_GET))
+    {
+        goto(EventScript_OverworldStoryTalk)
+    }
+    else{
+        playse(SE_WIN_OPEN)
+        waitse
+        msgbox(format("What would you like to get help with?"))
+        if (!flag(FLAG_PARTTIME_GET))
+        {
+            dynmultipush(StoryHints, 0)
+            dynmultipush(TrainersTips, 1)
+            dynmultistack(0, 4, FALSE, 2, FALSE, 0, NULL)
+            if(var(VAR_RESULT) == 0){
+                goto(EventScript_OverworldStoryTalk)
+            }
+            elif(var(VAR_RESULT) == 1){
+                goto(EventScript_OverworldTrainerTips)
+            }
+        }
+        else{
+            dynmultipush(StoryHints, 0)
+            dynmultipush(TrainersTips, 1)
+            dynmultipush(Work, 2)
+            dynmultistack(0, 4, FALSE, 3, FALSE, 0, NULL)
+            if(var(VAR_RESULT) == 0){
+                goto(EventScript_OverworldStoryTalk)
+            }
+            elif(var(VAR_RESULT) == 1){
+                goto(EventScript_OverworldTrainerTips)
+            }
+            else{
+                goto(EventScript_OverworldWorkParttime)
+            }
+        }
+    }
+    closemessage
+    release
+    end
+}
+
+text StoryHints{
+    "Story Hints"
+}
+
+text TrainersTips {
+    "Trainer's Tips"
+}
+
+text Work {
+    "Work Part-time"
+}
+
+script EventScript_OverworldStoryTalk {
     checkplayergender
     if (var(VAR_RESULT) == MALE && var(VAR_MITSURUS_INTRO_STATE) == 50){
         goto (EventScript_OverworldStoryTalk_AkihikosPrologue)
@@ -369,4 +423,25 @@ script EventScript_OverworldStoryTalk_PrePickUpFennekin {
 script EventScript_OverworldStoryTalk_PostGoodByeKikuno {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Now I should make my way to Thundershards Scree.\p
     According to the map, it should be on the north of Sunshine Meadow.)"))
+}
+
+///////////////////////
+////TRAINER'S TIPS/////
+///////////////////////
+
+script EventScript_OverworldTrainerTips {
+    closemessage
+    showhelpwindow(HELP_START_MENU)
+    waitbuttonpress
+    hidehelpwindow
+    release
+    end
+}
+
+///////////////////////
+////WORK PART-TIME/////
+///////////////////////
+
+script EventScript_OverworldWorkParttime {
+    
 }

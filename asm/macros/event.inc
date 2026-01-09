@@ -3176,15 +3176,6 @@
 	.4byte \destination
 	.endm
 
-@Talk Button Related
-	.macro showtalkbutton
-	callnative SrcCmd_showtalkbutton
-	.endm
-
-	.macro hidetalkbutton
-	callnative SrcCmd_hidetalkbutton
-	.endm
-
 	@ Creates a movement script automatically by using Weighted A*.
 	@ This is meant to be used to remove branching in scripts,
 	@ since the algorithm can be very slow.

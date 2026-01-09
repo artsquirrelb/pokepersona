@@ -428,7 +428,7 @@ static void Task_MapNamePopUpWindow(u8 taskId)
         break;
     case STATE_SLIDE_IN:
         // Slide the window onscreen.
-        HideTalkButton();
+        HideHelpButton();
         task->tYOffset -= POPUP_SLIDE_SPEED;
         if (task->tYOffset <= 0 )
         {
@@ -515,7 +515,7 @@ void HideMapNamePopUpWindow(void)
         SetGpuReg_ForcedBlank(REG_OFFSET_BG0VOFS, 0);
         DestroyTask(gPopupTaskId);
     }
-    ShowTalkButton();
+    ShowHelpButton();
 }
 
 static void UpdateSecondaryPopUpWindow(u8 secondaryPopUpWindowId)

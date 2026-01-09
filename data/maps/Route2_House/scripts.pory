@@ -30,7 +30,7 @@ mapscripts Route2_House_MapScripts {
             playbgm(MUS_NONE, TRUE)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 29){
-            clearflag(FLAG_HIDE_TALK_BUTTON)
+            clearflag(FLAG_HIDE_HELP_BUTTON)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) >= 29 && var(VAR_MITSURUS_INTRO_STATE) != 28){
             setflag(FLAG_TEMP_2)
@@ -44,7 +44,7 @@ mapscripts Route2_House_MapScripts {
             setflag(FLAG_TEMP_4)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 38){
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm(6, 6, 7)
             setobjectmovementtype(1, MOVEMENT_TYPE_FACE_RIGHT)
             setobjectmovementtype(5, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
@@ -53,7 +53,7 @@ mapscripts Route2_House_MapScripts {
             playbgm(MUS_NONE, TRUE)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 39){
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             setflag(FLAG_TEMP_1)
             setobjectxyperm(5, 4, 4)
             setobjectmovementtype(4, MOVEMENT_TYPE_FACE_UP)
@@ -96,7 +96,7 @@ mapscripts Route2_House_MapScripts {
         }
         if(var(VAR_MITSURUS_INTRO_STATE) == 32){
             setflag(FLAG_SPAWN_INVISIBLE)
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm(6, 6, 7)
             setobjectxyperm(8, 5, 7)
             setobjectmovementtype(1, MOVEMENT_TYPE_FACE_RIGHT)
@@ -114,7 +114,7 @@ mapscripts Route2_House_MapScripts {
         }
         if (var(VAR_MITSURUS_INTRO_STATE) == 34)
         {
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             setflag(FLAG_SPAWN_INVISIBLE)
             setobjectxyperm(6, 6, 7)
             setobjectmovementtype(6, MOVEMENT_TYPE_FACE_UP)
@@ -451,7 +451,7 @@ script Route2_House_Eventscript_Mitsuru {
         closemessage
     }
     elif(var(VAR_AKIHIKOS_INTRO_STATE) == 30){
-        setflag(FLAG_HIDE_TALK_BUTTON)
+        setflag(FLAG_HIDE_HELP_BUTTON)
         msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I also have a request.\p
         {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Certainly, let's hear it."))
         closemessage
@@ -1226,7 +1226,7 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     setvar(VAR_CURRENT_LEVEL_CAP, 18)
     setvar(VAR_CURRENT_EV_CAP, 80)
     setvar(VAR_DAYS_LEFT, 15)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_HIDE_HELP_BUTTON)
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement
     unlockcharacter(CHARACTER_AKIHIKO)
@@ -1276,7 +1276,7 @@ script Route2_House_Eventscript_MitsuruRestForTheNight {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Not too shabby. This will do."))
     closemessage
     setvar(VAR_MITSURUS_INTRO_STATE, 9)
-    setflag(FLAG_HIDE_TALK_BUTTON)
+    setflag(FLAG_HIDE_HELP_BUTTON)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     warpsilent(MAP_BLANK_MAP)
 }
@@ -1294,7 +1294,7 @@ script Route2_House_Eventscript_MitsuruPostRest {
     msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(The sun's up. Time to move out.)"))
     closemessage
     setvar(VAR_MITSURUS_INTRO_STATE, 11)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_HIDE_HELP_BUTTON)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     release
     end

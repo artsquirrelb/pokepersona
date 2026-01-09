@@ -15,7 +15,7 @@ static const struct WindowTemplate sHelpWindowTemplate = {
     .tilemapTop = 3,
     .width = 26,
     .height = 14,
-    .paletteNum = 15,
+    .paletteNum = 14,
     .baseBlock = 8
 };
 
@@ -27,8 +27,9 @@ void ShowHelpInfoWindow(struct ScriptContext *ctx)
     u32 yOffset;
     yOffset = 1;
     xOffset = 0;
-    u8 headerColor[3] = {0, 8, 3};
+    u8 headerColor[4] = {0, 2, 0, 0};
     u8 headerFont = FONT_NORMAL;
+    u8 descColor[4] = {0, 1, 0, 0};
     u8 descFont = FONT_SMALL;
 
     helpWindowId = AddWindow(&sHelpWindowTemplate);
@@ -46,7 +47,7 @@ void ShowHelpInfoWindow(struct ScriptContext *ctx)
     yOffset += 16;
     // Description (can fiddle with text fonts and what not)
     StringCopy(gStringVar4, gHelpWindowInfo[helpTutorialId].desc);
-    AddTextPrinterParameterized(helpWindowId, descFont, gStringVar4, 0, yOffset, TEXT_SKIP_DRAW, NULL);
+    AddTextPrinterParameterized4(helpWindowId, descFont, xOffset, yOffset, 0, 0, descColor, 0, gStringVar4);
 
     CopyWindowToVram(helpWindowId, COPYWIN_FULL);
 }

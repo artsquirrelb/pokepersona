@@ -82,7 +82,7 @@ MansionsGarden_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 
 MansionsGarden_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 # 30 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 31 "data/maps/MansionsGarden/scripts.pory"
 	setobjectxyperm KIKUNO, 37, 23
 # 32 "data/maps/MansionsGarden/scripts.pory"
@@ -144,7 +144,7 @@ EventScript_NewGameSetUp::
 # 66 "data/maps/MansionsGarden/scripts.pory"
 	setvar VAR_TIME_RESET_ATTEMPTS, 5
 # 67 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 68 "data/maps/MansionsGarden/scripts.pory"
 	setflag FLAG_SAFE_FOLLOWER_MOVEMENT
 # 70 "data/maps/MansionsGarden/scripts.pory"
@@ -240,7 +240,7 @@ MansionsGarden_Eventscript_SlowlyShowTheMap::
 
 MansionsGarden_Eventscript_KikunoVSFennekin::
 # 124 "data/maps/MansionsGarden/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 125 "data/maps/MansionsGarden/scripts.pory"
 	delay 20
 # 126 "data/maps/MansionsGarden/scripts.pory"
@@ -512,7 +512,7 @@ MansionsGarden_Eventscript_Fennekin_5:
 
 MansionsGarden_Eventscript_GetShinyFennekin::
 # 274 "data/maps/MansionsGarden/scripts.pory"
-	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, shinyMode = SHINY_MODE_ALWAYS
+	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_ALWAYS
 # 275 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq MansionsGarden_Eventscript_GetShinyFennekin_1
@@ -556,7 +556,7 @@ MansionsGarden_Eventscript_GetShinyFennekin_2:
 
 MansionsGarden_Eventscript_GetNormalFennekin::
 # 295 "data/maps/MansionsGarden/scripts.pory"
-	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, shinyMode = SHINY_MODE_NEVER
+	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_NEVER
 # 296 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq MansionsGarden_Eventscript_GetNormalFennekin_1
@@ -690,7 +690,7 @@ MansionsGarden_Eventscript_SayingGoodbyeToKikuno::
 # 374 "data/maps/MansionsGarden/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 375 "data/maps/MansionsGarden/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 # 376 "data/maps/MansionsGarden/scripts.pory"
 	clearflag FLAG_HIDE_MAP_NAME_POPUP
 # 377 "data/maps/MansionsGarden/scripts.pory"

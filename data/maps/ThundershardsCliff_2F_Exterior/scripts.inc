@@ -47,7 +47,7 @@ ThundershardsCave_2F_Eventscript_DailyChansey_Heal::
 # 26 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	lock
 # 27 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 28 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	faceplayer
 # 29 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
@@ -61,7 +61,7 @@ ThundershardsCave_2F_Eventscript_DailyChansey_Heal_1:
 # 57 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	release
 # 58 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 	end
 
 ThundershardsCave_2F_Eventscript_DailyChansey_Heal_2:
@@ -131,7 +131,7 @@ ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave::
 # 69 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	lock
 # 70 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 71 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	fadenewbgm MUS_P3R_FEARFUL_EXPERIENCE
 # 72 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"

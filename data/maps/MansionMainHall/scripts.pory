@@ -1,7 +1,7 @@
 mapscripts MansionMainHall_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
         if (var(VAR_MITSURUS_INTRO_STATE) == 2){
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
         }
         if (var(VAR_MITSURUS_INTRO_STATE) >= 3){
             setflag(FLAG_TEMP_1)

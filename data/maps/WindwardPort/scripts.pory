@@ -179,3 +179,11 @@ script WindwardPort_Eventscript_CitySign{
     release
     end
 }
+
+script WindwardPort_Eventscript_DirectionSign{
+    lock
+    msgbox(format("Route 4 {LEFT_ARROW}"))
+    closemessage
+    release
+    end
+}

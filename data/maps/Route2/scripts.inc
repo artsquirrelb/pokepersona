@@ -107,12 +107,12 @@ Route2_MapScripts_MAP_SCRIPT_ON_TRANSITION_13:
 
 Route2_MapScripts_MAP_SCRIPT_ON_TRANSITION_17:
 # 27 "data/maps/Route2/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 	goto Route2_MapScripts_MAP_SCRIPT_ON_TRANSITION_16
 
 Route2_MapScripts_MAP_SCRIPT_ON_TRANSITION_20:
 # 30 "data/maps/Route2/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 31 "data/maps/Route2/scripts.pory"
 	setobjectxyperm 6, 10, 12
 	goto Route2_MapScripts_MAP_SCRIPT_ON_TRANSITION_19
@@ -934,7 +934,7 @@ Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon::
 # 510 "data/maps/Route2/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 34
 # 511 "data/maps/Route2/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 # 512 "data/maps/Route2/scripts.pory"
 	destroyfollowernpc
 # 513 "data/maps/Route2/scripts.pory"

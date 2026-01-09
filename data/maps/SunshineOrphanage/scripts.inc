@@ -23,14 +23,14 @@ SunshineOrphanage_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 4 "data/maps/SunshineOrphanage/scripts.pory"
 	setflag FLAG_SPAWN_INVISIBLE
 # 5 "data/maps/SunshineOrphanage/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 6 "data/maps/SunshineOrphanage/scripts.pory"
 	setflag FLAG_TEMP_1
 	goto SunshineOrphanage_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 SunshineOrphanage_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 # 9 "data/maps/SunshineOrphanage/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 	goto SunshineOrphanage_MapScripts_MAP_SCRIPT_ON_TRANSITION_4
 
 SunshineOrphanage_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:

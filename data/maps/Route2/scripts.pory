@@ -24,10 +24,10 @@ mapscripts Route2_MapScripts {
             setflag(FLAG_TEMP_2)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 26){
-            clearflag(FLAG_HIDE_TALK_BUTTON)
+            clearflag(FLAG_HIDE_HELP_BUTTON)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 33){
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm(6, 10, 12)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 34){
@@ -508,7 +508,7 @@ script Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon {
     fwdtime(13, 45)
     release
     setvar(VAR_AKIHIKOS_INTRO_STATE, 34)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_HIDE_HELP_BUTTON)
     destroyfollowernpc
     makecharaUnavailable(CHARACTER_SHINJIRO)
     end

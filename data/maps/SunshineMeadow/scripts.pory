@@ -149,7 +149,7 @@ script SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle {
             closemessage
             subvar(VAR_MITSURU_RELATIONSHIP_POINTS, 3) //current point: 97
             fwdtime(18, 0)
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             setflag(FLAG_DONT_TRANSITION_MUSIC)
             warpsilent(MAP_BLANK_MAP, 0, 0)
             }
@@ -455,7 +455,7 @@ script SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle{
     closemessage
     setflag(FLAG_TEMP_1)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 38)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_HIDE_HELP_BUTTON)
     clearflag(FLAG_NO_WHITEOUT)
     clearflag(FLAG_NO_BAG_USE)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)

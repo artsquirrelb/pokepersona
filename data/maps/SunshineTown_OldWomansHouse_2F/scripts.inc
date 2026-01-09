@@ -102,7 +102,7 @@ SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_CheckIf
 
 SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene::
 # 67 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 68 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
 	faceplayer
 # 69 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
@@ -134,7 +134,7 @@ SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscen
 	closemessage
 SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene_1:
 # 98 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 	return
 
 SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene_2:

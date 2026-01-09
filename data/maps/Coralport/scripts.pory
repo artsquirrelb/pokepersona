@@ -29,7 +29,7 @@ mapscripts Coralport_MapScripts {
         }
         if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 2){
             clearflag(FLAG_TEMP_3)
-            clearflag(FLAG_HIDE_TALK_BUTTON)
+            clearflag(FLAG_HIDE_HELP_BUTTON)
         }
         if (var(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE) == 3){ //lapras by the beach
             clearflag(FLAG_TEMP_3)

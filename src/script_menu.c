@@ -381,6 +381,8 @@ static void DrawMultichoiceMenuDynamic(u8 left, u8 top, u8 argc, struct ListMenu
     gMultiuseListMenuTemplate.totalItems = argc;
     gMultiuseListMenuTemplate.maxShowed = maxBeforeScroll;
     gMultiuseListMenuTemplate.moveCursorFunc = MultichoiceDynamic_MoveCursor;
+    gMultiuseListMenuTemplate.cursorPal = 1;
+    
 
     taskId = CreateTask(Task_HandleScrollingMultichoiceInput, 80);
     gTasks[taskId].data[0] = ListMenuInit(&gMultiuseListMenuTemplate, 0, 0);

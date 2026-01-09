@@ -684,7 +684,7 @@ void HeatStartMenu_Init(void) {
       PlayerFreeze();
       StopPlayerAvatar();
   }
-  HideTalkButton();
+  HideHelpButton();
   LockPlayerFieldControls();
 
   if (sHeatStartMenu == NULL) {
@@ -1142,8 +1142,8 @@ static u8 SaveReturnSuccessCallback(void)
     if (!IsSEPlaying() && SaveSuccesTimer())
     {
         HideSaveInfoWindow();
-        FlagClear(FLAG_HIDE_TALK_BUTTON);
-        ShowTalkButton();
+        FlagClear(FLAG_HIDE_HELP_BUTTON);
+        ShowHelpButton();
         return SAVE_SUCCESS;
     }
     else
@@ -1421,8 +1421,8 @@ static void Task_HandleSave(u8 taskId) {
       ClearDialogWindowAndFrameToTransparent(0, TRUE);
       ScriptUnfreezeObjectEvents();  
       UnlockPlayerFieldControls();
-      FlagClear(FLAG_HIDE_TALK_BUTTON);
-      ShowTalkButton();
+      FlagClear(FLAG_HIDE_HELP_BUTTON);
+      ShowHelpButton();
       DestroyTask(taskId);
       break;
     case SAVE_ERROR:    // Close start menu
@@ -1430,8 +1430,8 @@ static void Task_HandleSave(u8 taskId) {
       ScriptUnfreezeObjectEvents();
       UnlockPlayerFieldControls();
       SoftResetInBattlePyramid();
-      FlagClear(FLAG_HIDE_TALK_BUTTON);
-      ShowTalkButton();
+      FlagClear(FLAG_HIDE_HELP_BUTTON);
+      ShowHelpButton();
       DestroyTask(taskId);
       break;
   }
@@ -1575,16 +1575,16 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
     PlaySE(SE_SELECT);
     DestroyTask(taskId);
     HeatStartMenu_ExitAndClearTilemap();
-    FlagClear(FLAG_HIDE_TALK_BUTTON);
-    ShowTalkButton();
+    FlagClear(FLAG_HIDE_HELP_BUTTON);
+    ShowHelpButton();
     LockPlayerFieldControls();
     ScriptContext_SetupScript(EventScript_RegionMap);
 
   } else if (JOY_NEW(B_BUTTON) && sHeatStartMenu->loadState == 0) {
     PlaySE(SE_SELECT);
     HeatStartMenu_ExitAndClearTilemap(); 
-    FlagClear(FLAG_HIDE_TALK_BUTTON);
-    ShowTalkButton();
+    FlagClear(FLAG_HIDE_HELP_BUTTON);
+    ShowHelpButton();
     DestroyTask(taskId);
   } else if (gMain.newKeys & DPAD_DOWN && sHeatStartMenu->loadState == 0) {
     HeatStartMenu_HandleInput_DPADDOWN();

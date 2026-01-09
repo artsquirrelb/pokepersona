@@ -11,7 +11,7 @@ mapscripts SunshineOrphanage_AkihikosRoom2F_MapScripts {
             setflag(FLAG_TEMP_2)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 9) {
-            clearflag(FLAG_HIDE_TALK_BUTTON)
+            clearflag(FLAG_HIDE_HELP_BUTTON)
             clearflag(FLAG_DONT_TRANSITION_MUSIC)
         }
     }
@@ -76,7 +76,7 @@ script Miki_Inviting_Akihiko_To_Play{
     playse(SE_EXIT)
     setflag(FLAG_TEMP_1)
     setvar(VAR_AKIHIKOS_INTRO_STATE , 2)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_HIDE_HELP_BUTTON)
     removeobject(1)
     special(RemoveCameraObject)
     release

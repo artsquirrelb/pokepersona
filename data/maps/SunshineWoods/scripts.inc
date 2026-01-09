@@ -167,7 +167,7 @@ SunshineWoods_Eventscript_DoNotEnterTheGrass::
 # 79 "data/maps/SunshineWoods/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 6
 # 80 "data/maps/SunshineWoods/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 81 "data/maps/SunshineWoods/scripts.pory"
 	warpsilent MAP_SUNSHINE_WOODS, 3, 5
 	return

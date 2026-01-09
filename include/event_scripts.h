@@ -681,7 +681,7 @@ extern const u8 Common_EventScript_ShowPokemonCenterSign[];
 extern const u8 Common_EventScript_ShowPokemartSign[];
 
 // story talk
-extern const u8 EventScript_OverworldStoryTalk[];
+extern const u8 EventScript_OverworldHelpButton[];
 // follower npc
 extern const u8 Eventscript_MitsuruFollower[];
 extern const u8 Eventscript_AkihikoFollower[];

@@ -133,8 +133,8 @@ bool8 ScrCmd_end(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1);
 
-    FlagClear(FLAG_HIDE_TALK_BUTTON);
-    ShowTalkButton();
+    FlagClear(FLAG_HIDE_HELP_BUTTON);
+    ShowHelpButton();
     StopScript(ctx);
     return FALSE;
 }
@@ -1621,8 +1621,8 @@ bool8 ScrCmd_lockall(struct ScriptContext *ctx)
     else
     {
         FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
-        FlagSet(FLAG_HIDE_TALK_BUTTON);
-        HideTalkButton();
+        FlagSet(FLAG_HIDE_HELP_BUTTON);
+        HideHelpButton();
         struct ObjectEvent *followerObj = GetFollowerObject();
         FreezeObjects_WaitForPlayer();
         SetupNativeScript(ctx, IsFreezePlayerFinished);
@@ -1645,8 +1645,8 @@ bool8 ScrCmd_lock(struct ScriptContext *ctx)
     else
     {   
         FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
-        FlagSet(FLAG_HIDE_TALK_BUTTON);
-        HideTalkButton();
+        FlagSet(FLAG_HIDE_HELP_BUTTON);
+        HideHelpButton();
         struct ObjectEvent *followerObj = GetFollowerObject();
         if (gObjectEvents[gSelectedObjectEvent].active)
         {
@@ -1682,7 +1682,7 @@ bool8 ScrCmd_releaseall(struct ScriptContext *ctx)
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
-    ShowTalkButton();
+    ShowHelpButton();
     gMsgBoxIsCancelable = FALSE;
     return FALSE;
 }
@@ -1704,7 +1704,7 @@ bool8 ScrCmd_release(struct ScriptContext *ctx)
     ObjectEventClearHeldMovementIfFinished(&gObjectEvents[playerObjectId]);
     ScriptMovement_UnfreezeObjectEvents();
     UnfreezeObjectEvents();
-    ShowTalkButton();
+    ShowHelpButton();
     gMsgBoxIsCancelable = FALSE;
     return FALSE;
 }
@@ -1774,7 +1774,7 @@ bool8 ScrCmd_closemessage(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
     HideFieldMessageBox();
-    ShowTalkButton();
+    ShowHelpButton();
     return FALSE;
 }
 
@@ -2485,22 +2485,6 @@ bool8 ScrCmd_updatecoinsbox(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
     PrintCoinsString(GetCoins());
-    return FALSE;
-}
-
-bool8 SrcCmd_showtalkbutton(struct ScriptContext *ctx)
-{
-    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
-
-    ShowTalkButton();
-    return FALSE;
-}
-
-bool8 SrcCmd_hidetalkbutton(struct ScriptContext *ctx)
-{
-    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
-
-    HideTalkButton();
     return FALSE;
 }
 

@@ -2,11 +2,11 @@ mapscripts SunshineOrphanage_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 0) {
             setflag(FLAG_SPAWN_INVISIBLE)
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             setflag(FLAG_TEMP_1)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) >= 5) {
             setflag(FLAG_TEMP_1)

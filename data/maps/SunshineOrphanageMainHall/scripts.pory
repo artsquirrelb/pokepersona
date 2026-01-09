@@ -12,12 +12,12 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
             setflag(FLAG_TEMP_1)
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 7) {
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm (4, 11, 23)
 			setobjectmovementtype (4, MOVEMENT_TYPE_FACE_RIGHT)
             hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)}
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 11) {
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm (4, 12, 5)
             setobjectmovementtype (4, MOVEMENT_TYPE_FACE_DOWN)
             setobjectxyperm (13, 18, 6)
@@ -176,7 +176,7 @@ script SunshineOrphanageMainHall_Eventscript_GetPawmiStarter {
     msgbox ("Let Pawmi in the Cherish Ball?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         setflag(FLAG_SYS_POKEMON_GET)
-        givemon(SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, isStoryStarter = TRUE)
+        givemon(SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_METAL_CLAW, isStoryStarter = TRUE)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             waitfanfare

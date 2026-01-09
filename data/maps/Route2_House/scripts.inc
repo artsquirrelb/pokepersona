@@ -110,7 +110,7 @@ Route2_House_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 
 Route2_House_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
 # 33 "data/maps/Route2_House/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 	goto Route2_House_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 
 Route2_House_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
@@ -146,7 +146,7 @@ Route2_House_MapScripts_MAP_SCRIPT_ON_TRANSITION_20:
 
 Route2_House_MapScripts_MAP_SCRIPT_ON_TRANSITION_24:
 # 47 "data/maps/Route2_House/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 48 "data/maps/Route2_House/scripts.pory"
 	setobjectxyperm 6, 6, 7
 # 49 "data/maps/Route2_House/scripts.pory"
@@ -163,7 +163,7 @@ Route2_House_MapScripts_MAP_SCRIPT_ON_TRANSITION_24:
 
 Route2_House_MapScripts_MAP_SCRIPT_ON_TRANSITION_27:
 # 56 "data/maps/Route2_House/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 57 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_TEMP_1
 # 58 "data/maps/Route2_House/scripts.pory"
@@ -270,7 +270,7 @@ Route2_House_MapScripts_MAP_SCRIPT_ON_TRANSITION_60:
 # 98 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_SPAWN_INVISIBLE
 # 99 "data/maps/Route2_House/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 100 "data/maps/Route2_House/scripts.pory"
 	setobjectxyperm 6, 6, 7
 # 101 "data/maps/Route2_House/scripts.pory"
@@ -300,7 +300,7 @@ Route2_House_MapScripts_MAP_SCRIPT_ON_TRANSITION_63:
 
 Route2_House_MapScripts_MAP_SCRIPT_ON_TRANSITION_65:
 # 117 "data/maps/Route2_House/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 118 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_SPAWN_INVISIBLE
 # 119 "data/maps/Route2_House/scripts.pory"
@@ -875,7 +875,7 @@ Route2_House_Eventscript_Mitsuru_2:
 
 Route2_House_Eventscript_Mitsuru_3:
 # 454 "data/maps/Route2_House/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 455 "data/maps/Route2_House/scripts.pory"
 	msgbox Route2_House_Eventscript_Mitsuru_Text_1
 # 457 "data/maps/Route2_House/scripts.pory"
@@ -2213,7 +2213,7 @@ Route2_House_Eventscript_TheFirstMorning2_1:
 # 1228 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_DAYS_LEFT, 15
 # 1229 "data/maps/Route2_House/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 # 1230 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, facedown
 # 1231 "data/maps/Route2_House/scripts.pory"
@@ -2340,7 +2340,7 @@ Route2_House_Eventscript_MitsuruRestForTheNight::
 # 1278 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 9
 # 1279 "data/maps/Route2_House/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 1280 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
 # 1281 "data/maps/Route2_House/scripts.pory"
@@ -2372,7 +2372,7 @@ Route2_House_Eventscript_MitsuruPostRest::
 # 1296 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 11
 # 1297 "data/maps/Route2_House/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 # 1298 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 1299 "data/maps/Route2_House/scripts.pory"

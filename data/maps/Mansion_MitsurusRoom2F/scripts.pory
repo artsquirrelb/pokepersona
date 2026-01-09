@@ -152,12 +152,12 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
 }
 
 script Eventscript_CutsceneStarts {
-    setflag(FLAG_HIDE_TALK_BUTTON)
+    setflag(FLAG_HIDE_HELP_BUTTON)
     setflag(FLAG_HIDE_MAP_NAME_POPUP)
 }
 
 script Eventscript_CutsceneEnds {
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_HIDE_HELP_BUTTON)
     clearflag(FLAG_HIDE_MAP_NAME_POPUP)
 }
 
@@ -213,7 +213,7 @@ script Mansion_MitsurusRoom2F_Eventscript_Piano {
         msgbox(format("Play a song? {COLOR GREEN}(It will take roughly 30 seconds.)"), MSGBOX_YESNO)
         closemessage
         if (var(VAR_RESULT) == TRUE){
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             playbgm(MUS_XC2_GARFONT_MERCERNARIES_NIGHT, FALSE)
             delay(1800)
             fadenewbgm(MUS_XC2_TORIGOTH_NIGHT)

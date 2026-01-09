@@ -90,7 +90,7 @@ Coralport_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
 # 31 "data/maps/Coralport/scripts.pory"
 	clearflag FLAG_TEMP_3
 # 32 "data/maps/Coralport/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 	goto Coralport_MapScripts_MAP_SCRIPT_ON_TRANSITION_10
 
 Coralport_MapScripts_MAP_SCRIPT_ON_TRANSITION_14:

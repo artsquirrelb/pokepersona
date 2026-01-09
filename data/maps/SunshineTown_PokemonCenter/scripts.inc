@@ -79,13 +79,13 @@ SunshineTown_PokemonCenter_Eventscript_Nurse::
 
 PCStorage::
 # 41 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 42 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	lock
 # 43 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	call EventScript_PC
 # 44 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 # 45 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	release
 	return
@@ -120,7 +120,7 @@ SunshineTown_PokemonCenter_Eventscript_MartLady_4:
 
 SunshineTown_PokemonCenter_Eventscript_MartLady_2:
 # 56 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 57 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
 # 58 "data/maps/SunshineTown_PokemonCenter/scripts.pory"

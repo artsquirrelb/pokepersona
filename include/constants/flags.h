@@ -49,7 +49,7 @@
 #define FLAG_DETECTOR_MODE              0x23 // Allow player to find hidden mons Flag
 #define FLAG_EXP_SHARE                  0x24 // Item configs
 #define FLAG_FOLLOWERS_DISABLED         0x25 // Enables / Disables followers by using a flag. Helpful to disable followers for a period of time.
-#define FLAG_HIDE_TALK_BUTTON           0x26 // Was Unused Flag
+#define FLAG_HIDE_HELP_BUTTON           0x26 // Was Unused Flag
 #define FLAG_NO_CATCHING                0x27 // Was Unused Flag
 #define FLAG_NO_RUNNING                 0x28 // Was Unused Flag
 #define FLAG_NO_WHITEOUT                0x29 // Was Unused Flag
@@ -93,14 +93,12 @@
 #define FLAG_UNUSED_0x04F    0x4F // Unused Flag
 
 // Scripts
-#define FLAG_HIDE_SKY_PILLAR_TOP_RAYQUAZA_STILL  0x50
+#define FLAG_HELP_WINDOW_GET                     0x50
 #define FLAG_SET_WALL_CLOCK                      0x51
 #define FLAG_RECEIVED_MINING_KIT                 0x52
-#define FLAG_LEGENDARIES_IN_SOOTOPOLIS           0x53
-
+#define FLAG_PARTTIME_GET                        0x53
 #define FLAG_AMEAME_PARTTIME_UNLOCKED            0x54  // Was Unused Flag
 #define FLAG_CORALPORT_TRADED_SWEET_HEART        0x55  // Was Unused Flag
-
 #define FLAG_HIDE_CONTEST_POKE_BALL          0x56  // Always set after new game, object it hides is added directly
 #define FLAG_MET_RIVAL_MOM                   0x57
 #define FLAG_BIRCH_AIDE_MET                  0x58

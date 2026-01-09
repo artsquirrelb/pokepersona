@@ -251,6 +251,54 @@ WindwardPort_Eventscript_Youngster::
 	end
 
 
+WindwardPort_Eventscript_Fisherman::
+# 159 "data/maps/WindwardPort/scripts.pory"
+	lock
+# 160 "data/maps/WindwardPort/scripts.pory"
+	faceplayer
+# 161 "data/maps/WindwardPort/scripts.pory"
+	setspeaker WindwardPort_Eventscript_Fisherman_Text_0
+# 162 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_Fisherman_Text_1
+# 164 "data/maps/WindwardPort/scripts.pory"
+	closemessage
+# 165 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+
+WindwardPort_Eventscript_Corphish::
+# 170 "data/maps/WindwardPort/scripts.pory"
+	moncryscript SPECIES_CORPHISH
+# 171 "data/maps/WindwardPort/scripts.pory"
+	releaseall
+	end
+
+
+WindwardPort_Eventscript_CitySign::
+# 176 "data/maps/WindwardPort/scripts.pory"
+	lock
+# 177 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_CitySign_Text_0
+# 178 "data/maps/WindwardPort/scripts.pory"
+	closemessage
+# 179 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+
+WindwardPort_Eventscript_DirectionSign::
+# 184 "data/maps/WindwardPort/scripts.pory"
+	lock
+# 185 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_DirectionSign_Text_0
+# 186 "data/maps/WindwardPort/scripts.pory"
+	closemessage
+# 187 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+
 WindwardPort_Eventscript_ParasolLady_Text_0:
 # 26 "data/maps/WindwardPort/scripts.pory"
 	.string "Tsugumi$"
@@ -373,3 +421,22 @@ WindwardPort_Eventscript_Youngster_Text_1:
 	.string "Ranger building once a week.\p"
 	.string "She wears lab coat so I assume she's a\n"
 	.string "scientist or researcher?$"
+
+WindwardPort_Eventscript_Fisherman_Text_0:
+# 161 "data/maps/WindwardPort/scripts.pory"
+	.string "Hibari$"
+
+WindwardPort_Eventscript_Fisherman_Text_1:
+# 162 "data/maps/WindwardPort/scripts.pory"
+	.string "I love the sea breeze.\n"
+	.string "Sitting here while listening to the\l"
+	.string "sound of the waves is my favorite\l"
+	.string "activity of the day.$"
+
+WindwardPort_Eventscript_CitySign_Text_0:
+# 177 "data/maps/WindwardPort/scripts.pory"
+	.string "Welcome to Windward Port!$"
+
+WindwardPort_Eventscript_DirectionSign_Text_0:
+# 185 "data/maps/WindwardPort/scripts.pory"
+	.string "Route 4 {LEFT_ARROW}$"

@@ -17,7 +17,7 @@ MansionMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 
 MansionMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
 # 4 "data/maps/MansionMainHall/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 	goto MansionMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 
 MansionMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:

@@ -12,7 +12,7 @@ mapscripts SunshineTown_MapScripts {
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) == 16 || var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18) {
             playbgm(MUS_P3_CALAMITY, TRUE)
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm(2, 14, 11)
             setobjectmovementtype (2, MOVEMENT_TYPE_WALK_RIGHT_AND_LEFT)
             setobjectxyperm(1, 3, 14)
@@ -286,7 +286,7 @@ script SunshineTown_Eventscript_WarpToBurningOrphanage {//VAR_TEMP_F == 0
         lock
         playse(SE_EXIT)
         setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
-        setflag(FLAG_HIDE_TALK_BUTTON)
+        setflag(FLAG_HIDE_HELP_BUTTON)
         warp(MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23)
         waitstate
     }

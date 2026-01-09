@@ -652,7 +652,7 @@ static bool8 AreLegendariesInSootopolisPreventingEncounters(void)
         return FALSE;
     }
 
-    return FlagGet(FLAG_LEGENDARIES_IN_SOOTOPOLIS);
+    return FlagGet(FLAG_PARTTIME_GET);
 }
 
 bool8 StandardWildEncounter(u16 curMetatileBehavior, u16 prevMetatileBehavior)

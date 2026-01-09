@@ -304,8 +304,8 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         PlaySE(SE_WIN_OPEN);
         //ShowStartMenu();
         HideMapNamePopUpWindow();
-        FlagSet(FLAG_HIDE_TALK_BUTTON);
-        HideTalkButton();
+        FlagSet(FLAG_HIDE_HELP_BUTTON);
+        HideHelpButton();
         HeatStartMenu_Init();
         return TRUE;
     }
@@ -690,7 +690,7 @@ void InitStoryTalk(void)
         StopPlayerAvatar();
     }
     LockPlayerFieldControls();
-    ScriptContext_SetupScript(EventScript_OverworldStoryTalk);
+    ScriptContext_SetupScript(EventScript_OverworldHelpButton);
     UnlockPlayerFieldControls();
 }
 

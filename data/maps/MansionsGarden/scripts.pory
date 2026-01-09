@@ -27,7 +27,7 @@ mapscripts MansionsGarden_MapScripts {
             setobjectxyperm(INDEEDEE_F, 46, 22)
         }
         if (var(VAR_MITSURUS_INTRO_STATE) == 3) {
-            setflag(FLAG_HIDE_TALK_BUTTON)
+            setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm(KIKUNO, 37, 23)
             setobjectmovementtype(KIKUNO, MOVEMENT_TYPE_FACE_RIGHT)
             setobjectxyperm(INDEEDEE_F, 38, 23)
@@ -64,7 +64,7 @@ script EventScript_NewGameSetUp {
 	setvar (VAR_MITSURU_RELATIONSHIP_POINTS, 100)
 	setvar (VAR_AKIHIKO_RELATIONSHIP_POINTS, 100)
     setvar (VAR_TIME_RESET_ATTEMPTS, 5)
-    setflag(FLAG_HIDE_TALK_BUTTON)
+    setflag(FLAG_HIDE_HELP_BUTTON)
     setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
 
     checkplayergender
@@ -121,7 +121,7 @@ script MansionsGarden_Eventscript_SlowlyShowTheMap {
 
 
 script MansionsGarden_Eventscript_KikunoVSFennekin {
-    setflag(FLAG_HIDE_TALK_BUTTON)
+    setflag(FLAG_HIDE_HELP_BUTTON)
     delay(20)
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down*2))
@@ -271,7 +271,7 @@ script MansionsGarden_Eventscript_Fennekin {
 }
 
 script MansionsGarden_Eventscript_GetShinyFennekin {
-    givemon(SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, shinyMode = SHINY_MODE_ALWAYS)
+    givemon(SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_ALWAYS)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             waitfanfare
@@ -292,7 +292,7 @@ script MansionsGarden_Eventscript_GetShinyFennekin {
             msgbox("Party full.")}
 }
 script MansionsGarden_Eventscript_GetNormalFennekin {
-    givemon(SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, shinyMode = SHINY_MODE_NEVER)
+    givemon(SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_NEVER)
          if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
              playfanfare(MUS_OBTAIN_ITEM)
         waitfanfare
@@ -372,7 +372,7 @@ script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
     closemessage
     setrespawn(HEAL_LOCATION_MANSIONS_GARDEN)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_HIDE_HELP_BUTTON)
     clearflag(FLAG_HIDE_MAP_NAME_POPUP)
     fwdtime(23, 15)
     release

@@ -309,7 +309,7 @@ SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle_1:
 # 151 "data/maps/SunshineMeadow/scripts.pory"
 	fwdtime 18, 0
 # 152 "data/maps/SunshineMeadow/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 153 "data/maps/SunshineMeadow/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
 # 154 "data/maps/SunshineMeadow/scripts.pory"
@@ -809,7 +809,7 @@ SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle::
 # 457 "data/maps/SunshineMeadow/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 38
 # 458 "data/maps/SunshineMeadow/scripts.pory"
-	clearflag FLAG_HIDE_TALK_BUTTON
+	clearflag FLAG_HIDE_HELP_BUTTON
 # 459 "data/maps/SunshineMeadow/scripts.pory"
 	clearflag FLAG_NO_WHITEOUT
 # 460 "data/maps/SunshineMeadow/scripts.pory"

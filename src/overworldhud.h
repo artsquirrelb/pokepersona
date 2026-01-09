@@ -3,6 +3,6 @@
 
 //void CreateOverworldMonHUD(void);
 void CreateOverworldTalkHUD(void);
-void HideTalkButton (void);
-void ShowTalkButton (void);
+void HideHelpButton (void);
+void ShowHelpButton (void);
 #endif // GUARD_OVERWORLD_H

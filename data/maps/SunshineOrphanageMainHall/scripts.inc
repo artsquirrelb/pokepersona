@@ -47,7 +47,7 @@ SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_5:
 
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
 # 15 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 16 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectxyperm 4, 11, 23
 # 17 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -58,7 +58,7 @@ SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
 
 SunshineOrphanageMainHall_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
 # 20 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	setflag FLAG_HIDE_TALK_BUTTON
+	setflag FLAG_HIDE_HELP_BUTTON
 # 21 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setobjectxyperm 4, 12, 5
 # 22 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -321,7 +321,7 @@ SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_2:
 # 178 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	setflag FLAG_SYS_POKEMON_GET
 # 179 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	givemon SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, isStoryStarter = TRUE
+	givemon SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_METAL_CLAW, isStoryStarter = TRUE
 # 180 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_5

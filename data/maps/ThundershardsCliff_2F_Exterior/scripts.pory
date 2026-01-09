@@ -24,7 +24,7 @@ script ThundershardsCave_2F_Eventscript_Warning {
 
 script ThundershardsCave_2F_Eventscript_DailyChansey_Heal {
     lock
-    setflag(FLAG_HIDE_TALK_BUTTON)
+    setflag(FLAG_HIDE_HELP_BUTTON)
     faceplayer
     msgbox(format("Ask Chansey to heal your party?"), MSGBOX_YESNO)
     closemessage
@@ -55,7 +55,7 @@ script ThundershardsCave_2F_Eventscript_DailyChansey_Heal {
         closemessage
     }
     release
-    clearflag(FLAG_HIDE_TALK_BUTTON)
+    clearflag(FLAG_HIDE_HELP_BUTTON)
     end
 }
 script ThundershardsCliff_2F_Exterior_Eventscript_MitsuruApproaching_CaveEntrance {
@@ -67,7 +67,7 @@ script ThundershardsCliff_2F_Exterior_Eventscript_MitsuruApproaching_CaveEntranc
 
 script ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave {
     lock
-    setflag(FLAG_HIDE_TALK_BUTTON)
+    setflag(FLAG_HIDE_HELP_BUTTON)
     fadenewbgm(MUS_P3R_FEARFUL_EXPERIENCE)
     delay(20)
     clearflag(FLAG_TEMP_1)

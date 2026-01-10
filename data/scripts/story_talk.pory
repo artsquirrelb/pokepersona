@@ -431,7 +431,6 @@ script EventScript_OverworldTrainerTips {
         case 4: call(EventScript_ShowHelpQuest)
         case 5: goto(EventScript_OverworldTrainerTips2)
     }
-    goto(EventScript_OverworldTrainerTips)
     release
     end
 }
@@ -454,7 +453,6 @@ script EventScript_OverworldTrainerTips2{
         case 2: call(EventScript_ShowHelpPartTime)
         case 5: goto(EventScript_OverworldTrainerTips)
     }
-    goto(EventScript_OverworldTrainerTips2)
     release
     end
 }

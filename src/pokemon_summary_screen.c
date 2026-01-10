@@ -335,6 +335,8 @@ static u8 AddWindowFromTemplateList(const struct WindowTemplate *template, u8 te
 static u8 IncrementSkillsStatsMode(u8 mode);
 static void ClearStatLabel(u32 length, u32 statsCoordX, u32 statsCoordY);
 u32 GetAdjustedIvData(struct Pokemon *mon, u32 stat);
+static void TryUpdateRelearnType(enum IncrDecrUpdateValues delta);
+static void ShowRelearnPrompt(void);
 
 static const struct BgTemplate sBgTemplates[] =
 {
@@ -572,7 +574,7 @@ static const struct WindowTemplate sSummaryTemplate[] =
     },
     [PSS_LABEL_WINDOW_PROMPT_RELEARN] = {
         .bg = 0,
-        .tilemapLeft = 18,
+        .tilemapLeft = (P_ENABLE_MOVE_RELEARNERS) ? 18 : 22,
         .tilemapTop = 2,
         .width = 11,
         .height = 2,
@@ -1959,7 +1961,7 @@ bool32 CheckRelearnerStateFlag(enum MoveRelearnerStates state)
     }
 }
 
-void TryUpdateRelearnType(enum IncrDecrUpdateValues delta)
+static void TryUpdateRelearnType(enum IncrDecrUpdateValues delta)
 {
     bool32 hasRelearnableMoves = FALSE;
     u32 zeroCounter = 0;
@@ -4933,7 +4935,7 @@ static inline void ShowUtilityPrompt(s16 mode)
     PrintTextOnWindow(PSS_LABEL_WINDOW_PROMPT_UTILITY, promptText, stringXPos, 1, 0, 0);
 }
 
-void ShowRelearnPrompt(void)
+static void ShowRelearnPrompt(void)
 {
     u32 currPage = sMonSummaryScreen->currPageIndex;
 
@@ -4946,15 +4948,21 @@ void ShowRelearnPrompt(void)
     if (!HasAnyRelearnableMoves(gMoveRelearnerState))
         return;
 
-    const u8* relearnText;
-
+    const u8 *relearnText;
     int relearnTextXPos;
 
-    switch (gMoveRelearnerState)
+    if ((!P_ENABLE_MOVE_RELEARNERS
+    && !P_TM_MOVES_RELEARNER
+    && !FlagGet(P_FLAG_EGG_MOVES)
+    && !FlagGet(P_FLAG_TUTOR_MOVES)))
     {
-        case MOVE_RELEARNER_LEVEL_UP_MOVES:
-            relearnText = sText_Relearn_LevelUp;
-            break;
+        relearnText = sText_Relearn;
+        relearnTextXPos = 0;
+    }
+    else
+    {
+        switch (gMoveRelearnerState)
+        {
         case MOVE_RELEARNER_EGG_MOVES:
             relearnText = sText_Relearn_Egg;
             break;
@@ -4965,11 +4973,12 @@ void ShowRelearnPrompt(void)
             relearnText = sText_Relearn_Tutor;
             break;
         default:
-            relearnText = sText_Relearn;
+        case MOVE_RELEARNER_LEVEL_UP_MOVES:
+            relearnText = sText_Relearn_LevelUp;
             break;
+        }
+        relearnTextXPos = GetStringRightAlignXOffset(FONT_NORMAL, relearnText, 0);
     }
-
-    relearnTextXPos = GetStringRightAlignXOffset(FONT_NORMAL, relearnText, 0);
 
     FillWindowPixelBuffer(PSS_LABEL_WINDOW_PROMPT_RELEARN, PIXEL_FILL(0));
     PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_RELEARN);

@@ -4055,6 +4055,8 @@ static void Cmd_dofaintanimation(void)
         return;
     }
 
+    gBattleStruct->battlerState[battler].fainted = TRUE;
+
     BtlController_EmitFaintAnimation(battler, B_COMM_TO_CONTROLLER);
     MarkBattlerForControllerExec(battler);
     gBattlescriptCurrInstr = cmd->nextInstr;
@@ -6825,6 +6827,7 @@ static void DrawLevelUpBannerText(void)
     GetMonNickname(mon, gStringVar4);
 
     printerTemplate.currentChar = gStringVar4;
+    printerTemplate.type = WINDOW_TEXT_PRINTER;
     printerTemplate.windowId = B_WIN_LEVEL_UP_BANNER;
     printerTemplate.fontId = FONT_SMALL;
     printerTemplate.x = 32;
@@ -14258,13 +14261,6 @@ void BS_TryIllusionOff(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
-void BS_SetSpriteIgnore0Hp(void)
-{
-    NATIVE_ARGS(bool8 ignore0HP);
-    gBattleStruct->spriteIgnore0Hp = cmd->ignore0HP;
-    gBattlescriptCurrInstr = cmd->nextInstr;
-}
-
 void BS_UpdateNick(void)
 {
     NATIVE_ARGS();
@@ -14501,7 +14497,7 @@ void BS_ArenaJudgmentString(void)
 void BS_ArenaWaitMessage(void)
 {
     NATIVE_ARGS();
-    if (IsTextPrinterActive(ARENA_WIN_JUDGMENT_TEXT))
+    if (IsTextPrinterActiveOnWindow(ARENA_WIN_JUDGMENT_TEXT))
         return;
     gBattlescriptCurrInstr = cmd->nextInstr;
 }

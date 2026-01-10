@@ -708,8 +708,6 @@ EventScript_OverworldTrainerTips_10:
 	case 5, EventScript_OverworldTrainerTips_20
 EventScript_OverworldTrainerTips_13:
 # 434 "data/scripts/story_talk.pory"
-	goto EventScript_OverworldTrainerTips
-# 435 "data/scripts/story_talk.pory"
 	release
 	end
 
@@ -767,232 +765,230 @@ EventScript_OverworldTrainerTips_20:
 
 
 EventScript_OverworldTrainerTips2::
-# 440 "data/scripts/story_talk.pory"
+# 439 "data/scripts/story_talk.pory"
 	compare VAR_AKIHIKOS_INTRO_STATE, 100
 	goto_if_ge EventScript_OverworldTrainerTips2_2
-# 440 "data/scripts/story_talk.pory"
+# 439 "data/scripts/story_talk.pory"
 	compare VAR_MITSURUS_INTRO_STATE, 100
 	goto_if_ge EventScript_OverworldTrainerTips2_2
 EventScript_OverworldTrainerTips2_1:
-# 443 "data/scripts/story_talk.pory"
+# 442 "data/scripts/story_talk.pory"
 	goto_if_set FLAG_HELP_MAKE_CHOICE, EventScript_OverworldTrainerTips2_7
 EventScript_OverworldTrainerTips2_6:
-# 446 "data/scripts/story_talk.pory"
+# 445 "data/scripts/story_talk.pory"
 	goto_if_set FLAG_PARTTIME_GET, EventScript_OverworldTrainerTips2_10
 EventScript_OverworldTrainerTips2_9:
-# 449 "data/scripts/story_talk.pory"
+# 448 "data/scripts/story_talk.pory"
 	dynmultipush gText_Back, 5
-# 450 "data/scripts/story_talk.pory"
+# 449 "data/scripts/story_talk.pory"
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, NULL
-# 451 "data/scripts/story_talk.pory"
+# 450 "data/scripts/story_talk.pory"
 	switch VAR_RESULT
-# 452 "data/scripts/story_talk.pory"
+# 451 "data/scripts/story_talk.pory"
 	case 0, EventScript_OverworldTrainerTips2_14
-# 453 "data/scripts/story_talk.pory"
+# 452 "data/scripts/story_talk.pory"
 	case 1, EventScript_OverworldTrainerTips2_15
-# 454 "data/scripts/story_talk.pory"
+# 453 "data/scripts/story_talk.pory"
 	case 2, EventScript_OverworldTrainerTips2_16
-# 455 "data/scripts/story_talk.pory"
+# 454 "data/scripts/story_talk.pory"
 	case 5, EventScript_OverworldTrainerTips2_17
 EventScript_OverworldTrainerTips2_12:
-# 457 "data/scripts/story_talk.pory"
-	goto EventScript_OverworldTrainerTips2
-# 458 "data/scripts/story_talk.pory"
+# 456 "data/scripts/story_talk.pory"
 	release
 	end
 
 EventScript_OverworldTrainerTips2_2:
-# 441 "data/scripts/story_talk.pory"
+# 440 "data/scripts/story_talk.pory"
 	dynmultipush HelpDeadline, 0
 	goto EventScript_OverworldTrainerTips2_1
 
 EventScript_OverworldTrainerTips2_7:
-# 444 "data/scripts/story_talk.pory"
+# 443 "data/scripts/story_talk.pory"
 	dynmultipush HelpChoice, 1
 	goto EventScript_OverworldTrainerTips2_6
 
 EventScript_OverworldTrainerTips2_10:
-# 447 "data/scripts/story_talk.pory"
+# 446 "data/scripts/story_talk.pory"
 	dynmultipush HelpParttime, 2
 	goto EventScript_OverworldTrainerTips2_9
 
 EventScript_OverworldTrainerTips2_14:
-# 452 "data/scripts/story_talk.pory"
+# 451 "data/scripts/story_talk.pory"
 	call EventScript_ShowHelpDeadline
 	goto EventScript_OverworldTrainerTips2_12
 
 EventScript_OverworldTrainerTips2_15:
-# 453 "data/scripts/story_talk.pory"
+# 452 "data/scripts/story_talk.pory"
 	call EventScript_ShowHelpChoice
 	goto EventScript_OverworldTrainerTips2_12
 
 EventScript_OverworldTrainerTips2_16:
-# 454 "data/scripts/story_talk.pory"
+# 453 "data/scripts/story_talk.pory"
 	call EventScript_ShowHelpPartTime
 	goto EventScript_OverworldTrainerTips2_12
 
 EventScript_OverworldTrainerTips2_17:
-# 455 "data/scripts/story_talk.pory"
+# 454 "data/scripts/story_talk.pory"
 	goto EventScript_OverworldTrainerTips
 	goto EventScript_OverworldTrainerTips2_12
 
 
 EventScript_ShowHelpPokedex::
-# 463 "data/scripts/story_talk.pory"
+# 461 "data/scripts/story_talk.pory"
 	closemessage
-# 464 "data/scripts/story_talk.pory"
+# 462 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_POKEDEX
-# 465 "data/scripts/story_talk.pory"
+# 463 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 466 "data/scripts/story_talk.pory"
+# 464 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpShinyChance::
-# 470 "data/scripts/story_talk.pory"
+# 468 "data/scripts/story_talk.pory"
 	closemessage
-# 471 "data/scripts/story_talk.pory"
+# 469 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_SHINY_CHANCE
-# 472 "data/scripts/story_talk.pory"
+# 470 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 473 "data/scripts/story_talk.pory"
+# 471 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpStarter::
-# 477 "data/scripts/story_talk.pory"
+# 475 "data/scripts/story_talk.pory"
 	closemessage
-# 478 "data/scripts/story_talk.pory"
+# 476 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_STORY_STARTER
-# 479 "data/scripts/story_talk.pory"
+# 477 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 480 "data/scripts/story_talk.pory"
+# 478 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpQuest::
-# 484 "data/scripts/story_talk.pory"
+# 482 "data/scripts/story_talk.pory"
 	closemessage
-# 485 "data/scripts/story_talk.pory"
+# 483 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_QUEST_MENU
-# 486 "data/scripts/story_talk.pory"
+# 484 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 487 "data/scripts/story_talk.pory"
+# 485 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpCompanion::
-# 491 "data/scripts/story_talk.pory"
+# 489 "data/scripts/story_talk.pory"
 	closemessage
-# 492 "data/scripts/story_talk.pory"
+# 490 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_COMPANION_MENU
-# 493 "data/scripts/story_talk.pory"
+# 491 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 494 "data/scripts/story_talk.pory"
+# 492 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpChoice::
-# 498 "data/scripts/story_talk.pory"
+# 496 "data/scripts/story_talk.pory"
 	closemessage
-# 499 "data/scripts/story_talk.pory"
+# 497 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_MAKE_CHOICES
-# 500 "data/scripts/story_talk.pory"
+# 498 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 501 "data/scripts/story_talk.pory"
+# 499 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpDeadline::
-# 505 "data/scripts/story_talk.pory"
+# 503 "data/scripts/story_talk.pory"
 	closemessage
-# 506 "data/scripts/story_talk.pory"
+# 504 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_DEADLINE
-# 507 "data/scripts/story_talk.pory"
+# 505 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 508 "data/scripts/story_talk.pory"
+# 506 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpPartTime::
-# 512 "data/scripts/story_talk.pory"
+# 510 "data/scripts/story_talk.pory"
 	closemessage
-# 513 "data/scripts/story_talk.pory"
+# 511 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_PART_TIME
-# 514 "data/scripts/story_talk.pory"
+# 512 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 515 "data/scripts/story_talk.pory"
+# 513 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_OverworldWorkParttime::
-# 531 "data/scripts/story_talk.pory"
+# 529 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldWorkParttime_Text_0
-# 532 "data/scripts/story_talk.pory"
+# 530 "data/scripts/story_talk.pory"
 	goto_if_set FLAG_AMEAME_PARTTIME_UNLOCKED, EventScript_OverworldWorkParttime_2
 EventScript_OverworldWorkParttime_1:
-# 536 "data/scripts/story_talk.pory"
+# 534 "data/scripts/story_talk.pory"
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, NULL
-# 537 "data/scripts/story_talk.pory"
+# 535 "data/scripts/story_talk.pory"
 	switch VAR_RESULT
-# 538 "data/scripts/story_talk.pory"
+# 536 "data/scripts/story_talk.pory"
 	case 0, EventScript_OverworldWorkParttime_6
 EventScript_OverworldWorkParttime_4:
-# 540 "data/scripts/story_talk.pory"
+# 538 "data/scripts/story_talk.pory"
 	release
 	end
 
 EventScript_OverworldWorkParttime_2:
-# 534 "data/scripts/story_talk.pory"
+# 532 "data/scripts/story_talk.pory"
 	dynmultipush AmeAme, 0
 	goto EventScript_OverworldWorkParttime_1
 
 EventScript_OverworldWorkParttime_6:
-# 538 "data/scripts/story_talk.pory"
+# 536 "data/scripts/story_talk.pory"
 	goto EventScript_TryStartAmeAmeParttime
 	goto EventScript_OverworldWorkParttime_4
 
 
 EventScript_TryStartAmeAmeParttime::
-# 547 "data/scripts/story_talk.pory"
+# 545 "data/scripts/story_talk.pory"
 	msgbox EventScript_TryStartAmeAmeParttime_Text_0, MSGBOX_YESNO
-# 548 "data/scripts/story_talk.pory"
+# 546 "data/scripts/story_talk.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne EventScript_TryStartAmeAmeParttime_2
-# 561 "data/scripts/story_talk.pory"
+# 559 "data/scripts/story_talk.pory"
 	goto EventScript_OverworldWorkParttime
 EventScript_TryStartAmeAmeParttime_1:
-# 563 "data/scripts/story_talk.pory"
+# 561 "data/scripts/story_talk.pory"
 	release
 	end
 
 EventScript_TryStartAmeAmeParttime_2:
-# 549 "data/scripts/story_talk.pory"
+# 547 "data/scripts/story_talk.pory"
 	gettime
-# 550 "data/scripts/story_talk.pory"
+# 548 "data/scripts/story_talk.pory"
 	compare VAR_0x8000, 7
 	goto_if_lt EventScript_TryStartAmeAmeParttime_5
-# 550 "data/scripts/story_talk.pory"
+# 548 "data/scripts/story_talk.pory"
 	compare VAR_0x8000, 15
 	goto_if_gt EventScript_TryStartAmeAmeParttime_5
-# 557 "data/scripts/story_talk.pory"
+# 555 "data/scripts/story_talk.pory"
 	goto CoralportCandyShop_Eventscript_RandomizeCutscenes
 	goto EventScript_TryStartAmeAmeParttime_1
 
 EventScript_TryStartAmeAmeParttime_5:
-# 551 "data/scripts/story_talk.pory"
+# 549 "data/scripts/story_talk.pory"
 	msgbox EventScript_TryStartAmeAmeParttime_Text_1
-# 552 "data/scripts/story_talk.pory"
+# 550 "data/scripts/story_talk.pory"
 	closemessage
-# 553 "data/scripts/story_talk.pory"
+# 551 "data/scripts/story_talk.pory"
 	release
 	end
 
@@ -1246,18 +1242,18 @@ EventScript_OverworldTrainerTips_Text_0:
 	.string "check?$"
 
 EventScript_OverworldWorkParttime_Text_0:
-# 531 "data/scripts/story_talk.pory"
+# 529 "data/scripts/story_talk.pory"
 	.string "Which part-time job would you like to\n"
 	.string "work at?$"
 
 EventScript_TryStartAmeAmeParttime_Text_0:
-# 547 "data/scripts/story_talk.pory"
+# 545 "data/scripts/story_talk.pory"
 	.string "Work at AmeAme Candy Shop for {COLOR RED}6 hours{COLOR 2}\n"
 	.string "and {COLOR RED}$2000{COLOR 2}?\n"
 	.string "$"
 
 EventScript_TryStartAmeAmeParttime_Text_1:
-# 551 "data/scripts/story_talk.pory"
+# 549 "data/scripts/story_talk.pory"
 	.string "You can only work there between 7AM\n"
 	.string "and 3PM.$"
 
@@ -1274,37 +1270,37 @@ Work::
 	.string "Work Part-time$"
 
 HelpPokedex::
-# 517 "data/scripts/story_talk.pory"
+# 515 "data/scripts/story_talk.pory"
 	.string "Pokédex$"
 
 HelpShinyChance::
-# 518 "data/scripts/story_talk.pory"
+# 516 "data/scripts/story_talk.pory"
 	.string "Shiny Chance$"
 
 HelpStarter::
-# 519 "data/scripts/story_talk.pory"
+# 517 "data/scripts/story_talk.pory"
 	.string "Story Starter$"
 
 HelpCompanion::
-# 520 "data/scripts/story_talk.pory"
+# 518 "data/scripts/story_talk.pory"
 	.string "Companions$"
 
 HelpQuest::
-# 521 "data/scripts/story_talk.pory"
+# 519 "data/scripts/story_talk.pory"
 	.string "Quest Menu$"
 
 HelpChoice::
-# 522 "data/scripts/story_talk.pory"
+# 520 "data/scripts/story_talk.pory"
 	.string "Your actions$"
 
 HelpDeadline::
-# 523 "data/scripts/story_talk.pory"
+# 521 "data/scripts/story_talk.pory"
 	.string "Deadline$"
 
 HelpParttime::
-# 524 "data/scripts/story_talk.pory"
+# 522 "data/scripts/story_talk.pory"
 	.string "Part-time Jobs$"
 
 AmeAme::
-# 544 "data/scripts/story_talk.pory"
+# 542 "data/scripts/story_talk.pory"
 	.string "AmeAme Candy Shop (7AM - 3PM)$"

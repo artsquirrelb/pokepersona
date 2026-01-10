@@ -25,6 +25,7 @@
 #include "title_screen.h"
 #include "expansion_intro.h"
 #include "outfit_menu.h"
+#include "battle_anim.h"
 #include "constants/rgb.h"
 #include "constants/battle_anim.h"
 
@@ -109,8 +110,7 @@ static void SpriteCB_RayquazaOrb(struct Sprite *sprite);
 
 static void MainCB2_EndIntro(void);
 
-extern const struct CompressedSpriteSheet gBattleAnimPicTable[];
-extern const struct SpritePalette gBattleAnimPaletteTable[];
+extern const struct BattleAnimation gBattleAnimTable[ANIM_TAG_COUNT];
 extern const struct SpriteTemplate gAncientPowerRockSpriteTemplate;
 
 enum {
@@ -1204,7 +1204,7 @@ static void Task_Scene1_FadeIn(u8 taskId)
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     SetVBlankCallback(VBlankCB_Intro);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_ON);
-    gTasks[taskId].func = Task_Scene1_WaterDrops;
+    gTasks[taskId].func = Task_Scene1_End;
     gIntroFrameCounter = 0;
     m4aSongNumStart(MUS_INTRO);
     ResetSerial();
@@ -1357,7 +1357,7 @@ static void Task_Scene2_Load(u8 taskId)
     gIntroCredits_MovingSceneryVOffset = 0;
     sFlygonYOffset = 0;
     LoadIntroPart2Graphics(1);
-    gTasks[taskId].func = Task_Scene2_CreateSprites;
+    gTasks[taskId].func = Task_Scene2_End;
 }
 
 #define tBgAnimTaskId   data[0]
@@ -1727,7 +1727,7 @@ static void Task_Scene3_Load(u8 taskId)
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_WHITEALPHA);
     SetGpuReg(REG_OFFSET_BG2CNT, BGCNT_PRIORITY(3) | BGCNT_CHARBASE(0) | BGCNT_SCREENBASE(8) | BGCNT_256COLOR | BGCNT_AFF256x256);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_1 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG2_ON | DISPCNT_OBJ_ON);
-    gTasks[taskId].func = Task_Scene3_SpinPokeball;
+    gTasks[taskId].func = Task_EndIntroMovie;
     gIntroFrameCounter = 0;
     m4aSongNumStart(MUS_INTRO_BATTLE);
 }
@@ -1773,8 +1773,8 @@ static void Task_Scene3_LoadGroudon(u8 taskId)
         DecompressDataWithHeaderVram(gIntroGroudon_Tilemap, (void *)(BG_CHAR_ADDR(3)));
         DecompressDataWithHeaderVram(gIntroLegendBg_Gfx, (void *)(BG_CHAR_ADDR(1)));
         DecompressDataWithHeaderVram(gIntroGroudonBg_Tilemap, (void *)(BG_SCREEN_ADDR(28)));
-        LoadCompressedSpriteSheetUsingHeap(&gBattleAnimPicTable[GET_TRUE_SPRITE_INDEX(ANIM_TAG_ROCKS)]);
-        LoadSpritePalette(&gBattleAnimPaletteTable[GET_TRUE_SPRITE_INDEX(ANIM_TAG_ROCKS)]);
+        LoadCompressedSpriteSheetUsingHeap(&gBattleAnimTable[GET_TRUE_SPRITE_INDEX(ANIM_TAG_ROCKS)].pic);
+        LoadSpritePalette(&gBattleAnimTable[GET_TRUE_SPRITE_INDEX(ANIM_TAG_ROCKS)].palette);
         CpuCopy16(gIntro3Bg_Pal, gPlttBufferUnfaded, sizeof(gIntro3Bg_Pal));
         gTasks[taskId].func = Task_Scene3_InitGroudonBg;
     }

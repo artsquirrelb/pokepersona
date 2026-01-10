@@ -47,7 +47,7 @@ mapscripts SunshineWoods_MapScripts {
 
 script SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru {
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
-    if (var(VAR_RESULT) == FALSE && var(VAR_MITSURUS_INTRO_STATE) == 100){
+    if (!var(VAR_RESULT) && var(VAR_MITSURUS_INTRO_STATE) == 100){
         clearflag(FLAG_TEMP_8)
         clearflag(FLAG_HIDE_QUEST_ICON)
     }
@@ -636,8 +636,10 @@ script SunshineWoods_Eventscript_AkihikoPrologueStart {
     hidefollower
     hidefollowernpc
     lock
-    msgbox(format("{COLOR RED}Tips: From this point onward, the choices you made thorough the game will ultimately affect the story outcome."))
-    closemessage
+    if (!flag(FLAG_HELP_MAKE_CHOICE)){
+        call(EventScript_ShowHelpChoice)
+        setflag(FLAG_HELP_MAKE_CHOICE)
+    }
     faceplayer
     setflag(FLAG_HIDE_QUEST_ICON)
     if (var(VAR_TEMP_0) == 1){

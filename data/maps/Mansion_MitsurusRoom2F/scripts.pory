@@ -43,11 +43,15 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     And the map to Thundershards Cliff."))
     closemessage
     setcaughtmon(SPECIES_VULPIX_DELTA)
+    if (!flag(FLAG_SYS_POKEDEX_GET)){
+        call(EventScript_ShowHelpPokedex)
+        setflag(FLAG_SYS_POKEDEX_GET)
+        special(SetUnlockedPokedexFlags)
+        setflag(FLAG_SYS_NATIONAL_DEX)
+        special(EnableNationalPokedex)
+    }
+    setflag(FLAG_HELP_WINDOW_GET)
     setflag(FLAG_SYS_POKEMON_GET)
-    setflag(FLAG_SYS_POKEDEX_GET)
-    special(SetUnlockedPokedexFlags)
-    setflag(FLAG_SYS_NATIONAL_DEX)
-    special(EnableNationalPokedex)
     applymovement(LOCALID_PLAYER, emotepensive)
     waitmovement(0)
     setspeaker(SP_NAME_MITSURU)
@@ -96,9 +100,12 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     waitmoncry
     lock
     setobjectnewmovementtype(LOCALID_VULPIX, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
+    if (!var(VAR_RESULT)){
+        call(EventScript_ShowHelpShinyChance)
+        call(EventScript_ShowHelpStarter)
+    }
     release
-    msgbox(Eventscript_StarterPokemonTips)
-    closemessage
     end
 }
 

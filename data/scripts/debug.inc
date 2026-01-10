@@ -1488,7 +1488,7 @@ Debug_CheatStart::
 	compare VAR_RESULT, MALE
 	goto_if_eq Debug_CheatStart_2
 # 773 "data/scripts/debug.pory"
-	additem ITEM_POKE_BALL, 20
+	additem ITEM_POKE_BALL, 25
 # 774 "data/scripts/debug.pory"
 	addmoney 3000
 # 775 "data/scripts/debug.pory"
@@ -1512,7 +1512,7 @@ Debug_CheatStart_2:
 # 763 "data/scripts/debug.pory"
 	addmoney 15000
 # 764 "data/scripts/debug.pory"
-	additem ITEM_POKE_BALL, 40
+	additem ITEM_POKE_BALL, 45
 # 765 "data/scripts/debug.pory"
 	additem ITEM_CAMP_GEARS
 # 766 "data/scripts/debug.pory"

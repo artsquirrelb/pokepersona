@@ -110,7 +110,7 @@ SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru::
 # 49 "data/maps/SunshineWoods/scripts.pory"
 	subquestmenu QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE
 # 50 "data/maps/SunshineWoods/scripts.pory"
-	compare VAR_RESULT, FALSE
+	compare VAR_RESULT, 0
 	goto_if_eq SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru_3
 SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru_1:
 # 54 "data/maps/SunshineWoods/scripts.pory"
@@ -1138,180 +1138,186 @@ SunshineWoods_Eventscript_AkihikoPrologueStart::
 # 638 "data/maps/SunshineWoods/scripts.pory"
 	lock
 # 639 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_0
-# 640 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
-# 641 "data/maps/SunshineWoods/scripts.pory"
-	faceplayer
-# 642 "data/maps/SunshineWoods/scripts.pory"
-	setflag FLAG_HIDE_QUEST_ICON
+	goto_if_unset FLAG_HELP_MAKE_CHOICE, SunshineWoods_Eventscript_AkihikoPrologueStart_2
+SunshineWoods_Eventscript_AkihikoPrologueStart_1:
 # 643 "data/maps/SunshineWoods/scripts.pory"
+	faceplayer
+# 644 "data/maps/SunshineWoods/scripts.pory"
+	setflag FLAG_HIDE_QUEST_ICON
+# 645 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_TEMP_0, 1
-	goto_if_eq SunshineWoods_Eventscript_AkihikoPrologueStart_1
-# 651 "data/maps/SunshineWoods/scripts.pory"
+	goto_if_eq SunshineWoods_Eventscript_AkihikoPrologueStart_4
+# 653 "data/maps/SunshineWoods/scripts.pory"
 	fadenewbgm MUS_XC2_GARFONT_MERCERNARIES
-# 652 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_2
 # 654 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
-# 655 "data/maps/SunshineWoods/scripts.pory"
-	specialvar VAR_RESULT, GetPlayerFacingDirection
+	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_1
 # 656 "data/maps/SunshineWoods/scripts.pory"
+	closemessage
+# 657 "data/maps/SunshineWoods/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 658 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_NORTH
-	goto_if_eq SunshineWoods_Eventscript_AkihikoPrologueStart_5
-# 660 "data/maps/SunshineWoods/scripts.pory"
+	goto_if_eq SunshineWoods_Eventscript_AkihikoPrologueStart_8
+# 662 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_EAST
-	goto_if_eq SunshineWoods_Eventscript_AkihikoPrologueStart_6
-# 664 "data/maps/SunshineWoods/scripts.pory"
+	goto_if_eq SunshineWoods_Eventscript_AkihikoPrologueStart_9
+# 666 "data/maps/SunshineWoods/scripts.pory"
 	compare VAR_RESULT, DIR_WEST
-	goto_if_eq SunshineWoods_Eventscript_AkihikoPrologueStart_7
-# 670 "data/maps/SunshineWoods/scripts.pory"
-	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_3
-# 671 "data/maps/SunshineWoods/scripts.pory"
-	delay 8
+	goto_if_eq SunshineWoods_Eventscript_AkihikoPrologueStart_10
 # 672 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 16, SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_1
-SunshineWoods_Eventscript_AkihikoPrologueStart_4:
+	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_3
+# 673 "data/maps/SunshineWoods/scripts.pory"
+	delay 8
 # 674 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
-# 675 "data/maps/SunshineWoods/scripts.pory"
-	delay 60
+	applymovement 16, SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_1
+SunshineWoods_Eventscript_AkihikoPrologueStart_7:
 # 676 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_3
-# 680 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
-# 681 "data/maps/SunshineWoods/scripts.pory"
-	delay 30
+	waitmovement
+# 677 "data/maps/SunshineWoods/scripts.pory"
+	delay 60
+# 678 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_2
 # 682 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 16, emotepensive
+	closemessage
 # 683 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
+	delay 30
 # 684 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_4
-# 686 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_5, MSGBOX_YESNO
-# 688 "data/maps/SunshineWoods/scripts.pory"
-	compare VAR_RESULT, FALSE
-	goto_if_eq SunshineWoods_Eventscript_AkihikoPrologueStart_12
-# 701 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
-# 702 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_SHINY
-# 703 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 16, pointup3
-# 704 "data/maps/SunshineWoods/scripts.pory"
+	applymovement 16, emotepensive
+# 685 "data/maps/SunshineWoods/scripts.pory"
 	waitmovement
-# 705 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_7
-# 706 "data/maps/SunshineWoods/scripts.pory"
+# 686 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_3
+# 688 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_4, MSGBOX_YESNO
+# 690 "data/maps/SunshineWoods/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq SunshineWoods_Eventscript_AkihikoPrologueStart_15
+# 703 "data/maps/SunshineWoods/scripts.pory"
 	closemessage
+# 704 "data/maps/SunshineWoods/scripts.pory"
+	playse SE_SHINY
+# 705 "data/maps/SunshineWoods/scripts.pory"
+	applymovement 16, pointup3
+# 706 "data/maps/SunshineWoods/scripts.pory"
+	waitmovement
 # 707 "data/maps/SunshineWoods/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_6
 # 708 "data/maps/SunshineWoods/scripts.pory"
-	callnative Script_SwitchMainCharacter
+	closemessage
 # 709 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 0
+	fadescreenswapbuffers FADE_TO_BLACK
 # 710 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 50
+	callnative Script_SwitchMainCharacter
 # 711 "data/maps/SunshineWoods/scripts.pory"
-	unlockcharacter CHARACTER_AKIHIKO
+	setvar VAR_AKIHIKOS_INTRO_STATE, 0
 # 712 "data/maps/SunshineWoods/scripts.pory"
-	makecharaAvailable CHARACTER_AKIHIKO
+	setvar VAR_MITSURUS_INTRO_STATE, 50
 # 713 "data/maps/SunshineWoods/scripts.pory"
-	makecharaUnavailable CHARACTER_MITSURU
+	unlockcharacter CHARACTER_AKIHIKO
 # 714 "data/maps/SunshineWoods/scripts.pory"
-	makecharaUnavailable CHARACTER_INTELEON_T
+	makecharaAvailable CHARACTER_AKIHIKO
 # 715 "data/maps/SunshineWoods/scripts.pory"
-	makecharaUnavailable CHARACTER_SHINJIRO
+	makecharaUnavailable CHARACTER_MITSURU
 # 716 "data/maps/SunshineWoods/scripts.pory"
-	clearflag FLAG_SYS_B_DASH
+	makecharaUnavailable CHARACTER_INTELEON_T
 # 717 "data/maps/SunshineWoods/scripts.pory"
-	clearflag FLAG_SYS_POKEDEX_GET
+	makecharaUnavailable CHARACTER_SHINJIRO
 # 718 "data/maps/SunshineWoods/scripts.pory"
-	clearflag FLAG_SYS_POKEMON_GET
+	clearflag FLAG_SYS_B_DASH
 # 719 "data/maps/SunshineWoods/scripts.pory"
-	removeitem ITEM_EXP_SHARE
+	clearflag FLAG_SYS_POKEDEX_GET
 # 720 "data/maps/SunshineWoods/scripts.pory"
-	removeitem ITEM_CAMP_GEARS
+	clearflag FLAG_SYS_POKEMON_GET
 # 721 "data/maps/SunshineWoods/scripts.pory"
-	removeitem ITEM_ESCAPE_ROPE
+	removeitem ITEM_EXP_SHARE
 # 722 "data/maps/SunshineWoods/scripts.pory"
-	removeitem ITEM_MACH_BIKE
+	removeitem ITEM_CAMP_GEARS
 # 723 "data/maps/SunshineWoods/scripts.pory"
-	removeallitem ITEM_POKE_BALL, VAR_0x800A
+	removeitem ITEM_ESCAPE_ROPE
 # 724 "data/maps/SunshineWoods/scripts.pory"
-	removeallitem ITEM_GREAT_BALL, VAR_0x800B
+	removeitem ITEM_MACH_BIKE
 # 725 "data/maps/SunshineWoods/scripts.pory"
-	destroyfollowernpc
+	removeallitem ITEM_POKE_BALL, VAR_0x800A
 # 726 "data/maps/SunshineWoods/scripts.pory"
-	manuallysettime WEEKDAY_WED, 16, 30
+	removeallitem ITEM_GREAT_BALL, VAR_0x800B
 # 727 "data/maps/SunshineWoods/scripts.pory"
-	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, AKIHIKOS_PROLOGUE
+	destroyfollowernpc
 # 728 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_STORY_QUESTS_STATE, 1
+	manuallysettime WEEKDAY_WED, 16, 30
 # 729 "data/maps/SunshineWoods/scripts.pory"
-	warpsilent MAP_SUNSHINE_ORPHANAGE, 13, 18
+	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, AKIHIKOS_PROLOGUE
 # 730 "data/maps/SunshineWoods/scripts.pory"
-	special DrawWholeMapView
+	setvar VAR_STORY_QUESTS_STATE, 1
 # 731 "data/maps/SunshineWoods/scripts.pory"
+	warpsilent MAP_SUNSHINE_ORPHANAGE, 13, 18
+# 732 "data/maps/SunshineWoods/scripts.pory"
+	special DrawWholeMapView
+# 733 "data/maps/SunshineWoods/scripts.pory"
 	waitstate
 	return
 
-SunshineWoods_Eventscript_AkihikoPrologueStart_1:
-# 644 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_1
+SunshineWoods_Eventscript_AkihikoPrologueStart_2:
+# 640 "data/maps/SunshineWoods/scripts.pory"
+	call EventScript_ShowHelpChoice
+# 641 "data/maps/SunshineWoods/scripts.pory"
+	setflag FLAG_HELP_MAKE_CHOICE
+	goto SunshineWoods_Eventscript_AkihikoPrologueStart_1
+
+SunshineWoods_Eventscript_AkihikoPrologueStart_4:
 # 646 "data/maps/SunshineWoods/scripts.pory"
+	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_0
+# 648 "data/maps/SunshineWoods/scripts.pory"
 	closemessage
-# 647 "data/maps/SunshineWoods/scripts.pory"
+# 649 "data/maps/SunshineWoods/scripts.pory"
 	release
 	end
 
-SunshineWoods_Eventscript_AkihikoPrologueStart_5:
-# 657 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_AkihikoPrologueStart_8:
+# 659 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_0
-# 658 "data/maps/SunshineWoods/scripts.pory"
+# 660 "data/maps/SunshineWoods/scripts.pory"
 	applymovement 16, SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_1
-	goto SunshineWoods_Eventscript_AkihikoPrologueStart_4
+	goto SunshineWoods_Eventscript_AkihikoPrologueStart_7
 
-SunshineWoods_Eventscript_AkihikoPrologueStart_6:
-# 661 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_AkihikoPrologueStart_9:
+# 663 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_1
-# 662 "data/maps/SunshineWoods/scripts.pory"
+# 664 "data/maps/SunshineWoods/scripts.pory"
 	applymovement 16, SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_1
-	goto SunshineWoods_Eventscript_AkihikoPrologueStart_4
+	goto SunshineWoods_Eventscript_AkihikoPrologueStart_7
 
-SunshineWoods_Eventscript_AkihikoPrologueStart_7:
-# 665 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 16, SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_1
-# 666 "data/maps/SunshineWoods/scripts.pory"
-	delay 8
+SunshineWoods_Eventscript_AkihikoPrologueStart_10:
 # 667 "data/maps/SunshineWoods/scripts.pory"
+	applymovement 16, SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_1
+# 668 "data/maps/SunshineWoods/scripts.pory"
+	delay 8
+# 669 "data/maps/SunshineWoods/scripts.pory"
 	applymovement LOCALID_PLAYER, SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_2
-	goto SunshineWoods_Eventscript_AkihikoPrologueStart_4
+	goto SunshineWoods_Eventscript_AkihikoPrologueStart_7
 
-SunshineWoods_Eventscript_AkihikoPrologueStart_12:
-# 689 "data/maps/SunshineWoods/scripts.pory"
-	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_6
-# 690 "data/maps/SunshineWoods/scripts.pory"
-	closemessage
+SunshineWoods_Eventscript_AkihikoPrologueStart_15:
 # 691 "data/maps/SunshineWoods/scripts.pory"
-	playse SE_M_STAT_DECREASE
+	msgbox SunshineWoods_Eventscript_AkihikoPrologueStart_Text_5
 # 692 "data/maps/SunshineWoods/scripts.pory"
-	applymovement 16, pointdown3
+	closemessage
 # 693 "data/maps/SunshineWoods/scripts.pory"
-	waitmovement
+	playse SE_M_STAT_DECREASE
 # 694 "data/maps/SunshineWoods/scripts.pory"
-	subvar VAR_AKIHIKO_RELATIONSHIP_POINTS, 3
+	applymovement 16, pointdown3
 # 695 "data/maps/SunshineWoods/scripts.pory"
-	setvar VAR_TEMP_0, 1
+	waitmovement
 # 696 "data/maps/SunshineWoods/scripts.pory"
+	subvar VAR_AKIHIKO_RELATIONSHIP_POINTS, 3
+# 697 "data/maps/SunshineWoods/scripts.pory"
+	setvar VAR_TEMP_0, 1
+# 698 "data/maps/SunshineWoods/scripts.pory"
 	release
 	end
 
 
-# 736 "data/maps/SunshineWoods/scripts.pory"
+# 738 "data/maps/SunshineWoods/scripts.pory"
 pointup3:
-# 737 "data/maps/SunshineWoods/scripts.pory"
+# 739 "data/maps/SunshineWoods/scripts.pory"
 	point_up_3
 	step_end
 
@@ -1541,67 +1547,67 @@ SunshineWoods_Eventscript_KGStaff2_Battle_Movement_5:
 	set_invisible
 	step_end
 
-# 657 "data/maps/SunshineWoods/scripts.pory"
+# 659 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_0:
-# 657 "data/maps/SunshineWoods/scripts.pory"
+# 659 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 657 "data/maps/SunshineWoods/scripts.pory"
+# 659 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 657 "data/maps/SunshineWoods/scripts.pory"
+# 659 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 657 "data/maps/SunshineWoods/scripts.pory"
+# 659 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 657 "data/maps/SunshineWoods/scripts.pory"
+# 659 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 657 "data/maps/SunshineWoods/scripts.pory"
+# 659 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 657 "data/maps/SunshineWoods/scripts.pory"
+# 659 "data/maps/SunshineWoods/scripts.pory"
 	face_down
 	step_end
 
-# 658 "data/maps/SunshineWoods/scripts.pory"
+# 660 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_1:
-# 658 "data/maps/SunshineWoods/scripts.pory"
+# 660 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 658 "data/maps/SunshineWoods/scripts.pory"
+# 660 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 658 "data/maps/SunshineWoods/scripts.pory"
+# 660 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 658 "data/maps/SunshineWoods/scripts.pory"
+# 660 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 658 "data/maps/SunshineWoods/scripts.pory"
+# 660 "data/maps/SunshineWoods/scripts.pory"
 	face_down
 	step_end
 
-# 667 "data/maps/SunshineWoods/scripts.pory"
+# 669 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_2:
-# 667 "data/maps/SunshineWoods/scripts.pory"
+# 669 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 667 "data/maps/SunshineWoods/scripts.pory"
+# 669 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 667 "data/maps/SunshineWoods/scripts.pory"
+# 669 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 667 "data/maps/SunshineWoods/scripts.pory"
+# 669 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 667 "data/maps/SunshineWoods/scripts.pory"
+# 669 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 667 "data/maps/SunshineWoods/scripts.pory"
+# 669 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 667 "data/maps/SunshineWoods/scripts.pory"
+# 669 "data/maps/SunshineWoods/scripts.pory"
 	face_down
 	step_end
 
-# 670 "data/maps/SunshineWoods/scripts.pory"
+# 672 "data/maps/SunshineWoods/scripts.pory"
 SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_3:
-# 670 "data/maps/SunshineWoods/scripts.pory"
+# 672 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 670 "data/maps/SunshineWoods/scripts.pory"
+# 672 "data/maps/SunshineWoods/scripts.pory"
 	walk_left
-# 670 "data/maps/SunshineWoods/scripts.pory"
+# 672 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 670 "data/maps/SunshineWoods/scripts.pory"
+# 672 "data/maps/SunshineWoods/scripts.pory"
 	walk_up
-# 670 "data/maps/SunshineWoods/scripts.pory"
+# 672 "data/maps/SunshineWoods/scripts.pory"
 	face_down
 	step_end
 
@@ -1791,46 +1797,40 @@ SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_3:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}C'est magnifique. Let's move out.$"
 
 SunshineWoods_Eventscript_AkihikoPrologueStart_Text_0:
-# 639 "data/maps/SunshineWoods/scripts.pory"
-	.string "{COLOR RED}Tips: From this point onward, the\n"
-	.string "choices you made thorough the game will\l"
-	.string "ultimately affect the story outcome.$"
-
-SunshineWoods_Eventscript_AkihikoPrologueStart_Text_1:
-# 644 "data/maps/SunshineWoods/scripts.pory"
+# 646 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}.......{PAUSE 60} Sorry, I want to be alone for a\n"
 	.string "while. Can we talk later?$"
 
-SunshineWoods_Eventscript_AkihikoPrologueStart_Text_2:
-# 652 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_AkihikoPrologueStart_Text_1:
+# 654 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}So this is where you are.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Hey, Kirijo. Have a seat.$"
 
-SunshineWoods_Eventscript_AkihikoPrologueStart_Text_3:
-# 676 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_AkihikoPrologueStart_Text_2:
+# 678 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}What are you doing here, if I may ask?\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Just... {PAUSE 60}reminiscing,{PAUSE 60} I guess.\p"
 	.string "This was where I, my sis and Shinji used\n"
 	.string "to hang out.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That sounded like good times.$"
 
-SunshineWoods_Eventscript_AkihikoPrologueStart_Text_4:
-# 684 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_AkihikoPrologueStart_Text_3:
+# 686 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Kirjo, uh...{PAUSE 60} This is kinda sudden but I\n"
 	.string "guess I just want to talk about this to\l"
 	.string "someone.$"
 
-SunshineWoods_Eventscript_AkihikoPrologueStart_Text_5:
-# 686 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_AkihikoPrologueStart_Text_4:
+# 688 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Would you listen? {COLOR GREEN}(Begin Akihiko's\n"
 	.string "prologue quest?)$"
 
-SunshineWoods_Eventscript_AkihikoPrologueStart_Text_6:
-# 689 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_AkihikoPrologueStart_Text_5:
+# 691 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Oh, okay......$"
 
-SunshineWoods_Eventscript_AkihikoPrologueStart_Text_7:
-# 705 "data/maps/SunshineWoods/scripts.pory"
+SunshineWoods_Eventscript_AkihikoPrologueStart_Text_6:
+# 707 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thanks!$"
 
 SunshineWoods_Text_IkeIntro::

@@ -1,13 +1,6 @@
 script EventScript_CampGears{
-    if (var(VAR_AKIHIKOS_INTRO_STATE) < 100 && var(VAR_MITSURUS_INTRO_STATE) < 100){
-        checkplayergender
-        if(var(VAR_RESULT) == MALE){
-            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping.)"))
-        }
-        else{
-            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Now is not the time for camping.)"))
-        }
-        closemessage
+    if ((var(VAR_AKIHIKOS_INTRO_STATE) < 100 && var(VAR_MITSURUS_INTRO_STATE) < 100)){
+        call (EventScript_CampGears_NotTheTime)
     }
     callnative (ScrCmd_CanNotUseCampGears)
     if (var(VAR_RESULT)){
@@ -21,6 +14,14 @@ script EventScript_CampGears{
         }
         closemessage
     }
+    iscurrentmap(MAP_WINDWARD_PORT_HARBOR)
+    if (var(VAR_RESULT) && ((var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 1 || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 3
+        || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 5 || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 7
+        || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 9 || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 11
+        || var(VAR_WINDWARD_HARBOR_GHOST_BOY) == 13)))
+        {
+            call(EventScript_CampGears_NotTheTime)
+        }
     else{
         playse(SE_SELECT)
 	    msgbox ("Set up camp and wait until?")
@@ -58,6 +59,17 @@ script EventScript_CampGears{
     updatefollowingmon
     release
     end
+}
+
+script EventScript_CampGears_NotTheTime {
+    checkplayergender
+        if(var(VAR_RESULT) == MALE){
+            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping.)"))
+        }
+        else{
+            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Now is not the time for camping.)"))
+        }
+        closemessage
 }
 
 script EventScript_TellTheTimeDayHourMinute{

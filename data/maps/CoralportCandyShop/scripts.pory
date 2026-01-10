@@ -106,13 +106,15 @@ script CoralportCandyShop_Eventscript_ShopKeeperF {
             Simply check the time clock to start the work.\p
             Oh, and you can only start your shift here between {COLOR BLUE}7AM and 3PM{COLOR 2}."))
             closemessage
-            waitmovement
+            if (!flag(FLAG_PARTTIME_GET)){
+                call(EventScript_ShowHelpPartTime)
+                setflag(FLAG_PARTTIME_GET)
+            }
             setflag(FLAG_AMEAME_PARTTIME_UNLOCKED)
             questmenu(QUEST_MENU_SET_ACTIVE, QUEST_AMEAME_PARTTIME)
             playfanfare(MUS_OBTAIN_SYMBOL)
             waitfanfare
             msgbox(format("{COLOR GREEN}You now can work part-time at {COLOR BLUE}AmeAme Candy Shop{COLOR GREEN}!"))
-            closemessage
             release
             clearflag(FLAG_HIDE_QUEST_ICON)
             refreshquesticon
@@ -160,8 +162,7 @@ script CoralportCandyShop_Eventscript_TimeClock {
                 goto(CoralportCandyShop_Eventscript_RandomizeCutscenes)
             }
             else{
-                msgbox(format("You can only start your shift here between 7AM and 3PM."))
-                closemessage
+                msgbox(AmeAmeShiftStart)
                 release
                 end
             }
@@ -169,6 +170,10 @@ script CoralportCandyShop_Eventscript_TimeClock {
     }
     release
     end
+}
+
+text AmeAmeShiftStart{
+    format("You can only start your shift here between 7AM and 3PM.")
 }
 
 script CoralportCandyShop_Eventscript_RandomizeCutscenes {

@@ -125,23 +125,19 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
     msgbox(format(
         "{SPEAKER NAME_MIKI}Yay!\p
         {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p
-        {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, I'll give you a pokeball to keep it."))
+        {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, I'll give you a pokeball to keep it.\p
+        {SPEAKER NAME_NONE}Ms. Kobayashi gave {PLAYER} a Cherish Ball."))
     closemessage
-    msgbox("{PLAYER} received 1{COLOR GREEN} (hidden){COLOR DARK_GRAY} Cherish Ball.")
-    closemessage
-    msgbox(Eventscript_StarterPokemonTips)
-    closemessage
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, MITSURUS_PROLOGUE)
+    if (!var(VAR_RESULT)){
+        call(EventScript_ShowHelpShinyChance)
+        call(EventScript_ShowHelpStarter)
+        setflag(FLAG_HELP_WINDOW_GET)
+    }
     setvar(VAR_AKIHIKOS_INTRO_STATE, 8)
     fwdtime(20, 10)}
     release
     end
-}
-
-text Eventscript_StarterPokemonTips{
-    format("{COLOR GREEN}Tips: The shiny chance is roughly 1/100. \p 
-    No Pokémon are shiny locked, including the story starters.\p 
-    The story starters have been buffed and come with pre-determined Nature and Perfect IVs.\p
-    You also can not release them.")
 }
 
 script SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi {
@@ -495,7 +491,7 @@ script SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage{
     {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Of course, Ms. Kobayashi.\p
     {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, you may need these."))
     closemessage
-    giveitem (ITEM_POTION, 2)
+    giveitem (ITEM_POKE_BALL, 5)
     closemessage
     msgbox(format("
     {SPEAKER NAME_KOBAYASHI}Stay safe, dear.\p

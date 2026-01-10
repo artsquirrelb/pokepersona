@@ -3,41 +3,107 @@
 // Remember to modify include/constants/help_window.h to include identifiers so they can be used in event scripts.
 const struct HelpWindow gHelpWindowInfo[] =
 {
-    [HELP_START_MENU] =
+    [HELP_POKEDEX] =
     {
-        .header = COMPOUND_STRING("             Pokédex"),
+        .header = COMPOUND_STRING(" Pokédex"),
         .desc = COMPOUND_STRING("To access the Pokédex, press {START_BUTTON}\n"
                                 "while you're in the overworld."
                             ),
     },
+    [HELP_SHINY_CHANCE] =
+    {
+        .header = COMPOUND_STRING(" Shiny Chance"),
+        .desc = COMPOUND_STRING("The shiny chance is roughly {COLOR 7}1/100{COLOR 2}.\n"
+                                "No Pokémon are shiny locked, including the\n"
+                                "story starters."
+                            ),
+    },
+    [HELP_STORY_STARTER] =
+    {
+        .header = COMPOUND_STRING(" Story Starters"),
+        .desc = COMPOUND_STRING("Each {COLOR 7}protagonist{COLOR 2} has their own unique starter\n"
+                                "Pokémon. They've been buffed and come with\n"
+                                "pre-determined Nature and Perfect IVs.\n"
+                                "They also have a unique {COLOR 7}type weakness.{COLOR 2}\n"
+                                "You can check it in their respective\n"
+                                "protagonist's {COLOR 8}Trainer's Card{COLOR 2}.\n"
+                                "You also {COLOR RED}cannot{COLOR 2} release nor trade them!"
+                            ),
+    },
+    [HELP_COMPANION_MENU] =
+    {
+        .header = COMPOUND_STRING(" Companion Menu"),
+        .desc = COMPOUND_STRING("To access the Companion Menu, press\n"
+                                "{START_BUTTON}->{SELECT_BUTTON} while you're in\n"
+                                "the overworld.\n"
+                                "You will unlock more {COLOR 7}companions{COLOR 2} on your\n"
+                                "journey through the Kitoha region.\n"
+                                "You can set them as {COLOR 7}NPC follower{COLOR 2} or {COLOR 7}battle\n"
+                                "partner{COLOR 2} as well as switch between the two\n"
+                                "{COLOR 7}protagonists{COLOR 2}!\n"
+                                )
+    },
+    [HELP_QUEST_MENU] =
+    {
+        .header = COMPOUND_STRING(" Quest Menu"),
+        .desc = COMPOUND_STRING("{COLOR 7}Quest System{COLOR 2} is now unlocked!\n"
+                                "There are multiple side quests you can do\n"
+                                "as you travel through the Kitoha region.\n"
+                                "Check around for quest givers with a {COLOR 8}light\n"
+                                "blue{COLOR 2} exclamation mark.\n"
+                                "Some side quests may have different outcome\n"
+                                "and rewards {COLOR RED}depending on your action{COLOR 2}.\n"
+                            ),
+    },
+    [HELP_MAKE_CHOICES] =
+    {
+        .header = COMPOUND_STRING(" The choices you made"),
+        .desc = COMPOUND_STRING("From this point onward, some of the choices\n"
+                                "you made will ultimately {COLOR RED}affect the story's\n"
+                                "ending{COLOR 2}."
+                            ),
+    },
+    [HELP_DEADLINE] =
+    {
+        .header = COMPOUND_STRING(" Advancing Time"),
+        .desc = COMPOUND_STRING("Time will only move forward after you do\n"
+                                "certain actions, such as progressing the\n"
+                                "story quests, using the Camp Gears,\n"
+                                "defeating a trainer, spending time with\n"
+                                "your companions, working at a part-time\n"
+                                "job, etc. Failing to meet the deadline\n"
+                                "will result to a {COLOR RED}Game Over{COLOR 2}."
+                                ),
+    },
+    [HELP_PART_TIME] = 
+    {
+        .header = COMPOUND_STRING(" Part-time Job"),
+        .desc = COMPOUND_STRING("Working at a part-time job is a good way\n"
+                                "to advance the clock and get more money\n"
+                                "and other rewards.\n"
+                                "You can find the shortcut to start your\n"
+                                "shift by pressing {COLOR 8}{L_BUTTON}-> Work Part-time\n"
+                                "while in the overworld."
+                                ),
+    },
+    [HELP_GIMMIGHOUL_COINS] =
+    {
+        .header = COMPOUND_STRING(" Evolving Gimmighoul"),
+        .desc = COMPOUND_STRING("To evolve Gimmighoul into Gholdengo, you\n"
+                                "need to gather 999 {COLOR RED}Gimmighoul Coins{COLOR DARK_GRAY}.\n\n"
+                                "You can find Gimmighoul Coins scattered\n"
+                                "all around Paldea."
+                            ),
+    },
     [HELP_MEGA_EVOLUTION] =
     {
-        .header = COMPOUND_STRING("             Mega Evolution"),
+        .header = COMPOUND_STRING(" Mega Evolution"),
         .desc = COMPOUND_STRING("In battle, press {START_BUTTON} to Mega Evolve!\n\n"
                                 "The Pokémon must hold their Mega Stone to be \n"
                                 "to be able to Mega Evolve.\n"
                                 "You can only Mega Evolve once per battle."
                             ),
     },
-    [HELP_MASTER_BALL] =
-    {
-        .header = COMPOUND_STRING("Information: Master Ball"),
-        .desc = COMPOUND_STRING("There is only one Master Ball in Pokémon;\n"
-                                "use it wisely!\n"
-                                "Professor Oak suggests using it on a Pokémon\n"
-                                "you want to add to your team but are hard to\n"
-                                "catch, like a Fearow or Tentacruel!"
-                            ),
-    },
-    [HELP_GIMMIGHOUL_COINS] =
-    {
-        .header = COMPOUND_STRING("Information: Evolving Gimmighoul into Gholdengo"),
-        .desc = COMPOUND_STRING("To evolve Gimmighoul into Gholdengo, you\n"
-                                "need to gather 999 {COLOR RED}Gimmighoul Coins{COLOR DARK_GRAY}.\n\n"
-                                "You can find Gimmighoul Coins scattered\n"
-                                "all around Paldea."
-                            ),
-        .headerFont = FONT_NARROWER,
-    },
+    
     // Add more entries
 };

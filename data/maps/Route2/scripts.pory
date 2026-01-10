@@ -1159,13 +1159,9 @@ script Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting {
     (Maybe I can wander around the town to gather more information.)"))
     closemessage
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
-    if (var(VAR_RESULT) == FALSE)
+    if (!var(VAR_RESULT))
     {
-        msgbox(format("{COLOR GREEN}Tips: Quest System is now unlocked.\p
-        Check around for quest givers with a light blue exclamation mark.\p
-        You can open quest menu in\n
-        {START_BUTTON} Menu {RIGHT_ARROW} {L_BUTTON}."))
-        closemessage
+        call(EventScript_ShowHelpQuest)
         setflag(FLAG_SYS_QUEST_MENU_GET)
         questmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS)
         setvar(VAR_STORY_QUESTS_STATE, 0)

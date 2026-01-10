@@ -114,8 +114,11 @@ script SunshineMeadow_Eventscript_MitsuruOnFrame17 {
 script SunshineMeadow_Eventscript_PreMitsuruFirstBattleTalk {
     lock
     faceplayer
-    msgbox(format("{COLOR RED}Tips: From this point onward, the choices you made thorough the game will ultimately affect the story outcome.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for our first battle?"), MSGBOX_YESNO)
+    if (!flag(FLAG_HELP_MAKE_CHOICE)){
+        call(EventScript_ShowHelpChoice)
+        setflag(FLAG_HELP_MAKE_CHOICE)
+    }
+    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for our first battle?"), MSGBOX_YESNO)
     closemessage
     if (var(VAR_RESULT) == FALSE){
         msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}No worry. We still have time."))

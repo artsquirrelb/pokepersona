@@ -3,6 +3,7 @@
 #include "string_util.h"
 #include "sound.h"
 #include "text.h"
+#include "text_window.h"
 #include "window.h"
 #include "help_window.h"
 #include "constants/songs.h"
@@ -27,7 +28,7 @@ void ShowHelpInfoWindow(struct ScriptContext *ctx)
     u32 yOffset;
     yOffset = 1;
     xOffset = 0;
-    u8 headerColor[4] = {0, 2, 0, 0};
+    u8 headerColor[4] = {0, 4, 0, 0};
     u8 headerFont = FONT_NORMAL;
     u8 descColor[4] = {0, 1, 0, 0};
     u8 descFont = FONT_SMALL;

@@ -9,32 +9,17 @@ script EventScript_OverworldHelpButton
         playse(SE_WIN_OPEN)
         waitse
         msgbox(format("What would you like to get help with?"))
-        if (!flag(FLAG_PARTTIME_GET))
+        dynmultipush(StoryHints, 0)
+        dynmultipush(TrainersTips, 1)
+        if (flag(FLAG_PARTTIME_GET))
         {
-            dynmultipush(StoryHints, 0)
-            dynmultipush(TrainersTips, 1)
-            dynmultistack(0, 4, FALSE, 2, FALSE, 0, NULL)
-            if(var(VAR_RESULT) == 0){
-                goto(EventScript_OverworldStoryTalk)
-            }
-            elif(var(VAR_RESULT) == 1){
-                goto(EventScript_OverworldTrainerTips)
-            }
-        }
-        else{
-            dynmultipush(StoryHints, 0)
-            dynmultipush(TrainersTips, 1)
             dynmultipush(Work, 2)
-            dynmultistack(0, 4, FALSE, 3, FALSE, 0, NULL)
-            if(var(VAR_RESULT) == 0){
-                goto(EventScript_OverworldStoryTalk)
-            }
-            elif(var(VAR_RESULT) == 1){
-                goto(EventScript_OverworldTrainerTips)
-            }
-            else{
-                goto(EventScript_OverworldWorkParttime)
-            }
+        }
+        dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
+        switch(var(VAR_RESULT)){
+            case 0: goto(EventScript_OverworldStoryTalk)
+            case 1: goto(EventScript_OverworldTrainerTips)
+            case 2: goto(EventScript_OverworldWorkParttime)
         }
     }
     closemessage
@@ -42,17 +27,9 @@ script EventScript_OverworldHelpButton
     end
 }
 
-text StoryHints{
-    "Story Hints"
-}
-
-text TrainersTips {
-    "Trainer's Tips"
-}
-
-text Work {
-    "Work Part-time"
-}
+text StoryHints{"Story Hints"}
+text TrainersTips {"Trainer's Tips"}
+text Work {"Work Part-time"}
 
 script EventScript_OverworldStoryTalk {
     checkplayergender
@@ -430,18 +407,159 @@ script EventScript_OverworldStoryTalk_PostGoodByeKikuno {
 ///////////////////////
 
 script EventScript_OverworldTrainerTips {
-    closemessage
-    showhelpwindow(HELP_START_MENU)
-    waitbuttonpress
-    hidehelpwindow
+    if (flag(FLAG_SYS_POKEDEX_GET)){
+        dynmultipush(HelpPokedex, 0)
+    }
+    if (var(VAR_MITSURUS_INTRO_STATE) >= 2){
+        dynmultipush(HelpShinyChance, 1)
+        dynmultipush(HelpStarter, 2)
+    }
+    if (flag(FLAG_COMPANION_MENU_GET)){
+        dynmultipush(HelpCompanion, 3)
+    }
+    if (flag(FLAG_SYS_QUEST_MENU_GET)){
+        dynmultipush(HelpQuest, 4)
+    }
+    dynmultipush(gText_Next, 5)
+    msgbox(format("Which Trainer's Tips would you like to check?"))
+    dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
+    switch(var(VAR_RESULT)){
+        case 0: call(EventScript_ShowHelpPokedex)
+        case 1: call(EventScript_ShowHelpShinyChance)
+        case 2: call(EventScript_ShowHelpStarter)
+        case 3: call(EventScript_ShowHelpCompanion)
+        case 4: call(EventScript_ShowHelpQuest)
+        case 5: goto(EventScript_OverworldTrainerTips2)
+    }
+    goto(EventScript_OverworldTrainerTips)
     release
     end
 }
+
+script EventScript_OverworldTrainerTips2{
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 100 || var(VAR_MITSURUS_INTRO_STATE) >= 100){
+        dynmultipush(HelpDeadline, 0)
+    }
+    if (flag(FLAG_HELP_MAKE_CHOICE)){
+        dynmultipush(HelpChoice, 1)
+    }
+    if (flag(FLAG_PARTTIME_GET)){
+        dynmultipush(HelpParttime, 2)
+    }
+    dynmultipush(gText_Back, 5)
+    dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
+    switch(var(VAR_RESULT)){
+        case 0: call(EventScript_ShowHelpDeadline)
+        case 1: call(EventScript_ShowHelpChoice)
+        case 2: call(EventScript_ShowHelpPartTime)
+        case 5: goto(EventScript_OverworldTrainerTips)
+    }
+    goto(EventScript_OverworldTrainerTips2)
+    release
+    end
+}
+
+script EventScript_ShowHelpPokedex {
+    closemessage
+    showhelpwindow(HELP_POKEDEX)
+    waitbuttonpress
+    hidehelpwindow
+}
+
+script EventScript_ShowHelpShinyChance {
+    closemessage
+    showhelpwindow(HELP_SHINY_CHANCE)
+    waitbuttonpress
+    hidehelpwindow
+}
+
+script EventScript_ShowHelpStarter {
+    closemessage
+    showhelpwindow(HELP_STORY_STARTER)
+    waitbuttonpress
+    hidehelpwindow
+}
+
+script EventScript_ShowHelpQuest {
+    closemessage
+    showhelpwindow(HELP_QUEST_MENU)
+    waitbuttonpress
+    hidehelpwindow
+}
+
+script EventScript_ShowHelpCompanion {
+    closemessage
+    showhelpwindow(HELP_COMPANION_MENU)
+    waitbuttonpress
+    hidehelpwindow
+}
+
+script EventScript_ShowHelpChoice {
+    closemessage
+    showhelpwindow(HELP_MAKE_CHOICES)
+    waitbuttonpress
+    hidehelpwindow
+}
+
+script EventScript_ShowHelpDeadline {
+    closemessage
+    showhelpwindow(HELP_DEADLINE)
+    waitbuttonpress
+    hidehelpwindow
+}
+
+script EventScript_ShowHelpPartTime {
+    closemessage
+    showhelpwindow(HELP_PART_TIME)
+    waitbuttonpress
+    hidehelpwindow
+}
+text HelpPokedex{"Pokédex"}
+text HelpShinyChance{"Shiny Chance"}
+text HelpStarter{"Story Starter"}
+text HelpCompanion{"Companions"}
+text HelpQuest{"Quest Menu"}
+text HelpChoice{"Your actions"}
+text HelpDeadline{"Deadline"}
+text HelpParttime{"Part-time Jobs"}
 
 ///////////////////////
 ////WORK PART-TIME/////
 ///////////////////////
 
 script EventScript_OverworldWorkParttime {
-    
+    msgbox(format("Which part-time job would you like to work at?"))
+    if(flag(FLAG_AMEAME_PARTTIME_UNLOCKED))
+    {
+        dynmultipush(AmeAme, 0)
+    }
+    dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
+    switch(var(VAR_RESULT)){
+        case 0: goto(EventScript_TryStartAmeAmeParttime)
+    }
+    release
+    end
+}
+
+text AmeAme{"AmeAme Candy Shop (7AM - 3PM)"}
+
+script EventScript_TryStartAmeAmeParttime {
+    msgbox(format("Work at AmeAme Candy Shop for {COLOR RED}6 hours{COLOR 2} and {COLOR RED}$2000{COLOR 2}?\n"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        gettime
+        if (var(VAR_0x8000) < 7 || var(VAR_0x8000) > 15){
+            msgbox(format("You can only work there between 7AM and 3PM."))
+            closemessage
+            release
+            end
+        }
+        else{
+            goto(CoralportCandyShop_Eventscript_RandomizeCutscenes)
+        }
+    }
+    else{
+        goto(EventScript_OverworldWorkParttime)
+    }
+    release
+    end
 }

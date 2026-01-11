@@ -1,5 +1,6 @@
 const struct SpritePalette gSpritePalette_GeneralFieldEffect0 = {gFieldEffectObjectPalette0, FLDEFF_PAL_TAG_GENERAL_0};
 const struct SpritePalette gSpritePalette_GeneralFieldEffect1 = {gFieldEffectObjectPalette1, FLDEFF_PAL_TAG_GENERAL_1};
+const struct SpritePalette gSpritePalette_FieldEffectCaveSand = {gFieldEffectCaveSandPal, FLDEFF_PAL_TAG_CAVE_SAND};
 
 static const union AnimCmd sAnim_Shadow[] =
 {
@@ -373,6 +374,11 @@ static const struct SpriteFrameImage sPicTable_SandFootprints[] = {
     overworld_frame(gFieldEffectObjectPic_SandFootprints, 2, 2, 1),
 };
 
+static const struct SpriteFrameImage sPicTable_CaveSandFootprints[] = {
+    overworld_frame(gFieldEffectObjectPic_CaveSandFootprints, 2, 2, 0),
+    overworld_frame(gFieldEffectObjectPic_CaveSandFootprints, 2, 2, 1),
+};
+
 static const union AnimCmd sSandFootprintsAnim_South[] =
 {
     ANIMCMD_FRAME(0, 1, .vFlip = TRUE),
@@ -406,12 +412,54 @@ static const union AnimCmd *const sAnimTable_SandFootprints[] =
     sSandFootprintsAnim_East,
 };
 
+static const union AnimCmd sCaveSandFootprintsAnim_South[] =
+{
+    ANIMCMD_FRAME(0, 1, .vFlip = TRUE),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sCaveSandFootprintsAnim_North[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sCaveSandFootprintsAnim_West[] =
+{
+    ANIMCMD_FRAME(1, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sCaveSandFootprintsAnim_East[] =
+{
+    ANIMCMD_FRAME(1, 1, .hFlip = TRUE),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnimTable_CaveSandFootprints[] =
+{
+    sCaveSandFootprintsAnim_South,
+    sCaveSandFootprintsAnim_South,
+    sCaveSandFootprintsAnim_North,
+    sCaveSandFootprintsAnim_West,
+    sCaveSandFootprintsAnim_East,
+};
+
 const struct SpriteTemplate gFieldEffectObjectTemplate_SandFootprints = {
     .tileTag = TAG_NONE,
     .paletteTag = FLDEFF_PAL_TAG_GENERAL_0,
     .oam = &gObjectEventBaseOam_16x16,
     .anims = sAnimTable_SandFootprints,
     .images = sPicTable_SandFootprints,
+    .callback = UpdateFootprintsTireTracksFieldEffect,
+};
+
+const struct SpriteTemplate gFieldEffectObjectTemplate_CaveSandFootprints = {
+    .tileTag = TAG_NONE,
+    .paletteTag = FLDEFF_PAL_TAG_CAVE_SAND,
+    .oam = &gObjectEventBaseOam_16x16,
+    .anims = sAnimTable_CaveSandFootprints,
+    .images = sPicTable_CaveSandFootprints,
     .callback = UpdateFootprintsTireTracksFieldEffect,
 };
 

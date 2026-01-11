@@ -88,3 +88,20 @@ script EventScript_CheckDaysLeft {
         waitstate
     }
 }
+
+script EventScript_ConfirmUseEscapeRope {
+    buffernumberstring(STR_VAR_3, VAR_0x800A)
+    msgbox(ConfirmUseEscapeRope, MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        callnative(ScrCmd_addhoursEscapeRope)
+        callnative(ResetInitialPlayerAvatarState)
+        callnative(StartEscapeRopeFieldEffect)
+        waitstate
+    }
+    release
+    end
+}
+
+text ConfirmUseEscapeRope {
+    format("Exiting this dungeon will advance the\n time by {COLOR RED}{STR_VAR_3} hour(s){COLOR 2}.\pUse Escape Rope?")
+}

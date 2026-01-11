@@ -3385,6 +3385,15 @@ bool8 ScrCmd_addhours(struct ScriptContext *ctx)
     return FALSE;
 }
 
+bool8 ScrCmd_addhoursEscapeRope(struct ScriptContext *ctx)
+{
+    u32 hours = VarGet(VAR_0x800A);
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+
+    FakeRtc_AdvanceTimeBy(0, hours, 0, 0);
+    return FALSE;
+}
+
 bool8 ScrCmd_addminutes(struct ScriptContext *ctx)
 {
     u32 minutes = ScriptReadWord(ctx);

@@ -101,6 +101,7 @@
 #define FLDEFF_EXPLOSION                 96
 #define FLDEFF_QUEST_ICON_3DOTS          97
 #define FLDEFF_QUEST_ICON_STAR           98
+#define FLDEFF_CAVE_SAND_FOOTPRINTS      99
 
 
 #define FLDEFFOBJ_SHADOW_S              0
@@ -149,6 +150,7 @@
 #define FLDEFFOBJ_ORAS_DOWSE_BRENDAN    43
 #define FLDEFFOBJ_ORAS_DOWSE_MAY        44
 #define FLDEFFOBJ_EXPLOSION             45
+#define FLDEFFOBJ_CAVE_SAND_FOOTPRINTS  46
 
 #define FLDEFF_PAL_TAG_CUT_GRASS          0x1000
 #define FLDEFF_PAL_TAG_SECRET_POWER_TREE  0x1003
@@ -166,7 +168,9 @@
 #define FLDEFF_PAL_TAG_DUST_CLOUD         0x1013
 #define FLDEFF_PAL_TAG_ORAS_DOWSE         0x1014
 #define FLDEFF_PAL_TAG_EXPLOSION          0x1015
+#define FLDEFF_PAL_TAG_CAVE_SAND          0x1016
 #define FLDEFF_PAL_TAG_FIELD_MOVE_MON     0x8400
+
 
 // tile tags, for field effects that may have many copies on screen at once
 #define FLDEFF_TILE_TAG_SHADOW_SMALL        0x1400

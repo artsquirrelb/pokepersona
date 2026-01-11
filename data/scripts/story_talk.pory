@@ -19,7 +19,7 @@ script EventScript_OverworldHelpButton
         switch(var(VAR_RESULT)){
             case 0: goto(EventScript_OverworldStoryTalk)
             case 1: goto(EventScript_OverworldTrainerTips)
-            case 2: goto(EventScript_OverworldWorkParttime)
+            case 2: goto(EventScript_OverworldTryStartWorkParttime)
         }
     }
     closemessage
@@ -445,18 +445,43 @@ script EventScript_OverworldTrainerTips2{
     if (flag(FLAG_PARTTIME_GET)){
         dynmultipush(HelpParttime, 2)
     }
-    dynmultipush(gText_Back, 5)
+    if (flag(FLAG_HELP_EXIT_DUNGEON)){
+        dynmultipush(HelpExitDungeon, 3)
+    }
+    if (flag(FLAG_HELP_DUNGEON_ENCOUNTER)){
+        dynmultipush(HelpDungeonEncounter, 4)
+    }
+    dynmultipush(NextBackB, 5)
     dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
     switch(var(VAR_RESULT)){
         case 0: call(EventScript_ShowHelpDeadline)
         case 1: call(EventScript_ShowHelpChoice)
         case 2: call(EventScript_ShowHelpPartTime)
-        case 5: goto(EventScript_OverworldTrainerTips)
+        case 3: call(EventScript_ShowHelpExitDungeon)
+        case 4: call(EventScript_ShowHelpDungeonEncounter)
+        case 5: goto(EventScript_OverworldTrainerTips3)
+        default: goto(EventScript_OverworldTrainerTips)
     }
     release
     end
 }
 
+script EventScript_OverworldTrainerTips3 {
+    dynmultipush(QuitBack, 5)
+    dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
+    switch(var(VAR_RESULT)){
+        
+        case 5: 
+            release
+            end
+        default: goto(EventScript_OverworldTrainerTips2)
+    }
+    release
+    end
+}
+
+text NextBackB{"Next/({B_BUTTON}: Back)"}
+text QuitBack{"Quit/({B_BUTTON}: Back)"}
 script EventScript_ShowHelpPokedex {
     closemessage
     showhelpwindow(HELP_POKEDEX)
@@ -512,6 +537,21 @@ script EventScript_ShowHelpPartTime {
     waitbuttonpress
     hidehelpwindow
 }
+
+script EventScript_ShowHelpExitDungeon {
+    closemessage
+    showhelpwindow(HELP_EXIT_DUNGEON)
+    waitbuttonpress
+    hidehelpwindow
+}
+
+script EventScript_ShowHelpDungeonEncounter {
+    closemessage
+    showhelpwindow(HELP_DUNGEON_ENCOUNTER)
+    waitbuttonpress
+    hidehelpwindow
+}
+
 text HelpPokedex{"Pokédex"}
 text HelpShinyChance{"Shiny Chance"}
 text HelpStarter{"Story Starter"}
@@ -520,10 +560,24 @@ text HelpQuest{"Quest Menu"}
 text HelpChoice{"Your actions"}
 text HelpDeadline{"Deadline"}
 text HelpParttime{"Part-time Jobs"}
+text HelpDungeonEncounter{"Dungeon Encounter"}
+text HelpExitDungeon{"Exiting Dungeons"}
 
 ///////////////////////
 ////WORK PART-TIME/////
 ///////////////////////
+
+script EventScript_OverworldTryStartWorkParttime {
+    specialvar(VAR_RESULT, DoesExitingMapForwardTime)
+    if (var(VAR_RESULT)){
+        msgbox(format("Can't start a part-time job in this dungeon."))
+        release
+        end
+    }
+    else{
+        goto(EventScript_OverworldWorkParttime)
+    }
+}
 
 script EventScript_OverworldWorkParttime {
     msgbox(format("Which part-time job would you like to work at?"))

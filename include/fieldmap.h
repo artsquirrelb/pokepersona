@@ -53,6 +53,7 @@ void CopySecondaryTilesetToVram(struct MapLayout const *mapLayout);
 const struct MapHeader *const GetMapHeaderFromConnection(const struct MapConnection *connection);
 const struct MapConnection *GetMapConnectionAtPos(s16 x, s16 y);
 void MapGridSetMetatileImpassabilityAt(int x, int y, bool32 impassable);
+bool8 DoesExitingMapForwardTime (void);
 
 // field_region_map.c
 void FieldInitRegionMap(MainCallback callback);

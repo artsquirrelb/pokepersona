@@ -45,6 +45,14 @@ script CoralportCave_MapScripts_OnFrameTemp0_PlayerWalkleft {
         applymovement(LOCALID_PLAYER, walkleft)
         waitmovement
     }
+    if(!flag(FLAG_HELP_EXIT_DUNGEON)){
+        call(EventScript_ShowHelpExitDungeon)
+        setflag(FLAG_HELP_EXIT_DUNGEON)
+    }
+    if (!flag(FLAG_HELP_DUNGEON_ENCOUNTER)){
+        call(EventScript_ShowHelpDungeonEncounter)
+        setflag(FLAG_HELP_DUNGEON_ENCOUNTER)
+    }
     setvar(VAR_TEMP_0, 1)
     release
 }

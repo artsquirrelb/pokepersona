@@ -105,6 +105,7 @@ gFieldEffectScriptPointers::
 	.4byte gFieldEffectScript_Explosion                 @ FLDEFF_EXPLOSION
 	.4byte gFieldEffectScript_QuestIcon_3Dots			@ FLDEFF_QUEST_ICON_3DOTS
 	.4byte gFieldEffectScript_QuestIcon_Star			@ FLDEFF_QUEST_ICON_STAR
+	.4byte gFieldEffectScript_CaveSandFootprints        @ FLDEFF_CAVE_SAND_FOOTPRINTS
 	
 gFieldEffectScript_Explosion::
 	field_eff_loadfadedpal_callnative gSpritePalette_ExplosionFieldEffect, FldEff_Explosion
@@ -164,6 +165,10 @@ gFieldEffectScript_JumpTallGrass::
 
 gFieldEffectScript_SandFootprints::
 	field_eff_loadfadedpal_callnative gSpritePalette_GeneralFieldEffect0, FldEff_SandFootprints
+	field_eff_end
+
+gFieldEffectScript_CaveSandFootprints::
+	field_eff_loadfadedpal_callnative gSpritePalette_FieldEffectCaveSand, FldEff_CaveSandFootprints
 	field_eff_end
 
 gFieldEffectScript_JumpBigSplash::

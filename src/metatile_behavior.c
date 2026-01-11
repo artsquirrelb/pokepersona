@@ -198,6 +198,14 @@ bool8 MetatileBehavior_IsSandOrDeepSand(u8 metatileBehavior)
         return FALSE;
 }
 
+bool8 MetatileBehavior_IsCaveSand(u8 metatileBehavior)
+{
+    if (metatileBehavior == MB_CAVE)
+        return TRUE;
+    else
+        return FALSE;
+}
+
 bool8 MetatileBehavior_IsDeepSand(u8 metatileBehavior)
 {
     if (metatileBehavior == MB_DEEP_SAND)

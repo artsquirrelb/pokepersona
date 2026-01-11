@@ -205,6 +205,31 @@ EventScript_CheckDaysLeft_4:
 	return
 
 
+EventScript_ConfirmUseEscapeRope::
+# 93 "data/scripts/newbagitems.pory"
+	buffernumberstring STR_VAR_3, VAR_0x800A
+# 94 "data/scripts/newbagitems.pory"
+	msgbox ConfirmUseEscapeRope, MSGBOX_YESNO
+# 95 "data/scripts/newbagitems.pory"
+	compare VAR_RESULT, 0
+	goto_if_ne EventScript_ConfirmUseEscapeRope_2
+EventScript_ConfirmUseEscapeRope_1:
+# 101 "data/scripts/newbagitems.pory"
+	release
+	end
+
+EventScript_ConfirmUseEscapeRope_2:
+# 96 "data/scripts/newbagitems.pory"
+	callnative ScrCmd_addhoursEscapeRope
+# 97 "data/scripts/newbagitems.pory"
+	callnative ResetInitialPlayerAvatarState
+# 98 "data/scripts/newbagitems.pory"
+	callnative StartEscapeRopeFieldEffect
+# 99 "data/scripts/newbagitems.pory"
+	waitstate
+	goto EventScript_ConfirmUseEscapeRope_1
+
+
 EventScript_CampGears_Text_0:
 # 10 "data/scripts/newbagitems.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}(I can't set up a camp here.)$"
@@ -234,3 +259,9 @@ EventScript_CheckDaysLeft_Text_0:
 # 83 "data/scripts/newbagitems.pory"
 	.string "{COLOR GREEN}YOU HAVE {COLOR RED}ONE DAY LEFT {COLOR GREEN}TO COMPLETE THE\n"
 	.string "CURRENT STORY QUEST.$"
+
+ConfirmUseEscapeRope::
+# 105 "data/scripts/newbagitems.pory"
+	.string "Exiting this dungeon will advance the\n"
+	.string "time by {COLOR RED}{STR_VAR_3} hour(s){COLOR 2}.\p"
+	.string "Use Escape Rope?$"

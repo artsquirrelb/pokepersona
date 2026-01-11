@@ -105,7 +105,7 @@ const u8 gText_DexSortSmallestDescription[] = _("Owned Pokémon are listed from 
 const u8 gText_DexEmptyString[] = _("");
 const u8 gText_DexSearchDontSpecify[] = _("Don't Specify.");
 const u8 gText_DexSearchTypeNone[] = _("None");
-const u8 gText_SelectorArrow[] = _("▶");
+const u8 gText_SelectorArrow[] = _("{COLOR 4}▶");
 const u8 gText_EmptySpace[] = _(" "); // Unused
 const u8 gText_WelcomeToHOF[] = _("Welcome to the Hall of Fame!");
 const u8 gText_HOFDexRating[] = _("Spotted Pokémon: {STR_VAR_1}!\nOwned Pokémon: {STR_VAR_2}!\pProf. Birch's Pokédex rating!\pProf. Birch: Let's see…\p");
@@ -976,7 +976,7 @@ const u8 gText_FrontierFacilityIncluding[] = _(".\pThese include ");
 const u8 gText_FrontierFacilityAreInelegible[] = _(" are inelegible");
 
 const u8 gText_YesNo[] = _("Yes\nNo");
-const u8 gText_SelectorArrow3[] = _("▶");
+const u8 gText_SelectorArrow3[] = _("{COLOR 4}▶");
 const u8 gText_Peekaboo[] = _("Peekaboo!");
 const u8 gText_CommErrorCheckConnections[] = _("Communication error…\nPlease check all connections,\nthen turn the power Off and On.");
 const u8 gText_CommErrorEllipsis[] = _("Communication error…");

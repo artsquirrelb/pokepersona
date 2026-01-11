@@ -1571,7 +1571,7 @@ void LoadBallGfx(u8 ballId, u8 inBattle)
     {
         LoadCompressedSpriteSheetUsingHeap(&gBallSpriteSheets[ballId]);
         LoadSpritePalette(&gBallSpritePalettes[ballId]);
-        if (inBattle)
+        if (gMain.inBattle)
             TimeMixBattleSpritePalette(OBJ_PLTT_ID(LoadSpritePalette(&gBallSpritePalettes[ballId])));
     }
 

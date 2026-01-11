@@ -4,8 +4,15 @@ mapscripts ThundershardsCave_1F_MapScripts {
             setflag(FLAG_TEMP_1)
         }
     }
+    MAP_SCRIPT_ON_RESUME: ThundershardsCave_1F_MapScripts_OnResume
 }
 
+script ThundershardsCave_1F_MapScripts_OnResume {
+    if (!flag(FLAG_HELP_DUNGEON_ENCOUNTER)){
+        call(EventScript_ShowHelpDungeonEncounter)
+        setflag(FLAG_HELP_DUNGEON_ENCOUNTER)
+    }
+}
 
 script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     lock

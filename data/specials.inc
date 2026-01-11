@@ -87,7 +87,7 @@ gSpecials::
 	def_special DoPokeNews
 	def_special GetRandomActiveShowIdx
 	def_special GetSelectedTVShow
-
+	def_special DoesExitingMapForwardTime
 	def_special IsLeadMonNicknamedOrNotEnglish
 	def_special SetContestCategoryStringVarForInterview
 	def_special GetNextActiveShowIfMassOutbreak

@@ -283,7 +283,7 @@ static u8 UpdateTimeOfDayPaletteFade(void)
         timePalettes = selectedPalettes & PALETTES_MAP;
     }
     //TimeMixPalettes(timePalettes, src, dst, gPaletteFade.bld0, gPaletteFade.bld1, gPaletteFade.weight);
-    TimeMixPalettes(timePalettes, src, dst, gPaletteFade.bld0, gPaletteFade.bld1, gPaletteFade.weight, 100);
+    TimeMixPalettes(timePalettes, src, dst, gPaletteFade.bld0, gPaletteFade.bld1, gPaletteFade.weight, 256);
 
     // palettes that were not blended above must be copied through
     if ((copyPalettes = ~timePalettes))
@@ -915,7 +915,7 @@ void TimeBlendPalette(u16 palOffset, u32 coeff, u32 blendColor)
 // Blends a weighted average of two blend parameters
 // Parameters can be either blended (as in BlendPalettes) or tinted (as in TintPaletteRGB_Copy)
 //void TimeMixPalettes(u32 palettes, u16 *src, u16 *dst, struct BlendSettings *blend0, struct BlendSettings *blend1, u16 weight0)
-void TimeMixPalettes(u32 palettes, u16 *src, u16 *dst, struct BlendSettings *blend0, struct BlendSettings *blend1, u16 weight0, s16 brightnessFactor)
+void TimeMixPalettes(u32 palettes, u16 *src, u16 *dst, struct BlendSettings *blend0, struct BlendSettings *blend1, u16 weight0, u32 spriteBlendWeight)
 {
     s32 r0, g0, b0, r1, g1, b1, defR, defG, defB, altR, altG, altB;
     u32 color0, coeff0, color1, coeff1;
@@ -983,6 +983,10 @@ void TimeMixPalettes(u32 palettes, u16 *src, u16 *dst, struct BlendSettings *ble
                 s32 g = (srcColor << 22) >> 27;
                 s32 b = (srcColor << 17) >> 27;
                 s32 r2, g2, b2;
+                
+                s32 tempR = r;
+                s32 tempG = g;
+                s32 tempB = b;
 
                 if (srcColor >> 15)
                 {
@@ -1054,16 +1058,11 @@ void TimeMixPalettes(u32 palettes, u16 *src, u16 *dst, struct BlendSettings *ble
                 r  = r2 + (((r - r2) * (s32)weight0) >> 8);
                 g  = g2 + (((g - g2) * (s32)weight0) >> 8);
                 b  = b2 + (((b - b2) * (s32)weight0) >> 8);
-                if (brightnessFactor != 100)
+                if (spriteBlendWeight < 256)
                 {
-                    r = (r * brightnessFactor) / 100;
-                    if (r > 31) r = 31;
-
-                    g = (g * brightnessFactor) / 100;
-                    if (g > 31) g = 31;
-
-                    b = (b * brightnessFactor) / 100;
-                    if (b > 31) b = 31;
+                    r = tempR + (((r - tempR) * (s32)spriteBlendWeight) >> 8);
+                    g = tempG + (((g - tempG) * (s32)spriteBlendWeight) >> 8);
+                    b = tempB + (((b - tempB) * (s32)spriteBlendWeight) >> 8);
                 }
                 *dst++ = RGB2(r, g, b);
                 // *dst++ = RGB2(r, g, b) | (srcColor >> 15) << 15;
@@ -1320,7 +1319,7 @@ void BlendPalettesGradually(u32 selectedPalettes, s8 delay, u8 coeff, u8 coeffTa
 
 void TimeMixBattleBgPalette(bool8 shadowOnly)
 {
-    if (!MapHasNaturalLight(gMapHeader.mapType) || B_APPLY_DNS_TO_BACKGROUND == FALSE)
+    if (!MapHasNaturalLight(gMapHeader.mapType) && B_APPLY_DNS_TO_BACKGROUND == FALSE)
         return;
 
     if (!shadowOnly)
@@ -1328,8 +1327,13 @@ void TimeMixBattleBgPalette(bool8 shadowOnly)
         UpdatePalettesWithTime(PALETTES_BATTLE_BG);
         LoadPalette(gPlttBufferFaded, 0, 4 * PLTT_SIZE_4BPP);
     }
-    BlendPalette(OBJ_PLTT_ID(4) + 8, 1, gTimeOfDayBlend[gTimeOfDay].coeff, RGB(5, 5, 5));
-    CpuCopy16(&gPlttBufferFaded[OBJ_PLTT_ID(4) + 8], &gPlttBufferUnfaded[OBJ_PLTT_ID(4) + 8], PLTT_SIZEOF(1));
+    BlendPalette(OBJ_PLTT_ID(4) + 6, 1, gTimeOfDayBlend[gTimeOfDay].coeff, RGB(5, 5, 5));
+    CpuCopy16(&gPlttBufferFaded[OBJ_PLTT_ID(4) + 6], &gPlttBufferUnfaded[OBJ_PLTT_ID(4) + 6], PLTT_SIZEOF(1));
+    if (B_BLEND_UI_EDGES)
+    {
+        BlendPalette(OBJ_PLTT_ID(4) + 5, 1, gTimeOfDayBlend[gTimeOfDay].coeff, RGB(10, 10, 10));
+        CpuCopy16(&gPlttBufferFaded[OBJ_PLTT_ID(4) + 5], &gPlttBufferUnfaded[OBJ_PLTT_ID(4) + 5], PLTT_SIZEOF(1));
+    }
 }
 
 void TimeMixBattleSpritePalette(u16 paletteOffset)
@@ -1338,12 +1342,12 @@ void TimeMixBattleSpritePalette(u16 paletteOffset)
         return;
 
     u32 paletteMask = 1 << (16 + ((paletteOffset - OBJ_PLTT_OFFSET) / 16));
-    s16 brightnessFactorStart = 100 + ((B_SPRITE_BRIGHTNESS - 100) * gTimeBlend.startBlend.coeff / 10);
-    s16 brightnessFactorEnd   = 100 + ((B_SPRITE_BRIGHTNESS - 100) * gTimeBlend.endBlend.coeff / 10);
+    u32 spriteBlendWeight = (gTimeBlend.weight * B_SPRITE_BLEND_LEVEL) / 100;
 
-    s16 brightnessFactor = brightnessFactorStart + ((brightnessFactorEnd - brightnessFactorStart) * gTimeBlend.weight / 256);
+    if (spriteBlendWeight > 256)
+        spriteBlendWeight = 256;
 
-    TimeMixPalettes(paletteMask, gPlttBufferUnfaded, gPlttBufferFaded, &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight, brightnessFactor);
+    TimeMixPalettes(paletteMask, gPlttBufferUnfaded, gPlttBufferFaded, &gTimeBlend.startBlend, &gTimeBlend.endBlend, gTimeBlend.weight, spriteBlendWeight);
 
     CpuCopy32(&gPlttBufferFaded[paletteOffset], &gPlttBufferUnfaded[paletteOffset], PLTT_SIZEOF(16));
 }

@@ -75,6 +75,27 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "will result to a {COLOR RED}Game Over{COLOR 2}."
                                 ),
     },
+    [HELP_DUNGEON_ENCOUNTER] =
+    {
+        .header = COMPOUND_STRING(" Dungeon Encounter"),
+        .desc = COMPOUND_STRING("In a dungeon, you will only encounter\n"
+                                "wild Pokémon in dark sand tiles (that\n"
+                                "leave footprints) or by interacting\n"
+                                "with roaming overworld Pokémon."
+                                ),
+    },
+    [HELP_EXIT_DUNGEON] =
+    {
+        .header = COMPOUND_STRING(" Exiting Dungeons"),
+        .desc = COMPOUND_STRING("Some dungeons will advance time forward\n"
+                                "when you exit them, either by going\n"
+                                "through the entrance or by using\n"
+                                "Escape Rope.\n"
+                                "You can check the amount of time lost\n"
+                                "by reading the Signpost in front of\n"
+                                "each dungeon."
+                                ),
+    },
     [HELP_PART_TIME] = 
     {
         .header = COMPOUND_STRING(" Part-time Job"),

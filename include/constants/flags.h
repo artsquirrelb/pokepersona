@@ -99,9 +99,9 @@
 #define FLAG_PARTTIME_GET                        0x53
 #define FLAG_AMEAME_PARTTIME_UNLOCKED            0x54  // Was Unused Flag
 #define FLAG_CORALPORT_TRADED_SWEET_HEART        0x55  // Was Unused Flag
-#define FLAG_HELP_MAKE_CHOICE          0x56  // Always set after new game, object it hides is added directly
-#define FLAG_MET_RIVAL_MOM                   0x57
-#define FLAG_BIRCH_AIDE_MET                  0x58
+#define FLAG_HELP_MAKE_CHOICE                    0x56  // Always set after new game, object it hides is added directly
+#define FLAG_HELP_EXIT_DUNGEON                   0x57
+#define FLAG_HELP_DUNGEON_ENCOUNTER              0x58
 #define FLAG_DECLINED_BIKE                   0x59
 #define FLAG_RECEIVED_BIKE                   0x5A
 #define FLAG_WATTSON_REMATCH_AVAILABLE       0x5B

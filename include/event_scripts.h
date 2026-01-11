@@ -700,5 +700,6 @@ extern const u8 EventScript_MovedTooFast[];
 extern const u8 EventScript_DisableAutoRun[];
 extern const u8 EventScript_EnableAutoRun[];
 
-
+//Escape Rope
+extern const u8 EventScript_ConfirmUseEscapeRope[];
 #endif // GUARD_EVENT_SCRIPTS_H

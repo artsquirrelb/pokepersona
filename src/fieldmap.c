@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle_pyramid.h"
 #include "bg.h"
+#include "event_data.h"
 #include "fieldmap.h"
 #include "fldeff.h"
 #include "fldeff_misc.h"
@@ -15,7 +16,9 @@
 #include "trainer_hill.h"
 #include "tv.h"
 #include "constants/rgb.h"
+#include "constants/map_groups.h"
 #include "constants/metatile_behaviors.h"
+#include "constants/vars.h"
 #include "wild_encounter.h"
 
 struct ConnectionFlags
@@ -960,4 +963,15 @@ void LoadMapTilesetPalettes(struct MapLayout const *mapLayout)
         LoadPrimaryTilesetPalette(mapLayout);
         LoadSecondaryTilesetPalette(mapLayout, FALSE);
     }
+}
+
+bool8 DoesExitingMapForwardTime (void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_CORALPORT_CAVE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_CORALPORT_CAVE))
+    {
+        VarSet(VAR_0x800A, 4);
+        return TRUE;
+    }
+    else
+        return FALSE;
 }

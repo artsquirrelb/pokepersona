@@ -15,6 +15,7 @@
 #include "event_object_lock.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
+#include "fake_rtc.h"
 #include "fieldmap.h"
 #include "field_effect.h"
 #include "field_player_avatar.h"
@@ -88,6 +89,7 @@ static bool32 IsValidLocationForVsSeeker(void);
 static void CB2_OpenOutfitBoxFromBag(void);
 static void Task_OpenRegisteredOutfitBox(u8 taskId);
 static u32 GetMonTargetExpAtCurrentHighestLevelMinusOne(struct Pokemon *mon);
+//static void UseEscapeRopeYesNo(u8 taskId);
 
 static const u8 sText_CantDismountBike[] = _("You can't dismount your Bike here.{PAUSE_UNTIL_PRESS}");
 static const u8 sText_ItemFinderNearby[] = _("Huh?\nThe Itemfinder's responding!\pThere's an item buried around here!{PAUSE_UNTIL_PRESS}");
@@ -103,6 +105,10 @@ static const u8 sText_UsedVar2WildRepelled[] = _("{PLAYER} used the\n{STR_VAR_2}
 static const u8 sText_PlayedPokeFluteCatchy[] = _("Played the Poké Flute.\pNow, that's a catchy tune!{PAUSE_UNTIL_PRESS}");
 static const u8 sText_PlayedPokeFlute[] = _("Played the Poké Flute.");
 static const u8 sText_PokeFluteAwakenedMon[] = _("The Poké Flute awakened sleeping\nPokémon.{PAUSE_UNTIL_PRESS}");
+//static const u8 sText_ConfirmUseEscapeRope[] = _("Exiting this dungeon will advance the\n time by {COLOR RED}{STR_VAR_3}{COLOR 2}.\pUse Escape Rope?");
+//static const u8 sText_CancelEscapeRope[] = _("{PLAYER} decided to not use the\nEscape Rope.{PAUSE_UNTIL_PRESS}");
+
+
 
 // EWRAM variables
 EWRAM_DATA static TaskFunc sItemUseOnFieldCB = NULL;
@@ -1135,6 +1141,32 @@ void Task_UseDigEscapeRopeOnField(u8 taskId)
     StartEscapeRopeFieldEffect();
     DestroyTask(taskId);
 }
+/*
+void Task_HandleEscapeRopeYesNoInput(u8 taskId)
+{
+    switch (Menu_ProcessInputNoWrapClearOnChoose())
+    {
+    case MENU_NOTHING_CHOSEN:
+        return;
+    case MENU_B_PRESSED:
+    case 0:
+        UnlockPlayerFieldControls();
+        DisplayCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem, sText_CancelEscapeRope);
+        break;
+    case 1:
+        PlaySE(SE_SELECT);
+        gTasks[taskId].data[0] = 0;
+        DisplayItemMessageOnField(taskId, gStringVar4, Task_UseDigEscapeRopeOnField);
+        break;
+    }
+}
+
+static void UseEscapeRopeYesNo(u8 taskId)
+{
+    LockPlayerFieldControls();
+    DisplayYesNoMenuDefaultYes();
+    CreateTask(Task_HandleEscapeRopeYesNoInput, 0x50);
+}*/
 
 static void ItemUseOnFieldCB_EscapeRope(u8 taskId)
 {
@@ -1144,9 +1176,19 @@ static void ItemUseOnFieldCB_EscapeRope(u8 taskId)
 
     CopyItemName(gSpecialVar_ItemId, gStringVar2);
     StringExpandPlaceholders(gStringVar4, gText_PlayerUsedVar2);
-    gTasks[taskId].data[0] = 0;
-    DisplayItemMessageOnField(taskId, gStringVar4, Task_UseDigEscapeRopeOnField);
+    
+    if (DoesExitingMapForwardTime())
+    {
+        DestroyTask(taskId);
+        ScriptContext_SetupScript(EventScript_ConfirmUseEscapeRope);
+    }
+    else
+    {
+        gTasks[taskId].data[0] = 0;
+        DisplayItemMessageOnField(taskId, gStringVar4, Task_UseDigEscapeRopeOnField);
+    }    
 }
+
 
 bool8 CanUseDigOrEscapeRopeOnCurMap(void)
 {

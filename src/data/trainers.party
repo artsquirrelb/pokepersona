@@ -146,7 +146,7 @@ Double Battle: Yes
 AI: Basic Trainer
 
 SPECIES_NATU @ITEM_ORAN_BERRY
-Level: 9
+Level: 5
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 EVs: 40 SpA
 Ability: Gluttony
@@ -156,7 +156,7 @@ Ability: Gluttony
 - Helping Hand
 
 SPECIES_TOGEDEMARU @ITEM_ORAN_BERRY
-Level: 9
+Level: 6
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 EVs: 40 Atk
 Ability: Iron Barbs
@@ -164,6 +164,10 @@ Ability: Iron Barbs
 - Fake Out
 - Rollout
 - Zappy Shock
+
+Azurill
+Level: 9
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_GHOSTBOY ===
 Name: Yamaki?

@@ -230,8 +230,8 @@ static const u32 sScrollBgTiles[] = INCBIN_U32("graphics/ui_options_plus/scroll_
 static const u32 sScrollBgTilemap[] = INCBIN_U32("graphics/ui_options_plus/scroll_tiles.bin.smolTM");
 static const u16 sScrollBgPalette[] = INCBIN_U16("graphics/ui_options_plus/scroll_tiles.gbapal");
 
-#define TEXT_COLOR_OPTIONS_WHITE                1
-#define TEXT_COLOR_OPTIONS_GRAY_FG              2
+#define TEXT_COLOR_OPTIONS_WHITE                2
+#define TEXT_COLOR_OPTIONS_GRAY_FG              1
 #define TEXT_COLOR_OPTIONS_GRAY_SHADOW          3
 #define TEXT_COLOR_OPTIONS_GRAY_LIGHT_FG        4
 #define TEXT_COLOR_OPTIONS_ORANGE_FG            5
@@ -579,7 +579,7 @@ static const u8 sText_TopBar_Sound_Right[]     = _("{R_BUTTON}GENERAL");
 
 static void DrawTopBarText(void)
 {
-    const u8 color[3] = { 0, TEXT_COLOR_WHITE, 0 };//slot 3 was TEXT_COLOR_OPTIONS_GRAY_FG
+    const u8 color[3] = { 0, 2, 0 };//slot 3 was TEXT_COLOR_OPTIONS_GRAY_FG
 
     FillWindowPixelBuffer(WIN_TOPBAR, PIXEL_FILL(0));
     switch (sOptions->submenu)
@@ -632,7 +632,7 @@ static void DrawLeftSideOptionText(int selection, int y)
     u8 color_gray[4];
 
     color_yellow[0] = TEXT_COLOR_TRANSPARENT;
-    color_yellow[1] = 1;//TEXT_COLOR_WHITE;
+    color_yellow[1] = 2;//TEXT_COLOR_WHITE;
     color_yellow[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
     color_yellow[3] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
     color_gray[0] = TEXT_COLOR_TRANSPARENT;
@@ -657,16 +657,16 @@ static void DrawRightSideChoiceText(const u8 *text, int x, int y, bool8 choosen,
         color_red[1] = 4;//TEXT_COLOR_OPTIONS_ORANGE_FG;
         color_red[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
         color_gray[0] = TEXT_COLOR_TRANSPARENT;
-        color_gray[1] = 2;//TEXT_COLOR_OPTIONS_WHITE;
+        color_gray[1] = 1;//TEXT_COLOR_OPTIONS_WHITE;
         color_gray[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
     }
     else
     {
         color_red[0] = TEXT_COLOR_TRANSPARENT;
-        color_red[1] = 2;//TEXT_COLOR_OPTIONS_WHITE;
+        color_red[1] = 1;//TEXT_COLOR_OPTIONS_WHITE;
         color_red[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
         color_gray[0] = TEXT_COLOR_TRANSPARENT;
-        color_gray[1] = 2;//TEXT_COLOR_OPTIONS_WHITE;
+        color_gray[1] = 4;//TEXT_COLOR_OPTIONS_WHITE;
         color_gray[2] = 0;//TEXT_COLOR_OPTIONS_GRAY_FG;
     }
 

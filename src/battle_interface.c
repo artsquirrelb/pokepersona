@@ -233,6 +233,28 @@ enum
     HEALTHBOX_GFX_175,
     HEALTHBOX_GFX_176,
     HEALTHBOX_GFX_177,
+    HEALTHBOX_GFX_178,
+    HEALTHBOX_GFX_STATUS_PSN_BATTLER0_D,  //status psn "(P" for double
+    HEALTHBOX_GFX_179,                   //status psn "SN"
+    HEALTHBOX_GFX_180,                   //status psn "|)""
+    HEALTHBOX_GFX_STATUS_PRZ_BATTLER0_D,  //status prz
+    HEALTHBOX_GFX_181,
+    HEALTHBOX_GFX_182,
+    HEALTHBOX_GFX_STATUS_SLP_BATTLER0_D,  //status slp
+    HEALTHBOX_GFX_183,
+    HEALTHBOX_GFX_184,
+    HEALTHBOX_GFX_STATUS_FRZ_BATTLER0_D,  //status frz
+    HEALTHBOX_GFX_185,
+    HEALTHBOX_GFX_186,
+    HEALTHBOX_GFX_STATUS_BRN_BATTLER0_D,  //status brn
+    HEALTHBOX_GFX_187,
+    HEALTHBOX_GFX_188,
+    HEALTHBOX_GFX_STATUS_FRB_BATTLER0_D,  //status frb
+    HEALTHBOX_GFX_189,
+    HEALTHBOX_GFX_190,
+    HEALTHBOX_GFX_NO_STATUS_BATTLER0_D,   //no status
+    HEALTHBOX_GFX_191,
+    HEALTHBOX_GFX_192,
 };
 
 static const u8 *GetHealthboxElementGfxPtr(u8);
@@ -2058,7 +2080,7 @@ static u8 GetStatusIconForBattlerId(u8 statusElementId, u8 battler)
         if (battler == 0)
         {
             if (GetBattlerCoordsIndex(battler) == BATTLE_COORDS_DOUBLES)
-                ret = HEALTHBOX_GFX_STATUS_PSN_BATTLER2;
+                ret = HEALTHBOX_GFX_STATUS_PSN_BATTLER0_D;
             else
                 ret = HEALTHBOX_GFX_STATUS_PSN_BATTLER0;
         }
@@ -2073,7 +2095,7 @@ static u8 GetStatusIconForBattlerId(u8 statusElementId, u8 battler)
         if (battler == 0)
         {
             if (GetBattlerCoordsIndex(battler) == BATTLE_COORDS_DOUBLES)
-                ret = HEALTHBOX_GFX_STATUS_PRZ_BATTLER2;
+                ret = HEALTHBOX_GFX_STATUS_PRZ_BATTLER0_D;
             else
                 ret = HEALTHBOX_GFX_STATUS_PRZ_BATTLER0;
         }
@@ -2088,7 +2110,7 @@ static u8 GetStatusIconForBattlerId(u8 statusElementId, u8 battler)
         if (battler == 0)
         {
             if (GetBattlerCoordsIndex(battler) == BATTLE_COORDS_DOUBLES)
-                ret = HEALTHBOX_GFX_STATUS_SLP_BATTLER2;
+                ret = HEALTHBOX_GFX_STATUS_SLP_BATTLER0_D;
             else
                 ret = HEALTHBOX_GFX_STATUS_SLP_BATTLER0;
         }
@@ -2103,7 +2125,7 @@ static u8 GetStatusIconForBattlerId(u8 statusElementId, u8 battler)
         if (battler == 0)
         {
             if (GetBattlerCoordsIndex(battler) == BATTLE_COORDS_DOUBLES)
-                ret = HEALTHBOX_GFX_STATUS_FRZ_BATTLER2;
+                ret = HEALTHBOX_GFX_STATUS_FRZ_BATTLER0_D;
             else
                 ret = HEALTHBOX_GFX_STATUS_FRZ_BATTLER0;
         }
@@ -2118,7 +2140,7 @@ static u8 GetStatusIconForBattlerId(u8 statusElementId, u8 battler)
         if (battler == 0)
         {
             if (GetBattlerCoordsIndex(battler) == BATTLE_COORDS_DOUBLES)
-                ret = HEALTHBOX_GFX_STATUS_FRB_BATTLER2;
+                ret = HEALTHBOX_GFX_STATUS_FRB_BATTLER0_D;
             else
                 ret = HEALTHBOX_GFX_STATUS_FRB_BATTLER0;
         }
@@ -2133,7 +2155,7 @@ static u8 GetStatusIconForBattlerId(u8 statusElementId, u8 battler)
         if (battler == 0)
         {
             if (GetBattlerCoordsIndex(battler) == BATTLE_COORDS_DOUBLES)
-                ret = HEALTHBOX_GFX_STATUS_BRN_BATTLER2;
+                ret = HEALTHBOX_GFX_STATUS_BRN_BATTLER0_D;
             else
                 ret = HEALTHBOX_GFX_STATUS_BRN_BATTLER0;
         }
@@ -2147,7 +2169,7 @@ static u8 GetStatusIconForBattlerId(u8 statusElementId, u8 battler)
     case HEALTHBOX_GFX_NO_STATUS_BATTLER0:
         if (battler == 0){
             if (GetBattlerCoordsIndex(battler) == BATTLE_COORDS_DOUBLES)
-                ret = HEALTHBOX_GFX_NO_STATUS_BATTLER2;
+                ret = HEALTHBOX_GFX_NO_STATUS_BATTLER0_D;
             else
                 ret = HEALTHBOX_GFX_NO_STATUS_BATTLER0;
         }
@@ -2692,13 +2714,13 @@ static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 wi
  * FG = ForeGround
  * SH = SHadow
  */
-#define ABILITY_POP_UP_BATTLER_BG_TXTCLR 3
+#define ABILITY_POP_UP_BATTLER_BG_TXTCLR 4
 #define ABILITY_POP_UP_BATTLER_FG_TXTCLR 1
-#define ABILITY_POP_UP_BATTLER_SH_TXTCLR 3
+#define ABILITY_POP_UP_BATTLER_SH_TXTCLR 4
 
-#define ABILITY_POP_UP_ABILITY_BG_TXTCLR 4
-#define ABILITY_POP_UP_ABILITY_FG_TXTCLR 2
-#define ABILITY_POP_UP_ABILITY_SH_TXTCLR 4
+#define ABILITY_POP_UP_ABILITY_BG_TXTCLR 3
+#define ABILITY_POP_UP_ABILITY_FG_TXTCLR 11
+#define ABILITY_POP_UP_ABILITY_SH_TXTCLR 3
 
 #define sState          data[0]
 #define sAutoDestroy    data[1]
@@ -3137,14 +3159,16 @@ static const struct SpriteSheet sSpriteSheet_MoveInfoWindow =
     sMoveInfoWindowGfx, sizeof(sMoveInfoWindowGfx), MOVE_INFO_WINDOW_TAG
 };
 
-#define LAST_USED_BALL_X_F    14
-#define LAST_USED_BALL_X_0    -14
+#define LAST_USED_BALL_X_F    16
+#define LAST_USED_BALL_X_0    -16
 #define LAST_USED_BALL_Y      ((IsDoubleBattle()) ? 78 : 68)
 #define LAST_USED_BALL_Y_BNC  ((IsDoubleBattle()) ? 76 : 66)
 
 #define LAST_BALL_WIN_X_F       (LAST_USED_BALL_X_F - 0)
 #define LAST_BALL_WIN_X_0       (LAST_USED_BALL_X_0 - 0)
 #define LAST_USED_WIN_Y         (LAST_USED_BALL_Y - 8)
+
+#define MOVE_INFO_WIN_Y       96
 
 #define sHide  data[0]
 #define sTimer  data[1]
@@ -3251,7 +3275,7 @@ void TryToAddMoveInfoWindow(void)
 
     if (gBattleStruct->moveInfoSpriteId == MAX_SPRITES)
     {
-        gBattleStruct->moveInfoSpriteId = CreateSprite(&sSpriteTemplate_MoveInfoWindow, LAST_BALL_WIN_X_0, LAST_USED_WIN_Y + 32, 6);
+        gBattleStruct->moveInfoSpriteId = CreateSprite(&sSpriteTemplate_MoveInfoWindow, LAST_BALL_WIN_X_0, MOVE_INFO_WIN_Y + 16, 6);
         gSprites[gBattleStruct->moveInfoSpriteId].sHide = FALSE;
     }
 }

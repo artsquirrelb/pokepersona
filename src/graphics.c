@@ -728,7 +728,8 @@ const u8 gHealthboxElementsGfxTable[][32] = INCBIN_U8("graphics/battle_interface
                                                   "graphics/battle_interface/healthbox_player_lvl.4bpp",//8 tiles
                                                   "graphics/battle_interface/healthbox_opponent_lvl.4bpp",//8 tiles
                                                   "graphics/battle_interface/healthbox_player_nick.4bpp",//16 tiles
-                                                  "graphics/battle_interface/healthbox_opponent_nick.4bpp");//16 tiles
+                                                  "graphics/battle_interface/healthbox_opponent_nick.4bpp",//16 tiles
+                                                  "graphics/battle_interface/status1.4bpp");
                                                 
 const u32 gBattleInterfaceGfx_UnusedWindow3[] = INCBIN_U32("graphics/battle_interface/unused_window3.4bpp.smol");
 const u32 gBattleInterfaceGfx_UnusedWindow4[] = INCBIN_U32("graphics/battle_interface/unused_window4.4bpp.smol");

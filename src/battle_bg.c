@@ -285,7 +285,7 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .tilemapTop = 0,
         .width = 12,
         .height = 3,
-        .paletteNum = 1,
+        .paletteNum = 6,
         .baseBlock = 0x016e,
     },
     [B_WIN_VS_PLAYER] = {
@@ -506,7 +506,7 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
         .tilemapTop = 8,
         .width = 10,
         .height = 11,
-        .paletteNum = 5,
+        .paletteNum = 1,
         .baseBlock = 0x0100,
     },
     [B_WIN_LEVEL_UP_BANNER] = {
@@ -515,7 +515,7 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
         .tilemapTop = 0,
         .width = 12,
         .height = 3,
-        .paletteNum = 1,
+        .paletteNum = 5,
         .baseBlock = 0x016e,
     },
     [ARENA_WIN_PLAYER_NAME] = {

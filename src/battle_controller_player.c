@@ -2021,7 +2021,12 @@ static void PlayerHandleChooseAction(u32 battler)
 
     gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
     BattleTv_ClearExplosionFaintCause();
-    BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
+    if (gSaveBlock2Ptr->optionsQuickRunButton == 0)
+        BattlePutTextOnWindow(gText_BattleMenuR, B_WIN_ACTION_MENU);
+    else if (gSaveBlock2Ptr->optionsQuickRunButton == 1)
+        BattlePutTextOnWindow(gText_BattleMenuB, B_WIN_ACTION_MENU);
+    else//quick run off
+        BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
 
     for (i = 0; i < 4; i++)
         ActionSelectionDestroyCursorAt(i);

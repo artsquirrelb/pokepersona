@@ -6773,7 +6773,7 @@ static void DrawLevelUpWindow1(void)
     u16 currStats[NUM_STATS];
 
     GetMonLevelUpWindowStats(&gPlayerParty[gBattleStruct->expGetterMonId], currStats);
-    DrawLevelUpWindowPg1(B_WIN_LEVEL_UP_BOX, gBattleResources->beforeLvlUp->stats, currStats, 4, 0x1, 0x0);
+    DrawLevelUpWindowPg1(B_WIN_LEVEL_UP_BOX, gBattleResources->beforeLvlUp->stats, currStats, 3, 0x1, 0x0);
 }
 
 static void DrawLevelUpWindow2(void)
@@ -6781,7 +6781,7 @@ static void DrawLevelUpWindow2(void)
     u16 currStats[NUM_STATS];
 
     GetMonLevelUpWindowStats(&gPlayerParty[gBattleStruct->expGetterMonId], currStats);
-    DrawLevelUpWindowPg2(B_WIN_LEVEL_UP_BOX, currStats, 4, 0x1, 0x0);
+    DrawLevelUpWindowPg2(B_WIN_LEVEL_UP_BOX, currStats, 3, 0x1, 0x0);
 }
 
 static void InitLevelUpBanner(void)
@@ -6837,7 +6837,7 @@ static void DrawLevelUpBannerText(void)
     printerTemplate.letterSpacing = 0;
     printerTemplate.lineSpacing = 0;
     printerTemplate.color.background = TEXT_COLOR_TRANSPARENT;
-    printerTemplate.color.foreground = TEXT_COLOR_WHITE;
+    printerTemplate.color.foreground = 1;
     printerTemplate.color.shadow = TEXT_COLOR_TRANSPARENT;
     printerTemplate.color.accent = TEXT_COLOR_TRANSPARENT;
 
@@ -6856,13 +6856,13 @@ static void DrawLevelUpBannerText(void)
     {
         if (monGender == MON_MALE)
         {
-            txtPtr = WriteColorChangeControlCode(txtPtr, 0, 6);
+            txtPtr = WriteColorChangeControlCode(txtPtr, 0, 11);
             txtPtr = WriteColorChangeControlCode(txtPtr, 1, 0x0);
             *(txtPtr++) = CHAR_MALE;
         }
         else
         {
-            txtPtr = WriteColorChangeControlCode(txtPtr, 0, 13);
+            txtPtr = WriteColorChangeControlCode(txtPtr, 0, 4);
             txtPtr = WriteColorChangeControlCode(txtPtr, 1, 0x0);
             *(txtPtr++) = CHAR_FEMALE;
         }

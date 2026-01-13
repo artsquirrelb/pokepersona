@@ -295,12 +295,27 @@ static void StorePokemonInEmptyDaycareSlot(struct Pokemon *mon, struct DayCare *
 
 void StoreSelectedPokemonInDaycare(void)
 {
-    u8 monId = GetCursorSelectionMonId();
-     if (gSaveBlock3Ptr->followerIndex == monId)
-        gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
-    else if (gSaveBlock3Ptr->followerIndex < PARTY_SIZE && monId < gSaveBlock3Ptr->followerIndex)
-        gSaveBlock3Ptr->followerIndex--;
-    StorePokemonInEmptyDaycareSlot(&gPlayerParty[monId], &gSaveBlock1Ptr->daycare);
+    if (gSpecialVar_MonBoxId == 0xFF)
+    {
+        if (gSaveBlock3Ptr->followerIndex == monId)
+            gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
+        else if (gSaveBlock3Ptr->followerIndex < PARTY_SIZE && monId < gSaveBlock3Ptr->followerIndex)
+            gSaveBlock3Ptr->followerIndex--;
+        StorePokemonInEmptyDaycareSlot(&gPlayerParty[GetCursorSelectionMonId()], &gSaveBlock1Ptr->daycare);
+    }
+    else if (gSpecialVar_MonBoxId == TOTAL_BOXES_COUNT) // Selected party mon from PC
+    {
+        if (gSaveBlock3Ptr->followerIndex == monId)
+            gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
+        else if (gSaveBlock3Ptr->followerIndex < PARTY_SIZE && monId < gSaveBlock3Ptr->followerIndex)
+            gSaveBlock3Ptr->followerIndex--;
+        StorePokemonInEmptyDaycareSlot(&gPlayerParty[gSpecialVar_MonBoxPos], &gSaveBlock1Ptr->daycare);
+    }
+    else
+    {
+        s8 slotId = Daycare_FindEmptySpot(&gSaveBlock1Ptr->daycare);
+        StoreBoxMonInDaycare(GetBoxedMonPtr(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos), &gSaveBlock1Ptr->daycare.mons[slotId]);
+    }
 }
 
 // Shifts the second daycare Pokémon slot into the first slot.
@@ -587,7 +602,7 @@ static void _TriggerPendingDaycareEgg(struct DayCare *daycare)
     // inherit nature
     else
     {
-        u8 wantedNature = GetNatureFromPersonality(GetBoxMonData(&daycare->mons[parent].mon, MON_DATA_PERSONALITY, NULL));
+        u8 wantedNature = GetNatureFromPersonality(GetBoxMonData(&daycare->mons[parent].mon, MON_DATA_PERSONALITY));
         u32 personality;
 
         do
@@ -1263,12 +1278,16 @@ u16 GetSelectedMonNicknameAndSpecies(void)
         GetBoxMonNickname(&gPlayerParty[GetCursorSelectionMonId()].box, gStringVar1);
         return GetBoxMonData(&gPlayerParty[GetCursorSelectionMonId()].box, MON_DATA_SPECIES);
     }
+    else if (gSpecialVar_MonBoxId == TOTAL_BOXES_COUNT) // Selected party mon from PC
+    {
+        GetBoxMonNickname(&gPlayerParty[gSpecialVar_MonBoxPos].box, gStringVar1);
+        return GetBoxMonData(&gPlayerParty[gSpecialVar_MonBoxPos].box, MON_DATA_SPECIES);
+    }
     else
     {
         GetBoxMonNickname(&gPokemonStoragePtr->boxes[gSpecialVar_MonBoxId][gSpecialVar_MonBoxPos], gStringVar1);
         return GetBoxMonData(&gPokemonStoragePtr->boxes[gSpecialVar_MonBoxId][gSpecialVar_MonBoxPos], MON_DATA_SPECIES);
     }
-    
 }
 
 void GetDaycareMonNicknames(void)

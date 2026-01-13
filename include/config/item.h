@@ -12,7 +12,7 @@
 #define I_GRISEOUS_ORB_FORM_CHANGE      GEN_LATEST  // In Gen9+, the Griseous Orb no longer changes Giratina's form when held.
 #define I_GEM_BOOST_POWER               GEN_LATEST  // In Gen6+, the Gem boost power was reduced from 50% to 30%.
 #define I_USE_EVO_HELD_ITEMS_FROM_BAG   TRUE       // If TRUE, items such as Razor Claw or Electirizer will be usable from the bag to evolve a Pokémon just like in LA.
-#define I_TYPE_BOOST_POWER              GEN_LATEST  // In Gen4+, all regular type boosting held items had their power increased from 10% to 20%. eg. Charcoal
+#define I_TYPE_BOOST_POWER              GEN_LATEST  // In Gen4+, type-enhancing held items (such as Charcoal) had their multiplier increased from 1.1x to 1.2x. Sea Incense was changed from 1.05x to 1.2x.
 #define I_SELL_VALUE_FRACTION           GEN_3  // In Gen9+, items sell for 1/4 of their value instead of 1/2.
 #define I_PRICE                         GEN_LATEST  // Some items have varied in value across generations.
 #define I_BERRY_PRICE                   GEN_7       // Since Berries have become unplantable (Gen8+), their price has gone up.
@@ -26,6 +26,7 @@
                                                         // In Gen 8, many of the prices were adjusted and many items received 0-80% discounts.
                                                         // Gen 9 jacked up some of the prices to ludicrous degrees, and generally isn't recommended without heavily editing the BP gains.
 #define I_MOVE_TUTOR_INFO_BOX           TRUE        // Shows a box with battle move info when using the move tutor mart.
+#define I_LAX_INCENSE_BOOST             GEN_LATEST  // In Gen4+, Lax Incense increases evasion by 10% instead of 5%.
 
 // TM config
 #define I_REUSABLE_TMS          TRUE       // In Gen5-8, TMs are reusable. Setting this to TRUE will make all vanilla TMs reusable, though they can also be cherry-picked by setting their importance to 1.

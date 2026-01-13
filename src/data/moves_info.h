@@ -448,7 +448,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         #if B_UPDATED_MOVE_DATA == GEN_3
             .description = COMPOUND_STRING(
                 "A 2-turn move that strikes\n"
-                "the foe on the 2nd turn.");
+                "the foe on the 2nd turn."),
         #else
             .description = COMPOUND_STRING(
                 "A 2-turn move with a high\n"
@@ -4427,7 +4427,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         #else
             .description = COMPOUND_STRING(
                 "A triangular field of energy\n"
-                "is created and launched.");
+                "is created and launched."),
         #endif
         .effect = EFFECT_HIT,
         .power = 80,
@@ -7672,6 +7672,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_BREAK_SCREEN,
+            .preAttackEffect = TRUE,
+        }),
         .makesContact = TRUE,
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_COOL,
@@ -17148,7 +17152,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Chomps with psychic fangs.\n"
             "Destroys any barriers."),
-        .effect = EFFECT_BRICK_BREAK,
+        .effect = EFFECT_HIT,
         .power = 85,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
@@ -17156,6 +17160,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_BREAK_SCREEN,
+            .preAttackEffect = TRUE,
+        }),
         .makesContact = TRUE,
         .bitingMove = TRUE,
         .contestEffect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
@@ -17293,7 +17301,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Steals the target's stat\n"
             "boosts, then attacks."),
-        .effect = EFFECT_SPECTRAL_THIEF,
+        .effect = EFFECT_HIT,
         .power = 90,
         .type = TYPE_GHOST,
         .accuracy = 100,
@@ -17301,6 +17309,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_STEAL_STATS,
+            .preAttackEffect = TRUE,
+        }),
         .ignoresSubstitute = TRUE,
         .makesContact = TRUE,
         .metronomeBanned = TRUE,
@@ -20486,6 +20498,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_BREAK_SCREEN,
+            .preAttackEffect = TRUE,
+        }),
         .makesContact = TRUE,
         .metronomeBanned = TRUE,
         .battleAnimScript = gBattleAnimMove_RagingBull,

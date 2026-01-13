@@ -151,7 +151,7 @@ static void Task_DelayPrintOverworldTrainerHUD(u8 taskId)
         LoadCompressedSpriteSheet(&sSpriteSheet_TrainerCountHUD);
         LoadSpritePalette(&sSpritePal_TrainerCountHUD);
         gOWHUDSprite = SPRITE_NONE;
-        gOWHUDSprite = CreateSprite(&sSpriteTemplate_TrainerCountHUD, 19, 146, 0);
+        gOWHUDSprite = CreateSprite(&sSpriteTemplate_TrainerCountHUD, 16, 144, 0);
         gSprites[gOWHUDSprite].invisible = FALSE;
 
         //PrintTrainerCount(gOWHUDSprite, 0, gSprites[gOWHUDSprite].oam.tileNum + 5);

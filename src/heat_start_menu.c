@@ -1347,7 +1347,7 @@ static void ShowSaveInfoWindow(void) {
     
     BufferSaveMenuText(SAVE_MENU_LOCATION, gStringVar4, 0x0);
     //AddTextPrinterParameterized(sSaveInfoWindowId, FONT_NORMAL, gStringVar4, 0, yOffset, TEXT_SKIP_DRAW, NULL);
-    AddTextPrinterParameterizedCustom(sSaveInfoWindowId, FONT_NARROW, gStringVar4, 8, yOffset, TEXT_SKIP_DRAW, NULL, 1, 0x0, 0x0);
+    AddTextPrinterParameterizedCustom(sSaveInfoWindowId, FONT_NARROW, gStringVar4, 8, yOffset, TEXT_SKIP_DRAW, NULL, 7, 0x0, 0x0);
 
     // Print player name
     yOffset += 16;

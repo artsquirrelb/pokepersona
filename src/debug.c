@@ -32,6 +32,7 @@
 #include "naming_screen.h"
 #include "new_game.h"
 #include "overworld.h"
+#include "overworldhud.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "pokedex.h"
@@ -1327,6 +1328,8 @@ static void DebugTask_HandleMenuInput_General(u8 taskId)
         else
         {
             Debug_DestroyMenu_Full(taskId);
+            FlagClear(FLAG_HIDE_HELP_BUTTON);
+            ShowHelpButton();
             ScriptContext_Enable();
         }
     }

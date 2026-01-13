@@ -488,7 +488,7 @@ static const struct ListMenuTemplate sMainListTemplate =
     .upText_Y = 1,
     .cursorPal = 2,
     .fillValue = 1,
-    .cursorShadowPal = 3,
+    .cursorShadowPal = 1,
     .lettersSpacing = 1,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
@@ -510,7 +510,7 @@ static const struct ListMenuTemplate sSecondaryListTemplate =
     .upText_Y = 1,
     .cursorPal = 2,
     .fillValue = 1,
-    .cursorShadowPal = 3,
+    .cursorShadowPal = 1,
     .lettersSpacing = 1,
     .itemVerticalPadding = 0,
     .scrollMultiple = LIST_NO_MULTIPLE_SCROLL,
@@ -596,7 +596,8 @@ static const bool8 sHasChangeableEntries[LIST_ITEM_COUNT] =
     [LIST_ITEM_STAT_STAGES] = TRUE,
 };
 
-static const u16 sBgColor[] = {RGB_WHITE};
+//static const u16 sBgColor[] = {RGB_WHITE};
+static const u16 sBgColor[] = {RGB(GET_R(36), GET_G(57), GET_B(79))};
 
 // this file's functions
 static void Task_DebugMenuFadeOut(u8 taskId);
@@ -725,7 +726,7 @@ enum {
 
 static const u8 sTextColorTable[][3] =
 {
-    [COLORID_RED]        = {TEXT_COLOR_WHITE,       TEXT_COLOR_RED,        TEXT_COLOR_LIGHT_RED},
+    [COLORID_RED]        = {TEXT_COLOR_WHITE,       TEXT_COLOR_RED,        TEXT_COLOR_WHITE},
 };
 
 static void PutMovesPointsText(struct BattleDebugMenu *data)
@@ -734,12 +735,12 @@ static void PutMovesPointsText(struct BattleDebugMenu *data)
     u8 *text = Alloc(0x50);
 
     FillWindowPixelBuffer(data->aiMovesWindowId, 0x11);
-    AddTextPrinterParameterized(data->aiMovesWindowId, FONT_NORMAL, COMPOUND_STRING("Score/Dmg"), 3, 0, 0, NULL);
+    AddTextPrinterParameterizedCustom(data->aiMovesWindowId, FONT_NORMAL, COMPOUND_STRING("Score/Dmg"), 3, 0, 0, NULL, 2, 1, 1);
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
         text[0] = CHAR_SPACE;
         StringCopy(text + 1, GetMoveName(gBattleMons[data->aiBattlerId].moves[i]));
-        AddTextPrinterParameterized(data->aiMovesWindowId, FONT_NORMAL, text, 0, (i * 15) + 15, 0, NULL);
+        AddTextPrinterParameterizedCustom(data->aiMovesWindowId, FONT_NORMAL, text, 0, (i * 15) + 15, 0, NULL, 2, 1, 1);
         for (count = 0, j = 0; j < MAX_BATTLERS_COUNT; j++)
         {
             if (data->spriteIds.aiIconSpriteIds[j] == 0xFF)
@@ -752,12 +753,12 @@ static void PutMovesPointsText(struct BattleDebugMenu *data)
             if ((chosenMoveIndex == i) && (gAiBattleData->chosenTarget[data->aiBattlerId] == j) && !(gAiLogicData->shouldSwitch & (1u << data->aiBattlerId)))
                 AddTextPrinterParameterized3(data->aiMovesWindowId, FONT_NORMAL, 84 + count * 54, (i * 15) + 15, sTextColorTable[COLORID_RED], 0, text);
             else
-                AddTextPrinterParameterized(data->aiMovesWindowId, FONT_NORMAL, text, 84 + count * 54, (i * 15) + 15, 0, NULL);
+                AddTextPrinterParameterizedCustom(data->aiMovesWindowId, FONT_NORMAL, text, 84 + count * 54, (i * 15) + 15, 0, NULL, 2, 1, 1);
 
             if ((chosenMoveIndex == i) && (gAiBattleData->chosenTarget[data->aiBattlerId] == j) && !(gAiLogicData->shouldSwitch & (1u << data->aiBattlerId)))
                 AddTextPrinterParameterized3(data->aiMovesWindowId, FONT_NORMAL, 103 + count * 54, (i * 15) + 15, sTextColorTable[COLORID_RED], 0, COMPOUND_STRING("/"));
             else
-                AddTextPrinterParameterized(data->aiMovesWindowId, FONT_NORMAL, COMPOUND_STRING("/"), 103 + count * 54, (i * 15) + 15, 0, NULL);
+                AddTextPrinterParameterizedCustom(data->aiMovesWindowId, FONT_NORMAL, COMPOUND_STRING("/"), 103 + count * 54, (i * 15) + 15, 0, NULL, 2, 1, 1);
 
             ConvertIntToDecimalStringN(text,
                                        AI_GetDamage(data->aiBattlerId, battlerDef, i, AI_ATTACKING, gAiLogicData),
@@ -765,7 +766,7 @@ static void PutMovesPointsText(struct BattleDebugMenu *data)
             if ((chosenMoveIndex == i) && (gAiBattleData->chosenTarget[data->aiBattlerId] == j) && !(gAiLogicData->shouldSwitch & (1u << data->aiBattlerId)))
                 AddTextPrinterParameterized3(data->aiMovesWindowId, FONT_NORMAL, 110 + count * 54, (i * 15) + 15, sTextColorTable[COLORID_RED], 0, text);
             else
-                AddTextPrinterParameterized(data->aiMovesWindowId, FONT_NORMAL, text, 110 + count * 54, (i * 15) + 15, 0, NULL);
+                AddTextPrinterParameterizedCustom(data->aiMovesWindowId, FONT_NORMAL, text, 110 + count * 54, (i * 15) + 15, 0, NULL, 2, 1, 1);
 
             count++;
         }
@@ -911,7 +912,7 @@ static void PutAiInfoText(struct BattleDebugMenu *data)
     // item names
     for (i = 0; i < ARRAY_COUNT(sAiInfoItemNames); i++)
     {
-        AddTextPrinterParameterized(data->aiMovesWindowId, FONT_NORMAL, sAiInfoItemNames[i], 3, i * 15, 0, NULL);
+        AddTextPrinterParameterizedCustom(data->aiMovesWindowId, FONT_NORMAL, sAiInfoItemNames[i], 3, i * 15, 0, NULL, 2, 1, 1);
     }
 
     // items info
@@ -923,9 +924,9 @@ static void PutAiInfoText(struct BattleDebugMenu *data)
             enum HoldEffect holdEffect = gAiLogicData->holdEffects[i];
             u16 item = gAiLogicData->items[i];
             u8 x = (i == B_POSITION_PLAYER_LEFT) ? 83 + (i) * 75 : 83 + (i-1) * 75;
-            AddTextPrinterParameterized(data->aiMovesWindowId, FONT_SMALL, gAbilitiesInfo[ability].name, x, 0, 0, NULL);
-            AddTextPrinterParameterized(data->aiMovesWindowId, FONT_SMALL, GetItemName(item), x, 15, 0, NULL);
-            AddTextPrinterParameterized(data->aiMovesWindowId, FONT_SMALL, GetHoldEffectName(holdEffect), x, 30, 0, NULL);
+            AddTextPrinterParameterizedCustom(data->aiMovesWindowId, FONT_SMALL, gAbilitiesInfo[ability].name, x, 0, 0, NULL, 2, 1, 1);
+            AddTextPrinterParameterizedCustom(data->aiMovesWindowId, FONT_SMALL, GetItemName(item), x, 15, 0, NULL, 2, 1, 1);
+            AddTextPrinterParameterizedCustom(data->aiMovesWindowId, FONT_SMALL, GetHoldEffectName(holdEffect), x, 30, 0, NULL, 2, 1, 1);
         }
     }
 
@@ -1322,7 +1323,7 @@ static void PrintOnBattlerWindow(u8 windowId, u8 battlerId)
     StringCopy(&text[4], gBattleMons[battlerId].nickname);
 
     FillWindowPixelBuffer(windowId, 0x11);
-    AddTextPrinterParameterized(windowId, FONT_NORMAL, text, 0, 0, 0, NULL);
+    AddTextPrinterParameterizedCustom(windowId, FONT_NORMAL, text, 0, 0, 0, NULL, 2, 1, 1);
     CopyWindowToVram(windowId, COPYWIN_FULL);
 }
 
@@ -1551,7 +1552,7 @@ static void PrintDigitChars(struct BattleDebugMenu *data)
     text[i] = EOS;
 
     FillWindowPixelBuffer(data->modifyWindowId, 0x11);
-    AddTextPrinterParameterized(data->modifyWindowId, FONT_NORMAL, text, 3, 0, 0, NULL);
+    AddTextPrinterParameterizedCustom(data->modifyWindowId, FONT_NORMAL, text, 3, 0, 0, NULL, 2, 1, 1);
 }
 
 static const u32 GetBitfieldToAndValue(u32 currBit, u32 bitsCount)

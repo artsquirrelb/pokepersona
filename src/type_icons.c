@@ -25,7 +25,7 @@ static bool32 ShouldSkipSecondType(enum Type[], u32);
 static void SetTypeIconXY(s32*, s32*, u32, bool32, u32);
 
 static void CreateSpriteAndSetTypeSpriteAttributes(enum Type, u32 x, u32 y, u32, u32, bool32);
-static bool32 ShouldFlipTypeIcon(bool32, u32, enum Type);
+//static bool32 ShouldFlipTypeIcon(bool32, u32, enum Type);
 
 static void SpriteCB_TypeIcon(struct Sprite*);
 static void DestroyTypeIcon(struct Sprite*);
@@ -416,12 +416,12 @@ static void CreateSpriteAndSetTypeSpriteAttributes(enum Type type, u32 x, u32 y,
     sprite->tBattlerId = battler;
     sprite->tVerticalPosition = y;
 
-    sprite->hFlip = ShouldFlipTypeIcon(useDoubleBattleCoords, position, type);
+    //sprite->hFlip = ShouldFlipTypeIcon(useDoubleBattleCoords, position, type);
 
     StartSpriteAnim(sprite, type);
 }
 
-static bool32 ShouldFlipTypeIcon(bool32 useDoubleBattleCoords, u32 position, enum Type typeId)
+/*static bool32 ShouldFlipTypeIcon(bool32 useDoubleBattleCoords, u32 position, enum Type typeId)
 {
     enum BattleSide side = (useDoubleBattleCoords) ? B_SIDE_OPPONENT : B_SIDE_PLAYER;
 
@@ -429,7 +429,7 @@ static bool32 ShouldFlipTypeIcon(bool32 useDoubleBattleCoords, u32 position, enu
         return FALSE;
 
     return !gTypesInfo[typeId].isSpecialCaseType;
-}
+}*/
 
 static void SpriteCB_TypeIcon(struct Sprite *sprite)
 {

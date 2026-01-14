@@ -77,7 +77,6 @@ Comments can be added as C comment blocks
 Name:
 Class: Companion
 Pic: Hiker
-Gender: Male
 Music: Male
 Double Battle: No
 
@@ -85,7 +84,6 @@ Double Battle: No
 Name: Ichigo
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -102,7 +100,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Charles
 Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: Yes
 AI: Basic Trainer
@@ -121,7 +118,6 @@ Ability: Telepathy
 Name: Emily
 Class: Kirijo Genesis Staff
 Pic: Aqua Grunt F
-Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer / AI_FLAG_ATTACKS_PARTNER
@@ -140,7 +136,6 @@ Ability: Levitate
 Name: Norbert
 Class: Kirijo Genesis Staff
 Pic: Norbert
-Gender: Male
 Music: Aqua
 Double Battle: Yes
 AI: Basic Trainer
@@ -169,7 +164,6 @@ Ability: Iron Barbs
 Name: Yamaki?
 Class: Preschooler
 Pic: Preschooler M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -190,7 +184,6 @@ Nature: Modest
 Name: Hotaru
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -207,7 +200,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Ike
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -224,7 +216,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Riki
 Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -237,7 +228,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Yuuka
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -254,7 +244,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Touma
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -271,7 +260,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Touma
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -288,7 +276,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Miyu
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -305,7 +292,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Miyu
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -322,7 +308,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Dango
 Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -339,7 +324,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Magane
 Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -406,7 +390,6 @@ EVs: 40 Atk
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -427,7 +410,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -440,7 +422,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -457,7 +438,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -470,7 +450,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -483,7 +462,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -496,7 +474,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -513,7 +490,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt F
-Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -526,7 +502,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt F
-Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -539,7 +514,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt F
-Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -552,7 +526,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: FREDRICK
 Class: Expert
 Pic: Expert M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -569,7 +542,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: MATT
 Class: Aqua Admin
 Pic: Aqua Admin M
-Gender: Male
 Music: Aqua
 Items: Super Potion
 Double Battle: No
@@ -587,7 +559,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: ZANDER
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -600,7 +571,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SHELLY
 Class: Aqua Admin
 Pic: Aqua Admin F
-Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -617,7 +587,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: SHELLY
 Class: Aqua Admin
 Pic: Aqua Admin F
-Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -634,7 +603,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: ARCHIE
 Class: Aqua Leader
 Pic: Aqua Leader Archie
-Gender: Male
 Music: Aqua
 Items: Super Potion / Super Potion
 Double Battle: No
@@ -656,7 +624,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: LEAH
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -669,7 +636,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DAISY
 Class: Aroma Lady
 Pic: Aroma Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -686,7 +652,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ROSE
 Class: Aroma Lady
 Pic: Aroma Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -707,7 +672,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: FELIX
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -728,7 +692,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: VIOLET
 Class: Aroma Lady
 Pic: Aroma Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -745,7 +708,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ROSE
 Class: Aroma Lady
 Pic: Aroma Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -762,7 +724,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ROSE
 Class: Aroma Lady
 Pic: Aroma Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -783,7 +744,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: ROSE
 Class: Aroma Lady
 Pic: Aroma Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -804,7 +764,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: ROSE
 Class: Aroma Lady
 Pic: Aroma Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -825,7 +784,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: DUSTY
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -842,7 +800,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: CHIP
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -875,7 +832,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: FOSTER
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -900,7 +856,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: DUSTY
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -917,7 +872,6 @@ IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
 Name: DUSTY
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -934,7 +888,6 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Name: DUSTY
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -951,7 +904,6 @@ IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 Name: DUSTY
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -968,7 +920,6 @@ IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 Name: GABBY & TY
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
 Music: Interviewer
 Double Battle: Yes
 AI: Basic Trainer
@@ -985,7 +936,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: GABBY & TY
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
 Music: Interviewer
 Double Battle: Yes
 AI: Basic Trainer
@@ -1002,7 +952,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: GABBY & TY
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
 Music: Interviewer
 Double Battle: Yes
 AI: Basic Trainer
@@ -1019,7 +968,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: GABBY & TY
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
 Music: Interviewer
 Double Battle: Yes
 AI: Basic Trainer
@@ -1036,7 +984,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: GABBY & TY
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
 Music: Interviewer
 Double Battle: Yes
 AI: Basic Trainer
@@ -1053,7 +1000,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: GABBY & TY
 Class: Interviewer
 Pic: Interviewer
-Gender: Male
 Music: Interviewer
 Double Battle: Yes
 AI: Basic Trainer
@@ -1078,7 +1024,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: LOLA
 Class: Tuber F
 Pic: Tuber F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1095,7 +1040,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: AUSTINA
 Class: Tuber F
 Pic: Tuber F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1108,7 +1052,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GWEN
 Class: Tuber F
 Pic: Tuber F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1121,7 +1064,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LOLA
 Class: Tuber F
 Pic: Tuber F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1138,7 +1080,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: LOLA
 Class: Tuber F
 Pic: Tuber F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1155,7 +1096,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: LOLA
 Class: Tuber F
 Pic: Tuber F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1172,7 +1112,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: LOLA
 Class: Tuber F
 Pic: Tuber F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1189,7 +1128,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: RICKY
 Class: Tuber M
 Pic: Tuber M
-Gender: Male
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1206,7 +1144,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: SIMON
 Class: Tuber M
 Pic: Tuber M
-Gender: Male
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1223,7 +1160,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CHARLIE
 Class: Tuber M
 Pic: Tuber M
-Gender: Male
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1236,7 +1172,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: RICKY
 Class: Tuber M
 Pic: Tuber M
-Gender: Male
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1253,7 +1188,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: RICKY
 Class: Tuber M
 Pic: Tuber M
-Gender: Male
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1270,7 +1204,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: RICKY
 Class: Tuber M
 Pic: Tuber M
-Gender: Male
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1287,7 +1220,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: RICKY
 Class: Tuber M
 Pic: Tuber M
-Gender: Male
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -1304,7 +1236,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: RANDALL
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1321,7 +1252,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: PARKER
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1338,7 +1268,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: GEORGE
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1355,7 +1284,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: BERKE
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1371,7 +1299,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: BRAXTON
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1421,7 +1348,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: VINCENT
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1443,7 +1369,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: LEROY
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1461,7 +1386,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: WILTON
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Super Potion
 Double Battle: No
@@ -1483,7 +1407,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: EDGAR
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1501,7 +1424,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: ALBERT
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1519,7 +1441,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: SAMUEL
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1541,7 +1462,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: VITO
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1567,7 +1487,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: OWEN
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1589,7 +1508,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: WILTON
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1611,7 +1529,6 @@ IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 Name: WILTON
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1633,7 +1550,6 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 Name: WILTON
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1655,7 +1571,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: WILTON
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1677,7 +1592,6 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Name: WARREN
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1695,7 +1609,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: MARY
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1711,7 +1624,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: ALEXIA
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1728,7 +1640,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: JODY
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1744,7 +1655,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: WENDY
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1778,7 +1688,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: KEIRA
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1796,7 +1705,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: BROOKE
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Super Potion
 Double Battle: No
@@ -1818,7 +1726,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: JENNIFER
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1832,7 +1739,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: HOPE
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1846,7 +1752,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: SHANNON
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1860,7 +1765,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: MICHELLE
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1882,7 +1786,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: CAROLINE
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1900,7 +1803,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: JULIE
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1922,7 +1824,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: BROOKE
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1944,7 +1845,6 @@ IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 Name: BROOKE
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -1966,7 +1866,6 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 Name: BROOKE
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -1988,7 +1887,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BROOKE
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -2010,7 +1908,6 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Name: PATRICIA
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2027,7 +1924,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KINDRA
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2044,7 +1940,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TAMMY
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2061,7 +1956,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: VALERIE
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2074,7 +1968,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TASHA
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2087,7 +1980,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: VALERIE
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2104,7 +1996,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: VALERIE
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2121,7 +2012,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: VALERIE
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2138,7 +2028,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: VALERIE
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2159,7 +2048,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: CINDY
 Class: Lady
 Pic: Lady
-Gender: Female
 Music: Female
 Items: Full Restore
 Double Battle: No
@@ -2173,7 +2061,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DAPHNE
 Class: Lady
 Pic: Lady
-Gender: Female
 Music: Female
 Items: Full Restore
 Double Battle: No
@@ -2199,7 +2086,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -2220,7 +2106,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CINDY
 Class: Lady
 Pic: Lady
-Gender: Female
 Music: Female
 Items: Full Restore
 Double Battle: No
@@ -2236,7 +2121,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRIANNA
 Class: Lady
 Pic: Lady
-Gender: Female
 Music: Female
 Items: Full Restore
 Double Battle: No
@@ -2250,7 +2134,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: NAOMI
 Class: Lady
 Pic: Lady
-Gender: Female
 Music: Female
 Items: Full Restore
 Double Battle: No
@@ -2264,7 +2147,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: CINDY
 Class: Lady
 Pic: Lady
-Gender: Female
 Music: Female
 Items: Full Restore
 Double Battle: No
@@ -2278,7 +2160,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: CINDY
 Class: Lady
 Pic: Lady
-Gender: Female
 Music: Female
 Items: Full Restore
 Double Battle: No
@@ -2292,7 +2173,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: CINDY
 Class: Lady
 Pic: Lady
-Gender: Female
 Music: Female
 Items: Full Restore
 Double Battle: No
@@ -2306,7 +2186,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: CINDY
 Class: Lady
 Pic: Lady
-Gender: Female
 Music: Female
 Items: Full Restore
 Double Battle: No
@@ -2324,7 +2203,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: MELISSA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2337,7 +2215,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SHEILA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2350,7 +2227,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SHIRLEY
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2363,7 +2239,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JESSICA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2388,7 +2263,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CONNIE
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2401,7 +2275,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: BRIDGET
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2414,7 +2287,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: OLIVIA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2446,7 +2318,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: TIFFANY
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2463,7 +2334,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: JESSICA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2488,7 +2358,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: JESSICA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2513,7 +2382,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: JESSICA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2538,7 +2406,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: JESSICA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2563,7 +2430,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: Tarou
 Class: Rich Boy
 Pic: Rich Boy
-Gender: Male
 Music: Rich
 Items: Full Restore
 Double Battle: No
@@ -2582,7 +2448,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MOLLIE
 Class: Expert
 Pic: Expert F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -2599,7 +2464,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: GARRET
 Class: Rich Boy
 Pic: Rich Boy
-Gender: Male
 Music: Rich
 Items: Full Restore
 Double Battle: No
@@ -2613,7 +2477,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: WINSTON
 Class: Rich Boy
 Pic: Rich Boy
-Gender: Male
 Music: Rich
 Items: Full Restore
 Double Battle: No
@@ -2627,7 +2490,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: WINSTON
 Class: Rich Boy
 Pic: Rich Boy
-Gender: Male
 Music: Rich
 Items: Full Restore
 Double Battle: No
@@ -2641,7 +2503,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: WINSTON
 Class: Rich Boy
 Pic: Rich Boy
-Gender: Male
 Music: Rich
 Items: Full Restore
 Double Battle: No
@@ -2655,7 +2516,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: WINSTON
 Class: Rich Boy
 Pic: Rich Boy
-Gender: Male
 Music: Rich
 Items: Full Restore
 Double Battle: No
@@ -2673,7 +2533,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: STEVE
 Class: Pokemaniac
 Pic: Pokemaniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2686,7 +2545,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: THALIA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -2703,7 +2561,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MARK
 Class: Pokemaniac
 Pic: Pokemaniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2716,7 +2573,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt F
-Gender: Female
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -2729,7 +2585,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: STEVE
 Class: Pokemaniac
 Pic: Pokemaniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2742,7 +2597,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: STEVE
 Class: Pokemaniac
 Pic: Pokemaniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2759,7 +2613,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: STEVE
 Class: Pokemaniac
 Pic: Pokemaniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2776,7 +2629,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: STEVE
 Class: Pokemaniac
 Pic: Pokemaniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -2793,7 +2645,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: LUIS
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2806,7 +2657,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DOMINIK
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2819,7 +2669,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DOUGLAS
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2836,7 +2685,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: DARRIN
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2857,7 +2705,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: TONY
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2870,7 +2717,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JEROME
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2883,7 +2729,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MATTHEW
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2896,7 +2741,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DAVID
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2913,7 +2757,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SPENCER
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2930,7 +2773,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ROLAND
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2943,7 +2785,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: NOLEN
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2956,7 +2797,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: STAN
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2969,7 +2809,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BARRY
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -2982,7 +2821,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DEAN
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3003,7 +2841,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: RODNEY
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3016,7 +2853,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: RICHARD
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3029,7 +2865,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HERMAN
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3046,7 +2881,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SANTIAGO
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3063,7 +2897,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GILBERT
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3076,7 +2909,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: FRANKLIN
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3089,7 +2921,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KEVIN
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3102,7 +2933,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JACK
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3115,7 +2945,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DUDLEY
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3136,7 +2965,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CHAD
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3153,7 +2981,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TONY
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3166,7 +2993,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: TONY
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3179,7 +3005,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: TONY
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3196,7 +3021,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: TONY
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -3213,7 +3037,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: TAKAO
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3226,7 +3049,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HITOSHI
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3243,7 +3065,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: KIYO
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3256,7 +3077,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: KOICHI
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3273,7 +3093,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: NOB
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3286,7 +3105,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: NOB
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3299,7 +3117,6 @@ IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 Name: NOB
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3316,7 +3133,6 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 Name: NOB
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3337,7 +3153,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: NOB
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3362,7 +3177,6 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Name: YUJI
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3379,7 +3193,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: DAISUKE
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3392,7 +3205,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: ATSUSHI
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3405,7 +3217,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: KIRK
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3429,7 +3240,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt F
-Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -3446,7 +3256,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -3459,7 +3268,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SHAWN
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3476,7 +3284,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: FERNANDO
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3493,7 +3300,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DALTON
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3510,7 +3316,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DALTON
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3531,7 +3336,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: DALTON
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3552,7 +3356,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: DALTON
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3573,7 +3376,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: DALTON
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -3594,7 +3396,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: COLE
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -3607,7 +3408,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: JEFF
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -3624,7 +3424,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: AXLE
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -3637,7 +3436,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: JACE
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -3650,7 +3448,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: KEEGAN
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -3663,7 +3460,6 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 Name: BERNIE
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -3680,7 +3476,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BERNIE
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -3697,7 +3492,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: BERNIE
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -3714,7 +3508,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: BERNIE
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -3731,7 +3524,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: BERNIE
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -3748,7 +3540,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: DREW
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -3765,7 +3556,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BEAU
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -3798,7 +3588,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LARRY
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -3811,7 +3600,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SHANE
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -3828,7 +3616,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JUSTIN
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -3841,7 +3628,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ETHAN
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -3858,7 +3644,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: AUTUMN
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -3871,7 +3656,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TRAVIS
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -3884,7 +3668,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ETHAN
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -3901,7 +3684,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ETHAN
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -3918,7 +3700,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: ETHAN
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -3939,7 +3720,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: ETHAN
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -3960,7 +3740,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: BRENT
 Class: Bug Maniac
 Pic: Bug Maniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -3973,7 +3752,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: DONALD
 Class: Bug Maniac
 Pic: Bug Maniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -3994,7 +3772,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: TAYLOR
 Class: Bug Maniac
 Pic: Bug Maniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -4015,7 +3792,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: JEFFREY
 Class: Bug Maniac
 Pic: Bug Maniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -4036,7 +3812,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DEREK
 Class: Bug Maniac
 Pic: Bug Maniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -4053,7 +3828,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: JEFFREY
 Class: Bug Maniac
 Pic: Bug Maniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -4074,7 +3848,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: JEFFREY
 Class: Bug Maniac
 Pic: Bug Maniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -4095,7 +3868,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: JEFFREY
 Class: Bug Maniac
 Pic: Bug Maniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -4120,7 +3892,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: JEFFREY
 Class: Bug Maniac
 Pic: Bug Maniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -4149,7 +3920,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: EDWARD
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4163,7 +3933,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: PRESTON
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4176,7 +3945,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: VIRGIL
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4189,7 +3957,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: BLAKE
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4202,7 +3969,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: WILLIAM
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4223,7 +3989,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JOSHUA
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4240,7 +4005,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CAMERON
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4253,7 +4017,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CAMERON
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4270,7 +4033,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: CAMERON
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4287,7 +4049,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: CAMERON
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4304,7 +4065,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: CAMERON
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4321,7 +4081,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: JACLYN
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4335,7 +4094,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HANNAH
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4348,7 +4106,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: SAMANTHA
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4361,7 +4118,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: MAURA
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4374,7 +4130,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: KAYLA
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4395,7 +4150,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ALEXIS
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4412,7 +4166,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JACKI
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4429,7 +4182,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JACKI
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4446,7 +4198,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: JACKI
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4463,7 +4214,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: JACKI
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4480,7 +4230,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: JACKI
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -4497,7 +4246,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: WALTER
 Class: Gentleman
 Pic: Gentleman
-Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
@@ -4510,7 +4258,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MICAH
 Class: Gentleman
 Pic: Gentleman
-Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
@@ -4527,7 +4274,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: THOMAS
 Class: Gentleman
 Pic: Gentleman
-Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
@@ -4540,7 +4286,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: WALTER
 Class: Gentleman
 Pic: Gentleman
-Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
@@ -4553,7 +4298,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: WALTER
 Class: Gentleman
 Pic: Gentleman
-Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
@@ -4578,7 +4322,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: WALTER
 Class: Gentleman
 Pic: Gentleman
-Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
@@ -4602,7 +4345,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: WALTER
 Class: Gentleman
 Pic: Gentleman
-Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
@@ -4635,7 +4377,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: SIDNEY
 Class: Elite Four
 Pic: Elite Four Sidney
-Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
@@ -4686,7 +4427,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: PHOEBE
 Class: Elite Four
 Pic: Elite Four Phoebe
-Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
@@ -4737,7 +4477,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: GLACIA
 Class: Elite Four
 Pic: Elite Four Glacia
-Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
@@ -4788,7 +4527,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: DRAKE
 Class: Elite Four
 Pic: Elite Four Drake
-Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
@@ -4839,7 +4577,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: ROXANNE
 Class: Leader
 Pic: Leader Roxanne
-Gender: Female
 Music: Female
 Items: Potion / Potion
 Double Battle: No
@@ -4873,7 +4610,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: BRAWLY
 Class: Leader
 Pic: Leader Brawly
-Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
@@ -4907,7 +4643,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: WATTSON
 Class: Leader
 Pic: Leader Wattson
-Gender: Male
 Music: Male
 Items: Super Potion / Super Potion
 Double Battle: No
@@ -4949,7 +4684,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: FLANNERY
 Class: Leader
 Pic: Leader Flannery
-Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
@@ -4991,7 +4725,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: NORMAN
 Class: Leader
 Pic: Leader Norman
-Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
@@ -5033,7 +4766,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: WINONA
 Class: Leader
 Pic: Leader Winona
-Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
@@ -5083,7 +4815,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: TATE&LIZA
 Class: Leader
 Pic: Leader Tate And Liza
-Gender: Male
 Music: Female
 Items: Hyper Potion / Hyper Potion / Hyper Potion / Hyper Potion
 Double Battle: Yes
@@ -5125,7 +4856,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: JUAN
 Class: Leader
 Pic: Leader Juan
-Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
@@ -5175,7 +4905,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: JERRY
 Class: School Kid
 Pic: School Kid M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -5188,7 +4917,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: TED
 Class: School Kid
 Pic: School Kid M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -5201,7 +4929,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: PAUL
 Class: School Kid
 Pic: School Kid M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -5222,7 +4949,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: JERRY
 Class: School Kid
 Pic: School Kid M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -5239,7 +4965,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: JERRY
 Class: School Kid
 Pic: School Kid M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -5256,7 +4981,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: JERRY
 Class: School Kid
 Pic: School Kid M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -5273,7 +4997,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: JERRY
 Class: School Kid
 Pic: School Kid M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -5294,7 +5017,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: KAREN
 Class: School Kid
 Pic: School Kid F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -5307,7 +5029,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: GEORGIA
 Class: School Kid
 Pic: School Kid F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -5324,7 +5045,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: KAREN
 Class: School Kid
 Pic: School Kid F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -5341,7 +5061,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: KAREN
 Class: School Kid
 Pic: School Kid F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -5358,7 +5077,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: KAREN
 Class: School Kid
 Pic: School Kid F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -5375,7 +5093,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: KAREN
 Class: School Kid
 Pic: School Kid F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -5392,7 +5109,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: KATE & JOY
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -5417,7 +5133,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ANNA & MEG
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -5441,7 +5156,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ANNA & MEG
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -5465,7 +5179,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ANNA & MEG
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -5489,7 +5202,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: ANNA & MEG
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -5513,7 +5225,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: ANNA & MEG
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -5537,7 +5248,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: VICTOR
 Class: Winstrate
 Pic: Pokefan M
-Gender: Male
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5554,7 +5264,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: MIGUEL
 Class: Pokefan
 Pic: Pokefan M
-Gender: Male
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5567,7 +5276,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: COLTON
 Class: Pokefan
 Pic: Pokefan M
-Gender: Male
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5624,7 +5332,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MIGUEL
 Class: Pokefan
 Pic: Pokefan M
-Gender: Male
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5637,7 +5344,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MIGUEL
 Class: Pokefan
 Pic: Pokefan M
-Gender: Male
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5650,7 +5356,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MIGUEL
 Class: Pokefan
 Pic: Pokefan M
-Gender: Male
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5663,7 +5368,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MIGUEL
 Class: Pokefan
 Pic: Pokefan M
-Gender: Male
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5676,7 +5380,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: VICTORIA
 Class: Winstrate
 Pic: Pokefan F
-Gender: Female
 Music: Twins
 Double Battle: No
 AI: Basic Trainer / Try To Faint
@@ -5689,7 +5392,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: VANESSA
 Class: Pokefan
 Pic: Pokefan F
-Gender: Female
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5702,7 +5404,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BETHANY
 Class: Pokefan
 Pic: Pokefan F
-Gender: Female
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5723,7 +5424,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: ISABEL
 Class: Pokefan
 Pic: Pokefan F
-Gender: Female
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5740,7 +5440,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ISABEL
 Class: Pokefan
 Pic: Pokefan F
-Gender: Female
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5757,7 +5456,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ISABEL
 Class: Pokefan
 Pic: Pokefan F
-Gender: Female
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5774,7 +5472,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: ISABEL
 Class: Pokefan
 Pic: Pokefan F
-Gender: Female
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5791,7 +5488,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: ISABEL
 Class: Pokefan
 Pic: Pokefan F
-Gender: Female
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -5808,7 +5504,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: TIMOTHY
 Class: Expert
 Pic: Expert M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -5821,7 +5516,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: TIMOTHY
 Class: Expert
 Pic: Expert M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -5838,7 +5532,6 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Name: TIMOTHY
 Class: Expert
 Pic: Expert M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -5855,7 +5548,6 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 Name: TIMOTHY
 Class: Expert
 Pic: Expert M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -5872,7 +5564,6 @@ IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 Name: TIMOTHY
 Class: Expert
 Pic: Expert M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -5889,7 +5580,6 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 Name: VICKY
 Class: Winstrate
 Pic: Expert F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -5906,7 +5596,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: SHELBY
 Class: Expert
 Pic: Expert F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -5923,7 +5612,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: SHELBY
 Class: Expert
 Pic: Expert F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -5940,7 +5628,6 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Name: SHELBY
 Class: Expert
 Pic: Expert F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -5957,7 +5644,6 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 Name: SHELBY
 Class: Expert
 Pic: Expert F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -5974,7 +5660,6 @@ IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 Name: SHELBY
 Class: Expert
 Pic: Expert F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -5991,7 +5676,6 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 Name: CALVIN
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6004,7 +5688,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BILLY
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6021,7 +5704,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JOSH
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6035,7 +5717,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: TOMMY
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6052,7 +5733,6 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 Name: JOEY
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6065,7 +5745,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BEN
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6090,7 +5769,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: QUINCY
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -6116,7 +5794,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: KATELYNN
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -6142,7 +5819,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: JAYLEN
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6155,7 +5831,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DILLON
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6168,7 +5843,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CALVIN
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6181,7 +5855,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: CALVIN
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6198,7 +5871,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: CALVIN
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6219,7 +5891,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: CALVIN
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6240,7 +5911,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: EDDIE
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6257,7 +5927,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ALLEN
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6274,7 +5943,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TIMMY
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6291,7 +5959,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: WALLACE
 Class: Champion
 Pic: Champion Wallace
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
@@ -6350,7 +6017,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: ANDREW
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6371,7 +6037,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: IVAN
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6392,7 +6057,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CLAUDE
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6413,7 +6077,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ELLIOT
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6434,7 +6097,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: NED
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6447,7 +6109,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: DALE
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6472,7 +6133,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: NOLAN
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6485,7 +6145,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BARNY
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6502,7 +6161,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: WADE
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6515,7 +6173,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CARTER
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6532,7 +6189,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ELLIOT
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6553,7 +6209,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ELLIOT
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6578,7 +6233,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: ELLIOT
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6603,7 +6257,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: ELLIOT
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer / Try To Faint
@@ -6628,7 +6281,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: RONALD
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -6661,7 +6313,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JACOB
 Class: Triathlete
 Pic: Cycling Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6682,7 +6333,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: ANTHONY
 Class: Triathlete
 Pic: Cycling Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6699,7 +6349,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BENJAMIN
 Class: Triathlete
 Pic: Cycling Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6712,7 +6361,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BENJAMIN
 Class: Triathlete
 Pic: Cycling Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6725,7 +6373,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: BENJAMIN
 Class: Triathlete
 Pic: Cycling Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6738,7 +6385,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: BENJAMIN
 Class: Triathlete
 Pic: Cycling Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6751,7 +6397,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: BENJAMIN
 Class: Triathlete
 Pic: Cycling Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6764,7 +6409,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: ABIGAIL
 Class: Triathlete
 Pic: Cycling Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -6777,7 +6421,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JASMINE
 Class: Triathlete
 Pic: Cycling Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -6798,7 +6441,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ABIGAIL
 Class: Triathlete
 Pic: Cycling Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -6811,7 +6453,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ABIGAIL
 Class: Triathlete
 Pic: Cycling Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -6824,7 +6465,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: ABIGAIL
 Class: Triathlete
 Pic: Cycling Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -6837,7 +6477,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: ABIGAIL
 Class: Triathlete
 Pic: Cycling Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -6850,7 +6489,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: DYLAN
 Class: Triathlete
 Pic: Running Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6863,7 +6501,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DYLAN
 Class: Triathlete
 Pic: Running Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6876,7 +6513,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: DYLAN
 Class: Triathlete
 Pic: Running Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6889,7 +6525,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: DYLAN
 Class: Triathlete
 Pic: Running Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6902,7 +6537,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: DYLAN
 Class: Triathlete
 Pic: Running Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -6915,7 +6549,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: MARIA
 Class: Triathlete
 Pic: Running Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -6928,7 +6561,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MARIA
 Class: Triathlete
 Pic: Running Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -6941,7 +6573,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: MARIA
 Class: Triathlete
 Pic: Running Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -6954,7 +6585,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: MARIA
 Class: Triathlete
 Pic: Running Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -6967,7 +6597,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: MARIA
 Class: Triathlete
 Pic: Running Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -6980,7 +6609,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: CAMDEN
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -6997,7 +6625,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DEMETRIUS
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -7014,7 +6641,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ISAIAH
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7027,7 +6653,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: PABLO
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7044,7 +6669,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CHASE
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7061,7 +6685,6 @@ IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 Name: ISAIAH
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7074,7 +6697,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ISAIAH
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7087,7 +6709,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: ISAIAH
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7100,7 +6721,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: ISAIAH
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7113,7 +6733,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: ISOBEL
 Class: Triathlete
 Pic: Swimming Triathlete F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7126,7 +6745,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DONNY
 Class: Triathlete
 Pic: Swimming Triathlete F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7143,7 +6761,6 @@ IVs: 19 HP / 19 Atk / 19 Def / 19 SpA / 19 SpD / 19 Spe
 Name: TALIA
 Class: Triathlete
 Pic: Swimming Triathlete F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7156,7 +6773,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KATELYN
 Class: Triathlete
 Pic: Swimming Triathlete F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7169,7 +6785,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ALLISON
 Class: Triathlete
 Pic: Swimming Triathlete F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7186,7 +6801,6 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 Name: KATELYN
 Class: Triathlete
 Pic: Swimming Triathlete F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7199,7 +6813,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: KATELYN
 Class: Triathlete
 Pic: Swimming Triathlete F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7212,7 +6825,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: KATELYN
 Class: Triathlete
 Pic: Swimming Triathlete F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7225,7 +6837,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: KATELYN
 Class: Triathlete
 Pic: Swimming Triathlete F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -7238,7 +6849,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: NICOLAS
 Class: Dragon Tamer
 Pic: Dragon Tamer
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7255,7 +6865,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: NICOLAS
 Class: Dragon Tamer
 Pic: Dragon Tamer
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7272,7 +6881,6 @@ IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 Name: NICOLAS
 Class: Dragon Tamer
 Pic: Dragon Tamer
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7289,7 +6897,6 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 Name: NICOLAS
 Class: Dragon Tamer
 Pic: Dragon Tamer
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7310,7 +6917,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: NICOLAS
 Class: Dragon Tamer
 Pic: Dragon Tamer
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7331,7 +6937,6 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Name: AARON
 Class: Dragon Tamer
 Pic: Dragon Tamer
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7348,7 +6953,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: PERRY
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7361,7 +6965,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HUGH
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7378,7 +6981,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: PHIL
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7391,7 +6993,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JARED
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7412,7 +7013,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: HUMBERTO
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7425,7 +7025,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: PRESLEY
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7442,7 +7041,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: EDWARDO
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7459,7 +7057,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: COLIN
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7476,7 +7073,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ROBERT
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7489,7 +7085,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BENNY
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7510,7 +7105,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CHESTER
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7527,7 +7121,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ROBERT
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7544,7 +7137,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ROBERT
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7561,7 +7153,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: ROBERT
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7578,7 +7169,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: ROBERT
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7595,7 +7185,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: ALEX
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7612,7 +7201,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: BECK
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -7625,7 +7213,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: YASU
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer / Try To Faint
@@ -7638,7 +7225,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TAKASHI
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer / Try To Faint
@@ -7655,7 +7241,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DIANNE
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -7676,7 +7261,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JANI
 Class: Tuber F
 Pic: Tuber F
-Gender: Female
 Music: Girl
 Double Battle: No
 
@@ -7688,7 +7272,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LAO
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 
@@ -7720,7 +7303,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LUNG
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 
@@ -7736,7 +7318,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LAO
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 
@@ -7773,7 +7354,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LAO
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 
@@ -7810,7 +7390,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: LAO
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 
@@ -7845,7 +7424,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: LAO
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 
@@ -7882,7 +7460,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: JOCELYN
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7895,7 +7472,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LAURA
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7908,7 +7484,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: CYNDY
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7925,7 +7500,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: CORA
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7938,7 +7512,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: PAULA
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7951,7 +7524,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: CYNDY
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7968,7 +7540,6 @@ IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 Name: CYNDY
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -7985,7 +7556,6 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 Name: CYNDY
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -8002,7 +7572,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CYNDY
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -8019,7 +7588,6 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Name: MADELINE
 Class: Parasol Lady
 Pic: Parasol Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -8036,7 +7604,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CLARISSA
 Class: Parasol Lady
 Pic: Parasol Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -8053,7 +7620,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ANGELICA
 Class: Parasol Lady
 Pic: Parasol Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -8070,7 +7636,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: MADELINE
 Class: Parasol Lady
 Pic: Parasol Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -8087,7 +7652,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: MADELINE
 Class: Parasol Lady
 Pic: Parasol Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -8104,7 +7668,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: MADELINE
 Class: Parasol Lady
 Pic: Parasol Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -8129,7 +7692,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: MADELINE
 Class: Parasol Lady
 Pic: Parasol Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -8154,7 +7716,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: BEVERLY
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8171,7 +7732,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: IMANI
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8184,7 +7744,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KYLA
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8197,7 +7756,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DENISE
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8214,7 +7772,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BETH
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8227,7 +7784,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TARA
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8244,7 +7800,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MISSY
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8257,7 +7812,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ALICE
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8278,7 +7832,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JENNY
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8291,7 +7844,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRACE
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8304,7 +7856,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TANYA
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8317,7 +7868,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SHARON
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8330,7 +7880,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: NIKKI
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8347,7 +7896,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRENDA
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8360,7 +7908,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KATIE
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8377,7 +7924,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SUSIE
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8390,7 +7936,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KARA
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8403,7 +7948,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DANA
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8416,7 +7960,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SIENNA
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8433,7 +7976,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DEBRA
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8446,7 +7988,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LINDA
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8463,7 +8004,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KAYLEE
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8480,7 +8020,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LAUREL
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8497,7 +8036,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CARLEE
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8510,7 +8048,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JENNY
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8523,7 +8060,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JENNY
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8536,7 +8072,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JENNY
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8553,7 +8088,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JENNY
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -8574,7 +8108,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HEIDI
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -8599,7 +8132,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BECKY
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -8624,7 +8156,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CAROL
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -8641,7 +8172,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: NANCY
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -8658,7 +8188,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MARTHA
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -8675,7 +8204,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DIANA
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -8696,7 +8224,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CEDRIC
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -8713,7 +8240,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: IRENE
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -8730,7 +8256,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DIANA
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -8751,7 +8276,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: DIANA
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -8772,7 +8296,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: DIANA
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -8793,7 +8316,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: DIANA
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -8814,7 +8336,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: AMY & LIV
 Class: Twins
 Pic: Twins
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -8831,7 +8352,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: AMY & LIV
 Class: Twins
 Pic: Twins
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -8848,7 +8368,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: GINA & MIA
 Class: Twins
 Pic: Twins
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -8865,7 +8384,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MIU & YUKI
 Class: Twins
 Pic: Twins
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -8882,7 +8400,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: AMY & LIV
 Class: Twins
 Pic: Twins
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -8899,7 +8416,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GINA & MIA
 Class: Twins
 Pic: Twins
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -8920,7 +8436,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: AMY & LIV
 Class: Twins
 Pic: Twins
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -8937,7 +8452,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: AMY & LIV
 Class: Twins
 Pic: Twins
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -8962,7 +8476,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: AMY & LIV
 Class: Twins
 Pic: Twins
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -8987,7 +8500,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: HUEY
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9004,7 +8516,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: EDMOND
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9017,7 +8528,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ERNEST
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9034,7 +8544,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DWAYNE
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9055,7 +8564,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: PHILLIP
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9072,7 +8580,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LEONARD
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9093,7 +8600,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DUNCAN
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9110,7 +8616,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ERNEST
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9131,7 +8636,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ERNEST
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9152,7 +8656,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: ERNEST
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9173,7 +8676,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: ERNEST
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9194,7 +8696,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: ELI
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -9207,7 +8708,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: ANNIKA
 Class: Pokefan
 Pic: Pokefan F
-Gender: Female
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -9232,7 +8732,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: JAZMYN
 Class: Cooltrainer 2
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -9246,7 +8745,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JONAS
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -9263,7 +8761,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KAYLEY
 Class: Parasol Lady
 Pic: Parasol Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -9280,7 +8777,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: AURON
 Class: Expert
 Pic: Expert M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -9297,7 +8793,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KELVIN
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9314,7 +8809,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: MARLEY
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -9332,7 +8826,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: REYNA
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -9349,7 +8842,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: HUDSON
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9362,7 +8854,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CONOR
 Class: Expert
 Pic: Expert M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -9379,7 +8870,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: EDWIN
 Class: Collector
 Pic: Collector
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -9396,7 +8886,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HECTOR
 Class: Collector
 Pic: Collector
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -9413,7 +8902,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TABITHA
 Class: Magma Admin
 Pic: Magma Admin
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -9434,7 +8922,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: EDWIN
 Class: Collector
 Pic: Collector
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -9451,7 +8938,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: EDWIN
 Class: Collector
 Pic: Collector
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -9468,7 +8954,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: EDWIN
 Class: Collector
 Pic: Collector
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -9485,7 +8970,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: EDWIN
 Class: Collector
 Pic: Collector
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -9502,7 +8986,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: WALLY
 Class: Rival
 Pic: Wally
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
@@ -9552,7 +9035,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: Shinjiro
 Class: Rival
 Pic: Shinjiro
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Smart Trainer
@@ -9589,7 +9071,6 @@ Ability: Intimidate
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9610,7 +9091,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9631,7 +9111,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer / Try To Faint / Force Setup First Turn
@@ -9644,7 +9123,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9665,7 +9143,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9686,7 +9163,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9699,7 +9175,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9720,7 +9195,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9741,7 +9215,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: Mitsuru
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Smart Trainer / Prefer Highest Damage Move
@@ -9786,7 +9259,6 @@ Ability: Ice Scales
 Name: Akihiko
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Smart Trainer / Prefer Highest Damage Move
@@ -9831,7 +9303,6 @@ Ability: Fur Coat
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -9852,7 +9323,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -9865,7 +9335,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -9886,7 +9355,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -9907,7 +9375,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -9920,7 +9387,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -9941,7 +9407,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -9962,7 +9427,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: ISAAC
 Class: Pkmn Breeder
 Pic: Pokemon Breeder M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -9995,7 +9459,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DAVIS
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -10008,7 +9471,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MITCHELL
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -10033,7 +9495,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ISAAC
 Class: Pkmn Breeder
 Pic: Pokemon Breeder M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -10066,7 +9527,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ISAAC
 Class: Pkmn Breeder
 Pic: Pokemon Breeder M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -10099,7 +9559,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: ISAAC
 Class: Pkmn Breeder
 Pic: Pokemon Breeder M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -10132,7 +9591,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: ISAAC
 Class: Pkmn Breeder
 Pic: Pokemon Breeder M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -10165,7 +9623,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: LYDIA
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -10198,7 +9655,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HALLE
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10216,7 +9672,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GARRISON
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -10229,7 +9684,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LYDIA
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -10262,7 +9716,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: LYDIA
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -10295,7 +9748,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: LYDIA
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -10328,7 +9780,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: LYDIA
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -10361,7 +9812,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: JACKSON
 Class: Pkmn Ranger
 Pic: Pokemon Ranger M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10375,7 +9825,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: LORENZO
 Class: Pkmn Ranger
 Pic: Pokemon Ranger M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10397,7 +9846,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: SEBASTIAN
 Class: Pkmn Ranger
 Pic: Pokemon Ranger M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10411,7 +9859,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: JACKSON
 Class: Pkmn Ranger
 Pic: Pokemon Ranger M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10425,7 +9872,6 @@ IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
 Name: JACKSON
 Class: Pkmn Ranger
 Pic: Pokemon Ranger M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10439,7 +9885,6 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Name: JACKSON
 Class: Pkmn Ranger
 Pic: Pokemon Ranger M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10453,7 +9898,6 @@ IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 Name: JACKSON
 Class: Pkmn Ranger
 Pic: Pokemon Ranger M
-Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10471,7 +9915,6 @@ IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 Name: CATHERINE
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10489,7 +9932,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: JENNA
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10511,7 +9953,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: SOPHIA
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10529,7 +9970,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: CATHERINE
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10547,7 +9987,6 @@ IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
 Name: CATHERINE
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10565,7 +10004,6 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Name: CATHERINE
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10583,7 +10021,6 @@ IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 Name: CATHERINE
 Class: Pkmn Ranger
 Pic: Pokemon Ranger F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -10601,7 +10038,6 @@ IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 Name: JULIO
 Class: Triathlete
 Pic: Cycling Triathlete M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -10614,7 +10050,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt M
-Gender: Male
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -10631,7 +10066,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt F
-Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -10648,7 +10082,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt F
-Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -10665,7 +10098,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -10682,7 +10114,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: MARC
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -10699,7 +10130,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRENDEN
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -10712,7 +10142,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: LILITH
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -10725,7 +10154,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: CRISTIAN
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -10738,7 +10166,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: SYLVIA
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -10751,7 +10178,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: LEONARDO
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -10764,7 +10190,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ATHENA
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -10787,7 +10212,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: HARRISON
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -10800,7 +10224,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -10813,7 +10236,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CLARENCE
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -10826,7 +10248,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TERRY
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -10839,7 +10260,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: NATE
 Class: Gentleman
 Pic: Gentleman
-Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
@@ -10852,7 +10272,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: KATHLEEN
 Class: Hex Maniac
 Pic: Hex Maniac
-Gender: Female
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -10865,7 +10284,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: CLIFFORD
 Class: Gentleman
 Pic: Gentleman
-Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
@@ -10878,7 +10296,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: NICHOLAS
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -10891,7 +10308,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt F
-Gender: Female
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -10908,7 +10324,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -10921,7 +10336,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -10934,7 +10348,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -10947,7 +10360,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -10960,7 +10372,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MACEY
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -10973,7 +10384,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -10990,7 +10400,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11007,7 +10416,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: PAXTON
 Class: Expert
 Pic: Expert M
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -11024,7 +10432,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ISABELLA
 Class: Triathlete
 Pic: Swimming Triathlete F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -11037,7 +10444,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Aqua Grunt F
-Gender: Female
 Music: Aqua
 Double Battle: No
 AI: Basic Trainer
@@ -11054,7 +10460,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TABITHA
 Class: Magma Admin
 Pic: Magma Admin
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -11079,7 +10484,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: JONATHAN
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -11097,7 +10501,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11114,7 +10517,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer / Try To Faint / Force Setup First Turn
@@ -11131,7 +10533,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: MAXIE
 Class: Magma Leader
 Pic: Magma Leader Maxie
-Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
@@ -11153,7 +10554,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: MAXIE
 Class: Magma Leader
 Pic: Magma Leader Maxie
-Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
@@ -11175,7 +10575,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: TIANA
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11192,7 +10591,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HALEY
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11209,7 +10607,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JANICE
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11222,7 +10619,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: VIVI
 Class: Winstrate
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11243,7 +10639,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: HALEY
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11260,7 +10655,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: HALEY
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11277,7 +10671,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: HALEY
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11294,7 +10687,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: HALEY
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11315,7 +10707,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: SALLY
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11328,7 +10719,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ROBIN
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11349,7 +10739,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ANDREA
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11362,7 +10751,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: CRISSY
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11379,7 +10767,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: RICK
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11396,7 +10783,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LYLE
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11421,7 +10807,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JOSE
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11438,7 +10823,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: DOUG
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11455,7 +10839,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GREG
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11472,7 +10855,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KENT
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11485,7 +10867,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JAMES
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11502,7 +10883,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JAMES
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11515,7 +10895,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: JAMES
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11532,7 +10911,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: JAMES
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11553,7 +10931,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: JAMES
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -11578,7 +10955,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: BRICE
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11595,7 +10971,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TRENT
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11616,7 +10991,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LENNY
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11633,7 +11007,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LUCAS
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11650,7 +11023,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ALAN
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11671,7 +11043,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CLARK
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11684,7 +11055,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ERIC
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11701,7 +11071,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LUCAS
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11716,7 +11085,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MIKE
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11737,7 +11105,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MIKE
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11758,7 +11125,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TRENT
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11783,7 +11149,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: TRENT
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11808,7 +11173,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: TRENT
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11833,7 +11197,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: TRENT
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -11858,7 +11221,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: DEZ & LUKE
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
 Music: Girl
 Double Battle: Yes
 AI: Basic Trainer
@@ -11875,7 +11237,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LEA & JED
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
 Music: Girl
 Double Battle: Yes
 AI: Basic Trainer
@@ -11892,7 +11253,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KIRA & DAN
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
 Music: Girl
 Double Battle: Yes
 AI: Basic Trainer
@@ -11909,7 +11269,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KIRA & DAN
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
 Music: Girl
 Double Battle: Yes
 AI: Basic Trainer
@@ -11926,7 +11285,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: KIRA & DAN
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
 Music: Girl
 Double Battle: Yes
 AI: Basic Trainer
@@ -11943,7 +11301,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: KIRA & DAN
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
 Music: Girl
 Double Battle: Yes
 AI: Basic Trainer
@@ -11960,7 +11317,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: KIRA & DAN
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
 Music: Girl
 Double Battle: Yes
 AI: Basic Trainer
@@ -11977,7 +11333,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: JOHANNA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -11990,7 +11345,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GERALD
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -12008,7 +11362,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: VIVIAN
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -12033,7 +11386,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: DANIELLE
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -12050,7 +11402,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: HIDEO
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer / Try To Faint
@@ -12075,7 +11426,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KEIGO
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer / Try To Faint
@@ -12100,7 +11450,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: RILEY
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer / Try To Faint
@@ -12125,7 +11474,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: FLINT
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -12142,7 +11490,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: ASHLEY
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -12163,7 +11510,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: WALLY
 Class: Rival
 Pic: Wally
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -12176,7 +11522,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: WALLY
 Class: Rival
 Pic: Wally
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
@@ -12226,7 +11571,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: WALLY
 Class: Rival
 Pic: Wally
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
@@ -12276,7 +11620,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: WALLY
 Class: Rival
 Pic: Wally
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
@@ -12326,7 +11669,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: WALLY
 Class: Rival
 Pic: Wally
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore
 Double Battle: No
@@ -12376,7 +11718,6 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -12401,7 +11742,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -12426,7 +11766,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: BRENDAN
 Class: Rival
 Pic: Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -12451,7 +11790,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -12476,7 +11814,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -12501,7 +11838,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -12526,7 +11862,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: JONAH
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -12547,7 +11882,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HENRY
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -12564,7 +11898,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ROGER
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -12585,7 +11918,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ALEXA
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
@@ -12603,7 +11935,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: RUBEN
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -12621,7 +11952,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: KOJI
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -12634,7 +11964,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: WAYNE
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -12655,7 +11984,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: AIDAN
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -12672,7 +12000,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: REED
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -12689,7 +12016,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TISHA
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -12702,7 +12028,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TORI & TIA
 Class: Twins
 Pic: Twins
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -12719,7 +12044,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KIM & IRIS
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -12744,7 +12068,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TYRA & IVY
 Class: Sr And Jr
 Pic: Sr And Jr
-Gender: Male
 Music: Twins
 Double Battle: Yes
 AI: Basic Trainer
@@ -12769,7 +12092,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MEL & PAUL
 Class: Young Couple
 Pic: Young Couple
-Gender: Male
 Music: Girl
 Double Battle: Yes
 AI: Basic Trainer
@@ -12794,7 +12116,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JOHN & JAY
 Class: Old Couple
 Pic: Old Couple
-Gender: Male
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
@@ -12819,7 +12140,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: JOHN & JAY
 Class: Old Couple
 Pic: Old Couple
-Gender: Male
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
@@ -12844,7 +12164,6 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Name: JOHN & JAY
 Class: Old Couple
 Pic: Old Couple
-Gender: Male
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
@@ -12869,7 +12188,6 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 Name: JOHN & JAY
 Class: Old Couple
 Pic: Old Couple
-Gender: Male
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer / Try To Faint / Force Setup First Turn
@@ -12894,7 +12212,6 @@ IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 Name: JOHN & JAY
 Class: Old Couple
 Pic: Old Couple
-Gender: Male
 Music: Intense
 Double Battle: Yes
 AI: Basic Trainer
@@ -12919,7 +12236,6 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 Name: RELI & IAN
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
 Music: Swimmer
 Double Battle: Yes
 AI: Basic Trainer
@@ -12936,7 +12252,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LILA & ROY
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
 Music: Swimmer
 Double Battle: Yes
 AI: Basic Trainer
@@ -12953,7 +12268,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LILA & ROY
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
 Music: Swimmer
 Double Battle: Yes
 AI: Basic Trainer
@@ -12970,7 +12284,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LILA & ROY
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
 Music: Swimmer
 Double Battle: Yes
 AI: Basic Trainer
@@ -12987,7 +12300,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LILA & ROY
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
 Music: Swimmer
 Double Battle: Yes
 AI: Basic Trainer
@@ -13004,7 +12316,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LILA & ROY
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
 Music: Swimmer
 Double Battle: Yes
 AI: Basic Trainer
@@ -13021,7 +12332,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LISA & RAY
 Class: Sis And Bro
 Pic: Sis And Bro
-Gender: Male
 Music: Swimmer
 Double Battle: Yes
 AI: Basic Trainer
@@ -13038,7 +12348,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CHRIS
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -13063,7 +12372,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DAWSON
 Class: Rich Boy
 Pic: Rich Boy
-Gender: Male
 Music: Rich
 Double Battle: No
 AI: Basic Trainer
@@ -13080,7 +12388,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SARAH
 Class: Lady
 Pic: Lady
-Gender: Female
 Music: Female
 Items: Full Restore
 Double Battle: No
@@ -13098,7 +12405,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DARIAN
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -13111,7 +12417,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HAILEY
 Class: Tuber F
 Pic: Tuber F
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -13124,7 +12429,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CHANDLER
 Class: Tuber M
 Pic: Tuber M
-Gender: Male
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -13141,7 +12445,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KALEB
 Class: Pokefan
 Pic: Pokefan M
-Gender: Male
 Music: Twins
 Double Battle: No
 AI: Basic Trainer
@@ -13158,7 +12461,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JOSEPH
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -13175,7 +12477,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ALYSSA
 Class: Triathlete
 Pic: Cycling Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -13188,7 +12489,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MARCOS
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -13201,7 +12501,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: RHETT
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -13214,7 +12513,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: TYRON
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -13227,7 +12525,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CELINA
 Class: Aroma Lady
 Pic: Aroma Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -13240,7 +12537,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BIANCA
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -13253,7 +12549,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HAYDEN
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -13266,7 +12561,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SOPHIE
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -13283,7 +12577,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: COBY
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -13300,7 +12593,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LAWRENCE
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -13317,7 +12609,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: WYATT
 Class: Pokemaniac
 Pic: Pokemaniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -13334,7 +12625,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ANGELINA
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -13351,7 +12641,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KAI
 Class: Fisherman
 Pic: Fisherman
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -13364,7 +12653,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CHARLOTTE
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -13377,7 +12665,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DEANDRE
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -13398,7 +12685,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13411,7 +12697,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13424,7 +12709,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13437,7 +12721,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13454,7 +12737,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13471,7 +12753,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13484,7 +12765,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13497,7 +12777,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13510,7 +12789,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13523,7 +12801,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13536,7 +12813,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13549,7 +12825,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13562,7 +12837,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt M
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13575,7 +12849,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt F
-Gender: Female
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13588,7 +12861,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt F
-Gender: Female
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13601,7 +12873,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRUNT
 Class: Team Magma
 Pic: Magma Grunt F
-Gender: Female
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13614,7 +12885,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TABITHA
 Class: Magma Admin
 Pic: Magma Admin
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13639,7 +12909,6 @@ IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 Name: DARCY
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -13657,7 +12926,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MAXIE
 Class: Magma Leader
 Pic: Magma Leader Maxie
-Gender: Male
 Music: Magma
 Double Battle: No
 AI: Basic Trainer
@@ -13678,7 +12946,6 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Name: PETE
 Class: Swimmer M
 Pic: Swimmer M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -13691,7 +12958,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ISABELLE
 Class: Swimmer F
 Pic: Swimmer F
-Gender: Female
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -13704,7 +12970,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ANDRES
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -13721,7 +12986,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: JOSUE
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -13738,7 +13002,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: CAMRON
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -13751,7 +13014,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CORY
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -13772,7 +13034,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CAROLINA
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -13794,7 +13055,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: ELIJAH
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -13811,7 +13071,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CELIA
 Class: Picnicker
 Pic: Picnicker
-Gender: Female
 Music: Girl
 Double Battle: No
 AI: Basic Trainer
@@ -13828,7 +13087,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRYAN
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -13845,7 +13103,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRANDEN
 Class: Camper
 Pic: Camper
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -13862,7 +13119,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRYANT
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -13879,7 +13135,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SHAYLA
 Class: Aroma Lady
 Pic: Aroma Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -13896,7 +13151,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: KYRA
 Class: Triathlete
 Pic: Running Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -13913,7 +13167,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JAIDEN
 Class: Ninja Boy
 Pic: Ninja Boy
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -13930,7 +13183,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ALIX
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -13947,7 +13199,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: HELENE
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -13964,7 +13215,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MARLENE
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -13981,7 +13231,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DEVAN
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -13998,7 +13247,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: JOHNSON
 Class: Youngster
 Pic: Youngster
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -14015,7 +13263,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MELINA
 Class: Triathlete
 Pic: Running Triathlete F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -14028,7 +13275,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRANDI
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -14041,7 +13287,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: AISHA
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -14054,7 +13299,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MAKAYLA
 Class: Expert
 Pic: Expert F
-Gender: Female
 Music: Intense
 Items: Hyper Potion
 Double Battle: No
@@ -14072,7 +13316,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: FABIAN
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -14085,7 +13328,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: DAYTON
 Class: Kindler
 Pic: Kindler
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -14102,7 +13344,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: RACHEL
 Class: Parasol Lady
 Pic: Parasol Lady
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -14115,7 +13356,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LEONEL
 Class: Cooltrainer
 Pic: Cooltrainer M
-Gender: Male
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -14132,7 +13372,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: CALLIE
 Class: Battle Girl
 Pic: Battle Girl
-Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -14149,7 +13388,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: CALE
 Class: Bug Maniac
 Pic: Bug Maniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -14166,7 +13404,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MYLES
 Class: Pkmn Breeder
 Pic: Pokemon Breeder M
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -14199,7 +13436,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: PAT
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -14232,7 +13468,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: CRISTIN
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -14250,7 +13485,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -14267,7 +13501,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: MAY
 Class: Rival
 Pic: May
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -14284,7 +13517,6 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Name: ROXANNE
 Class: Leader
 Pic: Leader Roxanne
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14326,7 +13558,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: ROXANNE
 Class: Leader
 Pic: Leader Roxanne
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14376,7 +13607,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: ROXANNE
 Class: Leader
 Pic: Leader Roxanne
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14426,7 +13656,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: ROXANNE
 Class: Leader
 Pic: Leader Roxanne
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14484,7 +13713,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: BRAWLY
 Class: Leader
 Pic: Leader Brawly
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14526,7 +13754,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: BRAWLY
 Class: Leader
 Pic: Leader Brawly
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14568,7 +13795,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: BRAWLY
 Class: Leader
 Pic: Leader Brawly
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14618,7 +13844,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: BRAWLY
 Class: Leader
 Pic: Leader Brawly
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14676,7 +13901,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: WATTSON
 Class: Leader
 Pic: Leader Wattson
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14718,7 +13942,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: WATTSON
 Class: Leader
 Pic: Leader Wattson
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14768,7 +13991,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: WATTSON
 Class: Leader
 Pic: Leader Wattson
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14818,7 +14040,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: WATTSON
 Class: Leader
 Pic: Leader Wattson
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14876,7 +14097,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: FLANNERY
 Class: Leader
 Pic: Leader Flannery
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14918,7 +14138,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: FLANNERY
 Class: Leader
 Pic: Leader Flannery
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -14968,7 +14187,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: FLANNERY
 Class: Leader
 Pic: Leader Flannery
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15026,7 +14244,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: FLANNERY
 Class: Leader
 Pic: Leader Flannery
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15084,7 +14301,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: NORMAN
 Class: Leader
 Pic: Leader Norman
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15126,7 +14342,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: NORMAN
 Class: Leader
 Pic: Leader Norman
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15176,7 +14391,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: NORMAN
 Class: Leader
 Pic: Leader Norman
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15226,7 +14440,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: NORMAN
 Class: Leader
 Pic: Leader Norman
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15284,7 +14497,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: WINONA
 Class: Leader
 Pic: Leader Winona
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15334,7 +14546,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: WINONA
 Class: Leader
 Pic: Leader Winona
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15392,7 +14603,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: WINONA
 Class: Leader
 Pic: Leader Winona
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15450,7 +14660,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: WINONA
 Class: Leader
 Pic: Leader Winona
-Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15508,7 +14717,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: TATE&LIZA
 Class: Leader
 Pic: Leader Tate And Liza
-Gender: Male
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15558,7 +14766,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: TATE&LIZA
 Class: Leader
 Pic: Leader Tate And Liza
-Gender: Male
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15616,7 +14823,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: TATE&LIZA
 Class: Leader
 Pic: Leader Tate And Liza
-Gender: Male
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15674,7 +14880,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: TATE&LIZA
 Class: Leader
 Pic: Leader Tate And Liza
-Gender: Male
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15732,7 +14937,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: JUAN
 Class: Leader
 Pic: Leader Juan
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15782,7 +14986,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: JUAN
 Class: Leader
 Pic: Leader Juan
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15832,7 +15035,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: JUAN
 Class: Leader
 Pic: Leader Juan
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15890,7 +15092,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: JUAN
 Class: Leader
 Pic: Leader Juan
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
@@ -15948,7 +15149,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: ANGELO
 Class: Bug Maniac
 Pic: Bug Maniac
-Gender: Male
 Music: Suspicious
 Double Battle: No
 AI: Basic Trainer
@@ -15971,7 +15171,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: DARIUS
 Class: Bird Keeper
 Pic: Bird Keeper
-Gender: Male
 Music: Cool
 Double Battle: No
 AI: Basic Trainer
@@ -15984,7 +15183,6 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Name: STEVEN
 Class: Rival
 Pic: Steven
-Gender: Male
 Music: Male
 Items: Full Restore / Full Restore / Full Restore / Full Restore
 Double Battle: No
@@ -16042,7 +15240,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Name: ANABEL
 Class: Salon Maiden
 Pic: Salon Maiden Anabel
-Gender: Female
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -16055,7 +15252,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: TUCKER
 Class: Dome Ace
 Pic: Dome Ace Tucker
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -16068,7 +15264,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: SPENSER
 Class: Palace Maven
 Pic: Palace Maven Spenser
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -16081,7 +15276,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: GRETA
 Class: Arena Tycoon
 Pic: Arena Tycoon Greta
-Gender: Female
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -16094,7 +15288,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: NOLAND
 Class: Factory Head
 Pic: Factory Head Noland
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -16107,7 +15300,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LUCY
 Class: Pike Queen
 Pic: Pike Queen Lucy
-Gender: Female
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -16120,7 +15312,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRANDON
 Class: Pyramid King
 Pic: Pyramid King Brandon
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -16133,7 +15324,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ANDRES
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -16150,7 +15340,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: ANDRES
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -16171,7 +15360,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: ANDRES
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -16192,7 +15380,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: ANDRES
 Class: Ruin Maniac
 Pic: Ruin Maniac
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -16213,7 +15400,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: CORY
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -16234,7 +15420,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: CORY
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -16255,7 +15440,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: CORY
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -16276,7 +15460,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: CORY
 Class: Sailor
 Pic: Sailor
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -16297,7 +15480,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: PABLO
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -16314,7 +15496,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: PABLO
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -16335,7 +15516,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: PABLO
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -16356,7 +15536,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: PABLO
 Class: Triathlete
 Pic: Swimming Triathlete M
-Gender: Male
 Music: Swimmer
 Double Battle: No
 AI: Basic Trainer
@@ -16377,7 +15556,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: KOJI
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -16394,7 +15572,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: KOJI
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -16415,7 +15592,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: KOJI
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -16436,7 +15612,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: KOJI
 Class: Black Belt
 Pic: Black Belt
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -16457,7 +15632,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: CRISTIN
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -16475,7 +15649,6 @@ IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 Name: CRISTIN
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -16497,7 +15670,6 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 Name: CRISTIN
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -16519,7 +15691,6 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Name: CRISTIN
 Class: Cooltrainer
 Pic: Cooltrainer F
-Gender: Female
 Music: Cool
 Items: Hyper Potion
 Double Battle: No
@@ -16541,7 +15712,6 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Name: FERNANDO
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -16562,7 +15732,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: FERNANDO
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -16583,7 +15752,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: FERNANDO
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -16604,7 +15772,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: FERNANDO
 Class: Guitarist
 Pic: Guitarist
-Gender: Male
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
@@ -16625,7 +15792,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: SAWYER
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -16642,7 +15808,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: SAWYER
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -16663,7 +15828,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: SAWYER
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -16684,7 +15848,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: SAWYER
 Class: Hiker
 Pic: Hiker
-Gender: Male
 Music: Hiker
 Double Battle: No
 AI: Basic Trainer
@@ -16705,7 +15868,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: GABRIELLE
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -16738,7 +15900,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: GABRIELLE
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -16771,7 +15932,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: GABRIELLE
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -16804,7 +15964,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: GABRIELLE
 Class: Pkmn Breeder
 Pic: Pokemon Breeder F
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -16837,7 +15996,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: THALIA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -16854,7 +16012,6 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Name: THALIA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -16875,7 +16032,6 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Name: THALIA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -16896,7 +16052,6 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Name: THALIA
 Class: Beauty
 Pic: Beauty
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer
@@ -16917,7 +16072,6 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Name: MARIELA
 Class: Psychic
 Pic: Psychic F
-Gender: Female
 Music: Intense
 Double Battle: No
 
@@ -16929,7 +16083,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: ALVARO
 Class: Psychic
 Pic: Psychic M
-Gender: Male
 Music: Intense
 Double Battle: No
 
@@ -16945,7 +16098,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: EVERETT
 Class: Gentleman
 Pic: Gentleman
-Gender: Male
 Music: Rich
 Double Battle: No
 
@@ -16957,7 +16109,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: RED
 Class: Rival
 Pic: Red
-Gender: Male
 Music: Male
 Double Battle: No
 
@@ -16969,7 +16120,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: LEAF
 Class: Rival
 Pic: Leaf
-Gender: Female
 Music: Male
 Double Battle: No
 
@@ -16981,7 +16131,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: BRENDAN
 Class: RS Protag
 Pic: RS Brendan
-Gender: Male
 Music: Male
 Double Battle: No
 
@@ -16993,7 +16142,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: MAY
 Class: RS Protag
 Pic: RS May
-Gender: Female
 Music: Male
 Double Battle: No
 
@@ -17005,7 +16153,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Ike
 Class: Bug Catcher
 Pic: Bug Catcher
-Gender: Male
 Music: Male
 Double Battle: No
 AI: Basic Trainer
@@ -17022,7 +16169,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Name: Hotaru
 Class: Lass
 Pic: Lass
-Gender: Female
 Music: Female
 Double Battle: No
 AI: Basic Trainer

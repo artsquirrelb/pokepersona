@@ -4087,21 +4087,18 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         // and Pokémon with higher friendship receive less.
                         if (GetMonData(mon, MON_DATA_FRIENDSHIP) < 100)
                             UPDATE_FRIENDSHIP_FROM_ITEM();
-                    }
                         itemEffectParam++;
                         break;
 
                     case 6: // ITEM5_FRIENDSHIP_MID
                         if (GetMonData(mon, MON_DATA_FRIENDSHIP) >= 100 && GetMonData(mon, MON_DATA_FRIENDSHIP) < 200)
                             UPDATE_FRIENDSHIP_FROM_ITEM();
-                    }
                         itemEffectParam++;
                         break;
 
                     case 7: // ITEM5_FRIENDSHIP_HIGH
                         if (GetMonData(mon, MON_DATA_FRIENDSHIP) >= 200)
                             UPDATE_FRIENDSHIP_FROM_ITEM();
-                    }
                         itemEffectParam++;
                         break;
                     }

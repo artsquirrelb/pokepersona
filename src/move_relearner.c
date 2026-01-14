@@ -1085,7 +1085,7 @@ static void CreateLearnableMovesList(void)
         sMoveRelearnerStruct->menuItems[i].id = sMoveRelearnerStruct->movesToLearn[i];
     }
 
-    if(gSpecialVar_MonBoxId != 0xFF)
+    if(gSpecialVar_MonBoxId == 0xFF)
         GetMonData(&gPlayerParty[sMoveRelearnerStruct->partyMon], MON_DATA_NICKNAME, nickname);
     else
         GetBoxMonNickAt(gSpecialVar_MonBoxId, gSpecialVar_MonBoxPos, nickname);

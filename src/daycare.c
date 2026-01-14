@@ -276,7 +276,7 @@ void StorePokemonInDaycare(struct Pokemon *mon, struct DaycareMon *daycareMon)
         TransferEggMoves();
 }
 
-/*static void StoreBoxMonInDaycare(struct BoxPokemon *mon, struct DaycareMon *daycareMon)
+static void StoreBoxMonInDaycare(struct BoxPokemon *mon, struct DaycareMon *daycareMon)
 {
 
     daycareMon->mon = *mon;
@@ -285,7 +285,7 @@ void StorePokemonInDaycare(struct Pokemon *mon, struct DaycareMon *daycareMon)
 
     if (P_EGG_MOVE_TRANSFER >= GEN_8)
         TransferEggMoves();
-}*/
+}
 
 static void StorePokemonInEmptyDaycareSlot(struct Pokemon *mon, struct DayCare *daycare)
 {
@@ -295,6 +295,7 @@ static void StorePokemonInEmptyDaycareSlot(struct Pokemon *mon, struct DayCare *
 
 void StoreSelectedPokemonInDaycare(void)
 {
+    u8 monId = GetCursorSelectionMonId();
     if (gSpecialVar_MonBoxId == 0xFF)
     {
         if (gSaveBlock3Ptr->followerIndex == monId)

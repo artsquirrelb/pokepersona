@@ -2,7 +2,6 @@
 Name:
 Class: Companion
 Pic: Brendan
-Gender: Male
 Music: Male
 Back Pic: Brendan
 
@@ -10,7 +9,6 @@ Back Pic: Brendan
 Name: Akihiko
 Class: Companion
 Pic: Brendan
-Gender: Male
 Music: Male
 Back Pic: Brendan
 AI: Basic Trainer
@@ -53,7 +51,6 @@ EVs: 40 Atk / 40 SpA
 Name: Mitsuru
 Class: Companion
 Pic: May
-Gender: Female
 Music: Female
 Back Pic: May
 AI: Basic Trainer
@@ -99,7 +96,6 @@ Ability: Fur Coat
 Name: Shinjiro
 Class: Companion
 Pic: Shinjiro
-Gender: Male
 Music: Male
 Back Pic: Red
 AI: Basic Trainer
@@ -143,7 +139,6 @@ Ability: Torrent
 Name: Inteleon
 Class: Companion
 Pic: Inteleon_T
-Gender: Male
 Music: Male
 Back Pic: Inteleon_T
 AI: Basic Trainer
@@ -163,7 +158,6 @@ Ability: Torrent
 Name: Inteleon
 Class: Companion
 Pic: Inteleon_T
-Gender: Male
 Music: Male
 Back Pic: Inteleon_T
 AI: Basic Trainer

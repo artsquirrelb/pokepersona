@@ -7664,7 +7664,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Destroys barriers such as\n"
             "Reflect and causes damage."),
-        .effect = EFFECT_BRICK_BREAK,
+        .effect = EFFECT_HIT,
         .power = 75,
         .type = TYPE_FIGHTING,
         .accuracy = 100,

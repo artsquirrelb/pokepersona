@@ -49,7 +49,7 @@ struct PokedexCryScreen
     u8 cryRepeatDelay;
 };
 
-static void PlayCryScreenCry(u16);
+
 static void BufferCryWaveformSegment(void);
 static void DrawWaveformFlatline(void);
 static void AdvancePlayhead(u8);
@@ -343,7 +343,7 @@ void CryScreenPlayButton(u16 species)
     }
 }
 
-static void PlayCryScreenCry(u16 species)
+void PlayCryScreenCry(u16 species)
 {
     PlayCry_NormalNoDucking(species, 0, CRY_VOLUME_RS, CRY_PRIORITY_NORMAL);
     sDexCryScreen->cryState = 1;

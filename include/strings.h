@@ -20,6 +20,9 @@ extern const u8 gText_ExpandedPlaceholder_May[];
 extern const u8 gText_Lv50[];
 extern const u8 gText_OpenLevel[];
 
+extern const u8 gText_DexHoenn[];
+extern const u8 gText_DexNational[];
+
 extern const u8 gText_Mom[];
 extern const u8 gText_Dad[];
 

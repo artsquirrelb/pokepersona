@@ -3269,10 +3269,6 @@ static void CloseMoveSelectMode(u8 taskId)
     if (ShouldShowMoveRelearner())
         ShowMoveRelearner();
     ShowInfoPrompt();
-    if (!gMain.inBattle && !sMonSummaryScreen->summary.isEgg)
-    {
-        PutWindowTilemap(PSS_LABEL_WINDOW_PROMPT_DEX);
-    }
     sMonSummaryScreen->mode = SUMMARY_MODE_NORMAL;
     
     CreateTask(Task_HideEffectTilemap, 1);

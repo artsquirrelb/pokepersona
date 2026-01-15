@@ -8,10 +8,13 @@
 #include "main.h"
 #include "malloc.h"
 #include "menu.h"
+#include "m4a.h"
+#include "gba/m4a_internal.h"
 #include "overworld.h"
 #include "palette.h"
 #include "pokedex.h"
 #include "pokedex_area_screen.h"
+#include "pokedex_cry_screen.h"
 #include "region_map.h"
 #include "roamer.h"
 #include "rtc.h"
@@ -859,24 +862,12 @@ static void Task_HandlePokedexAreaScreenInput(u8 taskId)
             return;
         break;
     case 1:
-        if (JOY_NEW(B_BUTTON))
+        if (JOY_NEW(B_BUTTON)
+        || (JOY_NEW(DPAD_LEFT) || JOY_NEW(DPAD_RIGHT) 
+        || (JOY_NEW(L_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)
+        || (JOY_NEW(R_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR)))
         {
             gTasks[taskId].data[1] = 1;
-            PlaySE(SE_DEX_PAGE);
-        }
-        else if (JOY_NEW(DPAD_LEFT) || (JOY_NEW(L_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR))
-        {
-            gTasks[taskId].data[1] = 1;
-            PlaySE(SE_DEX_PAGE);
-        }
-        else if (JOY_NEW(DPAD_RIGHT) || (JOY_NEW(R_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR))
-        {
-            if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(sPokedexAreaScreen->species), FLAG_GET_CAUGHT))
-            {
-                PlaySE(SE_FAILURE);
-                return;
-            }
-            gTasks[taskId].data[1] = 2;
             PlaySE(SE_DEX_PAGE);
         }
         else if (JOY_NEW(DPAD_UP) && OW_TIME_OF_DAY_ENCOUNTERS == TRUE)

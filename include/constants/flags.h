@@ -68,7 +68,7 @@
 #define FLAG_FORCE_DOUBLE_WILD          0x36 // Was Unused Flag
 #define FLAG_EGG_MOVES                  0x37 // Was Unused Flag
 #define FLAG_TUTOR_MOVES                0x38 // Was Unused Flag
-#define FLAG_UNUSED_0x039    0x39 // Unused Flag
+#define FLAG_KITOHA_NATIONAL_STATE      0x39 // 0 == kitoha, 1 == national
 #define FLAG_UNUSED_0x03A    0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag

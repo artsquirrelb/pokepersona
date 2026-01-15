@@ -3213,10 +3213,10 @@ static void PrintInfoScreenText(const u8 *str, u8 left, u8 top)
 {
     u8 color[3];
     color[0] = TEXT_COLOR_TRANSPARENT;
-    color[1] = TEXT_DYNAMIC_COLOR_6;
-    color[2] = TEXT_COLOR_LIGHT_GRAY;
+    color[1] = 12;
+    color[2] = TEXT_COLOR_TRANSPARENT;
 
-    AddTextPrinterParameterized4(0, FONT_NORMAL, left, top, 0, 0, color, TEXT_SKIP_DRAW, str);
+    AddTextPrinterParameterized4(0, FONT_SMALL_NARROW, left, top, 0, 0, color, TEXT_SKIP_DRAW, str);
 }
 
 #define tScrolling       data[0]
@@ -4230,12 +4230,12 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
 
 void PrintMonMeasurements(u16 species, u32 owned)
 {
-    u32 x = GetMeasurementTextPositions(DEX_HEADER_X);
-    u32 yTop = GetMeasurementTextPositions(DEX_Y_TOP);
-    u32 yBottom = GetMeasurementTextPositions(DEX_Y_BOTTOM);
+    //u32 x = GetMeasurementTextPositions(DEX_HEADER_X);
+    //u32 yTop = GetMeasurementTextPositions(DEX_Y_TOP);
+    //u32 yBottom = GetMeasurementTextPositions(DEX_Y_BOTTOM);
 
-    PrintInfoScreenText(gText_HTHeight, x, yTop);
-    PrintInfoScreenText(gText_WTWeight, x, yBottom);
+    //PrintInfoScreenText(gText_HTHeight, x, yTop);
+    //PrintInfoScreenText(gText_WTWeight, x, yBottom);
 
     if (owned)
         PrintOwnedMonMeasurements(species);
@@ -4327,7 +4327,7 @@ static void PrintOwnedMonHeight(u16 species)
     u8* heightString;
 
     u32 x = GetMeasurementTextPositions(DEX_MEASUREMENT_X);
-    u32 yTop = GetMeasurementTextPositions(DEX_Y_TOP);
+    u32 yTop = GetMeasurementTextPositions(DEX_Y_BOTTOM);
 
     heightString = ConvertMonHeightToString(height);
 
@@ -4348,7 +4348,7 @@ static void PrintOwnedMonWeight(u16 species)
     u32 weight = GetSpeciesWeight(species);
     u8* weightString;
     u32 x = GetMeasurementTextPositions(DEX_MEASUREMENT_X);
-    u32 yBottom = GetMeasurementTextPositions(DEX_Y_BOTTOM);
+    u32 yBottom = GetMeasurementTextPositions(DEX_Y_TOP);
 
     weightString = ConvertMonWeightToString(weight);
 

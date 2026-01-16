@@ -234,6 +234,7 @@ static const u8 sText_FORMS_Buttons_Submenu_PE[] = _("{DPAD_NONE}Forms {A_BUTTON
 static const u8 sText_FORMS_Buttons_Submenu_Decapped_PE[] = _("{A_BUTTON}Check  {DPAD_LEFTRIGHT}Select");
 static const u8 sText_FORMS_NONE[] = _("{STR_VAR_1} has no alternate forms.");
 static const u8 sText_PlusSymbol[] = _("+");
+static const u8 sText_Blank[] = _("");//for clearing dex stats when pressing start button
 
 // static .rodata graphics
 
@@ -550,7 +551,8 @@ static u8 ClearMonSprites(void);
 static u16 GetPokemonSpriteToDisplay(u16);
 static u32 CreatePokedexMonSprite(u16, s16, s16);
 static void CreateInterfaceSprites(u8);
-static void PrintDexProgression (u8);
+static void PrintDexProgression(u8);
+static void PrintBlankDexProgression(u8);
 static void SpriteCB_MoveMonForInfoScreen(struct Sprite *sprite);
 static void SpriteCB_Scrollbar(struct Sprite *sprite);
 static void SpriteCB_ScrollArrow(struct Sprite *sprite);
@@ -2347,6 +2349,7 @@ static void Task_HandlePokedexInput(u8 taskId)
         {
             TryDestroyStatBars();
             TryDestroyStatBarsBg();
+            PrintBlankDexProgression(sPokedexView->currentPage);
             sPokedexView->menuY = 0;
             sPokedexView->menuIsOpen = TRUE;
             sPokedexView->menuCursorPos = 0;
@@ -2408,7 +2411,6 @@ static void Task_HandlePokedexStartMenuInput(u8 taskId)
     //If menu is not open, slide it up, on screen
     if (sPokedexView->menuY != 80)
     {
-        FillWindowPixelBuffer(WIN_MAIN_DEX, PIXEL_FILL(0));
         sPokedexView->menuY += 8;
     }
     else
@@ -3496,6 +3498,12 @@ static void PrintDexProgression (u8 page)
 
         ConvertIntToDecimalStringN(gStringVar3, seenCount, STR_CONV_MODE_LEADING_ZEROS, 4);
         PrintMainScreenText(WIN_MAIN_DEX, gStringVar3, xseencaught, yseen);
+}
+
+static void PrintBlankDexProgression(u8)
+{
+    FillWindowPixelBuffer(WIN_MAIN_DEX, PIXEL_FILL(0));
+    PrintMainScreenText(WIN_MAIN_DEX, sText_Blank, 0, 0);
 }
 
 static void SpriteCB_EndMoveMonForInfoScreen(struct Sprite *sprite)
@@ -6150,9 +6158,9 @@ static void PrintStatsScreen_Abilities(u8 taskId)
     {
         ability0 = sPokedexView->sPokemonStats.ability0;
 
-        PrintStatsScreenTextSmallWhite(WIN_STATS_ABILITIES, gAbilitiesInfo[ability0].name, abilities_x, abilities_y);
+        PrintStatsScreenTextSmallWhite(WIN_STATS_ABILITIES, gAbilitiesInfo[ability0].name, abilities_x, abilities_y + 1);
 
-        PrintStatsScreenTextSmall(WIN_STATS_ABILITIES, gAbilitiesInfo[ability0].description, abilities_x, abilities_y + 14);
+        PrintStatsScreenTextSmall(WIN_STATS_ABILITIES, gAbilitiesInfo[ability0].description, abilities_x, abilities_y + 15);
 
         ability1 = sPokedexView->sPokemonStats.ability1;
         if (ability1 != ABILITY_NONE && ability1 != ability0)
@@ -6166,9 +6174,9 @@ static void PrintStatsScreen_Abilities(u8 taskId)
     else //Hidden abilities
     {
         abilityHidden = sPokedexView->sPokemonStats.abilityHidden;
-        PrintStatsScreenTextSmallWhite(WIN_STATS_ABILITIES, gAbilitiesInfo[abilityHidden].name, abilities_x, abilities_y);
+        PrintStatsScreenTextSmallWhite(WIN_STATS_ABILITIES, gAbilitiesInfo[abilityHidden].name, abilities_x, abilities_y + 1);
 
-        PrintStatsScreenTextSmall(WIN_STATS_ABILITIES, gAbilitiesInfo[abilityHidden].description, abilities_x, abilities_y + 14);
+        PrintStatsScreenTextSmall(WIN_STATS_ABILITIES, gAbilitiesInfo[abilityHidden].description, abilities_x, abilities_y + 15);
     }
 }
 
@@ -9108,8 +9116,8 @@ static void CreateSearchParameterScrollArrows(u8 taskId)
 
 static void EraseAndPrintSearchTextBox(const u8 *str)
 {
-    ClearSearchMenuRect(8, 120 - 8, 224, 32);
-    PrintSearchText(str, 8, 121 - 8);
+    ClearSearchMenuRect(8, 120 - 6, 224, 32);
+    PrintSearchText(str, 8, 121 - 6);
 }
 
 static void EraseSelectorArrow(u32 y)

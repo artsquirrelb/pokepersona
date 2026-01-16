@@ -178,6 +178,8 @@ bool32 IsSendingKeysOverCable(void);
 void ClearLinkPlayerObjectEvents(void);
 bool16 SetTimeOfDay(u16 hours);
 
+u8 OverworldSpeedup_AdditionalIterations(u16, bool32);
+
 // Item Description Headers
 enum ItemObtainFlags
 {

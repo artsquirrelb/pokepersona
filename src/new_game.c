@@ -123,7 +123,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
     gSaveBlock2Ptr->optionsBikeMusicOff = FALSE;
     gSaveBlock2Ptr->optionsSurfMusicOff = FALSE;
-    gSaveBlock2Ptr->regionMapZoom = FALSE;
+    gSaveBlock2Ptr->optionsOverworldSpeed = OPTIONS_OVERWORLD_SPEED_1X;
     gSaveBlock2Ptr->optionsStartMenuPalette = 0;
     FlagSet(FLAG_EXP_SHARE);
 }

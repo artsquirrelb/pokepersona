@@ -44,9 +44,9 @@
 #define NUM_TEMP_FLAGS   (TEMP_FLAGS_END - TEMP_FLAGS_START + 1)
 
 #define FLAG_SPAWN_INVISIBLE            0x20 // Spawn invisible player
-#define FLAG_SEARCHING                  0x21 // DexNav configs
+#define FLAG_DN_SEARCHING               0x21 // DexNav configs
 #define FLAG_DEXNAV_GET                 0x22 // Shows dexnav in normal menu
-#define FLAG_DETECTOR_MODE              0x23 // Allow player to find hidden mons Flag
+#define FLAG_DN_DETECTOR_MODE           0x23 // Allow player to find hidden mons Flag
 #define FLAG_EXP_SHARE                  0x24 // Item configs
 #define FLAG_FOLLOWERS_DISABLED         0x25 // Enables / Disables followers by using a flag. Helpful to disable followers for a period of time.
 #define FLAG_HIDE_HELP_BUTTON           0x26 // Was Unused Flag
@@ -69,7 +69,7 @@
 #define FLAG_EGG_MOVES                  0x37 // Was Unused Flag
 #define FLAG_TUTOR_MOVES                0x38 // Was Unused Flag
 #define FLAG_KITOHA_NATIONAL_STATE      0x39 // 0 == kitoha, 1 == national
-#define FLAG_UNUSED_0x03A    0x3A // Unused Flag
+#define FLAG_PREVENT_OVERWORLD_SPEEDUP  0x3A // Unused Flag
 #define FLAG_UNUSED_0x03B    0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag

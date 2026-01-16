@@ -612,8 +612,8 @@ struct SaveBlock2
              u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
              u16 optionsBikeMusicOff:1; // whether cycling music is disabled
              u16 optionsSurfMusicOff:1; // whether surfing music is disabled
-             u16 regionMapZoom:1; // whether the map is zoomed in
-             u16 optionsStartMenuPalette:2; // whether the start menu is in the default palette
+             u8 optionsOverworldSpeed:1; // whether the map is zoomed in
+             u16 optionsStartMenuPalette:2; // Load the start menu palette based on the persistent setting
              u16 playerBike:1;
              u16 currOutfitId:4;
              u16 outfits[NUM_OUTFIT_OWNED_BYTES];

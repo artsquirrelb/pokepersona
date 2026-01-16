@@ -40,7 +40,7 @@ enum
     //MENUITEM_GENERAL_FRAMETYPE,
     MENUITEM_GENERAL_FOLLOWERS,
     MENUITEM_GENERAL_AUTORUN,
-    //MENUITEM_GENERAL_MATCHCALL,
+    MENUITEM_GENERAL_OVERWORLDSPEED,
     MENUITEM_GENERAL_CANCEL,
     MENUITEM_GENERAL_COUNT,
 };
@@ -198,7 +198,7 @@ static void ButtonMode_DrawChoices(int selection, int y);
 //static void FrameType_DrawChoices(int selection, int y);
 static void Followers_DrawChoices(int selection, int y);
 static void AutoRun_DrawChoices(int selection, int y);
-//static void MatchCall_DrawChoices(int selection, int y);
+static void OverworldSpeed_DrawChoices(int selection, int y);
 static void BattleScene_DrawChoices(int selection, int y);
 static void BattleStyle_DrawChoices(int selection, int y);
 static void BattleSpeed_DrawChoices(int selection, int y);
@@ -259,7 +259,7 @@ static const MenuItemFunctions sItemFunctionsGeneral[MENUITEM_GENERAL_COUNT] =
     //[MENUITEM_GENERAL_FRAMETYPE]    = {FrameType_DrawChoices,     FrameType_ProcessInput},
     [MENUITEM_GENERAL_FOLLOWERS]    = {Followers_DrawChoices,     TwoOptions_ProcessInput},
     [MENUITEM_GENERAL_AUTORUN]      = {AutoRun_DrawChoices,       TwoOptions_ProcessInput},
-    //[MENUITEM_GENERAL_MATCHCALL]    = {MatchCall_DrawChoices,     TwoOptions_ProcessInput},
+    [MENUITEM_GENERAL_OVERWORLDSPEED]    = {OverworldSpeed_DrawChoices,     TwoOptions_ProcessInput},
     [MENUITEM_GENERAL_CANCEL]       = {NULL, NULL},
 };
 
@@ -291,7 +291,7 @@ static const u8 *const sOptionMenuItemsNamesGeneral[MENUITEM_GENERAL_COUNT] =
     //[MENUITEM_GENERAL_FRAMETYPE]    = gText_Frame,
     [MENUITEM_GENERAL_FOLLOWERS]    = gText_Followers,
     [MENUITEM_GENERAL_AUTORUN]      = gText_AutoRun,
-    //[MENUITEM_GENERAL_MATCHCALL]    = gText_MatchCalls,
+    [MENUITEM_GENERAL_OVERWORLDSPEED]    = gText_OverworldSpeed,
     [MENUITEM_GENERAL_CANCEL]       = gText_OptionMenuSave,
 };
 
@@ -344,7 +344,7 @@ static bool8 CheckConditions(int selection)
         case MENUITEM_GENERAL_BUTTONMODE:
         //case MENUITEM_GENERAL_FRAMETYPE:
         case MENUITEM_GENERAL_FOLLOWERS:
-        //case MENUITEM_GENERAL_MATCHCALL:
+        case MENUITEM_GENERAL_OVERWORLDSPEED:
         case MENUITEM_GENERAL_CANCEL:
         case MENUITEM_GENERAL_COUNT:
             return TRUE;
@@ -417,6 +417,9 @@ static const u8 sText_Desc_BattleSpeed_1x[]     = _("Battle animations will play
 static const u8 sText_Desc_BattleSpeed_2x[]     = _("Battle animations will play in 2x\n speed.");
 static const u8 sText_Desc_BattleSpeed_3x[]     = _("Battle animations will play in 3x\n speed.");
 static const u8 sText_Desc_BattleSpeed_4x[]     = _("Battle animations will play in 4x\n speed.");
+static const u8 sText_Desc_OverworldSpeed_1x[]  = _("Overworld animations will run at\ndefault speed.");
+static const u8 sText_Desc_OverworldSpeed_2x[]  = _("Overworld animations will run in 2x\nspeed.");
+//static const u8 sText_Desc_OverworldSpeed_4x[]  = _("Overworld animations will run in 4x\nspeed.");
 
 static const u8 sText_Desc_SoundMono[]          = _("Sound is the same in all speakers.\nRecommended for original hardware.");
 static const u8 sText_Desc_SoundStereo[]        = _("Play the left and right audio channel\nseperatly. Great with headphones.");
@@ -433,7 +436,7 @@ static const u8 *const sOptionMenuItemDescriptionsGeneral[MENUITEM_GENERAL_COUNT
     //[MENUITEM_GENERAL_FRAMETYPE]   = {sText_Desc_FrameType,            sText_Empty,                     sText_Empty},
     [MENUITEM_GENERAL_FOLLOWERS]   = {sText_Desc_FollowersOn,          sText_Desc_FollowersOff,         sText_Empty,                sText_Empty},
     [MENUITEM_GENERAL_AUTORUN]     = {sText_Desc_AutoRunOn,            sText_Desc_AutoRunOff,           sText_Empty,                sText_Empty},
-    //[MENUITEM_GENERAL_MATCHCALL]   = {sText_Desc_MatchCallOn,          sText_Desc_MatchCallOff,         sText_Empty},
+    [MENUITEM_GENERAL_OVERWORLDSPEED]   = {sText_Desc_OverworldSpeed_1x,          sText_Desc_OverworldSpeed_2x, sText_Empty, sText_Empty},
     [MENUITEM_GENERAL_CANCEL]      = {sText_Desc_Save,                 sText_Empty,                     sText_Empty,                sText_Empty},
 };
 
@@ -469,7 +472,7 @@ static const u8 *const sOptionMenuItemDescriptionsDisabledGeneral[MENUITEM_GENER
     //[MENUITEM_GENERAL_FRAMETYPE]   = sText_Empty,
     [MENUITEM_GENERAL_FOLLOWERS]   = sText_Empty,
     [MENUITEM_GENERAL_AUTORUN]     = sText_Desc_Disabled_AutoRun,
-    //[MENUITEM_GENERAL_MATCHCALL]   = sText_Empty,
+    [MENUITEM_GENERAL_OVERWORLDSPEED]   = sText_Empty,
     [MENUITEM_GENERAL_CANCEL]      = sText_Empty,
 };
 
@@ -824,7 +827,7 @@ void CB2_InitOptionPlusMenu(void)
         //sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE]   = gSaveBlock2Ptr->optionsWindowFrameType;
         sOptions->sel_general[MENUITEM_GENERAL_FOLLOWERS]   = gSaveBlock2Ptr->optionsFollowersOff;
         sOptions->sel_general[MENUITEM_GENERAL_AUTORUN]     = gSaveBlock2Ptr->optionsAutoRunOff;
-       // sOptions->sel_general[MENUITEM_GENERAL_MATCHCALL]   = gSaveBlock2Ptr->optionsDisableMatchCall;
+        sOptions->sel_general[MENUITEM_GENERAL_OVERWORLDSPEED]   = gSaveBlock2Ptr->optionsOverworldSpeed;
 
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE]   = gSaveBlock2Ptr->optionsBattleSceneOff;
         sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE]   = gSaveBlock2Ptr->optionsBattleStyle;
@@ -1061,7 +1064,7 @@ static void Task_OptionMenuSave(u8 taskId)
     //gSaveBlock2Ptr->optionsWindowFrameType  = sOptions->sel_general[MENUITEM_GENERAL_FRAMETYPE];
     gSaveBlock2Ptr->optionsFollowersOff     = sOptions->sel_general[MENUITEM_GENERAL_FOLLOWERS];
     gSaveBlock2Ptr->optionsAutoRunOff       = sOptions->sel_general[MENUITEM_GENERAL_AUTORUN];
-    //gSaveBlock2Ptr->optionsDisableMatchCall = sOptions->sel_general[MENUITEM_GENERAL_MATCHCALL];
+    gSaveBlock2Ptr->optionsOverworldSpeed = sOptions->sel_general[MENUITEM_GENERAL_OVERWORLDSPEED];
 
     gSaveBlock2Ptr->optionsBattleSceneOff   = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESCENE];
     gSaveBlock2Ptr->optionsBattleStyle      = sOptions->sel_battle[MENUITEM_BATTLE_BATTLESTYLE];
@@ -1410,15 +1413,6 @@ static void AutoRun_DrawChoices(int selection, int y)
     DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 202), y, styles[1], active);
 }
 
-/*static void MatchCall_DrawChoices(int selection, int y)
-{
-    bool8 active = CheckConditions(MENUITEM_GENERAL_MATCHCALL);
-    u8 styles[2] = {0};
-    styles[selection] = 1;
-
-    DrawOptionMenuChoice(gText_BattleSceneOn, 104, y, styles[0], active);
-    DrawOptionMenuChoice(gText_BattleSceneOff, GetStringRightAlignXOffset(1, gText_BattleSceneOff, 198), y, styles[1], active);
-}*/
 
 static void BattleScene_DrawChoices(int selection, int y)
 {
@@ -1438,6 +1432,16 @@ static void BattleStyle_DrawChoices(int selection, int y)
 
     DrawOptionMenuChoice(gText_BattleStyleShift, 108, y, styles[0], active);
     DrawOptionMenuChoice(gText_BattleStyleSet, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleStyleSet, 202), y, styles[1], active);
+}
+
+static void OverworldSpeed_DrawChoices(int selection, int y)
+{
+    bool8 active = CheckConditions(MENUITEM_GENERAL_OVERWORLDSPEED);
+    u8 styles[2] = {0};
+    styles[selection] = 1;
+
+    DrawOptionMenuChoice(gText_BattleSpeed1x, 108, y, styles[0], active);
+    DrawOptionMenuChoice(gText_BattleSpeed2x, GetStringRightAlignXOffset(FONT_NORMAL, gText_BattleSpeed2x, 202), y, styles[1], active);
 }
 
 static void BattleSpeed_DrawChoices(int selection, int y)

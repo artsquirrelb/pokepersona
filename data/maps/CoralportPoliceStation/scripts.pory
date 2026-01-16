@@ -18,6 +18,7 @@ script CoralportPoliceStation_MapScripts_OnFrame1 {
 }
 
 script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
+    setflag(FLAG_PREVENT_OVERWORLD_SPEEDUP)
     clearflag(FLAG_TEMP_2)
     addobject(5)
     applymovement(LOCALID_PLAYER, moves(player_run_up*3, walk_up*2))
@@ -95,6 +96,7 @@ script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
     applymovement(LOCALID_PLAYER, moves(walk_left, face_up, set_visible))
     applymovement(M_CORALP, moves(walk_up, set_invisible))
     applymovement(S_CORALP, moves(walk_left*2, set_invisible))
+    delay(8)
     applymovement(A_CORALP, moves(set_invisible))
     applymovement(OBJ_EVENT_ID_CAMERA, walkup)
     waitmovement(OBJ_EVENT_ID_CAMERA)
@@ -111,6 +113,7 @@ script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
     setflag(FLAG_TEMP_2)
     setvar(VAR_CHAPTER_1_STATE, 2)
     questmenu(QUEST_MENU_UNLOCK_QUEST, QUEST_FIND_FISHERMANS_DAUGHTER)
+    clearflag(FLAG_PREVENT_OVERWORLD_SPEEDUP)
     release
     end
 }

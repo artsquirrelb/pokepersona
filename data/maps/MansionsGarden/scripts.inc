@@ -155,6 +155,8 @@ EventScript_NewGameSetUp::
 # 77 "data/maps/MansionsGarden/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 50
 EventScript_NewGameSetUp_1:
+# 79 "data/maps/MansionsGarden/scripts.pory"
+	callnative ScrCmd_InitTimeBasedEvent
 # 80 "data/maps/MansionsGarden/scripts.pory"
 	pausefakertc
 	return

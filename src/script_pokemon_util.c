@@ -9,6 +9,7 @@
 #include "event_data.h"
 #include "international_string_util.h"
 #include "item.h"
+#include "level_scaling.h"
 #include "link.h"
 #include "link_rfu.h"
 #include "load_save.h"
@@ -715,7 +716,17 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
         gender = GetSynchronizedGender(origin, species);
     if (nature == NATURE_MAY_SYNCHRONIZE)
         nature = GetSynchronizedNature(origin, species);
-        
+    
+    if (level == 255)
+    {
+        #if B_LEVEL_SCALING_ENABLED && B_WILD_SCALING_ENABLED
+            level = CalculateScriptedScaledLevel(species, level);
+            // Apply species scaling (evolution management)
+            species = CalculateWildScaledSpecies(species, level);
+        #else
+            level = 10;
+        #endif
+    }
     gSpecialVar_Result = ScriptGiveMonParameterized(side, slot, species, level, item, ball, nature, abilityNum, gender, evs, ivs, moves, shinyMode, gmaxFactor, teraType, dmaxLevel, isStoryStarter);
 }
 

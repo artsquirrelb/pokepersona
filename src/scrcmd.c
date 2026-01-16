@@ -3675,3 +3675,8 @@ bool8 ScrCmd_setstartingstatus(struct ScriptContext *ctx)
 
     return FALSE;
 }
+
+void ScrCmd_InitTimeBasedEvent(void)
+{
+    InitTimeBasedEvents();
+}

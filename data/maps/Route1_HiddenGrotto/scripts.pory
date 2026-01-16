@@ -18,10 +18,17 @@ script Route1_HiddenGrotto_TaurosPaldeaAqua {
         applymovement(1, emoteangry)
         waitmovement(0)
         faceplayer
-        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 43 && var(VAR_AKIHIKOS_INTRO_STATE) < 50){startoverworldencounter(12)}
-        else{startoverworldencounter(7)}
+        playmoncry(SPECIES_TAUROS, CRY_MODE_ENCOUNTER)
+        waitmoncry
+        if ((var(VAR_AKIHIKOS_INTRO_STATE) >= 43 && var(VAR_AKIHIKOS_INTRO_STATE < 50 )) || var(VAR_MITSURUS_INTRO_STATE) >= 100){
+            createmon(1, 0, SPECIES_TAUROS_PALDEA_AQUA, MON_LVL_SCALED, abilityNum = 0, atkIv = 31, move1 = MOVE_AQUA_JET, move2 = MOVE_TRAILBLAZE, move3 = MOVE_WORK_UP, move4 = MOVE_TAIL_WHIP)
+        }
+        else{
+            createmon(1, 0, SPECIES_TAUROS_PALDEA_AQUA, MON_LVL_SCALED, abilityNum = 0, atkIv = 31, move1 = MOVE_AQUA_JET, move2 = MOVE_TRAILBLAZE, move3 = MOVE_WORK_UP, move4 = MOVE_TAIL_WHIP)
+        }
+        dowildbattle
         setflag(FLAG_DAILY_HIDDENGROTTO_ROUTE1)
-        removeobject(1)
+        removeobject(VAR_LAST_TALKED)
     }
     release
     end

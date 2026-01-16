@@ -437,6 +437,30 @@ u8 CalculateWildScaledLevel(u16 species, u8 originalLevel)
     #endif
 }
 
+u8 CalculateScriptedScaledLevel(u16 species, u8 originalLevel)
+{
+    #if B_WILD_SCALING_ENABLED
+    static const struct LevelScalingConfig sWildConfig = {
+        .mode = LEVEL_SCALING_PARTY_HIGHEST,
+        .levelAugmentAdd = 0,
+        .levelVariation = 1,
+        .minLevel = B_WILD_SCALING_MIN_LEVEL,
+        .maxLevel = B_WILD_SCALING_MAX_LEVEL,
+        .manageEvolutions = B_WILD_SCALING_MANAGE_EVOLUTIONS,
+        .excludeFainted = B_WILD_SCALING_EXCLUDE_FAINTED,
+    };
+
+    u8 newLevel = CalculateScaledLevel(&sWildConfig, originalLevel);
+
+    // Note: Species validation should happen in wild encounter code
+    // as we can't modify the species from this function
+
+    return newLevel;
+    #else
+    return originalLevel;
+    #endif
+}
+
 // Calculate scaled species for wild encounters (called from wild_encounter.c)
 u16 CalculateWildScaledSpecies(u16 species, u8 scaledLevel)
 {

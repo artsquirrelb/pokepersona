@@ -102,7 +102,7 @@
 #define FLAG_HELP_MAKE_CHOICE                    0x56  // Always set after new game, object it hides is added directly
 #define FLAG_HELP_EXIT_DUNGEON                   0x57
 #define FLAG_HELP_DUNGEON_ENCOUNTER              0x58
-#define FLAG_DECLINED_BIKE                   0x59
+#define FLAG_HELP_SPEEDUP                        0x59
 #define FLAG_RECEIVED_BIKE                   0x5A
 #define FLAG_WATTSON_REMATCH_AVAILABLE       0x5B
 #define FLAG_COLLECTED_ALL_SILVER_SYMBOLS    0x5C

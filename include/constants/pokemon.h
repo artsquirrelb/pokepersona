@@ -172,6 +172,7 @@ enum OtIdMethod
 #define PLAYER_HAS_ONE_MON             1
 #define PLAYER_HAS_ONE_USABLE_MON      2
 
+#define MON_LVL_SCALED          255
 #define MON_ALREADY_KNOWS_MOVE  0xFFFE
 #define MON_HAS_MAX_MOVES       0xFFFF
 

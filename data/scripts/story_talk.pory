@@ -467,10 +467,13 @@ script EventScript_OverworldTrainerTips2{
 }
 
 script EventScript_OverworldTrainerTips3 {
+    if (flag(FLAG_HELP_SPEEDUP)){
+        dynmultipush(HelpSpeedUp, 0)
+    }
     dynmultipush(QuitBack, 5)
     dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
     switch(var(VAR_RESULT)){
-        
+        case 0: call(EventScript_ShowHelpSpeedUp)
         case 5: 
             release
             end
@@ -552,6 +555,13 @@ script EventScript_ShowHelpDungeonEncounter {
     hidehelpwindow
 }
 
+script EventScript_ShowHelpSpeedUp {
+    closemessage
+    showhelpwindow(HELP_SPEED_UP)
+    waitbuttonpress
+    hidehelpwindow
+}
+
 text HelpPokedex{"Pokédex"}
 text HelpShinyChance{"Shiny Chance"}
 text HelpStarter{"Story Starter"}
@@ -562,6 +572,7 @@ text HelpDeadline{"Deadline"}
 text HelpParttime{"Part-time Jobs"}
 text HelpDungeonEncounter{"Dungeon Encounter"}
 text HelpExitDungeon{"Exiting Dungeons"}
+text HelpSpeedUp{"Game Speedup"}
 
 ///////////////////////
 ////WORK PART-TIME/////

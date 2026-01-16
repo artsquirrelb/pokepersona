@@ -473,6 +473,18 @@ Mansion_MitsurusRoom2F_Eventscript_Notebooks::
 	end
 
 
+Eventscript_OptionsTips::
+# 271 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	call EventScript_ShowHelpSpeedUp
+# 272 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	setflag FLAG_HELP_SPEEDUP
+# 273 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	removeobject VAR_LAST_TALKED
+# 274 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
+	release
+	end
+
+
 # 29 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Movement_0:
 # 29 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"

@@ -748,6 +748,7 @@ script Debug_CheatStart {
 	setflag(FLAG_SYS_QUEST_MENU_GET)
 	setflag(FLAG_COMPANION_MENU_GET)
 	setflag(FLAG_HELP_WINDOW_GET)
+	setflag(FLAG_EXP_SHARE)
 	special(EnableNationalPokedex)
 	fwdtime(8, 0)
 	setvar(VAR_AKIHIKOS_INTRO_STATE, 100)
@@ -768,6 +769,7 @@ script Debug_CheatStart {
 	subquestmenu(QUEST_MENU_COMPLETE_QUEST, STORY_QUESTS, AKIHIKOS_PROLOGUE)
 	subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, CHAPTER_1)
 	additem(ITEM_EXP_CANDY_XS, 40)
+	additem(ITEM_EXP_SHARE)
 	checkplayergender
 	if(var(VAR_RESULT) == MALE){
 		addmoney(15000)

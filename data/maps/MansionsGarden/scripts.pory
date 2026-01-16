@@ -76,7 +76,7 @@ script EventScript_NewGameSetUp {
         
         setvar(VAR_AKIHIKOS_INTRO_STATE, 50) // will be reset to 0 if player choose to play akihiko's prologue after doing mitsuru's
     }
-    
+    callnative(ScrCmd_InitTimeBasedEvent)
 	pausefakertc // pauses the time so that we can do our scripting part
 }
 

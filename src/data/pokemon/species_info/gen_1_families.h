@@ -17499,6 +17499,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sTaurosPaldeaAquaTeachableLearnset,
         .eggMoveLearnset = sTaurosPaldeaAquaEggMoveLearnset,
         .formSpeciesIdTable = sTaurosFormSpeciesIdTable,
+        .perfectIVCount = 3,
     },
 #endif //P_PALDEAN_FORMS
 #endif //P_FAMILY_TAUROS

@@ -377,7 +377,7 @@ static const struct WindowTemplate sShopBuyMenuWindowTemplates[] =
         .tilemapTop = 5,
         .width = 11,
         .height = 7,
-        .paletteNum = 14,
+        .paletteNum = 15,
         .baseBlock = 0x0222,
     },
     DUMMY_WIN_TEMPLATE
@@ -738,7 +738,7 @@ static void MoveTutorLoadMonIcons(u32 item)
 {
     
     DestroyPartyMonIcons_Shop();
-    FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(11));
+    FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(1));
     AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, gTextSelect, 64, 0, TEXT_SKIP_DRAW, NULL); // adds "select" text
     DrawPartyMonIcons_Shop();
     TintPartyMonIcons_Shop(item);
@@ -753,7 +753,7 @@ static void MoveTutorLoadMoveInfo(u32 item)
     const u8 *str;
     extern const struct TypeInfo gTypesInfo[NUMBER_OF_MON_TYPES];
 
-    FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(11));
+    FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(1));
 
     str = gText_MoveRelearnerPower;
     AddTextPrinterParameterizedCustom(WIN_BATTLE_MOVE_DESC, FONT_NARROW, str, 0, 0, TEXT_SKIP_DRAW, NULL, 2, 0, 0); // adds "Power" text
@@ -1369,7 +1369,7 @@ static void Task_BuyMenu(u8 taskId)
             {
                 sShowMonIcons = TRUE;
                 PlaySE(SE_SELECT);
-                FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(11));
+                FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(1));
                 AddTextPrinterParameterized(WIN_BATTLE_MOVE_DESC, FONT_NARROW, gTextSelect, 64, 0, TEXT_SKIP_DRAW, NULL); // adds "select" text
                 DrawPartyMonIcons_Shop();
                 TintPartyMonIcons_Shop(list->template.items[list->scrollOffset + list->selectedRow].id);
@@ -1379,7 +1379,7 @@ static void Task_BuyMenu(u8 taskId)
             {
                 sShowMonIcons = FALSE;
                 PlaySE(SE_SELECT);
-                FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(11));
+                FillWindowPixelBuffer(WIN_BATTLE_MOVE_DESC, PIXEL_FILL(1));
                 DestroyPartyMonIcons_Shop();
                 MoveTutorLoadMoveInfo(list->template.items[list->scrollOffset + list->selectedRow].id);
             }

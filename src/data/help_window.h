@@ -30,6 +30,18 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "You also {COLOR RED}cannot{COLOR 2} release nor trade them!"
                             ),
     },
+    [HELP_SPEED_UP] =
+    {
+        .header = COMPOUND_STRING(" Game Speed-up"),
+        .desc = COMPOUND_STRING("You can speed up the game by go to Options\n"
+                                "Menu and change the speed of the Overworld\n"
+                                "and/or Battle animations.\n"
+                                "Holding the {R_BUTTON} in the Overworld\n"
+                                "can temporarily return it to the default\n"
+                                "speed. In some other cases, overworld\n"
+                                "speed-up will be disabled."
+                            ),
+    },
     [HELP_COMPANION_MENU] =
     {
         .header = COMPOUND_STRING(" Companion Menu"),

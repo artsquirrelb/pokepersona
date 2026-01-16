@@ -541,1131 +541,1137 @@ Coralport_Eventscript_ShipHasDeparted::
 
 
 Coralport_Eventscript_NotYetBoardingTime::
-# 310 "data/maps/Coralport/scripts.pory"
-	delay 20
 # 311 "data/maps/Coralport/scripts.pory"
-	clearflag FLAG_TEMP_2
+	hidefollower
 # 312 "data/maps/Coralport/scripts.pory"
-	addobject S_CORAL
+	hidefollowernpc
 # 313 "data/maps/Coralport/scripts.pory"
-	addobject A_CORAL
+	delay 20
 # 314 "data/maps/Coralport/scripts.pory"
-	addobject M_CORAL
+	clearflag FLAG_TEMP_2
 # 315 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_PLAYER, invisible
+	addobject S_CORAL
 # 316 "data/maps/Coralport/scripts.pory"
-	waitmovement
+	addobject A_CORAL
 # 317 "data/maps/Coralport/scripts.pory"
-	applymovement M_CORAL, facedown
+	addobject M_CORAL
 # 318 "data/maps/Coralport/scripts.pory"
-	applymovement S_CORAL, Coralport_Eventscript_NotYetBoardingTime_Movement_0
+	applymovement LOCALID_PLAYER, invisible
 # 319 "data/maps/Coralport/scripts.pory"
-	applymovement A_CORAL, Coralport_Eventscript_NotYetBoardingTime_Movement_1
+	waitmovement
 # 320 "data/maps/Coralport/scripts.pory"
-	waitmovement
+	applymovement M_CORAL, facedown
 # 321 "data/maps/Coralport/scripts.pory"
-	delay 30
+	applymovement S_CORAL, Coralport_Eventscript_NotYetBoardingTime_Movement_0
 # 322 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_NotYetBoardingTime_Text_0
-# 327 "data/maps/Coralport/scripts.pory"
-	closemessage
-# 328 "data/maps/Coralport/scripts.pory"
-	applymovement M_CORAL, walkdown
-# 329 "data/maps/Coralport/scripts.pory"
-	delay 4
-# 330 "data/maps/Coralport/scripts.pory"
-	applymovement S_CORAL, walkleft
-# 331 "data/maps/Coralport/scripts.pory"
-	applymovement A_CORAL, facedown
-# 332 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_PLAYER, Coralport_Eventscript_NotYetBoardingTime_Movement_2
-# 333 "data/maps/Coralport/scripts.pory"
+	applymovement A_CORAL, Coralport_Eventscript_NotYetBoardingTime_Movement_1
+# 323 "data/maps/Coralport/scripts.pory"
 	waitmovement
+# 324 "data/maps/Coralport/scripts.pory"
+	delay 30
+# 325 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_NotYetBoardingTime_Text_0
+# 330 "data/maps/Coralport/scripts.pory"
+	closemessage
+# 331 "data/maps/Coralport/scripts.pory"
+	applymovement M_CORAL, walkdown
+# 332 "data/maps/Coralport/scripts.pory"
+	delay 4
+# 333 "data/maps/Coralport/scripts.pory"
+	applymovement S_CORAL, walkleft
 # 334 "data/maps/Coralport/scripts.pory"
-	removeobject M_CORAL
+	applymovement A_CORAL, facedown
 # 335 "data/maps/Coralport/scripts.pory"
-	delay 1
+	applymovement LOCALID_PLAYER, Coralport_Eventscript_NotYetBoardingTime_Movement_2
 # 336 "data/maps/Coralport/scripts.pory"
-	removeobject A_CORAL
+	waitmovement
 # 337 "data/maps/Coralport/scripts.pory"
-	delay 1
+	removeobject M_CORAL
 # 338 "data/maps/Coralport/scripts.pory"
-	removeobject S_CORAL
-# 339 "data/maps/Coralport/scripts.pory"
 	delay 1
+# 339 "data/maps/Coralport/scripts.pory"
+	removeobject A_CORAL
 # 340 "data/maps/Coralport/scripts.pory"
+	delay 1
+# 341 "data/maps/Coralport/scripts.pory"
+	removeobject S_CORAL
+# 342 "data/maps/Coralport/scripts.pory"
+	delay 1
+# 343 "data/maps/Coralport/scripts.pory"
 	setvar VAR_CHAPTER_1_STATE, 1
+# 344 "data/maps/Coralport/scripts.pory"
+	updatefollowingmon
 	return
 
 
 Coralport_Eventscript_TuberM::
-# 344 "data/maps/Coralport/scripts.pory"
-	lock
-# 345 "data/maps/Coralport/scripts.pory"
-	faceplayer
-# 346 "data/maps/Coralport/scripts.pory"
-	setspeaker Coralport_Eventscript_TuberM_Text_0
-# 347 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_TuberM_Text_1
 # 348 "data/maps/Coralport/scripts.pory"
-	closemessage
+	lock
 # 349 "data/maps/Coralport/scripts.pory"
+	faceplayer
+# 350 "data/maps/Coralport/scripts.pory"
+	setspeaker Coralport_Eventscript_TuberM_Text_0
+# 351 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_TuberM_Text_1
+# 352 "data/maps/Coralport/scripts.pory"
+	closemessage
+# 353 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 
 Coralport_Eventscript_Sandygast::
-# 354 "data/maps/Coralport/scripts.pory"
-	lock
-# 355 "data/maps/Coralport/scripts.pory"
-	playmoncry SPECIES_SANDYGAST, CRY_MODE_NORMAL
-# 356 "data/maps/Coralport/scripts.pory"
-	setwildbattle SPECIES_SANDYGAST, 11
-# 357 "data/maps/Coralport/scripts.pory"
-	dowildbattle
 # 358 "data/maps/Coralport/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	lock
 # 359 "data/maps/Coralport/scripts.pory"
-	setmetatile 11, 29, 0x246, FALSE
+	playmoncry SPECIES_SANDYGAST, CRY_MODE_NORMAL
 # 360 "data/maps/Coralport/scripts.pory"
-	special DrawWholeMapView
+	setwildbattle SPECIES_SANDYGAST, 11
 # 361 "data/maps/Coralport/scripts.pory"
-	fadescreenswapbuffers FADE_FROM_BLACK
+	dowildbattle
 # 362 "data/maps/Coralport/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 363 "data/maps/Coralport/scripts.pory"
+	setmetatile 11, 29, 0x246, FALSE
+# 364 "data/maps/Coralport/scripts.pory"
+	special DrawWholeMapView
+# 365 "data/maps/Coralport/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 366 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 
 Coralport_Eventscript_Beauty::
-# 367 "data/maps/Coralport/scripts.pory"
+# 371 "data/maps/Coralport/scripts.pory"
 	lock
-# 368 "data/maps/Coralport/scripts.pory"
+# 372 "data/maps/Coralport/scripts.pory"
 	faceplayer
-# 369 "data/maps/Coralport/scripts.pory"
-	setspeaker Coralport_Eventscript_Beauty_Text_0
-# 370 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_Beauty_Text_1
 # 373 "data/maps/Coralport/scripts.pory"
 	setspeaker Coralport_Eventscript_Beauty_Text_0
 # 374 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_Beauty_Text_2
+	msgbox Coralport_Eventscript_Beauty_Text_1
 # 377 "data/maps/Coralport/scripts.pory"
-	closemessage
+	setspeaker Coralport_Eventscript_Beauty_Text_0
 # 378 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_Beauty_Text_2
+# 381 "data/maps/Coralport/scripts.pory"
+	closemessage
+# 382 "data/maps/Coralport/scripts.pory"
 	moveobjecttocoords LOCALID_PLAYER, 22, 29, DIR_NORTH, 2
-# 379 "data/maps/Coralport/scripts.pory"
+# 383 "data/maps/Coralport/scripts.pory"
 	waitmovement
-# 380 "data/maps/Coralport/scripts.pory"
+# 384 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 
 Coralport_Eventscript_Fisherman::
-# 385 "data/maps/Coralport/scripts.pory"
+# 389 "data/maps/Coralport/scripts.pory"
 	lock
-# 386 "data/maps/Coralport/scripts.pory"
+# 390 "data/maps/Coralport/scripts.pory"
 	faceplayer
-# 387 "data/maps/Coralport/scripts.pory"
-	setspeaker Coralport_Eventscript_Fisherman_Text_0
-# 388 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_Fisherman_Text_1
 # 391 "data/maps/Coralport/scripts.pory"
-	closemessage
+	setspeaker Coralport_Eventscript_Fisherman_Text_0
 # 392 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_Fisherman_Text_1
+# 395 "data/maps/Coralport/scripts.pory"
+	closemessage
+# 396 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 
 Coralport_Eventscript_Krabby::
-# 397 "data/maps/Coralport/scripts.pory"
-	lockall
-# 398 "data/maps/Coralport/scripts.pory"
-	startoverworldencounter 12
-# 399 "data/maps/Coralport/scripts.pory"
-	setflag FLAG_TEMP_1
-# 400 "data/maps/Coralport/scripts.pory"
-	removeobject VAR_LAST_TALKED
 # 401 "data/maps/Coralport/scripts.pory"
+	lockall
+# 402 "data/maps/Coralport/scripts.pory"
+	startoverworldencounter 12
+# 403 "data/maps/Coralport/scripts.pory"
+	setflag FLAG_TEMP_1
+# 404 "data/maps/Coralport/scripts.pory"
+	removeobject VAR_LAST_TALKED
+# 405 "data/maps/Coralport/scripts.pory"
 	releaseall
 	end
 
 
 Coralport_Eventscript_MustTalkToSailorOnGuard::
-# 406 "data/maps/Coralport/scripts.pory"
-	lock
-# 407 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_PLAYER, walkdown
-# 408 "data/maps/Coralport/scripts.pory"
-	waitmovement
-# 409 "data/maps/Coralport/scripts.pory"
-	checkplayergender
 # 410 "data/maps/Coralport/scripts.pory"
+	lock
+# 411 "data/maps/Coralport/scripts.pory"
+	applymovement LOCALID_PLAYER, walkdown
+# 412 "data/maps/Coralport/scripts.pory"
+	waitmovement
+# 413 "data/maps/Coralport/scripts.pory"
+	checkplayergender
+# 414 "data/maps/Coralport/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Coralport_Eventscript_MustTalkToSailorOnGuard_2
-# 415 "data/maps/Coralport/scripts.pory"
+# 419 "data/maps/Coralport/scripts.pory"
 	msgbox Coralport_Eventscript_MustTalkToSailorOnGuard_Text_1
 Coralport_Eventscript_MustTalkToSailorOnGuard_1:
-# 418 "data/maps/Coralport/scripts.pory"
+# 422 "data/maps/Coralport/scripts.pory"
 	closemessage
-# 419 "data/maps/Coralport/scripts.pory"
+# 423 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 Coralport_Eventscript_MustTalkToSailorOnGuard_2:
-# 411 "data/maps/Coralport/scripts.pory"
+# 415 "data/maps/Coralport/scripts.pory"
 	msgbox Coralport_Eventscript_MustTalkToSailorOnGuard_Text_0
 	goto Coralport_Eventscript_MustTalkToSailorOnGuard_1
 
 
 setameamequestasreward::
-# 424 "data/maps/Coralport/scripts.pory"
-	lock
-# 425 "data/maps/Coralport/scripts.pory"
-	msgbox setameamequestasreward_Text_0
-# 426 "data/maps/Coralport/scripts.pory"
-	closemessage
-# 427 "data/maps/Coralport/scripts.pory"
-	setvar VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 10
 # 428 "data/maps/Coralport/scripts.pory"
-	questmenu QUEST_MENU_SET_REWARD, QUEST_AMEAME_PARTTIME
+	lock
 # 429 "data/maps/Coralport/scripts.pory"
+	msgbox setameamequestasreward_Text_0
+# 430 "data/maps/Coralport/scripts.pory"
+	closemessage
+# 431 "data/maps/Coralport/scripts.pory"
+	setvar VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 10
+# 432 "data/maps/Coralport/scripts.pory"
+	questmenu QUEST_MENU_SET_REWARD, QUEST_AMEAME_PARTTIME
+# 433 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp::
-# 434 "data/maps/Coralport/scripts.pory"
-	delay 20
-# 435 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_PLAYER, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_0
-# 436 "data/maps/Coralport/scripts.pory"
-	waitmovement
-# 437 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_0
 # 438 "data/maps/Coralport/scripts.pory"
-	closemessage
+	delay 20
 # 439 "data/maps/Coralport/scripts.pory"
-	applymovement A_CORAL, walkup
+	applymovement LOCALID_PLAYER, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_0
 # 440 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_PLAYER, walkup
+	waitmovement
 # 441 "data/maps/Coralport/scripts.pory"
-	waitmovement
+	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_0
 # 442 "data/maps/Coralport/scripts.pory"
-	delay 20
+	closemessage
 # 443 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_1
+	applymovement A_CORAL, walkup
+# 444 "data/maps/Coralport/scripts.pory"
+	applymovement LOCALID_PLAYER, walkup
 # 445 "data/maps/Coralport/scripts.pory"
-	applymovement S_CORAL, faceright
-# 446 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_2
-# 453 "data/maps/Coralport/scripts.pory"
-	closemessage
-# 454 "data/maps/Coralport/scripts.pory"
-	playse SE_PIN
-# 455 "data/maps/Coralport/scripts.pory"
-	applymovement M_CORAL, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_1
-# 456 "data/maps/Coralport/scripts.pory"
 	waitmovement
-# 457 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_3
-# 459 "data/maps/Coralport/scripts.pory"
-	applymovement S_CORAL, faceleft
-# 460 "data/maps/Coralport/scripts.pory"
-	delay 4
-# 461 "data/maps/Coralport/scripts.pory"
-	applymovement M_CORAL, facedown
-# 462 "data/maps/Coralport/scripts.pory"
-	delay 30
-# 463 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_4
-# 467 "data/maps/Coralport/scripts.pory"
-	closemessage
-# 468 "data/maps/Coralport/scripts.pory"
-	delay 30
-# 469 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_5
-# 470 "data/maps/Coralport/scripts.pory"
-	applymovement S_CORAL, faceright
-# 471 "data/maps/Coralport/scripts.pory"
+# 446 "data/maps/Coralport/scripts.pory"
 	delay 20
-# 472 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_6
-# 475 "data/maps/Coralport/scripts.pory"
+# 447 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_1
+# 449 "data/maps/Coralport/scripts.pory"
+	applymovement S_CORAL, faceright
+# 450 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_2
+# 457 "data/maps/Coralport/scripts.pory"
 	closemessage
-# 476 "data/maps/Coralport/scripts.pory"
-	delay 30
-# 477 "data/maps/Coralport/scripts.pory"
-	playse SE_RG_SS_ANNE_HORN
-# 478 "data/maps/Coralport/scripts.pory"
-	delay 30
-# 479 "data/maps/Coralport/scripts.pory"
+# 458 "data/maps/Coralport/scripts.pory"
 	playse SE_PIN
+# 459 "data/maps/Coralport/scripts.pory"
+	applymovement M_CORAL, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_1
+# 460 "data/maps/Coralport/scripts.pory"
+	waitmovement
+# 461 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_3
+# 463 "data/maps/Coralport/scripts.pory"
+	applymovement S_CORAL, faceleft
+# 464 "data/maps/Coralport/scripts.pory"
+	delay 4
+# 465 "data/maps/Coralport/scripts.pory"
+	applymovement M_CORAL, facedown
+# 466 "data/maps/Coralport/scripts.pory"
+	delay 30
+# 467 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_4
+# 471 "data/maps/Coralport/scripts.pory"
+	closemessage
+# 472 "data/maps/Coralport/scripts.pory"
+	delay 30
+# 473 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_5
+# 474 "data/maps/Coralport/scripts.pory"
+	applymovement S_CORAL, faceright
+# 475 "data/maps/Coralport/scripts.pory"
+	delay 20
+# 476 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_6
+# 479 "data/maps/Coralport/scripts.pory"
+	closemessage
 # 480 "data/maps/Coralport/scripts.pory"
-	applymovement M_CORAL, emoteexclamation
+	delay 30
 # 481 "data/maps/Coralport/scripts.pory"
-	delay 4
+	playse SE_RG_SS_ANNE_HORN
 # 482 "data/maps/Coralport/scripts.pory"
-	applymovement A_CORAL, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_2
+	delay 30
 # 483 "data/maps/Coralport/scripts.pory"
-	delay 4
+	playse SE_PIN
 # 484 "data/maps/Coralport/scripts.pory"
-	applymovement S_CORAL, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_2
+	applymovement M_CORAL, emoteexclamation
 # 485 "data/maps/Coralport/scripts.pory"
-	delay 60
+	delay 4
 # 486 "data/maps/Coralport/scripts.pory"
-	applymovement A_CORAL, faceup
+	applymovement A_CORAL, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_2
 # 487 "data/maps/Coralport/scripts.pory"
 	delay 4
 # 488 "data/maps/Coralport/scripts.pory"
-	applymovement S_CORAL, faceright
+	applymovement S_CORAL, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_2
 # 489 "data/maps/Coralport/scripts.pory"
-	waitmovement
+	delay 60
 # 490 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_7
+	applymovement A_CORAL, faceup
+# 491 "data/maps/Coralport/scripts.pory"
+	delay 4
 # 492 "data/maps/Coralport/scripts.pory"
-	closemessage
+	applymovement S_CORAL, faceright
 # 493 "data/maps/Coralport/scripts.pory"
-	applymovement M_CORAL, walkdown
+	waitmovement
 # 494 "data/maps/Coralport/scripts.pory"
-	applymovement S_CORAL, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_3
-# 495 "data/maps/Coralport/scripts.pory"
-	applymovement A_CORAL, walkup
+	msgbox Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_7
 # 496 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_PLAYER, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_4
+	closemessage
 # 497 "data/maps/Coralport/scripts.pory"
-	waitmovement S_CORAL
+	applymovement M_CORAL, walkdown
 # 498 "data/maps/Coralport/scripts.pory"
-	removeobject M_CORAL
+	applymovement S_CORAL, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_3
 # 499 "data/maps/Coralport/scripts.pory"
-	delay 1
+	applymovement A_CORAL, walkup
 # 500 "data/maps/Coralport/scripts.pory"
-	removeobject S_CORAL
+	applymovement LOCALID_PLAYER, Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_4
 # 501 "data/maps/Coralport/scripts.pory"
-	delay 1
+	waitmovement S_CORAL
 # 502 "data/maps/Coralport/scripts.pory"
-	removeobject A_CORAL
+	removeobject M_CORAL
 # 503 "data/maps/Coralport/scripts.pory"
 	delay 1
 # 504 "data/maps/Coralport/scripts.pory"
-	setflag FLAG_TEMP_2
+	removeobject S_CORAL
 # 505 "data/maps/Coralport/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 4
+	delay 1
 # 506 "data/maps/Coralport/scripts.pory"
+	removeobject A_CORAL
+# 507 "data/maps/Coralport/scripts.pory"
+	delay 1
+# 508 "data/maps/Coralport/scripts.pory"
+	setflag FLAG_TEMP_2
+# 509 "data/maps/Coralport/scripts.pory"
+	setvar VAR_CHAPTER_1_STATE, 4
+# 510 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 
 Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast::
-# 511 "data/maps/Coralport/scripts.pory"
-	lock
-# 512 "data/maps/Coralport/scripts.pory"
-	delay 20
-# 513 "data/maps/Coralport/scripts.pory"
-	special SpawnCameraObject
-# 514 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_CAMERA, Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_0
 # 515 "data/maps/Coralport/scripts.pory"
-	waitmovement
+	lock
 # 516 "data/maps/Coralport/scripts.pory"
-	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
+	delay 20
 # 517 "data/maps/Coralport/scripts.pory"
-	applymovement 28, jumpinplaceleft
+	special SpawnCameraObject
 # 518 "data/maps/Coralport/scripts.pory"
-	waitmovement
+	applymovement LOCALID_CAMERA, Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_0
 # 519 "data/maps/Coralport/scripts.pory"
-	applymovement 28, Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_1
-# 520 "data/maps/Coralport/scripts.pory"
-	delay 4
-# 521 "data/maps/Coralport/scripts.pory"
-	playse SE_PIN
-# 522 "data/maps/Coralport/scripts.pory"
-	applymovement 27, Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_2
-# 523 "data/maps/Coralport/scripts.pory"
-	delay 60
-# 524 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_CAMERA, Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_3
-# 525 "data/maps/Coralport/scripts.pory"
 	waitmovement
+# 520 "data/maps/Coralport/scripts.pory"
+	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
+# 521 "data/maps/Coralport/scripts.pory"
+	applymovement 28, jumpinplaceleft
+# 522 "data/maps/Coralport/scripts.pory"
+	waitmovement
+# 523 "data/maps/Coralport/scripts.pory"
+	applymovement 28, Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_1
+# 524 "data/maps/Coralport/scripts.pory"
+	delay 4
+# 525 "data/maps/Coralport/scripts.pory"
+	playse SE_PIN
 # 526 "data/maps/Coralport/scripts.pory"
-	special RemoveCameraObject
+	applymovement 27, Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_2
 # 527 "data/maps/Coralport/scripts.pory"
-	delay 30
+	delay 60
 # 528 "data/maps/Coralport/scripts.pory"
-	setvar VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 2
+	applymovement LOCALID_CAMERA, Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_3
 # 529 "data/maps/Coralport/scripts.pory"
-	clearflag FLAG_HIDE_MAP_NAME_POPUP
+	waitmovement
 # 530 "data/maps/Coralport/scripts.pory"
-	clearflag FLAG_HIDE_QUEST_ICON
+	special RemoveCameraObject
 # 531 "data/maps/Coralport/scripts.pory"
-	refreshquesticon
+	delay 30
 # 532 "data/maps/Coralport/scripts.pory"
-	warpsilent MAP_CORALPORT, 13, 27
+	setvar VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 2
 # 533 "data/maps/Coralport/scripts.pory"
+	clearflag FLAG_HIDE_MAP_NAME_POPUP
+# 534 "data/maps/Coralport/scripts.pory"
+	clearflag FLAG_HIDE_QUEST_ICON
+# 535 "data/maps/Coralport/scripts.pory"
+	refreshquesticon
+# 536 "data/maps/Coralport/scripts.pory"
+	warpsilent MAP_CORALPORT, 13, 27
+# 537 "data/maps/Coralport/scripts.pory"
 	waitstate
 	return
 
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER::
-# 537 "data/maps/Coralport/scripts.pory"
+# 541 "data/maps/Coralport/scripts.pory"
 	lock
-# 538 "data/maps/Coralport/scripts.pory"
+# 542 "data/maps/Coralport/scripts.pory"
 	setflag FLAG_HIDE_QUEST_ICON
-# 539 "data/maps/Coralport/scripts.pory"
+# 543 "data/maps/Coralport/scripts.pory"
 	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
-# 540 "data/maps/Coralport/scripts.pory"
+# 544 "data/maps/Coralport/scripts.pory"
 	compare VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 2
 	goto_if_eq Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_2
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_1:
-# 547 "data/maps/Coralport/scripts.pory"
+# 551 "data/maps/Coralport/scripts.pory"
 	compare VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 3
 	goto_if_eq Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_5
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_4:
-# 552 "data/maps/Coralport/scripts.pory"
+# 556 "data/maps/Coralport/scripts.pory"
 	compare VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 4
 	goto_if_eq Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_10
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_9:
-# 558 "data/maps/Coralport/scripts.pory"
+# 562 "data/maps/Coralport/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
-# 559 "data/maps/Coralport/scripts.pory"
+# 563 "data/maps/Coralport/scripts.pory"
 	refreshquesticon
-# 560 "data/maps/Coralport/scripts.pory"
+# 564 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_2:
-# 541 "data/maps/Coralport/scripts.pory"
+# 545 "data/maps/Coralport/scripts.pory"
 	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_1, MSGBOX_YESNO
-# 543 "data/maps/Coralport/scripts.pory"
+# 547 "data/maps/Coralport/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_7
 	goto Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_1
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_5:
-# 548 "data/maps/Coralport/scripts.pory"
+# 552 "data/maps/Coralport/scripts.pory"
 	faceplayer
-# 549 "data/maps/Coralport/scripts.pory"
+# 553 "data/maps/Coralport/scripts.pory"
 	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_2
-# 550 "data/maps/Coralport/scripts.pory"
+# 554 "data/maps/Coralport/scripts.pory"
 	closemessage
 	goto Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_4
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_7:
-# 544 "data/maps/Coralport/scripts.pory"
+# 548 "data/maps/Coralport/scripts.pory"
 	goto Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start
 	goto Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_1
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_10:
-# 553 "data/maps/Coralport/scripts.pory"
+# 557 "data/maps/Coralport/scripts.pory"
 	faceplayer
-# 554 "data/maps/Coralport/scripts.pory"
+# 558 "data/maps/Coralport/scripts.pory"
 	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_3
 	goto Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_9
 
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start::
-# 565 "data/maps/Coralport/scripts.pory"
-	applymovement 27, walkinplaceright
-# 566 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_0
-# 567 "data/maps/Coralport/scripts.pory"
-	closemessage
-# 568 "data/maps/Coralport/scripts.pory"
-	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
 # 569 "data/maps/Coralport/scripts.pory"
-	applymovement 28, jumpinplaceleft
+	applymovement 27, walkinplaceright
 # 570 "data/maps/Coralport/scripts.pory"
-	waitmovement
+	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_0
 # 571 "data/maps/Coralport/scripts.pory"
-	delay 30
+	closemessage
 # 572 "data/maps/Coralport/scripts.pory"
-	applymovement 28, faceright
-# 573 "data/maps/Coralport/scripts.pory"
-	special SpawnCameraObject
-# 574 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_CAMERA, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_0
-# 575 "data/maps/Coralport/scripts.pory"
-	waitmovement
-# 576 "data/maps/Coralport/scripts.pory"
-	delay 40
-# 577 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_CAMERA, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_1
-# 578 "data/maps/Coralport/scripts.pory"
-	waitmovement
-# 579 "data/maps/Coralport/scripts.pory"
-	delay 20
-# 580 "data/maps/Coralport/scripts.pory"
-	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
-# 581 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_1
-# 582 "data/maps/Coralport/scripts.pory"
 	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
-# 583 "data/maps/Coralport/scripts.pory"
+# 573 "data/maps/Coralport/scripts.pory"
 	applymovement 28, jumpinplaceleft
-# 584 "data/maps/Coralport/scripts.pory"
+# 574 "data/maps/Coralport/scripts.pory"
 	waitmovement
-# 585 "data/maps/Coralport/scripts.pory"
-	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
-# 586 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_2
-# 587 "data/maps/Coralport/scripts.pory"
-	closemessage
-# 588 "data/maps/Coralport/scripts.pory"
-	applymovement 27, walkright
-# 589 "data/maps/Coralport/scripts.pory"
-	applymovement 28, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_2
-# 590 "data/maps/Coralport/scripts.pory"
-	waitmovement
-# 591 "data/maps/Coralport/scripts.pory"
-	delay 20
-# 592 "data/maps/Coralport/scripts.pory"
-	clearflag FLAG_TEMP_4
-# 593 "data/maps/Coralport/scripts.pory"
-	playse SE_BALL_OPEN
-# 594 "data/maps/Coralport/scripts.pory"
-	addobject 26
-# 595 "data/maps/Coralport/scripts.pory"
-	applymovement 26, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_3
-# 596 "data/maps/Coralport/scripts.pory"
-	waitmovement
-# 597 "data/maps/Coralport/scripts.pory"
-	playmoncry SPECIES_LAPRAS, CRY_MODE_NORMAL
-# 598 "data/maps/Coralport/scripts.pory"
-	waitmoncry
-# 599 "data/maps/Coralport/scripts.pory"
-	lock
-# 600 "data/maps/Coralport/scripts.pory"
-	setobjectnewmovementtype 26, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
-# 601 "data/maps/Coralport/scripts.pory"
-	release
-# 602 "data/maps/Coralport/scripts.pory"
+# 575 "data/maps/Coralport/scripts.pory"
 	delay 30
-# 603 "data/maps/Coralport/scripts.pory"
-	applymovement 27, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_4
-# 604 "data/maps/Coralport/scripts.pory"
+# 576 "data/maps/Coralport/scripts.pory"
+	applymovement 28, faceright
+# 577 "data/maps/Coralport/scripts.pory"
+	special SpawnCameraObject
+# 578 "data/maps/Coralport/scripts.pory"
+	applymovement LOCALID_CAMERA, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_0
+# 579 "data/maps/Coralport/scripts.pory"
 	waitmovement
-# 605 "data/maps/Coralport/scripts.pory"
+# 580 "data/maps/Coralport/scripts.pory"
+	delay 40
+# 581 "data/maps/Coralport/scripts.pory"
+	applymovement LOCALID_CAMERA, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_1
+# 582 "data/maps/Coralport/scripts.pory"
+	waitmovement
+# 583 "data/maps/Coralport/scripts.pory"
+	delay 20
+# 584 "data/maps/Coralport/scripts.pory"
 	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
-# 606 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_3
-# 607 "data/maps/Coralport/scripts.pory"
-	closemessage
-# 608 "data/maps/Coralport/scripts.pory"
-	applymovement 28, shakehorizontal
-# 609 "data/maps/Coralport/scripts.pory"
+# 585 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_1
+# 586 "data/maps/Coralport/scripts.pory"
+	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
+# 587 "data/maps/Coralport/scripts.pory"
+	applymovement 28, jumpinplaceleft
+# 588 "data/maps/Coralport/scripts.pory"
 	waitmovement
-# 610 "data/maps/Coralport/scripts.pory"
-	playmoncry SPECIES_GROWLITHE, CRY_MODE_WEAK
-# 611 "data/maps/Coralport/scripts.pory"
+# 589 "data/maps/Coralport/scripts.pory"
+	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
+# 590 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_2
+# 591 "data/maps/Coralport/scripts.pory"
+	closemessage
+# 592 "data/maps/Coralport/scripts.pory"
+	applymovement 27, walkright
+# 593 "data/maps/Coralport/scripts.pory"
+	applymovement 28, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_2
+# 594 "data/maps/Coralport/scripts.pory"
+	waitmovement
+# 595 "data/maps/Coralport/scripts.pory"
+	delay 20
+# 596 "data/maps/Coralport/scripts.pory"
+	clearflag FLAG_TEMP_4
+# 597 "data/maps/Coralport/scripts.pory"
+	playse SE_BALL_OPEN
+# 598 "data/maps/Coralport/scripts.pory"
+	addobject 26
+# 599 "data/maps/Coralport/scripts.pory"
+	applymovement 26, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_3
+# 600 "data/maps/Coralport/scripts.pory"
+	waitmovement
+# 601 "data/maps/Coralport/scripts.pory"
+	playmoncry SPECIES_LAPRAS, CRY_MODE_NORMAL
+# 602 "data/maps/Coralport/scripts.pory"
 	waitmoncry
+# 603 "data/maps/Coralport/scripts.pory"
+	lock
+# 604 "data/maps/Coralport/scripts.pory"
+	setobjectnewmovementtype 26, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT
+# 605 "data/maps/Coralport/scripts.pory"
+	release
+# 606 "data/maps/Coralport/scripts.pory"
+	delay 30
+# 607 "data/maps/Coralport/scripts.pory"
+	applymovement 27, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_4
+# 608 "data/maps/Coralport/scripts.pory"
+	waitmovement
+# 609 "data/maps/Coralport/scripts.pory"
+	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
+# 610 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_3
+# 611 "data/maps/Coralport/scripts.pory"
+	closemessage
 # 612 "data/maps/Coralport/scripts.pory"
-	applymovement 27, faceright
+	applymovement 28, shakehorizontal
 # 613 "data/maps/Coralport/scripts.pory"
 	waitmovement
 # 614 "data/maps/Coralport/scripts.pory"
-	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
+	playmoncry SPECIES_GROWLITHE, CRY_MODE_WEAK
 # 615 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_4
-# 619 "data/maps/Coralport/scripts.pory"
-	closemessage
-# 620 "data/maps/Coralport/scripts.pory"
-	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
-# 621 "data/maps/Coralport/scripts.pory"
-	applymovement 28, walkinplacedown
-# 622 "data/maps/Coralport/scripts.pory"
+	waitmoncry
+# 616 "data/maps/Coralport/scripts.pory"
+	applymovement 27, faceright
+# 617 "data/maps/Coralport/scripts.pory"
 	waitmovement
-# 623 "data/maps/Coralport/scripts.pory"
+# 618 "data/maps/Coralport/scripts.pory"
 	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
-# 624 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_5
-# 625 "data/maps/Coralport/scripts.pory"
-	applymovement 27, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_5
-# 626 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_6
-# 627 "data/maps/Coralport/scripts.pory"
+# 619 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_4
+# 623 "data/maps/Coralport/scripts.pory"
 	closemessage
+# 624 "data/maps/Coralport/scripts.pory"
+	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
+# 625 "data/maps/Coralport/scripts.pory"
+	applymovement 28, walkinplacedown
+# 626 "data/maps/Coralport/scripts.pory"
+	waitmovement
+# 627 "data/maps/Coralport/scripts.pory"
+	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
 # 628 "data/maps/Coralport/scripts.pory"
-	setvar VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 4
+	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_5
 # 629 "data/maps/Coralport/scripts.pory"
-	clearflag FLAG_HIDE_QUEST_ICON
+	applymovement 27, Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_5
 # 630 "data/maps/Coralport/scripts.pory"
-	warp MAP_CORALPORT_CAVE, 0
+	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_6
 # 631 "data/maps/Coralport/scripts.pory"
+	closemessage
+# 632 "data/maps/Coralport/scripts.pory"
+	setvar VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 4
+# 633 "data/maps/Coralport/scripts.pory"
+	clearflag FLAG_HIDE_QUEST_ICON
+# 634 "data/maps/Coralport/scripts.pory"
+	warp MAP_CORALPORT_CAVE, 0
+# 635 "data/maps/Coralport/scripts.pory"
 	waitstate
 	return
 
 
-# 634 "data/maps/Coralport/scripts.pory"
+# 638 "data/maps/Coralport/scripts.pory"
 jumpinplacedown:
-# 635 "data/maps/Coralport/scripts.pory"
+# 639 "data/maps/Coralport/scripts.pory"
 	jump_in_place_down
 	step_end
 
 Coralport_Eventscript_Growlithe::
-# 639 "data/maps/Coralport/scripts.pory"
+# 643 "data/maps/Coralport/scripts.pory"
 	lock
-# 640 "data/maps/Coralport/scripts.pory"
+# 644 "data/maps/Coralport/scripts.pory"
 	compare VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 2
 	goto_if_eq Coralport_Eventscript_Growlithe_2
-# 658 "data/maps/Coralport/scripts.pory"
-	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
-# 659 "data/maps/Coralport/scripts.pory"
-	waitmoncry
-# 660 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_Growlithe_Text_0
 # 662 "data/maps/Coralport/scripts.pory"
+	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
+# 663 "data/maps/Coralport/scripts.pory"
+	waitmoncry
+# 664 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_Growlithe_Text_0
+# 666 "data/maps/Coralport/scripts.pory"
 	closemessage
 Coralport_Eventscript_Growlithe_1:
-# 664 "data/maps/Coralport/scripts.pory"
+# 668 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 Coralport_Eventscript_Growlithe_2:
-# 641 "data/maps/Coralport/scripts.pory"
+# 645 "data/maps/Coralport/scripts.pory"
 	setflag FLAG_HIDE_QUEST_ICON
-# 642 "data/maps/Coralport/scripts.pory"
+# 646 "data/maps/Coralport/scripts.pory"
 	msgbox Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_1, MSGBOX_YESNO
-# 644 "data/maps/Coralport/scripts.pory"
+# 648 "data/maps/Coralport/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Coralport_Eventscript_Growlithe_5
-# 650 "data/maps/Coralport/scripts.pory"
+# 654 "data/maps/Coralport/scripts.pory"
 	closemessage
-# 651 "data/maps/Coralport/scripts.pory"
+# 655 "data/maps/Coralport/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
-# 652 "data/maps/Coralport/scripts.pory"
+# 656 "data/maps/Coralport/scripts.pory"
 	release
-# 653 "data/maps/Coralport/scripts.pory"
+# 657 "data/maps/Coralport/scripts.pory"
 	refreshquesticon
 	end
 
 Coralport_Eventscript_Growlithe_5:
-# 645 "data/maps/Coralport/scripts.pory"
+# 649 "data/maps/Coralport/scripts.pory"
 	applymovement LOCALID_PLAYER, Coralport_Eventscript_Growlithe_Movement_0
-# 646 "data/maps/Coralport/scripts.pory"
+# 650 "data/maps/Coralport/scripts.pory"
 	waitmovement
-# 647 "data/maps/Coralport/scripts.pory"
+# 651 "data/maps/Coralport/scripts.pory"
 	goto Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start
 	goto Coralport_Eventscript_Growlithe_1
 
 
 Coralport_Eventscript_Lapras::
-# 669 "data/maps/Coralport/scripts.pory"
+# 673 "data/maps/Coralport/scripts.pory"
 	compare VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 3
 	goto_if_eq Coralport_Eventscript_Lapras_2
 Coralport_Eventscript_Lapras_1:
-# 684 "data/maps/Coralport/scripts.pory"
+# 688 "data/maps/Coralport/scripts.pory"
 	compare VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 4
 	goto_if_ge Coralport_Eventscript_Lapras_5
 Coralport_Eventscript_Lapras_4:
 	end
 
 Coralport_Eventscript_Lapras_2:
-# 670 "data/maps/Coralport/scripts.pory"
+# 674 "data/maps/Coralport/scripts.pory"
 	msgbox Coralport_Eventscript_Lapras_Text_0, MSGBOX_YESNO
-# 671 "data/maps/Coralport/scripts.pory"
+# 675 "data/maps/Coralport/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Coralport_Eventscript_Lapras_7
 	goto Coralport_Eventscript_Lapras_1
 
 Coralport_Eventscript_Lapras_5:
-# 685 "data/maps/Coralport/scripts.pory"
+# 689 "data/maps/Coralport/scripts.pory"
 	msgbox Coralport_Eventscript_Lapras_Text_1, MSGBOX_YESNO
-# 686 "data/maps/Coralport/scripts.pory"
+# 690 "data/maps/Coralport/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Coralport_Eventscript_Lapras_9
 	goto Coralport_Eventscript_Lapras_4
 
 Coralport_Eventscript_Lapras_7:
-# 672 "data/maps/Coralport/scripts.pory"
-	playmoncry SPECIES_LAPRAS, CRY_MODE_NORMAL
-# 673 "data/maps/Coralport/scripts.pory"
-	waitmoncry
-# 674 "data/maps/Coralport/scripts.pory"
-	applymovement 26, walkright
-# 675 "data/maps/Coralport/scripts.pory"
-	waitmovement
 # 676 "data/maps/Coralport/scripts.pory"
-	delay 4
+	playmoncry SPECIES_LAPRAS, CRY_MODE_NORMAL
 # 677 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_PLAYER, walkright
+	waitmoncry
 # 678 "data/maps/Coralport/scripts.pory"
-	waitmovement
+	applymovement 26, walkright
 # 679 "data/maps/Coralport/scripts.pory"
-	setvar VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 4
+	waitmovement
 # 680 "data/maps/Coralport/scripts.pory"
-	warpsilent MAP_CORALPORT, 41, 25
+	delay 4
 # 681 "data/maps/Coralport/scripts.pory"
+	applymovement LOCALID_PLAYER, walkright
+# 682 "data/maps/Coralport/scripts.pory"
+	waitmovement
+# 683 "data/maps/Coralport/scripts.pory"
+	setvar VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 4
+# 684 "data/maps/Coralport/scripts.pory"
+	warpsilent MAP_CORALPORT, 41, 25
+# 685 "data/maps/Coralport/scripts.pory"
 	waitstate
 	goto Coralport_Eventscript_Lapras_1
 
 Coralport_Eventscript_Lapras_9:
-# 687 "data/maps/Coralport/scripts.pory"
-	playmoncry SPECIES_LAPRAS, CRY_MODE_NORMAL
-# 688 "data/maps/Coralport/scripts.pory"
-	waitmoncry
-# 689 "data/maps/Coralport/scripts.pory"
-	applymovement 26, walkdown
-# 690 "data/maps/Coralport/scripts.pory"
-	waitmovement
 # 691 "data/maps/Coralport/scripts.pory"
-	delay 4
+	playmoncry SPECIES_LAPRAS, CRY_MODE_NORMAL
 # 692 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_PLAYER, walkdown
+	waitmoncry
 # 693 "data/maps/Coralport/scripts.pory"
-	waitmovement
+	applymovement 26, walkdown
 # 694 "data/maps/Coralport/scripts.pory"
-	setvar VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 3
+	waitmovement
 # 695 "data/maps/Coralport/scripts.pory"
-	warpsilent MAP_CORALPORT, 36, 28
+	delay 4
 # 696 "data/maps/Coralport/scripts.pory"
+	applymovement LOCALID_PLAYER, walkdown
+# 697 "data/maps/Coralport/scripts.pory"
+	waitmovement
+# 698 "data/maps/Coralport/scripts.pory"
+	setvar VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 3
+# 699 "data/maps/Coralport/scripts.pory"
+	warpsilent MAP_CORALPORT, 36, 28
+# 700 "data/maps/Coralport/scripts.pory"
 	waitstate
 	goto Coralport_Eventscript_Lapras_4
 
 
 Coralport_Eventscript_ConfirmEnterCave::
-# 703 "data/maps/Coralport/scripts.pory"
+# 707 "data/maps/Coralport/scripts.pory"
 	lock
-# 704 "data/maps/Coralport/scripts.pory"
+# 708 "data/maps/Coralport/scripts.pory"
 	msgbox Coralport_Eventscript_ConfirmEnterCave_Text_0, MSGBOX_YESNO
-# 706 "data/maps/Coralport/scripts.pory"
+# 710 "data/maps/Coralport/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Coralport_Eventscript_ConfirmEnterCave_1
-# 713 "data/maps/Coralport/scripts.pory"
+# 717 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 Coralport_Eventscript_ConfirmEnterCave_1:
-# 707 "data/maps/Coralport/scripts.pory"
+# 711 "data/maps/Coralport/scripts.pory"
 	applymovement LOCALID_PLAYER, walkright
-# 708 "data/maps/Coralport/scripts.pory"
+# 712 "data/maps/Coralport/scripts.pory"
 	waitmovement
-# 709 "data/maps/Coralport/scripts.pory"
+# 713 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 
 Coralport_Eventscript_CaveSign::
-# 719 "data/maps/Coralport/scripts.pory"
-	lock
-# 720 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_CaveSign_Text_0
-# 722 "data/maps/Coralport/scripts.pory"
-	closemessage
 # 723 "data/maps/Coralport/scripts.pory"
+	lock
+# 724 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_CaveSign_Text_0
+# 726 "data/maps/Coralport/scripts.pory"
+	closemessage
+# 727 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe::
-# 728 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_PLAYER, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_0
-# 729 "data/maps/Coralport/scripts.pory"
-	waitmovement
-# 730 "data/maps/Coralport/scripts.pory"
-	delay 30
-# 731 "data/maps/Coralport/scripts.pory"
-	applymovement 27, walkinplacedown
 # 732 "data/maps/Coralport/scripts.pory"
-	waitmovement
+	applymovement LOCALID_PLAYER, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_0
 # 733 "data/maps/Coralport/scripts.pory"
-	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
+	waitmovement
 # 734 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_0
+	delay 30
+# 735 "data/maps/Coralport/scripts.pory"
+	applymovement 27, walkinplacedown
+# 736 "data/maps/Coralport/scripts.pory"
+	waitmovement
 # 737 "data/maps/Coralport/scripts.pory"
 	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
 # 738 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_1
-# 739 "data/maps/Coralport/scripts.pory"
-	closemessage
-# 740 "data/maps/Coralport/scripts.pory"
-	applymovement 27, faceleft
+	msgbox Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_0
 # 741 "data/maps/Coralport/scripts.pory"
-	applymovement 28, faceright
+	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
 # 742 "data/maps/Coralport/scripts.pory"
-	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
+	msgbox Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_1
 # 743 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_2
+	closemessage
 # 744 "data/maps/Coralport/scripts.pory"
-	closemessage
+	applymovement 27, faceleft
 # 745 "data/maps/Coralport/scripts.pory"
-	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
+	applymovement 28, faceright
 # 746 "data/maps/Coralport/scripts.pory"
-	applymovement 28, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_1
-# 747 "data/maps/Coralport/scripts.pory"
-	waitmovement
-# 748 "data/maps/Coralport/scripts.pory"
-	applymovement 28, facedown
-# 749 "data/maps/Coralport/scripts.pory"
-	lock
-# 750 "data/maps/Coralport/scripts.pory"
-	setobjectnewmovementtype 28, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
-# 751 "data/maps/Coralport/scripts.pory"
-	release
-# 752 "data/maps/Coralport/scripts.pory"
-	applymovement 27, facedown
-# 753 "data/maps/Coralport/scripts.pory"
-	waitmovement
-# 754 "data/maps/Coralport/scripts.pory"
 	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
-# 755 "data/maps/Coralport/scripts.pory"
-	msgbox Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_3
-# 759 "data/maps/Coralport/scripts.pory"
+# 747 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_2
+# 748 "data/maps/Coralport/scripts.pory"
 	closemessage
-# 760 "data/maps/Coralport/scripts.pory"
-	applymovement 28, walkinplacedown
-# 761 "data/maps/Coralport/scripts.pory"
+# 749 "data/maps/Coralport/scripts.pory"
+	playmoncry SPECIES_GROWLITHE, CRY_MODE_NORMAL
+# 750 "data/maps/Coralport/scripts.pory"
+	applymovement 28, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_1
+# 751 "data/maps/Coralport/scripts.pory"
 	waitmovement
-# 762 "data/maps/Coralport/scripts.pory"
-	delay 30
+# 752 "data/maps/Coralport/scripts.pory"
+	applymovement 28, facedown
+# 753 "data/maps/Coralport/scripts.pory"
+	lock
+# 754 "data/maps/Coralport/scripts.pory"
+	setobjectnewmovementtype 28, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN
+# 755 "data/maps/Coralport/scripts.pory"
+	release
+# 756 "data/maps/Coralport/scripts.pory"
+	applymovement 27, facedown
+# 757 "data/maps/Coralport/scripts.pory"
+	waitmovement
+# 758 "data/maps/Coralport/scripts.pory"
+	setspeaker Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0
+# 759 "data/maps/Coralport/scripts.pory"
+	msgbox Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_3
 # 763 "data/maps/Coralport/scripts.pory"
-	applymovement 27, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_2
+	closemessage
 # 764 "data/maps/Coralport/scripts.pory"
-	applymovement 28, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_3
+	applymovement 28, walkinplacedown
 # 765 "data/maps/Coralport/scripts.pory"
-	waitmovement 27
+	waitmovement
 # 766 "data/maps/Coralport/scripts.pory"
-	playse SE_EXIT
-# 767 "data/maps/Coralport/scripts.pory"
-	waitmovement 28
-# 768 "data/maps/Coralport/scripts.pory"
-	playse SE_EXIT
-# 769 "data/maps/Coralport/scripts.pory"
-	removeobject 27
-# 770 "data/maps/Coralport/scripts.pory"
-	delay 1
-# 771 "data/maps/Coralport/scripts.pory"
-	removeobject 28
-# 772 "data/maps/Coralport/scripts.pory"
 	delay 30
+# 767 "data/maps/Coralport/scripts.pory"
+	applymovement 27, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_2
+# 768 "data/maps/Coralport/scripts.pory"
+	applymovement 28, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_3
+# 769 "data/maps/Coralport/scripts.pory"
+	waitmovement 27
+# 770 "data/maps/Coralport/scripts.pory"
+	playse SE_EXIT
+# 771 "data/maps/Coralport/scripts.pory"
+	waitmovement 28
+# 772 "data/maps/Coralport/scripts.pory"
+	playse SE_EXIT
 # 773 "data/maps/Coralport/scripts.pory"
-	applymovement LOCALID_PLAYER, Coralport_Eventscript_NotYetBoardingTime_Movement_2
+	removeobject 27
 # 774 "data/maps/Coralport/scripts.pory"
-	applymovement S_CORAL, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_4
+	delay 1
 # 775 "data/maps/Coralport/scripts.pory"
-	applymovement A_CORAL, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_5
+	removeobject 28
 # 776 "data/maps/Coralport/scripts.pory"
-	applymovement M_CORAL, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_6
+	delay 30
 # 777 "data/maps/Coralport/scripts.pory"
-	waitmovement LOCALID_PLAYER
+	applymovement LOCALID_PLAYER, Coralport_Eventscript_NotYetBoardingTime_Movement_2
 # 778 "data/maps/Coralport/scripts.pory"
-	removeobject S_CORAL
+	applymovement S_CORAL, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_4
 # 779 "data/maps/Coralport/scripts.pory"
-	delay 1
+	applymovement A_CORAL, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_5
 # 780 "data/maps/Coralport/scripts.pory"
-	removeobject A_CORAL
+	applymovement M_CORAL, Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_6
 # 781 "data/maps/Coralport/scripts.pory"
-	delay 1
+	waitmovement LOCALID_PLAYER
 # 782 "data/maps/Coralport/scripts.pory"
-	removeobject M_CORAL
+	removeobject S_CORAL
 # 783 "data/maps/Coralport/scripts.pory"
 	delay 1
 # 784 "data/maps/Coralport/scripts.pory"
-	setvar VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 7
+	removeobject A_CORAL
 # 785 "data/maps/Coralport/scripts.pory"
-	questmenu QUEST_MENU_SET_REWARD, QUEST_FIND_FISHERMANS_DAUGHTER
+	delay 1
 # 786 "data/maps/Coralport/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
+	removeobject M_CORAL
 # 787 "data/maps/Coralport/scripts.pory"
-	clearflag FLAG_HIDE_QUEST_ICON
+	delay 1
 # 788 "data/maps/Coralport/scripts.pory"
-	fadedefaultbgm
+	setvar VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 7
 # 789 "data/maps/Coralport/scripts.pory"
-	delay 30
+	questmenu QUEST_MENU_SET_REWARD, QUEST_FIND_FISHERMANS_DAUGHTER
 # 790 "data/maps/Coralport/scripts.pory"
-	setseenmon SPECIES_GROWLITHE
+	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 791 "data/maps/Coralport/scripts.pory"
-	setseenmon SPECIES_WOOPER_PALDEA
+	clearflag FLAG_HIDE_QUEST_ICON
 # 792 "data/maps/Coralport/scripts.pory"
-	setseenmon SPECIES_CLODSIRE
+	fadedefaultbgm
 # 793 "data/maps/Coralport/scripts.pory"
-	special ShowMapNamePopup
+	delay 30
 # 794 "data/maps/Coralport/scripts.pory"
+	setseenmon SPECIES_GROWLITHE
+# 795 "data/maps/Coralport/scripts.pory"
+	setseenmon SPECIES_WOOPER_PALDEA
+# 796 "data/maps/Coralport/scripts.pory"
+	setseenmon SPECIES_CLODSIRE
+# 797 "data/maps/Coralport/scripts.pory"
+	special ShowMapNamePopup
+# 798 "data/maps/Coralport/scripts.pory"
 	release
 	end
 
 
-# 318 "data/maps/Coralport/scripts.pory"
+# 321 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_NotYetBoardingTime_Movement_0:
-# 318 "data/maps/Coralport/scripts.pory"
+# 321 "data/maps/Coralport/scripts.pory"
 	walk_right
-# 318 "data/maps/Coralport/scripts.pory"
+# 321 "data/maps/Coralport/scripts.pory"
 	walk_down
-# 318 "data/maps/Coralport/scripts.pory"
+# 321 "data/maps/Coralport/scripts.pory"
 	face_up
 	step_end
 
-# 319 "data/maps/Coralport/scripts.pory"
+# 322 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_NotYetBoardingTime_Movement_1:
-# 319 "data/maps/Coralport/scripts.pory"
+# 322 "data/maps/Coralport/scripts.pory"
 	walk_down
-# 319 "data/maps/Coralport/scripts.pory"
+# 322 "data/maps/Coralport/scripts.pory"
 	face_up
 	step_end
 
-# 332 "data/maps/Coralport/scripts.pory"
+# 335 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_NotYetBoardingTime_Movement_2:
-# 332 "data/maps/Coralport/scripts.pory"
+# 335 "data/maps/Coralport/scripts.pory"
 	walk_down
-# 332 "data/maps/Coralport/scripts.pory"
+# 335 "data/maps/Coralport/scripts.pory"
 	set_visible
 	step_end
 
-# 435 "data/maps/Coralport/scripts.pory"
+# 439 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_0:
-# 435 "data/maps/Coralport/scripts.pory"
+# 439 "data/maps/Coralport/scripts.pory"
 	walk_down
-# 435 "data/maps/Coralport/scripts.pory"
+# 439 "data/maps/Coralport/scripts.pory"
 	walk_down
-# 435 "data/maps/Coralport/scripts.pory"
+# 439 "data/maps/Coralport/scripts.pory"
 	walk_down
-# 435 "data/maps/Coralport/scripts.pory"
+# 439 "data/maps/Coralport/scripts.pory"
 	walk_down
-# 435 "data/maps/Coralport/scripts.pory"
+# 439 "data/maps/Coralport/scripts.pory"
 	walk_down
-# 435 "data/maps/Coralport/scripts.pory"
+# 439 "data/maps/Coralport/scripts.pory"
 	walk_down
 	step_end
 
-# 455 "data/maps/Coralport/scripts.pory"
+# 459 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_1:
-# 455 "data/maps/Coralport/scripts.pory"
+# 459 "data/maps/Coralport/scripts.pory"
 	emote_exclamation_mark
-# 455 "data/maps/Coralport/scripts.pory"
+# 459 "data/maps/Coralport/scripts.pory"
 	face_left
 	step_end
 
-# 482 "data/maps/Coralport/scripts.pory"
+# 486 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_2:
-# 482 "data/maps/Coralport/scripts.pory"
+# 486 "data/maps/Coralport/scripts.pory"
 	emote_exclamation_mark
-# 482 "data/maps/Coralport/scripts.pory"
+# 486 "data/maps/Coralport/scripts.pory"
 	face_down
 	step_end
 
-# 494 "data/maps/Coralport/scripts.pory"
+# 498 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_3:
-# 494 "data/maps/Coralport/scripts.pory"
+# 498 "data/maps/Coralport/scripts.pory"
 	walk_right
-# 494 "data/maps/Coralport/scripts.pory"
+# 498 "data/maps/Coralport/scripts.pory"
 	walk_right
 	step_end
 
-# 496 "data/maps/Coralport/scripts.pory"
+# 500 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Movement_4:
-# 496 "data/maps/Coralport/scripts.pory"
+# 500 "data/maps/Coralport/scripts.pory"
 	face_down
-# 496 "data/maps/Coralport/scripts.pory"
+# 500 "data/maps/Coralport/scripts.pory"
 	set_visible
 	step_end
 
-# 514 "data/maps/Coralport/scripts.pory"
+# 518 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_0:
-# 514 "data/maps/Coralport/scripts.pory"
+# 518 "data/maps/Coralport/scripts.pory"
 	walk_diag_southeast
-# 514 "data/maps/Coralport/scripts.pory"
+# 518 "data/maps/Coralport/scripts.pory"
 	walk_diag_southeast
 	step_end
 
-# 519 "data/maps/Coralport/scripts.pory"
+# 523 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_1:
-# 519 "data/maps/Coralport/scripts.pory"
+# 523 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 519 "data/maps/Coralport/scripts.pory"
+# 523 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 519 "data/maps/Coralport/scripts.pory"
+# 523 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 519 "data/maps/Coralport/scripts.pory"
+# 523 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 519 "data/maps/Coralport/scripts.pory"
+# 523 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 519 "data/maps/Coralport/scripts.pory"
+# 523 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 519 "data/maps/Coralport/scripts.pory"
+# 523 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 519 "data/maps/Coralport/scripts.pory"
+# 523 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_2:
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 	emote_exclamation_mark
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 	delay_16
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 	delay_16
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
-# 522 "data/maps/Coralport/scripts.pory"
+# 526 "data/maps/Coralport/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 524 "data/maps/Coralport/scripts.pory"
+# 528 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_QuestOldRodSeeingFishermanAndGrowlitheRunToTheEast_Movement_3:
-# 524 "data/maps/Coralport/scripts.pory"
+# 528 "data/maps/Coralport/scripts.pory"
 	walk_diag_northwest
-# 524 "data/maps/Coralport/scripts.pory"
+# 528 "data/maps/Coralport/scripts.pory"
 	walk_diag_northwest
 	step_end
 
-# 574 "data/maps/Coralport/scripts.pory"
+# 578 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_0:
-# 574 "data/maps/Coralport/scripts.pory"
+# 578 "data/maps/Coralport/scripts.pory"
 	walk_diag_northeast
-# 574 "data/maps/Coralport/scripts.pory"
+# 578 "data/maps/Coralport/scripts.pory"
 	walk_diag_northeast
-# 574 "data/maps/Coralport/scripts.pory"
+# 578 "data/maps/Coralport/scripts.pory"
 	walk_diag_northeast
-# 574 "data/maps/Coralport/scripts.pory"
+# 578 "data/maps/Coralport/scripts.pory"
 	walk_diag_northeast
-# 574 "data/maps/Coralport/scripts.pory"
+# 578 "data/maps/Coralport/scripts.pory"
 	walk_diag_northeast
 	step_end
 
-# 577 "data/maps/Coralport/scripts.pory"
+# 581 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_1:
-# 577 "data/maps/Coralport/scripts.pory"
+# 581 "data/maps/Coralport/scripts.pory"
 	walk_diag_southwest
-# 577 "data/maps/Coralport/scripts.pory"
+# 581 "data/maps/Coralport/scripts.pory"
 	walk_diag_southwest
-# 577 "data/maps/Coralport/scripts.pory"
+# 581 "data/maps/Coralport/scripts.pory"
 	walk_diag_southwest
-# 577 "data/maps/Coralport/scripts.pory"
+# 581 "data/maps/Coralport/scripts.pory"
 	walk_diag_southwest
-# 577 "data/maps/Coralport/scripts.pory"
+# 581 "data/maps/Coralport/scripts.pory"
 	walk_diag_southwest
 	step_end
 
-# 589 "data/maps/Coralport/scripts.pory"
+# 593 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_2:
-# 589 "data/maps/Coralport/scripts.pory"
+# 593 "data/maps/Coralport/scripts.pory"
 	face_down
-# 589 "data/maps/Coralport/scripts.pory"
+# 593 "data/maps/Coralport/scripts.pory"
 	lock_facing_direction
-# 589 "data/maps/Coralport/scripts.pory"
+# 593 "data/maps/Coralport/scripts.pory"
 	walk_up
-# 589 "data/maps/Coralport/scripts.pory"
+# 593 "data/maps/Coralport/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 595 "data/maps/Coralport/scripts.pory"
+# 599 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_3:
-# 595 "data/maps/Coralport/scripts.pory"
+# 599 "data/maps/Coralport/scripts.pory"
 	set_invisible
-# 595 "data/maps/Coralport/scripts.pory"
+# 599 "data/maps/Coralport/scripts.pory"
 	exit_pokeball
-# 595 "data/maps/Coralport/scripts.pory"
+# 599 "data/maps/Coralport/scripts.pory"
 	set_visible
-# 595 "data/maps/Coralport/scripts.pory"
+# 599 "data/maps/Coralport/scripts.pory"
 	face_left
 	step_end
 
-# 603 "data/maps/Coralport/scripts.pory"
+# 607 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_4:
-# 603 "data/maps/Coralport/scripts.pory"
+# 607 "data/maps/Coralport/scripts.pory"
 	walk_left
-# 603 "data/maps/Coralport/scripts.pory"
+# 607 "data/maps/Coralport/scripts.pory"
 	face_player
 	step_end
 
-# 625 "data/maps/Coralport/scripts.pory"
+# 629 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_5:
-# 625 "data/maps/Coralport/scripts.pory"
+# 629 "data/maps/Coralport/scripts.pory"
 	face_player
 	step_end
 
-# 645 "data/maps/Coralport/scripts.pory"
+# 649 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_Growlithe_Movement_0:
-# 645 "data/maps/Coralport/scripts.pory"
+# 649 "data/maps/Coralport/scripts.pory"
 	walk_left
-# 645 "data/maps/Coralport/scripts.pory"
+# 649 "data/maps/Coralport/scripts.pory"
 	face_up
 	step_end
 
-# 728 "data/maps/Coralport/scripts.pory"
+# 732 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_0:
-# 728 "data/maps/Coralport/scripts.pory"
+# 732 "data/maps/Coralport/scripts.pory"
 	walk_slow_down
-# 728 "data/maps/Coralport/scripts.pory"
+# 732 "data/maps/Coralport/scripts.pory"
 	walk_slow_down
-# 728 "data/maps/Coralport/scripts.pory"
+# 732 "data/maps/Coralport/scripts.pory"
 	walk_slow_down
-# 728 "data/maps/Coralport/scripts.pory"
+# 732 "data/maps/Coralport/scripts.pory"
 	walk_slow_down
 	step_end
 
-# 746 "data/maps/Coralport/scripts.pory"
+# 750 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_1:
-# 746 "data/maps/Coralport/scripts.pory"
+# 750 "data/maps/Coralport/scripts.pory"
 	emote_music
-# 746 "data/maps/Coralport/scripts.pory"
+# 750 "data/maps/Coralport/scripts.pory"
 	walk_in_place_right
 	step_end
 
-# 763 "data/maps/Coralport/scripts.pory"
+# 767 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_2:
-# 763 "data/maps/Coralport/scripts.pory"
+# 767 "data/maps/Coralport/scripts.pory"
 	walk_in_place_left
-# 763 "data/maps/Coralport/scripts.pory"
+# 767 "data/maps/Coralport/scripts.pory"
 	delay_16
-# 763 "data/maps/Coralport/scripts.pory"
+# 767 "data/maps/Coralport/scripts.pory"
 	delay_16
-# 763 "data/maps/Coralport/scripts.pory"
+# 767 "data/maps/Coralport/scripts.pory"
 	walk_up
-# 763 "data/maps/Coralport/scripts.pory"
+# 767 "data/maps/Coralport/scripts.pory"
 	set_invisible
 	step_end
 
-# 764 "data/maps/Coralport/scripts.pory"
+# 768 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_3:
-# 764 "data/maps/Coralport/scripts.pory"
+# 768 "data/maps/Coralport/scripts.pory"
 	walk_in_place_right
-# 764 "data/maps/Coralport/scripts.pory"
+# 768 "data/maps/Coralport/scripts.pory"
 	delay_16
-# 764 "data/maps/Coralport/scripts.pory"
+# 768 "data/maps/Coralport/scripts.pory"
 	delay_16
-# 764 "data/maps/Coralport/scripts.pory"
+# 768 "data/maps/Coralport/scripts.pory"
 	walk_right
-# 764 "data/maps/Coralport/scripts.pory"
+# 768 "data/maps/Coralport/scripts.pory"
 	walk_up
-# 764 "data/maps/Coralport/scripts.pory"
+# 768 "data/maps/Coralport/scripts.pory"
 	set_invisible
 	step_end
 
-# 774 "data/maps/Coralport/scripts.pory"
+# 778 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_4:
-# 774 "data/maps/Coralport/scripts.pory"
+# 778 "data/maps/Coralport/scripts.pory"
 	walk_left
-# 774 "data/maps/Coralport/scripts.pory"
+# 778 "data/maps/Coralport/scripts.pory"
 	set_invisible
 	step_end
 
-# 775 "data/maps/Coralport/scripts.pory"
+# 779 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_5:
-# 775 "data/maps/Coralport/scripts.pory"
+# 779 "data/maps/Coralport/scripts.pory"
 	walk_right
-# 775 "data/maps/Coralport/scripts.pory"
+# 779 "data/maps/Coralport/scripts.pory"
 	face_down
-# 775 "data/maps/Coralport/scripts.pory"
+# 779 "data/maps/Coralport/scripts.pory"
 	set_invisible
 	step_end
 
-# 776 "data/maps/Coralport/scripts.pory"
+# 780 "data/maps/Coralport/scripts.pory"
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Movement_6:
-# 776 "data/maps/Coralport/scripts.pory"
+# 780 "data/maps/Coralport/scripts.pory"
 	face_down
-# 776 "data/maps/Coralport/scripts.pory"
+# 780 "data/maps/Coralport/scripts.pory"
 	set_invisible
 	step_end
 
@@ -1786,7 +1792,7 @@ Coralport_Eventscript_ShipHasDeparted_Text_0:
 	.string "come back between 7AM and 5PM.$"
 
 Coralport_Eventscript_NotYetBoardingTime_Text_0:
-# 322 "data/maps/Coralport/scripts.pory"
+# 325 "data/maps/Coralport/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}What now?\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It appears that we have no other\n"
 	.string "choice but to wait until boarding time.\p"
@@ -1797,20 +1803,20 @@ Coralport_Eventscript_NotYetBoardingTime_Text_0:
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes, let's do that.$"
 
 Coralport_Eventscript_TuberM_Text_0:
-# 346 "data/maps/Coralport/scripts.pory"
+# 350 "data/maps/Coralport/scripts.pory"
 	.string "Ujou$"
 
 Coralport_Eventscript_TuberM_Text_1:
-# 347 "data/maps/Coralport/scripts.pory"
+# 351 "data/maps/Coralport/scripts.pory"
 	.string "Sometimes when I poke the sand\n"
 	.string "castles, they move!$"
 
 Coralport_Eventscript_Beauty_Text_0:
-# 369 "data/maps/Coralport/scripts.pory"
+# 373 "data/maps/Coralport/scripts.pory"
 	.string "Harehina$"
 
 Coralport_Eventscript_Beauty_Text_1:
-# 370 "data/maps/Coralport/scripts.pory"
+# 374 "data/maps/Coralport/scripts.pory"
 	.string "I bought two tickets for this vacation\n"
 	.string "but my damned ex cheated on me so I\l"
 	.string "brought my younger brother instead.\p"
@@ -1819,50 +1825,50 @@ Coralport_Eventscript_Beauty_Text_1:
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Good for you.$"
 
 Coralport_Eventscript_Beauty_Text_2:
-# 374 "data/maps/Coralport/scripts.pory"
+# 378 "data/maps/Coralport/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Oh? Wait, you're just my type. How old\n"
 	.string "are you?\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}W-what?\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}(Hey! Let's just bail!)$"
 
 Coralport_Eventscript_Fisherman_Text_0:
-# 387 "data/maps/Coralport/scripts.pory"
+# 391 "data/maps/Coralport/scripts.pory"
 	.string "Jumaro$"
 
 Coralport_Eventscript_Fisherman_Text_1:
-# 388 "data/maps/Coralport/scripts.pory"
+# 392 "data/maps/Coralport/scripts.pory"
 	.string "I'm waiting for a friend of mine.\n"
 	.string "We promised to go fishing together but\l"
 	.string "he's taking so long.\p"
 	.string "I wonder what's wrong.$"
 
 Coralport_Eventscript_MustTalkToSailorOnGuard_Text_0:
-# 411 "data/maps/Coralport/scripts.pory"
+# 415 "data/maps/Coralport/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(It's not the time to wander around.\p"
 	.string "We need to board the ship to Windward\n"
 	.string "Port.)$"
 
 Coralport_Eventscript_MustTalkToSailorOnGuard_Text_1:
-# 415 "data/maps/Coralport/scripts.pory"
+# 419 "data/maps/Coralport/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(It's not the time to wander around.\p"
 	.string "We need to board the ship to Windward\n"
 	.string "Port.)$"
 
 setameamequestasreward_Text_0:
-# 425 "data/maps/Coralport/scripts.pory"
+# 429 "data/maps/Coralport/scripts.pory"
 	.string "set ameame quest state reward$"
 
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_0:
-# 437 "data/maps/Coralport/scripts.pory"
+# 441 "data/maps/Coralport/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}......$"
 
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_1:
-# 443 "data/maps/Coralport/scripts.pory"
+# 447 "data/maps/Coralport/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Kirijo.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes, Sanada-kun?$"
 
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_2:
-# 446 "data/maps/Coralport/scripts.pory"
+# 450 "data/maps/Coralport/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}If you know who's behind the explosion,\n"
 	.string "why didn't you say anything to the\l"
 	.string "police?\p"
@@ -1876,12 +1882,12 @@ Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_2:
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Corruption shit or something like that?$"
 
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_3:
-# 457 "data/maps/Coralport/scripts.pory"
+# 461 "data/maps/Coralport/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Aragaki-kun, language.\p"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Tch.$"
 
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_4:
-# 463 "data/maps/Coralport/scripts.pory"
+# 467 "data/maps/Coralport/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}But indeed.\p"
 	.string "The illegal experiments have already\n"
 	.string "proceeded to the state of producing\l"
@@ -1891,40 +1897,40 @@ Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_4:
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}......$"
 
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_5:
-# 469 "data/maps/Coralport/scripts.pory"
+# 473 "data/maps/Coralport/scripts.pory"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}... But Kurosawa-san was really kind and\n"
 	.string "tried really hard to help me and Shinji.$"
 
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_6:
-# 472 "data/maps/Coralport/scripts.pory"
+# 476 "data/maps/Coralport/scripts.pory"
 	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Not all cops are the same.\p"
 	.string "I guess he also has a battle he's\n"
 	.string "fighting on his own.\p"
 	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}......$"
 
 Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_7:
-# 490 "data/maps/Coralport/scripts.pory"
+# 494 "data/maps/Coralport/scripts.pory"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I suppose the ship is ready for\n"
 	.string "boarding.\l"
 	.string "Let's move out.$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_0:
-# 539 "data/maps/Coralport/scripts.pory"
+# 543 "data/maps/Coralport/scripts.pory"
 	.string "Ikumi$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_1:
-# 541 "data/maps/Coralport/scripts.pory"
+# 545 "data/maps/Coralport/scripts.pory"
 	.string "{COLOR RED}Continuing this quest will fast forward\n"
 	.string "the clock at least 4 hours.\p"
 	.string "Do you want to proceed?$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_2:
-# 549 "data/maps/Coralport/scripts.pory"
+# 553 "data/maps/Coralport/scripts.pory"
 	.string "You're back! Let's hop on my Lapras to\n"
 	.string "go back to Coralport Cave entrance!$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_3:
-# 554 "data/maps/Coralport/scripts.pory"
+# 558 "data/maps/Coralport/scripts.pory"
 	.string "You need to stock up on healing items?\n"
 	.string "Feel free to hop on my Lapras to go\l"
 	.string "back to the main land.\p"
@@ -1932,25 +1938,25 @@ Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Text_3:
 	.string "My daughter is still in there.$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_0:
-# 566 "data/maps/Coralport/scripts.pory"
+# 570 "data/maps/Coralport/scripts.pory"
 	.string "How is it now, Growlithe?$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_1:
-# 581 "data/maps/Coralport/scripts.pory"
+# 585 "data/maps/Coralport/scripts.pory"
 	.string "You mean Misa is in that cave over\n"
 	.string "there?$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_2:
-# 586 "data/maps/Coralport/scripts.pory"
+# 590 "data/maps/Coralport/scripts.pory"
 	.string "Alright!$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_3:
-# 606 "data/maps/Coralport/scripts.pory"
+# 610 "data/maps/Coralport/scripts.pory"
 	.string "Lapras can carry all of us. Let us\n"
 	.string "proceed then!$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_4:
-# 615 "data/maps/Coralport/scripts.pory"
+# 619 "data/maps/Coralport/scripts.pory"
 	.string "What's wrong, Growlithe?\p"
 	.string "Oh, right. You're scared of water, aren't\n"
 	.string "you?\p"
@@ -1960,60 +1966,60 @@ Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_4:
 	.string "Can you wait for us here?$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_5:
-# 624 "data/maps/Coralport/scripts.pory"
+# 628 "data/maps/Coralport/scripts.pory"
 	.string "Thank you, you're such a good boy.$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_6:
-# 626 "data/maps/Coralport/scripts.pory"
+# 630 "data/maps/Coralport/scripts.pory"
 	.string "Let's go, my daughter is waiting!$"
 
 Coralport_Eventscript_Growlithe_Text_0:
-# 660 "data/maps/Coralport/scripts.pory"
+# 664 "data/maps/Coralport/scripts.pory"
 	.string "Growlithe looks worried. It seems like it\n"
 	.string "won't go back to its owner until you\l"
 	.string "rescue Misa.\p"
 	.string "What a good boy!$"
 
 Coralport_Eventscript_Lapras_Text_0:
-# 670 "data/maps/Coralport/scripts.pory"
+# 674 "data/maps/Coralport/scripts.pory"
 	.string "Hop on Lapras and go to Coralport Cave\n"
 	.string "entrance?$"
 
 Coralport_Eventscript_Lapras_Text_1:
-# 685 "data/maps/Coralport/scripts.pory"
+# 689 "data/maps/Coralport/scripts.pory"
 	.string "Hop on Lapras and go back to the main\n"
 	.string "land?$"
 
 Coralport_Eventscript_ConfirmEnterCave_Text_0:
-# 704 "data/maps/Coralport/scripts.pory"
+# 708 "data/maps/Coralport/scripts.pory"
 	.string "{COLOR GREEN}Once you enter this cave, leaving it will\n"
 	.string "fast forward the clock by {COLOR RED}4 hours{COLOR GREEN}.\p"
 	.string "Do you want to proceed?$"
 
 Coralport_Eventscript_CaveSign_Text_0:
-# 720 "data/maps/Coralport/scripts.pory"
+# 724 "data/maps/Coralport/scripts.pory"
 	.string "{CLEAR_TO 60}Coralport Cave\n"
 	.string "{CLEAR_TO 45}{COLOR GREEN}Time forwarding: {COLOR RED}4 hours{COLOR GREEN}.$"
 
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_0:
-# 734 "data/maps/Coralport/scripts.pory"
+# 738 "data/maps/Coralport/scripts.pory"
 	.string "Thank you so much for saving my family\n"
 	.string "back there.\p"
 	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}You're welcome, Ikumi-san.\n"
 	.string "We're glad that Misa was found safely.$"
 
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_1:
-# 738 "data/maps/Coralport/scripts.pory"
+# 742 "data/maps/Coralport/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Indeed, indeed.$"
 
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_2:
-# 743 "data/maps/Coralport/scripts.pory"
+# 747 "data/maps/Coralport/scripts.pory"
 	.string "Thanks to you too, Growlithe! Without\n"
 	.string "you, I wouldn't even know where she\l"
 	.string "went to.$"
 
 Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe_Text_3:
-# 755 "data/maps/Coralport/scripts.pory"
+# 759 "data/maps/Coralport/scripts.pory"
 	.string "Now I have to return the Growlithe to\n"
 	.string "the policeman.\p"
 	.string "Please make sure to come by my house\n"

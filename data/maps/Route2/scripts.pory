@@ -1,7 +1,7 @@
 mapscripts Route2_MapScripts {
     MAP_SCRIPT_ON_LOAD{
         if (var(VAR_MITSURUS_INTRO_STATE) < 10){
-            setmetatile(10, 11, 0x2C2, TRUE)
+            setmetatile(10, 11, 0x829, TRUE)
         }
     }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[

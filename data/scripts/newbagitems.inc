@@ -182,50 +182,52 @@ EventScript_TellTheTimeDayHourMinute::
 
 EventScript_CheckDaysLeft::
 # 82 "data/scripts/newbagitems.pory"
+	dotimebasedevents
+# 83 "data/scripts/newbagitems.pory"
 	compare VAR_DAYS_LEFT, 1
 	goto_if_eq EventScript_CheckDaysLeft_2
 EventScript_CheckDaysLeft_1:
-# 86 "data/scripts/newbagitems.pory"
+# 87 "data/scripts/newbagitems.pory"
 	compare VAR_DAYS_LEFT, 0
 	goto_if_eq EventScript_CheckDaysLeft_4
 	return
 
 EventScript_CheckDaysLeft_2:
-# 83 "data/scripts/newbagitems.pory"
-	msgbox EventScript_CheckDaysLeft_Text_0
 # 84 "data/scripts/newbagitems.pory"
+	msgbox EventScript_CheckDaysLeft_Text_0
+# 85 "data/scripts/newbagitems.pory"
 	closemessage
 	goto EventScript_CheckDaysLeft_1
 
 EventScript_CheckDaysLeft_4:
-# 87 "data/scripts/newbagitems.pory"
-	warpsilent MAP_GAME_OVER, 0, 5
 # 88 "data/scripts/newbagitems.pory"
+	warpsilent MAP_GAME_OVER, 0, 5
+# 89 "data/scripts/newbagitems.pory"
 	waitstate
 	return
 
 
 EventScript_ConfirmUseEscapeRope::
-# 93 "data/scripts/newbagitems.pory"
-	buffernumberstring STR_VAR_3, VAR_0x800A
 # 94 "data/scripts/newbagitems.pory"
-	msgbox ConfirmUseEscapeRope, MSGBOX_YESNO
+	buffernumberstring STR_VAR_3, VAR_0x800A
 # 95 "data/scripts/newbagitems.pory"
+	msgbox ConfirmUseEscapeRope, MSGBOX_YESNO
+# 96 "data/scripts/newbagitems.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne EventScript_ConfirmUseEscapeRope_2
 EventScript_ConfirmUseEscapeRope_1:
-# 101 "data/scripts/newbagitems.pory"
+# 102 "data/scripts/newbagitems.pory"
 	release
 	end
 
 EventScript_ConfirmUseEscapeRope_2:
-# 96 "data/scripts/newbagitems.pory"
-	callnative ScrCmd_addhoursEscapeRope
 # 97 "data/scripts/newbagitems.pory"
-	callnative ResetInitialPlayerAvatarState
+	callnative ScrCmd_addhoursEscapeRope
 # 98 "data/scripts/newbagitems.pory"
-	callnative StartEscapeRopeFieldEffect
+	callnative ResetInitialPlayerAvatarState
 # 99 "data/scripts/newbagitems.pory"
+	callnative StartEscapeRopeFieldEffect
+# 100 "data/scripts/newbagitems.pory"
 	waitstate
 	goto EventScript_ConfirmUseEscapeRope_1
 
@@ -256,12 +258,12 @@ EventScript_TellTheTimeDayHourMinute_Text_0:
 	.string "{STR_VAR_2}:{STR_VAR_3}.$"
 
 EventScript_CheckDaysLeft_Text_0:
-# 83 "data/scripts/newbagitems.pory"
+# 84 "data/scripts/newbagitems.pory"
 	.string "{COLOR GREEN}YOU HAVE {COLOR RED}ONE DAY LEFT {COLOR GREEN}TO COMPLETE THE\n"
 	.string "CURRENT STORY QUEST.$"
 
 ConfirmUseEscapeRope::
-# 105 "data/scripts/newbagitems.pory"
+# 106 "data/scripts/newbagitems.pory"
 	.string "Exiting this dungeon will advance the\n"
 	.string "time by {COLOR RED}{STR_VAR_3} hour(s){COLOR 2}.\p"
 	.string "Use Escape Rope?$"

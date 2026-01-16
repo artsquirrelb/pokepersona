@@ -306,38 +306,42 @@ script Coralport_Eventscript_ShipHasDeparted {
     release
     end
 }
+
 script Coralport_Eventscript_NotYetBoardingTime {
+    hidefollower
+    hidefollowernpc
     delay(20)
-            clearflag(FLAG_TEMP_2)
-            addobject(S_CORAL)
-            addobject(A_CORAL)
-            addobject(M_CORAL)
-            applymovement(LOCALID_PLAYER, invisible)
-            waitmovement
-            applymovement(M_CORAL, facedown)
-            applymovement(S_CORAL, moves(walk_right, walk_down, face_up))
-            applymovement(A_CORAL, moves(walk_down, face_up))
-            waitmovement
-            delay(30)
-            msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}What now?\p
-            {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It appears that we have no other choice but to wait until boarding time.\p
-            {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Maybe we can pay the police station a visit?\p
-            I'd like to check if they've found anything about Miki.\p
-            {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes, let's do that."))
-            closemessage
-            applymovement(M_CORAL, walkdown)
-            delay(4)
-            applymovement(S_CORAL, walkleft)
-            applymovement(A_CORAL, facedown)
-            applymovement(LOCALID_PLAYER, moves(walk_down, set_visible))
-            waitmovement
-            removeobject(M_CORAL)
-            delay(1)
-            removeobject(A_CORAL)
-            delay(1)
-            removeobject(S_CORAL)
-            delay(1)
-            setvar(VAR_CHAPTER_1_STATE, 1)
+    clearflag(FLAG_TEMP_2)
+    addobject(S_CORAL)
+    addobject(A_CORAL)
+    addobject(M_CORAL)
+    applymovement(LOCALID_PLAYER, invisible)
+    waitmovement
+    applymovement(M_CORAL, facedown)
+    applymovement(S_CORAL, moves(walk_right, walk_down, face_up))
+    applymovement(A_CORAL, moves(walk_down, face_up))
+    waitmovement
+    delay(30)
+    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}What now?\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It appears that we have no other choice but to wait until boarding time.\p
+    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Maybe we can pay the police station a visit?\p
+    I'd like to check if they've found anything about Miki.\p
+    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes, let's do that."))
+    closemessage
+    applymovement(M_CORAL, walkdown)
+    delay(4)
+    applymovement(S_CORAL, walkleft)
+    applymovement(A_CORAL, facedown)
+    applymovement(LOCALID_PLAYER, moves(walk_down, set_visible))
+    waitmovement
+    removeobject(M_CORAL)
+    delay(1)
+    removeobject(A_CORAL)
+    delay(1)
+    removeobject(S_CORAL)
+    delay(1)
+    setvar(VAR_CHAPTER_1_STATE, 1)
+    updatefollowingmon
 }
 
 script Coralport_Eventscript_TuberM {

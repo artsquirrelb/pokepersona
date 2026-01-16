@@ -17,7 +17,7 @@ Route2_MapScripts_MAP_SCRIPT_ON_LOAD:
 
 Route2_MapScripts_MAP_SCRIPT_ON_LOAD_1:
 # 4 "data/maps/Route2/scripts.pory"
-	setmetatile 10, 11, 0x2C2, TRUE
+	setmetatile 10, 11, 0x829, TRUE
 	return
 
 Route2_MapScripts_MAP_SCRIPT_ON_TRANSITION:

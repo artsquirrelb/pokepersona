@@ -266,3 +266,11 @@ script Mansion_MitsurusRoom2F_Eventscript_Notebooks {
     release
     end
 }
+
+script Eventscript_OptionsTips {
+    call(EventScript_ShowHelpSpeedUp)
+    setflag(FLAG_HELP_SPEEDUP)
+    removeobject(VAR_LAST_TALKED)
+    release
+    end
+}

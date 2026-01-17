@@ -8,6 +8,7 @@
 #include "difficulty.h"
 #include "string_util.h"
 #include "text.h"
+#include "level_scaling.h"
 
 #include "constants/abilities.h"
 #include "constants/battle_ai.h"
@@ -31,6 +32,10 @@ void FillPartnerParty(u16 trainerId)
     s32 ball = -1;
     enum DifficultyLevel difficulty = GetBattlePartnerDifficultyLevel(trainerId);
     SetFacilityPtrsGetLevel();
+
+    #if B_LEVEL_SCALING_ENABLED && B_TRAINER_SCALING_ENABLED
+        InvalidatePartyLevelCache();
+    #endif
 
     if (trainerId > TRAINER_PARTNER(PARTNER_NONE))
     {
@@ -73,7 +78,24 @@ void FillPartnerParty(u16 trainerId)
             else if (partyData[i].gender == TRAINER_MON_FEMALE)
                 personality = (personality & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, partyData[i].species);
             ModifyPersonalityForNature(&personality, partyData[i].nature);
+
+            // Apply level scaling
+            #if B_LEVEL_SCALING_ENABLED && B_TRAINER_SCALING_ENABLED
+
+            u8 scaledlevel = partyData[i].lvl;
+            u16 scaledSpecies = partyData[i].species;
+            const struct LevelScalingConfig *config = GetPartnerLevelScalingConfig(trainerId);
+            if (config->mode != LEVEL_SCALING_NONE)
+            {
+                // Calculate scaled level for this mon
+                scaledlevel = CalculateScaledLevel(config, partyData[i].lvl);
+                // Validate species for the scaled level
+                scaledSpecies = ValidateSpeciesForLevel(partyData[i].species, scaledlevel, config->manageEvolutions);
+            }
+            CreateMon(&gPlayerParty[i + 3], scaledSpecies, scaledlevel, personality, OTID_STRUCT_PRESET(otID));
+            #else
             CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, personality, OTID_STRUCT_PRESET(otID));
+            #endif
             j = partyData[i].isShiny;
             SetMonData(&gPlayerParty[i + 3], MON_DATA_IS_SHINY, &j);
             SetMonData(&gPlayerParty[i + 3], MON_DATA_HELD_ITEM, &partyData[i].heldItem);

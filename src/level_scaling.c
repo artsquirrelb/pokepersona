@@ -380,6 +380,52 @@ const struct LevelScalingConfig *GetTrainerLevelScalingConfig(u16 trainerId)
     return config;
 }
 
+const struct LevelScalingConfig *GetPartnerLevelScalingConfig(u16 partnerId)
+{
+    // Default configuration from config file
+    static const struct LevelScalingConfig sDefaultPartnerConfig = {
+        .mode = LEVEL_SCALING_PARTY_HIGHEST,
+        .levelAugmentAdd = 0,
+        .levelVariation = 1,
+        .minLevel = 0,
+        .maxLevel = VAR_CURRENT_LEVEL_CAP,
+        .manageEvolutions = B_TRAINER_SCALING_MANAGE_EVOLUTIONS,
+        .excludeFainted = B_TRAINER_SCALING_EXCLUDE_FAINTED,
+    };
+
+    // Check bounds
+    if (partnerId >= ARRAY_COUNT(gPartnerLevelScalingRules))
+        return &sDefaultPartnerConfig;
+
+    // Get config from rules array
+    const struct LevelScalingConfig *config = &gPartnerLevelScalingRules[partnerId];
+
+    // If mode is 0 (LEVEL_SCALING_NONE), check if this is:
+    // 1. An explicit opt-out (trainer has config with mode = NONE), OR
+    // 2. An undefined entry (zero-initialized)
+    //
+    // We distinguish by checking if ANY field is non-zero
+    // If all fields are zero, it's undefined and we use default
+    // If mode is NONE but other fields are set, it's an explicit opt-out
+    if (config->mode == LEVEL_SCALING_NONE)
+    {
+        // Check if any other field is non-zero (indicates explicit config)
+        if (config->levelAugmentAdd == 0 &&
+            config->levelVariation == 0 &&
+            config->minLevel == 0 &&
+            config->maxLevel == 0 &&
+            config->manageEvolutions == FALSE &&
+            config->excludeFainted == FALSE)
+        {
+            // All fields zero = undefined entry, use default
+            return &sDefaultPartnerConfig;
+        }
+        // else: Explicit NONE config, return it
+    }
+
+    return config;
+}
+
 u8 CalculateScaledLevel(const struct LevelScalingConfig *config, u8 originalLevel)
 {
     u8 baseLevel;

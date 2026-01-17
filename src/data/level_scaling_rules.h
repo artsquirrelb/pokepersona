@@ -194,3 +194,17 @@ const struct LevelScalingConfig gTrainerLevelScalingRules[TRAINERS_COUNT] =
     },
     */
 };
+
+
+const struct LevelScalingConfig gPartnerLevelScalingRules[TRAINER_PARTNER(PARTNER_COUNT)] =
+{
+    [TRAINER_PARTNER(PARTNER_INTELEON_T_C1)] = {
+        .mode = LEVEL_SCALING_PARTY_HIGHEST,
+        .levelAugmentAdd = 5,
+        .levelVariation = 2,
+        .minLevel = 0,
+        .maxLevel = 0,
+        .manageEvolutions = FALSE,
+        .excludeFainted = FALSE,
+    },
+};

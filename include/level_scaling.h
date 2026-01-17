@@ -87,6 +87,8 @@ struct EvolutionOverride
 
 // Get current scaling config for a trainer
 const struct LevelScalingConfig *GetTrainerLevelScalingConfig(u16 trainerId);
+// Get current scaling config for a battler partner
+const struct LevelScalingConfig *GetPartnerLevelScalingConfig(u16 partnerId);
 
 // Calculate scaled level for a trainer mon (internal use in battle_main.c)
 u8 CalculateScaledLevel(const struct LevelScalingConfig *config, u8 originalLevel);

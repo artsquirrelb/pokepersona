@@ -7,7 +7,7 @@ script Eventscript_MitsuruFollower{
     lock
     faceplayer
     checkfollowerbattler
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Is something wrong, Sanada-kun?"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Is something wrong, Sanada-kun?"))
     if (var(VAR_RESULT) == FALSE){   
         multichoice(18, 4, MULTI_NPC_FOLLOWER_1, 0)
         call (Eventscript_MitsuruFollowerMultichoice1) //isn't battle partner
@@ -55,48 +55,48 @@ script Eventscript_MitsuruFollowerMultichoice2 {
 }
 script Eventscript_AkiMitsuFollower_Talk {
     if (var(VAR_TEMP_0) == 2){
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Let's go, Sanada-kun. There's no time to waste.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}I know."))
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Let's go, Sanada-kun. There's no time to waste.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}I know."))
     }
     elif(var(VAR_TEMP_0) == 1){
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I'm still getting used to travelling with a larger party like this.\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}If I have to be honest, I find it quite delightful so far.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Oh? Did you travel before?\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}It was for the Ranger School. I used to do the fieldwork for the Pokémon Researchers there.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}That sounds awesome. Miki and I have always wanted to travel the region, for Pokémon research or not.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}......\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}......\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}I just brought the mood down, didn't I? Sorry.\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}We will find her soon.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Of course, I believe so."))
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I'm still getting used to travelling with a larger party like this.\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}If I have to be honest, I find it quite delightful so far.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Oh? Did you travel before?\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}It was for the Ranger School. I used to do the fieldwork for the Pokémon Researchers there.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}That sounds awesome. Miki and I have always wanted to travel the region, for Pokémon research or not.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}......\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}......\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}I just brought the mood down, didn't I? Sorry.\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}We will find her soon.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Of course, I believe so."))
         closemessage
         setvar(VAR_TEMP_0, 2)
     }
     else {
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Just want to say that you won't regret partnering with us.\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}We'll see. I do rarely make wrong choices.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Ahaha, very confident, aren't you? Don't worry. I don't intend to make it a wrong choice."))
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Just want to say that you won't regret partnering with us.\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}We'll see. I do rarely make wrong choices.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}Ahaha, very confident, aren't you? Don't worry. I don't intend to make it a wrong choice."))
         closemessage
         setvar(VAR_TEMP_0, 1)
     }
 }
 
 script Eventscript_MitsuruFollower_SetPartner {
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Very well. I'll back you up."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Very well. I'll back you up."))
     closemessage
     changefollowerbattler(PARTNER_MITSURU_C1)
     setflag(FLAG_PARTNER_WILD_BATTLES)
 }
 
 script Eventscript_MitsuruFollower_UnsetPartner {
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}You want to train on your own? Your determination is truly admirable."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}You want to train on your own? Your determination is truly admirable."))
     closemessage
     changefollowerbattler(0)
     clearflag(FLAG_PARTNER_WILD_BATTLES)
 }
 
 script Eventscript_MitsuruFollower_Return {
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}By all means. I figure you miss your Pokémon as well."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}By all means. I figure you miss your Pokémon as well."))
     closemessage
     call(Eventscript_NPCFollowerReturn)
 }
@@ -105,7 +105,7 @@ script Eventscript_MitsuruFollower_Cancel {
     playse(SE_PIN)
     applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, moves(emote_question_mark))
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Well, if you have anything you want to say to me, please don't hesitate."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Well, if you have anything you want to say to me, please don't hesitate."))
 }
 
 
@@ -139,7 +139,7 @@ script Eventscript_AkihikoFollower {
     lock
     faceplayer
     checkfollowerbattler
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Need something, Kirijo?"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Need something, Kirijo?"))
     if (var(VAR_RESULT) == FALSE){   
         multichoice(18, 4, MULTI_NPC_FOLLOWER_1, 0)
         call (Eventscript_AkihikoFollowerMultichoice1) //isn't battle partner
@@ -187,7 +187,7 @@ script Eventscript_AkihikoFollowerMultichoice2 {
 }
 
 script Eventscript_AkihikoFollower_SetPartner {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright. I won't lose to you!"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Alright. I won't lose to you!"))
     closemessage
     changefollowerbattler(PARTNER_AKIHIKO_C1)
     updatefollowingmon
@@ -195,14 +195,14 @@ script Eventscript_AkihikoFollower_SetPartner {
 }
         
 script Eventscript_AkihikoFollower_UnsetPartner {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure then. I'll just train on my own."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Sure then. I'll just train on my own."))
     closemessage
     changefollowerbattler(0)
     clearflag(FLAG_PARTNER_WILD_BATTLES)
 }
 
 script Eventscript_AkihikoFollower_Return {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Understood!"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Understood!"))
     closemessage
     call(Eventscript_NPCFollowerReturn)
 }
@@ -211,7 +211,7 @@ script Eventscript_AkihikoFollower_Cancel {
     playse(SE_PIN)
     applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, moves(emote_question_mark))
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Huh? Okay then."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Huh? Okay then."))
 }
 
 //////////////////////////////
@@ -222,10 +222,10 @@ script Eventscript_ShinjiroFollower {
     faceplayer
     checkplayergender
     if (var(VAR_RESULT) == MALE){
-        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}What's up, Aki?"))
+        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What's up, Aki?"))
     }
     else{
-        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}What's wrong, Princess?"))
+        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What's wrong, Princess?"))
     }
     checkfollowerbattler
     if (var(VAR_RESULT) == FALSE){
@@ -330,26 +330,26 @@ script Eventscript_AkiShinjiFollower_Talk {
 
 script Eventscript_ShinjiMitsuFollower_Talk {
     if (var(VAR_TEMP_2) == 1){
-        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Ahem, let's just go."))
+        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}Ahem, let's just go."))
     }
     else{
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}.......\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}.......\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Ahem, may I ask you something?\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Didn't you want to talk? So just fire away.\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}How did you learn to battle when you didn't have a Pokémon before?\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}They taught us in the orphanage.\p
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}.......\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}.......\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Ahem, may I ask you something?\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Didn't you want to talk? So just fire away.\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}How did you learn to battle when you didn't have a Pokémon before?\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}They taught us in the orphanage.\p
         It'd be hard to manage if the kids have their own Pokémon so the staff lent us theirs for Pokémon battling classes.\p
         We also get a certified trainer card after graduating.\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}So that was how it worked there.\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Anything else?\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}For now, no. Thank you, that was quite informative.\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}So that was how it worked there.\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Anything else?\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}For now, no. Thank you, that was quite informative.\p
         What about you? I figure it'll only be fair if you ask me something in return.\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}........\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}What's your Pokémon's favorite foods...?\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}My Pokémon's favorite foods...?\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}N-Never mind that. We're done here.\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Aragaki-kun?"))
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}........\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}What's your Pokémon's favorite foods...?\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}My Pokémon's favorite foods...?\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}N-Never mind that. We're done here.\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}Aragaki-kun?"))
         closemessage
         setvar(VAR_TEMP_2, 1)
         specialvar(VAR_RESULT, GetPlayerFacingDirection)
@@ -371,15 +371,15 @@ script Eventscript_ShinjiMitsuFollower_Talk {
 
 script Eventscript_ShinjiroFollower_Aki_SetPartner{
     if (var(VAR_AKIHIKOS_INTRO_STATE) > 0 && var(VAR_AKIHIKOS_INTRO_STATE) < 38){
-        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Aki, I don't have a Pokémon yet.\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}But well, I suppose I've got your back in a fist fight. Just bring me a bus stop sign or something."))
+        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_DOUBT}Aki, I don't have a Pokémon yet.\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}But well, I suppose I've got your back in a fist fight. Just bring me a bus stop sign or something."))
     }
     elif (var(VAR_AKIHIKOS_INTRO_STATE) >= 38 && var(VAR_AKIHIKOS_INTRO_STATE) < 100){
-        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Don't we have to return to the house in Route 2?\p
+        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_DOUBT}Don't we have to return to the house in Route 2?\p
         Now is not the time to train, Aki."))
     }
     elif (var(VAR_AKIHIKOS_INTRO_STATE) == 100){
-        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Can't do anything without me, huh?"))
+        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Can't do anything without me, huh?"))
         closemessage
         changefollowerbattler(PARTNER_SHINJIRO_C1)
         setflag(FLAG_PARTNER_WILD_BATTLES)
@@ -387,34 +387,34 @@ script Eventscript_ShinjiroFollower_Aki_SetPartner{
 }
 
 script Eventscript_ShinjiroFollower_Aki_UnsetPartner {
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Alright then."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Alright then."))
     closemessage
     changefollowerbattler(0)
     clearflag(FLAG_PARTNER_WILD_BATTLES)
 }
 
 script Eventscript_ShinjiroFollower_Mitsu_SetPartner {
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}So you do need help sometimes, huh?"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}So you do need help sometimes, huh?"))
     closemessage
     changefollowerbattler(PARTNER_SHINJIRO_C1)
     setflag(FLAG_PARTNER_WILD_BATTLES)
 }
 
 script Eventscript_ShinjiroFollower_Mitsu_UnsetPartner {
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Sure, I know you can hold your ground."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Sure, I know you can hold your ground."))
     closemessage
     changefollowerbattler(0)
     clearflag(FLAG_PARTNER_WILD_BATTLES)
 }    
 
 script Eventscript_ShinjiroFollower_Aki_Return {
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Sure then, I'll also check how Ferroseed is doing."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Sure then, I'll also check how Ferroseed is doing."))
     closemessage
     call(Eventscript_NPCFollowerReturn)
 }
 
 script Eventscript_ShinjiroFollower_Mitsu_Return {
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Got it."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Got it."))
     closemessage
     call(Eventscript_NPCFollowerReturn)
 }
@@ -423,14 +423,14 @@ script Eventscript_ShinjiroFollower_Aki_Cancel {
     playse(SE_PIN)
     applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, moves(emote_question_mark))
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}What is it? Just spit it out."))   
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}What is it? Just spit it out."))   
 }
 
 script Eventscript_ShinjiroFollower_Mitsu_Cancel {
     playse(SE_PIN)
     applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, moves(emote_question_mark))
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Whatever.")) 
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Whatever.")) 
 }
 
 //////////////////////////////
@@ -441,7 +441,7 @@ script Eventscript_InteleonTFollower {
     lock
     faceplayer
     playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
-    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks at you and waits for what you want to say.)"))
+    msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks at you and waits for what you want to say.)"))
     checkfollowerbattler
     if (var(VAR_RESULT) == FALSE){
         multichoice(18, 4, MULTI_NPC_FOLLOWER_1, 0)
@@ -513,38 +513,38 @@ script Eventscript_InteleonTFollowerMultichoice2 {
 script Eventscript_InteleonTFollower_AkiTalk {
     applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, shakehorizontal)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(It doesn't look like it wants to chat with you.)"))
+    msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(It doesn't look like it wants to chat with you.)"))
 }
 
 script Eventscript_InteleonTFollower_MitsuTalk {
     if (var(VAR_MITSURUS_INTRO_STATE) <100){
         if(var(VAR_TEMP_3) == 1){
-            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Let's focusing on completing our mission, for Father.\p
-            {SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon nodded, looking determined.)"))
+            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Let's focusing on completing our mission, for Father.\p
+            {SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon nodded, looking determined.)"))
         }
         else{
-            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}I hope Father will be safe without you, Inteleon.\p
+            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}I hope Father will be safe without you, Inteleon.\p
             You're his most trusted partner and you two were never separated as far as I can remember."))
             closemessage
             playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
             applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, LockDirectionAndWalkInPlace)
             waitmovement(0)
-            msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_NORMAL}(Inteleon puts its hand on Mitsuru's shoulder, nodding.)\p
-            {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}You're right, I should believe in him.\p
+            msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_NORMAL}(Inteleon puts its hand on Mitsuru's shoulder, nodding.)\p
+            {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}You're right, I should believe in him.\p
             Let's focus on completing our mission."))
             closemessage
             setvar(VAR_TEMP_3, 1)
         }
     }
     elif (var(VAR_MITSURUS_INTRO_STATE) == 100){
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}What do you think about those two boys, Inteleon?\p
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}What do you think about those two boys, Inteleon?\p
         Did I make the right choice partnering up with them?"))
         closemessage
         playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
         applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, LockDirectionAndWalkInPlace)
         waitmovement(0)
-        msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_DOUBT}(Inteleon is lost in thought. Looks like it needs more time to answer this question.)\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}I suppose only time will tell."))
+        msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_DOUBT}(Inteleon is lost in thought. Looks like it needs more time to answer this question.)\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}I suppose only time will tell."))
     }
 }
 
@@ -558,14 +558,14 @@ script Eventscript_InteleonTFollower_Aki_SetPartner {
     closemessage
     applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, shakehorizontal)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon refused. It doesn't trust Akihiko enough right now.)"))
+    msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon refused. It doesn't trust Akihiko enough right now.)"))
     closemessage
     changefollowerbattler(0)
     clearflag(FLAG_PARTNER_WILD_BATTLES)
 }
 
 script Eventscript_InteleonTFollower_Mitsu_SetPartner {
-    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon silently nods.)"))
+    msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon silently nods.)"))
     closemessage
     if (var(VAR_MITSURUS_INTRO_STATE) < 100){
         changefollowerbattler(PARTNER_INTELEON_T_P)
@@ -582,14 +582,14 @@ script Eventscript_InteleonTFollower_Aki_UnsetPartner {
 }
     
 script Eventscript_InteleonTFollower_Mitsu_UnsetPartner {
-    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon silently nods.)"))
+    msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon silently nods.)"))
     closemessage
     changefollowerbattler(0)
     clearflag(FLAG_PARTNER_WILD_BATTLES)
 }
 
 script Eventscript_InteleonTFollower_Return {
-    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon silently nods.)"))
+    msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon silently nods.)"))
     closemessage
     call(Eventscript_NPCFollowerReturn)
 }
@@ -598,46 +598,46 @@ script Eventscript_InteleonTFollower_Cancel {
     playse(SE_PIN)
     applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, moves(emote_question_mark))
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks confused but says nothing.)"))
+    msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks confused but says nothing.)"))
 
 }
 
 script Eventscript_AkiShinjiFollower_Talk_P {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Have you thought of which Pokémon you want for your first?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Not sure, but I guess I'd like a Grass-type Pokémon. Or a Steel-type one.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Really? I thought it'd be a Fire-type, because you love cooking.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Now that I think about it, that also isn't bad at all."))  
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Have you thought of which Pokémon you want for your first?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Not sure, but I guess I'd like a Grass-type Pokémon. Or a Steel-type one.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Really? I thought it'd be a Fire-type, because you love cooking.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Now that I think about it, that also isn't bad at all."))  
 }
 
 script Eventscript_AkiShinjiFollower_Talk_C1 {
     if (var(VAR_TEMP_1) == 2){
-        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Enough chatting. I'm done with your dumbass.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}I'm not dumb!!"))
+        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}Enough chatting. I'm done with your dumbass.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}I'm not dumb!!"))
         closemessage
         playse(SE_BOO)
         applymovement(LOCALID_PLAYER, emoteangry)
         waitmovement(0)
     }
     elif (var(VAR_TEMP_1) == 1){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}There's one more weird thing about her.\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Yeah?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}She takes at least an hour in the bath. I don't get it.\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}.............\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Should I ask her? It bothers me when I don't understand something.\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Don't dig your own grave like that."))
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}There's one more weird thing about her.\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Yeah?\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}She takes at least an hour in the bath. I don't get it.\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}.............\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Should I ask her? It bothers me when I don't understand something.\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}Don't dig your own grave like that."))
         closemessage
         setvar(VAR_TEMP_1, 2)
     }
     else{
-        msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}At the risk of turning myself into a broken record, you shouldn't trust that girl so easily.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}I know, Shinji. Ms. Kobayashi's always warned us to not trust rich people.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Although I think she's quite weird for a billionaire young lady.\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}How so?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}She's not being arrogant nor flaunting her wealth?\p
+        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}At the risk of turning myself into a broken record, you shouldn't trust that girl so easily.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}I know, Shinji. Ms. Kobayashi's always warned us to not trust rich people.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Although I think she's quite weird for a billionaire young lady.\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}How so?\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}She's not being arrogant nor flaunting her wealth?\p
         Nor looking down on us orphan kids.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Besides, she's good at battling and truly seems to love her Pokémon a lot.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Besides, she's good at battling and truly seems to love her Pokémon a lot.\p
         I've never seen rich people act like that.\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Yeah, you're right about that."))
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Yeah, you're right about that."))
         setvar(VAR_TEMP_1, 1)
     }
 }

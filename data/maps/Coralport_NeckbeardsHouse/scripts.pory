@@ -167,11 +167,11 @@ script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start {
         applymovement(OBJ_EVENT_ID_NPC_FOLLOWER, moves(walk_right, face_left))
     }
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Please wait, Nebe-san."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Please wait, Nebe-san."))
     closemessage
     applymovement(1, faceright)
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I'm very sorry for your loss.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I'm very sorry for your loss.\p
     I'd love to repay your kindness back then at the cave so is there anything I could help?\p
     A picture of your toolbox or rocks collection perhaps?\p
     I'm currently traveling through the region so I may happen to come across them."))

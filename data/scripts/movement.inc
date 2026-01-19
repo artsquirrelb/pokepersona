@@ -1,6 +1,46 @@
 @ Starting from here, these movements are considered
 @ 'safe' (won't put follower into a Pokeball)
 Common_Movement_FollowerSafeStart::
+Common_Movement_Pensive:
+	emote_pensive
+	step_end
+
+Common_Movement_Music:
+	emote_music
+	step_end
+
+Common_Movement_Sweat:
+	emote_sweat
+	step_end
+
+Common_Movement_Happy:
+	emote_happy
+	step_end
+
+Common_Movement_Asleep:
+	emote_asleep
+	step_end
+
+Common_Movement_Sad:
+	emote_sad
+	step_end
+
+Common_Movement_Angry:
+	emote_angry
+	step_end
+
+Common_Movement_Cry:
+	emote_cry
+	step_end
+
+Common_Movement_Heart:
+	emote_heart
+	step_end
+
+Common_Movement_X:
+	emote_x
+	step_end
+
 Common_Movement_QuestionMark:
 	emote_question_mark
 	step_end

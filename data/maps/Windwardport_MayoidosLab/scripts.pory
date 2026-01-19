@@ -1,0 +1,935 @@
+mapscripts Windwardport_MayoidosLab_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: Windwardport_MayoidosLab_MapScripts_OnTransition
+    MAP_SCRIPT_ON_FRAME_TABLE[
+        VAR_CHAPTER_1_STATE, 5: Windwardport_MayoidosLab_MapScripts_OnFrame5
+        VAR_CHAPTER_1_STATE, 6: Windwardport_MayoidosLab_MapScripts_OnFrame6
+        VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY: Windwardport_MayoidosLab_MapScripts_PostGrookey
+    ]
+    MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
+        VAR_CHAPTER_1_STATE, 6: Windwardport_MayoidosLab_MapScripts_OnWarp
+        VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY: Windwardport_MayoidosLab_MapScripts_OnWarp
+    ]
+}
+
+script Windwardport_MayoidosLab_MapScripts_OnWarp {
+    hideobjectat(IRIA_WWH, MAP_WINDWARDPORT_MAYOIDOS_LAB)
+    hideobjectat(WACHI_WWH, MAP_WINDWARDPORT_MAYOIDOS_LAB)
+    hideobjectat(AEGISLASH_WWH, MAP_WINDWARDPORT_MAYOIDOS_LAB)
+    hideobjectat(SINISTCHA_WWH, MAP_WINDWARDPORT_MAYOIDOS_LAB)
+}
+
+script Windwardport_MayoidosLab_MapScripts_OnTransition {
+    setflag(FLAG_TEMP_1)
+    setflag(FLAG_TEMP_2)
+    setflag(FLAG_TEMP_3)
+    if (var(VAR_CHAPTER_1_STATE) == 5){
+        setflag(FLAG_HIDE_QUEST_ICON)
+        setobjectxyperm(WACHI_WWH, 7, 17)
+        setobjectmovementtype(WACHI_WWH, MOVEMENT_TYPE_FACE_RIGHT)
+        setobjectxyperm(MAYOIDO_WWH, 8, 17)
+        setobjectmovementtype(MAYOIDO_WWH, MOVEMENT_TYPE_FACE_LEFT)
+    }
+    if(var(VAR_CHAPTER_1_STATE) == 6){
+        setflag(FLAG_HIDE_QUEST_ICON)
+        setflag(FLAG_SPAWN_INVISIBLE)
+        clearflag(FLAG_TEMP_1)
+        clearflag(FLAG_TEMP_2)
+        clearflag(FLAG_TEMP_3)
+        setobjectxyperm(M_WWH, 9, 7)
+        setobjectxyperm(S_WWH, 8, 7)
+        setobjectxyperm(A_WWH, 10, 7)
+        addobject(M_WWH)
+        addobject(S_WWH)
+        addobject(A_WWH)
+    }
+    if(var(VAR_CHAPTER_1_STATE) == VAR_RECEIVED_GROOKEY){
+        setflag(FLAG_HIDE_QUEST_ICON)
+        setflag(FLAG_SPAWN_INVISIBLE)
+        clearflag(FLAG_TEMP_1)
+        setobjectxyperm(M_WWH, 5, 18)
+        setobjectxyperm(S_WWH, 4, 18)
+        setobjectxyperm(A_WWH, 6, 18)
+        setobjectxyperm(WACHI_WWH, 18, 18)
+        setobjectmovementtype(M_WWH, MOVEMENT_TYPE_FACE_DOWN)
+        setobjectmovementtype(S_WWH, MOVEMENT_TYPE_FACE_DOWN)
+        setobjectmovementtype(A_WWH, MOVEMENT_TYPE_FACE_DOWN)
+        addobject(M_WWH)
+        addobject(S_WWH)
+        addobject(A_WWH)
+    }
+    if(var(VAR_CHAPTER_1_STATE) > VAR_RECEIVED_GROOKEY){
+        gettimeofday
+        if(var(VAR_0x8000) == 3 || var(VAR_0x8000) == 4){
+            setobjectxyperm(WACHI_WWH, 3, 9)
+            setobjectmovementtype(WACHI_WWH, MOVEMENT_TYPE_FACE_UP)
+            setobjectxyperm(IRIA_WWH, 13, 15)
+            setobjectmovementtype(IRIA_WWH, MOVEMENT_TYPE_FACE_UP)
+        }
+    }
+    
+}
+
+script Windwardport_MayoidosLab_MapScripts_OnFrame5 {
+    lock
+    destroyfollowernpc
+    clearflag(FLAG_COMPANION_MENU_GET)
+    goto(Windwardport_MayoidosLab_WachiGettingScolded)
+}
+
+script Windwardport_MayoidosLab_MapScripts_OnFrame6{
+    lock
+    goto(Windwardport_MayoidosLab_Get2ndStarter)
+}
+
+script Windwardport_MayoidosLab_MapScripts_PostGrookey {
+    hideobjectat(WACHI_WWH, MAP_WINDWARDPORT_MAYOIDOS_LAB)
+    goto(Windwardport_MayoidosLab_ContinueGoingThroughRoute4)
+}
+script Windwardport_MayoidosLab_BedroomSign {
+    lock
+    msgbox(format("Staff's Restroom."))
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_LabRoomSign {
+    lock
+    msgbox(format("Laboratory."))
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_Aegislash {
+    moncryscript(SPECIES_AEGISLASH)
+    msgbox(format("The Aegislash refused to budge no matter what."))
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_Sinistcha {
+    moncryscript(SPECIES_SINISTCHA)
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_Mayoido {
+    setflag(FLAG_HIDE_QUEST_ICON)
+    lock
+    faceplayer
+    if (var(VAR_CHAPTER_1_STATE) == 7){
+        goto(Windwardport_MayoidosLab_Mayoido_PrePickGrookey)
+    }
+    questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_FIND_STARTERS)
+    if(!var(VAR_RESULT)){
+        goto(Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart)
+    }
+}
+script Windwardport_MayoidosLab_ScientistF {
+    lock
+    faceplayer
+    setspeaker("Iria")
+    checkplayergender
+    if( (   var(VAR_RESULT) == MALE && !flag(FLAG_STARTER_TRADE_DONE_M)    ) || (  var(VAR_RESULT) == FEMALE && !flag(FLAG_STARTER_TRADE_DONE_F) )  )
+    {
+        goto(Windwardport_MayoidosLab_StarterTrade)
+    }
+    gettimeofday
+    if(var(VAR_0x8000) == 0 || var(VAR_0x8000) == 1){
+        goto(Windwardport_MayoidosLab_ScientistF_Day)
+    }
+    else{
+        goto(Windwardport_MayoidosLab_ScientistF_Night)
+    }
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_StarterTrade {
+    msgbox(format("I know a friend who can trade each of you a different starter Pokémon from other regions.\p
+    I can't guaranteer you their potential, though."))
+    checkplayergender
+    if(var(VAR_RESULT) == MALE){
+        setspeaker("Iria")
+        msgbox(format("Do you want to trade your {COLOR GREEN}Grookey{COLOR 2} for another starter?"), MSGBOX_YESNO)
+        if(!var(VAR_RESULT)){
+            goto(Windwardport_MayoidosLab_StarterTrade_Reject)
+        }
+        else{
+            goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+        }
+    }
+    else{
+        setspeaker("Iria")
+        msgbox(format("Do you want to trade your {COLOR GREEN}Fennekin{COLOR 2} for another starter?"), MSGBOX_YESNO)
+        if(!var(VAR_RESULT)){
+            goto(Windwardport_MayoidosLab_StarterTrade_Reject)
+        }
+        else{
+            goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+        }
+    }
+}
+
+script Windwardport_MayoidosLab_StarterTrade_Reject {
+    faceplayer
+    setspeaker("Iria")
+    msgbox(format("Are you sure you don't want to trade? I won't ask you again about this matter."), MSGBOX_YESNO)
+    if(var(VAR_RESULT)){
+        setspeaker("Iria")
+        msgbox(format("Understood.\nGood luck on your journey."))
+        setflag(FLAG_STARTER_TRADE_DONE_M)
+        setflag(FLAG_STARTER_TRADE_DONE_F)
+        release
+        end
+    }
+    else{
+        goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+    }
+}
+
+script Windwardport_MayoidosLab_StarterTrade_WhichRegion {
+    setvar(VAR_TEMP_0, 0)
+    setspeaker("Iria")
+    msgbox(format("From which region would you want to get your new starter?"))
+    dynmultipush("Kanto", 0)
+    dynmultipush("Johto", 1)
+    dynmultipush("Hoenn", 2)
+    dynmultipush("Sinnoh", 3)
+    dynmultipush("Unova", 4)
+    dynmultipush("Kalos", 5)
+    dynmultipush("Alola", 6)
+    dynmultipush("Galar", 7)
+    dynmultipush("Paldea", 8)
+    dynmultistack(18, 0, FALSE, 6, FALSE, 0, NULL)
+    switch(var(VAR_RESULT))
+    {
+        case 0: goto(Windwardport_MayoidosLab_StarterTrade_Kanto)
+        case 1: goto(Windwardport_MayoidosLab_StarterTrade_Johto)
+        case 2: goto(Windwardport_MayoidosLab_StarterTrade_Hoenn)
+        case 3: goto(Windwardport_MayoidosLab_StarterTrade_Sinnoh)
+        case 4: goto(Windwardport_MayoidosLab_StarterTrade_Unova)
+        case 5: goto(Windwardport_MayoidosLab_StarterTrade_Kalos)
+        case 6: goto(Windwardport_MayoidosLab_StarterTrade_Alola)
+        case 7: goto(Windwardport_MayoidosLab_StarterTrade_Galar)
+        case 8: goto(Windwardport_MayoidosLab_StarterTrade_Paldea)
+        default: goto(Windwardport_MayoidosLab_StarterTrade_Reject)
+    }
+}
+
+script Windwardport_MayoidosLab_StarterTrade_Kanto {
+    setspeaker("Iria")
+    msgbox(format("Which starter from Kanto do you want?"))
+    dynmultipush("Bulbasaur", 0)
+    dynmultipush("Charmander", 1)
+    dynmultipush("Squirtle", 2)
+    dynmultistack(18, 6, FALSE, 3, FALSE, 0, NULL)
+    switch(var(VAR_RESULT))
+    {
+        case 0: setvar(VAR_TEMP_0, SPECIES_BULBASAUR)
+        case 1: setvar(VAR_TEMP_0, SPECIES_CHARMANDER)
+        case 2: setvar(VAR_TEMP_0, SPECIES_SQUIRTLE)
+        default: goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+    }
+    goto(Windwardport_MayoidosLab_ChooseMonToTrade)
+}
+
+script Windwardport_MayoidosLab_StarterTrade_Johto {
+    setspeaker("Iria")
+    msgbox(format("Which starter from Johto do you want?"))
+    dynmultipush("Chikorita", 0)
+    dynmultipush("Cyndaquil", 1)
+    dynmultipush("Totodile", 2)
+    dynmultistack(18, 6, FALSE, 3, FALSE, 0, NULL)
+    switch(var(VAR_RESULT))
+    {
+        case 0: setvar(VAR_TEMP_0, SPECIES_CHIKORITA)
+        case 1: setvar(VAR_TEMP_0, SPECIES_CYNDAQUIL)
+        case 2: setvar(VAR_TEMP_0, SPECIES_TOTODILE)
+        default: goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+    }
+    goto(Windwardport_MayoidosLab_ChooseMonToTrade)
+}
+
+script Windwardport_MayoidosLab_StarterTrade_Hoenn {
+    setspeaker("Iria")
+    msgbox(format("Which starter from Hoenn do you want?"))
+    dynmultipush("Treecko", 0)
+    dynmultipush("Torchic", 1)
+    dynmultipush("Mudkip", 2)
+    dynmultistack(18, 6, FALSE, 3, FALSE, 0, NULL)
+    switch(var(VAR_RESULT))
+    {
+        case 0: setvar(VAR_TEMP_0, SPECIES_TREECKO)
+        case 1: setvar(VAR_TEMP_0, SPECIES_TORCHIC)
+        case 2: setvar(VAR_TEMP_0, SPECIES_MUDKIP)
+        default: goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+    }
+    goto(Windwardport_MayoidosLab_ChooseMonToTrade)
+}
+
+script Windwardport_MayoidosLab_StarterTrade_Sinnoh {
+    setspeaker("Iria")
+    msgbox(format("Which starter from Sinnoh do you want?"))
+    dynmultipush("Turtwig", 0)
+    dynmultipush("Chimchar", 1)
+    dynmultipush("Piplup", 2)
+    dynmultistack(18, 6, FALSE, 3, FALSE, 0, NULL)
+    switch(var(VAR_RESULT))
+    {
+        case 0: setvar(VAR_TEMP_0, SPECIES_TURTWIG)
+        case 1: setvar(VAR_TEMP_0, SPECIES_CHIMCHAR)
+        case 2: setvar(VAR_TEMP_0, SPECIES_PIPLUP)
+        default: goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+    }
+    goto(Windwardport_MayoidosLab_ChooseMonToTrade)
+}
+
+script Windwardport_MayoidosLab_StarterTrade_Unova {
+    setspeaker("Iria")
+    msgbox(format("Which starter from Unova do you want?"))
+    dynmultipush("Snivy", 0)
+    dynmultipush("Tepig", 1)
+    dynmultipush("Oshawott", 2)
+    dynmultistack(18, 6, FALSE, 3, FALSE, 0, NULL)
+    switch(var(VAR_RESULT))
+    {
+        case 0: setvar(VAR_TEMP_0, SPECIES_SNIVY)
+        case 1: setvar(VAR_TEMP_0, SPECIES_TEPIG)
+        case 2: setvar(VAR_TEMP_0, SPECIES_OSHAWOTT)
+        default: goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+    }
+    goto(Windwardport_MayoidosLab_ChooseMonToTrade)
+}
+
+script Windwardport_MayoidosLab_StarterTrade_Kalos {
+    setspeaker("Iria")
+    msgbox(format("Which starter from Kalos do you want?"))
+    dynmultipush("Chespin", 0)
+    dynmultipush("Froakie", 1)
+    dynmultistack(18, 8, FALSE, 3, FALSE, 0, NULL)
+    switch(var(VAR_RESULT))
+    {
+        case 0: setvar(VAR_TEMP_0, SPECIES_CHESPIN)
+        case 1: setvar(VAR_TEMP_0, SPECIES_FROAKIE)
+        default: goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+    }
+    goto(Windwardport_MayoidosLab_ChooseMonToTrade)
+}
+
+script Windwardport_MayoidosLab_StarterTrade_Alola {
+    setspeaker("Iria")
+    msgbox(format("Which starter from Alola do you want?"))
+    dynmultipush("Rowlet", 0)
+    dynmultipush("Litten", 1)
+    dynmultipush("Popplio", 2)
+    dynmultistack(18, 6, FALSE, 3, FALSE, 0, NULL)
+    switch(var(VAR_RESULT))
+    {
+        case 0: setvar(VAR_TEMP_0, SPECIES_ROWLET)
+        case 1: setvar(VAR_TEMP_0, SPECIES_LITTEN)
+        case 2: setvar(VAR_TEMP_0, SPECIES_POPPLIO)
+        default: goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+    }
+    goto(Windwardport_MayoidosLab_ChooseMonToTrade)
+}
+
+script Windwardport_MayoidosLab_StarterTrade_Galar {
+    setspeaker("Iria")
+    msgbox(format("Which starter from Galar do you want?"))
+    dynmultipush("Scorbunny", 0)
+    dynmultipush("Sobble", 1)
+    dynmultistack(18, 8, FALSE, 3, FALSE, 0, NULL)
+    switch(var(VAR_RESULT))
+    {
+        case 0: setvar(VAR_TEMP_0, SPECIES_SCORBUNNY)
+        case 1: setvar(VAR_TEMP_0, SPECIES_SOBBLE)
+        default: goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+    }
+    goto(Windwardport_MayoidosLab_ChooseMonToTrade)
+}
+
+script Windwardport_MayoidosLab_StarterTrade_Paldea {
+    setspeaker("Iria")
+    msgbox(format("Which starter from Paldea do you want?"))
+    dynmultipush("Sprigatito", 0)
+    dynmultipush("Fuecoco", 1)
+    dynmultipush("Quaxly", 2)
+    dynmultistack(18, 6, FALSE, 3, FALSE, 0, NULL)
+    switch(var(VAR_RESULT))
+    {
+        case 0: setvar(VAR_TEMP_0, SPECIES_SPRIGATITO)
+        case 1: setvar(VAR_TEMP_0, SPECIES_FUECOCO)
+        case 2: setvar(VAR_TEMP_0, SPECIES_QUAXLY)
+        default: goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+    }
+    goto(Windwardport_MayoidosLab_ChooseMonToTrade)
+}
+
+script Windwardport_MayoidosLab_NotTheRightOne {
+    faceplayer
+    setspeaker("Iria")
+    checkplayergender
+    if(var(VAR_RESULT) == MALE){
+        msgbox(format("That's not a {COLOR GREEN}Grookey{COLOR 2}. Don't waste my time."))
+    }
+    else{
+        msgbox(format("That's not a {COLOR GREEN}Fennekin{COLOR 2}. Please don't waste my time."))
+    }
+    closemessage
+    playse(SE_M_BUBBLE)
+    applymoveplayer(moves(emote_sweat))
+    msgbox("Choose again?", MSGBOX_YESNO)
+    if (!var(VAR_RESULT)){
+        goto(Windwardport_MayoidosLab_StarterTrade_Reject)
+    }
+    else{
+        goto(Windwardport_MayoidosLab_StarterTrade_WhichRegion)
+    }
+    release
+}
+
+script Windwardport_MayoidosLab_ChooseMonToTrade {
+    setspeaker("Iria")
+    checkplayergender
+    if(var(VAR_RESULT) == MALE){
+        msgbox(format("Now I'll take your {COLOR GREEN}Grookey{COLOR 2}."))
+        fadescreen(FADE_TO_BLACK)
+	    special (ChooseBoxMon)
+	    waitstate
+        if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN){
+            goto (Windwardport_MayoidosLab_StarterTrade_Reject)
+        }
+        if (var(VAR_RESULT) != SPECIES_GROOKEY){
+            goto(Windwardport_MayoidosLab_NotTheRightOne)
+        }
+        else{
+            callnative(Scrcmd_removechosenmon)
+            goto(Windwardport_MayoidosLab_GiveMon)
+        }
+    }
+    else{
+        msgbox(format("Now I'll take your {COLOR GREEN}Fennekin{COLOR 2}."))
+        if (var(VAR_RESULT) != SPECIES_FENNEKIN){
+            goto(Windwardport_MayoidosLab_NotTheRightOne)
+        }
+        else{
+            callnative(Scrcmd_removechosenmon)
+            goto(Windwardport_MayoidosLab_GiveMon)
+        }
+    }
+}
+
+script Windwardport_MayoidosLab_GiveMon {
+    faceplayer
+    setspeaker("Iria")
+    msgbox(format("Alright, give me one moment to contact my friend."))
+    closemessage
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    delay(30)
+    playse(SE_POKENAV_CALL)
+    waitse
+    applymove(3, moves(face_away_player))
+    delay(60)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    playse(SE_POKENAV_HANG_UP)
+    waitse
+    delay(30)
+    applymove(3, moves(face_player))
+    bufferspeciesname(STR_VAR_1, VAR_TEMP_0)
+    setspeaker("Iria")
+    msgbox(format("They just sent me your {STR_VAR_1}. There you go."))
+    playfanfare(MUS_OBTAIN_ITEM)
+    waitfanfare
+    givemon(VAR_TEMP_0, 15, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31)
+    msgbox(format("{STR_VAR_1} has been sent to your party."))
+    checkplayergender
+    if (var(VAR_RESULT) == MALE){
+        setflag(FLAG_STARTER_TRADE_DONE_M)
+    }
+    else{
+        setflag(FLAG_STARTER_TRADE_DONE_F)
+    }
+    setspeaker("Iria")
+    msgbox(format("Treat your Pokémon well and good luck on your journey.\p
+    Now I have to go back to my work. Excuse me."))
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_ScientistF_Day {
+    msgbox(format("Professor Mayoido often goes to the city's Pokémon Ranger building to collect data.\p
+    Apparently, there have been a rise of cases where wild Pokémon developping new abilities and/or change color.\p
+    We're still researching the cause."))
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_ScientistF_Night {
+    msgbox(format("Taking breaks is as important. Make sure you stay hydrate, too."))
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_ScientistM {
+    lock
+    faceplayer
+    setspeaker("Wachi")
+    gettimeofday
+    if(var(VAR_0x8000) == 0 || var(VAR_0x8000) == 1){
+        msgbox(format("I'm in charge of cooking for the team, actually.\p
+        I'm just your average home chef, though.\p
+        Prof. Mayoido is a very capable woman but you really, really don't want her near a kitchen.\p
+        The last time she did, the house nearly exploded.\p
+        As for Iria-san... well, she's overworked.\p
+        So yeah, I'm the only one who can."))
+    }
+    else{
+        msgbox(format("Prof. Mayoido graduated from Kitoha College and taught there for a while. She was my teacher, actually.\p
+        She can be a geek sometimes but following her around has broadened my knowledge tremendously.\p
+        I can't wait for the next time our team take on a field work."))
+    }
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_WachiGettingScolded {
+    setflag(FLAG_PREVENT_OVERWORLD_SPEEDUP)
+    delay(20)
+    clearflag(FLAG_TEMP_1)
+    addobject(M_WWH)
+    addobject(S_WWH)
+    addobject(A_WWH)
+    hideplayer
+    applymovement(A_WWH, moves(walk_right, face_up))
+    delay(4)
+    applymovement(S_WWH, moves(walk_left, face_up))
+    delay(30)
+    applymoveplayer(moves(walk_up*2, walk_right))
+    applymove(WACHI_WWH, moves(shake_horizontal, delay_16, emote_cry))
+    delay(48)
+    playse(SE_M_BUBBLE)
+    setspeaker("Wachi")
+    msgbox(format("Prof. Mayoido... I'm very sorry!!\p
+    {SPEAKER NAME_PROF}Sigh... You have one job, boy. How could you forget to lock the lab...\p
+    I already promised the Kirijo young lady."))
+    closemessage
+    delay(30)
+    playse(SE_PIN)
+    applymove(MAYOIDO_WWH, moves(emote_exclamation_mark, face_down))
+    msgbox(format("{SPEAKER NAME_PROF}Kirijo-kun. You're here."))
+    closemessage
+    playse(SE_PIN)
+    applymove(WACHI_WWH, facedown)
+    playse(SE_M_BUBBLE)
+    applymove(WACHI_WWH, moves(emote_sweat))
+    delay(30)
+    applymovement(MAYOIDO_WWH, moves(walk_down, face_left))
+    delay(4)
+    applymovement(M_WWH, moves(walk_up*2, walk_right))
+    delay(8)
+    applymovement(S_WWH, moves(walk_up*3, walk_right*2))
+    applymovement(WACHI_WWH, moves(walk_right, face_left))
+    delay(4)
+    applymove(A_WWH, moves(walk_up, face_right))
+    delay(30)
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Is there something wrong, Professor Mayoido?"))
+    closemessage
+    playse(SE_M_BUBBLE)
+    applymove(MAYOIDO_WWH, moves(emote_sweat))
+    msgbox(format("{SPEAKER NAME_PROF}Apologies, Kirijo-kun.\n
+    We had a little accident and most of the Pokémon we'd prepared for your mission run away.\p
+    We only managed to secure 2 of them at the moment.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see.\n What about the items?\p
+    {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}All done and functioning well.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Magnifique."))
+    closemessage
+    applymove(M_WWH, moves(face_down, delay_16, delay_16, delay_16, face_up, delay_16, delay_16, delay_16, face_right))
+    delay(30)
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Oh right, I suppose introduction is due."))
+    closemessage
+    delay(30)
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Professor, this is Akihiko Sanada-kun and Shinjiro Aragaki-kun.\p
+    They're my companions for the mission.\p
+    Sanada-kun, Aragaki-kun, this is Professor Mayoido.\p
+    I did field works for her a few years ago.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Please to meet you!\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Same here.\p
+    {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Please to meet you too, Sanada-kun and Aragaki-kun."))
+    closemessage
+    delay(30)
+    playse(SE_M_BUBBLE)
+    applymove(MAYOIDO_WWH, moves(emote_pensive))
+    delay(70)
+    playse(SE_PIN)
+    applymovement(MAYOIDO_WWH, moves(emote_happy))
+    msgbox(format("{SPEAKER NAME_PROF}Fufufu."))
+    playse(SE_PIN)
+    applymove(M_WWH, moves(emote_question_mark))
+    delay(30)
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Professor?\p
+    {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Ah, don't mind me.{PAUSE_UNTIL_PRESS}\n
+    Let's get you three the Pokémon and the items now, shall we?"))
+    closemessage
+    setvar(VAR_CHAPTER_1_STATE, 6)
+    warpsilent(MAP_WINDWARDPORT_MAYOIDOS_LAB, 9, 9)
+    waitstate
+}
+
+script Windwardport_MayoidosLab_Get2ndStarter {
+    addobject(M_WWH)
+    addobject(A_WWH)
+    addobject(S_WWH)
+    applymoveplayer(moves(walk_slow_up*3))
+    delay(30)
+    msgbox(format("{SPEAKER NAME_PROF}Here's the two Pokémon we have left in the lab. My apologies again for the lack of choices.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It's fine, Prof. I appreciate it all the same."))
+    closemessage
+    delay(30)
+    applymove(M_WWH, moves(walk_down, face_up))
+    applymoveplayer(moves(walk_down))
+    delay(30)
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}You two can go ahead. I suppose you need them more than me."))
+    closemessage
+    applymovement(A_WWH, moves(face_down))
+    delay(4)
+    applymove(S_WWH, moves(face_down))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Really?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Don't mind if I do then."))
+    closemessage
+    delay(20)
+    applymoveplayer(moves(walk_up), 1)
+    applymove(A_WWH, moves(face_up))
+    applymove(S_WWH, moves(walk_up))
+    delay(30)
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Now, now, good boy, come here."))
+    closemessage
+    playmoncry(SPECIES_OSHAWOTT, 0)
+    applymove(OSHA_WWH, moves(emote_happy, jump_in_place_down))
+    delay(70)
+    playse(SE_BALL_OPEN)
+    applymove(OSHA_WWH, moves(enter_pokeball))
+    removeobject(OSHA_WWH)
+    delay(30)
+    applymove(S_WWH, moves(walk_down, face_right))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Your turn, Aki. Don't keep {COLOR GREEN}Grookey{COLOR 2} waiting."))
+    closemessage
+    applymovement(S_WWH, moves(walk_down, face_up))
+    checkplayergender
+    if(var(VAR_RESULT) == FEMALE){
+        switchmaincharacter
+    }
+    applymoveplayer(moves(walk_diag_southeast, face_up, set_visible))
+    applymove(A_WWH, moves(set_invisible))
+    removeobject(A_WWH)
+    setvar(VAR_CHAPTER_1_STATE, 7)
+    setflag(FLAG_TEMP_HIDE_FOLLOWER)
+    updatefollowingmon
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_MustGetGrookey {
+    lock
+    moveobjecttocoords(MC, 10, 6, DIR_NORTH)
+    waitmovement
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(I should pick up {COLOR GREEN}Grookey{COLOR 2}.)"))
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_Mitsuru {
+    lock
+    faceplayer
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Go ahead, Sanada-kun. {COLOR GREEN}Grookey{COLOR 2} seems to be very excited to have you as its trainer."))
+    applymove(M_WWH, moves(face_original_direction))
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_Shinjiro {
+    lock
+    faceplayer
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What are you waiting for, Aki? Hurry up so we can move along."))
+    applymove(S_WWH, moves(face_original_direction))
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_Mayoido_PrePickGrookey {
+    lock
+    faceplayer
+    msgbox(format("{SPEAKER NAME_PROF}Apologies for the lack of choices.\p
+    These two Pokémon are all we have left in the lab but I assure you they're well prepared and would make great companions."))
+    applymove(S_WWH, moves(face_original_direction))
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_Grookey {
+    lock
+    faceplayer
+    msgbox(format("Hold out a Pokéball to {COLOR GREEN}Grookey{COLOR 2}?"), MSGBOX_YESNO)
+    if(!var(VAR_RESULT)){
+        playse(SE_PIN)
+        applymove(GROO_WWH, moves(emote_question_mark))
+        msgbox(format("{COLOR GREEN}Grookey{COLOR 2} is wondering what you are."))//yes its what not who ahaha hes a lil silly munkey
+        release
+        end
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Huh? Is that some sparkling dust around it?)"), MSGBOX_YESNO)
+        if (var(VAR_RESULT)){
+            closemessage
+            givemon(SPECIES_GROOKEY, 15, ITEM_NONE, ITEM_POKE_BALL, NATURE_ADAMANT, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31, shinyMode = SHINY_MODE_ALWAYS)
+        }
+        else{
+            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Nah, my eyes were just playing tricks on me."))
+            closemessage
+            givemon(SPECIES_GROOKEY, 15, ITEM_NONE, ITEM_POKE_BALL, NATURE_ADAMANT, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31, shinyMode = SHINY_MODE_NEVER)
+        }
+        turnobject(MAYOIDO_WWH, DIR_EAST)
+        playmoncry(SPECIES_GROOKEY, 0)
+        playse(SE_LEDGE)
+        applymove(GROO_WWH, moves(emote_happy, jump_right))
+        playse(SE_LEDGE)
+        applymove(GROO_WWH, moves(jump_up))
+        playse(SE_LEDGE)
+        applymove(GROO_WWH, moves(jump_left))
+        playse(SE_LEDGE)
+        applymove(GROO_WWH, moves(jump_down))
+        delay(30)
+        playse(SE_LEDGE)
+        applymove(GROO_WWH, moves(jump_in_place_down))
+        playse(SE_LEDGE)
+        applymove(GROO_WWH, moves(jump_in_place_down))
+        delay(40)
+        playse(SE_BALL)
+        applymove(GROO_WWH, moves(enter_pokeball))
+        removeobject(GROO_WWH)
+        playfanfare(MUS_OBTAIN_ITEM)
+        msgbox(format("{COLOR GREEN}Grookey{COLOR 2} excitedly went into the Pokéball.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Welcome to the team, Grookey."))
+        closemessage
+        goto(Windwardport_MayoidosLab_ReceiveDexNav)
+    }
+}
+
+script Windwardport_MayoidosLab_ReceiveDexNav {
+    hidefollower
+    delay(30)
+    special(SpawnCameraObject)
+    turnobject(MAYOIDO_WWH, DIR_SOUTH)
+    applymovement(CAM, moves(walk_left))
+    applymoveplayer(moves(walk_down, face_up), 1)
+    applymovement(M_WWH, moves(walk_up))
+    delay(4)
+    applymove(S_WWH, moves(walk_up))
+    stepinplace(MAYOIDO_WWH, DIR_SOUTH)
+    msgbox(format("{SPEAKER NAME_PROF}Very well, now these are the items you requested, Kirijo-kun."))
+    closemessage
+    applymove(MAYOIDO_WWH, moves(walk_down, delay_16, delay_16, walk_left, face_down, delay_16, delay_16, walk_right *2, face_down, delay_16, delay_16, walk_up, walk_left, face_down))
+    delay(40)
+    msgbox(format("{SPEAKER NAME_PROF}{COLOR 7}DexNav{COLOR 2}, {COLOR 7}Escape Rope{COLOR 2}, {COLOR 7}Bike{COLOR 2}
+    and {COLOR 7}Pokémon Box Link{COLOR 2}, for each of you."))
+    call(EventScript_ShowHelpDexNav)
+    call(EventScript_ShowHelpBoxLink)
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Woah...{PAUSE_UNTIL_PRESS}\n
+    We can get all these stuff for free?\p
+    I'm pretty sure the {COLOR 7}DexNav{COLOR 2} alone costs a fortune...\p
+    {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}There's no free meal in this world, my young guy.\p
+    Let's just say it's a fair trade.\p
+    I, more than anyone, want Kirijo-kun's mission to be a success.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Rest assured, Prof. I'll do whatever it takes. Even if it's risking my life."))
+    closemessage
+    playse(SE_PIN)
+    applymovement(S_WWH, moves(emote_exclamation_mark, face_right))
+    delay(4)
+    applymoveplayer(moves(emote_exclamation_mark, face_left))
+    delay(60)
+    applymovement(S_WWH, moves(face_up))
+    applymoveplayer(moves(face_up), 1)
+    msgbox(format("{SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Ahahaha, you and your father are really two peas in a pot.\p
+    Anyway, that's all I have for you right now but feel free to help out in the lab as you usually do, Kirijo-kun.\p
+    Sanada-kun and Aragaki-kun are welcomed to as well, considering that you were hand-picked by Kirijo-kun.\p
+    There'll be rewards for your contribution, of course.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I appreciate your help, Prof. Mayoido.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}We'll take our leaves now. Please take care."))
+    closemessage
+    setvar(VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY)
+    additem(ITEM_ESCAPE_ROPE)
+    additem(ITEM_MACH_BIKE)
+    additem(ITEM_POKEMON_BOX_LINK)
+    setflag(FLAG_DEXNAV_GET)
+    questmenu(QUEST_MENU_UNLOCK_QUEST, QUEST_FIND_STARTERS)
+    warpsilent(MAP_WINDWARDPORT_MAYOIDOS_LAB, 5, 18)
+    waitstate
+}
+
+script Windwardport_MayoidosLab_ContinueGoingThroughRoute4 {
+    addobject(M_WWH)
+    addobject(A_WWH)
+    addobject(S_WWH)
+    applymoveplayer(walkdown, 1)
+    applymove(M_WWH, moves(walk_down*2, face_up))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Now that we received our package, we should continue going west of the city for Goldenwings Mt.\p
+    Is there any question?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}... {PAUSE 30}Nope.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_PENSIVE}... {PAUSE 60}Me neither.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}..... {PAUSE 60}Very well then, let's get going."))
+    closemessage
+    delay(30)
+    applymove(M_WWH, moves(face_down, delay_8, set_invisible))
+    playse(SE_EXIT)
+    waitse
+    removeobject(M_WWH)
+    delay(40)
+    playse(SE_M_BUBBLE)
+    applymove(S_WWH, moves(emote_pensive))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}She would even risk her life, she said...\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_PENSIVE}I wonder what she's fighting for.\p
+    I'm sure if Miki is in danger I'll definitely risk my life to save her.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}I guess we'll know when we reach Goldenwings Mt.\p
+    Let's go."))
+    closemessage
+    setvar(VAR_CHAPTER_1_STATE, 9)
+    clearflag(FLAG_PREVENT_OVERWORLD_SPEEDUP)
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    setflag(FLAG_COMPANION_MENU_GET)
+    refreshquesticon
+    warp(MAP_WINDWARD_PORT, 0)
+    waitstate
+}
+
+script Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart {
+    hidefollower
+    hidefollowernpc
+    special(SpawnCameraObject)
+    applymovement(CAM, walkdown)
+    applymoveplayer(moves(walk_down, face_up))
+    getplayerxy(VAR_0x8000, VAR_0x8001)
+    clearflag(FLAG_TEMP_1)
+    setobjectxyperm(A_WWH, VAR_0x8000, VAR_0x8001)
+    setobjectxyperm(M_WWH, VAR_0x8000, VAR_0x8001)
+    setobjectxyperm(S_WWH, VAR_0x8000, VAR_0x8001)
+    addobject(A_WWH)
+    addobject(S_WWH)
+    addobject(M_WWH)
+    hideplayer
+    applymovement(A_WWH, moves(walk_right, face_up))
+    applymove(S_WWH, moves(walk_left, face_up))
+    delay(30)
+    msgbox(format("{SPEAKER NAME_PROF}Hello, my lovely children. The lab has been busy and we appreciate any help we can get.\p
+    If you can spare the time, would you like to help us?"))
+    checkplayergender
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Certainly. How can we help you?\p
+    {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}As you've known, the Pokémon we've worked so hard to prepared for your journey have run away.\p
+    When you're travelling through the region, if you happen to see them, please secure them for us.\p
+    They're the starter Pokémon in other regions and there's a special sparkle on each of them.\p
+    You will know right away when you approach them."))
+    closemessage
+    call(Windwardport_MayoidosLab_CheckIfFennekinLineInPartyBox)
+    if(var(VAR_TEMP_1) != 0){
+        doemote(MAYOIDO_WWH, E_PENSIVE)
+        applymove(MAYOIDO_WWH, walkdown)
+        delay(48)
+        doemote(MAYOIDO_WWH, 0)
+        msgbox(format("{SPEAKER NAME_PROF}Your {COLOR 7}{STR_VAR_2}{COLOR 2}! That's the one that ran away!\p
+        Well, I'm not sure how it ended up with you but it's a relief then, one species secured.\p
+        Don't worry, you can keep it."))
+        closemessage
+        applymove(MAYOIDO_WWH, moves(walk_up, face_down))
+        delay(30)
+        msgbox(format("{SPEAKER NAME_PROF}Now where were we?{PAUSE_UNTIL_PRESS}\n
+        Oh right, yes. The missing Pokémon all have the same feature like that."))
+        closemessage
+    }
+    delay(30)
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Understood. We'll keep an eye out for them.\p
+    {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Perfect, our staff will also actively look for them as well
+    and will update any information they've found in the computer over there."))
+    closemessage
+    special(SpawnCameraObject)
+    applymove(CAM, moves(walk_left*3, walk_diag_northwest*2))
+    delay(40)
+    applymove(CAM, moves(walk_right*3, walk_diag_southeast*2))
+    special(RemoveCameraObject)
+    msgbox(format("{SPEAKER NAME_PROF}Be sure to check it from time to time.\p
+    Thank you for your help."))
+    closemessage
+    applymovement(A_WWH, walkleft)
+    applymove(S_WWH, walkright)
+    showplayer
+    removeobject(A_WWH)
+    delay(1)
+    removeobject(S_WWH)
+    delay(1)
+    removeobject(M_WWH)
+    delay(1)
+    questmenu(QUEST_MENU_SET_ACTIVE, QUEST_FIND_STARTERS)
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script Windwardport_MayoidosLab_CheckIfFennekinLineInPartyBox {
+    checkpartyboxspecies(SPECIES_FENNEKIN)
+    if(!var(VAR_RESULT)){
+        checkpartyboxspecies(SPECIES_BRAIXEN)
+        if (!var(VAR_RESULT)){
+            checkpartyboxspecies(SPECIES_DELPHOX)
+            if(var(VAR_RESULT)){
+                setvar(VAR_TEMP_1, 1)
+            }
+        }
+        else{
+            setvar(VAR_TEMP_1, 1)
+        }
+    }
+    else{
+        setvar(VAR_TEMP_1, 1)
+    }
+}
+
+script Windwardport_MayoidosLab_Mayoido_PC {
+    questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_FIND_STARTERS)
+    if(var(VAR_RESULT)){
+        lock
+        playse(SE_PC_ON)
+        msgbox(format("{COLOR 7}-Retrieving Starter Pokémon-\n{COLOR 2}Which information you'd like to check?"))
+        call(MayoidosLab_PC_FolderC1)
+        call(MayoidosLab_PC_ShowInfo)
+    }
+    else{
+        msgbox(format("There's a wall of numbers on the screen that makes no sense to you."))
+    }
+    playse(SE_PC_OFF)
+    release
+    end
+}
+
+script MayoidosLab_PC_FolderC1 {
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_1)
+    if(!var(VAR_RESULT)){
+        dynmultipush("Bulbasaur", 0)
+    }
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_14)
+    if(!var(VAR_RESULT)){
+        dynmultipush("Tepig", 1)
+    }
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_12)
+    if(!var(VAR_RESULT)){
+        dynmultipush("Piplup", 2)
+    }
+}
+
+script MayoidosLab_PC_ShowInfo {
+    dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
+    switch(var(VAR_RESULT)){
+        case 0:
+        case 1:
+        case 2:
+        default:
+            msgbox(format("Todo"))
+    }
+}

@@ -5844,6 +5844,18 @@
       "secondary_tileset": "gTileset_WindwardPort",
       "border_filepath": "data/layouts/WindwardPort_Beach/border.bin",
       "blockdata_filepath": "data/layouts/WindwardPort_Beach/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDWARDPORT_MAYOIDOS_LAB",
+      "name": "Windwardport_MayoidosLab_Layout",
+      "width": 22,
+      "height": 22,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_MayoidosLab",
+      "border_filepath": "data/layouts/Windwardport_MayoidosLab/border.bin",
+      "blockdata_filepath": "data/layouts/Windwardport_MayoidosLab/map.bin"
     }
   ]
 }

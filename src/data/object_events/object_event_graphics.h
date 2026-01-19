@@ -29,6 +29,7 @@ const u32 gObjectEventPic_Mitsuru_Sleeping[] = INCBIN_U32("graphics/object_event
 const u32 gObjectEventPic_Miki[] = INCBIN_U32("graphics/object_events/pics/people/miki.4bpp");
 const u32 gObjectEventPic_Frozen[] = INCBIN_U32("graphics/object_events/pics/people/frozen.4bpp");
 const u32 gObjectEventPic_Takeharu[] = INCBIN_U32("graphics/object_events/pics/people/takeharu.4bpp");
+const u32 gObjectEventPic_Mayoido[] = INCBIN_U32("graphics/object_events/pics/people/mayoido.4bpp");
 
 
 const u32 gObjectEventPic_Waitress[] = INCBIN_U32("graphics/object_events/pics/people/waitress.4bpp");
@@ -54,6 +55,7 @@ const u32 gObjectEventPic_VeteranM[] = INCBIN_U32("graphics/object_events/pics/p
 const u32 gObjectEventPic_VeteranF[] = INCBIN_U32("graphics/object_events/pics/people/veteran_f.4bpp");
 const u32 gObjectEventPic_Toddler[] = INCBIN_U32("graphics/object_events/pics/people/toddler.4bpp");
 const u32 gObjectEventPic_KimonoGirl[] = INCBIN_U32("graphics/object_events/pics/people/kimono_girl.4bpp");
+const u32 gObjectEventPic_ScientistF[] = INCBIN_U32("graphics/object_events/pics/people/scientist_f.4bpp");
 
 
 const u16 gObjectEventPal_Shinjiro[] = INCBIN_U16("graphics/object_events/pics/people/shinjiro.gbapal");

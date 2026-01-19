@@ -28,9 +28,8 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     delay(30)
     applymovement(LOCALID_PLAYER, moves(emote_pensive))
     waitmovement(0)
-    setspeaker(SP_NAME_MITSURU)
-    createfieldmugshot(MUGSHOT_MITSURU, EMOTE_NORMAL)
-    msgbox(format("I'll need this... and a spare pair of boots..."))
+
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I'll need this... and a spare pair of boots..."))
     closemessage
     setflag(FLAG_SYS_B_DASH)
     delay(30)
@@ -38,8 +37,8 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     delay(40)
     applymovement(LOCALID_VULPIX, moves(face_left, face_up))
     waitmovement(LOCALID_PLAYER)
-    createfieldmugshot(MUGSHOT_MITSURU, EMOTE_NORMAL)
-    msgbox(format("{SPEAKER NAME_MITSURU}My Pokédex, wallet... Repels...\p
+    createfieldmugshot(MUGSHOT_M, EMOTE_NORMAL)
+    msgbox(format("{SPEAKER NAME_M}My Pokédex, wallet... Repels...\p
     And the map to Thundershards Cliff."))
     closemessage
     setcaughtmon(SPECIES_VULPIX_DELTA)
@@ -54,13 +53,12 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     setflag(FLAG_SYS_POKEMON_GET)
     applymovement(LOCALID_PLAYER, emotepensive)
     waitmovement(0)
-    setspeaker(SP_NAME_MITSURU)
-    msgbox(format("{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}What else..."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}What else..."))
     closemessage
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, emoteexclamation)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Oh right."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Oh right."))
     closemessage
     applymovement(LOCALID_PLAYER, moves(walk_down *2, walk_left *3, walk_up))
     delay(8)
@@ -80,8 +78,8 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     additem(ITEM_POTION, 2)
     additem(ITEM_REPEL, 5)
     addmoney(15000)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll definitely need this while outdoors.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hmm, that should be everything."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'll definitely need this while outdoors.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Hmm, that should be everything."))
     closemessage
     delay(20)
     applymovement(LOCALID_VULPIX, moves(walk_fast_left*4, jump_in_place_up))
@@ -91,7 +89,7 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement(0)
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I know, I know. I'll never leave you behind, Vulpix.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I know, I know. I'll never leave you behind, Vulpix.\p
     Let's get you inside the Pokéball now, shall we?"))
     closemessage
     playmoncry(SPECIES_VULPIX, CRY_MODE_NORMAL)
@@ -137,7 +135,7 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
         }
         else{
             msgbox("Party full.")}
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It's already 10:32PM.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}It's already 10:32PM.\p
     If I don't go now, I won't be arriving at the cliff's foot before midnight."))
     closemessage
     fwdtime(22, 32)
@@ -172,7 +170,7 @@ script Mansion_MitsurusRoom2F_Eventscript_MustPickUpVulpix {
     lock
     applymovement(LOCALID_PLAYER, moves(walk_right, face_down))
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Vulpix is waiting for me.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Vulpix is waiting for me.)"))
     closemessage
     release
     end
@@ -181,7 +179,7 @@ script Mansion_MitsurusRoom2F_Eventscript_MustPickUpVulpix {
 script Mansion_MitsurusRoom2F_Eventscript_DollAlolanVulpix {
     lock
     msgbox(format("It's an Alolan Vulpix doll.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}...\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}...\p
     (This reminds me of how my Vulpix used to look...)"))
     closemessage
     release
@@ -225,14 +223,14 @@ script Mansion_MitsurusRoom2F_Eventscript_Piano {
             delay(1800)
             fadenewbgm(MUS_XC2_TORIGOTH_NIGHT)
             savebgm(MUS_XC2_TORIGOTH_NIGHT)
-            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(It's time to go.)"))
+            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(It's time to go.)"))
             closemessage
             addtime(0, 0, 10)
             setvar(VAR_TEMP_0, 1)
         }}
     else
     {
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I really need to get going.)"))
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(I really need to get going.)"))
     }
     release
     end
@@ -259,7 +257,7 @@ script Mansion_MitsurusRoom2F_Eventscript_BookshelfRight {
 script Mansion_MitsurusRoom2F_Eventscript_Notebooks {
     lock
     msgbox(format("College materials from the previous term.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Luckily, it's summer break right now.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Luckily, it's summer break right now.\p
     Otherwise it'd be hard for me to travel.\p
     Well, I figure I can always request a leave of absence until this matter is sorted out.)"))
     closemessage

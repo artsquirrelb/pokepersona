@@ -3110,6 +3110,20 @@ void Script_SwitchMainCharacter(void)
     FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
 }
 
+void Script_SwitchParty(void)
+{
+    if (gSaveBlock2Ptr->playerGender == MALE){
+        SavePlayerParty();
+        gSaveBlock2Ptr->playerGender = FEMALE;
+        LoadPlayerParty();
+    }
+    else{
+        SavePlayerParty();
+        gSaveBlock2Ptr->playerGender = MALE;
+        LoadPlayerParty(); 
+    }
+}
+
 static void SetBerryTreeGraphics(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     u8 berryStage;

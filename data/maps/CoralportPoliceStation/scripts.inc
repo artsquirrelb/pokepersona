@@ -677,17 +677,17 @@ CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_8:
 
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_9:
 # 87 "data/maps/CoralportPoliceStation/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}.......\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}... {PAUSE 40}(He's... also looking for a family\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}.......\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}... {PAUSE 40}(He's... also looking for a family\n"
 	.string "member...)\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}....{PAUSE 40} Aki.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}...{PAUSE 40} {CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Uh- yeah?\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}If you want to ask about Miki, go ask.\p"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}....{PAUSE 40} Aki.\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}...{PAUSE 40} {CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Uh- yeah?\p"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}If you want to ask about Miki, go ask.\p"
 	.string "If you want to help that man, go help\n"
 	.string "him.\p"
 	.string "Stop standing there and mopping\n"
 	.string "around.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}R-right.$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}R-right.$"
 
 CoralportPoliceStation_Eventscript_PolicemanReceptionist_Text_0:
 # 128 "data/maps/CoralportPoliceStation/scripts.pory"
@@ -711,7 +711,7 @@ CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_0:
 # 167 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "Welcome to Coralport Police Station.\n"
 	.string "How can we help you?\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Hello, have you found anything about\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Hello, have you found anything about\n"
 	.string "Miki, the missing girl from Sunshine\l"
 	.string "Orphanage?$"
 
@@ -726,11 +726,11 @@ CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_1:
 	.string "still find no traces of her nor her body.\p"
 	.string "The investigation is still on-going so\n"
 	.string "there's not much I can say further.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}I see..... Thanks.$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}I see..... Thanks.$"
 
 CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_2:
 # 187 "data/maps/CoralportPoliceStation/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Let's go outside.$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Let's go outside.$"
 
 CoralportPoliceStation_Eventscript_PolicemanEast_Text_0:
 # 222 "data/maps/CoralportPoliceStation/scripts.pory"

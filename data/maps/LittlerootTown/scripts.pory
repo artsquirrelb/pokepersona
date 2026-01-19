@@ -1024,9 +1024,9 @@ script LittlerootTown_Eventscript_RomhackingTextSign {
 text LittlerootTown_Text_RomhackingTextSign {
 	
 	format(
-		"{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+		"{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}"
 		"This rom hacking stuff is quite confusing.\p"
-		"{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}"
+		"{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}"
 		"But it's fun so far!"
 	)
 }

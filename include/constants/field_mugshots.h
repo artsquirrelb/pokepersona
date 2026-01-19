@@ -3,9 +3,9 @@
 
 enum Mugshots {
     MUGSHOT_NONE = 0,
-    MUGSHOT_MITSURU,
-    MUGSHOT_AKIHIKO,
-    MUGSHOT_SHINJIRO,
+    MUGSHOT_M,
+    MUGSHOT_A,
+    MUGSHOT_S,
     MUGSHOT_INTELEON,
     MUGSHOT_COUNT,
 };
@@ -26,12 +26,13 @@ enum MugshotEmotes {
     EMOTE_CONFIDENT,
     EMOTE_GEEZ,
     EMOTE_CRY,
+    EMOTE_PENSIVE,
     EMOTE_COUNT,
 };
 
-#define MUGSHOT_MITSURU 1 //total: 11
-#define MUGSHOT_AKIHIKO 2 //total: 13
-#define MUGSHOT_SHINJIRO 3 //total: 9
+#define MUGSHOT_M 1 //total: 11
+#define MUGSHOT_A 2 //total: 13
+#define MUGSHOT_S 3 //total: 9
 #define MUGSHOT_INTELEON 4 //total: 3
 #define MUGSHOT_COUNT 36
 

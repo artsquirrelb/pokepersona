@@ -1447,12 +1447,12 @@ WindwardPort_Harbor_Eventscript_Sign_Text_0:
 
 WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab_Text_0:
 # 164 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}We're in Windward Port at last.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Let's visit my personal lab to pick up\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}We're in Windward Port at last.\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Let's visit my personal lab to pick up\n"
 	.string "our package.\p"
 	.string "It's the house with the tall red roof at\n"
 	.string "the south of the city.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Sure.$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Sure.$"
 
 WindwardPort_Harbor_Eventscript_GhostBoyEventTrigger_Text_0:
 # 201 "data/maps/WindwardPort_Harbor/scripts.pory"
@@ -1504,7 +1504,7 @@ WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_0:
 
 WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_1:
 # 319 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}What's wrong, little boy?\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}What's wrong, little boy?\n"
 	.string "Why are you here alone?$"
 
 WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_2:
@@ -1514,12 +1514,12 @@ WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_2:
 
 WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_3:
 # 324 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure! Just for a little while, though.\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Sure! Just for a little while, though.\p"
 	.string "After that you gotta go home, alright?$"
 
 WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_4:
 # 334 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Why are you crying? Are you lost?$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Why are you crying? Are you lost?$"
 
 WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_5:
 # 336 "data/maps/WindwardPort_Harbor/scripts.pory"
@@ -1528,7 +1528,7 @@ WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_5:
 
 WindwardPort_Harbor_Eventscript_StartQuestGhosBoy_Text_6:
 # 339 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I don't see why not.\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I don't see why not.\p"
 	.string "But promise me you'll go home after\n"
 	.string "we're done playing?$"
 
@@ -1557,18 +1557,18 @@ WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_0:
 
 WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_1:
 # 408 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(Did he just vanish??)\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}(Maybe I'm getting tired. It's pretty\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}(Did he just vanish??)\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}(Maybe I'm getting tired. It's pretty\n"
 	.string "late-)\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(Wait! Since when the sun's out??)$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}(Wait! Since when the sun's out??)$"
 
 WindwardPort_Harbor_Eventscript_FoundGhostBoy1_Text_2:
 # 414 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(Did my eyes play tricks on me? He just\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}(Did my eyes play tricks on me? He just\n"
 	.string "vanished.)\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(Perhaps I do need to go rest. It's late\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}(Perhaps I do need to go rest. It's late\n"
 	.string "after all-)\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(Wait, it's already morning?)$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}(Wait, it's already morning?)$"
 
 WindwardPort_Harbor_Eventscript_StartTreasureHunt2_Text_0:
 # 427 "data/maps/WindwardPort_Harbor/scripts.pory"
@@ -1604,7 +1604,7 @@ WindwardPort_Harbor_Eventscript_TreasureHint_Text_0:
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_0:
 # 482 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}It's this one, right?$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}It's this one, right?$"
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_1:
 # 484 "data/maps/WindwardPort_Harbor/scripts.pory"
@@ -1613,7 +1613,7 @@ WindwardPort_Harbor_Eventscript_FoundTreasure_Text_1:
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_2:
 # 488 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Is this the right one?$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Is this the right one?$"
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_3:
 # 489 "data/maps/WindwardPort_Harbor/scripts.pory"
@@ -1632,14 +1632,14 @@ WindwardPort_Harbor_Eventscript_FoundTreasure_Text_5:
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_6:
 # 511 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(I swear he vanished into thin air\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}(I swear he vanished into thin air\n"
 	.string "again.)\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(What a weird boy.)$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(What a weird boy.)$"
 
 WindwardPort_Harbor_Eventscript_FoundTreasure_Text_7:
 # 516 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(He just vanished again.)\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(That's... quite weird.)$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}(He just vanished again.)\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(That's... quite weird.)$"
 
 WindwardPort_Harbor_Eventscript_StartQuiz3_Text_0:
 # 529 "data/maps/WindwardPort_Harbor/scripts.pory"
@@ -1801,12 +1801,12 @@ WindwardPort_Harbor_Eventscript_QuizFinished_Text_0:
 
 WindwardPort_Harbor_Eventscript_QuizFinished_Text_1:
 # 666 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}I'm Akihiko!\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}I'm Akihiko!\p"
 	.string "Let's play again next time, Yamaki.$"
 
 WindwardPort_Harbor_Eventscript_QuizFinished_Text_2:
 # 670 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}You can call me Mitsuru.\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}You can call me Mitsuru.\p"
 	.string "We should play again next time, Yamaki.$"
 
 WindwardPort_Harbor_Eventscript_QuizFinished_Text_3:
@@ -1816,13 +1816,13 @@ WindwardPort_Harbor_Eventscript_QuizFinished_Text_3:
 
 WindwardPort_Harbor_Eventscript_QuizFinished_Text_4:
 # 690 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(He vanished again...)\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(He vanished again...)\p"
 	.string "(Wait a minute... Since when did I learn\n"
 	.string "that his name was Yamaki?)$"
 
 WindwardPort_Harbor_Eventscript_QuizFinished_Text_5:
 # 695 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(He vanished...)\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(He vanished...)\p"
 	.string "(Wait... How did I know his name was\n"
 	.string "Yamaki? He never told me, didn't he?)$"
 

@@ -9817,6 +9817,29 @@ bool32 AnyStorageMonWithMove(enum Move move)
     return FALSE;
 }
 
+bool8 CheckStorageForMonBuffNickBoxId(u16 speciesId)
+{
+    s32 i, j;
+
+    for (i = 0; i < TOTAL_BOXES_COUNT; i++)
+    {
+        for (j = 0; j < IN_BOX_COUNT; j++)
+        {
+            if (speciesId == GetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_SPECIES)
+                && !GetBoxMonData(&gPokemonStoragePtr->boxes[i][j], MON_DATA_SANITY_IS_EGG))
+            {
+                GetBoxMonNickAt(i, j, gStringVar2);
+                StringGet_Nickname(gStringVar2);
+
+                StringCopy(gStringVar1, GetBoxNamePtr(i));
+                
+                return TRUE;
+            }
+                
+        }
+    }
+    return FALSE;
+}
 
 //------------------------------------------------------------------------------
 //  SECTION: Walda

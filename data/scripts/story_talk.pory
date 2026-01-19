@@ -163,21 +163,21 @@ script EventScript_OverworldStoryTalk_AkihikosPrologue {
 //////////////////////
 
 script EventScript_OverworldStoryTalk_MustSetClock {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Let's fix the clock and join Miki outside.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Let's fix the clock and join Miki outside.)"))
 }
 
 script EventScript_OverworldStoryTalk_ClockIsSet {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Miki's waiting for me outside. Better hurry)."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Miki's waiting for me outside. Better hurry)."))
 }
 
 script EventScript_OverworldStoryTalk_ShinjiroAndMikiJoinedGoingToWoods {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}What are you going to do in the woods?\p
-        {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}You'll know soon! I'm sure you'll love it!\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Gonna be funny if you fall into the pond again, Aki.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}I was just surprised!\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Yeah, by a Caterpie.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}Ugh...\p
-        {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Hehe."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}What are you going to do in the woods?\p
+        {SPEAKER NAME_MK}{DESTROY_MUGSHOT}You'll know soon! I'm sure you'll love it!\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Gonna be funny if you fall into the pond again, Aki.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}I was just surprised!\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Yeah, by a Caterpie.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}Ugh...\p
+        {SPEAKER NAME_MK}{DESTROY_MUGSHOT}Hehe."))
     }
 
 script EventScript_OverworldStoryTalk_LookingAroundInTheWoods {
@@ -185,18 +185,18 @@ script EventScript_OverworldStoryTalk_LookingAroundInTheWoods {
     applymovement(3, faceup)
     waitmovement(0)
     msgbox(format("
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}What are you doing?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Just looking around.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Making sure there's no Caterpie?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}Screw you.\p
-    {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Ehehe."))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What are you doing?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Just looking around.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Making sure there's no Caterpie?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}Screw you.\p
+    {SPEAKER NAME_MK}{DESTROY_MUGSHOT}Ehehe."))
 }
 script EventScript_OverworldStoryTalk_PrePickPawmi {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Come to think of it, this Pawmi's fur color is kinda... weird.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Come to think of it, this Pawmi's fur color is kinda... weird.)"))
 }
 
 script EventScript_OverworldStoryTalk_PostPickPawmi {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}(I slept so well.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}(I slept so well.)"))
     if (flag(FLAG_FOLLOWERS_DISABLED) == FALSE){
         lock
         msgbox(format("... You make a good hug pillow, huh?"))
@@ -216,29 +216,29 @@ movement PawmiHappy {
 }
 
 script EventScript_OverworldStoryTalk_HaveTalkedToShinjiro {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I wonder what Ms. Kobayashi needs us for..."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I wonder what Ms. Kobayashi needs us for..."))
     closemessage
     applymovement(2,facedown)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}No idea, she hurried off somewhere before I could ask."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}No idea, she hurried off somewhere before I could ask."))
 }
 
 script EventScript_OverworldStoryTalk_ShinjiroJoinedAkihikosRoom {
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Did you forget something? Hurry up, Ms. Kobayashi is waiting."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Did you forget something? Hurry up, Ms. Kobayashi is waiting."))
 }
 
 script EventScript_OverworldStoryTalk_PreTalkKobayashi {
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Ms. Kobayashi said she'd be at the main hall."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Ms. Kobayashi said she'd be at the main hall."))
 }
 
 script EventScript_OverworldStoryTalk_PostTalkKobayashi {
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The package is in the Pokémon Center in Sunshine Town.\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}The package is in the Pokémon Center in Sunshine Town.\p
     Let's get this over with. The show's on air soon.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Oh right, your favorite cooking show."))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Oh right, your favorite cooking show."))
 }
 
 script EventScript_OverworldStoryTalk_PostTalkKobayashi_InWoods {
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Never knew you would get your first Pokémon here, huh?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Yeah."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Never knew you would get your first Pokémon here, huh?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Yeah."))
     if (flag(FLAG_FOLLOWERS_DISABLED) == FALSE){
         lock
         msgbox(format("I'm glad I met you, Pawmi."))
@@ -251,81 +251,81 @@ script EventScript_OverworldStoryTalk_PostTalkKobayashi_InWoods {
 
 script EventScript_OverworldStoryTalk_PreTalkMartLady {
     msgbox(format("
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}What are you doing? Just ask the Mart Lady for the package."))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What are you doing? Just ask the Mart Lady for the package."))
 }
 
 script EventScript_OverworldStoryTalk_PostTalkMartLady {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Let's hurry up outside. I have a bad feeling.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Damn it, you too?"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Let's hurry up outside. I have a bad feeling.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Damn it, you too?"))
 }
 
 script EventScript_OverworldStoryTalk_TalkToTheTownPeople {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(Someone must've known what happened. Let's ask around.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(Someone must've known what happened. Let's ask around.)"))
 }
 
 script EventScript_OverworldStoryTalk_GoBackToTheOrphanage {
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}Let's hurry back to the orphanage!!"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}Let's hurry back to the orphanage!!"))
 }
 
 script EventScript_OverworldStoryTalk_PosttalkKurosawa {
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}You know where to go?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}No. But there's no point in returning to the orphanage right now. Let's start with Route 2."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}You know where to go?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}No. But there's no point in returning to the orphanage right now. Let's start with Route 2."))
 }
 script EventScript_OverworldStoryTalk_PosttalkKurosawa_Riverbank 
 {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Hey Shinji...\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Hey Shinji...\p
     Why do you think Ms. Kobayashi would do that to us?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Pushing us into the river...\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}..."))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}Pushing us into the river...\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}..."))
 }
 
 script EventScript_OverworldStoryTalk_PosttalkKurosawa_Woods {
     msgbox(format("
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Miki gifted me a flower crown here.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Miki gifted me a flower crown here.\p
     I left it in our room so it was probably burned to ash.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}..."))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}..."))
 
 }
 
 script EventScript_OverworldStoryTalk_PostFirstMeetingMitsuru {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(I wonder what Shinji wanted to say.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(I wonder what Shinji wanted to say.)"))
 }
 
 script EventScript_OverworldStoryTalk_PostFirstMeetingShinjiro {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}You think she'll agree?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}We have a good chance. She must've also wanted our help."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}You think she'll agree?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}We have a good chance. She must've also wanted our help."))
 }
 
 script EventScript_OverworldStoryTalk_PreFirstBattleMitsuruRoute2House {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Kirijo's waiting for us in Sunshine Meadow.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go meet up with her after we've sorted out our party.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Kirijo's waiting for us in Sunshine Meadow.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Let's go meet up with her after we've sorted out our party.\p
     We'll be having 3-vs-3 battles."))
 }
 
 script EventScript_OverworldStoryTalk_PreFirstBattleMitsuruShinjiroLeft {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Shinji went ahead to prepare his team.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Shinji went ahead to prepare his team.\p
     I should do the same and go to Sunshine Meadow to have my first battle with Kirijo.)"))
 }
 
 script EventScript_OverworldStoryTalk_PreFirstBattleMitsuru_Meadow{
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(There she is. Her Inteleon is gonna be hard to take down.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(There she is. Her Inteleon is gonna be hard to take down.\p
     There's also that weird-colored Vulpix.)"))
 }
 
 script EventScript_OverworldStoryTalk_PostFirstBattleMitsuru {
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}By the way, Shinji. The Ferroseed you used earlier...\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Looks a bit different, right?\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}By the way, Shinji. The Ferroseed you used earlier...\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Looks a bit different, right?\p
     It just started following me when I was looking for my first Pokémon in Route 1.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Huh...\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Wait, all three of us have Pokémons that look slightly different from usual.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}A special coincident, huh?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}..."))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Huh...\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wait, all three of us have Pokémons that look slightly different from usual.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}A special coincident, huh?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}..."))
 }
 
 script EventScript_OverworldStoryTalk_PostPrologue {
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}First, let's go through Route 2 to Coralport.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Alright! There are a few trainers on that route. Time to train!\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Someone sure is fired up."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}First, let's go through Route 2 to Coralport.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Alright! There are a few trainers on that route. Time to train!\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Someone sure is fired up."))
 }
 
 
@@ -362,7 +362,7 @@ script EventScript_OverworldStoryTalk_NoScript {
     closemessage
 }
 script EventScript_OverworldStoryTalk_MustPickUpVulpix {
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}
         (I should return Vulpix to its Pokéball and hurry to Thundershards Cliff.)"))
 }
 
@@ -371,7 +371,7 @@ script EventScript_OverworldStoryTalk_PostPickUpVulpix {
     applymovement(LOCALID_PLAYER, Common_Movement_FacePlayer)
     applymovement(OBJ_EVENT_ID_FOLLOWER, Common_Movement_FacePlayer)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}How do you feel getting back on the field, Vulpix?"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}How do you feel getting back on the field, Vulpix?"))
     closemessage
     playmoncry(SPECIES_VULPIX, CRY_MODE_NORMAL)
     waitmoncry
@@ -380,25 +380,25 @@ script EventScript_OverworldStoryTalk_PostPickUpVulpix {
         waitmovement(0)
     }
     msgbox(format("(Vulpix's dancing excitedly.)\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Haha, honestly, me too."))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Haha, honestly, me too."))
     closemessage
     release
 
 }
 
 script EventScript_OverworldStoryTalk_PostInteleonJoining {
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Well then, I'll be counting on you to watch my back, Inteleon."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Well then, I'll be counting on you to watch my back, Inteleon."))
     closemessage
     playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
-    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks determinated, nodding at you.)"))
+    msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks determinated, nodding at you.)"))
 }
 
 script EventScript_OverworldStoryTalk_PrePickUpFennekin {
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}A fire type would be great for my journey."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}A fire type would be great for my journey."))
 }
 
 script EventScript_OverworldStoryTalk_PostGoodByeKikuno {
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Now I should make my way to Thundershards Scree.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Now I should make my way to Thundershards Scree.\p
     According to the map, it should be on the north of Sunshine Meadow.)"))
 }
 
@@ -420,7 +420,28 @@ script EventScript_OverworldTrainerTips {
     if (flag(FLAG_SYS_QUEST_MENU_GET)){
         dynmultipush(HelpQuest, 4)
     }
-    dynmultipush(gText_Next, 5)
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 100 || var(VAR_MITSURUS_INTRO_STATE) >= 100){
+        dynmultipush(HelpDeadline, 5)
+    }
+    if (flag(FLAG_HELP_MAKE_CHOICE)){
+        dynmultipush(HelpChoice, 6)
+    }
+    if (flag(FLAG_PARTTIME_GET)){
+        dynmultipush(HelpParttime, 7)
+    }
+    if (flag(FLAG_HELP_EXIT_DUNGEON)){
+        dynmultipush(HelpExitDungeon, 8)
+    }
+    if (flag(FLAG_HELP_DUNGEON_ENCOUNTER)){
+        dynmultipush(HelpDungeonEncounter, 9)
+    }
+    if (flag(FLAG_HELP_SPEEDUP)){
+        dynmultipush(HelpSpeedUp, 10)
+    }
+    if (flag(FLAG_DEXNAV_GET)){
+        dynmultipush(HelpDexNav, 11)
+        dynmultipush(HelpBoxLink, 12)
+    }
     msgbox(format("Which Trainer's Tips would you like to check?"))
     dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
     switch(var(VAR_RESULT)){
@@ -429,55 +450,14 @@ script EventScript_OverworldTrainerTips {
         case 2: call(EventScript_ShowHelpStarter)
         case 3: call(EventScript_ShowHelpCompanion)
         case 4: call(EventScript_ShowHelpQuest)
-        case 5: goto(EventScript_OverworldTrainerTips2)
-    }
-    release
-    end
-}
-
-script EventScript_OverworldTrainerTips2{
-    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 100 || var(VAR_MITSURUS_INTRO_STATE) >= 100){
-        dynmultipush(HelpDeadline, 0)
-    }
-    if (flag(FLAG_HELP_MAKE_CHOICE)){
-        dynmultipush(HelpChoice, 1)
-    }
-    if (flag(FLAG_PARTTIME_GET)){
-        dynmultipush(HelpParttime, 2)
-    }
-    if (flag(FLAG_HELP_EXIT_DUNGEON)){
-        dynmultipush(HelpExitDungeon, 3)
-    }
-    if (flag(FLAG_HELP_DUNGEON_ENCOUNTER)){
-        dynmultipush(HelpDungeonEncounter, 4)
-    }
-    dynmultipush(NextBackB, 5)
-    dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
-    switch(var(VAR_RESULT)){
-        case 0: call(EventScript_ShowHelpDeadline)
-        case 1: call(EventScript_ShowHelpChoice)
-        case 2: call(EventScript_ShowHelpPartTime)
-        case 3: call(EventScript_ShowHelpExitDungeon)
-        case 4: call(EventScript_ShowHelpDungeonEncounter)
-        case 5: goto(EventScript_OverworldTrainerTips3)
-        default: goto(EventScript_OverworldTrainerTips)
-    }
-    release
-    end
-}
-
-script EventScript_OverworldTrainerTips3 {
-    if (flag(FLAG_HELP_SPEEDUP)){
-        dynmultipush(HelpSpeedUp, 0)
-    }
-    dynmultipush(QuitBack, 5)
-    dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
-    switch(var(VAR_RESULT)){
-        case 0: call(EventScript_ShowHelpSpeedUp)
-        case 5: 
-            release
-            end
-        default: goto(EventScript_OverworldTrainerTips2)
+        case 5: call(EventScript_ShowHelpDeadline)
+        case 6: call(EventScript_ShowHelpChoice)
+        case 7: call(EventScript_ShowHelpPartTime)
+        case 8: call(EventScript_ShowHelpExitDungeon)
+        case 9: call(EventScript_ShowHelpDungeonEncounter)
+        case 10: call(EventScript_ShowHelpSpeedUp)
+        case 11: call(EventScript_ShowHelpDexNav)
+        case 12: call(EventScript_ShowHelpBoxLink)
     }
     release
     end
@@ -562,6 +542,20 @@ script EventScript_ShowHelpSpeedUp {
     hidehelpwindow
 }
 
+script EventScript_ShowHelpDexNav {
+    closemessage
+    showhelpwindow(HELP_DEXNAV)
+    waitbuttonpress
+    hidehelpwindow  
+}
+
+script EventScript_ShowHelpBoxLink {
+    closemessage
+    showhelpwindow(HELP_BOX_LINK)
+    waitbuttonpress
+    hidehelpwindow 
+}
+
 text HelpPokedex{"Pokédex"}
 text HelpShinyChance{"Shiny Chance"}
 text HelpStarter{"Story Starter"}
@@ -573,6 +567,8 @@ text HelpParttime{"Part-time Jobs"}
 text HelpDungeonEncounter{"Dungeon Encounter"}
 text HelpExitDungeon{"Exiting Dungeons"}
 text HelpSpeedUp{"Game Speedup"}
+text HelpDexNav{"DexNav"}
+text HelpBoxLink{"Box Link"}
 
 ///////////////////////
 ////WORK PART-TIME/////

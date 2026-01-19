@@ -25,9 +25,9 @@ script SunshineOrphanage_Burning_Eventscript_AkihikoNoticesTheFire {
     applymovement(5, emoteexclamation)
     applymovement(4, KobayashiNotices)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}Crap-\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Miki! Where's Miki?!\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}MIKI!!"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Crap-\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Miki! Where's Miki?!\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}MIKI!!"))
     closemessage
     goto(SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko)
 }
@@ -43,7 +43,7 @@ script SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko {
     delay(8)
     applymovement(4, KobayashiBlocks)
     call(Eventscript_BlockShakeCamera)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}AKI-!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}AKI-!"), MSGBOX_AUTOCLOSE)
     closemessage
     delay(30)
     applymovement(LOCALID_PLAYER, AkihikoTriesToRunUp)
@@ -51,15 +51,15 @@ script SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko {
     waitmovement(0)
     delay(20)
     msgbox(format("
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Teacher! Let me go!! I have to find Miki!!\p
-    {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}It's too dangerous, Akihiko!"))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Teacher! Let me go!! I have to find Miki!!\p
+    {SPEAKER NAME_KBYS}{DESTROY_MUGSHOT}It's too dangerous, Akihiko!"))
     call (SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera)
     call (SunshineOrphanage_Burning_Eventscript_EveryonePin)
     applymovement(5, faceup)
     waitmovement(0)
     delay(20)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}The fire is coming from the girls' hallway!\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Fuck-!"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}The fire is coming from the girls' hallway!\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Fuck-!"))
     closemessage
     goto (SunshineOrphanage_Burning_Eventscript_SusMenAppear)
 }
@@ -193,7 +193,7 @@ script SunshineOrphanage_Burning_Eventscript_KobayashiLetsOutPokemon {
     clearflag(FLAG_HIDE_MIKI)
     applymovement(8, Azumarillexitpokeball)
     waitmovement(8)
-    msgbox(format("{SPEAKER NAME_KOBAYASHI}Azumarill, NOW!"))
+    msgbox(format("{SPEAKER NAME_KBYS}Azumarill, NOW!"))
     closemessage
     goto (SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver)
 }
@@ -212,7 +212,7 @@ script SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver{
     waitmoncry
     applymovement(8, AzumarillGetsReady)
     waitmovement(8)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}What the-"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}What the-"))
     closemessage
     applymovement(8, AzumarillPushesAkiShinjiToRiver)
     applymovement(5, AkiShinjiGettingPushed)
@@ -222,7 +222,7 @@ script SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver{
     addobject(4)
     applymovement (4, KobayashiWalksTowardAzumarill)
     waitmovement(4)
-    msgbox(format("{SPEAKER NAME_KOBAYASHI}I'm sorry, Akihiko, Shinjiro."))
+    msgbox(format("{SPEAKER NAME_KBYS}I'm sorry, Akihiko, Shinjiro."))
     closemessage
     goto (SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver)
 }
@@ -253,7 +253,7 @@ script SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver {
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     special (StopMapMusic)
     delay(16)
-    msgbox(format("{SPEAKER NAME_KOBAYASHI}Do not trust anyone."))
+    msgbox(format("{SPEAKER NAME_KBYS}Do not trust anyone."))
     closemessage
     releaseall
     playmoncry(SPECIES_AZUMARILL, CRY_MODE_NORMAL)
@@ -272,7 +272,7 @@ script SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver {
     applymovement (8, faceleft)
     waitmovement(0)
     delay(16)
-    msgbox(format("{SPEAKER NAME_KOBAYASHI}Go, Azumarill. I'll be fine."))
+    msgbox(format("{SPEAKER NAME_KBYS}Go, Azumarill. I'll be fine."))
     closemessage
     playmoncry(SPECIES_AZUMARILL, CRY_MODE_NORMAL)
     applymovement (8, AzumarillJumpsDownTheRiver)
@@ -339,7 +339,7 @@ script SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi {
     setspeaker("Man In Black")
     //script currently unused, no need to edit
     msgbox(format("Where are the subjects?\p
-    {SPEAKER NAME_KOBAYASHI}They aren't in their room?"))
+    {SPEAKER NAME_KBYS}They aren't in their room?"))
     closemessage
     delay(16)
     showobjectat (11, MAP_SUNSHINE_ORPHANAGE_BURNING)
@@ -362,7 +362,7 @@ script SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi {
     playmoncry(SPECIES_BOLTUND, CRY_MODE_NORMAL)
     applymovement (13, BoltundExitsPokeball)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_KOBAYASHI}I said, I don't know."))
+    msgbox(format("{SPEAKER NAME_KBYS}I said, I don't know."))
     closemessage
     delay(30)
     fadescreenswapbuffers(FADE_TO_BLACK)

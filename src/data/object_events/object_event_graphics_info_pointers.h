@@ -47,6 +47,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SwimmerF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BlackBelt;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Beauty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Scientist1;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScientistF;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Lass;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gentleman;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Sailor;
@@ -249,6 +250,7 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shinjiro_Fa
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Akihiko_Fainted;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Miki;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Takeharu;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mayoido;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Waiter;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Waitress;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Butler;
@@ -302,6 +304,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_AKIHIKO_FAINTED] =          &gObjectEventGraphicsInfo_Akihiko_Fainted,
     [OBJ_EVENT_GFX_MIKI] =                     &gObjectEventGraphicsInfo_Miki,
     [OBJ_EVENT_GFX_TAKEHARU] =                 &gObjectEventGraphicsInfo_Takeharu,
+    [OBJ_EVENT_GFX_MAYOIDO] =                  &gObjectEventGraphicsInfo_Mayoido,
     [OBJ_EVENT_GFX_WAITER] =                   &gObjectEventGraphicsInfo_Waiter,
     [OBJ_EVENT_GFX_WAITRESS] =                 &gObjectEventGraphicsInfo_Waitress,
     [OBJ_EVENT_GFX_BUTLER] =                   &gObjectEventGraphicsInfo_Butler,
@@ -576,6 +579,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TODDLER] =                  &gObjectEventGraphicsInfo_Toddler,
     [OBJ_EVENT_GFX_NORBERT] =                  &gObjectEventGraphicsInfo_Norbert,
     [OBJ_EVENT_GFX_KIMONO_GIRL] =              &gObjectEventGraphicsInfo_KimonoGirl,
+    [OBJ_EVENT_GFX_SCIENTIST_F] =              &gObjectEventGraphicsInfo_ScientistF,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

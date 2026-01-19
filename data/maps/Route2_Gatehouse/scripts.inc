@@ -248,7 +248,7 @@ Route2_Gatehouse_Eventscript_KidF_Text_0:
 Route2_Gatehouse_Eventscript_KidF_Text_1:
 # 66 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "Hello, gorgeous sister! I like your hair!\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}!{PAUSE 60} {CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}My, thank you, little kid. I like your\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}!{PAUSE 60} {CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}My, thank you, little kid. I like your\n"
 	.string "eyes too.$"
 
 Route2_Gatehouse_Eventscript_KidF_Text_2:
@@ -264,25 +264,25 @@ Route2_Gatehouse_Eventscript_KidF_Text_3:
 Route2_Gatehouse_Eventscript_KidF_Text_4:
 # 82 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "Hello, grandpa!\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}M-Me? Grandpa???\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Hey, little girl. I'm still 16!$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}M-Me? Grandpa???\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Hey, little girl. I'm still 16!$"
 
 Route2_Gatehouse_Eventscript_KidF_Text_5:
 # 86 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Oh... Then why is your hair gray like my\n"
 	.string "grandpa's?\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}I- uh......{PAUSE 60}\n"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}Psst, Shinji, why is my hair gray?\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}How the f-{PAUSE 60} {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}(How should I know!? It\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}I- uh......{PAUSE 60}\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}Psst, Shinji, why is my hair gray?\p"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}How the f-{PAUSE 60} {CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}(How should I know!? It\n"
 	.string "probably has something to do with\l"
 	.string "genes?)\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}I believe it has something to do with\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}I believe it has something to do with\n"
 	.string "genes.$"
 
 Route2_Gatehouse_Eventscript_KidF_Text_6:
 # 93 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Oh, I see...\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_GEEZ}Sigh.........$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_GEEZ}Sigh.........$"
 
 Route2_Gatehouse_Eventscript_WallNoticeRight_Text_0:
 # 111 "data/maps/Route2_Gatehouse/scripts.pory"

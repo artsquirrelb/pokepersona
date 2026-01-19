@@ -267,7 +267,7 @@ static const u8 sText_AZ[] = _(" A-Z");
 static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 {
 	sub_quest(
-	      0,
+	      MITSURUS_PROLOGUE,
 	      gText_MitsurusPrologue_Name,
 	      gText_MitsurusPrologue_Desc,
 	      gText_MitsurusPrologue_Map,
@@ -277,7 +277,7 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      1,
+	      AKIHIKOS_PROLOGUE,
 	      gText_AkihikosPrologue_Name,
 	      gText_AkihikosPrologue_Desc,
 	      gText_AkihikosPrologue_Map,
@@ -287,7 +287,7 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      2,
+	      CHAPTER_1,
 	      gText_Chapter1_Name,
 	      gText_Chapter1_Desc,
 	      gText_Chapter1_Map,
@@ -297,7 +297,7 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      3,
+	      CHAPTER_2,
 	      gText_Chapter2_Name,
 	      gText_Chapter2_Desc,
 	      gText_Chapter2_Map,
@@ -307,7 +307,7 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      4,
+	      CHAPTER_3,
 	      gText_Chapter3_Name,
 	      gText_Chapter3_Desc,
 	      gText_Chapter3_Map,
@@ -317,7 +317,7 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      5,
+	      CHAPTER_4,
 	      gText_Chapter4_Name,
 	      gText_Chapter4_Desc,
 	      gText_Chapter4_Map,
@@ -327,7 +327,7 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      6,
+	      CHAPTER_5,
 	      gText_Chapter5_Name,
 	      gText_Chapter5_Desc,
 	      gText_Chapter5_Map,
@@ -337,7 +337,7 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      7,
+	      CHAPTER_6,
 	      gText_Chapter6_Name,
 	      gText_Chapter6_Desc,
 	      gText_Chapter6_Map,
@@ -347,7 +347,7 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      8,
+	      CHAPTER_7,
 	      gText_Chapter7_Name,
 	      gText_Chapter7_Desc,
 	      gText_Chapter7_Map,
@@ -357,7 +357,7 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      9,
+	      CHAPTER_8,
 	      gText_Chapter8_Name,
 	      gText_Chapter8_Desc,
 	      gText_Chapter8_Map,
@@ -370,7 +370,7 @@ static const struct SubQuest sStoryQuests_Sub[STORY_QUESTS_SUB_COUNT] =
 static const struct SubQuest sSubQuests2[QUEST_GHOST_BOY_SUB_COUNT] =
 {
 	sub_quest(
-	      10,
+	      SUB_QUEST_GHOST_BOY_1,
 	      gText_GhostBoySub_Name1,
 	      gText_GhostBoySub_Desc1,
 	      gText_WindwardPort_Map,
@@ -380,7 +380,7 @@ static const struct SubQuest sSubQuests2[QUEST_GHOST_BOY_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      11,
+	      SUB_QUEST_GHOST_BOY_2,
 	      gText_GhostBoySub_Name2,
 	      gText_GhostBoySub_Desc2,
 	      gText_WindwardPort_Map,
@@ -390,7 +390,7 @@ static const struct SubQuest sSubQuests2[QUEST_GHOST_BOY_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      12,
+	      SUB_QUEST_GHOST_BOY_3,
 	      gText_GhostBoySub_Name3,
 	      gText_GhostBoySub_Desc1,
 	      gText_WindwardPort_Map,
@@ -400,7 +400,7 @@ static const struct SubQuest sSubQuests2[QUEST_GHOST_BOY_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      13,
+	      SUB_QUEST_GHOST_BOY_4,
 	      gText_GhostBoySub_Name4,
 	      gText_GhostBoySub_Desc1,
 	      gText_WindwardPort_Map,
@@ -410,7 +410,7 @@ static const struct SubQuest sSubQuests2[QUEST_GHOST_BOY_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      14,
+	      SUB_QUEST_GHOST_BOY_5,
 	      gText_GhostBoySub_Name5,
 	      gText_GhostBoySub_Desc1,
 	      gText_WindwardPort_Map,
@@ -420,7 +420,7 @@ static const struct SubQuest sSubQuests2[QUEST_GHOST_BOY_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      15,
+	      SUB_QUEST_GHOST_BOY_6,
 	      gText_GhostBoySub_Name6,
 	      gText_GhostBoySub_Desc1,
 	      gText_WindwardPort_Map,
@@ -430,7 +430,7 @@ static const struct SubQuest sSubQuests2[QUEST_GHOST_BOY_SUB_COUNT] =
 	),
 
 	sub_quest(
-	      16,
+	      SUB_QUEST_GHOST_BOY_7,
 	      gText_GhostBoySub_Name7,
 	      gText_GhostBoySub_Desc1,
 	      gText_WindwardPort_Map,
@@ -440,6 +440,225 @@ static const struct SubQuest sSubQuests2[QUEST_GHOST_BOY_SUB_COUNT] =
 	),
 };
 
+static const struct SubQuest sQuestFindStarters_Sub[QUEST_FIND_STARTERS_SUB_COUNT] =
+{
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_1,
+	      gText_FindStartersSub_Name1,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(BULBASAUR),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_2,
+	      gText_FindStartersSub_Name2,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(CHARMANDER),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_3,
+	      gText_FindStartersSub_Name3,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(SQUIRTLE),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_4,
+	      gText_FindStartersSub_Name4,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(CHIKORITA),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_5,
+	      gText_FindStartersSub_Name5,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(CYNDAQUIL),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_6,
+	      gText_FindStartersSub_Name6,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(TOTODILE),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_7,
+	      gText_FindStartersSub_Name7,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(TREECKO),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_8,
+	      gText_FindStartersSub_Name8,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(TORCHIC),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_9,
+	      gText_FindStartersSub_Name9,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(MUDKIP),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_10,
+	      gText_FindStartersSub_Name10,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(TURTWIG),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_11,
+	      gText_FindStartersSub_Name11,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(CHIMCHAR),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_12,
+	      gText_FindStartersSub_Name12,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(PIPLUP),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_13,
+	      gText_FindStartersSub_Name13,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(SNIVY),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_14,
+	      gText_FindStartersSub_Name14,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(TEPIG),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_15,
+	      gText_FindStartersSub_Name15,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(CHESPIN),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_16,
+	      gText_FindStartersSub_Name16,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(FROAKIE),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_17,
+	      gText_FindStartersSub_Name17,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(ROWLET),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_18,
+	      gText_FindStartersSub_Name18,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(LITTEN),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_19,
+	      gText_FindStartersSub_Name19,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(POPPLIO),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_20,
+	      gText_FindStartersSub_Name20,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(SCORBUNNY),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_21,
+	      gText_FindStartersSub_Name21,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(SOBBLE),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_22,
+	      gText_FindStartersSub_Name22,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(SPRIGATITO),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_23,
+	      gText_FindStartersSub_Name23,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(FUECOCO),
+	      OBJECT,
+	      sText_Caught
+	),
+	sub_quest(
+	      SUB_QUEST_FIND_STARTER_24,
+	      gText_FindStartersSub_Name24,
+	      gText_SubQuest2_Desc3,
+	      gText_SideQuestMap12,
+	      OBJ_EVENT_GFX_SPECIES(QUAXLY),
+	      OBJECT,
+	      sText_Caught
+	),
+};
 ////////////////////////END SUBQUEST CUSTOMIZATION/////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -617,14 +836,14 @@ static const struct SideQuest sSideQuests[QUEST_COUNT] =
 		.questVariable = 0,
 	},
 
-	[QUEST_8] = 
+	[QUEST_FIND_STARTERS] = 
 	{
-		.name = gText_SideQuestName_8,
-		.desc = {gText_SideQuestDesc_8},
-		.donedesc = gText_SideQuestDoneDesc_8,
-		.map = {gText_Chapter6_Map},
-		.sprite = {ITEM_NONE},
-		.spritetype = {ITEM},
+		.name = gText_SideQuest7_Name,
+		.desc = {gText_SideQuest7_Desc},
+		.donedesc = gText_SideQuest7_DoneDesc,
+		.map = {COMPOUND_STRING("Mayoido's Lab")},
+		.sprite = {OBJ_EVENT_GFX_MAYOIDO},
+		.spritetype = {OBJECT},
 		.subquests = NULL,
 		.numSubquests = 0,
 		.questVariable = 0,

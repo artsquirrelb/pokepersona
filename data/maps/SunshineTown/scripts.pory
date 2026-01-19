@@ -21,11 +21,8 @@ mapscripts SunshineTown_MapScripts {
         if (var(VAR_AKIHIKOS_INTRO_STATE) < 16 || var(VAR_AKIHIKOS_INTRO_STATE) >= 17 || var(VAR_MITSURUS_INTRO_STATE) < 20) {
             setflag(FLAG_TEMP_2)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) >= 12 && var(VAR_MITSURUS_INTRO_STATE) <= 16){
-            setobjectmovementtype(2, MOVEMENT_TYPE_LOOK_AROUND)
-            setobjectmovementtype(1, MOVEMENT_TYPE_LOOK_AROUND)
-            setobjectxyperm(2, 3, 6)
-            setobjectxyperm(1, 3, 7)
+        if(var(VAR_MITSURUS_INTRO_STATE) > 16 && var(VAR_MITSURUS_INTRO_STATE) <= 50){
+            setmetatile(3, 13, 0x831, TRUE)
         }
         if (var(VAR_MITSURUS_INTRO_STATE) != 20){
             setflag(FLAG_TEMP_3)
@@ -96,11 +93,11 @@ script SunshineTown_Eventscript_MitsuruOnFrame19 {
 
 script SunshineTown_Eventscript_Kurosawa {
     lock
-    setspeaker(SP_NAME_KUROSAWA)
+    setspeaker(SP_NAME_KRSW)
     if (flag(FLAG_TEMP_1) == TRUE) {
         faceplayer
         msgbox(format("Hm?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-we'll get going now!"))
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}W-we'll get going now!"))
     }
     else {
         msgbox(format("If only the higher-ups allowed us-"))
@@ -108,8 +105,8 @@ script SunshineTown_Eventscript_Kurosawa {
         playse(SE_PIN)
         applymovement(3, KurosawaNoticed)
         waitmovement(0)
-        msgbox(format("{SPEAKER NAME_KUROSAWA}Do you need some help, kids?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Oh nothing! Sorry for bothering you, sir.\p
+        msgbox(format("{SPEAKER NAME_KRSW}Do you need some help, kids?\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Oh nothing! Sorry for bothering you, sir.\p
         (He looks so intimidating!)"))
         setflag(FLAG_TEMP_1)
     }
@@ -137,7 +134,7 @@ script SunshineTown_Eventscript_DontLeaveTownTrigger_Akihiko {//VAR_TEMP_F == 0
 }
 script SunshineTown_Eventscript_GoGetPackage {
     lockall
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The Pokémon Center is right there, Aki."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}The Pokémon Center is right there, Aki."))
     closemessage
     applymovement(LOCALID_PLAYER, walkright)
     waitmovement(0)
@@ -149,15 +146,9 @@ script SunshineTown_Eventscript_FatMan {
     lock
     setspeaker("Kojima")
     faceplayer
-    if (var(VAR_MITSURUS_INTRO_STATE) >= 12 && var(VAR_MITSURUS_INTRO_STATE) <= 16){
-        msgbox(format("Sorry, I lost my wallet around here and Yoshida is helping me finding it."))
-        closemessage
-        release
-        end
-    }
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18){
         msgbox(format("The policeman living here ran toward the woods after hearing that explosion.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should hurry up!"))
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}We should hurry up!"))
         setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
         release
         end
@@ -173,16 +164,10 @@ script SunshineTown_Eventscript_Boy {
     lock
     faceplayer
     setspeaker ("Yoshida")
-    if (var(VAR_MITSURUS_INTRO_STATE) >= 12 && var(VAR_MITSURUS_INTRO_STATE) <= 16){
-        msgbox(format("I'm helping Kojima find his wallet. Sigh... He's always losing important stuff."))
-        closemessage
-        release
-        end
-    }
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18){
         msgbox(format("I think something exploded in the woods.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DARKENED}Could it be...\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}The orphanage!"))
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DARKENED}Could it be...\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}The orphanage!"))
         setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
         release
         end
@@ -227,8 +212,8 @@ script SunshineTown_Eventscript_ExitingPC {
     applymovement(LOCALID_PLAYER, SunshineTown_Eventscript_AkihikoExitingPC)
     applymovement (4, SunshineTown_Eventscript_ShinjiroExitingPC)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Let's ask around what happened.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}Yeah."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Let's ask around what happened.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}Yeah."))
     closemessage
     applymovement(4, walkup)
     waitmovement(0)
@@ -256,7 +241,7 @@ script SunshineTown_Eventscript_DontLeaveTown {
     lockall
     applymovement(LOCALID_PLAYER, walkright)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}We should ask people in town about that explosion sound!"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}We should ask people in town about that explosion sound!"))
     closemessage
     releaseall
     end
@@ -265,7 +250,7 @@ script SunshineTown_Eventscript_DontLeaveTown {
 script SunshineTown_Eventscript_NoPointEnteringPC {
     lock
     applymovement(LOCALID_PLAYER, walkdown)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to be dawdling around!)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}(Not the time to be dawdling around!)"))
     closemessage
     release
     end
@@ -274,7 +259,7 @@ script SunshineTown_Eventscript_NoPointEnteringPC {
 script SunshineTown_Eventscript_NoPointLeavingTown {
     lock
     applymovement(LOCALID_PLAYER, walkright)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}(Not the time to be dawdling around!)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}(Not the time to be dawdling around!)"))
     closemessage
     release
     end
@@ -390,22 +375,22 @@ script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActiv
         if (var(VAR_RESULT) == MALE)
         {
             msgbox(format("Excuse me, young men. Can you do me a favor?\p
-            {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure, ma'am. What can we do for you?"))
+            {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Sure, ma'am. What can we do for you?"))
             closemessage
             setspeaker("Fumiko")
             msgbox(format("One of the Pokémon caretakers I hired couldn't show up today.\p
             Can you go play with my poor baby Riolu? He's on the second floor.\p
-            {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Leave it to us!"))
+            {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Leave it to us!"))
             closemessage
         }
         else{
             msgbox(format("Excuse me, young lass. Can you do me a favor?\p
-            {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Certainly, ma'am. What do you need?"))
+            {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Certainly, ma'am. What do you need?"))
             closemessage
             setspeaker("Fumiko")
             msgbox(format("One of the Pokémon caretakers I hired couldn't show up today.\p
             Can you go play with my poor baby Riolu? He's on the second floor.\p
-            {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll be happy to help."))
+            {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'll be happy to help."))
             closemessage
         }
         questmenu(QUEST_MENU_SET_ACTIVE, QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL)
@@ -494,7 +479,7 @@ script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
     delay(50)
     removeobject(3)
     removeobject(24)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(The police? How did they arrive this fast?
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(The police? How did they arrive this fast?
     The explosion happened just a few minutes ago.)\p
     (Not to mention, if I remember correctly, the nearest station is in the opposite direction of Sunshine Town.)"))
     closemessage
@@ -510,7 +495,7 @@ script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
     delay(4)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_fast_right))
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Excuse me. Did something happen? Everyone in town looks on edge."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Excuse me. Did something happen? Everyone in town looks on edge."))
     closemessage
     applymovement(1, faceleft)
     waitmovement
@@ -525,11 +510,11 @@ script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
     special(RemoveCameraObject)
     applymovement(1, moves(walk_fast_right*3, walk_fast_down*6, set_invisible))
     delay(20)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(The orphanage was exploded?)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}(The orphanage was exploded?)\p
     (Damn it! How am I so naive. Of course they would do that to erase the proofs and traces.)\p
-    {CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}(It was all my fault... If only I acted sooner.)\p
+    {CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}(It was all my fault... If only I acted sooner.)\p
     ...........\p
-    {CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(I should go check and help the injured as well.)"))
+    {CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(I should go check and help the injured as well.)"))
     closemessage
     removeobject(1)
     setvar(VAR_MITSURUS_INTRO_STATE, 20)
@@ -603,7 +588,7 @@ script SunshineTown_Eventscript_KGStaffAtWoodsEntrance {
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left, walk_diag_northwest))
     waitmovement
     special(RemoveCameraObject)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(They're searching for some boys... Ones of the orphan kids, perhaps?)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(They're searching for some boys... Ones of the orphan kids, perhaps?)\p
     (I should tail them and see what they're up to.)"))
     closemessage
     removeobject(22)
@@ -619,18 +604,18 @@ script SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji {
     lock
     applymovement(LOCALID_PLAYER, moves(player_run_right*3, walk_right*2, delay_16))
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(This man... He was helping the orphanage so he could've known something about those boys.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(This man... He was helping the orphanage so he could've known something about those boys.)"))
     closemessage
     applymovement(LOCALID_PLAYER, moves(walk_down, walk_right*2))
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Excuse me. Have you seen these boys?"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Excuse me. Have you seen these boys?"))
     setspeaker("Kojima")
     msgbox(format("{DESTROY_MUGSHOT}Oh them! I saw the policeman living in this town carried them to his house.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Really? When was it?"))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Really? When was it?"))
     setspeaker("Kojima")
     msgbox(format("{DESTROY_MUGSHOT}I think it was around an hour after the explosion at the orphanage happened?\p
     After that I've only seen the black-red beanie boy going out of the house a few times.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}May I ask where this policeman's house is?"))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}May I ask where this policeman's house is?"))
     closemessage
     applymovement(1, facedown)
     delay(4)
@@ -641,7 +626,7 @@ script SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji {
     waitmovement
     setspeaker("Kojima")
     msgbox(format("It's the house over there.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you so much for your help."))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see. Thank you so much for your help."))
     closemessage
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_diag_northeast*5, walk_right))
     waitmovement
@@ -684,7 +669,7 @@ script SunshineTown_Eventscript_MitsuruOverheardAkiShinji {
     delay(20)
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}....... (His sister's missing after the explosion, I suppose.)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}....... (His sister's missing after the explosion, I suppose.)\p
     (I should go to the orphanage and help the searching.)"))
     closemessage
     applymovement(LOCALID_PLAYER, moves(player_run_right*9, player_run_up*2, face_down))
@@ -696,11 +681,20 @@ script SunshineTown_Eventscript_MitsuruOverheardAkiShinji {
 script SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru {//VAR_TEMP_F == 0
     if (var(VAR_MITSURUS_INTRO_STATE) >= 6 && var(VAR_MITSURUS_INTRO_STATE) <= 16){
         lock
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Now is not the time to wander around in Sunshine Town.)"))
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Now is not the time to wander around in Sunshine Town.)"))
         closemessage
         applymovement(LOCALID_PLAYER, walkleft)
         waitmovement(0)
         release
         end
     }
+}
+
+script SunshineTown_Eventscript_KurosawaHouseLocked {
+    if(var(VAR_MITSURUS_INTRO_STATE) > 16 && var(VAR_MITSURUS_INTRO_STATE) <= 50)
+    {
+        msgbox("It's locked.")
+    }
+    release
+    end
 }

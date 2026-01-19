@@ -200,7 +200,7 @@ Route1_Eventscript_Twins_Movement_0:
 
 Route1_Eventscript_NotTheWayToMeadow_Text_0:
 # 9 "data/maps/Route1/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(If I remember correctly, Sunshine\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(If I remember correctly, Sunshine\n"
 	.string "Meadow is in the north of Route 2.)$"
 
 Route1_Eventscript_Touma_Text_0:
@@ -254,7 +254,7 @@ Route1_Eventscript_Ichigo_Text_1:
 Route1_ToumaIntro::
 # 41 "data/maps/Route1/scripts.pory"
 	.string "Um, can you please battle me...?\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Sigh... I really don't have time for\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Sigh... I really don't have time for\n"
 	.string "this.)$"
 
 Route1_ToumaDefeated::
@@ -267,7 +267,7 @@ Route1_ToumaPostBattle::
 	.string "battle classes.\p"
 	.string "But it's okay because I want to become\n"
 	.string "a researcher instead of a trainer.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That is a marvelous personal goal. I\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That is a marvelous personal goal. I\n"
 	.string "wish you the best of luck.$"
 
 Route1_ToumaIntro_A::
@@ -277,7 +277,7 @@ Route1_ToumaIntro_A::
 Route1_MiyuIntro::
 # 74 "data/maps/Route1/scripts.pory"
 	.string "Let's battle!\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Huh? What- wait-$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}Huh? What- wait-$"
 
 Route1_MiyuDefeated::
 # 79 "data/maps/Route1/scripts.pory"
@@ -300,7 +300,7 @@ Eventscript_HiddenGrotto::
 Route1_IchigoIntro::
 # 163 "data/maps/Route1/scripts.pory"
 	.string "Hehe, you can't escape me!\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(... Let's just get this over with.)$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(... Let's just get this over with.)$"
 
 Route1_IchigoIntro_A::
 # 168 "data/maps/Route1/scripts.pory"

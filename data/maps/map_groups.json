@@ -686,5 +686,7 @@
     "CoralportPoliceStation",
     "Coralport_NeckbeardsHouse"
   ],
-  "gMapGroup_IndoorWindwardPort": []
+  "gMapGroup_IndoorWindwardPort": [
+    "Windwardport_MayoidosLab"
+  ]
 }

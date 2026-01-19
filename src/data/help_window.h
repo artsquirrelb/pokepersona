@@ -108,6 +108,16 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "each dungeon."
                                 ),
     },
+    [HELP_PROTAGONISTS] =
+    {
+        .header = COMPOUND_STRING(" Protagonists"),
+        .desc = COMPOUND_STRING("It is required to complete both\n"
+                                "{COLOR 7}Akihiko{COLOR 2}'s and {COLOR 7}Mitsuru{COLOR 2}'s prologue before\n"
+                                "leaving {COLOR 8}Coralport{COLOR 2}.\n\n"
+                                "Check the {COLOR 7}Quest Menu{COLOR 2} to see how\n"
+                                "to start their quest."
+                                ),
+    },
     [HELP_PART_TIME] = 
     {
         .header = COMPOUND_STRING(" Part-time Job"),
@@ -115,8 +125,27 @@ const struct HelpWindow gHelpWindowInfo[] =
                                 "to advance the clock and get more money\n"
                                 "and other rewards.\n"
                                 "You can find the shortcut to start your\n"
-                                "shift by pressing {COLOR 8}{L_BUTTON}-> Work Part-time\n"
+                                "shift by pressing {L_BUTTON}-> Work Part-time\n"
                                 "while in the overworld."
+                                ),
+    },
+    [HELP_DEXNAV] = 
+    {
+        .header = COMPOUND_STRING(" DexNav"),
+        .desc = COMPOUND_STRING("A device that tells the information of the\n"
+                                "wild Pokémon in your current location and\n"
+                                "allow you to search for a specific Pokémon.\n\n"
+                                "You can access {COLOR 7}DexNav {COLOR 2}by pressing {START_BUTTON}\n"
+                                "in the overworld."
+                                ),
+    },
+    [HELP_BOX_LINK] = 
+    {
+        .header = COMPOUND_STRING(" Box Link"),
+        .desc = COMPOUND_STRING("A device that grants access to the {COLOR 7}Pokémon\n"
+                                "Storage System{COLOR 2} whenever you like.\n\n"
+                                "In some specific cases, the access will be\n"
+                                "blocked."
                                 ),
     },
     [HELP_GIMMIGHOUL_COINS] =

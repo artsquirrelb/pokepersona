@@ -23,7 +23,7 @@
 #define QUEST_BUY_SMILE_CANDY                           4 //unlocked after finishing QUEST_FIND_FISHERMANS_DAUGHTER // for good rod
 #define QUEST_FIND_MINING_KIT                           5 //can only start after finishing Mitsuru's Prologue
 #define QUEST_GHOST_BOY                                 6
-#define QUEST_8          7
+#define QUEST_FIND_STARTERS                             7
 #define QUEST_9          8
 #define QUEST_10         9
 #define QUEST_11        10
@@ -66,24 +66,35 @@
 #define SUB_QUEST_GHOST_BOY_5       14
 #define SUB_QUEST_GHOST_BOY_6       15
 #define SUB_QUEST_GHOST_BOY_7       16
-#define SUB_QUEST_18        17
-#define SUB_QUEST_19        18
-#define SUB_QUEST_20        19
-#define SUB_QUEST_21        20
-#define SUB_QUEST_22        21
-#define SUB_QUEST_23        22
-#define SUB_QUEST_24        23
-#define SUB_QUEST_25        24
-#define SUB_QUEST_26        25
-#define SUB_QUEST_27        26
-#define SUB_QUEST_28        27
-#define SUB_QUEST_29        28
-#define SUB_QUEST_30        29
+#define SUB_QUEST_FIND_STARTER_1    17
+#define SUB_QUEST_FIND_STARTER_2        18
+#define SUB_QUEST_FIND_STARTER_3        19
+#define SUB_QUEST_FIND_STARTER_4        20
+#define SUB_QUEST_FIND_STARTER_5        21
+#define SUB_QUEST_FIND_STARTER_6        22
+#define SUB_QUEST_FIND_STARTER_7        23
+#define SUB_QUEST_FIND_STARTER_8        24
+#define SUB_QUEST_FIND_STARTER_9        25
+#define SUB_QUEST_FIND_STARTER_10        26
+#define SUB_QUEST_FIND_STARTER_11        27
+#define SUB_QUEST_FIND_STARTER_12        28
+#define SUB_QUEST_FIND_STARTER_13        29
+#define SUB_QUEST_FIND_STARTER_14        30
+#define SUB_QUEST_FIND_STARTER_15        31
+#define SUB_QUEST_FIND_STARTER_16        32
+#define SUB_QUEST_FIND_STARTER_17        33
+#define SUB_QUEST_FIND_STARTER_18        34
+#define SUB_QUEST_FIND_STARTER_19        35
+#define SUB_QUEST_FIND_STARTER_20        36
+#define SUB_QUEST_FIND_STARTER_21        37
+#define SUB_QUEST_FIND_STARTER_22        38
+#define SUB_QUEST_FIND_STARTER_23        39
+#define SUB_QUEST_FIND_STARTER_24        40
 
 #define STORY_QUESTS_SUB_COUNT 10
 #define QUEST_GHOST_BOY_SUB_COUNT 7
-#define QUEST_3_SUB_COUNT 13
-#define SUB_QUEST_COUNT (STORY_QUESTS_SUB_COUNT + QUEST_GHOST_BOY_SUB_COUNT + QUEST_3_SUB_COUNT)
+#define QUEST_FIND_STARTERS_SUB_COUNT 24
+#define SUB_QUEST_COUNT (STORY_QUESTS_SUB_COUNT + QUEST_GHOST_BOY_SUB_COUNT + QUEST_FIND_STARTERS_SUB_COUNT)
 
 //complexe quest
 

@@ -1,0 +1,277 @@
+{
+  "id": "MAP_WINDWARDPORT_MAYOIDOS_LAB",
+  "name": "Windwardport_MayoidosLab",
+  "layout": "LAYOUT_WINDWARDPORT_MAYOIDOS_LAB",
+  "music": "MUS_BIRCH_LAB",
+  "region_map_section": "MAPSEC_WINDWARD_PORT",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "MAYOIDO_WWH",
+      "graphics_id": "OBJ_EVENT_GFX_MAYOIDO",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_QUEST_GIVER",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Windwardport_MayoidosLab_Mayoido",
+      "flag": "0",
+      "quest_id": 7
+    },
+    {
+      "local_id": "WACHI_WWH",
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
+      "x": 12,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Windwardport_MayoidosLab_ScientistM",
+      "flag": "0"
+    },
+    {
+      "local_id": "IRIA_WWH",
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_F",
+      "x": 5,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Windwardport_MayoidosLab_ScientistF",
+      "flag": "0"
+    },
+    {
+      "local_id": "SINISTCHA_WWH",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SINISTCHA)",
+      "x": 18,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Windwardport_MayoidosLab_Sinistcha",
+      "flag": "0"
+    },
+    {
+      "local_id": "AEGISLASH_WWH",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(AEGISLASH)",
+      "x": 1,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Windwardport_MayoidosLab_Aegislash",
+      "flag": "0"
+    },
+    {
+      "local_id": "A_WWH",
+      "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
+      "x": 5,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "local_id": "S_WWH",
+      "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
+      "x": 5,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Windwardport_MayoidosLab_Shinjiro",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "local_id": "M_WWH",
+      "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
+      "x": 5,
+      "y": 20,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Windwardport_MayoidosLab_Mitsuru",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "local_id": "OSHA_WWH",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(OSHAWOTT)",
+      "x": 8,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "local_id": "GROO_WWH",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GROOKEY)",
+      "x": 10,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Windwardport_MayoidosLab_Grookey",
+      "flag": "FLAG_TEMP_3"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_WINDWARD_PORT",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_CHAPTER_1_STATE",
+      "var_value": "7",
+      "script": "Windwardport_MayoidosLab_MustGetGrookey"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_CHAPTER_1_STATE",
+      "var_value": "7",
+      "script": "Windwardport_MayoidosLab_MustGetGrookey"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CHAPTER_1_STATE",
+      "var_value": "7",
+      "script": "Windwardport_MayoidosLab_MustGetGrookey"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_CHAPTER_1_STATE",
+      "var_value": "7",
+      "script": "Windwardport_MayoidosLab_MustGetGrookey"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 10,
+      "elevation": 0,
+      "var": "VAR_CHAPTER_1_STATE",
+      "var_value": "7",
+      "script": "Windwardport_MayoidosLab_MustGetGrookey"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 9,
+      "elevation": 0,
+      "var": "VAR_CHAPTER_1_STATE",
+      "var_value": "7",
+      "script": "Windwardport_MayoidosLab_MustGetGrookey"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 6,
+      "elevation": 0,
+      "var": "VAR_CHAPTER_1_STATE",
+      "var_value": "7",
+      "script": "Windwardport_MayoidosLab_MustGetGrookey"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_CHAPTER_1_STATE",
+      "var_value": "7",
+      "script": "Windwardport_MayoidosLab_MustGetGrookey"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_CHAPTER_1_STATE",
+      "var_value": "7",
+      "script": "Windwardport_MayoidosLab_MustGetGrookey"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Windwardport_MayoidosLab_BedroomSign"
+    },
+    {
+      "type": "sign",
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Windwardport_MayoidosLab_LabRoomSign"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Windwardport_MayoidosLab_Mayoido_PC"
+    }
+  ]
+}

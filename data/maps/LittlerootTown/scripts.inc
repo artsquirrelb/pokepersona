@@ -2039,6 +2039,6 @@ LittlerootTown_Eventscript_RomhackingTextSign::
 
 LittlerootTown_Text_RomhackingTextSign::
 # 1024 "data/maps/LittlerootTown/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} This rom hacking stuff is quite\n"
+	.string "{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL} This rom hacking stuff is quite\n"
 	.string "confusing.\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} But it's fun so far!$"
+	.string "{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY} But it's fun so far!$"

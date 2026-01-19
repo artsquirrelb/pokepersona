@@ -108,6 +108,7 @@
 #define VAR_AKIHIKO_RELATIONSHIP_POINTS                  0x4058
 #define VAR_SHINJIRO_RELATIONSHIP_POINTS                 0x4059 // Was Unused Var
 #define VAR_CHAPTER_1_STATE                              0x405A // Was VAR_RUSTBORO_CITY_STATE
+#define VAR_RECEIVED_GROOKEY                             8//script
 #define VAR_CHAPTER_2_STATE                              0x405B // Was Unused Var
 #define VAR_CHAPTER_3_STATE                              0x405C // Was Unused Var
 #define VAR_CHAPTER_4_STATE                              0x405D

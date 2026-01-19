@@ -856,45 +856,45 @@ MenRunToKobayashi:
 
 SunshineOrphanage_Burning_Eventscript_AkihikoNoticesTheFire_Text_0:
 # 28 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}Crap-\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Miki! Where's Miki?!\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}MIKI!!$"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Crap-\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Miki! Where's Miki?!\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}MIKI!!$"
 
 SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko_Text_0:
 # 46 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}AKI-!$"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}AKI-!$"
 
 SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko_Text_1:
 # 53 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Teacher! Let me go!! I have to find\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Teacher! Let me go!! I have to find\n"
 	.string "Miki!!\p"
-	.string "{SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}It's too dangerous, Akihiko!$"
+	.string "{SPEAKER NAME_KBYS}{DESTROY_MUGSHOT}It's too dangerous, Akihiko!$"
 
 SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko_Text_2:
 # 61 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}The fire is coming from the girls'\n"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}The fire is coming from the girls'\n"
 	.string "hallway!\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Fuck-!$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Fuck-!$"
 
 SunshineOrphanage_Burning_Eventscript_KobayashiLetsOutPokemon_Text_0:
 # 196 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_KOBAYASHI}Azumarill, NOW!$"
+	.string "{SPEAKER NAME_KBYS}Azumarill, NOW!$"
 
 SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver_Text_0:
 # 215 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}What the-$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}What the-$"
 
 SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver_Text_1:
 # 225 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_KOBAYASHI}I'm sorry, Akihiko, Shinjiro.$"
+	.string "{SPEAKER NAME_KBYS}I'm sorry, Akihiko, Shinjiro.$"
 
 SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver_Text_0:
 # 256 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_KOBAYASHI}Do not trust anyone.$"
+	.string "{SPEAKER NAME_KBYS}Do not trust anyone.$"
 
 SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver_Text_1:
 # 275 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_KOBAYASHI}Go, Azumarill. I'll be fine.$"
+	.string "{SPEAKER NAME_KBYS}Go, Azumarill. I'll be fine.$"
 
 SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_0:
 # 339 "data/maps/SunshineOrphanage_Burning/scripts.pory"
@@ -903,7 +903,7 @@ SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_0:
 SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_1:
 # 341 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	.string "Where are the subjects?\p"
-	.string "{SPEAKER NAME_KOBAYASHI}They aren't in their room?$"
+	.string "{SPEAKER NAME_KBYS}They aren't in their room?$"
 
 SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_2:
 # 355 "data/maps/SunshineOrphanage_Burning/scripts.pory"
@@ -912,4 +912,4 @@ SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_2:
 
 SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_3:
 # 365 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_KOBAYASHI}I said, I don't know.$"
+	.string "{SPEAKER NAME_KBYS}I said, I don't know.$"

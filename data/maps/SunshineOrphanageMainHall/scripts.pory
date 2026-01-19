@@ -84,7 +84,7 @@ script SunshineOrphanageMainHall_Eventscript_PawmiIsHealed {
     applymovement(15, PutdownbyAkihiko)
     waitmovement(0)
     msgbox(format(
-        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}There you go."))
+        "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}There you go."))
     closemessage
     release
     goto (SunshineOrphanageMainHall_Eventscript_PawmiAppreciated)
@@ -112,10 +112,10 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
     waitmovement(0)
     delay(30)
     msgbox(format(
-        "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Looks like it wants to stay with you.\p
-        {SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Can we keep it?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Can we, Ms. Kobayashi?\p
-        {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Normally you aren't allowed to have your own Pokémon here.\p However, since you are going
+        "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Looks like it wants to stay with you.\p
+        {SPEAKER NAME_MK}{DESTROY_MUGSHOT}Can we keep it?\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Can we, Ms. Kobayashi?\p
+        {SPEAKER NAME_KBYS}{DESTROY_MUGSHOT}Normally you aren't allowed to have your own Pokémon here.\p However, since you are going
         to leave in a few days, we can make an exception.\p
         Just make sure to not cause trouble in the mean time."))
     closemessage
@@ -123,9 +123,9 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
     applymovement (14, MikiHappy)
     waitmovement(0)
     msgbox(format(
-        "{SPEAKER NAME_MIKI}Yay!\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p
-        {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, I'll give you a pokeball to keep it.\p
+        "{SPEAKER NAME_MK}Yay!\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p
+        {SPEAKER NAME_KBYS}{DESTROY_MUGSHOT}Here, I'll give you a pokeball to keep it.\p
         {SPEAKER NAME_NONE}Ms. Kobayashi gave {PLAYER} a Cherish Ball."))
     closemessage
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, MITSURUS_PROLOGUE)
@@ -143,7 +143,7 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
 script SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi {
     lock
     faceplayer
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Go on, Pawmi is waiting for you."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Go on, Pawmi is waiting for you."))
     release
     end
 }
@@ -151,7 +151,7 @@ script SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi {
 script SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi {
     lock
     faceplayer
-    msgbox(format("{SPEAKER NAME_MIKI}Let's give Pawmi a home, big bro!"))
+    msgbox(format("{SPEAKER NAME_MK}Let's give Pawmi a home, big bro!"))
     release
     end
 }
@@ -211,7 +211,7 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     delay(20)
     applymovement (4, TeacherFacingAkihiko)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_KOBAYASHI}Alright.\p
+    msgbox(format("{SPEAKER NAME_KBYS}Alright.\p
     I supposed it's quite late now. You all should go to bed.\p
     See you tomorrow."))
     closemessage
@@ -275,7 +275,7 @@ script Girl_2_MainHall {
     }
     else{msgbox(format("Akihiko! I'm also getting adopted next week!\p
     My future adoptive parents are talking with my teacher right now.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}That's great! Congrats!"))}
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}That's great! Congrats!"))}
     release
     end
 }
@@ -330,13 +330,13 @@ script Boy_3_MainHall {
     setspeaker("Kenichi")
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
         msgbox(format("Oh hey, Akihiko! Miki is waiting for you outside.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}I know, thanks!"))
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}I know, thanks!"))
     }
     elif (var(VAR_AKIHIKOS_INTRO_STATE) == 5) {msgbox("Stay safe in the woods.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}We will!")}
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}We will!")}
     else {
         msgbox(format("I heard you found a rare Pokémon in the woods?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Pawmi is rare?"))
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Pawmi is rare?"))
     }
     release
     end
@@ -344,7 +344,7 @@ script Boy_3_MainHall {
 
 script DiningRoom {
     lock
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}
     It's the dining room. The pancakes here are the best."))
     release
     end
@@ -352,7 +352,7 @@ script DiningRoom {
 
 script BackyardDoor {
     lock
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}
     Outside is the backyard. We grow crops there."))
     release
     end
@@ -360,7 +360,7 @@ script BackyardDoor {
 
 script Girls_HallwayMainHall {
     lock
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}
     It's the way to the girls' hallway. I have no business there right now."))
     release
     end
@@ -368,14 +368,14 @@ script Girls_HallwayMainHall {
 
 script RestroomMainHall {
     lock
-    msgbox(format ("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}It's the restroom. I'm good for now."))
+    msgbox(format ("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}It's the restroom. I'm good for now."))
     release
     end
 }
 
 script PokeballShelf {
     lock
-    msgbox(format ("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Those belong to the staff. I shouldn't touch them."))
+    msgbox(format ("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Those belong to the staff. I shouldn't touch them."))
     release
     end
 }
@@ -388,7 +388,7 @@ script Porygon_PC {
     if (flag(FLAG_SYS_POKEMON_GET) == TRUE) {
         call(EventScript_AccessPokemonStorage)}
 
-    else {msgbox (format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+    else {msgbox (format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}
     Porygon can access the Pokémon Storage. If only I had a Pokémon."))
     release
     end}
@@ -422,7 +422,7 @@ script Blissey_Heal {
         special(HealPlayerParty)
         releaseall}
     else{
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}
         Blissey is very good at healing. I can ask it for help when I have an injured Pokémon."))
         releaseall
     }
@@ -431,7 +431,7 @@ script Blissey_Heal {
 
 script BlisseyHealedPawmi{
     lockall
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you for healing Pawmi, Blissey!"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Thank you for healing Pawmi, Blissey!"))
     playmoncry(SPECIES_BLISSEY, CRY_MODE_NORMAL)
     applymovement(11, BlisseyHappy)
     waitmovement(0)
@@ -483,19 +483,19 @@ script SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage{
     applymovement (4, SunshineOrphanageMainHall_Eventscript_MsKobayashiMoveRight)
     waitmovement(0)
     msgbox(format("
-    {SPEAKER NAME_KOBAYASHI}Good morning, Akihiko, Shinjiro.\p
+    {SPEAKER NAME_KBYS}Good morning, Akihiko, Shinjiro.\p
     Sorry to trouble you but can you two go pick up a package for me?\p
     It should be delivered at the Pokémon Center in Sunshine Town by now.\p
     You can get there by going through Sunshine Woods.\p
     Pawmi is with you now so it should be fine.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Of course, Ms. Kobayashi.\p
-    {SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, you may need these."))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Of course, Ms. Kobayashi.\p
+    {SPEAKER NAME_KBYS}{DESTROY_MUGSHOT}Here, you may need these."))
     closemessage
     giveitem (ITEM_POKE_BALL, 5)
     closemessage
     msgbox(format("
-    {SPEAKER NAME_KOBAYASHI}Stay safe, dear.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you, Ms. Kobayashi!"))
+    {SPEAKER NAME_KBYS}Stay safe, dear.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Thank you, Ms. Kobayashi!"))
     applymovement(13, walkup)
     waitmovement
     removeobject(13)

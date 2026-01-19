@@ -928,4 +928,16 @@
 #define S_WP 15
 #define GHOSTBOY 16
 
+// MAP_WINDWARDPORT_MAYOIDOS_LAB
+#define MAYOIDO_WWH 1
+#define WACHI_WWH 2
+#define IRIA_WWH 3
+#define SINISTCHA_WWH 4
+#define AEGISLASH_WWH 5
+#define A_WWH 6
+#define S_WWH 7
+#define M_WWH 8
+#define OSHA_WWH 9
+#define GROO_WWH 10
+
 #endif // GUARD_CONSTANTS_MAP_EVENT_IDS_H

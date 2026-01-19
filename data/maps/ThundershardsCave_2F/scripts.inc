@@ -836,18 +836,18 @@ ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_2:
 
 ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff_Text_3:
 # 102 "data/maps/ThundershardsCave_2F/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}.........\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}.........\p"
 	.string "({STR_VAR_1}, are you ready?)$"
 
 ThundershardsCave_2F_Eventscript_LetsJumpKGStaff_Text_0:
 # 114 "data/maps/ThundershardsCave_2F/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(They haven't noticed me yet. Let's\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(They haven't noticed me yet. Let's\n"
 	.string "surprise those people.)$"
 
 ThundershardsCave_2F_Eventscript_KirijoGenesisStaff_Text_0:
 # 134 "data/maps/ThundershardsCave_2F/scripts.pory"
 	.string "{SPEAKER NAME_WIB}What the- Why are you here-\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}{STR_VAR_1}, {STR_VAR_2}.$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}{STR_VAR_1}, {STR_VAR_2}.$"
 
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Text_0:
 # 150 "data/maps/ThundershardsCave_2F/scripts.pory"
@@ -858,25 +858,25 @@ ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Text_0:
 
 ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle_Text_1:
 # 163 "data/maps/ThundershardsCave_2F/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Not so fast.$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Not so fast.$"
 
 ThundershardsCave_2F_Eventscript_FreezingKGStaff_Text_0:
 # 214 "data/maps/ThundershardsCave_2F/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Don't worry, you'll thaw out in about 20\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Don't worry, you'll thaw out in about 20\n"
 	.string "minutes.\p"
 	.string "Let's go, {STR_VAR_1}, Inteleon.$"
 
 ThundershardsCave_2F_Eventscript_FrozenStaff_Text_0:
 # 237 "data/maps/ThundershardsCave_2F/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(I should be able to push them.)$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(I should be able to push them.)$"
 
 ThundershardsCave_2F_Eventscript_FrozenStaff_Text_1:
 # 245 "data/maps/ThundershardsCave_2F/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}(Magnifique.)$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}(Magnifique.)$"
 
 ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave_Text_0:
 # 281 "data/maps/ThundershardsCave_2F/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Looks like those two managed to\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Looks like those two managed to\n"
 	.string "escape.\p"
 	.string "That's a relief.)$"
 

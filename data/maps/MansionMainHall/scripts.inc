@@ -551,22 +551,22 @@ MansionMainHall_Eventscript_WaiterAoi_Movement_0:
 
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_0:
 # 25 "data/maps/MansionMainHall/scripts.pory"
-	.string "{SPEAKER NAME_TAKEHARU}Mitsuru.$"
+	.string "{SPEAKER NAME_TKHR}Mitsuru.$"
 
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_1:
 # 34 "data/maps/MansionMainHall/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Father...\p"
-	.string "{SPEAKER NAME_TAKEHARU}{DESTROY_MUGSHOT}So you really intend to go, no matter\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Father...\p"
+	.string "{SPEAKER NAME_TKHR}{DESTROY_MUGSHOT}So you really intend to go, no matter\n"
 	.string "what I say.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}I'm sorry, Father...\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}But we already talked about this\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}I'm sorry, Father...\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}But we already talked about this\n"
 	.string "before.\p"
 	.string "This is also my responsibility as a\n"
 	.string "Kirijo.\p"
 	.string "I simply cannot sit still while our\n"
 	.string "family's name gets further tainted.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}Please... don't stop me, Father.\p"
-	.string "{SPEAKER NAME_TAKEHARU}{DESTROY_MUGSHOT}You already know I don't fully agree\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}Please... don't stop me, Father.\p"
+	.string "{SPEAKER NAME_TKHR}{DESTROY_MUGSHOT}You already know I don't fully agree\n"
 	.string "with this.\p"
 	.string "No sane parent would let their child do\n"
 	.string "something this dangerous.\p"
@@ -578,16 +578,16 @@ MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_1:
 
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_2:
 # 51 "data/maps/MansionMainHall/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Father.....\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}If that'll put your mind more at ease,\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Father.....\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}If that'll put your mind more at ease,\n"
 	.string "I'll do so.$"
 
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_3:
 # 67 "data/maps/MansionMainHall/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I must go now.\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I must go now.\p"
 	.string "Please take care, Father.\p"
-	.string "{SPEAKER NAME_TAKEHARU}{DESTROY_MUGSHOT}Stay safe, and come back to me, Mitsuru.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}I fully intend to.$"
+	.string "{SPEAKER NAME_TKHR}{DESTROY_MUGSHOT}Stay safe, and come back to me, Mitsuru.\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}I fully intend to.$"
 
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_4:
 # 79 "data/maps/MansionMainHall/scripts.pory"
@@ -595,10 +595,10 @@ MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Text_4:
 
 MansionMainHall_Eventscript_Takeharu_Text_0:
 # 98 "data/maps/MansionMainHall/scripts.pory"
-	.string "{SPEAKER NAME_TAKEHARU}If you need anything on your journey,\n"
+	.string "{SPEAKER NAME_TKHR}If you need anything on your journey,\n"
 	.string "just make a call home.\p"
 	.string "I'll be sure to assist you whenever.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That is assuring. Thank you, Father.$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That is assuring. Thank you, Father.$"
 
 MansionMainHall_Eventscript_Butler_Text_0:
 # 109 "data/maps/MansionMainHall/scripts.pory"
@@ -611,7 +611,7 @@ MansionMainHall_Eventscript_Butler_Text_1:
 
 MansionMainHall_Eventscript_Butler_Text_2:
 # 118 "data/maps/MansionMainHall/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Y-Yuuma-san, please don't cry. I'll\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}Y-Yuuma-san, please don't cry. I'll\n"
 	.string "definitely be back in no time!$"
 
 MansionMainHall_Eventscript_Butler_Text_3:
@@ -621,8 +621,8 @@ MansionMainHall_Eventscript_Butler_Text_3:
 MansionMainHall_Eventscript_Butler_Text_4:
 # 130 "data/maps/MansionMainHall/scripts.pory"
 	.string "-sniff sniff-\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}P-Please stop crying, Yuuma-san...\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(Sigh, how do I comfort a person in\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}P-Please stop crying, Yuuma-san...\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}(Sigh, how do I comfort a person in\n"
 	.string "distress...?)$"
 
 MansionMainHall_Eventscript_WaiterHaruma_Text_0:
@@ -638,20 +638,20 @@ MansionMainHall_Eventscript_WaiterHaruma_Text_1:
 MansionMainHall_Eventscript_WaiterHaruma_Text_2:
 # 149 "data/maps/MansionMainHall/scripts.pory"
 	.string "Young Lady, what can I do for you?\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I don't see Kikuno anywhere. Do you\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I don't see Kikuno anywhere. Do you\n"
 	.string "know where she went off to?$"
 
 MansionMainHall_Eventscript_WaiterHaruma_Text_3:
 # 152 "data/maps/MansionMainHall/scripts.pory"
 	.string "{DESTROY_MUGSHOT}I saw her go outside to the main garden\n"
 	.string "a bit earlier.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you, Haruma.$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see. Thank you, Haruma.$"
 
 MansionMainHall_Eventscript_WaiterHaruma_Text_4:
 # 160 "data/maps/MansionMainHall/scripts.pory"
 	.string "Kikuno-san just went outside to the\n"
 	.string "main garden.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. Thank you, Haruma.$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see. Thank you, Haruma.$"
 
 MansionMainHall_Eventscript_WaitressMinori_Text_0:
 # 171 "data/maps/MansionMainHall/scripts.pory"
@@ -672,7 +672,7 @@ MansionMainHall_Eventscript_WaiterAoi_Text_1:
 
 MansionMainHall_Eventscript_WaiterAoi_Text_2:
 # 245 "data/maps/MansionMainHall/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(I better leave him alone... with the\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(I better leave him alone... with the\n"
 	.string "statues.)$"
 
 MansionMainHall_Eventscript_WaiterAoi_Text_3:
@@ -686,7 +686,7 @@ MansionMainHall_Eventscript_WaiterAoi_Text_3:
 MansionMainHall_Eventscript_WaiterAoi_Text_4:
 # 258 "data/maps/MansionMainHall/scripts.pory"
 	.string "Y-Young Lady! How can I help?\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Oh, it's nothing.\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Oh, it's nothing.\p"
 	.string ".......\p"
 	.string "You've worked hard, Aoi.$"
 
@@ -697,13 +697,13 @@ MansionMainHall_Eventscript_WaiterAoi_Text_5:
 
 MansionMainHall_Eventscript_EmptyGuestRoom_Text_0:
 # 289 "data/maps/MansionMainHall/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(It's my guest room. I don't have any\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(It's my guest room. I don't have any\n"
 	.string "guest visiting right now so it must be\l"
 	.string "empty.)$"
 
 MansionMainHall_Eventscript_NotTheWayOutToMainGarden_Text_0:
 # 297 "data/maps/MansionMainHall/scripts.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I have no business in the Berry Garden\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I have no business in the Berry Garden\n"
 	.string "right now.$"
 
 AlertingWildPokemonGotInside::
@@ -714,7 +714,7 @@ AlertingWildPokemonGotInside::
 	.string "cleaning up.\p"
 	.string "You may prefer to exit through this\n"
 	.string "west hall right now, Young Lady.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I see. That explained the noise I heard\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see. That explained the noise I heard\n"
 	.string "earlier.\p"
 	.string "Thank you for your hard work.$"
 
@@ -724,7 +724,7 @@ TakeharusOffice::
 	.string "in his office.\p"
 	.string "I'll go ask him if you want to, Young\n"
 	.string "Lady.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}It's fine, Koharu.\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It's fine, Koharu.\p"
 	.string "(Besides, I already discussed with\n"
 	.string "Father about all the documents he\l"
 	.string "keeps in there.)$"

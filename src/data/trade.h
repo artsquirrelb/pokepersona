@@ -968,7 +968,7 @@ static const union AffineAnimCmd *const sAffineAnims_CrossingMonPics[] =
 
 static const struct InGameTrade sIngameTrades[] =
 {
-    [INGAME_TRADE_SEEDOT] =
+    [INGAME_TRADE_BULBASAUR] =
     {
         .nickname = _("Dots"),
         .species = SPECIES_SEEDOT,

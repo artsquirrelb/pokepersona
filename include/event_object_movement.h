@@ -525,4 +525,5 @@ const struct SpritePalette *GetObjectEventPaletteFromTag(u16 tag);
 
 u8 GetObjectEventApricornTreeId(u8 objectEventId);
 
+void Script_SwitchParty(void);
 #endif //GUARD_EVENT_OBJECT_MOVEMENT_H

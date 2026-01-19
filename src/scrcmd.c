@@ -3270,7 +3270,7 @@ bool8 Scrcmd_checkspecies(struct ScriptContext *ctx)
     gSpecialVar_Result = CheckPartyHasSpecies(givenSpecies);
     for (partyIndex = 0; partyIndex < CalculatePlayerPartyCount(); partyIndex++)
         if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES) == givenSpecies)
-            gSpecialVar_0x8001 = partyIndex;
+            gSpecialVar_0x8004 = partyIndex;
     return FALSE;
 }
 
@@ -3284,7 +3284,7 @@ bool8 Scrcmd_checkspecies_choose(struct ScriptContext *ctx)
         if (GetMonData(&gPlayerParty[partyIndex], MON_DATA_SPECIES) == givenSpecies)
             {
                 gSpecialVar_Result = (GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES) == givenSpecies);
-                gSpecialVar_0x8001 = partyIndex;
+                gSpecialVar_0x8004 = partyIndex;
             }
 
     return FALSE;
@@ -3293,10 +3293,64 @@ bool8 Scrcmd_checkspecies_choose(struct ScriptContext *ctx)
 bool8 Scrcmd_changespecies(struct ScriptContext *ctx)
 {
     u16 targetspecies = VarGet(ScriptReadHalfword(ctx));
-    u16 monIndex = gSpecialVar_0x8001;
+    u16 monIndex = gSpecialVar_0x8004;
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
 
     SetMonSpecies (&gPlayerParty[monIndex], targetspecies);
+    return FALSE;
+}
+
+bool8 Scrcmd_removechosenmon(struct ScriptContext *ctx)
+{
+    Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
+    if(gSpecialVar_MonBoxId == TOTAL_BOXES_COUNT)
+    {
+        ZeroMonData(&gPlayerParty[gSpecialVar_MonBoxPos]);
+    }
+    else
+    {
+        ZeroBoxMonData(&gPokemonStoragePtr->boxes[gSpecialVar_MonBoxId][gSpecialVar_MonBoxPos]);
+    }
+    return FALSE;
+}
+
+bool8 Scrcmd_checkboxspecies(struct ScriptContext *ctx)
+{
+    u16 species = VarGet(ScriptReadHalfword(ctx));
+    
+    Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_Result = CheckStorageForMonBuffNickBoxId(species);
+
+    return FALSE;
+}
+
+bool8 Scrcmd_checkpartyboxspecies(struct ScriptContext *ctx)
+{
+    u16 species = VarGet(ScriptReadHalfword(ctx));
+    
+    Script_RequestEffects(SCREFF_V1);
+
+    gSpecialVar_Result = CheckStorageForMonBuffNickBoxId(species);
+    if (gSpecialVar_Result == FALSE)
+    {
+        gSpecialVar_Result = CheckPartyHasSpecies(species);
+        if(gSpecialVar_Result == FALSE)
+        {
+            Script_SwitchParty();
+            gSpecialVar_Result = CheckPartyHasSpecies(species);
+            if (gSpecialVar_Result == TRUE)
+            {
+                GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar2);
+                StringGet_Nickname(gStringVar2);
+            }
+            Script_SwitchParty();
+        }
+        else{
+            GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar2);
+            StringGet_Nickname(gStringVar2);
+        }
+    }
     return FALSE;
 }
 

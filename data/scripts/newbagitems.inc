@@ -232,13 +232,36 @@ EventScript_ConfirmUseEscapeRope_2:
 	goto EventScript_ConfirmUseEscapeRope_1
 
 
+EventScript_AccessPokemonBoxLink::
+# 112 "data/scripts/newbagitems.pory"
+	goto_if_set FLAG_PREVENT_BOX_LINK, EventScript_AccessPokemonBoxLink_2
+# 117 "data/scripts/newbagitems.pory"
+	playse SE_PC_LOGIN
+# 118 "data/scripts/newbagitems.pory"
+	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
+# 119 "data/scripts/newbagitems.pory"
+	special ShowPokemonStorageSystemPC
+# 120 "data/scripts/newbagitems.pory"
+	waitstate
+# 121 "data/scripts/newbagitems.pory"
+	goto EventScript_TurnOffPC
+	end
+
+EventScript_AccessPokemonBoxLink_2:
+# 113 "data/scripts/newbagitems.pory"
+	msgbox EventScript_AccessPokemonBoxLink_Text_0
+# 114 "data/scripts/newbagitems.pory"
+	release
+	end
+
+
 EventScript_CampGears_Text_0:
 # 10 "data/scripts/newbagitems.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}(I can't set up a camp here.)$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}(I can't set up a camp here.)$"
 
 EventScript_CampGears_Text_1:
 # 13 "data/scripts/newbagitems.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_GEEZ}(I shouldn't camp here.)$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_GEEZ}(I shouldn't camp here.)$"
 
 EventScript_CampGears_Text_2:
 # 27 "data/scripts/newbagitems.pory"
@@ -246,11 +269,11 @@ EventScript_CampGears_Text_2:
 
 EventScript_CampGears_NotTheTime_Text_0:
 # 67 "data/scripts/newbagitems.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping.)$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Now is not the time for camping.)$"
 
 EventScript_CampGears_NotTheTime_Text_1:
 # 70 "data/scripts/newbagitems.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Now is not the time for camping.)$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Now is not the time for camping.)$"
 
 EventScript_TellTheTimeDayHourMinute_Text_0:
 # 77 "data/scripts/newbagitems.pory"
@@ -261,6 +284,11 @@ EventScript_CheckDaysLeft_Text_0:
 # 84 "data/scripts/newbagitems.pory"
 	.string "{COLOR GREEN}YOU HAVE {COLOR RED}ONE DAY LEFT {COLOR GREEN}TO COMPLETE THE\n"
 	.string "CURRENT STORY QUEST.$"
+
+EventScript_AccessPokemonBoxLink_Text_0:
+# 113 "data/scripts/newbagitems.pory"
+	.string "Cannot open Pokémon Storage System\n"
+	.string "now.$"
 
 ConfirmUseEscapeRope::
 # 106 "data/scripts/newbagitems.pory"

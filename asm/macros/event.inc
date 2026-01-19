@@ -1992,6 +1992,10 @@
 	callnative Script_SwitchMainCharacter
 	.endm
 
+	.macro switchparty
+	callnative Script_SwitchParty
+	.endm
+
 	@ Opens the Pokemart system, offering the specified products for sale.
 	@ Products should be a list of .2byte item values preceded by an .align 2
 	@ Uses BP as currency, with the prices based on the .bpCost value
@@ -2702,6 +2706,20 @@
 	.2byte \speciesId
 	.endm 
 
+	@ Check if the Player has speciesId in PSS and return result to VAR_RESULT, nickname to STR_VAR_2 and boxname to STR_VAR_1
+	.macro checkboxspecies speciesId:req
+	callnative Scrcmd_checkboxspecies, requests_effects=1
+	.2byte \speciesId
+	.endm
+
+	@ Check if the Player has speciesId in PSS or both players' parties and return result to VAR_RESULT,
+	@ nickname to STR_VAR_2, boxname to STR_VAR_1 and party index to VAR_0x8004
+	.macro checkpartyboxspecies speciesId:req
+	callnative Scrcmd_checkpartyboxspecies, requests_effects=1
+	.2byte \speciesId
+	.endm
+
+
 	@Change index mon friendship to value
 	.macro setfriendship partyIndex:req, friendship:req
 	callnative Scrcmd_setfriendship, requests_effects=1
@@ -3243,18 +3261,28 @@
 	@ If wait is not provided, then waitmovement 0 is emitted. If you don't want that
 	@ emitted (ex: multiple NPCs are moving at the same time), then provide any
 	@ argument for wait.
-	.macro stepinplace localid:req, wait
-	getobjectfacingdirection \localid, VAR_0x8000
-	if (VAR_0x8000 == DIR_NORTH)
+	.macro stepinplace localid:req, direction:req, wait
+	.if \direction == DIR_NORTH
 		applymovement \localid, Common_Movement_WalkInPlaceFasterUp
-	else if (VAR_0x8000 == DIR_SOUTH)
+		.ifb \wait
+			waitmovement 0
+		.endif
+		
+	.elseif \direction == DIR_SOUTH
 		applymovement \localid, Common_Movement_WalkInPlaceFasterDown
-	else if (VAR_0x8000 == DIR_WEST)
+		.ifb \wait
+			waitmovement 0
+		.endif
+	.elseif \direction == DIR_WEST
 		applymovement \localid, Common_Movement_WalkInPlaceFasterLeft
-	else if (VAR_0x8000 == DIR_EAST)
+		.ifb \wait
+			waitmovement 0
+		.endif
+	.elseif \direction == DIR_EAST
 		applymovement \localid, Common_Movement_WalkInPlaceFasterRight
-	.ifb \wait
-		waitmovement 0
+		.ifb \wait
+			waitmovement 0
+		.endif
 	.endif
 	.endm
 
@@ -3298,4 +3326,55 @@
 	waitbuttonpress
 	hidehelpwindow
 	closemessage
+	.endm
+
+	@ If emote is not provided, then it will do an exclamation mark emote.
+	@ Other params included in include\constants\event_objects.h.
+	@ Invalid entries do the exclamation mark emote.
+	.macro doemote localid:req, emoteArg
+	.ifb \emoteArg
+		playse SE_PIN
+		applymovement \localid, Common_Movement_ExclamationMark
+	.else
+		.if \emoteArg == E_QUESTION
+			playse SE_PIN
+			applymovement \localid, Common_Movement_QuestionMark
+		.elseif \emoteArg == E_HEART
+			playse SE_M_BUBBLE
+			applymovement \localid, Common_Movement_Heart
+		.elseif \emoteArg == E_SWEAT
+			playse SE_M_BUBBLE
+			applymovement \localid, Common_Movement_Sweat
+		.elseif \emoteArg == E_HAPPY
+			playse SE_PIN
+			applymovement \localid, Common_Movement_Happy
+		.elseif \emoteArg == E_CRY
+			playse SE_M_BUBBLE
+			applymovement \localid, Common_Movement_Cry
+		.elseif \emoteArg == E_SAD
+			playse SE_PIN
+			applymovement \localid, Common_Movement_Sad
+		.elseif \emoteArg == E_ANGRY
+			playse SE_PIN
+			applymovement \localid, Common_Movement_Angry
+		.elseif \emoteArg == E_ASLEEP
+			playse SE_M_SNORE
+			applymovement \localid, Common_Movement_Asleep
+		.elseif \emoteArg == E_PENSIVE
+			playse SE_M_BUBBLE
+			applymovement \localid, Common_Movement_Pensive
+		.elseif \emoteArg == E_MUSIC
+			playse SE_PIN
+			applymovement \localid, Common_Movement_Music
+		.elseif \emoteArg == E_X
+			playse SE_BOO
+			applymovement \localid, Common_Movement_x
+		.else
+			playse SE_PIN
+			applymovement \localid, Common_Movement_ExclamationMark
+		.endif
+	.endif
+	waitmovement 0
+	applymovement \localid, Common_Movement_Delay48
+	waitmovement 0
 	.endm

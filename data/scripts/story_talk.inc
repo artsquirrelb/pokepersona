@@ -687,27 +687,64 @@ EventScript_OverworldTrainerTips_7:
 	goto_if_set FLAG_SYS_QUEST_MENU_GET, EventScript_OverworldTrainerTips_11
 EventScript_OverworldTrainerTips_10:
 # 423 "data/scripts/story_talk.pory"
-	dynmultipush gText_Next, 5
-# 424 "data/scripts/story_talk.pory"
-	msgbox EventScript_OverworldTrainerTips_Text_0
-# 425 "data/scripts/story_talk.pory"
-	dynmultistack 0, 0, FALSE, 6, FALSE, 0, NULL
-# 426 "data/scripts/story_talk.pory"
-	switch VAR_RESULT
-# 427 "data/scripts/story_talk.pory"
-	case 0, EventScript_OverworldTrainerTips_15
-# 428 "data/scripts/story_talk.pory"
-	case 1, EventScript_OverworldTrainerTips_16
-# 429 "data/scripts/story_talk.pory"
-	case 2, EventScript_OverworldTrainerTips_17
-# 430 "data/scripts/story_talk.pory"
-	case 3, EventScript_OverworldTrainerTips_18
-# 431 "data/scripts/story_talk.pory"
-	case 4, EventScript_OverworldTrainerTips_19
-# 432 "data/scripts/story_talk.pory"
-	case 5, EventScript_OverworldTrainerTips_20
+	compare VAR_AKIHIKOS_INTRO_STATE, 100
+	goto_if_ge EventScript_OverworldTrainerTips_14
+# 423 "data/scripts/story_talk.pory"
+	compare VAR_MITSURUS_INTRO_STATE, 100
+	goto_if_ge EventScript_OverworldTrainerTips_14
 EventScript_OverworldTrainerTips_13:
-# 434 "data/scripts/story_talk.pory"
+# 426 "data/scripts/story_talk.pory"
+	goto_if_set FLAG_HELP_MAKE_CHOICE, EventScript_OverworldTrainerTips_19
+EventScript_OverworldTrainerTips_18:
+# 429 "data/scripts/story_talk.pory"
+	goto_if_set FLAG_PARTTIME_GET, EventScript_OverworldTrainerTips_22
+EventScript_OverworldTrainerTips_21:
+# 432 "data/scripts/story_talk.pory"
+	goto_if_set FLAG_HELP_EXIT_DUNGEON, EventScript_OverworldTrainerTips_25
+EventScript_OverworldTrainerTips_24:
+# 435 "data/scripts/story_talk.pory"
+	goto_if_set FLAG_HELP_DUNGEON_ENCOUNTER, EventScript_OverworldTrainerTips_28
+EventScript_OverworldTrainerTips_27:
+# 438 "data/scripts/story_talk.pory"
+	goto_if_set FLAG_HELP_SPEEDUP, EventScript_OverworldTrainerTips_31
+EventScript_OverworldTrainerTips_30:
+# 441 "data/scripts/story_talk.pory"
+	goto_if_set FLAG_DEXNAV_GET, EventScript_OverworldTrainerTips_34
+EventScript_OverworldTrainerTips_33:
+# 445 "data/scripts/story_talk.pory"
+	msgbox EventScript_OverworldTrainerTips_Text_0
+# 446 "data/scripts/story_talk.pory"
+	dynmultistack 0, 0, FALSE, 6, FALSE, 0, NULL
+# 447 "data/scripts/story_talk.pory"
+	switch VAR_RESULT
+# 448 "data/scripts/story_talk.pory"
+	case 0, EventScript_OverworldTrainerTips_38
+# 449 "data/scripts/story_talk.pory"
+	case 1, EventScript_OverworldTrainerTips_39
+# 450 "data/scripts/story_talk.pory"
+	case 2, EventScript_OverworldTrainerTips_40
+# 451 "data/scripts/story_talk.pory"
+	case 3, EventScript_OverworldTrainerTips_41
+# 452 "data/scripts/story_talk.pory"
+	case 4, EventScript_OverworldTrainerTips_42
+# 453 "data/scripts/story_talk.pory"
+	case 5, EventScript_OverworldTrainerTips_43
+# 454 "data/scripts/story_talk.pory"
+	case 6, EventScript_OverworldTrainerTips_44
+# 455 "data/scripts/story_talk.pory"
+	case 7, EventScript_OverworldTrainerTips_45
+# 456 "data/scripts/story_talk.pory"
+	case 8, EventScript_OverworldTrainerTips_46
+# 457 "data/scripts/story_talk.pory"
+	case 9, EventScript_OverworldTrainerTips_47
+# 458 "data/scripts/story_talk.pory"
+	case 10, EventScript_OverworldTrainerTips_48
+# 459 "data/scripts/story_talk.pory"
+	case 11, EventScript_OverworldTrainerTips_49
+# 460 "data/scripts/story_talk.pory"
+	case 12, EventScript_OverworldTrainerTips_50
+EventScript_OverworldTrainerTips_36:
+# 462 "data/scripts/story_talk.pory"
 	release
 	end
 
@@ -733,385 +770,343 @@ EventScript_OverworldTrainerTips_11:
 	dynmultipush HelpQuest, 4
 	goto EventScript_OverworldTrainerTips_10
 
-EventScript_OverworldTrainerTips_15:
-# 427 "data/scripts/story_talk.pory"
-	call EventScript_ShowHelpPokedex
-	goto EventScript_OverworldTrainerTips_13
-
-EventScript_OverworldTrainerTips_16:
-# 428 "data/scripts/story_talk.pory"
-	call EventScript_ShowHelpShinyChance
-	goto EventScript_OverworldTrainerTips_13
-
-EventScript_OverworldTrainerTips_17:
-# 429 "data/scripts/story_talk.pory"
-	call EventScript_ShowHelpStarter
-	goto EventScript_OverworldTrainerTips_13
-
-EventScript_OverworldTrainerTips_18:
-# 430 "data/scripts/story_talk.pory"
-	call EventScript_ShowHelpCompanion
+EventScript_OverworldTrainerTips_14:
+# 424 "data/scripts/story_talk.pory"
+	dynmultipush HelpDeadline, 5
 	goto EventScript_OverworldTrainerTips_13
 
 EventScript_OverworldTrainerTips_19:
-# 431 "data/scripts/story_talk.pory"
-	call EventScript_ShowHelpQuest
-	goto EventScript_OverworldTrainerTips_13
+# 427 "data/scripts/story_talk.pory"
+	dynmultipush HelpChoice, 6
+	goto EventScript_OverworldTrainerTips_18
 
-EventScript_OverworldTrainerTips_20:
-# 432 "data/scripts/story_talk.pory"
-	goto EventScript_OverworldTrainerTips2
-	goto EventScript_OverworldTrainerTips_13
+EventScript_OverworldTrainerTips_22:
+# 430 "data/scripts/story_talk.pory"
+	dynmultipush HelpParttime, 7
+	goto EventScript_OverworldTrainerTips_21
 
+EventScript_OverworldTrainerTips_25:
+# 433 "data/scripts/story_talk.pory"
+	dynmultipush HelpExitDungeon, 8
+	goto EventScript_OverworldTrainerTips_24
 
-EventScript_OverworldTrainerTips2::
+EventScript_OverworldTrainerTips_28:
+# 436 "data/scripts/story_talk.pory"
+	dynmultipush HelpDungeonEncounter, 9
+	goto EventScript_OverworldTrainerTips_27
+
+EventScript_OverworldTrainerTips_31:
 # 439 "data/scripts/story_talk.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 100
-	goto_if_ge EventScript_OverworldTrainerTips2_2
-# 439 "data/scripts/story_talk.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 100
-	goto_if_ge EventScript_OverworldTrainerTips2_2
-EventScript_OverworldTrainerTips2_1:
+	dynmultipush HelpSpeedUp, 10
+	goto EventScript_OverworldTrainerTips_30
+
+EventScript_OverworldTrainerTips_34:
 # 442 "data/scripts/story_talk.pory"
-	goto_if_set FLAG_HELP_MAKE_CHOICE, EventScript_OverworldTrainerTips2_7
-EventScript_OverworldTrainerTips2_6:
-# 445 "data/scripts/story_talk.pory"
-	goto_if_set FLAG_PARTTIME_GET, EventScript_OverworldTrainerTips2_10
-EventScript_OverworldTrainerTips2_9:
-# 448 "data/scripts/story_talk.pory"
-	goto_if_set FLAG_HELP_EXIT_DUNGEON, EventScript_OverworldTrainerTips2_13
-EventScript_OverworldTrainerTips2_12:
-# 451 "data/scripts/story_talk.pory"
-	goto_if_set FLAG_HELP_DUNGEON_ENCOUNTER, EventScript_OverworldTrainerTips2_16
-EventScript_OverworldTrainerTips2_15:
-# 454 "data/scripts/story_talk.pory"
-	dynmultipush NextBackB, 5
-# 455 "data/scripts/story_talk.pory"
-	dynmultistack 0, 0, FALSE, 6, FALSE, 0, NULL
-# 456 "data/scripts/story_talk.pory"
-	switch VAR_RESULT
-# 457 "data/scripts/story_talk.pory"
-	case 0, EventScript_OverworldTrainerTips2_20
-# 458 "data/scripts/story_talk.pory"
-	case 1, EventScript_OverworldTrainerTips2_21
-# 459 "data/scripts/story_talk.pory"
-	case 2, EventScript_OverworldTrainerTips2_22
-# 460 "data/scripts/story_talk.pory"
-	case 3, EventScript_OverworldTrainerTips2_23
-# 461 "data/scripts/story_talk.pory"
-	case 4, EventScript_OverworldTrainerTips2_24
-# 462 "data/scripts/story_talk.pory"
-	case 5, EventScript_OverworldTrainerTips2_25
-# 463 "data/scripts/story_talk.pory"
-	goto EventScript_OverworldTrainerTips
-EventScript_OverworldTrainerTips2_18:
-# 465 "data/scripts/story_talk.pory"
-	release
-	end
-
-EventScript_OverworldTrainerTips2_2:
-# 440 "data/scripts/story_talk.pory"
-	dynmultipush HelpDeadline, 0
-	goto EventScript_OverworldTrainerTips2_1
-
-EventScript_OverworldTrainerTips2_7:
+	dynmultipush HelpDexNav, 11
 # 443 "data/scripts/story_talk.pory"
-	dynmultipush HelpChoice, 1
-	goto EventScript_OverworldTrainerTips2_6
+	dynmultipush HelpBoxLink, 12
+	goto EventScript_OverworldTrainerTips_33
 
-EventScript_OverworldTrainerTips2_10:
-# 446 "data/scripts/story_talk.pory"
-	dynmultipush HelpParttime, 2
-	goto EventScript_OverworldTrainerTips2_9
+EventScript_OverworldTrainerTips_38:
+# 448 "data/scripts/story_talk.pory"
+	call EventScript_ShowHelpPokedex
+	goto EventScript_OverworldTrainerTips_36
 
-EventScript_OverworldTrainerTips2_13:
+EventScript_OverworldTrainerTips_39:
 # 449 "data/scripts/story_talk.pory"
-	dynmultipush HelpExitDungeon, 3
-	goto EventScript_OverworldTrainerTips2_12
+	call EventScript_ShowHelpShinyChance
+	goto EventScript_OverworldTrainerTips_36
 
-EventScript_OverworldTrainerTips2_16:
+EventScript_OverworldTrainerTips_40:
+# 450 "data/scripts/story_talk.pory"
+	call EventScript_ShowHelpStarter
+	goto EventScript_OverworldTrainerTips_36
+
+EventScript_OverworldTrainerTips_41:
+# 451 "data/scripts/story_talk.pory"
+	call EventScript_ShowHelpCompanion
+	goto EventScript_OverworldTrainerTips_36
+
+EventScript_OverworldTrainerTips_42:
 # 452 "data/scripts/story_talk.pory"
-	dynmultipush HelpDungeonEncounter, 4
-	goto EventScript_OverworldTrainerTips2_15
+	call EventScript_ShowHelpQuest
+	goto EventScript_OverworldTrainerTips_36
 
-EventScript_OverworldTrainerTips2_20:
-# 457 "data/scripts/story_talk.pory"
+EventScript_OverworldTrainerTips_43:
+# 453 "data/scripts/story_talk.pory"
 	call EventScript_ShowHelpDeadline
-	goto EventScript_OverworldTrainerTips2_18
+	goto EventScript_OverworldTrainerTips_36
 
-EventScript_OverworldTrainerTips2_21:
-# 458 "data/scripts/story_talk.pory"
+EventScript_OverworldTrainerTips_44:
+# 454 "data/scripts/story_talk.pory"
 	call EventScript_ShowHelpChoice
-	goto EventScript_OverworldTrainerTips2_18
+	goto EventScript_OverworldTrainerTips_36
 
-EventScript_OverworldTrainerTips2_22:
-# 459 "data/scripts/story_talk.pory"
+EventScript_OverworldTrainerTips_45:
+# 455 "data/scripts/story_talk.pory"
 	call EventScript_ShowHelpPartTime
-	goto EventScript_OverworldTrainerTips2_18
+	goto EventScript_OverworldTrainerTips_36
 
-EventScript_OverworldTrainerTips2_23:
-# 460 "data/scripts/story_talk.pory"
+EventScript_OverworldTrainerTips_46:
+# 456 "data/scripts/story_talk.pory"
 	call EventScript_ShowHelpExitDungeon
-	goto EventScript_OverworldTrainerTips2_18
+	goto EventScript_OverworldTrainerTips_36
 
-EventScript_OverworldTrainerTips2_24:
-# 461 "data/scripts/story_talk.pory"
+EventScript_OverworldTrainerTips_47:
+# 457 "data/scripts/story_talk.pory"
 	call EventScript_ShowHelpDungeonEncounter
-	goto EventScript_OverworldTrainerTips2_18
+	goto EventScript_OverworldTrainerTips_36
 
-EventScript_OverworldTrainerTips2_25:
-# 462 "data/scripts/story_talk.pory"
-	goto EventScript_OverworldTrainerTips3
-	goto EventScript_OverworldTrainerTips2_18
-
-
-EventScript_OverworldTrainerTips3::
-# 470 "data/scripts/story_talk.pory"
-	goto_if_set FLAG_HELP_SPEEDUP, EventScript_OverworldTrainerTips3_2
-EventScript_OverworldTrainerTips3_1:
-# 473 "data/scripts/story_talk.pory"
-	dynmultipush QuitBack, 5
-# 474 "data/scripts/story_talk.pory"
-	dynmultistack 0, 0, FALSE, 6, FALSE, 0, NULL
-# 475 "data/scripts/story_talk.pory"
-	switch VAR_RESULT
-# 476 "data/scripts/story_talk.pory"
-	case 0, EventScript_OverworldTrainerTips3_6
-# 477 "data/scripts/story_talk.pory"
-	case 5, EventScript_OverworldTrainerTips3_7
-# 480 "data/scripts/story_talk.pory"
-	goto EventScript_OverworldTrainerTips2
-EventScript_OverworldTrainerTips3_4:
-# 482 "data/scripts/story_talk.pory"
-	release
-	end
-
-EventScript_OverworldTrainerTips3_2:
-# 471 "data/scripts/story_talk.pory"
-	dynmultipush HelpSpeedUp, 0
-	goto EventScript_OverworldTrainerTips3_1
-
-EventScript_OverworldTrainerTips3_6:
-# 476 "data/scripts/story_talk.pory"
+EventScript_OverworldTrainerTips_48:
+# 458 "data/scripts/story_talk.pory"
 	call EventScript_ShowHelpSpeedUp
-	goto EventScript_OverworldTrainerTips3_4
+	goto EventScript_OverworldTrainerTips_36
 
-EventScript_OverworldTrainerTips3_7:
-# 478 "data/scripts/story_talk.pory"
-	release
-	end
+EventScript_OverworldTrainerTips_49:
+# 459 "data/scripts/story_talk.pory"
+	call EventScript_ShowHelpDexNav
+	goto EventScript_OverworldTrainerTips_36
+
+EventScript_OverworldTrainerTips_50:
+# 460 "data/scripts/story_talk.pory"
+	call EventScript_ShowHelpBoxLink
+	goto EventScript_OverworldTrainerTips_36
 
 
 EventScript_ShowHelpPokedex::
-# 489 "data/scripts/story_talk.pory"
+# 469 "data/scripts/story_talk.pory"
 	closemessage
-# 490 "data/scripts/story_talk.pory"
+# 470 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_POKEDEX
-# 491 "data/scripts/story_talk.pory"
+# 471 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 492 "data/scripts/story_talk.pory"
+# 472 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpShinyChance::
-# 496 "data/scripts/story_talk.pory"
+# 476 "data/scripts/story_talk.pory"
 	closemessage
-# 497 "data/scripts/story_talk.pory"
+# 477 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_SHINY_CHANCE
-# 498 "data/scripts/story_talk.pory"
+# 478 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 499 "data/scripts/story_talk.pory"
+# 479 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpStarter::
-# 503 "data/scripts/story_talk.pory"
+# 483 "data/scripts/story_talk.pory"
 	closemessage
-# 504 "data/scripts/story_talk.pory"
+# 484 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_STORY_STARTER
-# 505 "data/scripts/story_talk.pory"
+# 485 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 506 "data/scripts/story_talk.pory"
+# 486 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpQuest::
-# 510 "data/scripts/story_talk.pory"
+# 490 "data/scripts/story_talk.pory"
 	closemessage
-# 511 "data/scripts/story_talk.pory"
+# 491 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_QUEST_MENU
-# 512 "data/scripts/story_talk.pory"
+# 492 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 513 "data/scripts/story_talk.pory"
+# 493 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpCompanion::
-# 517 "data/scripts/story_talk.pory"
+# 497 "data/scripts/story_talk.pory"
 	closemessage
-# 518 "data/scripts/story_talk.pory"
+# 498 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_COMPANION_MENU
-# 519 "data/scripts/story_talk.pory"
+# 499 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 520 "data/scripts/story_talk.pory"
+# 500 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpChoice::
-# 524 "data/scripts/story_talk.pory"
+# 504 "data/scripts/story_talk.pory"
 	closemessage
-# 525 "data/scripts/story_talk.pory"
+# 505 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_MAKE_CHOICES
-# 526 "data/scripts/story_talk.pory"
+# 506 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 527 "data/scripts/story_talk.pory"
+# 507 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpDeadline::
-# 531 "data/scripts/story_talk.pory"
+# 511 "data/scripts/story_talk.pory"
 	closemessage
-# 532 "data/scripts/story_talk.pory"
+# 512 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_DEADLINE
-# 533 "data/scripts/story_talk.pory"
+# 513 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 534 "data/scripts/story_talk.pory"
+# 514 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpPartTime::
-# 538 "data/scripts/story_talk.pory"
+# 518 "data/scripts/story_talk.pory"
 	closemessage
-# 539 "data/scripts/story_talk.pory"
+# 519 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_PART_TIME
-# 540 "data/scripts/story_talk.pory"
+# 520 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 541 "data/scripts/story_talk.pory"
+# 521 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpExitDungeon::
-# 545 "data/scripts/story_talk.pory"
+# 525 "data/scripts/story_talk.pory"
 	closemessage
-# 546 "data/scripts/story_talk.pory"
+# 526 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_EXIT_DUNGEON
-# 547 "data/scripts/story_talk.pory"
+# 527 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 548 "data/scripts/story_talk.pory"
+# 528 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpDungeonEncounter::
-# 552 "data/scripts/story_talk.pory"
+# 532 "data/scripts/story_talk.pory"
 	closemessage
-# 553 "data/scripts/story_talk.pory"
+# 533 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_DUNGEON_ENCOUNTER
-# 554 "data/scripts/story_talk.pory"
+# 534 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 555 "data/scripts/story_talk.pory"
+# 535 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_ShowHelpSpeedUp::
-# 559 "data/scripts/story_talk.pory"
+# 539 "data/scripts/story_talk.pory"
 	closemessage
-# 560 "data/scripts/story_talk.pory"
+# 540 "data/scripts/story_talk.pory"
 	showhelpwindow HELP_SPEED_UP
-# 561 "data/scripts/story_talk.pory"
+# 541 "data/scripts/story_talk.pory"
 	waitbuttonpress
-# 562 "data/scripts/story_talk.pory"
+# 542 "data/scripts/story_talk.pory"
+	hidehelpwindow
+	return
+
+
+EventScript_ShowHelpDexNav::
+# 546 "data/scripts/story_talk.pory"
+	closemessage
+# 547 "data/scripts/story_talk.pory"
+	showhelpwindow HELP_DEXNAV
+# 548 "data/scripts/story_talk.pory"
+	waitbuttonpress
+# 549 "data/scripts/story_talk.pory"
+	hidehelpwindow
+	return
+
+
+EventScript_ShowHelpBoxLink::
+# 553 "data/scripts/story_talk.pory"
+	closemessage
+# 554 "data/scripts/story_talk.pory"
+	showhelpwindow HELP_BOX_LINK
+# 555 "data/scripts/story_talk.pory"
+	waitbuttonpress
+# 556 "data/scripts/story_talk.pory"
 	hidehelpwindow
 	return
 
 
 EventScript_OverworldTryStartWorkParttime::
-# 582 "data/scripts/story_talk.pory"
+# 578 "data/scripts/story_talk.pory"
 	specialvar VAR_RESULT, DoesExitingMapForwardTime
-# 583 "data/scripts/story_talk.pory"
+# 579 "data/scripts/story_talk.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne EventScript_OverworldTryStartWorkParttime_1
-# 589 "data/scripts/story_talk.pory"
+# 585 "data/scripts/story_talk.pory"
 	goto EventScript_OverworldWorkParttime
 	return
 
 EventScript_OverworldTryStartWorkParttime_1:
-# 584 "data/scripts/story_talk.pory"
+# 580 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldTryStartWorkParttime_Text_0
-# 585 "data/scripts/story_talk.pory"
+# 581 "data/scripts/story_talk.pory"
 	release
 	end
 
 
 EventScript_OverworldWorkParttime::
-# 594 "data/scripts/story_talk.pory"
+# 590 "data/scripts/story_talk.pory"
 	msgbox EventScript_OverworldWorkParttime_Text_0
-# 595 "data/scripts/story_talk.pory"
+# 591 "data/scripts/story_talk.pory"
 	goto_if_set FLAG_AMEAME_PARTTIME_UNLOCKED, EventScript_OverworldWorkParttime_2
 EventScript_OverworldWorkParttime_1:
-# 599 "data/scripts/story_talk.pory"
+# 595 "data/scripts/story_talk.pory"
 	dynmultistack 0, 0, FALSE, 6, FALSE, 0, NULL
-# 600 "data/scripts/story_talk.pory"
+# 596 "data/scripts/story_talk.pory"
 	switch VAR_RESULT
-# 601 "data/scripts/story_talk.pory"
+# 597 "data/scripts/story_talk.pory"
 	case 0, EventScript_OverworldWorkParttime_6
 EventScript_OverworldWorkParttime_4:
-# 603 "data/scripts/story_talk.pory"
+# 599 "data/scripts/story_talk.pory"
 	release
 	end
 
 EventScript_OverworldWorkParttime_2:
-# 597 "data/scripts/story_talk.pory"
+# 593 "data/scripts/story_talk.pory"
 	dynmultipush AmeAme, 0
 	goto EventScript_OverworldWorkParttime_1
 
 EventScript_OverworldWorkParttime_6:
-# 601 "data/scripts/story_talk.pory"
+# 597 "data/scripts/story_talk.pory"
 	goto EventScript_TryStartAmeAmeParttime
 	goto EventScript_OverworldWorkParttime_4
 
 
 EventScript_TryStartAmeAmeParttime::
-# 610 "data/scripts/story_talk.pory"
+# 606 "data/scripts/story_talk.pory"
 	msgbox EventScript_TryStartAmeAmeParttime_Text_0, MSGBOX_YESNO
-# 611 "data/scripts/story_talk.pory"
+# 607 "data/scripts/story_talk.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne EventScript_TryStartAmeAmeParttime_2
-# 624 "data/scripts/story_talk.pory"
+# 620 "data/scripts/story_talk.pory"
 	goto EventScript_OverworldWorkParttime
 EventScript_TryStartAmeAmeParttime_1:
-# 626 "data/scripts/story_talk.pory"
+# 622 "data/scripts/story_talk.pory"
 	release
 	end
 
 EventScript_TryStartAmeAmeParttime_2:
-# 612 "data/scripts/story_talk.pory"
+# 608 "data/scripts/story_talk.pory"
 	gettime
-# 613 "data/scripts/story_talk.pory"
+# 609 "data/scripts/story_talk.pory"
 	compare VAR_0x8000, 7
 	goto_if_lt EventScript_TryStartAmeAmeParttime_5
-# 613 "data/scripts/story_talk.pory"
+# 609 "data/scripts/story_talk.pory"
 	compare VAR_0x8000, 15
 	goto_if_gt EventScript_TryStartAmeAmeParttime_5
-# 620 "data/scripts/story_talk.pory"
+# 616 "data/scripts/story_talk.pory"
 	goto CoralportCandyShop_Eventscript_RandomizeCutscenes
 	goto EventScript_TryStartAmeAmeParttime_1
 
 EventScript_TryStartAmeAmeParttime_5:
-# 614 "data/scripts/story_talk.pory"
+# 610 "data/scripts/story_talk.pory"
 	msgbox EventScript_TryStartAmeAmeParttime_Text_1
-# 615 "data/scripts/story_talk.pory"
+# 611 "data/scripts/story_talk.pory"
 	closemessage
-# 616 "data/scripts/story_talk.pory"
+# 612 "data/scripts/story_talk.pory"
 	release
 	end
 
@@ -1150,41 +1145,41 @@ EventScript_OverworldStoryTalk_Text_0:
 
 EventScript_OverworldStoryTalk_MustSetClock_Text_0:
 # 166 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Let's fix the clock and join Miki\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Let's fix the clock and join Miki\n"
 	.string "outside.)$"
 
 EventScript_OverworldStoryTalk_ClockIsSet_Text_0:
 # 170 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Miki's waiting for me outside. Better\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Miki's waiting for me outside. Better\n"
 	.string "hurry).$"
 
 EventScript_OverworldStoryTalk_ShinjiroAndMikiJoinedGoingToWoods_Text_0:
 # 174 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}What are you going to do in the woods?\p"
-	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}You'll know soon! I'm sure you'll love it!\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Gonna be funny if you fall into the pond\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}What are you going to do in the woods?\p"
+	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}You'll know soon! I'm sure you'll love it!\p"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Gonna be funny if you fall into the pond\n"
 	.string "again, Aki.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}I was just surprised!\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Yeah, by a Caterpie.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}Ugh...\p"
-	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Hehe.$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}I was just surprised!\p"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Yeah, by a Caterpie.\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}Ugh...\p"
+	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}Hehe.$"
 
 EventScript_OverworldStoryTalk_LookingAroundInTheWoods_Text_0:
 # 187 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}What are you doing?\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Just looking around.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Making sure there's no Caterpie?\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}Screw you.\p"
-	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Ehehe.$"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What are you doing?\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Just looking around.\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Making sure there's no Caterpie?\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}Screw you.\p"
+	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}Ehehe.$"
 
 EventScript_OverworldStoryTalk_PrePickPawmi_Text_0:
 # 195 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Come to think of it, this Pawmi's fur\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Come to think of it, this Pawmi's fur\n"
 	.string "color is kinda... weird.)$"
 
 EventScript_OverworldStoryTalk_PostPickPawmi_Text_0:
 # 199 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}(I slept so well.)$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}(I slept so well.)$"
 
 EventScript_OverworldStoryTalk_PostPickPawmi_Text_1:
 # 202 "data/scripts/story_talk.pory"
@@ -1192,37 +1187,37 @@ EventScript_OverworldStoryTalk_PostPickPawmi_Text_1:
 
 EventScript_OverworldStoryTalk_HaveTalkedToShinjiro_Text_0:
 # 219 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I wonder what Ms. Kobayashi needs us\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I wonder what Ms. Kobayashi needs us\n"
 	.string "for...$"
 
 EventScript_OverworldStoryTalk_HaveTalkedToShinjiro_Text_1:
 # 222 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}No idea, she hurried off somewhere\n"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}No idea, she hurried off somewhere\n"
 	.string "before I could ask.$"
 
 EventScript_OverworldStoryTalk_ShinjiroJoinedAkihikosRoom_Text_0:
 # 226 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Did you forget something? Hurry up, Ms.\n"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Did you forget something? Hurry up, Ms.\n"
 	.string "Kobayashi is waiting.$"
 
 EventScript_OverworldStoryTalk_PreTalkKobayashi_Text_0:
 # 230 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Ms. Kobayashi said she'd be at the main\n"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Ms. Kobayashi said she'd be at the main\n"
 	.string "hall.$"
 
 EventScript_OverworldStoryTalk_PostTalkKobayashi_Text_0:
 # 234 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}The package is in the Pokémon Center in\n"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}The package is in the Pokémon Center in\n"
 	.string "Sunshine Town.\p"
 	.string "Let's get this over with. The show's on\n"
 	.string "air soon.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Oh right, your favorite cooking show.$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Oh right, your favorite cooking show.$"
 
 EventScript_OverworldStoryTalk_PostTalkKobayashi_InWoods_Text_0:
 # 240 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Never knew you would get your first\n"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Never knew you would get your first\n"
 	.string "Pokémon here, huh?\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Yeah.$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Yeah.$"
 
 EventScript_OverworldStoryTalk_PostTalkKobayashi_InWoods_Text_1:
 # 244 "data/scripts/story_talk.pory"
@@ -1230,158 +1225,158 @@ EventScript_OverworldStoryTalk_PostTalkKobayashi_InWoods_Text_1:
 
 EventScript_OverworldStoryTalk_PreTalkMartLady_Text_0:
 # 253 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}What are you doing? Just ask the Mart\n"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What are you doing? Just ask the Mart\n"
 	.string "Lady for the package.$"
 
 EventScript_OverworldStoryTalk_PostTalkMartLady_Text_0:
 # 258 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Let's hurry up outside. I have a bad\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Let's hurry up outside. I have a bad\n"
 	.string "feeling.\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Damn it, you too?$"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Damn it, you too?$"
 
 EventScript_OverworldStoryTalk_TalkToTheTownPeople_Text_0:
 # 263 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(Someone must've known what happened.\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(Someone must've known what happened.\n"
 	.string "Let's ask around.)$"
 
 EventScript_OverworldStoryTalk_GoBackToTheOrphanage_Text_0:
 # 267 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_MAD}Let's hurry back to the orphanage!!$"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}Let's hurry back to the orphanage!!$"
 
 EventScript_OverworldStoryTalk_PosttalkKurosawa_Text_0:
 # 271 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}You know where to go?\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}No. But there's no point in returning to\n"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}You know where to go?\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}No. But there's no point in returning to\n"
 	.string "the orphanage right now. Let's start\l"
 	.string "with Route 2.$"
 
 EventScript_OverworldStoryTalk_PosttalkKurosawa_Riverbank_Text_0:
 # 276 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Hey Shinji...\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Hey Shinji...\p"
 	.string "Why do you think Ms. Kobayashi would do\n"
 	.string "that to us?\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Pushing us into the river...\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}...$"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}Pushing us into the river...\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}...$"
 
 EventScript_OverworldStoryTalk_PosttalkKurosawa_Woods_Text_0:
 # 283 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}Miki gifted me a flower crown here.\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Miki gifted me a flower crown here.\p"
 	.string "I left it in our room so it was probably\n"
 	.string "burned to ash.\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}...$"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}...$"
 
 EventScript_OverworldStoryTalk_PostFirstMeetingMitsuru_Text_0:
 # 291 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(I wonder what Shinji wanted to say.)$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(I wonder what Shinji wanted to say.)$"
 
 EventScript_OverworldStoryTalk_PostFirstMeetingShinjiro_Text_0:
 # 295 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}You think she'll agree?\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}We have a good chance. She must've also\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}You think she'll agree?\p"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}We have a good chance. She must've also\n"
 	.string "wanted our help.$"
 
 EventScript_OverworldStoryTalk_PreFirstBattleMitsuruRoute2House_Text_0:
 # 300 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Kirijo's waiting for us in Sunshine\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Kirijo's waiting for us in Sunshine\n"
 	.string "Meadow.\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go meet up with her after we've\n"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Let's go meet up with her after we've\n"
 	.string "sorted out our party.\p"
 	.string "We'll be having 3-vs-3 battles.$"
 
 EventScript_OverworldStoryTalk_PreFirstBattleMitsuruShinjiroLeft_Text_0:
 # 306 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Shinji went ahead to prepare his team.\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Shinji went ahead to prepare his team.\p"
 	.string "I should do the same and go to Sunshine\n"
 	.string "Meadow to have my first battle with\l"
 	.string "Kirijo.)$"
 
 EventScript_OverworldStoryTalk_PreFirstBattleMitsuru_Meadow_Text_0:
 # 311 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(There she is. Her Inteleon is gonna be\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(There she is. Her Inteleon is gonna be\n"
 	.string "hard to take down.\p"
 	.string "There's also that weird-colored Vulpix.)$"
 
 EventScript_OverworldStoryTalk_PostFirstBattleMitsuru_Text_0:
 # 316 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}By the way, Shinji. The Ferroseed you\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}By the way, Shinji. The Ferroseed you\n"
 	.string "used earlier...\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Looks a bit different, right?\p"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Looks a bit different, right?\p"
 	.string "It just started following me when I was\n"
 	.string "looking for my first Pokémon in Route 1.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Huh...\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Wait, all three of us have Pokémons\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Huh...\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wait, all three of us have Pokémons\n"
 	.string "that look slightly different from usual.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}A special coincident, huh?\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}...$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}A special coincident, huh?\p"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}...$"
 
 EventScript_OverworldStoryTalk_PostPrologue_Text_0:
 # 326 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}First, let's go through Route 2 to\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}First, let's go through Route 2 to\n"
 	.string "Coralport.\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Alright! There are a few trainers on\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Alright! There are a few trainers on\n"
 	.string "that route. Time to train!\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Someone sure is fired up.$"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Someone sure is fired up.$"
 
 EventScript_OverworldStoryTalk_MustPickUpVulpix_Text_0:
 # 365 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL} (I should return Vulpix to its Pokéball\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL} (I should return Vulpix to its Pokéball\n"
 	.string "and hurry to Thundershards Cliff.)$"
 
 EventScript_OverworldStoryTalk_PostPickUpVulpix_Text_0:
 # 374 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}How do you feel getting back on the\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}How do you feel getting back on the\n"
 	.string "field, Vulpix?$"
 
 EventScript_OverworldStoryTalk_PostPickUpVulpix_Text_1:
 # 382 "data/scripts/story_talk.pory"
 	.string "(Vulpix's dancing excitedly.)\p"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Haha, honestly, me too.$"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Haha, honestly, me too.$"
 
 EventScript_OverworldStoryTalk_PostInteleonJoining_Text_0:
 # 390 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Well then, I'll be counting on you to\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Well then, I'll be counting on you to\n"
 	.string "watch my back, Inteleon.$"
 
 EventScript_OverworldStoryTalk_PostInteleonJoining_Text_1:
 # 393 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks determinated, nodding\n"
+	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks determinated, nodding\n"
 	.string "at you.)$"
 
 EventScript_OverworldStoryTalk_PrePickUpFennekin_Text_0:
 # 397 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}A fire type would be great for my\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}A fire type would be great for my\n"
 	.string "journey.$"
 
 EventScript_OverworldStoryTalk_PostGoodByeKikuno_Text_0:
 # 401 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Now I should make my way to\n"
+	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Now I should make my way to\n"
 	.string "Thundershards Scree.\p"
 	.string "According to the map, it should be on\n"
 	.string "the north of Sunshine Meadow.)$"
 
 EventScript_OverworldTrainerTips_Text_0:
-# 424 "data/scripts/story_talk.pory"
+# 445 "data/scripts/story_talk.pory"
 	.string "Which Trainer's Tips would you like to\n"
 	.string "check?$"
 
 EventScript_OverworldTryStartWorkParttime_Text_0:
-# 584 "data/scripts/story_talk.pory"
+# 580 "data/scripts/story_talk.pory"
 	.string "Can't start a part-time job in this\n"
 	.string "dungeon.$"
 
 EventScript_OverworldWorkParttime_Text_0:
-# 594 "data/scripts/story_talk.pory"
+# 590 "data/scripts/story_talk.pory"
 	.string "Which part-time job would you like to\n"
 	.string "work at?$"
 
 EventScript_TryStartAmeAmeParttime_Text_0:
-# 610 "data/scripts/story_talk.pory"
+# 606 "data/scripts/story_talk.pory"
 	.string "Work at AmeAme Candy Shop for {COLOR RED}6 hours{COLOR 2}\n"
 	.string "and {COLOR RED}$2000{COLOR 2}?\n"
 	.string "$"
 
 EventScript_TryStartAmeAmeParttime_Text_1:
-# 614 "data/scripts/story_talk.pory"
+# 610 "data/scripts/story_talk.pory"
 	.string "You can only work there between 7AM\n"
 	.string "and 3PM.$"
 
@@ -1398,57 +1393,65 @@ Work::
 	.string "Work Part-time$"
 
 NextBackB::
-# 486 "data/scripts/story_talk.pory"
+# 466 "data/scripts/story_talk.pory"
 	.string "Next/({B_BUTTON}: Back)$"
 
 QuitBack::
-# 487 "data/scripts/story_talk.pory"
+# 467 "data/scripts/story_talk.pory"
 	.string "Quit/({B_BUTTON}: Back)$"
 
 HelpPokedex::
-# 565 "data/scripts/story_talk.pory"
+# 559 "data/scripts/story_talk.pory"
 	.string "Pokédex$"
 
 HelpShinyChance::
-# 566 "data/scripts/story_talk.pory"
+# 560 "data/scripts/story_talk.pory"
 	.string "Shiny Chance$"
 
 HelpStarter::
-# 567 "data/scripts/story_talk.pory"
+# 561 "data/scripts/story_talk.pory"
 	.string "Story Starter$"
 
 HelpCompanion::
-# 568 "data/scripts/story_talk.pory"
+# 562 "data/scripts/story_talk.pory"
 	.string "Companions$"
 
 HelpQuest::
-# 569 "data/scripts/story_talk.pory"
+# 563 "data/scripts/story_talk.pory"
 	.string "Quest Menu$"
 
 HelpChoice::
-# 570 "data/scripts/story_talk.pory"
+# 564 "data/scripts/story_talk.pory"
 	.string "Your actions$"
 
 HelpDeadline::
-# 571 "data/scripts/story_talk.pory"
+# 565 "data/scripts/story_talk.pory"
 	.string "Deadline$"
 
 HelpParttime::
-# 572 "data/scripts/story_talk.pory"
+# 566 "data/scripts/story_talk.pory"
 	.string "Part-time Jobs$"
 
 HelpDungeonEncounter::
-# 573 "data/scripts/story_talk.pory"
+# 567 "data/scripts/story_talk.pory"
 	.string "Dungeon Encounter$"
 
 HelpExitDungeon::
-# 574 "data/scripts/story_talk.pory"
+# 568 "data/scripts/story_talk.pory"
 	.string "Exiting Dungeons$"
 
 HelpSpeedUp::
-# 575 "data/scripts/story_talk.pory"
+# 569 "data/scripts/story_talk.pory"
 	.string "Game Speedup$"
 
+HelpDexNav::
+# 570 "data/scripts/story_talk.pory"
+	.string "DexNav$"
+
+HelpBoxLink::
+# 571 "data/scripts/story_talk.pory"
+	.string "Box Link$"
+
 AmeAme::
-# 607 "data/scripts/story_talk.pory"
+# 603 "data/scripts/story_talk.pory"
 	.string "AmeAme Candy Shop (7AM - 3PM)$"

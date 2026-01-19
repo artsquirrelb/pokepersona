@@ -228,7 +228,7 @@ script Route2_House_Eventscript_AkiShinjiWakingUp {
     waitmovement(0)
     delay(30)
     setspeaker("???????")
-    msgbox(format("{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}..."))
+    msgbox(format("{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}..."))
     closemessage
     delay(30)
     applymovement(2, shakehorizontal)
@@ -257,10 +257,10 @@ script Route2_House_Eventscript_AkiShinjiWakingUp {
     delay(30)
     applymovement(LOCALID_PLAYER, jumpinplaceup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Wh-Where are we?\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wh-Where are we?\p
     And who are you??"))
     setspeaker("???????")
-    msgbox(format("{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Apologies, but this is the best shelter I could provide in this situation.\p
+    msgbox(format("{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Apologies, but this is the best shelter I could provide in this situation.\p
     This is the house of my butler's grandson, who's currently traveling the region.\p
     We're still in Route 2. Worry not, it's safe here."))
     closemessage
@@ -271,66 +271,66 @@ script Route2_House_Eventscript_AkiShinjiWakingUp {
 script Route2_House_Eventscript_TriosFirstGreeting {
     lock
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}As for my name, I am Mitsuru Kirijo.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}-!\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}Kirijo-?!"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}As for my name, I am Mitsuru Kirijo.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}-!\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Kirijo-?!"))
     closemessage
     delay(30)
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}Uhhh, who? The name sounds familiar."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}Uhhh, who? The name sounds familiar."))
     closemessage
     applymovement(6, faceleft)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}-!\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}-!\p
     Dumbass! That's the billionaire group who donated us our PCs!\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Oooh..."))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Oooh..."))
     delay(20)
     applymovement(LOCALID_PLAYER, faceup)
     delay(8)
     applymovement(6, faceup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}So? What does a billionaire girl like you want with us?\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}So? What does a billionaire girl like you want with us?\p
     For whatever it is, I'm not interested. I only want to train and become a stronger trainer.\p
     I could've dealed with the Drowzee earlier if I were-\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Wait- Are you with the men in black who tried to kidnap us!?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}...\p 
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}No. \p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wait- Are you with the men in black who tried to kidnap us!?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}...\p 
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}No. \p
     In fact, I managed to disrupt them and brought you two here.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}To be more precise, my mission is to stop them.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Stop them?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Both of you are from Sunshine Orphanage, correct?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}To be more precise, my mission is to stop them.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Stop them?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Both of you are from Sunshine Orphanage, correct?\p
     Right now I can say for certain that the explosion which happened a few days ago was their doing.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}!!\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}-!"))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}!!\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}-!"))
     closemessage
     delay(20)
     applymovement(1, faceleft)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}(Mumble) If only I were able to stop them in time... It was my fault...\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}....."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}(Mumble) If only I were able to stop them in time... It was my fault...\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}....."))
     closemessage
     applymovement(1, facedown)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}My request is rather simple.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Request...?"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}My request is rather simple.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Request...?"))
     closemessage
     applymovement(1, MitsuruPickingAkihiko)
     waitmovement
     delay(8)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I would like you to join me, Akihiko Sanada-kun."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I would like you to join me, Akihiko Sanada-kun."))
     closemessage
     playse(SE_PIN)
     waitse
     applymovement(LOCALID_PLAYER, emoteexclamation)
     applymovement(6, emoteexclamation)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Huh?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I believe you have a reason for wanting to get stronger.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}.....\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I have clues of where to find those men in black and what they are doing.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}And earlier I saw your battle with them. You have great potential.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}If you'll join me... I promise it'll be a great challenge.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I believe you have a reason for wanting to get stronger.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}.....\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I have clues of where to find those men in black and what they are doing.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}And earlier I saw your battle with them. You have great potential.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}If you'll join me... I promise it'll be a great challenge.\p
     I'll also share what I know about those men with you."))
     closemessage
     applymovement(LOCALID_PLAYER, faceright)
@@ -342,29 +342,29 @@ script Route2_House_Eventscript_TriosFirstGreeting {
     delay(16)
     applymovement(6, faceup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}.....\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}.....\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Alright, I'll join you.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Very well."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}.....\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}.....\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Alright, I'll join you.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Very well."))
     closemessage
     playse(SE_PIN)
     waitse
     applymovement(6, ShinjiroSurprisedAtAkihikoChoice)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Wait!"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Wait!"))
     closemessage
     applymovement(6, ShinjiroDisruptsAkiMitsu)
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Aki, we need to talk.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Shinji?"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Aki, we need to talk.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Shinji?"))
     closemessage
     applymovement(6, faceup)
     delay(8)
     applymovement(LOCALID_PLAYER, faceup)
     waitmovement(0)
     delay(60)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Go ahead, I'll be waiting right here."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Go ahead, I'll be waiting right here."))
     closemessage
     applymovement(1, MitsuruGoesBackToPlace)
     waitmovement(0)
@@ -445,15 +445,15 @@ script Route2_House_Eventscript_Mitsuru {
     lock
     faceplayer
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 29){
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Have you both finished talking?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Not yet. We still need more time.\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Be my guest."))
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Have you both finished talking?\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Not yet. We still need more time.\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Be my guest."))
         closemessage
     }
     elif(var(VAR_AKIHIKOS_INTRO_STATE) == 30){
         setflag(FLAG_HIDE_HELP_BUTTON)
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I also have a request.\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Certainly, let's hear it."))
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I also have a request.\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Certainly, let's hear it."))
         closemessage
         setvar(VAR_AKIHIKOS_INTRO_STATE, 31)
         setflag(FLAG_DONT_TRANSITION_MUSIC)
@@ -465,18 +465,18 @@ script Route2_House_Eventscript_Mitsuru {
 script Route2_House_Eventscript_Shinjiro {
     lock
     faceplayer
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}What's wrong, Shinji?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}I don't trust her.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}What's wrong, Shinji?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}I don't trust her.\p
     She's hiding lots of information and we don't even know if it's true that she's not on those men's side.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}But she's also the only lead we have right now. We didn't even know where to start looking for Miki.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Besides, she said it'd be a great challenge.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}So you're tempted.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Honestly, yes. \p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}But she's also the only lead we have right now. We didn't even know where to start looking for Miki.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Besides, she said it'd be a great challenge.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}So you're tempted.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Honestly, yes. \p
     If what she said was true, I may find Miki or at least her whereabouts while going after those men in black.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I'm joining her. Don't stop me.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Told you I didn't trust her.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I'm joining her. Don't stop me.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Told you I didn't trust her.\p
     So if you join her, I will too. Someone's gotta keep an eye on her.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Alright, let's try asking her then."))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Alright, let's try asking her then."))
     closemessage
     applymovement(6, ShinjiroJoinsAndVanish)
     waitmovement(0)
@@ -499,7 +499,7 @@ script Route2_House_Eventscript_AVulpix {
     applymovement(5, faceleft)
     waitmovement(0)
     msgbox(format("Vulpix ignored you.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now that I have a closer look, this Vulpix looks a bit different...)"))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Now that I have a closer look, this Vulpix looks a bit different...)"))
     closemessage
     release
     end
@@ -508,8 +508,8 @@ script Route2_House_Eventscript_AVulpix {
 script Route2_House_Eventscript_Inteleon {
     lock
     faceplayer
-    msgbox("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon's looking at you judgingly.)\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}(Someone's got an attitude...)")
+    msgbox("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon's looking at you judgingly.)\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}(Someone's got an attitude...)")
     closemessage
     applymovement(4, faceright)
     release
@@ -520,7 +520,7 @@ script Route2_House_Eventscript_MustTalkToShinjiro {
     lock
     applymovement(LOCALID_PLAYER, walkup)
     waitmovement
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Shinji wants to talk with me.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Shinji wants to talk with me.)"))
     closemessage
     release
     end
@@ -530,7 +530,7 @@ script Route2_House_Eventscript_MustTalkToMitsuru {
     lock
     applymovement(LOCALID_PLAYER, walkup)
     waitmovement
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Kirijo is still waiting for me.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Kirijo is still waiting for me.)"))
     closemessage
     release
     end
@@ -539,35 +539,35 @@ script Route2_House_Eventscript_MustTalkToMitsuru {
 script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru {
     lock
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}So what's your request?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let me join too."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}So what's your request?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Let me join too."))
     closemessage
     applymovement(1, MitsuruLookingAtShinjiro)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hm... Shinjiro Aragaki-kun, correct?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}... You sure have done your research thoroughly.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll take that as a compliment.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}That wasn't.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Heh...\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I have yet to know if you're able to hold your ground when the situation calls for it.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Hm... Shinjiro Aragaki-kun, correct?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}... You sure have done your research thoroughly.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'll take that as a compliment.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}That wasn't.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Heh...\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I have yet to know if you're able to hold your ground when the situation calls for it.\p
     If I'm not mistaken, you don't have a Pokémon of your own yet.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}I can just catch one.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Alright. Then how about this.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Before the sun sets, if you can beat me in a Pokémon battle, you can come with us."))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}I can just catch one.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Alright. Then how about this.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Before the sun sets, if you can beat me in a Pokémon battle, you can come with us."))
     closemessage
     applymovement(1, walkdown)
     waitmessage
     msgbox(format("Mitsuru gave Shinjiro a modern device, some Pokéballs and Exp Candies."))
     applymovement(1, stepbackup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}It wouldn't be fair if you have nothing to catch a Pokémon.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}It wouldn't be fair if you have nothing to catch a Pokémon.\p
     Oh, and that device is a Pokédex. I'm just lending it to you.\p
     It's yours if you can beat me.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Hmph. Just you wait."))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Hmph. Just you wait."))
     closemessage
     applymovement(1, MitsuruGivingAkihikoPokedex)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}And these are for you."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}And these are for you."))
     closemessage
     playse(MUS_OBTAIN_ITEM)
     waitse
@@ -592,15 +592,15 @@ script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru {
     setvar(VAR_0x800B, 0)
     applymovement(1, stepbackup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}To be honest, I'd also like to have a battle with you, Sanada-kun.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}To be honest, I'd also like to have a battle with you, Sanada-kun.\p
     It's better to personally see how you fare in battle.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Heh, sure."))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Heh, sure."))
     closemessage
     applymovement(1, MitsuruGoesBackToCenter)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Alright. I'll be waiting for both of you in Sunshine Meadow.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Alright. I'll be waiting for both of you in Sunshine Meadow.\p
     {COLOR RED}We'll be having 3-vs-3 Pokémon battles and bag items are not allowed so plan your party accordingly.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}{COLOR DARK_GRAY}Good luck, you'll need it."))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}Good luck, you'll need it."))
     closemessage
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraPansToLowerHalfOfRoom)
@@ -626,9 +626,9 @@ script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru {
     applymovement(OBJ_EVENT_ID_CAMERA, CameraFromLowerHalfRoomBackToAkihiko)
     waitmovement(0)
     delay(30)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Bossy.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Heh. She's one weird rich girl.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let's go."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Bossy.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Heh. She's one weird rich girl.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Let's go."))
     closemessage
     applymovement(6, ShinjiroJoinsPostPokedex)
     waitmovement(0)
@@ -715,35 +715,35 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
     delay(8)
     applymovement(5, facedown)
     delay(60)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Alright, everyone's here.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Alright, everyone's here.\p
     Before I start, I'd like to ask you two a question.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Sure? What is it?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}How far can a trainer synergize with their Pokémon?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Uhh... what?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}You mean their bonds?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I know when a trainer and a Pokémon share a deep trust, Mega Evolution can be achieved.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}That is right, but not what I meant.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Sure? What is it?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}How far can a trainer synergize with their Pokémon?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_DOUBT}Uhh... what?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}You mean their bonds?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I know when a trainer and a Pokémon share a deep trust, Mega Evolution can be achieved.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}That is right, but not what I meant.\p
     Perhaps I should put it like this."))
     closemessage
     delay(50)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     playbgm(MUS_P3R_FEARFUL_EXPERIENCE, TRUE)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}What if I say, there's a way for a trainer to become one with their Pokémon?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Huh? What do you mean?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}In the most literal way possible.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}That's crazy.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Those men you fought- no, the organization behind them, is researching and developping a way to do so.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}What if I say, there's a way for a trainer to become one with their Pokémon?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh? What do you mean?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}In the most literal way possible.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}That's crazy.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Those men you fought- no, the organization behind them, is researching and developping a way to do so.\p
     Lots of progress has been made and there are already a few prototypes.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}Of course, the method isn't perfect and there are more-\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Wait, wait just a minute. I'm lost.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}Of course, the method isn't perfect and there are more-\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wait, wait just a minute. I'm lost.\p
     Prototypes?? Of what exactly??\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}A new specimen of human, who is able to use Pokémon's ability, in one way or another.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}You're kidding??\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}The more I listen to you, the crazier you sound.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}That is to be expected. I would have thought the same."))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}A new specimen of human, who is able to use Pokémon's ability, in one way or another.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}You're kidding??\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}The more I listen to you, the crazier you sound.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}That is to be expected. I would have thought the same."))
     closemessage
     delay(40)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}In any case, I already told you the goal of those men.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}In any case, I already told you the goal of those men.\p
     You're free to not believe me. We can simply just part ways right here."))
     closemessage
     delay(30)
@@ -752,12 +752,12 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
     applymovement(6, emotepensive)
     waitmovement(0)
     delay(60)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Look, Princess. It's not like we don't want to believe you.\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Look, Princess. It's not like we don't want to believe you.\p
     It all just sounds too much like fiction, okay.\p
     At least show us some proofs?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Right, didn't you say you know where to find them?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Right, didn't you say you know where to find them?\p
     How about you lead us to them and we'll see if what you said were real.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}.....\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}.....\p
     Very well. I suppose that's a logical idea."))
     closemessage
     applymovement(1, faceup)
@@ -772,7 +772,7 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
     fadenewbgm(MUS_RG_SS_ANNE)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     delay (60)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}For now, I suggest we rest for the night.
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}For now, I suggest we rest for the night.
     It's late and we're all tired from the battles.\p
     We'll depart early tomorrow morning so you two may want to stay here."))
     closemessage
@@ -800,25 +800,25 @@ script Route2_House_Eventscript_StayingTheNight {
     delay(60)
     applymovement(LOCALID_PLAYER, AkihikoLookingAtTheBed)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Uhhh you sure about that? There's only one bed."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Uhhh you sure about that? There's only one bed."))
     closemessage
     applymovement(1, MitsuruLookingAtTheBed)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}M-my apologies, it slipped my mind that this house doesn't have guest rooms.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}You two can take the bed. I'm okay with the floor.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}For Arceus's sake, Princess. Aki's kidding.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}M-my apologies, it slipped my mind that this house doesn't have guest rooms.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}You two can take the bed. I'm okay with the floor.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}For Arceus's sake, Princess. Aki's kidding.\p
     Just sleep on the bed, we have our own sleeping bags."))
     closemessage
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, AKihikoRemembersCampGears)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Oh, right! Kurosawa-san gave us the Camping Gears."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Oh, right! Kurosawa-san gave us the Camping Gears."))
     closemessage
     playse(SE_M_BUBBLE3)
     applymovement(6, ShinjiroSweat)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Dumbass, you weren't kidding!?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Stop calling me dumb!"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}Dumbass, you weren't kidding!?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Stop calling me dumb!"))
     closemessage
     playse(SE_FAILURE)
     applymovement(LOCALID_PLAYER, AkihikoBickering)
@@ -846,21 +846,21 @@ script Route2_House_Eventscript_StayingTheNight {
     playse(SE_SHINY)
     applymovement(1, emotemusic)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_HAPPY}Hehehe."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_HAPPY}Hehehe."))
     closemessage
     applymovement(LOCALID_PLAYER, faceup)
     delay(10)
     applymovement(6, faceup)
     waitmovement(0)
     delay(60)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}..."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}..."))
     closemessage
     playse(SE_SHINY)
     applymovement(LOCALID_PLAYER, emotemusic)
     applymovement(6, emotemusic)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Hehe.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Hmph."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}Hehe.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Hmph."))
     closemessage
     applymovement(OBJ_EVENT_ID_CAMERA, CameraSlowlyPansUpFadeScreen)
     delay(30)
@@ -945,11 +945,11 @@ script Route2_House_Eventscript_AkihikoCantSleep {
     applymovement(LOCALID_PLAYER, emotepensive)
     waitmovement(0)
     delay(40)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}(Dang... I can't sleep at all.)\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}(Dang... I can't sleep at all.)\p
     (Gotta admit, what Kirijo said earlier does bug me.)\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(It didn't look like she was lying.)\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(It didn't look like she was lying.)\p
     (If it was all true... and if Miki is already in their hands...)\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}(No, I must think positively. She must've still been fine and been waiting for me to come get her home.)\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}(No, I must think positively. She must've still been fine and been waiting for me to come get her home.)\p
     (If I can't sleep... may as well go train a bit.)"))
     closemessage
     applymovement(LOCALID_PLAYER, faceup)
@@ -960,7 +960,7 @@ script Route2_House_Eventscript_AkihikoCantSleep {
     applymovement(7, emoteasleep)
     waitmovement
     delay(30)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Kirijo is already sleeping soundly. She won't know if I sneak out.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Kirijo is already sleeping soundly. She won't know if I sneak out.)"))
     closemessage
     delay(20)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_fast_down*2))
@@ -973,26 +973,26 @@ script Route2_House_Eventscript_AkihikoCantSleep {
     playse(SE_M_DETECT)
     applymovement(4, shakehorizontal)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}-Hiss-"))
+    msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}-Hiss-"))
     closemessage
     playse(SE_M_BUBBLE3)
     applymovement(LOCALID_PLAYER, emotesweat)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}(And this Inteleon keeps looking daggers at me...)\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}(And this Inteleon keeps looking daggers at me...)\p
     (What did I even do?)"))
     closemessage
     applymovement(LOCALID_PLAYER, faceright)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesRight2)
     waitmovement(0)
     delay(30)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Where's Shinji, though?)\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Where's Shinji, though?)\p
     (Maybe he's outside.)"))
     closemessage
     applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesLeft2)
     waitmovement(0)
     applymovement(LOCALID_PLAYER, faceup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I uh... just gonna go outside for a bit."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I uh... just gonna go outside for a bit."))
     closemessage
     delay(20)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesDown2)
@@ -1067,11 +1067,11 @@ script Route2_House_Eventscript_Bathroom {
             checkplayergender
             if (var(VAR_RESULT) == MALE){
                 addtime(0, 0, 10)
-                msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}(All refreshed.)"))
+                msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}(All refreshed.)"))
             }
             else{
                 addtime(0, 0, 40)
-                msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}(That really freshened me up.)"))
+                msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}(That really freshened me up.)"))
             }
             closemessage
             special(HealPlayerParty)
@@ -1080,10 +1080,10 @@ script Route2_House_Eventscript_Bathroom {
         else{
             checkplayergender
             if(var(VAR_RESULT) == MALE){
-                msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Nah, I think I'm good.)"))
+                msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Nah, I think I'm good.)"))
             }
             else{
-                msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Let's do it later.)"))
+                msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Let's do it later.)"))
             }
             closemessage
             applymovement(LOCALID_PLAYER, faceleft)
@@ -1093,10 +1093,10 @@ script Route2_House_Eventscript_Bathroom {
     elif (var(VAR_TEMP_0) == 1){
         checkplayergender
         if (var(VAR_RESULT) == MALE){
-            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(I just used the bathroom.)"))
+            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(I just used the bathroom.)"))
         }
         else{
-            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Let's not waste time any further.)"))
+            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Let's not waste time any further.)"))
         }
         closemessage
         applymovement(LOCALID_PLAYER, faceleft)
@@ -1111,18 +1111,18 @@ script Route2_House_Eventscript_Bathroom {
 
     }
     elif(var(VAR_TEMP_0) == 2){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(That reminds me, Kirijo took a really long bath yesterday.)\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}I don't understand. What's so fun in the bathroom that made her stay that long?\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}What are you staring at the bathroom door for? Is there anything wrong?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}N-No, nothing! Nothing at all.\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}?"))
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(That reminds me, Kirijo took a really long bath yesterday.)\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}I don't understand. What's so fun in the bathroom that made her stay that long?\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}What are you staring at the bathroom door for? Is there anything wrong?\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}N-No, nothing! Nothing at all.\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}?"))
         closemessage
         applymovement(LOCALID_PLAYER, faceleft)
         waitmovement(0)
         setvar(VAR_TEMP_0, 3)
     }
     elif(var(VAR_TEMP_0) == 3){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(I should get going.)"))
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(I should get going.)"))
         closemessage
         applymovement(LOCALID_PLAYER, faceleft)
         waitmovement(0)
@@ -1144,11 +1144,11 @@ script Route2_House_Eventscript_TheFirstMorning {
     delay(30)
     playse(SE_M_YAWN)
     waitse
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}-yawn- (Gosh, I'm still feeling sleepy.)\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}-yawn- (Gosh, I'm still feeling sleepy.)\p
     (Maybe doing night battle wasn't a good choice.)"))
     closemessage
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Everyone, please gather around. I'll explain our plan route."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Everyone, please gather around. I'll explain our plan route."))
     closemessage
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraPansToMitsuruTheFirstMorning)
@@ -1158,7 +1158,7 @@ script Route2_House_Eventscript_TheFirstMorning {
     applymovement(6, ShinjiroGoesToPlaceTheFirstMorning)
     waitmovement(0)
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Please take a look at the map."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Please take a look at the map."))
     closemessage
     goto (EventScript_RegionMap)
     release
@@ -1166,18 +1166,18 @@ script Route2_House_Eventscript_TheFirstMorning {
 
 script Route2_House_Eventscript_TheFirstMorning2 {
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I believe our destination is around the base of Goldenwings Mountain.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I believe our destination is around the base of Goldenwings Mountain.\p
     To get there we can take a ship from Coralport, west of here.\p
     Then we go through Route 4 from Windward Town.\p
     Any questions?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Nope, the path is simple enough.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}C'est magnifique.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Oh, before I forget.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Nope, the path is simple enough.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}C'est magnifique.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Oh, before I forget.\p
     We should make a stop at my personal researcher's lab in Windward Port. There's a package for us that I've ordered.\p
     It'll be a great help for our journey.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}More gadgets?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}And Pokémon.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright! Let's head out then!"))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}More gadgets?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}And Pokémon.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Alright! Let's head out then!"))
     closemessage
     applymovement(5, walkleft)
     applymovement(6, walkleft)
@@ -1279,7 +1279,7 @@ script Route2_House_Eventscript_MitsuruRestForTheNight {
     applymovement(LOCALID_PLAYER, moves(walk_up*4, walk_left*2, walk_up*2, delay_16, delay_16, face_right, delay_16, delay_16, face_up, delay_16, delay_16 face_left))
     waitmovement
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Not too shabby. This will do."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Not too shabby. This will do."))
     closemessage
     setvar(VAR_MITSURUS_INTRO_STATE, 9)
     setflag(FLAG_HIDE_HELP_BUTTON)
@@ -1297,7 +1297,7 @@ script Route2_House_Eventscript_MitsuruPostRest {
     delay(20)
     applymovement(LOCALID_PLAYER, faceup)
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(The sun's up. Time to move out.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(The sun's up. Time to move out.)"))
     closemessage
     setvar(VAR_MITSURUS_INTRO_STATE, 11)
     clearflag(FLAG_HIDE_HELP_BUTTON)
@@ -1333,7 +1333,7 @@ script Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji {
     playse(SE_M_SCRATCH)
     setvar(VAR_0x8000, PIC_AKIHIKO)
     callnative(DrawMugshot)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(So this boy is... Akihiko Sanada.)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(So this boy is... Akihiko Sanada.)\p
     (He got adopted a few days ago, along with his younger sister Miki.)\p
     (Well, on paper at least, I suppose?)\p
     (Otherwise those men wouldn't have been searching for him near the orphanage.)\p
@@ -1341,10 +1341,10 @@ script Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji {
     playse(SE_M_SCRATCH)
     setvar(VAR_0x8000, PIC_SHINJIRO)
     callnative(DrawMugshot)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(And this one is Aragaki Shinjiro.)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(And this one is Aragaki Shinjiro.)\p
     (He's also adopted on paper and has a standard trainer card.)"))
     callnative (ClearMugshot)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Considering how eagerly the Genesis staff were searching for them)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Considering how eagerly the Genesis staff were searching for them)\p
     (I guess they must be ones of their “good potential” subjects.)\p
     (In that case, I must find them before the Genesis group does.)"))
     closemessage
@@ -1359,15 +1359,15 @@ script Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji {
     delay(4)
     applymovement(4, moves(walk_up*2, walk_left))
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Inteleon, you're back. Just about time.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I'd love to give you a rest but we really have to act right now.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Inteleon, you're back. Just about time.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I'd love to give you a rest but we really have to act right now.\p
     Although if you're too tired, you can return to the Pokéball."))
     closemessage
     playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
     applymovement(4, shakehorizontal)
     waitmovement
-    msgbox(format("{SPEAKER NAME_INTELEON}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon shaked its head, looking determined to accompany Mitsuru.)\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}If that's what you want, alright. Let's go then.\p
+    msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon shaked its head, looking determined to accompany Mitsuru.)\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}If that's what you want, alright. Let's go then.\p
     We should start asking around Sunshine Town for these two boys."))
     closemessage
     playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
@@ -1403,7 +1403,7 @@ script Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji {
 
 script Route2_House_Eventscript_MitsuruCallingTakeharuForHelp {
     delay(20)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes, Father. That'd be great.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Yes, Father. That'd be great.\p
     Yes. I'll talk to you later."))
     closemessage
     playse(SE_POKENAV_OFF)
@@ -1413,16 +1413,16 @@ script Route2_House_Eventscript_MitsuruCallingTakeharuForHelp {
     applymovement(5, faceright)
     applymovement(4, faceleft)
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}(It's been days and the girl still hasn't been found.)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}(It's been days and the girl still hasn't been found.)\p
     (There's a great chance that the Genesis group has taken her.)\p
     (I hope Father could help with the searching somehow.)\p
     ........"))
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}I've been avoidant about confronting the boys.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}I've been avoidant about confronting the boys.\p
     I don't know how to face them after what I'd done.\p
-    {CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}However, we can't afford to lose any more time before the group erases their tracks again.\p
-    {CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Let's go talk to Sanada and Aragaki, Vulpix, Inteleon."))
+    {CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}However, we can't afford to lose any more time before the group erases their tracks again.\p
+    {CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Let's go talk to Sanada and Aragaki, Vulpix, Inteleon."))
     closemessage
     playmoncry(SPECIES_VULPIX, CRY_MODE_NORMAL)
     delay(4)
@@ -1447,7 +1447,7 @@ script Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV {
     applymovement(LOCALID_PLAYER, moves(walk_slow_down *3))
     waitmovement(0)
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}..."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}..."))
     closemessage
     delay(30)
     applymovement(2, shakehorizontal)
@@ -1474,9 +1474,9 @@ script Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV {
     delay(30)
     applymovement(8, jumpinplaceup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Wh-Where are we?\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wh-Where are we?\p
     And who are you??"))
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Apologies, but this is the best shelter I could provide in this situation.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Apologies, but this is the best shelter I could provide in this situation.\p
     This is the house of my butler's grandson, who's currently traveling the region.\p
     We're still in Route 2. Worry not, it's safe here."))
     closemessage
@@ -1486,66 +1486,66 @@ script Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV {
 script Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV {
     lock
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}As for my name, I am Mitsuru Kirijo.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}-!\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}Kirijo-?!"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}As for my name, I am Mitsuru Kirijo.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}-!\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Kirijo-?!"))
     closemessage
     delay(30)
     applymovement(8, faceright)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}Uhhh, who? The name sounds familiar."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}Uhhh, who? The name sounds familiar."))
     closemessage
     applymovement(6, faceleft)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}-!\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}-!\p
     Dumbass! That's the billionaire group who donated us our PCs!\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Oooh..."))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Oooh..."))
     delay(20)
     applymovement(8, faceup)
     delay(8)
     applymovement(6, faceup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}So? What does a billionaire girl like you want with us?\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}So? What does a billionaire girl like you want with us?\p
     For whatever it is, I'm not interested. I only want to train and become a stronger trainer.\p
     I could've dealed with the Drowzee earlier if I were-\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Wait- Are you with the men in black who tried to kidnap us!?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}...\p 
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}No. \p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wait- Are you with the men in black who tried to kidnap us!?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}...\p 
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}No. \p
     In fact, I managed to disrupt them and brought you two here.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}To be more precise, my mission is to stop them.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Stop them?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Both of you are from Sunshine Orphanage, correct?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}To be more precise, my mission is to stop them.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Stop them?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Both of you are from Sunshine Orphanage, correct?\p
     Right now I can say for certain that the explosion which happened a few days ago was their doing.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}!!\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}-!"))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}!!\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}-!"))
     closemessage
     delay(20)
     applymovement(1, faceleft)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}(Mumble) If only I were able to stop them in time... It was my fault...\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}....."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}(Mumble) If only I were able to stop them in time... It was my fault...\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}....."))
     closemessage
     applymovement(1, facedown)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}My request is rather simple.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Request...?"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}My request is rather simple.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Request...?"))
     closemessage
     applymovement(1, MitsuruPickingAkihiko)
     waitmovement
     delay(8)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I would like you to join me, Akihiko Sanada-kun."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I would like you to join me, Akihiko Sanada-kun."))
     closemessage
     playse(SE_PIN)
     waitse
     applymovement(8, emoteexclamation)
     applymovement(6, emoteexclamation)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Huh?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I believe you have a reason for wanting to get stronger.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}.....\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I have clues of where to find those men in black and what they are doing.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}And earlier I saw your battle with them. You have great potential.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}If you'll join me... I promise it'll be a great challenge.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I believe you have a reason for wanting to get stronger.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}.....\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I have clues of where to find those men in black and what they are doing.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}And earlier I saw your battle with them. You have great potential.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}If you'll join me... I promise it'll be a great challenge.\p
     I'll also share what I know about those men with you."))
     closemessage
     applymovement(8, faceright)
@@ -1557,29 +1557,29 @@ script Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV {
     delay(16)
     applymovement(6, faceup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}.....\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}.....\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Alright, I'll join you.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Very well."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}.....\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}.....\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Alright, I'll join you.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Very well."))
     closemessage
     playse(SE_PIN)
     waitse
     applymovement(6, ShinjiroSurprisedAtAkihikoChoice)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Wait!"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Wait!"))
     closemessage
     applymovement(6, ShinjiroDisruptsAkiMitsu)
     applymovement(8, faceright)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Aki, we need to talk.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Shinji?"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Aki, we need to talk.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Shinji?"))
     closemessage
     applymovement(6, faceup)
     delay(8)
     applymovement(8, faceup)
     waitmovement(0)
     delay(60)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Go ahead, I'll be waiting right here."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Go ahead, I'll be waiting right here."))
     closemessage
     applymovement(1, MitsuruGoesBackToPlace)
     waitmovement(0)
@@ -1591,8 +1591,8 @@ script Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV {
     waitmovement(5)
     fadescreenswapbuffers(FADE_FROM_BLACK)
     delay(20)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I also have a request.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Certainly, let's hear it."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I also have a request.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Certainly, let's hear it."))
     closemessage
     applymovement(8, moves(walk_down, walk_left, face_up))
     waitmovement(8)
@@ -1603,50 +1603,50 @@ script Route2_House_Eventscript_TriosFirstGreetingMitsuruPOV {
 script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuruPOV {
     lock
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}So what's your request?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Let me join too."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}So what's your request?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Let me join too."))
     closemessage
     applymovement(1, MitsuruLookingAtShinjiro)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Hm... Shinjiro Aragaki-kun, correct?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}... You sure have done your research thoroughly.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I'll take that as a compliment.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}That wasn't.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Heh...\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I have yet to know if you're able to hold your ground when the situation calls for it.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Hm... Shinjiro Aragaki-kun, correct?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}... You sure have done your research thoroughly.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'll take that as a compliment.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}That wasn't.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Heh...\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I have yet to know if you're able to hold your ground when the situation calls for it.\p
     If I'm not mistaken, you don't have a Pokémon of your own yet.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}I can just catch one.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Alright. Then how about this.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Before the sun sets, if you can beat me in a Pokémon battle, you can come with us."))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}I can just catch one.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Alright. Then how about this.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Before the sun sets, if you can beat me in a Pokémon battle, you can come with us."))
     closemessage
     applymovement(1, walkdown)
     waitmessage
     msgbox(format("Mitsuru gave Shinjiro a modern device, some Pokéballs and Exp Candies."))
     applymovement(1, stepbackup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}It wouldn't be fair if you have nothing to catch a Pokémon.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}It wouldn't be fair if you have nothing to catch a Pokémon.\p
     Oh, and that device is a Pokédex. I'm just lending it to you.\p
     It's yours if you can beat me.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_CONFIDENT}Hmph. Just you wait."))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Hmph. Just you wait."))
     closemessage
     applymovement(1, MitsuruGivingAkihikoPokedex)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}And these are for you."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}And these are for you."))
     closemessage
     msgbox(format("Akihiko received a Pokédex and a wooden box.\p
     Inside was a good bunch of Pokéballs, Exp Candies and some essential Key Items."))
     closemessage
     applymovement(1, stepbackup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}To be honest, I'd also like to have a battle with you, Sanada-kun.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}To be honest, I'd also like to have a battle with you, Sanada-kun.\p
     It's better to personally see how you fare in battle.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_CONFIDENT}Heh, sure."))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Heh, sure."))
     closemessage
     applymovement(1, MitsuruGoesBackToCenter)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_CONFIDENT}Alright. I'll be waiting for both of you in Sunshine Meadow.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Alright. I'll be waiting for both of you in Sunshine Meadow.\p
     {COLOR RED}We'll be having 3-vs-3 Pokémon battles and bag items are not allowed so plan your party accordingly.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}{COLOR DARK_GRAY}Good luck, you'll need it."))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}Good luck, you'll need it."))
     closemessage
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraPansToLowerHalfOfRoom)
@@ -1686,35 +1686,35 @@ script Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV {
     applymovement(5, facedown)
     applymovement(6, faceup)
     delay(60)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Alright, everyone's here.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Alright, everyone's here.\p
     Before I start, I'd like to ask you two a question.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Sure? What is it?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}How far can a trainer synergize with their Pokémon?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Uhh... what?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}You mean their bonds?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}I know when a trainer and a Pokémon share a deep trust, Mega Evolution can be achieved.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}That is right, but not what I meant.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Sure? What is it?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}How far can a trainer synergize with their Pokémon?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_DOUBT}Uhh... what?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}You mean their bonds?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I know when a trainer and a Pokémon share a deep trust, Mega Evolution can be achieved.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}That is right, but not what I meant.\p
     Perhaps I should put it like this."))
     closemessage
     delay(50)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     playbgm(MUS_P3R_FEARFUL_EXPERIENCE, TRUE)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}What if I say, there's a way for a trainer to become one with their Pokémon?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Huh? What do you mean?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}In the most literal way possible.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}That's crazy.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Those men you fought- no, the organization behind them, is researching and developping a way to do so.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}What if I say, there's a way for a trainer to become one with their Pokémon?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh? What do you mean?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}In the most literal way possible.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}That's crazy.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Those men you fought- no, the organization behind them, is researching and developping a way to do so.\p
     Lots of progress has been made and there are already a few prototypes.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}Of course, the method isn't perfect and there are more-\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Wait, wait just a minute. I'm lost.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}Of course, the method isn't perfect and there are more-\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wait, wait just a minute. I'm lost.\p
     Prototypes?? Of what exactly??\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}A new specimen of human, who is able to use Pokémon's ability, in one way or another.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}You're kidding??\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}The more I listen to you, the crazier you sound.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}That is to be expected. I would have thought the same."))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}A new specimen of human, who is able to use Pokémon's ability, in one way or another.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}You're kidding??\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}The more I listen to you, the crazier you sound.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}That is to be expected. I would have thought the same."))
     closemessage
     delay(40)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}In any case, I already told you the goal of those men.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}In any case, I already told you the goal of those men.\p
     You're free to not believe me. We can simply just part ways right here."))
     closemessage
     delay(30)
@@ -1723,12 +1723,12 @@ script Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV {
     applymovement(6, emotepensive)
     waitmovement(0)
     delay(60)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Look, Princess. It's not like we don't want to believe you.\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Look, Princess. It's not like we don't want to believe you.\p
     It all just sounds too much like fiction, okay.\p
     At least show us some proofs?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Right, didn't you say you know where to find them?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Right, didn't you say you know where to find them?\p
     How about you lead us to them and we'll see if what you said were real.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}.....\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}.....\p
     Very well. I suppose that's a logical idea."))
     closemessage
     applymovement(1, faceup)
@@ -1742,7 +1742,7 @@ script Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV {
     waitmovement(0)
     fadenewbgm(MUS_RG_SS_ANNE)
     delay (60)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}For now, I suggest we rest for the night.
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}For now, I suggest we rest for the night.
     It's late and we're all tired from the battles.\p
     We'll depart early tomorrow morning so you two may want to stay here."))
     closemessage
@@ -1753,25 +1753,25 @@ script Route2_House_Eventscript_StayingTheNightMitsuruPOV {
     delay(60)
     applymovement(8, AkihikoLookingAtTheBed)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Uhhh you sure about that? There's only one bed."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Uhhh you sure about that? There's only one bed."))
     closemessage
     applymovement(1, MitsuruLookingAtTheBed)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SAD}M-my apologies, it slipped my mind that this house doesn't have guest rooms.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}You two can take the bed. I'm okay with the floor.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}For Arceus's sake, Princess. Aki's kidding.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}M-my apologies, it slipped my mind that this house doesn't have guest rooms.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}You two can take the bed. I'm okay with the floor.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}For Arceus's sake, Princess. Aki's kidding.\p
     Just sleep on the bed, we have our own sleeping bags."))
     closemessage
     playse(SE_PIN)
     applymovement(8, AKihikoRemembersCampGears)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Oh, right! Kurosawa-san gave us the Camping Gears."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Oh, right! Kurosawa-san gave us the Camping Gears."))
     closemessage
     playse(SE_M_BUBBLE3)
     applymovement(6, ShinjiroSweat)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}Dumbass, you weren't kidding!?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Stop calling me dumb!"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}Dumbass, you weren't kidding!?\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Stop calling me dumb!"))
     closemessage
     playse(SE_FAILURE)
     applymovement(8, AkihikoBickering)
@@ -1799,21 +1799,21 @@ script Route2_House_Eventscript_StayingTheNightMitsuruPOV {
     playse(SE_SHINY)
     applymovement(1, emotemusic)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_HAPPY}Hehehe."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_HAPPY}Hehehe."))
     closemessage
     applymovement(8, faceup)
     delay(10)
     applymovement(6, faceup)
     waitmovement(0)
     delay(60)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}..."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}..."))
     closemessage
     playse(SE_SHINY)
     applymovement(8, emotemusic)
     applymovement(6, emotemusic)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Hehe.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Hmph."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}Hehe.\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Hmph."))
     closemessage
     applymovement(OBJ_EVENT_ID_CAMERA, CameraSlowlyPansUpFadeScreen)
     delay(30)
@@ -1827,7 +1827,7 @@ script Route2_House_Eventscript_StayingTheNightMitsuruPOV {
 script Route2_House_Eventscript_TheFirstMorningMitsuruPOV {
     lock
     delay(20)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Everyone, please gather around. I'll explain our plan route."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Everyone, please gather around. I'll explain our plan route."))
     closemessage
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, walkdown)
@@ -1838,7 +1838,7 @@ script Route2_House_Eventscript_TheFirstMorningMitsuruPOV {
     waitmovement(0)
     delay(30)
     setvar(VAR_MITSURUS_INTRO_STATE, 34)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Please take a look at the map."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Please take a look at the map."))
     closemessage
     special(RemoveCameraObject)
     call (EventScript_RegionMap)
@@ -1846,18 +1846,18 @@ script Route2_House_Eventscript_TheFirstMorningMitsuruPOV {
 
 script Route2_House_Eventscript_TheFirstMorning2MitsuruPOV {
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I believe our destination is around the base of Goldenwings Mountain.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I believe our destination is around the base of Goldenwings Mountain.\p
     To get there we can take a ship from Coralport, west of here.\p
     Then we go through Route 4 from Windward Town.\p
     Any questions?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Nope, the path is simple enough.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}C'est magnifique.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Oh, before I forget.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Nope, the path is simple enough.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}C'est magnifique.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Oh, before I forget.\p
     We should make a stop at my personal researcher's lab in Windward Port. There's a package for us that I've ordered.\p
     It'll be a great help for our journey.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}More gadgets?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}And Pokémon.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright! Let's head out then!"))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}More gadgets?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}And Pokémon.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Alright! Let's head out then!"))
     closemessage
     applymovement(5, walkleft)
     applymovement(6, walkleft)

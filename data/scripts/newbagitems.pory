@@ -7,10 +7,10 @@ script EventScript_CampGears{
         playse(SE_BOO)
         checkplayergender
         if(var(VAR_RESULT) == MALE){
-            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}(I can't set up a camp here.)"))
+            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}(I can't set up a camp here.)"))
         }
         else{
-            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_GEEZ}(I shouldn't camp here.)"))
+            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_GEEZ}(I shouldn't camp here.)"))
         }
         closemessage
     }
@@ -64,10 +64,10 @@ script EventScript_CampGears{
 script EventScript_CampGears_NotTheTime {
     checkplayergender
         if(var(VAR_RESULT) == MALE){
-            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(Now is not the time for camping.)"))
+            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Now is not the time for camping.)"))
         }
         else{
-            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(Now is not the time for camping.)"))
+            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Now is not the time for camping.)"))
         }
         closemessage
 }
@@ -105,4 +105,19 @@ script EventScript_ConfirmUseEscapeRope {
 
 text ConfirmUseEscapeRope {
     format("Exiting this dungeon will advance the\n time by {COLOR RED}{STR_VAR_3} hour(s){COLOR 2}.\pUse Escape Rope?")
+}
+
+script EventScript_AccessPokemonBoxLink
+{
+    if (flag(FLAG_PREVENT_BOX_LINK)){
+        msgbox(format("Cannot open Pokémon Storage System now."))
+        release
+        end
+    }
+	playse (SE_PC_LOGIN)
+	msgbox (gText_StorageSystemOpened, MSGBOX_DEFAULT)
+	special (ShowPokemonStorageSystemPC)
+	waitstate
+	goto (EventScript_TurnOffPC)
+	end
 }

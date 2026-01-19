@@ -29,11 +29,11 @@ script SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_
         checkplayergender
         if(var(VAR_RESULT) == MALE)
         {
-            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}(Riolu is asleep. We should let it be.)"))
+            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}(Riolu is asleep. We should let it be.)"))
         }
         else
         {
-            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}(Riolu is asleep. I should let it be.)"))
+            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}(Riolu is asleep. I should let it be.)"))
         }
         closemessage
         releaseall
@@ -69,7 +69,7 @@ script SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_
     checkplayergender
     if (var(VAR_RESULT) == MALE)
     {
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Alright, lil' guy. If you're bored, come at me!"))
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Alright, lil' guy. If you're bored, come at me!"))
         closemessage
         setflag(FLAG_NO_CATCHING)
         setflag(FLAG_NO_RUNNING)
@@ -78,12 +78,12 @@ script SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_
         clearflag(FLAG_NO_RUNNING)
         msgbox(format("{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Riolu poured all of its energy into battle and got sleepy."))
         closemessage
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}I guess that should do it. Let's return to the grandma."))
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}I guess that should do it. Let's return to the grandma."))
         closemessage
     }
     else
     {
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I suppose a battle would tire you out."))
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I suppose a battle would tire you out."))
         closemessage
         setflag(FLAG_NO_CATCHING)
         setflag(FLAG_NO_RUNNING)
@@ -92,7 +92,7 @@ script SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_
         clearflag(FLAG_NO_RUNNING)
         msgbox(format("{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Riolu poured all of its energy into battle and got sleepy."))
         closemessage
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That should do it. Time to report to the grandma."))
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That should do it. Time to report to the grandma."))
         closemessage
     }
     clearflag(FLAG_HIDE_HELP_BUTTON)

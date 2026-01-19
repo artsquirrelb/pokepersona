@@ -876,14 +876,14 @@ walkup:
 
 SunshineOrphanageMainHall_Eventscript_PawmiIsHealed_Text_0:
 # 87 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}There you go.$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}There you go.$"
 
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_0:
 # 115 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SMILE}Looks like it wants to stay with you.\p"
-	.string "{SPEAKER NAME_MIKI}{DESTROY_MUGSHOT}Can we keep it?\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Can we, Ms. Kobayashi?\p"
-	.string "{SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Normally you aren't allowed to have your\n"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Looks like it wants to stay with you.\p"
+	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}Can we keep it?\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Can we, Ms. Kobayashi?\p"
+	.string "{SPEAKER NAME_KBYS}{DESTROY_MUGSHOT}Normally you aren't allowed to have your\n"
 	.string "own Pokémon here.\p"
 	.string "However, since you are going to leave in\n"
 	.string "a few days, we can make an exception.\p"
@@ -892,19 +892,19 @@ SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_0:
 
 SunshineOrphanageMainHall_Eventscript_PawmiAppreciated_Text_1:
 # 126 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_MIKI}Yay!\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p"
-	.string "{SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, I'll give you a pokeball to keep it.\p"
+	.string "{SPEAKER NAME_MK}Yay!\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}Thank you, Ms. Kobayashi!\p"
+	.string "{SPEAKER NAME_KBYS}{DESTROY_MUGSHOT}Here, I'll give you a pokeball to keep it.\p"
 	.string "{SPEAKER NAME_NONE}Ms. Kobayashi gave {PLAYER} a Cherish\n"
 	.string "Ball.$"
 
 SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi_Text_0:
 # 146 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Go on, Pawmi is waiting for you.$"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Go on, Pawmi is waiting for you.$"
 
 SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi_Text_0:
 # 154 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_MIKI}Let's give Pawmi a home, big bro!$"
+	.string "{SPEAKER NAME_MK}Let's give Pawmi a home, big bro!$"
 
 SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_0:
 # 172 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -925,7 +925,7 @@ SunshineOrphanageMainHall_Eventscript_GetPawmiStarter_Text_3:
 
 SunshineOrphanageMainHall_Eventscript_GoToSleep_Text_0:
 # 214 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_KOBAYASHI}Alright.\p"
+	.string "{SPEAKER NAME_KBYS}Alright.\p"
 	.string "I supposed it's quite late now. You all\n"
 	.string "should go to bed.\p"
 	.string "See you tomorrow.$"
@@ -972,7 +972,7 @@ Girl_2_MainHall_Text_2:
 	.string "week!\p"
 	.string "My future adoptive parents are talking\n"
 	.string "with my teacher right now.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY}That's great! Congrats!$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}That's great! Congrats!$"
 
 RichMan_MainHall_Text_0:
 # 286 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -1022,45 +1022,45 @@ Boy_3_MainHall_Text_1:
 # 332 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "Oh hey, Akihiko! Miki is waiting for you\n"
 	.string "outside.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}I know, thanks!$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}I know, thanks!$"
 
 Boy_3_MainHall_Text_2:
 # 335 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "Stay safe in the woods.\p {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}We will!$"
+	.string "Stay safe in the woods.\p {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}We will!$"
 
 Boy_3_MainHall_Text_3:
 # 338 "data/maps/SunshineOrphanageMainHall/scripts.pory"
 	.string "I heard you found a rare Pokémon in the\n"
 	.string "woods?\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Pawmi is rare?$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Pawmi is rare?$"
 
 DiningRoom_Text_0:
 # 347 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_HAPPY} It's the dining room. The pancakes here\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY} It's the dining room. The pancakes here\n"
 	.string "are the best.$"
 
 BackyardDoor_Text_0:
 # 355 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE} Outside is the backyard. We grow crops\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE} Outside is the backyard. We grow crops\n"
 	.string "there.$"
 
 Girls_HallwayMainHall_Text_0:
 # 363 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} It's the way to the girls' hallway. I\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL} It's the way to the girls' hallway. I\n"
 	.string "have no business there right now.$"
 
 RestroomMainHall_Text_0:
 # 371 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}It's the restroom. I'm good for now.$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}It's the restroom. I'm good for now.$"
 
 PokeballShelf_Text_0:
 # 378 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Those belong to the staff. I shouldn't\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Those belong to the staff. I shouldn't\n"
 	.string "touch them.$"
 
 Porygon_PC_Text_0:
 # 391 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Porygon can access the Pokémon\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL} Porygon can access the Pokémon\n"
 	.string "Storage. If only I had a Pokémon.$"
 
 MartLady_Text_0:
@@ -1077,13 +1077,13 @@ MartLady_Text_2:
 
 Blissey_Heal_Text_0:
 # 425 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} Blissey is very good at healing. I can\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL} Blissey is very good at healing. I can\n"
 	.string "ask it for help when I have an injured\l"
 	.string "Pokémon.$"
 
 BlisseyHealedPawmi_Text_0:
 # 434 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you for healing Pawmi, Blissey!$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Thank you for healing Pawmi, Blissey!$"
 
 NicknamePartyMon_Text_0:
 # 457 "data/maps/SunshineOrphanageMainHall/scripts.pory"
@@ -1095,7 +1095,7 @@ NicknameBoxMon_Text_0:
 
 SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage_Text_0:
 # 485 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_KOBAYASHI}Good morning, Akihiko, Shinjiro.\p"
+	.string "{SPEAKER NAME_KBYS}Good morning, Akihiko, Shinjiro.\p"
 	.string "Sorry to trouble you but can you two go\n"
 	.string "pick up a package for me?\p"
 	.string "It should be delivered at the Pokémon\n"
@@ -1104,13 +1104,13 @@ SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage_Text_0:
 	.string "Sunshine Woods.\p"
 	.string "Pawmi is with you now so it should be\n"
 	.string "fine.\p"
-	.string "{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Of course, Ms. Kobayashi.\p"
-	.string "{SPEAKER NAME_KOBAYASHI}{DESTROY_MUGSHOT}Here, you may need these.$"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Of course, Ms. Kobayashi.\p"
+	.string "{SPEAKER NAME_KBYS}{DESTROY_MUGSHOT}Here, you may need these.$"
 
 SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage_Text_1:
 # 496 "data/maps/SunshineOrphanageMainHall/scripts.pory"
-	.string "{SPEAKER NAME_KOBAYASHI}Stay safe, dear.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Thank you, Ms. Kobayashi!$"
+	.string "{SPEAKER NAME_KBYS}Stay safe, dear.\p"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Thank you, Ms. Kobayashi!$"
 
 NewLabTest_NotChosen::
 # 474 "data/maps/SunshineOrphanageMainHall/scripts.pory"

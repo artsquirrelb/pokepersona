@@ -93,11 +93,11 @@ script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Star
     msgbox(format("Wait, who are you lots? What do you want? I'm busy-"))
     checkplayergender
     if (var(VAR_RESULT) == MALE){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}We're here to help you find your daughter.\p
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}We're here to help you find your daughter.\p
         We were at the police station when you went there asking for help."))
     }
     else{
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Rest assured, sir. We're here to help you find your daughter.\p
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Rest assured, sir. We're here to help you find your daughter.\p
         We were at the police station when you went there asking for help."))
     }
     setspeaker("Ikumi")

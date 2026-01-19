@@ -70,7 +70,7 @@
 #define FLAG_TUTOR_MOVES                0x38 // Was Unused Flag
 #define FLAG_KITOHA_NATIONAL_STATE      0x39 // 0 == kitoha, 1 == national
 #define FLAG_PREVENT_OVERWORLD_SPEEDUP  0x3A // Unused Flag
-#define FLAG_UNUSED_0x03B    0x3B // Unused Flag
+#define FLAG_PREVENT_BOX_LINK           0x3B // Unused Flag
 #define FLAG_UNUSED_0x03C    0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
@@ -103,8 +103,8 @@
 #define FLAG_HELP_EXIT_DUNGEON                   0x57
 #define FLAG_HELP_DUNGEON_ENCOUNTER              0x58
 #define FLAG_HELP_SPEEDUP                        0x59
-#define FLAG_RECEIVED_BIKE                   0x5A
-#define FLAG_WATTSON_REMATCH_AVAILABLE       0x5B
+#define FLAG_STARTER_TRADE_DONE_M                  0x5A
+#define FLAG_STARTER_TRADE_DONE_F       0x5B
 #define FLAG_COLLECTED_ALL_SILVER_SYMBOLS    0x5C
 #define FLAG_GOOD_LUCK_SAFARI_ZONE           0x5D // Set after talking to NPC blocking Safari Zone entrance/exit once.
 #define FLAG_RECEIVED_WAILMER_PAIL           0x5E

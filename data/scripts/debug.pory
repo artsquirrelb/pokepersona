@@ -695,14 +695,20 @@ Debug_EventScript_GivePokerus::
 `
 
 script Debug_EventScript_Script_1{
-	setwildbattle(SPECIES_WINGULL, 10, ITEM_NONE, SPECIES_SANDYGAST, 10, ITEM_NONE)
-	dowildbattle
+	msgbox("Check if Bulbasaur in PC")
+	closemessage
+	checkboxspecies(SPECIES_BULBASAUR)
+	if (var(VAR_RESULT)){
+		msgbox("Bulbasaur is in PC {STR_VAR_1}, nickname: {STR_VAR_2}")
+	}
+	else{
+		msgbox("No Bulbasaur in PC")
+	}
 	release
 	end
 }
 
 script Debug_EventScript_Script_2{
-	trainerbattle_no_intro(TRAINER_NORBERT_THUNDERSHARDS_CAVE_2F_EXTERIOR, outrotest)
 	release
 	end
 }

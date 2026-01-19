@@ -287,11 +287,13 @@
 #define OBJ_EVENT_GFX_TODDLER                    280
 #define OBJ_EVENT_GFX_NORBERT                    281
 #define OBJ_EVENT_GFX_KIMONO_GIRL                282
+#define OBJ_EVENT_GFX_MAYOIDO                    283
+#define OBJ_EVENT_GFX_SCIENTIST_F                284
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        283
+#define NUM_OBJ_EVENT_GFX                        285
 
 
 // These are dynamic object gfx ids.
@@ -382,6 +384,8 @@
 #define OBJ_EVENT_ID_DYNAMIC_BASE 0xF0
 #define OBJ_EVENT_ID_CAMERA LOCALID_CAMERA
 #define OBJ_EVENT_ID_PLAYER LOCALID_PLAYER
+#define MC              LOCALID_PLAYER
+#define CAM                 LOCALID_CAMERA
 
 // Moved from src/event_object_movement.c so that they're accesible from other files.
 #define OBJ_EVENT_PAL_TAG_ZIGZAGOON               0x1100
@@ -483,5 +487,19 @@
 // for compressed graphicsInfos
 // '(C)ompressed (E)vent'
 #define COMP_OW_TILE_TAG_BASE 0xCE00
+
+// Emotes for emote scripting macro
+#define E_EXCLAM        0
+#define E_QUESTION      1
+#define E_HEART         2
+#define E_SWEAT         3
+#define E_HAPPY         4
+#define E_SAD           5
+#define E_ANGRY           6
+#define E_CRY           7
+#define E_MUSIC         8
+#define E_ASLEEP        9
+#define E_PENSIVE       10
+#define E_X             11
 
 #endif  // GUARD_CONSTANTS_EVENT_OBJECTS_H

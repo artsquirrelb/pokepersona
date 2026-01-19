@@ -2,7 +2,7 @@ mapscripts SunshineOrphanage2FHallway_MapScripts {}
 
 script Girls_Hallway2F{
     lock
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}"
         "It's the way to the girls' hallway. I have no business there right now."))
     release
     end
@@ -10,7 +10,7 @@ script Girls_Hallway2F{
 
 script Restroom2F {
     lock
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}"
         "It's the restroom. I'm good for now."))
     release
     end
@@ -21,7 +21,7 @@ script BOY_1_2F {
     faceplayer
     setspeaker ("Kuro")
     msgbox(format("I wish the orphanage let us have Pokémon.\p"
-        "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}"
+        "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}"
         "I do too but I guess it'll be harder for the staff.\p They're already busy enough."
         ))
     release
@@ -35,12 +35,12 @@ script BOY_2_2F {
     if (var(VAR_AKIHIKOS_INTRO_STATE) < 9) {
         msgbox(format(
         "Few days ago I saw a Pawmi with a different color in the woods.\p It's neither orange yellow nor pink.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}
         What color was it then?"))
     closemessage
     setspeaker("Kou")
     msgbox(format("Hehe, it's a secret.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}
         ..."))}
     else {
         msgbox(format("Wait, that Pawmi...\p

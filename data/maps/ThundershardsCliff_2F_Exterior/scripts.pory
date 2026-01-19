@@ -87,7 +87,7 @@ script ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave {
     bufferleadmonspeciesname(STR_VAR_1)
     msgbox(format("Tch. I told those two to not let anyone through.\p
     And here you are, Young Lady.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}They were no match for me.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}They were no match for me.\p
     And you're not going anywhere either.\p
     Let's go, {STR_VAR_1}."))
     closemessage
@@ -107,16 +107,16 @@ script ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat {
     msgbox(format("That was pretty informative.\p
     Looks like your synergy level has increased again, Young Lady.\p
     As expected of our premium prototype.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_MAD}Norbert, you...!"))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_MAD}Norbert, you...!"))
     setspeaker("Scientist Norbert")
     msgbox(format("{DESTROY_MUGSHOT}As the prize for winning, I'll spare you a bit of information.\p
     You aren't the only premium prototype anymore.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}...!"))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}...!"))
     setspeaker("Scientist Norbert")
     msgbox(format("{DESTROY_MUGSHOT}Well then, as much as I enjoyed our little chat, there's somewhere else I need to be.\p
     I hope we don't meet again, for your own good, little miss.\p
     Oh, and be careful of the fire. Hehehehehe.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_MAD}What- WAIT-!"))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_MAD}What- WAIT-!"))
     closemessage
     applymovement(LOCALID_PLAYER, moves(player_run_right*2, face_left))
     dofieldeffectnpcflyout(24, 25, 1)
@@ -125,10 +125,10 @@ script ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat {
     waitmovement(LOCALID_PLAYER)
     removeobject(8)
     setflag(FLAG_TEMP_1)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_MAD}Damn it!!"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_MAD}Damn it!!"))
     closemessage
     delay(8)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Wait... He said “fire”?"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Wait... He said “fire”?"))
     closemessage
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     setvar(VAR_MITSURUS_INTRO_STATE, 16)
@@ -154,7 +154,7 @@ script ThundershardsCliff_2F_Exterior_Eventscript_LabExploding {
     waitmovement
     playbgm(MUS_P3_CALAMITY, FALSE)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}What the-"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}What the-"))
     closemessage
     applymovement(LOCALID_PLAYER, moves(player_run_left*5, player_run_down, player_run_left,
     player_run_down, player_run_left*7, player_run_down*3, player_run_left, player_run_down*3))

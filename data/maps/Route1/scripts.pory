@@ -6,7 +6,7 @@ script Route1_Eventscript_NotTheWayToMeadow {
     lock
     applymovement(LOCALID_PLAYER, walkup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(If I remember correctly, Sunshine Meadow is in the north of Route 2.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(If I remember correctly, Sunshine Meadow is in the north of Route 2.)"))
     closemessage
     release
     end
@@ -40,7 +40,7 @@ script Route1_Eventscript_Touma {
 
 text Route1_ToumaIntro {
     format("Um, can you please battle me...?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(Sigh... I really don't have time for this.)")
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Sigh... I really don't have time for this.)")
 }
 
 text Route1_ToumaDefeated {
@@ -50,7 +50,7 @@ text Route1_ToumaDefeated {
 text Route1_ToumaPostBattle {
     format("I don't do very well in my Pokémon battle classes.\p
     But it's okay because I want to become a researcher instead of a trainer.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}That is a marvelous personal goal. I wish you the best of luck.")
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That is a marvelous personal goal. I wish you the best of luck.")
 }
 
 text Route1_ToumaIntro_A {
@@ -73,7 +73,7 @@ script Route1_Eventscript_Miyu {
 
 text Route1_MiyuIntro {
     format("Let's battle!\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}Huh? What- wait-")
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}Huh? What- wait-")
 }
 
 text Route1_MiyuDefeated {
@@ -162,7 +162,7 @@ script Route1_Eventscript_Ichigo {
 
 text Route1_IchigoIntro {
    format("Hehe, you can't escape me!\p
-   {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(... Let's just get this over with.)") 
+   {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(... Let's just get this over with.)") 
 }
 
 text Route1_IchigoIntro_A {

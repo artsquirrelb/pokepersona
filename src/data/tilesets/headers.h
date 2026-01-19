@@ -1083,3 +1083,14 @@ const struct Tileset gTileset_WindwardPort =
     .metatileAttributes = gMetatileAttributes_WindwardPort,
     .callback = InitTilesetAnim_Coralport,  //same sand water animation offset as coralport's
 };
+
+const struct Tileset gTileset_MayoidosLab =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_MayoidosLab,
+    .palettes = gTilesetPalettes_MayoidosLab,
+    .metatiles = gMetatiles_MayoidosLab,
+    .metatileAttributes = gMetatileAttributes_MayoidosLab,
+    .callback = NULL,
+};

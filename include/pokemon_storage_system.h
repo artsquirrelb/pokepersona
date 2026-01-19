@@ -59,6 +59,8 @@ bool32 CheckBoxMonSanityAt(u32 boxId, u32 boxPosition);
 u32 CountStorageNonEggMons(void);
 u32 CountAllStorageMons(void);
 bool32 AnyStorageMonWithMove(enum Move move);
+bool8 CheckStorageForMonBuffNickBoxId(u16 speciesId);
+
 void CB2_ReturnToPokeStorage(void);
 
 void ResetWaldaWallpaper(void);

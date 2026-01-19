@@ -58,7 +58,7 @@ script SunshineTown_PokemonCenter_Eventscript_MartLady {
         applymovement(7, SunshineTown_PokemonCenter_Eventscript_ShinjiroFacesTheMart)
         waitmovement(0)
         msgbox(format("
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Hello. We're here to pick up a package for Ms. Kobayashi.\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Hello. We're here to pick up a package for Ms. Kobayashi.\p
         It should have arrived today."))
         closemessage
         setspeaker("Mart Employee")
@@ -130,12 +130,12 @@ script SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient {
     applymovement(LOCALID_PLAYER, SunshineTown_PokemonCenter_Eventscript_AkihikoMoveAround)
     waitmovement
     msgbox(format("
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT}What's taking her so long??\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Yeah, it's been 10 minutes."))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}What's taking her so long??\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Yeah, it's been 10 minutes."))
     closemessage
     applymovement(LOCALID_PLAYER, walkright)
     msgbox(format("
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Is there anything wrong, ma'am-"), MSGBOX_AUTOCLOSE)
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Is there anything wrong, ma'am-"), MSGBOX_AUTOCLOSE)
     special(StopMapMusic)
     playse (SE_INTRO_BLAST)
     call(SunshineTown_PokemonCenter_Eventscript_CameraShake)
@@ -148,9 +148,9 @@ script SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient {
     applymovement(7, faceright)
     waitmovement(0)
     msgbox(format("
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}W-What was that??\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}Sounded like an explosion.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_MAD}Shinji, let's go check."))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}W-What was that??\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Sounded like an explosion.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Shinji, let's go check."))
     closemessage
     applymovement(7, SunshineTown_PokemonCenter_Eventscript_ShinjiroJoins)
     waitmovement(0)
@@ -256,7 +256,7 @@ script SunshineTown_PokemonCenter_Eventscript_Gentleman {
     setspeaker ("Watanabe")
     if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15 && var(VAR_AKIHIKOS_INTRO_STATE) < 24) {
         msgbox(format("It sounds dangerous outside, you kids should stay here.\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Thank you, sir, but we'll be fine."))
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Thank you, sir, but we'll be fine."))
     }
     else {msgbox (format("
     The Kirijo group specializes in researching Pokémon in this region.\p

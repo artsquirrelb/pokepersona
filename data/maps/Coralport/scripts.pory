@@ -242,6 +242,22 @@ script Coralport_Eventscript_SailorOnGuard {
     lock
     faceplayer
     setspeaker("Umito")
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, MITSURUS_PROLOGUE)
+    if(!var(VAR_RESULT)){
+        showhelpwindow(HELP_PROTAGONISTS)
+        waitbuttonpress
+        hidehelpwindow
+        release
+        end
+    }
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, MITSURUS_PROLOGUE)
+    if(!var(VAR_RESULT)){
+        showhelpwindow(HELP_PROTAGONISTS)
+        waitbuttonpress
+        hidehelpwindow
+        release
+        end
+    }
     if (var(VAR_CHAPTER_1_STATE) <4)
     {
         msgbox(format("This ship will depart for Windward Port.\p
@@ -322,11 +338,11 @@ script Coralport_Eventscript_NotYetBoardingTime {
     applymovement(A_CORAL, moves(walk_down, face_up))
     waitmovement
     delay(30)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}What now?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}It appears that we have no other choice but to wait until boarding time.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Maybe we can pay the police station a visit?\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}What now?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}It appears that we have no other choice but to wait until boarding time.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Maybe we can pay the police station a visit?\p
     I'd like to check if they've found anything about Miki.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes, let's do that."))
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Yes, let's do that."))
     closemessage
     applymovement(M_CORAL, walkdown)
     delay(4)
@@ -373,11 +389,11 @@ script Coralport_Eventscript_Beauty {
     setspeaker("Harehina")
     msgbox(format("I bought two tickets for this vacation but my damned ex cheated on me so I brought my younger brother instead.\p
     I'm enjoying this a lot more than I thought.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Good for you."))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Good for you."))
     setspeaker("Harehina")
     msgbox(format("{DESTROY_MUGSHOT}Oh? Wait, you're just my type. How old are you?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}W-what?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}(Hey! Let's just bail!)"))
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}W-what?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}(Hey! Let's just bail!)"))
     closemessage
     moveobjecttocoords(LOCALID_PLAYER, 22, 29, DIR_NORTH, 2)
     waitmovement
@@ -412,11 +428,11 @@ script Coralport_Eventscript_MustTalkToSailorOnGuard {
     waitmovement
     checkplayergender
     if(var(VAR_RESULT) == MALE){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}(It's not the time to wander around.\p
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(It's not the time to wander around.\p
         We need to board the ship to Windward Port.)"))
     }
     else{
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}(It's not the time to wander around.\p
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(It's not the time to wander around.\p
         We need to board the ship to Windward Port.)"))
     }
     closemessage
@@ -438,44 +454,43 @@ script Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp 
     delay(20)
     applymovement(LOCALID_PLAYER, moves(walk_down*6))//13,12
     waitmovement
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}......"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}......"))
     closemessage
     applymovement(A_CORAL, walkup) //13,12
     applymovement(LOCALID_PLAYER, walkup)//13,11
     waitmovement
     delay(20)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}Kirijo.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Yes, Sanada-kun?"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Kirijo.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Yes, Sanada-kun?"))
     applymovement(S_CORAL, faceright)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}If you know who's behind the explosion, why didn't you say anything to the police?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}I'd prefer not getting them involved.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}What?\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Besides, I doubt they'd be any help, even if they knew.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}If you know who's behind the explosion, why didn't you say anything to the police?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}I'd prefer not getting them involved.\p
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}What?\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Besides, I doubt they'd be any help, even if they knew.\p
     Otherwise I wouldn't be here, asking you two to accompany me on this journey.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}But- why?\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SERIOUS}Corruption shit or something like that?"))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}But- why?\p
+    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Corruption or something like that?"))
     closemessage
     playse(SE_PIN)
-    applymovement(M_CORAL, moves(emote_exclamation_mark, face_left))
+    applymovement(M_CORAL, faceleft)
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}Aragaki-kun, language.\p
-    {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_DOUBT}Tch."))
-    applymovement(S_CORAL, faceleft)
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Exactly."))
     delay(4)
     applymovement(M_CORAL, facedown)
     delay(30)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SERIOUS}But indeed.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Indeed.\p
     The illegal experiments have already proceeded to the state of producing successful prototypes.\p
     Why do you think they haven't already been caught nor stopped?\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}......"))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}......"))
     closemessage
     delay(30)
-    msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}... But Kurosawa-san was really kind and tried really hard to help me and Shinji."))
-    applymovement(S_CORAL, faceright)
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_PENSIVE}... But Kurosawa-san has always been really kind and willingly helped us."))
     delay(20)
-    msgbox(format("{SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_NORMAL}Not all cops are the same.\p
-    I guess he also has a battle he's fighting on his own.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SAD}......"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Not all cops are the same.\p
+    I guess he also has a battle he's fighting on his own."))
+    applymovement(M_CORAL, moves(emote_pensive))
+    applymovement(A_CORAL, moves(emote_pensive))
+    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_PENSIVE}......"))
     closemessage
     delay(30)
     playse(SE_RG_SS_ANNE_HORN)
@@ -491,7 +506,7 @@ script Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp 
     delay(4)
     applymovement(S_CORAL, faceright)
     waitmovement
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}I suppose the ship is ready for boarding.\l
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I suppose the ship is ready for boarding.\l
     Let's move out."))
     closemessage
     applymovement(M_CORAL, walkdown)
@@ -736,7 +751,7 @@ script Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe {
     waitmovement
     setspeaker("Ikumi")
     msgbox(format("Thank you so much for saving my family back there.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}You're welcome, Ikumi-san.\n
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}You're welcome, Ikumi-san.\n
     We're glad that Misa was found safely."))
     setspeaker("Ikumi")
     msgbox(format("{DESTROY_MUGSHOT}Indeed, indeed."))
@@ -759,7 +774,7 @@ script Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe {
     msgbox(format("Now I have to return the Growlithe to the policeman.\p
     Please make sure to come by my house later. I want to give you all something.\p
     Misa and Wooper would also be really happy to see you.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}We will!"))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}We will!"))
     closemessage
     applymovement(28, walkinplacedown)
     waitmovement

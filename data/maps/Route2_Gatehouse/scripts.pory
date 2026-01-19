@@ -64,8 +64,8 @@ script Route2_Gatehouse_Eventscript_KidF {
     setspeaker("Ame")
     if (flag(FLAG_RECEIVED_EXP_CANDIES_ROUTE2_GATEHOUSE) == FALSE){
         msgbox(format("Hello, gorgeous sister! I like your hair!\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}!{PAUSE 60}
-        {CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}My, thank you, little kid. I like your eyes too."))
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}!{PAUSE 60}
+        {CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}My, thank you, little kid. I like your eyes too."))
         setspeaker("Ame")
         msgbox(format("{DESTROY_MUGSHOT}Hehe, thank you. You can have these candies!"))
         closemessage
@@ -80,18 +80,18 @@ script Route2_Gatehouse_Eventscript_KidF {
     }
     elif (var(VAR_TEMP_0) == 1){
         msgbox(format("Hello, grandpa!\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}M-Me? Grandpa???\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}Hey, little girl. I'm still 16!"))
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}M-Me? Grandpa???\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Hey, little girl. I'm still 16!"))
         setspeaker("Ame")
         msgbox(format("{DESTROY_MUGSHOT}Oh... Then why is your hair gray like my grandpa's?\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}I- uh......{PAUSE 60}\n
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}Psst, Shinji, why is my hair gray?\p
-        {SPEAKER NAME_SHINJIRO}{CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_SURPRISED}How the f-{PAUSE 60}
-        {CREATE_MUGSHOT MUGSHOT_SHINJIRO EMOTE_GEEZ}(How should I know!? It probably has something to do with genes?)\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SERIOUS}I believe it has something to do with genes."))
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}I- uh......{PAUSE 60}\n
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}Psst, Shinji, why is my hair gray?\p
+        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}How the f-{PAUSE 60}
+        {CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}(How should I know!? It probably has something to do with genes?)\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}I believe it has something to do with genes."))
         setspeaker("Ame")
         msgbox(format("{DESTROY_MUGSHOT}Oh, I see...\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_GEEZ}Sigh........."))
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_GEEZ}Sigh........."))
         closemessage
         setvar(VAR_TEMP_0, 2)
         release

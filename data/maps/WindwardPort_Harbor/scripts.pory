@@ -161,10 +161,10 @@ script WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab {
     delay(4)
     applymove(S_WP, moves(walk_down, face_left))
     delay(20)
-    msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}We're in Windward Port at last.\p
-    {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Let's visit my personal lab to pick up our package.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}We're in Windward Port at last.\p
+    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Let's visit my personal lab to pick up our package.\p
     It's the house with the tall red roof at the south of the city.\p
-    {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}Sure."))
+    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Sure."))
     closemessage
     delay(20)
     clearflag(FLAG_SPAWN_INVISIBLE)
@@ -316,12 +316,12 @@ script WindwardPort_Harbor_Eventscript_StartQuestGhosBoy {
     closemessage
     checkplayergender
     if (var(VAR_RESULT) == MALE){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}What's wrong, little boy?\nWhy are you here alone?"))
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}What's wrong, little boy?\nWhy are you here alone?"))
         setspeaker("Yamaki")
         msgbox(format("{DESTROY_MUGSHOT}No one wants to play with me...\p
         Will you play with me, mister?"), MSGBOX_YESNO)
         if(var(VAR_RESULT)){
-            msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}Sure! Just for a little while, though.\p
+            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Sure! Just for a little while, though.\p
             After that you gotta go home, alright?"))
             closemessage
             goto(WindwardPort_Harbor_Eventscript_StartHideAndSeek)
@@ -331,12 +331,12 @@ script WindwardPort_Harbor_Eventscript_StartQuestGhosBoy {
         }
     }
     else{
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}Why are you crying? Are you lost?"))
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Why are you crying? Are you lost?"))
         setspeaker("Yamaki")
         msgbox(format("{DESTROY_MUGSHOT}No one wants to play with me...\p
         Will you play with me, miss?"), MSGBOX_YESNO)
         if(var(VAR_RESULT)){
-            msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}I don't see why not.\p
+            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I don't see why not.\p
             But promise me you'll go home after we're done playing?"))
             setspeaker("Yamaki")
             msgbox(format("{DESTROY_MUGSHOT}Promise!"))
@@ -405,15 +405,15 @@ script WindwardPort_Harbor_Eventscript_FoundGhostBoy1 {
     applymoveplayer(emoteexclamation)
     checkplayergender
     if(var(VAR_RESULT) == MALE){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(Did he just vanish??)\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_STRUGGLED}(Maybe I'm getting tired. It's pretty late-)\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(Wait! Since when the sun's out??)"))
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}(Did he just vanish??)\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}(Maybe I'm getting tired. It's pretty late-)\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}(Wait! Since when the sun's out??)"))
         closemessage
     }
     else{
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(Did my eyes play tricks on me? He just vanished.)\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_STRUGGLED}(Perhaps I do need to go rest. It's late after all-)\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(Wait, it's already morning?)"))
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}(Did my eyes play tricks on me? He just vanished.)\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}(Perhaps I do need to go rest. It's late after all-)\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}(Wait, it's already morning?)"))
         closemessage
     }
     clearflag(FLAG_HIDE_QUEST_ICON)
@@ -479,13 +479,13 @@ script WindwardPort_Harbor_Eventscript_TreasureHint {
 script WindwardPort_Harbor_Eventscript_FoundTreasure {
     checkplayergender
     if(var(VAR_RESULT) == MALE){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}It's this one, right?"))
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}It's this one, right?"))
         setspeaker("Yamaki")
         msgbox(format("{DESTROY_MUGSHOT}Woah! You found it!\p
         You're really good at games, mister!"))
     }
     else{
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}Is this the right one?"))
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Is this the right one?"))
         msgbox(format("{DESTROY_MUGSHOT}Woah! You found it!\p
         You're really good at games, miss!"))
     }
@@ -508,13 +508,13 @@ script WindwardPort_Harbor_Eventscript_FoundTreasure {
     applymoveplayer(emoteexclamation)
     checkplayergender
     if(var(VAR_RESULT) == MALE){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED}(I swear he vanished into thin air again.)\p
-        {SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(What a weird boy.)"))
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}(I swear he vanished into thin air again.)\p
+        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(What a weird boy.)"))
         closemessage
     }
     else{
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SURPRISED}(He just vanished again.)\p
-        {SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(That's... quite weird.)"))
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}(He just vanished again.)\p
+        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(That's... quite weird.)"))
         closemessage
     }
     clearflag(FLAG_HIDE_QUEST_ICON)
@@ -663,11 +663,11 @@ script WindwardPort_Harbor_Eventscript_QuizFinished {
     Oh right, I haven't learned your name. If you don't mind, can I know it?"))
     checkplayergender
     if (var(VAR_RESULT) == MALE){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SMILE}I'm Akihiko!\p
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}I'm Akihiko!\p
         Let's play again next time, Yamaki."))
     }
     else{
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_SMILE}You can call me Mitsuru.\p
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}You can call me Mitsuru.\p
         We should play again next time, Yamaki."))
     }
     playse(SE_SHINY)
@@ -687,12 +687,12 @@ script WindwardPort_Harbor_Eventscript_QuizFinished {
     applymoveplayer(emoteexclamation)
     checkplayergender
     if(var(VAR_RESULT) == MALE){
-        msgbox(format("{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL}(He vanished again...)\p
+        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(He vanished again...)\p
         (Wait a minute... Since when did I learn that his name was Yamaki?)"))
         closemessage
     }
     else{
-        msgbox(format("{SPEAKER NAME_MITSURU}{CREATE_MUGSHOT MUGSHOT_MITSURU EMOTE_NORMAL}(He vanished...)\p
+        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(He vanished...)\p
         (Wait... How did I know his name was Yamaki? He never told me, didn't he?)"))
         closemessage
     }

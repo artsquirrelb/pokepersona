@@ -77,12 +77,12 @@ TrashcanEmpty::
 
 Girls_Hallway2F_Text_0:
 # 5 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} It's the way to the girls' hallway. I\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL} It's the way to the girls' hallway. I\n"
 	.string "have no business there right now.$"
 
 Restroom2F_Text_0:
 # 13 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} It's the restroom. I'm good for now.$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL} It's the restroom. I'm good for now.$"
 
 BOY_1_2F_Text_0:
 # 22 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
@@ -92,7 +92,7 @@ BOY_1_2F_Text_1:
 # 23 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	.string "I wish the orphanage let us have\n"
 	.string "Pokémon.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_NORMAL} I do too but I guess it'll be harder for\n"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL} I do too but I guess it'll be harder for\n"
 	.string "the staff.\p"
 	.string "They're already busy enough.$"
 
@@ -105,12 +105,12 @@ BOY_2_2F_Text_1:
 	.string "Few days ago I saw a Pawmi with a\n"
 	.string "different color in the woods.\p"
 	.string "It's neither orange yellow nor pink.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_SURPRISED} What color was it then?$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED} What color was it then?$"
 
 BOY_2_2F_Text_2:
 # 42 "data/maps/SunshineOrphanage2FHallway/scripts.pory"
 	.string "Hehe, it's a secret.\p"
-	.string "{SPEAKER NAME_AKIHIKO}{CREATE_MUGSHOT MUGSHOT_AKIHIKO EMOTE_DOUBT} ...$"
+	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT} ...$"
 
 BOY_2_2F_Text_3:
 # 46 "data/maps/SunshineOrphanage2FHallway/scripts.pory"

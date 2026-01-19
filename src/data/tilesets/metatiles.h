@@ -276,3 +276,6 @@ const u16 gMetatileAttributes_Coralport_PoliceStation[] = INCBIN_U16("data/tiles
 
 const u16 gMetatiles_WindwardPort[] = INCBIN_U16("data/tilesets/secondary/windward_port/metatiles.bin");
 const u16 gMetatileAttributes_WindwardPort[] = INCBIN_U16("data/tilesets/secondary/windward_port/metatile_attributes.bin");
+
+const u16 gMetatiles_MayoidosLab[] = INCBIN_U16("data/tilesets/secondary/mayoidos_lab/metatiles.bin");
+const u16 gMetatileAttributes_MayoidosLab[] = INCBIN_U16("data/tilesets/secondary/mayoidos_lab/metatile_attributes.bin");

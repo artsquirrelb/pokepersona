@@ -146,6 +146,9 @@ static u16 GetPreEvolution(u16 species)
     // Search all species to find what evolves into this species
     for (i = 1; i < NUM_SPECIES; i++)
     {
+        if (!IsSpeciesEnabled(i))
+            continue;
+        
         const struct Evolution *evolutions = GetSpeciesEvolutions(i);
         if (evolutions == NULL)
             continue;
@@ -168,6 +171,9 @@ static u8 GetEvolutionLevelForSpecies(u16 species)
     // Find what evolves into this species
     for (i = 1; i < NUM_SPECIES; i++)
     {
+        if (!IsSpeciesEnabled(i))
+            continue;
+        
         const struct Evolution *evolutions = GetSpeciesEvolutions(i);
         if (evolutions == NULL)
             continue;
@@ -194,6 +200,9 @@ static bool8 IsSpeciesLegalAtLevel(u16 species, u8 level)
     #if B_SCALING_USE_OVERRIDES
     const struct EvolutionOverride *override;
 
+    if (!IsSpeciesEnabled(species))
+        return FALSE;
+    
     // Check evolution overrides first
     override = GetEvolutionOverride(species);
     if (override != NULL)
@@ -230,7 +239,9 @@ static bool8 IsSpeciesLegalAtLevel(u16 species, u8 level)
 const struct EvolutionOverride *GetEvolutionOverride(u16 species)
 {
     u32 i;
-
+    if (!IsSpeciesEnabled(species))
+        return NULL;
+    
     for (i = 0; gEvolutionOverrides[i].species != SPECIES_NONE; i++)
     {
         if (gEvolutionOverrides[i].species == species)
@@ -241,7 +252,7 @@ const struct EvolutionOverride *GetEvolutionOverride(u16 species)
 }
 
 u16 ValidateSpeciesForLevel(u16 species, u8 targetLevel, bool8 manageEvolutions)
-{
+{   
     if (!manageEvolutions)
         return species;
 

@@ -5863,10 +5863,10 @@ void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task)
 
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     enum Item item = gSpecialVar_ItemId;
-    tItemEffect = GetItemEffectType(gSpecialVar_ItemId);
+    tItemEffect = GetItemEffectType(item);
     u16 friendship = GetMonData(mon, MON_DATA_FRIENDSHIP);
     u16 ev = ItemEffectToMonEv(mon, tItemEffect);
-    tQuantityInBag = CountTotalItemQuantityInBag(gSpecialVar_ItemId);
+    tQuantityInBag = CountTotalItemQuantityInBag(item);
     tItemCount = 1;
 
     if (friendship == MAX_FRIENDSHIP && ev == 0)

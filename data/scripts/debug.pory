@@ -800,3 +800,12 @@ script Debug_CheatStart {
 	release
 	end
 }
+
+script Debug_EventScript_GivePokerus{
+	special (ChoosePartyMon)
+	waitstate
+	callnative (DebugNative_Party_SetPokerus)
+	releaseall
+	end
+}
+	

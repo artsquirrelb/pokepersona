@@ -165,7 +165,7 @@ static const u8 sFigyBerryLongDesc[]      = _("A hold item that restores HP but\
 static const u8 sBerryIngredientLongDesc[]      = _("Can be ground up into a powder as\n"
                                                     "an ingredient for medicine.");
 
-const struct Item gItemsInfo[] =
+const struct ItemInfo gItemsInfo[] =
 {
     [ITEM_NONE] =
     {
@@ -12447,7 +12447,7 @@ const struct Item gItemsInfo[] =
         .description = COMPOUND_STRING(
             "Raises the Defense of Ice\n"
             "type {PKMN} for 5 turns."),
-        #else
+    #else
         .description = COMPOUND_STRING(
             "Creates a hailstorm\n"
             "that damages all\n"
@@ -16862,7 +16862,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_CampGears,
     },
     
-    [ITEM_OUTFIT_BOX] =
+    /*[ITEM_OUTFIT_BOX] =
     {
         .name = ITEM_NAME("Outfit Box"),
         .pluralName = ITEM_PLURAL_NAME("Outfit Box"),
@@ -16877,7 +16877,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_OutfitBox,
 	    .iconPic = gItemIcon_OutfitBox,
 	    .iconPalette = gItemIconPalette_OutfitBox,
-    },
+    },*/
 
     [ITEM_CANDY_JAR] =
     {

@@ -28,6 +28,7 @@
 #include "metatile_behavior.h"
 #include "move.h"
 #include "overworld.h"
+#include "overworldhud.h"
 #include "palette.h"
 #include "party_menu.h"
 #include "pokedex.h"
@@ -136,7 +137,8 @@ EWRAM_DATA static struct DexNavSearch *sDexNavSearchDataPtr = NULL;
 EWRAM_DATA static struct DexNavGUI *sDexNavUiDataPtr = NULL;
 EWRAM_DATA static u8 *sBg1TilemapBuffer = NULL;
 EWRAM_DATA u16 gDexNavSpecies = SPECIES_NONE;
-
+static EWRAM_DATA u8    spriteIdData[LAND_WILD_COUNT] = {};
+static EWRAM_DATA u16   spriteIdPalette[LAND_WILD_COUNT] = {};
 //// Function Declarations
 //GUI
 static void Task_DexNavWaitFadeIn(u8 taskId);
@@ -182,22 +184,22 @@ static const u32 sHiddenMonIconGfx[] = INCBIN_U32("graphics/dexnav/hidden.4bpp.s
 // strings
 static const u8 sText_DexNav_NoInfo[] = _("--------");
 static const u8 sText_DexNav_CaptureToSee[] = _("Capture first!");
-static const u8 sText_DexNav_PressRToRegister[] = _("R to Register!");
+static const u8 sText_DexNav_PressRToRegister[] = _("R TO REGISTER!");
 static const u8 sText_DexNav_SearchForRegisteredSpecies[] = _("Search {STR_VAR_1}");
 static const u8 sText_DexNav_NotFoundHere[] = _("This Pokémon cannot be found here!");
 static const u8 sText_ThreeQmarks[] = _("???");
-static const u8 sText_SearchLevel[] = _("Search {LV}. {STR_VAR_1}");
+static const u8 sText_SearchLevel[] = _("SEARCH {LV}. {STR_VAR_1}");
 static const u8 sText_MonLevel[] = _("{LV}. {STR_VAR_1}");
-static const u8 sText_EggMove[] = _("Move: {STR_VAR_1}");
+static const u8 sText_EggMove[] = _("MOVE: {STR_VAR_1}");
 static const u8 sText_HeldItem[] = _("{STR_VAR_1}");
-static const u8 sText_StartExit[] = _("{START_BUTTON} Exit");
+static const u8 sText_StartExit[] = _("{START_BUTTON} EXIT");
 static const u8 sText_DexNavChain[] = _("{NO} {STR_VAR_1}");
 static const u8 sText_DexNavChainLong[] = _("{NO}{STR_VAR_1}");
 
-static const u8 sText_ArrowLeft[] = _("{LEFT_ARROW}");
-static const u8 sText_ArrowRight[] = _("{RIGHT_ARROW}");
-static const u8 sText_ArrowUp[] = _("{UP_ARROW}");
-static const u8 sText_ArrowDown[] = _("{DOWN_ARROW}");
+static const u8 sText_ArrowLeft[] = _("{COLOR 5}{LEFT_ARROW}");
+static const u8 sText_ArrowRight[] = _("{COLOR 5}{RIGHT_ARROW}");
+static const u8 sText_ArrowUp[] = _("{COLOR 5}{UP_ARROW}");
+static const u8 sText_ArrowDown[] = _("{COLOR 5}{DOWN_ARROW}");
 
 static const struct WindowTemplate sDexNavGuiWindowTemplates[] =
 {
@@ -225,10 +227,10 @@ static const struct WindowTemplate sDexNavGuiWindowTemplates[] =
 };
 
 //gui font
-static const u8 sFontColor_Black[3] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
-static const u8 sFontColor_White[3] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};
+static const u8 sFontColor_Black[3] = {TEXT_COLOR_TRANSPARENT, 1, 0};
+static const u8 sFontColor_White[3] = {TEXT_COLOR_TRANSPARENT, 2, 0};
 //search window font
-static const u8 sSearchFontColor[3] = {0, 15, 13};
+static const u8 sSearchFontColor[3] = {0, 5, 3};
 
 static const struct OamData sNoDataIconOam =
 {
@@ -436,7 +438,7 @@ static void AddSearchWindow(u8 width)
     SetWindowTemplateFields(&template, 0, 1, y, width, 3, 14, 8);
 
     sDexNavSearchDataPtr->windowId = AddWindow(&template);
-    FillWindowPixelBuffer(sDexNavSearchDataPtr->windowId, PIXEL_FILL(1));
+    FillWindowPixelBuffer(sDexNavSearchDataPtr->windowId, PIXEL_FILL(3));
     PutWindowTilemap(sDexNavSearchDataPtr->windowId);
     CopyWindowToVram(sDexNavSearchDataPtr->windowId, 3);
 
@@ -555,12 +557,13 @@ static void RemoveDexNavWindowAndGfx(void)
     ClearStdWindowAndFrameToTransparent(sDexNavSearchDataPtr->windowId, FALSE);
     CopyWindowToVram(sDexNavSearchDataPtr->windowId, 3);
     RemoveWindow(sDexNavSearchDataPtr->windowId);
+    ShowHelpButton();
 }
 
 
-///////////////////////
-//// DEXNAV SEARCH ////
-///////////////////////
+//////////////////////
+////DEXNAV SEARCH/////
+//////////////////////
 static u8 GetPlayerDistance(s16 x, s16 y)
 {
     u16 deltaX = abs(x - (gSaveBlock1Ptr->pos.x + 7));
@@ -823,7 +826,7 @@ static void SetUpDexNavSearch(void)
         DexNavUpdateSearchWindow(sDexNavSearchDataPtr->proximity, searchLevel);
     }
 
-    gPlayerAvatar.creeping = TRUE;  //initialize as true in case mon appears beside you
+    //gPlayerAvatar.creeping = TRUE;  //initialize as true in case mon appears beside you
     sDexNavSearchDataPtr->proximity = gSprites[gPlayerAvatar.spriteId].x;
     sDexNavSearchDataPtr->startingTime = gMain.vblankCounter1;
     IncrementGameStat(GAME_STAT_DEXNAV_SCANNED);
@@ -898,7 +901,7 @@ static void DexNavUpdateDirectionArrow(void)
     const u8 *str;
     u8 windowId = sDexNavSearchDataPtr->windowId;
 
-    FillWindowPixelRect(windowId, PIXEL_FILL(1), SEARCH_ARROW_X, SEARCH_ARROW_Y, 12, 12);
+    FillWindowPixelRect(windowId, PIXEL_FILL(3), SEARCH_ARROW_X, SEARCH_ARROW_Y, 12, 12);
     if (deltaX <= 1 && deltaY <= 1)
     {
         str = gText_EmptyString2;
@@ -926,6 +929,7 @@ static void DexNavDrawIcons(void)
 {
     u16 species = sDexNavSearchDataPtr->species;
 
+    HideHelpButton();
     DrawSearchWindow(species, sDexNavSearchDataPtr->potential, FALSE);
     DrawDexNavSearchMonIcon(species, &sDexNavSearchDataPtr->iconSpriteId, GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT));
     DrawDexNavSearchHeldItem(&sDexNavSearchDataPtr->itemSpriteId);
@@ -1018,12 +1022,14 @@ static void RevealHiddenMon(void)
 
         //if not seen, hide name and whiteout mon
         DrawSearchWindow(species, sDexNavSearchDataPtr->potential, TRUE);
-        DrawDexNavSearchMonIcon(species, &sDexNavSearchDataPtr->iconSpriteId, FALSE);
+        DrawDexNavSearchMonIcon(species, &sDexNavSearchDataPtr->iconSpriteId, TRUE);
         // whiteout icon
         index = IndexOfSpritePaletteTag(gSprites[sDexNavSearchDataPtr->iconSpriteId].template->paletteTag);
         CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_ID(index)], sDexNavSearchDataPtr->palBuffer, 32);
-        TintPalette_CustomTone(sDexNavSearchDataPtr->palBuffer, 16, 510, 510, 510);
+        TintPalette_GrayScale(sDexNavSearchDataPtr->palBuffer, PLTT_SIZE_4BPP);
+        //TintPalette_CustomTone(sDexNavSearchDataPtr->palBuffer, 16, 510, 510, 510);
         LoadPalette(sDexNavSearchDataPtr->palBuffer, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP);
+        
     }
     else
     {
@@ -1059,7 +1065,7 @@ bool32 OnStep_DexNavSearch(void)
         }
     }
 
-    if (sDexNavSearchDataPtr->proximity <= CREEPING_PROXIMITY && !gPlayerAvatar.creeping && frameCount > 60)
+    /*if (sDexNavSearchDataPtr->proximity <= CREEPING_PROXIMITY && !gPlayerAvatar.creeping && frameCount > 60)
     { //should be creeping but player walks normally
         if (sDexNavSearchDataPtr->hiddenSearch)
         {
@@ -1071,14 +1077,14 @@ bool32 OnStep_DexNavSearch(void)
             EndDexNavSearchSetupScript(EventScript_MovedTooFast);
             return TRUE;
         }
-    }
+    }*/
 
-    if (sDexNavSearchDataPtr->proximity <= SNEAKING_PROXIMITY && TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH | PLAYER_AVATAR_FLAG_BIKE))
+    /*if (sDexNavSearchDataPtr->proximity <= SNEAKING_PROXIMITY && TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_DASH | PLAYER_AVATAR_FLAG_BIKE))
     { // running/biking too close
         //always do event script, even if player hasn't revealed a hidden mon. It's assumed they would be creeping towards it
         EndDexNavSearchSetupScript(EventScript_MovedTooFast);
         return TRUE;
-    }
+    }*/
 
     if (frameCount > DEXNAV_TIMEOUT * 60)
     { // player took too long
@@ -1138,7 +1144,7 @@ static void DexNavUpdateSearchWindow(u8 proximity, u8 searchLevel)
     if (sDexNavSearchDataPtr->hiddenSearch && !GetSetPokedexFlag(SpeciesToNationalPokedexNum(sDexNavSearchDataPtr->species), FLAG_GET_SEEN))
         hideName = TRUE;    //if a detector mode hidden search and player hasn't seen the mon, hide info
 
-    FillWindowPixelBuffer(sDexNavSearchDataPtr->windowId, PIXEL_FILL(1));   //clear window
+    FillWindowPixelBuffer(sDexNavSearchDataPtr->windowId, PIXEL_FILL(3));   //clear window
     AddSearchWindowText(sDexNavSearchDataPtr->species, proximity, searchLevel, hideName);
 
     DexNavUpdateDirectionArrow();
@@ -1826,6 +1832,7 @@ static void DexNavGuiFreeResources(void)
 {
     Free(sDexNavUiDataPtr);
     Free(sBg1TilemapBuffer);
+    FreeMonIconPalettes();
     FreeAllWindowBuffers();
 }
 
@@ -1901,6 +1908,8 @@ static bool8 SpeciesInArray(u16 species, u8 section)
         break;
     }
 
+
+
     return FALSE;
 }
 
@@ -1933,7 +1942,7 @@ static void DexNavLoadEncounterData(void)
         for (i = 0; i < LAND_WILD_COUNT; i++)
         {
             species = landMonsInfo->wildPokemon[i].species;
-            if (species != SPECIES_NONE && !SpeciesInArray(species, 0))
+            if (species != SPECIES_NONE && !SpeciesInArray(species, 0) && species < NUM_SPECIES)
                 sDexNavUiDataPtr->landSpecies[grassIndex++] = landMonsInfo->wildPokemon[i].species;
         }
     }
@@ -1944,7 +1953,7 @@ static void DexNavLoadEncounterData(void)
         for (i = 0; i < WATER_WILD_COUNT; i++)
         {
             species = waterMonsInfo->wildPokemon[i].species;
-            if (species != SPECIES_NONE && !SpeciesInArray(species, 1))
+            if (species != SPECIES_NONE && !SpeciesInArray(species, 1) && species < NUM_SPECIES)
                 sDexNavUiDataPtr->waterSpecies[waterIndex++] = waterMonsInfo->wildPokemon[i].species;
         }
     }
@@ -1955,20 +1964,51 @@ static void DexNavLoadEncounterData(void)
         for (i = 0; i < HIDDEN_WILD_COUNT; i++)
         {
             species = hiddenMonsInfo->wildPokemon[i].species;
-            if (species != SPECIES_NONE && !SpeciesInArray(species, 2))
+            if (species != SPECIES_NONE && !SpeciesInArray(species, 2) && species < NUM_SPECIES)
                 sDexNavUiDataPtr->hiddenSpecies[hiddenIndex++] = hiddenMonsInfo->wildPokemon[i].species;
         }
     }
-}
 
-static void TryDrawIconInSlot(u16 species, s16 x, s16 y)
+}
+/*void LoadMonIconPalettesTinted_DN(void)
 {
+    u8 i;
+    for (i = 0; i < ARRAY_COUNT(gMonIconPaletteTable); i++)
+    {
+        LoadSpritePaletteDouble(&gMonIconPaletteTable[i]);
+        TintPalette_GrayScale2(&gPlttBufferUnfaded[0x170 + i*16], 16);
+    }
+}*/
+
+static void TryDrawIconInSlot(u16 species, s16 x, s16 y, u8 i)
+{
+    //LoadMonIconPalettesTinted_DN();
+
     if (species == SPECIES_NONE || species > NUM_SPECIES)
         CreateNoDataIcon(x, y);   //'X' in slot
     else if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))
-        CreateMonIcon(SPECIES_NONE, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF); //question mark
+        //CreateMonIcon(SPECIES_NONE, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF); //question mark
+        {
+            spriteIdData[i] = CreateMonIcon(species, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF);
+            spriteIdPalette[i] = gSprites[spriteIdData[i]].oam.paletteNum;
+        }
     else
         CreateMonIcon(species, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF);
+}
+
+static void TryTintIconInSlot(u16 species, u8 i)
+{
+    
+    if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN)) 
+    {
+        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
+        gSprites[spriteIdData[i]].oam.objMode = ST_OAM_OBJ_BLEND;
+    }
+    else
+    {
+        gSprites[spriteIdData[i]].oam.objMode = ST_OAM_OBJ_NORMAL;
+    }
 }
 
 static void DrawSpeciesIcons(void)
@@ -1983,7 +2023,8 @@ static void DrawSpeciesIcons(void)
         species = sDexNavUiDataPtr->landSpecies[i];
         x = ROW_LAND_ICON_X + (24 * (i % COL_LAND_COUNT));
         y = ROW_LAND_TOP_ICON_Y + (i > COL_LAND_MAX ? 28 : 0);
-        TryDrawIconInSlot(species, x, y);
+        TryDrawIconInSlot(species, x, y, i);
+        TryTintIconInSlot(species, i);
     }
 
     for (i = 0; i < WATER_WILD_COUNT; i++)
@@ -1991,7 +2032,8 @@ static void DrawSpeciesIcons(void)
         species = sDexNavUiDataPtr->waterSpecies[i];
         x = ROW_WATER_ICON_X + 24 * i;
         y = ROW_WATER_ICON_Y;
-        TryDrawIconInSlot(species, x, y);
+        TryDrawIconInSlot(species, x, y, i);
+        TryTintIconInSlot(species, i);
     }
 
     for (i = 0; i < HIDDEN_WILD_COUNT; i++)
@@ -2000,8 +2042,9 @@ static void DrawSpeciesIcons(void)
         x = ROW_HIDDEN_ICON_X + 24 * i;
         y = ROW_HIDDEN_ICON_Y;
         if (FlagGet(DN_FLAG_DETECTOR_MODE))
-            TryDrawIconInSlot(species, x, y);
-       else if (species == SPECIES_NONE || species > NUM_SPECIES)
+            {TryDrawIconInSlot(species, x, y, i);
+            TryTintIconInSlot(species, i);}
+        else if (species == SPECIES_NONE || species > NUM_SPECIES)
             CreateNoDataIcon(x, y);
         else
             CreateMonIcon(SPECIES_NONE, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF); //question mark if detector mode inactive
@@ -2032,7 +2075,7 @@ static u16 DexNavGetSpecies(void)
     default:
         return SPECIES_NONE;
     }
-
+    
     if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))
         return SPECIES_NONE;
 
@@ -2042,6 +2085,7 @@ static u16 DexNavGetSpecies(void)
 static void SetSpriteInvisibility(u8 spriteArrayId, bool8 invisible)
 {
     gSprites[sDexNavUiDataPtr->typeIconSpriteIds[spriteArrayId]].invisible = invisible;
+    gSprites[sDexNavUiDataPtr->typeIconSpriteIds[spriteArrayId]].oam.objMode = ST_OAM_OBJ_NORMAL;
 }
 
 // different from pokemon_summary_screen
@@ -2118,7 +2162,7 @@ static void PrintCurrentSpeciesInfo(void)
     }
 
     //search level
-    if (species == SPECIES_NONE)
+    /*if (species == SPECIES_NONE)
     {
         AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, 0, SEARCH_LEVEL_Y, sFontColor_Black, 0, sText_DexNav_NoInfo);
     }
@@ -2126,7 +2170,7 @@ static void PrintCurrentSpeciesInfo(void)
     {
         ConvertIntToDecimalStringN(gStringVar4, GetSearchLevel(species), 0, 4);
         AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, 0, SEARCH_LEVEL_Y, sFontColor_Black, 0, gStringVar4);
-    }
+    }*/
 
     //hidden ability
     if (species == SPECIES_NONE)
@@ -2146,8 +2190,8 @@ static void PrintCurrentSpeciesInfo(void)
     }
 
     //current chain
-    ConvertIntToDecimalStringN(gStringVar1, gSaveBlock3Ptr->dexNavChain, STR_CONV_MODE_LEFT_ALIGN, 3);
-    AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, 0, CHAIN_BONUS_Y, sFontColor_Black, 0, gStringVar1);
+    //ConvertIntToDecimalStringN(gStringVar1, gSaveBlock3Ptr->dexNavChain, STR_CONV_MODE_LEFT_ALIGN, 3);
+    //AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, 0, CHAIN_BONUS_Y, sFontColor_Black, 0, gStringVar1);
 
     CopyWindowToVram(WINDOW_INFO, 3);
     PutWindowTilemap(WINDOW_INFO);

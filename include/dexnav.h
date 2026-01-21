@@ -31,7 +31,7 @@ enum EncounterType
 };
 
 #define COL_WATER_COUNT         5
-#define COL_LAND_COUNT          6
+#define COL_LAND_COUNT          5
 #define COL_HIDDEN_COUNT        3
 
 #define COL_WATER_MAX           (COL_WATER_COUNT - 1)
@@ -47,7 +47,7 @@ enum EncounterType
 #define SPECIES_INFO_Y          5
 #define TYPE_ICONS_Y            (SPECIES_INFO_Y + 24)
 #define SEARCH_LEVEL_Y          (TYPE_ICONS_Y + 24)
-#define HA_INFO_Y               (SEARCH_LEVEL_Y + 24)
+#define HA_INFO_Y               (SEARCH_LEVEL_Y)
 #define CHAIN_BONUS_Y           (HA_INFO_Y + 24)
 
 #define MON_LEVEL_NONEXISTENT   255 // If mon not in area GetEncounterLevel returns this to exit the search

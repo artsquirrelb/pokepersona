@@ -59,6 +59,8 @@
 #include "constants/abilities.h"
 #include "constants/rgb.h"
 #include "constants/region_map_sections.h"
+#include "constants/flags.h"
+#include "constants/vars.h"
 #include "gba/m4a_internal.h"
 
 #if DEXNAV_ENABLED
@@ -73,6 +75,8 @@ enum WindowIds
 {
     WINDOW_INFO,
     WINDOW_REGISTERED,
+    WINDOW_MAP,
+    WINDOW_ROD,
     WINDOW_COUNT,
 };
 
@@ -136,9 +140,11 @@ struct DexNavGUI
 EWRAM_DATA static struct DexNavSearch *sDexNavSearchDataPtr = NULL;
 EWRAM_DATA static struct DexNavGUI *sDexNavUiDataPtr = NULL;
 EWRAM_DATA static u8 *sBg1TilemapBuffer = NULL;
+EWRAM_DATA static u8 *sBg2TilemapBuffer = NULL;
 EWRAM_DATA u16 gDexNavSpecies = SPECIES_NONE;
-static EWRAM_DATA u8    spriteIdData[LAND_WILD_COUNT] = {};
-static EWRAM_DATA u16   spriteIdPalette[LAND_WILD_COUNT] = {};
+static EWRAM_DATA u8 spriteIdData[LAND_WILD_COUNT] = {};
+static EWRAM_DATA u16 spriteIdPalette[LAND_WILD_COUNT] = {};
+
 //// Function Declarations
 //GUI
 static void Task_DexNavWaitFadeIn(u8 taskId);
@@ -167,7 +173,10 @@ static void RevealHiddenMon(void);
 // gui image data
 static const u32 sDexNavGuiTiles[] = INCBIN_U32("graphics/dexnav/gui_tiles.4bpp.smol");
 static const u32 sDexNavGuiTilemap[] = INCBIN_U32("graphics/dexnav/gui_tilemap.bin.smolTM");
+static const u32 sDexNav_Scroll_Tilemap[] = INCBIN_U32("graphics/dexnav/scroll_tilemap.bin.smolTM");
+
 static const u32 sDexNavGuiPal[] = INCBIN_U32("graphics/dexnav/gui.gbapal");
+static const u16 sMonSilhouette_Pal[] = INCBIN_U16("graphics/dexnav/silhouette.gbapal");
 
 static const u32 sSelectionCursorGfx[] = INCBIN_U32("graphics/dexnav/cursor.4bpp.smol");
 static const u16 sSelectionCursorPal[] = INCBIN_U16("graphics/dexnav/cursor.gbapal");
@@ -184,8 +193,8 @@ static const u32 sHiddenMonIconGfx[] = INCBIN_U32("graphics/dexnav/hidden.4bpp.s
 // strings
 static const u8 sText_DexNav_NoInfo[] = _("--------");
 static const u8 sText_DexNav_CaptureToSee[] = _("Capture first!");
-static const u8 sText_DexNav_PressRToRegister[] = _("R TO REGISTER!");
-static const u8 sText_DexNav_SearchForRegisteredSpecies[] = _("Search {STR_VAR_1}");
+static const u8 sText_DexNav_None[] = _("NONE");
+static const u8 sText_DexNav_SearchForRegisteredSpecies[] = _("{STR_VAR_1}");
 static const u8 sText_DexNav_NotFoundHere[] = _("This Pokémon cannot be found here!");
 static const u8 sText_ThreeQmarks[] = _("???");
 static const u8 sText_SearchLevel[] = _("SEARCH {LV}. {STR_VAR_1}");
@@ -195,6 +204,9 @@ static const u8 sText_HeldItem[] = _("{STR_VAR_1}");
 static const u8 sText_StartExit[] = _("{START_BUTTON} EXIT");
 static const u8 sText_DexNavChain[] = _("{NO} {STR_VAR_1}");
 static const u8 sText_DexNavChainLong[] = _("{NO}{STR_VAR_1}");
+static const u8 sText_OldRod[] = _("OLD ROD");
+static const u8 sText_GoodRod[] = _("GOOD ROD");
+static const u8 sText_SuperRod[] = _("SUPER ROD");
 
 static const u8 sText_ArrowLeft[] = _("{COLOR 5}{LEFT_ARROW}");
 static const u8 sText_ArrowRight[] = _("{COLOR 5}{RIGHT_ARROW}");
@@ -206,22 +218,42 @@ static const struct WindowTemplate sDexNavGuiWindowTemplates[] =
     [WINDOW_INFO] =
     {
         .bg = 0,
-        .tilemapLeft = 21,
-        .tilemapTop = 5,
+        .tilemapLeft = 19,
+        .tilemapTop = 4,
         .width = 9,
-        .height = 15,
+        .height = 12,
         .paletteNum = 15,
         .baseBlock = 1,
     },
     [WINDOW_REGISTERED] =
     {
         .bg = 0,
-        .tilemapLeft = 4,
+        .tilemapLeft = 21,
+        .tilemapTop = 17,
+        .width = 9,
+        .height = 3,
+        .paletteNum = 15,
+        .baseBlock = 200,//magic number??
+    },
+    [WINDOW_MAP] =
+    {
+        .bg = 0,
+        .tilemapLeft = 18,
         .tilemapTop = 0,
-        .width = 26,
+        .width = 11,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 200,
+        .baseBlock = 200 + (9*3),
+    },
+    [WINDOW_ROD] =
+    {
+        .bg = 0,
+        .tilemapLeft = 11,
+        .tilemapTop = 14,
+        .width = 5,
+        .height = 3,
+        .paletteNum = 0,
+        .baseBlock = 200 + (9*3) + (11*2),
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -229,6 +261,7 @@ static const struct WindowTemplate sDexNavGuiWindowTemplates[] =
 //gui font
 static const u8 sFontColor_Black[3] = {TEXT_COLOR_TRANSPARENT, 1, 0};
 static const u8 sFontColor_White[3] = {TEXT_COLOR_TRANSPARENT, 2, 0};
+static const u8 sRodFont_Color[3] = {TEXT_COLOR_TRANSPARENT, 9, 0};//pal 0
 //search window font
 static const u8 sSearchFontColor[3] = {0, 5, 3};
 
@@ -394,6 +427,12 @@ static const struct SpriteTemplate sHiddenMonIconTemplate =
     .anims =  gDummySpriteAnimTable,
 };
 
+static const struct SpritePalette sMonSilouetteSpritePalette =
+{
+    .data = sMonSilhouette_Pal,
+    .tag = SILOUETTE_PAL_TAG,
+};
+
 // gui sprite sheets
 static const struct CompressedSpriteSheet sNoDataIconSpriteSheet = {sNoDataGfx, (32 * 32) / 2, ICON_GFX_TAG};
 static const struct CompressedSpriteSheet sCapturedAllPokemonSpriteSheet = {sCapturedAllMonsTiles, (8 * 8) / 2, CAPTURED_ALL_TAG};
@@ -469,9 +508,9 @@ static void AddSearchWindowText(u16 species, u8 proximity, u8 searchLevel, bool8
     }
 
     //level - always present
-    ConvertIntToDecimalStringN(gStringVar1, sDexNavSearchDataPtr->monLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
-    StringExpandPlaceholders(gStringVar4, sText_MonLevel);
-    AddTextPrinterParameterized3(sDexNavSearchDataPtr->windowId, FONT_SMALL, WINDOW_COL_1, 0, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
+    //ConvertIntToDecimalStringN(gStringVar1, sDexNavSearchDataPtr->monLevel, STR_CONV_MODE_LEFT_ALIGN, 3);
+    //StringExpandPlaceholders(gStringVar4, sText_MonLevel);
+    //AddTextPrinterParameterized3(sDexNavSearchDataPtr->windowId, FONT_SMALL, WINDOW_COL_1, 0, sSearchFontColor, TEXT_SKIP_DRAW, gStringVar4);
 
     if (proximity <= SNEAKING_PROXIMITY)
     {
@@ -551,6 +590,7 @@ static void RemoveDexNavWindowAndGfx(void)
     FreeSpriteTilesByTag(HIDDEN_MON_ICON_TAG);
     FreeSpriteTilesByTag(LIT_STAR_TILE_TAG);
     FreeSpritePaletteByTag(HELD_ITEM_TAG);
+    FreeSpritePaletteByTag(SILOUETTE_PAL_TAG);
     SafeFreeMonIconPalette(sDexNavSearchDataPtr->species);
 
     // remove window
@@ -862,7 +902,7 @@ static bool8 InitDexNavSearch(u32 species, u32 environment)
         return TRUE;
     }
 
-    if (sDexNavSearchDataPtr->monLevel == MON_LEVEL_NONEXISTENT || !TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 12, 12, FALSE))
+    if (sDexNavSearchDataPtr->monLevel == MON_LEVEL_NONEXISTENT || !TryStartHiddenMonFieldEffect(sDexNavSearchDataPtr->environment, 6, 6, FALSE))
     {
         DexNavSearchBail(EventScript_NotFoundNearby);
         return TRUE;
@@ -1026,8 +1066,7 @@ static void RevealHiddenMon(void)
         // whiteout icon
         index = IndexOfSpritePaletteTag(gSprites[sDexNavSearchDataPtr->iconSpriteId].template->paletteTag);
         CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_ID(index)], sDexNavSearchDataPtr->palBuffer, 32);
-        TintPalette_GrayScale(sDexNavSearchDataPtr->palBuffer, PLTT_SIZE_4BPP);
-        //TintPalette_CustomTone(sDexNavSearchDataPtr->palBuffer, 16, 510, 510, 510);
+        TintPalette_CustomTone(sDexNavSearchDataPtr->palBuffer, 16, 510, 510, 510);
         LoadPalette(sDexNavSearchDataPtr->palBuffer, OBJ_PLTT_ID(index), PLTT_SIZE_4BPP);
         
     }
@@ -1564,19 +1603,25 @@ static u8 GetEncounterLevelFromMapData(u16 species, enum EncounterType environme
 ///////////
 /// GUI ///
 ///////////
-static const struct BgTemplate sDexNavMenuBgTemplates[2] =
+static const struct BgTemplate sDexNavMenuBgTemplates[3] =
 {
     {
         .bg = 0,
         .charBaseIndex = 0,
-        .mapBaseIndex = 31,
+        .mapBaseIndex = 28,
         .priority = 0
     },
     {
         .bg = 1,
-        .charBaseIndex = 3,
-        .mapBaseIndex = 30,
+        .charBaseIndex = 2,
+        .mapBaseIndex = 29,
         .priority = 1
+    },
+    {
+        .bg = 2,
+        .charBaseIndex = 2,
+        .mapBaseIndex = 30,
+        .priority = 2
     }
 };
 
@@ -1585,6 +1630,8 @@ static void DexNav_VBlankCB(void)
     LoadOam();
     ProcessSpriteCopyRequests();
     TransferPlttBuffer();
+    ChangeBgX(2, 64, BG_COORD_SUB);
+    ChangeBgY(2, 64, BG_COORD_ADD);
 }
 
 static void DexNav_MainCB(void)
@@ -1604,15 +1651,22 @@ static bool8 DexNav_InitBgs(void)
     if (sBg1TilemapBuffer == NULL)
         return FALSE;
 
+    sBg2TilemapBuffer = Alloc(BG_SCREEN_SIZE);
+    if (sBg2TilemapBuffer == NULL)
+        return FALSE;
     memset(sBg1TilemapBuffer, 0, 0x800);
+    memset(sBg1TilemapBuffer, 0, BG_SCREEN_SIZE);
     ResetBgsAndClearDma3BusyFlags(0);
     InitBgsFromTemplates(0, sDexNavMenuBgTemplates, NELEMS(sDexNavMenuBgTemplates));
     SetBgTilemapBuffer(1, sBg1TilemapBuffer);
+    SetBgTilemapBuffer(2, sBg2TilemapBuffer);
     ScheduleBgCopyTilemapToVram(1);
+    ScheduleBgCopyTilemapToVram(2);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON);
     SetGpuReg(REG_OFFSET_BLDCNT , 0);
     ShowBg(0);
     ShowBg(1);
+    ShowBg(2);
     return TRUE;
 }
 
@@ -1622,13 +1676,14 @@ static bool8 DexNav_LoadGraphics(void)
     {
     case 0:
         ResetTempTileDataBuffers();
-        DecompressAndCopyTileDataToVram(1, sDexNavGuiTiles, 0, 0, 0);
+        DecompressAndCopyTileDataToVram(1, sDexNavGuiTiles, 128*88/2, 0, 0);
         sDexNavUiDataPtr->state++;
         break;
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
             DecompressDataWithHeaderWram(sDexNavGuiTilemap, sBg1TilemapBuffer);
+            DecompressDataWithHeaderWram(sDexNav_Scroll_Tilemap, sBg2TilemapBuffer);
             sDexNavUiDataPtr->state++;
         }
         break;
@@ -1811,13 +1866,13 @@ static void DexNavLoadCapturedAllSymbols(void)
     LoadCompressedSpriteSheetUsingHeap(&sCapturedAllPokemonSpriteSheet);
 
     if (CapturedAllLandMons(headerId))
-        CreateSprite(&sCaptureAllMonsSpriteTemplate, 152, 58, 0);
+        CreateSprite(&sCaptureAllMonsSpriteTemplate, 78, 58, 0);
 
     if (CapturedAllWaterMons(headerId))
-        CreateSprite(&sCaptureAllMonsSpriteTemplate, 139, 17, 0);
+        CreateSprite(&sCaptureAllMonsSpriteTemplate, 80, 17, 0);
 
     if (CapturedAllHiddenMons(headerId))
-        CreateSprite(&sCaptureAllMonsSpriteTemplate, 114, 123, 0);
+        CreateSprite(&sCaptureAllMonsSpriteTemplate, 34, 132, 0);
 }
 
 //#define WIN_DETAILS_TILE        0x3a3
@@ -1832,8 +1887,16 @@ static void DexNavGuiFreeResources(void)
 {
     Free(sDexNavUiDataPtr);
     Free(sBg1TilemapBuffer);
+    Free(sBg2TilemapBuffer);
     FreeMonIconPalettes();
+    FreeSpritePaletteByTag(SILOUETTE_PAL_TAG);
     FreeAllWindowBuffers();
+    /*u8 i;
+    for (i = 0; i < LAND_WILD_COUNT; i++)
+    {
+        spriteIdData[i] = 0;
+        spriteIdPalette[i] = 0;
+    }*/
 }
 
 static void CB1_InitDexNavSearch(void)
@@ -1970,45 +2033,31 @@ static void DexNavLoadEncounterData(void)
     }
 
 }
-/*void LoadMonIconPalettesTinted_DN(void)
-{
-    u8 i;
-    for (i = 0; i < ARRAY_COUNT(gMonIconPaletteTable); i++)
-    {
-        LoadSpritePaletteDouble(&gMonIconPaletteTable[i]);
-        TintPalette_GrayScale2(&gPlttBufferUnfaded[0x170 + i*16], 16);
-    }
-}*/
 
 static void TryDrawIconInSlot(u16 species, s16 x, s16 y, u8 i)
 {
-    //LoadMonIconPalettesTinted_DN();
-
     if (species == SPECIES_NONE || species > NUM_SPECIES)
         CreateNoDataIcon(x, y);   //'X' in slot
-    else if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))
-        //CreateMonIcon(SPECIES_NONE, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF); //question mark
-        {
-            spriteIdData[i] = CreateMonIcon(species, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF);
-            spriteIdPalette[i] = gSprites[spriteIdData[i]].oam.paletteNum;
-        }
+    else if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT) 
+    || !GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN))//if not caught or not seen, save spriteid and palette to array
+    {
+        spriteIdData[i] = CreateMonIcon(species, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF);
+        spriteIdPalette[i] = gSprites[spriteIdData[i]].oam.paletteNum;
+    }
     else
-        CreateMonIcon(species, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF);
+        CreateMonIcon(species, SpriteCB_MonIcon, x, y, 0, 0xFFFFFFFF);//if caught doesnt save spriteid nor palette
 }
 
+//only affect the non caught icons
 static void TryTintIconInSlot(u16 species, u8 i)
 {
-    
-    if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN)) 
-    {
-        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
-        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
-        gSprites[spriteIdData[i]].oam.objMode = ST_OAM_OBJ_BLEND;
-    }
-    else
-    {
-        gSprites[spriteIdData[i]].oam.objMode = ST_OAM_OBJ_NORMAL;
-    }
+    if (!GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_SEEN)) //if not seen, turn into silouette
+        gSprites[spriteIdData[i]].oam.paletteNum = 10;
+        
+    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(6, 8));
+    gSprites[spriteIdData[i]].oam.objMode = ST_OAM_OBJ_BLEND;
+    StartSpriteAnim(&gSprites[spriteIdData[i]], 4);//full stop
 }
 
 static void DrawSpeciesIcons(void)
@@ -2140,9 +2189,9 @@ static void PrintCurrentSpeciesInfo(void)
 
     //species name
     if (species == SPECIES_NONE)
-        AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, 0, SPECIES_INFO_Y, sFontColor_Black, 0, sText_DexNav_NoInfo);
+        AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, GetStringCenterAlignXOffset(FONT_SMALL, sText_DexNav_NoInfo, 8*9), SPECIES_INFO_Y, sFontColor_White, 0, sText_DexNav_NoInfo);
     else
-        AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, 0, SPECIES_INFO_Y, sFontColor_Black, 0, GetSpeciesName(species));
+        AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, GetStringCenterAlignXOffset(FONT_SMALL, GetSpeciesName(species), 8*9), SPECIES_INFO_Y, sFontColor_White, 0, GetSpeciesName(species));
 
     //type icon(s)
     type1 = GetSpeciesType(species, 0);
@@ -2152,13 +2201,13 @@ static void PrintCurrentSpeciesInfo(void)
 
     if (type1 == type2)
     {
-        SetTypeIconPosAndPal(type1, 186, 69, 0);
+        SetTypeIconPosAndPal(type1, 22*8 -4, TYPE_ICONS_Y, 0);
         SetSpriteInvisibility(1, TRUE);
     }
     else
     {
-        SetTypeIconPosAndPal(type1, 168, 69, 0);
-        SetTypeIconPosAndPal(type2, 168 + 33, 69, 1);
+        SetTypeIconPosAndPal(type1, 156, TYPE_ICONS_Y, 0);
+        SetTypeIconPosAndPal(type2, 156 + 34, TYPE_ICONS_Y, 1);
     }
 
     //search level
@@ -2175,23 +2224,23 @@ static void PrintCurrentSpeciesInfo(void)
     //hidden ability
     if (species == SPECIES_NONE)
     {
-        AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, 0, HA_INFO_Y, sFontColor_Black, 0, sText_DexNav_NoInfo);
+        AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, GetStringCenterAlignXOffset(FONT_SMALL, sText_DexNav_NoInfo, 8*9), HA_INFO_Y, sFontColor_White, 0, sText_DexNav_NoInfo);
     }
     else if (GetSetPokedexFlag(dexNum, FLAG_GET_CAUGHT))
     {
         if (GetSpeciesAbility(species, 2) != ABILITY_NONE)
-            AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, 0, HA_INFO_Y, sFontColor_Black, 0, gAbilitiesInfo[GetSpeciesAbility(species, 2)].name);
+            AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, GetStringCenterAlignXOffset(FONT_SMALL, gAbilitiesInfo[GetSpeciesAbility(species, 2)].name, 8*9), HA_INFO_Y, sFontColor_White, 0, gAbilitiesInfo[GetSpeciesAbility(species, 2)].name);
         else
-            AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, 0, HA_INFO_Y, sFontColor_Black, 0, gText_None);
+            AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, GetStringCenterAlignXOffset(FONT_SMALL, gText_None, 8*9), HA_INFO_Y, sFontColor_White, 0, gText_None);
     }
     else
     {
-        AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, 0, HA_INFO_Y, sFontColor_Black, 0, sText_DexNav_CaptureToSee);
+        AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, GetStringCenterAlignXOffset(FONT_SMALL, sText_DexNav_CaptureToSee, 8*9), HA_INFO_Y, sFontColor_White, 0, sText_DexNav_CaptureToSee);
     }
 
     //current chain
-    //ConvertIntToDecimalStringN(gStringVar1, gSaveBlock3Ptr->dexNavChain, STR_CONV_MODE_LEFT_ALIGN, 3);
-    //AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, 0, CHAIN_BONUS_Y, sFontColor_Black, 0, gStringVar1);
+    ConvertIntToDecimalStringN(gStringVar1, gSaveBlock3Ptr->dexNavChain, STR_CONV_MODE_LEFT_ALIGN, 3);
+    AddTextPrinterParameterized3(WINDOW_INFO, FONT_SMALL, GetStringCenterAlignXOffset(FONT_SMALL, gStringVar1, 8*9), CHAIN_BONUS_Y, sFontColor_White, 0, gStringVar1);
 
     CopyWindowToVram(WINDOW_INFO, 3);
     PutWindowTilemap(WINDOW_INFO);
@@ -2199,29 +2248,52 @@ static void PrintCurrentSpeciesInfo(void)
 
 static void PrintMapName(void)
 {
+    PutWindowTilemap(WINDOW_MAP);
     GetMapName(gStringVar3, GetCurrentRegionMapSectionId(), 0);
-    AddTextPrinterParameterized3(WINDOW_REGISTERED, FONT_NORMAL, 108 +
-                                 GetStringRightAlignXOffset(1, gStringVar3, MAP_NAME_LENGTH * GetFontAttribute(1, FONTATTR_MAX_LETTER_WIDTH)),
+    AddTextPrinterParameterized3(WINDOW_MAP, FONT_SHORT,
+                                 GetStringRightAlignXOffset(FONT_SHORT, gStringVar3, 11*8),
                                  0, sFontColor_White, 0, gStringVar3);
-    CopyWindowToVram(WINDOW_REGISTERED, 3);
+    CopyWindowToVram(WINDOW_MAP, 3);
 }
 
 static void PrintSearchableSpecies(u16 species)
 {
-    FillWindowPixelBuffer(WINDOW_REGISTERED, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
     PutWindowTilemap(WINDOW_REGISTERED);
+    FillWindowPixelBuffer(WINDOW_REGISTERED, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
     if (species == SPECIES_NONE)
     {
-        AddTextPrinterParameterized3(WINDOW_REGISTERED, FONT_NORMAL, 0, 0, sFontColor_White, TEXT_SKIP_DRAW, sText_DexNav_PressRToRegister);
+        AddTextPrinterParameterized3(WINDOW_REGISTERED, FONT_SMALL, GetStringCenterAlignXOffset(FONT_SMALL, sText_DexNav_None, 9*8), 1, sFontColor_White, TEXT_SKIP_DRAW, sText_DexNav_None);
     }
     else
     {
         StringCopy(gStringVar1, GetSpeciesName(species));
         StringExpandPlaceholders(gStringVar4, sText_DexNav_SearchForRegisteredSpecies);
-        AddTextPrinterParameterized3(WINDOW_REGISTERED, FONT_NORMAL, 0, 0, sFontColor_White, TEXT_SKIP_DRAW, gStringVar4);
+        AddTextPrinterParameterized3(WINDOW_REGISTERED, FONT_SMALL, GetStringCenterAlignXOffset(FONT_SMALL, gStringVar4, 9*8), 1, sFontColor_White, TEXT_SKIP_DRAW, gStringVar4);
     }
+    CopyWindowToVram(WINDOW_REGISTERED, 3);
+}
 
-    PrintMapName();
+static void PrintRodType(void)
+{
+    u8 type = VarGet(VAR_ROD_TYPE);
+    PutWindowTilemap(WINDOW_ROD);
+    FillWindowPixelBuffer(WINDOW_ROD, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+    if (type == ROD_OLD)
+    {
+        AddTextPrinterParameterized3(WINDOW_ROD, FONT_SMALLER, 1, 5, sRodFont_Color, TEXT_SKIP_DRAW, sText_OldRod);
+    }
+    else if (type == ROD_GOOD)
+    {
+        AddTextPrinterParameterized3(WINDOW_ROD, FONT_SMALLER, 1, 5, sRodFont_Color, TEXT_SKIP_DRAW, sText_GoodRod);
+    }
+    else if (type == ROD_SUPER)
+    {
+        AddTextPrinterParameterized3(WINDOW_ROD, FONT_SMALLER, 1, 5, sRodFont_Color, TEXT_SKIP_DRAW, sText_SuperRod);
+    }
+    else {
+        AddTextPrinterParameterized3(WINDOW_ROD, FONT_SMALLER, 1, 5, sRodFont_Color, TEXT_SKIP_DRAW, sText_DexNav_None);
+    }
+    CopyWindowToVram(WINDOW_ROD, 3);
 }
 
 static void CreateTypeIconSprites(void)
@@ -2292,6 +2364,8 @@ static bool8 DexNav_DoGfxSetup(void)
         break;
     case 7:
         PrintSearchableSpecies(VarGet(DN_VAR_SPECIES) & DEXNAV_MASK_SPECIES);
+        PrintMapName();
+        PrintRodType();
         DexNavLoadEncounterData();
         gMain.state++;
         break;
@@ -2309,6 +2383,7 @@ static bool8 DexNav_DoGfxSetup(void)
         break;
     case 10:
         LoadMonIconPalettes();
+        LoadSpritePaletteInSlot(&sMonSilouetteSpritePalette, 10);
         DrawSpeciesIcons();
         CreateSelectionCursor();
         DexNavLoadCapturedAllSymbols();
@@ -2480,10 +2555,10 @@ static void Task_DexNavMain(u8 taskId)
     }
     else if (JOY_NEW(R_BUTTON))
     {
-        // check selection is valid. Play sound if invalid
+        // check selection is valid && not already registered.
         species = DexNavGetSpecies();
 
-        if (species != SPECIES_NONE)
+        if (species != SPECIES_NONE && VarGet(DN_VAR_SPECIES) != species)
         {
             PrintSearchableSpecies(species);
             //PlaySE(SE_DEX_SEARCH);
@@ -2492,10 +2567,37 @@ static void Task_DexNavMain(u8 taskId)
             // create value to store in a var
             VarSet(DN_VAR_SPECIES, ((sDexNavUiDataPtr->environment << 14) | species));
         }
+        else if (species != SPECIES_NONE && VarGet(DN_VAR_SPECIES) == species)
+        {//if current species is already registered, unregister it
+            PlaySE(SE_POKENAV_OFF);
+            VarSet(DN_VAR_SPECIES, SPECIES_NONE);
+            PrintSearchableSpecies(SPECIES_NONE);
+        }
         else
         {
             PlaySE(SE_FAILURE);
         }
+    }
+    else if (JOY_NEW(L_BUTTON))
+    {
+        u8 RodType = VarGet(VAR_ROD_TYPE);
+        if (RodType == ROD_OLD && FlagGet(FLAG_RECEIVED_GOOD_ROD))
+        {
+            VarSet(VAR_ROD_TYPE, ROD_GOOD);
+            PlaySE(SE_SELECT);
+        }
+        else if ( RodType == ROD_GOOD && FlagGet(FLAG_RECEIVED_SUPER_ROD)){
+            VarSet(VAR_ROD_TYPE, ROD_SUPER);
+            PlaySE(SE_SELECT);
+        }
+        else if (RodType == ROD_SUPER || (RodType == ROD_GOOD && !FlagGet(FLAG_RECEIVED_SUPER_ROD))){
+            VarSet(VAR_ROD_TYPE, ROD_OLD);
+            PlaySE(SE_SELECT);
+        }
+        else{
+            PlaySE(SE_FAILURE);
+        }
+        PrintRodType();
     }
     else if (JOY_NEW(A_BUTTON))
     {

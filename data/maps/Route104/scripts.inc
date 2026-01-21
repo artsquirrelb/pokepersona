@@ -141,7 +141,7 @@ Route104_EventScript_MayAskToBattle::
 
 Route104_EventScript_BattleMay::
 	msgbox Route104_Text_MayIntro, MSGBOX_DEFAULT
-	switch VAR_STARTER_MON
+	switch VAR_ROD_TYPE
 	case 0, Route104_EventScript_BattleMayTreecko
 	case 1, Route104_EventScript_BattleMayTorchic
 	case 2, Route104_EventScript_BattleMayMudkip
@@ -213,7 +213,7 @@ Route104_EventScript_BrendanAskToBattle::
 
 Route104_EventScript_BattleBrendan::
 	msgbox Route104_Text_BrendanIntro, MSGBOX_DEFAULT
-	switch VAR_STARTER_MON
+	switch VAR_ROD_TYPE
 	case 0, Route104_EventScript_BattleBrendanTreecko
 	case 1, Route104_EventScript_BattleBrendanTorchic
 	case 2, Route104_EventScript_BattleBrendanMudkip

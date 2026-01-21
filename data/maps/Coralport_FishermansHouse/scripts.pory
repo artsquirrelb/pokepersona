@@ -60,6 +60,8 @@ script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Rewa
     Please have this as thanks!"))
     closemessage
     giveitem(ITEM_OLD_ROD)
+    setflag(FLAG_RECEIVED_OLD_ROD)
+    setvar(VAR_ROD_TYPE, 1)//1: old rod unlocked
     msgbox(format("If you need help with anything, please tell me!"))
     closemessage
     questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_FISHERMANS_DAUGHTER)

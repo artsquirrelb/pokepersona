@@ -30,6 +30,7 @@ enum {
     FONT_SHORT_NARROW,
     FONT_BW_SUMMARY_SCREEN,
     FONT_SHORT_NARROWER,
+    FONT_SMALLER,
 };
 
 // Return values for font functions

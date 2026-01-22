@@ -2,6 +2,7 @@
 #include "battle_setup.h"
 #include "battle_pike.h"
 #include "battle_pyramid.h"
+#include "dexnav.h"
 #include "event_data.h"
 #include "fieldmap.h"
 #include "fishing.h"
@@ -317,10 +318,6 @@ static u32 ChooseWildMonIndex_Fishing(u8 rod)
             wildMonIndex = 6;
         if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_6 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_7)
             wildMonIndex = 7;
-        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_7 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_8)
-            wildMonIndex = 8;
-        if (rand >= ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_8 && rand < ENCOUNTER_CHANCE_FISHING_MONS_SUPER_ROD_SLOT_9)
-            wildMonIndex = 9;
 
         if (swap)
             wildMonIndex = 14 - wildMonIndex;
@@ -949,6 +946,14 @@ void FishingWildEncounter(u8 rod)
 
         species = sWildFeebas.species;
         CreateWildMon(species, level);
+    }
+    else if(VarGet(VAR_TEMP_A) != 0 && FlagGet(FLAG_DEXNAV_FISHING))
+    { 
+        species = VarGet(VAR_TEMP_A);
+        gDexNavSpecies = species;
+        CreateWildMon(species, 10);
+        IncrementGameStat(GAME_STAT_FISHING_ENCOUNTERS);
+        BattleSetup_StartWildBattle();
     }
     else
     {

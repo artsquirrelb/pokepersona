@@ -71,7 +71,7 @@
 #define FLAG_KITOHA_NATIONAL_STATE      0x39 // 0 == kitoha, 1 == national
 #define FLAG_PREVENT_OVERWORLD_SPEEDUP  0x3A // Unused Flag
 #define FLAG_PREVENT_BOX_LINK           0x3B // Unused Flag
-#define FLAG_UNUSED_0x03C    0x3C // Unused Flag
+#define FLAG_DEXNAV_FISHING             0x3C // Unused Flag
 #define FLAG_UNUSED_0x03D    0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E    0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F    0x3F // Unused Flag

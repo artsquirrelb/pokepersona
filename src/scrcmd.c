@@ -16,6 +16,7 @@
 #include "field_door.h"
 #include "field_effect.h"
 #include "field_move.h"
+#include "fishing.h"
 #include "event_object_lock.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"

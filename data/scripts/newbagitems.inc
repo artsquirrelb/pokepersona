@@ -255,6 +255,22 @@ EventScript_AccessPokemonBoxLink_2:
 	end
 
 
+EventScript_NotFoundNearby::
+# 127 "data/scripts/newbagitems.pory"
+	goto_if_set FLAG_DEXNAV_FISHING, EventScript_NotFoundNearby_2
+# 131 "data/scripts/newbagitems.pory"
+	msgbox NotFoundNearby
+EventScript_NotFoundNearby_1:
+# 133 "data/scripts/newbagitems.pory"
+	release
+	end
+
+EventScript_NotFoundNearby_2:
+# 128 "data/scripts/newbagitems.pory"
+	msgbox EventScript_NotFoundNearby_Text_0
+	goto EventScript_NotFoundNearby_1
+
+
 EventScript_CampGears_Text_0:
 # 10 "data/scripts/newbagitems.pory"
 	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}(I can't set up a camp here.)$"
@@ -290,8 +306,18 @@ EventScript_AccessPokemonBoxLink_Text_0:
 	.string "Cannot open Pokémon Storage System\n"
 	.string "now.$"
 
+EventScript_NotFoundNearby_Text_0:
+# 128 "data/scripts/newbagitems.pory"
+	.string "Use a fishing rod to encounter the\n"
+	.string "registered species!$"
+
 ConfirmUseEscapeRope::
 # 106 "data/scripts/newbagitems.pory"
 	.string "Exiting this dungeon will advance the\n"
 	.string "time by {COLOR RED}{STR_VAR_3} hour(s){COLOR 2}.\p"
 	.string "Use Escape Rope?$"
+
+NotFoundNearby::
+# 138 "data/scripts/newbagitems.pory"
+	.string "It couldn't be found nearby.\n"
+	.string "Try looking in a different area!$"

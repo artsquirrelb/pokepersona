@@ -4,13 +4,12 @@ EventScript_StartDexNavBattle::
 	applymovement OBJ_EVENT_ID_PLAYER Common_Movement_ExclamationMark
 	waitmovement 0
 	waitse
+	delay 30
 	dowildbattle	
 	release
 	end
 
-EventScript_NotFoundNearby::
-	msgbox sText_NotFoundNearby, MSGBOX_SIGN
-	end
+
 
 EventScript_MovedTooFast::
 	msgbox sText_TryMovingSlower, MSGBOX_SIGN
@@ -27,10 +26,6 @@ EventScript_LostSignal::
 EventScript_TooDark::
 	msgbox sText_TooDark, MSGBOX_SIGN
 	end
-
-sText_NotFoundNearby:
-	.string "It couldn't be found nearby.\n"
-	.string "Try looking in a different area!$"
 
 sText_TryMovingSlower:
 	.string "The Pokémon got away!\n"

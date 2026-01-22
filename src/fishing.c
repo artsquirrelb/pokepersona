@@ -1,11 +1,13 @@
 #include "global.h"
 #include "main.h"
+#include "dexnav.h"
 #include "event_object_movement.h"
 #include "fieldmap.h"
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
 #include "menu.h"
 #include "metatile_behavior.h"
+#include "overworldhud.h"
 #include "random.h"
 #include "script.h"
 #include "strings.h"
@@ -155,6 +157,7 @@ static void Task_Fishing(u8 taskId)
 static bool32 Fishing_Init(struct Task *task)
 {
     LockPlayerFieldControls();
+    HideHelpButton();
     gPlayerAvatar.preventStep = TRUE;
     task->tStep = FISHING_GET_ROD_OUT;
     return FALSE;
@@ -247,7 +250,7 @@ static bool32 Fishing_ShowDots(struct Task *task)
             }
             else
             {
-                AddTextPrinterParameterized(0, FONT_NORMAL, dot, task->tNumDots * 8, 1, 0, NULL);
+                AddTextPrinterParameterizedCustom(0, FONT_NORMAL, dot, task->tNumDots * 8, 1, 0, NULL, 2, 0, 0);
                 task->tNumDots++;
             }
         }
@@ -289,7 +292,7 @@ static bool32 Fishing_CheckForBite(struct Task *task)
 static bool32 Fishing_GotBite(struct Task *task)
 {
     AlignFishingAnimationFrames();
-    AddTextPrinterParameterized(0, FONT_NORMAL, sText_OhABite, 0, 17, 0, NULL);
+    AddTextPrinterParameterizedCustom(0, FONT_NORMAL, sText_OhABite, 0, 17, 0, NULL, 2, 0, 0);
     task->tStep = FISHING_CHANGE_MINIGAME;
     task->tFrameCounter = 0;
     return FALSE;
@@ -369,7 +372,7 @@ static bool32 Fishing_MonOnHook(struct Task *task)
 {
     AlignFishingAnimationFrames();
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
-    AddTextPrinterParameterized2(0, FONT_NORMAL, sText_PokemonOnHook, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    AddTextPrinterParameterized2(0, FONT_NORMAL, sText_PokemonOnHook, 1, 0, TEXT_COLOR_DARK_GRAY, 0, 0);
     task->tStep = FISHING_START_ENCOUNTER;
     task->tFrameCounter = 0;
     return FALSE;
@@ -417,7 +420,7 @@ static bool32 Fishing_NotEvenNibble(struct Task *task)
     AlignFishingAnimationFrames();
     StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingNoCatchDirectionAnimNum(GetPlayerFacingDirection()));
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
-    AddTextPrinterParameterized2(0, FONT_NORMAL, sText_NotEvenANibble, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    AddTextPrinterParameterized2(0, FONT_NORMAL, sText_NotEvenANibble, 1, 0, TEXT_COLOR_DARK_GRAY, 0, 0);
     task->tStep = FISHING_NO_MON;
     return TRUE;
 }
@@ -428,7 +431,7 @@ static bool32 Fishing_GotAway(struct Task *task)
     AlignFishingAnimationFrames();
     StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], GetFishingNoCatchDirectionAnimNum(GetPlayerFacingDirection()));
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
-    AddTextPrinterParameterized2(0, FONT_NORMAL, sText_ItGotAway, 1, 0, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+    AddTextPrinterParameterized2(0, FONT_NORMAL, sText_ItGotAway, 1, 0, TEXT_COLOR_DARK_GRAY, 0, 0);
     task->tStep = FISHING_NO_MON;
     return TRUE;
 }

@@ -695,6 +695,7 @@ extern const u8 EventScript_PokemonGotAway[];
 extern const u8 EventScript_LostSignal[];
 extern const u8 EventScript_TooDark[];
 extern const u8 EventScript_MovedTooFast[];
+extern const u8 EventScript_StartDexNavFishingBattle[];
 
 // Auto run
 extern const u8 EventScript_DisableAutoRun[];

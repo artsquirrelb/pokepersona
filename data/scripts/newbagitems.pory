@@ -124,12 +124,7 @@ script EventScript_AccessPokemonBoxLink
 
 script EventScript_NotFoundNearby
 {
-    if (flag(FLAG_DEXNAV_FISHING)){
-        msgbox(format("Use a fishing rod to encounter the registered species!"))
-    }
-    else{
-        msgbox (NotFoundNearby)
-    }
+    msgbox (NotFoundNearby)
 	release
 	end
     

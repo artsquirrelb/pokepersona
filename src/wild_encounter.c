@@ -30,6 +30,7 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/weather.h"
+#include "constants/flags.h"
 #include "level_scaling.h"
 
 extern const u8 EventScript_SprayWoreOff[];
@@ -943,17 +944,8 @@ void FishingWildEncounter(u8 rod)
     if (CheckFeebas() == TRUE)
     {
         u8 level = ChooseWildMonLevel(&sWildFeebas, 0, WILD_AREA_FISHING);
-
         species = sWildFeebas.species;
         CreateWildMon(species, level);
-    }
-    else if(VarGet(VAR_TEMP_A) != 0 && FlagGet(FLAG_DEXNAV_FISHING))
-    { 
-        species = VarGet(VAR_TEMP_A);
-        gDexNavSpecies = species;
-        CreateWildMon(species, 10);
-        IncrementGameStat(GAME_STAT_FISHING_ENCOUNTERS);
-        BattleSetup_StartWildBattle();
     }
     else
     {
@@ -961,7 +953,6 @@ void FishingWildEncounter(u8 rod)
         timeOfDay = GetTimeOfDayForEncounters(headerId, WILD_AREA_FISHING);
         species = GenerateFishingWildMon(gWildMonHeaders[headerId].encounterTypes[timeOfDay].fishingMonsInfo, rod);
     }
-
     IncrementGameStat(GAME_STAT_FISHING_ENCOUNTERS);
     SetPokemonAnglerSpecies(species);
     BattleSetup_StartWildBattle();

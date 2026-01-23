@@ -4,15 +4,12 @@ EventScript_StartDexNavBattle::
 	applymovement OBJ_EVENT_ID_PLAYER Common_Movement_ExclamationMark
 	waitmovement 0
 	waitse
-	delay 30
 	dowildbattle	
 	release
 	end
 
-
-
 EventScript_MovedTooFast::
-	msgbox sText_TryMovingSlower, MSGBOX_SIGN
+	msgbox sText_TryUsingRod, MSGBOX_SIGN
 	end
 
 EventScript_PokemonGotAway::
@@ -27,9 +24,9 @@ EventScript_TooDark::
 	msgbox sText_TooDark, MSGBOX_SIGN
 	end
 
-sText_TryMovingSlower:
+sText_TryUsingRod:
 	.string "The Pokémon got away!\n"
-	.string "Try moving more slowly.$"
+	.string "Try using a fishing rod!$"
 
 sText_PokemonGotAway:
 	.string "The Pokémon got away!$"

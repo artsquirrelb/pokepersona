@@ -31,8 +31,8 @@ enum EncounterType
 {
     ENCOUNTER_TYPE_LAND,
     ENCOUNTER_TYPE_WATER,
-    ENCOUNTER_TYPE_FISHING,
-    ENCOUNTER_TYPE_HIDDEN // Get from species
+    ENCOUNTER_TYPE_HIDDEN, // Get from species
+    ENCOUNTER_TYPE_FISHING
 };
 
 #define COL_WATER_COUNT         5
@@ -53,7 +53,7 @@ enum EncounterType
 
 #define SPECIES_INFO_Y          2
 #define TYPE_ICONS_Y            (SPECIES_INFO_Y + 47)
-#define SEARCH_LEVEL_Y          0//unused
+#define SEARCH_LEVEL_Y          CHAIN_BONUS_Y
 #define HA_INFO_Y               (TYPE_ICONS_Y)
 #define CHAIN_BONUS_Y           (HA_INFO_Y + 24)
 
@@ -86,7 +86,7 @@ bool32 TryFindHiddenPokemon(void);
 u32 CalculateDexNavShinyRolls(void);
 void IncrementDexNavChain(void);
 bool32 OnStep_DexNavSearch(void);
-//void StartDexNavFishingBattle(void);
+void CreateDexNavFishingMon (void);
 
 extern u16 gDexNavSpecies;
 

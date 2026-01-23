@@ -1445,7 +1445,6 @@ static void DoCleanUpAndStartSaveMenu(void) {
     FreezeObjectEvents();
     LoadUserWindowBorderGfx(sSaveInfoWindowId, STD_WINDOW_BASE_TILE_NUM, BG_PLTT_ID(STD_WINDOW_PALETTE_NUM));
     LockPlayerFieldControls();
-    FlagClear(FLAG_HIDE_HELP_BUTTON);
     DestroyTask(FindTaskIdByFunc(Task_HeatStartMenu_HandleMainInput));
     InitSave();
     CreateTask(Task_HandleSave, 0x80);

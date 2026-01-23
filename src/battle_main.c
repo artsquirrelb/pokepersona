@@ -5678,7 +5678,7 @@ static void FreeResetData_ReturnToOvOrDoEvolutions(void)
             TryIncrementSpeciesSearchLevel();
         }
         else
-            gSaveBlock3Ptr->dexNavChain = 0;
+            gSaveBlock1Ptr->dexNavChain = 0;
 
         ClearCurrentTrainerWantRematchVsSeeker();
         gDexNavSpecies = SPECIES_NONE;

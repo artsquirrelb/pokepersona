@@ -95,7 +95,7 @@ LilycoveCity_LilycoveMuseum_2F_Movement_FaceExhibitHall:
 
 LilycoveCity_LilycoveMuseum_2F_EventScript_Curator::
 	lockall
-	goto_if_set FLAG_RECEIVED_GLASS_ORNAMENT, LilycoveCity_LilycoveMuseum_2F_EventScript_ReceivedGlassOrnament
+	goto_if_set FLAG_RECEIVED_TM_CHILLING_WATER, LilycoveCity_LilycoveMuseum_2F_EventScript_ReceivedGlassOrnament
 	specialvar VAR_0x8004, CountPlayerMuseumPaintings
 	switch VAR_0x8004
 	case 1, LilycoveCity_LilycoveMuseum_2F_EventScript_AddedPainting
@@ -124,7 +124,7 @@ LilycoveCity_LilycoveMuseum_2F_EventScript_GiveGlassOrnament::
 	msgbox LilycoveCity_LilycoveMuseum_2F_Text_TokenOfGratitude, MSGBOX_DEFAULT
 	givedecoration DECOR_GLASS_ORNAMENT
 	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_LilycoveMuseum_2F_EventScript_NoRoomForGlassOrnament
-	setflag FLAG_RECEIVED_GLASS_ORNAMENT
+	setflag FLAG_RECEIVED_TM_CHILLING_WATER
 	closemessage
 	releaseall
 	end

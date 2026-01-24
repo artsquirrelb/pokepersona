@@ -3,32 +3,42 @@ mapscripts SunshineTownRiverbank_MapScripts {
         VAR_AKIHIKOS_INTRO_STATE, 19: SunshineTownRiverbank_Eventscript_OnWarp19
         VAR_AKIHIKOS_INTRO_STATE, 20: SunshineTownRiverbank_Eventscript_OnWarp20
     ]
-    MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_AKIHIKOS_INTRO_STATE) < 19) {
-            setflag(FLAG_TEMP_1)
-            setflag(FLAG_TEMP_2)
-            setflag(FLAG_TEMP_3)
-        }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 19 || var(VAR_AKIHIKOS_INTRO_STATE) == 20) {
-            playbgm(MUS_NONE, TRUE)
-            setflag(FLAG_SPAWN_INVISIBLE)
-            
-        }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 21){
-            setflag(FLAG_SPAWN_INVISIBLE)
-            setobjectxyperm(4, 16, 0)
-            playbgm(MUS_NONE, TRUE)
-        }
-        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 22){
-            setflag(FLAG_TEMP_1)
-            setflag(FLAG_TEMP_2)
-            setflag(FLAG_TEMP_3)
-        }
-    }
+    MAP_SCRIPT_ON_TRANSITION: SunshineTownRiverbank_MapScripts_OnTransition
+
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 19: SunshineTownRiverbank_Eventscript_OnFrame19
         VAR_AKIHIKOS_INTRO_STATE, 21: SunshineTownRiverbank_Eventscript_OnFrame21
     ]
+}
+
+script SunshineTownRiverbank_MapScripts_OnTransition {
+    setflag(FLAG_TEMP_4)
+    if (var(VAR_AKIHIKOS_INTRO_STATE) < 19) {
+        setflag(FLAG_TEMP_1)
+        setflag(FLAG_TEMP_2)
+        setflag(FLAG_TEMP_3)
+    }
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 19 || var(VAR_AKIHIKOS_INTRO_STATE) == 20) {
+        playbgm(MUS_NONE, TRUE)
+        setflag(FLAG_SPAWN_INVISIBLE)
+            
+    }
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == 21){
+        setflag(FLAG_SPAWN_INVISIBLE)
+        setobjectxyperm(4, 16, 0)
+        playbgm(MUS_NONE, TRUE)
+    }
+    if(var(VAR_AKIHIKOS_INTRO_STATE) >= 22){
+        setflag(FLAG_TEMP_1)
+        setflag(FLAG_TEMP_2)
+        setflag(FLAG_TEMP_3)
+    }
+    gettimeofday
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_3)
+    if (!var(VAR_RESULT) && var(VAR_0x8000) == 3)
+    {
+        clearflag(FLAG_TEMP_4)
+    }
 }
 script SunshineTownRiverbank_Eventscript_OnWarp19{
     hideobjectat(4, MAP_SUNSHINE_TOWN_RIVERBANK)
@@ -116,4 +126,48 @@ movement KurosawaFindingAkiShinji {
     face_down
     delay_16
     delay_16
+}
+
+script SunshineTownRiverbank_Eventscript_Squirtle {
+    lock
+    faceplayer
+    setflag(FLAG_NO_CATCHING)
+    setflag(FLAG_NO_RUNNING)
+    createmon(1, 0, SPECIES_SQUIRTLE, 255, shinyMode = SHINY_MODE_ALWAYS, move1 = MOVE_BUBBLE_BEAM, move2 = MOVE_ICE_BEAM, move3 = MOVE_FAKE_OUT, move4 = MOVE_YAWN, spAtkEv = 100, spAtkIv = 31, speedEv = 100, speedIv = 31)
+    dowildbattle
+    clearflag(FLAG_NO_CATCHING)
+    clearflag(FLAG_NO_RUNNING)
+    doemote(SQUIRTLE_Q, 0)
+    doemote(SQUIRTLE_Q, E_HAPPY)
+    msgbox(format("Squirtle happily acknowledged your strength."))
+    closemessage
+    playse(SE_BALL_OPEN)
+    applymove(SQUIRTLE_Q, moves(enter_pokeball))
+    removeobject(SQUIRTLE_Q)
+    delay(30)
+    mcsaid(0)
+    msgbox(format("(That Squirtle was sparkling.\n
+        It must be the one that ran away from Prof. Mayoido's lab.\p
+        I should return it to them.)"))
+    closemessage
+    playse(SE_BALL_TRADE)
+    waitse
+    delay(30)
+    doemote(MC, E_PENSIVE)
+    playse(SE_POKENAV_CALL)
+    applymoveplayer(emoteexclamation)
+    waitse
+    delay(30)
+    playse(SE_POKENAV_ON)
+    delay(30)
+    msgbox(format("{SPEAKER NAME_PROF}Hello, {VERSION}-kun.\n
+    It looks like you found the ran away Squirtle!\p
+    When you have the chance, return to my lab, I have a reward for you as a thanks for helping us.\p
+    I gotta run now, see ya later."))
+    closemessage
+    playse(SE_POKENAV_HANG_UP)
+    waitse
+    subquestmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_3)
+    release
+    end
 }

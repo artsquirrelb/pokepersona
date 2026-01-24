@@ -5,11 +5,11 @@
 
 ALIGNED(4)
 const u8 gText_ExpandedPlaceholder_Empty[] = _("");
-const u8 gText_ExpandedPlaceholder_Kun[] = _("");
-const u8 gText_ExpandedPlaceholder_Chan[] = _("");
+const u8 gText_ExpandedPlaceholder_Kun[] = _("-kun");
+const u8 gText_ExpandedPlaceholder_Chan[] = _("-chan");
 const u8 gText_ExpandedPlaceholder_Sapphire[] = _("Sapphire");
-const u8 gText_ExpandedPlaceholder_Ruby[] = _("Ruby");
-const u8 gText_ExpandedPlaceholder_Emerald[] = _("Emerald");
+const u8 gText_ExpandedPlaceholder_Ruby[] = _("Sanada");
+const u8 gText_ExpandedPlaceholder_Emerald[] = _("Kirijo");
 const u8 gText_ExpandedPlaceholder_Aqua[] = _("Aqua");
 const u8 gText_ExpandedPlaceholder_Magma[] = _("Magma");
 const u8 gText_ExpandedPlaceholder_Archie[] = _("Archie");
@@ -1406,7 +1406,7 @@ const u8 gText_SideQuest3_DoneDesc[]    = _("You've been a great help. Feel free
 const u8 gText_SideQuest4_DoneDesc[]    = _("Wooper starts smiling more and\nMisa's also very happy.\nReceived: Good Rod.");
 const u8 gText_SideQuest5_DoneDesc[]    = _("Nebe can now continue his mining\nhobby!\nReceived: Mining Kit.");
 const u8 gText_SideQuest6_DoneDesc[]    = _("Completed.\nReward: Shiny Yamask or none.\n(Depending on your action.)");
-const u8 gText_SideQuest7_DoneDesc[]    = _("All ran-away Pokémon have been found.\nReward: Various items.");
+const u8 gText_SideQuest7_DoneDesc[]    = _("All ran-away Pokémon have been found.\nReward: Various.");
 const u8 gText_SideQuestDoneDesc_9[] = _("Completed Quest 9");
 const u8 gText_SideQuestDoneDesc_10[] = _("Completed Quest 10");
 const u8 gText_SideQuestDoneDesc_11[] = _("Completed Quest 11");

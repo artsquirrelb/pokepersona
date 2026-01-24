@@ -299,6 +299,14 @@ WindwardPort_Eventscript_DirectionSign::
 	end
 
 
+WindwardPort_Eventscript_Lilligant::
+# 192 "data/maps/WindwardPort/scripts.pory"
+	moncryscript SPECIES_LILLIGANT
+# 193 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+
 WindwardPort_Eventscript_ParasolLady_Text_0:
 # 26 "data/maps/WindwardPort/scripts.pory"
 	.string "Tsugumi$"

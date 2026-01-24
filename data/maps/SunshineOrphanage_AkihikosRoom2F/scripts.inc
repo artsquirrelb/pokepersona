@@ -610,6 +610,52 @@ SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2::
 	end
 
 
+Eventscript_PostGivemon::
+# 362 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PARTY
+	goto_if_eq Eventscript_PostGivemon_1
+# 365 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq Eventscript_PostGivemon_2
+# 369 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	call Eventscript_CantGiveMon
+	return
+
+Eventscript_PostGivemon_1:
+# 363 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	call Eventscript_MonGivenToParty
+	return
+
+Eventscript_PostGivemon_2:
+# 366 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	call Eventscript_MonSendToBox
+	return
+
+
+Eventscript_MonGivenToParty::
+# 374 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox Eventscript_MonGivenToParty_Text_0
+# 375 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	closemessage
+	return
+
+
+Eventscript_MonSendToBox::
+# 379 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox Eventscript_MonSendToBox_Text_0
+# 380 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	closemessage
+	return
+
+
+Eventscript_CantGiveMon::
+# 384 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	msgbox Eventscript_CantGiveMon_Text_0
+# 386 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	closemessage
+	return
+
+
 AkihikosRoom2F_Eventscript_MikiAppears_Text_0:
 # 59 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_MK}BIG BRO!$"
@@ -715,6 +761,21 @@ SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_0:
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_1:
 # 334 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Let's go.$"
+
+Eventscript_MonGivenToParty_Text_0:
+# 374 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	.string "{PLAYER} put {STR_VAR_1} in the\n"
+	.string "party.$"
+
+Eventscript_MonSendToBox_Text_0:
+# 379 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	.string "{STR_VAR_1} was sent to the\n"
+	.string "Pokémon Storage.$"
+
+Eventscript_CantGiveMon_Text_0:
+# 384 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
+	.string "There's no room for {STR_VAR_1}.\n"
+	.string "{PLAYER} released it to the wild.$"
 
 Lets_Go_Play::
 # 86 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"

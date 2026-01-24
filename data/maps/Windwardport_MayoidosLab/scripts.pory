@@ -119,10 +119,25 @@ script Windwardport_MayoidosLab_Mayoido {
     if (var(VAR_CHAPTER_1_STATE) == 7){
         goto(Windwardport_MayoidosLab_Mayoido_PrePickGrookey)
     }
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_3)
+    if (var(VAR_RESULT) && !flag(FLAG_RECEIVED_TM_CHILLING_WATER)){
+        goto(MayoidosLab_Mayoido_FoundSquirtle)
+    }
     questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_FIND_STARTERS)
     if(!var(VAR_RESULT)){
         goto(Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart)
     }
+    questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS)
+    if(!var(VAR_RESULT)){
+        goto(MayoidosLab_Mayoido_StartersNotFound)
+    }
+    else{
+        goto(MayoidosLab_Mayoido_AllStartersFound)
+    }
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
 }
 script Windwardport_MayoidosLab_ScientistF {
     lock
@@ -909,27 +924,81 @@ script Windwardport_MayoidosLab_Mayoido_PC {
 }
 
 script MayoidosLab_PC_FolderC1 {
-    subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_1)
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_10)
     if(!var(VAR_RESULT)){
-        dynmultipush("Bulbasaur", 0)
+        dynmultipush("Turtwig", 0)
     }
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_14)
     if(!var(VAR_RESULT)){
         dynmultipush("Tepig", 1)
     }
-    subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_12)
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_3)
     if(!var(VAR_RESULT)){
-        dynmultipush("Piplup", 2)
+        dynmultipush("Squirtle", 2)
     }
 }
 
 script MayoidosLab_PC_ShowInfo {
     dynmultistack(0, 0, FALSE, 6, FALSE, 0, NULL)
     switch(var(VAR_RESULT)){
+        case 2: goto(ShowSquirtleInfo)
         case 0:
         case 1:
-        case 2:
         default:
             msgbox(format("Todo"))
     }
+}
+
+script ShowSquirtleInfo {
+    msgbox(format("{COLOR 7}There were sighting of a sparkling Squirtle swimming toward Sunshine Town."))
+    release
+    end
+}
+
+script MayoidosLab_Mayoido_FoundSquirtle {
+    doemote(MAYOIDO_WWH, 0)
+    msgbox(format("{SPEAKER NAME_PROF}You're back!\nAs promised, here's the reward for finding the Squirtle!"))
+    closemessage
+    giveitem(ITEM_TM_CHILLING_WATER)
+    msgbox(format("{SPEAKER NAME_PROF}Well, one more thing, though.\p
+    The Squirtle isn't very happy being cooped up in the lab.\p
+    I think it'll be better if it goes with you.\p
+    How do you say?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT)){
+        bufferspeciesname(STR_VAR_1, SPECIES_SQUIRTLE)
+        givemon(SPECIES_SQUIRTLE, 15, hpIv = 31, atkIv = 31, defIv  = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31, move1 = MOVE_YAWN, move2 = MOVE_FAKE_OUT, move3 = MOVE_LIFE_DEW, move4 = MOVE_WATER_PULSE)
+        call(Eventscript_PostGivemon)
+        setflag(FLAG_RECEIVED_TM_CHILLING_WATER)
+    }
+    else{
+        msgbox(format("{SPEAKER NAME_PROF}That's a shame but I respect your choice.\p
+        We'll raise it the best we can."))
+    }
+    questmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS)
+    if(!var(VAR_RESULT)){
+        goto(MayoidosLab_Mayoido_StartersNotFound)
+    }
+    else{
+        doemote(MAYOIDO_WWH, 0)
+        goto(MayoidosLab_Mayoido_AllStartersFound)
+    }
+}
+
+script MayoidosLab_Mayoido_StartersNotFound {
+    msgbox(format("{SPEAKER NAME_PROF}There are still missing starter Pokémon. Let's give it our best to retrieve them."))
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
+}
+
+script MayoidosLab_Mayoido_AllStartersFound {
+    msgbox(format("{SPEAKER NAME_PROF}You've found all the missing starters!\p
+    I really can't thank you enough.\p
+    I trust that they're in your good care, {VERSION}-kun.\p
+    Well then, if the lab is in need of your help again, I'll let you know."))
+    clearflag(FLAG_HIDE_QUEST_ICON)
+    refreshquesticon
+    release
+    end
 }

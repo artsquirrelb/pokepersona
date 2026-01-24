@@ -164,6 +164,11 @@ script SunshineTown_Eventscript_Boy {
     lock
     faceplayer
     setspeaker ("Yoshida")
+    questmenu(QUEST_MENU_CHECK_ACTIVE, QUEST_FIND_STARTERS)
+    if(var(VAR_RESULT))
+    {
+        goto (SunshineTown_Eventscript_Boy_GiveSquirtleInfo)
+    }
     if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18){
         msgbox(format("I think something exploded in the woods.\p
         {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DARKENED}Could it be...\p
@@ -179,11 +184,28 @@ script SunshineTown_Eventscript_Boy {
     }
     else {
         msgbox(format("One of the richest families in the region lives on this island.\p
-    I heard their mansion was at the south end of Route 1."))
+        I heard their mansion was at the south end of Route 1."))
     }
     closemessage
     release
     end
+}
+
+script SunshineTown_Eventscript_Boy_GiveSquirtleInfo {
+    mcsaid(0, 0, A_AskSquirtle, M_AskSquirtle)
+    setspeaker("Yoshida")
+    msgbox(format("{DESTROY_MUGSHOT}Oh, that one! I saw it at the river bank one {COLOR 7}night{COLOR 2}.\p
+    Tried to catch it but it wiped me out..."))
+    mcsaid(EMOTE_SMILE, 0, "Thank you!", "I see.\nThank you for the information.")
+    release
+    end
+}
+
+text A_AskSquirtle{
+    format("Hello, I'm looking for a sparkling Squirtle, have you seen it anywhere?")
+}
+text M_AskSquirtle{
+    format("Good day, have you seen a sparkling Squirtle around here by any chance?")
 }
 
 script SunshineTown_Eventscript_DirerctionSign {

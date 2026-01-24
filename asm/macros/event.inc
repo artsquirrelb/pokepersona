@@ -2252,7 +2252,7 @@
 	.macro removefieldmugshot
 	callnative RemoveFieldMugshot
 	.endm
-	
+
 	.macro setdynamicaifunc func:req
 	callnative ScriptSetDynamicAiFunc, requests_effects=1
 	.4byte \func
@@ -3378,3 +3378,83 @@
 	applymovement \localid, Common_Movement_Delay48
 	waitmovement 0
 	.endm
+
+	@check gender and set speaker + mugshot + emote id
+	@emote1 for akihiko emote2 for mitsuru
+	.macro mcsaid emote1:req, emote2, text1, text2
+	checkplayergender
+		goto_if_ne VAR_RESULT, MALE, 1f
+	setspeaker SP_NAME_A
+	createfieldmugshot MUGSHOT_A, \emote1
+	.ifnb \text1
+		.byte SCR_OP_MESSAGE
+		.4byte \text1
+		.byte SCR_OP_WAITMESSAGE
+		.byte SCR_OP_WAITBUTTONPRESS
+	.else
+		goto 2f
+	.endif
+	goto 2f
+	1:
+	setspeaker SP_NAME_M
+	.ifb \emote2
+		createfieldmugshot MUGSHOT_M, \emote1
+	.else
+		createfieldmugshot MUGSHOT_M, \emote2
+	.endif
+	.ifnb \text2
+		.byte SCR_OP_MESSAGE
+		.4byte \text2
+		.byte SCR_OP_WAITMESSAGE
+		.byte SCR_OP_WAITBUTTONPRESS
+	.else
+		goto 2f
+	.endif
+	goto 2f
+	2:
+	.endm
+
+@set akihiko speaker and emote and text
+.macro akisaid emote:req, text
+setspeaker SP_NAME_A
+createfieldmugshot MUGSHOT_A, \emote
+.ifnb \text
+	.byte SCR_OP_MESSAGE
+	.4byte \text1
+	.byte SCR_OP_WAITMESSAGE
+	.byte SCR_OP_WAITBUTTONPRESS
+.else
+	goto 1f
+.endif
+1:
+.endm
+
+@set mitsuru speaker and emote and text
+.macro mitsaid emote:req, text
+setspeaker SP_NAME_M
+createfieldmugshot MUGSHOT_M, \emote
+.ifnb \text
+	.byte SCR_OP_MESSAGE
+	.4byte \text1
+	.byte SCR_OP_WAITMESSAGE
+	.byte SCR_OP_WAITBUTTONPRESS
+.else
+	goto 1f
+.endif
+1:
+.endm
+
+@set shinjiro speaker and emote and text
+.macro shinsaid emote:req, text
+setspeaker SP_NAME_S
+createfieldmugshot MUGSHOT_S, \emote
+.ifnb \text
+	.byte SCR_OP_MESSAGE
+	.4byte \text1
+	.byte SCR_OP_WAITMESSAGE
+	.byte SCR_OP_WAITBUTTONPRESS
+.else
+	goto 1f
+.endif
+1:
+.endm

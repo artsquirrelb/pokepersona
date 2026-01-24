@@ -358,3 +358,30 @@ script SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji2 {
     end
 }
 
+script Eventscript_PostGivemon{
+    if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
+        call(Eventscript_MonGivenToParty)
+    }
+    elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
+        call(Eventscript_MonSendToBox)
+    }
+    else{
+        call(Eventscript_CantGiveMon)
+    }
+}
+
+script Eventscript_MonGivenToParty {
+    msgbox(format("{PLAYER} put {STR_VAR_1} in the party."))
+    closemessage
+}
+
+script Eventscript_MonSendToBox {
+    msgbox(format("{STR_VAR_1} was sent to the Pokémon Storage."))
+    closemessage
+}
+
+script Eventscript_CantGiveMon {
+    msgbox(format("There's no room for {STR_VAR_1}.\n
+    {PLAYER} released it to the wild."))
+    closemessage
+}

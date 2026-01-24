@@ -103,8 +103,8 @@
 #define FLAG_HELP_EXIT_DUNGEON                   0x57
 #define FLAG_HELP_DUNGEON_ENCOUNTER              0x58
 #define FLAG_HELP_SPEEDUP                        0x59
-#define FLAG_STARTER_TRADE_DONE_M                  0x5A
-#define FLAG_STARTER_TRADE_DONE_F       0x5B
+#define FLAG_STARTER_TRADE_DONE_M                0x5A
+#define FLAG_STARTER_TRADE_DONE_F                0x5B
 #define FLAG_COLLECTED_ALL_SILVER_SYMBOLS    0x5C
 #define FLAG_GOOD_LUCK_SAFARI_ZONE           0x5D // Set after talking to NPC blocking Safari Zone entrance/exit once.
 #define FLAG_RECEIVED_WAILMER_PAIL           0x5E
@@ -257,7 +257,7 @@
 
 #define FLAG_RECEIVED_TM_REST                0xEA
 #define FLAG_RECEIVED_TM_ATTRACT             0xEB
-#define FLAG_RECEIVED_GLASS_ORNAMENT         0xEC
+#define FLAG_RECEIVED_TM_CHILLING_WATER      0xEC   //set after finishing starter squirtle quest
 #define FLAG_RECEIVED_SILVER_SHIELD          0xED
 #define FLAG_RECEIVED_GOLD_SHIELD            0xEE
 #define FLAG_USED_STORAGE_KEY                0xEF

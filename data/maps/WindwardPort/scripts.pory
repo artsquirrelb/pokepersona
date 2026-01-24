@@ -187,3 +187,9 @@ script WindwardPort_Eventscript_DirectionSign{
     release
     end
 }
+
+script WindwardPort_Eventscript_Lilligant {
+    moncryscript(SPECIES_LILLIGANT)
+    release
+    end
+}

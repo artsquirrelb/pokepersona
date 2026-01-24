@@ -490,7 +490,10 @@ static const u8 *ExpandPlaceholder_RivalName(void)
 
 static const u8 *ExpandPlaceholder_Version(void)
 {
-    return gText_ExpandedPlaceholder_Emerald;
+    if (gSaveBlock2Ptr->playerGender == MALE)
+        return gText_ExpandedPlaceholder_Ruby;//Kirijo
+    else
+        return gText_ExpandedPlaceholder_Emerald;//Sanada
 }
 
 static const u8 *ExpandPlaceholder_Aqua(void)

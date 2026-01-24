@@ -10058,7 +10058,7 @@
               {
                 "min_level": 20,
                 "max_level": 22,
-                "species": "SPECIES_SQUIRTLE"
+                "species": "SPECIES_POLIWHIRL"
               },
               {
                 "min_level": 30,
@@ -10073,7 +10073,7 @@
               {
                 "min_level": 30,
                 "max_level": 32,
-                "species": "SPECIES_SQUIRTLE"
+                "species": "SPECIES_DRATINI"
               }
             ]
           }
@@ -10132,7 +10132,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_CHIKORITA"
+                "species": "SPECIES_ROCKRUFF"
               }
             ]
           },
@@ -10554,7 +10554,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_MUDKIP"
+                "species": "SPECIES_DRATINI"
               }
             ]
           }
@@ -11430,7 +11430,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_PALPITOAD"
+                "species": "SPECIES_SEISMITOAD"
               },
               {
                 "min_level": 5,
@@ -11564,7 +11564,7 @@
               {
                 "min_level": 5,
                 "max_level": 5,
-                "species": "SPECIES_PALPITOAD"
+                "species": "SPECIES_GASTRODON_WEST"
               },
               {
                 "min_level": 5,

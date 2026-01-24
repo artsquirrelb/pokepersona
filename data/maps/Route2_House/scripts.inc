@@ -3883,7 +3883,7 @@ Route2_House_Eventscript_MitsuruExplainingObjectives_Text_0:
 	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Sure? What is it?\p"
 	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}How far can a trainer synergize with\n"
 	.string "their Pokémon?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}Uhh... what?\p"
+	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_DOUBT}Uhh... what?\p"
 	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}You mean their bonds?\p"
 	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I know when a trainer and a Pokémon\n"
 	.string "share a deep trust, Mega Evolution can\l"

@@ -15,8 +15,9 @@
 
 #pragma GCC optimize("O3")
 
-#define PATH_FINDER_WEIGHT 1.5
-#define PATH_FINDER_MAX_ELEVATION 15
+#define PATH_FINDER_WEIGHT          1.5
+#define PATH_FINDER_MAX_ELEVATION   15
+#define PATH_FINDER_PRINT_TIME      FALSE
 
 struct PathNode
 {
@@ -26,7 +27,8 @@ struct PathNode
     s16 x;
     s16 y;
     u8 elevation;
-    u8 move;
+    u8 movementAction;
+    u8 originDirection;
 };
 
 // Priority queue used to
@@ -52,10 +54,11 @@ struct PathFinderContext
 {
     struct PathQueue nodeFrontier;
     struct PathList exploredNodes;
+    struct ObjectEvent *objectEvent;
+    struct PathNode *currentNode;
+    struct PathNode *nodeBuffer;
     struct Coords16 start;
     struct Coords16 target;
-    struct ObjectEvent *objectEvent;
-    struct PathNode *nodeBuffer;
     u32 nodeCount;
     u32 speed;
     u32 maxNodes;
@@ -64,13 +67,14 @@ struct PathFinderContext
 
 static u8 *FindPathForObjectEvent(struct PathFinderContext *ctx, u32 maxNodes);
 static void MoveObjectEventToCoords(u8 localId, s16 targetX, s16 targetY, u8 facingDirection, u32 speed, u32 maxNodes);
+static bool32 FindObjectEventApproachPosition(u8 localId, u8 direction, struct Coords16* result);
 static u8 *ReconstructPath(struct PathNode *targetNode, u8 facingDirection);
-static inline bool32 PathFinderTargetReached(struct PathFinderContext *ctx, struct PathNode *node);
+static inline bool32 PathFinderTargetReached(struct PathFinderContext *ctx);
 static inline u32 ManhattanDistance(s16 x1, s16 y1, s16 x2, s16 y2);
-static u8 CheckForPathFinderCollision(struct ObjectEvent *objectEvent, struct PathNode *node, s16 x, s16 y, u8 direction);
-static inline void TryCreateNeighbor(struct PathFinderContext *ctx, struct PathNode *currentNode, u8 direction);
+static u8 CheckForPathFinderCollision(struct PathFinderContext *ctx, s16 x, s16 y, u8 direction, u8 currentBehavior, u8 nextBehavior);
+static inline void TryCreateNeighbor(struct PathFinderContext *ctx, u8 direction);
 
-static inline struct PathNode *PathNode_Create(struct PathFinderContext *ctx, s16 x, s16 y, u32 costG, struct PathNode *parent);
+static inline struct PathNode *PathNode_Create(struct PathFinderContext *ctx, s16 x, s16 y, u8 direction, u32 costG);
 static inline u8 PathNode_GetElevation(struct PathNode *node, s16 x, s16 y);
 static inline bool32 PathNode_HasLowerCost(struct PathNode *node1, struct PathNode *node2);
 static inline bool32 PathNode_Equal(struct PathNode *node1, struct PathNode *node2);
@@ -85,15 +89,25 @@ static inline void PathQueue_HeapifyDown(struct PathQueue *queue, u32 index);
 
 static struct PathList PathList_Create(u32 capacity);
 static void PathList_Destroy(struct PathList *list);
-static bool32 PathList_TryInset(struct PathList *list, struct PathNode *node, struct PathNode **out);
+static bool32 PathList_TryInsert(struct PathList *list, struct PathNode *node, struct PathNode **out);
 static bool32 PathList_HasNode(struct PathList *list, struct PathNode *node);
 
-static const u8 sNeighbors[] =
+static const u8 sNeighbors[CARDINAL_DIRECTION_COUNT][4] =
 {
-    DIR_SOUTH,
-    DIR_NORTH,
-    DIR_WEST,
-    DIR_EAST,
+    [DIR_NONE]  = { DIR_SOUTH, DIR_NORTH, DIR_WEST, DIR_EAST },
+    [DIR_SOUTH] = { DIR_NORTH, DIR_WEST,  DIR_EAST, DIR_NONE },
+    [DIR_NORTH] = { DIR_SOUTH, DIR_WEST,  DIR_EAST, DIR_NONE },
+    [DIR_WEST]  = { DIR_SOUTH, DIR_NORTH, DIR_EAST, DIR_NONE },
+    [DIR_EAST]  = { DIR_SOUTH, DIR_NORTH, DIR_WEST, DIR_NONE },
+};
+
+static const u8 sNeighborCount[CARDINAL_DIRECTION_COUNT] =
+{
+    [DIR_NONE]  = 4,
+    [DIR_SOUTH] = 3,
+    [DIR_NORTH] = 3,
+    [DIR_WEST]  = 3,
+    [DIR_EAST]  = 3,
 };
 
 // Based on the Manhattan Distance.
@@ -204,6 +218,7 @@ struct PathFinderContext CreatePathFinderContext(struct ObjectEvent *objectEvent
 
     ctx.maxNodes = maxNodes;
     ctx.nodeBuffer = Alloc(sizeof(struct PathNode) * maxNodes);
+    ctx.currentNode = NULL;
     ctx.nodeCount = 0;
 
     ctx.nodeFrontier = PathQueue_Create(maxNodes);
@@ -212,7 +227,7 @@ struct PathFinderContext CreatePathFinderContext(struct ObjectEvent *objectEvent
     return ctx;
 }
 
-void DestroyPathFinderContex(struct PathFinderContext *ctx)
+static void DestroyPathFinderContext(struct PathFinderContext *ctx)
 {
     Free(ctx->nodeBuffer);
     PathList_Destroy(&ctx->exploredNodes);
@@ -235,22 +250,62 @@ void ScrCmd_moveobjecttocoords(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
     // When applying script movements to follower, it may have frozen animation that must be cleared
-    if ((localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen) 
+    if ((localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen)
             || ((objEvent = &gObjectEvents[GetObjectEventIdByLocalId(localId)]) && IS_OW_MON_OBJ(objEvent)))
     {
         ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
         gSprites[objEvent->spriteId].animCmdIndex = 0; // Reset start frame of animation
     }
 
+    if (localId != OBJ_EVENT_ID_FOLLOWER && !FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT))
+        ScriptHideFollower();
+
     MoveObjectEventToCoords(localId, x, y, facingDirection, speed, maxNodes);
     SetMovingNpcId(localId);
+}
+
+void ScrCmd_approachobject(struct ScriptContext *ctx)
+{
+    u16 localId = VarGet(ScriptReadHalfword(ctx));
+    u16 targetLocalId = VarGet(ScriptReadHalfword(ctx));
+    u8 facingDirection = VarGet(ScriptReadByte(ctx));
+    u8 approachDirection = VarGet(ScriptReadByte(ctx));
+    u8 speed = VarGet(ScriptReadByte(ctx));
+    u32 maxNodes = ScriptReadWord(ctx);
+    struct ObjectEvent *objEvent;
+    struct Coords16 coords;
+
+    Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
+
+    // When applying script movements to follower, it may have frozen animation that must be cleared
+    if ((localId == OBJ_EVENT_ID_FOLLOWER && (objEvent = GetFollowerObject()) && objEvent->frozen)
+            || ((objEvent = &gObjectEvents[GetObjectEventIdByLocalId(localId)]) && IS_OW_MON_OBJ(objEvent)))
+    {
+        ClearObjectEventMovement(objEvent, &gSprites[objEvent->spriteId]);
+        gSprites[objEvent->spriteId].animCmdIndex = 0; // Reset start frame of animation
+    }
+
+    bool32 result = FindObjectEventApproachPosition(targetLocalId, approachDirection, &coords);
+    if (result == FALSE)
+    {
+        PlaySE(SE_PIN);
+        objEvent->directionOverwrite = DIR_NONE;
+        ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, sPathFinderFailScript);
+        return;
+    }
 
     if (localId != OBJ_EVENT_ID_FOLLOWER && !FlagGet(FLAG_SAFE_FOLLOWER_MOVEMENT))
         ScriptHideFollower();
+
+    MoveObjectEventToCoords(localId, coords.x, coords.y, facingDirection, speed, maxNodes);
+    SetMovingNpcId(localId);
 }
 
 static void MoveObjectEventToCoords(u8 localId, s16 targetX, s16 targetY, u8 facingDirection, u32 speed, u32 maxNodes)
 {
+    if (PATH_FINDER_PRINT_TIME)
+        CycleCountStart();
+
     struct ObjectEvent *objectEvent = &gObjectEvents[GetObjectEventIdByLocalId(localId)];
     struct PathFinderContext ctx = CreatePathFinderContext(objectEvent, targetX, targetY, facingDirection, speed, maxNodes);
 
@@ -261,10 +316,13 @@ static void MoveObjectEventToCoords(u8 localId, s16 targetX, s16 targetY, u8 fac
         movementScript = sPathFinderFailScript;
     }
 
-    DestroyPathFinderContex(&ctx);
+    DestroyPathFinderContext(&ctx);
 
     objectEvent->directionOverwrite = DIR_NONE;
     ScriptMovement_StartObjectMovementScript(localId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, movementScript);
+
+    if (PATH_FINDER_PRINT_TIME)
+        DebugPrintf("Path Finding Time: %u", CycleCountEnd());
 }
 
 static u8 *FindPathForObjectEvent(struct PathFinderContext *ctx, u32 maxNodes)
@@ -272,7 +330,7 @@ static u8 *FindPathForObjectEvent(struct PathFinderContext *ctx, u32 maxNodes)
     if (maxNodes == 0)
         return NULL;
 
-    struct PathNode *startNode = PathNode_Create(ctx, ctx->start.x, ctx->start.y, 0, NULL);
+    struct PathNode *startNode = PathNode_Create(ctx, ctx->start.x, ctx->start.y, DIR_NONE, 0);
     startNode->elevation = ctx->objectEvent->currentElevation;
     ctx->nodeCount++;
 
@@ -281,27 +339,52 @@ static u8 *FindPathForObjectEvent(struct PathFinderContext *ctx, u32 maxNodes)
 
     while (PathQueue_Pop(&ctx->nodeFrontier, &nextNode))
     {
-        struct PathNode *currentNode = NULL;
-        bool32 inserted = PathList_TryInset(&ctx->exploredNodes, nextNode, &currentNode);
+        ctx->currentNode = NULL;
+        bool32 inserted = PathList_TryInsert(&ctx->exploredNodes, nextNode, &ctx->currentNode);
         if (inserted == FALSE)
             continue;
 
-        if (PathFinderTargetReached(ctx, currentNode))
-            return ReconstructPath(currentNode, ctx->facingDirection);
+        if (PathFinderTargetReached(ctx))
+            return ReconstructPath(ctx->currentNode, ctx->facingDirection);
 
-        for (u32 i = 0; i < ARRAY_COUNT(sNeighbors); i++)
-            TryCreateNeighbor(ctx, currentNode, sNeighbors[i]);
+        u8 direction = ctx->currentNode->originDirection;
+        u8 neighborCount = sNeighborCount[direction];
+
+        for (u32 i = 0; i < neighborCount; i++)
+            TryCreateNeighbor(ctx, sNeighbors[direction][i]);
     }
 
     return NULL;
 }
 
-static inline void TryCreateNeighbor(struct PathFinderContext *ctx, struct PathNode *currentNode, u8 direction)
+static bool32 FindObjectEventApproachPosition(u8 localId, u8 direction, struct Coords16* result)
 {
+    if (direction == DIR_NONE)
+        return FALSE;
+
+    if (direction > DIR_EAST)
+        direction -= DIR_EAST;
+
+    struct ObjectEvent *objectEvent = &gObjectEvents[GetObjectEventIdByLocalId(localId)];
+
+    struct Coords16 targetCoords;
+    targetCoords.x = objectEvent->currentCoords.x;
+    targetCoords.y = objectEvent->currentCoords.y;
+
+    result->x = targetCoords.x + gDirectionToVectors[direction].x - MAP_OFFSET;
+    result->y = targetCoords.y + gDirectionToVectors[direction].y - MAP_OFFSET;
+
+    return TRUE;
+}
+
+static inline void TryCreateNeighbor(struct PathFinderContext *ctx, u8 direction)
+{
+    struct PathNode *currentNode = ctx->currentNode;
     s16 neighborX = currentNode->x + gDirectionToVectors[direction].x;
     s16 neighborY = currentNode->y + gDirectionToVectors[direction].y;
-    u8 collision = CheckForPathFinderCollision(ctx->objectEvent, currentNode, neighborX, neighborY, direction);
-
+    u8 nextBehavior = MapGridGetMetatileBehaviorAt(neighborX, neighborY);
+    u8 currentBehavior = MapGridGetMetatileBehaviorAt(ctx->currentNode->x, ctx->currentNode->y);
+    u8 collision = CheckForPathFinderCollision(ctx, neighborX, neighborY, direction, currentBehavior, nextBehavior);
     struct PathNode *neighbor = NULL;
 
     if (collision == COLLISION_NONE)
@@ -315,14 +398,21 @@ static inline void TryCreateNeighbor(struct PathFinderContext *ctx, struct PathN
 
         u32 tentativeG = currentNode->costG + sPrecomputedDistance[direction];
 
-        neighbor = PathNode_Create(ctx, neighborX, neighborY, tentativeG, currentNode);
+        neighbor = PathNode_Create(ctx, neighborX, neighborY, direction, tentativeG);
         if (neighbor == NULL)
             return;
 
         if (PathList_HasNode(&ctx->exploredNodes, neighbor))
             return;
 
-        neighbor->move = sMovementsBySpeed[ctx->speed][direction];
+        u32 speed = ctx->speed;
+        if (SLOW_MOVEMENT_ON_STAIRS && speed != 0 &&
+            ObjectMovingOnRockStairsWithBehaviors(ctx->objectEvent, direction, currentBehavior, nextBehavior))
+        {
+            speed--;
+        }
+
+        neighbor->movementAction = sMovementsBySpeed[speed][direction];
     }
     else if (collision == COLLISION_LEDGE_JUMP)
     {
@@ -331,14 +421,14 @@ static inline void TryCreateNeighbor(struct PathFinderContext *ctx, struct PathN
 
         u32 tentativeG = currentNode->costG + sPrecomputedDistance[direction] * 2;
 
-        neighbor = PathNode_Create(ctx, neighborX, neighborY, tentativeG, currentNode);
+        neighbor = PathNode_Create(ctx, neighborX, neighborY, direction, tentativeG);
         if (neighbor == NULL)
             return;
 
         if (PathList_HasNode(&ctx->exploredNodes, neighbor))
             return;
 
-        neighbor->move = sJump2Movement[direction];
+        neighbor->movementAction = sJump2Movement[direction];
     }
     else
     {
@@ -370,7 +460,7 @@ static u8 *ReconstructPath(struct PathNode *targetNode, u8 facingDirection)
         if (it->parent == NULL)
             break;
 
-        movementScript[--index] = it->move;
+        movementScript[--index] = it->movementAction;
     }
 
     index = moves + 1;
@@ -378,36 +468,40 @@ static u8 *ReconstructPath(struct PathNode *targetNode, u8 facingDirection)
         movementScript[index++] = MOVEMENT_ACTION_FACE_DOWN + facingDirection - 1;
 
     movementScript[index] = MOVEMENT_ACTION_GENERATED_END;
+    movementScript++; // Ignore begin marker
 
     return movementScript;
 }
 
-static inline bool32 PathFinderTargetReached(struct PathFinderContext *ctx, struct PathNode *node)
+static inline bool32 PathFinderTargetReached(struct PathFinderContext *ctx)
 {
-    if (ctx->target.x == node->x && ctx->target.y == node->y)
+    if (ctx->target.x == ctx->currentNode->x && ctx->target.y == ctx->currentNode->y)
         return TRUE;
 
     return FALSE;
 }
 
-static u8 CheckForPathFinderCollision(struct ObjectEvent *objectEvent, struct PathNode *node, s16 x, s16 y, u8 direction)
+static u8 CheckForPathFinderCollision(struct PathFinderContext *ctx, s16 x, s16 y, u8 direction, u8 currentBehavior, u8 nextBehavior)
 {
-    u8 nextBehavior = MapGridGetMetatileBehaviorAt(x, y);
-    u8 currentBehavior = MapGridGetMetatileBehaviorAt(node->x, node->y);
+    struct ObjectEvent *objectEvent = ctx->objectEvent;
+    u8 elevation = ctx->currentNode->elevation;
 
     if (GetLedgeJumpDirectionWithBehavior(direction, nextBehavior) != DIR_NONE)
         return COLLISION_LEDGE_JUMP;
 
-    return GetCollisionWithBehaviorsAtCoords(objectEvent, x, y, node->elevation, direction, currentBehavior, nextBehavior);
+    return GetCollisionWithBehaviorsAtCoords(objectEvent, x, y, elevation, direction, currentBehavior, nextBehavior);
+}
+
+static inline s16 PathFinder_Abs(s16 value)
+{
+    s16 mask = value >> 15;
+    return (value ^ mask) - mask;
 }
 
 static inline u32 ManhattanDistance(s16 x1, s16 y1, s16 x2, s16 y2)
 {
-    s16 dx = x2 - x1;
-    s16 dy = y2 - y1;
-
-    dx = (dx ^ (dx >> 15)) - (dx >> 15);
-    dy = (dy ^ (dy >> 15)) - (dy >> 15);
+    s16 dx = PathFinder_Abs(x2 - x1);
+    s16 dy = PathFinder_Abs(y2 - y1);
 
     return (u32)(dx + dy);
 }
@@ -416,20 +510,41 @@ static inline u32 ManhattanDistance(s16 x1, s16 y1, s16 x2, s16 y2)
 // Nodes /////////////////////////
 //////////////////////////////////
 
-static inline struct PathNode *PathNode_Create(struct PathFinderContext *ctx, s16 x, s16 y, u32 costG, struct PathNode *parent)
+static inline u8 OppositeDirection(u8 direction)
+{
+    switch (direction)
+    {
+        case DIR_SOUTH: return DIR_NORTH;
+        case DIR_NORTH: return DIR_SOUTH;
+        case DIR_WEST:  return DIR_EAST;
+        case DIR_EAST:  return DIR_WEST;
+        default:        return DIR_NONE;
+    }
+}
+
+static inline struct PathNode *PathNode_Create(struct PathFinderContext *ctx, s16 x, s16 y, u8 direction, u32 costG)
 {
     if (ctx->maxNodes == ctx->nodeCount)
         return NULL;
 
     struct PathNode *node = &ctx->nodeBuffer[ctx->nodeCount];
-    u32 costH = PATH_FINDER_WEIGHT * ManhattanDistance(x, y, ctx->target.x, ctx->target.y);
+
+    u32 costH;
+    u32 distance = ManhattanDistance(x, y, ctx->target.x, ctx->target.y);
+
+    // I don't know why the compiler doesn't optimize this by itself.
+    if (PATH_FINDER_WEIGHT == 1.5)
+        costH = distance + (distance / 2);
+    else
+        costH = PATH_FINDER_WEIGHT * distance;
 
     node->x = x;
     node->y = y;
-    node->elevation = PathNode_GetElevation(parent, x, y);
+    node->elevation = PathNode_GetElevation(ctx->currentNode, x, y);
     node->costG = costG;
     node->costF = costG + costH;
-    node->parent = parent;
+    node->parent = ctx->currentNode;
+    node->originDirection = OppositeDirection(direction);
 
     return node;
 }
@@ -437,13 +552,9 @@ static inline struct PathNode *PathNode_Create(struct PathFinderContext *ctx, s1
 static inline u8 PathNode_GetElevation(struct PathNode *parent, s16 x, s16 y)
 {
     u8 elevation = MapGridGetElevationAt(x, y);
-    if (elevation == PATH_FINDER_MAX_ELEVATION)
-    {
-        if (parent == NULL)
-            return elevation;
 
+    if (elevation == PATH_FINDER_MAX_ELEVATION && parent != NULL)
         elevation = parent->elevation;
-    }
 
     return elevation;
 }
@@ -631,7 +742,7 @@ static void PathList_Destroy(struct PathList *list)
     list->size = 0;
 }
 
-static bool32 PathList_TryInset(struct PathList *list, struct PathNode *node, struct PathNode **out)
+static bool32 PathList_TryInsert(struct PathList *list, struct PathNode *node, struct PathNode **out)
 {
     u32 index = PathNode_Hash(node) & list->mask;
 

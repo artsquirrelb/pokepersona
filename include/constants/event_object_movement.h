@@ -286,7 +286,6 @@
 #define MOVEMENT_ACTION_GENERATED_END                   0xC5
 
 
-
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
 

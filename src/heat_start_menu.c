@@ -52,6 +52,7 @@
 #include "text_window.h"
 #include "trainer_card.h"
 #include "window.h"
+#include "wild_encounter.h"
 #include "union_room.h"
 #include "constants/battle_frontier.h"
 #include "constants/rgb.h"
@@ -1551,11 +1552,19 @@ static void Task_HeatStartMenu_HandleMainInput(u8 taskId) {
   //HeatStartMenu_UpdateClockDisplay();
   if (JOY_NEW(A_BUTTON)) {
     PlaySE(SE_SELECT);
-    if (sHeatStartMenu->loadState == 0) {
-      if (menuSelected != MENU_SAVE) {
-        FadeScreen(FADE_TO_BLACK, 0);
+    if (sHeatStartMenu->loadState == 0 && menuSelected == MENU_POKETCH && MapHasNoEncounterData())
+    {
+      HeatStartMenu_ExitAndClearTilemap();
+      DestroyTask(taskId);
+      ScriptContext_SetupScript(EventScript_NoEncounterDexNav);
+    }
+    else{
+      if (sHeatStartMenu->loadState == 0) {
+        if (menuSelected != MENU_SAVE) {
+          FadeScreen(FADE_TO_BLACK, 0);
+        }
+        sHeatStartMenu->loadState = 1;
       }
-      sHeatStartMenu->loadState = 1;
     }
   } else if (JOY_NEW(SELECT_BUTTON) &&sHeatStartMenu->loadState == 0 && FlagGet(FLAG_SYS_QUEST_MENU_GET) == TRUE) {
     PlaySE(SE_SELECT);

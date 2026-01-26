@@ -707,6 +707,10 @@ const u32 gUnusedTilemap_BasicFrame[] = INCBIN_U32("graphics/unused/basic_frame.
 
 // Battle Interface
 
+//const u32 gHealthbox_SinglePlayerHp[] = INCBIN_U32("graphics/battle_interface/healthbox_singles_player_hpnumbers.4bpp");
+//const u32 gHealthbox_SinglePlayerLvl[] = INCBIN_U32("graphics/battle_interface/healthbox_player_lvl.4bpp");
+//const u32 gHealthbox_SinglePlayerNick[] = INCBIN_U32("graphics/battle_interface/healthbox_player_nick.4bpp");
+
 const u16 gBattleInterface_BallStatusBarPal[] = INCBIN_U16("graphics/battle_interface/ball_status_bar.gbapal");
 
 const u16 gBattleInterface_BallDisplayPal[] = INCBIN_U16("graphics/battle_interface/ball_display.gbapal");

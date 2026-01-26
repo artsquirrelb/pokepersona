@@ -1470,88 +1470,90 @@ Debug_CheatStart::
 # 757 "data/scripts/debug.pory"
 	setflag FLAG_EXP_SHARE
 # 758 "data/scripts/debug.pory"
-	special EnableNationalPokedex
+	setflag FLAG_VISITED_SUNSHINE_TOWN
 # 759 "data/scripts/debug.pory"
-	fwdtime 8, 0
+	special EnableNationalPokedex
 # 760 "data/scripts/debug.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 100
+	fwdtime 8, 0
 # 761 "data/scripts/debug.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 100
+	setvar VAR_AKIHIKOS_INTRO_STATE, 100
 # 762 "data/scripts/debug.pory"
-	setvar VAR_CURRENT_LEVEL_CAP, 18
+	setvar VAR_MITSURUS_INTRO_STATE, 100
 # 763 "data/scripts/debug.pory"
-	setvar VAR_CURRENT_EV_CAP, 80
+	setvar VAR_CURRENT_LEVEL_CAP, 18
 # 764 "data/scripts/debug.pory"
-	setvar VAR_DAYS_LEFT, 15
+	setvar VAR_CURRENT_EV_CAP, 80
 # 765 "data/scripts/debug.pory"
-	unlockcharacter CHARACTER_MITSURU
+	setvar VAR_DAYS_LEFT, 15
 # 766 "data/scripts/debug.pory"
-	unlockcharacter CHARACTER_AKIHIKO
+	unlockcharacter CHARACTER_MITSURU
 # 767 "data/scripts/debug.pory"
-	unlockcharacter CHARACTER_SHINJIRO
+	unlockcharacter CHARACTER_AKIHIKO
 # 768 "data/scripts/debug.pory"
-	unlockcharacter CHARACTER_INTELEON_T
+	unlockcharacter CHARACTER_SHINJIRO
 # 769 "data/scripts/debug.pory"
-	makecharaAvailable CHARACTER_MITSURU
+	unlockcharacter CHARACTER_INTELEON_T
 # 770 "data/scripts/debug.pory"
-	makecharaAvailable CHARACTER_AKIHIKO
+	makecharaAvailable CHARACTER_MITSURU
 # 771 "data/scripts/debug.pory"
-	makecharaAvailable CHARACTER_SHINJIRO
+	makecharaAvailable CHARACTER_AKIHIKO
 # 772 "data/scripts/debug.pory"
-	makecharaAvailable CHARACTER_INTELEON_T
+	makecharaAvailable CHARACTER_SHINJIRO
 # 773 "data/scripts/debug.pory"
-	questmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS
+	makecharaAvailable CHARACTER_INTELEON_T
 # 774 "data/scripts/debug.pory"
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, STORY_QUESTS, MITSURUS_PROLOGUE
+	questmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS
 # 775 "data/scripts/debug.pory"
-	subquestmenu QUEST_MENU_COMPLETE_QUEST, STORY_QUESTS, AKIHIKOS_PROLOGUE
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, STORY_QUESTS, MITSURUS_PROLOGUE
 # 776 "data/scripts/debug.pory"
-	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, CHAPTER_1
+	subquestmenu QUEST_MENU_COMPLETE_QUEST, STORY_QUESTS, AKIHIKOS_PROLOGUE
 # 777 "data/scripts/debug.pory"
-	additem ITEM_EXP_CANDY_XS, 40
+	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, CHAPTER_1
 # 778 "data/scripts/debug.pory"
-	additem ITEM_EXP_SHARE
+	additem ITEM_EXP_CANDY_XS, 40
 # 779 "data/scripts/debug.pory"
-	checkplayergender
+	additem ITEM_EXP_SHARE
 # 780 "data/scripts/debug.pory"
+	checkplayergender
+# 781 "data/scripts/debug.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Debug_CheatStart_2
-# 791 "data/scripts/debug.pory"
-	additem ITEM_POKE_BALL, 25
 # 792 "data/scripts/debug.pory"
-	addmoney 3000
+	additem ITEM_POKE_BALL, 25
 # 793 "data/scripts/debug.pory"
-	givemon SPECIES_VULPIX_DELTA, 10, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ECHOED_VOICE, isStoryStarter = TRUE
+	addmoney 3000
 # 794 "data/scripts/debug.pory"
-	givemon SPECIES_FENNEKIN, 10, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_ALWAYS
+	givemon SPECIES_VULPIX_DELTA, 15, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ECHOED_VOICE, isStoryStarter = TRUE
 # 795 "data/scripts/debug.pory"
-	switchmaincharacter
+	givemon SPECIES_FENNEKIN, 15, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_ALWAYS
 # 796 "data/scripts/debug.pory"
-	givemon SPECIES_PAWMI_DELTA, 10, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, isStoryStarter = TRUE
-Debug_CheatStart_1:
-# 798 "data/scripts/debug.pory"
 	switchmaincharacter
+# 797 "data/scripts/debug.pory"
+	givemon SPECIES_PAWMI_DELTA, 15, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_METAL_CLAW, MOVE_ZAPPY_SHOCK, isStoryStarter = TRUE
+Debug_CheatStart_1:
 # 799 "data/scripts/debug.pory"
-	warp MAP_ROUTE2_GATEHOUSE, 9, 8
+	switchmaincharacter
 # 800 "data/scripts/debug.pory"
+	warp MAP_ROUTE2_GATEHOUSE, 9, 8
+# 801 "data/scripts/debug.pory"
 	release
 	end
 
 Debug_CheatStart_2:
-# 781 "data/scripts/debug.pory"
-	addmoney 15000
 # 782 "data/scripts/debug.pory"
-	additem ITEM_POKE_BALL, 45
+	addmoney 15000
 # 783 "data/scripts/debug.pory"
-	additem ITEM_CAMP_GEARS
+	additem ITEM_POKE_BALL, 45
 # 784 "data/scripts/debug.pory"
-	givemon SPECIES_PAWMI_DELTA, 10, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_METAL_CLAW, isStoryStarter = TRUE
+	additem ITEM_CAMP_GEARS
 # 785 "data/scripts/debug.pory"
-	switchmaincharacter
+	givemon SPECIES_PAWMI_DELTA, 15, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_METAL_CLAW, MOVE_ZAPPY_SHOCK, isStoryStarter = TRUE
 # 786 "data/scripts/debug.pory"
-	givemon SPECIES_VULPIX_DELTA, 10, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ECHOED_VOICE, isStoryStarter = TRUE
+	switchmaincharacter
 # 787 "data/scripts/debug.pory"
-	givemon SPECIES_FENNEKIN, 10, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_ALWAYS
+	givemon SPECIES_VULPIX_DELTA, 15, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ECHOED_VOICE, isStoryStarter = TRUE
+# 788 "data/scripts/debug.pory"
+	givemon SPECIES_FENNEKIN, 15, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_ALWAYS
 	goto Debug_CheatStart_1
 
 

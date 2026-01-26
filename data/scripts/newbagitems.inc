@@ -263,6 +263,16 @@ EventScript_NotFoundNearby::
 	end
 
 
+EventScript_NoEncounterDexNav::
+# 139 "data/scripts/newbagitems.pory"
+	msgbox EventScript_NoEncounterDexNav_Text_0
+# 140 "data/scripts/newbagitems.pory"
+	clearflag FLAG_HIDE_HELP_BUTTON
+# 141 "data/scripts/newbagitems.pory"
+	release
+	end
+
+
 EventScript_CampGears_Text_0:
 # 10 "data/scripts/newbagitems.pory"
 	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}(I can't set up a camp here.)$"
@@ -297,6 +307,10 @@ EventScript_AccessPokemonBoxLink_Text_0:
 # 113 "data/scripts/newbagitems.pory"
 	.string "Cannot open Pokémon Storage System\n"
 	.string "now.$"
+
+EventScript_NoEncounterDexNav_Text_0:
+# 139 "data/scripts/newbagitems.pory"
+	.string "There's no encounter in this area.$"
 
 ConfirmUseEscapeRope::
 # 106 "data/scripts/newbagitems.pory"

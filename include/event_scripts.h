@@ -696,6 +696,7 @@ extern const u8 EventScript_LostSignal[];
 extern const u8 EventScript_TooDark[];
 extern const u8 EventScript_MovedTooFast[];
 extern const u8 EventScript_StartDexNavFishingBattle[];
+extern const u8 EventScript_NoEncounterDexNav[];
 
 // Auto run
 extern const u8 EventScript_DisableAutoRun[];

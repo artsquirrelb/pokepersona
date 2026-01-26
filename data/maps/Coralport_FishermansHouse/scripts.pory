@@ -25,6 +25,7 @@ mapscripts Coralport_FishermansHouse_MapScripts {
 
 script Coralport_FishermansHouse_Eventscript_FisherMan {
     lock
+    setflag(FLAG_HIDE_QUEST_ICON)
     setspeaker("Ikumi")
     questmenu(QUEST_MENU_CHECK_REWARD, QUEST_BUY_SMILE_CANDY)
     if (var(VAR_RESULT)){
@@ -73,6 +74,8 @@ script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Rewa
 
 script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start {
     lock
+    hidefollower
+    hidefollowernpc
     applymovement(1, walkinplaceright)
     applymovement(4, faceleft)
     waitmovement
@@ -109,7 +112,7 @@ script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Star
     applymovement(1, faceright)
     waitmovement
     playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
-    applymovement(4, moves(jump_in_place_left, delay_16, walk_right *2, face_left))
+    applymovement(4, moves(jump_in_place_left, delay_16, face_down, delay_16, delay_16, face_left))
     waitmovement
     faceplayer
     setspeaker("Ikumi")
@@ -117,8 +120,8 @@ script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Star
     closemessage
     special(SpawnCameraObject)
     applymovement(4, moves(walk_fast_down*7, set_invisible))
-    applymovement(1, moves(walk_fast_right*3, walk_fast_down*7, set_invisible))
-    applymovement(LOCALID_CAMERA, moves(walk_diag_southeast*3))
+    applymovement(1, moves(walk_fast_right*2, walk_fast_down*7, set_invisible))
+    applymovement(LOCALID_CAMERA, moves(walk_diag_southeast, walk_fast_down*2))
     waitmovement(4)
     playse(SE_EXIT)
     removeobject(4)
@@ -126,7 +129,7 @@ script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Star
     playse(SE_EXIT)
     removeobject(1)
     delay(30)
-    applymovement(LOCALID_CAMERA, moves(walk_diag_northwest*3))
+    applymovement(LOCALID_CAMERA, moves(walk_fast_up*2, walk_diag_northwest))
     waitmovement
     special(RemoveCameraObject)
     delay(30)

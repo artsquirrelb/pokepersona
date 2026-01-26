@@ -216,8 +216,8 @@
     {
       "id": "HEAL_LOCATION_MANSIONS_GARDEN",
       "map": "MAP_MANSIONS_GARDEN",
-      "x": 39,
-      "y": 20,
+      "x": 13,
+      "y": 31,
       "respawn_map": "MAP_MANSION_TRAINING_HOUSE",
       "respawn_npc": "LOCALID_MANSION_TRAINING_HOUSE_NURSE"
     },

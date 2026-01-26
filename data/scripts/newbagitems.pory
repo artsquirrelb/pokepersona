@@ -134,3 +134,10 @@ text NotFoundNearby{
     format("It couldn't be found nearby.\n"
 	"Try looking in a different area!")
 }
+
+script EventScript_NoEncounterDexNav {
+    msgbox(format("There's no encounter in this area."))
+    clearflag(FLAG_HIDE_HELP_BUTTON)
+    release
+    end
+}

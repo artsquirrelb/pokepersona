@@ -946,7 +946,7 @@ Windwardport_MayoidosLab_ChooseMonToTrade_1:
 # 411 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	fadescreen FADE_TO_BLACK
 # 412 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	special ChooseBoxMon
+	chooseboxmon
 # 413 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	waitstate
 # 414 "data/maps/Windwardport_MayoidosLab/scripts.pory"

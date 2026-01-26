@@ -1314,20 +1314,20 @@ CoralportCandyShop_Eventscript_TimeClock_Text_1:
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_0:
 # 390 "data/maps/CoralportCandyShop/scripts.pory"
-	.string "Akihiko received ¥2000 for the job.\p"
-	.string "He also received a {STR_VAR_1} for\n"
+	.string "Akihiko received {COLOR 7}¥2000{COLOR 2} for the job.\p"
+	.string "He also received a {COLOR 7}{STR_VAR_1}{COLOR 2} for\n"
 	.string "his hard work.$"
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_1:
 # 396 "data/maps/CoralportCandyShop/scripts.pory"
-	.string "Mitsuru received ¥2000 for the job.\p"
-	.string "She also received a {STR_VAR_1} for\n"
+	.string "Mitsuru received {COLOR 7}¥2000{COLOR 2} for the job.\p"
+	.string "She also received a {COLOR 7}{STR_VAR_1}{COLOR 2} for\n"
 	.string "her hard work.$"
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_2:
 # 401 "data/maps/CoralportCandyShop/scripts.pory"
-	.string "Shinjiro received ¥2000 for the job.\p"
-	.string "He also received a {STR_VAR_1} for\n"
+	.string "Shinjiro received {COLOR 7}¥2000{COLOR 2} for the job.\p"
+	.string "He also received a {COLOR 7}{STR_VAR_1}{COLOR 2} for\n"
 	.string "his hard work.$"
 
 CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_Text_0:
@@ -1369,18 +1369,18 @@ CoralportCandyShop_Eventscript_Twin_Text_0:
 
 CoralportCandyShop_Eventscript_Twin_Text_1:
 # 475 "data/maps/CoralportCandyShop/scripts.pory"
-	.string "My Tinkatink back home loves {COLOR BLUE}Sweet\n"
+	.string "My Tinkatink back home loves {COLOR 7}Sweet\n"
 	.string "Heart {COLOR 2}a lot. If you have one, do you mind\l"
 	.string "trading it to me for a really cool item?$"
 
 CoralportCandyShop_Eventscript_Twin_Text_2:
 # 479 "data/maps/CoralportCandyShop/scripts.pory"
-	.string "But you don't have a {COLOR BLUE}Sweet Heart{COLOR 2}...$"
+	.string "But you don't have a {COLOR 7}Sweet Heart{COLOR 2}...$"
 
 CoralportCandyShop_Eventscript_Twin_Text_3:
 # 489 "data/maps/CoralportCandyShop/scripts.pory"
-	.string "{PLAYER} traded a {COLOR BLUE}Sweet Heart{COLOR 2} for a\n"
-	.string "{COLOR BLUE}Whipped Dream{COLOR 2}.$"
+	.string "{PLAYER} traded a {COLOR 7}Sweet Heart{COLOR 2} for a\n"
+	.string "{COLOR 7}Whipped Dream{COLOR 2}.$"
 
 CoralportCandyShop_Eventscript_Twin_Text_4:
 # 492 "data/maps/CoralportCandyShop/scripts.pory"

@@ -570,11 +570,10 @@ static void CB2_InitBattleInternal(void)
         TryFormChange(i, B_SIDE_OPPONENT, FORM_CHANGE_BEGIN_BATTLE);
     }
 
-    if (TESTING)
-    {
-        gPlayerPartyCount = CalculatePartyCount(gPlayerParty);
-        gEnemyPartyCount = CalculatePartyCount(gEnemyParty);
-    }
+    #if TESTING
+    gPlayerPartyCount = CalculatePartyCount(gPlayerParty);
+    gEnemyPartyCount = CalculatePartyCount(gEnemyParty);
+    #endif
 
     gBattleCommunication[MULTIUSE_STATE] = 0;
 }
@@ -2688,7 +2687,7 @@ static void AskRecordBattle(void)
 static void TryCorrectShedinjaLanguage(struct Pokemon *mon)
 {
     u8 nickname[POKEMON_NAME_LENGTH + 1];
-    u8 language = LANGUAGE_JAPANESE;
+    enum Language language = LANGUAGE_JAPANESE;
 
     if (GetMonData(mon, MON_DATA_SPECIES) == SPECIES_SHEDINJA
      && GetMonData(mon, MON_DATA_LANGUAGE) != language)
@@ -3083,10 +3082,10 @@ static void ClearSetBScriptingStruct(void)
     memset(&gBattleScripting, 0, sizeof(gBattleScripting));
 
     gBattleScripting.windowsType = temp;
-    if (TESTING)
+    gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
+    #if TESTING
         gBattleScripting.battleStyle = OPTIONS_BATTLE_STYLE_SET;
-    else
-        gBattleScripting.battleStyle = gSaveBlock2Ptr->optionsBattleStyle;
+    #endif
     gBattleScripting.expOnCatch = (GetConfig(CONFIG_EXP_CATCH) >= GEN_6);
     gBattleScripting.specialTrainerBattleType = specialBattleType;
 }
@@ -4626,10 +4625,12 @@ static void HandleTurnActionSelectionState(void)
         case STATE_SELECTION_SCRIPT:
             if (gBattleStruct->battlerState[battler].selectionScriptFinished)
             {
+                gSelectionBattleScripts[battler] = NULL;
                 gBattleCommunication[battler] = gBattleStruct->stateIdAfterSelScript[battler];
             }
             else
             {
+                assertf(gSelectionBattleScripts[battler] != NULL, "selection script set to run, but pointer is null");
                 gBattlerAttacker = battler;
                 gBattlescriptCurrInstr = gSelectionBattleScripts[battler];
                 if (!IsBattleControllerActiveOrPendingSyncAnywhere(battler))
@@ -4648,6 +4649,7 @@ static void HandleTurnActionSelectionState(void)
         case STATE_SELECTION_SCRIPT_MAY_RUN:
             if (gBattleStruct->battlerState[battler].selectionScriptFinished)
             {
+                gSelectionBattleScripts[battler] = NULL;
                 if (gBattleResources->bufferB[battler][1] == B_ACTION_NOTHING_FAINTED)
                 {
                     gHitMarker |= HITMARKER_RUN;
@@ -4662,6 +4664,7 @@ static void HandleTurnActionSelectionState(void)
             }
             else
             {
+                assertf(gSelectionBattleScripts[battler] != NULL, "selection script set to run, but pointer is null");
                 gBattlerAttacker = battler;
                 gBattlescriptCurrInstr = gSelectionBattleScripts[battler];
                 if (!IsBattleControllerActiveOrPendingSyncAnywhere(battler))
@@ -6130,8 +6133,7 @@ void SetTypeBeforeUsingMove(enum Move move, u32 battler)
     if (holdEffect == HOLD_EFFECT_GEMS
         && GetBattleMoveType(move) == GetItemSecondaryId(heldItem)
         && effect != EFFECT_PLEDGE
-        && effect != EFFECT_OHKO
-        && effect != EFFECT_SHEER_COLD)
+        && effect != EFFECT_OHKO)
     {
         gSpecialStatuses[battler].gemParam = GetBattlerHoldEffectParam(battler);
         gSpecialStatuses[battler].gemBoost = TRUE;

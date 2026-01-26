@@ -1372,7 +1372,7 @@ EventScript_OverworldWorkParttime_Text_0:
 EventScript_TryStartAmeAmeParttime_Text_0:
 # 606 "data/scripts/story_talk.pory"
 	.string "Work at AmeAme Candy Shop for {COLOR RED}6 hours{COLOR 2}\n"
-	.string "and {COLOR RED}$2000{COLOR 2}?\n"
+	.string "and get paid with{COLOR RED}¥2000{COLOR 2}?\n"
 	.string "$"
 
 EventScript_TryStartAmeAmeParttime_Text_1:

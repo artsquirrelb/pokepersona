@@ -701,7 +701,8 @@ extern const u8 EventScript_NoEncounterDexNav[];
 // Auto run
 extern const u8 EventScript_DisableAutoRun[];
 extern const u8 EventScript_EnableAutoRun[];
-
 //Escape Rope
 extern const u8 EventScript_ConfirmUseEscapeRope[];
+
+extern const u8 MoveTutor_AfterChooseBoxMon[];
 #endif // GUARD_EVENT_SCRIPTS_H

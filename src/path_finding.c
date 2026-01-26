@@ -71,8 +71,8 @@ static bool32 FindObjectEventApproachPosition(u8 localId, u8 direction, struct C
 static u8 *ReconstructPath(struct PathNode *targetNode, u8 facingDirection);
 static inline bool32 PathFinderTargetReached(struct PathFinderContext *ctx);
 static inline u32 ManhattanDistance(s16 x1, s16 y1, s16 x2, s16 y2);
-static u8 CheckForPathFinderCollision(struct PathFinderContext *ctx, s16 x, s16 y, u8 direction, u8 currentBehavior, u8 nextBehavior);
-static inline void TryCreateNeighbor(struct PathFinderContext *ctx, u8 direction);
+static u8 CheckForPathFinderCollision(struct PathFinderContext *ctx, s16 x, s16 y, enum Direction direction);
+static inline void TryCreateNeighbor(struct PathFinderContext *ctx, enum Direction direction);
 
 static inline struct PathNode *PathNode_Create(struct PathFinderContext *ctx, s16 x, s16 y, u8 direction, u32 costG);
 static inline u8 PathNode_GetElevation(struct PathNode *node, s16 x, s16 y);
@@ -377,14 +377,14 @@ static bool32 FindObjectEventApproachPosition(u8 localId, u8 direction, struct C
     return TRUE;
 }
 
-static inline void TryCreateNeighbor(struct PathFinderContext *ctx, u8 direction)
+static inline void TryCreateNeighbor(struct PathFinderContext *ctx, enum Direction direction)
 {
     struct PathNode *currentNode = ctx->currentNode;
     s16 neighborX = currentNode->x + gDirectionToVectors[direction].x;
     s16 neighborY = currentNode->y + gDirectionToVectors[direction].y;
-    u8 nextBehavior = MapGridGetMetatileBehaviorAt(neighborX, neighborY);
-    u8 currentBehavior = MapGridGetMetatileBehaviorAt(ctx->currentNode->x, ctx->currentNode->y);
-    u8 collision = CheckForPathFinderCollision(ctx, neighborX, neighborY, direction, currentBehavior, nextBehavior);
+    //u8 nextBehavior = MapGridGetMetatileBehaviorAt(neighborX, neighborY);
+    //u8 currentBehavior = MapGridGetMetatileBehaviorAt(ctx->currentNode->x, ctx->currentNode->y);
+    u8 collision = CheckForPathFinderCollision(ctx, neighborX, neighborY, direction);
     struct PathNode *neighbor = NULL;
 
     if (collision == COLLISION_NONE)
@@ -407,7 +407,7 @@ static inline void TryCreateNeighbor(struct PathFinderContext *ctx, u8 direction
 
         u32 speed = ctx->speed;
         if (SLOW_MOVEMENT_ON_STAIRS && speed != 0 &&
-            ObjectMovingOnRockStairsWithBehaviors(ctx->objectEvent, direction, currentBehavior, nextBehavior))
+            ObjectMovingOnRockStairs(ctx->objectEvent, direction))
         {
             speed--;
         }
@@ -481,15 +481,15 @@ static inline bool32 PathFinderTargetReached(struct PathFinderContext *ctx)
     return FALSE;
 }
 
-static u8 CheckForPathFinderCollision(struct PathFinderContext *ctx, s16 x, s16 y, u8 direction, u8 currentBehavior, u8 nextBehavior)
+static u8 CheckForPathFinderCollision(struct PathFinderContext *ctx, s16 x, s16 y, enum Direction direction)
 {
     struct ObjectEvent *objectEvent = ctx->objectEvent;
-    u8 elevation = ctx->currentNode->elevation;
+    //u8 elevation = ctx->currentNode->elevation;
 
-    if (GetLedgeJumpDirectionWithBehavior(direction, nextBehavior) != DIR_NONE)
+    if (GetLedgeJumpDirection(x, y, direction) != DIR_NONE)
         return COLLISION_LEDGE_JUMP;
 
-    return GetCollisionWithBehaviorsAtCoords(objectEvent, x, y, elevation, direction, currentBehavior, nextBehavior);
+    return GetCollisionFlagsAtCoords(objectEvent, x, y, direction);
 }
 
 static inline s16 PathFinder_Abs(s16 value)

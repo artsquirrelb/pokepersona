@@ -387,19 +387,19 @@ script CoralportCandyShop_Eventscript_PartTime_RandomizeReward {
             bufferitemname(STR_VAR_1, ITEM_LAVA_COOKIE)
     }
     if (var(VAR_AMEAME_CANDY_SHOP) == 1){
-        msgbox(format("Akihiko received ¥2000 for the job.\p
-        He also received a {STR_VAR_1} for his hard work."))
+        msgbox(format("Akihiko received {COLOR 7}¥2000{COLOR 2} for the job.\p
+        He also received a {COLOR 7}{STR_VAR_1}{COLOR 2} for his hard work."))
         closemessage
     }
     elif(var(VAR_AMEAME_CANDY_SHOP) == 2)
     {   
-        msgbox(format("Mitsuru received ¥2000 for the job.\p
-        She also received a {STR_VAR_1} for her hard work."))
+        msgbox(format("Mitsuru received {COLOR 7}¥2000{COLOR 2} for the job.\p
+        She also received a {COLOR 7}{STR_VAR_1}{COLOR 2} for her hard work."))
         closemessage
     }
     else{
-        msgbox(format("Shinjiro received ¥2000 for the job.\p
-        He also received a {STR_VAR_1} for his hard work."))
+        msgbox(format("Shinjiro received {COLOR 7}¥2000{COLOR 2} for the job.\p
+        He also received a {COLOR 7}{STR_VAR_1}{COLOR 2} for his hard work."))
         closemessage
     }
     setvar(VAR_AMEAME_CANDY_SHOP, 0)
@@ -472,11 +472,11 @@ script CoralportCandyShop_Eventscript_Twin {
     faceplayer
     setspeaker("Aiko")
     if (flag(FLAG_CORALPORT_TRADED_SWEET_HEART) == FALSE){
-        msgbox(format("My Tinkatink back home loves {COLOR BLUE}Sweet Heart {COLOR 2}a lot. If you have one, do you mind trading it to me for a really cool item?"), MSGBOX_YESNO)
+        msgbox(format("My Tinkatink back home loves {COLOR 7}Sweet Heart {COLOR 2}a lot. If you have one, do you mind trading it to me for a really cool item?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == TRUE){
             checkitem(ITEM_SWEET_HEART)
             if (var(VAR_RESULT) == FALSE){
-                msgbox(format("But you don't have a {COLOR BLUE}Sweet Heart{COLOR 2}..."))
+                msgbox(format("But you don't have a {COLOR 7}Sweet Heart{COLOR 2}..."))
                 closemessage
                 release
                 end
@@ -486,7 +486,7 @@ script CoralportCandyShop_Eventscript_Twin {
                 additem(ITEM_WHIPPED_DREAM)
                 playfanfare(MUS_OBTAIN_ITEM)
                 waitfanfare
-                msgbox(format("{PLAYER} traded a {COLOR BLUE}Sweet Heart{COLOR 2} for a {COLOR BLUE}Whipped Dream{COLOR 2}."))
+                msgbox(format("{PLAYER} traded a {COLOR 7}Sweet Heart{COLOR 2} for a {COLOR 7}Whipped Dream{COLOR 2}."))
                 closemessage
                 setspeaker("Aiko")
                 msgbox(format("Thank you!! My Tinkatink would be so happy!"))

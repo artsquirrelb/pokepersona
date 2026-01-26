@@ -54,7 +54,7 @@ void DisplayDadsAdviceCannotUseItemMessage(u8 taskId, bool8 isUsingRegisteredKey
 void ItemUseOutOfBattle_PokeFlute(u8 taskId);
 void ItemUseOutOfBattle_TownMap(u8 taskId);
 bool8 ItemfinderCheckForHiddenItems(const struct MapEvents *, u8);
-u8 GetDirectionToHiddenItem(s16, s16);
+enum Direction GetDirectionToHiddenItem(s16, s16);
 void ItemUseOutOfBattle_TMCase(u8 taskId);
 void ItemUseOutOfBattle_BerryPouch(u8 taskId);
 bool32 CanFish(void);

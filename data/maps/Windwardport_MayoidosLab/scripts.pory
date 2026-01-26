@@ -409,7 +409,7 @@ script Windwardport_MayoidosLab_ChooseMonToTrade {
     if(var(VAR_RESULT) == MALE){
         msgbox(format("Now I'll take your {COLOR GREEN}Grookey{COLOR 2}."))
         fadescreen(FADE_TO_BLACK)
-	    special (ChooseBoxMon)
+	    chooseboxmon
 	    waitstate
         if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN){
             goto (Windwardport_MayoidosLab_StarterTrade_Reject)

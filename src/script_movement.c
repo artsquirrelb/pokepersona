@@ -239,7 +239,7 @@ static void ScriptMovement_TakeStep(u8 taskId, u8 moveScrId, u8 objEventId, cons
         // put that follower into a pokeball
         // (sTimer helps limit this expensive check to once per step)
         if (OW_FOLLOWERS_SCRIPT_MOVEMENT && gSprites[obj->spriteId].sTimer == 1
-         && (objEventId = GetObjectObjectCollidesWith(obj, 0, 0, obj->currentElevation, TRUE)) < OBJECT_EVENTS_COUNT
+         && (objEventId = GetObjectObjectCollidesWith(obj, 0, 0, TRUE)) < OBJECT_EVENTS_COUNT
             // switch `obj` to follower
          && ((obj = &gObjectEvents[objEventId])->movementType == MOVEMENT_TYPE_FOLLOW_PLAYER)
          && gSprites[obj->spriteId].sTypeFuncId != 0)

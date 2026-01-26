@@ -275,7 +275,6 @@ void NewGameInitData(void)
     ResetItemFlags();
     ResetOutfitData();
     SetDefaultOutfitAccordingToPlayerGender();
-    gSpecialVar_MonBoxId = 0xFF;
     ResetDexNav();
     ClearFollowerNPCData();
 }

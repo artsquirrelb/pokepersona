@@ -68,6 +68,7 @@
 #include "battle.h"
 #include "constants/event_objects.h"
 #include "constants/map_types.h"
+#include "constants/party_menu.h"
 #include "constants/vars.h"
 #include "constants/flags.h"
 #include "quests.h"
@@ -1553,6 +1554,8 @@ bool8 ScrCmd_faceplayer(struct ScriptContext *ctx)
         case DIR_WEST:
             ScriptMovement_StartObjectMovementScript(OBJ_EVENT_ID_NPC_FOLLOWER, npcFollower->mapGroup, npcFollower->mapNum, Common_Movement_FaceLeft);
             break;
+        default:
+            break;
         }
         return FALSE;
     }
@@ -1564,7 +1567,7 @@ bool8 ScrCmd_faceplayer(struct ScriptContext *ctx)
 bool8 ScrCmd_turnobject(struct ScriptContext *ctx)
 {
     u16 localId = VarGet(ScriptReadHalfword(ctx));
-    u8 direction = ScriptReadByte(ctx);
+    enum Direction direction = ScriptReadByte(ctx);
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
@@ -1590,7 +1593,7 @@ bool8 ScrCmd_createvobject(struct ScriptContext *ctx)
     u16 x = VarGet(ScriptReadHalfword(ctx));
     u16 y = VarGet(ScriptReadHalfword(ctx));
     u8 elevation = ScriptReadByte(ctx);
-    u8 direction = ScriptReadByte(ctx);
+    enum Direction direction = ScriptReadByte(ctx);
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
@@ -1601,7 +1604,7 @@ bool8 ScrCmd_createvobject(struct ScriptContext *ctx)
 bool8 ScrCmd_turnvobject(struct ScriptContext *ctx)
 {
     u8 virtualObjId = ScriptReadByte(ctx);
-    u8 direction = ScriptReadByte(ctx);
+    enum Direction direction = ScriptReadByte(ctx);
 
     Script_RequestEffects(SCREFF_V1 | SCREFF_HARDWARE);
 
@@ -3303,14 +3306,18 @@ bool8 Scrcmd_changespecies(struct ScriptContext *ctx)
 bool8 Scrcmd_removechosenmon(struct ScriptContext *ctx)
 {
     Script_RequestEffects(SCREFF_V1 | SCREFF_SAVE);
-    if(gSpecialVar_MonBoxId == TOTAL_BOXES_COUNT)
+    struct Pokemon *mon;
+    if (gSpecialVar_0x8004 == PC_MON_CHOSEN)
     {
-        ZeroMonData(&gPlayerParty[gSpecialVar_MonBoxPos]);
+        mon = Alloc(sizeof(struct Pokemon));
+        RemoveSelectedPcMon(mon);
     }
     else
     {
-        ZeroBoxMonData(&gPokemonStoragePtr->boxes[gSpecialVar_MonBoxId][gSpecialVar_MonBoxPos]);
+        mon = &gPlayerParty[gSpecialVar_0x8004];
+        ZeroMonData(mon);
     }
+
     return FALSE;
 }
 

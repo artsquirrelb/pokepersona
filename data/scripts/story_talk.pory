@@ -603,7 +603,7 @@ script EventScript_OverworldWorkParttime {
 text AmeAme{"AmeAme Candy Shop (7AM - 3PM)"}
 
 script EventScript_TryStartAmeAmeParttime {
-    msgbox(format("Work at AmeAme Candy Shop for {COLOR RED}6 hours{COLOR 2} and {COLOR RED}$2000{COLOR 2}?\n"), MSGBOX_YESNO)
+    msgbox(format("Work at AmeAme Candy Shop for {COLOR RED}6 hours{COLOR 2} and get paid with{COLOR RED}¥2000{COLOR 2}?\n"), MSGBOX_YESNO)
     if (var(VAR_RESULT)){
         gettime
         if (var(VAR_0x8000) < 7 || var(VAR_0x8000) > 15){

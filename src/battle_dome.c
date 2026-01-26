@@ -1760,7 +1760,7 @@ void CallBattleDomeFunction(void)
 
 static void InitDomeChallenge(void)
 {
-    u32 lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
+    enum FrontierLevelMode lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
     u32 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
 
     gSaveBlock2Ptr->frontier.challengeStatus = 0;
@@ -1776,7 +1776,7 @@ static void InitDomeChallenge(void)
 
 static void GetDomeData(void)
 {
-    u32 lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
+    enum FrontierLevelMode lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
     u32 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
 
     switch (gSpecialVar_0x8005)
@@ -1844,7 +1844,7 @@ static void GetDomeData(void)
 
 static void SetDomeData(void)
 {
-    u32 lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
+    enum FrontierLevelMode lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
     u32 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
 
     switch (gSpecialVar_0x8005)
@@ -2591,7 +2591,7 @@ static void SaveDomeChallenge(void)
 
 static void IncrementDomeStreaks(void)
 {
-    u8 lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
+    enum FrontierLevelMode lvlMode = gSaveBlock2Ptr->frontier.lvlMode;
     u8 battleMode = VarGet(VAR_FRONTIER_BATTLE_MODE);
 
     if (gSaveBlock2Ptr->frontier.domeWinStreaks[battleMode][lvlMode] < 999)
@@ -3946,7 +3946,6 @@ static bool32 IsDomeLuckyMove(enum Move move)
             return FALSE;
         // fallthrough
     case EFFECT_OHKO:
-    case EFFECT_SHEER_COLD:
     case EFFECT_METRONOME:
     case EFFECT_MIRROR_MOVE:
     case EFFECT_SKETCH:
@@ -4022,6 +4021,8 @@ static bool32 IsDomeRareMove(enum Move move)
     u16 species = 0;
     for(i = 0; i < NUM_SPECIES; i++)
     {
+        if (!IsSpeciesEnabled(i))
+            continue;
         const struct LevelUpMove *learnset = GetSpeciesLevelUpLearnset(i);
         for(j = 0; learnset[j].move != LEVEL_UP_MOVE_END; j++)
         {
@@ -5107,13 +5108,14 @@ static u16 GetWinningMove(int winnerTournamentId, int loserTournamentId, u8 roun
         for (j = 0; j < MAX_MON_MOVES; j++)
         {
             u32 moveIndex = i * MAX_MON_MOVES + j;
-            enum Move move = moves[moveIndex];
+            enum Move move;
 
             moveScores[moveIndex] = 0;
             if (DOME_TRAINERS[winnerTournamentId].trainerId == TRAINER_FRONTIER_BRAIN)
                 move = GetFrontierBrainMonMove(i, j);
             else
                 move = gFacilityTrainerMons[DOME_MONS[winnerTournamentId][i]].moves[j];
+            moves[moveIndex] = move;
 
             movePower = GetMovePower(move);
             if (IsBattleMoveStatus(move))
@@ -5731,7 +5733,7 @@ static void InitRandomTourneyTreeResults(void)
     int monId;
     int zero1;
     int zero2;
-    u8 lvlMode;
+    enum FrontierLevelMode lvlMode;
     u16 *statSums;
     int *statValues;
     u8 ivs = 0;

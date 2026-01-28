@@ -127,8 +127,6 @@ static u32 BuildOutfitLists(void);
 static inline void UpdateOutfitInfo(void);
 static void UpdateCursorPosition(void);
 static void AssignNPCFollowerToVarAccordingCurrentCursorIdx(void);
-//static u16 GetOutfitIdFromCurrentFollowerGFX(void);
-//static u16 GetOutfitIdNumberFromCurrentPointer (void);
 static void SwitchPlayerAndFollower(void);
 static void AssignNPCFollowerFromVar(void);
 

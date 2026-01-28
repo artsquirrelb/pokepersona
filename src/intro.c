@@ -24,7 +24,6 @@
 #include "util.h"
 #include "title_screen.h"
 #include "expansion_intro.h"
-#include "outfit_menu.h"
 #include "battle_anim.h"
 #include "constants/rgb.h"
 #include "constants/battle_anim.h"
@@ -1142,11 +1141,6 @@ void CB2_InitCopyrightScreenAfterBootup(void)
         LoadGameSave(SAVE_NORMAL);
         if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_CORRUPT)
             Sav2_ClearSetDefault();
-        if (gSaveBlock2Ptr->currOutfitId == CHARACTER_NONE)
-        {
-            UnlockCharacter(DEFAULT_CHARACTER);
-            gSaveBlock2Ptr->currOutfitId = DEFAULT_CHARACTER;
-        }
         SetPokemonCryStereo(gSaveBlock2Ptr->optionsSound);
         InitHeap(gHeap, HEAP_SIZE);
     }
@@ -1204,7 +1198,7 @@ static void Task_Scene1_FadeIn(u8 taskId)
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_BLACK);
     SetVBlankCallback(VBlankCB_Intro);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG_ALL_ON | DISPCNT_OBJ_ON);
-    gTasks[taskId].func = Task_Scene1_End;
+    gTasks[taskId].func = Task_Scene1_WaterDrops;
     gIntroFrameCounter = 0;
     m4aSongNumStart(MUS_INTRO);
     ResetSerial();
@@ -1357,7 +1351,7 @@ static void Task_Scene2_Load(u8 taskId)
     gIntroCredits_MovingSceneryVOffset = 0;
     sFlygonYOffset = 0;
     LoadIntroPart2Graphics(1);
-    gTasks[taskId].func = Task_Scene2_End;
+    gTasks[taskId].func = Task_Scene2_CreateSprites;
 }
 
 #define tBgAnimTaskId   data[0]
@@ -1727,7 +1721,7 @@ static void Task_Scene3_Load(u8 taskId)
     BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, RGB_WHITEALPHA);
     SetGpuReg(REG_OFFSET_BG2CNT, BGCNT_PRIORITY(3) | BGCNT_CHARBASE(0) | BGCNT_SCREENBASE(8) | BGCNT_256COLOR | BGCNT_AFF256x256);
     SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_MODE_1 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG2_ON | DISPCNT_OBJ_ON);
-    gTasks[taskId].func = Task_EndIntroMovie;
+    gTasks[taskId].func = Task_Scene3_SpinPokeball;
     gIntroFrameCounter = 0;
     m4aSongNumStart(MUS_INTRO_BATTLE);
 }

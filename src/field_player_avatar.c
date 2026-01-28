@@ -269,12 +269,26 @@ static const u8 sRSAvatarGfxIds[GENDER_COUNT] =
     [FEMALE] = OBJ_EVENT_GFX_LINK_RS_MAY
 };
 
-static const u8 sPlayerAvatarGfxToStateFlag[4] =
+static const struct __attribute__((packed))
 {
-    [PLAYER_AVATAR_STATE_NORMAL]     = PLAYER_AVATAR_FLAG_ON_FOOT,
-    [PLAYER_AVATAR_STATE_BIKE]       = PLAYER_AVATAR_FLAG_BIKE,
-    [PLAYER_AVATAR_STATE_SURFING]    = PLAYER_AVATAR_FLAG_SURFING,
-    [PLAYER_AVATAR_STATE_UNDERWATER] = PLAYER_AVATAR_FLAG_UNDERWATER,
+    u8 graphicsId;
+    u8 playerFlag;
+} sPlayerAvatarGfxToStateFlag[GENDER_COUNT][5] =
+{
+    [MALE] =
+    {
+        {OBJ_EVENT_GFX_BRENDAN_NORMAL,     PLAYER_AVATAR_FLAG_ON_FOOT},
+        {OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,  PLAYER_AVATAR_FLAG_BIKE},
+        {OBJ_EVENT_GFX_BRENDAN_SURFING,    PLAYER_AVATAR_FLAG_SURFING},
+        {OBJ_EVENT_GFX_BRENDAN_UNDERWATER, PLAYER_AVATAR_FLAG_UNDERWATER},
+    },
+    [FEMALE] =
+    {
+        {OBJ_EVENT_GFX_MAY_NORMAL,         PLAYER_AVATAR_FLAG_ON_FOOT},
+        {OBJ_EVENT_GFX_MAY_MACH_BIKE,      PLAYER_AVATAR_FLAG_BIKE},
+        {OBJ_EVENT_GFX_MAY_SURFING,        PLAYER_AVATAR_FLAG_SURFING},
+        {OBJ_EVENT_GFX_MAY_UNDERWATER,     PLAYER_AVATAR_FLAG_UNDERWATER},
+    }
 };
 
 static bool8 (*const sPushBoulderFuncs[])(struct Task *, struct ObjectEvent *, struct ObjectEvent *) =
@@ -859,10 +873,10 @@ static void PlayerNotOnBikeMoving(enum Direction direction, u16 heldKeys)
     }
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
-     && (heldKeys & B_BUTTON || !gSaveBlock2Ptr->optionsAutoRunOff) 
+     && (heldKeys & B_BUTTON || !gSaveBlock2Ptr->optionsAutoRunOff)
      && FlagGet(FLAG_SYS_B_DASH)
-     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0 
-     && !FollowerNPCComingThroughDoor() 
+     && IsRunningDisallowed(gObjectEvents[gPlayerAvatar.objectEventId].currentMetatileBehavior) == 0
+     && !FollowerNPCComingThroughDoor()
      && (I_ORAS_DOWSING_FLAG == 0 || (I_ORAS_DOWSING_FLAG != 0 && !FlagGet(I_ORAS_DOWSING_FLAG))))
     {
         if (heldKeys & B_BUTTON && !gSaveBlock2Ptr->optionsAutoRunOff)
@@ -1081,30 +1095,28 @@ static void PlayerAvatarTransition_Dummy(struct ObjectEvent *objEvent)
 
 }
 
-static void SetPlayerAvatarTransitionState(struct ObjectEvent *objEvent, u8 state)
-{
-    ObjectEventSetGraphicsId(objEvent, GetPlayerAvatarGraphicsIdByStateId(state));
-    ObjectEventTurn(objEvent, objEvent->movementDirection);
-    SetPlayerAvatarStateMask(sPlayerAvatarGfxToStateFlag[state]);
-}
-
 static void PlayerAvatarTransition_Normal(struct ObjectEvent *objEvent)
 {
-    SetPlayerAvatarTransitionState(objEvent, PLAYER_AVATAR_STATE_NORMAL);
+    ObjectEventSetGraphicsId(objEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_NORMAL));
+    ObjectEventTurn(objEvent, objEvent->movementDirection);
+    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_ON_FOOT);
 }
 
 static void PlayerAvatarTransition_Bike(struct ObjectEvent *objEvent)
 {
-    SetPlayerAvatarTransitionState(objEvent, PLAYER_AVATAR_STATE_BIKE);
+    ObjectEventSetGraphicsId(objEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_BIKE));
+    ObjectEventTurn(objEvent, objEvent->movementDirection);
+    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_BIKE);
     BikeClearState(0, 0);
-    Bike_HandleBumpySlopeJump();
 }
 
 static void PlayerAvatarTransition_Surfing(struct ObjectEvent *objEvent)
 {
     u8 spriteId;
 
-    SetPlayerAvatarTransitionState(objEvent, PLAYER_AVATAR_STATE_SURFING);
+    ObjectEventSetGraphicsId(objEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_SURFING));
+    ObjectEventTurn(objEvent, objEvent->movementDirection);
+    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_SURFING);
     gFieldEffectArguments[0] = objEvent->currentCoords.x;
     gFieldEffectArguments[1] = objEvent->currentCoords.y;
     gFieldEffectArguments[2] = gPlayerAvatar.objectEventId;
@@ -1115,7 +1127,9 @@ static void PlayerAvatarTransition_Surfing(struct ObjectEvent *objEvent)
 
 static void PlayerAvatarTransition_Underwater(struct ObjectEvent *objEvent)
 {
-    SetPlayerAvatarTransitionState(objEvent, PLAYER_AVATAR_STATE_UNDERWATER);
+    ObjectEventSetGraphicsId(objEvent, GetPlayerAvatarGraphicsIdByStateId(PLAYER_AVATAR_STATE_UNDERWATER));
+    ObjectEventTurn(objEvent, objEvent->movementDirection);
+    SetPlayerAvatarStateMask(PLAYER_AVATAR_FLAG_UNDERWATER);
     objEvent->fieldEffectSpriteId = StartUnderwaterSurfBlobBobbing(objEvent->spriteId);
 }
 
@@ -1612,14 +1626,14 @@ void SetPlayerAvatarStateMask(u8 flags)
     gPlayerAvatar.flags |= flags;
 }
 
-static u8 GetPlayerAvatarStateTransitionByGraphicsId(u16 graphicsId)
+static u8 GetPlayerAvatarStateTransitionByGraphicsId(u16 graphicsId, u8 gender)
 {
-    u32 i;
+    u8 i;
 
     for (i = 0; i < ARRAY_COUNT(sPlayerAvatarGfxToStateFlag); i++)
     {
-        if (GetPlayerAvatarGraphicsIdByStateId(i) == graphicsId)
-            return sPlayerAvatarGfxToStateFlag[i];
+        if (GetPlayerAvatarGraphicsIdByStateIdAndGender(i, gender) == graphicsId)
+            return sPlayerAvatarGfxToStateFlag[gender][i].playerFlag;
     }
     return PLAYER_AVATAR_FLAG_ON_FOOT;
 }
@@ -1631,15 +1645,16 @@ u16 GetPlayerAvatarGraphicsIdByCurrentState(void)
 
     for (i = 0; i < ARRAY_COUNT(sPlayerAvatarGfxToStateFlag); i++)
     {
-        if (sPlayerAvatarGfxToStateFlag[i] & flags)
+        if (sPlayerAvatarGfxToStateFlag[gPlayerAvatar.gender][i].playerFlag & flags)
             return GetPlayerAvatarGraphicsIdByStateId(i);
+            //return sPlayerAvatarGfxToStateFlag[gPlayerAvatar.gender][i].graphicsId;
     }
     return 0;
 }
 
 void SetPlayerAvatarExtraStateTransition(u16 graphicsId, u8 transitionFlag)
 {
-    u8 stateFlag = GetPlayerAvatarStateTransitionByGraphicsId(graphicsId);
+    u8 stateFlag = GetPlayerAvatarStateTransitionByGraphicsId(graphicsId, gSaveBlock2Ptr->playerGender);
 
     gPlayerAvatar.transitionFlags |= stateFlag | transitionFlag;
     DoPlayerAvatarTransition();

@@ -1565,7 +1565,8 @@ static void CB2_ShowCard(void)
         break;
     case 1:
         if (!FuncIsActiveTask(Task_ExchangeCards))
-            ShowTrainerCardInLink(GetMultiplayerId() ^ 1, CB2_ReturnToField);
+            ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu);
+            //ShowTrainerCardInLink(GetMultiplayerId() ^ 1, CB2_ReturnToField);
         break;
     }
 

@@ -1195,7 +1195,8 @@ static UNUSED void CreateTask_EnterCableClubSeatNoFollowup(void)
 
 void Script_ShowLinkTrainerCard(void)
 {
-    ShowTrainerCardInLink(gSpecialVar_0x8006, CB2_ReturnToFieldContinueScriptPlayMapMusic);
+    ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu);
+    //ShowTrainerCardInLink(gSpecialVar_0x8006, CB2_ReturnToFieldContinueScriptPlayMapMusic);
 }
 
 // Returns FALSE if the player has no stars. Returns TRUE otherwise, and puts the name of the

@@ -827,7 +827,8 @@ static bool8 StartMenuLinkModePlayerNameCallback(void)
     {
         PlayRainStoppingSoundEffect();
         CleanupOverworldWindowsAndTilemaps();
-        ShowTrainerCardInLink(gLocalLinkPlayerId, CB2_ReturnToFieldWithOpenMenu);
+        //ShowTrainerCardInLink(gLocalLinkPlayerId, CB2_ReturnToFieldWithOpenMenu);
+        ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu);
 
         return TRUE;
     }

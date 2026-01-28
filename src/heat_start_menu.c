@@ -1077,10 +1077,7 @@ static void DoCleanUpAndOpenTrainerCard(void) {
     PlayRainStoppingSoundEffect();
     HeatStartMenu_ExitAndClearTilemap();
     CleanupOverworldWindowsAndTilemaps();
-    if (IsOverworldLinkActive() || InUnionRoom()) {
-      ShowPlayerTrainerCard(CB2_ReturnToFieldWithOpenMenu); // Display trainer card
-      DestroyTask(FindTaskIdByFunc(Task_HeatStartMenu_HandleMainInput));
-    } else if (FlagGet(FLAG_SYS_FRONTIER_PASS)) {
+    if (FlagGet(FLAG_SYS_FRONTIER_PASS)) {
       ShowFrontierPass(CB2_ReturnToFieldWithOpenMenu); // Display frontier pass
       DestroyTask(FindTaskIdByFunc(Task_HeatStartMenu_HandleMainInput));
     } else {

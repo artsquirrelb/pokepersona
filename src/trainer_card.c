@@ -35,11 +35,24 @@
 #include "constants/rgb.h"
 #include "constants/trainers.h"
 #include "constants/union_room.h"
+#include "gba/types.h"
+#include "gba/io_reg.h"
 
 enum {
     WIN_MSG,
     WIN_CARD_TEXT,
     WIN_TRAINER_PIC,
+};
+
+
+#define MAX_STARS           4
+#define SHADOW_SPRITE_COUNT 3
+
+enum TrainerCardSprites
+{
+    SPRITE_ARR_ID_STARS,
+    SPRITE_ARR_ID_SHADOWS = SPRITE_ARR_ID_STARS + MAX_STARS,
+    SPRITE_ARR_ID_COUNT = SPRITE_ARR_ID_SHADOWS + SHADOW_SPRITE_COUNT
 };
 
 struct TrainerCardData
@@ -82,21 +95,23 @@ struct TrainerCardData
     u16 blendColor;
     MainCallback callback2;
     struct TrainerCard trainerCard;
-    u16 frontTilemap[600];
-    u16 backTilemap[600];
-    u16 bgTilemap[600];
+    u16 frontTilemap[0x800];
+    u16 backTilemap[0x800];
+    u16 bgTilemap[0x800];
     u8 badgeTiles[0x80 * NUM_BADGES];
     u8 stickerTiles[0x200];
     u8 cardTiles[0x2300];
     u16 cardTilemapBuffer[0x1000];
-    u16 bgTilemapBuffer[0x1000];
+    u16 bgTilemapBuffer[0x800];
     u16 cardTop;
     u8 language;
+    u8 spriteIds[SPRITE_ARR_ID_COUNT];
 };
 
 // EWRAM
 EWRAM_DATA struct TrainerCard gTrainerCards[4] = {0};
 EWRAM_DATA static struct TrainerCardData *sData = NULL;
+
 
 //this file's functions
 static void VblankCb_TrainerCard(void);
@@ -106,10 +121,15 @@ static void CB2_TrainerCard(void);
 static void CloseTrainerCard(u8 task);
 static bool8 PrintAllOnCardFront(void);
 static void DrawTrainerCardWindow(u8);
-static void CreateTrainerCardTrainerPic(void);
+//static void CreateTrainerCardTrainerPic(void);
 static void DrawCardScreenBackground(u16 *);
 static void DrawCardFrontOrBack(u16 *);
 static void DrawStarsAndBadgesOnCard(void);
+static void HideStarsSprites(void);
+static void ShowStarsSprites(void);
+static void DrawShadowSprites(void);
+static void HideShadowSprites(void);
+static void ShowShadowSprites(void);
 static void PrintTimeOnCard(void);
 static void FlipTrainerCard(void);
 static bool8 IsCardFlipTaskActive(void);
@@ -250,7 +270,7 @@ static const struct WindowTemplate sTrainerCardWindowTemplates[] =
         .tilemapTop = 1,
         .width = 28,
         .height = 18,
-        .paletteNum = 15,
+        .paletteNum = 0,
         .baseBlock = 0x1,
     },
     [WIN_TRAINER_PIC] = {
@@ -265,14 +285,14 @@ static const struct WindowTemplate sTrainerCardWindowTemplates[] =
     DUMMY_WIN_TEMPLATE
 };
 
-static const u16 *const sHoennTrainerCardPals[] =
+/*static const u16 *const sHoennTrainerCardPals[] =
 {
     gHoennTrainerCardGreen_Pal,  // Default (0 stars)
     sHoennTrainerCardBronze_Pal, // 1 star
     sHoennTrainerCardCopper_Pal, // 2 stars
     sHoennTrainerCardSilver_Pal, // 3 stars
     sHoennTrainerCardGold_Pal,   // 4 stars
-};
+};*/
 
 static const u16 *const sKantoTrainerCardPals[] =
 {
@@ -283,7 +303,8 @@ static const u16 *const sKantoTrainerCardPals[] =
     sKantoTrainerCardGold_Pal,   // 4 stars
 };
 
-static const u8 sTrainerCardTextColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_LIGHT_GRAY};
+static const u8 sTrainerCardTextColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY, 0};
+static const u8 sMitsuTrainerCardTextColors[] = {TEXT_COLOR_TRANSPARENT, 14, 0};
 static const u8 sTrainerCardStatColors[] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_RED, TEXT_COLOR_LIGHT_RED};
 static const u8 sTimeColonInvisibleTextColors[6] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_TRANSPARENT, TEXT_COLOR_TRANSPARENT};
 
@@ -320,6 +341,122 @@ static const u8 sTrainerPicFacilityClass[][GENDER_COUNT] =
     }
 };
 
+#define TAG_STAR  30000
+#define TAG_SHADOW 30001
+
+static const u32 sCardStarGfx[] = INCBIN_U32("graphics/trainer_card/star.4bpp.smol");
+static const struct OamData sOamData_CardStar =
+{
+    .shape = SPRITE_SHAPE(8x8),
+    .size = SPRITE_SIZE(8x8),
+    .priority = 0,
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_CardStar =
+{
+    .data = sCardStarGfx,
+    .size = (8*8)/2,
+    .tag = TAG_STAR,
+};
+
+static const struct SpriteTemplate sSpriteTemplate_CardStar =
+{
+    .tileTag = TAG_STAR,
+    .paletteTag = TAG_STAR,
+    .oam = &sOamData_CardStar,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static const struct SpritePalette sSpritePal_CardStar =
+{
+    .data = sTrainerCardStar_Pal,
+    .tag = TAG_STAR,
+};
+
+static const u32 sShadowGfx[] = INCBIN_U32("graphics/trainer_card/shadow.4bpp.smol");
+static const u16 sShadowGfx_Pal[] = INCBIN_U16("graphics/trainer_card/shadow.gbapal");
+static const struct OamData sOamData_Shadow =
+{
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(64x64),
+    .size = SPRITE_SIZE(64x64),
+    .priority = 1,
+};
+
+static const struct CompressedSpriteSheet sSpriteSheet_Shadow =
+{
+    .data = sShadowGfx,
+    .size = (64 * 64 * 3)/2,
+    .tag = TAG_SHADOW,
+};
+
+static const union AnimCmd sSpriteAnim_ShadowLeft[] = {
+    ANIMCMD_FRAME(0, 0, FALSE, FALSE),  // First 64x64 frame (tiles 0-63)
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_ShadowMiddle[] = {
+    ANIMCMD_FRAME(64, 0, FALSE, FALSE),  // Second 64x64 frame (tiles 63-127)
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_ShadowRight[] = {
+    ANIMCMD_FRAME(128, 0, FALSE, FALSE),  // Third 64x64 frame (tiles 128-191)
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_ShadowMiddleFlip[] = {
+    ANIMCMD_FRAME(64, 0, .hFlip = TRUE, FALSE),  // Second 64x64 frame flipped (tiles 63-127)
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_ShadowLeftFlip[] = {
+    ANIMCMD_FRAME(128, 0, .hFlip = TRUE, FALSE),  // Third 64x64 frame flipped (tiles 128-191)
+    ANIMCMD_END
+};
+
+static const union AnimCmd *const sSpriteAnimTable_Shadow[] = {
+    sSpriteAnim_ShadowLeft,
+    sSpriteAnim_ShadowMiddle,
+    sSpriteAnim_ShadowRight,
+};
+
+static const union AnimCmd *const sSpriteAnimTable_ShadowFlip[] = {
+    sSpriteAnim_ShadowLeftFlip,
+    sSpriteAnim_ShadowMiddleFlip,
+    sSpriteAnim_ShadowLeft,//same as no flip 1st sprite 
+};
+
+static const struct SpriteTemplate sSpriteTemplate_Shadow =
+{
+    .tileTag = TAG_SHADOW,
+    .paletteTag = TAG_SHADOW,
+    .oam = &sOamData_Shadow,
+    .anims = sSpriteAnimTable_Shadow,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static const struct SpriteTemplate sSpriteTemplate_Shadow_Flip =
+{
+    .tileTag = TAG_SHADOW,
+    .paletteTag = TAG_SHADOW,
+    .oam = &sOamData_Shadow,
+    .anims = sSpriteAnimTable_ShadowFlip,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static const struct SpritePalette sSpritePal_Shadow =
+{
+    .data = sShadowGfx_Pal,
+    .tag = TAG_SHADOW,
+};
+
 static bool8 (*const sTrainerCardFlipTasks[])(struct Task *) =
 {
     Task_BeginCardFlip,
@@ -338,6 +475,7 @@ static void VblankCb_TrainerCard(void)
     BlinkTimeColon();
     if (sData->allowDMACopy)
         DmaCopy16(3, &gScanlineEffectRegBuffers[0], &gScanlineEffectRegBuffers[1], 0x140);
+    ChangeBgX(2, 64, BG_COORD_SUB);
 }
 
 static void HblankCb_TrainerCard(void)
@@ -398,9 +536,11 @@ static void Task_TrainerCard(u8 taskId)
         sData->mainState++;
         break;
     case 3:
-        FillWindowPixelBuffer(WIN_TRAINER_PIC, PIXEL_FILL(0));
-        CreateTrainerCardTrainerPic();
-        DrawTrainerCardWindow(WIN_TRAINER_PIC);
+        //FillWindowPixelBuffer(WIN_TRAINER_PIC, PIXEL_FILL(0));
+        //CreateTrainerCardTrainerPic();
+        //DrawTrainerCardWindow(WIN_TRAINER_PIC);
+        DrawShadowSprites();
+        DrawStarsAndBadgesOnCard();
         sData->mainState++;
         break;
     case 4:
@@ -412,16 +552,15 @@ static void Task_TrainerCard(u8 taskId)
         sData->mainState++;
         break;
     case 6:
-        DrawStarsAndBadgesOnCard();
         sData->mainState++;
         break;
     // Fade in
     case 7:
-        if (gWirelessCommType == 1 && gReceivedRemoteLinkPlayers == TRUE)
+        /*if (gWirelessCommType == 1 && gReceivedRemoteLinkPlayers == TRUE)
         {
             LoadWirelessStatusIndicatorSpriteGfx();
             CreateWirelessStatusIndicatorSprite(DISPLAY_WIDTH - 10, DISPLAY_HEIGHT - 10);
-        }
+        }*/
         BlendPalettes(PALETTES_ALL, 16, sData->blendColor);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 16, 0, sData->blendColor);
         SetVBlankCallback(VblankCb_TrainerCard);
@@ -440,7 +579,8 @@ static void Task_TrainerCard(u8 taskId)
         break;
     case STATE_HANDLE_INPUT_FRONT:
         // Blink the : in play time
-        if (!gReceivedRemoteLinkPlayers && sData->timeColonNeedDraw)
+        //if (!gReceivedRemoteLinkPlayers && sData->timeColonNeedDraw)
+        if (sData->timeColonNeedDraw)
         {
             PrintTimeOnCard();
             DrawTrainerCardWindow(WIN_CARD_TEXT);
@@ -448,21 +588,23 @@ static void Task_TrainerCard(u8 taskId)
         }
         if (JOY_NEW(A_BUTTON))
         {
+            HideStarsSprites();
+            HideShadowSprites();
             FlipTrainerCard();
             PlaySE(SE_RG_CARD_FLIP);
             sData->mainState = STATE_WAIT_FLIP_TO_BACK;
         }
         else if (JOY_NEW(B_BUTTON))
         {
-            if (gReceivedRemoteLinkPlayers && sData->isLink && InUnionRoom() == TRUE)
+            /*if (gReceivedRemoteLinkPlayers && sData->isLink && InUnionRoom() == TRUE)
             {
                 sData->mainState = STATE_WAIT_LINK_PARTNER;
             }
             else
-            {
+            {*/
                 BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, sData->blendColor);
                 sData->mainState = STATE_CLOSE_CARD;
-            }
+            //}
         }
         break;
     case STATE_WAIT_FLIP_TO_BACK:
@@ -475,7 +617,7 @@ static void Task_TrainerCard(u8 taskId)
     case STATE_HANDLE_INPUT_BACK:
         if (JOY_NEW(B_BUTTON))
         {
-            if (gReceivedRemoteLinkPlayers && sData->isLink && InUnionRoom() == TRUE)
+            /*if (gReceivedRemoteLinkPlayers && sData->isLink && InUnionRoom() == TRUE)
             {
                 sData->mainState = STATE_WAIT_LINK_PARTNER;
             }
@@ -485,23 +627,23 @@ static void Task_TrainerCard(u8 taskId)
                 sData->mainState = STATE_CLOSE_CARD;
             }
             else
-            {
+            {*/
                 FlipTrainerCard();
                 sData->mainState = STATE_WAIT_FLIP_TO_FRONT;
                 PlaySE(SE_RG_CARD_FLIP);
-            }
+            //}
         }
         else if (JOY_NEW(A_BUTTON))
         {
-           if (gReceivedRemoteLinkPlayers && sData->isLink && InUnionRoom() == TRUE)
+           /*if (gReceivedRemoteLinkPlayers && sData->isLink && InUnionRoom() == TRUE)
            {
                sData->mainState = STATE_WAIT_LINK_PARTNER;
            }
            else
-           {
+           {*/
                BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, sData->blendColor);
                sData->mainState = STATE_CLOSE_CARD;
-           }
+           //}
         }
         break;
     case STATE_WAIT_LINK_PARTNER:
@@ -538,13 +680,25 @@ static bool8 LoadCardGfx(void)
     {
     case 0:
         if (sData->cardType != CARD_TYPE_FRLG)
-            DecompressDataWithHeaderWram(gHoennTrainerCardBg_Tilemap, sData->bgTilemap);
+        {
+            if (sData->trainerCard.gender == MALE)
+                DecompressDataWithHeaderWram(gHoennTrainerCardBg_Tilemap, sData->bgTilemap);
+            else
+                DecompressDataWithHeaderWram(gMitsuTrainerCardBg_Tilemap, sData->bgTilemap);
+        }
+            
         else
             DecompressDataWithHeaderWram(gKantoTrainerCardBg_Tilemap, sData->bgTilemap);
         break;
     case 1:
         if (sData->cardType != CARD_TYPE_FRLG)
-            DecompressDataWithHeaderWram(gHoennTrainerCardBack_Tilemap, sData->backTilemap);
+        {
+            if (sData->trainerCard.gender == MALE)
+                DecompressDataWithHeaderWram(gHoennTrainerCardBack_Tilemap, sData->backTilemap);
+            else
+                DecompressDataWithHeaderWram(gMitsuTrainerCardBack_Tilemap, sData->backTilemap);
+        }
+            
         else
             DecompressDataWithHeaderWram(gKantoTrainerCardBack_Tilemap, sData->backTilemap);
         break;
@@ -552,7 +706,13 @@ static bool8 LoadCardGfx(void)
         if (!sData->isLink)
         {
             if (sData->cardType != CARD_TYPE_FRLG)
-                DecompressDataWithHeaderWram(gHoennTrainerCardFront_Tilemap, sData->frontTilemap);
+            {
+                if (sData->trainerCard.gender == MALE)
+                    DecompressDataWithHeaderWram(gHoennTrainerCardFront_Tilemap, sData->frontTilemap);
+                else
+                    DecompressDataWithHeaderWram(gMitsuTrainerCardFront_Tilemap, sData->frontTilemap);
+            }
+                
             else
                 DecompressDataWithHeaderWram(gKantoTrainerCardFront_Tilemap, sData->frontTilemap);
         }
@@ -565,14 +725,24 @@ static bool8 LoadCardGfx(void)
         }
         break;
     case 3:
-        if (sData->cardType != CARD_TYPE_FRLG)
-            DecompressDataWithHeaderWram(sHoennTrainerCardBadges_Gfx, sData->badgeTiles);
-        else
-            DecompressDataWithHeaderWram(sKantoTrainerCardBadges_Gfx, sData->badgeTiles);
+        //if (sData->cardType != CARD_TYPE_FRLG)
+            //DecompressDataWithHeaderWram(sHoennTrainerCardBadges_Gfx, sData->badgeTiles);
+        //else
+            //DecompressDataWithHeaderWram(sKantoTrainerCardBadges_Gfx, sData->badgeTiles);
+            LoadCompressedSpriteSheet(&sSpriteSheet_CardStar);
+            LoadSpritePalette(&sSpritePal_CardStar);
+            LoadCompressedSpriteSheet(&sSpriteSheet_Shadow);
+            LoadSpritePalette(&sSpritePal_Shadow);
         break;
     case 4:
         if (sData->cardType != CARD_TYPE_FRLG)
-            DecompressDataWithHeaderWram(gHoennTrainerCard_Gfx, sData->cardTiles);
+        {
+            if (sData->trainerCard.gender == MALE)
+                DecompressDataWithHeaderWram(gAkiTrainerCard_Gfx, sData->cardTiles);
+            else
+                DecompressDataWithHeaderWram(gMitsuTrainerCard_Gfx, sData->cardTiles);
+        }
+            
         else
             DecompressDataWithHeaderWram(gKantoTrainerCard_Gfx, sData->cardTiles);
         break;
@@ -784,12 +954,24 @@ static void TrainerCard_GenerateCardForPlayer(struct TrainerCard *trainerCard)
 //! TODO: Store the link player's current outfit id
 void TrainerCard_GenerateCardForLinkPlayer(struct TrainerCard *trainerCard)
 {
-    memset(trainerCard, 0, 0x60);
+    /*memset(trainerCard, 0, 0x60);
     trainerCard->version = GAME_VERSION;
     SetPlayerCardData(trainerCard, CARD_TYPE_EMERALD);
     trainerCard->linkHasAllFrontierSymbols = HasAllFrontierSymbols();
     *((u16 *)&trainerCard->linkPoints.frontier) = gSaveBlock2Ptr->frontier.cardBattlePoints;
     if (trainerCard->linkHasAllFrontierSymbols)
+        trainerCard->stars++;
+
+    if (trainerCard->gender == FEMALE)
+        trainerCard->unionRoomClass = gUnionRoomFacilityClasses[(trainerCard->trainerId % NUM_UNION_ROOM_CLASSES) + NUM_UNION_ROOM_CLASSES];
+    else
+        trainerCard->unionRoomClass = gUnionRoomFacilityClasses[trainerCard->trainerId % NUM_UNION_ROOM_CLASSES];*/
+    memset(trainerCard, 0, sizeof(struct TrainerCard));
+    trainerCard->version = GAME_VERSION;
+    SetPlayerCardData(trainerCard, CARD_TYPE_EMERALD);
+    trainerCard->hasAllFrontierSymbols = HasAllFrontierSymbols();
+    trainerCard->frontierBP = gSaveBlock2Ptr->frontier.cardBattlePoints;
+    if (trainerCard->hasAllFrontierSymbols)
         trainerCard->stars++;
 
     if (trainerCard->gender == FEMALE)
@@ -824,7 +1006,7 @@ static void SetDataFromTrainerCard(void)
 {
     u8 i;
     u32 badgeFlag;
-
+    sData->isLink = FALSE;//trying to fix the colon not blinking in mitsuru's trainer card
     sData->hasPokedex = FALSE;
     sData->hasHofResult = FALSE;
     sData->hasLinkResults = FALSE;
@@ -868,9 +1050,9 @@ static void InitGpuRegs(void)
     SetGpuReg(REG_OFFSET_WINOUT, WINOUT_WIN01_BG1 | WINOUT_WIN01_BG2 | WINOUT_WIN01_BG3 | WINOUT_WIN01_OBJ);
     SetGpuReg(REG_OFFSET_WIN0V, DISPLAY_HEIGHT);
     SetGpuReg(REG_OFFSET_WIN0H, DISPLAY_WIDTH);
-    if (gReceivedRemoteLinkPlayers)
+    /*if (gReceivedRemoteLinkPlayers)
         EnableInterrupts(INTR_FLAG_VBLANK | INTR_FLAG_HBLANK | INTR_FLAG_VCOUNT | INTR_FLAG_TIMER3 | INTR_FLAG_SERIAL);
-    else
+    else*/
         EnableInterrupts(INTR_FLAG_VBLANK | INTR_FLAG_HBLANK);
 }
 
@@ -1009,17 +1191,26 @@ static void BufferTextsVarsForCardPage2(void)
     BufferBattleFacilityStats();
 }
 
+const u8 sText_AkiName[] = _("Akihiko Sanada");
+const u8 sText_MitsuName[] = _("Mitsuru Kirijo");
+
 static void PrintNameOnCardFront(void)
 {
-    u8 buffer[32];
+    /*u8 buffer[32];
     u8 *txtPtr;
     txtPtr = StringCopy(buffer, gText_TrainerCardName);
     StringCopy(txtPtr, sData->trainerCard.playerName);
-    ConvertInternationalString(txtPtr, sData->language);
+    ConvertInternationalString(txtPtr, sData->language);*/
+    int xMitsu = GetStringRightAlignXOffset(FONT_NORMAL, sText_MitsuName, 27*8);
     if (sData->cardType == CARD_TYPE_FRLG)
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 28, sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 28, sTrainerCardTextColors, TEXT_SKIP_DRAW, sText_AkiName);
     else
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 33, sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
+    {
+        if (sData->trainerCard.gender == MALE)
+            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 8, 9, sTrainerCardTextColors, TEXT_SKIP_DRAW, sText_AkiName);
+        else
+            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, xMitsu, 9, sTrainerCardTextColors, TEXT_SKIP_DRAW, sText_MitsuName);
+    }
 }
 
 static void PrintIdOnCard(void)
@@ -1027,18 +1218,19 @@ static void PrintIdOnCard(void)
     u8 buffer[32];
     u8 *txtPtr;
     s32 xPos;
-    u32 top;
+    u32 top = 9;
     txtPtr = StringCopy(buffer, gText_TrainerCardIDNo);
     ConvertIntToDecimalStringN(txtPtr, sData->trainerCard.trainerId, STR_CONV_MODE_LEADING_ZEROS, 5);
     if (sData->cardType == CARD_TYPE_FRLG)
     {
         xPos = GetStringCenterAlignXOffset(FONT_NORMAL, buffer, 80) + 132;
-        top = 9;
     }
     else
     {
-        xPos = GetStringCenterAlignXOffset(FONT_NORMAL, buffer, 96) + 120;
-        top = 9;
+        if (sData->trainerCard.gender == MALE)
+            xPos = GetStringCenterAlignXOffset(FONT_NORMAL, buffer, 96) + 80;
+        else
+            xPos = 9*8;
     }
 
     AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, xPos, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, buffer);
@@ -1048,25 +1240,34 @@ static void PrintMoneyOnCard(void)
 {
     s32 xOffset;
     u8 top;
+    top = (12*8) + 1;
 
     if (!sData->isHoenn)
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 56, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 20, 56, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
     else
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 57, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
-
+    {
+        if (sData->trainerCard.gender == MALE)
+            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 8, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
+        else
+            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 15*8, top, sMitsuTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardMoney);
+    }
+        
+    
     ConvertIntToDecimalStringN(gStringVar1, sData->trainerCard.money, STR_CONV_MODE_LEFT_ALIGN, MAX_MONEY_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
     if (!sData->isHoenn)
     {
-        xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 144);
+        xOffset = GetStringRightAlignXOffset(FONT_SHORT_NARROW, gStringVar4, 144);
         top = 56;
     }
     else
     {
-        xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 128);
-        top = 57;
+        xOffset = GetStringRightAlignXOffset(FONT_SHORT_NARROW, gStringVar4, 100);
     }
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, xOffset, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    if (sData->trainerCard.gender == MALE)
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, xOffset, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    else
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 15*8 + xOffset, top, sMitsuTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
 }
 
 static u16 GetCaughtMonsCount(void)
@@ -1081,28 +1282,40 @@ static void PrintPokedexOnCard(void)
 {
     s32 xOffset;
     u8 top;
+    top = (10*8) + 1;
     if (FlagGet(FLAG_SYS_POKEDEX_GET))
     {
         if (!sData->isHoenn)
-            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 72, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
+            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 20, 72, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
         else
-            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 73, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
-        StringCopy(ConvertIntToDecimalStringN(gStringVar4, sData->trainerCard.caughtMonsCount, STR_CONV_MODE_LEFT_ALIGN, 4), gText_EmptyString6);
+        {
+            if (sData->trainerCard.gender == MALE)
+                AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 8, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
+            else
+                AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 15*8, top, sMitsuTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardPokedex);
+        }
+            
+        
+            StringCopy(ConvertIntToDecimalStringN(gStringVar4, sData->trainerCard.caughtMonsCount, STR_CONV_MODE_LEFT_ALIGN, 4), gText_EmptyString6);
         if (!sData->isHoenn)
         {
-            xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 144);
+            xOffset = GetStringRightAlignXOffset(FONT_SHORT_NARROW, gStringVar4, 144);
             top = 72;
         }
         else
         {
-            xOffset = GetStringRightAlignXOffset(FONT_NORMAL, gStringVar4, 128);
-            top = 73;
+            xOffset = GetStringRightAlignXOffset(FONT_SHORT_NARROW, gStringVar4, 100);
         }
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, xOffset, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+        if (sData->trainerCard.gender == MALE)
+            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, xOffset, top, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+        else
+            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 15*8 + xOffset, top, sMitsuTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
     }
 }
 
 static const u8 *const sTimeColonTextColors[] = {sTrainerCardTextColors, sTimeColonInvisibleTextColors};
+static const u8 *const sMitsuTimeColonTextColors[] = {sMitsuTrainerCardTextColors, sTimeColonInvisibleTextColors};
+
 
 static void PrintTimeOnCard(void)
 {
@@ -1110,22 +1323,28 @@ static void PrintTimeOnCard(void)
     u16 minutes;
     s32 width;
     u32 x, y, totalWidth;
-
+    y = (14*8) +1;
     if (!sData->isHoenn)
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 20, 88, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 20, 88, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
     else
-        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, 16, 89, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
-
-    if (sData->isLink)
+    {
+        if (sData->trainerCard.gender == MALE)
+            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 8, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
+        else
+            AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 15*8, y, sMitsuTrainerCardTextColors, TEXT_SKIP_DRAW, gText_TrainerCardTime);
+    }
+        
+    
+    /*if (sData->isLink)
     {
         hours = sData->trainerCard.playTimeHours;
         minutes = sData->trainerCard.playTimeMinutes;
     }
     else
-    {
+    {*/
         hours = gSaveBlock2Ptr->playTimeHours;
         minutes = gSaveBlock2Ptr->playTimeMinutes;
-    }
+    //}
 
     if (hours > 999)
         hours = 999;
@@ -1140,20 +1359,33 @@ static void PrintTimeOnCard(void)
     }
     else
     {
-        x = 128;
-        y = 89;
+        x = 100;
     }
     totalWidth = width + 30;
     x -= totalWidth;
+    if (sData->trainerCard.gender == MALE)
+        FillWindowPixelRect(WIN_CARD_TEXT, PIXEL_FILL(0), x, y, totalWidth, 15);
+    else
+        FillWindowPixelRect(WIN_CARD_TEXT, PIXEL_FILL(0), 15*8 + x, y, totalWidth, 15);
 
-    FillWindowPixelRect(WIN_CARD_TEXT, PIXEL_FILL(0), x, y, totalWidth, 15);
     ConvertIntToDecimalStringN(gStringVar4, hours, STR_CONV_MODE_RIGHT_ALIGN, 3);
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, x, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    if (sData->trainerCard.gender == MALE)
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, x, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    else
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 15*8 + x, y, sMitsuTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    
     x += 18;
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, x, y, sTimeColonTextColors[sData->timeColonInvisible], TEXT_SKIP_DRAW, gText_Colon2);
+    if (sData->trainerCard.gender == MALE)
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, x, y, sTimeColonTextColors[sData->timeColonInvisible], TEXT_SKIP_DRAW, gText_Colon2);
+    else
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 15*8 + x, y, sMitsuTimeColonTextColors[sData->timeColonInvisible], TEXT_SKIP_DRAW, gText_Colon2);
+        
     x += width;
     ConvertIntToDecimalStringN(gStringVar4, minutes, STR_CONV_MODE_LEADING_ZEROS, 2);
-    AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_NORMAL, x, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    if (sData->trainerCard.gender == MALE)
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, x, y, sTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
+    else
+        AddTextPrinterParameterized3(WIN_CARD_TEXT, FONT_SHORT_NARROW, 15*8 + x, y, sMitsuTrainerCardTextColors, TEXT_SKIP_DRAW, gStringVar4);
 }
 
 /*static void PrintProfilePhraseOnCard(void)
@@ -1436,15 +1668,19 @@ static u8 SetCardBgsAndPals(void)
         LoadBgTiles(3, sData->badgeTiles, ARRAY_COUNT(sData->badgeTiles), 0);
         break;
     case 1:
-        LoadBgTiles(0, sData->cardTiles, 0x1800, 0);
+        if (sData->trainerCard.gender == MALE)
+            LoadBgTiles(0, sData->cardTiles, 128*128/2, 0);
+        else
+            LoadBgTiles(0, sData->cardTiles, 128*136/2, 0);
         break;
     case 2:
         if (sData->cardType != CARD_TYPE_FRLG)
         {
-            LoadPalette(sHoennTrainerCardPals[sData->trainerCard.stars], BG_PLTT_ID(0), 3 * PLTT_SIZE_4BPP);
-            LoadPalette(sHoennTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
-            if (sData->trainerCard.gender != MALE)
-                LoadPalette(sHoennTrainerCardFemaleBg_Pal, BG_PLTT_ID(1), PLTT_SIZE_4BPP);
+            if (sData->trainerCard.gender == MALE)
+                LoadPalette(gAkiTrainerCard_Pal, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+            //LoadPalette(sHoennTrainerCardBadges_Pal, BG_PLTT_ID(3), PLTT_SIZE_4BPP);
+            else
+                LoadPalette(gMitsuTrainerCard_Pal, BG_PLTT_ID(0), 2* PLTT_SIZE_4BPP);
         }
         else
         {
@@ -1475,14 +1711,11 @@ static void DrawCardScreenBackground(u16 *ptr)
     s16 i, j;
     u16 *dst = sData->bgTilemapBuffer;
 
-    for (i = 0; i < 20; i++)
+    for (i = 0; i < 32; i++)//y
     {
-        for (j = 0; j < 32; j++)
+        for (j = 0; j < 32; j++)//x
         {
-            if (j < 30)
-                dst[32 * i + j] = ptr[30 * i + j];
-            else
-                dst[32 * i + j] = ptr[0];
+                dst[32 * i + j] = ptr[32 * i + j];
         }
     }
     CopyBgTilemapBufferToVram(2);
@@ -1506,15 +1739,65 @@ static void DrawCardFrontOrBack(u16 *ptr)
     CopyBgTilemapBufferToVram(0);
 }
 
+/*static void DestroySpriteInArray(u8 spriteArrayId)
+{
+    if (sData->spriteIds[spriteArrayId] != SPRITE_NONE)
+    {
+        DestroySprite(&gSprites[sData->spriteIds[spriteArrayId]]);
+        sData->spriteIds[spriteArrayId] = SPRITE_NONE;
+    }
+}
+
+static void DestroyStarsSprites(void)
+{
+    u8 i;
+    for (i = 0; i < MAX_STARS; i++)
+    {
+        DestroySpriteInArray(SPRITE_ARR_ID_STARS + i);
+    }
+}*/
+
 static void DrawStarsAndBadgesOnCard(void)
 {
-    static const u8 yOffsets[] = {7, 7};
+    //DestroyStarsSprites();
 
-    s16 i, x;
-    u16 tileNum = 192;
-    u8 palNum = 3;
+    s16 i, x, y;
+    u8 currentstar = sData->trainerCard.stars;
 
-    FillBgTilemapBufferRect(3, 143, 15, yOffsets[sData->isHoenn], sData->trainerCard.stars, 1, 4);
+    for (i = SPRITE_ARR_ID_STARS; i < currentstar; i++)
+    {
+        if (sData->trainerCard.gender == MALE)
+        {
+            x = 18 + (10 * i);
+            y = 5*8 - 2;
+        }
+        else
+        {
+            x = 27*8 - (10 * i);
+            y = 5*8 - 2;
+        }
+        sData->spriteIds[i] = CreateSprite(&sSpriteTemplate_CardStar, x, y, 0);
+        /*gSprites[sData->spriteIds[i]].invisible = TRUE;
+
+        if (currentstar == 1)
+            gSprites[sData->spriteIds[SPRITE_ARR_ID_STARS]].invisible = FALSE;
+        else if (currentstar == 2)
+        {
+            gSprites[sData->spriteIds[SPRITE_ARR_ID_STARS]].invisible = FALSE;
+            gSprites[sData->spriteIds[SPRITE_ARR_ID_STARS + 1]].invisible = FALSE;
+        }
+        else if (currentstar == 3)
+        {
+            gSprites[sData->spriteIds[SPRITE_ARR_ID_STARS]].invisible = FALSE;
+            gSprites[sData->spriteIds[SPRITE_ARR_ID_STARS + 1]].invisible = FALSE;
+            gSprites[sData->spriteIds[SPRITE_ARR_ID_STARS + 2]].invisible = FALSE;
+        }
+        else
+            gSprites[sData->spriteIds[i]].invisible = FALSE;*/
+            
+    }
+
+    /*FillBgTilemapBufferRect(3, 143, 15, yOffsets[sData->isHoenn], sData->trainerCard.stars, 1, 4);
     if (!sData->isLink)
     {
         x = 4;
@@ -1529,7 +1812,81 @@ static void DrawStarsAndBadgesOnCard(void)
             }
         }
     }
-    CopyBgTilemapBufferToVram(3);
+    CopyBgTilemapBufferToVram(3);*/
+}
+
+static void HideStarsSprites(void)
+{
+    u8 i;
+    for (i = SPRITE_ARR_ID_STARS; i < sData->trainerCard.stars; i++)
+    {
+        gSprites[sData->spriteIds[SPRITE_ARR_ID_STARS + i]].invisible = TRUE;
+    }
+}
+
+static void ShowStarsSprites(void)
+{
+    u8 i;
+    for (i = SPRITE_ARR_ID_STARS; i < sData->trainerCard.stars; i++)
+    {
+        gSprites[sData->spriteIds[SPRITE_ARR_ID_STARS + i]].invisible = FALSE;
+    }
+}
+
+/*static void DestroyShadowSprites(void)
+{
+    u8 i;
+    for (i = 0; i < SHADOW_SPRITE_COUNT; i++)
+    {
+        DestroySpriteInArray(SPRITE_ARR_ID_SHADOWS + i);
+    }
+}*/
+
+static void DrawShadowSprites(void)
+{
+    //DestroyShadowSprites();
+    s16 i, x, y;
+    u8 *spriteIds = &sData->spriteIds[SPRITE_ARR_ID_SHADOWS];
+
+    for (i = 0; i < SHADOW_SPRITE_COUNT; i++)
+    {
+        
+        if (sData->trainerCard.gender == MALE)
+        {
+            x = 8 + (i * 64) + 32;
+            y = 11*8 + 32;
+            spriteIds[i] = CreateSprite(&sSpriteTemplate_Shadow, x, y, 1);
+        }
+        else
+        {
+            x = 13*8 + 32 + (i-1) * 64;
+            y = 11*8 + 32;
+            spriteIds[i] = CreateSprite(&sSpriteTemplate_Shadow_Flip, x, y, 1);
+        }
+        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
+        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(5, 8));
+        if (spriteIds[i] != MAX_SPRITES)
+            StartSpriteAnim(&gSprites[spriteIds[i]], i);
+        gSprites[spriteIds[i]].oam.objMode = ST_OAM_OBJ_BLEND;
+    } 
+}
+
+static void HideShadowSprites(void)
+{
+    u8 i;
+    for (i = SPRITE_ARR_ID_SHADOWS; i < SPRITE_ARR_ID_SHADOWS + SHADOW_SPRITE_COUNT; i++)
+    {
+        gSprites[sData->spriteIds[i]].invisible = TRUE;
+    }
+}
+
+static void ShowShadowSprites(void)
+{
+    u8 i;
+    for (i = SPRITE_ARR_ID_SHADOWS; i < SPRITE_ARR_ID_SHADOWS + SHADOW_SPRITE_COUNT; i++)
+    {
+        gSprites[sData->spriteIds[i]].invisible = FALSE;
+    }
 }
 
 static void DrawCardBackStats(void)
@@ -1694,6 +2051,7 @@ static bool8 Task_DrawFlippedCardSide(struct Task *task)
         case 1:
             if (!sData->onBack)
             {
+                
                 if (!PrintAllOnCardBack())
                     return FALSE;
             }
@@ -1705,7 +2063,9 @@ static bool8 Task_DrawFlippedCardSide(struct Task *task)
             break;
         case 2:
             if (!sData->onBack)
+            {
                 DrawCardFrontOrBack(sData->backTilemap);
+            }
             else
                 DrawTrainerCardWindow(WIN_CARD_TEXT);
             break;
@@ -1713,11 +2073,11 @@ static bool8 Task_DrawFlippedCardSide(struct Task *task)
             if (!sData->onBack)
                 DrawCardBackStats();
             else
-                FillWindowPixelBuffer(WIN_TRAINER_PIC, PIXEL_FILL(0));
+                //FillWindowPixelBuffer(WIN_TRAINER_PIC, PIXEL_FILL(0));
             break;
         case 4:
             if (sData->onBack)
-                CreateTrainerCardTrainerPic();
+                //CreateTrainerCardTrainerPic();
             break;
         default:
             task->tFlipState++;
@@ -1726,7 +2086,7 @@ static bool8 Task_DrawFlippedCardSide(struct Task *task)
             return FALSE;
         }
         sData->flipDrawState++;
-    } while (gReceivedRemoteLinkPlayers == 0);
+    } while (gReceivedRemoteLinkPlayers == 0 || gReceivedRemoteLinkPlayers == 1);
 
     return FALSE;
 }
@@ -1738,10 +2098,9 @@ static bool8 Task_SetCardFlipped(struct Task *task)
     // If on back of card, draw front of card because its being flipped
     if (sData->onBack)
     {
-        DrawTrainerCardWindow(WIN_TRAINER_PIC);
+        //DrawTrainerCardWindow(WIN_TRAINER_PIC);
         DrawCardScreenBackground(sData->bgTilemap);
         DrawCardFrontOrBack(sData->frontTilemap);
-        DrawStarsAndBadgesOnCard();
     }
     DrawTrainerCardWindow(WIN_CARD_TEXT);
     sData->onBack ^= 1;
@@ -1800,6 +2159,11 @@ static bool8 Task_EndCardFlip(struct Task *task)
 {
     ShowBg(1);
     ShowBg(3);
+    if (!sData->onBack)
+    {
+        ShowShadowSprites();
+        ShowStarsSprites();
+    }
     SetHBlankCallback(NULL);
     DestroyTask(FindTaskIdByFunc(Task_DoCardFlipTask));
     return FALSE;
@@ -1814,11 +2178,11 @@ void ShowPlayerTrainerCard(void (*callback)(void))
     else
         sData->blendColor = RGB_BLACK;
 
-    if (InUnionRoom() == TRUE)
+    /*if (InUnionRoom() == TRUE)
         sData->isLink = TRUE;
-    else
-        sData->isLink = FALSE;
-
+    else*/
+    sData->isLink = FALSE;
+    gReceivedRemoteLinkPlayers = 0;
     sData->language = GAME_LANGUAGE;
     TrainerCard_GenerateCardForPlayer(&sData->trainerCard);
     SetMainCallback2(CB2_InitTrainerCard);
@@ -1828,7 +2192,7 @@ void ShowTrainerCardInLink(u8 cardId, void (*callback)(void))
 {
     sData = AllocZeroed(sizeof(*sData));
     sData->callback2 = callback;
-    sData->isLink = TRUE;
+    //sData->isLink = TRUE;
     sData->trainerCard = gTrainerCards[cardId];
     sData->language = gLinkPlayers[cardId].language;
     SetMainCallback2(CB2_InitTrainerCard);
@@ -1889,7 +2253,7 @@ static u8 VersionToCardType(enum GameVersion version)
         return CARD_TYPE_RS;
 }
 
-static void CreateTrainerCardTrainerPic(void)
+/*static void CreateTrainerCardTrainerPic(void)
 {
     if (InUnionRoom() == TRUE && gReceivedRemoteLinkPlayers == 1)
     {
@@ -1911,4 +2275,4 @@ static void CreateTrainerCardTrainerPic(void)
                     8,
                     WIN_TRAINER_PIC);
     }
-}
+}*/

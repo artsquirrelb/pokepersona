@@ -1985,7 +1985,7 @@ const u16 gUsePokeblockNatureWin_Pal[] = INCBIN_U16("graphics/pokeblock/use_scre
 // trainer card
 
 const u16 gHoennTrainerCardGreen_Pal[] = INCBIN_U16("graphics/trainer_card/green.gbapal");
-const u32 gHoennTrainerCard_Gfx[] = INCBIN_U32("graphics/trainer_card/tiles.4bpp.smol");
+
 const u32 gHoennTrainerCardBg_Tilemap[] = INCBIN_U32("graphics/trainer_card/bg.bin.smolTM");
 const u32 gHoennTrainerCardFront_Tilemap[] = INCBIN_U32("graphics/trainer_card/front.bin.smolTM");
 const u32 gHoennTrainerCardBack_Tilemap[] = INCBIN_U32("graphics/trainer_card/back.bin.smolTM");
@@ -1997,6 +1997,16 @@ const u32 gKantoTrainerCardBg_Tilemap[] = INCBIN_U32("graphics/trainer_card/frlg
 const u32 gKantoTrainerCardFront_Tilemap[] = INCBIN_U32("graphics/trainer_card/frlg/front.bin.smolTM");
 const u32 gKantoTrainerCardBack_Tilemap[] = INCBIN_U32("graphics/trainer_card/frlg/back.bin.smolTM");
 const u32 gKantoTrainerCardFrontLink_Tilemap[] = INCBIN_U32("graphics/trainer_card/frlg/front_link.bin.smolTM");
+
+const u32 gAkiTrainerCard_Gfx[] = INCBIN_U32("graphics/trainer_card/tiles_a.4bpp.smol");//aki
+const u16 gAkiTrainerCard_Pal[] = INCBIN_U16("graphics/trainer_card/aki.gbapal");
+
+const u32 gMitsuTrainerCard_Gfx[] = INCBIN_U32("graphics/trainer_card/tiles_m.4bpp.smol");//mitsu
+const u16 gMitsuTrainerCard_Pal[] = INCBIN_U16("graphics/trainer_card/mitsu.gbapal");
+const u32 gMitsuTrainerCardBg_Tilemap[] = INCBIN_U32("graphics/trainer_card/bg_m.bin.smolTM");
+const u32 gMitsuTrainerCardFront_Tilemap[] = INCBIN_U32("graphics/trainer_card/front_m.bin.smolTM");
+const u32 gMitsuTrainerCardBack_Tilemap[] = INCBIN_U32("graphics/trainer_card/back_m.bin.smolTM");
+
 
 // Pokémon storage system
 

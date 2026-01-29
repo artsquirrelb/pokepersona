@@ -25,7 +25,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BOY_1_2F",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY_3",
@@ -38,7 +42,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BOY_2_2F",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     }
   ],
   "warp_events": [

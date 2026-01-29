@@ -19,7 +19,7 @@ void SoftResetInBattlePyramid(void);
 u8 GetTrainerEncounterMusicIdInBattlePyramid(u16 trainerId);
 void GenerateBattlePyramidFloorLayout(u16 *backupMapData, bool8 setPlayerPosition);
 void LoadBattlePyramidObjectEventTemplates(void);
-void LoadBattlePyramidFloorObjectEventScripts(void);
+//void LoadBattlePyramidFloorObjectEventScripts(void);
 u8 GetNumBattlePyramidObjectEvents(void);
 u16 GetBattlePyramidPickupItemId(void);
 

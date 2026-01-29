@@ -36,7 +36,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_5"
+      "flag": "FLAG_TEMP_5",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -153,7 +157,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_SailorOnGuard",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -166,7 +174,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_SailorOnBreak",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": false,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
@@ -179,7 +191,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Fisherman",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BEAUTY",
@@ -192,7 +208,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Beauty",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": false,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SAILOR",
@@ -205,7 +225,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_SailorOnHarbor",
-      "flag": "0"
+      "flag": "0",
+      "d": false,
+      "e": true,
+      "m": false,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
@@ -218,7 +242,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_OldWoman",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": false,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
@@ -231,7 +259,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_OldMan",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": false,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
@@ -244,7 +276,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Policeman",
-      "flag": "0"
+      "flag": "0",
+      "d": false,
+      "e": true,
+      "m": false,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MACHAMP)",
@@ -257,7 +293,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Machamp",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": false,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX",
@@ -270,7 +310,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Vigoroth",
-      "flag": "0"
+      "flag": "0",
+      "d": false,
+      "e": true,
+      "m": false,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(KRABBY)",
@@ -283,7 +327,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Krabby",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": false,
+      "m": false,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TUBER_M",
@@ -296,7 +344,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_TuberM",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": false,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
@@ -309,7 +361,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": false
     },
     {
       "local_id": "A_CORAL",
@@ -323,7 +379,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "local_id": "M_CORAL",
@@ -337,7 +397,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "local_id": "S_CORAL",
@@ -351,7 +415,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(LAPRAS)",
@@ -364,7 +432,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Lapras",
-      "flag": "FLAG_TEMP_4"
+      "flag": "FLAG_TEMP_4",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
@@ -378,6 +450,10 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER",
       "flag": "FLAG_TEMP_3",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true,
       "quest_id": 2
     },
     {
@@ -391,7 +467,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Growlithe",
-      "flag": "FLAG_TEMP_3"
+      "flag": "FLAG_TEMP_3",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",

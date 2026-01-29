@@ -25,7 +25,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_PokemonCenter_Eventscript_YoungBoy",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "local_id": "LOCALID_SUNSHINETOWN_NURSE",
@@ -39,7 +43,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_PokemonCenter_Eventscript_Nurse",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
@@ -52,7 +60,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_PokemonCenter_Eventscript_OldMan",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": false,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
@@ -65,7 +77,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_PokemonCenter_Eventscript_Gentleman",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": false,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BLISSEY)",
@@ -78,7 +94,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
@@ -91,7 +111,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_PokemonCenter_Eventscript_MartLady",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
@@ -104,7 +128,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(POOCHYENA)",
@@ -117,7 +145,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_PokemonCenter_Eventscript_NPCPoochyena",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     }
   ],
   "warp_events": [

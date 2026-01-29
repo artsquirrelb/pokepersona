@@ -26,6 +26,10 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CoralportCandyShop_Eventscript_ShopKeeperF",
       "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": false,
       "quest_id": 3
     },
     {
@@ -39,7 +43,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CoralportCandyShop_Eventscript_ShopKeeperM",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
@@ -52,7 +60,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CoralportCandyShop_Eventscript_FatMan",
-      "flag": "FLAG_TEMP_3"
+      "flag": "FLAG_TEMP_3",
+      "d": false,
+      "e": true,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SWIRLIX)",
@@ -65,7 +77,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CoralportCandyShop_Eventscript_Slurpuff",
-      "flag": "0"
+      "flag": "0",
+      "d": false,
+      "e": true,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
@@ -78,7 +94,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "CoralportCandyShop_Eventscript_Twin",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": true,
+      "m": false,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
@@ -91,7 +111,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_4"
+      "flag": "FLAG_TEMP_4",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     }
   ],
   "warp_events": [

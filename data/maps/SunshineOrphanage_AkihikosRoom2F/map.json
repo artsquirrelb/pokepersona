@@ -25,7 +25,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
@@ -38,7 +42,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPARKLE",

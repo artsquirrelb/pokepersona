@@ -25,7 +25,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_KurosawasHouse_Eventscript_Kurosawa",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": false,
+      "m": false,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(GROWLITHE)",
@@ -51,7 +55,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     }
   ],
   "warp_events": [

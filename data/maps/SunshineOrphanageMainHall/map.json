@@ -25,7 +25,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RichMan_MainHall",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_BREEDER_F",
@@ -38,7 +42,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RichLady_MainHall",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
@@ -51,7 +59,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Girl_2_MainHall",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
@@ -64,7 +76,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Teacher_MainHall",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ROOFTOP_SALE_WOMAN",
@@ -77,7 +93,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MartLady",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
@@ -90,7 +110,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Boy_1_MainHall",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
@@ -103,7 +127,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Girl_1_MainHall",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
@@ -116,7 +144,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Boy_2_MainHall",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
@@ -129,7 +161,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Boy_3_MainHall",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
@@ -142,7 +178,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Porygon_PC",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "local_id": "LOCALID_SUNSHINE_ORPHANAGE_BLISSEY",
@@ -156,7 +196,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Blissey_Heal",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MINCCINO)",
@@ -182,7 +226,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshinOrphanageMainHall_Eventscript_ShinjiroTellsYouToCatchPawmi",
-      "flag": "FLAG_TEMP_3"
+      "flag": "FLAG_TEMP_3",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MIKI",
@@ -195,7 +243,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineOrphanageMainHall_Eventscript_MikiTellsYouToCatchPawmi",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PAWMI_DELTA)",
@@ -208,7 +260,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineOrphanageMainHall_Eventscript_GetPawmiStarter",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     }
   ],
   "warp_events": [

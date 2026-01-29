@@ -46,7 +46,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_2_ORAN",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -59,7 +63,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_2_RAWST",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M",
@@ -72,7 +80,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M",
@@ -85,7 +97,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
@@ -98,7 +114,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "local_id": "SHINJIRO",
@@ -112,7 +132,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route2_Eventscript_ShinjiroFindingPokemon",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DROWZEE)",
@@ -138,7 +162,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO_FAINTED",
@@ -151,7 +179,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FROZEN",
@@ -164,7 +196,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_6"
+      "flag": "FLAG_TEMP_6",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FROZEN",
@@ -177,7 +213,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_6"
+      "flag": "FLAG_TEMP_6",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(INTELEON)",
@@ -190,7 +230,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_6"
+      "flag": "FLAG_TEMP_6",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
@@ -203,7 +247,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "Route2_Eventscript_Yuuka",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "local_id": "TAROU",
@@ -217,7 +265,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route2_Eventscript_Tarou",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LASS",
@@ -230,7 +282,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route2_Eventscript_Himari",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
@@ -243,7 +299,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Porygon_PC",
-      "flag": "FLAG_TEMP_3"
+      "flag": "FLAG_TEMP_3",
+      "d": false,
+      "e": true,
+      "m": false,
+      "n": true
     },
     {
       "local_id": "KYOUSUKE",
@@ -257,7 +317,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route2_Eventscript_Kyousuke",
-      "flag": "FLAG_TEMP_4"
+      "flag": "FLAG_TEMP_4",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -283,7 +347,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_5"
+      "flag": "FLAG_TEMP_5",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     }
   ],
   "warp_events": [

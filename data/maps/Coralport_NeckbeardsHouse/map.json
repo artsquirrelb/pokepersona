@@ -26,6 +26,10 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_NeckbeardsHouse_Eventscript_Neckbeard",
       "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true,
       "quest_id": 5
     }
   ],

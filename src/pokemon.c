@@ -5801,7 +5801,7 @@ void SetWildMonHeldItem(void)
 
             rnd = Random() % 100;
             species = GetMonData(&gEnemyParty[i], MON_DATA_SPECIES, 0);
-            if (gMapHeader.mapLayoutId == LAYOUT_ALTERING_CAVE)
+            if (gMapHeader.mapLayoutId == LAYOUT_BLANK_MAP)
             {
                 s32 alteringCaveId = GetWildMonTableIdInAlteringCave(species);
                 if (alteringCaveId != 0)

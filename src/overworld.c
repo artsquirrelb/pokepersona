@@ -150,7 +150,7 @@ static void CreateLinkPlayerSprite(u8, enum GameVersion);
 static void GetLinkPlayerCoords(u8, s16 *, s16 *);
 static u8 GetLinkPlayerFacingDirection(u8);
 static u8 GetLinkPlayerElevation(u8);
-static u8 GetLinkPlayerIdAt(s16, s16);
+//static u8 GetLinkPlayerIdAt(s16, s16);
 static void SetPlayerFacingDirection(u8, u8);
 static void ZeroObjectEvent(struct ObjectEvent *);
 static void SpawnLinkPlayerObjectEvent(u8, s16, s16, u8);
@@ -834,7 +834,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     SetWarpDestination(mapGroup, mapNum, WARP_ID_NONE, -1, -1);
 
     // Dont transition map music between BF Outside West/East
-    if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER)
+    //if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER)
         TransitionMapMusic();
 
     ApplyCurrentWarp();
@@ -878,7 +878,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     }
     else
     {
-        if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER || gMapHeader.regionMapSectionId != sLastMapSectionId)
+        if ( gMapHeader.regionMapSectionId != sLastMapSectionId)
             ShowMapNamePopup();
     }
 }
@@ -891,11 +891,11 @@ static void LoadMapFromWarp(bool32 a1)
     LoadCurrentMapData();
     if (!(sObjectEventLoadFlag & SKIP_OBJECT_EVENT_LOAD))
     {
-        if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
-            LoadBattlePyramidObjectEventTemplates();
-        else if (InTrainerHill())
-            LoadTrainerHillObjectEventTemplates();
-        else
+        //if (gMapHeader.mapLayoutId == LAYOUT_BLANK_MAP)
+            //LoadBattlePyramidObjectEventTemplates();
+        //else if (InTrainerHill())
+            //LoadTrainerHillObjectEventTemplates();
+        //else
             LoadObjEventTemplatesFromHeader();
     }
 
@@ -929,11 +929,11 @@ static void LoadMapFromWarp(bool32 a1)
     UpdateLocationHistoryForRoamer();
     MoveAllRoamersToOtherLocationSets();
     gChainFishingDexNavStreak = 0;
-    if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
-        InitBattlePyramidMap(FALSE);
-    else if (InTrainerHill())
-        InitTrainerHillMap();
-    else
+    //if (gMapHeader.mapLayoutId == LAYOUT_BLANK_MAP)
+    //    InitBattlePyramidMap(FALSE);
+    //else if (InTrainerHill())
+    //    InitTrainerHillMap();
+    //else
         InitMap();
 
     if (a1 != TRUE && isIndoors)
@@ -1079,7 +1079,7 @@ static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
 {
     if (!FlagGet(FLAG_SYS_WEATHER_CTRL))
         return FALSE;
-    if (warp->mapGroup == 0)
+    /*if (warp->mapGroup == 0)
     {
         switch (warp->mapNum)
         {
@@ -1104,7 +1104,7 @@ static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
                 return TRUE;
             }
         }
-    }
+    }*/
     return FALSE;
 }
 
@@ -1112,9 +1112,9 @@ static bool16 NoMusicInSootopolisWithLegendaries(struct WarpData *warp)
 {
     if (VarGet(VAR_SKY_PILLAR_STATE) != 1)
         return FALSE;
-    else if (warp->mapGroup != MAP_GROUP(MAP_SOOTOPOLIS_CITY))
+    else if (warp->mapGroup != MAP_GROUP(MAP_BLANK_MAP))
         return FALSE;
-    else if (warp->mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY))
+    else if (warp->mapNum == MAP_NUM(MAP_BLANK_MAP))
         return TRUE;
     else
         return FALSE;
@@ -1124,9 +1124,9 @@ static bool16 IsInfiltratedWeatherInstitute(struct WarpData *warp)
 {
     if (VarGet(VAR_WEATHER_INSTITUTE_STATE))
         return FALSE;
-    else if (warp->mapGroup != MAP_GROUP(MAP_ROUTE119_WEATHER_INSTITUTE_1F))
+    else if (warp->mapGroup != MAP_GROUP(MAP_BLANK_MAP))
         return FALSE;
-    else if (warp->mapNum == MAP_NUM(MAP_ROUTE119_WEATHER_INSTITUTE_1F) || warp->mapNum == MAP_NUM(MAP_ROUTE119_WEATHER_INSTITUTE_2F))
+    else if (warp->mapNum == MAP_NUM(MAP_BLANK_MAP) || warp->mapNum == MAP_NUM(MAP_BLANK_MAP))
         return TRUE;
     else
         return FALSE;
@@ -1138,9 +1138,9 @@ static bool16 IsInfiltratedSpaceCenter(struct WarpData *warp)
         return FALSE;
     else if (VarGet(VAR_CHAPTER_4_STATE) > 2)
         return FALSE;
-    else if (warp->mapGroup != MAP_GROUP(MAP_MOSSDEEP_CITY_SPACE_CENTER_1F))
+    else if (warp->mapGroup != MAP_GROUP(MAP_BLANK_MAP))
         return FALSE;
-    else if (warp->mapNum == MAP_NUM(MAP_MOSSDEEP_CITY_SPACE_CENTER_1F) || warp->mapNum == MAP_NUM(MAP_MOSSDEEP_CITY_SPACE_CENTER_2F))
+    else if (warp->mapNum == MAP_NUM(MAP_BLANK_MAP) || warp->mapNum == MAP_NUM(MAP_BLANK_MAP))
         return TRUE;
     return FALSE;
 }
@@ -1164,37 +1164,37 @@ u16 GetCurrLocationDefaultMusic(void)
     u16 music;
 
     // Play the desert music only when the sandstorm is active on Route 111.
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111) && GetSavedWeather() == WEATHER_SANDSTORM)
-        return MUS_DESERT;
+    //if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111) && GetSavedWeather() == WEATHER_SANDSTORM)
+    //    return MUS_DESERT;
 
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
-    if (music != MUS_ROUTE118)
+    if (music != MAP_BLANK_MAP)
     {
         return music;
     }
     else
     {
         if (gSaveBlock1Ptr->pos.x < 24)
-            return MUS_ROUTE110;
+            return MAP_BLANK_MAP;
         else
-            return MUS_ROUTE119;
+            return MAP_BLANK_MAP;
     }
 }
 
 u16 GetWarpDestinationMusic(void)
 {
     u16 music = GetLocationMusic(&sWarpDestination);
-    if (music != MUS_ROUTE118)
-    {
+    //if (music != MUS_ROUTE118)
+    //{
         return music;
-    }
+    /*}
     else
     {
         if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_MAUVILLE_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_MAUVILLE_CITY))
             return MUS_ROUTE110;
         else
             return MUS_ROUTE119;
-    }
+    }*/
 }
 
 void Overworld_ResetMapMusic(void)
@@ -1279,7 +1279,7 @@ void TryFadeOutOldMapMusic(void)
     u16 warpMusic = GetWarpDestinationMusic();
     if (warpMusic != GetCurrentMapMusic())
     {
-        if (currentMusic == MUS_SURF && VarGet(VAR_SKY_PILLAR_STATE) == 2 && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SOOTOPOLIS_CITY) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY) && sWarpDestination.mapGroup == MAP_GROUP(MAP_SOOTOPOLIS_CITY) && sWarpDestination.mapNum == MAP_NUM(MAP_SOOTOPOLIS_CITY) && sWarpDestination.x == 29 && sWarpDestination.y == 53)
+        if (currentMusic == MUS_SURF && VarGet(VAR_SKY_PILLAR_STATE) == 2 && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BLANK_MAP) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BLANK_MAP) && sWarpDestination.mapGroup == MAP_GROUP(MAP_BLANK_MAP) && sWarpDestination.mapNum == MAP_NUM(MAP_BLANK_MAP) && sWarpDestination.x == 29 && sWarpDestination.y == 53)
             return;
         FadeOutMapMusic(GetMapMusicFadeoutSpeed());
     }
@@ -1368,7 +1368,7 @@ void UpdateAmbientCry(s16 *state, u16 *delayCounter)
 
 static void ChooseAmbientCrySpecies(void)
 {
-    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE130) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE130)) && !IsMirageIslandPresent())
+    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BLANK_MAP) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BLANK_MAP)) && !IsMirageIslandPresent())
     {
         // Only play water Pokémon cries on this route
         // when Mirage Island is not present
@@ -1930,7 +1930,7 @@ static void FieldCB_FadeTryShowMapPopup(void)
 
 void CB2_ContinueSavedGame(void)
 {
-    u8 trainerHillMapId;
+    //u8 trainerHillMapId;
 
     FieldClearVBlankHBlankCallbacks();
     StopMapMusic();
@@ -1940,23 +1940,23 @@ void CB2_ContinueSavedGame(void)
 
     LoadSaveblockMapHeader();
     ClearDiveAndHoleWarps();
-    trainerHillMapId = GetCurrentTrainerHillMapId();
-    if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
-        LoadBattlePyramidFloorObjectEventScripts();
-    else if (trainerHillMapId != 0 && trainerHillMapId != TRAINER_HILL_ENTRANCE)
-        LoadTrainerHillFloorObjectEventScripts();
-    else
+    //trainerHillMapId = GetCurrentTrainerHillMapId();
+    //if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
+    //    LoadBattlePyramidFloorObjectEventScripts();
+    //else if (trainerHillMapId != 0 && trainerHillMapId != TRAINER_HILL_ENTRANCE)
+    //    LoadTrainerHillFloorObjectEventScripts();
+    //else
         LoadSaveblockObjEventScripts();
 
     UnfreezeObjectEvents();
     FlagClear(FLAG_HIDE_HELP_BUTTON);
     DoTimeBasedEvents();
     UpdateMiscOverworldStates();
-    if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
-        InitBattlePyramidMap(TRUE);
-    else if (trainerHillMapId != 0)
-        InitTrainerHillMap();
-    else
+    //if (gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PYRAMID_FLOOR)
+    //    InitBattlePyramidMap(TRUE);
+    //else if (trainerHillMapId != 0)
+    //    InitTrainerHillMap();
+    //else
         InitMapFromSavedGame();
 
     PlayTimeCounter_Start();
@@ -2864,7 +2864,7 @@ static u16 KeyInterCB_WaitForPlayersToExit(u32 keyOrPlayerId)
         CheckRfuKeepAliveTimer();
     if (AreAllPlayersInLinkState(PLAYER_LINK_STATE_EXITING_ROOM) == TRUE)
     {
-        ScriptContext_SetupScript(EventScript_DoLinkRoomExit);
+        //ScriptContext_SetupScript(EventScript_DoLinkRoomExit);
         SetKeyInterceptCallback(KeyInterCB_SendNothing);
     }
     return LINK_KEY_CODE_EMPTY;
@@ -2982,7 +2982,7 @@ static bool32 PlayerIsAtSouthExit(struct CableClubPlayer *player)
 static const u8 *TryInteractWithPlayer(struct CableClubPlayer *player)
 {
     struct MapPosition otherPlayerPos;
-    u8 linkPlayerId;
+    //u8 linkPlayerId;
 
     if (player->movementMode != MOVEMENT_MODE_FREE && player->movementMode != MOVEMENT_MODE_SCRIPTED)
         return FACING_NONE;
@@ -2991,9 +2991,9 @@ static const u8 *TryInteractWithPlayer(struct CableClubPlayer *player)
     otherPlayerPos.x += gDirectionToVectors[player->facing].x;
     otherPlayerPos.y += gDirectionToVectors[player->facing].y;
     otherPlayerPos.elevation = 0;
-    linkPlayerId = GetLinkPlayerIdAt(otherPlayerPos.x, otherPlayerPos.y);
+    //linkPlayerId = GetLinkPlayerIdAt(otherPlayerPos.x, otherPlayerPos.y);
 
-    if (linkPlayerId != MAX_LINK_PLAYERS)
+    /*if (linkPlayerId != MAX_LINK_PLAYERS)
     {
         if (!player->isLocalPlayer)
             return CableClub_EventScript_TooBusyToNotice;
@@ -3003,7 +3003,7 @@ static const u8 *TryInteractWithPlayer(struct CableClubPlayer *player)
             return CableClub_EventScript_ReadTrainerCard;
         else
             return CableClub_EventScript_ReadTrainerCardColored;
-    }
+    }*/
 
     return GetInteractedLinkPlayerScript(&otherPlayerPos, player->metatileBehavior, player->facing);
 }
@@ -3012,31 +3012,7 @@ static const u8 *TryInteractWithPlayer(struct CableClubPlayer *player)
 // these event scripts runs.
 static u16 GetDirectionForEventScript(const u8 *script)
 {
-    if (script == EventScript_BattleColosseum_4P_PlayerSpot0)
-        return FACING_FORCED_RIGHT;
-    else if (script == EventScript_BattleColosseum_4P_PlayerSpot1)
-        return FACING_FORCED_LEFT;
-    else if (script == EventScript_BattleColosseum_4P_PlayerSpot2)
-        return FACING_FORCED_RIGHT;
-    else if (script == EventScript_BattleColosseum_4P_PlayerSpot3)
-        return FACING_FORCED_LEFT;
-    else if (script == EventScript_RecordCenter_Spot0)
-        return FACING_FORCED_RIGHT;
-    else if (script == EventScript_RecordCenter_Spot1)
-        return FACING_FORCED_LEFT;
-    else if (script == EventScript_RecordCenter_Spot2)
-        return FACING_FORCED_RIGHT;
-    else if (script == EventScript_RecordCenter_Spot3)
-        return FACING_FORCED_LEFT;
-    else if (script == EventScript_BattleColosseum_2P_PlayerSpot0)
-        return FACING_FORCED_RIGHT;
-    else if (script == EventScript_BattleColosseum_2P_PlayerSpot1)
-        return FACING_FORCED_LEFT;
-    else if (script == EventScript_TradeCenter_Chair0)
-        return FACING_FORCED_RIGHT;
-    else if (script == EventScript_TradeCenter_Chair1)
-        return FACING_FORCED_LEFT;
-    else
+    
         return FACING_NONE;
 }
 
@@ -3062,7 +3038,7 @@ static void RunInteractLocalPlayerScript(const u8 *script)
 static void RunConfirmLeaveCableClubScript(void)
 {
     PlaySE(SE_WIN_OPEN);
-    ScriptContext_SetupScript(EventScript_ConfirmLeaveCableClubRoom);
+    //ScriptContext_SetupScript(EventScript_ConfirmLeaveCableClubRoom);
     LockPlayerFieldControls();
 }
 
@@ -3075,7 +3051,7 @@ static void InitMenuBasedScript(const u8 *script)
 
 static void RunTerminateLinkScript(void)
 {
-    ScriptContext_SetupScript(EventScript_TerminateLink);
+    //ScriptContext_SetupScript(EventScript_TerminateLink);
     LockPlayerFieldControls();
 }
 
@@ -3261,7 +3237,7 @@ static s32 UNUSED GetLinkPlayerObjectStepTimer(u8 linkPlayerId)
     return 16 - (s8)objEvent->directionSequenceIndex;
 }
 
-static u8 GetLinkPlayerIdAt(s16 x, s16 y)
+/*static u8 GetLinkPlayerIdAt(s16 x, s16 y)
 {
     u8 i;
     for (i = 0; i < MAX_LINK_PLAYERS; i++)
@@ -3274,7 +3250,7 @@ static u8 GetLinkPlayerIdAt(s16 x, s16 y)
         }
     }
     return 4;
-}
+}*/
 
 static void SetPlayerFacingDirection(u8 linkPlayerId, u8 facing)
 {

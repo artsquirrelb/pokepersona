@@ -51,7 +51,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_103_LEPPA",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -64,7 +68,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_103_CHERI_2",
       "script": "BerryTreeScript",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
@@ -77,7 +85,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "Route1_Eventscript_Touma",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": false,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
@@ -103,7 +115,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route1_Eventscript_Miyu",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": false,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
@@ -116,7 +132,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route1_Eventscript_Twins",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
@@ -129,7 +149,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_TM_THUNDER_PUNCH",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_1_TM_THUNDER_PUNCH"
+      "flag": "FLAG_ITEM_ROUTE_1_TM_THUNDER_PUNCH",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -168,7 +192,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
@@ -181,7 +209,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_ALTARIANITE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_ROUTE_1_ALTARIANITE"
+      "flag": "FLAG_ITEM_ROUTE_1_ALTARIANITE",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TEDDIURSA)",
@@ -194,7 +226,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route1_Eventscript_Teddiursa",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "d": false,
+      "e": true,
+      "m": false,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
@@ -207,7 +243,11 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route1_Eventscript_Ichigo",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": false,
+      "n": true
     }
   ],
   "warp_events": [

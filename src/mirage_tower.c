@@ -255,7 +255,7 @@ static u16 sDebug_DisintegrationData[8];
 
 bool8 IsMirageTowerVisible(void)
 {
-    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE111) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE111)))
+    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BLANK_MAP) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BLANK_MAP)))
         return FALSE;
     return FlagGet(FLAG_MIRAGE_TOWER_VISIBLE);
 }
@@ -278,8 +278,8 @@ void TryStartMirageTowerPulseBlendEffect(void)
         return;
     }
 
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ROUTE111)
-     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_ROUTE111)
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_BLANK_MAP)
+     || gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_BLANK_MAP)
      || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE))
         return;
 
@@ -292,8 +292,8 @@ void TryStartMirageTowerPulseBlendEffect(void)
 
 void ClearMirageTowerPulseBlendEffect(void)
 {
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_ROUTE111)
-     || gSaveBlock1Ptr->location.mapNum   != MAP_NUM(MAP_ROUTE111)
+    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_BLANK_MAP)
+     || gSaveBlock1Ptr->location.mapNum   != MAP_NUM(MAP_BLANK_MAP)
      || !FlagGet(FLAG_MIRAGE_TOWER_VISIBLE)
      || sMirageTowerPulseBlend == NULL)
         return;
@@ -346,7 +346,7 @@ static void PlayerDescendMirageTower(u8 taskId)
     struct ObjectEvent *fallingPlayer;
     struct ObjectEvent *player;
 
-    TryGetObjectEventIdByLocalIdAndMap(LOCALID_ROUTE111_PLAYER_FALLING, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &objectEventId);
+    TryGetObjectEventIdByLocalIdAndMap(1, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, &objectEventId);
     fallingPlayer = &gObjectEvents[objectEventId];
     gSprites[fallingPlayer->spriteId].y2 += 4;
     player = &gObjectEvents[gPlayerAvatar.objectEventId];

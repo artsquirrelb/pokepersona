@@ -25,7 +25,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_House1_Eventscript_LittleGirl",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(POOCHYENA)",
@@ -38,7 +42,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_House1_Eventscript_Poochyena",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LADY",
@@ -51,7 +59,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_House1_Eventscript_Lady",
-      "flag": "0"
+      "flag": "0",
+      "d": false,
+      "e": true,
+      "m": true,
+      "n": true
     }
   ],
   "warp_events": [

@@ -39,11 +39,11 @@ gText_Birch_BoyOrGirl::
 	.string "$"
 
 gText_Birch_WhatsYourName::
-	.string "So it's {PLAYER}{KUN}?\p"
+	.string "So it's {PLAYER}?\p"
 	.string "$"
 
 gText_Birch_SoItsPlayer::
-	.string "So it's {PLAYER}{KUN}?$"
+	.string "So it's {PLAYER}?$"
 
 gText_Birch_YourePlayer::
 	.string "Great! If you have any question,\n"

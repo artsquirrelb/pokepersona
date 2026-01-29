@@ -1319,10 +1319,10 @@ static void GetInBattlePike(void)
 
 bool8 InBattlePike(void)
 {
-    return gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_THREE_PATH_ROOM
-        || gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_NORMAL
-        || gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS
-        || gMapHeader.mapLayoutId == LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_UNUSED;
+    return gMapHeader.mapLayoutId == LAYOUT_BLANK_MAP
+        || gMapHeader.mapLayoutId == LAYOUT_BLANK_MAP
+        || gMapHeader.mapLayoutId == LAYOUT_BLANK_MAP
+        || gMapHeader.mapLayoutId == LAYOUT_BLANK_MAP;
 }
 
 static void SetHintedRoom(void)

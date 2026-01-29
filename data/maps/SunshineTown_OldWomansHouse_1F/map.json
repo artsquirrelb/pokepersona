@@ -25,7 +25,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_OldWomansHouse_1F_Eventscript_LucarioAndRiolu",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RIOLU)",
@@ -38,7 +42,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_OldWomansHouse_1F_Eventscript_LucarioAndRiolu",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RIOLU)",
@@ -51,7 +59,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_OldWomansHouse_1F_Eventscript_Riolu",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
@@ -64,7 +76,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_OldWomansHouse_1F_Eventscript_Caretaker",
-      "flag": "0"
+      "flag": "0",
+      "d": true,
+      "e": false,
+      "m": false,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RIOLU)",
@@ -77,7 +93,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_OldWomansHouse_1F_Eventscript_Riolu",
-      "flag": "0"
+      "flag": "0",
+      "d": false,
+      "e": true,
+      "m": false,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(RIOLU)",
@@ -90,7 +110,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_OldWomansHouse_1F_Eventscript_Riolu",
-      "flag": "0"
+      "flag": "0",
+      "d": false,
+      "e": true,
+      "m": false,
+      "n": true
     }
   ],
   "warp_events": [
@@ -124,14 +148,5 @@
     }
   ],
   "coord_events": [],
-  "bg_events": [
-    {
-      "type": "sign",
-      "x": 1,
-      "y": 7,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TrashcanEmpty"
-    }
-  ]
+  "bg_events": []
 }

@@ -600,7 +600,7 @@ static u32 AllocateFrontierPassData(MainCallback callback)
         return ERR_ALLOC_FAILED;
 
     sPassData->callback = callback;
-    i = GetCurrentRegionMapSectionId();
+    /*i = GetCurrentRegionMapSectionId();
     if (i != MAPSEC_BATTLE_FRONTIER && i != MAPSEC_ARTISAN_CAVE)
     {
         // Player is not in the frontier, set
@@ -609,12 +609,12 @@ static u32 AllocateFrontierPassData(MainCallback callback)
         sPassData->cursorY = 104;
     }
     else
-    {
+    {*/
         // Player is in the frontier, set
         // cursor position to the frontier map
         sPassData->cursorX = 176;
         sPassData->cursorY = 48;
-    }
+    //}
 
     sPassData->battlePoints = gSaveBlock2Ptr->frontier.battlePoints;
     sPassData->hasBattleRecord = CanCopyRecordedBattleSaveData();
@@ -1561,7 +1561,7 @@ static void Task_HandleFrontierMap(u8 taskId)
     tState++;
 }
 
-static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a frontier map number
+/*static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a frontier map number
 {
     // In Battle Tower
     if ((mapNum >= MAP_NUM(MAP_BATTLE_FRONTIER_BATTLE_TOWER_LOBBY) && mapNum <= MAP_NUM(MAP_BATTLE_FRONTIER_BATTLE_TOWER_BATTLE_ROOM))
@@ -1610,15 +1610,15 @@ static u8 MapNumToFrontierFacilityId(u16 mapNum) // id + 1, zero means not a fro
 
     else
         return 0;
-}
+}*/
 
 static void InitFrontierMapSprites(void)
 {
-    struct SpriteSheet gfx = { GetPlayerHeadGfxOrPal(GFX, TRUE), 0x80, TAG_HEAD_MALE };
+    //struct SpriteSheet gfx = { GetPlayerHeadGfxOrPal(GFX, TRUE), 0x80, TAG_HEAD_MALE };
     struct SpritePalette pal = { GetPlayerHeadGfxOrPal(PAL, TRUE), TAG_HEAD_FEMALE };
     u8 spriteId;
-    u8 id;
-    s16 x = 0, y;
+    //u8 id;
+    //s16 x = 0, y;
 
     FreeAllSpritePalettes();
     LoadSpritePalettes(sSpritePalettes);
@@ -1638,7 +1638,7 @@ static void InitFrontierMapSprites(void)
     StartSpriteAnim(sMapData->mapIndicatorSprite, sMapLandmarks[sMapData->cursorPos].animNum);
 
     // Create player indicator head sprite only if it's in vicinity of battle frontier.
-    id = GetCurrentRegionMapSectionId();
+    /*id = GetCurrentRegionMapSectionId();
     if (id == MAPSEC_BATTLE_FRONTIER || id == MAPSEC_ARTISAN_CAVE)
     {
         s8 mapNum = gSaveBlock1Ptr->location.mapNum;
@@ -1691,7 +1691,7 @@ static void InitFrontierMapSprites(void)
 
         sMapData->playerHeadSprite = &gSprites[spriteId];
         sMapData->playerHeadSprite->oam.priority = 0;
-    }
+    }*/
 }
 
 static void PrintOnFrontierMap(void)

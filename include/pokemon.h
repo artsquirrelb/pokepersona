@@ -12,7 +12,6 @@
 #include "constants/map_groups.h"
 #include "constants/regions.h"
 #include "constants/region_map_sections.h"
-#include "constants/map_groups.h"
 #include "constants/battle.h"
 #include "constants/abilities.h"
 #include "contest_effect.h"

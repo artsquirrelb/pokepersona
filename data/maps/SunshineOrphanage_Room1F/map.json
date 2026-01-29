@@ -25,7 +25,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_TM_WILL_O_WISP",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_SUNSHINE_ORPHANAGE_1F_TM_WILL_O_WISP"
+      "flag": "FLAG_ITEM_SUNSHINE_ORPHANAGE_1F_TM_WILL_O_WISP",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     }
   ],
   "warp_events": [

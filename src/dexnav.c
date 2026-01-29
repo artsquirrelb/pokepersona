@@ -3264,7 +3264,7 @@ u32 CalculateDexNavShinyRolls(void)
 void TryIncrementSpeciesSearchLevel()
 {
 #if USE_DEXNAV_SEARCH_LEVELS == TRUE
-    if (gMapHeader.regionMapSectionId != MAPSEC_BATTLE_FRONTIER && gSaveBlock1Ptr->dexNavSearchLevels[gDexNavSpecies] < 255)
+    if (gSaveBlock1Ptr->dexNavSearchLevels[gDexNavSpecies] < 255)
         gSaveBlock1Ptr->dexNavSearchLevels[gDexNavSpecies]++;
 #endif
 }

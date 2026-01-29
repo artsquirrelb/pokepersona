@@ -293,8 +293,8 @@ bool8 IsHoldingItemAllowed(enum Item itemId)
 {
     // e-Reader Enigma Berry can't be held in link areas
     if (itemId == ITEM_ENIGMA_BERRY_E_READER
-     && ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TRADE_CENTER)
-       && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TRADE_CENTER))
+     && ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BLANK_MAP)
+       && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BLANK_MAP))
        || InUnionRoom() == TRUE))
         return FALSE;
     else

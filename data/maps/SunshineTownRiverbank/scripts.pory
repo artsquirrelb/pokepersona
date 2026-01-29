@@ -33,9 +33,8 @@ script SunshineTownRiverbank_MapScripts_OnTransition {
         setflag(FLAG_TEMP_2)
         setflag(FLAG_TEMP_3)
     }
-    gettimeofday
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_3)
-    if (!var(VAR_RESULT) && var(VAR_0x8000) == 3)
+    if (!var(VAR_RESULT))
     {
         clearflag(FLAG_TEMP_4)
     }

@@ -27,6 +27,10 @@ EventScript_FollowerLovesYou::
 	msgbox gText_FollowerLovesYou, MSGBOX_DEFAULT
 	return
 
+ContestHall_Movement_Heart:
+	emote_heart
+	step_end
+
 @ Message address must be loaded into bank 0
 EventScript_FollowerGeneric:: @ similar to Std_MsgboxDefault
 	faceplayer

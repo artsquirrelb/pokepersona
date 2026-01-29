@@ -2395,7 +2395,7 @@ static void EndLinkBattleInSteps(void)
         if (IsLinkTaskFinished() == TRUE)
         {
             SetLinkStandbyCallback();
-            BattlePutTextOnWindow(gText_LinkStandby3, B_WIN_MSG);
+            //BattlePutTextOnWindow(gText_LinkStandby3, B_WIN_MSG);
             gBattleCommunication[MULTIUSE_STATE]++;
         }
         break;
@@ -2605,7 +2605,6 @@ static void AskRecordBattle(void)
             {
                 // Other battlers may be recording, wait for them
                 SetLinkStandbyCallback();
-                BattlePutTextOnWindow(gText_LinkStandby3, B_WIN_MSG);
             }
             gBattleCommunication[MULTIUSE_STATE]++; // STATE_END_RECORD_NO
         }
@@ -2635,15 +2634,15 @@ static void AskRecordBattle(void)
         if (gBattleCommunication[1] == 1)
         {
             PlaySE(SE_SAVE);
-            BattleStringExpandPlaceholdersToDisplayedString(gText_BattleRecordedOnPass);
-            BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MSG);
+            //BattleStringExpandPlaceholdersToDisplayedString(gText_BattleRecordedOnPass);
+            //BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MSG);
             gBattleCommunication[1] = 128; // Delay
             gBattleCommunication[MULTIUSE_STATE]++;
         }
         else
         {
-            BattleStringExpandPlaceholdersToDisplayedString(BattleFrontier_BattleTowerBattleRoom_Text_RecordCouldntBeSaved);
-            BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MSG);
+            //BattleStringExpandPlaceholdersToDisplayedString(BattleFrontier_BattleTowerBattleRoom_Text_RecordCouldntBeSaved);
+            //BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MSG);
             gBattleCommunication[1] = 128; // Delay
             gBattleCommunication[MULTIUSE_STATE]++;
         }
@@ -2654,7 +2653,7 @@ static void AskRecordBattle(void)
             if (gMain.anyLinkBattlerHasFrontierPass)
             {
                 SetLinkStandbyCallback();
-                BattlePutTextOnWindow(gText_LinkStandby3, B_WIN_MSG);
+                //BattlePutTextOnWindow(gText_LinkStandby3, B_WIN_MSG);
             }
             gBattleCommunication[MULTIUSE_STATE]++;
         }

@@ -26,6 +26,10 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_FishermansHouse_Eventscript_FisherMan",
       "flag": "FLAG_TEMP_1",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true,
       "quest_id": 2
     },
     {
@@ -40,6 +44,10 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_FishermansHouse_Eventscript_LittleGirl",
       "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false,
       "quest_id": 4
     },
     {
@@ -53,7 +61,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_FishermansHouse_Eventscript_Wooper",
-      "flag": "FLAG_TEMP_2"
+      "flag": "FLAG_TEMP_2",
+      "d": true,
+      "e": false,
+      "m": true,
+      "n": false
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(GROWLITHE)",
@@ -66,7 +78,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_FishermansHouse_Eventscript_Growlithe",
-      "flag": "FLAG_TEMP_3"
+      "flag": "FLAG_TEMP_3",
+      "d": true,
+      "e": true,
+      "m": true,
+      "n": true
     }
   ],
   "warp_events": [

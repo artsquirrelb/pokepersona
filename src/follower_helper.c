@@ -100,7 +100,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
             MATCH_TYPES(TYPE_FIRE, TYPE_FIRE),
         },
     },
-    [COND_MSG_EVER_GRANDE] =
+    /*[COND_MSG_EVER_GRANDE] =
     {
         .text = sCondMsg06,
         .script = EventScript_FollowerFaceUp,
@@ -128,7 +128,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         {
             MATCH_MAP(MAP_ROUTE117_POKEMON_DAY_CARE)
         },
-    },
+    },*/
     [COND_MSG_MART] =
     {
         .text = (u8*)sShopTexts,
@@ -149,7 +149,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
             MATCH_MUSIC(MUS_VICTORY_ROAD)
         },
     },
-    [COND_MSG_BIKE_SHOP] =
+    /*[COND_MSG_BIKE_SHOP] =
     {
         .text = sCondMsg12,
         .emotion = FOLLOWER_EMOTION_PENSIVE,
@@ -170,7 +170,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
             MATCH_MAP(MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F),
             MATCH_MAP(MAP_SLATEPORT_CITY_STERNS_SHIPYARD_2F),
         },
-    },
+    },*/
     [COND_MSG_SAILING] =
     {
         .text = (u8*)sBoatTexts,
@@ -219,7 +219,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
             MATCH_ON_MB(MB_SAND, MB_FOOTPRINTS),
         },
     },
-    [COND_MSG_ELEVATOR] =
+    /*[COND_MSG_ELEVATOR] =
     {
         .text = (u8*)sElevatorTexts,
         .textSpread = 1,
@@ -269,7 +269,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
             MATCH_MAPSEC(MAPSEC_MT_PYRE),
             MATCH_MUSIC(MUS_MT_PYRE),
         },
-    },
+    },*/
     [COND_MSG_FIRE_RAIN] =
     {
         .text = sCondMsg31,
@@ -336,7 +336,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .emotion = FOLLOWER_EMOTION_PENSIVE,
         .conditions =
         {
-            MATCH_MAPSEC(MAPSEC_PETALBURG_WOODS),
+            MATCH_MAPSEC(MAPSEC_SUNSHINEWOODS),
         },
     },
     [COND_MSG_ICE] =

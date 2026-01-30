@@ -1215,13 +1215,13 @@ SunshineWoods_Eventscript_AkihikoPrologueStart_7:
 # 713 "data/maps/SunshineWoods/scripts.pory"
 	unlockcharacter CHARACTER_AKIHIKO
 # 714 "data/maps/SunshineWoods/scripts.pory"
-	makecharaAvailable CHARACTER_AKIHIKO
+	clearflag FLAG_LOCK_AKIHIKO
 # 715 "data/maps/SunshineWoods/scripts.pory"
-	makecharaUnavailable CHARACTER_MITSURU
+	setflag FLAG_LOCK_MITSURU
 # 716 "data/maps/SunshineWoods/scripts.pory"
-	makecharaUnavailable CHARACTER_INTELEON_T
+	setflag FLAG_LOCK_INTELEON_T
 # 717 "data/maps/SunshineWoods/scripts.pory"
-	makecharaUnavailable CHARACTER_SHINJIRO
+	setflag FLAG_LOCK_SHINJIRO
 # 718 "data/maps/SunshineWoods/scripts.pory"
 	clearflag FLAG_SYS_B_DASH
 # 719 "data/maps/SunshineWoods/scripts.pory"

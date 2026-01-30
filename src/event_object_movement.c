@@ -2002,14 +2002,6 @@ u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevati
     return spriteId;
 }
 
-
-
-// This and the above function could probably use some clean-up/optimization
-// The general order of operations is:
-// 1. If the follower has been recalled to its ball, return NULL
-// 2. If no preferred follower has been set or the player is in battle facility or contest hall, use default behavior
-// 3. Use preferred follower
-// 4. If preferred follower is fainted or an egg (hopefully this shouldn't be possible), use default behavior
 // Default: Return address of first conscious party mon or NULL
 struct Pokemon *GetFirstLiveMon(void)
 {
@@ -2027,9 +2019,9 @@ struct Pokemon *GetFirstLiveMon(void)
             continue;
 
         if (gPlayerParty[i].hp > 0 && !(gPlayerParty[i].box.isEgg || gPlayerParty[i].box.isBadEgg))
-            return &gPlayerParty[i];*/
+            return &gPlayerParty[i];
     }
-    //return NULL;
+    return NULL;
 }
 
 // Return follower ObjectEvent or NULL

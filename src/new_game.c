@@ -162,14 +162,14 @@ static void SetDefaultOutfitAccordingToPlayerGender (void)
         {   
             LockCharacter(CHARACTER_MITSURU);
             UnlockCharacter(CHARACTER_AKIHIKO);
-            MakeCharaAvailable(CHARACTER_AKIHIKO);
+            FlagClear(FLAG_LOCK_AKIHIKO);
             gSaveBlock2Ptr->currOutfitId = CHARACTER_AKIHIKO;
         }
         else
         {   
             LockCharacter(CHARACTER_AKIHIKO);
             UnlockCharacter(CHARACTER_MITSURU);
-            MakeCharaAvailable(CHARACTER_MITSURU);
+            FlagClear(FLAG_LOCK_MITSURU);
             gSaveBlock2Ptr->currOutfitId = CHARACTER_MITSURU;
         }
     }

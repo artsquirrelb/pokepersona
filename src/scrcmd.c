@@ -3124,24 +3124,6 @@ bool8 ScrCmd_toggleoutfit(struct ScriptContext *ctx)
     return TRUE;
 }
 
-bool8 ScrCmd_togglecharaavailability(struct ScriptContext *ctx)
-{
-    u16 outfitId = VarGet(ScriptReadHalfword(ctx));
-    u8 type = ScriptReadByte(ctx);
-
-    switch(type)
-    {
-    default:
-    case CHARA_TOGGLE_AVAILABLE:
-        MakeCharaAvailable(outfitId);
-        break;
-    case CHARA_TOGGLE_UNAVAILABLE:
-        MakeCharaUnavailable(outfitId);
-        break;
-    }
-    return TRUE;
-}
-
 bool8 ScrCmd_getoutfitstatus(struct ScriptContext *ctx)
 {
     u16 outfitId = VarGet(ScriptReadHalfword(ctx));
@@ -3164,7 +3146,7 @@ void ScrCmd_getcharaavailability(struct ScriptContext *ctx)
 {
     u16 outfitId = VarGet(ScriptReadHalfword(ctx));
     
-    gSpecialVar_Result = GetCharaAvailability(outfitId);
+    gSpecialVar_Result = isCharaUnavailable(outfitId);
 }
 
 bool8 ScrCmd_bufferoutfitstr(struct ScriptContext *ctx)

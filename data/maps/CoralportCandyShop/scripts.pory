@@ -191,8 +191,7 @@ script CoralportCandyShop_Eventscript_RandomizeCutscenes {
 script CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime { //roll into akihiko cutscene
     checkplayergender
     if(var(VAR_RESULT) == FEMALE){                                 //if currently playing as mitsuru
-        getcharaAvailability(CHARACTER_AKIHIKO)
-        if (var(VAR_RESULT) == FALSE){                             //if akihiko is unavailable
+        if (flag(FLAG_LOCK_AKIHIKO)){                             //if akihiko is unavailable
             goto(CoralportCandyShop_Eventscript_RandomizeCutscenes)//roll again
         }
         else{
@@ -207,8 +206,7 @@ script CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime { //roll into a
 script CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime {
     checkplayergender
     if(var(VAR_RESULT) == MALE){
-        getcharaAvailability(CHARACTER_MITSURU)
-        if(var(VAR_RESULT) == FALSE)
+        if(flag(FLAG_LOCK_MITSURU))//if mitsuru is unavailable, roll again
         {
             goto(CoralportCandyShop_Eventscript_RandomizeCutscenes)
         }

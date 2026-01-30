@@ -510,7 +510,7 @@ script Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon {
     setvar(VAR_AKIHIKOS_INTRO_STATE, 34)
     clearflag(FLAG_HIDE_HELP_BUTTON)
     destroyfollowernpc
-    makecharaUnavailable(CHARACTER_SHINJIRO)
+    setflag(FLAG_LOCK_SHINJIRO)
     end
 }
 

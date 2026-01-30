@@ -889,11 +889,11 @@ unlockcharacters::
 # 484 "data/maps/SunshineTown/scripts.pory"
 	unlockcharacter CHARACTER_AKIHIKO
 # 485 "data/maps/SunshineTown/scripts.pory"
-	makecharaAvailable CHARACTER_MITSURU
+	clearflag FLAG_LOCK_MITSURU
 # 486 "data/maps/SunshineTown/scripts.pory"
-	makecharaAvailable CHARACTER_AKIHIKO
+	clearflag FLAG_LOCK_AKIHIKO
 # 487 "data/maps/SunshineTown/scripts.pory"
-	makecharaAvailable CHARACTER_SHINJIRO
+	clearflag FLAG_LOCK_SHINJIRO
 	end
 
 

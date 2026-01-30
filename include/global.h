@@ -144,7 +144,6 @@
 #define NUM_TRENDY_SAYING_BYTES ROUND_BITS_TO_BYTES(NUM_TRENDY_SAYINGS)
 
 #define NUM_OUTFIT_OWNED_BYTES ROUND_BITS_TO_BYTES(CHARACTER_COUNT)
-#define NUM_CHARA_AVAIL_BYTES ROUND_BITS_TO_BYTES(CHARACTER_COUNT)
 
 #define NUM_APRICORN_TREE_BYTES ROUND_BITS_TO_BYTES(APRICORN_TREE_COUNT)
 
@@ -613,7 +612,6 @@ struct SaveBlock2
              u16 playerBike:1;
              u16 currOutfitId:4;
              u16 outfits[NUM_OUTFIT_OWNED_BYTES];
-             u16 CharacterAvailability[NUM_CHARA_AVAIL_BYTES];
     /*0x18*/ struct Pokedex pokedex;
     /*0x90*/ u8 filler_90[0x6];
     /*0x98*/ struct Time localTimeOffset;

@@ -359,14 +359,15 @@ static inline const u64 GetTrainerAIFlagsFromId(u16 trainerId)
 struct Outfit
 {
     u8 isHidden:1; //! Will not shows up in the menu if locked.
-    u32 prices[GENDER_COUNT]; //! heh
+    u16 isLocked;//! Will be grayed out if flag set
+    u8 isMC:1;
     const u8 *name;
     const u8 *desc;
-    u16 trainerPics[GENDER_COUNT][2];
-    u16 avatarGfxIds[GENDER_COUNT][PLAYER_AVATAR_STATE_COUNT];
-    u16 animGfxIds[GENDER_COUNT][PLAYER_AVATAR_GFX_COUNT];
+    u16 trainerPics[2];
+    u16 avatarGfxIds[PLAYER_AVATAR_STATE_COUNT];
+    u16 animGfxIds[PLAYER_AVATAR_GFX_COUNT];
     //! region map & frontier pass
-    const void *iconsRM[GENDER_COUNT]; //! region map
+    const void *iconsRM; //! region map
     const void *iconsFP; //! frontier pass
 };
 

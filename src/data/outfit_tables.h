@@ -55,187 +55,106 @@ const struct Outfit gOutfits[CHARACTER_COUNT] =
 
     [CHARACTER_MITSURU] = {
         .isHidden = TRUE,
-        .prices = { 200, 500 },
+        .isLocked = FLAG_LOCK_MITSURU,
+        .isMC = TRUE,
         .name = COMPOUND_STRING("Mitsuru Kirijo"),
         .desc = COMPOUND_STRING(
             "Burdens herself for her family's sin.\n"
             "A clever trainer and leader."),
-
-        .trainerPics = {
-            [MALE] = { TRAINER_PIC_FRONT_MAY, TRAINER_PIC_BACK_MAY, },
-            [FEMALE] =   { TRAINER_PIC_FRONT_MAY, TRAINER_PIC_BACK_MAY, },
-        },
+        .trainerPics = {TRAINER_PIC_FRONT_MAY, TRAINER_PIC_BACK_MAY},
         .avatarGfxIds = {
-            [MALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_MAY_NORMAL,
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_MAY_MACH_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_MAY_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_MAY_UNDERWATER
-           },
-           [FEMALE] = {
-                [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_MAY_NORMAL,
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_MAY_MACH_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_MAY_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_MAY_UNDERWATER
-           },   
+            [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_MAY_NORMAL,
+            [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_MAY_MACH_BIKE,
+            [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_MAY_SURFING,
+            [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_MAY_UNDERWATER 
         },
         .animGfxIds = {
-            [MALE] = {
-                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_MAY_FIELD_MOVE,
-                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_MAY_FISHING,
-                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_MAY_WATERING,
-                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_MAY_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_MAY_FIELD_MOVE
-            },
-
-            [FEMALE] = {
-               [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_MAY_FIELD_MOVE,
-                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_MAY_FISHING,
-                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_MAY_WATERING,
-                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_MAY_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_MAY_FIELD_MOVE
-            },
+            [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_MAY_FIELD_MOVE,
+            [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_MAY_FISHING,
+            [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_MAY_WATERING,
+            [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_MAY_DECORATING,
+            [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_MAY_FIELD_MOVE
         },
-        .iconsRM = { sRegionMapPlayerIcon_BrendanGfx, sRegionMapPlayerIcon_MayGfx },
+        .iconsRM = sRegionMapPlayerIcon_MayGfx,
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
 
     [CHARACTER_AKIHIKO] = {
-        //! DESC: if sets to TRUE, it will not be shown in the OUTFIT menu if it's locked.
         .isHidden = TRUE,
-
-        //! DESC: prices for purchasing them.
-        .prices = { 0, 0 },
-
-        //! agbcc doesnt like COMPOUND_STRING on my end
-        //! DESC: outfit's name
+        .isLocked = FLAG_LOCK_AKIHIKO,
+        .isMC = TRUE,
         .name = COMPOUND_STRING("Akihiko Sanada"),
         .desc = COMPOUND_STRING(
             "Wants to get stronger to find his sister.\n"
             "Very loyal to those he trusts and cares."),
-        //! DESC: trainer front & back pic index
-        //! (see include/constants/trainers.h)
-        .trainerPics = {
-            [MALE] =   { TRAINER_PIC_FRONT_BRENDAN, TRAINER_PIC_BACK_BRENDAN, },
-            [FEMALE] = { TRAINER_PIC_FRONT_BRENDAN, TRAINER_PIC_BACK_BRENDAN, },
-        },
-
-        //! DESC: overworld avatars, consisting of: walking, cycling,
-        //! surfing, and underwater. (see include/constants/event_object.h)
+        .trainerPics = {TRAINER_PIC_FRONT_BRENDAN, TRAINER_PIC_BACK_BRENDAN},
         .avatarGfxIds = {
-           [MALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_BRENDAN_NORMAL,
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
-           },
-           [FEMALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_BRENDAN_NORMAL,
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
-           },
+            [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_BRENDAN_NORMAL,
+            [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
+            [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
+            [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
         },
-
-        //! DESC: overworld anims, consisting of: field move, fishing,
-        //! water, and decorating. (see include/constants/event_object.h)
         .animGfxIds = {
-            [MALE] = {
-                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE,
-                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_BRENDAN_FISHING,
-                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_BRENDAN_WATERING,
-                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_BRENDAN_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE
-            },
-            [FEMALE] = {
-                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE,
-                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_BRENDAN_FISHING,
-                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_BRENDAN_WATERING,
-                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_BRENDAN_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE
-            },
+            [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE,
+            [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_BRENDAN_FISHING,
+            [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_BRENDAN_WATERING,
+            [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_BRENDAN_DECORATING,
+            [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE
         },
-
-        //! DESC: head icons gfx&pal for region map
-        .iconsRM = { sRegionMapPlayerIcon_BrendanGfx, sRegionMapPlayerIcon_MayGfx },
-
-        //! DESC: head icons gfx&pal for frontier pass
-        //! note that frontier pass needs to be in one sprite instead of two,
-        //! unlike region map. (probably should split them tbh)
+        .iconsRM = sRegionMapPlayerIcon_BrendanGfx,
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
 
     [CHARACTER_SHINJIRO] = {
         .isHidden = TRUE,
-        .prices = { 200, 500 },
+        .isLocked = FLAG_LOCK_SHINJIRO,
+        .isMC = FALSE,
         .name = COMPOUND_STRING("Shinjiro Aragaki"),
         .desc = COMPOUND_STRING(
             "Looks grumpy, but he's soft inside.\n"
             "Akihiko's childhood best friend."),
-
-        .trainerPics = {
-            [MALE] =   { TRAINER_PIC_FRONT_SHINJIRO, TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN, },
-            [FEMALE] = { TRAINER_PIC_FRONT_SHINJIRO, TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN, },
-        },
+        .trainerPics = {TRAINER_PIC_FRONT_SHINJIRO, TRAINER_PIC_BACK_RUBY_SAPPHIRE_BRENDAN},  
         .avatarGfxIds = {
-            [MALE] = {
                [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_SHINJIRO,
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
-           },
-           [FEMALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_SHINJIRO,
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
-           },   
+               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_SHINJIRO,
+               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_SHINJIRO,
+               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_SHINJIRO
         },
         .animGfxIds = {
-            [MALE] = {
-                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE,
-                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_BRENDAN_FISHING,
-                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_BRENDAN_WATERING,
-                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_BRENDAN_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE
-            },
-            [FEMALE] = {
-                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE,
-                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_BRENDAN_FISHING,
-                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_BRENDAN_WATERING,
-                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_BRENDAN_DECORATING,
-                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE
-            },
+                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_SHINJIRO,
+                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_SHINJIRO,
+                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_SHINJIRO,
+                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_SHINJIRO,
+                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_SHINJIRO
         },
-        .iconsRM = { sRegionMapPlayerIcon_BrendanGfx, sRegionMapPlayerIcon_MayGfx },
+        .iconsRM = sRegionMapPlayerIcon_BrendanGfx,
         .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     },
 
     [CHARACTER_INTELEON_T] = {
         .isHidden = TRUE,
-        .prices = { 200, 500 },
+        .isLocked = FLAG_LOCK_INTELEON_T,
+        .isMC = FALSE,
         .name = COMPOUND_STRING("Inteleon (Takeharu's)"),
         .desc = COMPOUND_STRING(
             "Always serious, cares a lot about\n"
             "Mitsuru and acts like a mentor."),
 
-        .trainerPics = {
-            [MALE] =   { TRAINER_PIC_FRONT_INTELEON_T, TRAINER_PIC_BACK_INTELEON_T, },
-            [FEMALE] = { TRAINER_PIC_FRONT_INTELEON_T, TRAINER_PIC_BACK_INTELEON_T, },
-        },
+        .trainerPics = {TRAINER_PIC_FRONT_INTELEON_T, TRAINER_PIC_BACK_INTELEON_T},
         .avatarGfxIds = {
-            [MALE] = {
                [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_SPECIES(INTELEON),
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
-           },
-           [FEMALE] = {
-               [PLAYER_AVATAR_STATE_NORMAL] =     OBJ_EVENT_GFX_SPECIES(INTELEON),
-               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
-               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_BRENDAN_SURFING,
-               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_BRENDAN_UNDERWATER
-           },   
+               [PLAYER_AVATAR_STATE_BIKE] =       OBJ_EVENT_GFX_SPECIES(INTELEON),
+               [PLAYER_AVATAR_STATE_SURFING] =    OBJ_EVENT_GFX_SPECIES(INTELEON),
+               [PLAYER_AVATAR_STATE_UNDERWATER] = OBJ_EVENT_GFX_SPECIES(INTELEON)
         },
+        .animGfxIds = {
+                [PLAYER_AVATAR_GFX_FIELD_MOVE] = OBJ_EVENT_GFX_SPECIES(INTELEON),
+                [PLAYER_AVATAR_GFX_FISHING] =    OBJ_EVENT_GFX_SPECIES(INTELEON),
+                [PLAYER_AVATAR_GFX_WATERING] =   OBJ_EVENT_GFX_SPECIES(INTELEON),
+                [PLAYER_AVATAR_GFX_DECORATING] = OBJ_EVENT_GFX_SPECIES(INTELEON),
+                [PLAYER_AVATAR_GFX_VSSEEKER] =   OBJ_EVENT_GFX_SPECIES(INTELEON)
+        },
+        .iconsRM = sRegionMapPlayerIcon_BrendanGfx,
+        .iconsFP = sFrontierPassPlayerIcons_BrendanMay_Gfx,
     }
 };

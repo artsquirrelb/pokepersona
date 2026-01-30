@@ -119,7 +119,7 @@ script SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow {
         setflag(FLAG_COMPANION_MENU_GET)
     }
     unlockcharacter(CHARACTER_SHINJIRO)
-    makecharaAvailable(CHARACTER_SHINJIRO)
+    clearflag(FLAG_LOCK_SHINJIRO)
     goto (SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa)
     
 

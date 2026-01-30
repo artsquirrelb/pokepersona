@@ -829,13 +829,13 @@ MansionsGarden_Eventscript_MitsuruPrologueStart::
 # 487 "data/maps/MansionsGarden/scripts.pory"
 	unlockcharacter CHARACTER_MITSURU
 # 488 "data/maps/MansionsGarden/scripts.pory"
-	makecharaAvailable CHARACTER_MITSURU
+	clearflag FLAG_LOCK_MITSURU
 # 489 "data/maps/MansionsGarden/scripts.pory"
-	makecharaUnavailable CHARACTER_AKIHIKO
+	setflag FLAG_LOCK_AKIHIKO
 # 490 "data/maps/MansionsGarden/scripts.pory"
-	makecharaUnavailable CHARACTER_INTELEON_T
+	setflag FLAG_LOCK_INTELEON_T
 # 491 "data/maps/MansionsGarden/scripts.pory"
-	makecharaUnavailable CHARACTER_SHINJIRO
+	setflag FLAG_LOCK_SHINJIRO
 # 492 "data/maps/MansionsGarden/scripts.pory"
 	destroyfollowernpc
 # 493 "data/maps/MansionsGarden/scripts.pory"

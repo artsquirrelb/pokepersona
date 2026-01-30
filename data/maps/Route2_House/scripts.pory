@@ -222,7 +222,7 @@ script Route2_House_Eventscript_MitsuruOnFrame34 {
 script Route2_House_Eventscript_AkiShinjiWakingUp {
     lock
     destroyfollowernpc
-    makecharaUnavailable(CHARACTER_SHINJIRO)
+    setflag(FLAG_LOCK_SHINJIRO)
     delay(20)
     applymovement(LOCALID_PLAYER, CameraPansDownToTheTrio)
     waitmovement(0)
@@ -641,7 +641,7 @@ script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru {
     setvar(VAR_AKIHIKOS_INTRO_STATE, 33)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fwdtime(13, 30)
-    makecharaAvailable(CHARACTER_SHINJIRO)
+    clearflag(FLAG_LOCK_SHINJIRO)
     release
     end
 }
@@ -1213,15 +1213,15 @@ script Route2_House_Eventscript_TheFirstMorning2 {
         subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, MITSURUS_PROLOGUE)
         unlockcharacter(CHARACTER_MITSURU)
         unlockcharacter(CHARACTER_INTELEON_T)
-        makecharaUnavailable(CHARACTER_MITSURU)
-        makecharaUnavailable(CHARACTER_INTELEON_T)
+        setflag(FLAG_LOCK_MITSURU)
+        setflag(FLAG_LOCK_INTELEON_T)
     }
     else{
         setvar(VAR_MITSURUS_INTRO_STATE, 100)
         unlockcharacter(CHARACTER_MITSURU)
         unlockcharacter(CHARACTER_INTELEON_T)
-        makecharaAvailable(CHARACTER_MITSURU)
-        makecharaAvailable(CHARACTER_INTELEON_T)
+        clearflag(FLAG_LOCK_MITSURU)
+        clearflag(FLAG_LOCK_INTELEON_T)
 
     }
     setflag(FLAG_TEMP_1)
@@ -1234,8 +1234,8 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     waitmovement
     unlockcharacter(CHARACTER_AKIHIKO)
     unlockcharacter(CHARACTER_SHINJIRO)
-    makecharaAvailable(CHARACTER_AKIHIKO)
-    makecharaAvailable(CHARACTER_SHINJIRO)
+    clearflag(FLAG_LOCK_AKIHIKO)
+    clearflag(FLAG_LOCK_SHINJIRO)
     completesubquest(STORY_QUESTS, AKIHIKOS_PROLOGUE)
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, MITSURUS_PROLOGUE)
     if (!var(VAR_RESULT)){
@@ -1891,15 +1891,15 @@ script Route2_House_Eventscript_TheFirstMorning2MitsuruPOV {
         subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
         unlockcharacter(CHARACTER_AKIHIKO)
         unlockcharacter(CHARACTER_SHINJIRO)
-        makecharaUnavailable(CHARACTER_AKIHIKO)
-        makecharaUnavailable(CHARACTER_SHINJIRO)
+        setflag(FLAG_LOCK_AKIHIKO)
+        setflag(FLAG_LOCK_SHINJIRO)
     }
     else{
         setvar(VAR_AKIHIKOS_INTRO_STATE, 100)
         unlockcharacter(CHARACTER_AKIHIKO)
         unlockcharacter(CHARACTER_SHINJIRO)
-        makecharaAvailable(CHARACTER_AKIHIKO)
-        makecharaAvailable(CHARACTER_SHINJIRO)
+        clearflag(FLAG_LOCK_AKIHIKO)
+        clearflag(FLAG_LOCK_SHINJIRO)
     }
     setflag(FLAG_TEMP_1)
     setvar(VAR_MITSURUS_INTRO_STATE, 100) //complete mitsuru's prologue
@@ -1910,8 +1910,8 @@ script Route2_House_Eventscript_TheFirstMorning2MitsuruPOV {
     waitmovement
     unlockcharacter(CHARACTER_MITSURU)
     unlockcharacter(CHARACTER_INTELEON_T)
-    makecharaAvailable(CHARACTER_MITSURU)
-    makecharaAvailable(CHARACTER_INTELEON_T)
+    clearflag(FLAG_LOCK_MITSURU)
+    clearflag(FLAG_LOCK_INTELEON_T)
     completesubquest(STORY_QUESTS, MITSURUS_PROLOGUE)
     special(RemoveCameraObject)
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)

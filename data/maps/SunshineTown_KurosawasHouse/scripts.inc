@@ -212,7 +212,7 @@ SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow_1:
 # 121 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	unlockcharacter CHARACTER_SHINJIRO
 # 122 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	makecharaAvailable CHARACTER_SHINJIRO
+	clearflag FLAG_LOCK_SHINJIRO
 # 123 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
 	goto SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa
 	return

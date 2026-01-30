@@ -142,7 +142,7 @@ MansionMainHall_Eventscript_TakeharuStoppingMitsuru_1:
 # 88 "data/maps/MansionMainHall/scripts.pory"
 	unlockcharacter CHARACTER_INTELEON_T
 # 89 "data/maps/MansionMainHall/scripts.pory"
-	makecharaAvailable CHARACTER_INTELEON_T
+	clearflag FLAG_LOCK_INTELEON_T
 # 90 "data/maps/MansionMainHall/scripts.pory"
 	fwdtime 22, 45
 # 91 "data/maps/MansionMainHall/scripts.pory"

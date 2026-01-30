@@ -1425,7 +1425,7 @@ static void NamingScreen_NoIcon(void)
  */
 static void NamingScreen_CreatePlayerIcon(void)
 {
-    u16 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(DEFAULT_CHARACTER, PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
+    u16 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(DEFAULT_CHARACTER, PLAYER_AVATAR_STATE_NORMAL);
     u8 spriteId;
     // u32 outfit = sNamingScreen->monPersonality;
 

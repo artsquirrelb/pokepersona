@@ -938,7 +938,7 @@ Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon::
 # 512 "data/maps/Route2/scripts.pory"
 	destroyfollowernpc
 # 513 "data/maps/Route2/scripts.pory"
-	makecharaUnavailable CHARACTER_SHINJIRO
+	setflag FLAG_LOCK_SHINJIRO
 	end
 
 

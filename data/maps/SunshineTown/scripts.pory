@@ -482,9 +482,9 @@ script unlockcharacters
     unlockcharacter(CHARACTER_MITSURU)
     unlockcharacter(CHARACTER_SHINJIRO)
     unlockcharacter(CHARACTER_AKIHIKO)
-    makecharaAvailable(CHARACTER_MITSURU)
-    makecharaAvailable(CHARACTER_AKIHIKO)
-    makecharaAvailable(CHARACTER_SHINJIRO)
+    clearflag(FLAG_LOCK_MITSURU)
+    clearflag(FLAG_LOCK_AKIHIKO)
+    clearflag(FLAG_LOCK_SHINJIRO)
     end
 }
 

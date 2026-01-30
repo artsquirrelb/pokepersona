@@ -494,7 +494,7 @@ Route2_House_Eventscript_AkiShinjiWakingUp::
 # 224 "data/maps/Route2_House/scripts.pory"
 	destroyfollowernpc
 # 225 "data/maps/Route2_House/scripts.pory"
-	makecharaUnavailable CHARACTER_SHINJIRO
+	setflag FLAG_LOCK_SHINJIRO
 # 226 "data/maps/Route2_House/scripts.pory"
 	delay 20
 # 227 "data/maps/Route2_House/scripts.pory"
@@ -1150,7 +1150,7 @@ Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_1:
 # 643 "data/maps/Route2_House/scripts.pory"
 	fwdtime 13, 30
 # 644 "data/maps/Route2_House/scripts.pory"
-	makecharaAvailable CHARACTER_SHINJIRO
+	clearflag FLAG_LOCK_SHINJIRO
 # 645 "data/maps/Route2_House/scripts.pory"
 	release
 	end
@@ -2206,9 +2206,9 @@ Route2_House_Eventscript_TheFirstMorning2::
 # 1222 "data/maps/Route2_House/scripts.pory"
 	unlockcharacter CHARACTER_INTELEON_T
 # 1223 "data/maps/Route2_House/scripts.pory"
-	makecharaAvailable CHARACTER_MITSURU
+	clearflag FLAG_LOCK_MITSURU
 # 1224 "data/maps/Route2_House/scripts.pory"
-	makecharaAvailable CHARACTER_INTELEON_T
+	clearflag FLAG_LOCK_INTELEON_T
 Route2_House_Eventscript_TheFirstMorning2_1:
 # 1227 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_TEMP_1
@@ -2231,9 +2231,9 @@ Route2_House_Eventscript_TheFirstMorning2_1:
 # 1236 "data/maps/Route2_House/scripts.pory"
 	unlockcharacter CHARACTER_SHINJIRO
 # 1237 "data/maps/Route2_House/scripts.pory"
-	makecharaAvailable CHARACTER_AKIHIKO
+	clearflag FLAG_LOCK_AKIHIKO
 # 1238 "data/maps/Route2_House/scripts.pory"
-	makecharaAvailable CHARACTER_SHINJIRO
+	clearflag FLAG_LOCK_SHINJIRO
 # 1239 "data/maps/Route2_House/scripts.pory"
 	completesubquest STORY_QUESTS, AKIHIKOS_PROLOGUE
 # 1240 "data/maps/Route2_House/scripts.pory"
@@ -2258,9 +2258,9 @@ Route2_House_Eventscript_TheFirstMorning2_2:
 # 1215 "data/maps/Route2_House/scripts.pory"
 	unlockcharacter CHARACTER_INTELEON_T
 # 1216 "data/maps/Route2_House/scripts.pory"
-	makecharaUnavailable CHARACTER_MITSURU
+	setflag FLAG_LOCK_MITSURU
 # 1217 "data/maps/Route2_House/scripts.pory"
-	makecharaUnavailable CHARACTER_INTELEON_T
+	setflag FLAG_LOCK_INTELEON_T
 	goto Route2_House_Eventscript_TheFirstMorning2_1
 
 Route2_House_Eventscript_TheFirstMorning2_6:
@@ -3310,9 +3310,9 @@ Route2_House_Eventscript_TheFirstMorning2MitsuruPOV::
 # 1900 "data/maps/Route2_House/scripts.pory"
 	unlockcharacter CHARACTER_SHINJIRO
 # 1901 "data/maps/Route2_House/scripts.pory"
-	makecharaAvailable CHARACTER_AKIHIKO
+	clearflag FLAG_LOCK_AKIHIKO
 # 1902 "data/maps/Route2_House/scripts.pory"
-	makecharaAvailable CHARACTER_SHINJIRO
+	clearflag FLAG_LOCK_SHINJIRO
 Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_1:
 # 1904 "data/maps/Route2_House/scripts.pory"
 	setflag FLAG_TEMP_1
@@ -3333,9 +3333,9 @@ Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_1:
 # 1912 "data/maps/Route2_House/scripts.pory"
 	unlockcharacter CHARACTER_INTELEON_T
 # 1913 "data/maps/Route2_House/scripts.pory"
-	makecharaAvailable CHARACTER_MITSURU
+	clearflag FLAG_LOCK_MITSURU
 # 1914 "data/maps/Route2_House/scripts.pory"
-	makecharaAvailable CHARACTER_INTELEON_T
+	clearflag FLAG_LOCK_INTELEON_T
 # 1915 "data/maps/Route2_House/scripts.pory"
 	completesubquest STORY_QUESTS, MITSURUS_PROLOGUE
 # 1916 "data/maps/Route2_House/scripts.pory"
@@ -3362,9 +3362,9 @@ Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_2:
 # 1893 "data/maps/Route2_House/scripts.pory"
 	unlockcharacter CHARACTER_SHINJIRO
 # 1894 "data/maps/Route2_House/scripts.pory"
-	makecharaUnavailable CHARACTER_AKIHIKO
+	setflag FLAG_LOCK_AKIHIKO
 # 1895 "data/maps/Route2_House/scripts.pory"
-	makecharaUnavailable CHARACTER_SHINJIRO
+	setflag FLAG_LOCK_SHINJIRO
 	goto Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_1
 
 Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_6:

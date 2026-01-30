@@ -81,8 +81,7 @@ script Coralport_NeckbeardsHouse_CheckIfMitsuru {
             goto(Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start)
         }
         else{
-            getcharaAvailability(CHARACTER_MITSURU)
-            if (var(VAR_RESULT)){
+            if (!flag(FLAG_LOCK_MITSURU)){
                 hidefollower
                 switchmaincharacter
                 updatefollowingmon

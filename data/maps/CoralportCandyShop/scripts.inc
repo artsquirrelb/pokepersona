@@ -347,894 +347,888 @@ CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime::
 	compare VAR_RESULT, FEMALE
 	goto_if_eq CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime_2
 CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime_1:
-# 202 "data/maps/CoralportCandyShop/scripts.pory"
+# 201 "data/maps/CoralportCandyShop/scripts.pory"
 	destroyfollowernpc
-# 203 "data/maps/CoralportCandyShop/scripts.pory"
+# 202 "data/maps/CoralportCandyShop/scripts.pory"
 	setvar VAR_AMEAME_CANDY_SHOP, 1
-# 204 "data/maps/CoralportCandyShop/scripts.pory"
+# 203 "data/maps/CoralportCandyShop/scripts.pory"
 	warpsilent MAP_CORALPORT_CANDY_SHOP, 12, 3
 	return
 
 CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime_2:
 # 194 "data/maps/CoralportCandyShop/scripts.pory"
-	getcharaAvailability CHARACTER_AKIHIKO
-# 195 "data/maps/CoralportCandyShop/scripts.pory"
-	compare VAR_RESULT, FALSE
-	goto_if_eq CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime_4
-# 199 "data/maps/CoralportCandyShop/scripts.pory"
+	goto_if_set FLAG_LOCK_AKIHIKO, CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime_4
+# 198 "data/maps/CoralportCandyShop/scripts.pory"
 	switchmaincharacter
 	goto CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime_1
 
 CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime_4:
-# 196 "data/maps/CoralportCandyShop/scripts.pory"
+# 195 "data/maps/CoralportCandyShop/scripts.pory"
 	goto CoralportCandyShop_Eventscript_RandomizeCutscenes
 	goto CoralportCandyShop_Eventscript_TryStartingAkihikoPartTime_1
 
 
 CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime::
-# 208 "data/maps/CoralportCandyShop/scripts.pory"
+# 207 "data/maps/CoralportCandyShop/scripts.pory"
 	checkplayergender
-# 209 "data/maps/CoralportCandyShop/scripts.pory"
+# 208 "data/maps/CoralportCandyShop/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime_2
 CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime_1:
-# 219 "data/maps/CoralportCandyShop/scripts.pory"
+# 217 "data/maps/CoralportCandyShop/scripts.pory"
 	destroyfollowernpc
-# 220 "data/maps/CoralportCandyShop/scripts.pory"
+# 218 "data/maps/CoralportCandyShop/scripts.pory"
 	setvar VAR_AMEAME_CANDY_SHOP, 2
-# 221 "data/maps/CoralportCandyShop/scripts.pory"
+# 219 "data/maps/CoralportCandyShop/scripts.pory"
 	warpsilent MAP_CORALPORT_CANDY_SHOP, 10, 6
 	return
 
 CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime_2:
-# 210 "data/maps/CoralportCandyShop/scripts.pory"
-	getcharaAvailability CHARACTER_MITSURU
-# 211 "data/maps/CoralportCandyShop/scripts.pory"
-	compare VAR_RESULT, FALSE
-	goto_if_eq CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime_4
-# 216 "data/maps/CoralportCandyShop/scripts.pory"
+# 209 "data/maps/CoralportCandyShop/scripts.pory"
+	goto_if_set FLAG_LOCK_MITSURU, CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime_4
+# 214 "data/maps/CoralportCandyShop/scripts.pory"
 	switchmaincharacter
 	goto CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime_1
 
 CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime_4:
-# 213 "data/maps/CoralportCandyShop/scripts.pory"
+# 211 "data/maps/CoralportCandyShop/scripts.pory"
 	goto CoralportCandyShop_Eventscript_RandomizeCutscenes
 	goto CoralportCandyShop_Eventscript_TryStartingMitsuruPartTime_1
 
 
 CoralportCandyShop_Eventscript_TryStartingShinjiroPartTime::
-# 225 "data/maps/CoralportCandyShop/scripts.pory"
+# 223 "data/maps/CoralportCandyShop/scripts.pory"
 	destroyfollowernpc
-# 226 "data/maps/CoralportCandyShop/scripts.pory"
+# 224 "data/maps/CoralportCandyShop/scripts.pory"
 	setvar VAR_AMEAME_CANDY_SHOP, 3
-# 227 "data/maps/CoralportCandyShop/scripts.pory"
+# 225 "data/maps/CoralportCandyShop/scripts.pory"
 	warpsilent MAP_CORALPORT_CANDY_SHOP, 5, 4
 	return
 
 
 CoralportCandyShop_Eventscript_PartTimeCutscene_1::
-# 231 "data/maps/CoralportCandyShop/scripts.pory"
+# 229 "data/maps/CoralportCandyShop/scripts.pory"
 	lock
-# 232 "data/maps/CoralportCandyShop/scripts.pory"
+# 230 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 20
-# 233 "data/maps/CoralportCandyShop/scripts.pory"
+# 231 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_BIKE_BELL
-# 234 "data/maps/CoralportCandyShop/scripts.pory"
+# 232 "data/maps/CoralportCandyShop/scripts.pory"
 	clearflag FLAG_TEMP_3
-# 235 "data/maps/CoralportCandyShop/scripts.pory"
+# 233 "data/maps/CoralportCandyShop/scripts.pory"
 	addobject 3, MAP_CORALPORT_CANDY_SHOP
-# 236 "data/maps/CoralportCandyShop/scripts.pory"
+# 234 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 20
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 3, CoralportCandyShop_Eventscript_PartTimeCutscene_1_Movement_0
+# 236 "data/maps/CoralportCandyShop/scripts.pory"
+	waitmovement
+# 237 "data/maps/CoralportCandyShop/scripts.pory"
+	delay 30
 # 238 "data/maps/CoralportCandyShop/scripts.pory"
-	waitmovement
-# 239 "data/maps/CoralportCandyShop/scripts.pory"
-	delay 30
-# 240 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_VEND
-# 241 "data/maps/CoralportCandyShop/scripts.pory"
+# 239 "data/maps/CoralportCandyShop/scripts.pory"
 	waitse
-# 242 "data/maps/CoralportCandyShop/scripts.pory"
+# 240 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 3, CoralportCandyShop_Eventscript_PartTimeCutscene_1_Movement_1
+# 241 "data/maps/CoralportCandyShop/scripts.pory"
+	waitmovement
+# 242 "data/maps/CoralportCandyShop/scripts.pory"
+	delay 30
 # 243 "data/maps/CoralportCandyShop/scripts.pory"
-	waitmovement
-# 244 "data/maps/CoralportCandyShop/scripts.pory"
-	delay 30
-# 245 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_PIN
-# 246 "data/maps/CoralportCandyShop/scripts.pory"
+# 244 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, CoralportCandyShop_Eventscript_PartTimeCutscene_1_Movement_2
-# 247 "data/maps/CoralportCandyShop/scripts.pory"
+# 245 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 248 "data/maps/CoralportCandyShop/scripts.pory"
+# 246 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_SHOP
-# 249 "data/maps/CoralportCandyShop/scripts.pory"
+# 247 "data/maps/CoralportCandyShop/scripts.pory"
 	waitse
-# 250 "data/maps/CoralportCandyShop/scripts.pory"
+# 248 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 30
-# 251 "data/maps/CoralportCandyShop/scripts.pory"
+# 249 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 3, CoralportCandyShop_Eventscript_PartTimeCutscene_1_Movement_3
-# 252 "data/maps/CoralportCandyShop/scripts.pory"
+# 250 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 253 "data/maps/CoralportCandyShop/scripts.pory"
+# 251 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_EXIT
-# 254 "data/maps/CoralportCandyShop/scripts.pory"
+# 252 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 20
-# 255 "data/maps/CoralportCandyShop/scripts.pory"
+# 253 "data/maps/CoralportCandyShop/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 256 "data/maps/CoralportCandyShop/scripts.pory"
+# 254 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, CoralportCandyShop_Eventscript_PartTimeCutscene_1_Movement_4
-# 257 "data/maps/CoralportCandyShop/scripts.pory"
+# 255 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 258 "data/maps/CoralportCandyShop/scripts.pory"
+# 256 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 30
-# 259 "data/maps/CoralportCandyShop/scripts.pory"
+# 257 "data/maps/CoralportCandyShop/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 260 "data/maps/CoralportCandyShop/scripts.pory"
+# 258 "data/maps/CoralportCandyShop/scripts.pory"
 	addmoney 2000
-# 261 "data/maps/CoralportCandyShop/scripts.pory"
+# 259 "data/maps/CoralportCandyShop/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 262 "data/maps/CoralportCandyShop/scripts.pory"
+# 260 "data/maps/CoralportCandyShop/scripts.pory"
 	waitfanfare
-# 263 "data/maps/CoralportCandyShop/scripts.pory"
+# 261 "data/maps/CoralportCandyShop/scripts.pory"
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward
 	return
 
 
 CoralportCandyShop_Eventscript_PartTimeCutscene_2::
-# 267 "data/maps/CoralportCandyShop/scripts.pory"
+# 265 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 20
-# 268 "data/maps/CoralportCandyShop/scripts.pory"
+# 266 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_0
+# 267 "data/maps/CoralportCandyShop/scripts.pory"
+	waitmovement
+# 268 "data/maps/CoralportCandyShop/scripts.pory"
+	delay 20
 # 269 "data/maps/CoralportCandyShop/scripts.pory"
-	waitmovement
-# 270 "data/maps/CoralportCandyShop/scripts.pory"
-	delay 20
-# 271 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_BIKE_BELL
-# 272 "data/maps/CoralportCandyShop/scripts.pory"
+# 270 "data/maps/CoralportCandyShop/scripts.pory"
 	clearflag FLAG_TEMP_2
-# 273 "data/maps/CoralportCandyShop/scripts.pory"
+# 271 "data/maps/CoralportCandyShop/scripts.pory"
 	addobject 5, MAP_CORALPORT_CANDY_SHOP
-# 274 "data/maps/CoralportCandyShop/scripts.pory"
+# 272 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 8
-# 275 "data/maps/CoralportCandyShop/scripts.pory"
+# 273 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_1
-# 276 "data/maps/CoralportCandyShop/scripts.pory"
+# 274 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 277 "data/maps/CoralportCandyShop/scripts.pory"
+# 275 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 20
-# 278 "data/maps/CoralportCandyShop/scripts.pory"
+# 276 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_2
-# 279 "data/maps/CoralportCandyShop/scripts.pory"
+# 277 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 5, CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_3
+# 278 "data/maps/CoralportCandyShop/scripts.pory"
+	waitmovement
+# 279 "data/maps/CoralportCandyShop/scripts.pory"
+	delay 30
 # 280 "data/maps/CoralportCandyShop/scripts.pory"
-	waitmovement
-# 281 "data/maps/CoralportCandyShop/scripts.pory"
-	delay 30
-# 282 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_4
-# 283 "data/maps/CoralportCandyShop/scripts.pory"
+# 281 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 4
-# 284 "data/maps/CoralportCandyShop/scripts.pory"
+# 282 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 5, CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_5
-# 285 "data/maps/CoralportCandyShop/scripts.pory"
+# 283 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 286 "data/maps/CoralportCandyShop/scripts.pory"
+# 284 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 40
-# 287 "data/maps/CoralportCandyShop/scripts.pory"
+# 285 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_PIN
-# 288 "data/maps/CoralportCandyShop/scripts.pory"
+# 286 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, faceleft
-# 289 "data/maps/CoralportCandyShop/scripts.pory"
+# 287 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 5, CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_6
-# 290 "data/maps/CoralportCandyShop/scripts.pory"
+# 288 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 291 "data/maps/CoralportCandyShop/scripts.pory"
+# 289 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 30
-# 292 "data/maps/CoralportCandyShop/scripts.pory"
+# 290 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_7
-# 293 "data/maps/CoralportCandyShop/scripts.pory"
+# 291 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_SHOP
-# 294 "data/maps/CoralportCandyShop/scripts.pory"
+# 292 "data/maps/CoralportCandyShop/scripts.pory"
 	waitse
-# 295 "data/maps/CoralportCandyShop/scripts.pory"
+# 293 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 30
-# 296 "data/maps/CoralportCandyShop/scripts.pory"
+# 294 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, facedown
+# 295 "data/maps/CoralportCandyShop/scripts.pory"
+	waitmovement
+# 296 "data/maps/CoralportCandyShop/scripts.pory"
+	applymovement 5, CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_8
 # 297 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
 # 298 "data/maps/CoralportCandyShop/scripts.pory"
-	applymovement 5, CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_8
-# 299 "data/maps/CoralportCandyShop/scripts.pory"
-	waitmovement
-# 300 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_EXIT
-# 301 "data/maps/CoralportCandyShop/scripts.pory"
+# 299 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 30
-# 302 "data/maps/CoralportCandyShop/scripts.pory"
+# 300 "data/maps/CoralportCandyShop/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 303 "data/maps/CoralportCandyShop/scripts.pory"
+# 301 "data/maps/CoralportCandyShop/scripts.pory"
 	moveobjecttocoords LOCALID_PLAYER, 9, 5, DIR_SOUTH, 2
-# 304 "data/maps/CoralportCandyShop/scripts.pory"
+# 302 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 305 "data/maps/CoralportCandyShop/scripts.pory"
+# 303 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 30
-# 306 "data/maps/CoralportCandyShop/scripts.pory"
+# 304 "data/maps/CoralportCandyShop/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 307 "data/maps/CoralportCandyShop/scripts.pory"
+# 305 "data/maps/CoralportCandyShop/scripts.pory"
 	addmoney 2000
-# 308 "data/maps/CoralportCandyShop/scripts.pory"
+# 306 "data/maps/CoralportCandyShop/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 309 "data/maps/CoralportCandyShop/scripts.pory"
+# 307 "data/maps/CoralportCandyShop/scripts.pory"
 	waitfanfare
-# 310 "data/maps/CoralportCandyShop/scripts.pory"
+# 308 "data/maps/CoralportCandyShop/scripts.pory"
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward
 	return
 
 
 CoralportCandyShop_Eventscript_PartTimeCutscene_3::
-# 314 "data/maps/CoralportCandyShop/scripts.pory"
+# 312 "data/maps/CoralportCandyShop/scripts.pory"
 	lock
-# 315 "data/maps/CoralportCandyShop/scripts.pory"
+# 313 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 20
-# 316 "data/maps/CoralportCandyShop/scripts.pory"
+# 314 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, invisible
-# 317 "data/maps/CoralportCandyShop/scripts.pory"
+# 315 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 6, emotepensive
+# 316 "data/maps/CoralportCandyShop/scripts.pory"
+	waitmovement
+# 317 "data/maps/CoralportCandyShop/scripts.pory"
+	applymovement 3, CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_0
 # 318 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
 # 319 "data/maps/CoralportCandyShop/scripts.pory"
-	applymovement 3, CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_0
+	applymovement 6, faceleft
 # 320 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
 # 321 "data/maps/CoralportCandyShop/scripts.pory"
-	applymovement 6, faceleft
+	delay 30
 # 322 "data/maps/CoralportCandyShop/scripts.pory"
-	waitmovement
-# 323 "data/maps/CoralportCandyShop/scripts.pory"
-	delay 30
-# 324 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_SHOP
-# 325 "data/maps/CoralportCandyShop/scripts.pory"
+# 323 "data/maps/CoralportCandyShop/scripts.pory"
 	waitse
-# 326 "data/maps/CoralportCandyShop/scripts.pory"
+# 324 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 30
-# 327 "data/maps/CoralportCandyShop/scripts.pory"
+# 325 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 6, facedown
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 3, CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_1
-# 329 "data/maps/CoralportCandyShop/scripts.pory"
+# 327 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 60
-# 330 "data/maps/CoralportCandyShop/scripts.pory"
+# 328 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_EXIT
-# 331 "data/maps/CoralportCandyShop/scripts.pory"
+# 329 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 6, CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_2
-# 332 "data/maps/CoralportCandyShop/scripts.pory"
+# 330 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_2
-# 333 "data/maps/CoralportCandyShop/scripts.pory"
+# 331 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 334 "data/maps/CoralportCandyShop/scripts.pory"
+# 332 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 30
-# 335 "data/maps/CoralportCandyShop/scripts.pory"
+# 333 "data/maps/CoralportCandyShop/scripts.pory"
 	addobject 5
-# 336 "data/maps/CoralportCandyShop/scripts.pory"
+# 334 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 5, CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_3
+# 335 "data/maps/CoralportCandyShop/scripts.pory"
+	waitmovement
+# 336 "data/maps/CoralportCandyShop/scripts.pory"
+	applymovement 6, faceright
 # 337 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
 # 338 "data/maps/CoralportCandyShop/scripts.pory"
-	applymovement 6, faceright
+	delay 20
 # 339 "data/maps/CoralportCandyShop/scripts.pory"
-	waitmovement
-# 340 "data/maps/CoralportCandyShop/scripts.pory"
-	delay 20
-# 341 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_PIN
-# 342 "data/maps/CoralportCandyShop/scripts.pory"
+# 340 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 5, CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_7
-# 343 "data/maps/CoralportCandyShop/scripts.pory"
+# 341 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 344 "data/maps/CoralportCandyShop/scripts.pory"
+# 342 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 20
-# 345 "data/maps/CoralportCandyShop/scripts.pory"
+# 343 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_SHOP
+# 344 "data/maps/CoralportCandyShop/scripts.pory"
+	waitse
+# 345 "data/maps/CoralportCandyShop/scripts.pory"
+	delay 30
 # 346 "data/maps/CoralportCandyShop/scripts.pory"
-	waitse
-# 347 "data/maps/CoralportCandyShop/scripts.pory"
-	delay 30
-# 348 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 5, CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_4
-# 349 "data/maps/CoralportCandyShop/scripts.pory"
+# 347 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 350 "data/maps/CoralportCandyShop/scripts.pory"
+# 348 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_EXIT
-# 351 "data/maps/CoralportCandyShop/scripts.pory"
+# 349 "data/maps/CoralportCandyShop/scripts.pory"
 	waitse
-# 352 "data/maps/CoralportCandyShop/scripts.pory"
+# 350 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 30
-# 353 "data/maps/CoralportCandyShop/scripts.pory"
+# 351 "data/maps/CoralportCandyShop/scripts.pory"
 	fadescreenswapbuffers FADE_TO_BLACK
-# 354 "data/maps/CoralportCandyShop/scripts.pory"
+# 352 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement LOCALID_PLAYER, CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_5
-# 355 "data/maps/CoralportCandyShop/scripts.pory"
+# 353 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 6, CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_6
-# 356 "data/maps/CoralportCandyShop/scripts.pory"
+# 354 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 357 "data/maps/CoralportCandyShop/scripts.pory"
+# 355 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 30
-# 358 "data/maps/CoralportCandyShop/scripts.pory"
+# 356 "data/maps/CoralportCandyShop/scripts.pory"
 	fadescreenswapbuffers FADE_FROM_BLACK
-# 359 "data/maps/CoralportCandyShop/scripts.pory"
+# 357 "data/maps/CoralportCandyShop/scripts.pory"
 	addmoney 2000
-# 360 "data/maps/CoralportCandyShop/scripts.pory"
+# 358 "data/maps/CoralportCandyShop/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 361 "data/maps/CoralportCandyShop/scripts.pory"
+# 359 "data/maps/CoralportCandyShop/scripts.pory"
 	waitfanfare
-# 362 "data/maps/CoralportCandyShop/scripts.pory"
+# 360 "data/maps/CoralportCandyShop/scripts.pory"
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward
 	return
 
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward::
-# 367 "data/maps/CoralportCandyShop/scripts.pory"
+# 365 "data/maps/CoralportCandyShop/scripts.pory"
 	random 8
-# 368 "data/maps/CoralportCandyShop/scripts.pory"
+# 366 "data/maps/CoralportCandyShop/scripts.pory"
 	switch VAR_RESULT
-# 370 "data/maps/CoralportCandyShop/scripts.pory"
+# 368 "data/maps/CoralportCandyShop/scripts.pory"
 	case 0, CoralportCandyShop_Eventscript_PartTime_RandomizeReward_3
-# 371 "data/maps/CoralportCandyShop/scripts.pory"
+# 369 "data/maps/CoralportCandyShop/scripts.pory"
 	case 1, CoralportCandyShop_Eventscript_PartTime_RandomizeReward_3
-# 372 "data/maps/CoralportCandyShop/scripts.pory"
+# 370 "data/maps/CoralportCandyShop/scripts.pory"
 	case 2, CoralportCandyShop_Eventscript_PartTime_RandomizeReward_3
-# 373 "data/maps/CoralportCandyShop/scripts.pory"
+# 371 "data/maps/CoralportCandyShop/scripts.pory"
 	case 3, CoralportCandyShop_Eventscript_PartTime_RandomizeReward_3
-# 376 "data/maps/CoralportCandyShop/scripts.pory"
+# 374 "data/maps/CoralportCandyShop/scripts.pory"
 	case 4, CoralportCandyShop_Eventscript_PartTime_RandomizeReward_4
-# 379 "data/maps/CoralportCandyShop/scripts.pory"
+# 377 "data/maps/CoralportCandyShop/scripts.pory"
 	case 5, CoralportCandyShop_Eventscript_PartTime_RandomizeReward_5
-# 382 "data/maps/CoralportCandyShop/scripts.pory"
+# 380 "data/maps/CoralportCandyShop/scripts.pory"
 	case 6, CoralportCandyShop_Eventscript_PartTime_RandomizeReward_6
-# 385 "data/maps/CoralportCandyShop/scripts.pory"
+# 383 "data/maps/CoralportCandyShop/scripts.pory"
 	case 7, CoralportCandyShop_Eventscript_PartTime_RandomizeReward_7
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_1:
-# 389 "data/maps/CoralportCandyShop/scripts.pory"
+# 387 "data/maps/CoralportCandyShop/scripts.pory"
 	compare VAR_AMEAME_CANDY_SHOP, 1
 	goto_if_eq CoralportCandyShop_Eventscript_PartTime_RandomizeReward_9
-# 394 "data/maps/CoralportCandyShop/scripts.pory"
+# 392 "data/maps/CoralportCandyShop/scripts.pory"
 	compare VAR_AMEAME_CANDY_SHOP, 2
 	goto_if_eq CoralportCandyShop_Eventscript_PartTime_RandomizeReward_10
-# 401 "data/maps/CoralportCandyShop/scripts.pory"
+# 399 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_2
-# 403 "data/maps/CoralportCandyShop/scripts.pory"
+# 401 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_8:
-# 405 "data/maps/CoralportCandyShop/scripts.pory"
+# 403 "data/maps/CoralportCandyShop/scripts.pory"
 	setvar VAR_AMEAME_CANDY_SHOP, 0
-# 406 "data/maps/CoralportCandyShop/scripts.pory"
+# 404 "data/maps/CoralportCandyShop/scripts.pory"
 	addtime 0, 6, 0
-# 407 "data/maps/CoralportCandyShop/scripts.pory"
+# 405 "data/maps/CoralportCandyShop/scripts.pory"
 	call EventScript_CheckDaysLeft
-# 408 "data/maps/CoralportCandyShop/scripts.pory"
+# 406 "data/maps/CoralportCandyShop/scripts.pory"
 	call CoralportCandyShop_Eventscript_PartTime_QuestCheckDone
-# 409 "data/maps/CoralportCandyShop/scripts.pory"
+# 407 "data/maps/CoralportCandyShop/scripts.pory"
 	warp MAP_CORALPORT, 17, 17
-# 410 "data/maps/CoralportCandyShop/scripts.pory"
+# 408 "data/maps/CoralportCandyShop/scripts.pory"
 	waitstate
-# 411 "data/maps/CoralportCandyShop/scripts.pory"
+# 409 "data/maps/CoralportCandyShop/scripts.pory"
 	release
 	end
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_3:
-# 374 "data/maps/CoralportCandyShop/scripts.pory"
+# 372 "data/maps/CoralportCandyShop/scripts.pory"
 	additem ITEM_EXP_CANDY_M
-# 375 "data/maps/CoralportCandyShop/scripts.pory"
+# 373 "data/maps/CoralportCandyShop/scripts.pory"
 	bufferitemname STR_VAR_1, ITEM_EXP_CANDY_M
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_1
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_4:
-# 377 "data/maps/CoralportCandyShop/scripts.pory"
+# 375 "data/maps/CoralportCandyShop/scripts.pory"
 	additem ITEM_SERIOUS_MINT
-# 378 "data/maps/CoralportCandyShop/scripts.pory"
+# 376 "data/maps/CoralportCandyShop/scripts.pory"
 	bufferitemname STR_VAR_1, ITEM_SERIOUS_MINT
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_1
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_5:
-# 380 "data/maps/CoralportCandyShop/scripts.pory"
+# 378 "data/maps/CoralportCandyShop/scripts.pory"
 	additem ITEM_SWEET_HEART
-# 381 "data/maps/CoralportCandyShop/scripts.pory"
+# 379 "data/maps/CoralportCandyShop/scripts.pory"
 	bufferitemname STR_VAR_1, ITEM_SWEET_HEART
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_1
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_6:
-# 383 "data/maps/CoralportCandyShop/scripts.pory"
+# 381 "data/maps/CoralportCandyShop/scripts.pory"
 	additem ITEM_EXP_CANDY_S
-# 384 "data/maps/CoralportCandyShop/scripts.pory"
+# 382 "data/maps/CoralportCandyShop/scripts.pory"
 	bufferitemname STR_VAR_1, ITEM_EXP_CANDY_S
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_1
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_7:
-# 386 "data/maps/CoralportCandyShop/scripts.pory"
+# 384 "data/maps/CoralportCandyShop/scripts.pory"
 	additem ITEM_LAVA_COOKIE
-# 387 "data/maps/CoralportCandyShop/scripts.pory"
+# 385 "data/maps/CoralportCandyShop/scripts.pory"
 	bufferitemname STR_VAR_1, ITEM_LAVA_COOKIE
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_1
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_9:
-# 390 "data/maps/CoralportCandyShop/scripts.pory"
+# 388 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_0
-# 392 "data/maps/CoralportCandyShop/scripts.pory"
+# 390 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_8
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_10:
-# 396 "data/maps/CoralportCandyShop/scripts.pory"
+# 394 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_1
-# 398 "data/maps/CoralportCandyShop/scripts.pory"
+# 396 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
 	goto CoralportCandyShop_Eventscript_PartTime_RandomizeReward_8
 
 
 CoralportCandyShop_Eventscript_PartTime_QuestCheckDone::
-# 416 "data/maps/CoralportCandyShop/scripts.pory"
+# 414 "data/maps/CoralportCandyShop/scripts.pory"
 	compare VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 30
 	goto_if_lt CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_2
 CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_1:
-# 420 "data/maps/CoralportCandyShop/scripts.pory"
+# 418 "data/maps/CoralportCandyShop/scripts.pory"
 	questmenu QUEST_MENU_CHECK_REWARD, QUEST_AMEAME_PARTTIME
-# 421 "data/maps/CoralportCandyShop/scripts.pory"
+# 419 "data/maps/CoralportCandyShop/scripts.pory"
 	compare VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 30
 	goto_if_eq CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_5
 	return
 
 CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_2:
-# 418 "data/maps/CoralportCandyShop/scripts.pory"
+# 416 "data/maps/CoralportCandyShop/scripts.pory"
 	addvar VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 1
 	goto CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_1
 
 CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_4:
-# 423 "data/maps/CoralportCandyShop/scripts.pory"
+# 421 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_Text_0
-# 425 "data/maps/CoralportCandyShop/scripts.pory"
+# 423 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
-# 426 "data/maps/CoralportCandyShop/scripts.pory"
+# 424 "data/maps/CoralportCandyShop/scripts.pory"
 	questmenu QUEST_MENU_SET_REWARD, QUEST_AMEAME_PARTTIME
 	return
 
 CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_5:
-# 421 "data/maps/CoralportCandyShop/scripts.pory"
+# 419 "data/maps/CoralportCandyShop/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_4
 	return
 
 
 CoralportCandyShop_Eventscript_QuestGiveReward::
-# 431 "data/maps/CoralportCandyShop/scripts.pory"
+# 429 "data/maps/CoralportCandyShop/scripts.pory"
 	playse SE_PIN
-# 432 "data/maps/CoralportCandyShop/scripts.pory"
+# 430 "data/maps/CoralportCandyShop/scripts.pory"
 	setspeaker CoralportCandyShop_Eventscript_ShopKeeperF_Text_0
-# 433 "data/maps/CoralportCandyShop/scripts.pory"
+# 431 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_QuestGiveReward_Text_0
-# 434 "data/maps/CoralportCandyShop/scripts.pory"
+# 432 "data/maps/CoralportCandyShop/scripts.pory"
 	applymovement 1, emoteexclamation
-# 435 "data/maps/CoralportCandyShop/scripts.pory"
+# 433 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmovement
-# 436 "data/maps/CoralportCandyShop/scripts.pory"
+# 434 "data/maps/CoralportCandyShop/scripts.pory"
 	setspeaker CoralportCandyShop_Eventscript_ShopKeeperF_Text_0
-# 437 "data/maps/CoralportCandyShop/scripts.pory"
+# 435 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_QuestGiveReward_Text_1
-# 439 "data/maps/CoralportCandyShop/scripts.pory"
+# 437 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
-# 440 "data/maps/CoralportCandyShop/scripts.pory"
+# 438 "data/maps/CoralportCandyShop/scripts.pory"
 	giveitem ITEM_CANDY_JAR
-# 441 "data/maps/CoralportCandyShop/scripts.pory"
+# 439 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_QuestGiveReward_Text_2
-# 442 "data/maps/CoralportCandyShop/scripts.pory"
+# 440 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
-# 443 "data/maps/CoralportCandyShop/scripts.pory"
+# 441 "data/maps/CoralportCandyShop/scripts.pory"
 	questmenu QUEST_MENU_COMPLETE_QUEST, QUEST_AMEAME_PARTTIME
-# 444 "data/maps/CoralportCandyShop/scripts.pory"
+# 442 "data/maps/CoralportCandyShop/scripts.pory"
 	setvar VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 31
-# 445 "data/maps/CoralportCandyShop/scripts.pory"
+# 443 "data/maps/CoralportCandyShop/scripts.pory"
 	release
 	end
 
 
 CoralportCandyShop_Eventscript_Slurpuff::
-# 449 "data/maps/CoralportCandyShop/scripts.pory"
+# 447 "data/maps/CoralportCandyShop/scripts.pory"
 	lock
-# 450 "data/maps/CoralportCandyShop/scripts.pory"
+# 448 "data/maps/CoralportCandyShop/scripts.pory"
 	showmonpic SPECIES_SLURPUFF, 18, 5
-# 451 "data/maps/CoralportCandyShop/scripts.pory"
+# 449 "data/maps/CoralportCandyShop/scripts.pory"
 	playmoncry SPECIES_SLURPUFF, CRY_MODE_NORMAL
-# 452 "data/maps/CoralportCandyShop/scripts.pory"
+# 450 "data/maps/CoralportCandyShop/scripts.pory"
 	waitmoncry
-# 453 "data/maps/CoralportCandyShop/scripts.pory"
+# 451 "data/maps/CoralportCandyShop/scripts.pory"
 	setseenmon SPECIES_SLURPUFF
-# 454 "data/maps/CoralportCandyShop/scripts.pory"
+# 452 "data/maps/CoralportCandyShop/scripts.pory"
 	delay 30
-# 455 "data/maps/CoralportCandyShop/scripts.pory"
+# 453 "data/maps/CoralportCandyShop/scripts.pory"
 	hidemonpic
-# 456 "data/maps/CoralportCandyShop/scripts.pory"
+# 454 "data/maps/CoralportCandyShop/scripts.pory"
 	release
 	end
 
 
 CoralportCandyShop_Eventscript_FatMan::
-# 461 "data/maps/CoralportCandyShop/scripts.pory"
+# 459 "data/maps/CoralportCandyShop/scripts.pory"
 	lock
-# 462 "data/maps/CoralportCandyShop/scripts.pory"
+# 460 "data/maps/CoralportCandyShop/scripts.pory"
 	faceplayer
-# 463 "data/maps/CoralportCandyShop/scripts.pory"
+# 461 "data/maps/CoralportCandyShop/scripts.pory"
 	setspeaker CoralportCandyShop_Eventscript_FatMan_Text_0
-# 464 "data/maps/CoralportCandyShop/scripts.pory"
+# 462 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_FatMan_Text_1
-# 465 "data/maps/CoralportCandyShop/scripts.pory"
+# 463 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
-# 466 "data/maps/CoralportCandyShop/scripts.pory"
+# 464 "data/maps/CoralportCandyShop/scripts.pory"
 	release
 	end
 
 
 CoralportCandyShop_Eventscript_Twin::
-# 471 "data/maps/CoralportCandyShop/scripts.pory"
+# 469 "data/maps/CoralportCandyShop/scripts.pory"
 	lock
-# 472 "data/maps/CoralportCandyShop/scripts.pory"
+# 470 "data/maps/CoralportCandyShop/scripts.pory"
 	faceplayer
-# 473 "data/maps/CoralportCandyShop/scripts.pory"
+# 471 "data/maps/CoralportCandyShop/scripts.pory"
 	setspeaker CoralportCandyShop_Eventscript_Twin_Text_0
-# 474 "data/maps/CoralportCandyShop/scripts.pory"
+# 472 "data/maps/CoralportCandyShop/scripts.pory"
 	goto_if_unset FLAG_CORALPORT_TRADED_SWEET_HEART, CoralportCandyShop_Eventscript_Twin_2
-# 507 "data/maps/CoralportCandyShop/scripts.pory"
+# 505 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_Twin_Text_6
-# 508 "data/maps/CoralportCandyShop/scripts.pory"
+# 506 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
 CoralportCandyShop_Eventscript_Twin_1:
-# 510 "data/maps/CoralportCandyShop/scripts.pory"
+# 508 "data/maps/CoralportCandyShop/scripts.pory"
 	release
 	end
 
 CoralportCandyShop_Eventscript_Twin_2:
-# 475 "data/maps/CoralportCandyShop/scripts.pory"
+# 473 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_Twin_Text_1, MSGBOX_YESNO
-# 476 "data/maps/CoralportCandyShop/scripts.pory"
+# 474 "data/maps/CoralportCandyShop/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq CoralportCandyShop_Eventscript_Twin_5
-# 500 "data/maps/CoralportCandyShop/scripts.pory"
+# 498 "data/maps/CoralportCandyShop/scripts.pory"
 	setspeaker CoralportCandyShop_Eventscript_Twin_Text_0
-# 501 "data/maps/CoralportCandyShop/scripts.pory"
+# 499 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_Twin_Text_5
-# 502 "data/maps/CoralportCandyShop/scripts.pory"
+# 500 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
 	goto CoralportCandyShop_Eventscript_Twin_1
 
 CoralportCandyShop_Eventscript_Twin_5:
-# 477 "data/maps/CoralportCandyShop/scripts.pory"
+# 475 "data/maps/CoralportCandyShop/scripts.pory"
 	checkitem ITEM_SWEET_HEART
-# 478 "data/maps/CoralportCandyShop/scripts.pory"
+# 476 "data/maps/CoralportCandyShop/scripts.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq CoralportCandyShop_Eventscript_Twin_8
-# 485 "data/maps/CoralportCandyShop/scripts.pory"
+# 483 "data/maps/CoralportCandyShop/scripts.pory"
 	removeitem ITEM_SWEET_HEART
-# 486 "data/maps/CoralportCandyShop/scripts.pory"
+# 484 "data/maps/CoralportCandyShop/scripts.pory"
 	additem ITEM_WHIPPED_DREAM
-# 487 "data/maps/CoralportCandyShop/scripts.pory"
+# 485 "data/maps/CoralportCandyShop/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 488 "data/maps/CoralportCandyShop/scripts.pory"
+# 486 "data/maps/CoralportCandyShop/scripts.pory"
 	waitfanfare
-# 489 "data/maps/CoralportCandyShop/scripts.pory"
+# 487 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_Twin_Text_3
-# 490 "data/maps/CoralportCandyShop/scripts.pory"
+# 488 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
-# 491 "data/maps/CoralportCandyShop/scripts.pory"
+# 489 "data/maps/CoralportCandyShop/scripts.pory"
 	setspeaker CoralportCandyShop_Eventscript_Twin_Text_0
-# 492 "data/maps/CoralportCandyShop/scripts.pory"
+# 490 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_Twin_Text_4
-# 493 "data/maps/CoralportCandyShop/scripts.pory"
+# 491 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
-# 494 "data/maps/CoralportCandyShop/scripts.pory"
+# 492 "data/maps/CoralportCandyShop/scripts.pory"
 	setflag FLAG_CORALPORT_TRADED_SWEET_HEART
-# 495 "data/maps/CoralportCandyShop/scripts.pory"
+# 493 "data/maps/CoralportCandyShop/scripts.pory"
 	release
 	end
 
 CoralportCandyShop_Eventscript_Twin_8:
-# 479 "data/maps/CoralportCandyShop/scripts.pory"
+# 477 "data/maps/CoralportCandyShop/scripts.pory"
 	msgbox CoralportCandyShop_Eventscript_Twin_Text_2
-# 480 "data/maps/CoralportCandyShop/scripts.pory"
+# 478 "data/maps/CoralportCandyShop/scripts.pory"
 	closemessage
-# 481 "data/maps/CoralportCandyShop/scripts.pory"
+# 479 "data/maps/CoralportCandyShop/scripts.pory"
 	release
 	end
 
 
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_1_Movement_0:
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_up
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_up
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_up
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_right
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_right
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_right
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_right
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_right
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_up
-# 237 "data/maps/CoralportCandyShop/scripts.pory"
+# 235 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 242 "data/maps/CoralportCandyShop/scripts.pory"
+# 240 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_1_Movement_1:
-# 242 "data/maps/CoralportCandyShop/scripts.pory"
+# 240 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_down
-# 242 "data/maps/CoralportCandyShop/scripts.pory"
+# 240 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 242 "data/maps/CoralportCandyShop/scripts.pory"
+# 240 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 242 "data/maps/CoralportCandyShop/scripts.pory"
+# 240 "data/maps/CoralportCandyShop/scripts.pory"
 	face_up
 	step_end
 
-# 246 "data/maps/CoralportCandyShop/scripts.pory"
+# 244 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_1_Movement_2:
-# 246 "data/maps/CoralportCandyShop/scripts.pory"
+# 244 "data/maps/CoralportCandyShop/scripts.pory"
 	emote_happy
-# 246 "data/maps/CoralportCandyShop/scripts.pory"
+# 244 "data/maps/CoralportCandyShop/scripts.pory"
 	delay_16
-# 246 "data/maps/CoralportCandyShop/scripts.pory"
+# 244 "data/maps/CoralportCandyShop/scripts.pory"
 	delay_16
-# 246 "data/maps/CoralportCandyShop/scripts.pory"
+# 244 "data/maps/CoralportCandyShop/scripts.pory"
 	face_right
-# 246 "data/maps/CoralportCandyShop/scripts.pory"
+# 244 "data/maps/CoralportCandyShop/scripts.pory"
 	delay_16
-# 246 "data/maps/CoralportCandyShop/scripts.pory"
+# 244 "data/maps/CoralportCandyShop/scripts.pory"
 	delay_16
-# 246 "data/maps/CoralportCandyShop/scripts.pory"
+# 244 "data/maps/CoralportCandyShop/scripts.pory"
 	face_down
 	step_end
 
-# 251 "data/maps/CoralportCandyShop/scripts.pory"
+# 249 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_1_Movement_3:
-# 251 "data/maps/CoralportCandyShop/scripts.pory"
+# 249 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_down
-# 251 "data/maps/CoralportCandyShop/scripts.pory"
+# 249 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_down
-# 251 "data/maps/CoralportCandyShop/scripts.pory"
+# 249 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_down
-# 251 "data/maps/CoralportCandyShop/scripts.pory"
+# 249 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 251 "data/maps/CoralportCandyShop/scripts.pory"
+# 249 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 251 "data/maps/CoralportCandyShop/scripts.pory"
+# 249 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 251 "data/maps/CoralportCandyShop/scripts.pory"
+# 249 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_down
-# 251 "data/maps/CoralportCandyShop/scripts.pory"
+# 249 "data/maps/CoralportCandyShop/scripts.pory"
 	set_invisible
 	step_end
 
-# 256 "data/maps/CoralportCandyShop/scripts.pory"
+# 254 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_1_Movement_4:
-# 256 "data/maps/CoralportCandyShop/scripts.pory"
+# 254 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 256 "data/maps/CoralportCandyShop/scripts.pory"
+# 254 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 256 "data/maps/CoralportCandyShop/scripts.pory"
+# 254 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 256 "data/maps/CoralportCandyShop/scripts.pory"
+# 254 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_down
-# 256 "data/maps/CoralportCandyShop/scripts.pory"
+# 254 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_down
 	step_end
 
-# 268 "data/maps/CoralportCandyShop/scripts.pory"
+# 266 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_0:
-# 268 "data/maps/CoralportCandyShop/scripts.pory"
+# 266 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_left
-# 268 "data/maps/CoralportCandyShop/scripts.pory"
+# 266 "data/maps/CoralportCandyShop/scripts.pory"
 	delay_16
-# 268 "data/maps/CoralportCandyShop/scripts.pory"
+# 266 "data/maps/CoralportCandyShop/scripts.pory"
 	delay_16
-# 268 "data/maps/CoralportCandyShop/scripts.pory"
+# 266 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
 	step_end
 
-# 275 "data/maps/CoralportCandyShop/scripts.pory"
+# 273 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_1:
-# 275 "data/maps/CoralportCandyShop/scripts.pory"
+# 273 "data/maps/CoralportCandyShop/scripts.pory"
 	emote_exclamation_mark
-# 275 "data/maps/CoralportCandyShop/scripts.pory"
+# 273 "data/maps/CoralportCandyShop/scripts.pory"
 	face_down
 	step_end
 
-# 278 "data/maps/CoralportCandyShop/scripts.pory"
+# 276 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_2:
-# 278 "data/maps/CoralportCandyShop/scripts.pory"
+# 276 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_left
-# 278 "data/maps/CoralportCandyShop/scripts.pory"
+# 276 "data/maps/CoralportCandyShop/scripts.pory"
 	face_down
 	step_end
 
-# 279 "data/maps/CoralportCandyShop/scripts.pory"
+# 277 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_3:
-# 279 "data/maps/CoralportCandyShop/scripts.pory"
+# 277 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_up
-# 279 "data/maps/CoralportCandyShop/scripts.pory"
+# 277 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_up
 	step_end
 
-# 282 "data/maps/CoralportCandyShop/scripts.pory"
+# 280 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_4:
-# 282 "data/maps/CoralportCandyShop/scripts.pory"
+# 280 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_left
-# 282 "data/maps/CoralportCandyShop/scripts.pory"
+# 280 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_up
-# 282 "data/maps/CoralportCandyShop/scripts.pory"
+# 280 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_up
 	step_end
 
-# 284 "data/maps/CoralportCandyShop/scripts.pory"
+# 282 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_5:
-# 284 "data/maps/CoralportCandyShop/scripts.pory"
+# 282 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_left
-# 284 "data/maps/CoralportCandyShop/scripts.pory"
+# 282 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_left
-# 284 "data/maps/CoralportCandyShop/scripts.pory"
+# 282 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_up
-# 284 "data/maps/CoralportCandyShop/scripts.pory"
+# 282 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_up
-# 284 "data/maps/CoralportCandyShop/scripts.pory"
+# 282 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_up
 	step_end
 
-# 289 "data/maps/CoralportCandyShop/scripts.pory"
+# 287 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_6:
-# 289 "data/maps/CoralportCandyShop/scripts.pory"
+# 287 "data/maps/CoralportCandyShop/scripts.pory"
 	face_right
-# 289 "data/maps/CoralportCandyShop/scripts.pory"
+# 287 "data/maps/CoralportCandyShop/scripts.pory"
 	emote_happy
 	step_end
 
-# 292 "data/maps/CoralportCandyShop/scripts.pory"
+# 290 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_7:
-# 292 "data/maps/CoralportCandyShop/scripts.pory"
+# 290 "data/maps/CoralportCandyShop/scripts.pory"
 	emote_happy
 	step_end
 
-# 298 "data/maps/CoralportCandyShop/scripts.pory"
+# 296 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_2_Movement_8:
-# 298 "data/maps/CoralportCandyShop/scripts.pory"
+# 296 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 298 "data/maps/CoralportCandyShop/scripts.pory"
+# 296 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 298 "data/maps/CoralportCandyShop/scripts.pory"
+# 296 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 298 "data/maps/CoralportCandyShop/scripts.pory"
+# 296 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 298 "data/maps/CoralportCandyShop/scripts.pory"
+# 296 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 298 "data/maps/CoralportCandyShop/scripts.pory"
+# 296 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 298 "data/maps/CoralportCandyShop/scripts.pory"
+# 296 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 298 "data/maps/CoralportCandyShop/scripts.pory"
+# 296 "data/maps/CoralportCandyShop/scripts.pory"
 	set_invisible
 	step_end
 
-# 319 "data/maps/CoralportCandyShop/scripts.pory"
+# 317 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_0:
-# 319 "data/maps/CoralportCandyShop/scripts.pory"
+# 317 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 319 "data/maps/CoralportCandyShop/scripts.pory"
+# 317 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
 	step_end
 
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_1:
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 328 "data/maps/CoralportCandyShop/scripts.pory"
+# 326 "data/maps/CoralportCandyShop/scripts.pory"
 	set_invisible
 	step_end
 
-# 331 "data/maps/CoralportCandyShop/scripts.pory"
+# 329 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_2:
-# 331 "data/maps/CoralportCandyShop/scripts.pory"
+# 329 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 331 "data/maps/CoralportCandyShop/scripts.pory"
+# 329 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 331 "data/maps/CoralportCandyShop/scripts.pory"
+# 329 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
-# 331 "data/maps/CoralportCandyShop/scripts.pory"
+# 329 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_down
 	step_end
 
-# 336 "data/maps/CoralportCandyShop/scripts.pory"
+# 334 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_3:
-# 336 "data/maps/CoralportCandyShop/scripts.pory"
+# 334 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 336 "data/maps/CoralportCandyShop/scripts.pory"
+# 334 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 336 "data/maps/CoralportCandyShop/scripts.pory"
+# 334 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 336 "data/maps/CoralportCandyShop/scripts.pory"
+# 334 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 336 "data/maps/CoralportCandyShop/scripts.pory"
+# 334 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 336 "data/maps/CoralportCandyShop/scripts.pory"
+# 334 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
-# 336 "data/maps/CoralportCandyShop/scripts.pory"
+# 334 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 348 "data/maps/CoralportCandyShop/scripts.pory"
+# 346 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_4:
-# 348 "data/maps/CoralportCandyShop/scripts.pory"
+# 346 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_right
-# 348 "data/maps/CoralportCandyShop/scripts.pory"
+# 346 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_right
-# 348 "data/maps/CoralportCandyShop/scripts.pory"
+# 346 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_down
-# 348 "data/maps/CoralportCandyShop/scripts.pory"
+# 346 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_fast_down
-# 348 "data/maps/CoralportCandyShop/scripts.pory"
+# 346 "data/maps/CoralportCandyShop/scripts.pory"
 	set_invisible
 	step_end
 
-# 354 "data/maps/CoralportCandyShop/scripts.pory"
+# 352 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_5:
-# 354 "data/maps/CoralportCandyShop/scripts.pory"
+# 352 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 354 "data/maps/CoralportCandyShop/scripts.pory"
+# 352 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 354 "data/maps/CoralportCandyShop/scripts.pory"
+# 352 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 354 "data/maps/CoralportCandyShop/scripts.pory"
+# 352 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_up
-# 354 "data/maps/CoralportCandyShop/scripts.pory"
+# 352 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_up
 	step_end
 
-# 355 "data/maps/CoralportCandyShop/scripts.pory"
+# 353 "data/maps/CoralportCandyShop/scripts.pory"
 CoralportCandyShop_Eventscript_PartTimeCutscene_3_Movement_6:
-# 355 "data/maps/CoralportCandyShop/scripts.pory"
+# 353 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 355 "data/maps/CoralportCandyShop/scripts.pory"
+# 353 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 355 "data/maps/CoralportCandyShop/scripts.pory"
+# 353 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_right
-# 355 "data/maps/CoralportCandyShop/scripts.pory"
+# 353 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_up
-# 355 "data/maps/CoralportCandyShop/scripts.pory"
+# 353 "data/maps/CoralportCandyShop/scripts.pory"
 	walk_up
-# 355 "data/maps/CoralportCandyShop/scripts.pory"
+# 353 "data/maps/CoralportCandyShop/scripts.pory"
 	face_down
 	step_end
 
@@ -1313,36 +1307,36 @@ CoralportCandyShop_Eventscript_TimeClock_Text_1:
 	.string "will be paid {COLOR RED}¥2000{COLOR 2}.$"
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_0:
-# 390 "data/maps/CoralportCandyShop/scripts.pory"
+# 388 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Akihiko received {COLOR 7}¥2000{COLOR 2} for the job.\p"
 	.string "He also received a {COLOR 7}{STR_VAR_1}{COLOR 2} for\n"
 	.string "his hard work.$"
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_1:
-# 396 "data/maps/CoralportCandyShop/scripts.pory"
+# 394 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Mitsuru received {COLOR 7}¥2000{COLOR 2} for the job.\p"
 	.string "She also received a {COLOR 7}{STR_VAR_1}{COLOR 2} for\n"
 	.string "her hard work.$"
 
 CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_2:
-# 401 "data/maps/CoralportCandyShop/scripts.pory"
+# 399 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Shinjiro received {COLOR 7}¥2000{COLOR 2} for the job.\p"
 	.string "He also received a {COLOR 7}{STR_VAR_1}{COLOR 2} for\n"
 	.string "his hard work.$"
 
 CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_Text_0:
-# 423 "data/maps/CoralportCandyShop/scripts.pory"
+# 421 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "{COLOR GREEN}You have worked part-time at AmeAme\n"
 	.string "Candy Shop for at least 10 times.\p"
 	.string "Check back with Gumi for reward.$"
 
 CoralportCandyShop_Eventscript_QuestGiveReward_Text_0:
-# 433 "data/maps/CoralportCandyShop/scripts.pory"
+# 431 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Hello {PLAYER}! here to start your\n"
 	.string "shift?$"
 
 CoralportCandyShop_Eventscript_QuestGiveReward_Text_1:
-# 437 "data/maps/CoralportCandyShop/scripts.pory"
+# 435 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Oh my. Now that I think of it, you've\n"
 	.string "been working for us for quite a while,\l"
 	.string "right?\p"
@@ -1350,49 +1344,49 @@ CoralportCandyShop_Eventscript_QuestGiveReward_Text_1:
 	.string "as a gift for helping us!$"
 
 CoralportCandyShop_Eventscript_QuestGiveReward_Text_2:
-# 441 "data/maps/CoralportCandyShop/scripts.pory"
+# 439 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Feel free to come back anytime! We'll be\n"
 	.string "very appreciated!$"
 
 CoralportCandyShop_Eventscript_FatMan_Text_0:
-# 463 "data/maps/CoralportCandyShop/scripts.pory"
+# 461 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Nozomi$"
 
 CoralportCandyShop_Eventscript_FatMan_Text_1:
-# 464 "data/maps/CoralportCandyShop/scripts.pory"
+# 462 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "I love that the candies from this shop\n"
 	.string "aren't too sweet.$"
 
 CoralportCandyShop_Eventscript_Twin_Text_0:
-# 473 "data/maps/CoralportCandyShop/scripts.pory"
+# 471 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Aiko$"
 
 CoralportCandyShop_Eventscript_Twin_Text_1:
-# 475 "data/maps/CoralportCandyShop/scripts.pory"
+# 473 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "My Tinkatink back home loves {COLOR 7}Sweet\n"
 	.string "Heart {COLOR 2}a lot. If you have one, do you mind\l"
 	.string "trading it to me for a really cool item?$"
 
 CoralportCandyShop_Eventscript_Twin_Text_2:
-# 479 "data/maps/CoralportCandyShop/scripts.pory"
+# 477 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "But you don't have a {COLOR 7}Sweet Heart{COLOR 2}...$"
 
 CoralportCandyShop_Eventscript_Twin_Text_3:
-# 489 "data/maps/CoralportCandyShop/scripts.pory"
+# 487 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "{PLAYER} traded a {COLOR 7}Sweet Heart{COLOR 2} for a\n"
 	.string "{COLOR 7}Whipped Dream{COLOR 2}.$"
 
 CoralportCandyShop_Eventscript_Twin_Text_4:
-# 492 "data/maps/CoralportCandyShop/scripts.pory"
+# 490 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Thank you!! My Tinkatink would be so\n"
 	.string "happy!$"
 
 CoralportCandyShop_Eventscript_Twin_Text_5:
-# 501 "data/maps/CoralportCandyShop/scripts.pory"
+# 499 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Aw... I understand.$"
 
 CoralportCandyShop_Eventscript_Twin_Text_6:
-# 507 "data/maps/CoralportCandyShop/scripts.pory"
+# 505 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Thank you for making my Tinkatink\n"
 	.string "happy!$"
 

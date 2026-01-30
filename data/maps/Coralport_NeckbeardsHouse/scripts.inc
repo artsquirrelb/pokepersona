@@ -141,7 +141,7 @@ Coralport_NeckbeardsHouse_CheckIfMitsuru::
 # 75 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_eq Coralport_NeckbeardsHouse_CheckIfMitsuru_1
-# 110 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 109 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	goto Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start
 	return
 
@@ -152,29 +152,26 @@ Coralport_NeckbeardsHouse_CheckIfMitsuru_1:
 	compare VAR_RESULT, 0
 	goto_if_ne Coralport_NeckbeardsHouse_CheckIfMitsuru_4
 # 84 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	getcharaAvailability CHARACTER_MITSURU
-# 85 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	compare VAR_RESULT, 0
-	goto_if_ne Coralport_NeckbeardsHouse_CheckIfMitsuru_7
-# 95 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	goto_if_unset FLAG_LOCK_MITSURU, Coralport_NeckbeardsHouse_CheckIfMitsuru_7
+# 94 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	setflag FLAG_HIDE_QUEST_ICON
-# 96 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 95 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	playse SE_PIN
-# 97 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 96 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, Coralport_NeckbeardsHouse_CheckIfMitsuru_Movement_2
-# 98 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 97 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	waitmovement
-# 99 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 98 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
-# 100 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 99 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_CheckIfMitsuru_Text_0
-# 102 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 101 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	closemessage
-# 103 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 102 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
-# 104 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 103 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	warp MAP_CORALPORT, 4
-# 105 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 104 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	waitstate
 	return
 
@@ -190,214 +187,214 @@ Coralport_NeckbeardsHouse_CheckIfMitsuru_4:
 	return
 
 Coralport_NeckbeardsHouse_CheckIfMitsuru_7:
-# 86 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 85 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	hidefollower
-# 87 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 86 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	switchmaincharacter
-# 88 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 87 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	updatefollowingmon
-# 89 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 88 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	delay 20
-# 90 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 89 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement LOCALID_PLAYER, walkinplaceup
-# 91 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 90 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	waitmovement
-# 92 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 91 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	goto Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start
 	return
 
 
 Coralport_NeckbeardsHouse_TriggerLeft::
-# 115 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 114 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	hidefollower
-# 116 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 115 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement LOCALID_PLAYER, Coralport_NeckbeardsHouse_TriggerLeft_Movement_0
+# 116 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	waitmovement
 # 117 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitmovement
-# 118 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement OBJ_EVENT_ID_FOLLOWER, Coralport_NeckbeardsHouse_TriggerLeft_Movement_1
-# 119 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 118 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	waitmovement
-# 120 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 119 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	delay 20
-# 121 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 120 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	goto Coralport_NeckbeardsHouse_CheckIfMitsuru
 	return
 
 
 Coralport_NeckbeardsHouse_TriggerRight::
-# 125 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 124 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	goto Coralport_NeckbeardsHouse_CheckIfMitsuru
 	return
 
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start::
-# 128 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 127 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	lock
-# 129 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 128 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	setvar VAR_QUEST_FIND_MINING_KIT_STATE, 1
-# 130 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 129 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	setflag FLAG_HIDE_QUEST_ICON
-# 131 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 130 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_0
+# 131 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	closemessage
 # 132 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	closemessage
-# 133 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	playse SE_PIN
-# 134 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 133 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, Coralport_NeckbeardsHouse_CheckIfMitsuru_Movement_2
+# 134 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	waitmovement
 # 135 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitmovement
+	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
 # 136 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
-# 137 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_1
+# 137 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	closemessage
 # 138 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	closemessage
+	delay 30
 # 139 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	delay 30
-# 140 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_0
+# 140 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	waitmovement
 # 141 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitmovement
+	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
 # 142 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
-# 143 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_2
+# 146 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	closemessage
 # 147 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	closemessage
+	delay 30
 # 148 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	delay 30
-# 149 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	playse SE_M_BUBBLE
-# 150 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 149 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, emotecry
+# 150 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	waitmovement
 # 151 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitmovement
+	delay 30
 # 152 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	delay 30
-# 153 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
-# 154 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 153 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_3
-# 156 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 155 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	closemessage
-# 157 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 156 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	delay 30
-# 158 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 157 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_1
-# 159 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 158 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	waitmovement
-# 160 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 159 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	isfollowernpc OBJ_EVENT_GFX_MAY_NORMAL
-# 161 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 160 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_2
-# 166 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 165 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement LOCALID_PLAYER, walkinplaceleft
-# 167 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 166 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_2
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_1:
+# 168 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	waitmovement
 # 169 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitmovement
-# 170 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_4
+# 170 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	closemessage
 # 171 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	closemessage
-# 172 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, faceright
+# 172 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	delay 30
 # 173 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	delay 30
-# 174 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_5
+# 177 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	closemessage
 # 178 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	closemessage
-# 179 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	playse SE_PIN
-# 180 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 179 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, emoteexclamation
+# 180 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
 # 181 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
-# 182 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_6
+# 183 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	closemessage
 # 184 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	closemessage
-# 185 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_3
+# 185 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	waitmovement
 # 186 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitmovement
+	delay 30
 # 187 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	delay 30
-# 188 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, walkinplaceup
+# 188 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	playse SE_M_SCRATCH
 # 189 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	playse SE_M_SCRATCH
+	waitse
 # 190 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitse
+	delay 10
 # 191 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	delay 10
+	playse SE_M_SCRATCH
 # 192 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	playse SE_M_SCRATCH
+	waitse
 # 193 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitse
-# 194 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	delay 10
-# 195 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 194 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	playse SE_M_SCRATCH
+# 195 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	waitse
 # 196 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitse
+	delay 30
 # 197 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	delay 30
-# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_4
+# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	waitmovement
 # 199 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitmovement
+	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
 # 200 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
-# 201 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_7
+# 201 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	closemessage
 # 202 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	closemessage
-# 203 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
-# 204 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 203 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_8
+# 204 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	closemessage
 # 205 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	closemessage
-# 206 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, walkinplaceright
-# 207 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 206 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
-# 208 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 207 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_9
-# 212 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 211 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	closemessage
-# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 212 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	delay 30
-# 214 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement 1, Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_5
-# 215 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 214 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	waitmovement
-# 216 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 215 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	playse SE_EXIT
-# 217 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 216 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	waitse
-# 218 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 217 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	removeobject 1
-# 219 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 218 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	clearflag FLAG_HIDE_QUEST_ICON
-# 220 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 219 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	setflag FLAG_TEMP_1
-# 221 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 220 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	questmenu QUEST_MENU_SET_ACTIVE, QUEST_FIND_MINING_KIT
-# 222 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 221 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	release
 	end
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_2:
-# 162 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 161 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement OBJ_EVENT_ID_NPC_FOLLOWER, walkinplaceleft
-# 163 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 162 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	applymovement LOCALID_PLAYER, walkinplaceleft
 	goto Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_1
 
@@ -420,113 +417,113 @@ Coralport_NeckbeardsHouse_CheckIfMitsuru_Movement_1:
 	face_up
 	step_end
 
-# 97 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 96 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 Coralport_NeckbeardsHouse_CheckIfMitsuru_Movement_2:
-# 97 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 96 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	emote_exclamation_mark
-# 97 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 96 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	face_down
 	step_end
 
-# 116 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 115 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 Coralport_NeckbeardsHouse_TriggerLeft_Movement_0:
-# 116 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 115 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_right
-# 116 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 115 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	face_up
 	step_end
 
-# 118 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 117 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 Coralport_NeckbeardsHouse_TriggerLeft_Movement_1:
-# 118 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 117 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_down
-# 118 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 117 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_right
-# 118 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 117 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	face_up
 	step_end
 
-# 140 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 139 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_0:
-# 140 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 139 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	emote_pensive
-# 140 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 139 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	face_right
-# 140 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 139 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	delay_16
-# 140 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 139 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	delay_16
-# 140 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 139 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	face_down
 	step_end
 
-# 158 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 157 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_1:
-# 158 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 157 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_left
-# 158 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 157 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_down
 	step_end
 
-# 167 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 166 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_2:
-# 167 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 166 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_right
-# 167 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 166 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	face_left
 	step_end
 
-# 185 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 184 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_3:
-# 185 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 184 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_up
-# 185 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 184 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_up
-# 185 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 184 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_left
-# 185 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 184 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_left
-# 185 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 184 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_left
-# 185 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 184 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_left
-# 185 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 184 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_left
-# 185 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 184 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_up
 	step_end
 
-# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 197 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_4:
-# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 197 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_down
-# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 197 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_right
-# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 197 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_right
-# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 197 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_right
-# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 197 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_right
-# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 197 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_right
-# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 197 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_down
-# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 197 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_down
-# 198 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 197 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	face_right
 	step_end
 
-# 214 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_5:
-# 214 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_down
-# 214 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_down
-# 214 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_down
-# 214 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	set_invisible
 	step_end
 
@@ -572,7 +569,7 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Ongoing_Text_0:
 	.string "cleaning up.$"
 
 Coralport_NeckbeardsHouse_CheckIfMitsuru_Text_0:
-# 100 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 99 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "Who are you kids?\p"
 	.string "Well, sorry but I'm not at the state to\n"
 	.string "be welcoming strangers in my house\l"
@@ -580,16 +577,16 @@ Coralport_NeckbeardsHouse_CheckIfMitsuru_Text_0:
 	.string "out.$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_0:
-# 131 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 130 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "Oh Arceus... They aren't here...$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_1:
-# 137 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 136 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "Oh! You're... that young lady in\n"
 	.string "Thundershard Cave.$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_2:
-# 143 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 142 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "Well... This is awkward.\p"
 	.string "I did promise to give you a mining kit\n"
 	.string "when you visit me...\p"
@@ -598,18 +595,18 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_2:
 	.string "tools, as well as my rocks collection...$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_3:
-# 154 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 153 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "Sorry, I'd love to give you a warm\n"
 	.string "welcome but right now I probably should\l"
 	.string "file a case to the police.\p"
 	.string "Now please excuse me.$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_4:
-# 170 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 169 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Please wait, Nebe-san.$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_5:
-# 174 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 173 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I'm very sorry for your loss.\p"
 	.string "I'd love to repay your kindness back\n"
 	.string "then at the cave so is there anything I\l"
@@ -621,22 +618,22 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_5:
 	.string "them.$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_6:
-# 182 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 181 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "Oh that's very kind of you!\p"
 	.string "Hang on a moment, I do have some\n"
 	.string "pictures of the stolen stuff.$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_7:
-# 201 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 200 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "There they are!$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_8:
-# 204 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 203 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "{PLAYER} received a bunch of photos\n"
 	.string "of Nebe with his collections.$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_9:
-# 208 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 207 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "Thank you very much for offering help!\n"
 	.string "You're a kind young lady.\p"
 	.string "Now I'll go to the police station to\n"

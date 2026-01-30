@@ -1514,27 +1514,27 @@ u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, enum Gender gender)
     return sRivalAvatarGfxIds[state][gender];
 }
 
-static u16 GetPlayerAvatarGraphicsIdByOutfitStateIdGenderAndIsAnim(u8 outfit, u8 state, enum Gender gender, bool32 isAnim)
+static u16 GetPlayerAvatarGraphicsIdByOutfitStateIdGenderAndIsAnim(u8 outfit, u8 state, bool32 isAnim)
 {
     if (isAnim)
-        return gOutfits[outfit].animGfxIds[gender][state];
+        return gOutfits[outfit].animGfxIds[state];
     else
-        return gOutfits[outfit].avatarGfxIds[gender][state];
+        return gOutfits[outfit].avatarGfxIds[state];
 }
 
-u16 GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state, u8 gender)
+u16 GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state)
 {
-    return GetPlayerAvatarGraphicsIdByOutfitStateIdGenderAndIsAnim(outfit, state, gender, FALSE);
+    return GetPlayerAvatarGraphicsIdByOutfitStateIdGenderAndIsAnim(outfit, state, FALSE);
 }
 
-u16 GetPlayerAnimGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state, u8 gender)
+u16 GetPlayerAnimGraphicsIdByOutfitStateIdAndGender(u8 outfit, u8 state)
 {
-    return GetPlayerAvatarGraphicsIdByOutfitStateIdGenderAndIsAnim(outfit, state, gender, TRUE);
+    return GetPlayerAvatarGraphicsIdByOutfitStateIdGenderAndIsAnim(outfit, state, TRUE);
 }
 
-u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, enum Gender gender)
+u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state)
 {
-    return GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(gSaveBlock2Ptr->currOutfitId, state, gender);
+    return GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(gSaveBlock2Ptr->currOutfitId, state);
 }
 
 u16 GetFRLGAvatarGraphicsIdByGender(enum Gender gender)
@@ -1549,7 +1549,7 @@ u16 GetRSAvatarGraphicsIdByGender(enum Gender gender)
 
 u16 GetPlayerAvatarGraphicsIdByStateId(u8 state)
 {
-    return GetPlayerAvatarGraphicsIdByStateIdAndGender(state, gSaveBlock2Ptr->playerGender);
+    return GetPlayerAvatarGraphicsIdByStateIdAndGender(state);
 }
 
 enum Gender GetPlayerAvatarGenderByGraphicsId(u16 gfxId)
@@ -1570,9 +1570,9 @@ enum Gender GetPlayerAvatarGenderByGraphicsId(u16 gfxId)
     }
 }
 
-u8 GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(u8 state, u8 linkId, u8 gender)
+u8 GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(u8 state, u8 linkId)
 {
-    return gOutfits[gLinkPlayers[linkId].currOutfitId].avatarGfxIds[gender][state];
+    return gOutfits[gLinkPlayers[linkId].currOutfitId].avatarGfxIds[state];
 }
 
 bool8 PartyHasMonWithSurf(void)
@@ -1626,14 +1626,14 @@ void SetPlayerAvatarStateMask(u8 flags)
     gPlayerAvatar.flags |= flags;
 }
 
-static u8 GetPlayerAvatarStateTransitionByGraphicsId(u16 graphicsId, u8 gender)
+static u8 GetPlayerAvatarStateTransitionByGraphicsId(u16 graphicsId, enum Gender gender)
 {
     u8 i;
 
     for (i = 0; i < ARRAY_COUNT(sPlayerAvatarGfxToStateFlag); i++)
     {
-        if (GetPlayerAvatarGraphicsIdByStateIdAndGender(i, gender) == graphicsId)
-            return sPlayerAvatarGfxToStateFlag[gender][i].playerFlag;
+        if (GetPlayerAvatarGraphicsIdByStateIdAndGender(i) == graphicsId)
+            return sPlayerAvatarGfxToStateFlag[gSaveBlock2Ptr->playerGender][i].playerFlag;
     }
     return PLAYER_AVATAR_FLAG_ON_FOOT;
 }
@@ -1706,7 +1706,7 @@ void SetPlayerInvisibility(bool8 invisible)
 
 static void SetPlayerAvatarAnimation(u32 playerAnimId, u32 animNum)
 {
-    u16 gfxId = GetPlayerAnimGraphicsIdByOutfitStateIdAndGender(gSaveBlock2Ptr->currOutfitId, playerAnimId, gSaveBlock2Ptr->playerGender);
+    u16 gfxId = GetPlayerAnimGraphicsIdByOutfitStateIdAndGender(gSaveBlock2Ptr->currOutfitId, playerAnimId);
     ObjectEventSetGraphicsId(&gObjectEvents[gPlayerAvatar.objectEventId], gfxId);
     StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], animNum);
 }

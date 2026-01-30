@@ -1037,7 +1037,7 @@ Windwardport_MayoidosLab_GiveMon::
 # 464 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	waitfanfare
 # 465 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	givemon VAR_TEMP_0, 15, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31
+	givemon VAR_TEMP_0, 12, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31
 # 466 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	msgbox Windwardport_MayoidosLab_GiveMon_Text_2
 # 467 "data/maps/Windwardport_MayoidosLab/scripts.pory"
@@ -1417,7 +1417,7 @@ Windwardport_MayoidosLab_Grookey::
 # 709 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	closemessage
 # 710 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	givemon SPECIES_GROOKEY, 15, ITEM_NONE, ITEM_POKE_BALL, NATURE_ADAMANT, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31, shinyMode = SHINY_MODE_NEVER
+	givemon SPECIES_GROOKEY, 12, ITEM_NONE, ITEM_POKE_BALL, NATURE_ADAMANT, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31, shinyMode = SHINY_MODE_NEVER
 Windwardport_MayoidosLab_Grookey_4:
 # 712 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	turnobject MAYOIDO_WWH, DIR_EAST
@@ -1482,7 +1482,7 @@ Windwardport_MayoidosLab_Grookey_5:
 # 704 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	closemessage
 # 705 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	givemon SPECIES_GROOKEY, 15, ITEM_NONE, ITEM_POKE_BALL, NATURE_ADAMANT, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31, shinyMode = SHINY_MODE_ALWAYS
+	givemon SPECIES_GROOKEY, 12, ITEM_NONE, ITEM_POKE_BALL, NATURE_ADAMANT, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31, shinyMode = SHINY_MODE_ALWAYS
 	goto Windwardport_MayoidosLab_Grookey_4
 
 

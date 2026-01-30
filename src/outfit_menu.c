@@ -9,6 +9,7 @@
 #include "window.h"
 #include "data.h"
 #include "decompress.h"
+#include "event_data.h"
 #include "event_object_movement.h"
 #include "event_scripts.h"
 #include "field_player_avatar.h"
@@ -35,6 +36,8 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/event_objects.h"
+#include "constants/flags.h"
+#include "constants/vars.h"
 
 #define GRID_COLS   1
 #define GRID_ROWS   4
@@ -418,14 +421,14 @@ void OpenOutfitMenu(MainCallback retCB)
     {   
         LockCharacter(CHARACTER_MITSURU);
         UnlockCharacter(CHARACTER_AKIHIKO);
-        MakeCharaAvailable(CHARACTER_AKIHIKO);
+        FlagClear(FLAG_LOCK_AKIHIKO);
         gSaveBlock2Ptr->currOutfitId = CHARACTER_AKIHIKO;
     }
     else
     {   
         LockCharacter(CHARACTER_AKIHIKO);
         UnlockCharacter(CHARACTER_MITSURU);
-        MakeCharaAvailable(CHARACTER_MITSURU);
+        FlagClear(FLAG_LOCK_MITSURU);
         gSaveBlock2Ptr->currOutfitId = CHARACTER_MITSURU;
     }
     }
@@ -768,7 +771,7 @@ static void SpriteCB_Overworld(struct Sprite *s)
     u32 idx = s->data[0];
     u32 i = sOutfitMenu->list[sOutfitMenu->grid->topLeftItemIndex + idx];
     // play anim only if it's currecntly picked AND that it's available
-    if (idx == sOutfitMenu->grid->selectedItem && GetCharaAvailability(i))
+    if (idx == sOutfitMenu->grid->selectedItem && !isCharaUnavailable(i))
     {
         StartSpriteAnimIfDifferent(s, ANIM_STD_GO_SOUTH);
     }
@@ -786,14 +789,14 @@ static void ForEachCB_PopulateOutfitOverworlds(u32 idx, u32 col, u32 row)
     if (i >= CHARACTER_COUNT || idx >= sOutfitMenu->listCount)
         return;
 
-    gfx = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(i, PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
+    gfx = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(i, PLAYER_AVATAR_STATE_NORMAL);
     x = ((col % GRID_COLS) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0];
     y = ((row % GRID_ROWS) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
 
     sOutfitMenu->grid->iconSpriteIds[idx] = CreateObjectGraphicsSprite(gfx, SpriteCB_Overworld, x, y, 0);
     gSprites[sOutfitMenu->grid->iconSpriteIds[idx]].data[0] = idx;
     
-    if (!GetCharaAvailability(i)) //if chara is unavailable, tint them gray
+    if (isCharaUnavailable(i)) //if chara is unavailable, tint them gray
     {
         // bc we're directly tint to idx 1-15, skipping idx 0
         // there's no point of tinting idx 0
@@ -1015,76 +1018,80 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
     {
         if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
         {                
-            if (GetCharaAvailability(sOutfitMenu->idx))
-            {
-                if (sOutfitMenu->idx == CHARACTER_AKIHIKO) //selecting Akihiko
-                {
-                    if (PlayerHasFollowerNPC()                                                    //if there is a follower
-                        && GetFollowerNPCData(FNPC_DATA_GFX_ID) == OBJ_EVENT_GFX_BRENDAN_NORMAL    //& current follower is akihiko
-                        && gSaveBlock2Ptr->playerGender == FEMALE)                                  //& current player is mitsuru
-                    {
-                        PlaySE(SE_SUCCESS);
-                        SavePlayerParty();
-                        gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
-                        SwitchPlayerGenderAccordingToChosenOutfit();
-                        LoadPlayerParty();
-                        SwitchPlayerAndFollower();                              //swap player to akihiko and follower to mitsuru
-                        gTasks[taskId].func = Task_PrintIsCurrentFollower;
-                        
-                    }
-                    else                    //there's no follower atm or current follower isnt akihiko or current player is akihiko
-                    {
-                        PlaySE(SE_SUCCESS);
-                        SavePlayerParty();
-                        gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
-                        SwitchPlayerGenderAccordingToChosenOutfit();
-                        LoadPlayerParty();
-                                                     
-                        gTasks[taskId].func = Task_PrintIsNowPlayer;
-                    }
-                    
-                }
-                else if (sOutfitMenu->idx == CHARACTER_MITSURU) //selecting Mitsuru)
-                {
-                    if (GetFollowerNPCData(FNPC_DATA_GFX_ID) == OBJ_EVENT_GFX_MAY_NORMAL   //if current follower is mitsuru
-                    && gSaveBlock2Ptr->playerGender == MALE)                                //and current player is akihiko
-                    {
-                        PlaySE(SE_SUCCESS);
-                        SavePlayerParty();
-                        gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
-                        SwitchPlayerGenderAccordingToChosenOutfit();
-                        LoadPlayerParty();
-                        SwitchPlayerAndFollower();                              //swap player to mitsuru and follower to akihiko
-                        gTasks[taskId].func = Task_PrintIsCurrentFollower;
-                    }
-                    else                                         //current follower isn't mitsuru or current player is already mitsuru
-                    {
-                        PlaySE(SE_SUCCESS);
-                        
-                        SavePlayerParty();
-                        gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
-                        SwitchPlayerGenderAccordingToChosenOutfit();
-                        LoadPlayerParty();
-                        gTasks[taskId].func = Task_PrintIsNowPlayer;
-                    }
-                }
-                else 
-                {
-                    PlaySE(SE_BOO);
-                    gTasks[taskId].func = Task_PrintNotPlayable;
-                }
-            }
-            else
+            if (isCharaUnavailable(sOutfitMenu->idx))
             {
                 PlaySE(SE_BOO);
                 gTasks[taskId].func = Task_PrintCharacterUnavailable;
             }
-        
+            else
+            {
+                if (!gOutfits[sOutfitMenu->idx].isMC)
+                {
+                    PlaySE(SE_BOO);
+                    gTasks[taskId].func = Task_PrintNotPlayable;
+                }
+                else
+                {
+                    if (sOutfitMenu->idx == CHARACTER_AKIHIKO) //selecting Akihiko
+                    {
+                        if (VarGet(VAR_0x8000) == OBJ_EVENT_GFX_BRENDAN_NORMAL)
+                            VarSet(VAR_0x8000, 0);
+                        if (PlayerHasFollowerNPC()                                                    //if there is a follower
+                        && GetFollowerNPCData(FNPC_DATA_GFX_ID) == OBJ_EVENT_GFX_BRENDAN_NORMAL    //& current follower is akihiko
+                        && gSaveBlock2Ptr->playerGender == FEMALE)                                 //& current player is mitsuru
+                        {
+                            PlaySE(SE_SUCCESS);
+                            SavePlayerParty();
+                            gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
+                            SwitchPlayerGenderAccordingToChosenOutfit();
+                            LoadPlayerParty();
+                            SwitchPlayerAndFollower();                              //swap player to akihiko and follower to mitsuru
+                            gTasks[taskId].func = Task_PrintIsCurrentFollower;
+                        
+                        }
+                        else                    //there's no follower atm or current follower isnt akihiko or current player is akihiko
+                        {
+                            PlaySE(SE_SUCCESS);
+                            SavePlayerParty();
+                            gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
+                            SwitchPlayerGenderAccordingToChosenOutfit();
+                            LoadPlayerParty();
+                            gTasks[taskId].func = Task_PrintIsNowPlayer;
+                        }
+                    }
+                    else//selecting mitsuru
+                    {
+                        if (VarGet(VAR_0x8000) == OBJ_EVENT_GFX_MAY_NORMAL)
+                            VarSet(VAR_0x8000, 0);
+                        if (PlayerHasFollowerNPC()
+                        && GetFollowerNPCData(FNPC_DATA_GFX_ID) == OBJ_EVENT_GFX_MAY_NORMAL   //if current follower is mitsuru
+                        && gSaveBlock2Ptr->playerGender == MALE)                                //and current player is akihiko
+                        {
+                            PlaySE(SE_SUCCESS);
+                            SavePlayerParty();
+                            gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
+                            SwitchPlayerGenderAccordingToChosenOutfit();
+                            LoadPlayerParty();
+                            SwitchPlayerAndFollower();                              //swap player to mitsuru and follower to akihiko
+                            gTasks[taskId].func = Task_PrintIsCurrentFollower;
+                        }
+                        else                                         //current follower isn't mitsuru or current player is already mitsuru
+                        {
+                            PlaySE(SE_SUCCESS);
+                            SavePlayerParty();
+                            gSaveBlock2Ptr->currOutfitId = sOutfitMenu->idx;
+                            SwitchPlayerGenderAccordingToChosenOutfit();
+                            LoadPlayerParty();
+                            gTasks[taskId].func = Task_PrintIsNowPlayer;
+                        }
+                    }
+                }
+            }
         }
         else
         {
             PlaySE(SE_BOO);
-            if (GetCharaAvailability(sOutfitMenu->idx))
+            if (!isCharaUnavailable(sOutfitMenu->idx))
                 gTasks[taskId].func = Task_PrintCantSwitchCharacter;
             else
                 gTasks[taskId].func = Task_PrintCharacterUnavailable; //! might be confusing?
@@ -1095,7 +1102,12 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
     {
         if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT)
         {   
-            if (GetCharaAvailability(sOutfitMenu->idx))
+            if (isCharaUnavailable(sOutfitMenu->idx))
+            {
+                PlaySE(SE_BOO);
+                gTasks[taskId].func = Task_PrintCharacterUnavailable;
+            }
+            else
             {
                 if (sOutfitMenu->idx == gSaveBlock2Ptr->currOutfitId)           //if the selected character is currently the player, can't make them follower
                 {
@@ -1114,11 +1126,6 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
                     PlaySE(SE_BOO);
                     gTasks[taskId].func = Task_PrintCharacterUnavailable;
                 }
-            }
-            else
-            {
-                PlaySE(SE_BOO);
-                gTasks[taskId].func = Task_PrintCharacterUnavailable;
             }
         }
     }
@@ -1181,9 +1188,9 @@ void BufferOutfitStrings(u8 *dest, u8 outfitId, u8 dataType)
 u32 GetPlayerTrainerPicIdByOutfitGenderType(u32 outfitId, u32 gender, bool32 type)
 {
     if (outfitId > CHARACTER_NONE && outfitId < CHARACTER_COUNT)
-        return gOutfits[outfitId].trainerPics[gender][type];
+        return gOutfits[outfitId].trainerPics[type];
     else
-        return gOutfits[0].trainerPics[gender][type];
+        return gOutfits[0].trainerPics[type];
 }
 
 const void *GetPlayerHeadGfxOrPal(u8 which, bool32 isFP)
@@ -1218,7 +1225,7 @@ const void *GetPlayerHeadGfxOrPal(u8 which, bool32 isFP)
                         gOutfits[gSaveBlock2Ptr->currOutfitId].iconsFP;
         }
         else
-            return gOutfits[gSaveBlock2Ptr->currOutfitId].iconsRM[gSaveBlock2Ptr->playerGender];
+            return gOutfits[gSaveBlock2Ptr->currOutfitId].iconsRM;
     }
 }
 
@@ -1230,25 +1237,9 @@ u16 *GetOutfitPointer(u16 id)
         return &gSaveBlock2Ptr->outfits[id / 8];
 }
 
-u16 *GetCharaAvailPointer(u16 id)
-{
-    if (id > CHARACTER_COUNT)
-        return NULL;
-    else
-        return &gSaveBlock2Ptr->CharacterAvailability[id / 8];
-}
-
 u16 UnlockCharacter(u16 id)
 {
     u16 *ptr = GetOutfitPointer(id);
-    if (ptr)
-        *ptr |= 1 << (id & 7);
-    return 0;
-}
-
-u16 MakeCharaAvailable(u16 id)
-{
-    u16 *ptr = GetCharaAvailPointer(id);
     if (ptr)
         *ptr |= 1 << (id & 7);
     return 0;
@@ -1262,25 +1253,9 @@ u16 ToggleOutfit(u16 id)
     return 0;
 }
 
-u16 ToggleCharaAvailability(u16 id)
-{
-    u16 *ptr = GetCharaAvailPointer(id);
-    if (ptr)
-        *ptr ^= 1 << (id & 7);
-    return 0;
-}
-
 u16 LockCharacter(u16 id)
 {
     u16 *ptr = GetOutfitPointer(id);
-    if (ptr)
-        *ptr &= ~(1 << (id & 7));
-    return 0;
-}
-
-u16 MakeCharaUnavailable(u16 id)
-{
-    u16 *ptr = GetCharaAvailPointer(id);
     if (ptr)
         *ptr &= ~(1 << (id & 7));
     return 0;
@@ -1302,20 +1277,9 @@ bool8 GetOutfitStatus(u16 id)
     return TRUE;
 }
 
-bool8 GetCharaAvailability(u16 id)
+bool8 isCharaUnavailable(u16 id)
 {
-    u16 *ptr = GetCharaAvailPointer(id);
-
-    // return false if GetCharaAvailPointer returns NULL
-    if (!ptr)
-        return FALSE;
-
-    // return false if flag is not set
-    if (!(((*ptr) >> (id & 7)) & 1))
-        return FALSE;
-
-    // rest
-    return TRUE;
+    return FlagGet(gOutfits[id].isLocked);
 }
 
 bool8 IsPlayerWearingOutfit(u16 id)
@@ -1328,7 +1292,7 @@ bool8 IsPlayerWearingOutfit(u16 id)
 
 u32 GetOutfitPrice(u16 id)
 {
-    return gOutfits[id].prices[gSaveBlock2Ptr->playerGender];
+    return 0;
 }
 
 void SetCurrentOutfitGfxIntoVar(struct ScriptContext *ctx)
@@ -1336,7 +1300,7 @@ void SetCurrentOutfitGfxIntoVar(struct ScriptContext *ctx)
     u32 varId = ScriptReadHalfword(ctx);
     u32 state = ScriptReadHalfword(ctx);
     u32 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(
-        gSaveBlock2Ptr->currOutfitId, state, gSaveBlock2Ptr->playerGender);
+        gSaveBlock2Ptr->currOutfitId, state);
 
     VarSet(varId, gfxId);
 }
@@ -1352,83 +1316,30 @@ void SwitchPlayerGenderAccordingToChosenOutfit(void)
 void AssignNPCFollowerToVarAccordingCurrentCursorIdx(void)
 {
     FlagSet(FLAG_FOLLOWERS_DISABLED);
-
-    if (sOutfitMenu->idx == CHARACTER_AKIHIKO)
-        VarSet(VAR_0x8000, OBJ_EVENT_GFX_BRENDAN_NORMAL);
-
-    else if (sOutfitMenu->idx == CHARACTER_MITSURU)
-        VarSet(VAR_0x8000, OBJ_EVENT_GFX_MAY_NORMAL);
-
-    else if (sOutfitMenu->idx == CHARACTER_SHINJIRO)
-        VarSet(VAR_0x8000, OBJ_EVENT_GFX_SHINJIRO);
-
-    else if (sOutfitMenu->idx == CHARACTER_INTELEON_T)
-        VarSet(VAR_0x8000, OBJ_EVENT_GFX_SPECIES(INTELEON));
-
-    else
-        FlagClear(FLAG_FOLLOWERS_DISABLED);
-
+    VarSet(VAR_0x8000, gOutfits[sOutfitMenu->idx].avatarGfxIds[PLAYER_AVATAR_STATE_NORMAL]);
 }
 
 void AssignNPCFollowerFromVar(void)
 {
     u32 gfx = VarGet(VAR_0x8000);
-    if (gfx == OBJ_EVENT_GFX_BRENDAN_NORMAL)
+    if (gfx != 0)
     {
         DestroyFollowerNPC();
-        CreateFollowerNPC(OBJ_EVENT_GFX_BRENDAN_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_AkihikoFollower);
+        if (gfx == OBJ_EVENT_GFX_BRENDAN_NORMAL)
+            CreateFollowerNPC(OBJ_EVENT_GFX_BRENDAN_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_AkihikoFollower);
+        else if (gfx == OBJ_EVENT_GFX_MAY_NORMAL)
+            CreateFollowerNPC(OBJ_EVENT_GFX_MAY_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_MitsuruFollower); 
+        else if (gfx == OBJ_EVENT_GFX_SHINJIRO)
+            CreateFollowerNPC(OBJ_EVENT_GFX_SHINJIRO, FOLLOWER_NPC_FLAG_CLEAR_ON_WHITE_OUT, Eventscript_ShinjiroFollower);
+        else
+            CreateFollowerNPC(OBJ_EVENT_GFX_SPECIES(INTELEON), FOLLOWER_NPC_FLAG_CLEAR_ON_WHITE_OUT, Eventscript_InteleonTFollower);
     }
-        
-    else if (gfx == OBJ_EVENT_GFX_MAY_NORMAL)
-    {
-        DestroyFollowerNPC();
-        CreateFollowerNPC(OBJ_EVENT_GFX_MAY_NORMAL, FOLLOWER_NPC_FLAG_ALL, Eventscript_MitsuruFollower);
-    }
-       
-    else if (gfx == OBJ_EVENT_GFX_SHINJIRO)
-    {
-        DestroyFollowerNPC();
-        CreateFollowerNPC(OBJ_EVENT_GFX_SHINJIRO, FOLLOWER_NPC_FLAG_ALL, Eventscript_ShinjiroFollower);
-    }
-        
-    else if (gfx == OBJ_EVENT_GFX_SPECIES(INTELEON))
-    {
-        DestroyFollowerNPC();
-        CreateFollowerNPC(OBJ_EVENT_GFX_SPECIES(INTELEON), FOLLOWER_NPC_FLAG_CLEAR_ON_WHITE_OUT, Eventscript_InteleonTFollower);
-    }    
     else
-        VarSet(VAR_0x8000, 0);
+        FlagClear(FLAG_FOLLOWERS_DISABLED);
+
     VarSet(VAR_0x8000, 0);
     UpdateFollowingPokemon();
 }
-/*u16 GetOutfitIdFromCurrentFollowerGFX(void)
-{
-    u16 currentfollowergfx = GetFollowerNPCData(FNPC_DATA_GFX_ID);
-    
-    if (currentfollowergfx == OBJ_EVENT_GFX_BRENDAN_NORMAL)
-        return CHARACTER_AKIHIKO;
-
-    else if (currentfollowergfx == OBJ_EVENT_GFX_MAY_NORMAL)
-        return CHARACTER_MITSURU;
-        
-    else if (currentfollowergfx == OBJ_EVENT_GFX_SHINJIRO)
-        return CHARACTER_SHINJIRO;
-    
-    else
-        return 0;
-}
-
-u16 GetOutfitIdNumberFromCurrentPointer (void)
-{
-    if (sOutfitMenu->idx == CHARACTER_AKIHIKO)
-        return CHARACTER_AKIHIKO;
-    else if (sOutfitMenu->idx == CHARACTER_MITSURU)
-        return CHARACTER_MITSURU;
-    else if (sOutfitMenu->idx == CHARACTER_SHINJIRO)
-        return CHARACTER_SHINJIRO;
-    else
-        return 0;
-}*/
 
 void SwitchPlayerAndFollower(void)
 {   

@@ -950,7 +950,7 @@ static void InitMapBasedOnPlayerLocation(void)
     u16 x;
     u16 y;
     u16 dimensionScale;
-    u16 xOnMap;
+    //u16 xOnMap;
     struct WarpData *warp;
 
     if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BLANK_MAP)

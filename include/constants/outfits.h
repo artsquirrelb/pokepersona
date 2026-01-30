@@ -10,9 +10,7 @@
 // ScrCmd_toggleoutfit
 #define OUTFIT_TOGGLE_UNLOCK 0
 #define OUTFIT_TOGGLE_LOCK 1
-// ScrCmd_togglecharaavailability
-#define CHARA_TOGGLE_AVAILABLE 0
-#define CHARA_TOGGLE_UNAVAILABLE 1
+
 // BufferOutfitStrings
 #define OUTFIT_BUFFER_NAME  0
 #define OUTFIT_BUFFER_DESC  1

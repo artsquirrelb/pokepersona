@@ -1944,19 +1944,6 @@
 	.byte \type
 	.endm
 
-	@! Make character grayed out or not in companion menu
-	.macro togglecharaavailability outfitId:req, type:req
-	callnative ScrCmd_togglecharaavailability, requests_effects=1
-	.2byte \outfitId
-	.byte \type
-	.endm
-
-	@! Gets the current availability of the character if they're grayed out in the companion menu and store result in VAR_RESULT
-	.macro getcharaAvailability outfitId:req
-	callnative ScrCmd_getcharaavailability, requests_effects=1
-	.2byte \outfitId
-	.endm
-
 	@! Gets the current status of the specified outfit where:
 	@! OUTFIT_CHECK_FLAG is for checking if it's either unlocked/locked
 	@! OUTFIT_CHECK_USED is for checking if it's currently used
@@ -2367,14 +2354,6 @@
 
 	.macro lockcharacter outfitId:req
 	toggleoutfit \outfitId, OUTFIT_TOGGLE_LOCK
-	.endm
-
-	.macro makecharaAvailable outfitId:req
-	togglecharaavailability \outfitId, CHARA_TOGGLE_AVAILABLE
-	.endm
-
-	.macro makecharaUnavailable outfitId:req
-	togglecharaavailability \outfitId, CHARA_TOGGLE_UNAVAILABLE
 	.endm
 
 	@! Jumps to \dest if the specified outfit is unlocked

@@ -94,7 +94,7 @@ static const u8 sUnionRoomLocalIds[] = {
 
 // Unused
 static const u16 sHidePlayerFlags[] = {
-    FLAG_HIDE_UNION_ROOM_PLAYER_1,
+    FLAG_LOCK_INTELEON_T,
     FLAG_HIDE_UNION_ROOM_PLAYER_2,
     FLAG_HIDE_UNION_ROOM_PLAYER_3,
     FLAG_HIDE_UNION_ROOM_PLAYER_4,
@@ -145,17 +145,17 @@ static bool32 IsUnionRoomPlayerAt(u32 leaderId, u32 memberId, s32 x, s32 y)
 
 static bool32 IsUnionRoomPlayerHidden(u32 player_idx)
 {
-    return FlagGet(FLAG_HIDE_UNION_ROOM_PLAYER_1 + player_idx);
+    return FlagGet(FLAG_LOCK_INTELEON_T + player_idx);
 }
 
 static void HideUnionRoomPlayer(u32 player_idx)
 {
-    FlagSet(FLAG_HIDE_UNION_ROOM_PLAYER_1 + player_idx);
+    FlagSet(FLAG_LOCK_INTELEON_T + player_idx);
 }
 
 static void ShowUnionRoomPlayer(u32 player_idx)
 {
-    FlagClear(FLAG_HIDE_UNION_ROOM_PLAYER_1 + player_idx);
+    FlagClear(FLAG_LOCK_INTELEON_T + player_idx);
 }
 
 static void SetUnionRoomPlayerGfx(u32 leaderId, u32 gfxId)

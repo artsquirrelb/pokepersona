@@ -398,6 +398,7 @@ script Coralport_Eventscript_Beauty {
     {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}W-what?\p
     {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}(Hey! Let's just bail!)"))
     closemessage
+    hidefollowernpc
     moveobjecttocoords(LOCALID_PLAYER, 22, 29, DIR_NORTH, 2)
     waitmovement
     release

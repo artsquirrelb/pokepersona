@@ -3403,7 +3403,7 @@ static void CreateLinkPlayerSprite(u8 linkPlayerId, enum GameVersion gameVersion
             break;
         case VERSION_EMERALD:
         {
-            u16 gfxId = GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(PLAYER_AVATAR_STATE_NORMAL, linkPlayerId, linkGender(objEvent));
+            u16 gfxId = GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(PLAYER_AVATAR_STATE_NORMAL, linkPlayerId);
             objEvent->spriteId = CreateObjectGraphicsSprite(gfxId, SpriteCB_LinkPlayer, 0, 0, 0);
         }
             break;

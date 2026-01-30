@@ -2394,7 +2394,7 @@ static void InitObjectEventsLink(void)
     gTotalCameraPixelOffsetX = 0;
     gTotalCameraPixelOffsetY = 0;
     ResetObjectEvents();
-    TrySpawnObjectEvents(0, 0);
+    TrySpawnObjectEvents(0, 0, TRUE);
     TryRunOnWarpIntoMapScript();
 }
 
@@ -2411,7 +2411,7 @@ static void InitObjectEventsLocal(void)
     InitPlayerAvatar(x, y, player->direction, gSaveBlock2Ptr->playerGender);
     SetPlayerAvatarTransitionFlags(player->transitionFlags);
     ResetInitialPlayerAvatarState();
-    TrySpawnObjectEvents(0, 0);
+    TrySpawnObjectEvents(0, 0, TRUE);
     RefreshQuestIcons();
     FollowerNPC_HandleSprite();
     UpdateFollowingPokemon();

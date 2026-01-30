@@ -357,7 +357,10 @@ script Coralport_Eventscript_NotYetBoardingTime {
     removeobject(S_CORAL)
     delay(1)
     setvar(VAR_CHAPTER_1_STATE, 1)
+    clearflag(FLAG_TEMP_HIDE_FOLLOWER)
     updatefollowingmon
+    release
+    end
 }
 
 script Coralport_Eventscript_TuberM {
@@ -512,8 +515,9 @@ script Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp 
     applymovement(M_CORAL, walkdown)
     applymovement(S_CORAL, moves(walk_right*2))
     applymovement(A_CORAL, walkup)
-    applymovement(LOCALID_PLAYER, moves(face_down, set_visible))
     waitmovement(S_CORAL)
+    waitmovement
+    applymovement(LOCALID_PLAYER, moves(face_down, set_visible))
     removeobject(M_CORAL)
     delay(1)
     removeobject(S_CORAL)

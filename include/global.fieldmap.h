@@ -94,9 +94,9 @@ struct __attribute__((packed, aligned(4))) ObjectEventTemplate
     /*0x06*/ s16 y;
     /*0x08*/ u8 elevation;
     /*0x09*/ u8 movementType;
-    /*0x0A*/ u16 movementRangeX:4;
-             u16 movementRangeY:4;
-             u16 unused:8;
+    /*0x0A*/ u8 movementRangeX:4;
+             u8 movementRangeY:4;
+    /*0x0B*/ u8 timeVisibility;
     /*0x0C*/ u16 trainerType;
     /*0x0E*/ u16 trainerRange_berryTreeId;
     /*0x10*/ const u8 *script;
@@ -234,8 +234,8 @@ struct ObjectEvent
              u16 movementDirection:4;
              struct __attribute__((packed))
              {
-                u8 rangeX:4;
-                u8 rangeY:4;
+                u16 rangeX:4;
+                u16 rangeY:4;
              } range;
     /*0x1A*/ u8 fieldEffectSpriteId;
     /*0x1B*/ u8 warpArrowSpriteId;

@@ -103,9 +103,9 @@ enum TimeOfDay
     TIME_NIGHT,
     TIMES_OF_DAY_COUNT,
 };
-#define TIME_EVENING_FLAG       (1 << 0)
+#define TIME_MORNING_FLAG       (1 << 0)
 #define TIME_DAY_FLAG           (1 << 1)
-#define TIME_MORNING_FLAG       (1 << 2)
+#define TIME_EVENING_FLAG       (1 << 2)
 #define TIME_NIGHT_FLAG         (1 << 3)
 
 // for incrementing/decrementing

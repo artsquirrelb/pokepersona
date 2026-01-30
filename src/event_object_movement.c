@@ -1786,6 +1786,29 @@ u8 TrySpawnObjectEventTemplate(const struct ObjectEventTemplate *objectEventTemp
     return objectEventId;
 }
 
+static void TrySpawnObjectEventTemplateBasedOnSchedule(const struct ObjectEventTemplate *objectEventTemplate, u8 mapNum, u8 mapGroup, s16 cameraX, s16 cameraY, u8 timeOfDay)
+{
+  switch(timeOfDay)
+  {
+    case TIME_MORNING:
+      if (objectEventTemplate->timeVisibility & TIME_MORNING_FLAG)
+        TrySpawnObjectEventTemplate(objectEventTemplate, mapNum, mapGroup, cameraX, cameraY);
+      break;
+    case TIME_DAY:
+      if (objectEventTemplate->timeVisibility & TIME_DAY_FLAG)
+        TrySpawnObjectEventTemplate(objectEventTemplate, mapNum, mapGroup, cameraX, cameraY);
+      break;
+    case TIME_EVENING:
+      if (objectEventTemplate->timeVisibility & TIME_EVENING_FLAG)
+        TrySpawnObjectEventTemplate(objectEventTemplate, mapNum, mapGroup, cameraX, cameraY);
+      break;
+    case TIME_NIGHT:
+      if (objectEventTemplate->timeVisibility & TIME_NIGHT_FLAG)
+        TrySpawnObjectEventTemplate(objectEventTemplate, mapNum, mapGroup, cameraX, cameraY);
+      break;
+  }
+}
+
 u8 SpawnSpecialObjectEvent(struct ObjectEventTemplate *objectEventTemplate)
 {
     s16 cameraX;
@@ -2747,7 +2770,7 @@ void TrySpawnLightSprites(s16 camX, s16 camY)
     }
 }
 
-void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)
+void TrySpawnObjectEvents(s16 cameraX, s16 cameraY, u32 isOnMapLoad)
 {
     u8 i;
     u8 objectCount;
@@ -2766,6 +2789,8 @@ void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)
         else
             objectCount = gMapHeader.events->objectEventCount;
 
+        u8 timeOfDay = GetTimeOfDay();
+
         for (i = 0; i < objectCount; i++)
         {
             struct ObjectEventTemplate *template = &gSaveBlock1Ptr->objectEventTemplates[i];
@@ -2776,8 +2801,25 @@ void TrySpawnObjectEvents(s16 cameraX, s16 cameraY)
             {
                 if (template->graphicsId == OBJ_EVENT_GFX_LIGHT_SPRITE)
                     SpawnLightSprite(npcX, npcY, cameraX, cameraY, template->trainerRange_berryTreeId); // light sprite instead
-                else
-                    TrySpawnObjectEventTemplate(template, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, cameraX, cameraY);
+                else{
+                    if (template->timeVisibility != 0) {
+                        if (
+                            isOnMapLoad
+                            || (
+                                npcX <= gSaveBlock1Ptr->pos.x
+                                || npcY <= gSaveBlock1Ptr->pos.y + 1
+                                || npcX >= gSaveBlock1Ptr->pos.x + MAP_OFFSET_W
+                                || npcY >= gSaveBlock1Ptr->pos.y + MAP_OFFSET_H
+                            )
+                        ) {
+                            // Spawn these babies only on map load or offscreen
+                            TrySpawnObjectEventTemplateBasedOnSchedule(template, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, cameraX, cameraY, timeOfDay);
+                        }
+                    }
+                    else {
+                        TrySpawnObjectEventTemplate(template, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup, cameraX, cameraY);
+                    }
+                }
             }
         }
     }
@@ -3430,7 +3472,7 @@ static bool8 ObjectEventDoesElevationMatch(struct ObjectEvent *objectEvent, u8 e
 void UpdateObjectEventsForCameraUpdate(s16 x, s16 y)
 {
     UpdateObjectEventCoordsForCameraUpdate();
-    TrySpawnObjectEvents(x, y);
+    TrySpawnObjectEvents(x, y, FALSE);
     RemoveObjectEventsOutsideView();
 }
 

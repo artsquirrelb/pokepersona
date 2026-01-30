@@ -19,9 +19,6 @@ mapscripts SunshineOrphanage_MapScripts {
 }
 
 script SunshineOrphanageOnFrame0 {
-    manuallysettime(WEEKDAY_WED, 16, 30, 0)
-    setflag(FLAG_SET_WALL_CLOCK)
-    setflag(FLAG_SYS_CLOCK_SET)
     goto (SunshineOrphanage_Eventscript_ShowTheMap)}
 
 script SunshineOrphanage_Eventscript_ShowTheMap {

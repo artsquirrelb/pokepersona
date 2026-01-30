@@ -66,18 +66,20 @@ script EventScript_NewGameSetUp {
     setvar (VAR_TIME_RESET_ATTEMPTS, 5)
     setflag(FLAG_HIDE_HELP_BUTTON)
     setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
-
+    setflag(FLAG_SET_WALL_CLOCK)
+    setflag(FLAG_SYS_CLOCK_SET)
     checkplayergender
     if (var(VAR_RESULT) == MALE){
-        
+        manuallysettime(WEEKDAY_WED, 16, 30, 0)
         setvar(VAR_MITSURUS_INTRO_STATE, 50) // will be reset to 0 if player choose to play mitsuru's prologue after doing akihiko's
     }
     else{
-        
+        manuallysettime(WEEKDAY_WED, 22, 30, 0)
         setvar(VAR_AKIHIKOS_INTRO_STATE, 50) // will be reset to 0 if player choose to play akihiko's prologue after doing mitsuru's
     }
     callnative(ScrCmd_InitTimeBasedEvent)
-	pausefakertc // pauses the time so that we can do our scripting part
+    pausefakertc
+	 // pauses the time so that we can do our scripting part
 }
 
 script MansionsGarden_CheckIfMitsuruPrologueIsDoneForAkihiko {
@@ -90,9 +92,6 @@ script MansionsGarden_CheckIfMitsuruPrologueIsDoneForAkihiko {
 }
 
 script MansionsGarden_Eventscript_OnFrame0 {
-    manuallysettime(WEEKDAY_WED, 22, 30, 0)
-    setflag(FLAG_SET_WALL_CLOCK)
-    setflag(FLAG_SYS_CLOCK_SET)
     goto(MansionsGarden_Eventscript_SlowlyShowTheMap)
 }
 

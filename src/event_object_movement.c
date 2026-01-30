@@ -2014,33 +2014,14 @@ u8 CreateVirtualObject(u16 graphicsId, u8 virtualObjId, s16 x, s16 y, u8 elevati
 struct Pokemon *GetFirstLiveMon(void)
 {
     u32 i;
-    //for (i = 0; i < PARTY_SIZE; i++)
-    u32 j = gSaveBlock3Ptr->followerIndex;
-
-    if (j == OW_FOLLOWER_RECALLED)
-        return NULL;
-    if (j == OW_FOLLOWER_NOT_SET)
+    for (i = 0; i < PARTY_SIZE; i++)
     {
-        for (i = 0; i < PARTY_SIZE; i++)
-        {
-            if (gPlayerParty[i].hp > 0 && !(gPlayerParty[i].box.isEgg || gPlayerParty[i].box.isBadEgg))
-                return &gPlayerParty[i];
-        }
-        return NULL;
-    }                                                                 
-    if (gPlayerParty[j].hp > 0 && !(gPlayerParty[j].box.isEgg || gPlayerParty[j].box.isBadEgg))
-        return &gPlayerParty[j];
-    else
-    {
-        for (i = 0; i < PARTY_SIZE; i++)
-        {
-            if (gPlayerParty[i].hp > 0 && !(gPlayerParty[i].box.isEgg || gPlayerParty[i].box.isBadEgg))
-                return &gPlayerParty[i];
-        }
-        return NULL;
+        struct Pokemon *mon = &gPlayerParty[i];
+        u32 species = GetMonData(mon, MON_DATA_SPECIES_OR_EGG);
+        if (species == SPECIES_NONE)
+            continue;
 
-        /*struct Pokemon *mon = &gPlayerParty[i];
-        if ((OW_FOLLOWERS_ALLOWED_SPECIES && GetMonData(mon, MON_DATA_SPECIES_OR_EGG) != VarGet(OW_FOLLOWERS_ALLOWED_SPECIES))
+        if ((OW_FOLLOWERS_ALLOWED_SPECIES && species != VarGet(OW_FOLLOWERS_ALLOWED_SPECIES))
          || (OW_FOLLOWERS_ALLOWED_MET_LVL && GetMonData(mon, MON_DATA_MET_LEVEL) != VarGet(OW_FOLLOWERS_ALLOWED_MET_LVL))
          || (OW_FOLLOWERS_ALLOWED_MET_LOC && GetMonData(mon, MON_DATA_MET_LOCATION) != VarGet(OW_FOLLOWERS_ALLOWED_MET_LOC)))
             continue;

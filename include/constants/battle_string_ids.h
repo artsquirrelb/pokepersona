@@ -712,6 +712,7 @@ enum StringID
     STRINGID_POWERCONSTRUCTPRESENCEOFMANY,
     STRINGID_POWERCONSTRUCTTRANSFORM,
     STRINGID_ABILITYSHIELDPROTECTS,
+<<<<<<< HEAD
     STRINGID_MONTOOSCAREDTOMOVE,
     STRINGID_GHOSTGETOUTGETOUT,
     STRINGID_SILPHSCOPEUNVEILED,
@@ -722,6 +723,8 @@ enum StringID
     STRINGID_PKMNANGRY,
     STRINGID_PKMNEATING,
     STRINGID_PKMNDISGUISEWASBUSTED,
+=======
+>>>>>>> parent of 97e83ebe6a (Add FRLG (#7423))
     STRINGID_COUNT
 };
 
@@ -971,15 +974,6 @@ enum InobedientStringID
 // For randomly selecting a disobey string
 // Skips the one used for Battle Palace
 #define NUM_LOAF_STRINGS (B_MSG_PRETEND_NOT_NOTICE + 1)
-
-// gSafariReactionStringIds
-enum SafariReactionStringID
-{
-    B_MSG_MON_WATCHING,
-    B_MSG_MON_ANGRY,
-    B_MSG_MON_EATING,
-    NUM_SAFARI_REACTIONS
-};
 
 // gSafariGetNearStringIds
 enum SafariGetNearStringID

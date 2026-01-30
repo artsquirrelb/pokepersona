@@ -708,6 +708,8 @@ script Debug_EventScript_Script_1{
 }
 
 script Debug_EventScript_Script_2{
+	setwildbattle(SPECIES_CHARMANDER, 15, ITEM_NONE, SPECIES_WINGULL, 15)
+	dowildbattle
 	release
 	end
 }
@@ -715,6 +717,7 @@ script Debug_EventScript_Script_2{
 text outrotest{"..."}
 
 script Debug_EventScript_Script_3{
+	trainerbattle_no_intro(TRAINER_NORBERT_THUNDERSHARDS_CAVE_2F_EXTERIOR, KGScientist_Defeated)
 	release
 	end
 }

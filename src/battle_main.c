@@ -518,9 +518,7 @@ static void CB2_InitBattleInternal(void)
     gBattle_BG3_Y = 0;
 
     if (!DEBUG_OVERWORLD_MENU || (DEBUG_OVERWORLD_MENU && !gIsDebugBattle))
-    {
         gBattleEnvironment = BattleSetup_GetEnvironmentId();
-    }
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         gBattleEnvironment = BATTLE_ENVIRONMENT_BUILDING;
     if (TestRunner_Battle_GetForcedEnvironment())
@@ -566,8 +564,8 @@ static void CB2_InitBattleInternal(void)
         AdjustFriendship(&gPlayerParty[i], FRIENDSHIP_EVENT_LEAGUE_BATTLE);
 
         // Apply party-wide start-of-battle form changes for both sides.
-        TryFormChange(i, B_SIDE_PLAYER, FORM_CHANGE_BEGIN_BATTLE);
-        TryFormChange(i, B_SIDE_OPPONENT, FORM_CHANGE_BEGIN_BATTLE);
+        TryFormChange(&gPlayerParty[i], FORM_CHANGE_BEGIN_BATTLE);
+        TryFormChange(&gEnemyParty[i], FORM_CHANGE_BEGIN_BATTLE);
     }
 
     #if TESTING
@@ -3414,6 +3412,8 @@ const u8* FaintClearSetData(enum BattlerId battler)
     gBattleStruct->lastTakenMoveFrom[battler][2] = 0;
     gBattleStruct->lastTakenMoveFrom[battler][3] = 0;
     gBattleStruct->palaceFlags &= ~(1u << battler);
+    if (battler == gBattlerAttacker)
+        gBattleStruct->moldBreakerActive = FALSE;
 
     ClearPursuitValuesIfSet(battler);
 
@@ -3447,7 +3447,7 @@ const u8* FaintClearSetData(enum BattlerId battler)
     gBattleMons[battler].types[2] = TYPE_MYSTERY;
 
     Ai_UpdateFaintData(battler);
-    TryBattleFormChange(battler, FORM_CHANGE_FAINT);
+    TryBattleFormChange(battler, FORM_CHANGE_FAINT, GetBattlerAbility(battler));
 
     // If the fainted mon was involved in a Sky Drop
     if (gBattleStruct->skyDropTargets[battler] != SKY_DROP_NO_TARGET)
@@ -6054,6 +6054,10 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
         if (species == SPECIES_TERAPAGOS_STELLAR)
             return TYPE_STELLAR;
         break;
+    case EFFECT_NATURE_POWER:
+        if (state == MON_IN_BATTLE)
+            return GetMoveType(GetNaturePowerMove());
+        break;
     default:
         break;
     }
@@ -6153,7 +6157,7 @@ void ScriptSetTotemBoost(struct ScriptContext *ctx)
 bool32 IsWildMonSmart(void)
 {
 #if B_SMART_WILD_AI_FLAG != 0
-    return (FlagGet(B_SMART_WILD_AI_FLAG));
+    return (FlagGet(B_SMART_WILD_AI_FLAG) || IsDoubleBattle());
 #else
     return FALSE;
 #endif

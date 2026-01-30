@@ -409,12 +409,13 @@ script Windwardport_MayoidosLab_ChooseMonToTrade {
     if(var(VAR_RESULT) == MALE){
         msgbox(format("Now I'll take your {COLOR GREEN}Grookey{COLOR 2}."))
         fadescreen(FADE_TO_BLACK)
-	    chooseboxmon
+        setvar(VAR_0x8009, SPECIES_GROOKEY)
+	    chooseboxmon(SELECT_PC_MON_TRADE)
 	    waitstate
         if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN){
             goto (Windwardport_MayoidosLab_StarterTrade_Reject)
         }
-        if (var(VAR_RESULT) != SPECIES_GROOKEY){
+        if (!var(VAR_RESULT)){
             goto(Windwardport_MayoidosLab_NotTheRightOne)
         }
         else{
@@ -424,7 +425,13 @@ script Windwardport_MayoidosLab_ChooseMonToTrade {
     }
     else{
         msgbox(format("Now I'll take your {COLOR GREEN}Fennekin{COLOR 2}."))
-        if (var(VAR_RESULT) != SPECIES_FENNEKIN){
+        fadescreen(FADE_TO_BLACK)
+        setvar(VAR_0x8009, SPECIES_FENNEKIN)
+	    chooseboxmon(SELECT_PC_MON_TRADE)
+        if (var(VAR_0x8004) == PARTY_NOTHING_CHOSEN){
+            goto (Windwardport_MayoidosLab_StarterTrade_Reject)
+        }
+        if (!var(VAR_RESULT)){
             goto(Windwardport_MayoidosLab_NotTheRightOne)
         }
         else{

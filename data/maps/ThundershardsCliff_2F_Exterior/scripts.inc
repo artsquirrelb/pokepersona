@@ -448,7 +448,7 @@ ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave_Text_1:
 	.string "Tch. I told those two to not let anyone\n"
 	.string "through.\p"
 	.string "And here you are, Young Lady.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}They were no match for me.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}They were no match for me.\p"
 	.string "And you're not going anywhere either.\p"
 	.string "Let's go, {STR_VAR_1}.$"
 
@@ -462,7 +462,7 @@ ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_1:
 	.string "Looks like your synergy level has\n"
 	.string "increased again, Young Lady.\p"
 	.string "As expected of our premium prototype.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_MAD}Norbert, you...!$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_MAD}Norbert, you...!$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_2:
 # 112 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
@@ -470,7 +470,7 @@ ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_2:
 	.string "a bit of information.\p"
 	.string "You aren't the only premium prototype\n"
 	.string "anymore.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}...!$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}...!$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_3:
 # 116 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
@@ -481,19 +481,19 @@ ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_3:
 	.string "good, little miss.\p"
 	.string "Oh, and be careful of the fire.\n"
 	.string "Hehehehehe.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_MAD}What- WAIT-!$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_MAD}What- WAIT-!$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_4:
 # 128 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_MAD}Damn it!!$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_MAD}Damn it!!$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat_Text_5:
 # 131 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Wait... He said “fire”?$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Wait... He said “fire”?$"
 
 ThundershardsCliff_2F_Exterior_Eventscript_LabExploding_Text_0:
 # 157 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}What the-$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}What the-$"
 
 KGScientist_Defeated::
 # 100 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"

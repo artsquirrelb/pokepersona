@@ -175,10 +175,10 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_SailorOnBreak",
       "flag": "0",
-      "d": true,
-      "e": false,
+      "d": false,
+      "e": true,
       "m": false,
-      "n": false
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
@@ -276,11 +276,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Policeman",
-      "flag": "0",
-      "d": false,
-      "e": true,
-      "m": false,
-      "n": true
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MACHAMP)",
@@ -294,9 +290,7 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_Eventscript_Machamp",
       "flag": "0",
-      "d": true,
-      "e": false,
-      "m": false,
+      "e": true,
       "n": true
     },
     {
@@ -498,6 +492,68 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 15,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Coralport_Eventscript_Maniac",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MAGNEMITE)",
+      "x": 14,
+      "y": 31,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Coralport_Eventscript_Magnemite",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "local_id": "MIKU_CORAL",
+      "graphics_id": "OBJ_EVENT_GFX_YOUNG_WOMAN",
+      "x": 6,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Coralport_Eventscript_CoupleF",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "local_id": "EMI_CORAL",
+      "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F",
+      "x": 7,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Coralport_Eventscript_CoupleF",
+      "flag": "0",
+      "e": true,
+      "n": true
     }
   ],
   "warp_events": [
@@ -630,6 +686,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Coralport_Eventscript_CaveSign"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 20,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Coralport_Eventscript_ShipSchedule"
     }
   ]
 }

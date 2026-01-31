@@ -34,9 +34,9 @@ script SunshineTown_KurosawasHouse_OnFrame23 {
 
 script SunshineTown_KurosawasHouse_Eventscript_KurosawaInformingAkihikoAboutMiki {
     delay(30)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_TIRED}...\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_TIRED}...\p
     (If only I were stronger... I could've fought back and had a chance at finding Miki...)\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}..."))
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_PENSIVE}..."))
     closemessage
     delay(8)
     applymovement(1, KurosawaInformingAkihikoAboutMiki)
@@ -45,10 +45,10 @@ script SunshineTown_KurosawasHouse_Eventscript_KurosawaInformingAkihikoAboutMiki
     applymovement(LOCALID_PLAYER, NoticingKurosawa)
     waitmovement(0)
     msgbox(format("
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_TIRED}Kurosawa-san...\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_TIRED}Kurosawa-san...\p
     {SPEAKER NAME_KRSW}{DESTROY_MUGSHOT}We still haven't found her.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}And the body count didn't add up, which means...\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_TIRED}..."))
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_PENSIVE}And the body count didn't add up, which means...\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_TIRED}..."))
     closemessage
     goto(SunshineTown_KurosawasHouse_Eventscript_AkihikoDecidingToGo)
 }
@@ -71,10 +71,10 @@ script SunshineTown_KurosawasHouse_Eventscript_AkihikoDecidingToGo {
     applymovement (1, facedown)
     waitmovement(0)
     msgbox(format("
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Where are you going?"))
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Where are you going?"))
     closemessage
     delay(20)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}I believe Miki is still alive.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}I believe Miki is still alive.\p
     And if she's alive, there's a big chance that she's in danger.\p
     I'll definitely find her.\p
     And in order to do that,\p
@@ -83,7 +83,7 @@ script SunshineTown_KurosawasHouse_Eventscript_AkihikoDecidingToGo {
     delay(10)
     applymovement(LOCALID_PLAYER, faceup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}It's time for me to go."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}It's time for me to go."))
     closemessage
     goto (SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow)
 }
@@ -97,14 +97,14 @@ script SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow {
     delay(20)
     applymovement(3, ShinjiroDecidingToFollow)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}I'll go with you, Aki.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh? But-\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}No buts.\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}I'll go with you, Aki.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Huh? But-\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}No buts.\p
     Letting a reckless dumbass like you travel alone is basically murder.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}Not funny.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Besides, Miki is like a sister to me too. I'm also worried about her.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}...\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Alright. Let's go find her together, Shinji."))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}Not funny.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Besides, Miki is like a sister to me too. I'm also worried about her.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}...\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Alright. Let's go find her together, Shinji."))
     closemessage
     fadenewbgm(MUS_RG_SEVII_67)
     applymovement(LOCALID_PLAYER, faceup)
@@ -139,7 +139,7 @@ movement KurosawaGivingPokebalToShinji {
 }
 
 script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Kurosawa-san, thank you for your hard work and for taking care of us these past few days.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Kurosawa-san, thank you for your hard work and for taking care of us these past few days.\p
     Please take care.\p
     {SPEAKER NAME_KRSW}{DESTROY_MUGSHOT}Wait just a moment."))
     closemessage
@@ -150,7 +150,7 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     {SPEAKER NAME_KRSW}Sanada-kun already has a Pokémon so I'm giving this to you, Aragaki-kun.\p
     Befriending a Pokémon will greatly help you on your journey.\p
     You also should help other people if you can.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Thank you, Kurosawa-san. We will.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Thank you, Kurosawa-san. We will.\p
     {SPEAKER NAME_KRSW}{DESTROY_MUGSHOT}Oh, right. Hang on."))
     closemessage
     applymovement(1, KurosawaGettingTheSleepingBags)
@@ -164,7 +164,7 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     waitmovement(1)
     giveitem(ITEM_CAMP_GEARS)
     msgbox(format("{SPEAKER NAME_KRSW}Take these Camping Gears. You'll need them while outdoors.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Woah, these are great! Thank you, Kurosawa-san!\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Woah, these are great! Thank you, Kurosawa-san!\p
     {SPEAKER NAME_KRSW}{DESTROY_MUGSHOT}Stay safe, kids. I'll keep you updated with our search."))
     closemessage
     delay(20)
@@ -226,16 +226,16 @@ script SunshineTown_KurosawasHouse_Eventscript_Kurosawa {
 script Eventscript_Kurosawa_Akihiko_P_C1 {
     if (var(VAR_TEMP_0) == 1){
         msgbox(format("{DESTROY_MUGSHOT}You kids are always welcome to spend the night here if you want to.\p
-        {SPEAKER NAME_A}{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Thank you, Kurosawa-san."))
+        {SPEAKER NAME_A}{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Thank you, Kurosawa-san."))
         closemessage
     }
     else{
         msgbox(format("{DESTROY_MUGSHOT}The Sanadas and the Aragakis were supposed to pick you two up but they all got into accidents and are currently being treated at Kibou Hospital.\p
         The injuries aren't life threatening but they'll have to stay there for a month or two.\p
         The adoption papers were already done and approved so you're officially a Sanada and an Aragaki.\p
-        {SPEAKER NAME_A}{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}My... parents.\p
+        {SPEAKER NAME_A}{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}My... parents.\p
         We should visit them in Kibou City.\p
-        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}Yeah..."))
+        {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_PENSIVE}Yeah..."))
         closemessage
         setvar(VAR_TEMP_0, 1)
     }
@@ -248,9 +248,9 @@ script Eventscript_Kurosawa_Mitsuru_C1 {
     hidefollower
     if (var(VAR_TEMP_1) == 1){
         msgbox(format("{SPEAKER NAME_KRSW}That reminds me, how are Sanada and Aragaki?\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}They're improving very quickly, sir.\n
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}They're improving very quickly, sir.\n
         I'm certainly still not used to the rowdy bickering between them but they're...{PAUSE 60}
-        {CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}fun to be around."))
+        {CREATE MUGSHOT_M EMOTE_SMILE}fun to be around."))
         closemessage
         doemote(1, E_HAPPY)
         msgbox(format("{SPEAKER NAME_KRSW}Ahaha, I can see that.\n
@@ -263,25 +263,32 @@ script Eventscript_Kurosawa_Mitsuru_C1 {
     else{
         doemote(1, 0)
         msgbox(format("{SPEAKER NAME_KRSW}Oh, Kirijo. What brings you here?\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Good day, Kurosawa-san. I hope you've been doing well.\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Good day, Kurosawa-san. I hope you've been doing well.\p
         My father sent you his regards.\p
         {SPEAKER NAME_KRSW}{DESTROY_MUGSHOT}Hahaha, always so formal, aren't you?\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}If I may so ask, how's the investigation going?\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}If I may so ask, how's the investigation going?\p
         {SPEAKER NAME_KRSW}{DESTROY_MUGSHOT}To be honest, it's not going too well.\p
         Especially when I have to be discreet about it.\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}..... Our apologies for putting you in such a tough spot, Kurosawa-san.\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}..... Our apologies for putting you in such a tough spot, Kurosawa-san.\p
         If only that incident didn't-"))
-        stepinplace(1, DIR_SOUTH)
+        specialvar(VAR_0x8000, GetPlayerFacingDirection)
+        switch(var(VAR_0x8000))
+        {
+            case DIR_NORTH: stepinplace(VAR_LAST_TALKED, DIR_SOUTH)
+            case DIR_WEST: stepinplace(VAR_LAST_TALKED, DIR_EAST)
+            case DIR_EAST: stepinplace(VAR_LAST_TALKED, DIR_WEST)
+            default: stepinplace(VAR_LAST_TALKED, DIR_NORTH)
+        }
         msgbox(format("{SPEAKER NAME_KRSW}{DESTROY_MUGSHOT}Now now, young lady. I have to cut you short here.\p
         What happened back then was entirely due to my choice in pursuing justice.\p
         It's neither you nor your father's fault.\p
         It's the same now, I'm simply just doing my best to protect this region and its people.\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}... {PAUSE 60}You're a very righteous man, Kurosawa-san.\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}... {PAUSE 60}You're a very righteous man, Kurosawa-san.\p
         It's our honor to have you as an ally.\p
         {SPEAKER NAME_KRSW}{DESTROY_MUGSHOT}I can say the same to you, Kirijo.\n
         However, there's a part of me wishing the opposite.\p
         Kids like you shouldn't be the one bearing burdens that we adults failed to.\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}Kurosawa-san..."))
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}Kurosawa-san..."))
         setvar(VAR_TEMP_1, 1)
     }
     release

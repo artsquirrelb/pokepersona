@@ -1613,7 +1613,7 @@ SunshineWoods_Eventscript_AkihikoPrologueStart_Movement_3:
 
 SunshineWoods_Eventscript_DoNotEnterTheGrass_Text_0:
 # 74 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Alright, we're here.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Alright, we're here.\p"
 	.string "Don't enter the tall grass, okay?\p"
 	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}Okay!$"
 
@@ -1621,29 +1621,29 @@ SunshineWoods_Eventscript_PawmisCry_Text_0:
 # 109 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_MK}Big bro! Look! I just made this flower\n"
 	.string "crown! It's for you!\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}It's very pretty! Thank you, Miki!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_HAPPY}It's very pretty! Thank you, Miki!$"
 
 SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown_Text_0:
 # 119 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Will you make one for me too, Miki?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Will you make one for me too, Miki?\p"
 	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}Of course!$"
 
 SunshineWoods_Eventscript_PawmiCries_Text_0:
 # 135 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}W-What was that?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Could be a wild Pokémon. Be careful!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}W-What was that?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Could be a wild Pokémon. Be careful!$"
 
 SunshineWoods_Eventscript_PawmisInjured_Text_0:
 # 203 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Wait...\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}It looks heavily injured.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Wait...\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}It looks heavily injured.\p"
 	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}We should take it back to the\n"
 	.string "orphanage!\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Yeah!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Yeah!$"
 
 TakePawmiToHeal_Text_0:
 # 222 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Come on, lil' guy.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Come on, lil' guy.$"
 
 SunshineWoods_Eventscript_DirectionSign_Text_0:
 # 256 "data/maps/SunshineWoods/scripts.pory"
@@ -1712,7 +1712,7 @@ SunshineWoods_Eventscript_KGStaff1_Battle_Text_1:
 
 SunshineWoods_Eventscript_KGStaff1_Battle_Text_2:
 # 420 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Great teamwork, Inteleon.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Great teamwork, Inteleon.\p"
 	.string "Now let's check if he has any useful\n"
 	.string "information.$"
 
@@ -1723,17 +1723,17 @@ SunshineWoods_Eventscript_KGStaff1_Battle_Text_3:
 
 SunshineWoods_Eventscript_KGStaff1_Battle_Text_4:
 # 441 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}So this is one of the boys they're\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}So this is one of the boys they're\n"
 	.string "searching for?$"
 
 SunshineWoods_Eventscript_KGStaff1_Battle_Text_5:
 # 447 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}There's nothing else here, let's go,\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}There's nothing else here, let's go,\n"
 	.string "Inteleon.$"
 
 SunshineWoods_Eventscript_KGStaff1_PostBattle_Text_0:
 # 470 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(He's out cold. There's no further\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(He's out cold. There's no further\n"
 	.string "information I can get out of him.)$"
 
 SunshineWoods_Eventscript_KGStaff2_Battle_Text_0:
@@ -1746,7 +1746,7 @@ SunshineWoods_Eventscript_KGStaff2_Battle_Text_1:
 
 SunshineWoods_Eventscript_KGStaff2_Battle_Text_2:
 # 531 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Great job, Inteleon.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Great job, Inteleon.\p"
 	.string "Now let's see...$"
 
 SunshineWoods_Eventscript_KGStaff2_Battle_Text_3:
@@ -1757,26 +1757,26 @@ SunshineWoods_Eventscript_KGStaff2_Battle_Text_3:
 
 SunshineWoods_Eventscript_KGStaff2_Battle_Text_4:
 # 555 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Magnifique. Now I know how one of their\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Magnifique. Now I know how one of their\n"
 	.string "targets looks like.$"
 
 SunshineWoods_Eventscript_KGStaff2_Battle_Text_5:
 # 561 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}There's nothing else here, time to go.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}There's nothing else here, time to go.$"
 
 SunshineWoods_Eventscript_KGStaff2_PostBattle_Text_0:
 # 587 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(He's fainted. Inteleon hit him a little\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(He's fainted. Inteleon hit him a little\n"
 	.string "too hard but he should be fine.)$"
 
 SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_0:
 # 596 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Let's check the men in black for\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Let's check the men in black for\n"
 	.string "information.)$"
 
 SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_1:
 # 613 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Can you go help the rescue at the\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Can you go help the rescue at the\n"
 	.string "orphanage, Inteleon?\p"
 	.string "Don't worry about me, I'll just go back\n"
 	.string "to the house in Route 2 to do some\l"
@@ -1785,53 +1785,53 @@ SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_1:
 
 SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_2:
 # 618 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon shaked its head.)\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}Sigh... Then how about after I get to\n"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon shaked its head.)\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}Sigh... Then how about after I get to\n"
 	.string "the house safely?\p"
 	.string "I promise I'll stay there until you\n"
 	.string "return.$"
 
 SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_Text_3:
 # 624 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon reluctantly agreed.)\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}C'est magnifique. Let's move out.$"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon reluctantly agreed.)\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}C'est magnifique. Let's move out.$"
 
 SunshineWoods_Eventscript_AkihikoPrologueStart_Text_0:
 # 646 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}.......{PAUSE 60} Sorry, I want to be alone for a\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}.......{PAUSE 60} Sorry, I want to be alone for a\n"
 	.string "while. Can we talk later?$"
 
 SunshineWoods_Eventscript_AkihikoPrologueStart_Text_1:
 # 654 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}So this is where you are.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Hey, Kirijo. Have a seat.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}So this is where you are.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Hey, Kirijo. Have a seat.$"
 
 SunshineWoods_Eventscript_AkihikoPrologueStart_Text_2:
 # 678 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}What are you doing here, if I may ask?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Just... {PAUSE 60}reminiscing,{PAUSE 60} I guess.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}What are you doing here, if I may ask?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Just... {PAUSE 60}reminiscing,{PAUSE 60} I guess.\p"
 	.string "This was where I, my sis and Shinji used\n"
 	.string "to hang out.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That sounded like good times.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}That sounded like good times.$"
 
 SunshineWoods_Eventscript_AkihikoPrologueStart_Text_3:
 # 686 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Kirjo, uh...{PAUSE 60} This is kinda sudden but I\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}Kirjo, uh...{PAUSE 60} This is kinda sudden but I\n"
 	.string "guess I just want to talk about this to\l"
 	.string "someone.$"
 
 SunshineWoods_Eventscript_AkihikoPrologueStart_Text_4:
 # 688 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Would you listen? {COLOR GREEN}(Begin Akihiko's\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Would you listen? {COLOR GREEN}(Begin Akihiko's\n"
 	.string "prologue quest?)$"
 
 SunshineWoods_Eventscript_AkihikoPrologueStart_Text_5:
 # 691 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Oh, okay......$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}Oh, okay......$"
 
 SunshineWoods_Eventscript_AkihikoPrologueStart_Text_6:
 # 707 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Thanks!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Thanks!$"
 
 SunshineWoods_Text_IkeIntro::
 # 276 "data/maps/SunshineWoods/scripts.pory"

@@ -31,13 +31,13 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     applymovement(LOCALID_TAKEHARU, moves(walk_down*3, walk_right))
     applymovement(LOCALID_INTELEON, moves(walk_down*2, walk_right*2))
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Father...\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Father...\p
     {SPEAKER NAME_TKHR}{DESTROY_MUGSHOT}So you really intend to go, no matter what I say.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}I'm sorry, Father...\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}But we already talked about this before.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}I'm sorry, Father...\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}But we already talked about this before.\p
     This is also my responsibility as a Kirijo.\p
     I simply cannot sit still while our family's name gets further tainted.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}Please... don't stop me, Father.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}Please... don't stop me, Father.\p
     {SPEAKER NAME_TKHR}{DESTROY_MUGSHOT}You already know I don't fully agree with this.\p
     No sane parent would let their child do something this dangerous.\p
     However, I'm also aware that I won't be able to stop you, since stubborness apparently runs in both of our veins.\p
@@ -48,8 +48,8 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     applymovement(LOCALID_INTELEON, walkinplaceright)
     waitmoncry
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Father.....\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}If that'll put your mind more at ease, I'll do so."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Father.....\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}If that'll put your mind more at ease, I'll do so."))
     closemessage
     applymovement(LOCALID_TAKEHARU, faceup)
     applymovement(LOCALID_INTELEON, facedown)
@@ -64,10 +64,10 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     applymovement(LOCALID_TAKEHARU, faceright)
     waitmovement(0)
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I must go now.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I must go now.\p
     Please take care, Father.\p
     {SPEAKER NAME_TKHR}{DESTROY_MUGSHOT}Stay safe, and come back to me, Mitsuru.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}I fully intend to."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}I fully intend to."))
     closemessage
     applymovement(LOCALID_INTELEON, moves(walk_down, set_invisible))
     waitmovement(0)
@@ -97,7 +97,7 @@ script MansionMainHall_Eventscript_Takeharu {
     faceplayer
     msgbox(format("{SPEAKER NAME_TKHR}If you need anything on your journey, just make a call home.\p
     I'll be sure to assist you whenever.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That is assuring. Thank you, Father."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}That is assuring. Thank you, Father."))
     closemessage
     release
     end
@@ -115,7 +115,7 @@ script MansionMainHall_Eventscript_Butler {
         applymovement(LOCALID_BUTLER, moves(emote_cry, shake_horizontal))
         waitmovement(0)
         waitse
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}Y-Yuuma-san, please don't cry. I'll definitely be back in no time!"))
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}Y-Yuuma-san, please don't cry. I'll definitely be back in no time!"))
         setspeaker("Butler Yuuma")
         msgbox(format("{DESTROY_MUGSHOT}-sniff sniff-"))
         closemessage
@@ -128,8 +128,8 @@ script MansionMainHall_Eventscript_Butler {
     else
     {
         msgbox(format("-sniff sniff-\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}P-Please stop crying, Yuuma-san...\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}(Sigh, how do I comfort a person in distress...?)"))
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}P-Please stop crying, Yuuma-san...\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_STRUGGLED}(Sigh, how do I comfort a person in distress...?)"))
         closemessage
     }
     release
@@ -147,10 +147,10 @@ script MansionMainHall_Eventscript_WaiterHaruma {
         waitmovement(0)
         setspeaker("Haruma")
         msgbox(format("Young Lady, what can I do for you?\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I don't see Kikuno anywhere. Do you know where she went off to?"))
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I don't see Kikuno anywhere. Do you know where she went off to?"))
         setspeaker("Haruma")
         msgbox(format("{DESTROY_MUGSHOT}I saw her go outside to the main garden a bit earlier.\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see. Thank you, Haruma."))
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see. Thank you, Haruma."))
         closemessage
         applymovement(7, faceleft)
         waitmovement(0)
@@ -158,7 +158,7 @@ script MansionMainHall_Eventscript_WaiterHaruma {
     }
     else {
         msgbox(format("Kikuno-san just went outside to the main garden.\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see. Thank you, Haruma."))
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see. Thank you, Haruma."))
         closemessage
     }
     release
@@ -179,7 +179,7 @@ text AlertingWildPokemonGotInside {
     format("Earlier some wild Pokémon got inside the east hall and made a mess.\p
     The matter was resolved but we're still cleaning up.\p
     You may prefer to exit through this west hall right now, Young Lady.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see. That explained the noise I heard earlier.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see. That explained the noise I heard earlier.\p
     Thank you for your hard work.")
 }
 
@@ -211,7 +211,7 @@ script MansionMainHall_Eventscript_WaitressKoharu {
 text TakeharusOffice {
     format("Master Kirijo told us to not let anyone in his office.\p
     I'll go ask him if you want to, Young Lady.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It's fine, Koharu.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It's fine, Koharu.\p
     (Besides, I already discussed with Father about all the documents he keeps in there.)")
 }
 
@@ -242,7 +242,7 @@ script MansionMainHall_Eventscript_WaiterAoi {
         applymovement(LOCALID_PLAYER, emotesweat)
         waitmovement(0)
         delay(20)
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(I better leave him alone... with the statues.)"))
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(I better leave him alone... with the statues.)"))
         closemessage
         release
         end
@@ -256,7 +256,7 @@ script MansionMainHall_Eventscript_WaiterAoi {
     waitmovement(0)
     setspeaker("Aoi")
     msgbox(format("Y-Young Lady! How can I help?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Oh, it's nothing.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Oh, it's nothing.\p
     .......\p
     You've worked hard, Aoi."))
     closemessage
@@ -286,7 +286,7 @@ script MansionMainHall_Eventscript_WaiterAoi {
 
 script MansionMainHall_Eventscript_EmptyGuestRoom {
     lock
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(It's my guest room. I don't have any guest visiting right now so it must be empty.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(It's my guest room. I don't have any guest visiting right now so it must be empty.)"))
     closemessage
     release
     end
@@ -294,7 +294,7 @@ script MansionMainHall_Eventscript_EmptyGuestRoom {
 
 script MansionMainHall_Eventscript_NotTheWayOutToMainGarden {
     lock
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I have no business in the Berry Garden right now."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I have no business in the Berry Garden right now."))
     closemessage
     applymovement(LOCALID_PLAYER, walkright)
     waitmovement(0)

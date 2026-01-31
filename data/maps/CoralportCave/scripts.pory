@@ -200,9 +200,9 @@ script CoralportCave_Eventscript_DusclopsCutscene {
     delay(8)
     applymovement(3, moves(lock_facing_direction, walk_up, unlock_facing_direction))
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Sanada-kun, Aragaki-kun. Back me up.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Gotcha!\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}No need to ask!"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Sanada-kun, Aragaki-kun. Back me up.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Gotcha!\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}No need to ask!"))
     closemessage
     applymovement(11, moves(walk_fast_left*3, walk_fast_down*3, walk_fast_left*4, face_down))
     delay(20)
@@ -324,7 +324,7 @@ script CoralportCave_Eventscript_TheReasonMisaEnteredTheCave {
     applymovement(LOCALID_PLAYER, moves(walk_down*3))               //akimitsu: 9,9
     waitmovement
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It looks like it wants us to follow it."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It looks like it wants us to follow it."))
     closemessage
     fadescreenswapbuffers(FADE_TO_BLACK, 1)
     applymovement(LOCALID_PLAYER, moves(walk_down*7, walk_left*3))          //akimitsu: 6, 16
@@ -340,8 +340,8 @@ script CoralportCave_Eventscript_TheReasonMisaEnteredTheCave {
     fadescreenswapbuffers(FADE_FROM_BLACK)
     delay(50)
     fadenewbgm(MUS_END)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Is that... its parent?\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}It's... not moving."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Is that... its parent?\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}It's... not moving."))
     closemessage
     applymovement(3, faceup)
     playmoncry(SPECIES_WOOPER, CRY_MODE_WEAK)
@@ -354,7 +354,7 @@ script CoralportCave_Eventscript_TheReasonMisaEnteredTheCave {
     delay(40)
     applymovement(10, emotepensive)
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}......{PAUSE 60}It's too late...\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}......{PAUSE 60}It's too late...\p
     Its life energy has already been all drained."))
     closemessage
     delay(20)
@@ -457,16 +457,16 @@ script CoralportCave_Eventscript_MisaTakingInWooper {
     delay(30)
     applymovement(LOCALID_PLAYER, moves(walk_diag_northeast))
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}........"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}........"))
     closemessage
     delay(30)
     applymovement(11, shakehorizontal)
     waitmovement
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CRY}-sniffle-"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CRY}-sniffle-"))
     applymovement(9, faceright)
     waitmovement
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Hphm, crybaby.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CRY}Shut up. -sniffle-"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Hphm, crybaby.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CRY}Shut up. -sniffle-"))
     closemessage
     delay(30)
     fadescreenspeed(FADE_TO_BLACK, 4)

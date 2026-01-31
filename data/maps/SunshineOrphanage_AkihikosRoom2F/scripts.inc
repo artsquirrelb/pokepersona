@@ -662,12 +662,12 @@ AkihikosRoom2F_Eventscript_MikiAppears_Text_0:
 
 GoSetTheClock_Text_0:
 # 122 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}{SPEAKER NAME_A}I should fix the clock.$"
+	.string "{CREATE MUGSHOT_A EMOTE_NORMAL}{SPEAKER NAME_A}I should fix the clock.$"
 
 SetWallclock_Text_0:
 # 135 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "The clock isn't working.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Let's see... The current time is...\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Let's see... The current time is...\n"
 	.string "4:32PM.$"
 
 SetWallclock_Text_1:
@@ -702,65 +702,65 @@ SunshineOrphanage_AkihikosRoom2F_RivalsPC_Text_0:
 
 ShinjirosPC_Text_0:
 # 199 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}It's Shinji's PC. It was a donation.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}It's Shinji's PC. It was a donation.$"
 
 BookshelfLeft_Text_0:
 # 206 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "A book of how to draw anime characters.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE} Miki often asks me to draw her favorite\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE} Miki often asks me to draw her favorite\n"
 	.string "character from the game Persona 3.$"
 
 BookshelfRight_Text_0:
 # 215 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "A book about Pokémon species in their\n"
 	.string "natural habitats.\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}{SPEAKER NAME_A} I hope I can get my own Pokémon soon.$"
+	.string "{CREATE MUGSHOT_A EMOTE_HAPPY}{SPEAKER NAME_A} I hope I can get my own Pokémon soon.$"
 
 ChoresList_Text_0:
 # 223 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Shinji and my chores list.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Shinji and my chores list.$"
 
 Calendar_Text_0:
 # 230 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL} My sis and I are going to get adopted\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL} My sis and I are going to get adopted\n"
 	.string "in 3 days, Shinji on the following day.\p"
 	.string "The Sanadas and the Aragakis look like\n"
 	.string "they are good people.\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}I'll miss everyone here...$"
+	.string "{CREATE MUGSHOT_A EMOTE_SAD}I'll miss everyone here...$"
 
 TrashcanEmptyAkihikoRoom_Text_0:
 # 240 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "It's empty.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL} Shinji just took out the trash.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL} Shinji just took out the trash.$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_0:
 # 250 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Ms. Kobayashi asked for both of us to\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Ms. Kobayashi asked for both of us to\n"
 	.string "meet her at the main hall.$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_1:
 # 254 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string " {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Morning, Akihiko.$"
+	.string " {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Morning, Akihiko.$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi_Text_2:
 # 257 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Morning to you too, Pawmi.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Morning to you too, Pawmi.$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaventTalkedToShinji1_Text_0:
 # 284 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Hey, Akihiko.\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Hey, Akihiko.\n"
 	.string "Ms. Kobayashi said she wanted to meet\l"
 	.string "us at the main hall.\p"
 	.string "Let's go.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Oh, sure.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Oh, sure.$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_0:
 # 329 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Oh, you're leaving?$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Oh, you're leaving?$"
 
 SunshineOrphanage_AkihikosRoom2F_Eventscript_HaveTalkedToShinji1_Text_1:
 # 334 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Let's go.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Let's go.$"
 
 Eventscript_MonGivenToParty_Text_0:
 # 374 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
@@ -781,7 +781,7 @@ Lets_Go_Play::
 # 86 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_MK}It's time!\p"
 	.string "You promised to take me out today!\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}{SPEAKER NAME_A} Let me fix this clock real quick.\p"
+	.string "{CREATE MUGSHOT_A EMOTE_SMILE}{SPEAKER NAME_A} Let me fix this clock real quick.\p"
 	.string "Otherwise Shinji's gonna grill me.\p"
 	.string "{DESTROY_MUGSHOT}{SPEAKER NAME_MK}Okay! I'll be waiting outside with Ms.\n"
 	.string "Kobayashi!$"

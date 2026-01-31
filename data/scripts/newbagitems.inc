@@ -275,11 +275,11 @@ EventScript_NoEncounterDexNav::
 
 EventScript_CampGears_Text_0:
 # 10 "data/scripts/newbagitems.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}(I can't set up a camp here.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}(I can't set up a camp here.)$"
 
 EventScript_CampGears_Text_1:
 # 13 "data/scripts/newbagitems.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_GEEZ}(I shouldn't camp here.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_GEEZ}(I shouldn't camp here.)$"
 
 EventScript_CampGears_Text_2:
 # 27 "data/scripts/newbagitems.pory"
@@ -287,11 +287,11 @@ EventScript_CampGears_Text_2:
 
 EventScript_CampGears_NotTheTime_Text_0:
 # 67 "data/scripts/newbagitems.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Now is not the time for camping.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Now is not the time for camping.)$"
 
 EventScript_CampGears_NotTheTime_Text_1:
 # 70 "data/scripts/newbagitems.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Now is not the time for camping.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Now is not the time for camping.)$"
 
 EventScript_TellTheTimeDayHourMinute_Text_0:
 # 77 "data/scripts/newbagitems.pory"

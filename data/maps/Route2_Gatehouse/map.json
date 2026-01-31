@@ -25,11 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route2_Gatehouse_Eventscript_Mart_Employee",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0"
     },
     {
       "local_id": "LOCALID_ROUTE2_GATEHOUSE_NURSE",
@@ -43,11 +39,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route2_Gatehouse_Eventscript_Nurse",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BLISSEY)",
@@ -60,11 +52,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
@@ -78,9 +66,7 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route2_Gatehouse_Eventscript_Man",
       "flag": "0",
-      "d": false,
       "e": true,
-      "m": false,
       "n": true
     },
     {
@@ -96,9 +82,7 @@
       "script": "Route2_Gatehouse_Eventscript_OldMan",
       "flag": "0",
       "d": true,
-      "e": false,
-      "m": true,
-      "n": false
+      "m": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
@@ -106,16 +90,29 @@
       "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
+      "movement_range_x": 1,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route2_Gatehouse_Eventscript_KidF",
       "flag": "0",
       "d": true,
-      "e": false,
-      "m": true,
-      "n": false
+      "m": true
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LADY",
+      "x": 5,
+      "y": 13,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route2_Gatehouse_Eventscript_Lady",
+      "flag": "0",
+      "d": true,
+      "e": true
     }
   ],
   "warp_events": [

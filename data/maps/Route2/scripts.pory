@@ -122,8 +122,8 @@ script Route2_Eventscript_AkishinjiGettingBlockedBySusMen {
     applymovement(LOCALID_PLAYER, AkiShinjiStepBack)
     applymovement (6, AkiShinjiStepBack)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}Ouch!\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}What the hell??"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}Ouch!\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}What the hell??"))
     closemessage
     delay(30)
     playbgm(MUS_P3R_FEARFUL_EXPERIENCE, TRUE)
@@ -136,7 +136,7 @@ script Route2_Eventscript_AkishinjiGettingBlockedBySusMen {
     applymovement(3, walkinplaceright)
     waitmovement(0)
     msgbox(format("You two are coming with us. Like it or not.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}What?"))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}What?"))
     closemessage
     applymovement(4, SusMan1ApproachingAkihiko)
     waitmovement(0)
@@ -145,7 +145,7 @@ script Route2_Eventscript_AkishinjiGettingBlockedBySusMen {
     applymovement(4, SusMan1StepBack)
     waitmovement(0)
     delay(20)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}No way! Who even are you!?"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}No way! Who even are you!?"))
     closemessage
     goto(Route2_Eventscript_StartBattleWithSusMen)
     release
@@ -230,7 +230,7 @@ script Route2_Eventscript_PostBattleWithSusMen{
     applymovement(LOCALID_PLAYER, facedown)
     applymovement(6, facedown)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh?"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Huh?"))
     closemessage
     setspeaker("Man In Black 2")
     applymovement(3, walkinplaceright)
@@ -295,7 +295,7 @@ script Route2_Eventscript_MitsuruDisruptsTheMen {
     lock
     delay(20)
     setspeaker("???????")
-    msgbox(format("{CREATE_MUGSHOT MUGSHOT_M EMOTE_SILHOUETTE}Now! Inteleon, Vulpix!"))
+    msgbox(format("{CREATE MUGSHOT_M EMOTE_SILHOUETTE}Now! Inteleon, Vulpix!"))
     closemessage
     fadescreenswapbuffers(FADE_TO_BLACK)
     delay(20)
@@ -359,7 +359,7 @@ script Route2_Eventscript_MitsuruAppears {
     waitse
     delay(30)
     setspeaker("???????")
-    msgbox(format("{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}...\p
+    msgbox(format("{CREATE MUGSHOT_M EMOTE_NORMAL}...\p
     Inteleon, let's get these two out of here first.\p
     The ice can only hold them off for so long."))
     closemessage
@@ -434,7 +434,7 @@ text Route2_YuukaIntro {
 
 text Route2_YuukaIntro_M {
     format("Hey, I'm bored. Let's have a quick battle!\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}(It's so late, you should be at home!)")
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_STRUGGLED}(It's so late, you should be at home!)")
 }
 
 text Route2_YuukaDefeated {
@@ -492,10 +492,10 @@ script Route2_Eventscript_AkihikoOnFrame33 {
 script Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon {
     applymovement(6, ShinjiroSplitsOut)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Aight, I'm gonna go ahead and catch some Pokémon.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Sure. Be careful, the men in black could still be around here.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Hah. The same to you, Aki.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}See you later at the Meadow."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Aight, I'm gonna go ahead and catch some Pokémon.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Sure. Be careful, the men in black could still be around here.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Hah. The same to you, Aki.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}See you later at the Meadow."))
     closemessage
     applymovement(6, ShinjiroGoesOffCam)
     applymovement(LOCALID_PLAYER, faceright)
@@ -528,11 +528,11 @@ movement ShinjiroGoesOffCam {
 script Route2_Eventscript_ShinjiroFindingPokemon {
     lock
     faceplayer
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}How's it going?\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Got myself two.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}Hahaha, I've never seen you're this worked up.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Shut up and go to the Meadow if you're done preparing.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}Alright, alright ahaha."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}How's it going?\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Got myself two.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_HAPPY}Hahaha, I've never seen you're this worked up.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Shut up and go to the Meadow if you're done preparing.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_HAPPY}Alright, alright ahaha."))
     closemessage
     release
     end
@@ -552,21 +552,21 @@ script Route2_Eventscript_AkihikoNoticingShinjiroOutside {
     applymovement(OBJ_EVENT_ID_CAMERA, walkright)
     waitmovement(0)
     delay(20)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Oh, there he is.)\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Hey Shinji, you couldn't sleep too?"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Oh, there he is.)\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Hey Shinji, you couldn't sleep too?"))
     closemessage
     playse(SE_PIN)
     applymovement(6, ShinjiroHeardAkihikoCalling)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Aki.\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Aki.\p
     Yep, I keep thinking of what Kirijo said.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}Humans who can use Pokémon's ability, huh...\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Heh, guess we were thinking the same thing.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Well, there's not much we can do until we see for ourselves if what she said was true.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Since we're both not feeling sleepy, how about a battle?\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}I was just about to suggest that.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_PENSIVE}Humans who can use Pokémon's ability, huh...\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Heh, guess we were thinking the same thing.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Well, there's not much we can do until we see for ourselves if what she said was true.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}Since we're both not feeling sleepy, how about a battle?\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}I was just about to suggest that.\p
     The Ferroseed you used earlier against Kirijo really caught my curiosity.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}I'll show what it can do. {COLOR RED}Let's do a 3-vs-3 without bag item use again.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}I'll show what it can do. {COLOR RED}Let's do a 3-vs-3 without bag item use again.\p
     {COLOR DARK_GRAY}Step up if you're ready."))
     closemessage
     applymovement(SHINJIRO, moves(walk_right*4, face_left))
@@ -595,7 +595,7 @@ script Route2_Eventscript_MustBattleShinjiro {
     lock
     applymovement(LOCALID_PLAYER, walkdown)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(There's no point going back inside, it's not like I can sleep right now.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(There's no point going back inside, it's not like I can sleep right now.)"))
     closemessage
     release
     end
@@ -603,9 +603,9 @@ script Route2_Eventscript_MustBattleShinjiro {
 
 script Route2_Eventscript_InitShinjiroFirstBattle {
     lock
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Ready for our first battle?"), MSGBOX_YESNO)
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}Ready for our first battle?"), MSGBOX_YESNO)
     if (var(VAR_RESULT) == FALSE){
-        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Heh, take your sweet time. We still have all night, Aki."))
+        msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Heh, take your sweet time. We still have all night, Aki."))
         closemessage
         applymovement(LOCALID_PLAYER, walkleft)
         waitmovement(0)
@@ -613,7 +613,7 @@ script Route2_Eventscript_InitShinjiroFirstBattle {
         end
     }
     else{
-        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Before we start, do you want me to heal your Pokémon?"), MSGBOX_YESNO)
+        msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}Before we start, do you want me to heal your Pokémon?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == TRUE){
             closemessage
             playse(MUS_HEAL)
@@ -628,10 +628,10 @@ script Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle {
     lock
     specialvar(VAR_RESULT, CountPartyNonEggMons)
     if (var(VAR_RESULT) < 3){
-        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Wait, you don't have at least 3 Pokémon to battle. I want a fair fight.\p
+        msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Wait, you don't have at least 3 Pokémon to battle. I want a fair fight.\p
         Are you sure you still want to fight handicapped?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == FALSE){
-            msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Good thinking. I won't go down easily."))
+            msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}Good thinking. I won't go down easily."))
             closemessage
             applymovement(LOCALID_PLAYER, walkleft)
             waitmovement(0)
@@ -642,7 +642,7 @@ script Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle {
             playse(SE_FAILURE)
             applymovement(6, emoteangry)
             waitmovement(0)
-            msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Don't underestimate me."))
+            msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Don't underestimate me."))
             closemessage
             subvar(VAR_SHINJIRO_RELATIONSHIP_POINTS, 3) //current point: 97
             trainerbattle_no_intro(TRAINER_SHINJIRO_ROUTE_2, ShinjiroFirstBattleDefeated)
@@ -656,8 +656,8 @@ script Route2_Eventscript_CheckingPartyNumberForShinjiroFirstBattle {
         applymovement(6, pointup2)
         waitmovement(0)
         addvar(VAR_SHINJIRO_RELATIONSHIP_POINTS, 3) //current point: 103
-        msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Let's go.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}No holding back, alright?"))
+        msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}Let's go.\p
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}No holding back, alright?"))
         closemessage
         goto(Route2_Eventscript_SelectingPartyShinjiroFirstBattle)
         release
@@ -696,7 +696,7 @@ script Route2_Eventscript_SelectingPartyShinjiroFirstBattle {
     trainerbattle_selectmons(TRAINER_SHINJIRO_ROUTE_2, ShinjiroFirstBattleDefeated, Route2_Eventscript_SelectingPartyShinjiroFirstBattle_Cancel, Route2__Eventscript_ShinjiroFirstBattleResult, 3)
 }
 script Route2_Eventscript_SelectingPartyShinjiroFirstBattle_Cancel{
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Let's pick 3 Pokémon to fight. Shinji is waiting.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Let's pick 3 Pokémon to fight. Shinji is waiting.)"))
     closemessage
     goto (Route2_Eventscript_SelectingPartyShinjiroFirstBattle)
 }
@@ -732,46 +732,46 @@ script Route2__Eventscript_ShinjiroFirstBattleResult {
 }
 
 text Route2_Eventscript_WonInShinjiroFirstBattlePointUp {
-    format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}-huff- -huff- (Did I win?)\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}-huff- Dang it, I was so close.\p
+    format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}-huff- -huff- (Did I win?)\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}-huff- Dang it, I was so close.\p
     Looks like I lost to both of you, huh.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Well, next time I won't lose again.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Hehe, I'm always open for another battle against you. It was fun.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Heh, it is.")
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Well, next time I won't lose again.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Hehe, I'm always open for another battle against you. It was fun.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Heh, it is.")
 }
 
 text Route2_Eventscript_WonInShinjiroFirstBattlePointDown {
-    format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}-huff- -huff- (Did I win?)\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}-huff- Dang it, I was so close.\p
+    format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}-huff- -huff- (Did I win?)\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}-huff- Dang it, I was so close.\p
     Looks like I lost to both of you, huh.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Well, next time I won't lose again.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Hehe, I'm always open for another battle against you. It was fun.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}...\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Well, next time I won't lose again.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Hehe, I'm always open for another battle against you. It was fun.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}...\p
     To be honest, I'd have prefered if you'd fought me fairly. I asked for a 3-vs-3.\p
     If you underestimate me again, I won't let it slide, unlike this time.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}... Sorry.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Apology accepted.")
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}... Sorry.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Apology accepted.")
 }
 text Route2_Eventscript_LostInShinjiroFirstBattlePointUp {
-    format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}Arg, I was so close!\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}-huff- Your {STR_VAR_1} did pack a punch.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}But it looks like I'm not the worst out of the three of us, heh.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Next time I won't lose.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Looking forward to that.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}... Did you just imitate Kirijo...\p
+    format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}Arg, I was so close!\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}-huff- Your {STR_VAR_1} did pack a punch.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}But it looks like I'm not the worst out of the three of us, heh.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Next time I won't lose.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}Looking forward to that.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}... Did you just imitate Kirijo...\p
     Please don't do that again.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Pft, the look on your face.")
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Pft, the look on your face.")
 }
 
 text Route2_Eventscript_LostInShinjiroFirstBattlePointDown {
-    format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}Arg, I lost...\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}...\p
+    format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}Arg, I lost...\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}...\p
     Isn't that to be expected? Since you didn't want to fight me with 3 Pokémon?\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}...\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}I hope you won't underestimate me next time. It wasn't fun even when I won.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Yeah... Sorry.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}Sigh.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}I'll let it slide this time. Apology accepted.")
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}...\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}I hope you won't underestimate me next time. It wasn't fun even when I won.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}Yeah... Sorry.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_PENSIVE}Sigh.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}I'll let it slide this time. Apology accepted.")
 }
 script Route2_Eventscript_PostShinjiroFirstBattle {
     lock
@@ -781,10 +781,10 @@ script Route2_Eventscript_PostShinjiroFirstBattle {
     playse(SE_M_YAWN)
     applymovement(6, shakevertical)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}-yawn- That battle took all the energy out of me.\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_GEEZ}-yawn- That battle took all the energy out of me.\p
     Let's go to bed. I don't want to hear Kirijo complaining tomorrow if we sleep in.\p
     Wanna head inside?\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Yeah, I'm tired too."))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Yeah, I'm tired too."))
     closemessage
     special(HealPlayerParty)
     warpsilent(MAP_BLANK_MAP, 0, 0)
@@ -871,7 +871,7 @@ script Route2_Eventscript_MitsuruApproachingRoute2House {
     delay(40)
     applymovement(LOCALID_PLAYER, moves(walk_up, face_right))
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Yuuma-san said the key is under the pot of plant outside of the house.)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Yuuma-san said the key is under the pot of plant outside of the house.)\p
     (Let's see..........)\p
     (Found it.)"))
     closemessage
@@ -880,7 +880,7 @@ script Route2_Eventscript_MitsuruApproachingRoute2House {
     delay(40)
     playse(SE_CLICK)
     waitse
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Please excuse my intrusion."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Please excuse my intrusion."))
     closemessage
     delay(20)
     applymovement(LOCALID_PLAYER, walkup)
@@ -951,7 +951,7 @@ script Route2_Eventscript_MitsuruWitnessingAkiShinjiGettingAmbushed {
     waitmovement
     applymovement(LOCALID_PLAYER, faceup)
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It's those men from the Genesis Group. I have to know what they're plotting.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It's those men from the Genesis Group. I have to know what they're plotting.\p
     Can you cover the north, Inteleon?"))
     closemessage
     playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
@@ -987,8 +987,8 @@ script Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV {
     applymovement(19, AkiShinjiStepBack)
     applymovement (6, AkiShinjiStepBack)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}Ouch!\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}What the hell??"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}Ouch!\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}What the hell??"))
     closemessage
     delay(30)
     setspeaker("Man In Black 1")
@@ -1000,7 +1000,7 @@ script Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV {
     applymovement(3, walkinplaceright)
     waitmovement(0)
     msgbox(format("You two are coming with us. Like it or not.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}What?"))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}What?"))
     closemessage
     applymovement(4, SusMan1ApproachingAkihiko)
     waitmovement(0)
@@ -1009,7 +1009,7 @@ script Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV {
     applymovement(4, SusMan1StepBack)
     waitmovement(0)
     delay(20)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}No way! Who even are you!?"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}No way! Who even are you!?"))
     closemessage
     setspeaker("Man In Black 1")
     applymovement(4, walkinplaceright)
@@ -1030,7 +1030,7 @@ script Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV {
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement
     fadescreenswapbuffers(FADE_FROM_BLACK)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(!)\n
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(!)\n
     (Sanada won.)\p
     (His battling skill is quite good.)"))
     closemessage
@@ -1048,7 +1048,7 @@ script Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV {
     applymovement(19, facedown)
     applymovement(6, facedown)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh?"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Huh?"))
     closemessage
     setspeaker("Man In Black 2")
     applymovement(3, walkinplaceright)
@@ -1086,7 +1086,7 @@ script Route2_Eventscript_AkishinjiAsleepMitsuruPOV {
     applymovement(3, walkright)
     waitmovement(0)
     delay(20)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Now! Inteleon, Vulpix!"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Now! Inteleon, Vulpix!"))
     closemessage
     fadescreenswapbuffers(FADE_TO_BLACK)
     delay(20)
@@ -1133,7 +1133,7 @@ script Route2_Eventscript_MitsuruAppearsMitsuruPOV {
     playse(SE_EXIT)
     waitse
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}...\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}...\p
     Inteleon, let's get these two out of here first.\p
     The ice can only hold them off for so long."))
     closemessage
@@ -1155,7 +1155,7 @@ script Route2_Eventscript_MitsuruAppearsMitsuruPOV {
 
 script Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting {
     lock
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(There's still time before the promised hour.)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(There's still time before the promised hour.)\p
     (Maybe I can wander around the town to gather more information.)"))
     closemessage
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)

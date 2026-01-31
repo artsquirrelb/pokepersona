@@ -200,7 +200,7 @@ script MansionsGarden_Eventscript_VSFennekin {
     waitse
     special(HealPlayerParty)
     msgbox(format("{SPEAKER NAME_KKN}Phew. Thanks to you, this Fennekin finally calmed down.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Where did it come from? We don't normally see Fennekin around here.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Where did it come from? We don't normally see Fennekin around here.\p
     {SPEAKER NAME_KKN}{DESTROY_MUGSHOT}It managed to sneak up into the east hall and made a mess of the place."))
     closemessage
     delay(20)
@@ -214,7 +214,7 @@ script MansionsGarden_Eventscript_VSFennekin {
     release
     delay(30)
     msgbox(format("{SPEAKER NAME_KKN}Looks like it wants to go with you?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Good timing. I do want a fire type in my team."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Good timing. I do want a fire type in my team."))
     closemessage
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     fwdtime(23, 0)
@@ -243,7 +243,7 @@ script MansionsGarden_Eventscript_Fennekin {
     msgbox(format("Touch Fennekin with the Pokéball?"), MSGBOX_YESNO)
     closemessage
     if(var(VAR_RESULT) == TRUE){
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Now that I get a closer look at it...\p
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Now that I get a closer look at it...\p
         It seems like there are sparkles around this Fennekin?)"), MSGBOX_YESNO)
         closemessage
         if (var(VAR_RESULT) == TRUE){
@@ -251,7 +251,7 @@ script MansionsGarden_Eventscript_Fennekin {
             call (MansionsGarden_Eventscript_GetShinyFennekin)
         }
         else{
-            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Oh, it's just dust.)"))
+            msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Oh, it's just dust.)"))
             closemessage
             call (MansionsGarden_Eventscript_GetNormalFennekin)
         }
@@ -320,7 +320,7 @@ script MustGetFennekin {
     lock
     applymovement(LOCALID_PLAYER, moves(walk_left, face_down))
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(I should let Fennekin join the team. It'll be a great help for my mission.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(I should let Fennekin join the team. It'll be a great help for my mission.)"))
     closemessage
     release
     end
@@ -333,9 +333,9 @@ script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
     waitmovement(0)
     delay(30)
     msgbox(format("{SPEAKER NAME_KKN}I guess no one managed to stop you at all.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Kikuno...\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Kikuno...\p
     {SPEAKER NAME_KKN}{DESTROY_MUGSHOT}Young Lady, how about I join you on your mission?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}You know I won't agree to that.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}You know I won't agree to that.\p
     It's too dangerous and I can't guarantee your safety.\p
     {SPEAKER NAME_KKN}{DESTROY_MUGSHOT}Hahaha, it's funny how you say the exact same thing as everyone who tried to stop you."))
     closemessage
@@ -345,7 +345,7 @@ script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
     applymovement(KIKUNO, moves(walk_down*2, face_up))
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_KKN}I guess this is goodbye then.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Yes... Please take care, Kikuno.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Yes... Please take care, Kikuno.\p
     {SPEAKER NAME_KKN}{DESTROY_MUGSHOT}You too, Young Lady."))
     closemessage
     delay(30)
@@ -355,7 +355,7 @@ script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
     msgbox(format("{SPEAKER NAME_KKN}Oh right.\p
     I'm not sure if you have heard, but in case you need some healing, Nurse Sawa has returned from her maternity leave.\p
     She should be at the Training House.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see. Thank you for informing me.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see. Thank you for informing me.\p
     {SPEAKER NAME_KKN}{DESTROY_MUGSHOT}My pleasure."))
     closemessage
     delay(10)
@@ -367,7 +367,7 @@ script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
     waitmovement(0)
     special(RemoveCameraObject)
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(I should get going now.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(I should get going now.)"))
     closemessage
     setrespawn(HEAL_LOCATION_MANSIONS_GARDEN)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
@@ -435,7 +435,7 @@ script MansionsGarden_Eventscript_MitsuruPrologueStart {
     lock
     faceplayer
     if (var(VAR_TEMP_0) == 1){
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}.......{PAUSE 60}
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}.......{PAUSE 60}
         Could we talk later? I still want to stay here alone for a while."))
         closemessage
         release
@@ -443,26 +443,26 @@ script MansionsGarden_Eventscript_MitsuruPrologueStart {
     }
     else
     {
-        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}So... This is your uh... house? Mansion? Land??\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}To be more exact, it's my family's mansion.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Woah.............\p
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}So... This is your uh... house? Mansion? Land??\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}To be more exact, it's my family's mansion.\p
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Woah.............\p
         Why aren't you going in, by the way? The gate's locked and no one's home?\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}There's always somebody home. Although my Father may have been at the company in Paulownia City at the moment.\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}There's always somebody home. Although my Father may have been at the company in Paulownia City at the moment.\p
         I'm not going in because...\p
-        {CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Well, you may call it “resolve”, I suppose?\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I've made a promise to myself to never waver until my mission is completed.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Oh, I get it. It's like visiting home would make you reluctant to travel far from home again.\p
-        {CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Although in my case, it'd strenghten my resolve further.\p
+        {CREATE MUGSHOT_M EMOTE_SMILE}Well, you may call it “resolve”, I suppose?\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I've made a promise to myself to never waver until my mission is completed.\p
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Oh, I get it. It's like visiting home would make you reluctant to travel far from home again.\p
+        {CREATE MUGSHOT_A EMOTE_SERIOUS}Although in my case, it'd strenghten my resolve further.\p
         'Cause you know, I want my life before the explosion back.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}But enough about me, I actually want to ask you something.\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'm all ears.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}How did you know about me and Shinji?{PAUSE_UNTIL_PRESS}\n
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I mean, we're just 2 random orphan kids.\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}.........."))
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It's a long story. Do you still want to listen? {COLOR GREEN}(Begin Mitsuru's prologue quest?)"), MSGBOX_YESNO)
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}But enough about me, I actually want to ask you something.\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I'm all ears.\p
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}How did you know about me and Shinji?{PAUSE_UNTIL_PRESS}\n
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}I mean, we're just 2 random orphan kids.\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}.........."))
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It's a long story. Do you still want to listen? {COLOR GREEN}(Begin Mitsuru's prologue quest?)"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == FALSE)
         {
-            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}......... {PAUSE 60}Very well."))
+            msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}......... {PAUSE 60}Very well."))
             closemessage
             playse(SE_M_STAT_DECREASE)
             applymovement(27, pointdown3)
@@ -478,7 +478,7 @@ script MansionsGarden_Eventscript_MitsuruPrologueStart {
             playse(SE_SHINY)
             applymovement(27, pointup3)
             waitmovement
-            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Very well."))
+            msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Very well."))
             closemessage
             fadescreenswapbuffers(FADE_TO_BLACK)
             switchmaincharacter

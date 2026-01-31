@@ -603,11 +603,11 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_3:
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_4:
 # 169 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Please wait, Nebe-san.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Please wait, Nebe-san.$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_5:
 # 173 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I'm very sorry for your loss.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I'm very sorry for your loss.\p"
 	.string "I'd love to repay your kindness back\n"
 	.string "then at the cave so is there anything I\l"
 	.string "could help?\p"

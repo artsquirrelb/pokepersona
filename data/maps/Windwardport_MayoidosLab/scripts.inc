@@ -2628,7 +2628,7 @@ Windwardport_MayoidosLab_WachiGettingScolded_Text_1:
 
 Windwardport_MayoidosLab_WachiGettingScolded_Text_2:
 # 557 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Is there something wrong, Professor\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Is there something wrong, Professor\n"
 	.string "Mayoido?$"
 
 Windwardport_MayoidosLab_WachiGettingScolded_Text_3:
@@ -2639,26 +2639,26 @@ Windwardport_MayoidosLab_WachiGettingScolded_Text_3:
 	.string "run away.\p"
 	.string "We only managed to secure 2 of them at\n"
 	.string "the moment.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see.\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see.\n"
 	.string "What about the items?\p"
 	.string "{SPEAKER NAME_PROF}{DESTROY_MUGSHOT}All done and functioning well.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Magnifique.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Magnifique.$"
 
 Windwardport_MayoidosLab_WachiGettingScolded_Text_4:
 # 570 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Oh right, I suppose introduction is due.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Oh right, I suppose introduction is due.$"
 
 Windwardport_MayoidosLab_WachiGettingScolded_Text_5:
 # 573 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Professor, this is Akihiko Sanada-kun\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Professor, this is Akihiko Sanada-kun\n"
 	.string "and Shinjiro Aragaki-kun.\p"
 	.string "They're my companions for the mission.\p"
 	.string "Sanada-kun, Aragaki-kun, this is\n"
 	.string "Professor Mayoido.\p"
 	.string "I did field works for her a few years\n"
 	.string "ago.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Please to meet you!\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Same here.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Please to meet you!\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Same here.\p"
 	.string "{SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Please to meet you too, Sanada-kun and\n"
 	.string "Aragaki-kun.$"
 
@@ -2668,7 +2668,7 @@ Windwardport_MayoidosLab_WachiGettingScolded_Text_6:
 
 Windwardport_MayoidosLab_WachiGettingScolded_Text_7:
 # 591 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Professor?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Professor?\p"
 	.string "{SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Ah, don't mind me.{PAUSE_UNTIL_PRESS}\n"
 	.string "Let's get you three the Pokémon and\l"
 	.string "the items now, shall we?$"
@@ -2678,41 +2678,41 @@ Windwardport_MayoidosLab_Get2ndStarter_Text_0:
 	.string "{SPEAKER NAME_PROF}Here's the two Pokémon we have left in\n"
 	.string "the lab. My apologies again for the lack\l"
 	.string "of choices.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It's fine, Prof. I appreciate it all the\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It's fine, Prof. I appreciate it all the\n"
 	.string "same.$"
 
 Windwardport_MayoidosLab_Get2ndStarter_Text_1:
 # 613 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}You two can go ahead. I suppose you\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}You two can go ahead. I suppose you\n"
 	.string "need them more than me.$"
 
 Windwardport_MayoidosLab_Get2ndStarter_Text_2:
 # 618 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Really?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Don't mind if I do then.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Really?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Don't mind if I do then.$"
 
 Windwardport_MayoidosLab_Get2ndStarter_Text_3:
 # 626 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Now, now, good boy, come here.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Now, now, good boy, come here.$"
 
 Windwardport_MayoidosLab_Get2ndStarter_Text_4:
 # 636 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Your turn, Aki. Don't keep {COLOR GREEN}Grookey{COLOR 2}\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Your turn, Aki. Don't keep {COLOR GREEN}Grookey{COLOR 2}\n"
 	.string "waiting.$"
 
 Windwardport_MayoidosLab_MustGetGrookey_Text_0:
 # 657 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(I should pick up {COLOR GREEN}Grookey{COLOR 2}.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(I should pick up {COLOR GREEN}Grookey{COLOR 2}.)$"
 
 Windwardport_MayoidosLab_Mitsuru_Text_0:
 # 665 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Go ahead, Sanada-kun. {COLOR GREEN}Grookey{COLOR 2} seems to\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Go ahead, Sanada-kun. {COLOR GREEN}Grookey{COLOR 2} seems to\n"
 	.string "be very excited to have you as its\l"
 	.string "trainer.$"
 
 Windwardport_MayoidosLab_Shinjiro_Text_0:
 # 674 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What are you waiting for, Aki? Hurry up\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}What are you waiting for, Aki? Hurry up\n"
 	.string "so we can move along.$"
 
 Windwardport_MayoidosLab_Mayoido_PrePickGrookey_Text_0:
@@ -2733,19 +2733,19 @@ Windwardport_MayoidosLab_Grookey_Text_1:
 
 Windwardport_MayoidosLab_Grookey_Text_2:
 # 702 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Huh? Is that some sparkling dust\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Huh? Is that some sparkling dust\n"
 	.string "around it?)$"
 
 Windwardport_MayoidosLab_Grookey_Text_3:
 # 708 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Nah, my eyes were just playing tricks on\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Nah, my eyes were just playing tricks on\n"
 	.string "me.$"
 
 Windwardport_MayoidosLab_Grookey_Text_4:
 # 732 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{COLOR GREEN}Grookey{COLOR 2} excitedly went into the\n"
 	.string "Pokéball.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Welcome to the team, Grookey.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Welcome to the team, Grookey.$"
 
 Windwardport_MayoidosLab_ReceiveDexNav_Text_0:
 # 750 "data/maps/Windwardport_MayoidosLab/scripts.pory"
@@ -2759,7 +2759,7 @@ Windwardport_MayoidosLab_ReceiveDexNav_Text_1:
 
 Windwardport_MayoidosLab_ReceiveDexNav_Text_2:
 # 758 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Woah...{PAUSE_UNTIL_PRESS}\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Woah...{PAUSE_UNTIL_PRESS}\n"
 	.string "We can get all these stuff for free?\p"
 	.string "I'm pretty sure the {COLOR 7}DexNav{COLOR 2} alone costs\n"
 	.string "a fortune...\p"
@@ -2768,7 +2768,7 @@ Windwardport_MayoidosLab_ReceiveDexNav_Text_2:
 	.string "Let's just say it's a fair trade.\p"
 	.string "I, more than anyone, want Kirijo-kun's\n"
 	.string "mission to be a success.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Rest assured, Prof. I'll do whatever it\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Rest assured, Prof. I'll do whatever it\n"
 	.string "takes. Even if it's risking my life.$"
 
 Windwardport_MayoidosLab_ReceiveDexNav_Text_3:
@@ -2783,27 +2783,27 @@ Windwardport_MayoidosLab_ReceiveDexNav_Text_3:
 	.string "you were hand-picked by Kirijo-kun.\p"
 	.string "There'll be rewards for your\n"
 	.string "contribution, of course.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I appreciate your help, Prof. Mayoido.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}We'll take our leaves now. Please take\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I appreciate your help, Prof. Mayoido.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}We'll take our leaves now. Please take\n"
 	.string "care.$"
 
 Windwardport_MayoidosLab_ContinueGoingThroughRoute4_Text_0:
 # 796 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Now that we received our package, we\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Now that we received our package, we\n"
 	.string "should continue going west of the city\l"
 	.string "for Goldenwings Mt.\p"
 	.string "Is there any question?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}... {PAUSE 30}Nope.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_PENSIVE}... {PAUSE 60}Me neither.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}..... {PAUSE 60}Very well then, let's get going.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}... {PAUSE 30}Nope.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_PENSIVE}... {PAUSE 60}Me neither.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}..... {PAUSE 60}Very well then, let's get going.$"
 
 Windwardport_MayoidosLab_ContinueGoingThroughRoute4_Text_1:
 # 810 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}She would even risk her life, she said...\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_PENSIVE}I wonder what she's fighting for.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_PENSIVE}She would even risk her life, she said...\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_PENSIVE}I wonder what she's fighting for.\p"
 	.string "I'm sure if Miki is in danger I'll\n"
 	.string "definitely risk my life to save her.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}I guess we'll know when we reach\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}I guess we'll know when we reach\n"
 	.string "Goldenwings Mt.\p"
 	.string "Let's go.$"
 
@@ -2817,7 +2817,7 @@ Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_0:
 
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_1:
 # 846 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Certainly. How can we help you?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Certainly. How can we help you?\p"
 	.string "{SPEAKER NAME_PROF}{DESTROY_MUGSHOT}As you've known, the Pokémon we've\n"
 	.string "worked so hard to prepared for your\l"
 	.string "journey have run away.\p"
@@ -2847,7 +2847,7 @@ Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_3:
 
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_4:
 # 869 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Understood. We'll keep an eye out for\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Understood. We'll keep an eye out for\n"
 	.string "them.\p"
 	.string "{SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Perfect, our staff will also actively\n"
 	.string "look for them as well and will update\l"

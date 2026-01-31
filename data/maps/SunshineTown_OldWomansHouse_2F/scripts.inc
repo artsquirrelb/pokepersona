@@ -177,11 +177,11 @@ SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Questwa
 
 SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_CheckIfReward_Text_0:
 # 32 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}(Riolu is asleep. We should let it be.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}(Riolu is asleep. We should let it be.)$"
 
 SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_CheckIfReward_Text_1:
 # 36 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}(Riolu is asleep. I should let it be.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}(Riolu is asleep. I should let it be.)$"
 
 SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_CheckIfActive_Text_0:
 # 59 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
@@ -189,7 +189,7 @@ SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_CheckIf
 
 SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene_Text_0:
 # 72 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Alright, lil' guy. If you're bored, come\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Alright, lil' guy. If you're bored, come\n"
 	.string "at me!$"
 
 SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene_Text_1:
@@ -199,16 +199,16 @@ SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscen
 
 SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene_Text_2:
 # 81 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}I guess that should do it. Let's return\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}I guess that should do it. Let's return\n"
 	.string "to the grandma.$"
 
 SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene_Text_3:
 # 86 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I suppose a battle would tire you out.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I suppose a battle would tire you out.$"
 
 SunshineTown_OldWomansHouse_2F_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_Riolu_Cutscene_Text_4:
 # 95 "data/maps/SunshineTown_OldWomansHouse_2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That should do it. Time to report to the\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}That should do it. Time to report to the\n"
 	.string "grandma.$"
 
 SunshineTown_OldWomansHouse_2F_Eventscript_Notebook_Text_0:

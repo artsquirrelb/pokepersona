@@ -66,7 +66,7 @@ GIRL_1F::
 
 Restroom1F_Text_0:
 # 7 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL} It's the restroom. I'm good for now.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL} It's the restroom. I'm good for now.$"
 
 TrashcanFull_Text_0:
 # 15 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
@@ -80,7 +80,7 @@ BOY_1_1F_Text_1:
 # 24 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	.string "I'm playing a game called Persona 3. I'm\n"
 	.string "hooked.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE} Oh, Miki loves that game as well. She\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE} Oh, Miki loves that game as well. She\n"
 	.string "talks about it all the time.$"
 
 BOY_2_1F_Text_0:
@@ -91,7 +91,7 @@ BOY_2_1F_Text_1:
 # 35 "data/maps/SunshineOrphanage1FHallway/scripts.pory"
 	.string "You and Miki are so lucky. I wish I could\n"
 	.string "also get adopted along with my big sis...\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD} ...\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD} ...\p"
 	.string "Sorry, I don't really know what to say...$"
 
 GIRL_1F_Text_0:
@@ -106,4 +106,4 @@ GIRL_1F_Text_1:
 	.string "too?\p"
 	.string "Is this because he's sick all the\n"
 	.string "time...?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD} I wish I had the answer to that...$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD} I wish I had the answer to that...$"

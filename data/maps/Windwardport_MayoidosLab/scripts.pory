@@ -554,28 +554,28 @@ script Windwardport_MayoidosLab_WachiGettingScolded {
     delay(4)
     applymove(A_WWH, moves(walk_up, face_right))
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Is there something wrong, Professor Mayoido?"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Is there something wrong, Professor Mayoido?"))
     closemessage
     playse(SE_M_BUBBLE)
     applymove(MAYOIDO_WWH, moves(emote_sweat))
     msgbox(format("{SPEAKER NAME_PROF}Apologies, Kirijo-kun.\n
     We had a little accident and most of the Pokémon we'd prepared for your mission run away.\p
     We only managed to secure 2 of them at the moment.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see.\n What about the items?\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see.\n What about the items?\p
     {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}All done and functioning well.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Magnifique."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Magnifique."))
     closemessage
     applymove(M_WWH, moves(face_down, delay_16, delay_16, delay_16, face_up, delay_16, delay_16, delay_16, face_right))
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Oh right, I suppose introduction is due."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Oh right, I suppose introduction is due."))
     closemessage
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Professor, this is Akihiko Sanada-kun and Shinjiro Aragaki-kun.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Professor, this is Akihiko Sanada-kun and Shinjiro Aragaki-kun.\p
     They're my companions for the mission.\p
     Sanada-kun, Aragaki-kun, this is Professor Mayoido.\p
     I did field works for her a few years ago.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Please to meet you!\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Same here.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Please to meet you!\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Same here.\p
     {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Please to meet you too, Sanada-kun and Aragaki-kun."))
     closemessage
     delay(30)
@@ -588,7 +588,7 @@ script Windwardport_MayoidosLab_WachiGettingScolded {
     playse(SE_PIN)
     applymove(M_WWH, moves(emote_question_mark))
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Professor?\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Professor?\p
     {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Ah, don't mind me.{PAUSE_UNTIL_PRESS}\n
     Let's get you three the Pokémon and the items now, shall we?"))
     closemessage
@@ -604,26 +604,26 @@ script Windwardport_MayoidosLab_Get2ndStarter {
     applymoveplayer(moves(walk_slow_up*3))
     delay(30)
     msgbox(format("{SPEAKER NAME_PROF}Here's the two Pokémon we have left in the lab. My apologies again for the lack of choices.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It's fine, Prof. I appreciate it all the same."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It's fine, Prof. I appreciate it all the same."))
     closemessage
     delay(30)
     applymove(M_WWH, moves(walk_down, face_up))
     applymoveplayer(moves(walk_down))
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}You two can go ahead. I suppose you need them more than me."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}You two can go ahead. I suppose you need them more than me."))
     closemessage
     applymovement(A_WWH, moves(face_down))
     delay(4)
     applymove(S_WWH, moves(face_down))
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Really?\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Don't mind if I do then."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Really?\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Don't mind if I do then."))
     closemessage
     delay(20)
     applymoveplayer(moves(walk_up), 1)
     applymove(A_WWH, moves(face_up))
     applymove(S_WWH, moves(walk_up))
     delay(30)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Now, now, good boy, come here."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Now, now, good boy, come here."))
     closemessage
     playmoncry(SPECIES_OSHAWOTT, 0)
     applymove(OSHA_WWH, moves(emote_happy, jump_in_place_down))
@@ -633,7 +633,7 @@ script Windwardport_MayoidosLab_Get2ndStarter {
     removeobject(OSHA_WWH)
     delay(30)
     applymove(S_WWH, moves(walk_down, face_right))
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Your turn, Aki. Don't keep {COLOR GREEN}Grookey{COLOR 2} waiting."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Your turn, Aki. Don't keep {COLOR GREEN}Grookey{COLOR 2} waiting."))
     closemessage
     applymovement(S_WWH, moves(walk_down, face_up))
     checkplayergender
@@ -654,7 +654,7 @@ script Windwardport_MayoidosLab_MustGetGrookey {
     lock
     moveobjecttocoords(MC, 10, 6, DIR_NORTH)
     waitmovement
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(I should pick up {COLOR GREEN}Grookey{COLOR 2}.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(I should pick up {COLOR GREEN}Grookey{COLOR 2}.)"))
     release
     end
 }
@@ -662,7 +662,7 @@ script Windwardport_MayoidosLab_MustGetGrookey {
 script Windwardport_MayoidosLab_Mitsuru {
     lock
     faceplayer
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Go ahead, Sanada-kun. {COLOR GREEN}Grookey{COLOR 2} seems to be very excited to have you as its trainer."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Go ahead, Sanada-kun. {COLOR GREEN}Grookey{COLOR 2} seems to be very excited to have you as its trainer."))
     applymove(M_WWH, moves(face_original_direction))
     release
     end
@@ -671,7 +671,7 @@ script Windwardport_MayoidosLab_Mitsuru {
 script Windwardport_MayoidosLab_Shinjiro {
     lock
     faceplayer
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What are you waiting for, Aki? Hurry up so we can move along."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}What are you waiting for, Aki? Hurry up so we can move along."))
     applymove(S_WWH, moves(face_original_direction))
     release
     end
@@ -699,13 +699,13 @@ script Windwardport_MayoidosLab_Grookey {
         end
     }
     else{
-        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Huh? Is that some sparkling dust around it?)"), MSGBOX_YESNO)
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Huh? Is that some sparkling dust around it?)"), MSGBOX_YESNO)
         if (var(VAR_RESULT)){
             closemessage
             givemon(SPECIES_GROOKEY, 12, ITEM_NONE, ITEM_POKE_BALL, NATURE_ADAMANT, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31, shinyMode = SHINY_MODE_ALWAYS)
         }
         else{
-            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Nah, my eyes were just playing tricks on me."))
+            msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Nah, my eyes were just playing tricks on me."))
             closemessage
             givemon(SPECIES_GROOKEY, 12, ITEM_NONE, ITEM_POKE_BALL, NATURE_ADAMANT, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31, shinyMode = SHINY_MODE_NEVER)
         }
@@ -730,7 +730,7 @@ script Windwardport_MayoidosLab_Grookey {
         removeobject(GROO_WWH)
         playfanfare(MUS_OBTAIN_ITEM)
         msgbox(format("{COLOR GREEN}Grookey{COLOR 2} excitedly went into the Pokéball.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Welcome to the team, Grookey."))
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Welcome to the team, Grookey."))
         closemessage
         goto(Windwardport_MayoidosLab_ReceiveDexNav)
     }
@@ -755,13 +755,13 @@ script Windwardport_MayoidosLab_ReceiveDexNav {
     and {COLOR 7}Pokémon Box Link{COLOR 2}, for each of you."))
     call(EventScript_ShowHelpDexNav)
     call(EventScript_ShowHelpBoxLink)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Woah...{PAUSE_UNTIL_PRESS}\n
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Woah...{PAUSE_UNTIL_PRESS}\n
     We can get all these stuff for free?\p
     I'm pretty sure the {COLOR 7}DexNav{COLOR 2} alone costs a fortune...\p
     {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}There's no free meal in this world, my young guy.\p
     Let's just say it's a fair trade.\p
     I, more than anyone, want Kirijo-kun's mission to be a success.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Rest assured, Prof. I'll do whatever it takes. Even if it's risking my life."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Rest assured, Prof. I'll do whatever it takes. Even if it's risking my life."))
     closemessage
     playse(SE_PIN)
     applymovement(S_WWH, moves(emote_exclamation_mark, face_right))
@@ -774,8 +774,8 @@ script Windwardport_MayoidosLab_ReceiveDexNav {
     Anyway, that's all I have for you right now but feel free to help out in the lab as you usually do, Kirijo-kun.\p
     Sanada-kun and Aragaki-kun are welcomed to as well, considering that you were hand-picked by Kirijo-kun.\p
     There'll be rewards for your contribution, of course.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I appreciate your help, Prof. Mayoido.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}We'll take our leaves now. Please take care."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I appreciate your help, Prof. Mayoido.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}We'll take our leaves now. Please take care."))
     closemessage
     setvar(VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY)
     additem(ITEM_ESCAPE_ROPE)
@@ -793,11 +793,11 @@ script Windwardport_MayoidosLab_ContinueGoingThroughRoute4 {
     addobject(S_WWH)
     applymoveplayer(walkdown, 1)
     applymove(M_WWH, moves(walk_down*2, face_up))
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Now that we received our package, we should continue going west of the city for Goldenwings Mt.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Now that we received our package, we should continue going west of the city for Goldenwings Mt.\p
     Is there any question?\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}... {PAUSE 30}Nope.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_PENSIVE}... {PAUSE 60}Me neither.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}..... {PAUSE 60}Very well then, let's get going."))
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}... {PAUSE 30}Nope.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_PENSIVE}... {PAUSE 60}Me neither.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}..... {PAUSE 60}Very well then, let's get going."))
     closemessage
     delay(30)
     applymove(M_WWH, moves(face_down, delay_8, set_invisible))
@@ -807,10 +807,10 @@ script Windwardport_MayoidosLab_ContinueGoingThroughRoute4 {
     delay(40)
     playse(SE_M_BUBBLE)
     applymove(S_WWH, moves(emote_pensive))
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}She would even risk her life, she said...\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_PENSIVE}I wonder what she's fighting for.\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_PENSIVE}She would even risk her life, she said...\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_PENSIVE}I wonder what she's fighting for.\p
     I'm sure if Miki is in danger I'll definitely risk my life to save her.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}I guess we'll know when we reach Goldenwings Mt.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}I guess we'll know when we reach Goldenwings Mt.\p
     Let's go."))
     closemessage
     setvar(VAR_CHAPTER_1_STATE, 9)
@@ -843,7 +843,7 @@ script Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart {
     msgbox(format("{SPEAKER NAME_PROF}Hello, my lovely children. The lab has been busy and we appreciate any help we can get.\p
     If you can spare the time, would you like to help us?"))
     checkplayergender
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Certainly. How can we help you?\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Certainly. How can we help you?\p
     {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}As you've known, the Pokémon we've worked so hard to prepared for your journey have run away.\p
     When you're travelling through the region, if you happen to see them, please secure them for us.\p
     They're the starter Pokémon in other regions and there's a special sparkle on each of them.\p
@@ -866,7 +866,7 @@ script Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart {
         closemessage
     }
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Understood. We'll keep an eye out for them.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Understood. We'll keep an eye out for them.\p
     {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Perfect, our staff will also actively look for them as well
     and will update any information they've found in the computer over there."))
     closemessage

@@ -856,25 +856,25 @@ MenRunToKobayashi:
 
 SunshineOrphanage_Burning_Eventscript_AkihikoNoticesTheFire_Text_0:
 # 28 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Crap-\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Miki! Where's Miki?!\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}MIKI!!$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}Crap-\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Miki! Where's Miki?!\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}MIKI!!$"
 
 SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko_Text_0:
 # 46 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}AKI-!$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_MAD}AKI-!$"
 
 SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko_Text_1:
 # 53 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Teacher! Let me go!! I have to find\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}Teacher! Let me go!! I have to find\n"
 	.string "Miki!!\p"
 	.string "{SPEAKER NAME_KBYS}{DESTROY_MUGSHOT}It's too dangerous, Akihiko!$"
 
 SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko_Text_2:
 # 61 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}The fire is coming from the girls'\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_MAD}The fire is coming from the girls'\n"
 	.string "hallway!\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Fuck-!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}Fuck-!$"
 
 SunshineOrphanage_Burning_Eventscript_KobayashiLetsOutPokemon_Text_0:
 # 196 "data/maps/SunshineOrphanage_Burning/scripts.pory"
@@ -882,7 +882,7 @@ SunshineOrphanage_Burning_Eventscript_KobayashiLetsOutPokemon_Text_0:
 
 SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver_Text_0:
 # 215 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}What the-$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}What the-$"
 
 SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver_Text_1:
 # 225 "data/maps/SunshineOrphanage_Burning/scripts.pory"

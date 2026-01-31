@@ -7,10 +7,10 @@ script EventScript_CampGears{
         playse(SE_BOO)
         checkplayergender
         if(var(VAR_RESULT) == MALE){
-            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}(I can't set up a camp here.)"))
+            msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}(I can't set up a camp here.)"))
         }
         else{
-            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_GEEZ}(I shouldn't camp here.)"))
+            msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_GEEZ}(I shouldn't camp here.)"))
         }
         closemessage
     }
@@ -64,10 +64,10 @@ script EventScript_CampGears{
 script EventScript_CampGears_NotTheTime {
     checkplayergender
         if(var(VAR_RESULT) == MALE){
-            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Now is not the time for camping.)"))
+            msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Now is not the time for camping.)"))
         }
         else{
-            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Now is not the time for camping.)"))
+            msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Now is not the time for camping.)"))
         }
         closemessage
 }

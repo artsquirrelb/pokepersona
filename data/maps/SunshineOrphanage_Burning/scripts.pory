@@ -25,9 +25,9 @@ script SunshineOrphanage_Burning_Eventscript_AkihikoNoticesTheFire {
     applymovement(5, emoteexclamation)
     applymovement(4, KobayashiNotices)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Crap-\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Miki! Where's Miki?!\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}MIKI!!"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}Crap-\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Miki! Where's Miki?!\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}MIKI!!"))
     closemessage
     goto(SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko)
 }
@@ -43,7 +43,7 @@ script SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko {
     delay(8)
     applymovement(4, KobayashiBlocks)
     call(Eventscript_BlockShakeCamera)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}AKI-!"), MSGBOX_AUTOCLOSE)
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_MAD}AKI-!"), MSGBOX_AUTOCLOSE)
     closemessage
     delay(30)
     applymovement(LOCALID_PLAYER, AkihikoTriesToRunUp)
@@ -51,15 +51,15 @@ script SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko {
     waitmovement(0)
     delay(20)
     msgbox(format("
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Teacher! Let me go!! I have to find Miki!!\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}Teacher! Let me go!! I have to find Miki!!\p
     {SPEAKER NAME_KBYS}{DESTROY_MUGSHOT}It's too dangerous, Akihiko!"))
     call (SunshineOrphanage_Burning_Eventscript_ExplosionShakeCamera)
     call (SunshineOrphanage_Burning_Eventscript_EveryonePin)
     applymovement(5, faceup)
     waitmovement(0)
     delay(20)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}The fire is coming from the girls' hallway!\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Fuck-!"))
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_MAD}The fire is coming from the girls' hallway!\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}Fuck-!"))
     closemessage
     goto (SunshineOrphanage_Burning_Eventscript_SusMenAppear)
 }
@@ -212,7 +212,7 @@ script SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver{
     waitmoncry
     applymovement(8, AzumarillGetsReady)
     waitmovement(8)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}What the-"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}What the-"))
     closemessage
     applymovement(8, AzumarillPushesAkiShinjiToRiver)
     applymovement(5, AkiShinjiGettingPushed)

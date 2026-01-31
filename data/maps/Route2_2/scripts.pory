@@ -29,3 +29,14 @@ script Route2_2_Eventscript_Pansage {
     releaseall
     end
 }
+
+script Route2_2_Eventscript_Man {
+    lock
+    faceplayer
+    setspeaker("Fusahiro")
+    msgbox(format("If you're wondering, no. I'm not BGR.\p
+    I'm simply here to enjoy the peaceful evening.\p
+    Who might this BRG character be, though? They seem to be taking care of this little garden."))
+    release
+    end
+}

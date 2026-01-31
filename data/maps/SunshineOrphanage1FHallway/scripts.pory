@@ -4,7 +4,7 @@ mapscripts SunshineOrphanage1FHallway_MapScripts {
 script Restroom1F {
     lock
     msgbox(format (
-        "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}"
+        "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}"
         "It's the restroom. I'm good for now."
     ))
     release
@@ -22,7 +22,7 @@ script BOY_1_1F {
     setspeaker ("Kenta")
     msgbox(format (
         "I'm playing a game called Persona 3. I'm hooked.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}
         Oh, Miki loves that game as well. She talks about it all the time."))
     release
 }
@@ -33,7 +33,7 @@ script BOY_2_1F {
     setspeaker ("Jun")
     msgbox(format (
         "You and Miki are so lucky. I wish I could also get adopted along with my big sis...\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}
         ...\p Sorry, I don't really know what to say..."))
     release
 }
@@ -44,7 +44,7 @@ script GIRL_1F {
     setspeaker ("Ran")
     msgbox(format ("My future adoptive parents looked very wealthy.\p Why couldn't they adopt my brother too?\p
     Is this because he's sick all the time...?\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}
     I wish I had the answer to that..."))
     release
 }

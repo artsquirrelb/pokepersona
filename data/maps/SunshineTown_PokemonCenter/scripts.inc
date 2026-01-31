@@ -634,7 +634,7 @@ SunshineTown_PokemonCenter_Eventscript_MartLady_Text_1:
 
 SunshineTown_PokemonCenter_Eventscript_MartLady_Text_2:
 # 60 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Hello. We're here to pick up a package\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Hello. We're here to pick up a package\n"
 	.string "for Ms. Kobayashi.\p"
 	.string "It should have arrived today.$"
 
@@ -648,18 +648,18 @@ SunshineTown_PokemonCenter_Eventscript_MartLady_Text_4:
 
 SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_0:
 # 132 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}What's taking her so long??\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Yeah, it's been 10 minutes.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}What's taking her so long??\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Yeah, it's been 10 minutes.$"
 
 SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_1:
 # 137 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Is there anything wrong, ma'am-$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Is there anything wrong, ma'am-$"
 
 SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient_Text_2:
 # 150 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}W-What was that??\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Sounded like an explosion.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Shinji, let's go check.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}W-What was that??\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}Sounded like an explosion.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}Shinji, let's go check.$"
 
 SunshineTown_PokemonCenter_Eventscript_OldMan_Text_0:
 # 210 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
@@ -699,7 +699,7 @@ SunshineTown_PokemonCenter_Eventscript_Gentleman_Text_1:
 # 258 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "It sounds dangerous outside, you kids\n"
 	.string "should stay here.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Thank you, sir, but we'll be fine.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Thank you, sir, but we'll be fine.$"
 
 SunshineTown_PokemonCenter_Eventscript_Gentleman_Text_2:
 # 261 "data/maps/SunshineTown_PokemonCenter/scripts.pory"

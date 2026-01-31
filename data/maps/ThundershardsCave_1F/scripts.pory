@@ -35,7 +35,7 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     special(RemoveCameraObject)
     setspeaker("Big Man")
     msgbox(format("Rocks are fascinating, don't you agree, young lady?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}Huh? Oh- yes, I suppose they are."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}Huh? Oh- yes, I suppose they are."))
     closemessage
     playse(SE_SHINY)
     applymovement(7, emotemusic)
@@ -56,7 +56,7 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     If you visit my house in Coralport I can give you a new one."))
     setspeaker("Mr. Nebe")
     msgbox(format("Just ask around for Nebe's house when you get there. Coralport is very hospitable.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}I- Thank you. Nebe-san."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}I- Thank you. Nebe-san."))
     closemessage
     applymovement(7, moves(walk_down, walk_left*7, walk_down *4, set_invisible, walk_down))
     delay(8)
@@ -65,8 +65,8 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     removeobject(7)
     playse(SE_EXIT)
     waitse
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}.......\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(I should go on with my mission.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}.......\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(I should go on with my mission.)"))
     closemessage
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement
@@ -96,7 +96,7 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites2 {
     special(RemoveCameraObject)
     setspeaker("Big Man")
     msgbox(format("Rocks are fascinating, don't you agree, young lady?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}Huh? Oh- yes, I suppose they are."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}Huh? Oh- yes, I suppose they are."))
     closemessage
     playse(SE_SHINY)
     applymovement(7, emotemusic)
@@ -117,7 +117,7 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites2 {
     If you visit my house in Coralport I can give you a new one."))
     setspeaker("Mr. Nebe")
     msgbox(format("Just ask around for Nebe's house when you get there. Coralport is very hospitable.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}I- Thank you. Nebe-san."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}I- Thank you. Nebe-san."))
     closemessage
     applymovement(7, moves(walk_up, walk_left*7, walk_down *5, set_invisible, walk_down))
     delay(8)
@@ -127,8 +127,8 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites2 {
     waitse
     removeobject(7)
     setflag(FLAG_TEMP_1)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}.......\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(I should go on with my mission.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}.......\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(I should go on with my mission.)"))
     closemessage
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement

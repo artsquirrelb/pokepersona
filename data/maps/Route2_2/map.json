@@ -40,12 +40,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "script": "EventScript_StrengthBoulder",
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
@@ -57,12 +53,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "script": "EventScript_StrengthBoulder",
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -127,11 +119,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_2_2_ORAN",
       "script": "BerryTreeScript",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -144,11 +132,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_2_2_CHESTO",
       "script": "BerryTreeScript",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -161,11 +145,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_2_2_ASPEAR",
       "script": "BerryTreeScript",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
@@ -178,11 +158,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_2_2_SITRUS",
       "script": "BerryTreeScript",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PANSAGE)",
@@ -197,9 +173,7 @@
       "script": "Route2_2_Eventscript_Pansage",
       "flag": "FLAG_TEMP_1",
       "d": true,
-      "e": false,
-      "m": true,
-      "n": false
+      "m": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -226,6 +200,20 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_1",
+      "x": 19,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route2_2_Eventscript_Man",
+      "flag": "0",
+      "e": true
     }
   ],
   "warp_events": [

@@ -1159,7 +1159,7 @@ MansionsGarden_Eventscript_VSFennekin_Text_1:
 # 202 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KKN}Phew. Thanks to you, this Fennekin\n"
 	.string "finally calmed down.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Where did it come from? We don't\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Where did it come from? We don't\n"
 	.string "normally see Fennekin around here.\p"
 	.string "{SPEAKER NAME_KKN}{DESTROY_MUGSHOT}It managed to sneak up into the east\n"
 	.string "hall and made a mess of the place.$"
@@ -1167,7 +1167,7 @@ MansionsGarden_Eventscript_VSFennekin_Text_1:
 MansionsGarden_Eventscript_VSFennekin_Text_2:
 # 216 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KKN}Looks like it wants to go with you?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Good timing. I do want a fire type in my\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Good timing. I do want a fire type in my\n"
 	.string "team.$"
 
 MansionsGarden_Eventscript_Kikuno_Text_0:
@@ -1185,13 +1185,13 @@ MansionsGarden_Eventscript_Fennekin_Text_0:
 
 MansionsGarden_Eventscript_Fennekin_Text_1:
 # 246 "data/maps/MansionsGarden/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Now that I get a closer look at it...\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Now that I get a closer look at it...\p"
 	.string "It seems like there are sparkles around\n"
 	.string "this Fennekin?)$"
 
 MansionsGarden_Eventscript_Fennekin_Text_2:
 # 254 "data/maps/MansionsGarden/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Oh, it's just dust.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Oh, it's just dust.)$"
 
 MansionsGarden_Eventscript_Fennekin_Text_3:
 # 265 "data/maps/MansionsGarden/scripts.pory"
@@ -1209,17 +1209,17 @@ MansionsGarden_Eventscript_GetShinyFennekin_Text_1:
 
 MustGetFennekin_Text_0:
 # 323 "data/maps/MansionsGarden/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(I should let Fennekin join the team.\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(I should let Fennekin join the team.\n"
 	.string "It'll be a great help for my mission.)$"
 
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_0:
 # 335 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KKN}I guess no one managed to stop you at\n"
 	.string "all.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Kikuno...\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Kikuno...\p"
 	.string "{SPEAKER NAME_KKN}{DESTROY_MUGSHOT}Young Lady, how about I join you on\n"
 	.string "your mission?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}You know I won't agree to that.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}You know I won't agree to that.\p"
 	.string "It's too dangerous and I can't\n"
 	.string "guarantee your safety.\p"
 	.string "{SPEAKER NAME_KKN}{DESTROY_MUGSHOT}Hahaha, it's funny how you say the\n"
@@ -1229,7 +1229,7 @@ MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_0:
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_1:
 # 347 "data/maps/MansionsGarden/scripts.pory"
 	.string "{SPEAKER NAME_KKN}I guess this is goodbye then.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Yes... Please take care, Kikuno.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Yes... Please take care, Kikuno.\p"
 	.string "{SPEAKER NAME_KKN}{DESTROY_MUGSHOT}You too, Young Lady.$"
 
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_2:
@@ -1239,12 +1239,12 @@ MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_2:
 	.string "case you need some healing, Nurse Sawa\l"
 	.string "has returned from her maternity leave.\p"
 	.string "She should be at the Training House.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see. Thank you for informing me.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see. Thank you for informing me.\p"
 	.string "{SPEAKER NAME_KKN}{DESTROY_MUGSHOT}My pleasure.$"
 
 MansionsGarden_Eventscript_SayingGoodbyeToKikuno_Text_3:
 # 370 "data/maps/MansionsGarden/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(I should get going now.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(I should get going now.)$"
 
 MansionsGarden_Eventscript_TrainingHouse_Sign_Text_0:
 # 392 "data/maps/MansionsGarden/scripts.pory"
@@ -1267,50 +1267,50 @@ MansionsGarden_Eventscript_WaiterKouhei_Text_1:
 
 MansionsGarden_Eventscript_MitsuruPrologueStart_Text_0:
 # 438 "data/maps/MansionsGarden/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}.......{PAUSE 60} Could we talk later? I still want to\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}.......{PAUSE 60} Could we talk later? I still want to\n"
 	.string "stay here alone for a while.$"
 
 MansionsGarden_Eventscript_MitsuruPrologueStart_Text_1:
 # 446 "data/maps/MansionsGarden/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}So... This is your uh... house? Mansion?\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}So... This is your uh... house? Mansion?\n"
 	.string "Land??\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}To be more exact, it's my family's\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}To be more exact, it's my family's\n"
 	.string "mansion.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Woah.............\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Woah.............\p"
 	.string "Why aren't you going in, by the way? The\n"
 	.string "gate's locked and no one's home?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}There's always somebody home. Although\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}There's always somebody home. Although\n"
 	.string "my Father may have been at the company\l"
 	.string "in Paulownia City at the moment.\p"
 	.string "I'm not going in because...\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Well, you may call it “resolve”, I\n"
+	.string "{CREATE MUGSHOT_M EMOTE_SMILE}Well, you may call it “resolve”, I\n"
 	.string "suppose?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I've made a promise to myself to never\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I've made a promise to myself to never\n"
 	.string "waver until my mission is completed.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Oh, I get it. It's like visiting home\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Oh, I get it. It's like visiting home\n"
 	.string "would make you reluctant to travel far\l"
 	.string "from home again.\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Although in my case, it'd strenghten my\n"
+	.string "{CREATE MUGSHOT_A EMOTE_SERIOUS}Although in my case, it'd strenghten my\n"
 	.string "resolve further.\p"
 	.string "'Cause you know, I want my life before\n"
 	.string "the explosion back.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}But enough about me, I actually want to\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}But enough about me, I actually want to\n"
 	.string "ask you something.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'm all ears.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}How did you know about me and Shinji?{PAUSE_UNTIL_PRESS}\n"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I mean, we're just 2 random orphan kids.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}..........$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I'm all ears.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}How did you know about me and Shinji?{PAUSE_UNTIL_PRESS}\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}I mean, we're just 2 random orphan kids.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}..........$"
 
 MansionsGarden_Eventscript_MitsuruPrologueStart_Text_2:
 # 462 "data/maps/MansionsGarden/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It's a long story. Do you still want to\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It's a long story. Do you still want to\n"
 	.string "listen? {COLOR GREEN}(Begin Mitsuru's prologue\l"
 	.string "quest?)$"
 
 MansionsGarden_Eventscript_MitsuruPrologueStart_Text_3:
 # 465 "data/maps/MansionsGarden/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}......... {PAUSE 60}Very well.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}......... {PAUSE 60}Very well.$"
 
 MansionsGarden_Eventscript_MitsuruPrologueStart_Text_4:
 # 481 "data/maps/MansionsGarden/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Very well.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Very well.$"

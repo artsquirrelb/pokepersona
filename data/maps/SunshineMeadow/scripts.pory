@@ -118,10 +118,10 @@ script SunshineMeadow_Eventscript_PreMitsuruFirstBattleTalk {
         call(EventScript_ShowHelpChoice)
         setflag(FLAG_HELP_MAKE_CHOICE)
     }
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for our first battle?"), MSGBOX_YESNO)
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for our first battle?"), MSGBOX_YESNO)
     closemessage
     if (var(VAR_RESULT) == FALSE){
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}No worry. We still have time."))
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}No worry. We still have time."))
         closemessage
         end
     }
@@ -133,11 +133,11 @@ script SunshineMeadow_Eventscript_PreMitsuruFirstBattleTalk {
 script SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle {
     specialvar(VAR_RESULT, CountPartyNonEggMons)
     if (var(VAR_RESULT) < 3){
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It seems like you don't have at least 3 Pokémon in your party.\p
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It seems like you don't have at least 3 Pokémon in your party.\p
         I'd like us to have a fair battle. {COLOR RED}Do you still want to proceed at this state?"), MSGBOX_YESNO)
         closemessage
         if (var(VAR_RESULT) == FALSE){
-            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Well then, please come back later when you have at least 3 Pokémon in your party."))
+            msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Well then, please come back later when you have at least 3 Pokémon in your party."))
             closemessage
             release
             end
@@ -148,7 +148,7 @@ script SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle {
             waitse
             waitmovement(0)
             delay(20)
-            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Are you underestimating me because I'm a girl?"))
+            msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Are you underestimating me because I'm a girl?"))
             closemessage
             subvar(VAR_MITSURU_RELATIONSHIP_POINTS, 3) //current point: 97
             fwdtime(18, 0)
@@ -163,7 +163,7 @@ script SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle {
         waitse
         waitmovement(0)
         delay(20)
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Very well. Shall we start?"))
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Very well. Shall we start?"))
         closemessage
         addvar(VAR_MITSURU_RELATIONSHIP_POINTS, 3) //current point: 103
         fwdtime(18, 0)
@@ -198,15 +198,15 @@ script SunshineMeadow_Eventscript_StartingMitsuruFirstBattle {
     waitmovement(0)
     if (var(VAR_MITSURU_RELATIONSHIP_POINTS) == 97)
     {
-        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Shinji! You made it!\p
-        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}Damn, you two are already at it, huh?\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}You're just in time. We're starting."))
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Shinji! You made it!\p
+        {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}Damn, you two are already at it, huh?\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}You're just in time. We're starting."))
     }
     else
     {
-        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Shinji! You made it!\p
-        {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}Damn, you two are already at it, huh?\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Not quite, you're just in time. We're starting."))
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Shinji! You made it!\p
+        {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}Damn, you two are already at it, huh?\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Not quite, you're just in time. We're starting."))
     }
     closemessage
     applymovement(5, faceright)
@@ -219,19 +219,19 @@ script SunshineMeadow_Eventscript_StartingMitsuruFirstBattle {
     waitmovement(0)
     delay(20)
     if (var(VAR_MITSURU_RELATIONSHIP_POINTS) == 97){
-        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Not gonna use your Inteleon?\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}I already told you I wanted a fair fight.\p
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Not gonna use your Inteleon?\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}I already told you I wanted a fair fight.\p
         He's not mine. He's only here to watch over me.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Huh, if you said so.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Alright then. Let's see what you can do, Kirijo."))
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Huh, if you said so.\p
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Alright then. Let's see what you can do, Kirijo."))
     }
     else
     {
-        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Not gonna use your Inteleon?\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}It wouldn't be a fair fight if I do.\p
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Not gonna use your Inteleon?\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}It wouldn't be a fair fight if I do.\p
         Beside, he's not mine. He's only here to watch over me.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh, if you said so.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Alright then. Let's go, Kirijo."))
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Huh, if you said so.\p
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Alright then. Let's go, Kirijo."))
     }
     closemessage
     applymovement (LOCALID_PLAYER, walkdown)
@@ -283,7 +283,7 @@ script SunshineMeadow_Eventscript_ChoosingPartyForMitsuruFirstBattle {
 }
 
 script SunshineMeadow_Eventscript_MitsuruFirstBattleSelectCancel{
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Let's pick 3 Pokémon to fight. Kirijo is waiting.)"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Let's pick 3 Pokémon to fight. Kirijo is waiting.)"))
     closemessage
     goto (SunshineMeadow_Eventscript_ChoosingPartyForMitsuruFirstBattle)
 }
@@ -321,31 +321,31 @@ movement pointdown3 {
 }
 
 text SunshineMeadow_Eventscript_WonInMitsuruFirstBattlePointUp {
-    format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}To be honest, althought I didn't use my full team,
+    format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}To be honest, althought I didn't use my full team,
     it's still very impressive that you managed to beat me, Sanada-kun.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(I only managed to win by sheer luck...\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(I only managed to win by sheer luck...\p
     The way she ordered her Pokémons was so smart.\p
     It's... amazing.)")
 }
 
 text SunshineMeadow_Eventscript_WonInMitsuruFirstBattlePointDown {
-    format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}... Looks like my observation about your fighting prowess is correct.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Very well then, I hope we get along, Sanada-kun.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Same here.")
+    format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}... Looks like my observation about your fighting prowess is correct.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Very well then, I hope we get along, Sanada-kun.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Same here.")
 }
 
 text SunshineMeadow_Eventscript_LostInMitsuruFirstBattlePointUp {
-    format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That was a very good fight. I've learned better of how you battle.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Don't be discouraged. It's proof that you can still get so much more stronger.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(Damn... The way she ordered her Pokémons was so smart.\p
+    format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}That was a very good fight. I've learned better of how you battle.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Don't be discouraged. It's proof that you can still get so much more stronger.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(Damn... The way she ordered her Pokémons was so smart.\p
     It's... amazing.)")
 }
 
 text SunshineMeadow_Eventscript_LostInMitsuruFirstBattlePointDown {
-    format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}...\p
+    format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}...\p
     Do you understand now that you shouldn't have underestimated me?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Now please step down, I still have a battle to do with Aragaki-kun.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(Damn it... She was confident for a reason.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Now please step down, I still have a battle to do with Aragaki-kun.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(Damn it... She was confident for a reason.\p
     Her skill is... amazing.)")
 }
 
@@ -363,12 +363,12 @@ script SunshineMeadow_Eventscript_PostMitsuruFirstBattle {
     special(HealPlayerParty)
     playse(MUS_HEAL)
     waitse
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Alright, I've healed your party."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Alright, I've healed your party."))
     closemessage
     applymovement(1, MitsuruGoesBackAfterHealing)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}It's your turn now, Aragaki-kun.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Aight. I'll show you what I've got."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}It's your turn now, Aragaki-kun.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Aight. I'll show you what I've got."))
     closemessage
     applymovement(1, MitsuruGoesBackToStartBattle)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraGoesRight2)
@@ -379,9 +379,9 @@ script SunshineMeadow_Eventscript_PostMitsuruFirstBattle {
     applymovement(4, ShinjiroGoesToStartBattle)
     waitmovement(0)
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Are you ready?\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Whenever you are.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(I should also study more of how they fight.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Are you ready?\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Whenever you are.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(I should also study more of how they fight.)"))
     closemessage
     warpsilent(MAP_BLANK_MAP, 0, 0)
     fwdtime(19, 10)
@@ -400,8 +400,8 @@ script SunshineMeadow_Eventscript_PostMitsuruFirstBattleGameOver {
     special(SpawnCameraObject)
     applymovement(1, facedown)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Please take your place, Aragaki-kun.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Aight. I'll show you what I've got."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Please take your place, Aragaki-kun.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Aight. I'll show you what I've got."))
     closemessage
     applymovement(1, faceleft)
     applymovement(OBJ_EVENT_ID_CAMERA, walkinplacedown)
@@ -412,9 +412,9 @@ script SunshineMeadow_Eventscript_PostMitsuruFirstBattleGameOver {
     applymovement(4, ShinjiroGoesToStartBattle)
     waitmovement(0)
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Are you ready?\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Whenever you are.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(Let's see how Shinji fare against her.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Are you ready?\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Whenever you are.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(Let's see how Shinji fare against her.)"))
     closemessage
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     warpsilent(MAP_BLANK_MAP, 0, 0)
@@ -433,26 +433,26 @@ script SunshineMeadow_Eventscript_AkihikoOnFrame37 {
 
 script SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle{
     delay(30)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}Damn, you're tough.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I appreciate the compliment."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}Damn, you're tough.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I appreciate the compliment."))
     closemessage
     applymovement(4, ShinjiroGoesBackToPlacePostShinjiMitsuFirstBattle)
     applymovement(1, MitsuruGoesToTheCenterPostShinjiMitsuFirstBattle)
     applymovement(2, VulpixFollowsMitsuruPostShinjiMitsuFirstBattle)
     applymovement(LOCALID_PLAYER, CameraPansDownPostShinjiMitsuFirstBattle)
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Now that I get a clearer vision of how both of you fare in battle,\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Now that I get a clearer vision of how both of you fare in battle,\p
     I'll be counting on you, Sanada-kun and Aragaki-kun.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Huh?\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}You mean...\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Yes, both of you are coming with me. You two have great potential.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}YESSS!!\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Heh. Just you wait. I'll win against you in no time.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Same here!\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'm looking forward to that."))
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}Huh?\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}You mean...\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Yes, both of you are coming with me. You two have great potential.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_HAPPY}YESSS!!\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}Heh. Just you wait. I'll win against you in no time.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Same here!\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I'm looking forward to that."))
     closemessage
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Anyway, back to business.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Anyway, back to business.\p
     I suppose you both want to know further about those men.\p
     Let's go back to the house on Route 2, I'll explain our objective."))
     closemessage
@@ -517,14 +517,14 @@ movement CameraPansDownPostShinjiMitsuFirstBattle {
 script SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattleGameOver {
     fadenewbgm(MUS_CREDITS)
     delay(30)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}Damn, how are you so strong?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}...\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}It seems like neither of you are whom I can put my trust on."))
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}Damn, how are you so strong?\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}...\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}It seems like neither of you are whom I can put my trust on."))
     closemessage
     applymovement(1, faceright)
     waitmovement(0)
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}I'd hate to go back on my word\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}I'd hate to go back on my word\p
     but I'd like for us to go on our own ways.\p
     My apology for wasting your time.\p
     Farewell."))
@@ -574,14 +574,14 @@ script SunshineMeadow_Eventscript_JumpOverFence{
     checkplayergender
     if (var(VAR_RESULT) == FEMALE){
         if (var(VAR_MITSURUS_INTRO_STATE) > 100){
-            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(There's no reason to go over there right now.)\p
+            msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(There's no reason to go over there right now.)\p
             (The lab was already exploded and everything was burned away.)"))
             closemessage
             end
         }
         else{
             lock
-            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Here we go.)"))
+            msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(Here we go.)"))
             closemessage
             hidefollower
             hidefollowernpc
@@ -614,7 +614,7 @@ script SunshineMeadow_Eventscript_JumpOverFence{
     }
     else{
         if (var(VAR_AKIHIKOS_INTRO_STATE) < 100){
-            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Huh, there's a footprint here. Looks like someone climbed over the fence.)\p
+            msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Huh, there's a footprint here. Looks like someone climbed over the fence.)\p
             (I'd like to explore further but right now I have other more important matters to attend to.)"))
             closemessage
         }
@@ -627,14 +627,14 @@ script SunshineMeadow_Eventscript_MitsuruAproachTheFence {
     applymovement(LOCALID_PLAYER, moves(player_run_up*4, player_run_left*3, player_run_up, face_up))
     waitmovement(0)
     delay(20)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}-Huff- -Huff-\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Eventhough I ran with all my might, it's still too late.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_STRUGGLED}-Huff- -Huff-\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(Eventhough I ran with all my might, it's still too late.)"))
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_up*3, delay_16, delay_16, delay_16, walk_down*3))
     waitmovement(0)
     special(RemoveCameraObject)
     callnative(Script_CalculateTime)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}It's already {STR_VAR_2}:{STR_VAR_3}...\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}It's already {STR_VAR_2}:{STR_VAR_3}...\p
     Not very ideal to tackle a mountain cave.\p
     Not to mention, my Pokémon are all tired from the unexpected battles."))
     closemessage
@@ -643,7 +643,7 @@ script SunshineMeadow_Eventscript_MitsuruAproachTheFence {
     delay(20)
     applymovement(LOCALID_PLAYER, emotepensive)
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Yuuma-san said his grandson owned a house nearby in Route 2.)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(Yuuma-san said his grandson owned a house nearby in Route 2.)\p
     (He's travelling the region at the moment and I'm free to use it in the mean time.)\p
     (Alright then.)"))
     closemessage
@@ -656,7 +656,7 @@ script SunshineMeadow_Eventscript_MitsuruAproachTheFence {
 
 script SunshineMeadow_Eventscript_MitsuruPlansToJumpOverTheFence {
     lock
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(The cave entrance is just on the other side of the fences.)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(The cave entrance is just on the other side of the fences.)\p
     It's not too tall so I believe I can jump over them.)"))
     closemessage
     setvar(VAR_MITSURUS_INTRO_STATE, 12)
@@ -680,7 +680,7 @@ script SunshineMeadow_Eventscript_MitsuruLookingOverCollapsedCave {
     applymovement(LOCALID_PLAYER, visible)
     applymovement(1, invisible)
     waitmoncry
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}.......\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_STRUGGLED}.......\p
     I failed. They got away with all the evidences."))
     closemessage
     applymovement(LOCALID_PLAYER, facedown)
@@ -688,7 +688,7 @@ script SunshineMeadow_Eventscript_MitsuruLookingOverCollapsedCave {
     applymovement(2, moves(walk_down, walk_left, face_up))
     waitmovement
     delay(20)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}Let's regroup and plan our next move.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_STRUGGLED}Let's regroup and plan our next move.\p
     We also need to visit the Pokémon Center in Sunshine Town to heal the team."))
     closemessage
     playmoncry(SPECIES_VULPIX, CRY_MODE_NORMAL)
@@ -753,9 +753,9 @@ script SunshineMeadow_Eventscript_MitsuruPreparingForAkiMitsuFirstBattle {
     applymovement(4, invisible)
     applymovement(5, moves(player_run_up*2, walk_up*2))
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for our first battle?\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}You bet I am!\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Very well. Shall we start?"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for our first battle?\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}You bet I am!\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Very well. Shall we start?"))
     closemessage
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, walkright)
@@ -780,9 +780,9 @@ script SunshineMeadow_Eventscript_MitsuruPreparingForAkiMitsuFirstBattle {
     applymovement(LOCALID_PLAYER, AkiMitsuNoticeShinjiro)
     waitmovement
     delay(10)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Shinji! You made it!\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}Damn, you two are already at it, huh?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Not quite, you're just in time. We're starting."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Shinji! You made it!\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}Damn, you two are already at it, huh?\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Not quite, you're just in time. We're starting."))
     closemessage
     applymovement(5, faceright)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraPansBackUpToArenaMitsuruFirstFight)
@@ -793,11 +793,11 @@ script SunshineMeadow_Eventscript_MitsuruPreparingForAkiMitsuFirstBattle {
     applymovement(OBJ_EVENT_ID_CAMERA, walkup)
     waitmovement(0)
     delay(20)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Not gonna use your Inteleon?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}It wouldn't be a fair fight if I do.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Not gonna use your Inteleon?\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}It wouldn't be a fair fight if I do.\p
     Beside, he's not mine. He's only here to watch over me.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh, if you said so.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Alright then. Let's go, Kirijo."))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Huh, if you said so.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Alright then. Let's go, Kirijo."))
     closemessage
     applymovement (OBJ_EVENT_ID_CAMERA, walkdown)
     waitmovement(0)
@@ -813,7 +813,7 @@ script SunshineMeadow_Eventscript_ChoosingPartyForAkihikoFirstBattle {
     trainerbattle_selectmons(TRAINER_AKIHIKO_SUNSHINE_MEADOW, AkihikoFirstBattleDefeated, SunshineMeadow_Eventscript_ChoosingPartyForAkihikoFirstBattle_Cancel, SunshineMeadow_Eventscript_AkihikoFirstBattleResult, 3)
 }
 script SunshineMeadow_Eventscript_ChoosingPartyForAkihikoFirstBattle_Cancel{
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Let's pick 3 Pokémon to fight.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Let's pick 3 Pokémon to fight.)"))
     closemessage
     goto (SunshineMeadow_Eventscript_ChoosingPartyForAkihikoFirstBattle)
 }
@@ -836,15 +836,15 @@ script SunshineMeadow_Eventscript_AkihikoFirstBattleResult {
 }
 
 text SunshineMeadow_Eventscript_WonInAkihikoFirstBattle {
-    format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That was a very good fight. I've learned better of how you battle.\p
+    format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}That was a very good fight. I've learned better of how you battle.\p
     Don't be discouraged. It's proof that you can still get so much more stronger.\p
-    {CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}(He's indeed a very clever trainer. Good reflex and precision, however, a little too reckless.)")
+    {CREATE MUGSHOT_M EMOTE_CONFIDENT}(He's indeed a very clever trainer. Good reflex and precision, however, a little too reckless.)")
 }
 
 text SunshineMeadow_Eventscript_LostInAkihikoFirstBattle {
-    format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}To be honest, althought I didn't use my full team,
+    format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}To be honest, althought I didn't use my full team,
     it's still very impressive that you managed to beat me, Sanada-kun.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}It was so close, though. I only managed to win by sheer luck.")
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}It was so close, though. I only managed to win by sheer luck.")
 }
 
 script SunshineMeadow_Eventscript_PostAkihikoFirstBattle {
@@ -854,13 +854,13 @@ script SunshineMeadow_Eventscript_PostAkihikoFirstBattle {
     special(HealPlayerParty)
     playse(MUS_HEAL)
     waitse
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Alright, I've healed your party."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Alright, I've healed your party."))
     closemessage
     applymovement(LOCALID_PLAYER, moves(walk_right *2, face_down))
     waitmovement(0)
     special(SpawnCameraObject)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}It's your turn now, Aragaki-kun.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Aight. I'll show you what I've got."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}It's your turn now, Aragaki-kun.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Aight. I'll show you what I've got."))
     closemessage
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
     applymovement(LOCALID_PLAYER, MitsuruGoesBackToStartBattle)
@@ -871,8 +871,8 @@ script SunshineMeadow_Eventscript_PostAkihikoFirstBattle {
     applymovement(4, ShinjiroGoesToStartBattle)
     waitmovement(0)
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Are you ready?\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Whenever you are."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Are you ready?\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Whenever you are."))
     closemessage
     special(RemoveCameraObject)
     goto(SunshineMeadow_Eventscript_ChoosingPartyForShinjiroFirstBattle)
@@ -883,7 +883,7 @@ script SunshineMeadow_Eventscript_ChoosingPartyForShinjiroFirstBattle {
 }
 
 script SunshineMeadow_Eventscript_ChoosingPartyForShinjiroFirstBattle_Cancel{
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Let's pick 3 Pokémon to fight.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Let's pick 3 Pokémon to fight.)"))
     closemessage
     goto (SunshineMeadow_Eventscript_ChoosingPartyForShinjiroFirstBattle)
 }
@@ -896,7 +896,7 @@ script SunshineMeadow_Eventscript_ShinjiroFirstBattleResult {
     fwdtime(19, 00)
     specialvar(VAR_RESULT, GetBattleOutcome)
         if (var(VAR_RESULT) == B_OUTCOME_WON){
-            msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I appreciate the compliment."))
+            msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I appreciate the compliment."))
         }
         else{
             addvar(VAR_TEMP_0, 1)
@@ -910,7 +910,7 @@ script SunshineMeadow_Eventscript_ShinjiroFirstBattleResult {
             }
             else
             {
-                msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Well fought. Looks like I still have much to learn."))
+                msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Well fought. Looks like I still have much to learn."))
             }
         }
     closemessage
@@ -922,18 +922,18 @@ script SunshineMeadow_Eventscript_ShinjiroFirstBattleResult {
     waitmovement(LOCALID_PLAYER)
     applymovement(OBJ_EVENT_ID_CAMERA,  moves(walk_down*2))
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Now that I get a clearer vision of how both of you fare in battle,\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Now that I get a clearer vision of how both of you fare in battle,\p
     I'll be counting on you, Sanada-kun and Aragaki-kun.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Huh?\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}You mean...\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Yes, both of you are coming with me. You two have great potential.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}YESSS!!\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Heh. Just you wait. I'll win against you in no time.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Same here!\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'm looking forward to that."))
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}Huh?\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}You mean...\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Yes, both of you are coming with me. You two have great potential.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_HAPPY}YESSS!!\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}Heh. Just you wait. I'll win against you in no time.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Same here!\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I'm looking forward to that."))
     closemessage
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Anyway, back to business.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Anyway, back to business.\p
     I suppose you both want to know further about those men.\p
     Let's go back to the house on Route 2, I'll explain our objective."))
     closemessage
@@ -943,5 +943,36 @@ script SunshineMeadow_Eventscript_ShinjiroFirstBattleResult {
     fwdtime(19, 50)
     warpsilent(MAP_ROUTE2, 10, 13)
     waitstate
+    end
+}
+
+script SunshineMeadow_Eventscript_SchoolGirl {
+    lock
+    faceplayer
+    setspeaker("Fuwako")
+    msgbox(format("The air here is pretty cool in the evening, right?\p
+    I and my brother's Pokémon enjoy the scenery here too."))
+    release
+    end
+}
+
+script SunshineMeadow_Eventscript_LittleBoy {
+    lock
+    faceplayer
+    setspeaker ("Kenta")
+    msgbox(format("Psychic types are weak to Dark types, but my sister's Gothita gets along well with my Poochyena."))
+    release
+    end
+}
+
+script SunshineMeadow_Eventscript_Gothita {
+    moncryscript(SPECIES_GOTHITA)
+    release
+    end
+}
+
+script SunshineMeadow_Eventscript_Poochyena {
+    moncryscript(SPECIES_POOCHYENA)
+    release
     end
 }

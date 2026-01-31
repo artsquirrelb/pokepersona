@@ -40,6 +40,20 @@ Route2_2_Eventscript_Pansage::
 	end
 
 
+Route2_2_Eventscript_Man::
+# 34 "data/maps/Route2_2/scripts.pory"
+	lock
+# 35 "data/maps/Route2_2/scripts.pory"
+	faceplayer
+# 36 "data/maps/Route2_2/scripts.pory"
+	setspeaker Route2_2_Eventscript_Man_Text_0
+# 37 "data/maps/Route2_2/scripts.pory"
+	msgbox Route2_2_Eventscript_Man_Text_1
+# 40 "data/maps/Route2_2/scripts.pory"
+	release
+	end
+
+
 Route2_2_Eventscript_BerrySign_Text_0:
 # 7 "data/maps/Route2_2/scripts.pory"
 	.string "If you pick the berries, please plant\n"
@@ -51,3 +65,16 @@ Route2_2_Eventscript_DirectionSign_Text_0:
 # 17 "data/maps/Route2_2/scripts.pory"
 	.string "Coralport {LEFT_ARROW}\n"
 	.string "Sunshine Town {RIGHT_ARROW}$"
+
+Route2_2_Eventscript_Man_Text_0:
+# 36 "data/maps/Route2_2/scripts.pory"
+	.string "Fusahiro$"
+
+Route2_2_Eventscript_Man_Text_1:
+# 37 "data/maps/Route2_2/scripts.pory"
+	.string "If you're wondering, no. I'm not BGR.\p"
+	.string "I'm simply here to enjoy the peaceful\n"
+	.string "evening.\p"
+	.string "Who might this BRG character be,\n"
+	.string "though? They seem to be taking care of\l"
+	.string "this little garden.$"

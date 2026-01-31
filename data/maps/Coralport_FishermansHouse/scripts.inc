@@ -802,14 +802,14 @@ Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_
 
 Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_3:
 # 101 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}We're here to help you find your\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}We're here to help you find your\n"
 	.string "daughter.\p"
 	.string "We were at the police station when you\n"
 	.string "went there asking for help.$"
 
 Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_4:
 # 105 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Rest assured, sir. We're here to help you\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Rest assured, sir. We're here to help you\n"
 	.string "find your daughter.\p"
 	.string "We were at the police station when you\n"
 	.string "went there asking for help.$"

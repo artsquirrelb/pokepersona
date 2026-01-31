@@ -3639,16 +3639,16 @@ Route2_House_Eventscript_AkiShinjiWakingUp_Text_0:
 
 Route2_House_Eventscript_AkiShinjiWakingUp_Text_1:
 # 231 "data/maps/Route2_House/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}...$"
+	.string "{CREATE MUGSHOT_M EMOTE_NORMAL}...$"
 
 Route2_House_Eventscript_AkiShinjiWakingUp_Text_2:
 # 260 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wh-Where are we?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Wh-Where are we?\p"
 	.string "And who are you??$"
 
 Route2_House_Eventscript_AkiShinjiWakingUp_Text_3:
 # 263 "data/maps/Route2_House/scripts.pory"
-	.string "{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Apologies, but this is the best shelter\n"
+	.string "{CREATE MUGSHOT_M EMOTE_NORMAL}Apologies, but this is the best shelter\n"
 	.string "I could provide in this situation.\p"
 	.string "This is the house of my butler's\n"
 	.string "grandson, who's currently traveling the\l"
@@ -3658,171 +3658,171 @@ Route2_House_Eventscript_AkiShinjiWakingUp_Text_3:
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_0:
 # 274 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}As for my name, I am Mitsuru Kirijo.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}-!\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Kirijo-?!$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}As for my name, I am Mitsuru Kirijo.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}-!\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}Kirijo-?!$"
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_1:
 # 281 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}Uhhh, who? The name sounds familiar.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}Uhhh, who? The name sounds familiar.$"
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_2:
 # 285 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}-!\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}-!\p"
 	.string "Dumbass! That's the billionaire group\n"
 	.string "who donated us our PCs!\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Oooh...$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Oooh...$"
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_3:
 # 293 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}So? What does a billionaire girl like you\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}So? What does a billionaire girl like you\n"
 	.string "want with us?\p"
 	.string "For whatever it is, I'm not interested. I\n"
 	.string "only want to train and become a\l"
 	.string "stronger trainer.\p"
 	.string "I could've dealed with the Drowzee\n"
 	.string "earlier if I were-\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wait- Are you with the men in black who\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Wait- Are you with the men in black who\n"
 	.string "tried to kidnap us!?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}...\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}No.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}...\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}No.\p"
 	.string "In fact, I managed to disrupt them and\n"
 	.string "brought you two here.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}To be more precise, my mission is to\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}To be more precise, my mission is to\n"
 	.string "stop them.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Stop them?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Both of you are from Sunshine\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Stop them?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Both of you are from Sunshine\n"
 	.string "Orphanage, correct?\p"
 	.string "Right now I can say for certain that\n"
 	.string "the explosion which happened a few\l"
 	.string "days ago was their doing.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}!!\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}-!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}!!\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}-!$"
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_4:
 # 310 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}(Mumble) If only I were able to stop\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}(Mumble) If only I were able to stop\n"
 	.string "them in time... It was my fault...\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}.....$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}.....$"
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_5:
 # 315 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}My request is rather simple.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Request...?$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}My request is rather simple.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Request...?$"
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_6:
 # 321 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I would like you to join me, Akihiko\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I would like you to join me, Akihiko\n"
 	.string "Sanada-kun.$"
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_7:
 # 328 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I believe you have a reason for wanting\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Huh?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I believe you have a reason for wanting\n"
 	.string "to get stronger.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}.....\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I have clues of where to find those men\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}.....\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I have clues of where to find those men\n"
 	.string "in black and what they are doing.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}And earlier I saw your battle with them.\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}And earlier I saw your battle with them.\n"
 	.string "You have great potential.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}If you'll join me... I promise it'll be a\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}If you'll join me... I promise it'll be a\n"
 	.string "great challenge.\p"
 	.string "I'll also share what I know about those\n"
 	.string "men with you.$"
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_8:
 # 345 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}.....\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}.....\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Alright, I'll join you.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Very well.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}.....\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}.....\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Alright, I'll join you.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Very well.$"
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_9:
 # 354 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Wait!$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Wait!$"
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_10:
 # 359 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Aki, we need to talk.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Shinji?$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Aki, we need to talk.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Shinji?$"
 
 Route2_House_Eventscript_TriosFirstGreeting_Text_11:
 # 367 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Go ahead, I'll be waiting right here.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Go ahead, I'll be waiting right here.$"
 
 Route2_House_Eventscript_Mitsuru_Text_0:
 # 448 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Have you both finished talking?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Not yet. We still need more time.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Be my guest.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Have you both finished talking?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Not yet. We still need more time.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Be my guest.$"
 
 Route2_House_Eventscript_Mitsuru_Text_1:
 # 455 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I also have a request.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Certainly, let's hear it.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}I also have a request.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Certainly, let's hear it.$"
 
 Route2_House_Eventscript_Shinjiro_Text_0:
 # 468 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}What's wrong, Shinji?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}I don't trust her.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}What's wrong, Shinji?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}I don't trust her.\p"
 	.string "She's hiding lots of information and we\n"
 	.string "don't even know if it's true that she's\l"
 	.string "not on those men's side.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}But she's also the only lead we have\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}But she's also the only lead we have\n"
 	.string "right now. We didn't even know where to\l"
 	.string "start looking for Miki.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Besides, she said it'd be a great\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Besides, she said it'd be a great\n"
 	.string "challenge.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}So you're tempted.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Honestly, yes.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}So you're tempted.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Honestly, yes.\p"
 	.string "If what she said was true, I may find\n"
 	.string "Miki or at least her whereabouts while\l"
 	.string "going after those men in black.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I'm joining her. Don't stop me.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Told you I didn't trust her.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}I'm joining her. Don't stop me.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Told you I didn't trust her.\p"
 	.string "So if you join her, I will too. Someone's\n"
 	.string "gotta keep an eye on her.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Alright, let's try asking her then.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Alright, let's try asking her then.$"
 
 Route2_House_Eventscript_AVulpix_Text_0:
 # 501 "data/maps/Route2_House/scripts.pory"
 	.string "Vulpix ignored you.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Now that I have a closer look, this\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Now that I have a closer look, this\n"
 	.string "Vulpix looks a bit different...)$"
 
 Route2_House_Eventscript_Inteleon_Text_0:
 # 511 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon's looking at you judgingly.)\p {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}(Someone's got an attitude...)$"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon's looking at you judgingly.)\p {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}(Someone's got an attitude...)$"
 
 Route2_House_Eventscript_MustTalkToShinjiro_Text_0:
 # 523 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Shinji wants to talk with me.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Shinji wants to talk with me.)$"
 
 Route2_House_Eventscript_MustTalkToMitsuru_Text_0:
 # 533 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Kirijo is still waiting for me.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Kirijo is still waiting for me.)$"
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_0:
 # 542 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}So what's your request?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Let me join too.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}So what's your request?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Let me join too.$"
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_1:
 # 547 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Hm... Shinjiro Aragaki-kun, correct?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}... You sure have done your research\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Hm... Shinjiro Aragaki-kun, correct?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}... You sure have done your research\n"
 	.string "thoroughly.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'll take that as a compliment.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}That wasn't.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Heh...\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I have yet to know if you're able to\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I'll take that as a compliment.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}That wasn't.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Heh...\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I have yet to know if you're able to\n"
 	.string "hold your ground when the situation\l"
 	.string "calls for it.\p"
 	.string "If I'm not mistaken, you don't have a\n"
 	.string "Pokémon of your own yet.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}I can just catch one.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Alright. Then how about this.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Before the sun sets, if you can beat me\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}I can just catch one.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Alright. Then how about this.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Before the sun sets, if you can beat me\n"
 	.string "in a Pokémon battle, you can come with\l"
 	.string "us.$"
 
@@ -3833,16 +3833,16 @@ Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_2:
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_3:
 # 563 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}It wouldn't be fair if you have nothing\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}It wouldn't be fair if you have nothing\n"
 	.string "to catch a Pokémon.\p"
 	.string "Oh, and that device is a Pokédex. I'm\n"
 	.string "just lending it to you.\p"
 	.string "It's yours if you can beat me.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Hmph. Just you wait.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}Hmph. Just you wait.$"
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_4:
 # 570 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}And these are for you.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}And these are for you.$"
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_5:
 # 574 "data/maps/Route2_House/scripts.pory"
@@ -3854,95 +3854,95 @@ Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_5:
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_6:
 # 595 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}To be honest, I'd also like to have a\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}To be honest, I'd also like to have a\n"
 	.string "battle with you, Sanada-kun.\p"
 	.string "It's better to personally see how you\n"
 	.string "fare in battle.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Heh, sure.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Heh, sure.$"
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_7:
 # 601 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Alright. I'll be waiting for both of you\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Alright. I'll be waiting for both of you\n"
 	.string "in Sunshine Meadow.\p"
 	.string "{COLOR RED}We'll be having 3-vs-3 Pokémon battles\n"
 	.string "and bag items are not allowed so plan\l"
 	.string "your party accordingly.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}Good luck, you'll need it.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}Good luck, you'll need it.$"
 
 Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru_Text_8:
 # 629 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Bossy.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Heh. She's one weird rich girl.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Let's go.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Bossy.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Heh. She's one weird rich girl.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Let's go.$"
 
 Route2_House_Eventscript_MitsuruExplainingObjectives_Text_0:
 # 718 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Alright, everyone's here.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Alright, everyone's here.\p"
 	.string "Before I start, I'd like to ask you two a\n"
 	.string "question.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Sure? What is it?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}How far can a trainer synergize with\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Sure? What is it?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}How far can a trainer synergize with\n"
 	.string "their Pokémon?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_DOUBT}Uhh... what?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}You mean their bonds?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I know when a trainer and a Pokémon\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_DOUBT}Uhh... what?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}You mean their bonds?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}I know when a trainer and a Pokémon\n"
 	.string "share a deep trust, Mega Evolution can\l"
 	.string "be achieved.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}That is right, but not what I meant.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}That is right, but not what I meant.\p"
 	.string "Perhaps I should put it like this.$"
 
 Route2_House_Eventscript_MitsuruExplainingObjectives_Text_1:
 # 731 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}What if I say, there's a way for a\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}What if I say, there's a way for a\n"
 	.string "trainer to become one with their\l"
 	.string "Pokémon?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh? What do you mean?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}In the most literal way possible.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}That's crazy.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Those men you fought- no, the\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Huh? What do you mean?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}In the most literal way possible.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}That's crazy.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Those men you fought- no, the\n"
 	.string "organization behind them, is\l"
 	.string "researching and developping a way to do\l"
 	.string "so.\p"
 	.string "Lots of progress has been made and\n"
 	.string "there are already a few prototypes.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}Of course, the method isn't perfect and\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}Of course, the method isn't perfect and\n"
 	.string "there are more-\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wait, wait just a minute. I'm lost.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Wait, wait just a minute. I'm lost.\p"
 	.string "Prototypes?? Of what exactly??\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}A new specimen of human, who is able to\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}A new specimen of human, who is able to\n"
 	.string "use Pokémon's ability, in one way or\l"
 	.string "another.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}You're kidding??\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}The more I listen to you, the crazier\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}You're kidding??\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}The more I listen to you, the crazier\n"
 	.string "you sound.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}That is to be expected. I would have\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}That is to be expected. I would have\n"
 	.string "thought the same.$"
 
 Route2_House_Eventscript_MitsuruExplainingObjectives_Text_2:
 # 746 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}In any case, I already told you the goal\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}In any case, I already told you the goal\n"
 	.string "of those men.\p"
 	.string "You're free to not believe me. We can\n"
 	.string "simply just part ways right here.$"
 
 Route2_House_Eventscript_MitsuruExplainingObjectives_Text_3:
 # 755 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Look, Princess. It's not like we don't\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Look, Princess. It's not like we don't\n"
 	.string "want to believe you.\p"
 	.string "It all just sounds too much like\n"
 	.string "fiction, okay.\p"
 	.string "At least show us some proofs?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Right, didn't you say you know where to\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Right, didn't you say you know where to\n"
 	.string "find them?\p"
 	.string "How about you lead us to them and we'll\n"
 	.string "see if what you said were real.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}.....\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}.....\p"
 	.string "Very well. I suppose that's a logical\n"
 	.string "idea.$"
 
 Route2_House_Eventscript_MitsuruExplainingObjectives_Text_4:
 # 775 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}For now, I suggest we rest for the\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}For now, I suggest we rest for the\n"
 	.string "night. It's late and we're all tired from\l"
 	.string "the battles.\p"
 	.string "We'll depart early tomorrow morning so\n"
@@ -3950,29 +3950,29 @@ Route2_House_Eventscript_MitsuruExplainingObjectives_Text_4:
 
 Route2_House_Eventscript_StayingTheNight_Text_0:
 # 803 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Uhhh you sure about that? There's only\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Uhhh you sure about that? There's only\n"
 	.string "one bed.$"
 
 Route2_House_Eventscript_StayingTheNight_Text_1:
 # 807 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}M-my apologies, it slipped my mind that\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}M-my apologies, it slipped my mind that\n"
 	.string "this house doesn't have guest rooms.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}You two can take the bed. I'm okay with\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}You two can take the bed. I'm okay with\n"
 	.string "the floor.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}For Arceus's sake, Princess. Aki's\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_GEEZ}For Arceus's sake, Princess. Aki's\n"
 	.string "kidding.\p"
 	.string "Just sleep on the bed, we have our own\n"
 	.string "sleeping bags.$"
 
 Route2_House_Eventscript_StayingTheNight_Text_2:
 # 815 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Oh, right! Kurosawa-san gave us the\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Oh, right! Kurosawa-san gave us the\n"
 	.string "Camping Gears.$"
 
 Route2_House_Eventscript_StayingTheNight_Text_3:
 # 820 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}Dumbass, you weren't kidding!?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Stop calling me dumb!$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_GEEZ}Dumbass, you weren't kidding!?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Stop calling me dumb!$"
 
 Route2_House_Eventscript_StayingTheNight_Text_4:
 # 845 "data/maps/Route2_House/scripts.pory"
@@ -3980,26 +3980,26 @@ Route2_House_Eventscript_StayingTheNight_Text_4:
 
 Route2_House_Eventscript_StayingTheNight_Text_5:
 # 849 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_HAPPY}Hehehe.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_HAPPY}Hehehe.$"
 
 Route2_House_Eventscript_StayingTheNight_Text_6:
 # 856 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}...$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}...$"
 
 Route2_House_Eventscript_StayingTheNight_Text_7:
 # 862 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}Hehe.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Hmph.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_HAPPY}Hehe.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Hmph.$"
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_0:
 # 948 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}(Dang... I can't sleep at all.)\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}(Dang... I can't sleep at all.)\p"
 	.string "(Gotta admit, what Kirijo said earlier\n"
 	.string "does bug me.)\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(It didn't look like she was lying.)\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(It didn't look like she was lying.)\p"
 	.string "(If it was all true... and if Miki is\n"
 	.string "already in their hands...)\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}(No, I must think positively. She\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}(No, I must think positively. She\n"
 	.string "must've still been fine and been waiting\l"
 	.string "for me to come get her home.)\p"
 	.string "(If I can't sleep... may as well go train a\n"
@@ -4007,27 +4007,27 @@ Route2_House_Eventscript_AkihikoCantSleep_Text_0:
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_1:
 # 963 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Kirijo is already sleeping soundly. She\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Kirijo is already sleeping soundly. She\n"
 	.string "won't know if I sneak out.)$"
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_2:
 # 976 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}-Hiss-$"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}-Hiss-$"
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_3:
 # 981 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}(And this Inteleon keeps looking\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}(And this Inteleon keeps looking\n"
 	.string "daggers at me...)\p"
 	.string "(What did I even do?)$"
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_4:
 # 988 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Where's Shinji, though?)\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Where's Shinji, though?)\p"
 	.string "(Maybe he's outside.)$"
 
 Route2_House_Eventscript_AkihikoCantSleep_Text_5:
 # 995 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I uh... just gonna go outside for a bit.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}I uh... just gonna go outside for a bit.$"
 
 TakeARest_Text_0:
 # 1027 "data/maps/Route2_House/scripts.pory"
@@ -4039,78 +4039,78 @@ Route2_House_Eventscript_Bathroom_Text_0:
 
 Route2_House_Eventscript_Bathroom_Text_1:
 # 1070 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}(All refreshed.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_HAPPY}(All refreshed.)$"
 
 Route2_House_Eventscript_Bathroom_Text_2:
 # 1074 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}(That really freshened me up.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}(That really freshened me up.)$"
 
 Route2_House_Eventscript_Bathroom_Text_3:
 # 1083 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Nah, I think I'm good.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Nah, I think I'm good.)$"
 
 Route2_House_Eventscript_Bathroom_Text_4:
 # 1086 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Let's do it later.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Let's do it later.)$"
 
 Route2_House_Eventscript_Bathroom_Text_5:
 # 1096 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(I just used the bathroom.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(I just used the bathroom.)$"
 
 Route2_House_Eventscript_Bathroom_Text_6:
 # 1099 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Let's not waste time any further.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Let's not waste time any further.)$"
 
 Route2_House_Eventscript_Bathroom_Text_7:
 # 1114 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(That reminds me, Kirijo took a really\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(That reminds me, Kirijo took a really\n"
 	.string "long bath yesterday.)\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}I don't understand. What's so fun in the\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}I don't understand. What's so fun in the\n"
 	.string "bathroom that made her stay that long?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}What are you staring at the bathroom\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}What are you staring at the bathroom\n"
 	.string "door for? Is there anything wrong?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}N-No, nothing! Nothing at all.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}?$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}N-No, nothing! Nothing at all.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}?$"
 
 Route2_House_Eventscript_Bathroom_Text_8:
 # 1125 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(I should get going.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(I should get going.)$"
 
 Route2_House_Eventscript_TheFirstMorning_Text_0:
 # 1147 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}-yawn- (Gosh, I'm still feeling sleepy.)\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}-yawn- (Gosh, I'm still feeling sleepy.)\p"
 	.string "(Maybe doing night battle wasn't a good\n"
 	.string "choice.)$"
 
 Route2_House_Eventscript_TheFirstMorning_Text_1:
 # 1151 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Everyone, please gather around. I'll\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Everyone, please gather around. I'll\n"
 	.string "explain our plan route.$"
 
 Route2_House_Eventscript_TheFirstMorning_Text_2:
 # 1161 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Please take a look at the map.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Please take a look at the map.$"
 
 Route2_House_Eventscript_TheFirstMorning2_Text_0:
 # 1169 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I believe our destination is around the\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I believe our destination is around the\n"
 	.string "base of Goldenwings Mountain.\p"
 	.string "To get there we can take a ship from\n"
 	.string "Coralport, west of here.\p"
 	.string "Then we go through Route 4 from\n"
 	.string "Windward Town.\p"
 	.string "Any questions?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Nope, the path is simple enough.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}C'est magnifique.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Oh, before I forget.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Nope, the path is simple enough.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}C'est magnifique.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Oh, before I forget.\p"
 	.string "We should make a stop at my personal\n"
 	.string "researcher's lab in Windward Port.\l"
 	.string "There's a package for us that I've\l"
 	.string "ordered.\p"
 	.string "It'll be a great help for our journey.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}More gadgets?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}And Pokémon.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Alright! Let's head out then!$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}More gadgets?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}And Pokémon.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Alright! Let's head out then!$"
 
 Route2_House_Eventscript_TheFirstMorning2_Text_1:
 # 1199 "data/maps/Route2_House/scripts.pory"
@@ -4126,15 +4126,15 @@ Route2_House_Eventscript_TheFirstMorning2_Text_2:
 
 Route2_House_Eventscript_MitsuruRestForTheNight_Text_0:
 # 1282 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Not too shabby. This will do.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Not too shabby. This will do.$"
 
 Route2_House_Eventscript_MitsuruPostRest_Text_0:
 # 1300 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(The sun's up. Time to move out.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(The sun's up. Time to move out.)$"
 
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_0:
 # 1336 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(So this boy is... Akihiko Sanada.)\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(So this boy is... Akihiko Sanada.)\p"
 	.string "(He got adopted a few days ago, along\n"
 	.string "with his younger sister Miki.)\p"
 	.string "(Well, on paper at least, I suppose?)\p"
@@ -4146,13 +4146,13 @@ Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_0:
 
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_1:
 # 1344 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(And this one is Aragaki Shinjiro.)\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(And this one is Aragaki Shinjiro.)\p"
 	.string "(He's also adopted on paper and has a\n"
 	.string "standard trainer card.)$"
 
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_2:
 # 1347 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Considering how eagerly the Genesis\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(Considering how eagerly the Genesis\n"
 	.string "staff were searching for them)\p"
 	.string "(I guess they must be ones of their\n"
 	.string "“good potential” subjects.)\p"
@@ -4161,29 +4161,29 @@ Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_2:
 
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_3:
 # 1362 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Inteleon, you're back. Just about time.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I'd love to give you a rest but we really\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Inteleon, you're back. Just about time.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I'd love to give you a rest but we really\n"
 	.string "have to act right now.\p"
 	.string "Although if you're too tired, you can\n"
 	.string "return to the Pokéball.$"
 
 Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji_Text_4:
 # 1369 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon shaked its head, looking\n"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon shaked its head, looking\n"
 	.string "determined to accompany Mitsuru.)\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}If that's what you want, alright. Let's\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}If that's what you want, alright. Let's\n"
 	.string "go then.\p"
 	.string "We should start asking around Sunshine\n"
 	.string "Town for these two boys.$"
 
 Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_0:
 # 1406 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Yes, Father. That'd be great.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Yes, Father. That'd be great.\p"
 	.string "Yes. I'll talk to you later.$"
 
 Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_1:
 # 1416 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}(It's been days and the girl still hasn't\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}(It's been days and the girl still hasn't\n"
 	.string "been found.)\p"
 	.string "(There's a great chance that the\n"
 	.string "Genesis group has taken her.)\p"
@@ -4193,23 +4193,23 @@ Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_1:
 
 Route2_House_Eventscript_MitsuruCallingTakeharuForHelp_Text_2:
 # 1422 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}I've been avoidant about confronting\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}I've been avoidant about confronting\n"
 	.string "the boys.\p"
 	.string "I don't know how to face them after\n"
 	.string "what I'd done.\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}However, we can't afford to lose any\n"
+	.string "{CREATE MUGSHOT_M EMOTE_NORMAL}However, we can't afford to lose any\n"
 	.string "more time before the group erases their\l"
 	.string "tracks again.\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Let's go talk to Sanada and Aragaki,\n"
+	.string "{CREATE MUGSHOT_M EMOTE_SERIOUS}Let's go talk to Sanada and Aragaki,\n"
 	.string "Vulpix, Inteleon.$"
 
 Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV_Text_0:
 # 1450 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}...$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}...$"
 
 Route2_House_Eventscript_AkiShinjiWakingUpMitsuruPOV_Text_1:
 # 1479 "data/maps/Route2_House/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Apologies, but this is the best shelter\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Apologies, but this is the best shelter\n"
 	.string "I could provide in this situation.\p"
 	.string "This is the house of my butler's\n"
 	.string "grandson, who's currently traveling the\l"

@@ -557,7 +557,7 @@ Mansion_MitsurusRoom2F_Eventscript_MustPickUpVulpix_Movement_0:
 
 Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_0:
 # 32 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I'll need this... and a spare pair of\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I'll need this... and a spare pair of\n"
 	.string "boots...$"
 
 Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_1:
@@ -567,20 +567,20 @@ Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_1:
 
 Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_2:
 # 56 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}What else...$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}What else...$"
 
 Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_3:
 # 61 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Oh right.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Oh right.$"
 
 Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_4:
 # 81 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'll definitely need this while outdoors.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Hmm, that should be everything.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I'll definitely need this while outdoors.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Hmm, that should be everything.$"
 
 Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking_Text_5:
 # 92 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I know, I know. I'll never leave you\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I know, I know. I'll never leave you\n"
 	.string "behind, Vulpix.\p"
 	.string "Let's get you inside the Pokéball now,\n"
 	.string "shall we?$"
@@ -605,7 +605,7 @@ Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_3:
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_4:
 # 138 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}It's already 10:32PM.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}It's already 10:32PM.\p"
 	.string "If I don't go now, I won't be arriving at\n"
 	.string "the cliff's foot before midnight.$"
 
@@ -621,12 +621,12 @@ Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_6:
 
 Mansion_MitsurusRoom2F_Eventscript_MustPickUpVulpix_Text_0:
 # 173 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Vulpix is waiting for me.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Vulpix is waiting for me.)$"
 
 Mansion_MitsurusRoom2F_Eventscript_DollAlolanVulpix_Text_0:
 # 181 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "It's an Alolan Vulpix doll.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}...\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}...\p"
 	.string "(This reminds me of how my Vulpix used\n"
 	.string "to look...)$"
 
@@ -642,11 +642,11 @@ Mansion_MitsurusRoom2F_Eventscript_Piano_Text_0:
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_Text_1:
 # 226 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(It's time to go.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(It's time to go.)$"
 
 Mansion_MitsurusRoom2F_Eventscript_Piano_Text_2:
 # 233 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(I really need to get going.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(I really need to get going.)$"
 
 Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft_Text_0:
 # 241 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
@@ -667,7 +667,7 @@ Mansion_MitsurusRoom2F_Eventscript_Notebooks_Text_0:
 # 259 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "College materials from the previous\n"
 	.string "term.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Luckily, it's summer break right now.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Luckily, it's summer break right now.\p"
 	.string "Otherwise it'd be hard for me to travel.\p"
 	.string "Well, I figure I can always request a\n"
 	.string "leave of absence until this matter is\l"

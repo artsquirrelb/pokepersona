@@ -84,14 +84,14 @@ script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
     waitmovement(5)
     playse(SE_EXIT)
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}.......\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}... {PAUSE 40}(He's... also looking for a family member...)\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}....{PAUSE 40} Aki.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}...{PAUSE 40}
-    {CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Uh- yeah?\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}If you want to ask about Miki, go ask.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}.......\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}... {PAUSE 40}(He's... also looking for a family member...)\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}....{PAUSE 40} Aki.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}...{PAUSE 40}
+    {CREATE MUGSHOT_A EMOTE_NORMAL}Uh- yeah?\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}If you want to ask about Miki, go ask.\p
     If you want to help that man, go help him.\p Stop standing there and mopping around.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}R-right."))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}R-right."))
     closemessage
     applymovement(LOCALID_PLAYER, moves(walk_left, face_up, set_visible))
     applymovement(M_CORALP, moves(walk_up, set_invisible))
@@ -165,7 +165,7 @@ script CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki {
     waitmovement
     delay(30)
     msgbox(format("Welcome to Coralport Police Station. How can we help you?\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Hello, have you found anything about Miki,
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Hello, have you found anything about Miki,
     the missing girl from Sunshine Orphanage?"))
     setspeaker("Namake")
     msgbox(format("{DESTROY_MUGSHOT}Oh, you're her brother, I guess.\p
@@ -173,7 +173,7 @@ script CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki {
     nor the reason for which the explosion happened.\p
     We've been looking high and low but we still find no traces of her nor her body.\p
     The investigation is still on-going so there's not much I can say further.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}I see..... Thanks."))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}I see..... Thanks."))
     closemessage
     applymovement(A_CORALP, walkdown)
     applymovement(LOCALID_CAMERA, walkdown)
@@ -184,7 +184,7 @@ script CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki {
     applymovement(M_CORALP, facedown)
     waitmovement
     delay(30)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Let's go outside."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}Let's go outside."))
     setvar(VAR_CHAPTER_1_STATE, 3)
     warp(MAP_CORALPORT, 13, 6)
     waitstate

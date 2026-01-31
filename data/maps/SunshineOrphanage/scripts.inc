@@ -362,12 +362,12 @@ Miki_and_Shinjiro_Notice_Akihiko_Text_0:
 
 Miki_and_Akihiko_walk_to_Shinjiro_Text_0:
 # 65 "data/maps/SunshineOrphanage/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Miki wants to go to the woods but there\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Miki wants to go to the woods but there\n"
 	.string "are wild Pokémon there.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Shinji, it's fineee. As long as we stay\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Shinji, it's fineee. As long as we stay\n"
 	.string "out of the tall grass.\p"
 	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}To the woods! To the woods!\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}Sigh...$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_PENSIVE}Sigh...$"
 
 Boy_1_OrphanageEntrance_Text_0:
 # 103 "data/maps/SunshineOrphanage/scripts.pory"
@@ -376,7 +376,7 @@ Boy_1_OrphanageEntrance_Text_0:
 Boy_1_OrphanageEntrance_Text_1:
 # 104 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "Can I grow tall like these sunflowers?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}Just drink lots of milk!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_HAPPY}Just drink lots of milk!$"
 
 Girl_OrphanageEntrance_Text_0:
 # 113 "data/maps/SunshineOrphanage/scripts.pory"
@@ -388,7 +388,7 @@ Girl_OrphanageEntrance_Text_1:
 	.string "accompanying a man in a white coat\l"
 	.string "speaking with our teachers.\p"
 	.string "I wonder who they are...\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I asked Ms. Kobayashi once and she said\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}I asked Ms. Kobayashi once and she said\n"
 	.string "they donated a lot to the orphanage.$"
 
 Sunshine_Orphanage_Direction_Sign_Text_0:

@@ -49,8 +49,8 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
-      "x": 22,
-      "y": 12,
+      "x": 21,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
       "movement_range_x": 1,
@@ -60,7 +60,7 @@
       "script": "SunshineTown_Eventscript_Boy",
       "flag": "0",
       "d": true,
-      "e": true,
+      "e": false,
       "m": true,
       "n": false
     },
@@ -111,9 +111,7 @@
       "script": "SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL",
       "flag": "0",
       "d": true,
-      "e": false,
       "m": true,
-      "n": false,
       "quest_id": 1
     },
     {
@@ -274,11 +272,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_CutTree",
-      "flag": "FLAG_TEMP_1F",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_1F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
@@ -291,11 +285,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_CutTree",
-      "flag": "FLAG_TEMP_1F",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_1F"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
@@ -308,11 +298,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_TM_THIEF",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_SUNSHINETOWN_TM_THIEF",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_SUNSHINETOWN_TM_THIEF"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
@@ -325,11 +311,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_HM_ROCK_SMASH",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_SUNSHINE_TOWN_TM_ROCK_SMASH",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_ITEM_SUNSHINE_TOWN_TM_ROCK_SMASH"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
@@ -390,6 +372,51 @@
       "e": false,
       "m": true,
       "n": false
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
+      "x": 23,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SunshineTown_Eventscript_Gentleman",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_BREEDER_F",
+      "x": 10,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SunshineTown_Eventscript_BreederF",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NICKIT)",
+      "x": 9,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SunshineTown_Eventscript_Nickit",
+      "flag": "0",
+      "e": true,
+      "n": true
     }
   ],
   "warp_events": [

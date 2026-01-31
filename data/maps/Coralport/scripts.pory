@@ -77,17 +77,6 @@ mapscripts Coralport_MapScripts {
         VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 3: Coralport_MapScripts_QuestOldRodOnWarp3
         VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 4: Coralport_MapScripts_QuestOldRodOnWarp4
     ]
-    MAP_SCRIPT_ON_RESUME: Coralport_MapScripts_UpdatingShipState
-}
-
-script Coralport_MapScripts_UpdatingShipState {
-    gettime
-    if (var(VAR_0x8000) < 7 || var(VAR_0x8000) >=17){
-        setflag(FLAG_TEMP_5)
-    }
-    else{
-        clearflag(FLAG_TEMP_5)
-    }
 }
         
 script Coralport_MapScripts_OnFrame3 {
@@ -202,28 +191,14 @@ script Coralport_Eventscript_SailorOnBreak {
 }
 
 script Coralport_Eventscript_Machamp {
-    lockall
-    faceplayer
-    showmonpic(SPECIES_MACHAMP, 18, 5)
-    playmoncry(SPECIES_MACHAMP, CRY_MODE_NORMAL)
-    waitmoncry
-    delay (30)
-    setseenmon(SPECIES_MACHAMP)
-    hidemonpic
-    releaseall
+    moncryscript(SPECIES_MACHAMP)
+    release
     end
 }
 
 script Coralport_Eventscript_Vigoroth {
-    lockall
-    faceplayer
-    showmonpic(SPECIES_VIGOROTH, 18, 5)
-    playmoncry(SPECIES_VIGOROTH, CRY_MODE_NORMAL)
-    waitmoncry
-    setseenmon(SPECIES_VIGOROTH)
-    delay (30)
-    hidemonpic
-    releaseall
+    moncryscript(SPECIES_VIGOROTH)
+    release
     end
 }
 
@@ -250,7 +225,7 @@ script Coralport_Eventscript_SailorOnGuard {
         release
         end
     }
-    subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, MITSURUS_PROLOGUE)
+    subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
     if(!var(VAR_RESULT)){
         showhelpwindow(HELP_PROTAGONISTS)
         waitbuttonpress
@@ -260,8 +235,8 @@ script Coralport_Eventscript_SailorOnGuard {
     }
     if (var(VAR_CHAPTER_1_STATE) <4)
     {
-        msgbox(format("This ship will depart for Windward Port.\p
-        Please come back later when it's boarding time."))
+        msgbox(format("We're extremely sorry but there's a problem with the shipment.\p
+        The departure to Windward Port has been delayed until further notice."))
         closemessage
         if (var(VAR_CHAPTER_1_STATE) == 0){
             goto(Coralport_Eventscript_NotYetBoardingTime)
@@ -269,55 +244,46 @@ script Coralport_Eventscript_SailorOnGuard {
     }
     else
     {
-        gettime
-        if(var(VAR_0x8000) >= 7 && var(VAR_0x8000) <= 17){
-            showmoneybox(0, 0)
-            msgbox(format("This ship is departing for Windward Port.\p
-            The trip will estimatedly take {COLOR RED}3 hours{COLOR 2}.\p
-            It costs {COLOR GREEN}¥100 {COLOR 2}per ticket. Would you like to board the ship?"), MSGBOX_YESNO)
-            closemessage
+        showmoneybox(0, 0)
+        msgbox(format("This ship is departing for Windward Port.\p
+        The trip will estimatedly take {COLOR RED}3 hours{COLOR 2}.\p
+        It costs {COLOR GREEN}¥100 {COLOR 2}per ticket. Would you like to board the ship?"), MSGBOX_YESNO)
+        closemessage
+        if (var(VAR_RESULT)){
+            checkmoney(300)
             if (var(VAR_RESULT)){
-                checkmoney(300)
-                if (var(VAR_RESULT)){
-                    playse(SE_SHOP)
-                    removemoney(300)
-                    updatemoneybox
-                    setspeaker("Umito")
-                    msgbox(format("This way, please."))
-                    closemessage
-                    hidemoneybox
-                    applymovement(10, walkinplaceup)
-                    waitmovement
-                    delay(30)
-                    addtime(0, 3, 0)
-                    warp(MAP_WINDWARD_PORT_HARBOR, 23, 20)
-                    waitstate
-                }
-                else{
-                    setspeaker("Umito")
-                    msgbox(format("I'm sorry but you don't have enough money for 3 tickets."))
-                    closemessage
-                    hidemoneybox
-                    release
-                    end
-                }
-                
+                playse(SE_SHOP)
+                removemoney(300)
+                updatemoneybox
+                setspeaker("Umito")
+                msgbox(format("This way, please."))
+                closemessage
+                hidemoneybox
+                applymove(10, walkinplaceup)
+                delay(30)
+                addtime(0, 3, 0)
+                warp(MAP_WINDWARD_PORT_HARBOR, 23, 20)
+                waitstate
             }
             else{
+                setspeaker("Umito")
+                msgbox(format("I'm sorry but you don't have enough money for 3 tickets."))
                 hidemoneybox
-            }
+                release
+                end
+            } 
         }
         else{
-            goto(Coralport_Eventscript_ShipHasDeparted)
+            hidemoneybox
         }
     }
     release
     end
 }
 
-script Coralport_Eventscript_ShipHasDeparted {
-    msgbox(format("The ship has already departed for Windward Port.\p
-        If you want to board the ship, please come back between 7AM and 5PM."))
+script Coralport_Eventscript_ShipSchedule {
+    msgbox(format("{CLEAR_TO 45}Coralport -> Windward Port\n
+    {CLEAR_TO 30}Boarding time: 6AM - 5:59PM."))
     closemessage
     release
     end
@@ -338,11 +304,11 @@ script Coralport_Eventscript_NotYetBoardingTime {
     applymovement(A_CORAL, moves(walk_down, face_up))
     waitmovement
     delay(30)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}What now?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}It appears that we have no other choice but to wait until boarding time.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Maybe we can pay the police station a visit?\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}What now?\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}It appears that we have no other choice but to wait until boarding time.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Maybe we can pay the police station a visit?\p
     I'd like to check if they've found anything about Miki.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Yes, let's do that."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Yes, let's do that."))
     closemessage
     applymovement(M_CORAL, walkdown)
     delay(4)
@@ -392,11 +358,11 @@ script Coralport_Eventscript_Beauty {
     setspeaker("Harehina")
     msgbox(format("I bought two tickets for this vacation but my damned ex cheated on me so I brought my younger brother instead.\p
     I'm enjoying this a lot more than I thought.\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Good for you."))
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Good for you."))
     setspeaker("Harehina")
     msgbox(format("{DESTROY_MUGSHOT}Oh? Wait, you're just my type. How old are you?\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}W-what?\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}(Hey! Let's just bail!)"))
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}W-what?\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}(Hey! Let's just bail!)"))
     closemessage
     hidefollowernpc
     moveobjecttocoords(LOCALID_PLAYER, 22, 29, DIR_NORTH, 2)
@@ -432,11 +398,11 @@ script Coralport_Eventscript_MustTalkToSailorOnGuard {
     waitmovement
     checkplayergender
     if(var(VAR_RESULT) == MALE){
-        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(It's not the time to wander around.\p
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(It's not the time to wander around.\p
         We need to board the ship to Windward Port.)"))
     }
     else{
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(It's not the time to wander around.\p
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(It's not the time to wander around.\p
         We need to board the ship to Windward Port.)"))
     }
     closemessage
@@ -458,43 +424,41 @@ script Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp 
     delay(20)
     applymovement(LOCALID_PLAYER, moves(walk_down*6))//13,12
     waitmovement
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}......"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}......"))
     closemessage
     applymovement(A_CORAL, walkup) //13,12
     applymovement(LOCALID_PLAYER, walkup)//13,11
     waitmovement
     delay(20)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Kirijo.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Yes, Sanada-kun?"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Kirijo.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Yes, Sanada-kun?"))
     applymovement(S_CORAL, faceright)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}If you know who's behind the explosion, why didn't you say anything to the police?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}I'd prefer not getting them involved.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}What?\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Besides, I doubt they'd be any help, even if they knew.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}If you know who's behind the explosion, why didn't you say anything to the police?\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}I'd prefer not getting them involved.\p
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}What?\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Besides, I doubt they'd be any help, even if they knew.\p
     Otherwise I wouldn't be here, asking you two to accompany me on this journey.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}But- why?\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Corruption or something like that?"))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}But- why?\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Corruption or something like that?"))
     closemessage
-    playse(SE_PIN)
     applymovement(M_CORAL, faceleft)
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Exactly."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Exactly."))
     delay(4)
     applymovement(M_CORAL, facedown)
     delay(30)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Indeed.\p
-    The illegal experiments have already proceeded to the state of producing successful prototypes.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}The illegal experiments have already
+    proceeded to the state of producing successful prototypes.\p
     Why do you think they haven't already been caught nor stopped?\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}......"))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}......"))
     closemessage
     delay(30)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_PENSIVE}... But Kurosawa-san has always been really kind and willingly helped us."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_PENSIVE}... But Kurosawa-san has always been really kind and willingly helped us."))
     delay(20)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Not all cops are the same.\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Not all cops are the same.\p
     I guess he also has a battle he's fighting on his own."))
-    applymovement(M_CORAL, moves(emote_pensive))
     applymovement(A_CORAL, moves(emote_pensive))
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_PENSIVE}......"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_PENSIVE}......"))
     closemessage
     delay(30)
     playse(SE_RG_SS_ANNE_HORN)
@@ -510,7 +474,7 @@ script Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp 
     delay(4)
     applymovement(S_CORAL, faceright)
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I suppose the ship is ready for boarding.\l
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I suppose the ship is ready for boarding.\l
     Let's move out."))
     closemessage
     applymovement(M_CORAL, walkdown)
@@ -756,7 +720,7 @@ script Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe {
     waitmovement
     setspeaker("Ikumi")
     msgbox(format("Thank you so much for saving my family back there.\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}You're welcome, Ikumi-san.\n
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}You're welcome, Ikumi-san.\n
     We're glad that Misa was found safely."))
     setspeaker("Ikumi")
     msgbox(format("{DESTROY_MUGSHOT}Indeed, indeed."))
@@ -779,7 +743,7 @@ script Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe {
     msgbox(format("Now I have to return the Growlithe to the policeman.\p
     Please make sure to come by my house later. I want to give you all something.\p
     Misa and Wooper would also be really happy to see you.\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}We will!"))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}We will!"))
     closemessage
     applymovement(28, walkinplacedown)
     waitmovement
@@ -815,6 +779,58 @@ script Coralport_Eventscript_QuestOldRodFishermanReturningTheGrowlithe {
     setseenmon(SPECIES_WOOPER_PALDEA)
     setseenmon(SPECIES_CLODSIRE)
     special(ShowMapNamePopup)
+    release
+    end
+}
+
+script Coralport_Eventscript_Maniac {
+    lock
+    faceplayer
+    setspeaker("Chuuei")
+    msgbox(format("Whenever I'm here I'm reminded of a proposal scene of an old couple.\p
+    I witnessed it, you know. It was so cute.\p
+    Man... I want a love like that too...\p
+    Boy or girl, I don't really mind, as long as they're breathing.\p
+    Ah... I'm so lonely."))
+    doemote(VAR_LAST_TALKED, E_SAD)
+    release
+    end
+}
+
+script Coralport_Eventscript_Magnemite {
+    moncryscript(SPECIES_MAGNEMITE)
+    turnobject(VAR_LAST_TALKED, DIR_EAST)
+    delay(30)
+    faceplayer
+    msgbox(format("Magnemite seems to be worried about its trainer's love life."))
+    release
+    end
+}
+
+script Coralport_Eventscript_CoupleF {
+    lock
+    setspeaker("Miku")
+    stepinplace(MIKU_CORAL, DIR_EAST)
+    msgbox(format("How's the work going, sweetie?"))
+    setspeaker("Emi")
+    stepinplace(EMI_CORAL, DIR_WEST)
+    msgbox(format("The Riolus are still young so it's hard to teach them new moves.\p
+    The owner is a kind old lady, though."))
+    setspeaker("Miku")
+    stepinplace(MIKU_CORAL, DIR_EAST)
+    msgbox(format("I'm glad it's going well, Emi."))
+    doemote(MIKU_CORAL, 0)
+    setspeaker("Miku")
+    msgbox(format("Wait, you got bruises on your arms!"))
+    setspeaker("Emi")
+    stepinplace(EMI_CORAL, DIR_WEST)
+    msgbox(format("Oh, don't worry. They were just from the baby Riolus-"))
+    setspeaker("Miku")
+    doemote(MIKU_CORAL, E_ANGRY)
+    msgbox(format("Shut up and let me treat them."))
+    setspeaker("Emi")
+    doemote(EMI_CORAL, E_SWEAT)
+    msgbox(format("Y-yes, ma'am."))
     release
     end
 }

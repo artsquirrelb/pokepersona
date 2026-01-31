@@ -1316,6 +1316,54 @@ SunshineTown_Eventscript_KurosawaHouseLocked_3:
 	goto SunshineTown_Eventscript_KurosawaHouseLocked_1
 
 
+SunshineTown_Eventscript_BreederF::
+# 725 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 726 "data/maps/SunshineTown/scripts.pory"
+	faceplayer
+# 727 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_BreederF_Text_0
+# 728 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_BreederF_Text_1
+# 730 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+
+SunshineTown_Eventscript_Nickit::
+# 735 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 736 "data/maps/SunshineTown/scripts.pory"
+	playmoncry SPECIES_NICKIT, 0
+# 737 "data/maps/SunshineTown/scripts.pory"
+	showmonpic SPECIES_NICKIT, 18, 5
+# 738 "data/maps/SunshineTown/scripts.pory"
+	doemote VAR_LAST_TALKED, E_HAPPY
+# 739 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_Nickit_Text_0
+# 740 "data/maps/SunshineTown/scripts.pory"
+	hidemonpic
+# 741 "data/maps/SunshineTown/scripts.pory"
+	setseenmon SPECIES_NICKIT
+# 742 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+
+SunshineTown_Eventscript_Gentleman::
+# 747 "data/maps/SunshineTown/scripts.pory"
+	lock
+# 748 "data/maps/SunshineTown/scripts.pory"
+	faceplayer
+# 749 "data/maps/SunshineTown/scripts.pory"
+	setspeaker SunshineTown_Eventscript_Gentleman_Text_0
+# 750 "data/maps/SunshineTown/scripts.pory"
+	msgbox SunshineTown_Eventscript_Gentleman_Text_1
+# 755 "data/maps/SunshineTown/scripts.pory"
+	release
+	end
+
+
 # 63 "data/maps/SunshineTown/scripts.pory"
 SunshineTown_Eventscript_MitsuruOnWarp19_Movement_0:
 # 63 "data/maps/SunshineTown/scripts.pory"
@@ -1613,7 +1661,7 @@ SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Movement_0:
 SunshineTown_Eventscript_Kurosawa_Text_0:
 # 99 "data/maps/SunshineTown/scripts.pory"
 	.string "Hm?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}W-we'll get going now!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}W-we'll get going now!$"
 
 SunshineTown_Eventscript_Kurosawa_Text_1:
 # 103 "data/maps/SunshineTown/scripts.pory"
@@ -1622,13 +1670,13 @@ SunshineTown_Eventscript_Kurosawa_Text_1:
 SunshineTown_Eventscript_Kurosawa_Text_2:
 # 108 "data/maps/SunshineTown/scripts.pory"
 	.string "{SPEAKER NAME_KRSW}Do you need some help, kids?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Oh nothing! Sorry for bothering you,\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Oh nothing! Sorry for bothering you,\n"
 	.string "sir.\p"
 	.string "(He looks so intimidating!)$"
 
 SunshineTown_Eventscript_GoGetPackage_Text_0:
 # 137 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}The Pokémon Center is right there, Aki.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}The Pokémon Center is right there, Aki.$"
 
 SunshineTown_Eventscript_FatMan_Text_0:
 # 147 "data/maps/SunshineTown/scripts.pory"
@@ -1638,7 +1686,7 @@ SunshineTown_Eventscript_FatMan_Text_1:
 # 150 "data/maps/SunshineTown/scripts.pory"
 	.string "The policeman living here ran toward\n"
 	.string "the woods after hearing that explosion.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}We should hurry up!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}We should hurry up!$"
 
 SunshineTown_Eventscript_FatMan_Text_2:
 # 157 "data/maps/SunshineTown/scripts.pory"
@@ -1654,8 +1702,8 @@ SunshineTown_Eventscript_Boy_Text_1:
 # 173 "data/maps/SunshineTown/scripts.pory"
 	.string "I think something exploded in the\n"
 	.string "woods.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DARKENED}Could it be...\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}The orphanage!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DARKENED}Could it be...\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_MAD}The orphanage!$"
 
 SunshineTown_Eventscript_Boy_Text_2:
 # 181 "data/maps/SunshineTown/scripts.pory"
@@ -1699,17 +1747,17 @@ SunshineTown_Eventscript_TownSign_Text_0:
 
 SunshineTown_Eventscript_ExitingPC_Text_0:
 # 237 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}Let's ask around what happened.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}Yeah.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}Let's ask around what happened.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_MAD}Yeah.$"
 
 SunshineTown_Eventscript_DontLeaveTown_Text_0:
 # 266 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}We should ask people in town about that\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}We should ask people in town about that\n"
 	.string "explosion sound!$"
 
 SunshineTown_Eventscript_NoPointEnteringPC_Text_0:
 # 275 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_MAD}(Not the time to be dawdling around!)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}(Not the time to be dawdling around!)$"
 
 SunshineTown_Eventscript_OW_Happiny_Text_0:
 # 305 "data/maps/SunshineTown/scripts.pory"
@@ -1740,7 +1788,7 @@ SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_
 # 399 "data/maps/SunshineTown/scripts.pory"
 	.string "Excuse me, young men. Can you do me a\n"
 	.string "favor?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Sure, ma'am. What can we do for you?$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Sure, ma'am. What can we do for you?$"
 
 SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_2:
 # 403 "data/maps/SunshineTown/scripts.pory"
@@ -1748,13 +1796,13 @@ SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_
 	.string "couldn't show up today.\p"
 	.string "Can you go play with my poor baby Riolu?\n"
 	.string "He's on the second floor.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Leave it to us!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Leave it to us!$"
 
 SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_3:
 # 409 "data/maps/SunshineTown/scripts.pory"
 	.string "Excuse me, young lass. Can you do me a\n"
 	.string "favor?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Certainly, ma'am. What do you need?$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Certainly, ma'am. What do you need?$"
 
 SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_4:
 # 413 "data/maps/SunshineTown/scripts.pory"
@@ -1762,7 +1810,7 @@ SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_
 	.string "couldn't show up today.\p"
 	.string "Can you go play with my poor baby Riolu?\n"
 	.string "He's on the second floor.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'll be happy to help.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I'll be happy to help.$"
 
 SunshineTown_Eventscript_ExpertF_PreQuest_Text_0:
 # 430 "data/maps/SunshineTown/scripts.pory"
@@ -1791,7 +1839,7 @@ unlockcharacters_Text_0:
 
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_0:
 # 504 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(The police? How did they arrive this\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(The police? How did they arrive this\n"
 	.string "fast? The explosion happened just a\l"
 	.string "few minutes ago.)\p"
 	.string "(Not to mention, if I remember\n"
@@ -1800,7 +1848,7 @@ SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_0:
 
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_1:
 # 520 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Excuse me. Did something happen?\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Excuse me. Did something happen?\n"
 	.string "Everyone in town looks on edge.$"
 
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_2:
@@ -1818,14 +1866,14 @@ SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_3:
 
 SunshineTown_Eventscript_MitsuruSeeingPoliceRunning_Text_4:
 # 535 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}(The orphanage was exploded?)\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_STRUGGLED}(The orphanage was exploded?)\p"
 	.string "(Damn it! How am I so naive. Of course\n"
 	.string "they would do that to erase the proofs\l"
 	.string "and traces.)\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}(It was all my fault... If only I acted\n"
+	.string "{CREATE MUGSHOT_M EMOTE_SAD}(It was all my fault... If only I acted\n"
 	.string "sooner.)\p"
 	.string "...........\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(I should go check and help the injured\n"
+	.string "{CREATE MUGSHOT_M EMOTE_SERIOUS}(I should go check and help the injured\n"
 	.string "as well.)$"
 
 SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_0:
@@ -1854,26 +1902,26 @@ SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_4:
 
 SunshineTown_Eventscript_KGStaffAtWoodsEntrance_Text_5:
 # 613 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(They're searching for some boys... Ones\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(They're searching for some boys... Ones\n"
 	.string "of the orphan kids, perhaps?)\p"
 	.string "(I should tail them and see what they're\n"
 	.string "up to.)$"
 
 SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_0:
 # 629 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(This man... He was helping the\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(This man... He was helping the\n"
 	.string "orphanage so he could've known\l"
 	.string "something about those boys.)$"
 
 SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_1:
 # 633 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Excuse me. Have you seen these boys?$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Excuse me. Have you seen these boys?$"
 
 SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_2:
 # 635 "data/maps/SunshineTown/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Oh them! I saw the policeman living in\n"
 	.string "this town carried them to his house.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Really? When was it?$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Really? When was it?$"
 
 SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_3:
 # 638 "data/maps/SunshineTown/scripts.pory"
@@ -1882,13 +1930,13 @@ SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_3:
 	.string "After that I've only seen the black-red\n"
 	.string "beanie boy going out of the house a few\l"
 	.string "times.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}May I ask where this policeman's house\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}May I ask where this policeman's house\n"
 	.string "is?$"
 
 SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji_Text_4:
 # 650 "data/maps/SunshineTown/scripts.pory"
 	.string "It's the house over there.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I see. Thank you so much for your help.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see. Thank you so much for your help.$"
 
 SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_0:
 # 667 "data/maps/SunshineTown/scripts.pory"
@@ -1937,19 +1985,51 @@ SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_8:
 
 SunshineTown_Eventscript_MitsuruOverheardAkiShinji_Text_9:
 # 694 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}....... (His sister's missing after the\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}....... (His sister's missing after the\n"
 	.string "explosion, I suppose.)\p"
 	.string "(I should go to the orphanage and help\n"
 	.string "the searching.)$"
 
 SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru_Text_0:
 # 706 "data/maps/SunshineTown/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Now is not the time to wander around in\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(Now is not the time to wander around in\n"
 	.string "Sunshine Town.)$"
 
 SunshineTown_Eventscript_KurosawaHouseLocked_Text_0:
 # 718 "data/maps/SunshineTown/scripts.pory"
 	.string "It's locked.$"
+
+SunshineTown_Eventscript_BreederF_Text_0:
+# 727 "data/maps/SunshineTown/scripts.pory"
+	.string "Hahana$"
+
+SunshineTown_Eventscript_BreederF_Text_1:
+# 728 "data/maps/SunshineTown/scripts.pory"
+	.string "They say Nickit survives by stealing\n"
+	.string "other Pokémon's food.\p"
+	.string "Makes me wonder if I give it enough\n"
+	.string "food, will it still steal from others?$"
+
+SunshineTown_Eventscript_Nickit_Text_0:
+# 739 "data/maps/SunshineTown/scripts.pory"
+	.string "Nickit is enjoying its Sitrus Berry.$"
+
+SunshineTown_Eventscript_Gentleman_Text_0:
+# 749 "data/maps/SunshineTown/scripts.pory"
+	.string "Watanabe$"
+
+SunshineTown_Eventscript_Gentleman_Text_1:
+# 750 "data/maps/SunshineTown/scripts.pory"
+	.string "I enjoy the silence when the sun goes\n"
+	.string "down in this town.\p"
+	.string "There aren't many people living here but\n"
+	.string "during the daytime,\p"
+	.string "the teachers from the orphanage often\n"
+	.string "bring the kids here to play.\p"
+	.string "Don't get me wrong, though. I don't mind\n"
+	.string "the carefree smile of those kids.\p"
+	.string "I just wish their Pokémon battles\n"
+	.string "weren't too rowdy.$"
 
 A_AskSquirtle::
 # 204 "data/maps/SunshineTown/scripts.pory"

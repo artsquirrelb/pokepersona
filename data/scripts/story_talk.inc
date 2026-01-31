@@ -1145,41 +1145,41 @@ EventScript_OverworldStoryTalk_Text_0:
 
 EventScript_OverworldStoryTalk_MustSetClock_Text_0:
 # 166 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Let's fix the clock and join Miki\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Let's fix the clock and join Miki\n"
 	.string "outside.)$"
 
 EventScript_OverworldStoryTalk_ClockIsSet_Text_0:
 # 170 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Miki's waiting for me outside. Better\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Miki's waiting for me outside. Better\n"
 	.string "hurry).$"
 
 EventScript_OverworldStoryTalk_ShinjiroAndMikiJoinedGoingToWoods_Text_0:
 # 174 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}What are you going to do in the woods?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}What are you going to do in the woods?\p"
 	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}You'll know soon! I'm sure you'll love it!\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Gonna be funny if you fall into the pond\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Gonna be funny if you fall into the pond\n"
 	.string "again, Aki.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}I was just surprised!\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Yeah, by a Caterpie.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}Ugh...\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}I was just surprised!\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Yeah, by a Caterpie.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}Ugh...\p"
 	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}Hehe.$"
 
 EventScript_OverworldStoryTalk_LookingAroundInTheWoods_Text_0:
 # 187 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What are you doing?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Just looking around.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Making sure there's no Caterpie?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_DOUBT}Screw you.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}What are you doing?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Just looking around.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_S EMOTE_SMILE}Making sure there's no Caterpie?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}Screw you.\p"
 	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}Ehehe.$"
 
 EventScript_OverworldStoryTalk_PrePickPawmi_Text_0:
 # 195 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Come to think of it, this Pawmi's fur\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Come to think of it, this Pawmi's fur\n"
 	.string "color is kinda... weird.)$"
 
 EventScript_OverworldStoryTalk_PostPickPawmi_Text_0:
 # 199 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}(I slept so well.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}(I slept so well.)$"
 
 EventScript_OverworldStoryTalk_PostPickPawmi_Text_1:
 # 202 "data/scripts/story_talk.pory"
@@ -1187,37 +1187,37 @@ EventScript_OverworldStoryTalk_PostPickPawmi_Text_1:
 
 EventScript_OverworldStoryTalk_HaveTalkedToShinjiro_Text_0:
 # 219 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}I wonder what Ms. Kobayashi needs us\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}I wonder what Ms. Kobayashi needs us\n"
 	.string "for...$"
 
 EventScript_OverworldStoryTalk_HaveTalkedToShinjiro_Text_1:
 # 222 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}No idea, she hurried off somewhere\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}No idea, she hurried off somewhere\n"
 	.string "before I could ask.$"
 
 EventScript_OverworldStoryTalk_ShinjiroJoinedAkihikosRoom_Text_0:
 # 226 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Did you forget something? Hurry up, Ms.\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Did you forget something? Hurry up, Ms.\n"
 	.string "Kobayashi is waiting.$"
 
 EventScript_OverworldStoryTalk_PreTalkKobayashi_Text_0:
 # 230 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Ms. Kobayashi said she'd be at the main\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Ms. Kobayashi said she'd be at the main\n"
 	.string "hall.$"
 
 EventScript_OverworldStoryTalk_PostTalkKobayashi_Text_0:
 # 234 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}The package is in the Pokémon Center in\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}The package is in the Pokémon Center in\n"
 	.string "Sunshine Town.\p"
 	.string "Let's get this over with. The show's on\n"
 	.string "air soon.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Oh right, your favorite cooking show.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Oh right, your favorite cooking show.$"
 
 EventScript_OverworldStoryTalk_PostTalkKobayashi_InWoods_Text_0:
 # 240 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Never knew you would get your first\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Never knew you would get your first\n"
 	.string "Pokémon here, huh?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Yeah.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Yeah.$"
 
 EventScript_OverworldStoryTalk_PostTalkKobayashi_InWoods_Text_1:
 # 244 "data/scripts/story_talk.pory"
@@ -1225,131 +1225,131 @@ EventScript_OverworldStoryTalk_PostTalkKobayashi_InWoods_Text_1:
 
 EventScript_OverworldStoryTalk_PreTalkMartLady_Text_0:
 # 253 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What are you doing? Just ask the Mart\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}What are you doing? Just ask the Mart\n"
 	.string "Lady for the package.$"
 
 EventScript_OverworldStoryTalk_PostTalkMartLady_Text_0:
 # 258 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Let's hurry up outside. I have a bad\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Let's hurry up outside. I have a bad\n"
 	.string "feeling.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Damn it, you too?$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Damn it, you too?$"
 
 EventScript_OverworldStoryTalk_TalkToTheTownPeople_Text_0:
 # 263 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(Someone must've known what happened.\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(Someone must've known what happened.\n"
 	.string "Let's ask around.)$"
 
 EventScript_OverworldStoryTalk_GoBackToTheOrphanage_Text_0:
 # 267 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_MAD}Let's hurry back to the orphanage!!$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_MAD}Let's hurry back to the orphanage!!$"
 
 EventScript_OverworldStoryTalk_PosttalkKurosawa_Text_0:
 # 271 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}You know where to go?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}No. But there's no point in returning to\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}You know where to go?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}No. But there's no point in returning to\n"
 	.string "the orphanage right now. Let's start\l"
 	.string "with Route 2.$"
 
 EventScript_OverworldStoryTalk_PosttalkKurosawa_Riverbank_Text_0:
 # 276 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Hey Shinji...\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}Hey Shinji...\p"
 	.string "Why do you think Ms. Kobayashi would do\n"
 	.string "that to us?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}Pushing us into the river...\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}...$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_PENSIVE}Pushing us into the river...\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}...$"
 
 EventScript_OverworldStoryTalk_PosttalkKurosawa_Woods_Text_0:
 # 283 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Miki gifted me a flower crown here.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}Miki gifted me a flower crown here.\p"
 	.string "I left it in our room so it was probably\n"
 	.string "burned to ash.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}...$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_PENSIVE}...$"
 
 EventScript_OverworldStoryTalk_PostFirstMeetingMitsuru_Text_0:
 # 291 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(I wonder what Shinji wanted to say.)$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(I wonder what Shinji wanted to say.)$"
 
 EventScript_OverworldStoryTalk_PostFirstMeetingShinjiro_Text_0:
 # 295 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}You think she'll agree?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}We have a good chance. She must've also\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}You think she'll agree?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}We have a good chance. She must've also\n"
 	.string "wanted our help.$"
 
 EventScript_OverworldStoryTalk_PreFirstBattleMitsuruRoute2House_Text_0:
 # 300 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Kirijo's waiting for us in Sunshine\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Kirijo's waiting for us in Sunshine\n"
 	.string "Meadow.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Let's go meet up with her after we've\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Let's go meet up with her after we've\n"
 	.string "sorted out our party.\p"
 	.string "We'll be having 3-vs-3 battles.$"
 
 EventScript_OverworldStoryTalk_PreFirstBattleMitsuruShinjiroLeft_Text_0:
 # 306 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Shinji went ahead to prepare his team.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Shinji went ahead to prepare his team.\p"
 	.string "I should do the same and go to Sunshine\n"
 	.string "Meadow to have my first battle with\l"
 	.string "Kirijo.)$"
 
 EventScript_OverworldStoryTalk_PreFirstBattleMitsuru_Meadow_Text_0:
 # 311 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(There she is. Her Inteleon is gonna be\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(There she is. Her Inteleon is gonna be\n"
 	.string "hard to take down.\p"
 	.string "There's also that weird-colored Vulpix.)$"
 
 EventScript_OverworldStoryTalk_PostFirstBattleMitsuru_Text_0:
 # 316 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}By the way, Shinji. The Ferroseed you\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}By the way, Shinji. The Ferroseed you\n"
 	.string "used earlier...\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Looks a bit different, right?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Looks a bit different, right?\p"
 	.string "It just started following me when I was\n"
 	.string "looking for my first Pokémon in Route 1.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Huh...\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Wait, all three of us have Pokémons\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Huh...\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Wait, all three of us have Pokémons\n"
 	.string "that look slightly different from usual.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}A special coincident, huh?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}...$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}A special coincident, huh?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}...$"
 
 EventScript_OverworldStoryTalk_PostPrologue_Text_0:
 # 326 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}First, let's go through Route 2 to\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}First, let's go through Route 2 to\n"
 	.string "Coralport.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Alright! There are a few trainers on\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Alright! There are a few trainers on\n"
 	.string "that route. Time to train!\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Someone sure is fired up.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Someone sure is fired up.$"
 
 EventScript_OverworldStoryTalk_MustPickUpVulpix_Text_0:
 # 365 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL} (I should return Vulpix to its Pokéball\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL} (I should return Vulpix to its Pokéball\n"
 	.string "and hurry to Thundershards Cliff.)$"
 
 EventScript_OverworldStoryTalk_PostPickUpVulpix_Text_0:
 # 374 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}How do you feel getting back on the\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}How do you feel getting back on the\n"
 	.string "field, Vulpix?$"
 
 EventScript_OverworldStoryTalk_PostPickUpVulpix_Text_1:
 # 382 "data/scripts/story_talk.pory"
 	.string "(Vulpix's dancing excitedly.)\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Haha, honestly, me too.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Haha, honestly, me too.$"
 
 EventScript_OverworldStoryTalk_PostInteleonJoining_Text_0:
 # 390 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Well then, I'll be counting on you to\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Well then, I'll be counting on you to\n"
 	.string "watch my back, Inteleon.$"
 
 EventScript_OverworldStoryTalk_PostInteleonJoining_Text_1:
 # 393 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks determinated, nodding\n"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks determinated, nodding\n"
 	.string "at you.)$"
 
 EventScript_OverworldStoryTalk_PrePickUpFennekin_Text_0:
 # 397 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}A fire type would be great for my\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}A fire type would be great for my\n"
 	.string "journey.$"
 
 EventScript_OverworldStoryTalk_PostGoodByeKikuno_Text_0:
 # 401 "data/scripts/story_talk.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Now I should make my way to\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(Now I should make my way to\n"
 	.string "Thundershards Scree.\p"
 	.string "According to the map, it should be on\n"
 	.string "the north of Sunshine Meadow.)$"

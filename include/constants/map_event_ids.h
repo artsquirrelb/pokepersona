@@ -9,6 +9,8 @@
 #define A_CORAL 23
 #define M_CORAL 24
 #define S_CORAL 25
+#define MIKU_CORAL 33
+#define EMI_CORAL 34
 
 // MAP_CORALPORT_POLICE_STATION
 #define A_CORALP 8

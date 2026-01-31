@@ -99,7 +99,7 @@ script ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff {
     setflag(FLAG_TEMP_2)
     special(RemoveCameraObject)
     bufferleadmonspeciesname(STR_VAR_1)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}.........\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}.........\p
     ({STR_VAR_1}, are you ready?)"))
     closemessage
     playfirstmoncry
@@ -111,7 +111,7 @@ script ThundershardsCave_2F_Eventscript_MitsuruEavesdroppingKGStaff {
 
 script ThundershardsCave_2F_Eventscript_LetsJumpKGStaff {
     lock
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(They haven't noticed me yet. Let's surprise those people.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(They haven't noticed me yet. Let's surprise those people.)"))
     closemessage
     applymovement(LOCALID_PLAYER, walkup)
     waitmovement(0)
@@ -132,7 +132,7 @@ script ThundershardsCave_2F_Eventscript_KirijoGenesisStaff {
     bufferpartymonnick(STR_VAR_1, 0)
     bufferpartymonnick(STR_VAR_2, 1)
     msgbox(format("{SPEAKER NAME_WIB}What the- Why are you here-\p
-    {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}{STR_VAR_1}, {STR_VAR_2}."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}{STR_VAR_1}, {STR_VAR_2}."))
     closemessage
     trainerbattle_two_trainers(TRAINER_KG_STAFF_M_THUNDERSHARDS_CAVE_1F, KG_Staff_M_defeated, TRAINER_KG_STAFF_F_THUNDERSHARDS_CAVE_1F, KG_Staff_F_defeated)
     goto(ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle)
@@ -160,7 +160,7 @@ script ThundershardsCave_2F_Eventscript_Post_KirijoGenesisStaffM_Battle {
         applymovement(LOCALID_PLAYER, moves(walk_fast_down, face_right))
         waitmovement
     }
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Not so fast."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Not so fast."))
     closemessage
     goto(ThundershardsCave_2F_Eventscript_FreezingKGStaff)
     release
@@ -211,7 +211,7 @@ script ThundershardsCave_2F_Eventscript_FreezingKGStaff {
     special(RemoveCameraObject)
     delay(20)
     bufferleadmonspeciesname(STR_VAR_1)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Don't worry, you'll thaw out in about 20 minutes.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Don't worry, you'll thaw out in about 20 minutes.\p
     Let's go, {STR_VAR_1}, Inteleon."))
     closemessage
     applymovement(21, moves(walk_left, set_invisible))
@@ -234,7 +234,7 @@ text KG_Staff_F_defeated {
 script ThundershardsCave_2F_Eventscript_FrozenStaff {
     if (var(VAR_MITSURUS_INTRO_STATE) == 14){
     lock
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(I should be able to push them.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(I should be able to push them.)"))
     closemessage
     playse(SE_SELECT)
     applymovement(19, moves(lock_facing_direction, walk_fast_right*3))
@@ -242,7 +242,7 @@ script ThundershardsCave_2F_Eventscript_FrozenStaff {
     waitmovement(0)
     playse(SE_CLICK)
     waitse
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}(Magnifique.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}(Magnifique.)"))
     setvar(VAR_MITSURUS_INTRO_STATE, 15)
     release
     end
@@ -278,7 +278,7 @@ script ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave {
     applymovement(OBJ_EVENT_ID_CAMERA, walkup)
     waitmovement
     call(ShakeScreenNoSound)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Looks like those two managed to escape.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(Looks like those two managed to escape.\p
     That's a relief.)"))
     closemessage
     call(ShakeScreenNoSound)

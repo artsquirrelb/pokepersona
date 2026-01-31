@@ -434,7 +434,7 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites1_Text_1:
 # 37 "data/maps/ThundershardsCave_1F/scripts.pory"
 	.string "Rocks are fascinating, don't you agree,\n"
 	.string "young lady?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}Huh? Oh- yes, I suppose they are.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}Huh? Oh- yes, I suppose they are.$"
 
 ThundershardsCave_1F_EventScript_NeckBeardInvites1_Text_2:
 # 43 "data/maps/ThundershardsCave_1F/scripts.pory"
@@ -470,12 +470,12 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites1_Text_7:
 	.string "Just ask around for Nebe's house when\n"
 	.string "you get there. Coralport is very\l"
 	.string "hospitable.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}I- Thank you. Nebe-san.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}I- Thank you. Nebe-san.$"
 
 ThundershardsCave_1F_EventScript_NeckBeardInvites1_Text_8:
 # 68 "data/maps/ThundershardsCave_1F/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}.......\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(I should go on with my mission.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}.......\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(I should go on with my mission.)$"
 
 Common_EventScript_MiningRock_Text_0:
 # 144 "data/maps/ThundershardsCave_1F/scripts.pory"

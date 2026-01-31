@@ -1410,9 +1410,9 @@ CoralportCave_Eventscript_DusclopsCutscene_Text_1:
 
 CoralportCave_Eventscript_DusclopsCutscene_Text_2:
 # 203 "data/maps/CoralportCave/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Sanada-kun, Aragaki-kun. Back me up.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Gotcha!\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}No need to ask!$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Sanada-kun, Aragaki-kun. Back me up.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Gotcha!\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}No need to ask!$"
 
 CoralportCave_Eventscript_TheReasonMisaEnteredTheCave_Text_0:
 # 269 "data/maps/CoralportCave/scripts.pory"
@@ -1461,16 +1461,16 @@ CoralportCave_Eventscript_TheReasonMisaEnteredTheCave_Text_7:
 
 CoralportCave_Eventscript_TheReasonMisaEnteredTheCave_Text_8:
 # 327 "data/maps/CoralportCave/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It looks like it wants us to follow it.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It looks like it wants us to follow it.$"
 
 CoralportCave_Eventscript_TheReasonMisaEnteredTheCave_Text_9:
 # 343 "data/maps/CoralportCave/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Is that... its parent?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}It's... not moving.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Is that... its parent?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}It's... not moving.$"
 
 CoralportCave_Eventscript_TheReasonMisaEnteredTheCave_Text_10:
 # 357 "data/maps/CoralportCave/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}......{PAUSE 60}It's too late...\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}......{PAUSE 60}It's too late...\p"
 	.string "Its life energy has already been all\n"
 	.string "drained.$"
 
@@ -1528,16 +1528,16 @@ CoralportCave_Eventscript_MisaTakingInWooper_Text_7:
 
 CoralportCave_Eventscript_MisaTakingInWooper_Text_8:
 # 460 "data/maps/CoralportCave/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}........$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}........$"
 
 CoralportCave_Eventscript_MisaTakingInWooper_Text_9:
 # 465 "data/maps/CoralportCave/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CRY}-sniffle-$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CRY}-sniffle-$"
 
 CoralportCave_Eventscript_MisaTakingInWooper_Text_10:
 # 468 "data/maps/CoralportCave/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Hphm, crybaby.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CRY}Shut up. -sniffle-$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Hphm, crybaby.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CRY}Shut up. -sniffle-$"
 
 DusclopsDefeated::
 # 224 "data/maps/CoralportCave/scripts.pory"

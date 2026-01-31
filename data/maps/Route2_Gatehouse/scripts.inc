@@ -194,6 +194,20 @@ Route2_Gatehouse_Eventscript_Bookshelves::
 	end
 
 
+Route2_Gatehouse_Eventscript_Lady::
+# 135 "data/maps/Route2_Gatehouse/scripts.pory"
+	lock
+# 136 "data/maps/Route2_Gatehouse/scripts.pory"
+	faceplayer
+# 137 "data/maps/Route2_Gatehouse/scripts.pory"
+	setspeaker Route2_Gatehouse_Eventscript_Lady_Text_0
+# 138 "data/maps/Route2_Gatehouse/scripts.pory"
+	msgbox Route2_Gatehouse_Eventscript_Lady_Text_1
+# 143 "data/maps/Route2_Gatehouse/scripts.pory"
+	release
+	end
+
+
 Route2_Gatehouse_Eventscript_Nurse_Text_0:
 # 10 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "Nurse Eimi$"
@@ -248,7 +262,7 @@ Route2_Gatehouse_Eventscript_KidF_Text_0:
 Route2_Gatehouse_Eventscript_KidF_Text_1:
 # 66 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "Hello, gorgeous sister! I like your hair!\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}!{PAUSE 60} {CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}My, thank you, little kid. I like your\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}!{PAUSE 60} {CREATE MUGSHOT_M EMOTE_SMILE}My, thank you, little kid. I like your\n"
 	.string "eyes too.$"
 
 Route2_Gatehouse_Eventscript_KidF_Text_2:
@@ -264,25 +278,25 @@ Route2_Gatehouse_Eventscript_KidF_Text_3:
 Route2_Gatehouse_Eventscript_KidF_Text_4:
 # 82 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "Hello, grandpa!\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}M-Me? Grandpa???\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Hey, little girl. I'm still 16!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}M-Me? Grandpa???\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Hey, little girl. I'm still 16!$"
 
 Route2_Gatehouse_Eventscript_KidF_Text_5:
 # 86 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Oh... Then why is your hair gray like my\n"
 	.string "grandpa's?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}I- uh......{PAUSE 60}\n"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_STRUGGLED}Psst, Shinji, why is my hair gray?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}How the f-{PAUSE 60} {CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}(How should I know!? It\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}I- uh......{PAUSE 60}\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}Psst, Shinji, why is my hair gray?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}How the f-{PAUSE 60} {CREATE MUGSHOT_S EMOTE_GEEZ}(How should I know!? It\n"
 	.string "probably has something to do with\l"
 	.string "genes?)\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}I believe it has something to do with\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}I believe it has something to do with\n"
 	.string "genes.$"
 
 Route2_Gatehouse_Eventscript_KidF_Text_6:
 # 93 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Oh, I see...\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_GEEZ}Sigh.........$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_GEEZ}Sigh.........$"
 
 Route2_Gatehouse_Eventscript_WallNoticeRight_Text_0:
 # 111 "data/maps/Route2_Gatehouse/scripts.pory"
@@ -300,3 +314,19 @@ Route2_Gatehouse_Eventscript_Bookshelves_Text_0:
 	.string "Sunshine Island on the east and the\l"
 	.string "smallest one, Uzumaki Island on the\l"
 	.string "south.$"
+
+Route2_Gatehouse_Eventscript_Lady_Text_0:
+# 137 "data/maps/Route2_Gatehouse/scripts.pory"
+	.string "Daria$"
+
+Route2_Gatehouse_Eventscript_Lady_Text_1:
+# 138 "data/maps/Route2_Gatehouse/scripts.pory"
+	.string "I'm currently watching a drama series\n"
+	.string "called Corviknight Driver.\p"
+	.string "The protagonist and his friends run a\n"
+	.string "Corviknight airborne taxi service and\l"
+	.string "punish the evil do-ers who made their\l"
+	.string "customers suffered.\p"
+	.string "The action scenes with his Corviknight\n"
+	.string "are very cool!\p"
+	.string "Maybe I should raise a Rookidee.$"

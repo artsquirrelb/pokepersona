@@ -71,7 +71,7 @@ script SunshineWoods_Eventscript_DoNotEnterTheGrass {
     applymovement(2, facedown)
     applymovement(3, facedown)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Alright, we're here.\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Alright, we're here.\p
     Don't enter the tall grass, okay?\p
     {SPEAKER NAME_MK}{DESTROY_MUGSHOT}Okay!"))
     fadescreenswapbuffers(FADE_TO_BLACK)
@@ -107,7 +107,7 @@ movement SunshineWoods_Eventscript_MikiFoundSomething {
 script SunshineWoods_Eventscript_PawmisCry {
     lock
     msgbox(format("{SPEAKER NAME_MK}Big bro! Look! I just made this flower crown! It's for you!\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}It's very pretty! Thank you, Miki!"))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_HAPPY}It's very pretty! Thank you, Miki!"))
     release
     goto (SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown)
 }
@@ -116,7 +116,7 @@ script SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown {
     lock
     applymovement(3, faceup)
     waitmovement(0)
-    msgbox(format("{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Will you make one for me too, Miki?\p
+    msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Will you make one for me too, Miki?\p
     {SPEAKER NAME_MK}{DESTROY_MUGSHOT}Of course!"))
     closemessage
     release
@@ -132,8 +132,8 @@ script SunshineWoods_Eventscript_PawmiCries {
     applymovement(3, SunshineWoods_Eventscript_MikiAlerted)
     delay(30)
     waitmovement
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}W-What was that?\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Could be a wild Pokémon. Be careful!"))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}W-What was that?\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Could be a wild Pokémon. Be careful!"))
     waitmessage
     release
     goto (SunshineWoods_Eventscript_PawmiAppears)
@@ -200,10 +200,10 @@ script SunshineWoods_Eventscript_PawmisInjured {
     applymovement(4, SunshineWoods_Eventscript_PawmiIsWeak)
     waitmovement
     delay(16)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Wait...\p
-    {SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}It looks heavily injured.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Wait...\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}It looks heavily injured.\p
     {SPEAKER NAME_MK}{DESTROY_MUGSHOT}We should take it back to the orphanage!\p
-    {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Yeah!"))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Yeah!"))
     release
     goto (TakePawmiToHeal)
 }
@@ -219,7 +219,7 @@ movement SunshineWoods_Eventscript_PawmiIsWeak {
 script TakePawmiToHeal {
     lock
     applymovement(LOCALID_PLAYER, SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi)
-    msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Come on, lil' guy."))
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Come on, lil' guy."))
     closemessage
     fadescreenswapbuffers(FADE_TO_BLACK)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 7)
@@ -417,7 +417,7 @@ script SunshineWoods_Eventscript_KGStaff1_Battle {
     waitmovement
     fadescreenswapbuffers(FADE_FROM_BLACK)
     delay(20)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Great teamwork, Inteleon.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Great teamwork, Inteleon.\p
     Now let's check if he has any useful information."))
     closemessage
     playse(SE_RG_CARD_FLIPPING)
@@ -438,13 +438,13 @@ script SunshineWoods_Eventscript_KGStaff1_Battle {
     callnative(DrawMugshot)
     msgbox(format("Besides the Exp candies, there's also a picture of a silver-haired boy."))
     closemessage
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}So this is one of the boys they're searching for?"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}So this is one of the boys they're searching for?"))
     closemessage
     callnative(ClearMugshot)
     playse(SE_RG_CARD_FLIPPING)
     applymovement(LOCALID_PLAYER, emotepensive)
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}There's nothing else here, let's go, Inteleon."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}There's nothing else here, let's go, Inteleon."))
     closemessage
     specialvar(VAR_RESULT, GetPlayerFacingDirection)
     if (var(VAR_RESULT) == DIR_SOUTH){
@@ -467,7 +467,7 @@ script SunshineWoods_Eventscript_KGStaff1_Battle {
 }
 
 script SunshineWoods_Eventscript_KGStaff1_PostBattle {
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(He's out cold. There's no further information I can get out of him.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(He's out cold. There's no further information I can get out of him.)"))
     closemessage
 }
 
@@ -528,7 +528,7 @@ script SunshineWoods_Eventscript_KGStaff2_Battle {
     
     fadescreenswapbuffers(FADE_FROM_BLACK)
     delay(20)
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Great job, Inteleon.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Great job, Inteleon.\p
     Now let's see..."))
     closemessage
     playse(SE_RG_CARD_FLIPPING)
@@ -552,13 +552,13 @@ script SunshineWoods_Eventscript_KGStaff2_Battle {
     callnative(DrawMugshot)
     msgbox(format("In another pocket, there's also a picture of a boy wearing black-red beanie."))
     closemessage
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Magnifique. Now I know how one of their targets looks like."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Magnifique. Now I know how one of their targets looks like."))
     closemessage
     callnative(ClearMugshot)
     playse(SE_RG_CARD_FLIPPING)
     applymovement(LOCALID_PLAYER, emotepensive)
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}There's nothing else here, time to go."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}There's nothing else here, time to go."))
     closemessage
     specialvar(VAR_RESULT, GetPlayerFacingDirection)
     if (var(VAR_RESULT) == DIR_SOUTH){
@@ -584,7 +584,7 @@ script SunshineWoods_Eventscript_KGStaff2_Battle {
 }
 
 script SunshineWoods_Eventscript_KGStaff2_PostBattle {
-    msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(He's fainted. Inteleon hit him a little too hard but he should be fine.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(He's fainted. Inteleon hit him a little too hard but he should be fine.)"))
     closemessage
 }
 
@@ -593,7 +593,7 @@ script SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown {
         lock
         applymovement(LOCALID_PLAYER, walkright)
         waitmovement
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Let's check the men in black for information.)"))
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Let's check the men in black for information.)"))
         closemessage
         release
         end
@@ -610,19 +610,19 @@ script SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown {
         addobject(INTELEON_T_SW)
         applymovement(INTELEON_T_SW, moves(walk_right, face_left))
         waitmovement
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Can you go help the rescue at the orphanage, Inteleon?\p
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Can you go help the rescue at the orphanage, Inteleon?\p
         Don't worry about me, I'll just go back to the house in Route 2 to do some research about the boys they're so interested in."))
         playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
         applymovement(INTELEON_T_SW, shakehorizontal)
         waitmovement
-        msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon shaked its head.)\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}Sigh... Then how about after I get to the house safely?\p
+        msgbox(format("{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon shaked its head.)\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}Sigh... Then how about after I get to the house safely?\p
         I promise I'll stay there until you return."))
         playmoncry(SPECIES_INTELEON, CRY_MODE_NORMAL)
         applymovement(INTELEON_T_SW, walkinplaceleft)
         waitmovement
-        msgbox(format("{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon reluctantly agreed.)\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}C'est magnifique. Let's move out."))
+        msgbox(format("{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon reluctantly agreed.)\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}C'est magnifique. Let's move out."))
         closemessage
         setvar(VAR_MITSURUS_INTRO_STATE, 22)
         setvar(VAR_0x8000, 0)
@@ -643,7 +643,7 @@ script SunshineWoods_Eventscript_AkihikoPrologueStart {
     faceplayer
     setflag(FLAG_HIDE_QUEST_ICON)
     if (var(VAR_TEMP_0) == 1){
-        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}.......{PAUSE 60}
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}.......{PAUSE 60}
         Sorry, I want to be alone for a while. Can we talk later?"))
         closemessage
         release
@@ -651,8 +651,8 @@ script SunshineWoods_Eventscript_AkihikoPrologueStart {
     }
     else{
         fadenewbgm(MUS_XC2_GARFONT_MERCERNARIES)
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}So this is where you are.\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Hey, Kirijo. Have a seat."))
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}So this is where you are.\p
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Hey, Kirijo. Have a seat."))
         closemessage
         specialvar(VAR_RESULT, GetPlayerFacingDirection)
         if(var(VAR_RESULT) == DIR_NORTH){
@@ -675,20 +675,20 @@ script SunshineWoods_Eventscript_AkihikoPrologueStart {
         }
         waitmovement
         delay(60)
-        msgbox(format("{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}What are you doing here, if I may ask?\p
-        {SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Just... {PAUSE 60}reminiscing,{PAUSE 60} I guess.\p
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}What are you doing here, if I may ask?\p
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Just... {PAUSE 60}reminiscing,{PAUSE 60} I guess.\p
         This was where I, my sis and Shinji used to hang out.\p
-        {SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That sounded like good times."))
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}That sounded like good times."))
         closemessage
         delay(30)
         applymovement(16, emotepensive)
         waitmovement
-        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Kirjo, uh...{PAUSE 60}
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}Kirjo, uh...{PAUSE 60}
         This is kinda sudden but I guess I just want to talk about this to someone."))
-        msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Would you listen?
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Would you listen?
         {COLOR GREEN}(Begin Akihiko's prologue quest?)"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == FALSE){
-            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}Oh, okay......"))
+            msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}Oh, okay......"))
             closemessage
             playse(SE_M_STAT_DECREASE)
             applymovement(16, pointdown3)
@@ -704,7 +704,7 @@ script SunshineWoods_Eventscript_AkihikoPrologueStart {
             playse(SE_SHINY)
             applymovement(16, pointup3)
             waitmovement
-            msgbox(format("{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Thanks!"))
+            msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Thanks!"))
             closemessage
             fadescreenswapbuffers(FADE_TO_BLACK)
             switchmaincharacter

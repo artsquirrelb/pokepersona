@@ -1070,188 +1070,188 @@ Eventscript_MitsuruFollower_Cancel_Movement_0:
 
 Eventscript_MitsuruFollower_Text_0:
 # 10 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Is something wrong, Sanada-kun?$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Is something wrong, Sanada-kun?$"
 
 Eventscript_AkiMitsuFollower_Talk_Text_0:
 # 58 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Let's go, Sanada-kun. There's no time to\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Let's go, Sanada-kun. There's no time to\n"
 	.string "waste.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}I know.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}I know.$"
 
 Eventscript_AkiMitsuFollower_Talk_Text_1:
 # 62 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}I'm still getting used to travelling with\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I'm still getting used to travelling with\n"
 	.string "a larger party like this.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}If I have to be honest, I find it quite\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}If I have to be honest, I find it quite\n"
 	.string "delightful so far.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Oh? Did you travel before?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}It was for the Ranger School. I used to\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Oh? Did you travel before?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}It was for the Ranger School. I used to\n"
 	.string "do the fieldwork for the Pokémon\l"
 	.string "Researchers there.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}That sounds awesome. Miki and I have\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}That sounds awesome. Miki and I have\n"
 	.string "always wanted to travel the region, for\l"
 	.string "Pokémon research or not.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}......\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}......\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SAD}I just brought the mood down, didn't I?\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}......\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}......\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}I just brought the mood down, didn't I?\n"
 	.string "Sorry.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}We will find her soon.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Of course, I believe so.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}We will find her soon.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Of course, I believe so.$"
 
 Eventscript_AkiMitsuFollower_Talk_Text_2:
 # 76 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Just want to say that you won't regret\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Just want to say that you won't regret\n"
 	.string "partnering with us.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}We'll see. I do rarely make wrong\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}We'll see. I do rarely make wrong\n"
 	.string "choices.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}Ahaha, very confident, aren't you?\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_HAPPY}Ahaha, very confident, aren't you?\n"
 	.string "Don't worry. I don't intend to make it a\l"
 	.string "wrong choice.$"
 
 Eventscript_MitsuruFollower_SetPartner_Text_0:
 # 85 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Very well. I'll back you up.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Very well. I'll back you up.$"
 
 Eventscript_MitsuruFollower_UnsetPartner_Text_0:
 # 92 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}You want to train on your own? Your\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}You want to train on your own? Your\n"
 	.string "determination is truly admirable.$"
 
 Eventscript_MitsuruFollower_Return_Text_0:
 # 99 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}By all means. I figure you miss your\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}By all means. I figure you miss your\n"
 	.string "Pokémon as well.$"
 
 Eventscript_MitsuruFollower_Cancel_Text_0:
 # 108 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Well, if you have anything you want to\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Well, if you have anything you want to\n"
 	.string "say to me, please don't hesitate.$"
 
 Eventscript_AkihikoFollower_Text_0:
 # 142 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Need something, Kirijo?$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Need something, Kirijo?$"
 
 Eventscript_AkihikoFollower_SetPartner_Text_0:
 # 190 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Alright. I won't lose to you!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Alright. I won't lose to you!$"
 
 Eventscript_AkihikoFollower_UnsetPartner_Text_0:
 # 198 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Sure then. I'll just train on my own.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Sure then. I'll just train on my own.$"
 
 Eventscript_AkihikoFollower_Return_Text_0:
 # 205 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Understood!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Understood!$"
 
 Eventscript_AkihikoFollower_Cancel_Text_0:
 # 214 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Huh? Okay then.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Huh? Okay then.$"
 
 Eventscript_ShinjiroFollower_Text_0:
 # 225 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What's up, Aki?$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}What's up, Aki?$"
 
 Eventscript_ShinjiroFollower_Text_1:
 # 228 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}What's wrong, Princess?$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}What's wrong, Princess?$"
 
 Eventscript_ShinjiMitsuFollower_Talk_Text_0:
 # 333 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}Ahem, let's just go.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_GEEZ}Ahem, let's just go.$"
 
 Eventscript_ShinjiMitsuFollower_Talk_Text_1:
 # 336 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}.......\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}.......\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Ahem, may I ask you something?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Didn't you want to talk? So just fire\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}.......\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}.......\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Ahem, may I ask you something?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Didn't you want to talk? So just fire\n"
 	.string "away.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}How did you learn to battle when you\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}How did you learn to battle when you\n"
 	.string "didn't have a Pokémon before?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}They taught us in the orphanage.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}They taught us in the orphanage.\p"
 	.string "It'd be hard to manage if the kids have\n"
 	.string "their own Pokémon so the staff lent us\l"
 	.string "theirs for Pokémon battling classes.\p"
 	.string "We also get a certified trainer card\n"
 	.string "after graduating.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}So that was how it worked there.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Anything else?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}For now, no. Thank you, that was quite\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}So that was how it worked there.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Anything else?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}For now, no. Thank you, that was quite\n"
 	.string "informative.\p"
 	.string "What about you? I figure it'll only be\n"
 	.string "fair if you ask me something in return.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}........\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_PENSIVE}What's your Pokémon's favorite\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}........\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_PENSIVE}What's your Pokémon's favorite\n"
 	.string "foods...?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}My Pokémon's favorite foods...?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}N-Never mind that. We're done here.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SURPRISED}Aragaki-kun?$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}My Pokémon's favorite foods...?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_GEEZ}N-Never mind that. We're done here.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}Aragaki-kun?$"
 
 Eventscript_ShinjiroFollower_Aki_SetPartner_Text_0:
 # 374 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_DOUBT}Aki, I don't have a Pokémon yet.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}But well, I suppose I've got your back\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_DOUBT}Aki, I don't have a Pokémon yet.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}But well, I suppose I've got your back\n"
 	.string "in a fist fight. Just bring me a bus stop\l"
 	.string "sign or something.$"
 
 Eventscript_ShinjiroFollower_Aki_SetPartner_Text_1:
 # 378 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_DOUBT}Don't we have to return to the house in\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_DOUBT}Don't we have to return to the house in\n"
 	.string "Route 2?\p"
 	.string "Now is not the time to train, Aki.$"
 
 Eventscript_ShinjiroFollower_Aki_SetPartner_Text_2:
 # 382 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Can't do anything without me, huh?$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Can't do anything without me, huh?$"
 
 Eventscript_ShinjiroFollower_Aki_UnsetPartner_Text_0:
 # 390 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Alright then.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Alright then.$"
 
 Eventscript_ShinjiroFollower_Mitsu_SetPartner_Text_0:
 # 397 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}So you do need help sometimes, huh?$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}So you do need help sometimes, huh?$"
 
 Eventscript_ShinjiroFollower_Mitsu_UnsetPartner_Text_0:
 # 404 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Sure, I know you can hold your ground.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Sure, I know you can hold your ground.$"
 
 Eventscript_ShinjiroFollower_Aki_Return_Text_0:
 # 411 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Sure then, I'll also check how Ferroseed\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Sure then, I'll also check how Ferroseed\n"
 	.string "is doing.$"
 
 Eventscript_ShinjiroFollower_Mitsu_Return_Text_0:
 # 417 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Got it.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Got it.$"
 
 Eventscript_ShinjiroFollower_Aki_Cancel_Text_0:
 # 426 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}What is it? Just spit it out.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_GEEZ}What is it? Just spit it out.$"
 
 Eventscript_ShinjiroFollower_Mitsu_Cancel_Text_0:
 # 433 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Whatever.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Whatever.$"
 
 Eventscript_InteleonTFollower_Text_0:
 # 444 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks at you and waits for\n"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks at you and waits for\n"
 	.string "what you want to say.)$"
 
 Eventscript_InteleonTFollower_AkiTalk_Text_0:
 # 516 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(It doesn't look like it wants to chat\n"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(It doesn't look like it wants to chat\n"
 	.string "with you.)$"
 
 Eventscript_InteleonTFollower_MitsuTalk_Text_0:
 # 522 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Let's focusing on completing our\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Let's focusing on completing our\n"
 	.string "mission, for Father.\p"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon nodded, looking determined.)$"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon nodded, looking determined.)$"
 
 Eventscript_InteleonTFollower_MitsuTalk_Text_1:
 # 526 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}I hope Father will be safe without you,\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}I hope Father will be safe without you,\n"
 	.string "Inteleon.\p"
 	.string "You're his most trusted partner and you\n"
 	.string "two were never separated as far as I\l"
@@ -1259,83 +1259,83 @@ Eventscript_InteleonTFollower_MitsuTalk_Text_1:
 
 Eventscript_InteleonTFollower_MitsuTalk_Text_2:
 # 532 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_NORMAL}(Inteleon puts its hand on Mitsuru's\n"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_NORMAL}(Inteleon puts its hand on Mitsuru's\n"
 	.string "shoulder, nodding.)\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}You're right, I should believe in him.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}You're right, I should believe in him.\p"
 	.string "Let's focus on completing our mission.$"
 
 Eventscript_InteleonTFollower_MitsuTalk_Text_3:
 # 540 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}What do you think about those two boys,\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}What do you think about those two boys,\n"
 	.string "Inteleon?\p"
 	.string "Did I make the right choice partnering\n"
 	.string "up with them?$"
 
 Eventscript_InteleonTFollower_MitsuTalk_Text_4:
 # 546 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_DOUBT}(Inteleon is lost in thought. Looks like\n"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_DOUBT}(Inteleon is lost in thought. Looks like\n"
 	.string "it needs more time to answer this\l"
 	.string "question.)\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}I suppose only time will tell.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}I suppose only time will tell.$"
 
 Eventscript_InteleonTFollower_Aki_SetPartner_Text_0:
 # 561 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon refused. It doesn't trust\n"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon refused. It doesn't trust\n"
 	.string "Akihiko enough right now.)$"
 
 Eventscript_InteleonTFollower_Mitsu_SetPartner_Text_0:
 # 568 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon silently nods.)$"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon silently nods.)$"
 
 Eventscript_InteleonTFollower_Cancel_Text_0:
 # 601 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_ITLN}{CREATE_MUGSHOT MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks confused but says\n"
+	.string "{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon looks confused but says\n"
 	.string "nothing.)$"
 
 Eventscript_AkiShinjiFollower_Talk_P_Text_0:
 # 606 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Have you thought of which Pokémon you\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Have you thought of which Pokémon you\n"
 	.string "want for your first?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Not sure, but I guess I'd like a\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Not sure, but I guess I'd like a\n"
 	.string "Grass-type Pokémon. Or a Steel-type\l"
 	.string "one.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Really? I thought it'd be a Fire-type,\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Really? I thought it'd be a Fire-type,\n"
 	.string "because you love cooking.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Now that I think about it, that also\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Now that I think about it, that also\n"
 	.string "isn't bad at all.$"
 
 Eventscript_AkiShinjiFollower_Talk_C1_Text_0:
 # 614 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}Enough chatting. I'm done with your\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_GEEZ}Enough chatting. I'm done with your\n"
 	.string "dumbass.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}I'm not dumb!!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}I'm not dumb!!$"
 
 Eventscript_AkiShinjiFollower_Talk_C1_Text_1:
 # 622 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}There's one more weird thing about her.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}Yeah?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}She takes at least an hour in the bath.\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}There's one more weird thing about her.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Yeah?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}She takes at least an hour in the bath.\n"
 	.string "I don't get it.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}.............\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Should I ask her? It bothers me when I\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_GEEZ}.............\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Should I ask her? It bothers me when I\n"
 	.string "don't understand something.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_GEEZ}Don't dig your own grave like that.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_GEEZ}Don't dig your own grave like that.$"
 
 Eventscript_AkiShinjiFollower_Talk_C1_Text_2:
 # 632 "data/scripts/follower_npc.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}At the risk of turning myself into a\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}At the risk of turning myself into a\n"
 	.string "broken record, you shouldn't trust that\l"
 	.string "girl so easily.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}I know, Shinji. Ms. Kobayashi's always\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}I know, Shinji. Ms. Kobayashi's always\n"
 	.string "warned us to not trust rich people.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Although I think she's quite weird for a\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Although I think she's quite weird for a\n"
 	.string "billionaire young lady.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_NORMAL}How so?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}She's not being arrogant nor flaunting\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}How so?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}She's not being arrogant nor flaunting\n"
 	.string "her wealth?\p"
 	.string "Nor looking down on us orphan kids.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}Besides, she's good at battling and\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Besides, she's good at battling and\n"
 	.string "truly seems to love her Pokémon a lot.\p"
 	.string "I've never seen rich people act like\n"
 	.string "that.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SMILE}Yeah, you're right about that.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Yeah, you're right about that.$"

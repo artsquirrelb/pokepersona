@@ -1621,6 +1621,50 @@ SunshineMeadow_Eventscript_ShinjiroFirstBattleResult_5:
 	goto SunshineMeadow_Eventscript_ShinjiroFirstBattleResult_1
 
 
+SunshineMeadow_Eventscript_SchoolGirl::
+# 950 "data/maps/SunshineMeadow/scripts.pory"
+	lock
+# 951 "data/maps/SunshineMeadow/scripts.pory"
+	faceplayer
+# 952 "data/maps/SunshineMeadow/scripts.pory"
+	setspeaker SunshineMeadow_Eventscript_SchoolGirl_Text_0
+# 953 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_SchoolGirl_Text_1
+# 955 "data/maps/SunshineMeadow/scripts.pory"
+	release
+	end
+
+
+SunshineMeadow_Eventscript_LittleBoy::
+# 960 "data/maps/SunshineMeadow/scripts.pory"
+	lock
+# 961 "data/maps/SunshineMeadow/scripts.pory"
+	faceplayer
+# 962 "data/maps/SunshineMeadow/scripts.pory"
+	setspeaker SunshineMeadow_Eventscript_LittleBoy_Text_0
+# 963 "data/maps/SunshineMeadow/scripts.pory"
+	msgbox SunshineMeadow_Eventscript_LittleBoy_Text_1
+# 964 "data/maps/SunshineMeadow/scripts.pory"
+	release
+	end
+
+
+SunshineMeadow_Eventscript_Gothita::
+# 969 "data/maps/SunshineMeadow/scripts.pory"
+	moncryscript SPECIES_GOTHITA
+# 970 "data/maps/SunshineMeadow/scripts.pory"
+	release
+	end
+
+
+SunshineMeadow_Eventscript_Poochyena::
+# 975 "data/maps/SunshineMeadow/scripts.pory"
+	moncryscript SPECIES_POOCHYENA
+# 976 "data/maps/SunshineMeadow/scripts.pory"
+	release
+	end
+
+
 # 591 "data/maps/SunshineMeadow/scripts.pory"
 SunshineMeadow_Eventscript_JumpOverFence_Movement_0:
 # 591 "data/maps/SunshineMeadow/scripts.pory"
@@ -1875,124 +1919,124 @@ SunshineMeadow_Eventscript_ShinjiroFirstBattleResult_Movement_2:
 
 SunshineMeadow_Eventscript_PreMitsuruFirstBattleTalk_Text_0:
 # 121 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for\n"
 	.string "our first battle?$"
 
 SunshineMeadow_Eventscript_PreMitsuruFirstBattleTalk_Text_1:
 # 124 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}No worry. We still have time.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}No worry. We still have time.$"
 
 SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle_Text_0:
 # 136 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}It seems like you don't have at least 3\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It seems like you don't have at least 3\n"
 	.string "Pokémon in your party.\p"
 	.string "I'd like us to have a fair battle. {COLOR RED}Do you\n"
 	.string "still want to proceed at this state?$"
 
 SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle_Text_1:
 # 140 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Well then, please come back later when\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Well then, please come back later when\n"
 	.string "you have at least 3 Pokémon in your\l"
 	.string "party.$"
 
 SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle_Text_2:
 # 151 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Are you underestimating me because I'm\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Are you underestimating me because I'm\n"
 	.string "a girl?$"
 
 SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle_Text_3:
 # 166 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Very well. Shall we start?$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Very well. Shall we start?$"
 
 SunshineMeadow_Eventscript_StartingMitsuruFirstBattle_Text_0:
 # 201 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Shinji! You made it!\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}Damn, you two are already at it, huh?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}You're just in time. We're starting.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Shinji! You made it!\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}Damn, you two are already at it, huh?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}You're just in time. We're starting.$"
 
 SunshineMeadow_Eventscript_StartingMitsuruFirstBattle_Text_1:
 # 207 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Shinji! You made it!\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}Damn, you two are already at it, huh?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Not quite, you're just in time. We're\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Shinji! You made it!\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}Damn, you two are already at it, huh?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Not quite, you're just in time. We're\n"
 	.string "starting.$"
 
 SunshineMeadow_Eventscript_StartingMitsuruFirstBattle_Text_2:
 # 222 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Not gonna use your Inteleon?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}I already told you I wanted a fair\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Not gonna use your Inteleon?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}I already told you I wanted a fair\n"
 	.string "fight.\p"
 	.string "He's not mine. He's only here to watch\n"
 	.string "over me.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}Huh, if you said so.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}Alright then. Let's see what you can do,\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Huh, if you said so.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Alright then. Let's see what you can do,\n"
 	.string "Kirijo.$"
 
 SunshineMeadow_Eventscript_StartingMitsuruFirstBattle_Text_3:
 # 230 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Not gonna use your Inteleon?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}It wouldn't be a fair fight if I do.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Not gonna use your Inteleon?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}It wouldn't be a fair fight if I do.\p"
 	.string "Beside, he's not mine. He's only here to\n"
 	.string "watch over me.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}Huh, if you said so.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Alright then. Let's go, Kirijo.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Huh, if you said so.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Alright then. Let's go, Kirijo.$"
 
 SunshineMeadow_Eventscript_MitsuruFirstBattleSelectCancel_Text_0:
 # 286 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Let's pick 3 Pokémon to fight. Kirijo is\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Let's pick 3 Pokémon to fight. Kirijo is\n"
 	.string "waiting.)$"
 
 SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_0:
 # 366 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Alright, I've healed your party.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Alright, I've healed your party.$"
 
 SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_1:
 # 370 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}It's your turn now, Aragaki-kun.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Aight. I'll show you what I've got.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}It's your turn now, Aragaki-kun.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Aight. I'll show you what I've got.$"
 
 SunshineMeadow_Eventscript_PostMitsuruFirstBattle_Text_2:
 # 382 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Are you ready?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Whenever you are.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(I should also study more of how they\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Are you ready?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Whenever you are.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(I should also study more of how they\n"
 	.string "fight.)$"
 
 SunshineMeadow_Eventscript_PostMitsuruFirstBattleGameOver_Text_0:
 # 403 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Please take your place, Aragaki-kun.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Aight. I'll show you what I've got.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Please take your place, Aragaki-kun.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Aight. I'll show you what I've got.$"
 
 SunshineMeadow_Eventscript_PostMitsuruFirstBattleGameOver_Text_1:
 # 415 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}Are you ready?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Whenever you are.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(Let's see how Shinji fare against her.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Are you ready?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Whenever you are.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(Let's see how Shinji fare against her.)$"
 
 SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_0:
 # 436 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}Damn, you're tough.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I appreciate the compliment.$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}Damn, you're tough.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I appreciate the compliment.$"
 
 SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_1:
 # 444 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Now that I get a clearer vision of how\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Now that I get a clearer vision of how\n"
 	.string "both of you fare in battle,\p"
 	.string "I'll be counting on you, Sanada-kun and\n"
 	.string "Aragaki-kun.\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SURPRISED}Huh?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SURPRISED}You mean...\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Yes, both of you are coming with me. You\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}Huh?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}You mean...\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Yes, both of you are coming with me. You\n"
 	.string "two have great potential.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_HAPPY}YESSS!!\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_CONFIDENT}Heh. Just you wait. I'll win against you\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_HAPPY}YESSS!!\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_CONFIDENT}Heh. Just you wait. I'll win against you\n"
 	.string "in no time.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Same here!\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I'm looking forward to that.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Same here!\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I'm looking forward to that.$"
 
 SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_2:
 # 455 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Anyway, back to business.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Anyway, back to business.\p"
 	.string "I suppose you both want to know\n"
 	.string "further about those men.\p"
 	.string "Let's go back to the house on Route 2,\n"
@@ -2000,14 +2044,14 @@ SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle_Text_2:
 
 SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattleGameOver_Text_0:
 # 520 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_STRUGGLED}Damn, how are you so strong?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}...\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}It seems like neither of you are whom I\n"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_STRUGGLED}Damn, how are you so strong?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}...\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}It seems like neither of you are whom I\n"
 	.string "can put my trust on.$"
 
 SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattleGameOver_Text_1:
 # 527 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SAD}I'd hate to go back on my word\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}I'd hate to go back on my word\p"
 	.string "but I'd like for us to go on our own\n"
 	.string "ways.\p"
 	.string "My apology for wasting your time.\p"
@@ -2033,18 +2077,18 @@ SunshineMeadow_Eventscript_InteleonPreBattle_Text_0:
 
 SunshineMeadow_Eventscript_JumpOverFence_Text_0:
 # 577 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(There's no reason to go over there\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(There's no reason to go over there\n"
 	.string "right now.)\p"
 	.string "(The lab was already exploded and\n"
 	.string "everything was burned away.)$"
 
 SunshineMeadow_Eventscript_JumpOverFence_Text_1:
 # 584 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Here we go.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(Here we go.)$"
 
 SunshineMeadow_Eventscript_JumpOverFence_Text_2:
 # 617 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_NORMAL}(Huh, there's a footprint here. Looks\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Huh, there's a footprint here. Looks\n"
 	.string "like someone climbed over the fence.)\p"
 	.string "(I'd like to explore further but right\n"
 	.string "now I have other more important\l"
@@ -2052,13 +2096,13 @@ SunshineMeadow_Eventscript_JumpOverFence_Text_2:
 
 SunshineMeadow_Eventscript_MitsuruAproachTheFence_Text_0:
 # 630 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}-Huff- -Huff-\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Eventhough I ran with all my might, it's\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_STRUGGLED}-Huff- -Huff-\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(Eventhough I ran with all my might, it's\n"
 	.string "still too late.)$"
 
 SunshineMeadow_Eventscript_MitsuruAproachTheFence_Text_1:
 # 637 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}It's already\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}It's already\n"
 	.string "{STR_VAR_2}:{STR_VAR_3}...\p"
 	.string "Not very ideal to tackle a mountain\n"
 	.string "cave.\p"
@@ -2067,7 +2111,7 @@ SunshineMeadow_Eventscript_MitsuruAproachTheFence_Text_1:
 
 SunshineMeadow_Eventscript_MitsuruAproachTheFence_Text_2:
 # 646 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}(Yuuma-san said his grandson owned a\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(Yuuma-san said his grandson owned a\n"
 	.string "house nearby in Route 2.)\p"
 	.string "(He's travelling the region at the\n"
 	.string "moment and I'm free to use it in the\l"
@@ -2076,7 +2120,7 @@ SunshineMeadow_Eventscript_MitsuruAproachTheFence_Text_2:
 
 SunshineMeadow_Eventscript_MitsuruPlansToJumpOverTheFence_Text_0:
 # 659 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(The cave entrance is just on the other\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(The cave entrance is just on the other\n"
 	.string "side of the fences.)\p"
 	.string "It's not too tall so I believe I can jump\n"
 	.string "over them.)$"
@@ -2088,13 +2132,13 @@ SunshineMeadow_Eventscript_ThundershardsCliffSign_Text_0:
 
 SunshineMeadow_Eventscript_MitsuruLookingOverCollapsedCave_Text_0:
 # 683 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}.......\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_STRUGGLED}.......\p"
 	.string "I failed. They got away with all the\n"
 	.string "evidences.$"
 
 SunshineMeadow_Eventscript_MitsuruLookingOverCollapsedCave_Text_1:
 # 691 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_STRUGGLED}Let's regroup and plan our next move.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_STRUGGLED}Let's regroup and plan our next move.\p"
 	.string "We also need to visit the Pokémon\n"
 	.string "Center in Sunshine Town to heal the\l"
 	.string "team.$"
@@ -2111,66 +2155,87 @@ SunshineMeadow_Eventscript_MitsuruPreFirstBattleWithAkihiko_Trigger_Text_1:
 
 SunshineMeadow_Eventscript_MitsuruPreparingForAkiMitsuFirstBattle_Text_0:
 # 756 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for\n"
 	.string "our first battle?\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}You bet I am!\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Very well. Shall we start?$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}You bet I am!\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Very well. Shall we start?$"
 
 SunshineMeadow_Eventscript_ChoosingPartyForAkihikoFirstBattle_Cancel_Text_0:
 # 816 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}(Let's pick 3 Pokémon to fight.)$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Let's pick 3 Pokémon to fight.)$"
 
 SunshineMeadow_Eventscript_PostAkihikoFirstBattle_Text_0:
 # 874 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}Are you ready?\p"
-	.string "{SPEAKER NAME_S}{CREATE_MUGSHOT MUGSHOT_S EMOTE_SERIOUS}Whenever you are.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}Are you ready?\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Whenever you are.$"
 
 SunshineMeadow_Eventscript_ShinjiroFirstBattleResult_Text_0:
 # 899 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}I appreciate the compliment.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I appreciate the compliment.$"
 
 SunshineMeadow_Eventscript_ShinjiroFirstBattleResult_Text_1:
 # 913 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Well fought. Looks like I still have much\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Well fought. Looks like I still have much\n"
 	.string "to learn.$"
+
+SunshineMeadow_Eventscript_SchoolGirl_Text_0:
+# 952 "data/maps/SunshineMeadow/scripts.pory"
+	.string "Fuwako$"
+
+SunshineMeadow_Eventscript_SchoolGirl_Text_1:
+# 953 "data/maps/SunshineMeadow/scripts.pory"
+	.string "The air here is pretty cool in the\n"
+	.string "evening, right?\p"
+	.string "I and my brother's Pokémon enjoy the\n"
+	.string "scenery here too.$"
+
+SunshineMeadow_Eventscript_LittleBoy_Text_0:
+# 962 "data/maps/SunshineMeadow/scripts.pory"
+	.string "Kenta$"
+
+SunshineMeadow_Eventscript_LittleBoy_Text_1:
+# 963 "data/maps/SunshineMeadow/scripts.pory"
+	.string "Psychic types are weak to Dark types,\n"
+	.string "but my sister's Gothita gets along well\l"
+	.string "with my Poochyena.$"
 
 SunshineMeadow_Eventscript_WonInMitsuruFirstBattlePointUp::
 # 323 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}To be honest, althought I didn't use my\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}To be honest, althought I didn't use my\n"
 	.string "full team, it's still very impressive\l"
 	.string "that you managed to beat me,\l"
 	.string "Sanada-kun.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(I only managed to win by sheer luck...\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(I only managed to win by sheer luck...\p"
 	.string "The way she ordered her Pokémons was\n"
 	.string "so smart.\p"
 	.string "It's... amazing.)$"
 
 SunshineMeadow_Eventscript_WonInMitsuruFirstBattlePointDown::
 # 331 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}... Looks like my observation about your\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}... Looks like my observation about your\n"
 	.string "fighting prowess is correct.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Very well then, I hope we get along,\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Very well then, I hope we get along,\n"
 	.string "Sanada-kun.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_CONFIDENT}Same here.$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Same here.$"
 
 SunshineMeadow_Eventscript_LostInMitsuruFirstBattlePointUp::
 # 337 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That was a very good fight. I've learned\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}That was a very good fight. I've learned\n"
 	.string "better of how you battle.\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}Don't be discouraged. It's proof that\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Don't be discouraged. It's proof that\n"
 	.string "you can still get so much more stronger.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(Damn... The way she ordered her\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(Damn... The way she ordered her\n"
 	.string "Pokémons was so smart.\p"
 	.string "It's... amazing.)$"
 
 SunshineMeadow_Eventscript_LostInMitsuruFirstBattlePointDown::
 # 344 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SERIOUS}...\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}...\p"
 	.string "Do you understand now that you\n"
 	.string "shouldn't have underestimated me?\p"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_NORMAL}Now please step down, I still have a\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Now please step down, I still have a\n"
 	.string "battle to do with Aragaki-kun.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SERIOUS}(Damn it... She was confident for a\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(Damn it... She was confident for a\n"
 	.string "reason.\p"
 	.string "Her skill is... amazing.)$"
 
@@ -2184,21 +2249,21 @@ AkihikoFirstBattleDefeated::
 
 SunshineMeadow_Eventscript_WonInAkihikoFirstBattle::
 # 838 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}That was a very good fight. I've learned\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}That was a very good fight. I've learned\n"
 	.string "better of how you battle.\p"
 	.string "Don't be discouraged. It's proof that\n"
 	.string "you can still get so much more stronger.\p"
-	.string "{CREATE_MUGSHOT MUGSHOT_M EMOTE_CONFIDENT}(He's indeed a very clever trainer. Good\n"
+	.string "{CREATE MUGSHOT_M EMOTE_CONFIDENT}(He's indeed a very clever trainer. Good\n"
 	.string "reflex and precision, however, a little\l"
 	.string "too reckless.)$"
 
 SunshineMeadow_Eventscript_LostInAkihikoFirstBattle::
 # 844 "data/maps/SunshineMeadow/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE_MUGSHOT MUGSHOT_M EMOTE_SMILE}To be honest, althought I didn't use my\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}To be honest, althought I didn't use my\n"
 	.string "full team, it's still very impressive\l"
 	.string "that you managed to beat me,\l"
 	.string "Sanada-kun.\p"
-	.string "{SPEAKER NAME_A}{CREATE_MUGSHOT MUGSHOT_A EMOTE_SMILE}It was so close, though. I only managed\n"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}It was so close, though. I only managed\n"
 	.string "to win by sheer luck.$"
 
 ShinjiroMFirstBattleDefeated::

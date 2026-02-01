@@ -45,7 +45,7 @@ script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Reward {
     closemessage
     giveitem(ITEM_MINING_KIT)
     setspeaker("Nebe")
-    msgbox(format("If you happen to find some colored shards while mining, please trade them to me!\p
+    msgbox(format("If you happen to find some colored shards while mining, please trade them with me!\p
     I do have some items I collected while travelling the region that you may find interesting."))
     closemessage
     questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_FIND_MINING_KIT)
@@ -97,7 +97,7 @@ script Coralport_NeckbeardsHouse_CheckIfMitsuru {
                 waitmovement
                 setspeaker("Nebe")
                 msgbox(format("Who are you kids?\p
-                Well, sorry but I'm not at the state to be welcoming strangers in my house right now, please kindly see yourselves out."))
+                Well, sorry but I'm not in the state to be welcoming strangers in my house right now, please kindly see yourselves out."))
                 closemessage
                 clearflag(FLAG_HIDE_QUEST_ICON)
                 warp(MAP_CORALPORT, 4)
@@ -141,8 +141,8 @@ script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start {
     setspeaker("Nebe")
     msgbox(format("Well... This is awkward.\p
     I did promise to give you a mining kit when you visit me...\p
-    But as you can see, some thieves have broken into my house and stole all of my tools,
-    as well as my rocks collection..."))
+    But as you can see, some thieves have broken into my house and stolen all of my tools,
+    as well as my rock collection..."))
     closemessage
     delay(30)
     playse(SE_M_BUBBLE)
@@ -150,7 +150,7 @@ script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start {
     waitmovement
     delay(30)
     setspeaker("Nebe")
-    msgbox(format("Sorry, I'd love to give you a warm welcome but right now I probably should file a case to the police.\p
+    msgbox(format("Sorry, I'd love to give you a warm welcome but right now I probably should file a report with the police.\p
     Now please excuse me."))
     closemessage
     delay(30)
@@ -171,7 +171,7 @@ script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start {
     applymovement(1, faceright)
     delay(30)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I'm very sorry for your loss.\p
-    I'd love to repay your kindness back then at the cave so is there anything I could help?\p
+    I'd love to repay your kindness back then at the cave so is there anything I could do to help?\p
     A picture of your toolbox or rocks collection perhaps?\p
     I'm currently traveling through the region so I may happen to come across them."))
     closemessage
@@ -204,7 +204,7 @@ script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start {
     closemessage
     applymovement(1, walkinplaceright)
     setspeaker("Nebe")
-    msgbox(format("Thank you very much for offering help! You're a kind young lady.\p
+    msgbox(format("Thank you very much for offering to help! You're a kind young lady.\p
     Now I'll go to the police station to report the case.\p
     I'll also let them know that you'll be helping so you can ask them about the investigation's progress.\p
     See you around and good luck on your journey, young lady."))

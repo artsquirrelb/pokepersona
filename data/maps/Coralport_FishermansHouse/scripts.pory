@@ -48,7 +48,7 @@ script Coralport_FishermansHouse_Eventscript_FisherMan {
 
 script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Completed {
     faceplayer
-    msgbox(format("You're always welcomed here. You're literally our saviors."))
+    msgbox(format("You're always welcome here. You're literally our saviors."))
     closemessage
     release
     end
@@ -57,8 +57,8 @@ script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Comp
 script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Reward{
     setflag(FLAG_HIDE_QUEST_ICON)
     faceplayer
-    msgbox(format("Oh you finally came by! Thank you so much for helping us at Coralport Cave!\p
-    Please have this as thanks!"))
+    msgbox(format("Oh, you finally came by! Thank you so much for helping us at Coralport Cave!\p
+    Please, have this as thanks!"))
     closemessage
     giveitem(ITEM_OLD_ROD)
     setflag(FLAG_RECEIVED_OLD_ROD)
@@ -95,7 +95,7 @@ script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Star
     applymovement(1, moves(emote_exclamation_mark, face_player))
     waitmovement
     setspeaker("Ikumi")
-    msgbox(format("Wait, who are you lots? What do you want? I'm busy-"))
+    msgbox(format("Wait, who are you lot? What do you want? I'm busy-"))
     checkplayergender
     if (var(VAR_RESULT) == MALE){
         msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}We're here to help you find your daughter.\p
@@ -180,15 +180,15 @@ script Coralport_FishermansHouse_Eventscript_LittleGirl {
 script Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Start {
     msgbox(format("Thank you for saving me!\n{PAUSE_UNTIL_PRESS}
     I'm a little worried that Wooper is still looking a bit sad, though.\p
-    I hope it would cheer up soon..."))
+    I hope it will cheer up soon..."))
     closemessage
     playse(SE_PIN)
     applymovement(2, emoteexclamation)
     waitmovement
     setspeaker("Misa")
-    msgbox(format("Oh I know! How about I go buy a Smile Candy for it?\p
+    msgbox(format("Oh, I know! How about I go buy a Smile Candy for it?\p
     Oh, but they don't sell it in Sunshine Island... and Pa probably won't allow me to go.\p
-    I'm very sorry to ask for your help again but if you happen to see a Smile Candy on sale, please buy one for me?\p
+    I'm very sorry to ask for your help again, but if you happen to see a Smile Candy on sale, please buy one for me.\p
     Here, you can use the allowance money I've been saving up for it!"))
     closemessage
     playfanfare(MUS_OBTAIN_ITEM)
@@ -274,7 +274,7 @@ script Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_GetGoodRod {
     closemessage
     giveitem(ITEM_GOOD_ROD)
     setspeaker("Ikumi")
-    msgbox(format("Thank you so much for fulfilling my daughter's wish. Our family owe you so much."))
+    msgbox(format("Thank you so much for fulfilling my daughter's wish. Our family owes you so much."))
     closemessage
     questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_BUY_SMILE_CANDY)
     clearflag(FLAG_HIDE_QUEST_ICON)
@@ -284,7 +284,7 @@ script Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_GetGoodRod {
 }
 
 script Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Completed {
-    msgbox(format("Woope starts smiling more after eating the Smile Candy.\p
+    msgbox(format("Wooper starts smiling more after eating the Smile Candy.\p
     That makes me so happy!"))
     closemessage
     clearflag(FLAG_HIDE_QUEST_ICON)

@@ -112,7 +112,7 @@ script SunshineMeadow_Eventscript_AkihikoOnFrame34 {
 script SunshineMeadow_Eventscript_AkihikoOnFrame36 {
     setvar(VAR_AKIHIKOS_INTRO_STATE, 37)
     if (var(VAR_MITSURU_RELATIONSHIP_POINTS) == 0){//GAME OVER
-        msgbox(format("Shinjiro didn't stand a slightest chance and was completely wiped out by Mitsuru."))
+        msgbox(format("Shinjiro didn't stand the slightest chance and was completely wiped out by Mitsuru."))
     }
     else{
         msgbox(format("Shinjiro managed to knock out one of Mitsuru's Pokémon before getting wiped out by her Vulpix."))

@@ -86,7 +86,7 @@ script CoralportCave_Eventscript_Fisherman {
     lock
     setflag(FLAG_HIDE_QUEST_ICON)
     setspeaker("Ikumi")
-    msgbox(format("My daughter should be in this cave. It's not too long but there are wild Pokémon.\p
+    msgbox(format("My daughter should be in this cave. It's not too big, but there are wild Pokémon.\p
     I'm not good at battling so I'll be tailing behind you."))
     closemessage
     clearflag(FLAG_HIDE_QUEST_ICON)
@@ -355,7 +355,7 @@ script CoralportCave_Eventscript_TheReasonMisaEnteredTheCave {
     applymovement(10, emotepensive)
     waitmovement
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}......{PAUSE 60}It's too late...\p
-    Its life energy has already been all drained."))
+    Its life energy has already been drained."))
     closemessage
     delay(20)
     applymovement(2, moves(walk_in_place_slow_down))
@@ -369,7 +369,7 @@ script CoralportCave_Eventscript_TheReasonMisaEnteredTheCave {
     fadescreenspeed(FADE_TO_BLACK, 4)
     delay(48)
     msgbox(format("Wooper sat by its parent for a long while before Shinjiro
-    gently pat its head and offered to help burying the Clodsire."))
+    gently pat its head and offered to help bury the Clodsire."))
     closemessage
     delay(30)
     setvar(VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 5)
@@ -430,7 +430,7 @@ script CoralportCave_Eventscript_MisaTakingInWooper {
     waitmovement
     setspeaker("Misa")
     msgbox(format("I forgot to ask for your permission...\p
-    How do you say, Pa? Can we take Wooper in?"))
+    What do you say, Pa? Can we take Wooper in?"))
     closemessage
     delay(30)
     applymovement(1, walkinplaceup)

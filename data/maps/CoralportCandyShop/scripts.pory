@@ -58,7 +58,7 @@ script CoralportCandyShop_Eventscript_ShopKeeperM {
     else{
         msgbox(format("Thank you and please come again!\p
         By the way, we're looking for a part-time worker.\p
-        If you're interest please speak to my wife over there."))
+        If you're interested, please speak to my wife over there."))
     }
     closemessage
     release
@@ -418,8 +418,8 @@ script CoralportCandyShop_Eventscript_PartTime_QuestCheckDone {
     questmenu(QUEST_MENU_CHECK_REWARD, QUEST_AMEAME_PARTTIME)
     if (var(VAR_AMEAME_CANDY_SHOP_QUEST_STATE) == 30 && var(VAR_RESULT) == FALSE)
     {
-        msgbox(format("{COLOR GREEN}You have worked part-time at AmeAme Candy Shop for at least 10 times.\p
-        Check back with Gumi for reward."))
+        msgbox(format("{COLOR GREEN}You have worked part-time at AmeAme Candy Shop at least 10 times.\p
+        Check back with Gumi for a reward."))
         closemessage
         questmenu(QUEST_MENU_SET_REWARD, QUEST_AMEAME_PARTTIME)
     }
@@ -428,7 +428,7 @@ script CoralportCandyShop_Eventscript_PartTime_QuestCheckDone {
 script CoralportCandyShop_Eventscript_QuestGiveReward {
     playse(SE_PIN)
     setspeaker("Gumi")
-    msgbox(format("Hello {PLAYER}! here to start your shift?"))
+    msgbox(format("Hello {PLAYER}! Here to start your shift?"))
     applymovement(1, emoteexclamation)
     waitmovement
     setspeaker("Gumi")
@@ -436,7 +436,7 @@ script CoralportCandyShop_Eventscript_QuestGiveReward {
     Here, you can have this. Just think it as a gift for helping us!"))
     closemessage
     giveitem(ITEM_CANDY_JAR)
-    msgbox(format("Feel free to come back anytime! We'll be very appreciated!"))
+    msgbox(format("Feel free to come back anytime! We'll be very appreciative!"))
     closemessage
     questmenu(QUEST_MENU_COMPLETE_QUEST, QUEST_AMEAME_PARTTIME)
     setvar(VAR_AMEAME_CANDY_SHOP_QUEST_STATE, 31) // end quest
@@ -470,7 +470,7 @@ script CoralportCandyShop_Eventscript_Twin {
     faceplayer
     setspeaker("Aiko")
     if (flag(FLAG_CORALPORT_TRADED_SWEET_HEART) == FALSE){
-        msgbox(format("My Tinkatink back home loves {COLOR 7}Sweet Heart {COLOR 2}a lot. If you have one, do you mind trading it to me for a really cool item?"), MSGBOX_YESNO)
+        msgbox(format("My Tinkatink back home loves {COLOR 7}Sweet Heart {COLOR 2}a lot. If you have one, do you mind trading it with me for a really cool item?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == TRUE){
             checkitem(ITEM_SWEET_HEART)
             if (var(VAR_RESULT) == FALSE){

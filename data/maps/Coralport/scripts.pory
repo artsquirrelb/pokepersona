@@ -145,7 +145,7 @@ script Coralport_Eventscript_Policeman {
     lock
     faceplayer
     setspeaker("Takagi")
-    msgbox(format("Welcome to Coralport!\n If you have any problem, please let us know.\p
+    msgbox(format("Welcome to Coralport!\n If you have any problems, please let us know.\p
     We'd be happy to help."))
     closemessage
     release
@@ -167,11 +167,11 @@ script Coralport_Eventscript_OldWoman {
     lock
     faceplayer
     setspeaker("Yukine")
-    msgbox(format("This guy said to me one day “Let's travel the world!”\p
-    We were still so young and I agreed.\n Then he brought us to all kind of beautiful places.\p
+    msgbox(format("This guy said to me one day, “Let's travel the world!”\p
+    We were still so young and I agreed.\n Then he brought us to all kinds of beautiful places.\p
     It was only until last year that he proposed, just on the beach over there.\p
-    That was quite late now that I think about it.\p
-    Although it also kind of slipped out of my mind, since I was having so much fun being around him."))
+    That was quite awhile ago now that I think about it.\p
+    Although it also kind of slipped my mind, since I was having so much fun being around him."))
     closemessage
     release
     end
@@ -181,7 +181,7 @@ script Coralport_Eventscript_SailorOnBreak {
     lock
     faceplayer
     setspeaker("Etsuo")
-    msgbox(format("Please don't talk to me. I'm on break.\p
+    msgbox(format("Please don't talk to me. I'm on my break.\p
     If you need help, talk to the sailors on the harbor."))
     closemessage
     applymovement(VAR_LAST_TALKED, facedown)
@@ -356,7 +356,7 @@ script Coralport_Eventscript_Beauty {
     lock
     faceplayer
     setspeaker("Harehina")
-    msgbox(format("I bought two tickets for this vacation but my damned ex cheated on me so I brought my younger brother instead.\p
+    msgbox(format("I bought two tickets for this vacation, but my damned ex cheated on me so I brought my younger brother instead.\p
     I'm enjoying this a lot more than I thought.\p
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Good for you."))
     setspeaker("Harehina")
@@ -434,7 +434,7 @@ script Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp 
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Yes, Sanada-kun?"))
     applymovement(S_CORAL, faceright)
     msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}If you know who's behind the explosion, why didn't you say anything to the police?\p
-    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}I'd prefer not getting them involved.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}I'd prefer not to get them involved.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}What?\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Besides, I doubt they'd be any help, even if they knew.\p
     Otherwise I wouldn't be here, asking you two to accompany me on this journey.\p
@@ -602,7 +602,7 @@ script Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start {
     setspeaker("Ikumi")
     msgbox(format("What's wrong, Growlithe?\p
     Oh, right. You're scared of water, aren't you?\p
-    Well... I don't have your Pokéball and returning to your owner to get it would be time-wasting...\p
+    Well... I don't have your Pokéball and returning to your owner to get it would be time-consuming...\p
     Can you wait for us here?"))
     closemessage
     playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)

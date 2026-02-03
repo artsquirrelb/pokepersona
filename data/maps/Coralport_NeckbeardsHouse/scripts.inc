@@ -555,7 +555,7 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Reward_Text_1:
 # 48 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "If you happen to find some colored\n"
 	.string "shards while mining, please trade them\l"
-	.string "to me!\p"
+	.string "with me!\p"
 	.string "I do have some items I collected while\n"
 	.string "travelling the region that you may find\l"
 	.string "interesting.$"
@@ -571,7 +571,7 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Ongoing_Text_0:
 Coralport_NeckbeardsHouse_CheckIfMitsuru_Text_0:
 # 99 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "Who are you kids?\p"
-	.string "Well, sorry but I'm not at the state to\n"
+	.string "Well, sorry but I'm not in the state to\n"
 	.string "be welcoming strangers in my house\l"
 	.string "right now, please kindly see yourselves\l"
 	.string "out.$"
@@ -591,14 +591,14 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_2:
 	.string "I did promise to give you a mining kit\n"
 	.string "when you visit me...\p"
 	.string "But as you can see, some thieves have\n"
-	.string "broken into my house and stole all of my\l"
-	.string "tools, as well as my rocks collection...$"
+	.string "broken into my house and stolen all of\l"
+	.string "my tools, as well as my rock collection...$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_3:
 # 153 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "Sorry, I'd love to give you a warm\n"
 	.string "welcome but right now I probably should\l"
-	.string "file a case to the police.\p"
+	.string "file a report with the police.\p"
 	.string "Now please excuse me.$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_4:
@@ -610,7 +610,7 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_5:
 	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I'm very sorry for your loss.\p"
 	.string "I'd love to repay your kindness back\n"
 	.string "then at the cave so is there anything I\l"
-	.string "could help?\p"
+	.string "could do to help?\p"
 	.string "A picture of your toolbox or rocks\n"
 	.string "collection perhaps?\p"
 	.string "I'm currently traveling through the\n"
@@ -634,8 +634,8 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_8:
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_9:
 # 207 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	.string "Thank you very much for offering help!\n"
-	.string "You're a kind young lady.\p"
+	.string "Thank you very much for offering to\n"
+	.string "help! You're a kind young lady.\p"
 	.string "Now I'll go to the police station to\n"
 	.string "report the case.\p"
 	.string "I'll also let them know that you'll be\n"

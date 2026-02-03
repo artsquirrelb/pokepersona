@@ -774,14 +774,14 @@ Coralport_FishermansHouse_Eventscript_FisherMan_Text_0:
 
 Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Completed_Text_0:
 # 51 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	.string "You're always welcomed here. You're\n"
+	.string "You're always welcome here. You're\n"
 	.string "literally our saviors.$"
 
 Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Reward_Text_0:
 # 60 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	.string "Oh you finally came by! Thank you so\n"
+	.string "Oh, you finally came by! Thank you so\n"
 	.string "much for helping us at Coralport Cave!\p"
-	.string "Please have this as thanks!$"
+	.string "Please, have this as thanks!$"
 
 Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Reward_Text_1:
 # 66 "data/maps/Coralport_FishermansHouse/scripts.pory"
@@ -799,8 +799,8 @@ Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_
 
 Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_2:
 # 98 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	.string "Wait, who are you lots? What do you\n"
-	.string "want? I'm busy-$"
+	.string "Wait, who are you lot? What do you want?\n"
+	.string "I'm busy-$"
 
 Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_3:
 # 101 "data/maps/Coralport_FishermansHouse/scripts.pory"
@@ -835,18 +835,18 @@ Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Start_Text_0:
 	.string "Thank you for saving me!\n"
 	.string "{PAUSE_UNTIL_PRESS} I'm a little worried that Wooper is still\l"
 	.string "looking a bit sad, though.\p"
-	.string "I hope it would cheer up soon...$"
+	.string "I hope it will cheer up soon...$"
 
 Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Start_Text_1:
 # 189 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	.string "Oh I know! How about I go buy a Smile\n"
+	.string "Oh, I know! How about I go buy a Smile\n"
 	.string "Candy for it?\p"
 	.string "Oh, but they don't sell it in Sunshine\n"
 	.string "Island... and Pa probably won't allow me\l"
 	.string "to go.\p"
 	.string "I'm very sorry to ask for your help\n"
-	.string "again but if you happen to see a Smile\l"
-	.string "Candy on sale, please buy one for me?\p"
+	.string "again, but if you happen to see a Smile\l"
+	.string "Candy on sale, please buy one for me.\p"
 	.string "Here, you can use the allowance money\n"
 	.string "I've been saving up for it!$"
 
@@ -900,12 +900,12 @@ Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_GetGoodRod_Text_0:
 Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_GetGoodRod_Text_1:
 # 277 "data/maps/Coralport_FishermansHouse/scripts.pory"
 	.string "Thank you so much for fulfilling my\n"
-	.string "daughter's wish. Our family owe you so\l"
+	.string "daughter's wish. Our family owes you so\l"
 	.string "much.$"
 
 Coralport_FishermansHouse_Eventscript_QUEST_BUY_SMILE_CANDY_Completed_Text_0:
 # 287 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	.string "Woope starts smiling more after eating\n"
+	.string "Wooper starts smiling more after eating\n"
 	.string "the Smile Candy.\p"
 	.string "That makes me so happy!$"
 

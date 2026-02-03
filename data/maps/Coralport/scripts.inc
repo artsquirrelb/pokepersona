@@ -1747,7 +1747,7 @@ Coralport_Eventscript_Policeman_Text_0:
 Coralport_Eventscript_Policeman_Text_1:
 # 145 "data/maps/Coralport/scripts.pory"
 	.string "Welcome to Coralport!\n"
-	.string "If you have any problem, please let us\l"
+	.string "If you have any problems, please let us\l"
 	.string "know.\p"
 	.string "We'd be happy to help.$"
 
@@ -1769,18 +1769,18 @@ Coralport_Eventscript_OldWoman_Text_0:
 
 Coralport_Eventscript_OldWoman_Text_1:
 # 167 "data/maps/Coralport/scripts.pory"
-	.string "This guy said to me one day “Let's\n"
+	.string "This guy said to me one day, “Let's\n"
 	.string "travel the world!”\p"
 	.string "We were still so young and I agreed.\n"
-	.string "Then he brought us to all kind of\l"
+	.string "Then he brought us to all kinds of\l"
 	.string "beautiful places.\p"
 	.string "It was only until last year that he\n"
 	.string "proposed, just on the beach over there.\p"
-	.string "That was quite late now that I think\n"
-	.string "about it.\p"
-	.string "Although it also kind of slipped out of\n"
-	.string "my mind, since I was having so much fun\l"
-	.string "being around him.$"
+	.string "That was quite awhile ago now that I\n"
+	.string "think about it.\p"
+	.string "Although it also kind of slipped my mind,\n"
+	.string "since I was having so much fun being\l"
+	.string "around him.$"
 
 Coralport_Eventscript_SailorOnBreak_Text_0:
 # 180 "data/maps/Coralport/scripts.pory"
@@ -1788,7 +1788,7 @@ Coralport_Eventscript_SailorOnBreak_Text_0:
 
 Coralport_Eventscript_SailorOnBreak_Text_1:
 # 181 "data/maps/Coralport/scripts.pory"
-	.string "Please don't talk to me. I'm on break.\p"
+	.string "Please don't talk to me. I'm on my break.\p"
 	.string "If you need help, talk to the sailors on\n"
 	.string "the harbor.$"
 
@@ -1861,7 +1861,7 @@ Coralport_Eventscript_Beauty_Text_0:
 
 Coralport_Eventscript_Beauty_Text_1:
 # 357 "data/maps/Coralport/scripts.pory"
-	.string "I bought two tickets for this vacation\n"
+	.string "I bought two tickets for this vacation,\n"
 	.string "but my damned ex cheated on me so I\l"
 	.string "brought my younger brother instead.\p"
 	.string "I'm enjoying this a lot more than I\n"
@@ -1916,7 +1916,7 @@ Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp_Text_2:
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}If you know who's behind the explosion,\n"
 	.string "why didn't you say anything to the\l"
 	.string "police?\p"
-	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}I'd prefer not getting them involved.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}I'd prefer not to get them involved.\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}What?\p"
 	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Besides, I doubt they'd be any help,\n"
 	.string "even if they knew.\p"
@@ -2007,7 +2007,7 @@ Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_4:
 	.string "you?\p"
 	.string "Well... I don't have your Pokéball and\n"
 	.string "returning to your owner to get it would\l"
-	.string "be time-wasting...\p"
+	.string "be time-consuming...\p"
 	.string "Can you wait for us here?$"
 
 Coralport_Eventscript_Fisherman_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Text_5:

@@ -1249,8 +1249,8 @@ CoralportCandyShop_Eventscript_ShopKeeperM_Text_3:
 	.string "Thank you and please come again!\p"
 	.string "By the way, we're looking for a\n"
 	.string "part-time worker.\p"
-	.string "If you're interest please speak to my\n"
-	.string "wife over there.$"
+	.string "If you're interested, please speak to\n"
+	.string "my wife over there.$"
 
 CoralportCandyShop_Eventscript_ShopKeeperF_Text_0:
 # 93 "data/maps/CoralportCandyShop/scripts.pory"
@@ -1327,12 +1327,12 @@ CoralportCandyShop_Eventscript_PartTime_RandomizeReward_Text_2:
 CoralportCandyShop_Eventscript_PartTime_QuestCheckDone_Text_0:
 # 421 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "{COLOR GREEN}You have worked part-time at AmeAme\n"
-	.string "Candy Shop for at least 10 times.\p"
-	.string "Check back with Gumi for reward.$"
+	.string "Candy Shop at least 10 times.\p"
+	.string "Check back with Gumi for a reward.$"
 
 CoralportCandyShop_Eventscript_QuestGiveReward_Text_0:
 # 431 "data/maps/CoralportCandyShop/scripts.pory"
-	.string "Hello {PLAYER}! here to start your\n"
+	.string "Hello {PLAYER}! Here to start your\n"
 	.string "shift?$"
 
 CoralportCandyShop_Eventscript_QuestGiveReward_Text_1:
@@ -1346,7 +1346,7 @@ CoralportCandyShop_Eventscript_QuestGiveReward_Text_1:
 CoralportCandyShop_Eventscript_QuestGiveReward_Text_2:
 # 439 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "Feel free to come back anytime! We'll be\n"
-	.string "very appreciated!$"
+	.string "very appreciative!$"
 
 CoralportCandyShop_Eventscript_FatMan_Text_0:
 # 461 "data/maps/CoralportCandyShop/scripts.pory"
@@ -1365,7 +1365,8 @@ CoralportCandyShop_Eventscript_Twin_Text_1:
 # 473 "data/maps/CoralportCandyShop/scripts.pory"
 	.string "My Tinkatink back home loves {COLOR 7}Sweet\n"
 	.string "Heart {COLOR 2}a lot. If you have one, do you mind\l"
-	.string "trading it to me for a really cool item?$"
+	.string "trading it with me for a really cool\l"
+	.string "item?$"
 
 CoralportCandyShop_Eventscript_Twin_Text_2:
 # 477 "data/maps/CoralportCandyShop/scripts.pory"

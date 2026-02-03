@@ -346,7 +346,7 @@ SunshineTownRiverbank_Eventscript_OnFrame22_Text_0:
 
 SunshineMeadow_Eventscript_AkihikoOnFrame36_Text_0:
 # 115 "data/maps/BlankMap/scripts.pory"
-	.string "Shinjiro didn't stand a slightest\n"
+	.string "Shinjiro didn't stand the slightest\n"
 	.string "chance and was completely wiped out by\l"
 	.string "Mitsuru.$"
 

@@ -1396,7 +1396,7 @@ CoralportCave_Eventscript_Fisherman_Text_0:
 CoralportCave_Eventscript_Fisherman_Text_1:
 # 89 "data/maps/CoralportCave/scripts.pory"
 	.string "My daughter should be in this cave. It's\n"
-	.string "not too long but there are wild Pokémon.\p"
+	.string "not too big, but there are wild Pokémon.\p"
 	.string "I'm not good at battling so I'll be\n"
 	.string "tailing behind you.$"
 
@@ -1471,7 +1471,7 @@ CoralportCave_Eventscript_TheReasonMisaEnteredTheCave_Text_9:
 CoralportCave_Eventscript_TheReasonMisaEnteredTheCave_Text_10:
 # 357 "data/maps/CoralportCave/scripts.pory"
 	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}......{PAUSE 60}It's too late...\p"
-	.string "Its life energy has already been all\n"
+	.string "Its life energy has already been\n"
 	.string "drained.$"
 
 CoralportCave_Eventscript_TheReasonMisaEnteredTheCave_Text_11:
@@ -1482,7 +1482,7 @@ CoralportCave_Eventscript_TheReasonMisaEnteredTheCave_Text_12:
 # 371 "data/maps/CoralportCave/scripts.pory"
 	.string "Wooper sat by its parent for a long\n"
 	.string "while before Shinjiro gently pat its\l"
-	.string "head and offered to help burying the\l"
+	.string "head and offered to help bury the\l"
 	.string "Clodsire.$"
 
 CoralportCave_Eventscript_MisaTakingInWooper_Text_0:
@@ -1511,7 +1511,7 @@ CoralportCave_Eventscript_MisaTakingInWooper_Text_3:
 CoralportCave_Eventscript_MisaTakingInWooper_Text_4:
 # 432 "data/maps/CoralportCave/scripts.pory"
 	.string "I forgot to ask for your permission...\p"
-	.string "How do you say, Pa? Can we take Wooper\n"
+	.string "What do you say, Pa? Can we take Wooper\n"
 	.string "in?$"
 
 CoralportCave_Eventscript_MisaTakingInWooper_Text_5:

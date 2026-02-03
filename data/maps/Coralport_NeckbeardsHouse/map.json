@@ -16,7 +16,7 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_NECK_BEARD",
-      "x": 8,
+      "x": 7,
       "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -26,10 +26,6 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Coralport_NeckbeardsHouse_Eventscript_Neckbeard",
       "flag": "FLAG_TEMP_1",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true,
       "quest_id": 5
     }
   ],
@@ -53,7 +49,7 @@
     {
       "type": "trigger",
       "x": 7,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "var": "VAR_QUEST_FIND_MINING_KIT_STATE",
       "var_value": "0",
@@ -62,7 +58,7 @@
     {
       "type": "trigger",
       "x": 8,
-      "y": 7,
+      "y": 8,
       "elevation": 0,
       "var": "VAR_QUEST_FIND_MINING_KIT_STATE",
       "var_value": "0",

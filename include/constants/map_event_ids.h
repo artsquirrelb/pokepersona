@@ -54,6 +54,10 @@
 // MAP_SUNSHINE_WOODS
 #define INTELEON_T_SW 13
 
+// MAP_THUNDERSTONE_SCREE_1F
+#define NB_TDS 1
+#define NB_R 5
+
 // MAP_WINDWARD_PORT_HARBOR
 #define A_WP 13
 #define M_WP 14

@@ -106,12 +106,12 @@ script SunshineTown_KurosawasHouse_Eventscript_ShinjiroDecidingToFollow {
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}...\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Alright. Let's go find her together, Shinji."))
     closemessage
-    fadenewbgm(MUS_RG_SEVII_67)
     applymovement(LOCALID_PLAYER, faceup)
     applymovement(3, ShinjiroFaceUpToKuroSawa)
     waitmovement(0)
     playfanfare(MUS_OBTAIN_TMHM)
     waitfanfare
+    fadenewbgm(MUS_RG_SEVII_67)
     msgbox(format("{COLOR GREEN}Tips: Shinjiro is now your Companion."))
     closemessage
     if (!flag(FLAG_COMPANION_MENU_GET)){
@@ -146,8 +146,8 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     applymovement(1, KurosawaGivingPokebalToShinji)
     waitmovement(0)
     delay(20)
-    msgbox(format("{SPEAKER NAME_NONE}Kurosawa gave Shinjiro a Pokéball.\p
-    {SPEAKER NAME_KRSW}Sanada-kun already has a Pokémon so I'm giving this to you, Aragaki-kun.\p
+    msgbox(format("{SPEAKER NAME_NONE}Kurosawa gave Shinjiro a few Pokéballs.\p
+    {SPEAKER NAME_KRSW}Sanada-kun already has a Pokémon so I'm giving these to you, Aragaki-kun.\p
     Befriending a Pokémon will greatly help you on your journey.\p
     You also should help other people if you can.\p
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Thank you, Kurosawa-san. We will.\p
@@ -176,17 +176,13 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
 }
 
 movement KurosawaGettingTheSleepingBags {
-    walk_left*2
-    walk_down
-    walk_left*3
-    walk_up *3
+    walk_left*5
+    walk_up *2
     delay_16
     delay_16
     delay_16
-    walk_down *3
-    walk_right*3
-    walk_up
-    walk_right*2
+    walk_down *2
+    walk_right*5
     face_down
     delay_16
     delay_16
@@ -198,9 +194,12 @@ script Growlithe_NPC {
     lock
     faceplayer
     playmoncry(SPECIES_GROWLITHE, CRY_MODE_NORMAL)
+    showmonpic(SPECIES_GROWLITHE, 18, 5)
     applymovement(2, Growlithe_NPC_Movement)
     waitmovement(0)
     msgbox("Growlithe looks determined.")
+    hidemonpic
+    setseenmon(SPECIES_GROWLITHE)
     release
     end
 }

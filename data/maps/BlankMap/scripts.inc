@@ -222,7 +222,7 @@ Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38::
 # 131 "data/maps/BlankMap/scripts.pory"
 	closemessage
 # 132 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_ROUTE2_HOUSE, 3, 11
+	warpsilent MAP_ROUTE2_HOUSE, 3, 10
 	return
 
 Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38_2:
@@ -241,7 +241,7 @@ Route2_Eventscript_AkihikoOnFrame42::
 # 139 "data/maps/BlankMap/scripts.pory"
 	msgbox Route2_Eventscript_AkihikoOnFrame42_Text_0
 # 141 "data/maps/BlankMap/scripts.pory"
-	warpsilent MAP_ROUTE2_HOUSE, 3, 11
+	warpsilent MAP_ROUTE2_HOUSE, 3, 10
 	return
 
 

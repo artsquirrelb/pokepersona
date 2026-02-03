@@ -113,15 +113,13 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
     closemessage
     if(var(VAR_RESULT) == YES){
         setvar(VAR_MITSURUS_INTRO_STATE, 2)
-        givemon(SPECIES_VULPIX_DELTA, 7, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_ECHOED_VOICE, isStoryStarter = TRUE)
+        givemon(SPECIES_VULPIX_DELTA, 7, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, isStoryStarter = TRUE)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             waitfanfare
             msgbox(format("Vulpix's pushed the Pokéball button with its nose and went inside."))
             removeobject(LOCALID_VULPIX)
             setflag(FLAG_TEMP_1)
-            msgbox(format("{COLOR GREEN}Tips: You can rename a Pokémon in its summary screen."))
-            closemessage
             
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
@@ -130,8 +128,6 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
             msgbox(format("Vulpix's pushed the Pokéball button with its nose and went inside."))
             removeobject(LOCALID_VULPIX)
             setflag(FLAG_TEMP_1)
-            msgbox(format("{COLOR GREEN}Tips: You can rename a Pokémon in its summary screen."))
-            closemessage
         }
         else{
             msgbox("Party full.")}
@@ -139,7 +135,6 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
     If I don't go now, I won't be arriving at the cliff's foot before midnight."))
     closemessage
     fwdtime(22, 32)
-    msgbox(format("{COLOR GREEN}{SPEAKER NAME_NONE}{DESTROY_MUGSHOT}Tips: Check your bag for various QoL items."))
     closemessage
     setfriendship(0, 200)
     updatefollowingmon

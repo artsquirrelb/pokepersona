@@ -1147,7 +1147,7 @@ static bool16 IsInfiltratedSpaceCenter(struct WarpData *warp)
 
 u16 GetLocationMusic(struct WarpData *warp)
 {
-    if (NoMusicInSootopolisWithLegendaries(warp) == TRUE)
+    /*if (NoMusicInSootopolisWithLegendaries(warp) == TRUE)
         return MUS_NONE;
     else if (ShouldLegendaryMusicPlayAtLocation(warp) == TRUE)
         return MUS_ABNORMAL_WEATHER;
@@ -1155,7 +1155,7 @@ u16 GetLocationMusic(struct WarpData *warp)
         return MUS_ENCOUNTER_MAGMA;
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
-    else
+    else*/
         return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
 }
 
@@ -1174,10 +1174,7 @@ u16 GetCurrLocationDefaultMusic(void)
     }
     else
     {
-        if (gSaveBlock1Ptr->pos.x < 24)
-            return MAP_BLANK_MAP;
-        else
-            return MAP_BLANK_MAP;
+        return MUS_NONE;
     }
 }
 
@@ -1368,7 +1365,7 @@ void UpdateAmbientCry(s16 *state, u16 *delayCounter)
 
 static void ChooseAmbientCrySpecies(void)
 {
-    if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BLANK_MAP) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BLANK_MAP)) && !IsMirageIslandPresent())
+    /*if ((gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BLANK_MAP) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BLANK_MAP)) && !IsMirageIslandPresent())
     {
         // Only play water Pokémon cries on this route
         // when Mirage Island is not present
@@ -1376,9 +1373,9 @@ static void ChooseAmbientCrySpecies(void)
         sAmbientCrySpecies = GetLocalWaterMon();
     }
     else
-    {
+    {*/
         sAmbientCrySpecies = GetLocalWildMon(&sIsAmbientCryWaterMon);
-    }
+    //}
 }
 
 enum MapType GetMapTypeByGroupAndId(s8 mapGroup, s8 mapNum)

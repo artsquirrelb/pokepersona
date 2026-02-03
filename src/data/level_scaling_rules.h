@@ -14,15 +14,15 @@
 // EXAMPLES:
 //
 // 1. Override with custom config:
-//    [TRAINER_ROXANNE_1] = {
+//    cludeFainted = FALSE,
+//    },[TRAINER_ROXANNE_1] = {
 //        .mode = LEVEL_SCALING_TO_LEVEL_CAP,
 //        .levelAugmentAdd = 2,         // +2 levels above cap
 //        .levelVariation = 1,          // Random 0-1 level reduction
 //        .minLevel = 10,
 //        .maxLevel = 50,
 //        .manageEvolutions = TRUE,
-//        .excludeFainted = FALSE,
-//    },
+//        .ex
 //
 // 2. Use a preset macro:
 //    [TRAINER_BRAWLY_1] = LEVEL_SCALING_CONFIG_PARTY_AVG,
@@ -110,6 +110,24 @@ const struct LevelScalingConfig gTrainerLevelScalingRules[TRAINERS_COUNT] =
     
     [TRAINER_GHOSTBOY] = LEVEL_SCALING_CONFIG_NONE,
 
+    [TRAINER_KG_STAFF_M_THUNDERSHARDS_CAVE_1F] = {
+        .mode = LEVEL_SCALING_PARTY_AVG,
+        .levelAugmentAdd = 2,
+        .levelVariation = 1,
+        .minLevel = 8,
+    },
+
+    [TRAINER_KG_STAFF_F_THUNDERSHARDS_CAVE_1F] = {
+        .mode = LEVEL_SCALING_PARTY_AVG,
+        .levelAugmentAdd = 2,
+        .levelVariation = 1,
+        .minLevel = 8,
+    },
+
+    [TRAINER_NORBERT_THUNDERSHARDS_CAVE_2F_EXTERIOR] = {
+        .mode = LEVEL_SCALING_PARTY_HIGHEST,
+        .minLevel = 8,
+    }
 
     // Example configurations (commented out by default):
 

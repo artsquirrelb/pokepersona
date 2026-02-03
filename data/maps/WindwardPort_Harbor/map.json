@@ -46,7 +46,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Harbor_Eventscript_SailorOnGuard",
-      "flag": "FLAG_TEMP_5"
+      "flag": "FLAG_TEMP_5",
+      "e": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SS_TIDAL",
@@ -111,7 +113,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1"
+      "flag": "FLAG_TEMP_1",
+      "e": true,
+      "n": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
@@ -150,7 +154,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Harbor_Eventscript_Gurdurr",
-      "flag": "FLAG_TEMP_4"
+      "flag": "FLAG_TEMP_4",
+      "e": true,
+      "m": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_VETERAN_F",
@@ -163,7 +169,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Harbor_Eventscript_VeteranF",
-      "flag": "FLAG_TEMP_4"
+      "flag": "FLAG_TEMP_4",
+      "d": true,
+      "e": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PELIPPER)",
@@ -176,7 +184,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Harbor_Eventscript_Pelipper",
-      "flag": "FLAG_TEMP_4"
+      "flag": "FLAG_TEMP_4",
+      "d": true,
+      "e": true
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_WORKER",
@@ -189,7 +199,9 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Harbor_Eventscript_Worker",
-      "flag": "FLAG_TEMP_4"
+      "flag": "FLAG_TEMP_4",
+      "d": true,
+      "m": true
     },
     {
       "local_id": "A_WP",
@@ -246,6 +258,7 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Harbor_Eventscript_PreschoolerM",
       "flag": "FLAG_TEMP_3",
+      "n": true,
       "quest_id": 6
     }
   ],
@@ -304,6 +317,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "NULL"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 19,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "WindwardPort_Harbor_Eventscript_ShipSchedule"
     }
   ]
 }

@@ -46,8 +46,7 @@ const struct HelpWindow gHelpWindowInfo[] =
     {
         .header = COMPOUND_STRING(" Companion Menu"),
         .desc = COMPOUND_STRING("To access the Companion Menu, press\n"
-                                "{START_BUTTON}->{SELECT_BUTTON} while you're in\n"
-                                "the overworld.\n"
+                                "{START_BUTTON}->{L_BUTTON} while you're in the overworld.\n"
                                 "You will unlock more {COLOR 7}companions{COLOR 2} on your\n"
                                 "journey through the Kitoha region.\n"
                                 "You can set them as {COLOR 7}NPC follower{COLOR 2} or {COLOR 7}battle\n"
@@ -58,10 +57,9 @@ const struct HelpWindow gHelpWindowInfo[] =
     [HELP_QUEST_MENU] =
     {
         .header = COMPOUND_STRING(" Quest Menu"),
-        .desc = COMPOUND_STRING("{COLOR 7}Quest System{COLOR 2} is now unlocked!\n"
-                                "There are multiple side quests you can do\n"
+        .desc = COMPOUND_STRING("There are multiple side quests you can do\n"
                                 "as you travel through the Kitoha region.\n"
-                                "Check around for quest givers with a {COLOR 8}light\n"
+                                "Check around for quest givers with a {COLOR 7}light\n"
                                 "blue{COLOR 2} exclamation mark.\n"
                                 "Some side quests may have different outcome\n"
                                 "and rewards {COLOR RED}depending on your action{COLOR 2}.\n"

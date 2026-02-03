@@ -13112,7 +13112,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     [MOVE_ECHOED_VOICE] =
     {
         .name = COMPOUND_STRING("Echoed Voice"),
-        .price = 1000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Does more damage every turn\n"
             "it is used."),

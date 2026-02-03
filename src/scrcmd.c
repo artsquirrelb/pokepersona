@@ -136,6 +136,7 @@ bool8 ScrCmd_end(struct ScriptContext *ctx)
     Script_RequestEffects(SCREFF_V1);
 
     FlagClear(FLAG_HIDE_HELP_BUTTON);
+    FlagClear(FLAG_PREVENT_OVERWORLD_SPEEDUP);
     ShowHelpButton();
     StopScript(ctx);
     return FALSE;
@@ -1626,6 +1627,7 @@ bool8 ScrCmd_lockall(struct ScriptContext *ctx)
     {
         FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
         FlagSet(FLAG_HIDE_HELP_BUTTON);
+        FlagSet(FLAG_PREVENT_OVERWORLD_SPEEDUP);
         HideHelpButton();
         struct ObjectEvent *followerObj = GetFollowerObject();
         FreezeObjects_WaitForPlayer();
@@ -1650,6 +1652,7 @@ bool8 ScrCmd_lock(struct ScriptContext *ctx)
     {   
         FlagSet(FLAG_SAFE_FOLLOWER_MOVEMENT);
         FlagSet(FLAG_HIDE_HELP_BUTTON);
+        FlagSet(FLAG_PREVENT_OVERWORLD_SPEEDUP);
         HideHelpButton();
         struct ObjectEvent *followerObj = GetFollowerObject();
         if (gObjectEvents[gSelectedObjectEvent].active)

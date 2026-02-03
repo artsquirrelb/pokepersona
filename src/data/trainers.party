@@ -223,6 +223,11 @@ AI: Basic Trainer
 Venipede
 Level: 6
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Poison Point
+- Poison Tail
+- Rollout
+- Protect
+- Defense Curl
 
 === TRAINER_YUUKA ===
 Name: Yuuka
@@ -232,13 +237,14 @@ Music: Girl
 Double Battle: No
 AI: Basic Trainer
 
-Fletchling
+Swirlix
 Level: 6
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Scyther
+Shinx
 Level: 6
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Thunder Wave
 
 === TRAINER_TOUMA ===
 Name: Touma
@@ -248,11 +254,11 @@ Music: Male
 Double Battle: No
 AI: Basic Trainer
 
-Bellsprout
+Litleo
 Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-Farfetch'd
+Klawf
 Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -296,7 +302,7 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Spewpa
+Bidoof
 Level: 12
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
@@ -16173,7 +16179,7 @@ Music: Female
 Double Battle: No
 AI: Basic Trainer
 
-Azurill
+Happiny
 Level: 9
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 

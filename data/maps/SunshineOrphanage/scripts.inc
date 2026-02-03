@@ -162,11 +162,11 @@ Shinjiro_and_Miki_Join_Party::
 # 81 "data/maps/SunshineOrphanage/scripts.pory"
 	applymovement 4, Shinjiro_joins
 # 82 "data/maps/SunshineOrphanage/scripts.pory"
-	applymovement 3, Miki_joins
+	applymove 3, Miki_joins
 # 83 "data/maps/SunshineOrphanage/scripts.pory"
-	waitmovement 0
-# 84 "data/maps/SunshineOrphanage/scripts.pory"
 	removeobject 4
+# 84 "data/maps/SunshineOrphanage/scripts.pory"
+	delay 1
 # 85 "data/maps/SunshineOrphanage/scripts.pory"
 	removeobject 3
 # 86 "data/maps/SunshineOrphanage/scripts.pory"
@@ -252,101 +252,93 @@ Donors_List::
 
 Sunflora_NPC::
 # 148 "data/maps/SunshineOrphanage/scripts.pory"
-	lock
+	moncryscript SPECIES_SUNFLORA
 # 149 "data/maps/SunshineOrphanage/scripts.pory"
-	faceplayer
-# 150 "data/maps/SunshineOrphanage/scripts.pory"
-	playmoncry SPECIES_SUNFLORA, CRY_MODE_NORMAL
-# 151 "data/maps/SunshineOrphanage/scripts.pory"
 	release
 	end
 
 
 Budew_NPC::
-# 156 "data/maps/SunshineOrphanage/scripts.pory"
-	lock
-# 157 "data/maps/SunshineOrphanage/scripts.pory"
-	faceplayer
-# 158 "data/maps/SunshineOrphanage/scripts.pory"
-	playmoncry SPECIES_BUDEW, CRY_MODE_NORMAL
-# 159 "data/maps/SunshineOrphanage/scripts.pory"
+# 154 "data/maps/SunshineOrphanage/scripts.pory"
+	moncryscript SPECIES_BUDEW
+# 155 "data/maps/SunshineOrphanage/scripts.pory"
 	release
 	end
 
 
 SunshineOrphanage_Eventscript_MetalClawTutor::
-# 164 "data/maps/SunshineOrphanage/scripts.pory"
+# 160 "data/maps/SunshineOrphanage/scripts.pory"
 	lock
-# 165 "data/maps/SunshineOrphanage/scripts.pory"
+# 161 "data/maps/SunshineOrphanage/scripts.pory"
 	faceplayer
-# 166 "data/maps/SunshineOrphanage/scripts.pory"
+# 162 "data/maps/SunshineOrphanage/scripts.pory"
 	setspeaker SunshineOrphanage_Eventscript_MetalClawTutor_Text_0
-# 167 "data/maps/SunshineOrphanage/scripts.pory"
+# 163 "data/maps/SunshineOrphanage/scripts.pory"
 	msgbox SunshineOrphanage_Eventscript_MetalClawTutor_Text_1, MSGBOX_YESNO
-# 170 "data/maps/SunshineOrphanage/scripts.pory"
+# 166 "data/maps/SunshineOrphanage/scripts.pory"
 	compare VAR_RESULT, TRUE
 	goto_if_eq SunshineOrphanage_Eventscript_MetalClawTutor_2
-# 195 "data/maps/SunshineOrphanage/scripts.pory"
+# 191 "data/maps/SunshineOrphanage/scripts.pory"
 	goto SunshineOrphanage_Eventscript_MetalClawDeclined
 SunshineOrphanage_Eventscript_MetalClawTutor_1:
-# 197 "data/maps/SunshineOrphanage/scripts.pory"
+# 193 "data/maps/SunshineOrphanage/scripts.pory"
 	release
 	end
 
 SunshineOrphanage_Eventscript_MetalClawTutor_2:
-# 171 "data/maps/SunshineOrphanage/scripts.pory"
+# 167 "data/maps/SunshineOrphanage/scripts.pory"
 	specialvar VAR_RESULT, CountPartyNonEggMons
-# 172 "data/maps/SunshineOrphanage/scripts.pory"
+# 168 "data/maps/SunshineOrphanage/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq SunshineOrphanage_Eventscript_MetalClawTutor_6
-# 179 "data/maps/SunshineOrphanage/scripts.pory"
+# 175 "data/maps/SunshineOrphanage/scripts.pory"
 	setspeaker SunshineOrphanage_Eventscript_MetalClawTutor_Text_0
-# 180 "data/maps/SunshineOrphanage/scripts.pory"
+# 176 "data/maps/SunshineOrphanage/scripts.pory"
 	msgbox SunshineOrphanage_Eventscript_MetalClawTutor_Text_3
-# 181 "data/maps/SunshineOrphanage/scripts.pory"
+# 177 "data/maps/SunshineOrphanage/scripts.pory"
 	closemessage
-# 182 "data/maps/SunshineOrphanage/scripts.pory"
+# 178 "data/maps/SunshineOrphanage/scripts.pory"
 	setvar VAR_0x8005, MOVE_METAL_CLAW
-# 183 "data/maps/SunshineOrphanage/scripts.pory"
+# 179 "data/maps/SunshineOrphanage/scripts.pory"
 	buffermovename STR_VAR_2, MOVE_METAL_CLAW
-# 184 "data/maps/SunshineOrphanage/scripts.pory"
+# 180 "data/maps/SunshineOrphanage/scripts.pory"
 	call MoveTutor_EventScript_OpenPartyMenu
-# 185 "data/maps/SunshineOrphanage/scripts.pory"
+# 181 "data/maps/SunshineOrphanage/scripts.pory"
 	compare VAR_RESULT, 4
 	goto_if_eq SunshineOrphanage_Eventscript_MetalClawTutor_8
-# 189 "data/maps/SunshineOrphanage/scripts.pory"
+# 185 "data/maps/SunshineOrphanage/scripts.pory"
 	setspeaker SunshineOrphanage_Eventscript_MetalClawTutor_Text_0
-# 190 "data/maps/SunshineOrphanage/scripts.pory"
+# 186 "data/maps/SunshineOrphanage/scripts.pory"
 	msgbox SunshineOrphanage_Eventscript_MetalClawTutor_Text_4
-# 191 "data/maps/SunshineOrphanage/scripts.pory"
+# 187 "data/maps/SunshineOrphanage/scripts.pory"
 	closemessage
 	goto SunshineOrphanage_Eventscript_MetalClawTutor_1
 
 SunshineOrphanage_Eventscript_MetalClawTutor_6:
-# 173 "data/maps/SunshineOrphanage/scripts.pory"
+# 169 "data/maps/SunshineOrphanage/scripts.pory"
 	setspeaker SunshineOrphanage_Eventscript_MetalClawTutor_Text_0
-# 174 "data/maps/SunshineOrphanage/scripts.pory"
+# 170 "data/maps/SunshineOrphanage/scripts.pory"
 	msgbox SunshineOrphanage_Eventscript_MetalClawTutor_Text_2
-# 175 "data/maps/SunshineOrphanage/scripts.pory"
+# 171 "data/maps/SunshineOrphanage/scripts.pory"
 	closemessage
-# 176 "data/maps/SunshineOrphanage/scripts.pory"
+# 172 "data/maps/SunshineOrphanage/scripts.pory"
 	release
 	end
 
 SunshineOrphanage_Eventscript_MetalClawTutor_8:
-# 186 "data/maps/SunshineOrphanage/scripts.pory"
+# 182 "data/maps/SunshineOrphanage/scripts.pory"
 	goto SunshineOrphanage_Eventscript_MetalClawDeclined
 	goto SunshineOrphanage_Eventscript_MetalClawTutor_1
 
 
 SunshineOrphanage_Eventscript_MetalClawDeclined::
-# 202 "data/maps/SunshineOrphanage/scripts.pory"
+# 198 "data/maps/SunshineOrphanage/scripts.pory"
 	setspeaker SunshineOrphanage_Eventscript_MetalClawTutor_Text_0
-# 203 "data/maps/SunshineOrphanage/scripts.pory"
+# 199 "data/maps/SunshineOrphanage/scripts.pory"
 	msgbox SunshineOrphanage_Eventscript_MetalClawDeclined_Text_0
-# 204 "data/maps/SunshineOrphanage/scripts.pory"
+# 200 "data/maps/SunshineOrphanage/scripts.pory"
 	closemessage
-# 205 "data/maps/SunshineOrphanage/scripts.pory"
+# 201 "data/maps/SunshineOrphanage/scripts.pory"
 	release
 	end
 
@@ -409,30 +401,30 @@ Donors_List_Text_0:
 	.string "--- Takuya$"
 
 SunshineOrphanage_Eventscript_MetalClawTutor_Text_0:
-# 166 "data/maps/SunshineOrphanage/scripts.pory"
+# 162 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "Materu$"
 
 SunshineOrphanage_Eventscript_MetalClawTutor_Text_1:
-# 167 "data/maps/SunshineOrphanage/scripts.pory"
+# 163 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "I'm interested in Steel-type Pokémon\n"
 	.string "and recently learned how to teach the\l"
 	.string "move {COLOR BLUE}Metal Claw {COLOR 2}to a Pokémon.\p"
 	.string "Do you want me to?$"
 
 SunshineOrphanage_Eventscript_MetalClawTutor_Text_2:
-# 174 "data/maps/SunshineOrphanage/scripts.pory"
+# 170 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "But you don't have any Pokémon...$"
 
 SunshineOrphanage_Eventscript_MetalClawTutor_Text_3:
-# 180 "data/maps/SunshineOrphanage/scripts.pory"
+# 176 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "Which Pokémon should I teach {COLOR BLUE}Metal Claw\n"
 	.string "{COLOR 2}to?$"
 
 SunshineOrphanage_Eventscript_MetalClawTutor_Text_4:
-# 190 "data/maps/SunshineOrphanage/scripts.pory"
+# 186 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "Just speak to me if you want me to\n"
 	.string "teach {COLOR BLUE}Metal Claw {COLOR 2}to a Pokémon!$"
 
 SunshineOrphanage_Eventscript_MetalClawDeclined_Text_0:
-# 203 "data/maps/SunshineOrphanage/scripts.pory"
+# 199 "data/maps/SunshineOrphanage/scripts.pory"
 	.string "Aw... Okay.$"

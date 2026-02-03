@@ -56,53 +56,42 @@ script WindwardPort_Harbor_Eventscript_SailorOnGuard {
     faceplayer
     setspeaker("Anderson")
     gettime
-    if(var(VAR_0x8000) < 7 || var(VAR_0x8000) >= 17){
-        showmoneybox(0, 0)
-        msgbox(format("This ship is departing for Coralport.\p
-        It will arrive at the destination in approximately {COLOR RED}3 hours{COLOR 2}.\p
-        It costs {COLOR GREEN}¥100 {COLOR 2}per ticket. Would you like to board the ship?"), MSGBOX_YESNO)
-        closemessage
+    showmoneybox(0, 0)
+    msgbox(format("This ship is departing for Coralport.\p
+    It will arrive at the destination in approximately {COLOR RED}3 hours{COLOR 2}.\p
+    It costs {COLOR GREEN}¥100 {COLOR 2}per ticket. Would you like to board the ship?"), MSGBOX_YESNO)
+    closemessage
+    if (var(VAR_RESULT)){
+        checkmoney(300)
         if (var(VAR_RESULT)){
-            checkmoney(300)
-            if (var(VAR_RESULT)){
-                playse(SE_SHOP)
-                removemoney(300)
-                updatemoneybox
-                setspeaker("Anderson")
-                msgbox(format("This way, please."))
-                closemessage
-                hidemoneybox
-                applymovement(1, walkinplacedown)
-                waitmovement
-                delay(30)
-                addtime(0, 3, 0)
-                warp(MAP_CORALPORT, 4, 20)
-                waitstate
-            }
-            else{
-                setspeaker("Anderson")
-                msgbox(format("I'm sorry but you don't have enough money for 3 tickets."))
-                closemessage
-                hidemoneybox
-                release
-                end
-            }
+            playse(SE_SHOP)
+            removemoney(300)
+            updatemoneybox
+            setspeaker("Anderson")
+            msgbox(format("This way, please."))
+            closemessage
+            hidemoneybox
+            applymovement(1, walkinplacedown)
+            waitmovement
+            delay(30)
+            addtime(0, 3, 0)
+            warp(MAP_CORALPORT, 4, 20)
+            waitstate
         }
         else{
+            setspeaker("Anderson")
+            msgbox(format("I'm sorry but you don't have enough money for 3 tickets."))
+            closemessage
             hidemoneybox
+            release
+            end
         }
     }
     else{
-        call(WindwardPort_Harbor_Eventscript_ShipOutOfCommission)
+        hidemoneybox
     }
-    closemessage
     release
     end
-}
-
-script WindwardPort_Harbor_Eventscript_ShipOutOfCommission {
-    msgbox(format("The ship to Coralport is currently out of commission.\p
-    Please come back between 5PM and 7AM."))
 }
 
 script WindwardPort_Harbor_Eventscript_VeteranF {
@@ -701,6 +690,14 @@ script WindwardPort_Harbor_Eventscript_QuizFinished {
     setvar(VAR_WINDWARD_HARBOR_GHOST_BOY, 6)
     call(EventScript_CheckDaysLeft)
     special(SetCB2LoadMap)
+    release
+    end
+}
+
+script WindwardPort_Harbor_Eventscript_ShipSchedule {
+    msgbox(format("{CLEAR_TO 45}Windward Port -> Coralport\n
+    {CLEAR_TO 30}Boarding time: 6PM - 5:59AM."))
+    closemessage
     release
     end
 }

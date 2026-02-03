@@ -97,15 +97,15 @@ MansionsGarden_MapScripts_MAP_SCRIPT_ON_TRANSITION_8:
 # 37 "data/maps/MansionsGarden/scripts.pory"
 	setobjectxyperm KIKUNO, 38, 20
 # 38 "data/maps/MansionsGarden/scripts.pory"
-	setobjectnewmovementtype KIKUNO, MOVEMENT_TYPE_FACE_RIGHT
+	setobjectmovementtype KIKUNO, MOVEMENT_TYPE_FACE_RIGHT
 # 39 "data/maps/MansionsGarden/scripts.pory"
 	setobjectxyperm INDEEDEE_F, 38, 21
 # 40 "data/maps/MansionsGarden/scripts.pory"
-	setobjectnewmovementtype INDEEDEE_F, MOVEMENT_TYPE_WALK_IN_PLACE_UP
+	setobjectmovementtype INDEEDEE_F, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 # 41 "data/maps/MansionsGarden/scripts.pory"
 	setobjectxyperm FENNEKIN, 39, 21
 # 42 "data/maps/MansionsGarden/scripts.pory"
-	setobjectnewmovementtype FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_UP
+	setobjectmovementtype FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_UP
 	goto MansionsGarden_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 
 MansionsGarden_MapScripts_MAP_SCRIPT_ON_TRANSITION_11:
@@ -516,7 +516,7 @@ MansionsGarden_Eventscript_Fennekin_5:
 
 MansionsGarden_Eventscript_GetShinyFennekin::
 # 273 "data/maps/MansionsGarden/scripts.pory"
-	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_ALWAYS
+	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, shinyMode = SHINY_MODE_ALWAYS
 # 274 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq MansionsGarden_Eventscript_GetShinyFennekin_1
@@ -560,7 +560,7 @@ MansionsGarden_Eventscript_GetShinyFennekin_2:
 
 MansionsGarden_Eventscript_GetNormalFennekin::
 # 294 "data/maps/MansionsGarden/scripts.pory"
-	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_NEVER
+	givemon SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, shinyMode = SHINY_MODE_NEVER
 # 295 "data/maps/MansionsGarden/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq MansionsGarden_Eventscript_GetNormalFennekin_1
@@ -839,30 +839,24 @@ MansionsGarden_Eventscript_MitsuruPrologueStart::
 # 492 "data/maps/MansionsGarden/scripts.pory"
 	destroyfollowernpc
 # 493 "data/maps/MansionsGarden/scripts.pory"
-	clearflag FLAG_SYS_B_DASH
-# 494 "data/maps/MansionsGarden/scripts.pory"
-	clearflag FLAG_SYS_POKEDEX_GET
-# 495 "data/maps/MansionsGarden/scripts.pory"
-	clearflag FLAG_SYS_POKEMON_GET
-# 496 "data/maps/MansionsGarden/scripts.pory"
 	removeitem ITEM_EXP_SHARE
-# 497 "data/maps/MansionsGarden/scripts.pory"
+# 494 "data/maps/MansionsGarden/scripts.pory"
 	removeitem ITEM_CAMP_GEARS
-# 498 "data/maps/MansionsGarden/scripts.pory"
+# 495 "data/maps/MansionsGarden/scripts.pory"
 	removeitem ITEM_ESCAPE_ROPE
-# 499 "data/maps/MansionsGarden/scripts.pory"
+# 496 "data/maps/MansionsGarden/scripts.pory"
 	removeitem ITEM_MACH_BIKE
-# 500 "data/maps/MansionsGarden/scripts.pory"
+# 497 "data/maps/MansionsGarden/scripts.pory"
 	manuallysettime WEEKDAY_WED, 22, 30, 0
-# 501 "data/maps/MansionsGarden/scripts.pory"
+# 498 "data/maps/MansionsGarden/scripts.pory"
 	subquestmenu QUEST_MENU_SET_ACTIVE, STORY_QUESTS, MITSURUS_PROLOGUE
-# 502 "data/maps/MansionsGarden/scripts.pory"
+# 499 "data/maps/MansionsGarden/scripts.pory"
 	setvar VAR_STORY_QUESTS_STATE, 0
-# 503 "data/maps/MansionsGarden/scripts.pory"
+# 500 "data/maps/MansionsGarden/scripts.pory"
 	warpsilent MAP_MANSIONS_GARDEN, 43, 27
-# 504 "data/maps/MansionsGarden/scripts.pory"
+# 501 "data/maps/MansionsGarden/scripts.pory"
 	special DrawWholeMapView
-# 505 "data/maps/MansionsGarden/scripts.pory"
+# 502 "data/maps/MansionsGarden/scripts.pory"
 	waitstate
 	return
 

@@ -1126,7 +1126,7 @@ SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown_4:
 # 630 "data/maps/SunshineWoods/scripts.pory"
 	fwdtime 15, 05
 # 631 "data/maps/SunshineWoods/scripts.pory"
-	warp MAP_ROUTE2_HOUSE, 3, 11
+	warp MAP_ROUTE2_HOUSE, 3, 9
 	return
 
 
@@ -1631,15 +1631,15 @@ SunshineWoods_Eventscript_ShinjiAskingForAFlowerCrown_Text_0:
 SunshineWoods_Eventscript_PawmiCries_Text_0:
 # 135 "data/maps/SunshineWoods/scripts.pory"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}W-What was that?\p"
-	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Could be a wild Pokémon. Be careful!$"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Could be a wild Pokémon. Be careful!$"
 
 SunshineWoods_Eventscript_PawmisInjured_Text_0:
 # 203 "data/maps/SunshineWoods/scripts.pory"
-	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Wait...\p"
-	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}It looks heavily injured.\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Wait...\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}It looks heavily injured.\p"
 	.string "{SPEAKER NAME_MK}{DESTROY_MUGSHOT}We should take it back to the\n"
 	.string "orphanage!\p"
-	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Yeah!$"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Yeah!$"
 
 TakePawmiToHeal_Text_0:
 # 222 "data/maps/SunshineWoods/scripts.pory"

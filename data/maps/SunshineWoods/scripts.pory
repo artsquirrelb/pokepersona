@@ -133,7 +133,7 @@ script SunshineWoods_Eventscript_PawmiCries {
     delay(30)
     waitmovement
     msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}W-What was that?\p
-    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Could be a wild Pokémon. Be careful!"))
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Could be a wild Pokémon. Be careful!"))
     waitmessage
     release
     goto (SunshineWoods_Eventscript_PawmiAppears)
@@ -200,10 +200,10 @@ script SunshineWoods_Eventscript_PawmisInjured {
     applymovement(4, SunshineWoods_Eventscript_PawmiIsWeak)
     waitmovement
     delay(16)
-    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Wait...\p
-    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}It looks heavily injured.\p
+    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Wait...\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}It looks heavily injured.\p
     {SPEAKER NAME_MK}{DESTROY_MUGSHOT}We should take it back to the orphanage!\p
-    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Yeah!"))
+    {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Yeah!"))
     release
     goto (TakePawmiToHeal)
 }
@@ -628,7 +628,7 @@ script SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown {
         setvar(VAR_0x8000, 0)
         setvar(VAR_0x8001, 0)
         fwdtime(15, 05)
-        warp(MAP_ROUTE2_HOUSE, 3, 11)
+        warp(MAP_ROUTE2_HOUSE, 3, 9)
     }
 }
 

@@ -172,23 +172,19 @@ script SunshineOrphanageMainHall_Eventscript_GetPawmiStarter {
     msgbox ("Let Pawmi in the Cherish Ball?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         setflag(FLAG_SYS_POKEMON_GET)
-        givemon(SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_METAL_CLAW, isStoryStarter = TRUE)
+        givemon(SPECIES_PAWMI_DELTA, 5, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_ADAMANT, 1, MON_MALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, isStoryStarter = TRUE)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             waitfanfare
-            msgbox("Received Pawmi.")
-            hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
-            msgbox(format("{COLOR GREEN}Tips: You can rename a Pokémon in its summary screen."))
-            closemessage
+            msgbox("Pawmi happily went into the Pokéball.")
+            applymove(15, moves(enter_pokeball))
             goto(SunshineOrphanageMainHall_Eventscript_GoToSleep)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             waitfanfare
-            msgbox("Received Pawmi.")
-            hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)
-            msgbox(format("{COLOR GREEN}Tips: You can rename a Pokémon in its summary screen."))
-            closemessage
+            msgbox("Pawmi happily went into the Pokéball.")
+            applymove(15, moves(enter_pokeball))
             goto(SunshineOrphanageMainHall_Eventscript_GoToSleep)
         }
         else{
@@ -208,6 +204,7 @@ movement PawmiDisappointed {
 
 script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     lock
+    closemessage
     delay(20)
     applymovement (4, TeacherFacingAkihiko)
     waitmovement(0)
@@ -444,9 +441,7 @@ movement BlisseyHappy {
 }
 
 script Minccino_NPC {
-    lock
-    faceplayer
-    playmoncry(SPECIES_MINCCINO, CRY_MODE_NORMAL)
+    moncryscript(SPECIES_MINCCINO)
     release
     end
 }

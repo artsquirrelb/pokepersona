@@ -129,7 +129,7 @@ script Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38 {
     fwdtime(22, 30)
     msgbox(format("Later that night..."))
     closemessage
-    warpsilent(MAP_ROUTE2_HOUSE, 3, 11)
+    warpsilent(MAP_ROUTE2_HOUSE, 3, 10)
 }
 
 script Route2_Eventscript_AkihikoOnFrame42 {
@@ -138,7 +138,7 @@ script Route2_Eventscript_AkihikoOnFrame42 {
     delay(60)
     msgbox(format("The next morning..."))
     //closemessage
-    warpsilent(MAP_ROUTE2_HOUSE, 3, 11)
+    warpsilent(MAP_ROUTE2_HOUSE, 3, 10)
 }
 
 script SunshineMeadow_Eventscript_GameOver {

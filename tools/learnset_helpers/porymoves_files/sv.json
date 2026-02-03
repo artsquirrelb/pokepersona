@@ -99297,7 +99297,9 @@
       "MOVE_SWEET_KISS",
       "MOVE_WISH"
     ],
-    "TutorMoves": []
+    "TutorMoves": [
+      "MOVE_POWER_UP_PUNCH"
+    ]
   },
   "PAWMO_DELTA": {
     "LevelMoves": [
@@ -99423,7 +99425,8 @@
     "TutorMoves": [
       "MOVE_COACHING",
       "MOVE_UPPER_HAND",
-      "MOVE_ZIPPY_ZAP"]
+      "MOVE_ZIPPY_ZAP",
+      "MOVE_POWER_UP_PUNCH"]
   },
   "PAWMOT_DELTA": {
     "LevelMoves": [
@@ -99576,6 +99579,7 @@
     "TutorMoves": [
       "MOVE_COACHING",
       "MOVE_EERIE_IMPULSE",
+      "MOVE_POWER_UP_PUNCH",
       "MOVE_UPPER_HAND",
       "MOVE_ZIPPY_ZAP"
       ]

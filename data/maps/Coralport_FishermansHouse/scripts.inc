@@ -687,6 +687,8 @@ Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movem
 # 122 "data/maps/Coralport_FishermansHouse/scripts.pory"
 	walk_fast_down
 # 122 "data/maps/Coralport_FishermansHouse/scripts.pory"
+	walk_fast_down
+# 122 "data/maps/Coralport_FishermansHouse/scripts.pory"
 	set_invisible
 	step_end
 
@@ -695,7 +697,7 @@ Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movem
 # 123 "data/maps/Coralport_FishermansHouse/scripts.pory"
 	walk_fast_right
 # 123 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	walk_fast_right
+	walk_fast_down
 # 123 "data/maps/Coralport_FishermansHouse/scripts.pory"
 	walk_fast_down
 # 123 "data/maps/Coralport_FishermansHouse/scripts.pory"

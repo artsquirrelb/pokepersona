@@ -4,47 +4,55 @@ mapscripts ThundershardsCave_1F_MapScripts {
             setflag(FLAG_TEMP_1)
         }
     }
-    MAP_SCRIPT_ON_RESUME: ThundershardsCave_1F_MapScripts_OnResume
 }
 
-script ThundershardsCave_1F_MapScripts_OnResume {
-    if (!flag(FLAG_HELP_DUNGEON_ENCOUNTER)){
+script ShowHelpEncounter{
+    if (!flag(FLAG_HELP_DUNGEON_ENCOUNTER) && var(VAR_TEMP_A) == 0){
         call(EventScript_ShowHelpDungeonEncounter)
         setflag(FLAG_HELP_DUNGEON_ENCOUNTER)
     }
+    setvar(VAR_TEMP_A, 1)
+    release
+    end
 }
 
-script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
+script ThundershardsCave_1F_EventScript_NeckBeardInvites {
     lock
     setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
     waitmovement
     delay(16)
-    applymovement(7, moves(shake_horizontal))
+    applymovement(NB_TDS, moves(shake_horizontal))
     waitmovement
     playse(SE_M_ROCK_THROW)
-    applymovement(4, moves(rock_smash_break))
-    waitmovement(4)
-    removeobject(4)
+    applymovement(NB_R, moves(rock_smash_break))
+    waitmovement(NB_R)
+    removeobject(NB_R)
     setflag(FLAG_TEMP_1)
     delay(30)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*2))
-    applymovement(7, moves(walk_left, walk_down, face_left))
-    waitmovement
+    getplayerxy(VAR_0x8000, VAR_0x8001)
+    if (var(VAR_0x8001) == 11){
+        applymove(NB_TDS, moves(walk_left, walk_down, face_left))
+    }
+    else
+    {
+        applymove(NB_TDS, moves(walk_left, walk_down *2, face_left))
+    }
     special(RemoveCameraObject)
     setspeaker("Big Man")
     msgbox(format("Rocks are fascinating, don't you agree, young lady?\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}Huh? Oh- yes, I suppose they are."))
     closemessage
     playse(SE_SHINY)
-    applymovement(7, emotemusic)
+    applymovement(NB_TDS, emotemusic)
     waitmovement
     setspeaker("Rock-loving Big Man?")
     msgbox(format("I know right? Your answer just made my day!\p
     If only my son thought the same."))
     closemessage
-    applymovement(7, walkleft)
+    applymovement(NB_TDS, walkleft)
     waitmovement
     setspeaker("Rock-loving Big Man?")
     msgbox(format("Here, your can have this. I got it from mining the rock just now."))
@@ -58,75 +66,23 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites1 {
     msgbox(format("Just ask around for Nebe's house when you get there. Coralport is very hospitable.\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}I- Thank you. Nebe-san."))
     closemessage
-    applymovement(7, moves(walk_down, walk_left*7, walk_down *4, set_invisible, walk_down))
-    delay(8)
-    applymovement(LOCALID_PLAYER, moves(face_down, delay_8, face_left))
-    waitmovement(7)
-    removeobject(7)
+    getplayerxy(VAR_0x8000, VAR_0x8001)
+    if (var(VAR_0x8001) == 11)
+    {
+        applymovement(NB_TDS, moves(walk_down, walk_left*7, walk_down *4, set_invisible, walk_down))
+        delay(8)
+        applymovement(LOCALID_PLAYER, moves(face_down, delay_8, face_left))
+    }
+    else
+    {
+        applymovement(NB_TDS, moves(walk_up, walk_left*7, walk_down *5, set_invisible, walk_down))
+        delay(8)
+        applymovement(LOCALID_PLAYER, moves(face_up, delay_8, face_left))
+    }
+    waitmovement(NB_TDS)
+    removeobject(NB_TDS)
     playse(SE_EXIT)
     waitse
-    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}.......\p
-    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(I should go on with my mission.)"))
-    closemessage
-    applymovement(LOCALID_PLAYER, faceright)
-    waitmovement
-    setvar(VAR_MITSURUS_INTRO_STATE, 13)
-    fwdtime(8, 05)
-    release
-    end
-}
-
-script ThundershardsCave_1F_EventScript_NeckBeardInvites2 {
-    lock
-    setflag(FLAG_SAFE_FOLLOWER_MOVEMENT)
-    special(SpawnCameraObject)
-    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_right*2))
-    waitmovement
-    delay(16)
-    applymovement(7, moves(shake_horizontal))
-    waitmovement
-    playse(SE_M_ROCK_THROW)
-    applymovement(4, moves(rock_smash_break))
-    waitmovement(4)
-    removeobject(4)
-    delay(30)
-    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*2))
-    applymovement(7, moves(walk_left, walk_down *2, face_left))
-    waitmovement
-    special(RemoveCameraObject)
-    setspeaker("Big Man")
-    msgbox(format("Rocks are fascinating, don't you agree, young lady?\p
-    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}Huh? Oh- yes, I suppose they are."))
-    closemessage
-    playse(SE_SHINY)
-    applymovement(7, emotemusic)
-    waitmovement
-    setspeaker("Rock-loving Big Man?")
-    msgbox(format("I know right? Your answer just made my day!\p
-    If only my son thought the same."))
-    closemessage
-    applymovement(7, walkleft)
-    waitmovement
-    setspeaker("Rock-loving Big Man?")
-    msgbox(format("Here, your can have this. I got it from mining the rock just now."))
-    closemessage
-    giveitem(ITEM_PEARL)
-    setspeaker("Rock-loving Big Man?")
-      msgbox(format("I'd love to give you a tools to mine rocks on your own.\p
-    Unfortunately I only have this old mining kit with me and it's my lucky charm.\p
-    If you visit my house in Coralport I can give you a new one."))
-    setspeaker("Mr. Nebe")
-    msgbox(format("Just ask around for Nebe's house when you get there. Coralport is very hospitable.\p
-    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}I- Thank you. Nebe-san."))
-    closemessage
-    applymovement(7, moves(walk_up, walk_left*7, walk_down *5, set_invisible, walk_down))
-    delay(8)
-    applymovement(LOCALID_PLAYER, moves(face_up, delay_8, face_left))
-    waitmovement(7)
-    playse(SE_EXIT)
-    waitse
-    removeobject(7)
-    setflag(FLAG_TEMP_1)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}.......\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(I should go on with my mission.)"))
     closemessage

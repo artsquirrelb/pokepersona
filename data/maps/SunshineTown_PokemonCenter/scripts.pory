@@ -61,7 +61,7 @@ script SunshineTown_PokemonCenter_Eventscript_MartLady {
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Hello. We're here to pick up a package for Ms. Kobayashi.\p
         It should have arrived today."))
         closemessage
-        setspeaker("Mart Employee")
+        setspeaker("Mart Employee Fusayo")
         msgbox("One moment, please.")
         setvar(VAR_AKIHIKOS_INTRO_STATE, 13)
         warpsilent(MAP_BLANK_MAP, 0, 0)
@@ -274,7 +274,7 @@ script SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene0 {
     playse(SE_EXIT)
     removeobject(LOCALID_PLAYER)
     delay(30)
-    setspeaker ("Mart Employee")
+    setspeaker("Mart Employee Fusayo")
     applymovement(6, walkleft)
     waitmovement(0)
     msgbox(SunshineTown_PokemonCenter_Eventscript_MartLadyEndCutsceneText)
@@ -295,7 +295,7 @@ script SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene1 {
     playse(SE_EXIT)
     removeobject(LOCALID_PLAYER)
     delay(30)
-    setspeaker ("Mart Employee")
+    setspeaker("Mart Employee Fusayo")
     applymovement(6, walkleft)
     waitmovement(0)
     msgbox(SunshineTown_PokemonCenter_Eventscript_MartLadyEndCutsceneText)

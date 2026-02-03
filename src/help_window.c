@@ -1,5 +1,6 @@
 #include "global.h"
 #include "menu.h"
+#include "palette.h"
 #include "string_util.h"
 #include "sound.h"
 #include "text.h"
@@ -34,6 +35,7 @@ void ShowHelpInfoWindow(struct ScriptContext *ctx)
     u8 descFont = FONT_SMALL;
 
     helpWindowId = AddWindow(&sHelpWindowTemplate);
+    LoadPalette(gTextWindowFrame1_Pal, 14*16, PLTT_SIZE_4BPP);
     DrawStdWindowFrame(helpWindowId, FALSE);
 
     // Set non-default values if any
@@ -56,6 +58,7 @@ void ShowHelpInfoWindow(struct ScriptContext *ctx)
 void HideHelpInfoWindow(void)
 {
     PlaySE(SE_RG_HELP_CLOSE);
+    
     ClearStdWindowAndFrame(helpWindowId, FALSE);
     RemoveWindow(helpWindowId);
 }

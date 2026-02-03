@@ -1,8 +1,8 @@
 mapscripts Route2_House_MapScripts {
     MAP_SCRIPT_ON_LOAD{
         if (var(VAR_MITSURUS_INTRO_STATE) == 22){
-            setmetatile(2, 10, 0x24B, TRUE)
-            setmetatile(2, 11, 0x253, TRUE)
+            setmetatile(2, 8, 0x8E7, TRUE)
+            setmetatile(2, 9, 0x8EF, TRUE)
         }
     }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
@@ -74,8 +74,8 @@ mapscripts Route2_House_MapScripts {
         }
         if(var(VAR_MITSURUS_INTRO_STATE) == 22){
             setflag(FLAG_TEMP_1)
-            setobjectxyperm(5, 2, 9)
-            setobjectmovementtype(5, MOVEMENT_TYPE_WALK_IN_PLACE_DOWN)
+            setobjectxyperm(5, 1, 8)
+            setobjectmovementtype(5, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
             setobjectxyperm(4, 7, 13)
             setobjectmovementtype (4, MOVEMENT_TYPE_FACE_UP)
         }
@@ -109,7 +109,7 @@ mapscripts Route2_House_MapScripts {
         {
             setflag(FLAG_SPAWN_INVISIBLE)
             setobjectxyperm(6, 8, 8)
-            setobjectxyperm(8, 3, 11)
+            setobjectxyperm(8, 3, 10)
             setobjectmovementtype(8, MOVEMENT_TYPE_FACE_LEFT)
         }
         if (var(VAR_MITSURUS_INTRO_STATE) == 34)
@@ -373,7 +373,6 @@ script Route2_House_Eventscript_TriosFirstGreeting {
     special(RemoveCameraObject)
     fwdtime(13, 20)
     release
-    end
 }
 
 movement jumpinplaceup {
@@ -478,15 +477,19 @@ script Route2_House_Eventscript_Shinjiro {
     So if you join her, I will too. Someone's gotta keep an eye on her.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_CONFIDENT}Alright, let's try asking her then."))
     closemessage
-    applymovement(6, ShinjiroJoinsAndVanish)
-    waitmovement(0)
+    specialvar(VAR_0x8000, GetPlayerFacingDirection)
+    switch (var(VAR_0x8000))
+    {
+        case DIR_NORTH: applymove(6, walkdown)
+        case DIR_EAST: applymove(6, walkleft)
+    }
+    applymove(6, ShinjiroJoinsAndVanish)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 30)
     release
     end
 }
 
 movement ShinjiroJoinsAndVanish {
-    walk_down
     set_invisible
     walk_fast_right
     walk_fast_up *2
@@ -590,6 +593,7 @@ script Route2_House_Eventscript_AkiShinjiDecidingToJoinMitsuru {
     additem(ITEM_EXP_CANDY_XS, 20)
     setvar(VAR_0x800A, 0)
     setvar(VAR_0x800B, 0)
+    delay(30)
     applymovement(1, stepbackup)
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}To be honest, I'd also like to have a battle with you, Sanada-kun.\p
@@ -940,6 +944,7 @@ script Route2_House_Eventscript_AkihikoOnFrame39 {
 script Route2_House_Eventscript_AkihikoCantSleep {
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fadenewbgm(MUS_OCEANIC_MUSEUM)
+    savebgm(MUS_OCEANIC_MUSEUM)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     delay(60)
     applymovement(LOCALID_PLAYER, emotepensive)
@@ -1019,7 +1024,7 @@ movement CameraGoesDown2 {
 
 movement AkihikoExitTheRoom {
     player_run_right *4
-    player_run_down *2
+    player_run_down *3
 }
 
 script TakeARest {
@@ -1160,6 +1165,7 @@ script Route2_House_Eventscript_TheFirstMorning {
     delay(30)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Please take a look at the map."))
     closemessage
+    special(RemoveCameraObject)
     goto (EventScript_RegionMap)
     release
 }
@@ -1190,7 +1196,7 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     removeobject(1)
     removeobject(4)
     special(SpawnCameraObject)
-    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_down *3))
+    applymovement(OBJ_EVENT_ID_CAMERA, walkdown)
     waitmovement(OBJ_EVENT_ID_CAMERA)
     special(RemoveCameraObject)
     delay(20)
@@ -1248,11 +1254,10 @@ script Route2_House_Eventscript_TheFirstMorning2 {
 movement CameraPansToMitsuruTheFirstMorning {
     walk_up *2
     walk_diag_northeast*2
-    walk_up
 }
 
 movement AkihikoGoesToPlaceTheFirstMorning {
-    walk_up *4
+    walk_up *3
     walk_right *2
     face_up
 }
@@ -1276,7 +1281,7 @@ script Route2_House_Eventscript_MitsuruOnWarp8{
 
 script Route2_House_Eventscript_MitsuruRestForTheNight {
     lock
-    applymovement(LOCALID_PLAYER, moves(walk_up*4, walk_left*2, walk_up*2, delay_16, delay_16, face_right, delay_16, delay_16, face_up, delay_16, delay_16 face_left))
+    applymovement(LOCALID_PLAYER, moves(walk_up*5, walk_left*2, walk_up*2, delay_16, delay_16, face_right, delay_16, delay_16, face_up, delay_16, delay_16 face_left))
     waitmovement
     delay(30)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Not too shabby. This will do."))
@@ -1357,7 +1362,7 @@ script Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji {
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, faceright)
     delay(4)
-    applymovement(4, moves(walk_up*2, walk_left))
+    applymovement(4, moves(walk_up*4, walk_left))
     waitmovement
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Inteleon, you're back. Just about time.\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I'd love to give you a rest but we really have to act right now.\p
@@ -1374,7 +1379,7 @@ script Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji {
     applymovement(4, walkinplaceleft)
     waitmovement
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*2))
-    applymovement(5, moves(walk_right, walk_down*2, set_invisible))
+    applymovement(5, moves(walk_right*2, walk_down, set_invisible))
     delay(8)
     applymovement(4, moves(walk_left*3, set_invisible))
     waitmovement
@@ -1388,8 +1393,8 @@ script Route2_House_Eventscript_MitsuruResearchingAboutAkiShinji {
     waitse
     playse(SE_RG_BAG_POCKET)
     waitse
-    setmetatile(2, 10, 0x22A, TRUE)
-    setmetatile(2, 11, 0x232, TRUE)
+    setmetatile(2, 8, 0x8BF, TRUE)
+    setmetatile(2, 9, 0x8CF, TRUE)
     special(DrawWholeMapView)
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement
@@ -1866,7 +1871,7 @@ script Route2_House_Eventscript_TheFirstMorning2MitsuruPOV {
     removeobject(6)
     special(SpawnCameraObject)
     applymovement(1, MitsuruJoinsTheFirstMorning)
-    applymovement(OBJ_EVENT_ID_CAMERA, walkup)
+    applymovement(OBJ_EVENT_ID_CAMERA, walkdown)
     applymovement(LOCALID_PLAYER, moves(walk_down*2, set_visible))
     applymovement(4, InteleonJoinsTheFirstMorning)
     waitmovement(0)

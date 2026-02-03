@@ -451,7 +451,7 @@ Route2_Eventscript_PostBattleWithSusMen::
 # 218 "data/maps/Route2/scripts.pory"
 	lock
 # 219 "data/maps/Route2/scripts.pory"
-	playbgm MUS_NONE, TRUE
+	fadenewbgm MUS_NONE
 # 220 "data/maps/Route2/scripts.pory"
 	clearflag FLAG_NO_WHITEOUT
 # 221 "data/maps/Route2/scripts.pory"
@@ -1546,7 +1546,7 @@ Route2_Eventscript_MitsuruApproachingRoute2House::
 # 888 "data/maps/Route2/scripts.pory"
 	playse SE_DOOR
 # 889 "data/maps/Route2/scripts.pory"
-	warpsilent MAP_ROUTE2_HOUSE, 7, 12
+	warpsilent MAP_ROUTE2_HOUSE, 7, 13
 # 890 "data/maps/Route2/scripts.pory"
 	waitstate
 	return

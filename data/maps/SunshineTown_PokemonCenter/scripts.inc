@@ -132,9 +132,9 @@ SunshineTown_PokemonCenter_Eventscript_MartLady_2:
 # 63 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	closemessage
 # 64 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_3
+	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_0
 # 65 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	msgbox SunshineTown_PokemonCenter_Eventscript_MartLady_Text_4
+	msgbox SunshineTown_PokemonCenter_Eventscript_MartLady_Text_3
 # 66 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 13
 # 67 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
@@ -506,7 +506,7 @@ SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene0::
 # 276 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay 30
 # 277 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_3
+	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_0
 # 278 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 6, walkleft
 # 279 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
@@ -544,7 +544,7 @@ SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene1::
 # 297 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	delay 30
 # 298 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_3
+	setspeaker SunshineTown_PokemonCenter_Eventscript_MartLady_Text_0
 # 299 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	applymovement 6, walkleft
 # 300 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
@@ -639,10 +639,6 @@ SunshineTown_PokemonCenter_Eventscript_MartLady_Text_2:
 	.string "It should have arrived today.$"
 
 SunshineTown_PokemonCenter_Eventscript_MartLady_Text_3:
-# 64 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
-	.string "Mart Employee$"
-
-SunshineTown_PokemonCenter_Eventscript_MartLady_Text_4:
 # 65 "data/maps/SunshineTown_PokemonCenter/scripts.pory"
 	.string "One moment, please.$"
 

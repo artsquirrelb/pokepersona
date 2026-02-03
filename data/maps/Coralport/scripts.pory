@@ -5,9 +5,6 @@ mapscripts Coralport_MapScripts {
         setflag(FLAG_TEMP_3)
         setflag(FLAG_TEMP_4)
         setrespawn(HEAL_LOCATION_CORALPORT)
-        if (var(VAR_CHAPTER_1_STATE) == 0){
-            manuallysettime(WEEKDAY_MON, 8, 0, 0)
-        }
         if(var(VAR_CHAPTER_1_STATE) == 3){
             setobjectxyperm(M_CORAL, 13, 10)
             setobjectmovementtype(M_CORAL, MOVEMENT_TYPE_FACE_DOWN)
@@ -290,6 +287,8 @@ script Coralport_Eventscript_ShipSchedule {
 }
 
 script Coralport_Eventscript_NotYetBoardingTime {
+    addtime(0, 2, 0)
+    release
     hidefollower
     hidefollowernpc
     delay(20)
@@ -325,7 +324,6 @@ script Coralport_Eventscript_NotYetBoardingTime {
     setvar(VAR_CHAPTER_1_STATE, 1)
     clearflag(FLAG_TEMP_HIDE_FOLLOWER)
     updatefollowingmon
-    release
     end
 }
 
@@ -474,6 +472,7 @@ script Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp 
     delay(4)
     applymovement(S_CORAL, faceright)
     waitmovement
+    delay (30)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I suppose the ship is ready for boarding.\l
     Let's move out."))
     closemessage
@@ -491,6 +490,7 @@ script Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp 
     delay(1)
     setflag(FLAG_TEMP_2)
     setvar(VAR_CHAPTER_1_STATE, 4)
+    addminutes(10)
     release
     end
 }

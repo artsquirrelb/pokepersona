@@ -79,9 +79,9 @@ movement Miki_leading_Akihiko_to_Shinjiro {
 script Shinjiro_and_Miki_Join_Party {
     lock
     applymovement (4, Shinjiro_joins)
-    applymovement (3, Miki_joins)
-    waitmovement(0)
+    applymove (3, Miki_joins)
     removeobject (4)
+    delay (1)
     removeobject(3)
     setflag(FLAG_TEMP_1)
     setvar(VAR_AKIHIKOS_INTRO_STATE, 5)
@@ -145,17 +145,13 @@ script Donors_List {
 }
 
 script Sunflora_NPC {
-    lock
-    faceplayer
-    playmoncry(SPECIES_SUNFLORA, CRY_MODE_NORMAL)
+    moncryscript(SPECIES_SUNFLORA)
     release
     end
 }
 
 script Budew_NPC {
-    lock
-    faceplayer
-    playmoncry(SPECIES_BUDEW, CRY_MODE_NORMAL)
+    moncryscript(SPECIES_BUDEW)
     release
     end
 }

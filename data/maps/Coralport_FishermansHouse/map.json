@@ -88,7 +88,7 @@
   "warp_events": [
     {
       "x": 11,
-      "y": 10,
+      "y": 11,
       "elevation": 0,
       "dest_map": "MAP_CORALPORT",
       "dest_warp_id": "3"

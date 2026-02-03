@@ -208,7 +208,8 @@
 #define METATILE_Gen4General_DONT_OVERIDE  0x08E
 
 // gTileset_Gen4Indoor
-#define METATILE_Gen4Indoor_DONT_OVERIDE  0x003
+#define METATILE_Gen4Indoor_DONT_OVERIDE   0x00C
+#define METATILE_Gen4Indoor_DONT_OVERRIDE  0x0C5
 
 // gTileset_General
 #define METATILE_General_BlueCaveIndent        0x1B0

@@ -47,6 +47,7 @@
       "MOVE_INFESTATION",
       "MOVE_SMOG",
       "MOVE_TRIPLE_KICK",
-      "MOVE_UPPER_HAND"
+      "MOVE_UPPER_HAND",
+      "MOVE_POWER_UP_PUNCH"
     ]
 }

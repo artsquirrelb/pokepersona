@@ -35,11 +35,11 @@ mapscripts MansionsGarden_MapScripts {
         }
         if (var(VAR_MITSURUS_INTRO_STATE) == 4){
             setobjectxyperm(KIKUNO, 38, 20)
-            setobjectnewmovementtype(KIKUNO, MOVEMENT_TYPE_FACE_RIGHT)
+            setobjectmovementtype(KIKUNO, MOVEMENT_TYPE_FACE_RIGHT)
             setobjectxyperm(INDEEDEE_F, 38, 21)
-            setobjectnewmovementtype(INDEEDEE_F, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+            setobjectmovementtype(INDEEDEE_F, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
             setobjectxyperm(FENNEKIN, 39, 21)
-            setobjectnewmovementtype(FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
+            setobjectmovementtype(FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
         }
         if (var(VAR_MITSURUS_INTRO_STATE) == 5) {
             setflag(FLAG_TEMP_2)
@@ -270,7 +270,7 @@ script MansionsGarden_Eventscript_Fennekin {
 }
 
 script MansionsGarden_Eventscript_GetShinyFennekin {
-    givemon(SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_ALWAYS)
+    givemon(SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, shinyMode = SHINY_MODE_ALWAYS)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             waitfanfare
@@ -291,7 +291,7 @@ script MansionsGarden_Eventscript_GetShinyFennekin {
             msgbox("Party full.")}
 }
 script MansionsGarden_Eventscript_GetNormalFennekin {
-    givemon(SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, MOVE_CALM_MIND, shinyMode = SHINY_MODE_NEVER)
+    givemon(SPECIES_FENNEKIN, 5, 0, ITEM_POKE_BALL, NATURE_MODEST, 0, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, shinyMode = SHINY_MODE_NEVER)
          if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
              playfanfare(MUS_OBTAIN_ITEM)
         waitfanfare
@@ -490,9 +490,6 @@ script MansionsGarden_Eventscript_MitsuruPrologueStart {
             setflag(FLAG_LOCK_INTELEON_T)
             setflag(FLAG_LOCK_SHINJIRO)
             destroyfollowernpc
-            clearflag(FLAG_SYS_B_DASH)
-            clearflag(FLAG_SYS_POKEDEX_GET)
-            clearflag(FLAG_SYS_POKEMON_GET)
             removeitem(ITEM_EXP_SHARE)
             removeitem(ITEM_CAMP_GEARS)
             removeitem(ITEM_ESCAPE_ROPE)

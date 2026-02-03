@@ -216,7 +216,7 @@ text SusMenFightDefeated {
 
 script Route2_Eventscript_PostBattleWithSusMen{
     lock
-    playbgm(MUS_NONE, TRUE)
+    fadenewbgm(MUS_NONE)
     clearflag(FLAG_NO_WHITEOUT)
     special(HealPlayerParty)
     delay(30)
@@ -886,7 +886,7 @@ script Route2_Eventscript_MitsuruApproachingRoute2House {
     applymovement(LOCALID_PLAYER, walkup)
     waitmovement
     playse(SE_DOOR)
-    warpsilent(MAP_ROUTE2_HOUSE, 7, 12)
+    warpsilent(MAP_ROUTE2_HOUSE, 7, 13)
     waitstate
 }
 

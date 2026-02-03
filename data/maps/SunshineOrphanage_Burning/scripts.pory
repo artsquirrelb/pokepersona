@@ -193,6 +193,7 @@ script SunshineOrphanage_Burning_Eventscript_KobayashiLetsOutPokemon {
     clearflag(FLAG_HIDE_MIKI)
     applymovement(8, Azumarillexitpokeball)
     waitmovement(8)
+    turnobject(4, DIR_WEST)
     msgbox(format("{SPEAKER NAME_KBYS}Azumarill, NOW!"))
     closemessage
     goto (SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver)
@@ -212,8 +213,10 @@ script SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver{
     waitmoncry
     applymovement(8, AzumarillGetsReady)
     waitmovement(8)
+    turnobject(4, DIR_SOUTH)
     msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}What the-"))
     closemessage
+    turnobject(4, DIR_EAST)
     applymovement(8, AzumarillPushesAkiShinjiToRiver)
     applymovement(5, AkiShinjiGettingPushed)
     applymovement(LOCALID_PLAYER, AkiShinjiGettingPushed)

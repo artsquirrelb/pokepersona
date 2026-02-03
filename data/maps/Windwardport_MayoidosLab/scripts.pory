@@ -818,6 +818,7 @@ script Windwardport_MayoidosLab_ContinueGoingThroughRoute4 {
     clearflag(FLAG_HIDE_QUEST_ICON)
     setflag(FLAG_COMPANION_MENU_GET)
     refreshquesticon
+    addminutes(30)
     warp(MAP_WINDWARD_PORT, 0)
     waitstate
 }

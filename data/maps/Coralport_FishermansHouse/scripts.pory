@@ -119,8 +119,8 @@ script Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Star
     msgbox(format("Looks like Growlithe has picked up her scent, let's follow it!"))
     closemessage
     special(SpawnCameraObject)
-    applymovement(4, moves(walk_fast_down*7, set_invisible))
-    applymovement(1, moves(walk_fast_right*2, walk_fast_down*7, set_invisible))
+    applymovement(4, moves(walk_fast_down*8, set_invisible))
+    applymovement(1, moves(walk_fast_right, walk_fast_down*8, set_invisible))
     applymovement(LOCALID_CAMERA, moves(walk_diag_southeast, walk_fast_down*2))
     waitmovement(4)
     playse(SE_EXIT)

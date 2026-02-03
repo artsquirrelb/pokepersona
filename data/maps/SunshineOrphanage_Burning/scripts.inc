@@ -370,487 +370,493 @@ SunshineOrphanage_Burning_Eventscript_KobayashiLetsOutPokemon::
 # 195 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	waitmovement 8
 # 196 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	msgbox SunshineOrphanage_Burning_Eventscript_KobayashiLetsOutPokemon_Text_0
+	turnobject 4, DIR_WEST
 # 197 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	closemessage
+	msgbox SunshineOrphanage_Burning_Eventscript_KobayashiLetsOutPokemon_Text_0
 # 198 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	closemessage
+# 199 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	goto SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver
 	return
 
 
-# 201 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 202 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 CameraBackToAki:
-# 202 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_down
-# 202 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 203 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_down
 # 203 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_down
+# 204 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 203 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 204 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 205 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-Azumarillexitpokeball:
 # 206 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	exit_pokeball
+Azumarillexitpokeball:
 # 207 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	exit_pokeball
+# 208 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	jump_in_place_right
 	step_end
 
 SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver::
-# 211 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	playmoncry SPECIES_AZUMARILL, CRY_MODE_NORMAL
 # 212 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmoncry
+	playmoncry SPECIES_AZUMARILL, CRY_MODE_NORMAL
 # 213 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 8, AzumarillGetsReady
+	waitmoncry
 # 214 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 8
+	applymovement 8, AzumarillGetsReady
 # 215 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	msgbox SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver_Text_0
+	waitmovement 8
 # 216 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	closemessage
+	turnobject 4, DIR_SOUTH
 # 217 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 8, AzumarillPushesAkiShinjiToRiver
+	msgbox SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver_Text_0
 # 218 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 5, AkiShinjiGettingPushed
-# 219 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement LOCALID_PLAYER, AkiShinjiGettingPushed
-# 220 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 0
-# 221 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay 20
-# 222 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	addobject 4
-# 223 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 4, KobayashiWalksTowardAzumarill
-# 224 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 4
-# 225 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	msgbox SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver_Text_1
-# 226 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	closemessage
+# 219 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	turnobject 4, DIR_EAST
+# 220 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 8, AzumarillPushesAkiShinjiToRiver
+# 221 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 5, AkiShinjiGettingPushed
+# 222 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement LOCALID_PLAYER, AkiShinjiGettingPushed
+# 223 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	waitmovement 0
+# 224 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	delay 20
+# 225 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	addobject 4
+# 226 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 4, KobayashiWalksTowardAzumarill
 # 227 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	waitmovement 4
+# 228 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	msgbox SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver_Text_1
+# 229 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	closemessage
+# 230 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	goto SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver
 	return
 
 
-# 230 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 233 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 PanToKobayashi:
-# 231 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_left
-# 231 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_left
-# 231 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_left
-# 231 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_left
-# 231 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_left
-# 231 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_left
-# 231 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_left
-# 231 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_left
-# 231 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_left
-# 231 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_left
-# 231 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_left
 	step_end
 
-# 233 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-AzumarillGetsReady:
-# 234 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	jump_in_place_right
-# 235 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_left
 # 236 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_down
+AzumarillGetsReady:
 # 237 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	jump_in_place_right
+# 238 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_left
+# 239 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_down
+# 240 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	face_right
 	step_end
 
-# 240 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 243 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 AzumarillPushesAkiShinjiToRiver:
-# 241 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 244 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 241 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 244 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 241 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 244 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 241 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 244 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 241 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 244 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 241 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 244 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 241 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 244 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 241 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 244 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 241 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 244 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 241 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 244 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 243 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-AkiShinjiGettingPushed:
-# 244 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	emote_exclamation_mark
-# 245 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	face_left
 # 246 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+AkiShinjiGettingPushed:
+# 247 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	emote_exclamation_mark
+# 248 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	face_left
+# 249 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	lock_facing_direction
-# 247 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 250 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 250 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 250 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 250 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 250 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 250 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 250 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 250 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 250 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 247 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 250 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
 	step_end
 
 SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver::
-# 251 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay 16
-# 252 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	lockall
-# 253 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	clearflag FLAG_DONT_TRANSITION_MUSIC
 # 254 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	special StopMapMusic
+	delay 16
 # 255 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay 16
+	lockall
 # 256 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	msgbox SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver_Text_0
-# 257 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	closemessage
-# 258 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	releaseall
-# 259 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	playmoncry SPECIES_AZUMARILL, CRY_MODE_NORMAL
-# 260 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 8, jumpinplaceright
-# 261 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 0
-# 262 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 8, AzumarillFinishesPushing
-# 263 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 5, ShinjiFellDown
-# 264 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement LOCALID_PLAYER, AkiFellDown
-# 265 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	playse SE_FALL
-# 266 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitse
-# 267 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	playse SE_M_DIVE
-# 268 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitse
-# 269 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 19
-# 270 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	setflag FLAG_TEMP_2
-# 271 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay 60
-# 272 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 8, faceleft
-# 273 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 0
-# 274 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay 16
-# 275 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	msgbox SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver_Text_1
-# 276 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	closemessage
-# 277 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	playmoncry SPECIES_AZUMARILL, CRY_MODE_NORMAL
-# 278 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 8, AzumarillJumpsDownTheRiver
-# 279 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 0
-# 280 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	playse SE_M_DIVE
-# 281 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay 30
-# 282 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	setflag FLAG_HIDE_MIKI
-# 283 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	clearflag FLAG_DONT_TRANSITION_MUSIC
+# 257 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	special StopMapMusic
+# 258 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	delay 16
+# 259 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	msgbox SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver_Text_0
+# 260 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	closemessage
+# 261 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	releaseall
+# 262 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	playmoncry SPECIES_AZUMARILL, CRY_MODE_NORMAL
+# 263 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 8, jumpinplaceright
+# 264 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	waitmovement 0
+# 265 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 8, AzumarillFinishesPushing
+# 266 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 5, ShinjiFellDown
+# 267 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement LOCALID_PLAYER, AkiFellDown
+# 268 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	playse SE_FALL
+# 269 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	waitse
+# 270 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	playse SE_M_DIVE
+# 271 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	waitse
+# 272 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	setvar VAR_AKIHIKOS_INTRO_STATE, 19
+# 273 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	setflag FLAG_TEMP_2
+# 274 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	delay 60
+# 275 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 8, faceleft
+# 276 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	waitmovement 0
+# 277 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	delay 16
+# 278 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	msgbox SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver_Text_1
+# 279 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	closemessage
+# 280 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	playmoncry SPECIES_AZUMARILL, CRY_MODE_NORMAL
+# 281 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 8, AzumarillJumpsDownTheRiver
+# 282 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	waitmovement 0
+# 283 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	playse SE_M_DIVE
 # 284 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	delay 30
 # 285 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	fwdtime 10, 05
+	setflag FLAG_HIDE_MIKI
 # 286 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	clearflag FLAG_DONT_TRANSITION_MUSIC
+# 287 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 288 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	fwdtime 10, 05
+# 289 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	warpsilent MAP_BLANK_MAP, 0, 0
 	return
 
 
-# 289 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 292 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 KobayashiWalksTowardAzumarill:
-# 290 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 293 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 290 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 293 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 290 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 293 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 290 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 293 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 290 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 293 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 291 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 294 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_right
-# 291 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 294 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_right
-# 291 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 294 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_right
 	step_end
 
-# 294 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-AzumarillJumpsDownTheRiver:
-# 295 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_in_place_left
-# 295 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_in_place_left
-# 296 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay_16
 # 297 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	face_right
+AzumarillJumpsDownTheRiver:
 # 298 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay_16
+	walk_in_place_left
+# 298 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_in_place_left
 # 299 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	jump_right
+	delay_16
 # 300 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	face_right
+# 301 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	delay_16
+# 302 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	jump_right
+# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	set_invisible
 	step_end
 
-# 302 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 305 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 PanToAkihiko:
-# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
-# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
-# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
-# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
-# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
-# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
-# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
-# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
-# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
-# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
-# 303 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
-	step_end
-
 # 306 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-jumpinplaceright:
-# 307 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	jump_in_place_right
+	walk_fast_right
+# 306 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_right
+# 306 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_right
+# 306 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_right
+# 306 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_right
+# 306 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_right
+# 306 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_right
+# 306 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_right
+# 306 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_right
+# 306 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_right
+# 306 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_right
 	step_end
 
 # 309 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+jumpinplaceright:
+# 310 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	jump_in_place_right
+	step_end
+
+# 312 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 AzumarillFinishesPushing:
-# 310 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 313 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 310 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 313 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
 	step_end
 
-# 313 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-ShinjiFellDown:
-# 314 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	lock_facing_direction
-# 315 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	walk_fast_right
 # 316 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	jump_right
+ShinjiFellDown:
 # 317 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	lock_facing_direction
+# 318 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	walk_fast_right
+# 319 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	jump_right
+# 320 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	set_invisible
 	step_end
 
-# 320 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-AkiFellDown:
-# 321 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	lock_facing_direction
-# 322 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	jump_right
 # 323 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+AkiFellDown:
+# 324 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	lock_facing_direction
+# 325 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	jump_right
+# 326 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	set_invisible
 	step_end
 
 SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi::
-# 328 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay 16
-# 329 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	special SpawnCameraObject
-# 330 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, PanToKobayashiAndTheMen
 # 331 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 0
+	delay 16
 # 332 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	addobject 6
+	special SpawnCameraObject
 # 333 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	addobject 7
+	applymovement OBJ_EVENT_ID_CAMERA, PanToKobayashiAndTheMen
 # 334 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 6, MenRunToKobayashi
+	waitmovement 0
 # 335 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 7, MenRunToKobayashi
+	addobject 6
 # 336 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 4, faceright
+	addobject 7
 # 337 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 0
+	applymovement 6, MenRunToKobayashi
 # 338 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay 16
+	applymovement 7, MenRunToKobayashi
 # 339 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	setspeaker SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_0
+	applymovement 4, faceright
+# 340 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	waitmovement 0
 # 341 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	msgbox SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_1
-# 343 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	closemessage
-# 344 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	delay 16
-# 345 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	showobjectat 11, MAP_SUNSHINE_ORPHANAGE_BURNING
-# 346 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	playmoncry SPECIES_GOLBAT, CRY_MODE_NORMAL
-# 347 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 11, MensMonExitPokeball
-# 348 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 0
-# 349 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	showobjectat 12, MAP_SUNSHINE_ORPHANAGE_BURNING
-# 350 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	playmoncry SPECIES_PAWNIARD, CRY_MODE_NORMAL
-# 351 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 12, MensMonExitPokeball
-# 352 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 0
-# 353 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay 16
-# 354 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 342 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	setspeaker SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_0
-# 355 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	msgbox SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_2
-# 357 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 344 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	msgbox SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_1
+# 346 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	closemessage
-# 358 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 347 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	delay 16
-# 359 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 4, KobayashiSendsOutBoltund
+# 348 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	showobjectat 11, MAP_SUNSHINE_ORPHANAGE_BURNING
+# 349 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	playmoncry SPECIES_GOLBAT, CRY_MODE_NORMAL
+# 350 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 11, MensMonExitPokeball
+# 351 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	waitmovement 0
+# 352 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	showobjectat 12, MAP_SUNSHINE_ORPHANAGE_BURNING
+# 353 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	playmoncry SPECIES_PAWNIARD, CRY_MODE_NORMAL
+# 354 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 12, MensMonExitPokeball
+# 355 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	waitmovement 0
+# 356 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	delay 16
+# 357 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	setspeaker SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_0
+# 358 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	msgbox SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_2
 # 360 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 0
-# 361 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	showobjectat 13, MAP_SUNSHINE_ORPHANAGE_BURNING
-# 362 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	playmoncry SPECIES_BOLTUND, CRY_MODE_NORMAL
-# 363 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	applymovement 13, BoltundExitsPokeball
-# 364 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	waitmovement 0
-# 365 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	msgbox SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_3
-# 366 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	closemessage
+# 361 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	delay 16
+# 362 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 4, KobayashiSendsOutBoltund
+# 363 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	waitmovement 0
+# 364 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	showobjectat 13, MAP_SUNSHINE_ORPHANAGE_BURNING
+# 365 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	playmoncry SPECIES_BOLTUND, CRY_MODE_NORMAL
+# 366 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	applymovement 13, BoltundExitsPokeball
 # 367 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	delay 30
+	waitmovement 0
 # 368 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	fadescreenswapbuffers FADE_TO_BLACK
+	msgbox SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_3
 # 369 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	closemessage
+# 370 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	delay 30
+# 371 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 372 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	warpsilent MAP_BLANK_MAP, 0, 0
 	end
 
 
-# 373 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-MensMonExitPokeball:
-# 374 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	exit_pokeball
-# 375 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	shake_vertical
 # 376 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+MensMonExitPokeball:
+# 377 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	exit_pokeball
+# 378 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	shake_vertical
+# 379 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	face_right
 	step_end
 
-# 379 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 382 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 KobayashiSendsOutBoltund:
-# 380 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 383 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	lock_facing_direction
-# 381 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 384 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_right
 	step_end
 
-# 384 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-BoltundExitsPokeball:
-# 385 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	exit_pokeball
-# 386 "data/maps/SunshineOrphanage_Burning/scripts.pory"
-	shake_vertical
 # 387 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+BoltundExitsPokeball:
+# 388 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	exit_pokeball
+# 389 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+	shake_vertical
+# 390 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	face_left
 	step_end
 
-# 390 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 393 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 PanToKobayashiAndTheMen:
-# 391 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 394 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_left
-# 391 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 394 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_left
-# 391 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 394 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_left
 	step_end
 
-# 394 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 397 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 MenRunToKobayashi:
-# 395 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 398 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_down
-# 395 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 398 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_down
-# 395 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 398 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_down
-# 395 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 398 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_down
-# 395 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 398 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_down
-# 396 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 399 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 396 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 399 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 396 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 399 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 396 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 399 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 396 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 399 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 396 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 399 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 396 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 399 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
-# 396 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 399 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	walk_fast_right
 	step_end
 
@@ -877,39 +883,39 @@ SunshineOrphanage_Burning_Eventscript_KobayashiBlocksAkihiko_Text_2:
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}Fuck-!$"
 
 SunshineOrphanage_Burning_Eventscript_KobayashiLetsOutPokemon_Text_0:
-# 196 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 197 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	.string "{SPEAKER NAME_KBYS}Azumarill, NOW!$"
 
 SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver_Text_0:
-# 215 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 217 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}What the-$"
 
 SunshineOrphanage_Burning_Eventscript_AzumarillPushesAkiShinjiToTheRiver_Text_1:
-# 225 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 228 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	.string "{SPEAKER NAME_KBYS}I'm sorry, Akihiko, Shinjiro.$"
 
 SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver_Text_0:
-# 256 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 259 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	.string "{SPEAKER NAME_KBYS}Do not trust anyone.$"
 
 SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver_Text_1:
-# 275 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 278 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	.string "{SPEAKER NAME_KBYS}Go, Azumarill. I'll be fine.$"
 
 SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_0:
-# 339 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 342 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	.string "Man In Black$"
 
 SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_1:
-# 341 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 344 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	.string "Where are the subjects?\p"
 	.string "{SPEAKER NAME_KBYS}They aren't in their room?$"
 
 SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_2:
-# 355 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 358 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	.string "I repeat.\n"
 	.string "Where are the subjects?$"
 
 SunshineOrphanage_Burning_Eventscript_SusMenApproachKobayashi_Text_3:
-# 365 "data/maps/SunshineOrphanage_Burning/scripts.pory"
+# 368 "data/maps/SunshineOrphanage_Burning/scripts.pory"
 	.string "{SPEAKER NAME_KBYS}I said, I don't know.$"

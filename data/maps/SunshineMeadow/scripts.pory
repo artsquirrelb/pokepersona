@@ -118,11 +118,12 @@ script SunshineMeadow_Eventscript_PreMitsuruFirstBattleTalk {
         call(EventScript_ShowHelpChoice)
         setflag(FLAG_HELP_MAKE_CHOICE)
     }
+    delay(30)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for our first battle?"), MSGBOX_YESNO)
     closemessage
     if (var(VAR_RESULT) == FALSE){
         msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}No worry. We still have time."))
-        closemessage
+        release
         end
     }
     else {

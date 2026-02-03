@@ -1608,327 +1608,329 @@ Windwardport_MayoidosLab_ContinueGoingThroughRoute4::
 # 820 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	refreshquesticon
 # 821 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	warp MAP_WINDWARD_PORT, 0
+	addminutes 30
 # 822 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	warp MAP_WINDWARD_PORT, 0
+# 823 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	waitstate
 	return
 
 
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart::
-# 826 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	hidefollower
 # 827 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	hidefollowernpc
+	hidefollower
 # 828 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	special SpawnCameraObject
+	hidefollowernpc
 # 829 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	applymovement CAM, walkdown
+	special SpawnCameraObject
 # 830 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	applymoveplayer Windwardport_MayoidosLab_Get2ndStarter_Movement_1
+	applymovement CAM, walkdown
 # 831 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	getplayerxy VAR_0x8000, VAR_0x8001
+	applymoveplayer Windwardport_MayoidosLab_Get2ndStarter_Movement_1
 # 832 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	clearflag FLAG_TEMP_1
+	getplayerxy VAR_0x8000, VAR_0x8001
 # 833 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	setobjectxyperm A_WWH, VAR_0x8000, VAR_0x8001
+	clearflag FLAG_TEMP_1
 # 834 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	setobjectxyperm M_WWH, VAR_0x8000, VAR_0x8001
+	setobjectxyperm A_WWH, VAR_0x8000, VAR_0x8001
 # 835 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	setobjectxyperm S_WWH, VAR_0x8000, VAR_0x8001
+	setobjectxyperm M_WWH, VAR_0x8000, VAR_0x8001
 # 836 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	addobject A_WWH
+	setobjectxyperm S_WWH, VAR_0x8000, VAR_0x8001
 # 837 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	addobject S_WWH
+	addobject A_WWH
 # 838 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	addobject M_WWH
+	addobject S_WWH
 # 839 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	hideplayer
+	addobject M_WWH
 # 840 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	applymovement A_WWH, Windwardport_MayoidosLab_WachiGettingScolded_Movement_0
+	hideplayer
 # 841 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	applymove S_WWH, Windwardport_MayoidosLab_WachiGettingScolded_Movement_1
+	applymovement A_WWH, Windwardport_MayoidosLab_WachiGettingScolded_Movement_0
 # 842 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	delay 30
+	applymove S_WWH, Windwardport_MayoidosLab_WachiGettingScolded_Movement_1
 # 843 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	delay 30
+# 844 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	msgbox Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_0
-# 845 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	checkplayergender
 # 846 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	checkplayergender
+# 847 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	msgbox Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_1
-# 851 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	closemessage
 # 852 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	call Windwardport_MayoidosLab_CheckIfFennekinLineInPartyBox
+	closemessage
 # 853 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	call Windwardport_MayoidosLab_CheckIfFennekinLineInPartyBox
+# 854 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	compare VAR_TEMP_1, 0
 	goto_if_ne Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_2
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_1:
-# 868 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	delay 30
 # 869 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	delay 30
+# 870 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	msgbox Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_4
-# 872 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	closemessage
 # 873 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	special SpawnCameraObject
-# 874 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	applymove CAM, Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Movement_1
-# 875 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	delay 40
-# 876 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	applymove CAM, Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Movement_2
-# 877 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	special RemoveCameraObject
-# 878 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	msgbox Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_5
-# 880 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	closemessage
+# 874 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	special SpawnCameraObject
+# 875 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	applymove CAM, Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Movement_1
+# 876 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	delay 40
+# 877 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	applymove CAM, Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Movement_2
+# 878 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	special RemoveCameraObject
+# 879 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	msgbox Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_5
 # 881 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	applymovement A_WWH, walkleft
+	closemessage
 # 882 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	applymove S_WWH, walkright
+	applymovement A_WWH, walkleft
 # 883 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	showplayer
+	applymove S_WWH, walkright
 # 884 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	removeobject A_WWH
+	showplayer
 # 885 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	delay 1
+	removeobject A_WWH
 # 886 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	removeobject S_WWH
+	delay 1
 # 887 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	delay 1
+	removeobject S_WWH
 # 888 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	removeobject M_WWH
-# 889 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	delay 1
+# 889 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	removeobject M_WWH
 # 890 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	questmenu QUEST_MENU_SET_ACTIVE, QUEST_FIND_STARTERS
+	delay 1
 # 891 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	clearflag FLAG_HIDE_QUEST_ICON
+	questmenu QUEST_MENU_SET_ACTIVE, QUEST_FIND_STARTERS
 # 892 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	refreshquesticon
+	clearflag FLAG_HIDE_QUEST_ICON
 # 893 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	refreshquesticon
+# 894 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	release
 	end
 
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_2:
-# 854 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	doemote MAYOIDO_WWH, E_PENSIVE
 # 855 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	applymove MAYOIDO_WWH, walkdown
+	doemote MAYOIDO_WWH, E_PENSIVE
 # 856 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	delay 48
+	applymove MAYOIDO_WWH, walkdown
 # 857 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	doemote MAYOIDO_WWH, 0
+	delay 48
 # 858 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	doemote MAYOIDO_WWH, 0
+# 859 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	msgbox Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_2
-# 861 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	closemessage
 # 862 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	applymove MAYOIDO_WWH, Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Movement_0
+	closemessage
 # 863 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	delay 30
+	applymove MAYOIDO_WWH, Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Movement_0
 # 864 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	delay 30
+# 865 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	msgbox Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_3
-# 866 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 867 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	closemessage
 	goto Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_1
 
 
 Windwardport_MayoidosLab_CheckIfFennekinLineInPartyBox::
-# 898 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	checkpartyboxspecies SPECIES_FENNEKIN
 # 899 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	checkpartyboxspecies SPECIES_FENNEKIN
+# 900 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Windwardport_MayoidosLab_CheckIfFennekinLineInPartyBox_1
-# 912 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 913 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	setvar VAR_TEMP_1, 1
 	return
 
 Windwardport_MayoidosLab_CheckIfFennekinLineInPartyBox_1:
-# 900 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	checkpartyboxspecies SPECIES_BRAIXEN
 # 901 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	checkpartyboxspecies SPECIES_BRAIXEN
+# 902 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Windwardport_MayoidosLab_CheckIfFennekinLineInPartyBox_4
-# 908 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 909 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	setvar VAR_TEMP_1, 1
 	return
 
 Windwardport_MayoidosLab_CheckIfFennekinLineInPartyBox_4:
-# 902 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	checkpartyboxspecies SPECIES_DELPHOX
 # 903 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	checkpartyboxspecies SPECIES_DELPHOX
+# 904 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Windwardport_MayoidosLab_CheckIfFennekinLineInPartyBox_7
 	return
 
 Windwardport_MayoidosLab_CheckIfFennekinLineInPartyBox_7:
-# 904 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 905 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	setvar VAR_TEMP_1, 1
 	return
 
 
 Windwardport_MayoidosLab_Mayoido_PC::
-# 917 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_FIND_STARTERS
 # 918 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_FIND_STARTERS
+# 919 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Windwardport_MayoidosLab_Mayoido_PC_2
-# 926 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 927 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	msgbox Windwardport_MayoidosLab_Mayoido_PC_Text_1
 Windwardport_MayoidosLab_Mayoido_PC_1:
-# 928 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	playse SE_PC_OFF
 # 929 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	playse SE_PC_OFF
+# 930 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	release
 	end
 
 Windwardport_MayoidosLab_Mayoido_PC_2:
-# 919 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	lock
 # 920 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	playse SE_PC_ON
+	lock
 # 921 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	msgbox Windwardport_MayoidosLab_Mayoido_PC_Text_0
+	playse SE_PC_ON
 # 922 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	call MayoidosLab_PC_FolderC1
+	msgbox Windwardport_MayoidosLab_Mayoido_PC_Text_0
 # 923 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	call MayoidosLab_PC_FolderC1
+# 924 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	call MayoidosLab_PC_ShowInfo
 	goto Windwardport_MayoidosLab_Mayoido_PC_1
 
 
 MayoidosLab_PC_FolderC1::
-# 934 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_10
 # 935 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_10
+# 936 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MayoidosLab_PC_FolderC1_2
 MayoidosLab_PC_FolderC1_1:
-# 938 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_14
 # 939 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_14
+# 940 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MayoidosLab_PC_FolderC1_5
 MayoidosLab_PC_FolderC1_4:
-# 942 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_3
 # 943 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	subquestmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_3
+# 944 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MayoidosLab_PC_FolderC1_7
 	return
 
 MayoidosLab_PC_FolderC1_2:
-# 936 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 937 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	dynmultipush Windwardport_MayoidosLab_StarterTrade_Sinnoh_Text_1, 0
 	goto MayoidosLab_PC_FolderC1_1
 
 MayoidosLab_PC_FolderC1_5:
-# 940 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 941 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	dynmultipush Windwardport_MayoidosLab_StarterTrade_Unova_Text_2, 1
 	goto MayoidosLab_PC_FolderC1_4
 
 MayoidosLab_PC_FolderC1_7:
-# 944 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 945 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	dynmultipush Windwardport_MayoidosLab_StarterTrade_Kanto_Text_3, 2
 	return
 
 
 MayoidosLab_PC_ShowInfo::
-# 949 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	dynmultistack 0, 0, FALSE, 6, FALSE, 0, NULL
 # 950 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	switch VAR_RESULT
+	dynmultistack 0, 0, FALSE, 6, FALSE, 0, NULL
 # 951 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	case 2, MayoidosLab_PC_ShowInfo_2
+	switch VAR_RESULT
 # 952 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	case 0, MayoidosLab_PC_ShowInfo_3
+	case 2, MayoidosLab_PC_ShowInfo_2
 # 953 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	case 0, MayoidosLab_PC_ShowInfo_3
+# 954 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	case 1, MayoidosLab_PC_ShowInfo_3
 MayoidosLab_PC_ShowInfo_3:
-# 955 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 956 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	msgbox MayoidosLab_PC_ShowInfo_Text_0
 	return
 
 MayoidosLab_PC_ShowInfo_2:
-# 951 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 952 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	goto ShowSquirtleInfo
 	return
 
 
 ShowSquirtleInfo::
-# 960 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	msgbox ShowSquirtleInfo_Text_0
 # 961 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	msgbox ShowSquirtleInfo_Text_0
+# 962 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	release
 	end
 
 
 MayoidosLab_Mayoido_FoundSquirtle::
-# 966 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	doemote MAYOIDO_WWH, 0
 # 967 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	msgbox MayoidosLab_Mayoido_FoundSquirtle_Text_0
+	doemote MAYOIDO_WWH, 0
 # 968 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	closemessage
+	msgbox MayoidosLab_Mayoido_FoundSquirtle_Text_0
 # 969 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	giveitem ITEM_TM_CHILLING_WATER
+	closemessage
 # 970 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	giveitem ITEM_TM_CHILLING_WATER
+# 971 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	msgbox MayoidosLab_Mayoido_FoundSquirtle_Text_1, MSGBOX_YESNO
-# 974 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 975 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne MayoidosLab_Mayoido_FoundSquirtle_2
-# 981 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 982 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	msgbox MayoidosLab_Mayoido_FoundSquirtle_Text_2
 MayoidosLab_Mayoido_FoundSquirtle_1:
-# 984 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS
 # 985 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	questmenu QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS
+# 986 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq MayoidosLab_Mayoido_FoundSquirtle_5
-# 989 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	doemote MAYOIDO_WWH, 0
 # 990 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	doemote MAYOIDO_WWH, 0
+# 991 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	goto MayoidosLab_Mayoido_AllStartersFound
 	return
 
 MayoidosLab_Mayoido_FoundSquirtle_2:
-# 975 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	bufferspeciesname STR_VAR_1, SPECIES_SQUIRTLE
 # 976 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	givemon SPECIES_SQUIRTLE, 15, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31, move1 = MOVE_YAWN, move2 = MOVE_FAKE_OUT, move3 = MOVE_LIFE_DEW, move4 = MOVE_WATER_PULSE
+	bufferspeciesname STR_VAR_1, SPECIES_SQUIRTLE
 # 977 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	call Eventscript_PostGivemon
+	givemon SPECIES_SQUIRTLE, 15, hpIv = 31, atkIv = 31, defIv = 31, speedIv = 31, spAtkIv = 31, spDefIv = 31, move1 = MOVE_YAWN, move2 = MOVE_FAKE_OUT, move3 = MOVE_LIFE_DEW, move4 = MOVE_WATER_PULSE
 # 978 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	call Eventscript_PostGivemon
+# 979 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	setflag FLAG_RECEIVED_TM_CHILLING_WATER
 	goto MayoidosLab_Mayoido_FoundSquirtle_1
 
 MayoidosLab_Mayoido_FoundSquirtle_5:
-# 986 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 987 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	goto MayoidosLab_Mayoido_StartersNotFound
 	return
 
 
 MayoidosLab_Mayoido_StartersNotFound::
-# 995 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	msgbox MayoidosLab_Mayoido_StartersNotFound_Text_0
 # 996 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	clearflag FLAG_HIDE_QUEST_ICON
+	msgbox MayoidosLab_Mayoido_StartersNotFound_Text_0
 # 997 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	refreshquesticon
+	clearflag FLAG_HIDE_QUEST_ICON
 # 998 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	refreshquesticon
+# 999 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	release
 	end
 
 
 MayoidosLab_Mayoido_AllStartersFound::
-# 1003 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 1004 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	msgbox MayoidosLab_Mayoido_AllStartersFound_Text_0
-# 1007 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	clearflag FLAG_HIDE_QUEST_ICON
 # 1008 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	refreshquesticon
+	clearflag FLAG_HIDE_QUEST_ICON
 # 1009 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+	refreshquesticon
+# 1010 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	release
 	end
 
@@ -2267,39 +2269,39 @@ Windwardport_MayoidosLab_ContinueGoingThroughRoute4_Movement_1:
 	set_invisible
 	step_end
 
-# 862 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 863 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Movement_0:
-# 862 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 863 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	walk_up
-# 862 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 863 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	face_down
 	step_end
 
-# 874 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 875 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Movement_1:
-# 874 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 875 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	walk_left
-# 874 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 875 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	walk_left
-# 874 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 875 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	walk_left
-# 874 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 875 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	walk_diag_northwest
-# 874 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 875 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	walk_diag_northwest
 	step_end
 
-# 876 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 877 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Movement_2:
-# 876 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 877 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	walk_right
-# 876 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 877 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	walk_right
-# 876 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 877 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	walk_right
-# 876 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 877 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	walk_diag_southeast
-# 876 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 877 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	walk_diag_southeast
 	step_end
 
@@ -2808,7 +2810,7 @@ Windwardport_MayoidosLab_ContinueGoingThroughRoute4_Text_1:
 	.string "Let's go.$"
 
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_0:
-# 843 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 844 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{SPEAKER NAME_PROF}Hello, my lovely children. The lab has\n"
 	.string "been busy and we appreciate any help we\l"
 	.string "can get.\p"
@@ -2816,7 +2818,7 @@ Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_0:
 	.string "like to help us?$"
 
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_1:
-# 846 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 847 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Certainly. How can we help you?\p"
 	.string "{SPEAKER NAME_PROF}{DESTROY_MUGSHOT}As you've known, the Pokémon we've\n"
 	.string "worked so hard to prepared for your\l"
@@ -2831,7 +2833,7 @@ Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_1:
 	.string "approach them.$"
 
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_2:
-# 858 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 859 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{SPEAKER NAME_PROF}Your {COLOR 7}{STR_VAR_2}{COLOR 2}! That's the one\n"
 	.string "that ran away!\p"
 	.string "Well, I'm not sure how it ended up with\n"
@@ -2840,13 +2842,13 @@ Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_2:
 	.string "Don't worry, you can keep it.$"
 
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_3:
-# 864 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 865 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{SPEAKER NAME_PROF}Now where were we?{PAUSE_UNTIL_PRESS}\n"
 	.string "Oh right, yes. The missing Pokémon all\l"
 	.string "have the same feature like that.$"
 
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_4:
-# 869 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 870 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Understood. We'll keep an eye out for\n"
 	.string "them.\p"
 	.string "{SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Perfect, our staff will also actively\n"
@@ -2855,37 +2857,37 @@ Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_4:
 	.string "computer over there.$"
 
 Windwardport_MayoidosLab_Mayoido_QuestStarterFindStart_Text_5:
-# 878 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 879 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{SPEAKER NAME_PROF}Be sure to check it from time to time.\p"
 	.string "Thank you for your help.$"
 
 Windwardport_MayoidosLab_Mayoido_PC_Text_0:
-# 921 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 922 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{COLOR 7}-Retrieving Starter Pokémon-\n"
 	.string "{COLOR 2}Which information you'd like to check?$"
 
 Windwardport_MayoidosLab_Mayoido_PC_Text_1:
-# 926 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 927 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "There's a wall of numbers on the screen\n"
 	.string "that makes no sense to you.$"
 
 MayoidosLab_PC_ShowInfo_Text_0:
-# 955 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 956 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "Todo$"
 
 ShowSquirtleInfo_Text_0:
-# 960 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 961 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{COLOR 7}There were sighting of a sparkling\n"
 	.string "Squirtle swimming toward Sunshine Town.$"
 
 MayoidosLab_Mayoido_FoundSquirtle_Text_0:
-# 967 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 968 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{SPEAKER NAME_PROF}You're back!\n"
 	.string "As promised, here's the reward for\l"
 	.string "finding the Squirtle!$"
 
 MayoidosLab_Mayoido_FoundSquirtle_Text_1:
-# 970 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 971 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{SPEAKER NAME_PROF}Well, one more thing, though.\p"
 	.string "The Squirtle isn't very happy being\n"
 	.string "cooped up in the lab.\p"
@@ -2894,18 +2896,18 @@ MayoidosLab_Mayoido_FoundSquirtle_Text_1:
 	.string "How do you say?$"
 
 MayoidosLab_Mayoido_FoundSquirtle_Text_2:
-# 981 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 982 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{SPEAKER NAME_PROF}That's a shame but I respect your\n"
 	.string "choice.\p"
 	.string "We'll raise it the best we can.$"
 
 MayoidosLab_Mayoido_StartersNotFound_Text_0:
-# 995 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 996 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{SPEAKER NAME_PROF}There are still missing starter Pokémon.\n"
 	.string "Let's give it our best to retrieve them.$"
 
 MayoidosLab_Mayoido_AllStartersFound_Text_0:
-# 1003 "data/maps/Windwardport_MayoidosLab/scripts.pory"
+# 1004 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	.string "{SPEAKER NAME_PROF}You've found all the missing starters!\p"
 	.string "I really can't thank you enough.\p"
 	.string "I trust that they're in your good care,\n"

@@ -1242,8 +1242,6 @@ MitsuruExitsTheHouse:
 	walk_down
 # 674 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 674 "data/maps/Route2_House/scripts.pory"
-	walk_down
 # 675 "data/maps/Route2_House/scripts.pory"
 	set_invisible
 	step_end
@@ -1284,8 +1282,6 @@ VulpixFollowsMitsuruExit:
 	walk_right
 # 686 "data/maps/Route2_House/scripts.pory"
 	walk_down
-# 686 "data/maps/Route2_House/scripts.pory"
-	walk_down
 # 687 "data/maps/Route2_House/scripts.pory"
 	set_invisible
 	step_end
@@ -1312,8 +1308,6 @@ InteleonFollowsMitsuruExit:
 	walk_right
 # 694 "data/maps/Route2_House/scripts.pory"
 	walk_right
-# 695 "data/maps/Route2_House/scripts.pory"
-	walk_down
 # 695 "data/maps/Route2_House/scripts.pory"
 	walk_down
 # 696 "data/maps/Route2_House/scripts.pory"

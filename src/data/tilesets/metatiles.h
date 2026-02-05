@@ -279,3 +279,6 @@ const u16 gMetatileAttributes_WindwardPort[] = INCBIN_U16("data/tilesets/seconda
 
 const u16 gMetatiles_MayoidosLab[] = INCBIN_U16("data/tilesets/secondary/mayoidos_lab/metatiles.bin");
 const u16 gMetatileAttributes_MayoidosLab[] = INCBIN_U16("data/tilesets/secondary/mayoidos_lab/metatile_attributes.bin");
+
+const u16 gMetatiles_RangerBuilding[] = INCBIN_U16("data/tilesets/secondary/ranger_building/metatiles.bin");
+const u16 gMetatileAttributes_RangerBuilding[] = INCBIN_U16("data/tilesets/secondary/ranger_building/metatile_attributes.bin");

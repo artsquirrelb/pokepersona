@@ -1813,7 +1813,7 @@ WindwardPort_Harbor_Eventscript_QuizFinished_Text_5:
 
 WindwardPort_Harbor_Eventscript_ShipSchedule_Text_0:
 # 698 "data/maps/WindwardPort_Harbor/scripts.pory"
-	.string "{CLEAR_TO 45}Windward Port -> Coralport\n"
+	.string "{CLEAR_TO 30}Windward Port -> Coralport\n"
 	.string "{CLEAR_TO 30}Boarding time: 6PM - 5:59AM.$"
 
 WindwardPort_Harbor_GhostBoy_Defeated::

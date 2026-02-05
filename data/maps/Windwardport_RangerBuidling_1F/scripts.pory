@@ -1,0 +1,113 @@
+mapscripts Windwardport_RangerBuidling_1F_MapScripts {}
+
+script Windwardport_RangerBuilding_1F_Elevator{
+    lock
+    msgbox(format("Go to 2F?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        call(Eventscript_ElevatorSFX)
+        warpsilent(MAP_WINDWARDPORT_RANGER_BUIDLING_2F, 3, 5)
+        waitstate
+    }
+    else
+    {
+        applymoveplayer(facedown)
+        release
+        end
+    }
+}
+
+script Eventscript_ElevatorSFX {
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    playse(SE_ESCALATOR)
+    waitse
+    delay(30)
+    playse(SE_CLICK)
+    waitse
+    delay(30)
+    playse(SE_SLIDING_DOOR)
+    waitse
+}
+
+script Eventscript_DoorLocked {
+    lock
+    msgbox("It's locked.")
+    release
+    end
+}
+
+script Windwardport_RangerBuilding_1F_Flygon {
+    moncryscript(SPECIES_FLYGON)
+    release
+    end
+}
+
+script Windwardport_RangerBuilding_1F_Nurse {
+    setspeaker("Nurse Floria")
+    call(Eventscript_Ranger_Nurse_Greetings)
+    setspeaker("Nurse Floria")
+    call(Eventscript_Nurse_Goodbye)
+	release
+	end
+}
+
+script Eventscript_Ranger_Nurse_Greetings{
+    lock
+    faceplayer
+    msgbox(format("Hello and welcome to the Pokémon Ranger Base.\p
+    Let me heal your tired Pokémon."))
+    hidefollower
+    playse(MUS_HEAL)
+    waitse
+    special(HealPlayerParty)
+    updatefollowingmon
+}
+
+script Windwardport_RangerBuilding_1F_Receptionist {
+    lock
+    faceplayer
+    setspeaker("Joel")
+    msgbox(format("Welcome to Windward Port's Pokémon Ranger Base!"))
+    release
+    end
+}
+
+script Windwardport_RangerBuilding_1F_AceF {
+    lock
+    faceplayer
+    setspeaker("Lyra")
+    msgbox(format("In Kitoha, the ranger force mostly deals with problems caused by wild Pokémon.\p
+    The moment it involves criminal activities, they'll transfer the case to the police force."))
+    release
+    end
+}
+
+script Windwardport_RangerBuilding_1F_Lady {
+    lock
+    faceplayer
+    setspeaker("Linda")
+    msgbox(format("My children are studying at the Ranger School in the east of Pawlonia City.\p
+    They want to be a Pokémon trainer.\p
+    My eldest daughter specifically wants to join the ranger force when she graduates."))
+    release
+    end
+}
+
+script Windwardport_RangerBuilding_1F_RangerFnKid {
+    lock
+    setspeaker("Eriza")
+    stepinplace(1, DIR_WEST)
+    msgbox(format("You said a Murkrow snatched your Gimmighoul badge?"))
+
+    setspeaker("Genroku")
+    stepinplace(5, DIR_EAST)
+    msgbox(format("Yes! My best friend gifted it to me.\p
+    He'll be sad if he found out I lost it.\p
+    Can you help me find it?"))
+
+    setspeaker("Eriza")
+    stepinplace(1, DIR_WEST)
+    msgbox(format("Sure. Where were you when the Murkrow attacked?"))
+    release
+    end
+}

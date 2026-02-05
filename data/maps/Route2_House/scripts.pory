@@ -671,7 +671,7 @@ movement MitsuruGoesBackToCenter {
 movement MitsuruExitsTheHouse {
     walk_down *5
     walk_right *2
-    walk_down *3
+    walk_down *2
     set_invisible
 }
 movement CameraPansToLowerHalfOfRoom {
@@ -683,7 +683,7 @@ movement VulpixFollowsMitsuruExit {
     walk_right*4
     walk_down*3
     walk_right*2
-    walk_down*2
+    walk_down
     set_invisible
 }
 
@@ -692,7 +692,7 @@ movement InteleonFollowsMitsuruExit {
     walk_right*4
     walk_down*3
     walk_right*2
-    walk_down*2
+    walk_down
     set_invisible
 }
 

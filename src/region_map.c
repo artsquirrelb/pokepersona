@@ -26,6 +26,7 @@
 #include "outfit_menu.h"
 #include "constants/region_map_sections.h"
 #include "constants/field_specials.h"
+#include "constants/flags.h"
 #include "constants/heal_locations.h"
 #include "constants/rgb.h"
 #include "constants/weather.h"
@@ -134,6 +135,7 @@ static const u8 sRegionMapPlayerIcon_MayGfx[] = INCBIN_U8("graphics/pokenav/regi
 
 static const mapsec_u16_t sRegionMap_SpecialPlaceLocations[][2] =
 {
+    {MAPSEC_CORALPORT_CAVE,           MAPSEC_CORALPORT},
     /*{MAPSEC_UNDERWATER_105,             MAPSEC_ROUTE_105},
     {MAPSEC_UNDERWATER_124,             MAPSEC_ROUTE_124},
     #ifdef BUGFIX
@@ -160,8 +162,8 @@ static const mapsec_u16_t sRegionMap_SpecialPlaceLocations[][2] =
     {MAPSEC_DESERT_UNDERPASS,           MAPSEC_ROUTE_114},
     {MAPSEC_ALTERING_CAVE,              MAPSEC_ROUTE_103},
     {MAPSEC_ARTISAN_CAVE,               MAPSEC_ROUTE_103},
-    {MAPSEC_ABANDONED_SHIP,             MAPSEC_ROUTE_108},*/
-    {MAPSEC_NONE,                       MAPSEC_NONE}
+    {MAPSEC_ABANDONED_SHIP,             MAPSEC_ROUTE_108},
+    {MAPSEC_NONE,                       MAPSEC_NONE}*/
 };
 
 static const mapsec_u16_t sMarineCaveMapSecIds[] =
@@ -292,6 +294,7 @@ static const u8 sMapHealLocations[][3] =
     [MAPSEC_CORALPORT] = {MAP_GROUP(MAP_CORALPORT), MAP_NUM(MAP_CORALPORT), HEAL_LOCATION_CORALPORT},
     [MAPSEC_WINDWARD_PORT] = {MAP_GROUP(MAP_WINDWARD_PORT), MAP_NUM(MAP_WINDWARD_PORT), HEAL_LOCATION_WINDWARD_PORT},
     [MAPSEC_KIRIJOS_MANSION] = {MAP_GROUP(MAP_MANSIONS_GARDEN), MAP_NUM(MAP_MANSIONS_GARDEN), HEAL_LOCATION_MANSIONS_GARDEN},
+    [MAPSEC_SUNSHINEWOODS] = {MAP_GROUP(MAP_SUNSHINE_WOODS), MAP_NUM(MAP_SUNSHINE_WOODS), HEAL_LOCATION_NONE},
     [MAPSEC_ROUTE_1] = {MAP_GROUP(MAP_ROUTE1), MAP_NUM(MAP_ROUTE1), HEAL_LOCATION_NONE},
     [MAPSEC_ROUTE_2] = {MAP_GROUP(MAP_ROUTE2), MAP_NUM(MAP_ROUTE2), HEAL_LOCATION_NONE},
     [MAPSEC_ROUTE_3] = {MAP_GROUP(MAP_ROUTE3), MAP_NUM(MAP_ROUTE3), HEAL_LOCATION_NONE},
@@ -1161,38 +1164,28 @@ static u8 GetMapsecType(mapsec_u16_t mapSecId)
         return FlagGet(FLAG_VISITED_CORALPORT) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     case MAPSEC_WINDWARD_PORT:
         return FlagGet(FLAG_VISITED_WINDWARD_PORT) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    /*case MAPSEC_DEWFORD_TOWN:
-        return FlagGet(FLAG_VISITED_WINDWARD_PORT) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_LAVARIDGE_TOWN:
-        return FlagGet(FLAG_VISITED_LAVARIDGE_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_FALLARBOR_TOWN:
-        return FlagGet(FLAG_VISITED_FALLARBOR_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_VERDANTURF_TOWN:
-        return FlagGet(FLAG_VISITED_VERDANTURF_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_PACIFIDLOG_TOWN:
-        return FlagGet(FLAG_VISITED_PACIFIDLOG_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_PETALBURG_CITY:
-        return FlagGet(FLAG_VISITED_PETALBURG_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_SLATEPORT_CITY:
-        return FlagGet(FLAG_VISITED_SLATEPORT_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_MAUVILLE_CITY:
-        return FlagGet(FLAG_VISITED_MAUVILLE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_RUSTBORO_CITY:
-        return FlagGet(FLAG_VISITED_RUSTBORO_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_FORTREE_CITY:
-        return FlagGet(FLAG_VISITED_FORTREE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_LILYCOVE_CITY:
-        return FlagGet(FLAG_VISITED_LILYCOVE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_MOSSDEEP_CITY:
-        return FlagGet(FLAG_VISITED_MOSSDEEP_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_SOOTOPOLIS_CITY:
-        return FlagGet(FLAG_VISITED_SOOTOPOLIS_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_EVER_GRANDE_CITY:
-        return FlagGet(FLAG_VISITED_EVER_GRANDE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
-    case MAPSEC_BATTLE_FRONTIER:
-        return FlagGet(FLAG_LANDMARK_BATTLE_FRONTIER) ? MAPSECTYPE_BATTLE_FRONTIER : MAPSECTYPE_NONE;
-    case MAPSEC_SOUTHERN_ISLAND:
-        return FlagGet(FLAG_LANDMARK_SOUTHERN_ISLAND) ? MAPSECTYPE_ROUTE : MAPSECTYPE_NONE;*/
+    case MAPSEC_KIBOU_CITY:
+        return FlagGet(FLAG_VISITED_KIBOU_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_TENERE_TOWN:
+        return FlagGet(FLAG_VISITED_TENERE_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_PAULOWNIA_CITY:
+        return FlagGet(FLAG_VISITED_PAULOWNIA_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_AKIKAZE_CITY:
+        return FlagGet(FLAG_VISITED_AKIKAZE_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_NATA_CITY:
+        return FlagGet(FLAG_VISITED_NATA_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_MIHARU_TOWN:
+        return FlagGet(FLAG_VISITED_MIHARU_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_KAZAHANA_CITY:
+        return FlagGet(FLAG_VISITED_KAZAHANA_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_SILVERFROST_VILLAGE:
+        return FlagGet(FLAG_VISITED_SILVERFROST_VILLAGE) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_FAERUMA_CITY:
+        return FlagGet(FLAG_VISITED_FAERUMA_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_FUNSEKI_TOWN:
+        return FlagGet(FLAG_VISITED_FUNSEKI_TOWN) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
+    case MAPSEC_KYOUI_CITY:
+        return FlagGet(FLAG_VISITED_KYOUI_CITY) ? MAPSECTYPE_CITY_CANFLY : MAPSECTYPE_CITY_CANTFLY;
     default:
         return MAPSECTYPE_ROUTE;
     }
@@ -1548,7 +1541,8 @@ u8 *GetMapName(u8 *dest, mapsec_u16_t regionMapId, u16 padLength)
     {
         str = GetSecretBaseMapName(dest);
     }
-    else*/ if (regionMapId < MAPSEC_NONE)
+    else*/
+    if (regionMapId < MAPSEC_NONE)
     {
         str = StringCopy(dest, gRegionMapEntries[regionMapId].name);
     }
@@ -1809,14 +1803,80 @@ static void LoadFlyDestIcons(void)
     TryCreateRedOutlineFlyDestIcons();
 }
 
+struct FlyLocation
+{
+    u16 flag;
+    u16 mapsec;
+};
+
+static const struct FlyLocation sFlyLocations[] =
+{
+    {
+        .mapsec = MAPSEC_SUNSHINETOWN,
+        .flag = FLAG_VISITED_SUNSHINE_TOWN,
+    },
+    {
+        .mapsec = MAPSEC_CORALPORT,
+        .flag = FLAG_VISITED_CORALPORT,
+    },
+    {
+        .mapsec = MAPSEC_WINDWARD_PORT,
+        .flag = FLAG_VISITED_WINDWARD_PORT,
+    },
+    {
+        .mapsec = MAPSEC_KIBOU_CITY,
+        .flag = FLAG_VISITED_KIBOU_CITY,
+    },
+    {
+        .mapsec = MAPSEC_TENERE_TOWN,
+        .flag = FLAG_VISITED_TENERE_TOWN,
+    },
+    {
+        .mapsec = MAPSEC_NATA_CITY,
+        .flag = FLAG_VISITED_NATA_CITY,
+    },
+    {
+        .mapsec = MAPSEC_PAULOWNIA_CITY,
+        .flag = FLAG_VISITED_PAULOWNIA_CITY,
+    },
+    {
+        .mapsec = MAPSEC_AKIKAZE_CITY,
+        .flag = FLAG_VISITED_AKIKAZE_CITY,
+    },
+    {
+        .mapsec = MAPSEC_MIHARU_TOWN,
+        .flag = FLAG_VISITED_MIHARU_TOWN,
+    },
+    {
+        .mapsec = MAPSEC_KAZAHANA_CITY,
+        .flag = FLAG_VISITED_KAZAHANA_CITY,
+    },
+    {
+        .mapsec = MAPSEC_SILVERFROST_VILLAGE,
+        .flag = FLAG_VISITED_SILVERFROST_VILLAGE,
+    },
+    {
+        .mapsec = MAPSEC_FAERUMA_CITY,
+        .flag = FLAG_VISITED_FAERUMA_CITY,
+    },
+    {
+        .mapsec = MAPSEC_FUNSEKI_TOWN,
+        .flag = FLAG_VISITED_FUNSEKI_TOWN,
+    },
+    {
+        .mapsec = MAPSEC_KYOUI_CITY,
+        .flag = FLAG_VISITED_KYOUI_CITY,
+    }
+};
+
 // Sprite data for SpriteCB_FlyDestIcon
 #define sIconMapSec   data[0]
 #define sFlickerTimer data[1]
 
+
 static void CreateFlyDestIcons(void)
 {
-    u16 canFlyFlag;
-    mapsec_u16_t mapSecId;
+    u32 i;
     u16 x;
     u16 y;
     u16 width;
@@ -1824,10 +1884,9 @@ static void CreateFlyDestIcons(void)
     u16 shape;
     u8 spriteId;
 
-    canFlyFlag = FLAG_VISITED_SUNSHINE_TOWN;
-    for (mapSecId = MAPSEC_SUNSHINETOWN; mapSecId <= MAPSEC_LUMINARIA_RESORT; mapSecId++)
+    for (i = 0; i < ARRAY_COUNT(sFlyLocations); i++)
     {
-        GetMapSecDimensions(mapSecId, &x, &y, &width, &height);
+        GetMapSecDimensions(sFlyLocations[i].mapsec, &x, &y, &width, &height);
         x = (x + MAPCURSOR_X_MIN) * 8 + 4;
         y = (y + MAPCURSOR_Y_MIN) * 8 + 4;
         
@@ -1849,15 +1908,14 @@ static void CreateFlyDestIcons(void)
             
             gSprites[spriteId].oam.shape = shape;
 
-            if (FlagGet(canFlyFlag))
+            if (FlagGet(sFlyLocations[i].flag))
                 gSprites[spriteId].callback = SpriteCB_FlyDestIcon;
             else
                 shape += 3;
 
             StartSpriteAnim(&gSprites[spriteId], shape);
-            gSprites[spriteId].sIconMapSec = mapSecId;
+            gSprites[spriteId].sIconMapSec = sFlyLocations[i].mapsec;
         }
-        canFlyFlag++;
     }
 }
 

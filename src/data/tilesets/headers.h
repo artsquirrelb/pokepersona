@@ -1094,3 +1094,14 @@ const struct Tileset gTileset_MayoidosLab =
     .metatileAttributes = gMetatileAttributes_MayoidosLab,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_RangerBuilding =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_RangerBuilding,
+    .palettes = gTilesetPalettes_RangerBuilding,
+    .metatiles = gMetatiles_RangerBuilding,
+    .metatileAttributes = gMetatileAttributes_RangerBuilding,
+    .callback = NULL,
+};

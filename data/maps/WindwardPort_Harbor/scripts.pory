@@ -695,7 +695,7 @@ script WindwardPort_Harbor_Eventscript_QuizFinished {
 }
 
 script WindwardPort_Harbor_Eventscript_ShipSchedule {
-    msgbox(format("{CLEAR_TO 45}Windward Port -> Coralport\n
+    msgbox(format("{CLEAR_TO 30}Windward Port -> Coralport\n
     {CLEAR_TO 30}Boarding time: 6PM - 5:59AM."))
     closemessage
     release

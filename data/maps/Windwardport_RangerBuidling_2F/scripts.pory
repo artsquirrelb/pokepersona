@@ -1,0 +1,55 @@
+mapscripts Windwardport_RangerBuidling_2F_MapScripts {}
+
+script Windwardport_RangerBuilding_2F_Elevator {
+    lock
+    msgbox(format("Go to 1F?"), MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        call(Eventscript_ElevatorSFX)
+        warpsilent(MAP_WINDWARDPORT_RANGER_BUIDLING_1F, 3, 5)
+        waitstate
+    }
+    else
+    {
+        applymoveplayer(facedown)
+        release
+        end
+    }
+}
+
+script Windwardport_RangerBuilding_2F_RangerM {
+    lock
+    faceplayer
+    setspeaker("Dokuji")
+    msgbox(format("There has been an increase in cases of wild Pokémon getting more aggressive lately.\p
+    What they have in common is that the Pokémon involved have unnatural colors on their body parts.\p
+    We have been partnering with Pokémon researchers to crack the reason."))
+    release
+    end
+}
+
+script Windwardport_RangerBuilding_2F_RangerF {
+    lock
+    faceplayer
+    setspeaker("Mayuu")
+    msgbox(format("They recently discovered that Excadrill could Mega evolve in Kalos.\p
+    The reward for this month's top 3 rangers includes a Mega Stone of their choice so I'm trying my hardest to achieve that."))
+    release
+    end
+}
+
+script Windwardport_RangerBuilding_2F_Excadrill {
+    moncryscript(SPECIES_EXCADRILL)
+    release
+    end
+}
+
+script Windwardport_RangerBuilding_2F_Researcher {
+    lock
+    faceplayer
+    setspeaker("Tetsuhiro")
+    msgbox(format("Besides the body parts' colors changed, the Pokémon that went savage
+    sometimes know moves that they normally can't learn."))
+    release
+    end
+}

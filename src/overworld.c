@@ -1168,14 +1168,14 @@ u16 GetCurrLocationDefaultMusic(void)
     //    return MUS_DESERT;
 
     music = GetLocationMusic(&gSaveBlock1Ptr->location);
-    if (music != MAP_BLANK_MAP)
-    {
+    //if (music != MUS_ABNORMAL_WEATHER)
+    //{
         return music;
-    }
-    else
-    {
-        return MUS_NONE;
-    }
+    //}
+    //else
+    //{
+    //    return MUS_NONE;
+    //}
 }
 
 u16 GetWarpDestinationMusic(void)

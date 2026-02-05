@@ -9,12 +9,6 @@
       "respawn_npc": "LOCALID_SUNSHINETOWN_NURSE"
     },
     {
-      "id": "HEAL_LOCATION_MANSION_MITSURUS_ROOM2F",
-      "map": "MAP_MITSURUS_ROOM2F",
-      "x": 16,
-      "y": 8
-    },
-    {
       "id": "HEAL_LOCATION_ROUTE2_HOUSE",
       "map": "MAP_ROUTE2_HOUSE",
       "x": 4,

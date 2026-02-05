@@ -771,3 +771,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/WindwardPort_Beach/scripts.inc"
 
 	.include "data/maps/Windwardport_MayoidosLab/scripts.inc"
+
+	.include "data/maps/Windwardport_RangerBuidling_1F/scripts.inc"
+
+	.include "data/maps/Windwardport_RangerBuidling_2F/scripts.inc"

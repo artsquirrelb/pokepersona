@@ -1,6 +1,5 @@
 mapscripts Mansion_MitsurusRoom2F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
-        setrespawn(HEAL_LOCATION_MANSION_MITSURUS_ROOM2F)
         if (var(VAR_MITSURUS_INTRO_STATE) >= 2){
             setflag(FLAG_TEMP_1)
         }

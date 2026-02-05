@@ -88,7 +88,7 @@
   "warp_events": [
     {
       "x": 11,
-      "y": 11,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_CORALPORT",
       "dest_warp_id": "3"
@@ -102,23 +102,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Coralport_FishermansHouse_Eventscript_LockedDoor"
-    },
-    {
-      "type": "sign",
-      "x": 8,
-      "y": 3,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TrashcanFull"
-    },
-    {
-      "type": "sign",
-      "x": 6,
-      "y": 6,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Coralport_FishermansHouse_Eventscript_LockedDoor"
+      "script": "Eventscript_DoorLocked"
     }
   ]
 }

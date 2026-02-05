@@ -473,3 +473,12 @@ script CheckIfHasFurfrou {
     }
 }
 
+script MansionTrainingHouse_Eventscript_Maid {
+    lock
+    faceplayer
+    setspeaker("Rina")
+    msgbox(format("The training floor is currently getting renovated.\p
+    We're extremely sorry for the inconvenience."))
+    release
+    end
+}

@@ -622,18 +622,6 @@ Coralport_FishermansHouse_Eventscript_Wooper_8:
 	end
 
 
-Coralport_FishermansHouse_Eventscript_LockedDoor::
-# 339 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	lock
-# 340 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	msgbox Coralport_FishermansHouse_Eventscript_LockedDoor_Text_0
-# 341 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	closemessage
-# 342 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	release
-	end
-
-
 # 89 "data/maps/Coralport_FishermansHouse/scripts.pory"
 Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_0:
 # 89 "data/maps/Coralport_FishermansHouse/scripts.pory"
@@ -685,10 +673,6 @@ Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movem
 # 122 "data/maps/Coralport_FishermansHouse/scripts.pory"
 	walk_fast_down
 # 122 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	walk_fast_down
-# 122 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	walk_fast_down
-# 122 "data/maps/Coralport_FishermansHouse/scripts.pory"
 	set_invisible
 	step_end
 
@@ -696,10 +680,6 @@ Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movem
 Coralport_FishermansHouse_Eventscript_QUEST_FIND_FISHERMANS_DAUGHTER_Start_Movement_4:
 # 123 "data/maps/Coralport_FishermansHouse/scripts.pory"
 	walk_fast_right
-# 123 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	walk_fast_down
-# 123 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	walk_fast_down
 # 123 "data/maps/Coralport_FishermansHouse/scripts.pory"
 	walk_fast_down
 # 123 "data/maps/Coralport_FishermansHouse/scripts.pory"
@@ -921,7 +901,3 @@ Coralport_FishermansHouse_Eventscript_Wooper_Text_1:
 Coralport_FishermansHouse_Eventscript_Wooper_Text_2:
 # 331 "data/maps/Coralport_FishermansHouse/scripts.pory"
 	.string "Wooper is smiling brightly!$"
-
-Coralport_FishermansHouse_Eventscript_LockedDoor_Text_0:
-# 340 "data/maps/Coralport_FishermansHouse/scripts.pory"
-	.string "It's locked.$"

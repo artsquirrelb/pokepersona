@@ -17,24 +17,32 @@ mapscripts SunshineTown_PokemonCenter_MapScripts {
 }
 
 script SunshineTown_PokemonCenter_Eventscript_Nurse {
+    setspeaker("Nurse Juria")
+    call(Eventscript_Nurse_Greetings)
+    setspeaker("Nurse Juria")
+    call(Eventscript_Nurse_Goodbye)
+	release
+	end
+}
+
+script Eventscript_Nurse_Greetings {
     lock
     faceplayer
-    setspeaker("Nurse Juria")
     msgbox(format("Hello and welcome to the Pokémon Center.\p
     Let me heal your tired Pokémon."))
     hidefollower
     playse(MUS_HEAL)
     waitse
     special(HealPlayerParty)
-    callnative (UpdateFollowingPokemon)
+    updatefollowingmon
+}
+
+script Eventscript_Nurse_Goodbye {
     msgbox(format("
     Thank you for waiting. We have restored your tired Pokémon to full health.\p
     We hope to see you again."))
     closemessage
-    applymovement(LOCALID_PLAYER, facedown)
-    waitmovement(0)
-	release
-	end
+    applymove(LOCALID_PLAYER, facedown)
 }
 
 script PCStorage {

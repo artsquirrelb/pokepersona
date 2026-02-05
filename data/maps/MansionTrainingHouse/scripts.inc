@@ -843,6 +843,20 @@ CheckIfHasFurfrou_28:
 	end
 
 
+MansionTrainingHouse_Eventscript_Maid::
+# 477 "data/maps/MansionTrainingHouse/scripts.pory"
+	lock
+# 478 "data/maps/MansionTrainingHouse/scripts.pory"
+	faceplayer
+# 479 "data/maps/MansionTrainingHouse/scripts.pory"
+	setspeaker MansionTrainingHouse_Eventscript_Maid_Text_0
+# 480 "data/maps/MansionTrainingHouse/scripts.pory"
+	msgbox MansionTrainingHouse_Eventscript_Maid_Text_1
+# 482 "data/maps/MansionTrainingHouse/scripts.pory"
+	release
+	end
+
+
 MansionTrainingHouse_Eventscript_Nurse_Text_0:
 # 10 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "Nurse Emily$"
@@ -960,6 +974,17 @@ CheckIfHasFurfrou_Text_1:
 # 470 "data/maps/MansionTrainingHouse/scripts.pory"
 	.string "Which style do you want for your\n"
 	.string "Furfrou?$"
+
+MansionTrainingHouse_Eventscript_Maid_Text_0:
+# 479 "data/maps/MansionTrainingHouse/scripts.pory"
+	.string "Rina$"
+
+MansionTrainingHouse_Eventscript_Maid_Text_1:
+# 480 "data/maps/MansionTrainingHouse/scripts.pory"
+	.string "The training floor is currently getting\n"
+	.string "renovated.\p"
+	.string "We're extremely sorry for the\n"
+	.string "inconvenience.$"
 
 FurfrouStyleChangedPerfectly::
 # 418 "data/maps/MansionTrainingHouse/scripts.pory"

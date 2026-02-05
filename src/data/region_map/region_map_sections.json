@@ -34,15 +34,27 @@
     },
     {
       "id": "MAPSEC_ROUTE_5",
-      "name": "Route 5"
+      "name": "Route 5",
+      "x": 7,
+      "y": 9,
+      "width": 2,
+      "height": 2
     },
     {
       "id": "MAPSEC_ROUTE_6",
-      "name": "Route 6"
+      "name": "Route 6",
+      "x": 7,
+      "y": 13,
+      "width": 2,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_7",
-      "name": "Route 7"
+      "name": "Route 7",
+      "x": 10,
+      "y": 9,
+      "width": 1,
+      "height": 2
     },
     {
       "id": "MAPSEC_ROUTE_8",
@@ -50,67 +62,131 @@
     },
     {
       "id": "MAPSEC_ROUTE_9",
-      "name": "Route 9"
+      "name": "Route 9",
+      "x": 6,
+      "y": 14,
+      "width": 5,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_10",
-      "name": "Route 10"
+      "name": "Route 10",
+      "x": 3,
+      "y": 14,
+      "width": 2,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_11",
-      "name": "Route 11"
+      "name": "Route 11",
+      "x": 1,
+      "y": 13,
+      "width": 1,
+      "height": 2
     },
     {
       "id": "MAPSEC_ROUTE_12",
-      "name": "Route 12"
+      "name": "Route 12",
+      "x": 10,
+      "y": 6,
+      "width": 1,
+      "height": 2
     },
     {
       "id": "MAPSEC_ROUTE_13",
-      "name": "Route 13"
+      "name": "Route 13",
+      "x": 8,
+      "y": 5,
+      "width": 3,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_14",
-      "name": "Route 14"
+      "name": "Route 14",
+      "x": 6,
+      "y": 3,
+      "width": 1,
+      "height": 2
     },
     {
       "id": "MAPSEC_ROUTE_15",
-      "name": "Route 15"
+      "name": "Route 15",
+      "x": 11,
+      "y": 3,
+      "width": 1,
+      "height": 2
     },
     {
       "id": "MAPSEC_ROUTE_16",
-      "name": "Route 16"
+      "name": "Route 16",
+      "x": 10,
+      "y": 2,
+      "width": 3,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_17",
-      "name": "Route 17"
+      "name": "Route 17",
+      "x": 15,
+      "y": 3,
+      "width": 2,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_18",
-      "name": "Route 18"
+      "name": "Route 18",
+      "x": 16,
+      "y": 4,
+      "width": 1,
+      "height": 6
     },
     {
       "id": "MAPSEC_ROUTE_19",
-      "name": "Route 19"
+      "name": "Route 19",
+      "x": 12,
+      "y": 5,
+      "width": 4,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_20",
-      "name": "Route 20"
+      "name": "Route 20",
+      "x": 14,
+      "y": 8,
+      "width": 2,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_21",
-      "name": "Route 21"
+      "name": "Route 21",
+      "x": 2,
+      "y": 4,
+      "width": 1,
+      "height": 3
     },
     {
       "id": "MAPSEC_ROUTE_22",
-      "name": "Route 22"
+      "name": "Route 22",
+      "x": 6,
+      "y": 6,
+      "width": 1,
+      "height": 2
     },
     {
       "id": "MAPSEC_ROUTE_23",
-      "name": "Route 23"
+      "name": "Route 23",
+      "x": 11,
+      "y": 0,
+      "width": 3,
+      "height": 1
     },
     {
       "id": "MAPSEC_ROUTE_24",
-      "name": "Route 24"
+      "name": "Route 24",
+      "x": 2,
+      "y": 1,
+      "width": 1,
+      "height": 2
     },
     {
       "id": "MAPSEC_ROUTE_25",
@@ -320,9 +396,9 @@
       "id": "MAPSEC_THUNDERSHARDS_CLIFF",
       "name": "Thundershards Scree",
       "x": 22,
-      "y": 7,
-      "width": 2,
-      "height": 1
+      "y": 6,
+      "width": 3,
+      "height": 2
     },
     {
       "id": "MAPSEC_THUNDERSHARDS_CLIFF_2",
@@ -342,7 +418,11 @@
     },
     {
       "id": "MAPSEC_THUNDERSHARDS_CLIFF_CAVE_1F",
-      "name": "Thundershard Cave 1F"
+      "name": "Thundershard Cave 1F",
+      "x": 23,
+      "y": 6,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_THUNDERSHARDS_CLIFF_CAVE_2F",
@@ -351,6 +431,30 @@
     {
       "id": "MAPSEC_CORALPORT_CAVE",
       "name": "Coralport Cave"
+    },
+    {
+      "id": "MAPSEC_FAERUMA_CITY",
+      "name": "Faeruma City",
+      "x": 17,
+      "y": 2,
+      "width": 1,
+      "height": 2
+    },
+    {
+      "id": "MAPSEC_FUNSEKI_TOWN",
+      "name": "Funseki Town",
+      "x": 2,
+      "y": 3,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_KYOUI_CITY",
+      "name": "Kyoui City",
+      "x": 5,
+      "y": 14,
+      "width": 1,
+      "height": 1
     }
   ]
 }

@@ -475,6 +475,14 @@ MansionMainHall_Eventscript_NotTheWayOutToMainGarden::
 	end
 
 
+MansionMainHall_Eventscript_IndeedeeM::
+# 306 "data/maps/MansionMainHall/scripts.pory"
+	moncryscript SPECIES_INDEEDEE_M
+# 307 "data/maps/MansionMainHall/scripts.pory"
+	release
+	end
+
+
 # 23 "data/maps/MansionMainHall/scripts.pory"
 MansionMainHall_Eventscript_TakeharuStoppingMitsuru_Movement_0:
 # 23 "data/maps/MansionMainHall/scripts.pory"

@@ -301,3 +301,9 @@ script MansionMainHall_Eventscript_NotTheWayOutToMainGarden {
     release
     end
 }
+
+script MansionMainHall_Eventscript_IndeedeeM {
+    moncryscript(SPECIES_INDEEDEE_M)
+    release
+    end
+}

@@ -687,6 +687,7 @@ enum SpeciesGfxChange
     SPECIES_GFX_CHANGE_FORM_CHANGE,
     SPECIES_GFX_CHANGE_FORM_CHANGE_INSTANT,
     SPECIES_GFX_CHANGE_ILLUSION_OFF,
+    SPECIES_GFX_CHANGE_GHOST_UNVEIL,
 };
 
 // Flags given to various functions to indicate which palettes to consider.
@@ -707,5 +708,8 @@ enum SpeciesGfxChange
 // The below are only used by AnimTask_BlendBattleAnimPal to get battler sprite palettes by position rather than by role.
 // It's redundant with F_PAL_BATTLERS, because they're only ever used together to refer to all the battlers at once.
 #define F_PAL_BATTLERS_2  (1 << 7 | 1 << 8 | 1 << 9 | 1 << 10)
+
+enum { SHAKE_BG_X, SHAKE_BG_Y, SHAKE_MON_X, SHAKE_MON_Y };
+enum { SHAKE_MON_ATTACKER, SHAKE_MON_TARGET, SHAKE_MON_BOTH };
 
 #endif // GUARD_CONSTANTS_BATTLE_ANIM_H

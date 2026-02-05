@@ -982,7 +982,13 @@ void HandleSpeciesGfxDataChange(enum BattlerId battlerAtk, enum BattlerId battle
     LoadPalette(paletteData, paletteOffset, PLTT_SIZE_4BPP);
     TimeMixBattleSpritePalette(paletteOffset);
 
-    if (changeType == SPECIES_GFX_CHANGE_TRANSFORM)
+    if (changeType == SPECIES_GFX_CHANGE_GHOST_UNVEIL)
+    {
+        SetMonData(&gEnemyParty[gBattlerPartyIndexes[battlerAtk]], MON_DATA_NICKNAME, gSpeciesInfo[targetSpecies].speciesName);
+        UpdateNickInHealthbox(gHealthboxSpriteIds[battlerAtk], &gEnemyParty[gBattlerPartyIndexes[battlerAtk]]);
+        TryAddPokeballIconToHealthbox(gHealthboxSpriteIds[battlerAtk]);
+    }
+    else if (changeType == SPECIES_GFX_CHANGE_TRANSFORM)
     {
         BlendPalette(paletteOffset, 16, 6, RGB_WHITE);
         CpuCopy32(&gPlttBufferFaded[paletteOffset], &gPlttBufferUnfaded[paletteOffset], PLTT_SIZEOF(16));

@@ -659,7 +659,10 @@ void HandleAction_UseMove(void)
         BattleArena_AddMindPoints(gBattlerAttacker);
 
     for (i = 0; i < MAX_BATTLERS_COUNT; i++)
+    {
         gBattleStruct->battlerState[i].wasAboveHalfHp = gBattleMons[i].hp > gBattleMons[i].maxHP / 2;
+        gBattleMons[i].volatiles.activateDancer = FALSE;
+    }
 
     gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
 }
@@ -864,7 +867,43 @@ void HandleAction_WatchesCarefully(void)
     gBattlerAttacker = gBattlerByTurnOrder[gCurrentTurnActionNumber];
     gBattle_BG0_X = 0;
     gBattle_BG0_Y = 0;
-    gBattlescriptCurrInstr = gBattlescriptsForSafariActions[0];
+    /*if (IS_FRLG)
+    {
+        if (gBattleStruct->safariRockThrowCounter != 0)
+        {
+            gBattleStruct->safariRockThrowCounter--;
+            if (gBattleStruct->safariRockThrowCounter == 0)
+            {
+                gBattleStruct->safariCatchFactor = gSpeciesInfo[GetMonData(gEnemyParty, MON_DATA_SPECIES)].catchRate * 100 / 1275;
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MON_WATCHING;
+            }
+            else
+            {
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MON_ANGRY;
+            }
+        }
+        else
+        {
+            if (gBattleStruct->safariBaitThrowCounter != 0)
+            {
+                --gBattleStruct->safariBaitThrowCounter;
+                if (gBattleStruct->safariBaitThrowCounter == 0)
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MON_WATCHING;
+                else
+                    gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MON_EATING;
+            }
+            else
+            {
+                gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MON_WATCHING;
+            }
+        }
+        gBattlescriptCurrInstr = gBattlescriptsForSafariActions[0];
+    }*/
+    //else
+    //{
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_MON_WATCHING;
+        gBattlescriptCurrInstr = gBattlescriptsForSafariActions[0];
+    //}
     gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
 }
 
@@ -4496,7 +4535,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
         }
         break;
     case ABILITYEFFECT_MOVE_END_OTHER: // Abilities that activate on *another* battler's moveend: Dancer, Soul-Heart, Receiver, Symbiosis
-        switch (GetBattlerAbility(battler))
+        switch (ability)
         {
         case ABILITY_DANCER:
             if (IsBattlerAlive(battler)
@@ -4507,6 +4546,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                 // Set bit and save Dancer mon's original target
                 gSpecialStatuses[battler].dancerUsedMove = TRUE;
                 gSpecialStatuses[battler].dancerOriginalTarget = gBattleStruct->moveTarget[battler] | 0x4;
+                gBattleMons[battler].volatiles.activateDancer = FALSE;
                 gBattlerAttacker = gBattlerAbility = battler;
                 gCalledMove = move;
 
@@ -5377,6 +5417,17 @@ bool32 CanGetFrostbite(enum BattlerId battlerAtk, enum BattlerId battlerDef, enu
     return FALSE;
 }
 
+bool32 IsSafeguardProtected(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Ability abilityAtk)
+{
+    if (!(gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD))
+        return FALSE;
+    if (IsBattlerAlly(battlerAtk, battlerDef))
+        return TRUE;
+    if (abilityAtk == ABILITY_INFILTRATOR)
+        return FALSE;
+    return TRUE;
+}
+
 bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Ability abilityAtk, enum Ability abilityDef, enum MoveEffect effect, enum ResultOption option)
 {
     const u8 *battleScript = NULL;
@@ -5529,7 +5580,7 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
         abilityDef = ABILITY_FLOWER_VEIL;
         battleScript = BattleScript_FlowerVeilProtects;
     }
-    else if (gSideStatuses[GetBattlerSide(battlerDef)] & SIDE_STATUS_SAFEGUARD)
+    else if (IsSafeguardProtected(battlerAtk, battlerDef, abilityAtk))
     {
         battleScript = BattleScript_SafeguardProtected;
     }
@@ -7555,7 +7606,7 @@ static inline uq4_12_t GetScreensModifier(struct BattleContext *ctx)
     {
         return UQ_4_12(1.0);
     }
-    if (ctx->abilityAtk == ABILITY_INFILTRATOR)
+    if (ctx->abilityAtk == ABILITY_INFILTRATOR && !IsBattlerAlly(ctx->battlerAtk, ctx->battlerDef))
     {
         if (ctx->updateFlags)
             RecordAbilityBattle(ctx->battlerAtk, ctx->abilityDef);
@@ -8142,7 +8193,7 @@ s32 CalcCritChanceStageGen1(struct BattleContext *ctx)
 static bool32 IsCriticalHit(struct BattleContext *ctx)
 {
 
-    if (gBattleTypeFlags & (BATTLE_TYPE_WALLY_TUTORIAL | BATTLE_TYPE_FIRST_BATTLE))
+    if (gBattleTypeFlags & (BATTLE_TYPE_CATCH_TUTORIAL | BATTLE_TYPE_FIRST_BATTLE))
         return FALSE;
     if (ctx->isSelfInflicted)
         return FALSE;
@@ -10797,10 +10848,19 @@ bool32 IsAnyTargetTurnDamaged(enum BattlerId battlerAtk)
 
 bool32 IsAnyTargetAffected(void)
 {
+    bool32 isSpreadMove = IsSpreadMove(GetBattlerMoveTargetType(gBattlerAttacker, gCurrentMove));
     for (enum BattlerId battler = 0; battler < gBattlersCount; battler++)
     {
-        if (battler == gBattlerAttacker)
-            continue;
+        if (isSpreadMove)
+        {
+            if (battler == gBattlerAttacker)
+                continue;
+        }
+        else
+        {
+            if (battler != gBattlerTarget)
+                continue;
+        }
 
         if (!IsBattlerUnaffectedByMove(battler))
             return TRUE;
@@ -11039,15 +11099,4 @@ void SetOrClearRageVolatile(void)
         gBattleMons[gBattlerAttacker].volatiles.rage = TRUE;
     else
         gBattleMons[gBattlerAttacker].volatiles.rage = FALSE;
-}
-
-s32 SubtractClamped(s32 lowestVal, s32 highestVal, s32 currentVal, s32 delta)
-{
-    s32 newValue = currentVal - delta;
-    if (newValue > highestVal)
-        newValue = highestVal;
-    else if (newValue < lowestVal)
-        newValue = lowestVal;
-
-    return newValue;
 }

@@ -278,7 +278,7 @@ static bool8 LoadBattlerSpriteGfx(enum BattlerId battler)
         }
         else if (gBattleTypeFlags & BATTLE_TYPE_SAFARI && position == B_POSITION_PLAYER_LEFT)
             DecompressTrainerBackPic(gSaveBlock2Ptr->playerGender, battler);
-        else if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL && position == B_POSITION_PLAYER_LEFT)
+        else if (gBattleTypeFlags & BATTLE_TYPE_CATCH_TUTORIAL && position == B_POSITION_PLAYER_LEFT)
             DecompressTrainerBackPic(TRAINER_PIC_BACK_WALLY, battler);
         else if (!gBattleSpritesDataPtr->battlerData[battler].behindSubstitute)
             BattleLoadMonSpriteGfx(GetBattlerMon(battler), battler);
@@ -330,7 +330,7 @@ void CreateBattlerSprite(enum BattlerId battler)
             gSprites[gBattlerSpriteIds[battler]].callback = SpriteCallbackDummy;
             gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
         }
-        else if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL && position == B_POSITION_PLAYER_LEFT)
+        else if (gBattleTypeFlags & BATTLE_TYPE_CATCH_TUTORIAL && position == B_POSITION_PLAYER_LEFT)
         {
             SetMultiuseSpriteTemplateToTrainerBack(TRAINER_PIC_BACK_WALLY, position);
             gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate, 0x50,
@@ -370,7 +370,7 @@ static void CreateHealthboxSprite(enum BattlerId battler)
         enum BattlerPosition position = GetBattlerPosition(battler);
         if (gBattleTypeFlags & BATTLE_TYPE_SAFARI && position == B_POSITION_PLAYER_LEFT)
             healthboxSpriteId = CreateSafariPlayerHealthboxSprites();
-        else if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL && position == B_POSITION_PLAYER_LEFT)
+        else if (gBattleTypeFlags & BATTLE_TYPE_CATCH_TUTORIAL && position == B_POSITION_PLAYER_LEFT)
             return;
         else
             healthboxSpriteId = CreateBattlerHealthboxSprites(battler);

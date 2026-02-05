@@ -85,17 +85,17 @@ enum BattleSide
 #define BATTLE_TYPE_MULTI              (1 << 6)
 #define BATTLE_TYPE_SAFARI             (1 << 7)
 #define BATTLE_TYPE_BATTLE_TOWER       (1 << 8)
-#define BATTLE_TYPE_WALLY_TUTORIAL     (1 << 9) 
+#define BATTLE_TYPE_CATCH_TUTORIAL     (1 << 9) 
 #define BATTLE_TYPE_ROAMER             (1 << 10)
 #define BATTLE_TYPE_EREADER_TRAINER    (1 << 11)
 #define BATTLE_TYPE_RAID               (1 << 12)
 #define BATTLE_TYPE_LEGENDARY          (1 << 13)
 #define BATTLE_TYPE_14                 (1 << 14)
-#define BATTLE_TYPE_TWO_OPPONENTS      (1 << 15) 
-#define BATTLE_TYPE_DOME               (1 << 16) 
-#define BATTLE_TYPE_PALACE             (1 << 17) 
-#define BATTLE_TYPE_ARENA              (1 << 18) 
-#define BATTLE_TYPE_FACTORY            (1 << 19) 
+#define BATTLE_TYPE_TWO_OPPONENTS      (1 << 15)
+#define BATTLE_TYPE_DOME               (1 << 16)
+#define BATTLE_TYPE_PALACE             (1 << 17)
+#define BATTLE_TYPE_ARENA              (1 << 18)
+#define BATTLE_TYPE_FACTORY            (1 << 19)
 #define BATTLE_TYPE_PIKE               (1 << 20)
 #define BATTLE_TYPE_PYRAMID            (1 << 21)
 #define BATTLE_TYPE_INGAME_PARTNER     (1 << 22)
@@ -111,7 +111,7 @@ enum BattleSide
 #define BATTLE_TYPE_FRONTIER                (BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_DOME | BATTLE_TYPE_PALACE | BATTLE_TYPE_ARENA | BATTLE_TYPE_FACTORY | BATTLE_TYPE_PIKE | BATTLE_TYPE_PYRAMID)
 #define BATTLE_TYPE_FRONTIER_NO_PYRAMID     (BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_DOME | BATTLE_TYPE_PALACE | BATTLE_TYPE_ARENA | BATTLE_TYPE_FACTORY | BATTLE_TYPE_PIKE)
 #define BATTLE_TYPE_RECORDED_INVALID        ((BATTLE_TYPE_LINK | BATTLE_TYPE_SAFARI | BATTLE_TYPE_FIRST_BATTLE                  \
-                                             | BATTLE_TYPE_WALLY_TUTORIAL | BATTLE_TYPE_ROAMER | BATTLE_TYPE_EREADER_TRAINER    \
+                                             | BATTLE_TYPE_CATCH_TUTORIAL | BATTLE_TYPE_ROAMER | BATTLE_TYPE_EREADER_TRAINER    \
                                              | BATTLE_TYPE_LEGENDARY                                                            \
                                              | BATTLE_TYPE_RECORDED | BATTLE_TYPE_TRAINER_HILL | BATTLE_TYPE_SECRET_BASE))
 
@@ -285,7 +285,8 @@ enum VolatileFlags
     F(VOLATILE_TRY_EJECT_PACK,              tryEjectPack,                  (u32, 1)) \
     F(VOLATILE_OCTOLOCKED_BY,               octolockedBy,                  (enum BattlerId, MAX_BITS(MAX_BATTLERS_COUNT))) \
     F(VOLATILE_PARADOX_BOOSTED_STAT,        paradoxBoostedStat,            (enum Stat, NUM_STATS - 1)) \
-    F(VOLATILE_UNABLE_TO_USE_MOVE,          unableToUseMove,               (u32, 1))
+    F(VOLATILE_UNABLE_TO_USE_MOVE,          unableToUseMove,               (u32, 1)) \
+    F(VOLATILE_ACTIVATE_DANCER,             activateDancer,                (u32, 1))
 
 
 /* Use within a macro to get the maximum allowed value for a volatile. Requires _typeMaxValue as input. */
@@ -657,8 +658,9 @@ enum BattleEnvironments
 #define BATTLE_RUN_FORBIDDEN      1
 #define BATTLE_RUN_FAILURE        2
 
-#define B_WIN_TYPE_NORMAL 0
-#define B_WIN_TYPE_ARENA  1
+#define B_WIN_TYPE_NORMAL         0
+#define B_WIN_TYPE_ARENA          1
+#define B_WIN_TYPE_KANTO_TUTORIAL 2
 
 // Window Ids for sStandardBattleWindowTemplates / sBattleArenaWindowTemplates
 #define B_WIN_MSG                 0

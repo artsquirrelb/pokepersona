@@ -598,7 +598,7 @@ struct SaveBlock2
              u16 optionsInstantTextOff:1; // whether instant text is disabled
              u8 optionsButtonMode;  // OPTIONS_BUTTON_MODE_[NORMAL/LR/L_EQUALS_A]
              u16 optionsWindowFrameType:5; // Specifies one of the 20 decorative borders for text boxes
-             u16 optionsFollowersOff:1; // whether ow followers are disabled
+             //u16 optionsFollowersOff:1; // whether ow followers are disabled
              u16 optionsAutoRunOff:1; // whether auto running is disabled
              u16 optionsBattleSceneOff:1; // whether battle animations are disabled
              u16 optionsBattleStyle:1; // OPTIONS_BATTLE_STYLE_[SHIFT/SET]
@@ -607,7 +607,7 @@ struct SaveBlock2
              u16 optionsSound:1; // OPTIONS_SOUND_[MONO/STEREO]
              u16 optionsBikeMusicOff:1; // whether cycling music is disabled
              u16 optionsSurfMusicOff:1; // whether surfing music is disabled
-             u8 optionsOverworldSpeed:1; // whether the map is zoomed in
+             u8 optionsOverworldSpeed:1; // OPTIONS_OVERWORLDSPEED [1X/2X]
              u16 optionsStartMenuPalette:2; // Load the start menu palette based on the persistent setting
              u16 playerBike:1;
              u16 currOutfitId:4;

@@ -1855,7 +1855,7 @@ static void SpriteCB_StatusSummaryBalls_OnSwitchout(struct Sprite *sprite)
     sprite->y2 = gSprites[barSpriteId].y2;
 }
 
-static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
+void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
 {
     u8 nickname[POKEMON_NAME_LENGTH + 1];
     void *ptr;
@@ -1926,12 +1926,12 @@ static void UpdateNickInHealthbox(u8 healthboxSpriteId, struct Pokemon *mon)
     //RemoveWindowOnHealthbox(windowId);
 }
 
-static void TryAddPokeballIconToHealthbox(u8 healthboxSpriteId)
+void TryAddPokeballIconToHealthbox(u8 healthboxSpriteId)
 {
     enum BattlerId battler;
     //u8 healthBarSpriteId;
 
-    if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL)
+    if (gBattleTypeFlags & BATTLE_TYPE_CATCH_TUTORIAL)
         return;
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
         return;

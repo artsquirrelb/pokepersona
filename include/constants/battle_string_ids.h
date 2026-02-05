@@ -972,6 +972,15 @@ enum InobedientStringID
 // Skips the one used for Battle Palace
 #define NUM_LOAF_STRINGS (B_MSG_PRETEND_NOT_NOTICE + 1)
 
+// gSafariReactionStringIds
+enum SafariReactionStringID
+{
+    B_MSG_MON_WATCHING,
+    B_MSG_MON_ANGRY,
+    B_MSG_MON_EATING,
+    NUM_SAFARI_REACTIONS
+};
+
 // gSafariGetNearStringIds
 enum SafariGetNearStringID
 {

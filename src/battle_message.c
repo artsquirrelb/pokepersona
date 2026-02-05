@@ -1315,6 +1315,13 @@ const u16 gInobedientStringIds[] =
     [B_MSG_INCAPABLE_OF_POWER] = STRINGID_PKMNINCAPABLEOFPOWER
 };
 
+const u16 gSafariReactionStringIds[NUM_SAFARI_REACTIONS] =
+{
+    [B_MSG_MON_WATCHING] = STRINGID_PKMNWATCHINGCAREFULLY,
+    [B_MSG_MON_ANGRY]    = STRINGID_PKMNANGRY,
+    [B_MSG_MON_EATING]   = STRINGID_PKMNEATING
+};
+
 const u16 gSafariGetNearStringIds[] =
 {
     [B_MSG_CREPT_CLOSER]    = STRINGID_CREPTCLOSER,
@@ -2065,7 +2072,8 @@ static const struct BattleWindowText sTextOnWindowsInfo_Arena[] =
 static const struct BattleWindowText *const sBattleTextOnWindowsInfo[] =
 {
     [B_WIN_TYPE_NORMAL] = sTextOnWindowsInfo_Normal,
-    [B_WIN_TYPE_ARENA]  = sTextOnWindowsInfo_Arena
+    [B_WIN_TYPE_ARENA]  = sTextOnWindowsInfo_Arena,
+    //[B_WIN_TYPE_KANTO_TUTORIAL] = sTextOnWindowsInfo_KantoTutorial,
 };
 
 static const u8 sRecordedBattleTextSpeeds[] = {8, 4, 1, 0};
@@ -2163,7 +2171,7 @@ void BufferStringBattle(enum StringID stringID, enum BattlerId battler)
                 stringPtr = sText_LegendaryPkmnAppeared;
             else if (IsDoubleBattle() && IsValidForBattle(GetBattlerMon(GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT))))
                 stringPtr = sText_TwoWildPkmnAppeared;
-            else if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL)
+            else if (gBattleTypeFlags & BATTLE_TYPE_CATCH_TUTORIAL)
                 stringPtr = sText_WildPkmnAppearedPause;
             else
                 stringPtr = sText_WildPkmnAppeared;

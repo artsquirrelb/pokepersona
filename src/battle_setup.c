@@ -437,7 +437,7 @@ void StartWallyTutorialBattle(void)
     CreateMaleMon(&gEnemyParty[0], SPECIES_RALTS, 5);
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
-    gBattleTypeFlags = BATTLE_TYPE_WALLY_TUTORIAL;
+    gBattleTypeFlags = BATTLE_TYPE_CATCH_TUTORIAL;
     CreateBattleStartTask(B_TRANSITION_SLICE, 0);
 }
 
@@ -946,6 +946,7 @@ static bool32 IsPlayerDefeated(u32 battleOutcome)
     {
     case B_OUTCOME_LOST:
     case B_OUTCOME_DREW:
+    case B_OUTCOME_FORFEITED:
         return TRUE;
     case B_OUTCOME_WON:
     case B_OUTCOME_RAN:

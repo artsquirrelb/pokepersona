@@ -476,8 +476,7 @@ static const union AnimCmd *const sAnims_SafariRock[] = {
     sAnim_SafariRock,
 };
 
-// Unused, leftover from FRLG
-static const struct SpriteTemplate sSafariRockSpriteTemplate =
+const struct SpriteTemplate sSafariRockSpriteTemplate =
 {
     .tileTag = ANIM_TAG_ROCKS,
     .paletteTag = ANIM_TAG_ROCKS,
@@ -813,7 +812,7 @@ void AnimTask_ThrowBall_StandingTrainer(u8 taskId)
     u8 subpriority;
     u8 spriteId;
 
-    if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL)
+    if (gBattleTypeFlags & BATTLE_TYPE_CATCH_TUTORIAL)
     {
         x = 32;
         y = 11;
@@ -2591,4 +2590,14 @@ static void CB_CriticalCaptureThrownBallMovement(struct Sprite *sprite)
         sprite->data[5] = 0;
         sprite->callback = SpriteCB_Ball_Bounce_Step;
     }
+}
+
+void AnimTask_SafariGetReaction(u8 taskId)
+{
+    if (gBattleCommunication[MULTISTRING_CHOOSER] >= NUM_SAFARI_REACTIONS)
+        gBattleAnimArgs[7] = 0;
+    else
+        gBattleAnimArgs[7] = gBattleCommunication[MULTISTRING_CHOOSER];
+
+    DestroyAnimVisualTask(taskId);
 }

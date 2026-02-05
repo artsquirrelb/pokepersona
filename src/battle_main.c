@@ -3362,8 +3362,10 @@ const u8* FaintClearSetData(enum BattlerId battler)
         gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE;
 
     bool32 keepGastroAcid = gBattleMons[battler].volatiles.gastroAcid;
+    bool32 keepTransformed = gBattleMons[battler].volatiles.transformed;
     memset(&gBattleMons[battler].volatiles, 0, sizeof(struct Volatiles));
     gBattleMons[battler].volatiles.gastroAcid = keepGastroAcid; // Edge case: Keep Gastro Acid if pokemon's ability can have effect after fainting, for example Innards Out.
+    gBattleMons[battler].volatiles.transformed = keepTransformed; // Edge case: Keep Transformed status to prevent triggering FORM_CHANGE_FAINT on transformed mons.
 
     for (enum BattlerId i = 0; i < gBattlersCount; i++)
     {
@@ -5562,7 +5564,7 @@ static void HandleEndTurn_FinishBattle(void)
                                   | BATTLE_TYPE_FIRST_BATTLE
                                   | BATTLE_TYPE_SAFARI
                                   | BATTLE_TYPE_EREADER_TRAINER
-                                  | BATTLE_TYPE_WALLY_TUTORIAL
+                                  | BATTLE_TYPE_CATCH_TUTORIAL
                                   | BATTLE_TYPE_FRONTIER)))
         {
             for (enum BattlerId battler = 0; battler < gBattlersCount; battler++)
@@ -5612,7 +5614,7 @@ static void HandleEndTurn_FinishBattle(void)
                                   | BATTLE_TYPE_SAFARI
                                   | BATTLE_TYPE_FRONTIER
                                   | BATTLE_TYPE_EREADER_TRAINER
-                                  | BATTLE_TYPE_WALLY_TUTORIAL))
+                                  | BATTLE_TYPE_CATCH_TUTORIAL))
             && gBattleResults.shinyWildMon)
         {
             TryPutBreakingNewsOnAir();
@@ -5681,7 +5683,7 @@ static void FreeResetData_ReturnToOvOrDoEvolutions(void)
                                   | BATTLE_TYPE_SAFARI
                                   | BATTLE_TYPE_FRONTIER
                                   | BATTLE_TYPE_EREADER_TRAINER
-                                  | BATTLE_TYPE_WALLY_TUTORIAL))
+                                  | BATTLE_TYPE_CATCH_TUTORIAL))
             && (B_EVOLUTION_AFTER_WHITEOUT >= GEN_6
                 || gBattleOutcome == B_OUTCOME_WON
                 || gBattleOutcome == B_OUTCOME_CAUGHT))

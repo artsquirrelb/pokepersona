@@ -9,7 +9,7 @@ We are going to add a Trainer Slide to Wally's first Victory Road battle, before
 
 static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_SLIDE_COUNT] =
 {
-    [DIFFICULTY_NORMAL] =
+    [DIFFICULTY_STORY] =
     {
 +        [TRAINER_WALLY_VR_1] = // use the Trainer's Id from include/constants/opponents.h
 +        {
@@ -26,7 +26,7 @@ If we were to edit a Trainer that appears in a Battle Facility, `sFrontierTraine
 ```diff
 static const u8* const sFrontierTrainerSlides[DIFFICULTY_COUNT][FRONTIER_TRAINERS_COUNT][TRAINER_SLIDE_COUNT] =
 {
-    [DIFFICULTY_NORMAL] =
+    [DIFFICULTY_STORY] =
     {
 +        [TRAINER_ANABEL] =
 +        {

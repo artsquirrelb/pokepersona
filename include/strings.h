@@ -266,15 +266,17 @@ extern const u8 gText_SelectorArrow3[];
 extern const u8 gText_YesNo[];
 
 // main menu/birch speech text
-extern const u8 gText_Birch_Welcome[];
-extern const u8 gText_ThisIsAPokemon[];
-extern const u8 gText_Birch_MainSpeech[];
-extern const u8 gText_Birch_AndYouAre[];
-extern const u8 gText_Birch_BoyOrGirl[];
-extern const u8 gText_Birch_WhatsYourName[];
-extern const u8 gText_Birch_SoItsPlayer[];
-extern const u8 gText_Birch_YourePlayer[];
-extern const u8 gText_Birch_AreYouReady[];
+extern const u8 gText_NewGame_Intro[];
+extern const u8 gText_NewGame_WhichCharacter[];
+extern const u8 gText_NewGame_AkiOrMitsu[];
+extern const u8 gText_NewGame_WhatDifficulty[];
+extern const u8 gText_NewGame_ChoosingCasual[];
+extern const u8 gText_NewGame_ChoosingStory[];
+extern const u8 gText_NewGame_ChoosingMerciless[];
+extern const u8 gText_NewGame_DifficultyInfos[];
+extern const u8 gText_NewGame_SoItsPlayer[];
+
+extern const u8 gText_NewGame_Outro[];
 extern const u8 gText_AM[];
 extern const u8 gText_PM[];
 extern const u8 gText_BirchInTrouble[];

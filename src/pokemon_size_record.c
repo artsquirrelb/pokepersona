@@ -175,19 +175,19 @@ static void GetMonSizeRecordInfo(u16 species, u16 *sizeRecord)
 
 void InitSeedotSizeRecord(void)
 {
-    VarSet(VAR_SEEDOT_SIZE_RECORD, DEFAULT_MAX_SIZE);
+    VarSet(VAR_DIFFICULTY, DEFAULT_MAX_SIZE);
 }
 
 void GetSeedotSizeRecordInfo(void)
 {
-    u16 *sizeRecord = GetVarPointer(VAR_SEEDOT_SIZE_RECORD);
+    u16 *sizeRecord = GetVarPointer(VAR_DIFFICULTY);
 
     GetMonSizeRecordInfo(SPECIES_SEEDOT, sizeRecord);
 }
 
 void CompareSeedotSize(void)
 {
-    u16 *sizeRecord = GetVarPointer(VAR_SEEDOT_SIZE_RECORD);
+    u16 *sizeRecord = GetVarPointer(VAR_DIFFICULTY);
 
     gSpecialVar_Result = CompareMonSize(SPECIES_SEEDOT, sizeRecord);
 }

@@ -58,14 +58,14 @@ static bool32 IsSlideInitalizedOrPlayed(enum BattlerId battler, enum TrainerSlid
 // Partner trainers must be added as TRAINER_PARTNER(PARTNER_XXXX)
 static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINER_PARTNER(PARTNER_COUNT)][TRAINER_SLIDE_COUNT] =
 {
-    [DIFFICULTY_NORMAL] =
+    [DIFFICULTY_STORY] =
     {
     },
 };
 
 static const u8* const sFrontierTrainerSlides[DIFFICULTY_COUNT][FRONTIER_TRAINERS_COUNT][TRAINER_SLIDE_COUNT] =
 {
-    [DIFFICULTY_NORMAL] =
+    [DIFFICULTY_STORY] =
     {
     },
 };
@@ -147,7 +147,7 @@ static const u8* const *GetTrainerSlideArray(enum DifficultyLevel difficulty, u3
 static bool32 DoesTrainerHaveSlideMessage(enum DifficultyLevel difficulty, u32 trainerId, u32 slideId)
 {
     const u8* const *trainerSlides = GetTrainerSlideArray(difficulty, trainerId, slideId);
-    const u8* const *trainerSlidesNormal = GetTrainerSlideArray(DIFFICULTY_NORMAL, trainerId, slideId);
+    const u8* const *trainerSlidesNormal = GetTrainerSlideArray(DIFFICULTY_STORY, trainerId, slideId);
 
 #if TESTING
     if (VarGet(TESTING_VAR_TRAINER_SLIDES) == slideId)
@@ -172,7 +172,7 @@ static bool32 DoesTrainerHaveSlideMessage(enum DifficultyLevel difficulty, u32 t
 void SetTrainerSlideMessage(enum DifficultyLevel difficulty, u32 trainerId, u32 slideId)
 {
     const u8* const *trainerSlides = GetTrainerSlideArray(difficulty, trainerId, slideId);
-    const u8* const *trainerSlidesNormal = GetTrainerSlideArray(DIFFICULTY_NORMAL, trainerId, slideId);
+    const u8* const *trainerSlidesNormal = GetTrainerSlideArray(DIFFICULTY_STORY, trainerId, slideId);
 
     if (trainerSlides[slideId] != NULL)
         gBattleStruct->trainerSlideMsg = trainerSlides[slideId];

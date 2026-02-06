@@ -1,0 +1,63 @@
+
+
+text gText_NewGame_Intro{
+    format("This game is a project of passion and is completely free.\p
+	If you paid for this game, you have been scammed.\p
+	The prologue quest, starter Pokémon and starting location is different based on
+    your chosen main character.\p
+	You can choose to experience the other's prologue quest later as you proceed.{PAUSE_UNTIL_PRESS}$")
+}
+
+text gText_NewGame_WhichCharacter{
+    format("So which character do you want to play as?{PAUSE_UNTIL_PRESS}$")
+}
+
+text gText_NewGame_AkiOrMitsu{
+	"Akihiko or Mitsuru?"
+}
+
+text gText_NewGame_SoItsPlayer{
+	 "So it's {PLAYER}?"
+}
+
+text gText_NewGame_WhatDifficulty{
+	format("What difficulty would you like to play with?")
+}
+
+text gText_NewGame_ChoosingCasual{
+    format("Confirm choosing {COLOR RED}Casual {COLOR 2}mode?\n
+    {COLOR 7}You will not be able to choose a higher difficulty later.")
+}
+
+text gText_NewGame_ChoosingStory{
+    format("Confirm choosing {COLOR RED}Story {COLOR 2}mode?\n
+    {COLOR 7}You will be able to choose a different difficulty later,
+    {COLOR RED}except for Merciless mode.")
+}
+text gText_NewGame_ChoosingMerciless{
+    format("Confirm choosing {COLOR RED}Merciless {COLOR 2}mode?\n
+    {COLOR 7}You will be able to choose a lower difficulty later.")
+}
+
+text gText_NewGame_DifficultyInfos{
+    format("In {COLOR 7}Casual Mode{COLOR 2}, you can expect the game's
+    difficulty to be on par with official games'.\p
+    A story starter can be put into any protagonist's team.\p
+    Recommended for new and/or players that just want to enjoy the story.\p
+    In {COLOR 7}Story Mode{COLOR 2}, the battle will be a bit more challenging
+    than those in official games, with key battles having proper strategy.\p
+    A story starter can only be put into its respective protagonist's team
+    to stay true to the story.\p
+    Recommended for players with experience in battle.\p
+    In {COLOR 7}Merciless Mode{COLOR 2}, your team will always be at a
+    lower level than the opponents'.\p
+    Your protagonist's story starter cannot be deposited nor released.\p
+    The money reward will also be reduced.\p
+    Not recommended for your first time playing this game.")
+}
+
+text gText_NewGame_Outro{
+    format("Great! If you have any question, feel free to contact me on SNS.\p
+    Documents for this game can be found at (place holder).\p
+	Please enjoy :D.")
+}

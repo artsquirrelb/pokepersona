@@ -176,12 +176,11 @@ static void SetDefaultOutfitAccordingToPlayerGender (void)
     }
 }
 static void WarpToTruck(void)
-{   
+{
     if (gSaveBlock2Ptr->playerGender == MALE)
-        SetWarpDestination(MAP_GROUP(MAP_SUNSHINE_ORPHANAGE), MAP_NUM(MAP_SUNSHINE_ORPHANAGE), WARP_ID_NONE, 13, 18);
+        SetWarpDestination(MAP_GROUP(MAP_BLANK_MAP), MAP_NUM(MAP_BLANK_MAP), WARP_ID_NONE, 0, 0);
     else
-        SetWarpDestination(MAP_GROUP(MAP_MANSIONS_GARDEN), MAP_NUM(MAP_MANSIONS_GARDEN), WARP_ID_NONE, 43, 27);
-        
+        SetWarpDestination(MAP_GROUP(MAP_BLANK_MAP), MAP_NUM(MAP_BLANK_MAP), WARP_ID_NONE, 0, 0);
     WarpIntoMap();
 }
 
@@ -240,8 +239,8 @@ void NewGameInitData(void)
     ResetGameStats();
     ClearAllContestWinnerPics();
     ClearPlayerLinkBattleRecords();
-    InitSeedotSizeRecord();
-    InitLotadSizeRecord();
+    //InitSeedotSizeRecord();
+    //InitLotadSizeRecord();
     gPlayerPartyCount = 0;
     ZeroPlayerPartyMons();
     ResetPokemonStorageSystem();
@@ -258,8 +257,6 @@ void NewGameInitData(void)
     //InitDewfordTrend();
     //ResetFanClub();
     ResetLotteryCorner();
-    WarpToTruck();
-    RunScriptImmediately(EventScript_ResetAllMapFlags);
     ResetMiniGamesRecords();
     //InitUnionRoomChatRegisteredTexts();
     //InitLilycoveLady();
@@ -272,12 +269,14 @@ void NewGameInitData(void)
     //ResetContestLinkResults();
     gSaveBlock3Ptr->followerIndex = OW_FOLLOWER_NOT_SET;
     QuestMenu_ResetMenuSaveData();
-    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+    //SetCurrentDifficultyLevel(DIFFICULTY_STORY);
     ResetItemFlags();
     ResetOutfitData();
     SetDefaultOutfitAccordingToPlayerGender();
     ResetDexNav();
     ClearFollowerNPCData();
+    WarpToTruck();
+    RunScriptImmediately(EventScript_ResetAllMapFlags);
 }
 
 static void ResetMiniGamesRecords(void)

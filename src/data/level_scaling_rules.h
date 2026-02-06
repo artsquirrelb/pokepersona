@@ -124,7 +124,7 @@ const struct LevelScalingConfig gTrainerLevelScalingRules[TRAINERS_COUNT] =
         .minLevel = 8,
     },
 
-    [TRAINER_NORBERT_THUNDERSHARDS_CAVE_2F_EXTERIOR] = {
+    [TRAINER_NORBERT_THUNDERSHARDS_EXTERIOR] = {
         .mode = LEVEL_SCALING_PARTY_HIGHEST,
         .minLevel = 8,
     }

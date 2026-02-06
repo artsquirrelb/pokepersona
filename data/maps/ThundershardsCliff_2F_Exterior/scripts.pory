@@ -93,7 +93,7 @@ script ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave {
     closemessage
     playbgm(MUS_P5_MENTAL_BREAKDOWN, FALSE)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
-    trainerbattle_no_intro(TRAINER_NORBERT_THUNDERSHARDS_CAVE_2F_EXTERIOR, KGScientist_Defeated)
+    trainerbattle_no_intro(TRAINER_NORBERT_THUNDERSHARDS_EXTERIOR, KGScientist_Defeated)
     goto(ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat)
 }
 

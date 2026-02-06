@@ -463,8 +463,6 @@ void BtlController_HandleSwitchInTryShinyAnim(enum BattlerId battler);
 void BtlController_HandleSwitchInSoundAndEnd(enum BattlerId battler);
 void BtlController_HandleSwitchInShowSubstitute(enum BattlerId battler);
 
-// Battle Speed Up (Credit to Pokabbie)
-u32 Rogue_GetBattleSpeedScale(bool32 forHealthbar);
 bool32 ShouldBattleRestrictionsApply(enum BattlerId battler);
 void FreeShinyStars(void);
 enum BattleTrainer GetBattlerTrainer(enum BattlerId battler);

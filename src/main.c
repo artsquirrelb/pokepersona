@@ -22,6 +22,7 @@
 #include "text.h"
 #include "intro.h"
 #include "main.h"
+#include "speedup.h"
 #include "trainer_hill.h"
 #include "test_runner.h"
 #include "constants/rgb.h"
@@ -114,7 +115,7 @@ void AgbMain(void)
     ResetBgs();
     SetDefaultFontsPointer();
     InitHeap(gHeap, HEAP_SIZE);
-    gMain.nativeSpeedUpActive = FALSE;
+
     gSoftResetDisabled = FALSE;
 
     if (gFlashMemoryPresent != TRUE)
@@ -148,30 +149,18 @@ void AgbMainLoop(void)
             DoSoftReset();
         }
 
-        if (Overworld_SendKeysToLinkIsRunning() == TRUE)
-        {
-            gLinkTransferringData = TRUE;
-            UpdateLinkAndCallCallbacks();
-            gLinkTransferringData = FALSE;
-        }
-        else
+        if (!SpeedupIsPaused())
         {
             gLinkTransferringData = FALSE;
             UpdateLinkAndCallCallbacks();
-
-            if (Overworld_RecvKeysFromLinkIsRunning() == TRUE)
-            {
-                gMain.newKeys = 0;
-                ClearSpriteCopyRequests();
-                gLinkTransferringData = TRUE;
-                UpdateLinkAndCallCallbacks();
-                gLinkTransferringData = FALSE;
-            }
         }
 
         PlayTimeCounter_Update();
         MapMusicMain();
-        WaitForVBlank();
+        // CheckSpeedupControls();
+
+        if (!SpeedupShouldSkip())
+            WaitForVBlank();
     }
 }
 

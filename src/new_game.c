@@ -31,6 +31,7 @@
 #include "frontier_util.h"
 #include "pokedex.h"
 #include "save.h"
+#include "speedup.h"
 #include "link_rfu.h"
 #include "main.h"
 #include "contest.h"

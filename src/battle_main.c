@@ -51,6 +51,7 @@
 #include "scanline_effect.h"
 #include "script.h"
 #include "sound.h"
+#include "speedup.h"
 #include "sprite.h"
 #include "string_util.h"
 #include "strings.h"
@@ -1734,69 +1735,11 @@ static void CB2_HandleStartMultiBattle(void)
 
 void BattleMainCB2(void)
 {
-    u32 speedScale = Rogue_GetBattleSpeedScale(FALSE);
-    gMain.nativeSpeedUpActive = FALSE;
-    // If we are processing a palette fade we need to temporarily fall back to 1x speed otherwise there is graphical corruption
-    if(PrevPaletteFadeResult() == PALETTE_FADE_STATUS_LOADING)
-        speedScale = 1;
-
-    if (gBattleResults.caughtMonSpecies)
-        speedScale = 1;
-
-    if(speedScale <= 1)
-    {
-        // Maintain OG order for compat
-        AnimateSprites();
-        BuildOamBuffer();
-        RunTextPrinters();
-        UpdatePaletteFade();
-        RunTasks();
-    }
-    else
-    {
-        /*u32 s;
-        u32 fadeResult;*/
-        u8 s;
-        u32 fadeResult = PALETTE_FADE_STATUS_DONE;
-        gMain.nativeSpeedUpActive = TRUE;
-
-        // Update select entries at higher speed
-        // disable speed up during palette fades otherwise we run into issues with blending
-        //(e.g. moves that change background like Psychic can get stuck or have their colours overflow)
-        for(s = 1; s < speedScale; ++s)
-        {
-            AnimateSprites();
-            RunTextPrinters();
-            fadeResult = UpdatePaletteFade();
-
-            if(fadeResult == PALETTE_FADE_STATUS_LOADING)
-            {
-                // minimal final update as we've just started a fade
-                BuildOamBuffer();
-                RunTasks();
-                break;
-            }
-            else
-            {
-                RunTasks();
-                VBlankCB_Battle();
-
-                // Call it again to make sure everything is behaving as it should (this is crazy town now)
-                if (gMain.callback1)
-                    gMain.callback1();
-            }
-        }
-        gMain.nativeSpeedUpActive = FALSE;
-        if (fadeResult != PALETTE_FADE_STATUS_LOADING)
-        {
-            // final update
-            AnimateSprites();
-            BuildOamBuffer();
-            RunTextPrinters();
-            UpdatePaletteFade();
-            RunTasks();
-        }
-    }
+    AnimateSprites();
+    BuildOamBuffer();
+    RunTextPrinters();
+    UpdatePaletteFade();
+    RunTasks();
 
     if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
     {
@@ -3050,16 +2993,6 @@ void BeginBattleIntro(void)
     gBattleCommunication[1] = 0;
     gBattleStruct->eventState.battleIntro = 0;
     gBattleMainFunc = DoBattleIntro;
-}
-
-bool32 InBattleChoosingMoves()
-{
-    return gBattleMainFunc == HandleTurnActionSelectionState;
-}
-
-bool32 InBattleRunningActions()
-{
-    return gBattleMainFunc == RunTurnActionsFunctions;
 }
 
 static void BattleMainCB1(void)
@@ -5557,6 +5490,7 @@ static void HandleEndTurn_MonFled(void)
 
 static void HandleEndTurn_FinishBattle(void)
 {
+    StopSpeedup();
     if (gCurrentActionFuncId == B_ACTION_TRY_FINISH || gCurrentActionFuncId == B_ACTION_FINISHED)
     {
         if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK

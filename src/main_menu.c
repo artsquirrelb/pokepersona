@@ -409,7 +409,7 @@ static const struct WindowTemplate sNewGameBirchSpeechTextWindows[] =
         .tilemapTop = 5,
         .width = 6,
         .height = 4,
-        .paletteNum = 14,
+        .paletteNum = 2,
         .baseBlock = 0x6D
     },
     {

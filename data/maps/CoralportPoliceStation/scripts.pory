@@ -48,11 +48,11 @@ script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
     msgbox(format("When was the last time you saw her?"))
     applymovement(5, walkinplaceup)
     setspeaker("Ikumi")
-    msgbox(format("Since this morning! I woke up and she was already not in the house!\p
+    msgbox(format("This morning! I woke up and she wasn't in the house!\p
     I've been searching for her everywhere!"))
     applymovement(5, moves(walk_fast_right*2, walk_faster_left*2, walk_fast_right*2, walk_faster_left*2, walk_fast_right*2, walk_faster_left*2))
     setspeaker("Ikumi")
-    message(format("Oh what do I do........{PAUSE 60}"))
+    message(format("Oh, what do I do........{PAUSE 60}"))
     waitmovement(5)
     lock
     setobjectnewmovementtype(5, MOVEMENT_TYPE_RUN_IN_PLACE_LEFT)
@@ -63,9 +63,9 @@ script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
     msgbox(format("Please calm down, sir."))
     applymovement(5, faceup)
     setspeaker("Namake")
-    msgbox(format("It's still relatively recent that you last saw her and she could be playing around here somewhere.\p
+    msgbox(format("It's still relatively recent when you last saw her and she could be playing around here somewhere.\p
     We're currently short-handed due to the recent incident at Sunshine Orphanage.\p
-    I also can't really leave my post unless it's emergency.\p
+    I also can't really leave my post unless it's an emergency.\p
     However, I can lend you my Growlithe. It has a great sense of smell.\p
     Do you have something that it can sniff?\l
     Recently worn clothes of your daughter, for example."))
@@ -91,7 +91,7 @@ script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}...{PAUSE 40}
     {CREATE MUGSHOT_A EMOTE_NORMAL}Uh- yeah?\p
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}If you want to ask about Miki, go ask.\p
-    If you want to help that man, go help him.\p Stop standing there and mopping around.\p
+    If you want to help that man, go help him.\p Stop standing there moping around.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}R-right."))
     closemessage
     applymovement(LOCALID_PLAYER, moves(walk_left, face_up, set_visible))
@@ -132,8 +132,8 @@ script CoralportPoliceStation_Eventscript_PolicemanReceptionist {
         applymovement(1, emoteexclamation)
         waitmovement
         setspeaker("Namake")
-        msgbox(format("Oh! You're that kind trainer who volunteered to help the investigation of Nebe-san's stolen mining collection case.\p
-        To be honest, the Coralport Police Station is currently heavily short-handed so we'd like to express our biggest gratitude.\p
+        msgbox(format("Oh! You're that kind trainer who volunteered to help the investigation of Nebe-san's stolen mining collection.\p
+        To be honest, the Coralport Police Station is currently short-handed, so we'd like to express our biggest gratitude.\p
         If you want to know further about the case, please kindly check the Information Board on your left."))
         closemessage
         setvar(VAR_QUEST_FIND_MINING_KIT_STATE, 2)
@@ -172,8 +172,8 @@ script CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki {
     msgbox(format("{DESTROY_MUGSHOT}Oh, you're her brother, I guess.\p
     We're extremely sorry but we still haven't found anything new about her,
     nor the reason for which the explosion happened.\p
-    We've been looking high and low but we still find no traces of her nor her body.\p
-    The investigation is still on-going so there's not much I can say further.\p
+    We've been looking high and low but we still haven't found any traces of her or her body.\p
+    The investigation is still on-going so there's not much more I can say.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}I see..... Thanks."))
     closemessage
     applymovement(A_CORALP, walkdown)
@@ -222,8 +222,8 @@ script CoralportPoliceStation_Eventscript_PolicemanEast {
     lock
     faceplayer
     setspeaker("Utaro")
-    msgbox(format("Almost everyone in the station have left to investigate the explosion case of Sunshine Orphanage.\p
-    Now all of these desk works are passed onto me... {PAUSE 40} Sigh...\p
+    msgbox(format("Almost everyone in the station has left to investigate the explosion at Sunshine Orphanage.\p
+    Now all of this desk work is passed onto me... {PAUSE 40} Sigh...\p
     Not gonna lie, I prefer field work."))
     closemessage
     playse(SE_PIN)
@@ -237,7 +237,7 @@ script CoralportPoliceStation_Eventscript_Woman {
     lock
     faceplayer
     setspeaker("Miku")
-    msgbox(format("I'm waiting for my registration paper to be processed.{PAUSE_UNTIL_PRESS}
+    msgbox(format("I'm waiting for my registration papers to be processed.{PAUSE_UNTIL_PRESS}
     It's taking so long..."))
     closemessage
     release
@@ -274,7 +274,7 @@ script CoralportPoliceStation_Eventscript_QuestBoard_1 {
 }
 
 script CoralportPoliceStation_Eventscript_QuestBoard_1_QUEST_FIND_MINING_KIT_Report {
-    msgbox(format("There's no new clue about this case.\p
+    msgbox(format("There's no new clues about this case.\p
     Please come back later (TODO lol)."))
     closemessage
     release

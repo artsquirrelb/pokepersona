@@ -179,7 +179,7 @@ text AlertingWildPokemonGotInside {
     format("Earlier some wild Pokémon got inside the east hall and made a mess.\p
     The matter was resolved but we're still cleaning up.\p
     You may prefer to exit through this west hall right now, Young Lady.\p
-    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see. That explained the noise I heard earlier.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see. That explains the noise I heard earlier.\p
     Thank you for your hard work.")
 }
 

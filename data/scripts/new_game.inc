@@ -270,8 +270,3 @@ EventScript_ResetAllMapFlags::
 	setflag FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT
 	setflag FLAG_HIDE_EVER_GRANDE_POKEMON_CENTER_1F_SCOTT
 	setflag FLAG_HIDE_SKY_PILLAR_WALLACE	
-	@ More set up
-	call EventScript_NewGameSetUp
-	call EventScript_ResetAllBerries
-	
-	

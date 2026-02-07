@@ -23,11 +23,11 @@ enum DifficultyLevel GetTrainerDifficultyLevelTest(u16 trainerId)
 {
     enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
 
-    if (difficulty == DIFFICULTY_NORMAL)
-        return DIFFICULTY_NORMAL;
+    if (difficulty == DIFFICULTY_STORY)
+        return DIFFICULTY_STORY;
 
     if (sTestTrainers[difficulty][trainerId].party == NULL)
-        return DIFFICULTY_NORMAL;
+        return DIFFICULTY_STORY;
 
     return difficulty;
 }
@@ -182,42 +182,42 @@ TEST("Trainer Class Balls apply to the entire party")
 
 TEST("Difficulty default to Normal is the trainer doesn't have a member for the current diffuculty")
 {
-    SetCurrentDifficultyLevel(DIFFICULTY_EASY);
+    SetCurrentDifficultyLevel(DIFFICULTY_STORY);
     struct Pokemon *testParty = Alloc(6 * sizeof(struct Pokemon));
     u32 currTrainer = 1;
     CreateNPCTrainerPartyFromTrainer(testParty, &sTestTrainers[GetTrainerDifficultyLevelTest(currTrainer)][currTrainer], TRUE, BATTLE_TYPE_TRAINER);
     EXPECT(GetMonData(&testParty[0], MON_DATA_SPECIES) == SPECIES_MEWTWO);
     Free(testParty);
-    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+    SetCurrentDifficultyLevel(DIFFICULTY_STORY);
 }
 
 TEST("Difficulty changes which party if used for NPCs if defined for the difficulty (EASY)")
 {
-    SetCurrentDifficultyLevel(DIFFICULTY_EASY);
+    SetCurrentDifficultyLevel(DIFFICULTY_STORY);
     struct Pokemon *testParty = Alloc(6 * sizeof(struct Pokemon));
     u32 currTrainer = 2;
     CreateNPCTrainerPartyFromTrainer(testParty, &sTestTrainers[GetTrainerDifficultyLevelTest(currTrainer)][currTrainer], TRUE, BATTLE_TYPE_TRAINER);
     EXPECT(GetMonData(&testParty[0], MON_DATA_SPECIES) == SPECIES_METAPOD);
     EXPECT(GetMonData(&testParty[0], MON_DATA_LEVEL) == 1);
     Free(testParty);
-    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+    SetCurrentDifficultyLevel(DIFFICULTY_STORY);
 }
 
 TEST("Difficulty changes which party if used for NPCs if defined for the difficulty (HARD)")
 {
-    SetCurrentDifficultyLevel(DIFFICULTY_HARD);
+    SetCurrentDifficultyLevel(DIFFICULTY_MERCILESS);
     struct Pokemon *testParty = Alloc(6 * sizeof(struct Pokemon));
     u32 currTrainer = 2;
     CreateNPCTrainerPartyFromTrainer(testParty, &sTestTrainers[GetTrainerDifficultyLevelTest(currTrainer)][currTrainer], TRUE, BATTLE_TYPE_TRAINER);
     EXPECT(GetMonData(&testParty[0], MON_DATA_SPECIES) == SPECIES_ARCEUS);
     EXPECT(GetMonData(&testParty[0], MON_DATA_LEVEL) == 99);
     Free(testParty);
-    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+    SetCurrentDifficultyLevel(DIFFICULTY_STORY);
 }
 
 TEST("Difficulty changes which party if used for NPCs if defined for the difficulty (NORMAL)")
 {
-    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
+    SetCurrentDifficultyLevel(DIFFICULTY_STORY);
     struct Pokemon *testParty = Alloc(6 * sizeof(struct Pokemon));
     u32 currTrainer = 2;
     CreateNPCTrainerPartyFromTrainer(testParty, &sTestTrainers[GetTrainerDifficultyLevelTest(currTrainer)][currTrainer], TRUE, BATTLE_TYPE_TRAINER);

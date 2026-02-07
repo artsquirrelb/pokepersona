@@ -1789,7 +1789,7 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
         struct Trainer *trainer = &parsed->trainers[i];
         fprintf(f, "#line %d\n", trainer->id_line);
         if (is_empty_string(trainer->difficulty))
-            trainer->difficulty = literal_string("Normal");
+            trainer->difficulty = literal_string("Story");
         else
             fprintf(f, "#line %d\n", trainer->difficulty_line);
         fprint_constant(f, "    [DIFFICULTY",trainer->difficulty);

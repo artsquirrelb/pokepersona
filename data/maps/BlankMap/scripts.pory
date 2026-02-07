@@ -1,8 +1,10 @@
 mapscripts BlankMap_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_SPAWN_INVISIBLE)
+        setflag(FLAG_HIDE_HELP_BUTTON)
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_AKIHIKOS_INTRO_STATE, 0: Eventscript_NewGameMode
         VAR_AKIHIKOS_INTRO_STATE, 7: SunshineWoods_Eventscript_WarpBackToOrphanage
         VAR_AKIHIKOS_INTRO_STATE, 9: SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom
         VAR_AKIHIKOS_INTRO_STATE, 13: SunshineTown_PokemonCenter_Eventscript_Onframe13
@@ -192,5 +194,82 @@ script Route2_House_Eventscript_MitsuruOnFrame32Warp {
     delay(60)
     msgbox(format("The next morning..."))
     warpsilent(MAP_ROUTE2_HOUSE, 5,5)
+    waitstate
+}
+
+script Eventscript_NewGameMode {
+    msgbox(gText_NewGame_WhatDifficulty)
+    dynmultipush("Casual", 0)
+    dynmultipush("Story", 1)
+    dynmultipush("Merciless", 2)
+    dynmultipush("Infos", 3)
+    dynmultistack(18, 4, TRUE, 4, FALSE, 0, NULL)
+    switch(var(VAR_RESULT))
+    {
+        case 0: goto(Eventscript_ChoosingCasual)
+        case 1: goto(Eventscript_ChoosingStory)
+        case 2: goto(Eventscript_ChoosingMerciless)
+        case 3: goto(Eventscript_ShowInfos)
+    }
+}
+
+script Eventscript_ChoosingCasual {
+    msgbox(gText_NewGame_ChoosingCasual, MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        closemessage
+        setvar(VAR_DIFFICULTY, 0)
+        goto(Eventscript_WarpToMap)
+    }
+    else{
+        goto(Eventscript_NewGameMode)
+    }
+}
+
+script Eventscript_ChoosingStory {
+    msgbox(gText_NewGame_ChoosingStory, MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        closemessage
+        setvar(VAR_DIFFICULTY, 1)
+        goto(Eventscript_WarpToMap)
+    }
+    else{
+        goto(Eventscript_NewGameMode)
+    }
+}
+
+script Eventscript_ChoosingMerciless {
+    msgbox(gText_NewGame_ChoosingMerciless, MSGBOX_YESNO)
+    if (var(VAR_RESULT))
+    {
+        closemessage
+        setvar(VAR_DIFFICULTY, 2)
+        goto(Eventscript_WarpToMap)
+    }
+    else{
+        goto(Eventscript_NewGameMode)
+    }
+}
+
+script Eventscript_ShowInfos {
+    msgbox(gText_NewGame_DifficultyInfos)
+    goto(Eventscript_NewGameMode)
+}
+
+script Eventscript_WarpToMap {
+    msgbox(gText_NewGame_Outro)
+    closemessage
+	call (EventScript_NewGameSetUp)
+	call (EventScript_ResetAllBerries)
+    checkplayergender
+    if (var(VAR_RESULT) == MALE)
+    {
+        warpwhitefade(MAP_SUNSHINE_ORPHANAGE, 13, 18)
+    }
+    else
+    {
+        warpwhitefade(MAP_MANSIONS_GARDEN, 43, 27)
+    }
     waitstate
 }

@@ -258,7 +258,7 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .tilemapTop = 55,
         .width = 8,
         .height = 4,
-        .paletteNum = 0,
+        .paletteNum = 5,
         .baseBlock = 0x02b0,//688
     },
     [B_WIN_YESNO] = {
@@ -267,7 +267,7 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .tilemapTop = 9,
         .width = 3,
         .height = 4,
-        .paletteNum = 0,
+        .paletteNum = 5,
         .baseBlock = 0x0100,//256
     },
     [B_WIN_LEVEL_UP_BOX] = {
@@ -276,7 +276,7 @@ static const struct WindowTemplate sStandardBattleWindowTemplates[] =
         .tilemapTop = 8,
         .width = 10,
         .height = 11,
-        .paletteNum = 0,
+        .paletteNum = 5,
         .baseBlock = 0x0100,
     },
     [B_WIN_LEVEL_UP_BANNER] = {
@@ -718,7 +718,7 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
         .tilemapTop = 55,
         .width = 8,
         .height = 4,
-        .paletteNum = 1,
+        .paletteNum = 5,
         .baseBlock = 0x02b0,
     },
     [B_WIN_YESNO] = {
@@ -727,7 +727,7 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
         .tilemapTop = 9,
         .width = 3,
         .height = 4,
-        .paletteNum = 1,
+        .paletteNum = 5,
         .baseBlock = 0x0100,
     },
     [B_WIN_LEVEL_UP_BOX] = {
@@ -736,7 +736,7 @@ static const struct WindowTemplate sBattleArenaWindowTemplates[] =
         .tilemapTop = 8,
         .width = 10,
         .height = 11,
-        .paletteNum = 1,
+        .paletteNum = 5,
         .baseBlock = 0x0100,
     },
     [B_WIN_LEVEL_UP_BANNER] = {
@@ -953,9 +953,9 @@ void InitBattleBgsVideo(void)
 
 void LoadBattleMenuWindowGfx(void)
 {
-    LoadDarkWindowBorderGfx(2, 0x12, BG_PLTT_ID(1));
-    LoadDarkWindowBorderGfx(2, 0x22, BG_PLTT_ID(1));
-    LoadPalette(gBattleWindowTextPalette, BG_PLTT_ID(5), PLTT_SIZE_4BPP);
+    LoadUserWindowBorderGfx(2, 0x12, BG_PLTT_ID(5));
+    LoadDarkWindowBorderGfx(2, 0x22, BG_PLTT_ID(5));
+    LoadPalette(gBattleWindowTextPalette, BG_PLTT_ID(6), PLTT_SIZE_4BPP);
 
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
     {
@@ -977,7 +977,8 @@ void LoadBattleTextboxAndBackground(void)
     DecompressDataWithHeaderVram(gBattleTextboxTiles, (void *)(BG_CHAR_ADDR(0)));
     CopyToBgTilemapBuffer(0, gBattleTextboxTilemap, 0, 0);
     CopyBgTilemapBufferToVram(0);
-    LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+    //LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), 2 * PLTT_SIZE_4BPP);
+    LoadPalette(gBattleTextboxPalette, BG_PLTT_ID(0), PLTT_SIZE_4BPP);
     LoadBattleMenuWindowGfx();
     if (B_TERRAIN_BG_CHANGE == TRUE)
         DrawTerrainTypeBattleBackground();

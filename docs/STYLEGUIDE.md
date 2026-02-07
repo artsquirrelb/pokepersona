@@ -385,7 +385,7 @@ bool32 CanActivateGimmick(u32 battler, u32 gimmick)
 u32 GetCurrentDifficultyLevel(void)
 {
     if (!B_VAR_DIFFICULTY)
-        return DIFFICULTY_STORY;
+        return DIFFICULTY_NORMAL;
 
     return VarGet(B_VAR_DIFFICULTY);
 }
@@ -402,7 +402,7 @@ bool32 CanActivateGimmick(u32 battler, enum Gimmick gimmick)
 enum DifficultyLevel GetCurrentDifficultyLevel(void)
 {
     if (!B_VAR_DIFFICULTY)
-        return DIFFICULTY_STORY;
+        return DIFFICULTY_NORMAL;
 
     return VarGet(B_VAR_DIFFICULTY);
 }

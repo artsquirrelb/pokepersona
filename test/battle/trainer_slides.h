@@ -1,4 +1,4 @@
-[DIFFICULTY_STORY] =
+[DIFFICULTY_NORMAL] =
 {
     [TRAINER_LEAF] =
     {

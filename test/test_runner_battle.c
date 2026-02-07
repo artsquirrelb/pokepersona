@@ -1770,7 +1770,7 @@ static void TearDownBattle(void)
     // Zero out the parties, data in them could potentially carry over
     ZeroPlayerPartyMons();
     ZeroEnemyPartyMons();
-    SetCurrentDifficultyLevel(DIFFICULTY_STORY);
+    SetCurrentDifficultyLevel(DIFFICULTY_NORMAL);
 
     // Set Battle Controllers to BATTLE_CONTROLLER_NONE
     for (u32 i = 0; i < MAX_BATTLERS_COUNT; i++)

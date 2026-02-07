@@ -175,7 +175,7 @@ ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave::
 # 95 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	setflag FLAG_DONT_TRANSITION_MUSIC
 # 96 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
-	trainerbattle_no_intro TRAINER_NORBERT_THUNDERSHARDS_EXTERIOR, KGScientist_Defeated
+	trainerbattle_no_intro TRAINER_NORBERT_THUNDERSHARDS_CAVE_2F_EXTERIOR, KGScientist_Defeated
 # 97 "data/maps/ThundershardsCliff_2F_Exterior/scripts.pory"
 	goto ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat
 	return

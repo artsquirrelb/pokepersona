@@ -131,7 +131,7 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
         else{
             msgbox("Party full.")}
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}It's already 10:32PM.\p
-    If I don't go now, I won't be arriving at the cliff's foot before midnight."))
+    If I don't go now, I won't arrive at the cliff's foot before midnight."))
     closemessage
     fwdtime(22, 32)
     closemessage
@@ -242,7 +242,7 @@ script Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft {
 
 script Mansion_MitsurusRoom2F_Eventscript_BookshelfRight {
     lock
-    msgbox(format("Various books about human's and Pokémon's biology, geology and genealogy."))
+    msgbox(format("Various books about humans' and Pokémons' biology, geology and genealogy."))
     closemessage
     release
     end
@@ -253,7 +253,7 @@ script Mansion_MitsurusRoom2F_Eventscript_Notebooks {
     msgbox(format("College materials from the previous term.\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Luckily, it's summer break right now.\p
     Otherwise it'd be hard for me to travel.\p
-    Well, I figure I can always request a leave of absence until this matter is sorted out.)"))
+    Well, I suppose I can always request a leave of absence until this matter is sorted out.)"))
     closemessage
     release
     end

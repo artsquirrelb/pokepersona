@@ -203,7 +203,7 @@ script Coralport_Eventscript_SailorOnHarbor {
     lock
     faceplayer
     setspeaker("Chikatake")
-    msgbox(format("We have to move these barrels onto the board before departure.\p
+    msgbox(format("We have to move these barrels on board before departure.\p
     Please excuse us, we're very busy."))
     closemessage
     release
@@ -429,7 +429,7 @@ script Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp 
     waitmovement
     delay(20)
     msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Kirijo.\p
-    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Yes, Sanada-kun?"))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Yes, Sanada?"))
     applymovement(S_CORAL, faceright)
     msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}If you know who's behind the explosion, why didn't you say anything to the police?\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}I'd prefer not to get them involved.\p

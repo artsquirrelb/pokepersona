@@ -200,7 +200,7 @@ script CoralportCave_Eventscript_DusclopsCutscene {
     delay(8)
     applymovement(3, moves(lock_facing_direction, walk_up, unlock_facing_direction))
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Sanada-kun, Aragaki-kun. Back me up.\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Sanada, Aragaki. Back me up.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Gotcha!\p
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}No need to ask!"))
     closemessage

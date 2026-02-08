@@ -97,7 +97,7 @@ script Coralport_NeckbeardsHouse_CheckIfMitsuru {
                 waitmovement
                 setspeaker("Nebe")
                 msgbox(format("Who are you kids?\p
-                Well, sorry but I'm not in the state to be welcoming strangers in my house right now, please kindly see yourselves out."))
+                Well, sorry but I'm not in the state to be welcoming strangers into my house right now, please kindly see yourselves out."))
                 closemessage
                 clearflag(FLAG_HIDE_QUEST_ICON)
                 warp(MAP_CORALPORT, 4)
@@ -151,7 +151,7 @@ script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start {
     delay(30)
     setspeaker("Nebe")
     msgbox(format("Sorry, I'd love to give you a warm welcome but right now I probably should file a report with the police.\p
-    Now please excuse me."))
+    Now, please excuse me."))
     closemessage
     delay(30)
     applymovement(1, moves(walk_left, walk_down))
@@ -171,8 +171,8 @@ script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start {
     applymovement(1, faceright)
     delay(30)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I'm very sorry for your loss.\p
-    I'd love to repay your kindness back then at the cave so is there anything I could do to help?\p
-    A picture of your toolbox or rocks collection perhaps?\p
+    I'd love to repay your kindness back then at the cave, so is there anything I could do to help?\p
+    A picture of your toolbox or rock collection perhaps?\p
     I'm currently traveling through the region so I may happen to come across them."))
     closemessage
     playse(SE_PIN)

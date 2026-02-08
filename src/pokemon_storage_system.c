@@ -45,6 +45,7 @@
 #include "constants/moves.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
+#include "constants/vars.h"
 #include "constants/pokemon_icon.h"
 #include "chooseboxmon.h"
 #include "party_menu.h"
@@ -111,7 +112,9 @@ enum {
     MSG_ITEM_IS_HELD,
     MSG_CHANGED_TO_ITEM,
     MSG_CANT_STORE_MAIL,
-    MSG_CANT_RELEASE_STARTER,
+    MSG_IS_STARTER,
+    MSG_NOT_TRAINER,
+    MSG_CANT_SHIFT
 };
 
 // IDs for how to resolve variables in the above messages
@@ -665,6 +668,17 @@ static void SetMonMarkings(u8);
 static bool8 IsRemovingLastPartyMon(void);
 static bool8 CanPlaceMon(void);
 static bool8 CanShiftMon(void);
+static bool8 IsMovingStoryMon(void);
+static bool8 IsCursorStoryMon(void);
+static bool8 CursorStoryMonMatchTrainer (void);
+static bool8 MovingStoryMonMatchTrainer (void);
+static bool8 CanShiftStoryMon(void);
+static bool8 CanWithdrawStoryMon(void);
+static bool8 CanStoreStoryMon(void);
+static bool8 CanDepositStoryMon(void);
+static bool8 CanPlaceStoryMon(void);
+static bool8 CanReleaseStoryMon(void);
+
 static bool8 IsMonBeingMoved(void);
 static void TryRefreshDisplayMon(void);
 static void ReshowDisplayMon(void);
@@ -1084,7 +1098,9 @@ static const struct StorageMessage sMessages[] =
     [MSG_ITEM_IS_HELD]         = {COMPOUND_STRING("{DYNAMIC 0} is now held."),   MSG_VAR_ITEM_NAME},
     [MSG_CHANGED_TO_ITEM]      = {COMPOUND_STRING("Changed to {DYNAMIC 0}."),    MSG_VAR_ITEM_NAME},
     [MSG_CANT_STORE_MAIL]      = {COMPOUND_STRING("Mail can't be stored!"),      MSG_VAR_NONE},
-    [MSG_CANT_RELEASE_STARTER] = {COMPOUND_STRING("That's your starter!"),  MSG_VAR_NONE},
+    [MSG_IS_STARTER]           = {COMPOUND_STRING("That's a story starter!"),       MSG_VAR_NONE},
+    [MSG_NOT_TRAINER]          = {COMPOUND_STRING("You aren't its trainer!"),    MSG_VAR_NONE},
+    [MSG_CANT_SHIFT]           = {COMPOUND_STRING("Can't shift with a starter!"),    MSG_VAR_NONE},
 };                                                       
 
 static const struct WindowTemplate sYesNoWindowTemplate =
@@ -2250,6 +2266,9 @@ enum {
     MSTATE_MULTIMOVE_RUN_MOVED,
     MSTATE_SCROLL_BOX_ITEM,
     MSTATE_WAIT_ITEM_ANIM,
+    MSTATE_ERROR_NOT_MON_TRAINER,
+    MSTATE_ERROR_IS_STORY_STARTER,
+    MSTATE_ERROR_CANT_SHIFT_MON,
 };
 
 static void Task_PokeStorageMain(u8 taskId)
@@ -2334,7 +2353,11 @@ static void Task_PokeStorageMain(u8 taskId)
             }
             break;
         case INPUT_DEPOSIT:
-            if (!IsRemovingLastPartyMon())
+            if (!CanDepositStoryMon())
+            {
+                sStorage->state = MSTATE_ERROR_IS_STORY_STARTER;
+            }
+            else if (!IsRemovingLastPartyMon())
             {
                 if (ItemIsMail(sStorage->displayMonItemId))
                 {
@@ -2367,6 +2390,10 @@ static void Task_PokeStorageMain(u8 taskId)
             {
                 sStorage->state = MSTATE_ERROR_LAST_PARTY_MON;
             }
+            else if (!CanShiftStoryMon())
+            {
+                sStorage->state = MSTATE_ERROR_CANT_SHIFT_MON;
+            }
             else
             {
                 PlaySE(SE_SELECT);
@@ -2374,12 +2401,30 @@ static void Task_PokeStorageMain(u8 taskId)
             }
             break;
         case INPUT_WITHDRAW:
-            PlaySE(SE_SELECT);
-            SetPokeStorageTask(Task_WithdrawMon);
+            if (!CanWithdrawStoryMon())
+            {
+                sStorage->state = MSTATE_ERROR_NOT_MON_TRAINER;
+            }
+            else
+            {
+                PlaySE(SE_SELECT);
+                SetPokeStorageTask(Task_WithdrawMon);
+            }
             break;
         case INPUT_PLACE_MON:
-            PlaySE(SE_SELECT);
+            if (!CanPlaceStoryMon() && sCursorArea != CURSOR_AREA_IN_PARTY)
+            {
+                sStorage->state = MSTATE_ERROR_IS_STORY_STARTER;
+            }
+            else if (!CanPlaceStoryMon() && sCursorArea == CURSOR_AREA_IN_PARTY)
+            {
+                sStorage->state = MSTATE_ERROR_NOT_MON_TRAINER;
+            }
+            else
+            {
+                PlaySE(SE_SELECT);
             SetPokeStorageTask(Task_PlaceMon);
+            }
             break;
         case INPUT_TAKE_ITEM:
             PlaySE(SE_SELECT);
@@ -2468,6 +2513,21 @@ static void Task_PokeStorageMain(u8 taskId)
             ClearBottomWindow();
             sStorage->state = MSTATE_HANDLE_INPUT;
         }
+        break;
+    case MSTATE_ERROR_CANT_SHIFT_MON:
+        PlaySE(SE_FAILURE);
+        PrintMessage(MSG_CANT_SHIFT);
+        sStorage->state = MSTATE_WAIT_ERROR_MSG;
+        break;
+    case MSTATE_ERROR_NOT_MON_TRAINER:
+        PlaySE(SE_FAILURE);
+        PrintMessage(MSG_NOT_TRAINER);
+        sStorage->state = MSTATE_WAIT_ERROR_MSG;
+        break;
+    case MSTATE_ERROR_IS_STORY_STARTER:
+        PlaySE(SE_FAILURE);
+        PrintMessage(MSG_IS_STARTER);
+        sStorage->state = MSTATE_WAIT_ERROR_MSG;
         break;
     case MSTATE_ERROR_LAST_PARTY_MON:
         PlaySE(SE_FAILURE);
@@ -2606,14 +2666,29 @@ static void Task_OnSelectedMon(u8 taskId)
             }
             break;
         case MENU_PLACE:
-            PlaySE(SE_SELECT);
-            ClearBottomWindow();
-            SetPokeStorageTask(Task_PlaceMon);
+            if (!CanPlaceStoryMon() && sCursorArea != CURSOR_AREA_IN_PARTY)
+            {
+                sStorage->state = 7;
+            }
+            else if (!CanPlaceStoryMon() && sCursorArea == CURSOR_AREA_IN_PARTY)
+            {
+                sStorage->state = 8;
+            }
+            else
+            {
+                PlaySE(SE_SELECT);
+                ClearBottomWindow();
+                SetPokeStorageTask(Task_PlaceMon);
+            }
             break;
         case MENU_SHIFT:
             if (!CanShiftMon())
             {
                 sStorage->state = 3;
+            }
+            else if (!CanShiftStoryMon())
+            {
+                sStorage->state = 9;
             }
             else
             {
@@ -2623,12 +2698,22 @@ static void Task_OnSelectedMon(u8 taskId)
             }
             break;
         case MENU_WITHDRAW:
-            PlaySE(SE_SELECT);
-            ClearBottomWindow();
-            SetPokeStorageTask(Task_WithdrawMon);
+            if (!CanWithdrawStoryMon())
+            {
+                sStorage->state = 8;
+            }
+            else{
+                PlaySE(SE_SELECT);
+                ClearBottomWindow();
+                SetPokeStorageTask(Task_WithdrawMon);
+            }
             break;
         case MENU_STORE:
-            if (IsRemovingLastPartyMon())
+            if (!CanStoreStoryMon())
+            {
+                sStorage->state = 7;
+            }
+            else if (IsRemovingLastPartyMon())
             {
                 sStorage->state = 3;
             }
@@ -2652,7 +2737,7 @@ static void Task_OnSelectedMon(u8 taskId)
             {
                 sStorage->state = 5; // Cannot release an Egg.
             }
-            else if (sStorage ->displayMonIsStoryStarter)
+            else if (!CanReleaseStoryMon())
             {
                 sStorage->state = 7;
             }
@@ -2735,7 +2820,17 @@ static void Task_OnSelectedMon(u8 taskId)
         break;
     case 7:
         PlaySE(SE_FAILURE);
-        PrintMessage(MSG_CANT_RELEASE_STARTER);
+        PrintMessage(MSG_IS_STARTER);
+        sStorage->state = 6;
+        break;
+    case 8:
+        PlaySE(SE_FAILURE);
+        PrintMessage(MSG_NOT_TRAINER);
+        sStorage->state = 6;
+        break;
+    case 9:
+        PlaySE(SE_FAILURE);
+        PrintMessage(MSG_CANT_SHIFT);
         sStorage->state = 6;
         break;
     case 6:
@@ -3712,6 +3807,18 @@ static void Task_OnBPressed(u8 taskId)
             {
                 PlaySE(SE_FAILURE);
                 PrintMessage(MSG_HOLDING_POKE);
+                sStorage->state = 1;
+            }
+            else if (!CanPlaceStoryMon() && sCursorArea != CURSOR_AREA_IN_PARTY)
+            {
+                PlaySE(SE_FAILURE);
+                PrintMessage(MSG_IS_STARTER);
+                sStorage->state = 1;
+            }
+            else if (!CanPlaceStoryMon() && sCursorArea == CURSOR_AREA_IN_PARTY)
+            {
+                PlaySE(SE_FAILURE);
+                PrintMessage(MSG_NOT_TRAINER);
                 sStorage->state = 1;
             }
             else if (CanPlaceMon())
@@ -6932,6 +7039,186 @@ static bool8 CanShiftMon(void)
         return TRUE;
     }
     return FALSE;
+}
+
+static bool8 IsMovingStoryMon(void)
+{
+    return GetMonData(&sStorage->movingMon, MON_DATA_IS_STORY_STARTER);
+}
+
+static bool8 IsCursorStoryMon(void)
+{
+    switch (sCursorArea)
+    {
+        case CURSOR_AREA_IN_PARTY:
+            return GetMonData(&gPlayerParty[sCursorPosition], MON_DATA_IS_STORY_STARTER);
+        case CURSOR_AREA_IN_BOX:
+            return GetCurrentBoxMonData(sCursorPosition, MON_DATA_IS_STORY_STARTER);
+        default:
+            return 0;
+    }     
+}
+
+static bool8 CursorStoryMonMatchTrainer (void)
+{
+    u16 species = GetSpeciesAtCursorPosition();
+
+    if (  (species == SPECIES_PAWMI_DELTA
+    || species == SPECIES_PAWMO_DELTA
+    || species == SPECIES_PAWMOT_DELTA)
+    && gSaveBlock2Ptr->playerGender == MALE)
+        return TRUE;
+
+    else if (  (species == SPECIES_VULPIX_DELTA
+    || species == SPECIES_NINETALES_DELTA)
+    && gSaveBlock2Ptr->playerGender == FEMALE)
+        return TRUE;
+
+    else
+        return FALSE;
+}
+
+static bool8 MovingStoryMonMatchTrainer (void)
+{
+    u16 movingspecies = GetMonData(&sStorage->movingMon, MON_DATA_SPECIES);
+    if (  (  movingspecies == SPECIES_PAWMI_DELTA
+            ||  movingspecies == SPECIES_PAWMO_DELTA
+            || movingspecies == SPECIES_PAWMOT_DELTA)
+            && gSaveBlock2Ptr->playerGender == MALE )
+        return TRUE;
+    else if (  (  movingspecies == SPECIES_VULPIX_DELTA
+            ||  movingspecies == SPECIES_NINETALES_DELTA)
+            && gSaveBlock2Ptr->playerGender == FEMALE )
+        return TRUE;
+    else
+        return FALSE;
+}
+
+static bool8 CanShiftStoryMon(void)
+{
+    //shift menu only appears when sIsMonBeingMoved true
+    u8 difficulty = VarGet(VAR_DIFFICULTY);
+
+    if (difficulty == DIFFICULTY_CASUAL)
+        return TRUE;
+    else if (difficulty == DIFFICULTY_STORY)
+    {
+        if (sCursorArea != CURSOR_AREA_IN_PARTY)
+            return TRUE;
+        else
+        {
+            if (IsMovingStoryMon() && !MovingStoryMonMatchTrainer())
+                return FALSE;
+            else
+                return TRUE;
+        }
+    }
+    else
+    {
+        if (sCursorArea == CURSOR_AREA_IN_PARTY)
+        {
+            if (IsMovingStoryMon() && !MovingStoryMonMatchTrainer())
+                return FALSE;
+            else
+                return TRUE;
+        }
+        else
+        {
+            if (IsMovingStoryMon())
+                return FALSE;
+            else
+                return TRUE;
+        }
+    }
+}
+
+static bool8 CanWithdrawStoryMon(void)
+{
+    u8 difficulty = VarGet(VAR_DIFFICULTY);
+    if (difficulty == DIFFICULTY_CASUAL)
+        return TRUE;
+    else
+    {
+        if (sIsMonBeingMoved)
+        {
+            if (IsMovingStoryMon() && !MovingStoryMonMatchTrainer())
+                return FALSE;
+            else
+                return TRUE;
+        }
+        else
+        {
+            if (IsCursorStoryMon() && !CursorStoryMonMatchTrainer())
+                return FALSE;
+            else
+                return TRUE;
+        }
+    }
+}
+
+static bool8 CanStoreStoryMon(void)
+{
+    if (VarGet(VAR_DIFFICULTY) != DIFFICULTY_MERCILESS)
+        return TRUE;
+    else
+    {
+        if (IsMovingStoryMon() || IsCursorStoryMon())
+            return FALSE;
+        else
+            return TRUE;
+    }
+}
+
+static bool8 CanDepositStoryMon(void)
+{
+    if (VarGet(VAR_DIFFICULTY) != DIFFICULTY_MERCILESS)
+        return TRUE;
+    else
+    {
+        if (IsCursorStoryMon())
+            return FALSE;
+        else
+            return TRUE;
+    }
+}
+
+static bool8 CanPlaceStoryMon(void)
+{
+    u8 difficulty = VarGet(VAR_DIFFICULTY);
+    if (difficulty == DIFFICULTY_CASUAL)
+        return TRUE;
+    else if (difficulty == DIFFICULTY_STORY)
+    {
+        if (sCursorArea != CURSOR_AREA_IN_PARTY)
+            return TRUE;
+        else
+        {
+            if (IsMovingStoryMon() && !MovingStoryMonMatchTrainer())
+                return FALSE;
+            else
+                return TRUE;
+        }
+    }
+    else
+    {
+        if (sCursorArea == CURSOR_AREA_IN_PARTY)
+            return TRUE;
+        else
+        {
+            if (IsMovingStoryMon())
+                return FALSE;
+            else
+                return TRUE;
+        }
+    }
+}
+
+static bool8 CanReleaseStoryMon(void)
+{
+    if (IsMovingStoryMon() || IsCursorStoryMon())
+        return FALSE;
+    else
+        return TRUE;
 }
 
 static bool8 IsMonBeingMoved(void)

@@ -1,0 +1,11 @@
+mapscripts Windwardport_House_1_MapScripts {}
+
+script WindwardPort_Eventscript_Cursola{
+    lock
+    playmoncry(SPECIES_PURUGLY, 0)
+    applymove(3, moves(emote_asleep, shake_horizontal))
+    msgbox(format("Purugly is napping peacefully. Best to leave it be!"))
+    setseenmon(SPECIES_PURUGLY)
+    release
+    end
+}

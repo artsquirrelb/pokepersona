@@ -16,6 +16,7 @@
   "object_events": [
     {
       "local_id": "MAYOIDO_WWH",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAYOIDO",
       "x": 9,
       "y": 5,
@@ -35,6 +36,7 @@
     },
     {
       "local_id": "WACHI_WWH",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
       "x": 12,
       "y": 17,
@@ -53,6 +55,7 @@
     },
     {
       "local_id": "IRIA_WWH",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_F",
       "x": 5,
       "y": 8,
@@ -71,6 +74,7 @@
     },
     {
       "local_id": "SINISTCHA_WWH",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SINISTCHA)",
       "x": 18,
       "y": 5,
@@ -89,6 +93,7 @@
     },
     {
       "local_id": "AEGISLASH_WWH",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(AEGISLASH)",
       "x": 1,
       "y": 6,
@@ -107,6 +112,7 @@
     },
     {
       "local_id": "A_WWH",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
       "x": 5,
       "y": 20,
@@ -125,6 +131,7 @@
     },
     {
       "local_id": "S_WWH",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 5,
       "y": 20,
@@ -143,6 +150,7 @@
     },
     {
       "local_id": "M_WWH",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
       "x": 5,
       "y": 20,
@@ -161,6 +169,7 @@
     },
     {
       "local_id": "OSHA_WWH",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(OSHAWOTT)",
       "x": 8,
       "y": 5,
@@ -179,6 +188,7 @@
     },
     {
       "local_id": "GROO_WWH",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(GROOKEY)",
       "x": 10,
       "y": 5,

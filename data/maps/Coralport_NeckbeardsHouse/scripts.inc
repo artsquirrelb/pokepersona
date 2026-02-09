@@ -572,7 +572,7 @@ Coralport_NeckbeardsHouse_CheckIfMitsuru_Text_0:
 # 99 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "Who are you kids?\p"
 	.string "Well, sorry but I'm not in the state to\n"
-	.string "be welcoming strangers in my house\l"
+	.string "be welcoming strangers into my house\l"
 	.string "right now, please kindly see yourselves\l"
 	.string "out.$"
 
@@ -599,7 +599,7 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_3:
 	.string "Sorry, I'd love to give you a warm\n"
 	.string "welcome but right now I probably should\l"
 	.string "file a report with the police.\p"
-	.string "Now please excuse me.$"
+	.string "Now, please excuse me.$"
 
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_4:
 # 169 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
@@ -609,9 +609,9 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_5:
 # 173 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I'm very sorry for your loss.\p"
 	.string "I'd love to repay your kindness back\n"
-	.string "then at the cave so is there anything I\l"
+	.string "then at the cave, so is there anything I\l"
 	.string "could do to help?\p"
-	.string "A picture of your toolbox or rocks\n"
+	.string "A picture of your toolbox or rock\n"
 	.string "collection perhaps?\p"
 	.string "I'm currently traveling through the\n"
 	.string "region so I may happen to come across\l"

@@ -32,8 +32,8 @@ script Windwardport_RangerBuilding_2F_RangerF {
     lock
     faceplayer
     setspeaker("Mayuu")
-    msgbox(format("They recently discovered that Excadrill could Mega evolve in Kalos.\p
-    The reward for this month's top 3 rangers includes a Mega Stone of their choice so I'm trying my hardest to achieve that."))
+    msgbox(format("I'm trying my hardest to get into this month's top 3 rangers.\p
+    The rewards includes a Mega Stone of choice and I want an Excadrillite."))
     release
     end
 }

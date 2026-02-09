@@ -589,8 +589,8 @@ Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_2:
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_3:
 # 133 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
 	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}It's already 10:32PM.\p"
-	.string "If I don't go now, I won't be arriving at\n"
-	.string "the cliff's foot before midnight.$"
+	.string "If I don't go now, I won't arrive at the\n"
+	.string "cliff's foot before midnight.$"
 
 Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball_Text_4:
 # 145 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
@@ -637,8 +637,8 @@ Mansion_MitsurusRoom2F_Eventscript_BookshelfLeft_Text_0:
 
 Mansion_MitsurusRoom2F_Eventscript_BookshelfRight_Text_0:
 # 245 "data/maps/Mansion_MitsurusRoom2F/scripts.pory"
-	.string "Various books about human's and\n"
-	.string "Pokémon's biology, geology and\l"
+	.string "Various books about humans' and\n"
+	.string "Pokémons' biology, geology and\l"
 	.string "genealogy.$"
 
 Mansion_MitsurusRoom2F_Eventscript_Notebooks_Text_0:
@@ -647,6 +647,6 @@ Mansion_MitsurusRoom2F_Eventscript_Notebooks_Text_0:
 	.string "term.\p"
 	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Luckily, it's summer break right now.\p"
 	.string "Otherwise it'd be hard for me to travel.\p"
-	.string "Well, I figure I can always request a\n"
+	.string "Well, I suppose I can always request a\n"
 	.string "leave of absence until this matter is\l"
 	.string "sorted out.)$"

@@ -576,6 +576,18 @@
       "secondary_tileset": "gTileset_RangerBuilding",
       "border_filepath": "data/layouts/Windwardport_RangerBuidling_2F/border.bin",
       "blockdata_filepath": "data/layouts/Windwardport_RangerBuidling_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDWARDPORT_HOUSE_1",
+      "name": "Windwardport_House_1_Layout",
+      "width": 19,
+      "height": 13,
+      "border_width": 1,
+      "border_height": 1,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_MayoidosLab",
+      "border_filepath": "data/layouts/Windwardport_House_1/border.bin",
+      "blockdata_filepath": "data/layouts/Windwardport_House_1/map.bin"
     }
   ]
 }

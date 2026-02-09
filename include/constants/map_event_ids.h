@@ -58,6 +58,10 @@
 #define NB_TDS 1
 #define NB_R 5
 
+// MAP_WINDWARD_PORT
+#define CHAKAMARU_WWP 21
+#define ICHI_WWP 22
+
 // MAP_WINDWARD_PORT_HARBOR
 #define A_WP 13
 #define M_WP 14

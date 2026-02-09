@@ -127,7 +127,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_TM_THUNDERBOLT",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_THUNDERSHARDS_CAVE_2F_TM_THUNDERBOLT",
+      "flag": "FLAG_ITEM_THUNDERSHARDS_CAVE_2F_TM_THUNDERBOLT",
       "d": true,
       "e": true,
       "m": true,

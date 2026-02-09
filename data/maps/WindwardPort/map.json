@@ -26,6 +26,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_STATUE_WINDWARD",
       "x": 34,
       "y": 20,
@@ -43,6 +44,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PARASOL_LADY",
       "x": 47,
       "y": 28,
@@ -53,13 +55,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Eventscript_ParasolLady",
-      "flag": "FLAG_TEMP_1",
+      "flag": "0",
       "d": true,
-      "e": false,
-      "m": true,
-      "n": false
+      "m": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F",
       "x": 35,
       "y": 30,
@@ -70,13 +71,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Eventscript_CyclistF",
-      "flag": "FLAG_TEMP_1",
+      "flag": "0",
       "d": true,
-      "e": false,
-      "m": true,
-      "n": false
+      "m": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 10,
       "y": 25,
@@ -87,13 +87,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Eventscript_Youngster",
-      "flag": "FLAG_TEMP_1",
+      "flag": "0",
       "d": true,
-      "e": false,
-      "m": true,
-      "n": false
+      "m": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
       "x": 49,
       "y": 12,
@@ -105,12 +104,11 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Eventscript_Fisherman",
       "flag": "0",
-      "d": false,
       "e": true,
-      "m": true,
-      "n": false
+      "m": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CORPHISH)",
       "x": 49,
       "y": 13,
@@ -122,12 +120,11 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Eventscript_Corphish",
       "flag": "0",
-      "d": false,
       "e": true,
-      "m": true,
-      "n": false
+      "m": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(LILLIGANT)",
       "x": 21,
       "y": 21,
@@ -140,11 +137,10 @@
       "script": "WindwardPort_Eventscript_Lilligant",
       "flag": "0",
       "d": true,
-      "e": false,
-      "m": true,
-      "n": false
+      "m": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_RANGER_F",
       "x": 28,
       "y": 8,
@@ -155,13 +151,14 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Eventscript_RangerF",
-      "flag": "FLAG_TEMP_1",
+      "flag": "0",
       "d": false,
       "e": true,
       "m": true,
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BIKER",
       "x": 38,
       "y": 37,
@@ -175,6 +172,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TRUCK",
       "x": 40,
       "y": 9,
@@ -185,13 +183,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1",
-      "d": true,
-      "e": false,
-      "m": false,
-      "n": false
+      "flag": "0",
+      "d": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M",
       "x": 14,
       "y": 16,
@@ -202,13 +198,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Eventscript_CyclistM",
-      "flag": "FLAG_TEMP_1",
+      "flag": "0",
       "d": true,
-      "e": false,
-      "m": true,
-      "n": false
+      "m": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SOCIALITE",
       "x": 36,
       "y": 20,
@@ -219,13 +214,14 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Eventscript_Socialite",
-      "flag": "FLAG_TEMP_1",
+      "flag": "0",
       "d": true,
       "e": false,
       "m": true,
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WARTORTLE)",
       "x": 36,
       "y": 21,
@@ -236,13 +232,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Eventscript_Wartortle",
-      "flag": "FLAG_TEMP_1",
+      "flag": "0",
       "d": true,
-      "e": false,
-      "m": true,
-      "n": false
+      "m": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_RANCHER_M",
       "x": 42,
       "y": 9,
@@ -253,13 +248,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Eventscript_RancherM",
-      "flag": "FLAG_TEMP_1",
-      "d": true,
-      "e": false,
-      "m": false,
-      "n": false
+      "flag": "0",
+      "d": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BEWEAR)",
       "x": 11,
       "y": 27,
@@ -270,11 +263,271 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "WindwardPort_Harbor_Eventscript_Bewear",
-      "flag": "FLAG_TEMP_1",
-      "d": false,
+      "flag": "0",
       "e": true,
-      "m": false,
       "n": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_RANGER_M",
+      "x": 25,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WindwardPort_Eventscript_RangerM",
+      "flag": "0",
+      "d": true,
+      "n": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ROUGHNECK",
+      "x": 31,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WindwardPort_Eventscript_RoughNeck_Unohachi",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VAROOM)",
+      "x": 30,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WindwardPort_Eventscript_Varoom",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_BIKER",
+      "x": 45,
+      "y": 26,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 8,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WindwardPort_Eventscript_Biker_Baru",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ROUGHNECK_2",
+      "x": 14,
+      "y": 23,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WindwardPort_Eventscript_Roughneck_Atsunao",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "local_id": "CHAKAMARU_WWP",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ROUGHNECK",
+      "x": 49,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "local_id": "ICHI_WWP",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ROUGHNECK_2",
+      "x": 48,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MURKROW)",
+      "x": 9,
+      "y": 17,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MURKROW)",
+      "x": 20,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_HEX_MANIAC",
+      "x": 43,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WindwardPort_Eventscript_HexManiac",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CURSOLA)",
+      "x": 44,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WindwardPort_Eventscript_Cursola",
+      "flag": "0",
+      "e": true,
+      "n": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPARKLE",
+      "x": 47,
+      "y": 36,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WindwardPort_Eventscript_JumpOverFence",
+      "flag": "0"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "x": 46,
+      "y": 37,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_TM_WATER_PULSE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_WINDWARD_PORT_TM_WATERPULSE"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DUSK_STONE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_WINDWARD_PORT_DUSK_STONE"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MURKROW)",
+      "x": 10,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "WindwardPort_Eventscript_Murkrow",
+      "flag": "FLAG_TEMP_1",
+      "e": true,
+      "n": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
+      "x": 16,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_RIGHT_AND_LEFT",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0",
+      "d": true,
+      "m": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WINGULL)",
+      "x": 24,
+      "y": 33,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "0",
+      "d": true,
+      "m": true
     }
   ],
   "warp_events": [
@@ -291,6 +544,13 @@
       "elevation": 0,
       "dest_map": "MAP_WINDWARDPORT_RANGER_BUIDLING_1F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 38,
+      "y": 35,
+      "elevation": 0,
+      "dest_map": "MAP_WINDWARDPORT_HOUSE_1",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -302,6 +562,15 @@
       "var": "VAR_TEMP_0",
       "var_value": "0",
       "script": "WindwardPort_Eventscript_RestingOnBench"
+    },
+    {
+      "type": "trigger",
+      "x": 47,
+      "y": 34,
+      "elevation": 0,
+      "var": "VAR_TEMP_0",
+      "var_value": "0",
+      "script": "WindwardPort_Eventscript_GangBattle_Trigger"
     }
   ],
   "bg_events": [

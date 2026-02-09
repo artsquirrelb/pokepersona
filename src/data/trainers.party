@@ -81,14 +81,12 @@ Music: Male
 Double Battle: No
 
 
-
 === TRAINER_IKE ===
 Name: Ike
 Class: Bug Catcher
 Pic: Bug Catcher
 Music: Male
 Double Battle: No
-Difficulty: Story
 AI: Basic Trainer
 
 Beedrill
@@ -99,24 +97,29 @@ SPECIES_CHEWTLE
 Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
-
 === TRAINER_HOTARU ===
 Name: Hotaru
 Class: Lass
 Pic: Lass
 Music: Female
 Double Battle: No
-Difficulty: Story
 AI: Basic Trainer
 
 Happiny
 Level: 9
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Pound
+- Sweet Kiss
+- Copycat
+- Defense Curl
 
 Pichu
 Level: 9
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
-
+- Thunder Wave
+- Thunder Shock
+- Disarming Voice
+- Charm
 
 === TRAINER_ICHIGO ===
 Name: Ichigo
@@ -124,7 +127,6 @@ Class: Camper
 Pic: Camper
 Music: Male
 Double Battle: No
-Difficulty: Story
 AI: Basic Trainer
 
 SPECIES_PANPOUR
@@ -141,8 +143,7 @@ Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
 Music: Aqua
 Double Battle: Yes
-Difficulty: Story
-AI: Basic Trainer
+AI: Basic Trainer / AI_FLAG_PREFER_STATUS_MOVES / AI_FLAG_DOUBLE_BATTLE
 
 SPECIES_ELGYEM @ITEM_ORAN_BERRY
 Level: 8
@@ -150,7 +151,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 EVs: 20 Def / 20 SpD
 Ability: Telepathy
 - Reflect
-- Thunder Wave
+- Confusion
 - Light Screen
 - Helping Hand
 
@@ -160,16 +161,15 @@ Name: Emily
 Class: Kirijo Genesis Staff
 Pic: Aqua Grunt F
 Music: Aqua
-Double Battle: No
-Difficulty: Story
-AI: Basic Trainer / AI_FLAG_ATTACKS_PARTNER
+Double Battle: Yes
+AI: Basic Trainer / AI_FLAG_ATTACKS_PARTNER / AI_FLAG_DOUBLE_BATTLE
 
 SPECIES_BRONZOR @ITEM_ORAN_BERRY
 Level: 8
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 EVs: 40 Atk
 Ability: Levitate
-- Hypnosis
+- Gyro Ball
 - Payback
 - Bulldoze
 - Rock Tomb
@@ -181,8 +181,7 @@ Class: Kirijo Genesis Staff
 Pic: Norbert
 Music: Aqua
 Double Battle: Yes
-Difficulty: Story
-AI: Basic Trainer
+AI: AI_FLAG_BASIC_TRAINER / AI_FLAG_DOUBLE_BATTLE
 
 SPECIES_NATU @ITEM_ORAN_BERRY
 Level: 9
@@ -211,9 +210,7 @@ Class: Preschooler
 Pic: Preschooler M
 Music: Intense
 Double Battle: No
-Difficulty: Story
-AI: Basic Trainer
-
+AI: AI_FLAG_SMART_TRAINER
 
 SPECIES_COFAGRIGUS
 Level: 100
@@ -232,7 +229,6 @@ Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
 Music: Aqua
 Double Battle: No
-Difficulty: Story
 AI: Basic Trainer
 
 Venipede
@@ -251,7 +247,6 @@ Class: Picnicker
 Pic: Picnicker
 Music: Girl
 Double Battle: No
-Difficulty: Story
 AI: Basic Trainer
 
 Swirlix
@@ -261,7 +256,6 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Shinx
 Level: 6
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
-- Thunder Wave
 
 
 === TRAINER_TOUMA ===
@@ -270,7 +264,6 @@ Class: Youngster
 Pic: Youngster
 Music: Male
 Double Battle: No
-Difficulty: Story
 AI: Basic Trainer
 
 Litleo
@@ -288,7 +281,6 @@ Class: Picnicker
 Pic: Picnicker
 Music: Female
 Double Battle: No
-Difficulty: Story
 AI: Basic Trainer
 
 Scatterbug
@@ -306,7 +298,6 @@ Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
 Music: Aqua
 Double Battle: No
-Difficulty: Story
 AI: Basic Trainer
 
 Meditite
@@ -324,7 +315,6 @@ Class: Kirijo Genesis Staff
 Pic: Aqua Grunt M
 Music: Aqua
 Double Battle: No
-Difficulty: Story
 AI: Basic Trainer
 
 Abra
@@ -350,10 +340,9 @@ Class: Horde
 Pic: Dusclops Horde
 Music: Intense
 Double Battle: Yes
-Difficulty: Story
 AI: AI_FLAG_DOUBLE_BATTLE / AI_FLAG_SMART_TRAINER
 
-Duskull @ ITEM_WIDE_LENS
+Duskull
 Level: 11
 IVs: 15 HP / 15 Atk / 31 Def / 31 SpA / 31 SpD / 15 Spe
 - Will O Wisp
@@ -386,14 +375,12 @@ EVs: 40 Atk
 - Thunder Punch
 - Shadow Sneak
 
-
 === TRAINER_SHINJIRO_ROUTE_2 ===
 Name: Shinjiro
 Class: Rival
 Pic: Shinjiro
 Music: Male
 Double Battle: No
-Difficulty: Story
 AI: Smart Trainer
 Mugshot: Blue
 
@@ -423,6 +410,45 @@ Ability: Intimidate
 - Work Up
 - Double Kick
 - Aqua Jet
+- Tackle
+
+=== TRAINER_SHINJIRO_ROUTE_2 ===
+Name: Shinjiro
+Class: Rival
+Pic: Shinjiro
+Music: Male
+Double Battle: No
+Difficulty: Merciless
+AI: Smart Trainer
+Mugshot: Blue
+
+Venipede @ ITEM_POISON_BARB
+Level: 10
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Speed Boost
+- Infestation
+- Poison Tail
+- Toxic
+- Rollout
+
+SPECIES_FERROSEED_DELTA (M) @ ITEM_ORAN_BERRY
+Level: 10
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 Atk
+Ability: Iron Barbs 
+- Bullet Seed
+- Leech Seed
+- Metal Claw
+- Spiky Shield
+
+SPECIES_TAUROS_PALDEA_AQUA @ ITEM_LUM_BERRY
+Level: 10
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Intimidate
+- Work Up
+- Double Kick
+- Aqua Jet
+- Tackle
 
 
 === TRAINER_MITSURU_SUNSHINE_MEADOW ===
@@ -431,7 +457,6 @@ Class: Rival
 Pic: May
 Music: Female
 Double Battle: No
-Difficulty: Story
 AI: Smart Trainer / Prefer Highest Damage Move
 Mugshot: Red
 
@@ -476,13 +501,12 @@ Class: Rival
 Pic: Brendan
 Music: Male
 Double Battle: No
-Difficulty: Story
 AI: Smart Trainer / Prefer Highest Damage Move
 Mugshot: Blue
 
 SPECIES_LITLEO (F) @ITEM_ORAN_BERRY
 Level: 10
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 20 SpA / 20 Spe
 Ability: Rivalry
 - Round
@@ -490,9 +514,9 @@ Ability: Rivalry
 - Yawn
 - Fire Spin
 
-SPECIES_ROCKRUFF @ITEM_ORAN_BERRY
+SPECIES_ROCKRUFF @ITEM_LUM_BERRY
 Level: 10
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 EVs: 20 Atk / 20 Spe
 Nature: Adamant
 Ability: Own Tempo
@@ -514,6 +538,50 @@ Ability: Fur Coat
 - Metal Claw
 
 
+=== TRAINER_AKIHIKO_SUNSHINE_MEADOW ===
+Name: Akihiko
+Class: Rival
+Pic: Brendan
+Music: Male
+Double Battle: No
+Difficulty: Merciless
+AI: Smart Trainer / Prefer Highest Damage Move
+Mugshot: Blue
+
+SPECIES_LITLEO (F) @ITEM_ORAN_BERRY
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 20 SpA / 20 Spe
+Ability: Unnerve
+- Round
+- Ember
+- Yawn
+- Fire Spin
+
+SPECIES_ROCKRUFF @ITEM_LUM_BERRY
+Level: 10
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 20 Atk / 20 Spe
+Nature: Adamant
+Ability: Own Tempo
+- Rock Throw
+- Bite
+- Howl
+- Trailblaze
+
+SPECIES_PAWMI_DELTA (M) @ITEM_LUM_BERRY
+Ball: Cherish Ball
+Level: 10
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 40 Atk
+Nature: Adamant
+Ability: Fur Coat
+- Nuzzle
+- Zappy Shock
+- Mach Punch
+- Metal Claw
+
+
 === TRAINER_TAROU ===
 Name: Tarou
 Class: Rich Boy
@@ -521,7 +589,6 @@ Pic: Rich Boy
 Music: Rich
 Items: Full Restore
 Double Battle: No
-Difficulty: Story
 AI: Basic Trainer
 
 Zigzagoon @ Nugget
@@ -531,3 +598,204 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 SPECIES_CAPSAKID @ Nugget
 Level: 10
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+===TRAINER_ROUGHNECK_UNOHACHI===
+Name: Unohachi
+Class: Roughneck
+Pic: Roughneck
+Music: Intense
+Double Battle: No
+AI: Basic Trainer
+
+Sableye
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Prankster
+- Fake Out
+- Encore
+- Foul Play
+- Thunder Wave
+
+Varoom @ ITEM_ORAN_BERRY
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Overcoat
+- Poison Gas
+- Gyro Ball
+- Thief
+- Assurance
+
+Rhyhorn @ ITEM_MUSCLE_BAND
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Lightning Rod
+- Curse
+- Smack Down
+- Bulldoze
+- Horn Attack
+
+===TRAINER_ROUGHNECK_UNOHACHI===
+Name: Unohachi
+Class: Roughneck
+Pic: Roughneck
+Music: Intense
+Double Battle: No
+Difficulty: Casual
+AI: Basic Trainer
+
+Sableye
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Varoom @ ITEM_ORAN_BERRY
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Rhyhorn
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Lightning Rod
+
+===TRAINER_ROUGHNECK_UNOHACHI===
+Name: Unohachi
+Class: Roughneck
+Pic: Roughneck
+Music: Intense
+Double Battle: No
+Items: Super Potion
+Difficulty: Merciless
+AI: AI_FLAG_SMART_TRAINER
+
+Sableye @ITEM_LEFTOVERS
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 Atk/ 40 Spe
+Ability: Prankster
+- Shadow Sneak
+- Encore
+- Knock Off
+- Will-O-Wisp
+
+Varoom @ ITEM_ORAN_BERRY
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 0 Spe
+EVs: 40 Atk / 40 Def
+Ability: Overcoat
+- Poison Gas
+- Gyro Ball
+- Thief
+- Bulldoze
+
+Rhyhorn @ ITEM_GROUND_GEM
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 Atk / 40 Def
+Ability: Lightning Rod
+- Curse
+- Smack Down
+- Bulldoze
+- Horn Attack
+
+
+===TRAINER_BIKER_BARU===
+Name: Baru
+Class: Roughneck
+Pic: Biker
+Music: Intense
+Double Battle: No
+AI: Basic Trainer / AI_FLAG_FORCE_SETUP_FIRST_TURN
+
+Morgrem
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 SpA / 40 Spe
+Ability: Prankster
+- Parting Shot
+- Fake Out
+- Chilling Water
+- Draining Kiss
+
+Nidorino
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 Atk / 40 Spe
+Ability: Poison Point
+- Double Kick
+- Poison Tail
+- Toxic Spikes
+- Protect
+
+Cyclizar
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 Atk / 40 Spe
+- Breaking Swipe
+- Quick Attack
+- Fire Fang
+- Acrobatics
+
+
+===TRAINER_BIKER_BARU===
+Name: Baru
+Class: Roughneck
+Pic: Biker
+Music: Intense
+Double Battle: No
+Difficulty: Casual
+AI: Basic Trainer
+
+Cyclizar
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+Nidorino
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+
+Morgrem
+Level: 18
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+
+===TRAINER_BIKER_BARU===
+Name: Baru
+Class: Roughneck
+Pic: Biker
+Music: Intense
+Double Battle: No
+Difficulty: Merciless
+AI: Basic Trainer / AI_FLAG_FORCE_SETUP_FIRST_TURN
+
+Morgrem @ ITEM_LIGHT_CLAY
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 SpA / 40 Spe
+Nature: Bold
+Ability: Prankster
+- Parting Shot
+- Reflect
+- Light Screen
+- Draining Kiss
+
+Nidorino @ ITEM_POISON_BARB
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 Atk / 40 Spe
+Nature: Adamant
+Ability: Poison Point
+- Double Kick
+- Poison Tail
+- Toxic
+- Protect
+
+Cyclizar @ITEM_FLYING_GEM
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 Atk / 40 Spe
+Nature: Adamant
+- Breaking Swipe
+- Quick Attack
+- Fire Fang
+- Acrobatics
+

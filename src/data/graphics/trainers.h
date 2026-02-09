@@ -306,6 +306,13 @@ const u16 gTrainerPalette_PreschoolerM[] = INCBIN_U16("graphics/trainers/front_p
 const u32 gTrainerFrontPic_PreschoolerF[] = INCBIN_U32("graphics/trainers/front_pics/preschooler_f.4bpp.smol");
 const u16 gTrainerPalette_PreschoolerF[] = INCBIN_U16("graphics/trainers/front_pics/preschooler_f.gbapal");
 
+const u32 gTrainerFrontPic_Roughneck[] = INCBIN_U32("graphics/trainers/front_pics/roughneck.4bpp.smol");
+const u16 gTrainerPalette_Roughneck[] = INCBIN_U16("graphics/trainers/front_pics/roughneck.gbapal");
+const u32 gTrainerFrontPic_Roughneck2[] = INCBIN_U32("graphics/trainers/front_pics/roughneck_2.4bpp.smol");
+const u16 gTrainerPalette_Roughneck2[] = INCBIN_U16("graphics/trainers/front_pics/roughneck_2.gbapal");
+const u32 gTrainerFrontPic_Biker[] = INCBIN_U32("graphics/trainers/front_pics/biker.4bpp.smol");
+const u16 gTrainerPalette_Biker[] = INCBIN_U16("graphics/trainers/front_pics/biker.gbapal");
+
 const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
 const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
@@ -440,7 +447,9 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_FRONT_DUSCLOPS_HORDE, gTrainerFrontPic_DusclopsHorde, gTrainerPalette_DusclopsHorde),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_PRESCHOOLER_M, gTrainerFrontPic_PreschoolerM, gTrainerPalette_PreschoolerM),
     TRAINER_SPRITE(TRAINER_PIC_FRONT_PRESCHOOLER_F, gTrainerFrontPic_PreschoolerF, gTrainerPalette_PreschoolerF),
-
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_ROUGHNECK, gTrainerFrontPic_Roughneck, gTrainerPalette_Roughneck),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_ROUGHNECK_2, gTrainerFrontPic_Roughneck2, gTrainerPalette_Roughneck2),
+    TRAINER_SPRITE(TRAINER_PIC_FRONT_BIKER, gTrainerFrontPic_Biker, gTrainerPalette_Biker),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

@@ -307,6 +307,232 @@ WindwardPort_Eventscript_Lilligant::
 	end
 
 
+WindwardPort_Eventscript_Varoom::
+# 198 "data/maps/WindwardPort/scripts.pory"
+	moncryscript SPECIES_VAROOM
+# 199 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_Varoom_Text_0
+# 200 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+
+WindwardPort_Eventscript_RoughNeck_Unohachi::
+# 205 "data/maps/WindwardPort/scripts.pory"
+	lock
+# 206 "data/maps/WindwardPort/scripts.pory"
+	faceplayer
+# 207 "data/maps/WindwardPort/scripts.pory"
+	specialvar VAR_RESULT, GetTrainerFlag
+# 208 "data/maps/WindwardPort/scripts.pory"
+	compare VAR_RESULT, 0
+	goto_if_eq WindwardPort_Eventscript_RoughNeck_Unohachi_2
+# 214 "data/maps/WindwardPort/scripts.pory"
+	setspeaker WindwardPort_Eventscript_RoughNeck_Unohachi_Text_0
+# 215 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_RoughNeck_Unohachi_Text_1
+WindwardPort_Eventscript_RoughNeck_Unohachi_1:
+# 217 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+WindwardPort_Eventscript_RoughNeck_Unohachi_2:
+# 210 "data/maps/WindwardPort/scripts.pory"
+	trainerbattle_single TRAINER_ROUGHNECK_UNOHACHI, RoughNeck_Unohachi_Intro, RoughNeck_Unohachi_Defeated
+	goto WindwardPort_Eventscript_RoughNeck_Unohachi_1
+
+
+WindwardPort_Eventscript_Biker_Baru::
+# 230 "data/maps/WindwardPort/scripts.pory"
+	trainerbattle_single TRAINER_BIKER_BARU, Biker_Baru_Intro, Biker_Baru_Defeated
+# 231 "data/maps/WindwardPort/scripts.pory"
+	setspeaker WindwardPort_Eventscript_Biker_Baru_Text_0
+# 232 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_Biker_Baru_Text_1
+# 233 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+
+WindwardPort_Eventscript_Roughneck_Atsunao::
+# 246 "data/maps/WindwardPort/scripts.pory"
+	lock
+# 247 "data/maps/WindwardPort/scripts.pory"
+	faceplayer
+# 248 "data/maps/WindwardPort/scripts.pory"
+	setspeaker WindwardPort_Eventscript_Roughneck_Atsunao_Text_0
+# 249 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_Roughneck_Atsunao_Text_1
+# 252 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+
+WindwardPort_Eventscript_RangerM::
+# 257 "data/maps/WindwardPort/scripts.pory"
+	lock
+# 258 "data/maps/WindwardPort/scripts.pory"
+	faceplayer
+# 259 "data/maps/WindwardPort/scripts.pory"
+	setspeaker WindwardPort_Eventscript_RangerM_Text_0
+# 260 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_RangerM_Text_1
+# 261 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+
+WindwardPort_Eventscript_HexManiac::
+# 266 "data/maps/WindwardPort/scripts.pory"
+	lock
+# 267 "data/maps/WindwardPort/scripts.pory"
+	faceplayer
+# 268 "data/maps/WindwardPort/scripts.pory"
+	setspeaker WindwardPort_Eventscript_HexManiac_Text_0
+# 269 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_HexManiac_Text_1
+# 272 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+
+WindwardPort_Eventscript_Cursola::
+# 277 "data/maps/WindwardPort/scripts.pory"
+	moncryscript SPECIES_CURSOLA
+# 278 "data/maps/WindwardPort/scripts.pory"
+	goto_if_unset FLAG_RECEIVED_HARD_STONE, WindwardPort_Eventscript_Cursola_2
+WindwardPort_Eventscript_Cursola_1:
+# 286 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+WindwardPort_Eventscript_Cursola_2:
+# 280 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_Cursola_Text_0
+# 281 "data/maps/WindwardPort/scripts.pory"
+	giveitem ITEM_HARD_STONE
+# 282 "data/maps/WindwardPort/scripts.pory"
+	setflag FLAG_RECEIVED_HARD_STONE
+# 283 "data/maps/WindwardPort/scripts.pory"
+	mcsaid EMOTE_SMILE
+# 284 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_Cursola_Text_1
+	goto WindwardPort_Eventscript_Cursola_1
+
+
+WindwardPort_Eventscript_Murkrow::
+# 292 "data/maps/WindwardPort/scripts.pory"
+	lock
+# 293 "data/maps/WindwardPort/scripts.pory"
+	faceplayer
+# 294 "data/maps/WindwardPort/scripts.pory"
+	startoverworldencounter 255
+# 295 "data/maps/WindwardPort/scripts.pory"
+	fadescreenswapbuffers FADE_TO_BLACK
+# 296 "data/maps/WindwardPort/scripts.pory"
+	removeobject VAR_LAST_TALKED
+# 297 "data/maps/WindwardPort/scripts.pory"
+	fadescreenswapbuffers FADE_FROM_BLACK
+# 298 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+
+WindwardPort_Eventscript_GangBattle_Trigger::
+# 303 "data/maps/WindwardPort/scripts.pory"
+	lock
+# 304 "data/maps/WindwardPort/scripts.pory"
+	playse SE_PIN
+# 305 "data/maps/WindwardPort/scripts.pory"
+	applymovement ICHI_WWP, WindwardPort_Eventscript_GangBattle_Trigger_Movement_0
+# 306 "data/maps/WindwardPort/scripts.pory"
+	delay 4
+# 307 "data/maps/WindwardPort/scripts.pory"
+	applymove CHAKAMARU_WWP, WindwardPort_Eventscript_GangBattle_Trigger_Movement_0
+# 308 "data/maps/WindwardPort/scripts.pory"
+	setspeaker WindwardPort_Eventscript_GangBattle_Trigger_Text_0
+# 309 "data/maps/WindwardPort/scripts.pory"
+	msgbox WindwardPort_Eventscript_GangBattle_Trigger_Text_1
+# 311 "data/maps/WindwardPort/scripts.pory"
+	closemessage
+# 312 "data/maps/WindwardPort/scripts.pory"
+	applymoveplayer walkup
+# 313 "data/maps/WindwardPort/scripts.pory"
+	turnobject ICHI_WWP, DIR_EAST
+# 314 "data/maps/WindwardPort/scripts.pory"
+	turnobject CHAKAMARU_WWP, DIR_WEST
+# 315 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+
+WindwardPort_Eventscript_JumpOverFence::
+# 320 "data/maps/WindwardPort/scripts.pory"
+	lock
+# 321 "data/maps/WindwardPort/scripts.pory"
+	hidefollower
+# 322 "data/maps/WindwardPort/scripts.pory"
+	hidefollowernpc
+# 323 "data/maps/WindwardPort/scripts.pory"
+	specialvar VAR_RESULT, GetPlayerFacingDirection
+# 324 "data/maps/WindwardPort/scripts.pory"
+	compare VAR_RESULT, DIR_NORTH
+	goto_if_eq WindwardPort_Eventscript_JumpOverFence_2
+# 328 "data/maps/WindwardPort/scripts.pory"
+	compare VAR_RESULT, DIR_SOUTH
+	goto_if_eq WindwardPort_Eventscript_JumpOverFence_3
+WindwardPort_Eventscript_JumpOverFence_1:
+# 332 "data/maps/WindwardPort/scripts.pory"
+	playse SE_LEDGE
+# 333 "data/maps/WindwardPort/scripts.pory"
+	delay 16
+# 334 "data/maps/WindwardPort/scripts.pory"
+	playse SE_LEDGE
+# 335 "data/maps/WindwardPort/scripts.pory"
+	waitmovement 0
+# 336 "data/maps/WindwardPort/scripts.pory"
+	clearflag FLAG_TEMP_HIDE_FOLLOWER
+# 337 "data/maps/WindwardPort/scripts.pory"
+	updatefollowingmon
+# 338 "data/maps/WindwardPort/scripts.pory"
+	release
+	end
+
+WindwardPort_Eventscript_JumpOverFence_2:
+# 326 "data/maps/WindwardPort/scripts.pory"
+	applymovement MC, WindwardPort_Eventscript_JumpOverFence_Movement_0
+	goto WindwardPort_Eventscript_JumpOverFence_1
+
+WindwardPort_Eventscript_JumpOverFence_3:
+# 330 "data/maps/WindwardPort/scripts.pory"
+	applymovement MC, WindwardPort_Eventscript_JumpOverFence_Movement_1
+	goto WindwardPort_Eventscript_JumpOverFence_1
+
+
+# 305 "data/maps/WindwardPort/scripts.pory"
+WindwardPort_Eventscript_GangBattle_Trigger_Movement_0:
+# 305 "data/maps/WindwardPort/scripts.pory"
+	emote_exclamation_mark
+# 305 "data/maps/WindwardPort/scripts.pory"
+	face_up
+	step_end
+
+# 326 "data/maps/WindwardPort/scripts.pory"
+WindwardPort_Eventscript_JumpOverFence_Movement_0:
+# 326 "data/maps/WindwardPort/scripts.pory"
+	jump_up
+# 326 "data/maps/WindwardPort/scripts.pory"
+	jump_up
+	step_end
+
+# 330 "data/maps/WindwardPort/scripts.pory"
+WindwardPort_Eventscript_JumpOverFence_Movement_1:
+# 330 "data/maps/WindwardPort/scripts.pory"
+	jump_down
+# 330 "data/maps/WindwardPort/scripts.pory"
+	jump_down
+	step_end
+
 WindwardPort_Eventscript_ParasolLady_Text_0:
 # 26 "data/maps/WindwardPort/scripts.pory"
 	.string "Tsugumi$"
@@ -448,3 +674,94 @@ WindwardPort_Eventscript_CitySign_Text_0:
 WindwardPort_Eventscript_DirectionSign_Text_0:
 # 185 "data/maps/WindwardPort/scripts.pory"
 	.string "Route 4 {LEFT_ARROW}$"
+
+WindwardPort_Eventscript_Varoom_Text_0:
+# 199 "data/maps/WindwardPort/scripts.pory"
+	.string "Varoom is enjoying the scrubbing.$"
+
+WindwardPort_Eventscript_RoughNeck_Unohachi_Text_0:
+# 214 "data/maps/WindwardPort/scripts.pory"
+	.string "Unohachi$"
+
+WindwardPort_Eventscript_RoughNeck_Unohachi_Text_1:
+# 215 "data/maps/WindwardPort/scripts.pory"
+	.string "Maybe I should get an Elesa's sticker\n"
+	.string "for my Varoom, what do you think?$"
+
+WindwardPort_Eventscript_Biker_Baru_Text_0:
+# 231 "data/maps/WindwardPort/scripts.pory"
+	.string "Baru$"
+
+WindwardPort_Eventscript_Biker_Baru_Text_1:
+# 232 "data/maps/WindwardPort/scripts.pory"
+	.string "Trainers like you could've ranked up\n"
+	.string "very fast in our gang.$"
+
+WindwardPort_Eventscript_Roughneck_Atsunao_Text_0:
+# 248 "data/maps/WindwardPort/scripts.pory"
+	.string "Atsunao$"
+
+WindwardPort_Eventscript_Roughneck_Atsunao_Text_1:
+# 249 "data/maps/WindwardPort/scripts.pory"
+	.string "The residents here are scared of the\n"
+	.string "gang running around at night.\p"
+	.string "It's why I dress up like a gang member.\p"
+	.string "No one will bother me,... {PAUSE_UNTIL_PRESS}except you\n"
+	.string "guys.$"
+
+WindwardPort_Eventscript_RangerM_Text_0:
+# 259 "data/maps/WindwardPort/scripts.pory"
+	.string "Taiga$"
+
+WindwardPort_Eventscript_RangerM_Text_1:
+# 260 "data/maps/WindwardPort/scripts.pory"
+	.string "If you're interested in joining Windward\n"
+	.string "Port's Pokémon Ranger team, speak to\l"
+	.string "Ranger Leader Jui.$"
+
+WindwardPort_Eventscript_HexManiac_Text_0:
+# 268 "data/maps/WindwardPort/scripts.pory"
+	.string "Chiyu$"
+
+WindwardPort_Eventscript_HexManiac_Text_1:
+# 269 "data/maps/WindwardPort/scripts.pory"
+	.string "No, you're not the one...{PAUSE_UNTIL_PRESS}\n"
+	.string "Or so you think I'd say, right?\p"
+	.string "This phrase has become popular among\n"
+	.string "the goth girls since years.\p"
+	.string "No one knows what it means, though.$"
+
+WindwardPort_Eventscript_Cursola_Text_0:
+# 280 "data/maps/WindwardPort/scripts.pory"
+	.string "Oh? Cursola gave {PLAYER} some thing.$"
+
+WindwardPort_Eventscript_Cursola_Text_1:
+# 284 "data/maps/WindwardPort/scripts.pory"
+	.string "Thank you Cursola!$"
+
+WindwardPort_Eventscript_GangBattle_Trigger_Text_0:
+# 308 "data/maps/WindwardPort/scripts.pory"
+	.string "Ichi$"
+
+WindwardPort_Eventscript_GangBattle_Trigger_Text_1:
+# 309 "data/maps/WindwardPort/scripts.pory"
+	.string "Who's there?\n"
+	.string "Hmph, just some nosy kids.\p"
+	.string "Go away, this is not your business!$"
+
+RoughNeck_Unohachi_Intro::
+# 221 "data/maps/WindwardPort/scripts.pory"
+	.string "Don't you see I'm cleaning my Varoom?$"
+
+RoughNeck_Unohachi_Defeated::
+# 225 "data/maps/WindwardPort/scripts.pory"
+	.string "Great, now my Varoom is even more dirty.$"
+
+Biker_Baru_Intro::
+# 237 "data/maps/WindwardPort/scripts.pory"
+	.string "Looks like you kids have some money,\n"
+	.string "mind lending me your wallets?$"
+
+Biker_Baru_Defeated::
+# 241 "data/maps/WindwardPort/scripts.pory"
+	.string "Bahh, tough kids.$"

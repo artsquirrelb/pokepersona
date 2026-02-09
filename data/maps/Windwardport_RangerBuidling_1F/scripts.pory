@@ -21,10 +21,8 @@ script Eventscript_ElevatorSFX {
     fadescreenswapbuffers(FADE_TO_BLACK)
     playse(SE_ESCALATOR)
     waitse
-    delay(30)
     playse(SE_CLICK)
     waitse
-    delay(30)
     playse(SE_SLIDING_DOOR)
     waitse
 }
@@ -68,6 +66,9 @@ script Windwardport_RangerBuilding_1F_Receptionist {
     faceplayer
     setspeaker("Joel")
     msgbox(format("Welcome to Windward Port's Pokémon Ranger Base!"))
+    msgbox(format("Oh, you want to join the Ranger Team?\p
+    You'll have to speak to Team Leader Jui.\p
+    They're currently on a mission on Route 4."))
     release
     end
 }
@@ -108,6 +109,13 @@ script Windwardport_RangerBuilding_1F_RangerFnKid {
     setspeaker("Eriza")
     stepinplace(1, DIR_WEST)
     msgbox(format("Sure. Where were you when the Murkrow attacked?"))
+    release
+    end
+}
+
+script Windwardport_RangerBuilding_1F_LeaderRoomSign {
+    lock
+    msgbox(format("Team Leader's Office"))
     release
     end
 }

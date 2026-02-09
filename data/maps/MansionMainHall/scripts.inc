@@ -722,7 +722,7 @@ AlertingWildPokemonGotInside::
 	.string "cleaning up.\p"
 	.string "You may prefer to exit through this\n"
 	.string "west hall right now, Young Lady.\p"
-	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see. That explained the noise I heard\n"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see. That explains the noise I heard\n"
 	.string "earlier.\p"
 	.string "Thank you for your hard work.$"
 

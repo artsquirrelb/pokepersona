@@ -94,6 +94,9 @@ $(OBJEVENTGFXDIR)/people/parasol_lady.4bpp: %.4bpp: %.png
 $(OBJEVENTGFXDIR)/people/roughneck.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 
+$(OBJEVENTGFXDIR)/people/roughneck_2.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+
 $(OBJEVENTGFXDIR)/people/worker.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 4 -mheight 4
 

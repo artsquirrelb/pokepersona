@@ -644,13 +644,13 @@ CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_3:
 
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_4:
 # 51 "data/maps/CoralportPoliceStation/scripts.pory"
-	.string "Since this morning! I woke up and she\n"
-	.string "was already not in the house!\p"
+	.string "This morning! I woke up and she wasn't\n"
+	.string "in the house!\p"
 	.string "I've been searching for her everywhere!$"
 
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_5:
 # 55 "data/maps/CoralportPoliceStation/scripts.pory"
-	.string "Oh what do I do........{PAUSE 60}$"
+	.string "Oh, what do I do........{PAUSE 60}$"
 
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_6:
 # 63 "data/maps/CoralportPoliceStation/scripts.pory"
@@ -658,14 +658,14 @@ CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_6:
 
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_7:
 # 66 "data/maps/CoralportPoliceStation/scripts.pory"
-	.string "It's still relatively recent that you\n"
+	.string "It's still relatively recent when you\n"
 	.string "last saw her and she could be playing\l"
 	.string "around here somewhere.\p"
 	.string "We're currently short-handed due to\n"
 	.string "the recent incident at Sunshine\l"
 	.string "Orphanage.\p"
 	.string "I also can't really leave my post unless\n"
-	.string "it's emergency.\p"
+	.string "it's an emergency.\p"
 	.string "However, I can lend you my Growlithe. It\n"
 	.string "has a great sense of smell.\p"
 	.string "Do you have something that it can\n"
@@ -689,8 +689,7 @@ CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_9:
 	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}If you want to ask about Miki, go ask.\p"
 	.string "If you want to help that man, go help\n"
 	.string "him.\p"
-	.string "Stop standing there and mopping\n"
-	.string "around.\p"
+	.string "Stop standing there moping around.\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}R-right.$"
 
 CoralportPoliceStation_Eventscript_PolicemanReceptionist_Text_0:
@@ -701,12 +700,11 @@ CoralportPoliceStation_Eventscript_PolicemanReceptionist_Text_1:
 # 135 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "Oh! You're that kind trainer who\n"
 	.string "volunteered to help the investigation\l"
-	.string "of Nebe-san's stolen mining collection\l"
-	.string "case.\p"
+	.string "of Nebe-san's stolen mining collection.\p"
 	.string "To be honest, the Coralport Police\n"
-	.string "Station is currently heavily\l"
-	.string "short-handed so we'd like to express\l"
-	.string "our biggest gratitude.\p"
+	.string "Station is currently short-handed, so\l"
+	.string "we'd like to express our biggest\l"
+	.string "gratitude.\p"
 	.string "If you want to know further about the\n"
 	.string "case, please kindly check the\l"
 	.string "Information Board on your left.$"
@@ -727,9 +725,10 @@ CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_1:
 	.string "nor the reason for which the explosion\l"
 	.string "happened.\p"
 	.string "We've been looking high and low but we\n"
-	.string "still find no traces of her nor her body.\p"
+	.string "still haven't found any traces of her or\l"
+	.string "her body.\p"
 	.string "The investigation is still on-going so\n"
-	.string "there's not much I can say further.\p"
+	.string "there's not much more I can say.\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}I see..... Thanks.$"
 
 CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_2:
@@ -742,11 +741,11 @@ CoralportPoliceStation_Eventscript_PolicemanEast_Text_0:
 
 CoralportPoliceStation_Eventscript_PolicemanEast_Text_1:
 # 225 "data/maps/CoralportPoliceStation/scripts.pory"
-	.string "Almost everyone in the station have\n"
-	.string "left to investigate the explosion case\l"
-	.string "of Sunshine Orphanage.\p"
-	.string "Now all of these desk works are passed\n"
-	.string "onto me... {PAUSE 40} Sigh...\p"
+	.string "Almost everyone in the station has left\n"
+	.string "to investigate the explosion at\l"
+	.string "Sunshine Orphanage.\p"
+	.string "Now all of this desk work is passed onto\n"
+	.string "me... {PAUSE 40} Sigh...\p"
 	.string "Not gonna lie, I prefer field work.$"
 
 CoralportPoliceStation_Eventscript_Woman_Text_0:
@@ -755,8 +754,8 @@ CoralportPoliceStation_Eventscript_Woman_Text_0:
 
 CoralportPoliceStation_Eventscript_Woman_Text_1:
 # 240 "data/maps/CoralportPoliceStation/scripts.pory"
-	.string "I'm waiting for my registration paper to\n"
-	.string "be processed.{PAUSE_UNTIL_PRESS} It's taking so long...$"
+	.string "I'm waiting for my registration papers\n"
+	.string "to be processed.{PAUSE_UNTIL_PRESS} It's taking so long...$"
 
 CoralportPoliceStation_Eventscript_QuestBoard_0_Text_0:
 # 249 "data/maps/CoralportPoliceStation/scripts.pory"
@@ -772,5 +771,5 @@ CoralportPoliceStation_Eventscript_QuestBoard_1_Text_0:
 
 CoralportPoliceStation_Eventscript_QuestBoard_1_QUEST_FIND_MINING_KIT_Report_Text_0:
 # 277 "data/maps/CoralportPoliceStation/scripts.pory"
-	.string "There's no new clue about this case.\p"
+	.string "There's no new clues about this case.\p"
 	.string "Please come back later (TODO lol).$"

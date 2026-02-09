@@ -148,7 +148,7 @@
 #define FLAG_ENABLE_ROXANNE_FIRST_CALL       0x80 // Set after defeating Brawly. This will activate a call with Roxanne in order to register her.
 #define FLAG_KYOGRE_ESCAPED_SEAFLOOR_CAVERN  0x81
 #define FLAG_DEFEATED_RIVAL_ROUTE103         0x82
-#define FLAG_RECEIVED_DOLL_LANETTE           0x83
+#define FLAG_RECEIVED_HARD_STONE           0x83
 #define FLAG_RECEIVED_EXP_CANDIES_ROUTE2_GATEHOUSE          0x84
 #define FLAG_RECEIVED_AMULET_COIN            0x85
 #define FLAG_PENDING_DAYCARE_EGG             0x86
@@ -978,14 +978,14 @@
 #define FLAG_ITEM_SUNSHINE_TOWN_TM_ROCK_SMASH                       0x3EC
 #define FLAG_ITEM_THUNDERSHARDS_CAVE_1F_TM_THUNDER_WAVE             0x3ED
 #define FLAG_ITEM_THUNDERSHARDS_CAVE_2F_AGGRONITE                   0x3EE
-#define FLAG_THUNDERSHARDS_CAVE_2F_TM_THUNDERBOLT                   0x3EF
+#define FLAG_ITEM_THUNDERSHARDS_CAVE_2F_TM_THUNDERBOLT                   0x3EF
 #define FLAG_ITEM_ROUTE_111_TM_SANDSTORM                            0x3F0
 #define FLAG_ITEM_THUNDERSHARDS_CAVE_2F_EXTERIOR_AERODACTYLITE      0x3F1
 #define FLAG_ITEM_SUNSHINE_ORPHANAGE_1F_TM_WILL_O_WISP              0x3F2
 #define FLAG_ITEM_CORALPORT_CAVE_TM_ROCK_TOMB                       0x3F3
-#define FLAG_ITEM_ROUTE_113_MAX_ETHER                               0x3F4
+#define FLAG_ITEM_WINDWARD_PORT_TM_WATERPULSE                       0x3F4
 #define FLAG_ITEM_THUNDERSHARD_CAVE_1F_CALCIUM                      0x3F5
-#define FLAG_ITEM_ROUTE_114_RARE_CANDY                              0x3F6
+#define FLAG_ITEM_WINDWARD_PORT_DUSK_STONE                              0x3F6
 #define FLAG_ITEM_ROUTE_114_PROTEIN                                 0x3F7
 #define FLAG_ITEM_ROUTE_115_SUPER_POTION                            0x3F8
 #define FLAG_ITEM_ROUTE_115_TM_FOCUS_PUNCH                          0x3F9

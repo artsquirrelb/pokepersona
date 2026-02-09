@@ -287,8 +287,9 @@ script Coralport_Eventscript_ShipSchedule {
 }
 
 script Coralport_Eventscript_NotYetBoardingTime {
-    addtime(0, 2, 0)
     release
+    addtime(0, 2, 0)
+    lock
     hidefollower
     hidefollowernpc
     delay(20)
@@ -324,6 +325,7 @@ script Coralport_Eventscript_NotYetBoardingTime {
     setvar(VAR_CHAPTER_1_STATE, 1)
     clearflag(FLAG_TEMP_HIDE_FOLLOWER)
     updatefollowingmon
+    release
     end
 }
 

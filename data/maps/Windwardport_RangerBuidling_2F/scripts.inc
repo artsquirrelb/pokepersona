@@ -101,12 +101,10 @@ Windwardport_RangerBuilding_2F_RangerF_Text_0:
 
 Windwardport_RangerBuilding_2F_RangerF_Text_1:
 # 35 "data/maps/Windwardport_RangerBuidling_2F/scripts.pory"
-	.string "They recently discovered that\n"
-	.string "Excadrill could Mega evolve in Kalos.\p"
-	.string "The reward for this month's top 3\n"
-	.string "rangers includes a Mega Stone of their\l"
-	.string "choice so I'm trying my hardest to\l"
-	.string "achieve that.$"
+	.string "I'm trying my hardest to get into this\n"
+	.string "month's top 3 rangers.\p"
+	.string "The rewards includes a Mega Stone of\n"
+	.string "choice and I want an Excadrillite.$"
 
 Windwardport_RangerBuilding_2F_Researcher_Text_0:
 # 50 "data/maps/Windwardport_RangerBuidling_2F/scripts.pory"

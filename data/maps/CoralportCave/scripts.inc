@@ -1410,7 +1410,7 @@ CoralportCave_Eventscript_DusclopsCutscene_Text_1:
 
 CoralportCave_Eventscript_DusclopsCutscene_Text_2:
 # 203 "data/maps/CoralportCave/scripts.pory"
-	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Sanada-kun, Aragaki-kun. Back me up.\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Sanada, Aragaki. Back me up.\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}Gotcha!\p"
 	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}No need to ask!$"
 

@@ -193,3 +193,148 @@ script WindwardPort_Eventscript_Lilligant {
     release
     end
 }
+
+script WindwardPort_Eventscript_Varoom {
+    moncryscript(SPECIES_VAROOM)
+    msgbox(format("Varoom is enjoying the scrubbing."))
+    release
+    end
+}
+
+script WindwardPort_Eventscript_RoughNeck_Unohachi {
+    lock
+    faceplayer
+    specialvar(VAR_RESULT, GetTrainerFlag)
+    if (!var(VAR_RESULT))
+    {
+        trainerbattle_single(TRAINER_ROUGHNECK_UNOHACHI, RoughNeck_Unohachi_Intro, RoughNeck_Unohachi_Defeated)
+    }
+    else
+    {
+        setspeaker("Unohachi")
+        msgbox(format("Maybe I should get an Elesa's sticker for my Varoom, what do you think?"))
+    }
+    release
+    end
+}
+
+text RoughNeck_Unohachi_Intro{
+    format("Don't you see I'm cleaning my Varoom?")
+}
+
+text RoughNeck_Unohachi_Defeated{
+    format("Great, now my Varoom is even more dirty.")
+}
+
+script WindwardPort_Eventscript_Biker_Baru {
+    trainerbattle_single(TRAINER_BIKER_BARU, Biker_Baru_Intro, Biker_Baru_Defeated)
+    setspeaker("Baru")
+    msgbox(format("Trainers like you could've ranked up very fast in our gang."))
+    release
+    end
+}
+
+text Biker_Baru_Intro{
+    format("Looks like you kids have some money, mind lending me your wallets?")
+}
+
+text Biker_Baru_Defeated {
+    format("Bahh, tough kids.")
+}
+
+script WindwardPort_Eventscript_Roughneck_Atsunao {
+    lock
+    faceplayer
+    setspeaker("Atsunao")
+    msgbox(format("The residents here are scared of the gang running around at night.\p
+    It's why I dress up like a gang member.\p
+    No one will bother me,... {PAUSE_UNTIL_PRESS}except you guys."))
+    release
+    end
+}
+
+script WindwardPort_Eventscript_RangerM {
+    lock
+    faceplayer
+    setspeaker("Taiga")
+    msgbox(format("If you're interested in joining Windward Port's Pokémon Ranger team, speak to Ranger Leader Jui."))
+    release
+    end
+}
+
+script WindwardPort_Eventscript_HexManiac {
+    lock
+    faceplayer
+    setspeaker("Chiyu")
+    msgbox(format("No, you're not the one...{PAUSE_UNTIL_PRESS}\nOr so you think I'd say, right?\p
+    This phrase has become popular among the goth girls since years.\p
+    No one knows what it means, though."))
+    release
+    end
+}
+
+script WindwardPort_Eventscript_Cursola {
+    moncryscript(SPECIES_CURSOLA)
+    if (!flag(FLAG_RECEIVED_HARD_STONE))
+    {
+        msgbox(format("Oh? Cursola gave {PLAYER} some thing."))
+        giveitem(ITEM_HARD_STONE)
+        setflag(FLAG_RECEIVED_HARD_STONE)
+        mcsaid(EMOTE_SMILE)
+        msgbox("Thank you Cursola!")
+    }
+    release
+    end
+}
+
+
+script WindwardPort_Eventscript_Murkrow {
+    lock
+    faceplayer
+    startoverworldencounter(255)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(VAR_LAST_TALKED)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    release
+    end
+}
+
+script WindwardPort_Eventscript_GangBattle_Trigger {
+    lock
+    playse(SE_PIN)
+    applymovement(ICHI_WWP, moves(emote_exclamation_mark, face_up))
+    delay(4)
+    applymove(CHAKAMARU_WWP, moves(emote_exclamation_mark, face_up))
+    setspeaker("Ichi")
+    msgbox(format("Who's there?\nHmph, just some nosy kids.\p
+    Go away, this is not your business!"))
+    closemessage
+    applymoveplayer(walkup)
+    turnobject(ICHI_WWP, DIR_EAST)
+    turnobject(CHAKAMARU_WWP, DIR_WEST)
+    release
+    end
+}
+
+script WindwardPort_Eventscript_JumpOverFence {
+    lock
+    hidefollower
+    hidefollowernpc
+    specialvar(VAR_RESULT, GetPlayerFacingDirection)
+    if (var(VAR_RESULT) == DIR_NORTH)
+    {
+        applymovement(MC, moves(jump_up, jump_up))
+    }
+    elif (var(VAR_RESULT) == DIR_SOUTH)
+    {
+        applymovement(MC, moves(jump_down, jump_down))
+    }
+    playse(SE_LEDGE)
+    delay(16)
+    playse(SE_LEDGE)
+    waitmovement(0)
+    clearflag(FLAG_TEMP_HIDE_FOLLOWER)
+    updatefollowingmon
+    release
+    end
+}

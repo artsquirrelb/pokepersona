@@ -6487,8 +6487,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Clefablite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Clefablite,
+        .iconPic = gItemIcon_Clefablite,
+        .iconPalette = gItemIconPalette_Clefablite,
     },
 
     [ITEM_VICTREEBELITE] =
@@ -6505,8 +6505,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Victreebelite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Victreebelite,
+        .iconPic = gItemIcon_Victreebelite,
+        .iconPalette = gItemIconPalette_Victreebelite,
     },
 
     [ITEM_STARMINITE] =
@@ -6523,8 +6523,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Starminite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Starminite,
+        .iconPic = gItemIcon_Starminite,
+        .iconPalette = gItemIconPalette_Starminite,
     },
 
     [ITEM_DRAGONINITE] =
@@ -6541,8 +6541,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Dragoninite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Dragoninite,
+        .iconPic = gItemIcon_Dragoninite,
+        .iconPalette = gItemIconPalette_Dragoninite,
     },
 
     [ITEM_MEGANIUMITE] =
@@ -6559,8 +6559,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Meganiumite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Meganiumite,
+        .iconPic = gItemIcon_Meganiumite,
+        .iconPalette = gItemIconPalette_Meganiumite,
     },
 
     [ITEM_FERALIGITE] =
@@ -6577,8 +6577,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Feraligite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Feraligite,
+        .iconPic = gItemIcon_Feraligite,
+        .iconPalette = gItemIconPalette_Feraligite,
     },
 
     [ITEM_SKARMORITE] =
@@ -6595,8 +6595,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Skarmorite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Skarmorite,
+        .iconPic = gItemIcon_Skarmorite,
+        .iconPalette = gItemIconPalette_Skarmorite,
     },
 
     [ITEM_FROSLASSITE] =
@@ -6613,8 +6613,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Froslassite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Froslassite,
+        .iconPic = gItemIcon_Froslassite,
+        .iconPalette = gItemIconPalette_Froslassite,
     },
 
     [ITEM_EMBOARITE] =
@@ -6631,8 +6631,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Emboarite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Emboarite,
+        .iconPic = gItemIcon_Emboarite,
+        .iconPalette = gItemIconPalette_Emboarite,
     },
 
     [ITEM_EXCADRITE] =
@@ -6649,8 +6649,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Excadrite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Excadrite,
+        .iconPic = gItemIcon_Excadrite,
+        .iconPalette = gItemIconPalette_Excadrite,
     },
 
     [ITEM_SCOLIPITE] =
@@ -6667,8 +6667,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Scolipite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Scolipite,
+        .iconPic = gItemIcon_Scolipite,
+        .iconPalette = gItemIconPalette_Scolipite,
     },
 
     [ITEM_SCRAFTINITE] =
@@ -6685,8 +6685,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Scraftinite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Scraftinite,
+        .iconPic = gItemIcon_Scraftinite,
+        .iconPalette = gItemIconPalette_Scraftinite,
     },
 
     [ITEM_EELEKTROSSITE] =
@@ -6703,8 +6703,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Eelektrossite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Eelektrossite,
+        .iconPic = gItemIcon_Eelektrossite,
+        .iconPalette = gItemIconPalette_Eelektrossite,
     },
 
     [ITEM_CHANDELURITE] =
@@ -6721,8 +6721,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Chandelurite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Chandelurite,
+        .iconPic = gItemIcon_Chandelurite,
+        .iconPalette = gItemIconPalette_Chandelurite,
     },
 
     [ITEM_CHESNAUGHTITE] =
@@ -6739,8 +6739,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Chesnaughtite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Chesnaughtite,
+        .iconPic = gItemIcon_Chesnaughtite,
+        .iconPalette = gItemIconPalette_Chesnaughtite,
     },
 
     [ITEM_DELPHOXITE] =
@@ -6757,8 +6757,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Delphoxite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Delphoxite,
+        .iconPic = gItemIcon_Delphoxite,
+        .iconPalette = gItemIconPalette_Delphoxite,
     },
 
     [ITEM_GRENINJITE] =
@@ -6775,8 +6775,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Greninjite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Greninjite,
+        .iconPic = gItemIcon_Greninjite,
+        .iconPalette = gItemIconPalette_Greninjite,
     },
 
     [ITEM_PYROARITE] =
@@ -6793,8 +6793,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Pyroarite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Pyroarite,
+        .iconPic = gItemIcon_Pyroarite,
+        .iconPalette = gItemIconPalette_Pyroarite,
     },
 
     [ITEM_FLOETTITE] =
@@ -6811,8 +6811,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Floettite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Floettite,
+        .iconPic = gItemIcon_Floettite,
+        .iconPalette = gItemIconPalette_Floettite,
     },
 
     [ITEM_MALAMARITE] =
@@ -6829,8 +6829,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Malamarite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Malamarite,
+        .iconPic = gItemIcon_Malamarite,
+        .iconPalette = gItemIconPalette_Malamarite,
     },
 
     [ITEM_BARBARACITE] =
@@ -6847,8 +6847,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Barbaracite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Barbaracite,
+        .iconPic = gItemIcon_Barbaracite,
+        .iconPalette = gItemIconPalette_Barbaracite,
     },
 
     [ITEM_DRAGALGITE] =
@@ -6865,8 +6865,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Dragalgite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Dragalgite,
+        .iconPic = gItemIcon_Dragalgite,
+        .iconPalette = gItemIconPalette_Dragalgite,
     },
 
     [ITEM_HAWLUCHANITE] =
@@ -6883,8 +6883,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Hawluchanite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Hawluchanite,
+        .iconPic = gItemIcon_Hawluchanite,
+        .iconPalette = gItemIconPalette_Hawluchanite,
     },
 
     [ITEM_ZYGARDITE] =
@@ -6901,8 +6901,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Zygardite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Zygardite,
+        .iconPic = gItemIcon_Zygardite,
+        .iconPalette = gItemIconPalette_Zygardite,
     },
 
     [ITEM_DRAMPANITE] =
@@ -6919,8 +6919,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Drampanite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Drampanite,
+        .iconPic = gItemIcon_Drampanite,
+        .iconPalette = gItemIconPalette_Drampanite,
     },
 
     [ITEM_FALINKSITE] =
@@ -6937,8 +6937,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Falinksite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Falinksite,
+        .iconPic = gItemIcon_Falinksite,
+        .iconPalette = gItemIconPalette_Falinksite,
     },
 
     [ITEM_HEATRANITE] =
@@ -6955,8 +6955,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Heatranite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Heatranite,
+        .iconPic = gItemIcon_Heatranite,
+        .iconPalette = gItemIconPalette_Heatranite,
     },
 
     [ITEM_DARKRANITE] =
@@ -6973,8 +6973,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Darkranite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Darkranite,
+        .iconPic = gItemIcon_Darkranite,
+        .iconPalette = gItemIconPalette_Darkranite,
     },
 
     [ITEM_ZERAORITE] =
@@ -6991,8 +6991,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Zeraorite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Zeraorite,
+        .iconPic = gItemIcon_Zeraorite,
+        .iconPalette = gItemIconPalette_Zeraorite,
     },
 
     [ITEM_RAICHUNITE_X] =
@@ -7006,8 +7006,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_RaichuniteX,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_RaichuniteX,
+        .iconPic = gItemIcon_RaichuniteX,
+        .iconPalette = gItemIconPalette_RaichuniteX,
     },
 
     [ITEM_RAICHUNITE_Y] =
@@ -7021,8 +7021,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_RaichuniteY,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_RaichuniteY,
+        .iconPic = gItemIcon_RaichuniteY,
+        .iconPalette = gItemIconPalette_RaichuniteY,
     },
 
     [ITEM_CHIMECHITE] =
@@ -7039,8 +7039,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Chimechite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Chimechite,
+        .iconPic = gItemIcon_Chimechite,
+        .iconPalette = gItemIconPalette_Chimechite,
     },
 
     [ITEM_ABSOLITE_Z] =
@@ -7054,8 +7054,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_AbsoliteZ,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_AbsoliteZ,
+        .iconPic = gItemIcon_AbsoliteZ,
+        .iconPalette = gItemIconPalette_AbsoliteZ,
     },
 
     [ITEM_STARAPTITE] =
@@ -7072,8 +7072,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Staraptite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Staraptite,
+        .iconPic = gItemIcon_Staraptite,
+        .iconPalette = gItemIconPalette_Staraptite,
     },
 
     [ITEM_GARCHOMPITE_Z] =
@@ -7087,8 +7087,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_GarchompiteZ,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_GarchompiteZ,
+        .iconPic = gItemIcon_GarchompiteZ,
+        .iconPalette = gItemIconPalette_GarchompiteZ,
     },
 
     [ITEM_LUCARIONITE_Z] =
@@ -7102,8 +7102,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_LucarioniteZ,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_LucarioniteZ,
+        .iconPic = gItemIcon_LucarioniteZ,
+        .iconPalette = gItemIconPalette_LucarioniteZ,
     },
 
     [ITEM_GOLURKITE] =
@@ -7120,8 +7120,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Golurkite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Golurkite,
+        .iconPic = gItemIcon_Golurkite,
+        .iconPalette = gItemIconPalette_Golurkite,
     },
 
     [ITEM_MEOWSTICITE] =
@@ -7138,8 +7138,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Meowsticite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Meowsticite,
+        .iconPic = gItemIcon_Meowsticite,
+        .iconPalette = gItemIconPalette_Meowsticite,
     },
 
     [ITEM_CRABOMINITE] =
@@ -7156,8 +7156,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Crabominite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Crabominite,
+        .iconPic = gItemIcon_Crabominite,
+        .iconPalette = gItemIconPalette_Crabominite,
     },
 
     [ITEM_GOLISOPITE] =
@@ -7174,8 +7174,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Golisopite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Golisopite,
+        .iconPic = gItemIcon_Golisopite,
+        .iconPalette = gItemIconPalette_Golisopite,
     },
 
     [ITEM_MAGEARNITE] =
@@ -7192,8 +7192,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Magearnite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Magearnite,
+        .iconPic = gItemIcon_Magearnite,
+        .iconPalette = gItemIconPalette_Magearnite,
     },
 
     [ITEM_SCOVILLAINITE] =
@@ -7210,8 +7210,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Scovillainite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Scovillainite,
+        .iconPic = gItemIcon_Scovillainite,
+        .iconPalette = gItemIconPalette_Scovillainite,
     },
 
     [ITEM_BAXCALIBRITE] =
@@ -7228,8 +7228,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Baxcalibrite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Baxcalibrite,
+        .iconPic = gItemIcon_Baxcalibrite,
+        .iconPalette = gItemIconPalette_Baxcalibrite,
     },
 
     [ITEM_TATSUGIRINITE] =
@@ -7246,8 +7246,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Tatsugirinite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Tatsugirinite,
+        .iconPic = gItemIcon_Tatsugirinite,
+        .iconPalette = gItemIconPalette_Tatsugirinite,
     },
 
     [ITEM_GLIMMORANITE] =
@@ -7264,8 +7264,8 @@ const struct ItemInfo gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 80,
-        .iconPic = gItemIcon_QuestionMark, // gItemIcon_Glimmoranite,
-        .iconPalette = gItemIconPalette_QuestionMark, // gItemIconPalette_Glimmoranite,
+        .iconPic = gItemIcon_Glimmoranite,
+        .iconPalette = gItemIconPalette_Glimmoranite,
     },
 
 // Gems

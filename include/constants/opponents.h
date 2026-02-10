@@ -23,9 +23,9 @@
 #define TRAINER_DUSCLOPS_HORDE                          17
 #define TRAINER_ROUGHNECK_UNOHACHI                      18
 #define TRAINER_BIKER_BARU                              19
-#define TRAINER_MIYU_2                        20
-#define TRAINER_IKE_2                          21
-#define TRAINER_GRUNT_SPACE_CENTER_1         22
+#define TRAINER_WAKAMU                                  20
+#define TRAINER_BENKICHI                                21
+#define TRAINER_ICHIME                                  22
 #define TRAINER_GRUNT_MT_PYRE_1              23
 #define TRAINER_GRUNT_MT_PYRE_2              24
 #define TRAINER_GRUNT_MT_PYRE_3              25

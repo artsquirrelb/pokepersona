@@ -2236,7 +2236,7 @@ Route2_House_Eventscript_TheFirstMorning2_1:
 # 1236 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_CURRENT_EV_CAP, 80
 # 1237 "data/maps/Route2_House/scripts.pory"
-	setvar VAR_DAYS_LEFT, 15
+	setvar VAR_DAYS_LEFT, 7
 # 1238 "data/maps/Route2_House/scripts.pory"
 	clearflag FLAG_HIDE_HELP_BUTTON
 # 1239 "data/maps/Route2_House/scripts.pory"
@@ -3336,7 +3336,7 @@ Route2_House_Eventscript_TheFirstMorning2MitsuruPOV_1:
 # 1912 "data/maps/Route2_House/scripts.pory"
 	setvar VAR_CURRENT_EV_CAP, 80
 # 1913 "data/maps/Route2_House/scripts.pory"
-	setvar VAR_DAYS_LEFT, 15
+	setvar VAR_DAYS_LEFT, 7
 # 1914 "data/maps/Route2_House/scripts.pory"
 	applymovement LOCALID_PLAYER, facedown
 # 1915 "data/maps/Route2_House/scripts.pory"

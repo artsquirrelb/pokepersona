@@ -1,0 +1,22 @@
+mapscripts Windwardport_Juis_House_1F_MapScripts {}
+
+script Windwardport_Juis_House_JuisGrandma {
+    lock
+    faceplayer
+    setspeaker("Etoka")
+    msgbox(format("My grandchild is the Ranger Team\n
+    Leader of this city.\l
+    Jui's parents passed away in a\l
+    landslide in Route 22 when Jui was\l
+    7 years old.\p
+    They must've been proud of the\n
+    person Jui has grown into.\p"))
+    release
+    end
+}
+
+script Windwardport_Juis_House_Monferno {
+    moncryscript(SPECIES_MONFERNO)
+    release
+    end
+}

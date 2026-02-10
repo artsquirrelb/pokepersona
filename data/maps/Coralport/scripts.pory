@@ -142,8 +142,8 @@ script Coralport_Eventscript_Policeman {
     lock
     faceplayer
     setspeaker("Takagi")
-    msgbox(format("Welcome to Coralport!\n If you have any problems, please let us know.\p
-    We'd be happy to help."))
+    msgbox(format("Welcome to Coralport!\p
+    If you have any problems, please let us know."))
     closemessage
     release
     end
@@ -153,8 +153,11 @@ script Coralport_Eventscript_OldMan {
     lock
     faceplayer
     setspeaker("Tomoki")
-    msgbox(format("I and my darling have been travelling around the world.\p
-    Coralport has this special charm to it that made us want to spend the rest of our days here."))
+    msgbox("I and my darling have been travelling\n
+    around the world.\p
+    Coralport has this special charm that\n
+    made us want to spend the rest of\l
+    our days here.")
     closemessage
     release
     end
@@ -164,11 +167,16 @@ script Coralport_Eventscript_OldWoman {
     lock
     faceplayer
     setspeaker("Yukine")
-    msgbox(format("This guy said to me one day, “Let's travel the world!”\p
-    We were still so young and I agreed.\n Then he brought us to all kinds of beautiful places.\p
-    It was only until last year that he proposed, just on the beach over there.\p
-    That was quite awhile ago now that I think about it.\p
-    Although it also kind of slipped my mind, since I was having so much fun being around him."))
+    msgbox(format("This guy said to me one day,\n
+    “Let's travel the world!”\p
+    We were still so young and I agreed.\p
+    Then we went to all kinds of\n
+    beautiful places.\p
+    It was only until last year that\n
+    he proposed, on the beach here.\p
+    That was quite a while ago now.\p
+    I was also having so much fun\n
+    being around him."))
     closemessage
     release
     end
@@ -178,7 +186,8 @@ script Coralport_Eventscript_SailorOnBreak {
     lock
     faceplayer
     setspeaker("Etsuo")
-    msgbox(format("Please don't talk to me. I'm on my break.\p
+    msgbox(format("Please don't talk to me.\n
+    I'm on my break.\p
     If you need help, talk to the sailors on the harbor."))
     closemessage
     applymovement(VAR_LAST_TALKED, facedown)
@@ -232,8 +241,10 @@ script Coralport_Eventscript_SailorOnGuard {
     }
     if (var(VAR_CHAPTER_1_STATE) <4)
     {
-        msgbox(format("We're extremely sorry but there's a problem with the shipment.\p
-        The departure to Windward Port has been delayed until further notice."))
+        msgbox("We're extremely sorry but there's\n
+        a problem with the shipment.\p
+        The departure to Windward Port has\n
+        been delayed until further notice.")
         closemessage
         if (var(VAR_CHAPTER_1_STATE) == 0){
             goto(Coralport_Eventscript_NotYetBoardingTime)
@@ -360,7 +371,8 @@ script Coralport_Eventscript_Beauty {
     I'm enjoying this a lot more than I thought.\p
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Good for you."))
     setspeaker("Harehina")
-    msgbox(format("{DESTROY_MUGSHOT}Oh? Wait, you're just my type. How old are you?\p
+    msgbox(format("{DESTROY_MUGSHOT}Oh? Wait, you're just my type.\n
+    How old are you?\p
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}W-what?\p
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}(Hey! Let's just bail!)"))
     closemessage
@@ -375,7 +387,7 @@ script Coralport_Eventscript_Fisherman {
     lock
     faceplayer
     setspeaker("Jumaro")
-    msgbox(format("I'm waiting for a friend of mine.\n
+    msgbox(format("I'm waiting for a friend of mine.\p
     We promised to go fishing together but he's taking so long.\p
     I wonder what's wrong."))
     closemessage

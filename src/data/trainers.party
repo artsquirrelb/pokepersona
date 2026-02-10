@@ -765,7 +765,7 @@ Pic: Biker
 Music: Intense
 Double Battle: No
 Difficulty: Merciless
-AI: Basic Trainer / AI_FLAG_FORCE_SETUP_FIRST_TURN
+AI: Smart Trainer / AI_FLAG_FORCE_SETUP_FIRST_TURN
 
 Morgrem @ ITEM_LIGHT_CLAY
 Level: 18
@@ -799,3 +799,259 @@ Nature: Adamant
 - Fire Fang
 - Acrobatics
 
+
+===TRAINER_WAKAMU===
+Name: Wakamu
+Class: Collector
+Pic: Collector
+Music: Suspicious
+Double Battle: No
+AI: Basic Trainer / AI_FLAG_SMART_SWITCHING
+
+Magnemite
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 0 Spe
+Ability: Sturdy
+EVs: 40 SpA / 40 Def
+- Thunder Wave
+- Gyro Ball
+- Charge Beam
+- Sonic Boom
+
+Golett @ ITEM_MUSCLE_BAND
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Iron Fist
+EVs: 40 Atk / 40 SpD
+- Shadow Punch
+- Bulldoze
+- Rock Tomb
+- Thief
+
+Spearow
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 Atk / 40 Spe
+- Aerial Ace
+- Fury Attack
+- Work Up
+- Assurance
+
+===TRAINER_WAKAMU===
+Name: Wakamu
+Class: Collector
+Pic: Collector
+Music: Suspicious
+Double Battle: No
+Difficulty: Casual
+AI: Basic Trainer 
+
+Magnemite
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 0 Spe
+Ability: Sturdy
+
+Golett
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Iron Fist
+
+Spearow
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+
+===TRAINER_WAKAMU===
+Name: Wakamu
+Class: Collector
+Pic: Collector
+Music: Suspicious
+Double Battle: No
+Difficulty: Merciless
+AI: Smart Trainer / AI_FLAG_FORCE_SETUP_FIRST_TURN
+
+Magnemite @ITEM_MAGNET
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 0 Spe
+Ability: Sturdy
+EVs: 40 SpA / 40 Def
+- Thunder Wave
+- Gyro Ball
+- Charge Beam
+- Volt Switch
+
+Golett @ ITEM_PUNCHING_GLOVE
+Level: 18
+IVs: 30 HP / 31 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Iron Fist
+EVs: 40 Atk / 40 SpD / 40 Def
+- Shadow Punch
+- Thunder Punch
+- Fire Punch
+- Ice Punch
+
+Spearow @ ITEM_FLYING_GEM
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 Atk / 40 Spe
+- Aerial Ace
+- Fury Attack
+- Work Up
+- Assurance
+
+
+===TRAINER_BENKICHI===
+Name: Benkichi
+Class: Ninja Boy
+Pic: Ninja Boy
+Music: Suspicious
+Double Battle: Yes
+AI: Basic Trainer / AI_FLAG_DOUBLE_BATTLE
+
+Surskit
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 SpA / 40 Spe
+Ability: Swift Swim
+- Chilling Water
+- Struggle Bug
+- Icy Wind
+- Mud Shot
+
+Pikachu
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 SpA / 40 Spe
+Ability: Lightning Rod
+- Nasty Plot
+- Electro Ball
+- Grass Knot
+- Thunder Wave
+
+===TRAINER_ICHIME===
+Name: Ichime
+Class: Preschooler
+Pic: Preschooler F
+Music: Twins
+Double Battle: Yes
+AI: Basic Trainer / AI_FLAG_DOUBLE_BATTLE / AI_FLAG_FORCE_SETUP_FIRST_TURN
+
+Lombre
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 SpA / 40 Spe
+Ability: Rain Dish
+- Rain Dance
+- Mega Drain
+- Leech Seed
+- Whirlpool
+
+Spheal
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 SpA / 40 Spe
+Ability: Thick Fat
+- Water Pulse
+- Icy Wind
+- Rest
+- Baby-Doll Eyes
+
+===TRAINER_BENKICHI===
+Name: Benkichi
+Class: Ninja Boy
+Pic: Ninja Boy
+Music: Suspicious
+Double Battle: Yes
+Difficulty: Casual
+AI: Basic Trainer / AI_FLAG_DOUBLE_BATTLE
+
+Surskit
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Swift Swim
+
+Pikachu
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 SpA / 40 Spe
+Ability: Lightning Rod
+
+===TRAINER_ICHIME===
+Name: Ichime
+Class: Preschooler
+Pic: Preschooler F
+Music: Twins
+Double Battle: Yes
+Difficulty: Casual
+AI: Basic Trainer / AI_FLAG_DOUBLE_BATTLE
+
+Lombre
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Rain Dish
+- Rain Dance
+- Mega Drain
+- Leech Seed
+- Whirlpool
+
+Spheal
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+Ability: Thick Fat
+
+===TRAINER_BENKICHI===
+Name: Benkichi
+Class: Ninja Boy
+Pic: Ninja Boy
+Music: Suspicious
+Double Battle: Yes
+Difficulty: Merciless
+AI: Smart Trainer / AI_FLAG_DOUBLE_BATTLE
+
+Surskit @ ITEM_WISE_GLASSES
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 SpA / 40 Spe
+Ability: Swift Swim
+- Chilling Water
+- Struggle Bug
+- Icy Wind
+- Mud Shot
+
+Pikachu @ ITEM_LIGHT_BALL
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 SpA / 40 Spe
+Ability: Lightning Rod
+- Nasty Plot
+- Electro Ball
+- Grass Knot
+- Thunder Wave
+
+===TRAINER_ICHIME===
+Name: Ichime
+Class: Preschooler
+Pic: Preschooler F
+Music: Twins
+Double Battle: Yes
+Difficulty: Merciless
+AI: Smart Trainer / AI_FLAG_DOUBLE_BATTLE / AI_FLAG_FORCE_SETUP_FIRST_TURN
+
+Lombre @ ITEM_DAMP_ROCK
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 SpA / 40 Spe
+Ability: Rain Dish
+- Rain Dance
+- Mega Drain
+- Leech Seed
+- Whirlpool
+
+Spheal @ ITEM_LUM_BERRY
+Level: 18
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+EVs: 40 SpA / 40 Spe
+Ability: Thick Fat
+- Water Pulse
+- Icy Wind
+- Rest
+- Round

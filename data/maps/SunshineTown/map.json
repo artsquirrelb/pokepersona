@@ -31,6 +31,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 11,
       "y": 8,
@@ -48,6 +49,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BOY_2",
       "x": 21,
       "y": 15,
@@ -65,6 +67,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
       "x": 3,
       "y": 14,
@@ -82,6 +85,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 8,
       "y": 4,
@@ -99,6 +103,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
       "x": 20,
       "y": 7,
@@ -115,6 +120,7 @@
       "quest_id": 1
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(HAPPINY)",
       "x": 28,
       "y": 5,
@@ -132,6 +138,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 4,
       "y": 17,
@@ -145,6 +152,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 9,
       "y": 17,
@@ -158,6 +166,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 14,
       "y": 17,
@@ -171,6 +180,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 19,
       "y": 17,
@@ -184,6 +194,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 24,
       "y": 17,
@@ -197,6 +208,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 24,
       "y": 14,
@@ -210,6 +222,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 29,
       "y": 14,
@@ -223,6 +236,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 29,
       "y": 17,
@@ -236,6 +250,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 12,
       "y": 4,
@@ -249,6 +264,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 21,
       "y": 9,
@@ -262,6 +278,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
       "x": 6,
       "y": 13,
@@ -275,6 +292,7 @@
       "flag": "FLAG_TEMP_1F"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CUTTABLE_TREE",
       "x": 7,
       "y": 13,
@@ -288,6 +306,7 @@
       "flag": "FLAG_TEMP_1F"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
       "x": 7,
       "y": 11,
@@ -301,6 +320,7 @@
       "flag": "FLAG_SUNSHINETOWN_TM_THIEF"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
       "x": 12,
       "y": 1,
@@ -314,6 +334,7 @@
       "flag": "FLAG_ITEM_SUNSHINE_TOWN_TM_ROCK_SMASH"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 12,
       "y": 9,
@@ -327,6 +348,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M",
       "x": 31,
       "y": 16,
@@ -344,6 +366,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M",
       "x": 31,
       "y": 17,
@@ -357,6 +380,7 @@
       "flag": "FLAG_TEMP_3"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
       "x": 31,
       "y": 24,
@@ -374,6 +398,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
       "x": 23,
       "y": 10,
@@ -389,6 +414,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_BREEDER_F",
       "x": 10,
       "y": 15,
@@ -404,6 +430,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(NICKIT)",
       "x": 9,
       "y": 15,

@@ -1,0 +1,17 @@
+mapscripts Windwardport_BeachHouse_MapScripts {}
+
+script Windwardport_BeachHouse_Man {
+    lock
+    faceplayer
+    setspeaker("Takehiko")
+    msgbox(format("I see that girl outside of my house everyday.\p
+    Do you think she likes me?"))
+    release
+    end
+}
+
+script Windwardport_BeachHouse_Tirtouga {
+    moncryscript(SPECIES_TIRTOUGA)
+    release
+    end
+}

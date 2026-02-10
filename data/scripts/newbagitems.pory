@@ -81,7 +81,8 @@ script EventScript_TellTheTimeDayHourMinute{
 script EventScript_CheckDaysLeft {
     dotimebasedevents
     if (var(VAR_DAYS_LEFT) == 1){
-        msgbox(format("{COLOR GREEN}YOU HAVE {COLOR RED}ONE DAY LEFT {COLOR GREEN}TO COMPLETE THE CURRENT STORY QUEST."))
+        msgbox(format("{COLOR GREEN}YOU HAVE {COLOR RED}ONE DAY LEFT\n
+        {COLOR GREEN}TO COMPLETE THE STORY QUEST."))
         closemessage
     }
     if (var(VAR_DAYS_LEFT) == 0){ 

@@ -36,7 +36,60 @@ script Route2_2_Eventscript_Man {
     setspeaker("Fusahiro")
     msgbox(format("If you're wondering, no. I'm not BGR.\p
     I'm simply here to enjoy the peaceful evening.\p
-    Who might this BRG character be, though? They seem to be taking care of this little garden."))
+    Who might this BRG character be, though?\p
+    They seem to be taking care of this little garden."))
     release
     end
+}
+
+script Route2_2_Eventscript_Maniac {
+    trainerbattle_single(TRAINER_WAKAMU, Route2_Wakamu_Intro, Route2_Wakamu_Defeated)
+    setspeaker("Wakamu")
+    msgbox(format("What do you mean scalper?\n
+    I'm a legit fan!"))
+}
+
+text Route2_Wakamu_Intro{
+    format("Hehehe, I lined up early and bought\nall the Pokémon TCG packs in store.\p
+    You gotta see the face of the kids behind me ahaha.\p
+    {CREATE MUGSHOT_S EMOTE_SERIOUS}... Damned scalper.")
+}
+
+text Route2_Wakamu_Defeated{
+    format("Hey! Don't touch my cards!\nNooooo!")
+}
+
+script Route2_2_Eventscript_NinjaBoy {
+    trainerbattle_single(TRAINER_BENKICHI, Route2_Benkichi_Intro, Route2_Benkichi_Defeated)
+    setspeaker("Benkichi")
+    msgbox(format("Thank you for the cards!"))
+    release
+    end
+}
+
+script Route2_2_Eventscript_PreschoolerF {
+    trainerbattle_single(TRAINER_ICHIME, Route2_Ichime_Intro, Route2_Ichime_Defeated)
+    setspeaker("Ichime")
+    msgbox(format("Thank you!!\n
+    The cards are so cute!"))
+    release
+    end
+}
+
+text Route2_Benkichi_Intro{
+    format("That man over there bought all of the cards in the store...")
+}
+
+text Route2_Benkichi_Defeated{
+    format("Wait, Ichime, look at their hands!")
+}
+
+text Route2_Ichime_Intro{
+    format("We're so sad, can you do a battle with us?\p
+    {CREATE MUGSHOT_A EMOTE_SURPRISED}Huh? Wait, we have-")
+}
+
+text Route2_Ichime_Defeated {
+    format("Woah! Those are Pokémon cards!\n
+    You're giving them to us?")
 }

@@ -1,1 +1,56 @@
 mapscripts WindwardPort_Beach_MapScripts {}
+
+script WindwardPort_Beach_ParasolLady {
+    lock
+    faceplayer
+    setspeaker("Asayo")
+    msgbox(format("Excuse me, I'm taking a selfie.\n
+    Can you please step away from the camera?"))
+    release
+    end
+}
+
+script WindwardPort_Beach_Mareanie {
+    startoverworldencounter(255)
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(VAR_LAST_TALKED)
+    setflag(FLAG_TEMP_1)
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    release
+    end
+}
+
+script WindwardPort_Beach_Sandcastle {
+    lock
+    msgbox(format("No matter what you do, the sand castle won't budge."))
+    release
+    end
+}
+
+script WindwardPort_Beach_Roughneck {
+    lock
+    faceplayer
+    setspeaker("Toshitada")
+    msgbox(WindwardPort_Beach_RoughneckBlock)
+    release
+    end
+}
+
+text WindwardPort_Beach_RoughneckBlock{
+    format("Oi kids. You have no business here.\p
+    Screw off.")
+}
+
+script WindwardPort_Beach_Roughneck_Trigger {
+    lock
+    applymove(TOSHITADA, walkinplacedown)
+    turnobject(MC, DIR_NORTH)
+    msgbox(WindwardPort_Beach_RoughneckBlock)
+    closemessage
+    applymovement(TOSHITADA, moves(walk_down, face_left))
+    applymoveplayer(moves(face_right, lock_facing_direction, walk_left, unlock_facing_direction))
+    delay(30)
+    applymove(TOSHITADA, moves(walk_up, face_down))
+    release
+    end
+}

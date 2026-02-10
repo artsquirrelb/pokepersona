@@ -26,6 +26,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AKIHIKO_FAINTED",
       "x": 15,
       "y": 5,
@@ -43,6 +44,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO_FAINTED",
       "x": 18,
       "y": 5,
@@ -60,6 +62,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
       "x": 17,
       "y": 0,
@@ -77,6 +80,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(AZUMARILL)",
       "x": 16,
       "y": 6,
@@ -95,6 +99,7 @@
     },
     {
       "local_id": "SQUIRTLE_Q",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SQUIRTLE)",
       "x": 17,
       "y": 3,

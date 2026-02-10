@@ -1234,7 +1234,7 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     setvar(VAR_AKIHIKOS_INTRO_STATE, 100) //complete akihiko's prologue
     setvar(VAR_CURRENT_LEVEL_CAP, 18)
     setvar(VAR_CURRENT_EV_CAP, 80)
-    setvar(VAR_DAYS_LEFT, 15)
+    setvar(VAR_DAYS_LEFT, 7)
     clearflag(FLAG_HIDE_HELP_BUTTON)
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement
@@ -1910,7 +1910,7 @@ script Route2_House_Eventscript_TheFirstMorning2MitsuruPOV {
     setvar(VAR_MITSURUS_INTRO_STATE, 100) //complete mitsuru's prologue
     setvar(VAR_CURRENT_LEVEL_CAP, 18)
     setvar(VAR_CURRENT_EV_CAP, 80)
-    setvar(VAR_DAYS_LEFT, 15)
+    setvar(VAR_DAYS_LEFT, 7)
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement
     unlockcharacter(CHARACTER_MITSURU)

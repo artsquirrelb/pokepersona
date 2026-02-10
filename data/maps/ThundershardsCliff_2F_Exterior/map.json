@@ -26,6 +26,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 20,
       "y": 33,
@@ -43,6 +44,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 22,
       "y": 39,
@@ -60,6 +62,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 20,
       "y": 27,
@@ -77,6 +80,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 6,
       "y": 31,
@@ -94,6 +98,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 14,
       "y": 23,
@@ -107,6 +112,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
       "x": 24,
       "y": 32,
@@ -124,6 +130,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 10,
       "y": 24,
@@ -137,6 +144,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_NORBERT",
       "x": 24,
       "y": 25,
@@ -154,6 +162,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHANSEY)",
       "x": 12,
       "y": 26,
@@ -167,6 +176,7 @@
       "flag": "FLAG_DAILY_CHANSEY_HEAL_THUNDERSHARD_CAVE_2F_EXTERIOR"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 7,
       "y": 31,

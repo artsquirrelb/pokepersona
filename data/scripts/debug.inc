@@ -1514,7 +1514,7 @@ Debug_CheatStart::
 # 773 "data/scripts/debug.pory"
 	setvar VAR_CURRENT_EV_CAP, 80
 # 774 "data/scripts/debug.pory"
-	setvar VAR_DAYS_LEFT, 15
+	setvar VAR_DAYS_LEFT, 7
 # 775 "data/scripts/debug.pory"
 	unlockcharacter CHARACTER_MITSURU
 # 776 "data/scripts/debug.pory"

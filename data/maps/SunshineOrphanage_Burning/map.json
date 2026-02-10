@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_GIRL",
       "x": 18,
       "y": 21,
@@ -32,6 +33,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
       "x": 19,
       "y": 18,
@@ -49,6 +51,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BUDEW)",
       "x": 18,
       "y": 18,
@@ -66,6 +69,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
       "x": 15,
       "y": 19,
@@ -83,6 +87,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 15,
       "y": 23,
@@ -96,6 +101,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M",
       "x": 13,
       "y": 13,
@@ -113,6 +119,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M",
       "x": 13,
       "y": 13,
@@ -130,6 +137,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(AZUMARILL)",
       "x": 15,
       "y": 19,
@@ -147,6 +155,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MARILL)",
       "x": 11,
       "y": 18,
@@ -164,6 +173,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SQUIRTLE)",
       "x": 18,
       "y": 17,

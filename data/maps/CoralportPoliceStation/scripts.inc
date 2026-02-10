@@ -125,342 +125,340 @@ CoralportPoliceStation_Eventscript_OverhearingFishermansRequest::
 	setspeaker CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_2
 # 66 "data/maps/CoralportPoliceStation/scripts.pory"
 	msgbox CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_7
-# 72 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement 5, walkinplaceup
 # 73 "data/maps/CoralportPoliceStation/scripts.pory"
-	setspeaker CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_0
+	applymovement 5, walkinplaceup
 # 74 "data/maps/CoralportPoliceStation/scripts.pory"
+	setspeaker CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_0
+# 75 "data/maps/CoralportPoliceStation/scripts.pory"
 	msgbox CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_8
-# 76 "data/maps/CoralportPoliceStation/scripts.pory"
-	closemessage
 # 77 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 30
-# 78 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement 5, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_5
-# 79 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_6
-# 80 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 10
-# 81 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement M_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_7
-# 83 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement A_CORALP, faceright
-# 84 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement S_CORALP, faceleft
-# 85 "data/maps/CoralportPoliceStation/scripts.pory"
-	waitmovement 5
-# 86 "data/maps/CoralportPoliceStation/scripts.pory"
-	playse SE_EXIT
-# 87 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 30
-# 88 "data/maps/CoralportPoliceStation/scripts.pory"
-	msgbox CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_9
-# 96 "data/maps/CoralportPoliceStation/scripts.pory"
 	closemessage
-# 97 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement LOCALID_PLAYER, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_8
-# 98 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement M_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_9
-# 99 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement S_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_10
+# 78 "data/maps/CoralportPoliceStation/scripts.pory"
+	delay 30
+# 79 "data/maps/CoralportPoliceStation/scripts.pory"
+	applymovement 5, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_5
+# 80 "data/maps/CoralportPoliceStation/scripts.pory"
+	applymovement OBJ_EVENT_ID_CAMERA, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_6
+# 81 "data/maps/CoralportPoliceStation/scripts.pory"
+	delay 10
+# 82 "data/maps/CoralportPoliceStation/scripts.pory"
+	applymovement M_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_7
+# 84 "data/maps/CoralportPoliceStation/scripts.pory"
+	applymovement A_CORALP, faceright
+# 85 "data/maps/CoralportPoliceStation/scripts.pory"
+	applymovement S_CORALP, faceleft
+# 86 "data/maps/CoralportPoliceStation/scripts.pory"
+	waitmovement 5
+# 87 "data/maps/CoralportPoliceStation/scripts.pory"
+	playse SE_EXIT
+# 88 "data/maps/CoralportPoliceStation/scripts.pory"
+	delay 30
+# 89 "data/maps/CoralportPoliceStation/scripts.pory"
+	msgbox CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_9
 # 100 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 8
+	closemessage
 # 101 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement A_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_11
+	applymovement LOCALID_PLAYER, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_8
 # 102 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement OBJ_EVENT_ID_CAMERA, walkup
+	applymovement M_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_9
 # 103 "data/maps/CoralportPoliceStation/scripts.pory"
-	waitmovement OBJ_EVENT_ID_CAMERA
+	applymove S_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_10
 # 104 "data/maps/CoralportPoliceStation/scripts.pory"
-	special RemoveCameraObject
+	applymovement A_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_11
 # 105 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 50
+	applymovement OBJ_EVENT_ID_CAMERA, walkup
 # 106 "data/maps/CoralportPoliceStation/scripts.pory"
-	removeobject M_CORALP
+	waitmovement OBJ_EVENT_ID_CAMERA
 # 107 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 1
+	special RemoveCameraObject
 # 108 "data/maps/CoralportPoliceStation/scripts.pory"
-	removeobject A_CORALP
+	delay 50
 # 109 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 1
+	removeobject M_CORALP
 # 110 "data/maps/CoralportPoliceStation/scripts.pory"
-	removeobject S_CORALP
-# 111 "data/maps/CoralportPoliceStation/scripts.pory"
 	delay 1
+# 111 "data/maps/CoralportPoliceStation/scripts.pory"
+	removeobject A_CORALP
 # 112 "data/maps/CoralportPoliceStation/scripts.pory"
-	removeobject 5
+	delay 1
 # 113 "data/maps/CoralportPoliceStation/scripts.pory"
-	setflag FLAG_TEMP_1
+	removeobject S_CORALP
 # 114 "data/maps/CoralportPoliceStation/scripts.pory"
-	setflag FLAG_TEMP_2
+	delay 1
 # 115 "data/maps/CoralportPoliceStation/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 2
+	removeobject 5
 # 116 "data/maps/CoralportPoliceStation/scripts.pory"
-	questmenu QUEST_MENU_UNLOCK_QUEST, QUEST_FIND_FISHERMANS_DAUGHTER
+	setflag FLAG_TEMP_1
 # 117 "data/maps/CoralportPoliceStation/scripts.pory"
-	addminutes 15
+	setflag FLAG_TEMP_2
 # 118 "data/maps/CoralportPoliceStation/scripts.pory"
+	setvar VAR_CHAPTER_1_STATE, 2
+# 119 "data/maps/CoralportPoliceStation/scripts.pory"
+	questmenu QUEST_MENU_UNLOCK_QUEST, QUEST_FIND_FISHERMANS_DAUGHTER
+# 120 "data/maps/CoralportPoliceStation/scripts.pory"
+	addminutes 15
+# 121 "data/maps/CoralportPoliceStation/scripts.pory"
 	release
 	end
 
 
 CoralportPoliceStation_Eventscript_PolicemanReceptionist::
-# 123 "data/maps/CoralportPoliceStation/scripts.pory"
+# 126 "data/maps/CoralportPoliceStation/scripts.pory"
 	lock
-# 124 "data/maps/CoralportPoliceStation/scripts.pory"
+# 127 "data/maps/CoralportPoliceStation/scripts.pory"
 	setspeaker CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_2
-# 125 "data/maps/CoralportPoliceStation/scripts.pory"
+# 128 "data/maps/CoralportPoliceStation/scripts.pory"
 	compare VAR_CHAPTER_1_STATE, 2
 	goto_if_eq CoralportPoliceStation_Eventscript_PolicemanReceptionist_2
-# 128 "data/maps/CoralportPoliceStation/scripts.pory"
+# 131 "data/maps/CoralportPoliceStation/scripts.pory"
 	compare VAR_QUEST_FIND_MINING_KIT_STATE, 1
 	goto_if_eq CoralportPoliceStation_Eventscript_PolicemanReceptionist_3
-# 144 "data/maps/CoralportPoliceStation/scripts.pory"
+# 147 "data/maps/CoralportPoliceStation/scripts.pory"
 	msgbox CoralportPoliceStation_Eventscript_PolicemanReceptionist_Text_0
 CoralportPoliceStation_Eventscript_PolicemanReceptionist_1:
-# 146 "data/maps/CoralportPoliceStation/scripts.pory"
+# 149 "data/maps/CoralportPoliceStation/scripts.pory"
 	closemessage
-# 147 "data/maps/CoralportPoliceStation/scripts.pory"
+# 150 "data/maps/CoralportPoliceStation/scripts.pory"
 	release
 	end
 
 CoralportPoliceStation_Eventscript_PolicemanReceptionist_2:
-# 126 "data/maps/CoralportPoliceStation/scripts.pory"
+# 129 "data/maps/CoralportPoliceStation/scripts.pory"
 	goto CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki
 	goto CoralportPoliceStation_Eventscript_PolicemanReceptionist_1
 
 CoralportPoliceStation_Eventscript_PolicemanReceptionist_3:
-# 129 "data/maps/CoralportPoliceStation/scripts.pory"
-	msgbox CoralportPoliceStation_Eventscript_PolicemanReceptionist_Text_0
-# 130 "data/maps/CoralportPoliceStation/scripts.pory"
-	closemessage
-# 131 "data/maps/CoralportPoliceStation/scripts.pory"
-	playse SE_PIN
 # 132 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement 1, emoteexclamation
+	msgbox CoralportPoliceStation_Eventscript_PolicemanReceptionist_Text_0
 # 133 "data/maps/CoralportPoliceStation/scripts.pory"
-	waitmovement
-# 134 "data/maps/CoralportPoliceStation/scripts.pory"
-	setspeaker CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_2
-# 135 "data/maps/CoralportPoliceStation/scripts.pory"
-	msgbox CoralportPoliceStation_Eventscript_PolicemanReceptionist_Text_1
-# 138 "data/maps/CoralportPoliceStation/scripts.pory"
 	closemessage
-# 139 "data/maps/CoralportPoliceStation/scripts.pory"
+# 134 "data/maps/CoralportPoliceStation/scripts.pory"
+	playse SE_PIN
+# 135 "data/maps/CoralportPoliceStation/scripts.pory"
+	applymovement 1, emoteexclamation
+# 136 "data/maps/CoralportPoliceStation/scripts.pory"
+	waitmovement
+# 137 "data/maps/CoralportPoliceStation/scripts.pory"
+	setspeaker CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_2
+# 138 "data/maps/CoralportPoliceStation/scripts.pory"
+	msgbox CoralportPoliceStation_Eventscript_PolicemanReceptionist_Text_1
+# 141 "data/maps/CoralportPoliceStation/scripts.pory"
+	closemessage
+# 142 "data/maps/CoralportPoliceStation/scripts.pory"
 	setvar VAR_QUEST_FIND_MINING_KIT_STATE, 2
-# 140 "data/maps/CoralportPoliceStation/scripts.pory"
+# 143 "data/maps/CoralportPoliceStation/scripts.pory"
 	release
 	end
 
 
 CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki::
-# 152 "data/maps/CoralportPoliceStation/scripts.pory"
-	hidefollower
-# 153 "data/maps/CoralportPoliceStation/scripts.pory"
-	setobjectxyperm M_CORALP, 5, 16
-# 154 "data/maps/CoralportPoliceStation/scripts.pory"
-	setobjectxyperm A_CORALP, 5, 16
 # 155 "data/maps/CoralportPoliceStation/scripts.pory"
-	setobjectxyperm S_CORALP, 5, 16
+	hidefollower
 # 156 "data/maps/CoralportPoliceStation/scripts.pory"
-	clearflag FLAG_TEMP_1
+	setobjectxyperm M_CORALP, 5, 16
 # 157 "data/maps/CoralportPoliceStation/scripts.pory"
-	addobject M_CORALP
+	setobjectxyperm A_CORALP, 5, 16
 # 158 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 1
+	setobjectxyperm S_CORALP, 5, 16
 # 159 "data/maps/CoralportPoliceStation/scripts.pory"
-	addobject A_CORALP
+	clearflag FLAG_TEMP_1
 # 160 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 1
+	addobject M_CORALP
 # 161 "data/maps/CoralportPoliceStation/scripts.pory"
-	addobject S_CORALP
-# 162 "data/maps/CoralportPoliceStation/scripts.pory"
 	delay 1
+# 162 "data/maps/CoralportPoliceStation/scripts.pory"
+	addobject A_CORALP
 # 163 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement LOCALID_PLAYER, invisible
+	delay 1
 # 164 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement M_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_1
+	addobject S_CORALP
 # 165 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement S_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_2
+	delay 1
 # 166 "data/maps/CoralportPoliceStation/scripts.pory"
-	waitmovement
+	applymovement LOCALID_PLAYER, invisible
 # 167 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 30
+	applymovement M_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_1
 # 168 "data/maps/CoralportPoliceStation/scripts.pory"
-	msgbox CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_0
-# 171 "data/maps/CoralportPoliceStation/scripts.pory"
-	setspeaker CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_2
-# 172 "data/maps/CoralportPoliceStation/scripts.pory"
-	msgbox CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_1
-# 178 "data/maps/CoralportPoliceStation/scripts.pory"
-	closemessage
-# 179 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement A_CORALP, walkdown
-# 180 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement LOCALID_CAMERA, walkdown
-# 181 "data/maps/CoralportPoliceStation/scripts.pory"
+	applymovement S_CORALP, CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_2
+# 169 "data/maps/CoralportPoliceStation/scripts.pory"
 	waitmovement
-# 182 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 8
-# 183 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement S_CORALP, facedown
-# 184 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 4
-# 185 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement M_CORALP, facedown
-# 186 "data/maps/CoralportPoliceStation/scripts.pory"
-	waitmovement
-# 187 "data/maps/CoralportPoliceStation/scripts.pory"
+# 170 "data/maps/CoralportPoliceStation/scripts.pory"
 	delay 30
+# 171 "data/maps/CoralportPoliceStation/scripts.pory"
+	msgbox CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_0
+# 174 "data/maps/CoralportPoliceStation/scripts.pory"
+	setspeaker CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_2
+# 175 "data/maps/CoralportPoliceStation/scripts.pory"
+	msgbox CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_1
+# 181 "data/maps/CoralportPoliceStation/scripts.pory"
+	closemessage
+# 182 "data/maps/CoralportPoliceStation/scripts.pory"
+	applymovement A_CORALP, walkdown
+# 183 "data/maps/CoralportPoliceStation/scripts.pory"
+	applymovement LOCALID_CAMERA, walkdown
+# 184 "data/maps/CoralportPoliceStation/scripts.pory"
+	waitmovement
+# 185 "data/maps/CoralportPoliceStation/scripts.pory"
+	delay 8
+# 186 "data/maps/CoralportPoliceStation/scripts.pory"
+	applymovement S_CORALP, facedown
+# 187 "data/maps/CoralportPoliceStation/scripts.pory"
+	delay 4
 # 188 "data/maps/CoralportPoliceStation/scripts.pory"
-	msgbox CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_2
+	applymovement M_CORALP, facedown
 # 189 "data/maps/CoralportPoliceStation/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 3
+	waitmovement
 # 190 "data/maps/CoralportPoliceStation/scripts.pory"
-	addminutes 15
+	delay 30
 # 191 "data/maps/CoralportPoliceStation/scripts.pory"
-	warp MAP_CORALPORT, 13, 6
+	msgbox CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_2
 # 192 "data/maps/CoralportPoliceStation/scripts.pory"
+	setvar VAR_CHAPTER_1_STATE, 3
+# 193 "data/maps/CoralportPoliceStation/scripts.pory"
+	addminutes 15
+# 194 "data/maps/CoralportPoliceStation/scripts.pory"
+	warp MAP_CORALPORT, 13, 6
+# 195 "data/maps/CoralportPoliceStation/scripts.pory"
 	waitstate
 	return
 
 
 CoralportPoliceStation_Eventscript_Klefki::
-# 196 "data/maps/CoralportPoliceStation/scripts.pory"
-	lock
-# 197 "data/maps/CoralportPoliceStation/scripts.pory"
-	faceplayer
-# 198 "data/maps/CoralportPoliceStation/scripts.pory"
-	showmonpic SPECIES_KLEFKI, 18, 5
 # 199 "data/maps/CoralportPoliceStation/scripts.pory"
-	playmoncry SPECIES_KLEFKI, CRY_MODE_NORMAL
+	lock
 # 200 "data/maps/CoralportPoliceStation/scripts.pory"
-	waitmoncry
+	faceplayer
 # 201 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 60
+	showmonpic SPECIES_KLEFKI, 18, 5
 # 202 "data/maps/CoralportPoliceStation/scripts.pory"
-	hidemonpic
+	playmoncry SPECIES_KLEFKI, CRY_MODE_NORMAL
 # 203 "data/maps/CoralportPoliceStation/scripts.pory"
-	setseenmon SPECIES_KLEFKI
+	waitmoncry
 # 204 "data/maps/CoralportPoliceStation/scripts.pory"
+	delay 60
+# 205 "data/maps/CoralportPoliceStation/scripts.pory"
+	hidemonpic
+# 206 "data/maps/CoralportPoliceStation/scripts.pory"
+	setseenmon SPECIES_KLEFKI
+# 207 "data/maps/CoralportPoliceStation/scripts.pory"
 	release
 	end
 
 
 CoralportPoliceStation_Eventscript_Arcanine::
-# 209 "data/maps/CoralportPoliceStation/scripts.pory"
-	lock
-# 210 "data/maps/CoralportPoliceStation/scripts.pory"
-	faceplayer
-# 211 "data/maps/CoralportPoliceStation/scripts.pory"
-	showmonpic SPECIES_ARCANINE, 18, 5
 # 212 "data/maps/CoralportPoliceStation/scripts.pory"
-	playmoncry SPECIES_ARCANINE, CRY_MODE_NORMAL
+	lock
 # 213 "data/maps/CoralportPoliceStation/scripts.pory"
-	waitmoncry
+	faceplayer
 # 214 "data/maps/CoralportPoliceStation/scripts.pory"
-	delay 60
+	showmonpic SPECIES_ARCANINE, 18, 5
 # 215 "data/maps/CoralportPoliceStation/scripts.pory"
-	hidemonpic
+	playmoncry SPECIES_ARCANINE, CRY_MODE_NORMAL
 # 216 "data/maps/CoralportPoliceStation/scripts.pory"
-	setseenmon SPECIES_ARCANINE
+	waitmoncry
 # 217 "data/maps/CoralportPoliceStation/scripts.pory"
+	delay 60
+# 218 "data/maps/CoralportPoliceStation/scripts.pory"
+	hidemonpic
+# 219 "data/maps/CoralportPoliceStation/scripts.pory"
+	setseenmon SPECIES_ARCANINE
+# 220 "data/maps/CoralportPoliceStation/scripts.pory"
 	release
 	end
 
 
 CoralportPoliceStation_Eventscript_PolicemanEast::
-# 222 "data/maps/CoralportPoliceStation/scripts.pory"
-	lock
-# 223 "data/maps/CoralportPoliceStation/scripts.pory"
-	faceplayer
-# 224 "data/maps/CoralportPoliceStation/scripts.pory"
-	setspeaker CoralportPoliceStation_Eventscript_PolicemanEast_Text_0
 # 225 "data/maps/CoralportPoliceStation/scripts.pory"
-	msgbox CoralportPoliceStation_Eventscript_PolicemanEast_Text_1
+	lock
+# 226 "data/maps/CoralportPoliceStation/scripts.pory"
+	faceplayer
+# 227 "data/maps/CoralportPoliceStation/scripts.pory"
+	setspeaker CoralportPoliceStation_Eventscript_PolicemanEast_Text_0
 # 228 "data/maps/CoralportPoliceStation/scripts.pory"
-	closemessage
-# 229 "data/maps/CoralportPoliceStation/scripts.pory"
-	playse SE_PIN
-# 230 "data/maps/CoralportPoliceStation/scripts.pory"
-	applymovement VAR_LAST_TALKED, CoralportPoliceStation_Eventscript_PolicemanEast_Movement_0
+	msgbox CoralportPoliceStation_Eventscript_PolicemanEast_Text_1
 # 231 "data/maps/CoralportPoliceStation/scripts.pory"
-	waitmovement
+	closemessage
 # 232 "data/maps/CoralportPoliceStation/scripts.pory"
+	playse SE_PIN
+# 233 "data/maps/CoralportPoliceStation/scripts.pory"
+	applymovement VAR_LAST_TALKED, CoralportPoliceStation_Eventscript_PolicemanEast_Movement_0
+# 234 "data/maps/CoralportPoliceStation/scripts.pory"
+	waitmovement
+# 235 "data/maps/CoralportPoliceStation/scripts.pory"
 	release
 	end
 
 
 CoralportPoliceStation_Eventscript_Woman::
-# 237 "data/maps/CoralportPoliceStation/scripts.pory"
-	lock
-# 238 "data/maps/CoralportPoliceStation/scripts.pory"
-	faceplayer
-# 239 "data/maps/CoralportPoliceStation/scripts.pory"
-	setspeaker CoralportPoliceStation_Eventscript_Woman_Text_0
 # 240 "data/maps/CoralportPoliceStation/scripts.pory"
-	msgbox CoralportPoliceStation_Eventscript_Woman_Text_1
+	lock
+# 241 "data/maps/CoralportPoliceStation/scripts.pory"
+	faceplayer
 # 242 "data/maps/CoralportPoliceStation/scripts.pory"
-	closemessage
+	setspeaker CoralportPoliceStation_Eventscript_Woman_Text_0
 # 243 "data/maps/CoralportPoliceStation/scripts.pory"
+	msgbox CoralportPoliceStation_Eventscript_Woman_Text_1
+# 245 "data/maps/CoralportPoliceStation/scripts.pory"
+	closemessage
+# 246 "data/maps/CoralportPoliceStation/scripts.pory"
 	release
 	end
 
 
 CoralportPoliceStation_Eventscript_QuestBoard_0::
-# 248 "data/maps/CoralportPoliceStation/scripts.pory"
+# 251 "data/maps/CoralportPoliceStation/scripts.pory"
 	compare VAR_QUEST_FIND_MINING_KIT_STATE, 0
 	goto_if_eq CoralportPoliceStation_Eventscript_QuestBoard_0_1
-# 256 "data/maps/CoralportPoliceStation/scripts.pory"
+# 259 "data/maps/CoralportPoliceStation/scripts.pory"
 	goto CoralportPoliceStation_Eventscript_QuestBoard_1
 	return
 
 CoralportPoliceStation_Eventscript_QuestBoard_0_1:
-# 249 "data/maps/CoralportPoliceStation/scripts.pory"
-	msgbox CoralportPoliceStation_Eventscript_QuestBoard_0_Text_0
-# 251 "data/maps/CoralportPoliceStation/scripts.pory"
-	closemessage
 # 252 "data/maps/CoralportPoliceStation/scripts.pory"
+	msgbox CoralportPoliceStation_Eventscript_QuestBoard_0_Text_0
+# 254 "data/maps/CoralportPoliceStation/scripts.pory"
+	closemessage
+# 255 "data/maps/CoralportPoliceStation/scripts.pory"
 	release
 	end
 
 
 CoralportPoliceStation_Eventscript_QuestBoard_1::
-# 261 "data/maps/CoralportPoliceStation/scripts.pory"
+# 264 "data/maps/CoralportPoliceStation/scripts.pory"
 	lock
-# 262 "data/maps/CoralportPoliceStation/scripts.pory"
+# 265 "data/maps/CoralportPoliceStation/scripts.pory"
 	questmenu QUEST_MENU_CHECK_REWARD, QUEST_FIND_MINING_KIT
-# 263 "data/maps/CoralportPoliceStation/scripts.pory"
+# 266 "data/maps/CoralportPoliceStation/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne CoralportPoliceStation_Eventscript_QuestBoard_1_2
-# 270 "data/maps/CoralportPoliceStation/scripts.pory"
+# 273 "data/maps/CoralportPoliceStation/scripts.pory"
 	questmenu QUEST_MENU_CHECK_ACTIVE, QUEST_FIND_MINING_KIT
-# 271 "data/maps/CoralportPoliceStation/scripts.pory"
+# 274 "data/maps/CoralportPoliceStation/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne CoralportPoliceStation_Eventscript_QuestBoard_1_4
 	return
 
 CoralportPoliceStation_Eventscript_QuestBoard_1_2:
-# 264 "data/maps/CoralportPoliceStation/scripts.pory"
-	msgbox CoralportPoliceStation_Eventscript_QuestBoard_1_Text_0
-# 266 "data/maps/CoralportPoliceStation/scripts.pory"
-	closemessage
 # 267 "data/maps/CoralportPoliceStation/scripts.pory"
+	msgbox CoralportPoliceStation_Eventscript_QuestBoard_1_Text_0
+# 269 "data/maps/CoralportPoliceStation/scripts.pory"
+	closemessage
+# 270 "data/maps/CoralportPoliceStation/scripts.pory"
 	release
 	end
 
 CoralportPoliceStation_Eventscript_QuestBoard_1_4:
-# 272 "data/maps/CoralportPoliceStation/scripts.pory"
+# 275 "data/maps/CoralportPoliceStation/scripts.pory"
 	goto CoralportPoliceStation_Eventscript_QuestBoard_1_QUEST_FIND_MINING_KIT_Report
 	return
 
 
 CoralportPoliceStation_Eventscript_QuestBoard_1_QUEST_FIND_MINING_KIT_Report::
-# 277 "data/maps/CoralportPoliceStation/scripts.pory"
-	msgbox CoralportPoliceStation_Eventscript_QuestBoard_1_QUEST_FIND_MINING_KIT_Report_Text_0
-# 279 "data/maps/CoralportPoliceStation/scripts.pory"
-	closemessage
 # 280 "data/maps/CoralportPoliceStation/scripts.pory"
+	msgbox CoralportPoliceStation_Eventscript_QuestBoard_1_QUEST_FIND_MINING_KIT_Report_Text_0
+# 282 "data/maps/CoralportPoliceStation/scripts.pory"
+	closemessage
+# 283 "data/maps/CoralportPoliceStation/scripts.pory"
 	release
 	end
 
@@ -531,97 +529,97 @@ CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_4:
 	walk_faster_left
 	step_end
 
-# 78 "data/maps/CoralportPoliceStation/scripts.pory"
+# 79 "data/maps/CoralportPoliceStation/scripts.pory"
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_5:
-# 78 "data/maps/CoralportPoliceStation/scripts.pory"
+# 79 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_right
-# 78 "data/maps/CoralportPoliceStation/scripts.pory"
+# 79 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_down
-# 78 "data/maps/CoralportPoliceStation/scripts.pory"
+# 79 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_down
-# 78 "data/maps/CoralportPoliceStation/scripts.pory"
+# 79 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_down
-# 78 "data/maps/CoralportPoliceStation/scripts.pory"
+# 79 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_down
-# 78 "data/maps/CoralportPoliceStation/scripts.pory"
+# 79 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_down
-# 78 "data/maps/CoralportPoliceStation/scripts.pory"
+# 79 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_down
-# 78 "data/maps/CoralportPoliceStation/scripts.pory"
+# 79 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_down
-# 78 "data/maps/CoralportPoliceStation/scripts.pory"
+# 79 "data/maps/CoralportPoliceStation/scripts.pory"
 	set_invisible
 	step_end
 
-# 79 "data/maps/CoralportPoliceStation/scripts.pory"
+# 80 "data/maps/CoralportPoliceStation/scripts.pory"
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_6:
-# 79 "data/maps/CoralportPoliceStation/scripts.pory"
+# 80 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_right
-# 79 "data/maps/CoralportPoliceStation/scripts.pory"
+# 80 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_down
-# 79 "data/maps/CoralportPoliceStation/scripts.pory"
+# 80 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_down
-# 79 "data/maps/CoralportPoliceStation/scripts.pory"
+# 80 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_down
-# 79 "data/maps/CoralportPoliceStation/scripts.pory"
+# 80 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_left
 	step_end
 
-# 81 "data/maps/CoralportPoliceStation/scripts.pory"
+# 82 "data/maps/CoralportPoliceStation/scripts.pory"
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_7:
-# 81 "data/maps/CoralportPoliceStation/scripts.pory"
+# 82 "data/maps/CoralportPoliceStation/scripts.pory"
 	lock_facing_direction
-# 81 "data/maps/CoralportPoliceStation/scripts.pory"
+# 82 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_fast_down
-# 82 "data/maps/CoralportPoliceStation/scripts.pory"
+# 83 "data/maps/CoralportPoliceStation/scripts.pory"
 	unlock_facing_direction
-# 82 "data/maps/CoralportPoliceStation/scripts.pory"
+# 83 "data/maps/CoralportPoliceStation/scripts.pory"
 	face_right
-# 82 "data/maps/CoralportPoliceStation/scripts.pory"
+# 83 "data/maps/CoralportPoliceStation/scripts.pory"
 	lock_facing_direction
-# 82 "data/maps/CoralportPoliceStation/scripts.pory"
+# 83 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_left
-# 82 "data/maps/CoralportPoliceStation/scripts.pory"
+# 83 "data/maps/CoralportPoliceStation/scripts.pory"
 	unlock_facing_direction
 	step_end
 
-# 97 "data/maps/CoralportPoliceStation/scripts.pory"
+# 101 "data/maps/CoralportPoliceStation/scripts.pory"
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_8:
-# 97 "data/maps/CoralportPoliceStation/scripts.pory"
+# 101 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_left
-# 97 "data/maps/CoralportPoliceStation/scripts.pory"
+# 101 "data/maps/CoralportPoliceStation/scripts.pory"
 	face_up
-# 97 "data/maps/CoralportPoliceStation/scripts.pory"
+# 101 "data/maps/CoralportPoliceStation/scripts.pory"
 	set_visible
 	step_end
 
-# 98 "data/maps/CoralportPoliceStation/scripts.pory"
+# 102 "data/maps/CoralportPoliceStation/scripts.pory"
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_9:
-# 98 "data/maps/CoralportPoliceStation/scripts.pory"
+# 102 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_up
-# 98 "data/maps/CoralportPoliceStation/scripts.pory"
+# 102 "data/maps/CoralportPoliceStation/scripts.pory"
 	set_invisible
 	step_end
 
-# 99 "data/maps/CoralportPoliceStation/scripts.pory"
+# 103 "data/maps/CoralportPoliceStation/scripts.pory"
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_10:
-# 99 "data/maps/CoralportPoliceStation/scripts.pory"
+# 103 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_left
-# 99 "data/maps/CoralportPoliceStation/scripts.pory"
+# 103 "data/maps/CoralportPoliceStation/scripts.pory"
 	walk_left
-# 99 "data/maps/CoralportPoliceStation/scripts.pory"
+# 103 "data/maps/CoralportPoliceStation/scripts.pory"
 	set_invisible
 	step_end
 
-# 101 "data/maps/CoralportPoliceStation/scripts.pory"
+# 104 "data/maps/CoralportPoliceStation/scripts.pory"
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Movement_11:
-# 101 "data/maps/CoralportPoliceStation/scripts.pory"
+# 104 "data/maps/CoralportPoliceStation/scripts.pory"
 	set_invisible
 	step_end
 
-# 230 "data/maps/CoralportPoliceStation/scripts.pory"
+# 233 "data/maps/CoralportPoliceStation/scripts.pory"
 CoralportPoliceStation_Eventscript_PolicemanEast_Movement_0:
-# 230 "data/maps/CoralportPoliceStation/scripts.pory"
+# 233 "data/maps/CoralportPoliceStation/scripts.pory"
 	emote_sad
 	step_end
 
@@ -666,38 +664,39 @@ CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_7:
 	.string "Orphanage.\p"
 	.string "I also can't really leave my post unless\n"
 	.string "it's an emergency.\p"
-	.string "However, I can lend you my Growlithe. It\n"
-	.string "has a great sense of smell.\p"
+	.string "However, I can lend you my Growlithe.\n"
+	.string "It has a great sense of smell.\p"
 	.string "Do you have something that it can\n"
-	.string "sniff?\l"
-	.string "Recently worn clothes of your\l"
+	.string "sniff?\p"
+	.string "Recently worn clothes of your\n"
 	.string "daughter, for example.$"
 
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_8:
-# 74 "data/maps/CoralportPoliceStation/scripts.pory"
+# 75 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "Of course! Please send your Growlithe\n"
 	.string "to my house.\l"
 	.string "It's the one on the beach!$"
 
 CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_9:
-# 88 "data/maps/CoralportPoliceStation/scripts.pory"
+# 89 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}.......\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}... {PAUSE 40}(He's... also looking for a family\n"
 	.string "member...)\p"
-	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}....{PAUSE 40} Aki.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}...{PAUSE 40} Aki.\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}...{PAUSE 40} {CREATE MUGSHOT_A EMOTE_NORMAL}Uh- yeah?\p"
-	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}If you want to ask about Miki, go ask.\p"
-	.string "If you want to help that man, go help\n"
-	.string "him.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}If you want to ask about Miki,\n"
+	.string "go ask.\p"
+	.string "If you want to help that man,\n"
+	.string "go help him.\p"
 	.string "Stop standing there moping around.\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}R-right.$"
 
 CoralportPoliceStation_Eventscript_PolicemanReceptionist_Text_0:
-# 129 "data/maps/CoralportPoliceStation/scripts.pory"
+# 132 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "Welcome to Coralport Police Station.$"
 
 CoralportPoliceStation_Eventscript_PolicemanReceptionist_Text_1:
-# 135 "data/maps/CoralportPoliceStation/scripts.pory"
+# 138 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "Oh! You're that kind trainer who\n"
 	.string "volunteered to help the investigation\l"
 	.string "of Nebe-san's stolen mining collection.\p"
@@ -710,7 +709,7 @@ CoralportPoliceStation_Eventscript_PolicemanReceptionist_Text_1:
 	.string "Information Board on your left.$"
 
 CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_0:
-# 168 "data/maps/CoralportPoliceStation/scripts.pory"
+# 171 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "Welcome to Coralport Police Station.\n"
 	.string "How can we help you?\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Hello, have you found anything about\n"
@@ -718,7 +717,7 @@ CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_0:
 	.string "Orphanage?$"
 
 CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_1:
-# 172 "data/maps/CoralportPoliceStation/scripts.pory"
+# 175 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Oh, you're her brother, I guess.\p"
 	.string "We're extremely sorry but we still\n"
 	.string "haven't found anything new about her,\l"
@@ -732,15 +731,15 @@ CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_1:
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}I see..... Thanks.$"
 
 CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_2:
-# 188 "data/maps/CoralportPoliceStation/scripts.pory"
+# 191 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}Let's go outside.$"
 
 CoralportPoliceStation_Eventscript_PolicemanEast_Text_0:
-# 224 "data/maps/CoralportPoliceStation/scripts.pory"
+# 227 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "Utaro$"
 
 CoralportPoliceStation_Eventscript_PolicemanEast_Text_1:
-# 225 "data/maps/CoralportPoliceStation/scripts.pory"
+# 228 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "Almost everyone in the station has left\n"
 	.string "to investigate the explosion at\l"
 	.string "Sunshine Orphanage.\p"
@@ -749,27 +748,27 @@ CoralportPoliceStation_Eventscript_PolicemanEast_Text_1:
 	.string "Not gonna lie, I prefer field work.$"
 
 CoralportPoliceStation_Eventscript_Woman_Text_0:
-# 239 "data/maps/CoralportPoliceStation/scripts.pory"
+# 242 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "Miku$"
 
 CoralportPoliceStation_Eventscript_Woman_Text_1:
-# 240 "data/maps/CoralportPoliceStation/scripts.pory"
+# 243 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "I'm waiting for my registration papers\n"
 	.string "to be processed.{PAUSE_UNTIL_PRESS} It's taking so long...$"
 
 CoralportPoliceStation_Eventscript_QuestBoard_0_Text_0:
-# 249 "data/maps/CoralportPoliceStation/scripts.pory"
+# 252 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "There's currently no new case that you\n"
 	.string "can accept.\p"
 	.string "(TODO: QUEST LIST for Coralport Police\n"
 	.string "Station)$"
 
 CoralportPoliceStation_Eventscript_QuestBoard_1_Text_0:
-# 264 "data/maps/CoralportPoliceStation/scripts.pory"
+# 267 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "This case has already been solved.\p"
 	.string "We sincerely thank you for your help.$"
 
 CoralportPoliceStation_Eventscript_QuestBoard_1_QUEST_FIND_MINING_KIT_Report_Text_0:
-# 277 "data/maps/CoralportPoliceStation/scripts.pory"
+# 280 "data/maps/CoralportPoliceStation/scripts.pory"
 	.string "There's no new clues about this case.\p"
 	.string "Please come back later (TODO lol).$"

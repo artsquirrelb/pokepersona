@@ -62,6 +62,9 @@
 #define CHAKAMARU_WWP 21
 #define ICHI_WWP 22
 
+// MAP_WINDWARD_PORT_BEACH
+#define TOSHITADA 3
+
 // MAP_WINDWARD_PORT_HARBOR
 #define A_WP 13
 #define M_WP 14

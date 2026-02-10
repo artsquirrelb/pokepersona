@@ -733,11 +733,11 @@ WindwardPort_Eventscript_HexManiac_Text_1:
 
 WindwardPort_Eventscript_Cursola_Text_0:
 # 280 "data/maps/WindwardPort/scripts.pory"
-	.string "Oh? Cursola gave {PLAYER} some thing.$"
+	.string "Oh? Cursola gave {PLAYER} something.$"
 
 WindwardPort_Eventscript_Cursola_Text_1:
 # 284 "data/maps/WindwardPort/scripts.pory"
-	.string "Thank you Cursola!$"
+	.string "Thank you, Cursola!$"
 
 WindwardPort_Eventscript_GangBattle_Trigger_Text_0:
 # 308 "data/maps/WindwardPort/scripts.pory"

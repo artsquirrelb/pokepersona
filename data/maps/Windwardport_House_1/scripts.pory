@@ -1,11 +1,33 @@
 mapscripts Windwardport_House_1_MapScripts {}
 
-script WindwardPort_Eventscript_Cursola{
+script WindwardPort_Eventscript_House_1_Purugly{
     lock
     playmoncry(SPECIES_PURUGLY, 0)
-    applymove(3, moves(emote_asleep, shake_horizontal))
+    showmonpic(SPECIES_PURUGLY, 18, 5)
+    doemote(3, E_ASLEEP)
     msgbox(format("Purugly is napping peacefully. Best to leave it be!"))
     setseenmon(SPECIES_PURUGLY)
+    hidemonpic
+    release
+    end
+}
+
+script WindwardPort_Eventscript_House_1_Man {
+    lock
+    faceplayer
+    setspeaker("Ruma")
+    msgbox(format("Contrary to its beefy appearance, Purugly is quite fast.\p
+    Especially when it comes to foods, one blink of an eye and it steals all my snacks..."))
+    release
+    end
+}
+
+script WindwardPort_Eventscript_House_1_Woman{
+    lock
+    faceplayer
+    setspeaker("Omame")
+    msgbox(format("We raised Purugly since it was a Glameow.\p
+    I still remember that it was very picky with foods."))
     release
     end
 }

@@ -277,11 +277,11 @@ script WindwardPort_Eventscript_Cursola {
     moncryscript(SPECIES_CURSOLA)
     if (!flag(FLAG_RECEIVED_HARD_STONE))
     {
-        msgbox(format("Oh? Cursola gave {PLAYER} some thing."))
+        msgbox(format("Oh? Cursola gave {PLAYER} something."))
         giveitem(ITEM_HARD_STONE)
         setflag(FLAG_RECEIVED_HARD_STONE)
         mcsaid(EMOTE_SMILE)
-        msgbox("Thank you Cursola!")
+        msgbox("Thank you, Cursola!")
     }
     release
     end

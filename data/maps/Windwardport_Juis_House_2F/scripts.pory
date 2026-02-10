@@ -1,0 +1,10 @@
+mapscripts Windwardport_Juis_House_2F_MapScripts {}
+
+script Windwardport_Juis_House_ChimcharDoll {
+    lock
+    msgbox("It's a Chimchar doll.")
+    mcsaid(EMOTE_SMILE)
+    msgbox(format("(Looks like it holds a lot of memories.)"))
+    release
+    end
+}

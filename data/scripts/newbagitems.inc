@@ -187,7 +187,7 @@ EventScript_CheckDaysLeft::
 	compare VAR_DAYS_LEFT, 1
 	goto_if_eq EventScript_CheckDaysLeft_2
 EventScript_CheckDaysLeft_1:
-# 87 "data/scripts/newbagitems.pory"
+# 88 "data/scripts/newbagitems.pory"
 	compare VAR_DAYS_LEFT, 0
 	goto_if_eq EventScript_CheckDaysLeft_4
 	return
@@ -195,80 +195,80 @@ EventScript_CheckDaysLeft_1:
 EventScript_CheckDaysLeft_2:
 # 84 "data/scripts/newbagitems.pory"
 	msgbox EventScript_CheckDaysLeft_Text_0
-# 85 "data/scripts/newbagitems.pory"
+# 86 "data/scripts/newbagitems.pory"
 	closemessage
 	goto EventScript_CheckDaysLeft_1
 
 EventScript_CheckDaysLeft_4:
-# 88 "data/scripts/newbagitems.pory"
-	warpsilent MAP_GAME_OVER, 0, 5
 # 89 "data/scripts/newbagitems.pory"
+	warpsilent MAP_GAME_OVER, 0, 5
+# 90 "data/scripts/newbagitems.pory"
 	waitstate
 	return
 
 
 EventScript_ConfirmUseEscapeRope::
-# 94 "data/scripts/newbagitems.pory"
-	buffernumberstring STR_VAR_3, VAR_0x800A
 # 95 "data/scripts/newbagitems.pory"
-	msgbox ConfirmUseEscapeRope, MSGBOX_YESNO
+	buffernumberstring STR_VAR_3, VAR_0x800A
 # 96 "data/scripts/newbagitems.pory"
+	msgbox ConfirmUseEscapeRope, MSGBOX_YESNO
+# 97 "data/scripts/newbagitems.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne EventScript_ConfirmUseEscapeRope_2
 EventScript_ConfirmUseEscapeRope_1:
-# 102 "data/scripts/newbagitems.pory"
+# 103 "data/scripts/newbagitems.pory"
 	release
 	end
 
 EventScript_ConfirmUseEscapeRope_2:
-# 97 "data/scripts/newbagitems.pory"
-	callnative ScrCmd_addhoursEscapeRope
 # 98 "data/scripts/newbagitems.pory"
-	callnative ResetInitialPlayerAvatarState
+	callnative ScrCmd_addhoursEscapeRope
 # 99 "data/scripts/newbagitems.pory"
-	callnative StartEscapeRopeFieldEffect
+	callnative ResetInitialPlayerAvatarState
 # 100 "data/scripts/newbagitems.pory"
+	callnative StartEscapeRopeFieldEffect
+# 101 "data/scripts/newbagitems.pory"
 	waitstate
 	goto EventScript_ConfirmUseEscapeRope_1
 
 
 EventScript_AccessPokemonBoxLink::
-# 112 "data/scripts/newbagitems.pory"
+# 113 "data/scripts/newbagitems.pory"
 	goto_if_set FLAG_PREVENT_BOX_LINK, EventScript_AccessPokemonBoxLink_2
-# 117 "data/scripts/newbagitems.pory"
-	playse SE_PC_LOGIN
 # 118 "data/scripts/newbagitems.pory"
-	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
+	playse SE_PC_LOGIN
 # 119 "data/scripts/newbagitems.pory"
-	special ShowPokemonStorageSystemPC
+	msgbox gText_StorageSystemOpened, MSGBOX_DEFAULT
 # 120 "data/scripts/newbagitems.pory"
-	waitstate
+	special ShowPokemonStorageSystemPC
 # 121 "data/scripts/newbagitems.pory"
+	waitstate
+# 122 "data/scripts/newbagitems.pory"
 	goto EventScript_TurnOffPC
 	end
 
 EventScript_AccessPokemonBoxLink_2:
-# 113 "data/scripts/newbagitems.pory"
-	msgbox EventScript_AccessPokemonBoxLink_Text_0
 # 114 "data/scripts/newbagitems.pory"
+	msgbox EventScript_AccessPokemonBoxLink_Text_0
+# 115 "data/scripts/newbagitems.pory"
 	release
 	end
 
 
 EventScript_NotFoundNearby::
-# 127 "data/scripts/newbagitems.pory"
-	msgbox NotFoundNearby
 # 128 "data/scripts/newbagitems.pory"
+	msgbox NotFoundNearby
+# 129 "data/scripts/newbagitems.pory"
 	release
 	end
 
 
 EventScript_NoEncounterDexNav::
-# 139 "data/scripts/newbagitems.pory"
-	msgbox EventScript_NoEncounterDexNav_Text_0
 # 140 "data/scripts/newbagitems.pory"
-	clearflag FLAG_HIDE_HELP_BUTTON
+	msgbox EventScript_NoEncounterDexNav_Text_0
 # 141 "data/scripts/newbagitems.pory"
+	clearflag FLAG_HIDE_HELP_BUTTON
+# 142 "data/scripts/newbagitems.pory"
 	release
 	end
 
@@ -300,25 +300,25 @@ EventScript_TellTheTimeDayHourMinute_Text_0:
 
 EventScript_CheckDaysLeft_Text_0:
 # 84 "data/scripts/newbagitems.pory"
-	.string "{COLOR GREEN}YOU HAVE {COLOR RED}ONE DAY LEFT {COLOR GREEN}TO COMPLETE THE\n"
-	.string "CURRENT STORY QUEST.$"
+	.string "{COLOR GREEN}YOU HAVE {COLOR RED}ONE DAY LEFT\n"
+	.string "{COLOR GREEN}TO COMPLETE THE STORY QUEST.$"
 
 EventScript_AccessPokemonBoxLink_Text_0:
-# 113 "data/scripts/newbagitems.pory"
+# 114 "data/scripts/newbagitems.pory"
 	.string "Cannot open Pokémon Storage System\n"
 	.string "now.$"
 
 EventScript_NoEncounterDexNav_Text_0:
-# 139 "data/scripts/newbagitems.pory"
+# 140 "data/scripts/newbagitems.pory"
 	.string "There's no encounter in this area.$"
 
 ConfirmUseEscapeRope::
-# 106 "data/scripts/newbagitems.pory"
+# 107 "data/scripts/newbagitems.pory"
 	.string "Exiting this dungeon will advance the\n"
 	.string "time by {COLOR RED}{STR_VAR_3} hour(s){COLOR 2}.\p"
 	.string "Use Escape Rope?$"
 
 NotFoundNearby::
-# 133 "data/scripts/newbagitems.pory"
+# 134 "data/scripts/newbagitems.pory"
 	.string "It couldn't be found nearby.\n"
 	.string "Try looking in a different area!$"

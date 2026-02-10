@@ -777,3 +777,15 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Windwardport_RangerBuidling_2F/scripts.inc"
 
 	.include "data/maps/Windwardport_House_1/scripts.inc"
+
+	.include "data/maps/Windwardport_House_2_1F/scripts.inc"
+
+	.include "data/maps/Windwardport_House_2_2F/scripts.inc"
+
+	.include "data/maps/Windwardport_Juis_House_1F/scripts.inc"
+
+	.include "data/maps/Windwardport_Juis_House_2F/scripts.inc"
+
+	.include "data/maps/Windwardport_House_3/scripts.inc"
+
+	.include "data/maps/Windwardport_BeachHouse/scripts.inc"

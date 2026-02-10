@@ -1,0 +1,11 @@
+mapscripts Windwardport_House_2_2F_MapScripts {}
+
+script Windwardport_House_2_2F_Girl {
+    lock
+    faceplayer
+    setspeaker("Okayo")
+    msgbox(format("I'm studying hard for Kyoui College's entrance exam.\p
+    It's happening in 2 months.\nI'm so nervous."))
+    release
+    end
+}

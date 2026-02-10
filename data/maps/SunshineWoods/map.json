@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BUG_CATCHER",
       "x": 15,
       "y": 14,
@@ -32,6 +33,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 20,
       "y": 6,
@@ -49,6 +51,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MIKI",
       "x": 21,
       "y": 6,
@@ -66,6 +69,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PAWMI_DELTA)",
       "x": 1,
       "y": 5,
@@ -83,6 +87,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 7,
       "y": 13,
@@ -100,6 +105,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CHEWTLE)",
       "x": 11,
       "y": 18,
@@ -117,6 +123,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
       "x": 21,
       "y": 2,
@@ -130,6 +137,7 @@
       "flag": "FLAG_TEMP_3"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POLICEMAN",
       "x": 22,
       "y": 2,
@@ -143,6 +151,7 @@
       "flag": "FLAG_TEMP_3"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
       "x": 11,
       "y": 2,
@@ -160,6 +169,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
       "x": 23,
       "y": 18,
@@ -177,6 +187,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M",
       "x": 12,
       "y": 10,
@@ -194,6 +205,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M",
       "x": 12,
       "y": 11,
@@ -212,6 +224,7 @@
     },
     {
       "local_id": "INTELEON_T_SW",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(INTELEON)",
       "x": 18,
       "y": 15,
@@ -229,6 +242,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M_FAINTED",
       "x": 12,
       "y": 17,
@@ -246,6 +260,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M_FAINTED",
       "x": 20,
       "y": 10,
@@ -263,6 +278,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
       "x": 5,
       "y": 5,

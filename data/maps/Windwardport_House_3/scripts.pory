@@ -1,0 +1,36 @@
+mapscripts Windwardport_House_3_MapScripts {}
+
+script Windwardport_House_3_Lady {
+    lock
+    faceplayer
+    setspeaker("Mirina")
+    msgbox("My father often brings crops from his\n
+    farm here.\l
+    I always end up sharing them with\l
+    my housemate because it's too much\l
+    for me alone.")
+    release
+    end
+}
+
+script Windwardport_House_3_PkmBreederF {
+    lock
+    faceplayer
+    setspeaker("Aie")
+    msgbox("I wish I had caring parents like\n
+    Mirina's.")
+    release
+    end
+}
+
+script Windwardport_House_3_Plusle {
+    moncryscript(SPECIES_PLUSLE)
+    release
+    end
+}
+
+script Windwardport_House_3_Minun {
+    moncryscript(SPECIES_MINUN)
+    release
+    end
+}

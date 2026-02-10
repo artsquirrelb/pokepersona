@@ -31,6 +31,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
       "x": 9,
       "y": 11,
@@ -44,6 +45,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(VULPIX_DELTA)",
       "x": 10,
       "y": 11,
@@ -57,6 +59,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(INTELEON)",
       "x": 7,
       "y": 10,
@@ -70,6 +73,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 10,
       "y": 17,
@@ -83,6 +87,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
       "x": 7,
       "y": 11,
@@ -96,6 +101,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPARKLE",
       "x": 12,
       "y": 9,
@@ -109,6 +115,7 @@
       "flag": "FLAG_TEMP_3"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 8,
       "y": 25,
@@ -122,6 +129,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 5,
       "y": 9,
@@ -135,6 +143,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 14,
       "y": 9,
@@ -148,6 +157,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 10,
       "y": -2,
@@ -161,6 +171,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 15,
       "y": -4,
@@ -174,6 +185,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PUSHABLE_BOULDER",
       "x": 21,
       "y": -2,
@@ -187,6 +199,7 @@
       "flag": "FLAG_TEMP_F"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_GIRL",
       "x": 19,
       "y": 17,
@@ -201,6 +214,7 @@
       "e": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(GOTHITA)",
       "x": 18,
       "y": 17,
@@ -215,6 +229,7 @@
       "e": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(POOCHYENA)",
       "x": 18,
       "y": 19,
@@ -229,6 +244,7 @@
       "e": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
       "x": 19,
       "y": 18,

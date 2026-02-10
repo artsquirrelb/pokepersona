@@ -367,27 +367,27 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_1:
 	setspeaker Coralport_NeckbeardsHouse_Eventscript_Neckbeard_Text_0
 # 207 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	msgbox Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_9
-# 211 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	closemessage
 # 212 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	delay 30
+	closemessage
 # 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	applymovement 1, Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_5
+	delay 30
 # 214 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitmovement
+	applymovement 1, Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_5
 # 215 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	playse SE_EXIT
+	waitmovement
 # 216 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	waitse
+	playse SE_EXIT
 # 217 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	removeobject 1
+	waitse
 # 218 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	clearflag FLAG_HIDE_QUEST_ICON
+	removeobject 1
 # 219 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	setflag FLAG_TEMP_1
+	clearflag FLAG_HIDE_QUEST_ICON
 # 220 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	questmenu QUEST_MENU_SET_ACTIVE, QUEST_FIND_MINING_KIT
+	setflag FLAG_TEMP_1
 # 221 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+	questmenu QUEST_MENU_SET_ACTIVE, QUEST_FIND_MINING_KIT
+# 222 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	release
 	end
 
@@ -515,15 +515,11 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_4:
 	face_right
 	step_end
 
-# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 214 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Movement_5:
-# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 214 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	walk_fast_down
-# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	walk_fast_down
-# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
-	walk_fast_down
-# 213 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
+# 214 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	set_invisible
 	step_end
 
@@ -635,7 +631,8 @@ Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_8:
 Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start_Text_9:
 # 207 "data/maps/Coralport_NeckbeardsHouse/scripts.pory"
 	.string "Thank you very much for offering to\n"
-	.string "help! You're a kind young lady.\p"
+	.string "help!\p"
+	.string "You're a kind young lady.\p"
 	.string "Now I'll go to the police station to\n"
 	.string "report the case.\p"
 	.string "I'll also let them know that you'll be\n"

@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_GIRL",
       "x": 8,
       "y": 6,
@@ -33,6 +34,7 @@
       "quest_id": 3
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ACE_TRAINER_M",
       "x": 12,
       "y": 3,
@@ -50,6 +52,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
       "x": 2,
       "y": 4,
@@ -67,6 +70,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(SWIRLIX)",
       "x": 11,
       "y": 3,
@@ -84,6 +88,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TWIN",
       "x": 14,
       "y": 7,
@@ -101,6 +106,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 5,
       "y": 4,

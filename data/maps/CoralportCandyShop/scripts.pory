@@ -50,7 +50,8 @@ script CoralportCandyShop_MapScripts_OnFrame3 {
 script CoralportCandyShop_Eventscript_ShopKeeperM {
     lock
     setspeaker("Kande")
-    msgbox(format("Welcome to AmeAme. How can I help you?"))
+    msgbox(format("Welcome to AmeAme.\n
+    How can I help you?"))
     pokemart(AmeAmeCandy_C1)
     if (flag(FLAG_AMEAME_PARTTIME_UNLOCKED) == TRUE){
         msgbox(format("Thank you and please come again!"))
@@ -470,10 +471,10 @@ script CoralportCandyShop_Eventscript_Twin {
     faceplayer
     setspeaker("Aiko")
     if (flag(FLAG_CORALPORT_TRADED_SWEET_HEART) == FALSE){
-        msgbox(format("My Tinkatink back home loves {COLOR 7}Sweet Heart {COLOR 2}a lot. If you have one, do you mind trading it with me for a really cool item?"), MSGBOX_YESNO)
+        msgbox(format("My Tinkatink back home loves {COLOR 7}Sweet Heart {COLOR 2}a lot.\p
+        If you have one, do you mind trading it with me?"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == TRUE){
-            checkitem(ITEM_SWEET_HEART)
-            if (var(VAR_RESULT) == FALSE){
+            if (!checkitem(ITEM_SWEET_HEART)){
                 msgbox(format("But you don't have a {COLOR 7}Sweet Heart{COLOR 2}..."))
                 closemessage
                 release

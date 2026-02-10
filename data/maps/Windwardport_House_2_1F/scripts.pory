@@ -1,0 +1,31 @@
+mapscripts Windwardport_House_2_1F_MapScripts {}
+
+script Windwardport_House_2_1F_Boy {
+    lock
+    faceplayer
+    setspeaker("Nanase")
+    msgbox(format("My sis is too busy studying to play with me these days.\p
+    I still have Ninjask but..."))
+    closemessage
+    doemote(VAR_LAST_TALKED, E_SAD)
+    release
+    end
+}
+
+script Windwardport_House_2_1F_Ninjask {
+    moncryscript(SPECIES_NINJASK)
+    msgbox(format("Ninjask is trying its best to cheer Nanase up."))
+    release
+    end
+}
+
+script Windwardport_House_2_1F_Woman {
+    lock
+    faceplayer
+    setspeaker("Baree")
+    msgbox(format("I'm very blessed to have kids as good-natured as them.\p
+    My daughter is studying to be a Pokémon researcher.\p
+    My son is still too young but he's well-behaved and loves to read about Pokémon's habitats."))
+    release
+    end
+}

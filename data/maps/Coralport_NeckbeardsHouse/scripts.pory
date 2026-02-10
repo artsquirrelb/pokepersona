@@ -204,13 +204,14 @@ script Coralport_NeckbeardsHouse_QUEST_FIND_MINING_KIT_Start {
     closemessage
     applymovement(1, walkinplaceright)
     setspeaker("Nebe")
-    msgbox(format("Thank you very much for offering to help! You're a kind young lady.\p
+    msgbox(format("Thank you very much for offering to help!\p
+    You're a kind young lady.\p
     Now I'll go to the police station to report the case.\p
     I'll also let them know that you'll be helping so you can ask them about the investigation's progress.\p
     See you around and good luck on your journey, young lady."))
     closemessage
     delay(30)
-    applymovement(1, moves(walk_fast_down*3, set_invisible))
+    applymovement(1, moves(walk_fast_down, set_invisible))
     waitmovement
     playse(SE_EXIT)
     waitse

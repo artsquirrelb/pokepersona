@@ -66,8 +66,9 @@ script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
     msgbox(format("It's still relatively recent when you last saw her and she could be playing around here somewhere.\p
     We're currently short-handed due to the recent incident at Sunshine Orphanage.\p
     I also can't really leave my post unless it's an emergency.\p
-    However, I can lend you my Growlithe. It has a great sense of smell.\p
-    Do you have something that it can sniff?\l
+    However, I can lend you my Growlithe.\n
+    It has a great sense of smell.\p
+    Do you have something that it can sniff?\p
     Recently worn clothes of your daughter, for example."))
     applymovement(5, walkinplaceup)
     setspeaker("Ikumi")
@@ -87,17 +88,19 @@ script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
     delay(30)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}.......\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}... {PAUSE 40}(He's... also looking for a family member...)\p
-    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}....{PAUSE 40} Aki.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}...{PAUSE 40} Aki.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}...{PAUSE 40}
     {CREATE MUGSHOT_A EMOTE_NORMAL}Uh- yeah?\p
-    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}If you want to ask about Miki, go ask.\p
-    If you want to help that man, go help him.\p Stop standing there moping around.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}If you want to ask about Miki,\n
+    go ask.\p
+    If you want to help that man,\n
+    go help him.\p
+    Stop standing there moping around.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}R-right."))
     closemessage
     applymovement(LOCALID_PLAYER, moves(walk_left, face_up, set_visible))
     applymovement(M_CORALP, moves(walk_up, set_invisible))
-    applymovement(S_CORALP, moves(walk_left*2, set_invisible))
-    delay(8)
+    applymove(S_CORALP, moves(walk_left*2, set_invisible))
     applymovement(A_CORALP, moves(set_invisible))
     applymovement(OBJ_EVENT_ID_CAMERA, walkup)
     waitmovement(OBJ_EVENT_ID_CAMERA)

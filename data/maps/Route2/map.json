@@ -36,6 +36,7 @@
   ],
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 29,
       "y": 8,
@@ -53,6 +54,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BERRY_TREE",
       "x": 28,
       "y": 8,
@@ -70,6 +72,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M",
       "x": 30,
       "y": 15,
@@ -87,6 +90,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_KG_STAFF_M",
       "x": 30,
       "y": 14,
@@ -104,6 +108,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
       "x": 24,
       "y": 14,
@@ -122,6 +127,7 @@
     },
     {
       "local_id": "SHINJIRO",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 37,
       "y": 12,
@@ -135,6 +141,7 @@
       "flag": "FLAG_TEMP_2"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DROWZEE)",
       "x": 34,
       "y": 14,
@@ -148,6 +155,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_AKIHIKO_FAINTED",
       "x": 33,
       "y": 11,
@@ -165,6 +173,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO_FAINTED",
       "x": 34,
       "y": 12,
@@ -182,6 +191,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FROZEN",
       "x": 32,
       "y": 12,
@@ -199,6 +209,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FROZEN",
       "x": 31,
       "y": 11,
@@ -216,6 +227,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(INTELEON)",
       "x": 31,
       "y": 7,
@@ -233,6 +245,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
       "x": 23,
       "y": 17,
@@ -251,6 +264,7 @@
     },
     {
       "local_id": "TAROU",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_RICH_BOY",
       "x": 11,
       "y": 20,
@@ -268,6 +282,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 18,
       "y": 21,
@@ -285,6 +300,7 @@
       "n": false
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
       "x": 8,
       "y": 12,
@@ -303,6 +319,7 @@
     },
     {
       "local_id": "KYOUSUKE",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
       "x": 11,
       "y": 21,
@@ -320,6 +337,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 8,
       "y": 13,
@@ -333,6 +351,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
       "x": 37,
       "y": 11,

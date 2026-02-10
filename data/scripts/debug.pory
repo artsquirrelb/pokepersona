@@ -771,7 +771,7 @@ script Debug_CheatStart {
 	setvar(VAR_MITSURUS_INTRO_STATE, 100)
 	setvar(VAR_CURRENT_LEVEL_CAP, 18)
 	setvar(VAR_CURRENT_EV_CAP, 80)
-	setvar(VAR_DAYS_LEFT, 15)
+	setvar(VAR_DAYS_LEFT, 7)
 	unlockcharacter(CHARACTER_MITSURU)
 	unlockcharacter(CHARACTER_AKIHIKO)
 	unlockcharacter(CHARACTER_SHINJIRO)

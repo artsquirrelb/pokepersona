@@ -588,6 +588,78 @@
       "secondary_tileset": "gTileset_MayoidosLab",
       "border_filepath": "data/layouts/Windwardport_House_1/border.bin",
       "blockdata_filepath": "data/layouts/Windwardport_House_1/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDWARDPORT_HOUSE_2_1F",
+      "name": "Windwardport_House_2_1F_Layout",
+      "width": 19,
+      "height": 12,
+      "border_width": 1,
+      "border_height": 1,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_MayoidosLab",
+      "border_filepath": "data/layouts/Windwardport_House_2_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Windwardport_House_2_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDWARDPORT_HOUSE_2_2F",
+      "name": "Windwardport_House_2_2F_Layout",
+      "width": 14,
+      "height": 12,
+      "border_width": 1,
+      "border_height": 1,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_MayoidosLab",
+      "border_filepath": "data/layouts/Windwardport_House_2_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Windwardport_House_2_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDWARDPORT_JUIS_HOUSE_1F",
+      "name": "Windwardport_Juis_House_1F_Layout",
+      "width": 19,
+      "height": 12,
+      "border_width": 1,
+      "border_height": 1,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_MayoidosLab",
+      "border_filepath": "data/layouts/Windwardport_Juis_House_1F/border.bin",
+      "blockdata_filepath": "data/layouts/Windwardport_Juis_House_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDWARDPORT_JUIS_HOUSE_2F",
+      "name": "Windwardport_Juis_House_2F_Layout",
+      "width": 11,
+      "height": 12,
+      "border_width": 1,
+      "border_height": 1,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_MayoidosLab",
+      "border_filepath": "data/layouts/Windwardport_Juis_House_2F/border.bin",
+      "blockdata_filepath": "data/layouts/Windwardport_Juis_House_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDWARDPORT_HOUSE_3",
+      "name": "Windwardport_House_3_Layout",
+      "width": 19,
+      "height": 12,
+      "border_width": 1,
+      "border_height": 1,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_MayoidosLab",
+      "border_filepath": "data/layouts/Windwardport_House_3/border.bin",
+      "blockdata_filepath": "data/layouts/Windwardport_House_3/map.bin"
+    },
+    {
+      "id": "LAYOUT_WINDWARDPORT_BEACH_HOUSE",
+      "name": "Windwardport_BeachHouse_Layout",
+      "width": 15,
+      "height": 12,
+      "border_width": 1,
+      "border_height": 1,
+      "primary_tileset": "gTileset_Gen4Indoor",
+      "secondary_tileset": "gTileset_MayoidosLab",
+      "border_filepath": "data/layouts/Windwardport_BeachHouse/border.bin",
+      "blockdata_filepath": "data/layouts/Windwardport_BeachHouse/map.bin"
     }
   ]
 }

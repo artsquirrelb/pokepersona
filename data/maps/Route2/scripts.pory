@@ -5,53 +5,53 @@ mapscripts Route2_MapScripts {
         }
     }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-        VAR_AKIHIKOS_INTRO_STATE, 25: Route2_Eventscript_AkihikoOnWarp25
-        VAR_AKIHIKOS_INTRO_STATE, 33: Route2_Eventscript_AkihikoOnWarp33
-        VAR_AKIHIKOS_INTRO_STATE, 40: Route2_Eventscript_AkihikoOnWarp40
+        VAR_AKIHIKOS_INTRO_STATE, A_TO_ROUTE2: Route2_Eventscript_AkihikoOnWarp25
+        VAR_AKIHIKOS_INTRO_STATE, A_AS_LEAVING_R2_HOUSE: Route2_Eventscript_AkihikoOnWarp33
+        VAR_AKIHIKOS_INTRO_STATE, A_CANT_SLEEP: Route2_Eventscript_AkihikoOnWarp40
         ////////////////
-        VAR_MITSURUS_INTRO_STATE, 8: Route2_Eventscript_MitsuruOnWarp8
-        VAR_MITSURUS_INTRO_STATE, 27: Route2_Eventscript_MitsuruOnWarp27
+        VAR_MITSURUS_INTRO_STATE, M_TOO_LATE_NIGHT: Route2_Eventscript_MitsuruOnWarp8
+        VAR_MITSURUS_INTRO_STATE, M_TO_ROUTE_2: Route2_Eventscript_MitsuruOnWarp27
     ]
     MAP_SCRIPT_ON_TRANSITION{
-        if (var(VAR_AKIHIKOS_INTRO_STATE) < 40){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) < A_CANT_SLEEP){
             setflag(FLAG_TEMP_3)
         }
-        if ((var(VAR_AKIHIKOS_INTRO_STATE) > 25 || var(VAR_MITSURUS_INTRO_STATE) < 20) &&  var(VAR_MITSURUS_INTRO_STATE) !=27){
+        if ((var(VAR_AKIHIKOS_INTRO_STATE) > A_TO_ROUTE2 || var(VAR_MITSURUS_INTRO_STATE) < M_ASK_AROUND_FOR_AKSJ) &&  var(VAR_MITSURUS_INTRO_STATE) != M_TO_ROUTE_2){
             setflag(FLAG_TEMP_1)
             setflag(FLAG_TEMP_6)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) > 25 && var(VAR_AKIHIKOS_INTRO_STATE) < 33){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) > A_TO_ROUTE2 && var(VAR_AKIHIKOS_INTRO_STATE) < A_AS_LEAVING_R2_HOUSE){
             setflag(FLAG_TEMP_2)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 26){
-            clearflag(FLAG_HIDE_HELP_BUTTON)
-        }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 33){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_AS_LEAVING_R2_HOUSE){
             setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm(6, 10, 12)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 34){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_TO_SUNSHINE_MEADOW){
             setobjectxyperm(6, 31, 21)
             setobjectmovementtype(6, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 37 && var(VAR_AKIHIKOS_INTRO_STATE) < 40){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_M_EXPLAINS_OBJECTIVES){
+            clearflag(FLAG_HIDE_HELP_BUTTON)
+        }
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= A_M_1ST_BATTLE && var(VAR_AKIHIKOS_INTRO_STATE) < A_CANT_SLEEP){
             setflag(FLAG_TEMP_2)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 40){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_CANT_SLEEP){
             setobjectxyperm(6, 13, 13)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 42){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= A_1ST_MORNING){
             setflag(FLAG_TEMP_2)
             setflag(FLAG_TEMP_3)
         }
-        if((var(VAR_AKIHIKOS_INTRO_STATE) == 100) || (var(VAR_MITSURUS_INTRO_STATE) == 100)){
+        if((var(VAR_AKIHIKOS_INTRO_STATE) == A_INTRO_COMPLETED) || (var(VAR_MITSURUS_INTRO_STATE) == M_INTRO_COMPLETED)){
             setflag(FLAG_TEMP_4)
             setobjectxyperm(TAROU, 9, 19)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) != 27){
+        if (var(VAR_MITSURUS_INTRO_STATE) != M_TO_ROUTE_2){
             setflag(FLAG_TEMP_5)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) == 27){
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_TO_ROUTE_2){
             setflag(FLAG_TEMP_6)
             setobjectxyperm(13, 19, 10)
             setobjectmovementtype(13, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
@@ -61,12 +61,12 @@ mapscripts Route2_MapScripts {
         
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_AKIHIKOS_INTRO_STATE, 25: Route2_Eventscript_AkihikoOnFrame25
-        VAR_AKIHIKOS_INTRO_STATE, 33: Route2_Eventscript_AkihikoOnFrame33
-        VAR_AKIHIKOS_INTRO_STATE, 40: Route2_Eventscript_AkihikoOnFrame40
+        VAR_AKIHIKOS_INTRO_STATE, A_TO_ROUTE2: Route2_Eventscript_AkihikoOnFrame25
+        VAR_AKIHIKOS_INTRO_STATE, A_AS_LEAVING_R2_HOUSE: Route2_Eventscript_AkihikoOnFrame33
+        VAR_AKIHIKOS_INTRO_STATE, A_CANT_SLEEP: Route2_Eventscript_AkihikoOnFrame40
         ////////////
-        VAR_MITSURUS_INTRO_STATE, 8: Route2_Eventscript_MitsuruOnFrame8
-        VAR_MITSURUS_INTRO_STATE, 29: Route2_Eventscript_MitsuruOnFrame29
+        VAR_MITSURUS_INTRO_STATE, M_TOO_LATE_NIGHT: Route2_Eventscript_MitsuruOnFrame8
+        VAR_MITSURUS_INTRO_STATE, M_SAVED_AKSJ: Route2_Eventscript_MitsuruOnFrame29
     ]
 }
 
@@ -135,7 +135,8 @@ script Route2_Eventscript_AkishinjiGettingBlockedBySusMen {
     setspeaker("Man In Black 2")
     applymovement(3, walkinplaceright)
     waitmovement(0)
-    msgbox(format("You two are coming with us. Like it or not.\p
+    msgbox(format("You two are coming with us.\n
+    Like it or not.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}What?"))
     closemessage
     applymovement(4, SusMan1ApproachingAkihiko)
@@ -372,10 +373,9 @@ script Route2_Eventscript_MitsuruAppears {
     applymovement(12, walkinplacedown)
     waitmovement(0)
     delay(30)
-    warpsilent(MAP_BLANK_MAP, 0, 0)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 26)
-    release
-
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_MEETING_M)
+    warpsilent(MAP_ROUTE2_HOUSE, 5, 3)
+    waitstate
 }
 
 movement walkinplacedown {
@@ -461,7 +461,7 @@ script Route2_Eventscript_Kyousuke {
     end
 }
 script Route2_Eventscript_Tarou {
-    if(((var(VAR_AKIHIKOS_INTRO_STATE) > 43 && var(VAR_AKIHIKOS_INTRO_STATE) < 50)) || var(VAR_MITSURUS_INTRO_STATE) < 20){
+    if(((var(VAR_AKIHIKOS_INTRO_STATE) > 43 && var(VAR_AKIHIKOS_INTRO_STATE) < A_NOT_PLAYER)) || var(VAR_MITSURUS_INTRO_STATE) < 20){
         goto(Route2_Eventscript_Kyousuke)
     }
     else{
@@ -507,10 +507,13 @@ script Route2_Eventscript_ShinjiroSplitsOutToCatchPokemon {
     setobjectxy(6, 31, 21)
     fwdtime(13, 45)
     release
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 34)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_TO_SUNSHINE_MEADOW)
     clearflag(FLAG_HIDE_HELP_BUTTON)
+    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
     destroyfollowernpc
     setflag(FLAG_LOCK_SHINJIRO)
+    special(SetCB2LoadMap)
+    release
     end
 }
 
@@ -576,7 +579,7 @@ script Route2_Eventscript_AkihikoNoticingShinjiroOutside {
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_left*5))
     waitmovement(0)
     special(RemoveCameraObject)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 41)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_S_1ST_BATTLE)
     end
 }
 
@@ -775,7 +778,6 @@ text Route2_Eventscript_LostInShinjiroFirstBattlePointDown {
 }
 script Route2_Eventscript_PostShinjiroFirstBattle {
     lock
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 42)
     clearflag(FLAG_NO_WHITEOUT)
     clearflag(FLAG_NO_BAG_USE)
     playse(SE_M_YAWN)
@@ -787,7 +789,14 @@ script Route2_Eventscript_PostShinjiroFirstBattle {
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Yeah, I'm tired too."))
     closemessage
     special(HealPlayerParty)
-    warpsilent(MAP_BLANK_MAP, 0, 0)
+    fadescreen(FADE_TO_BLACK)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_1ST_MORNING)
+    fwdtime(6,20)
+    fwdweekday(WEEKDAY_MON)
+    delay(60)
+    msgbox(format("The next morning..."))
+    warpsilent(MAP_ROUTE2_HOUSE, 3, 10)
+    waitstate
 }
 
 movement Route2ShinjiroGoesInsideHouse {
@@ -852,6 +861,19 @@ movement emotecry {
     emote_cry
 }
 
+script Route2_Eventscript_A_Trigger{
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == A_M_EXPLAINS_OBJECTIVES)
+    {
+        goto (Route2_Eventscript_ShinjiroFirstBattleWarning)
+    }
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == A_S_1ST_BATTLE)
+    {
+        goto(Route2_Eventscript_MustBattleShinjiro)
+    }
+    release
+    end
+}
+
 script Route2_Eventscript_ShinjiroFirstBattleWarning {
     lock
     msgbox(format("{COLOR RED}Important battle ahead. Do you want to proceed?"), MSGBOX_YESNO)
@@ -891,7 +913,7 @@ script Route2_Eventscript_MitsuruApproachingRoute2House {
 }
 
 script Route2_Eventscript_HouseLocked{
-    if (var(VAR_MITSURUS_INTRO_STATE) <10){
+    if (var(VAR_MITSURUS_INTRO_STATE) < M_TOO_LATE_NIGHT){
         lock
         msgbox(format("It's locked."))
         closemessage
@@ -999,7 +1021,8 @@ script Route2_Eventscript_AkishinjiGettingBlockedMitsuruPOV {
     setspeaker("Man In Black 2")
     applymovement(3, walkinplaceright)
     waitmovement(0)
-    msgbox(format("You two are coming with us. Like it or not.\p
+    msgbox(format("You two are coming with us.\n
+    Like it or not.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}What?"))
     closemessage
     applymovement(4, SusMan1ApproachingAkihiko)
@@ -1146,11 +1169,12 @@ script Route2_Eventscript_MitsuruAppearsMitsuruPOV {
     applymovement(12, walkinplacedown)
     waitmovement(0)
     fadenewbgm(MUS_DUMMY)
-    setvar(VAR_MITSURUS_INTRO_STATE, 28)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_SAVED_AKSJ)
     setflag(FLAG_HIDE_MAP_NAME_POPUP)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     delay(30)
     warpsilent(MAP_ROUTE2_HOUSE, 5, 3)
+    waitstate
 }
 
 script Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting {
@@ -1168,7 +1192,9 @@ script Route2_Eventscript_MitsuruPostSenpaiTrioFirstMeeting {
         subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, MITSURUS_PROLOGUE)
     }
     clearflag(FLAG_HIDE_QUEST_ICON)
-    setvar(VAR_MITSURUS_INTRO_STATE, 30)
+    clearflag(FLAG_HIDE_MAP_NAME_POPUP)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_TO_SUNSHINE_MEADOW)
+    special(ShowMapNamePopup)
     release
     end
 }
@@ -1179,7 +1205,8 @@ script Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight {
     applymovement(13, moves(emote_exclamation_mark, walk_fast_left, face_down))
     waitmovement
     setspeaker("Yuuka")
-    msgbox(format("I'm sorry but I dropped an important note around here. Could you please come back after I find it?"))
+    msgbox(format("I'm sorry but I dropped an important note around here.\p
+    Could you please come back after I find it?"))
     closemessage
     applymovement(13, walkdown)
     applymovement(LOCALID_PLAYER, moves(lock_facing_direction, walk_down, unlock_facing_direction))

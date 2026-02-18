@@ -222,7 +222,7 @@
       "y": 7,
       "elevation": 0,
       "var": "VAR_CHAPTER_1_STATE",
-      "var_value": "7",
+      "var_value": "C1_A_GET_GROOKEY",
       "script": "Windwardport_MayoidosLab_MustGetGrookey"
     },
     {
@@ -231,7 +231,7 @@
       "y": 6,
       "elevation": 0,
       "var": "VAR_CHAPTER_1_STATE",
-      "var_value": "7",
+      "var_value": "C1_A_GET_GROOKEY",
       "script": "Windwardport_MayoidosLab_MustGetGrookey"
     },
     {
@@ -240,7 +240,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CHAPTER_1_STATE",
-      "var_value": "7",
+      "var_value": "C1_A_GET_GROOKEY",
       "script": "Windwardport_MayoidosLab_MustGetGrookey"
     },
     {
@@ -249,7 +249,7 @@
       "y": 10,
       "elevation": 0,
       "var": "VAR_CHAPTER_1_STATE",
-      "var_value": "7",
+      "var_value": "C1_A_GET_GROOKEY",
       "script": "Windwardport_MayoidosLab_MustGetGrookey"
     },
     {
@@ -258,7 +258,7 @@
       "y": 10,
       "elevation": 0,
       "var": "VAR_CHAPTER_1_STATE",
-      "var_value": "7",
+      "var_value": "C1_A_GET_GROOKEY",
       "script": "Windwardport_MayoidosLab_MustGetGrookey"
     },
     {
@@ -267,7 +267,7 @@
       "y": 9,
       "elevation": 0,
       "var": "VAR_CHAPTER_1_STATE",
-      "var_value": "7",
+      "var_value": "C1_A_GET_GROOKEY",
       "script": "Windwardport_MayoidosLab_MustGetGrookey"
     },
     {
@@ -276,7 +276,7 @@
       "y": 6,
       "elevation": 0,
       "var": "VAR_CHAPTER_1_STATE",
-      "var_value": "7",
+      "var_value": "C1_A_GET_GROOKEY",
       "script": "Windwardport_MayoidosLab_MustGetGrookey"
     },
     {
@@ -285,7 +285,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_CHAPTER_1_STATE",
-      "var_value": "7",
+      "var_value": "C1_A_GET_GROOKEY",
       "script": "Windwardport_MayoidosLab_MustGetGrookey"
     },
     {
@@ -294,7 +294,7 @@
       "y": 4,
       "elevation": 0,
       "var": "VAR_CHAPTER_1_STATE",
-      "var_value": "7",
+      "var_value": "C1_A_GET_GROOKEY",
       "script": "Windwardport_MayoidosLab_MustGetGrookey"
     }
   ],

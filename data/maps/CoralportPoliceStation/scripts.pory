@@ -8,7 +8,7 @@ mapscripts CoralportPoliceStation_MapScripts {
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_CHAPTER_1_STATE, 1: CoralportPoliceStation_MapScripts_OnFrame1
+        VAR_CHAPTER_1_STATE, C1_TO_POLICE_STATION: CoralportPoliceStation_MapScripts_OnFrame1
     ]
 }
 
@@ -115,7 +115,7 @@ script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
     removeobject(5)
     setflag(FLAG_TEMP_1)
     setflag(FLAG_TEMP_2)
-    setvar(VAR_CHAPTER_1_STATE, 2)
+    setvar(VAR_CHAPTER_1_STATE, C1_ASK_ABOUT_MIKI)
     questmenu(QUEST_MENU_UNLOCK_QUEST, QUEST_FIND_FISHERMANS_DAUGHTER)
     addminutes(15)
     release
@@ -125,7 +125,7 @@ script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
 script CoralportPoliceStation_Eventscript_PolicemanReceptionist {
     lock
     setspeaker("Namake")
-    if (var(VAR_CHAPTER_1_STATE) == 2){
+    if (var(VAR_CHAPTER_1_STATE) == C1_ASK_ABOUT_MIKI){
         goto (CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki)
     }
     elif (var(VAR_QUEST_FIND_MINING_KIT_STATE) == 1){
@@ -189,7 +189,7 @@ script CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki {
     waitmovement
     delay(30)
     msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SAD}Let's go outside."))
-    setvar(VAR_CHAPTER_1_STATE, 3)
+    setvar(VAR_CHAPTER_1_STATE, C1_WAITING_SHIP)
     addminutes(15)
     warp(MAP_CORALPORT, 13, 6)
     waitstate

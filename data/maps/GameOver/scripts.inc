@@ -14,7 +14,7 @@ GameOver_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 
 GameOver_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 7 "data/maps/GameOver/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 38, Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, A_INTRO_GAMEOVER, Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle
 # 8 "data/maps/GameOver/scripts.pory"
 	map_script_2 VAR_DAYS_LEFT, 0, Eventscript_GAMEOVERFromMissingDeadline
 	.2byte 0
@@ -62,7 +62,7 @@ Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle_1:
 # 27 "data/maps/GameOver/scripts.pory"
 	special HealPlayerParty
 # 28 "data/maps/GameOver/scripts.pory"
-	setvar VAR_AKIHIKOS_INTRO_STATE, 34
+	setvar VAR_AKIHIKOS_INTRO_STATE, A_TO_SUNSHINE_MEADOW
 # 29 "data/maps/GameOver/scripts.pory"
 	setvar VAR_MITSURU_RELATIONSHIP_POINTS, 100
 # 30 "data/maps/GameOver/scripts.pory"

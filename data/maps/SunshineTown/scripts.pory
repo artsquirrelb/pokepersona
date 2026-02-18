@@ -7,10 +7,10 @@ mapscripts SunshineTown_MapScripts {
             setobjectxyperm(6, 23, 3)
             setobjectmovementtype(6, MOVEMENT_TYPE_FACE_LEFT)
         }
-        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 16 && var(VAR_MITSURUS_INTRO_STATE)!= 19){
+        if(var(VAR_AKIHIKOS_INTRO_STATE) >= A_EXPLOSION && var(VAR_MITSURUS_INTRO_STATE)!= M_HEARD_ORPHANAGE_EXPLOSION){
             setflag(FLAG_TEMP_1)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 16 || var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_EXPLOSION || var(VAR_AKIHIKOS_INTRO_STATE) == A_ASK_AROUND) {
             playbgm(MUS_P3_CALAMITY, TRUE)
             setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm(2, 14, 11)
@@ -18,21 +18,21 @@ mapscripts SunshineTown_MapScripts {
             setobjectxyperm(1, 3, 14)
             setobjectmovementtype (1, MOVEMENT_TYPE_LOOK_AROUND)
             }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) < 16 || var(VAR_AKIHIKOS_INTRO_STATE) >= 17 || var(VAR_MITSURUS_INTRO_STATE) < 20) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) < A_EXPLOSION || var(VAR_AKIHIKOS_INTRO_STATE) >= A_ASK_AROUND || var(VAR_MITSURUS_INTRO_STATE) < M_NOT_PLAYER) {
             setflag(FLAG_TEMP_2)
         }
-        if(var(VAR_MITSURUS_INTRO_STATE) > 16 && var(VAR_MITSURUS_INTRO_STATE) <= 50){
+        if(var(VAR_MITSURUS_INTRO_STATE) > M_TO_SUNSHINE_TOWN && var(VAR_MITSURUS_INTRO_STATE) <= M_NOT_PLAYER){
             setmetatile(3, 13, 0x831, TRUE)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) != 20){
+        if (var(VAR_MITSURUS_INTRO_STATE) != M_KG_STAFF_WOODS_ENTRANCE){
             setflag(FLAG_TEMP_3)
             setflag(FLAG_TEMP_5)
         }
-        if(var(VAR_MITSURUS_INTRO_STATE) >= 20 && var(VAR_MITSURUS_INTRO_STATE) < 23){
+        if(var(VAR_MITSURUS_INTRO_STATE) >= M_KG_STAFF_WOODS_ENTRANCE && var(VAR_MITSURUS_INTRO_STATE) < M_ASK_AROUND_FOR_AKSJ){
             setflag(FLAG_TEMP_4)
             setflag(FLAG_TEMP_5)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) >= 18 && var(VAR_MITSURUS_INTRO_STATE) <= 21 ){
+        if (var(VAR_MITSURUS_INTRO_STATE) >= M_TO_SUNSHINE_TOWN && var(VAR_MITSURUS_INTRO_STATE) <= M_FOLLOW_KG_STAFF ){
             setobjectxyperm(3, 13, 6)
             setobjectmovementtype(3, MOVEMENT_TYPE_FACE_LEFT)
             setobjectxyperm(24, 14, 7)
@@ -44,17 +44,17 @@ mapscripts SunshineTown_MapScripts {
         }
     }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-        VAR_MITSURUS_INTRO_STATE, 19: SunshineTown_Eventscript_MitsuruOnWarp19
-        VAR_MITSURUS_INTRO_STATE, 24: SunshineTown_Eventscript_MitsuruOnWarp24
+        VAR_MITSURUS_INTRO_STATE, M_HEARD_ORPHANAGE_EXPLOSION: SunshineTown_Eventscript_MitsuruOnWarp19
+        VAR_MITSURUS_INTRO_STATE, M_ASKING_FATMAN: SunshineTown_Eventscript_MitsuruOnWarp24
     ]
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 16: SunshineTown_Eventscript_OnFrame16
-        VAR_AKIHIKOS_INTRO_STATE, 23: SunshineTown_Eventscript_OnFrame23
+        VAR_AKIHIKOS_INTRO_STATE, A_EXPLOSION: SunshineTown_Eventscript_OnFrame16
+        VAR_AKIHIKOS_INTRO_STATE, A_KUROSAWAS_HOUSE: SunshineTown_Eventscript_OnFrame23
         ///////
-        VAR_MITSURUS_INTRO_STATE, 18: SunshineTown_Eventscript_MitsuruOnFrame18
-        VAR_MITSURUS_INTRO_STATE, 19: SunshineTown_Eventscript_MitsuruOnFrame19
-        VAR_MITSURUS_INTRO_STATE, 23: SunshineTown_Eventscript_MitsuruOnFrame23
-        VAR_MITSURUS_INTRO_STATE, 24: SunshineTown_Eventscript_MitsuruOnFrame24
+        VAR_MITSURUS_INTRO_STATE, M_TO_SUNSHINE_TOWN: SunshineTown_Eventscript_MitsuruOnFrame18
+        VAR_MITSURUS_INTRO_STATE, M_HEARD_ORPHANAGE_EXPLOSION: SunshineTown_Eventscript_MitsuruOnFrame19
+        VAR_MITSURUS_INTRO_STATE, M_ASK_AROUND_FOR_AKSJ: SunshineTown_Eventscript_MitsuruOnFrame23
+        VAR_MITSURUS_INTRO_STATE, M_ASKING_FATMAN: SunshineTown_Eventscript_MitsuruOnFrame24
     ]
     
 }
@@ -66,7 +66,7 @@ script SunshineTown_Eventscript_MitsuruOnWarp19 {
 
 script SunshineTown_Eventscript_MitsuruOnFrame23 {
     lock
-    setvar(VAR_MITSURUS_INTRO_STATE, 24)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_ASKING_FATMAN)
     warpsilent(MAP_SUNSHINE_TOWN, 3, 7)
     waitstate
 }
@@ -80,9 +80,10 @@ script SunshineTown_Eventscript_MitsuruOnFrame24{
 }
 
 script SunshineTown_Eventscript_MitsuruOnFrame18 {
+    fadescreenswapbuffers(FADE_TO_BLACK)
     call(Eventscript_CutsceneStarts)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
-    setvar(VAR_MITSURUS_INTRO_STATE, 19)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_HEARD_ORPHANAGE_EXPLOSION)
     warpsilent(MAP_SUNSHINE_TOWN, 4, 6)
     waitstate
 }
@@ -94,10 +95,9 @@ script SunshineTown_Eventscript_MitsuruOnFrame19 {
 script SunshineTown_Eventscript_Kurosawa {
     lock
     setspeaker(SP_NAME_KRSW)
-    if (flag(FLAG_TEMP_1) == TRUE) {
+    if (var(VAR_TEMP_E) == 1) {
         faceplayer
-        msgbox(format("Hm?\p
-        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}W-we'll get going now!"))
+        msgbox(format("(No... I shouldn't involve the kids...)"))
     }
     else {
         msgbox(format("If only the higher-ups allowed us-"))
@@ -105,10 +105,21 @@ script SunshineTown_Eventscript_Kurosawa {
         playse(SE_PIN)
         applymovement(3, KurosawaNoticed)
         waitmovement(0)
-        msgbox(format("{SPEAKER NAME_KRSW}Do you need some help, kids?\p
-        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Oh nothing! Sorry for bothering you, sir.\p
-        (He looks so intimidating!)"))
-        setflag(FLAG_TEMP_1)
+        msgbox(format("{SPEAKER NAME_KRSW}Oh its's you kids.\n
+        Out for an errand run?\p
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Yes, Kurosawa-san.\p
+        Do you need something from the Pokémon Center?\p
+        We're going there.\p
+        {DESTROY_MUGSHOT}{SPEAKER NAME_KRSW}Thanks kids, I'm good.\p
+        .....{PAUSE 60}\n
+        By the way, ...\p
+        {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Yes?\p
+        {DESTROY_MUGSHOT}{SPEAKER NAME_KRSW}No, it's nothing.\n
+        See you around.\p"))
+        doemote(MC, E_QUESTION)
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Sure then.\n
+        Goodbye, Kurosawa-san!"))
+        setvar(VAR_TEMP_E, 1)
     }
     release
     end
@@ -119,16 +130,13 @@ movement KurosawaNoticed {
     face_player
 }
 script SunshineTown_Eventscript_DontLeaveTownTrigger_Akihiko {//VAR_TEMP_F == 0
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 12){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == A_GO_GET_PACKAGE){
        goto(SunshineTown_Eventscript_GoGetPackage)
     }
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 17){
-        goto(SunshineTown_Eventscript_DontLeaveTown)
-    }
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 18){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == A_ASK_AROUND){
         goto(SunshineTown_Eventscript_NoPointLeavingTown)
     }
-    if(var(VAR_AKIHIKOS_INTRO_STATE) == 24){
+    if(var(VAR_AKIHIKOS_INTRO_STATE) == A_TO_ROUTE2){
         goto(SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24)
     }
 }
@@ -146,10 +154,9 @@ script SunshineTown_Eventscript_FatMan {
     lock
     setspeaker("Kojima")
     faceplayer
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == A_ASK_AROUND){
         msgbox(format("The policeman living here ran toward the woods after hearing that explosion.\p
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}We should hurry up!"))
-        setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
         release
         end
     }
@@ -169,15 +176,14 @@ script SunshineTown_Eventscript_Boy {
     {
         goto (SunshineTown_Eventscript_Boy_GiveSquirtleInfo)
     }
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == A_ASK_AROUND){
         msgbox(format("I think something exploded in the woods.\p
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DARKENED}Could it be...\p
         {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_MAD}The orphanage!"))
-        setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
         release
         end
     }
-    if (var(VAR_MITSURUS_INTRO_STATE) >= 18 && var(VAR_MITSURUS_INTRO_STATE) <= 21){
+    if (var(VAR_MITSURUS_INTRO_STATE) >= M_EXPLOSION && var(VAR_MITSURUS_INTRO_STATE) <= 21){
         msgbox(format("My brother is a fire fighter and he's at the burning orphanage right now.\p
         I'm so worried I can't stay still, I hope there's not many casualties.\p
         If only I had a Pokémon that can deal with fire to help but I only have a Poltchageist."))
@@ -241,7 +247,7 @@ script SunshineTown_Eventscript_ExitingPC {
     waitmovement(0)
     removeobject(4)
     setflag(FLAG_TEMP_2)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 17)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_ASK_AROUND)
     fwdtime(9, 35)
     releaseall
     end
@@ -257,16 +263,6 @@ movement SunshineTown_Eventscript_ShinjiroExitingPC {
     walk_fast_down *3
     walk_fast_right *2 
     face_up
-}
-
-script SunshineTown_Eventscript_DontLeaveTown {
-    lockall
-    applymovement(LOCALID_PLAYER, walkright)
-    waitmovement(0)
-    msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_MAD}We should ask people in town about that explosion sound!"))
-    closemessage
-    releaseall
-    end
 }
 
 script SunshineTown_Eventscript_NoPointEnteringPC {
@@ -287,21 +283,18 @@ script SunshineTown_Eventscript_NoPointLeavingTown {
     end
 }
 
-script SunshineTown_Eventscript_WarpToBurningOrphanage {//VAR_TEMP_F == 0
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18)
-    {
-        lock
-        playse(SE_EXIT)
-        setvar(VAR_AKIHIKOS_INTRO_STATE, 18)
-        setflag(FLAG_HIDE_HELP_BUTTON)
-        warp(MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23)
-        waitstate
-    }
+script SunshineTown_Eventscript_WarpToBurningOrphanage {
+    lock
+    playse(SE_EXIT)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_BURNING_ORPHANAGE)
+    setflag(FLAG_HIDE_HELP_BUTTON)
+    warp(MAP_SUNSHINE_ORPHANAGE_BURNING, 16, 23)
+    waitstate
 }
 
 script SunshineTown_Eventscript_OW_Happiny{
     lockall
-    if (var(VAR_AKIHIKOS_INTRO_STATE) < 24 || (var(VAR_MITSURUS_INTRO_STATE) >= 18 && var(VAR_MITSURUS_INTRO_STATE) <= 21)){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) < A_TO_ROUTE2 || (var(VAR_MITSURUS_INTRO_STATE) >= M_EXPLOSION && var(VAR_MITSURUS_INTRO_STATE) <= 21)){
         msgbox(format("The Happiny is looking through the door. It won't budge no matter what."))
         closemessage
         releaseall
@@ -331,7 +324,7 @@ script SunshineTown_Eventscript_OnFrame23{
         subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
     }
     clearflag(FLAG_HIDE_QUEST_ICON)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 24)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_TO_ROUTE2)
     release
     end
 }
@@ -425,7 +418,7 @@ script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActiv
 }
 
 script SunshineTown_Eventscript_ExpertF_PreQuest {
-    if (var(VAR_MITSURUS_INTRO_STATE) >= 18 && var(VAR_MITSURUS_INTRO_STATE) <= 21){
+    if (var(VAR_MITSURUS_INTRO_STATE) >= M_EXPLOSION && var(VAR_MITSURUS_INTRO_STATE) <= 21){
         faceplayer
         msgbox(format("I lent my Lucario to the police to help them with the rescue.\p
         The Riolus are still too young and I have to keep them safe here."))
@@ -433,7 +426,7 @@ script SunshineTown_Eventscript_ExpertF_PreQuest {
         release
         end
     }
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 17 || var(VAR_AKIHIKOS_INTRO_STATE) == 18){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == A_ASK_AROUND){
         faceplayer
         msgbox(format("Did you hear a loud sound or was it because of my ears acting up again?"))
         closemessage
@@ -450,7 +443,7 @@ script SunshineTown_Eventscript_ExpertF_PreQuest {
 
 script SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24 {
     lock
-    msgbox(format("{COLOR RED}Important scene ahead. Do you want to proceed?"), MSGBOX_YESNO)
+    msgbox(format("{COLOR RED}Important scene ahead.\nDo you want to proceed?"), MSGBOX_YESNO)
     if (var(VAR_RESULT) == 0){
         applymovement(LOCALID_PLAYER, walkright)
         waitmovement(0)
@@ -459,7 +452,8 @@ script SunshineTown_Eventscript_Begin_Route2_Cutscene_AkihikoVar24 {
     }
     else{
         fwdtime(11, 0)
-        warpsilent(MAP_BLANK_MAP, 0, 0)
+        warpsilent(MAP_ROUTE2, 37, 11)
+        waitstate
     }
 }
     
@@ -517,7 +511,8 @@ script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
     delay(4)
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_fast_right))
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Excuse me. Did something happen? Everyone in town looks on edge."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Excuse me. Did something happen?\n
+    Everyone in town looks on edge."))
     closemessage
     applymovement(1, faceleft)
     waitmovement
@@ -539,7 +534,7 @@ script SunshineTown_Eventscript_MitsuruSeeingPoliceRunning {
     {CREATE MUGSHOT_M EMOTE_SERIOUS}(I should go check and help the injured as well.)"))
     closemessage
     removeobject(1)
-    setvar(VAR_MITSURUS_INTRO_STATE, 20)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_KG_STAFF_WOODS_ENTRANCE)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     call(Eventscript_CutsceneEnds)
     clearflag(FLAG_TEMP_3)
@@ -616,7 +611,7 @@ script SunshineTown_Eventscript_KGStaffAtWoodsEntrance {
     removeobject(22)
     removeobject(23)
     setflag(FLAG_TEMP_3)
-    setvar(VAR_MITSURUS_INTRO_STATE, 21)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_FOLLOW_KG_STAFF)
     fwdtime(9, 40)
     release
     end
@@ -626,13 +621,16 @@ script SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji {
     lock
     applymovement(LOCALID_PLAYER, moves(player_run_right*3, walk_right*2, delay_16))
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(This man... He was helping the orphanage so he could've known something about those boys.)"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(This man... He was helping the orphanage.\p
+    He may know something about those boys.)"))
     closemessage
     applymovement(LOCALID_PLAYER, moves(walk_down, walk_right*2))
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Excuse me. Have you seen these boys?"))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Excuse me.\n
+    Have you seen these boys?"))
     setspeaker("Kojima")
-    msgbox(format("{DESTROY_MUGSHOT}Oh them! I saw the policeman living in this town carried them to his house.\p
+    msgbox(format("{DESTROY_MUGSHOT}Oh them!\p
+    I saw the policeman living in this town carried them to his house.\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Really? When was it?"))
     setspeaker("Kojima")
     msgbox(format("{DESTROY_MUGSHOT}I think it was around an hour after the explosion at the orphanage happened?\p
@@ -648,12 +646,14 @@ script SunshineTown_Eventscript_MitsuruAskingAboutAkiShinji {
     waitmovement
     setspeaker("Kojima")
     msgbox(format("It's the house over there.\p
-    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I see. Thank you so much for your help."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(Isn't that... {PAUSE 60}Kurosawa-san's house?)\p
+    I see.\n
+    Thank you so much for your help."))
     closemessage
     applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_diag_northeast*5, walk_right))
     waitmovement
     special(RemoveCameraObject)
-    setvar(VAR_MITSURUS_INTRO_STATE, 25)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_APPROACH_KRSW_HOUSE)
     fwdtime(17, 20)
     release
     end
@@ -665,7 +665,8 @@ script SunshineTown_Eventscript_MitsuruOverheardAkiShinji {
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, emoteexclamation)
     setspeaker("???????")
-    msgbox(format("Aki! At least eat something before you go find her! You haven't eaten since yesterday!"))
+    msgbox(format("Aki! At least eat something before you go find her!\p
+    You haven't eaten since yesterday!"))
     setspeaker("Aki?")
     msgbox(format("How do you expect I can eat anything when Miki is still out there missing!?\p
     What do you know anyway? It's not like she's your sister."))
@@ -680,28 +681,33 @@ script SunshineTown_Eventscript_MitsuruOverheardAkiShinji {
     Even if you find her, do you think she'll be happy seeing you in this state?\p
     Looking like a rotten walking zombie?"))
     setspeaker("Aki?")
-    msgbox(format(".......... Fuck you, Shinji. Fine."))
+    msgbox(format(".......... Fuck you, Shinji.\n
+    Fine."))
     closemessage
     delay(20)
     setspeaker("Shinji?")
     msgbox(format("Eat first. Then we'll go find her together, okay?"))
     setspeaker("Aki?")
-    msgbox(format("........Okay."))
+    msgbox(format("........ {PAUSE 60}Okay."))
     closemessage
     delay(20)
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement
-    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}....... (His sister's missing after the explosion, I suppose.)\p
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}...{PAUSE 60} (His sister's missing after the explosion, I suppose.)\p
     (I should go to the orphanage and help the searching.)"))
     closemessage
     applymovement(LOCALID_PLAYER, moves(player_run_right*9, player_run_up*2, face_down))
     delay(40)
-    setvar(VAR_MITSURUS_INTRO_STATE, 26)
-    warpsilent(MAP_BLANK_MAP)
+    fadescreen(FADE_TO_BLACK)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_CALLING_TKHR)
+    msgbox(format("A few days later."))
+    closemessage
+    warpsilent(MAP_ROUTE2_HOUSE, 5, 3)
+    waitstate
 }
 
 script SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru {//VAR_TEMP_F == 0
-    if (var(VAR_MITSURUS_INTRO_STATE) >= 6 && var(VAR_MITSURUS_INTRO_STATE) <= 16){
+    if (var(VAR_MITSURUS_INTRO_STATE) >= M_LEAVING_MANSION && var(VAR_MITSURUS_INTRO_STATE) <= M_VS_NORBERT){
         lock
         msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(Now is not the time to wander around in Sunshine Town.)"))
         closemessage
@@ -713,7 +719,7 @@ script SunshineTown_Eventscript_NotTheWayToSunshineMeadow_Mitsuru {//VAR_TEMP_F 
 }
 
 script SunshineTown_Eventscript_KurosawaHouseLocked {
-    if(var(VAR_MITSURUS_INTRO_STATE) > 16 && var(VAR_MITSURUS_INTRO_STATE) <= 50)
+    if(var(VAR_MITSURUS_INTRO_STATE) > M_VS_NORBERT && var(VAR_MITSURUS_INTRO_STATE) <= M_NOT_PLAYER)
     {
         msgbox("It's locked.")
     }

@@ -1,9 +1,9 @@
 mapscripts SunshineOrphanage_Burning_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 18: SunshineOrphanage_Burning_OnWarp18
+        VAR_AKIHIKOS_INTRO_STATE, A_BURNING_ORPHANAGE: SunshineOrphanage_Burning_OnWarp18
     ]
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_AKIHIKOS_INTRO_STATE, 18: SunshineOrphanage_Burning_OnFrame18
+        VAR_AKIHIKOS_INTRO_STATE, A_BURNING_ORPHANAGE: SunshineOrphanage_Burning_OnFrame18
     ]
 }
 
@@ -269,7 +269,7 @@ script SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver {
     waitse
     playse(SE_M_DIVE)
     waitse
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 19)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_TO_RIVERBANK)
     setflag(FLAG_TEMP_2)
     delay(60)
     applymovement (8, faceleft)
@@ -286,7 +286,8 @@ script SunshineOrphanage_Burning_Eventscript_AkiShinjiFellInTheRiver {
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fadescreenswapbuffers(FADE_TO_BLACK)
     fwdtime(10, 05)
-    warpsilent(MAP_BLANK_MAP, 0, 0)
+    delay(30)
+    warpsilent(MAP_SUNSHINE_TOWN_RIVERBANK, 17, 5)
 }
 
 movement KobayashiWalksTowardAzumarill {

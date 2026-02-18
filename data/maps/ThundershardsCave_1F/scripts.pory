@@ -1,6 +1,6 @@
 mapscripts ThundershardsCave_1F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
-        if(var(VAR_MITSURUS_INTRO_STATE) > 12){
+        if(var(VAR_MITSURUS_INTRO_STATE) > M_KG_STAFF_DOUBLE){
             setflag(FLAG_TEMP_1)
         }
     }
@@ -88,7 +88,7 @@ script ThundershardsCave_1F_EventScript_NeckBeardInvites {
     closemessage
     applymovement(LOCALID_PLAYER, faceright)
     waitmovement
-    setvar(VAR_MITSURUS_INTRO_STATE, 13)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_KG_STAFF_DOUBLE)
     fwdtime(8, 05)
     release
     end

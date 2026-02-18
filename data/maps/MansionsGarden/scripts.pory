@@ -1,7 +1,7 @@
 mapscripts MansionsGarden_MapScripts {
     MAP_SCRIPT_ON_LOAD {
         setflag(FLAG_TEMP_4)
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 100 || var(VAR_MITSURUS_INTRO_STATE) == 100){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_INTRO_COMPLETED || var(VAR_MITSURUS_INTRO_STATE) == M_INTRO_COMPLETED){
             setmetatile(12, 15, 0x911, FALSE)
             setmetatile(13, 15, 0x912, FALSE)
             setmetatile(14, 15, 0x913, FALSE)
@@ -19,21 +19,21 @@ mapscripts MansionsGarden_MapScripts {
             }
     }
     MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_MITSURUS_INTRO_STATE) == 0) {
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_INTRO_START) {
             setflag(FLAG_SPAWN_INVISIBLE)
             setflag(FLAG_TEMP_2)
             setobjectxyperm(KIKUNO, 42, 20)
             setobjectmovementtype(KIKUNO, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
             setobjectxyperm(INDEEDEE_F, 46, 22)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) == 3) {
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_FIND_KUKI) {
             setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm(KIKUNO, 37, 23)
             setobjectmovementtype(KIKUNO, MOVEMENT_TYPE_FACE_RIGHT)
             setobjectxyperm(INDEEDEE_F, 38, 23)
             setobjectmovementtype(INDEEDEE_F, MOVEMENT_TYPE_WALK_IN_PLACE_RIGHT)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) == 4){
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_GET_FENNEKIN){
             setobjectxyperm(KIKUNO, 38, 20)
             setobjectmovementtype(KIKUNO, MOVEMENT_TYPE_FACE_RIGHT)
             setobjectxyperm(INDEEDEE_F, 38, 21)
@@ -41,19 +41,19 @@ mapscripts MansionsGarden_MapScripts {
             setobjectxyperm(FENNEKIN, 39, 21)
             setobjectmovementtype(FENNEKIN, MOVEMENT_TYPE_WALK_IN_PLACE_UP)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) == 5) {
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_BYE_KUKI) {
             setflag(FLAG_TEMP_2)
             setobjectxyperm(KIKUNO, 44, 18)
             setobjectxyperm(INDEEDEE_F, 48, 20)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) >5){
+        if (var(VAR_MITSURUS_INTRO_STATE) > M_BYE_KUKI){
             setflag(FLAG_TEMP_2)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_MITSURUS_INTRO_STATE, 0: MansionsGarden_Eventscript_OnFrame0
-        VAR_MITSURUS_INTRO_STATE, 3: MansionsGarden_Eventscript_OnFrame3
-        VAR_MITSURUS_INTRO_STATE, 5: MansionsGarden_Eventscript_OnFrame5
+        VAR_MITSURUS_INTRO_STATE, M_INTRO_START: MansionsGarden_Eventscript_OnFrame0
+        VAR_MITSURUS_INTRO_STATE, M_FIND_KUKI: MansionsGarden_Eventscript_OnFrame3
+        VAR_MITSURUS_INTRO_STATE, M_BYE_KUKI: MansionsGarden_Eventscript_OnFrame5
 
         VAR_TEMP_8, 0: MansionsGarden_CheckIfMitsuruPrologueIsDoneForAkihiko
     ]
@@ -71,11 +71,11 @@ script EventScript_NewGameSetUp {
     checkplayergender
     if (var(VAR_RESULT) == MALE){
         manuallysettime(WEEKDAY_WED, 16, 30, 0)
-        setvar(VAR_MITSURUS_INTRO_STATE, 50) // will be reset to 0 if player choose to play mitsuru's prologue after doing akihiko's
+        setvar(VAR_MITSURUS_INTRO_STATE, M_NOT_PLAYER)
     }
     else{
         manuallysettime(WEEKDAY_WED, 22, 30, 0)
-        setvar(VAR_AKIHIKOS_INTRO_STATE, 50) // will be reset to 0 if player choose to play akihiko's prologue after doing mitsuru's
+        setvar(VAR_AKIHIKOS_INTRO_STATE, A_NOT_PLAYER)
     }
     callnative(ScrCmd_InitTimeBasedEvent)
     pausefakertc
@@ -84,7 +84,7 @@ script EventScript_NewGameSetUp {
 
 script MansionsGarden_CheckIfMitsuruPrologueIsDoneForAkihiko {
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, MITSURUS_PROLOGUE)
-    if (var(VAR_RESULT) == FALSE && var(VAR_AKIHIKOS_INTRO_STATE) == 100){
+    if (var(VAR_RESULT) == FALSE && var(VAR_AKIHIKOS_INTRO_STATE) == A_INTRO_COMPLETED){
         clearflag(FLAG_TEMP_4)
         clearflag(FLAG_HIDE_QUEST_ICON)
     }
@@ -96,7 +96,6 @@ script MansionsGarden_Eventscript_OnFrame0 {
 }
 
 script MansionsGarden_Eventscript_OnFrame3 {
-    setvar(VAR_MITSURUS_INTRO_STATE, 4)
     goto(MansionsGarden_Eventscript_KikunoVSFennekin)
 }
 
@@ -115,6 +114,7 @@ script MansionsGarden_Eventscript_SlowlyShowTheMap {
     setvar(VAR_CURRENT_LEVEL_CAP, 10)
     setvar(VAR_CURRENT_EV_CAP, 52)
     warpsilent(MAP_MITSURUS_ROOM2F, 15, 10)
+    waitstate
 }
 
 
@@ -218,13 +218,14 @@ script MansionsGarden_Eventscript_VSFennekin {
     closemessage
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     fwdtime(23, 0)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_GET_FENNEKIN)
     end
 }
 
 script MansionsGarden_Eventscript_Kikuno {
     lock
     faceplayer
-    if (var(VAR_MITSURUS_INTRO_STATE) == 4){
+    if (var(VAR_MITSURUS_INTRO_STATE) == M_GET_FENNEKIN){
         msgbox(format("{SPEAKER NAME_KKN}Go on, Young Lady. It'll be a great teammate on your journey."))
         closemessage
     }
@@ -255,8 +256,9 @@ script MansionsGarden_Eventscript_Fennekin {
             closemessage
             call (MansionsGarden_Eventscript_GetNormalFennekin)
         }
-        warpsilent(MAP_BLANK_MAP, 0, 0)
-        release
+        setvar(VAR_MITSURUS_INTRO_STATE, M_BYE_KUKI)
+        warpsilent(MAP_MANSIONS_GARDEN, 43, 18)
+        waitstate
     }
     else{
         playse(SE_PIN)
@@ -327,7 +329,6 @@ script MustGetFennekin {
 }
 
 script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
-    setvar(VAR_MITSURUS_INTRO_STATE, 6)
     delay(30)
     applymovement(KIKUNO, emotepensive)
     waitmovement(0)
@@ -374,6 +375,7 @@ script MansionsGarden_Eventscript_SayingGoodbyeToKikuno {
     clearflag(FLAG_HIDE_HELP_BUTTON)
     clearflag(FLAG_HIDE_MAP_NAME_POPUP)
     fwdtime(23, 15)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_LEAVING_MANSION)
     release
     end
 }
@@ -407,7 +409,7 @@ script MansionsGarden_Eventscript_WaiterKouhei {
     lock
     faceplayer
     setspeaker("Kouhei")
-    if (var(VAR_MITSURUS_INTRO_STATE) < 10){
+    if (var(VAR_MITSURUS_INTRO_STATE) < M_INTRO_COMPLETED){
     msgbox(format("It's my shift to stand guard tonight, Young Lady.\p
     I will make sure no wild Pokémon disrupt our staff's goodnight sleep."))
     closemessage
@@ -446,8 +448,10 @@ script MansionsGarden_Eventscript_MitsuruPrologueStart {
         msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}So... This is your uh... house? Mansion? Land??\p
         {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}To be more exact, it's my family's mansion.\p
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Woah.............\p
-        Why aren't you going in, by the way? The gate's locked and no one's home?\p
-        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}There's always somebody home. Although my Father may have been at the company in Paulownia City at the moment.\p
+        Why aren't you going in, by the way?\n
+        The gate's locked and no one's home?\p
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}There's always somebody home.\p
+        Although my Father may have been at the company in Paulownia City at the moment.\p
         I'm not going in because...\p
         {CREATE MUGSHOT_M EMOTE_SMILE}Well, you may call it “resolve”, I suppose?\p
         {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I've made a promise to myself to never waver until my mission is completed.\p
@@ -459,7 +463,8 @@ script MansionsGarden_Eventscript_MitsuruPrologueStart {
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}How did you know about me and Shinji?{PAUSE_UNTIL_PRESS}\n
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}I mean, we're just 2 random orphan kids.\p
         {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}.........."))
-        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It's a long story. Do you still want to listen? {COLOR GREEN}(Begin Mitsuru's prologue quest?)"), MSGBOX_YESNO)
+        msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}It's a long story. Do you still want to listen?\p
+        {COLOR GREEN}(Begin Mitsuru's prologue quest?)"), MSGBOX_YESNO)
         if (var(VAR_RESULT) == FALSE)
         {
             msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}......... {PAUSE 60}Very well."))
@@ -483,7 +488,7 @@ script MansionsGarden_Eventscript_MitsuruPrologueStart {
             fadescreenswapbuffers(FADE_TO_BLACK)
             switchmaincharacter
             setvar(VAR_MITSURUS_INTRO_STATE, 0)
-            setvar(VAR_AKIHIKOS_INTRO_STATE, 50)
+            setvar(VAR_AKIHIKOS_INTRO_STATE, A_NOT_PLAYER)
             unlockcharacter(CHARACTER_MITSURU)
             clearflag(FLAG_LOCK_MITSURU)
             setflag(FLAG_LOCK_AKIHIKO)

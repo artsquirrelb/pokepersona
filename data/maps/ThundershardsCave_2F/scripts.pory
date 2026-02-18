@@ -3,35 +3,35 @@ mapscripts ThundershardsCave_2F_MapScripts {
         VAR_MITSURUS_INTRO_STATE, 16: ThundershardsCave_2F_Eventscript_OnWarp16
     ]
     MAP_SCRIPT_ON_TRANSITION{
-        if (var(VAR_MITSURUS_INTRO_STATE) == 13 || var(VAR_MITSURUS_INTRO_STATE) == 14){
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_KG_STAFF_DOUBLE || var(VAR_MITSURUS_INTRO_STATE) == M_MUST_FIGHT_KG_STAFF){
             setflag(FLAG_TEMP_3)
             setflag(FLAG_TEMP_4)
             addobject(12)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) > 13){
+        if (var(VAR_MITSURUS_INTRO_STATE) > M_KG_STAFF_DOUBLE){
             setflag(FLAG_TEMP_2)
         }
-        if(var(VAR_MITSURUS_INTRO_STATE) >14){
+        if(var(VAR_MITSURUS_INTRO_STATE) >M_MUST_FIGHT_KG_STAFF){
             setflag(FLAG_TEMP_1)
             setflag(FLAG_TEMP_4)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) == 15){
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_VS_NORBERT){
             setobjectxyperm(19, 34, 8)
             setobjectxyperm(20, 33, 8)
         }
-        if(var(VAR_MITSURUS_INTRO_STATE) > 15){
+        if(var(VAR_MITSURUS_INTRO_STATE) > M_VS_NORBERT){
             setflag(FLAG_TEMP_3)
         }
-        if(var(VAR_MITSURUS_INTRO_STATE) == 16){
+        if(var(VAR_MITSURUS_INTRO_STATE) == M_EXPLOSION){
             setweather(WEATHER_DROUGHT)
             special(StartDroughtWeatherBlend)
         }
-        if(var(VAR_MITSURUS_INTRO_STATE) <20){
+        if(var(VAR_MITSURUS_INTRO_STATE) <= M_EXPLOSION){
             setflag(FLAG_TEMP_5)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_MITSURUS_INTRO_STATE, 16: ThundershardsCave_2F_Eventscript_OnFrame16
+        VAR_MITSURUS_INTRO_STATE, M_EXPLOSION: ThundershardsCave_2F_Eventscript_OnFrame16
     ]
 }
 
@@ -45,7 +45,7 @@ script ThundershardsCave_2F_Eventscript_OnFrame16 {
 
 script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff1 {
     lock
-    setvar(VAR_MITSURUS_INTRO_STATE, 14)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_MUST_FIGHT_KG_STAFF)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, delay_16, delay_16, player_run_right*2, face_left))
     waitmovement
@@ -58,7 +58,7 @@ script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff1 {
 
 script ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff2 {
     lock
-    setvar(VAR_MITSURUS_INTRO_STATE, 14)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_MUST_FIGHT_KG_STAFF)
     playse(SE_PIN)
     applymovement(LOCALID_PLAYER, moves(emote_exclamation_mark, delay_16, delay_16, player_run_right, face_left))
     waitmovement
@@ -232,7 +232,7 @@ text KG_Staff_F_defeated {
 }
 
 script ThundershardsCave_2F_Eventscript_FrozenStaff {
-    if (var(VAR_MITSURUS_INTRO_STATE) == 14){
+    if (var(VAR_MITSURUS_INTRO_STATE) == M_MUST_FIGHT_KG_STAFF){
     lock
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}(I should be able to push them.)"))
     closemessage
@@ -243,7 +243,7 @@ script ThundershardsCave_2F_Eventscript_FrozenStaff {
     playse(SE_CLICK)
     waitse
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_CONFIDENT}(Magnifique.)"))
-    setvar(VAR_MITSURUS_INTRO_STATE, 15)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_VS_NORBERT)
     release
     end
     }
@@ -315,7 +315,7 @@ script ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave {
     fadenewbgm(MUS_DUMMY)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     setflag(FLAG_HIDE_MAP_NAME_POPUP)
-    setvar(VAR_MITSURUS_INTRO_STATE, 17)
     fwdtime(9, 35)
     warp(MAP_SUNSHINE_MEADOW, 11, 3)
+    waitstate
 }

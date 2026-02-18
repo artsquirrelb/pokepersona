@@ -484,7 +484,7 @@
       "y": 20,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "4",
+      "var_value": "M_GET_FENNEKIN",
       "script": "MustGetFennekin"
     }
   ],

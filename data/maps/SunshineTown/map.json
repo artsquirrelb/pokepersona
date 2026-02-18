@@ -78,11 +78,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineTown_Eventscript_Kurosawa",
-      "flag": "FLAG_TEMP_1",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_1"
     },
     {
       "type": "object",
@@ -359,11 +355,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_5",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_5"
     },
     {
       "type": "object",
@@ -535,8 +527,8 @@
       "x": 31,
       "y": 16,
       "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "A_ASK_AROUND",
       "script": "SunshineTown_Eventscript_WarpToBurningOrphanage"
     },
     {
@@ -544,8 +536,8 @@
       "x": 31,
       "y": 17,
       "elevation": 0,
-      "var": "VAR_TEMP_F",
-      "var_value": "0",
+      "var": "VAR_AKIHIKOS_INTRO_STATE",
+      "var_value": "A_ASK_AROUND",
       "script": "SunshineTown_Eventscript_WarpToBurningOrphanage"
     },
     {
@@ -563,7 +555,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "18",
+      "var_value": "A_ASK_AROUND",
       "script": "SunshineTown_Eventscript_NoPointEnteringPC"
     },
     {
@@ -590,7 +582,7 @@
       "y": 16,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "20",
+      "var_value": "M_KG_STAFF_WOODS_ENTRANCE",
       "script": "SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger18"
     },
     {
@@ -599,7 +591,7 @@
       "y": 17,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "20",
+      "var_value": "M_KG_STAFF_WOODS_ENTRANCE",
       "script": "SunshineTown_Eventscript_MitsuruSeeingKGStaffAtWoodsEntranceTrigger19"
     },
     {
@@ -608,7 +600,7 @@
       "y": 14,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "25",
+      "var_value": "M_APPROACH_KRSW_HOUSE",
       "script": "SunshineTown_Eventscript_MitsuruOverheardAkiShinji"
     }
   ],

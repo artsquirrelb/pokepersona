@@ -275,7 +275,7 @@
       "y": 25,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "11",
+      "var_value": "M_TO_THUNDERSHARD",
       "script": "SunshineMeadow_Eventscript_MitsuruPlansToJumpOverTheFence"
     },
     {
@@ -284,7 +284,7 @@
       "y": 25,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "11",
+      "var_value": "M_TO_THUNDERSHARD",
       "script": "SunshineMeadow_Eventscript_MitsuruPlansToJumpOverTheFence"
     },
     {
@@ -293,7 +293,7 @@
       "y": 26,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "30",
+      "var_value": "M_TO_SUNSHINE_MEADOW",
       "script": "SunshineMeadow_Eventscript_MitsuruPreFirstBattleWithAkihiko_Trigger"
     },
     {
@@ -302,7 +302,7 @@
       "y": 26,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "30",
+      "var_value": "M_TO_SUNSHINE_MEADOW",
       "script": "SunshineMeadow_Eventscript_MitsuruPreFirstBattleWithAkihiko_Trigger"
     }
   ],

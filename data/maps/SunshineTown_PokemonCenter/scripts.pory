@@ -1,10 +1,10 @@
 mapscripts SunshineTown_PokemonCenter_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setrespawn(HEAL_LOCATION_SUNSHINE_TOWN)
-        if (var(VAR_MITSURUS_INTRO_STATE) <20 || var(VAR_AKIHIKOS_INTRO_STATE) == 12 || var(VAR_AKIHIKOS_INTRO_STATE) >= 24) {
+        if (var(VAR_MITSURUS_INTRO_STATE) <20 || var(VAR_AKIHIKOS_INTRO_STATE) == A_GO_GET_PACKAGE || var(VAR_AKIHIKOS_INTRO_STATE) >= A_TO_ROUTE2) {
             setflag(FLAG_TEMP_1)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 14) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_WAIT_PACKAGE) {
             setobjectxyperm(7, 11, 9)
             setobjectmovementtype (7, MOVEMENT_TYPE_FACE_UP)
             setobjectxyperm (6, 17, 8)
@@ -12,7 +12,7 @@ mapscripts SunshineTown_PokemonCenter_MapScripts {
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 14: SunshineTown_PokemonCenter_Eventscript_OnFrame14
+        VAR_AKIHIKOS_INTRO_STATE, A_WAIT_PACKAGE: SunshineTown_PokemonCenter_Eventscript_OnFrame14
     ]
 }
 
@@ -60,7 +60,7 @@ script SunshineTown_PokemonCenter_Eventscript_MartLady {
     setspeaker("Mart Employee Fusayo")
     msgbox(format("
         Hello. What can I do for you?"))
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 12){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == A_GO_GET_PACKAGE){
         setflag(FLAG_HIDE_HELP_BUTTON)
         setflag(FLAG_DONT_TRANSITION_MUSIC)
         applymovement(7, SunshineTown_PokemonCenter_Eventscript_ShinjiroFacesTheMart)
@@ -71,18 +71,21 @@ script SunshineTown_PokemonCenter_Eventscript_MartLady {
         closemessage
         setspeaker("Mart Employee Fusayo")
         msgbox("One moment, please.")
-        setvar(VAR_AKIHIKOS_INTRO_STATE, 13)
-        warpsilent(MAP_BLANK_MAP, 0, 0)
-        release
-        end
+        closemessage
+        fadescreen(FADE_TO_BLACK)
+        delay(30)
+        msgbox("10 minutes later...")
+        setvar(VAR_AKIHIKOS_INTRO_STATE, A_WAIT_PACKAGE)
+        warpsilent(MAP_SUNSHINE_TOWN_POKEMON_CENTER, 11, 8)
+        waitstate
     }
     if(flag(FLAG_SYS_POKEDEX_GET) == FALSE){
         pokemart(GeneralMart_PreDex)
     }
-	elif (flag(FLAG_SYS_POKEDEX_GET) == TRUE && var(VAR_AKIHIKOS_INTRO_STATE) < 100) {
+	elif (flag(FLAG_SYS_POKEDEX_GET) == TRUE && var(VAR_AKIHIKOS_INTRO_STATE) < A_INTRO_COMPLETED) {
         pokemart (GeneralMart_Prologue)
     }
-    elif (var(VAR_AKIHIKOS_INTRO_STATE) >= 100){
+    elif (var(VAR_AKIHIKOS_INTRO_STATE) >= A_INTRO_COMPLETED){
         pokemart (GeneralMart_C1_1)
     }
     msgbox(gText_PleaseComeAgain)
@@ -163,7 +166,7 @@ script SunshineTown_PokemonCenter_Eventscript_AkihikoImpatient {
     applymovement(7, SunshineTown_PokemonCenter_Eventscript_ShinjiroJoins)
     waitmovement(0)
     removeobject(7)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 15)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_EXPLOSION)
     setflag(FLAG_TEMP_1)
     fwdtime(9, 30)
     release
@@ -216,7 +219,7 @@ script SunshineTown_PokemonCenter_Eventscript_OldMan {
     lock
     faceplayer
     setspeaker("Oda")
-    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15 && var(VAR_AKIHIKOS_INTRO_STATE) < 24) {
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= A_EXPLOSION && var(VAR_AKIHIKOS_INTRO_STATE) < A_TO_ROUTE2) {
         msgbox(format("That almost gave me a heartattack..."))
     }
     else {msgbox(format("
@@ -229,7 +232,7 @@ script SunshineTown_PokemonCenter_Eventscript_YoungBoy {
     lock
     faceplayer
     setspeaker ("Kenta")
-    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15 && var(VAR_AKIHIKOS_INTRO_STATE) < 24) {
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= A_EXPLOSION && var(VAR_AKIHIKOS_INTRO_STATE) < A_TO_ROUTE2) {
         applymovement (1, shakehorizontal)
         waitmovement(0)
         msgbox(format("I-I'm fine. With Poochyena here, I'll be fine."))
@@ -262,7 +265,7 @@ script SunshineTown_PokemonCenter_Eventscript_Gentleman {
     lock
     faceplayer
     setspeaker ("Watanabe")
-    if (var(VAR_AKIHIKOS_INTRO_STATE) >= 15 && var(VAR_AKIHIKOS_INTRO_STATE) < 24) {
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= A_EXPLOSION && var(VAR_AKIHIKOS_INTRO_STATE) < A_TO_ROUTE2) {
         msgbox(format("It sounds dangerous outside, you kids should stay here.\p
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Thank you, sir, but we'll be fine."))
     }
@@ -288,10 +291,8 @@ script SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene0 {
     msgbox(SunshineTown_PokemonCenter_Eventscript_MartLadyEndCutsceneText)
     closemessage
     special(RemoveCameraObject)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 16)
     warpsilent(MAP_SUNSHINE_TOWN, 8, 4)
-    releaseall
-    end
+    waitstate
 }
 
 script SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene1 {
@@ -309,10 +310,8 @@ script SunshineTown_PokemonCenter_Eventscript_EndExplosionCutscene1 {
     msgbox(SunshineTown_PokemonCenter_Eventscript_MartLadyEndCutsceneText)
     closemessage
     special(RemoveCameraObject)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 16)
     warpsilent(MAP_SUNSHINE_TOWN, 8, 4)
-    releaseall
-    end
+    waitstate
 }
 
 movement walkleft {

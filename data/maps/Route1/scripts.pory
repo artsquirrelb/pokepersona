@@ -13,7 +13,7 @@ script Route1_Eventscript_NotTheWayToMeadow {
 }
 
 script Route1_Eventscript_Touma {
-    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){                           //post prologue
+    if(var(VAR_AKIHIKOS_INTRO_STATE) == A_INTRO_COMPLETED){                           //post prologue
         trainerbattle_single(TRAINER_TOUMA, Route1_ToumaIntro_A, Route1_ToumaDefeated)
     }
     else{
@@ -58,7 +58,7 @@ text Route1_ToumaIntro_A {
 }
 
 script Route1_Eventscript_Miyu {
-    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){      //post prologue
+    if(var(VAR_AKIHIKOS_INTRO_STATE) == A_INTRO_COMPLETED){      //post prologue
         trainerbattle_single(TRAINER_MIYU, Route1_MiyuIntro_A, Route1_MiyuDefeated)
     }
     else{                                           //mitsuru pre chapter 1
@@ -130,23 +130,16 @@ script Route1_Eventscript_Twins {
 
 script Route1_Eventscript_Teddiursa {
     lock
-    faceplayer
-    if (var(VAR_MITSURUS_INTRO_STATE) > 20 || var(VAR_AKIHIKOS_INTRO_STATE) == 100)
-    {   
-        startoverworldencounter(12)
-    }
-    else
-    {
-        startoverworldencounter(7)
-    }
-    removeobject(12)
+    faceplayer  
+    startoverworldencounter(255)
+    removeobject(TEDDIURSA)
     setflag(FLAG_TEMP_1)
     release
     end
 }
 
 script Route1_Eventscript_Ichigo {
-    if(var(VAR_AKIHIKOS_INTRO_STATE) == 100){      //post prologue
+    if(var(VAR_AKIHIKOS_INTRO_STATE) == A_INTRO_COMPLETED){      //post prologue
         trainerbattle_single(TRAINER_ICHIGO, Route1_IchigoIntro_A, Route1_IchigoDefeated)
     }
     else{                                           //mitsuru pre chapter 1

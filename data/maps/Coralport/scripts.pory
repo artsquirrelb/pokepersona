@@ -5,7 +5,7 @@ mapscripts Coralport_MapScripts {
         setflag(FLAG_TEMP_3)
         setflag(FLAG_TEMP_4)
         setrespawn(HEAL_LOCATION_CORALPORT)
-        if(var(VAR_CHAPTER_1_STATE) == 3){
+        if(var(VAR_CHAPTER_1_STATE) == C1_WAITING_SHIP){
             setobjectxyperm(M_CORAL, 13, 10)
             setobjectmovementtype(M_CORAL, MOVEMENT_TYPE_FACE_DOWN)
 
@@ -66,7 +66,7 @@ mapscripts Coralport_MapScripts {
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
         //VAR_TEMP_1, 0: Coralport_MapScripts_UpdatingShipState
-        VAR_CHAPTER_1_STATE, 3: Coralport_MapScripts_OnFrame3
+        VAR_CHAPTER_1_STATE, C1_WAITING_SHIP: Coralport_MapScripts_OnFrame3
         VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 1: Coralport_MapScripts_QuestOldRodOnFrame1
         VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 6: Coralport_MapScripts_QuestOldRodOnFrame6
     ]
@@ -239,14 +239,14 @@ script Coralport_Eventscript_SailorOnGuard {
         release
         end
     }
-    if (var(VAR_CHAPTER_1_STATE) <4)
+    if (var(VAR_CHAPTER_1_STATE) < C1_BOARDING_SHIP)
     {
         msgbox("We're extremely sorry but there's\n
         a problem with the shipment.\p
         The departure to Windward Port has\n
         been delayed until further notice.")
         closemessage
-        if (var(VAR_CHAPTER_1_STATE) == 0){
+        if (var(VAR_CHAPTER_1_STATE) == C1_START){
             goto(Coralport_Eventscript_NotYetBoardingTime)
         }
     }
@@ -333,7 +333,7 @@ script Coralport_Eventscript_NotYetBoardingTime {
     delay(1)
     removeobject(S_CORAL)
     delay(1)
-    setvar(VAR_CHAPTER_1_STATE, 1)
+    setvar(VAR_CHAPTER_1_STATE, C1_TO_POLICE_STATION)
     clearflag(FLAG_TEMP_HIDE_FOLLOWER)
     updatefollowingmon
     release
@@ -503,7 +503,7 @@ script Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp 
     removeobject(A_CORAL)
     delay(1)
     setflag(FLAG_TEMP_2)
-    setvar(VAR_CHAPTER_1_STATE, 4)
+    setvar(VAR_CHAPTER_1_STATE, C1_BOARDING_SHIP)
     addminutes(10)
     release
     end

@@ -44,11 +44,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_1"
     },
     {
       "type": "object",
@@ -62,11 +58,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_1",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_1"
     },
     {
       "type": "object",
@@ -334,7 +326,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "5",
+      "var_value": "A_GO_TO_SUNSHINE_WOODS",
       "script": "SunshineWoods_Eventscript_DoNotEnterTheGrass"
     },
     {
@@ -343,7 +335,7 @@
       "y": 5,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "5",
+      "var_value": "A_GO_TO_SUNSHINE_WOODS",
       "script": "SunshineWoods_Eventscript_DoNotEnterTheGrass"
     },
     {
@@ -352,7 +344,7 @@
       "y": 10,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "21",
+      "var_value": "M_FOLLOW_KG_STAFF",
       "script": "SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger2"
     },
     {
@@ -361,7 +353,7 @@
       "y": 11,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "21",
+      "var_value": "M_FOLLOW_KG_STAFF",
       "script": "SunshineWoods_Eventscript_MitsuruTailingKGStaffTrigger3"
     },
     {
@@ -370,7 +362,7 @@
       "y": 15,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "22",
+      "var_value": "M_AMBUSH_IN_SSWOODS",
       "script": "SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown"
     },
     {
@@ -379,7 +371,7 @@
       "y": 16,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "22",
+      "var_value": "M_AMBUSH_IN_SSWOODS",
       "script": "SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown"
     }
   ],

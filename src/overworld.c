@@ -1075,11 +1075,11 @@ static u8 UNUSED GetObjectEventLoadFlag(void)
     return sObjectEventLoadFlag;
 }
 
-static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
+/*static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
 {
     if (!FlagGet(FLAG_SYS_WEATHER_CTRL))
         return FALSE;
-    /*if (warp->mapGroup == 0)
+    if (warp->mapGroup == 0)
     {
         switch (warp->mapNum)
         {
@@ -1104,7 +1104,7 @@ static bool16 ShouldLegendaryMusicPlayAtLocation(struct WarpData *warp)
                 return TRUE;
             }
         }
-    }*/
+    }
     return FALSE;
 }
 
@@ -1143,7 +1143,7 @@ static bool16 IsInfiltratedSpaceCenter(struct WarpData *warp)
     else if (warp->mapNum == MAP_NUM(MAP_BLANK_MAP) || warp->mapNum == MAP_NUM(MAP_BLANK_MAP))
         return TRUE;
     return FALSE;
-}
+}*/
 
 u16 GetLocationMusic(struct WarpData *warp)
 {

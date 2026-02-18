@@ -1,13 +1,13 @@
 mapscripts SunshineTown_KurosawasHouse_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-        VAR_AKIHIKOS_INTRO_STATE, 23: SunshineTown_KurosawasHouse_OnWarp23
+        VAR_AKIHIKOS_INTRO_STATE, A_KUROSAWAS_HOUSE: SunshineTown_KurosawasHouse_OnWarp23
     ]
     MAP_SCRIPT_ON_TRANSITION{
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 23){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_KUROSAWAS_HOUSE){
             playbgm(MUS_NONE, TRUE)
             setobjectxyperm(1, 9, 11)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 24){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= A_TO_ROUTE2){
             setflag(FLAG_TEMP_1)
         }
         if (var(VAR_MITSURUS_INTRO_STATE) <50){
@@ -15,7 +15,7 @@ mapscripts SunshineTown_KurosawasHouse_MapScripts {
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_AKIHIKOS_INTRO_STATE, 23: SunshineTown_KurosawasHouse_OnFrame23
+        VAR_AKIHIKOS_INTRO_STATE, A_KUROSAWAS_HOUSE: SunshineTown_KurosawasHouse_OnFrame23
     ]
 }
 
@@ -150,7 +150,7 @@ script SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa {
     {SPEAKER NAME_KRSW}Sanada-kun already has a Pokémon so I'm giving these to you, Aragaki-kun.\p
     Befriending a Pokémon will greatly help you on your journey.\p
     You also should help other people if you can.\p
-    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Thank you, Kurosawa-san. We will.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Thank you, Kurosawa-san.\nWe will.\p
     {SPEAKER NAME_KRSW}{DESTROY_MUGSHOT}Oh, right. Hang on."))
     closemessage
     applymovement(1, KurosawaGettingTheSleepingBags)

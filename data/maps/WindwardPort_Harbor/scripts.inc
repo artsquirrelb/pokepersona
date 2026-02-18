@@ -9,7 +9,7 @@ WindwardPort_Harbor_MapScripts::
 
 WindwardPort_Harbor_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 4 "data/maps/WindwardPort_Harbor/scripts.pory"
-	map_script_2 VAR_CHAPTER_1_STATE, 4, WindwardPort_Harbor_MapScripts_OnFrame4
+	map_script_2 VAR_CHAPTER_1_STATE, C1_BOARDING_SHIP, WindwardPort_Harbor_MapScripts_OnFrame4
 	.2byte 0
 
 
@@ -25,7 +25,7 @@ WindwardPort_Harbor_MapScripts_OnTransition::
 # 14 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setflag FLAG_TEMP_3
 # 15 "data/maps/WindwardPort_Harbor/scripts.pory"
-	compare VAR_CHAPTER_1_STATE, 4
+	compare VAR_CHAPTER_1_STATE, C1_BOARDING_SHIP
 	goto_if_eq WindwardPort_Harbor_MapScripts_OnTransition_2
 WindwardPort_Harbor_MapScripts_OnTransition_1:
 # 19 "data/maps/WindwardPort_Harbor/scripts.pory"
@@ -310,7 +310,7 @@ WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab::
 # 171 "data/maps/WindwardPort_Harbor/scripts.pory"
 	setflag FLAG_TEMP_2
 # 172 "data/maps/WindwardPort_Harbor/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 5
+	setvar VAR_CHAPTER_1_STATE, C1_TO_MAYOIDOS_LAB
 # 173 "data/maps/WindwardPort_Harbor/scripts.pory"
 	release
 	end

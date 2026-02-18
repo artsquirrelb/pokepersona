@@ -1,14 +1,14 @@
 mapscripts MansionMainHall_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
-        if (var(VAR_MITSURUS_INTRO_STATE) == 2){
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_STOPPED_BY_TKHR){
             setflag(FLAG_HIDE_HELP_BUTTON)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) >= 3){
+        if (var(VAR_MITSURUS_INTRO_STATE) >= M_FIND_KUKI){
             setflag(FLAG_TEMP_1)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_MITSURUS_INTRO_STATE, 2: MansionMainHall_Eventscript_OnFrame2
+        VAR_MITSURUS_INTRO_STATE, M_STOPPED_BY_TKHR: MansionMainHall_Eventscript_OnFrame2
     ]
 }
 
@@ -18,7 +18,6 @@ script MansionMainHall_Eventscript_OnFrame2 {
 
 script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     lock
-    setvar(VAR_MITSURUS_INTRO_STATE, 3)
     delay(10)
     applymovement(LOCALID_PLAYER, moves(walk_down*3))
     waitmovement(0)
@@ -88,6 +87,7 @@ script MansionMainHall_Eventscript_TakeharuStoppingMitsuru {
     unlockcharacter(CHARACTER_INTELEON_T)
     clearflag(FLAG_LOCK_INTELEON_T)
     fwdtime(22, 45)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_FIND_KUKI)
     release
     end
 }
@@ -184,18 +184,21 @@ text AlertingWildPokemonGotInside {
 }
 
 script MansionMainHall_Eventscript_BlockingEastHall {
-    lock
-    applymovement(4, facedown)
-    applymovement(LOCALID_PLAYER, faceup)
-    waitmovement(0)
-    setspeaker("Minori")
-    msgbox(AlertingWildPokemonGotInside)
-    closemessage
-    applymovement(4, faceleft)
-    applymovement(LOCALID_PLAYER, walkleft)
-    waitmovement(0)
-    release
-    end
+    if (var(VAR_MITSURUS_INTRO_STATE) < M_INTRO_COMPLETED)
+    {
+        lock
+        applymovement(4, facedown)
+        applymovement(LOCALID_PLAYER, faceup)
+        waitmovement(0)
+        setspeaker("Minori")
+        msgbox(AlertingWildPokemonGotInside)
+        closemessage
+        applymovement(4, faceleft)
+        applymovement(LOCALID_PLAYER, walkleft)
+        waitmovement(0)
+        release
+        end
+    } 
 }
 
 script MansionMainHall_Eventscript_WaitressKoharu {

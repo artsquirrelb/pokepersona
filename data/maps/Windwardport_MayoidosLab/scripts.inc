@@ -9,18 +9,18 @@ Windwardport_MayoidosLab_MapScripts::
 
 Windwardport_MayoidosLab_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 4 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	map_script_2 VAR_CHAPTER_1_STATE, 5, Windwardport_MayoidosLab_MapScripts_OnFrame5
+	map_script_2 VAR_CHAPTER_1_STATE, C1_TO_MAYOIDOS_LAB, Windwardport_MayoidosLab_MapScripts_OnFrame5
 # 5 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	map_script_2 VAR_CHAPTER_1_STATE, 6, Windwardport_MayoidosLab_MapScripts_OnFrame6
+	map_script_2 VAR_CHAPTER_1_STATE, C1_2ND_STARTERS, Windwardport_MayoidosLab_MapScripts_OnFrame6
 # 6 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	map_script_2 VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY, Windwardport_MayoidosLab_MapScripts_PostGrookey
+	map_script_2 VAR_CHAPTER_1_STATE, C1_POST_GROOKEY_LAB, Windwardport_MayoidosLab_MapScripts_PostGrookey
 	.2byte 0
 
 Windwardport_MayoidosLab_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 9 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	map_script_2 VAR_CHAPTER_1_STATE, 6, Windwardport_MayoidosLab_MapScripts_OnWarp
+	map_script_2 VAR_CHAPTER_1_STATE, C1_2ND_STARTERS, Windwardport_MayoidosLab_MapScripts_OnWarp
 # 10 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	map_script_2 VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY, Windwardport_MayoidosLab_MapScripts_OnWarp
+	map_script_2 VAR_CHAPTER_1_STATE, C1_POST_GROOKEY_LAB, Windwardport_MayoidosLab_MapScripts_OnWarp
 	.2byte 0
 
 
@@ -44,19 +44,19 @@ Windwardport_MayoidosLab_MapScripts_OnTransition::
 # 24 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	setflag FLAG_TEMP_3
 # 25 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	compare VAR_CHAPTER_1_STATE, 5
+	compare VAR_CHAPTER_1_STATE, C1_TO_MAYOIDOS_LAB
 	goto_if_eq Windwardport_MayoidosLab_MapScripts_OnTransition_2
 Windwardport_MayoidosLab_MapScripts_OnTransition_1:
 # 32 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	compare VAR_CHAPTER_1_STATE, 6
+	compare VAR_CHAPTER_1_STATE, C1_2ND_STARTERS
 	goto_if_eq Windwardport_MayoidosLab_MapScripts_OnTransition_5
 Windwardport_MayoidosLab_MapScripts_OnTransition_4:
 # 45 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	compare VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY
+	compare VAR_CHAPTER_1_STATE, C1_POST_GROOKEY_LAB
 	goto_if_eq Windwardport_MayoidosLab_MapScripts_OnTransition_8
 Windwardport_MayoidosLab_MapScripts_OnTransition_7:
 # 60 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	compare VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY
+	compare VAR_CHAPTER_1_STATE, C1_POST_GROOKEY_LAB
 	goto_if_gt Windwardport_MayoidosLab_MapScripts_OnTransition_10
 	return
 
@@ -224,7 +224,7 @@ Windwardport_MayoidosLab_Mayoido::
 # 118 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	faceplayer
 # 119 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	compare VAR_CHAPTER_1_STATE, 7
+	compare VAR_CHAPTER_1_STATE, C1_A_GET_GROOKEY
 	goto_if_eq Windwardport_MayoidosLab_Mayoido_2
 Windwardport_MayoidosLab_Mayoido_1:
 # 122 "data/maps/Windwardport_MayoidosLab/scripts.pory"
@@ -1232,7 +1232,7 @@ Windwardport_MayoidosLab_WachiGettingScolded::
 # 594 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	closemessage
 # 595 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 6
+	setvar VAR_CHAPTER_1_STATE, C1_2ND_STARTERS
 # 596 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	warpsilent MAP_WINDWARDPORT_MAYOIDOS_LAB, 9, 9
 # 597 "data/maps/Windwardport_MayoidosLab/scripts.pory"
@@ -1326,7 +1326,7 @@ Windwardport_MayoidosLab_Get2ndStarter_1:
 # 645 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	removeobject A_WWH
 # 646 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 7
+	setvar VAR_CHAPTER_1_STATE, C1_A_GET_GROOKEY
 # 647 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	setflag FLAG_TEMP_HIDE_FOLLOWER
 # 648 "data/maps/Windwardport_MayoidosLab/scripts.pory"
@@ -1544,7 +1544,7 @@ Windwardport_MayoidosLab_ReceiveDexNav::
 # 779 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	closemessage
 # 780 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY
+	setvar VAR_CHAPTER_1_STATE, C1_POST_GROOKEY_LAB
 # 781 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	additem ITEM_ESCAPE_ROPE
 # 782 "data/maps/Windwardport_MayoidosLab/scripts.pory"
@@ -1598,7 +1598,7 @@ Windwardport_MayoidosLab_ContinueGoingThroughRoute4::
 # 815 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	closemessage
 # 816 "data/maps/Windwardport_MayoidosLab/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 9
+	setvar VAR_CHAPTER_1_STATE, C1_TO_ROUTE4
 # 817 "data/maps/Windwardport_MayoidosLab/scripts.pory"
 	clearflag FLAG_PREVENT_OVERWORLD_SPEEDUP
 # 818 "data/maps/Windwardport_MayoidosLab/scripts.pory"

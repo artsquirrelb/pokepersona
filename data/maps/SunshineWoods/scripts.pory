@@ -1,24 +1,24 @@
 mapscripts SunshineWoods_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
         setflag(FLAG_TEMP_8)
-        if (var(VAR_AKIHIKOS_INTRO_STATE) < 22){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) < A_BURNING_ORPHANAGE){
             setflag(FLAG_TEMP_3)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 6){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_FINDING_PAWMI){
             setobjectxyperm(2, 4, 3)
             setobjectxyperm(3, 5, 5)
             setobjectmovementtype(3, MOVEMENT_TYPE_FACE_RIGHT)
         }
-        if(var(VAR_AKIHIKOS_INTRO_STATE) > 11) {
+        if(var(VAR_AKIHIKOS_INTRO_STATE) >= A_GO_GET_PACKAGE) {
             setflag(FLAG_TEMP_1)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) != 21){
+        if (var(VAR_MITSURUS_INTRO_STATE) != M_FOLLOW_KG_STAFF){
             setflag(FLAG_TEMP_4)
             setflag(FLAG_TEMP_5)
             setflag(FLAG_TEMP_6)
             setflag(FLAG_TEMP_7)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) == 21){
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_FOLLOW_KG_STAFF){
             clearflag(FLAG_DONT_TRANSITION_MUSIC)
             setflag(FLAG_TEMP_6)
             setflag(FLAG_TEMP_5)
@@ -26,7 +26,7 @@ mapscripts SunshineWoods_MapScripts {
             setobjectmovementtype(7, MOVEMENT_TYPE_FACE_UP)
             setobjectmovementtype(8, MOVEMENT_TYPE_FACE_UP)
         }
-        if( var(VAR_MITSURUS_INTRO_STATE) == 22){
+        if( var(VAR_MITSURUS_INTRO_STATE) == M_AMBUSH_IN_SSWOODS){
             setobjectxyperm(12, 12, 17)
             setobjectmovementtype(12, MOVEMENT_TYPE_FACE_LEFT_AND_RIGHT)
             setobjectxyperm(11, 20, 10)
@@ -36,18 +36,17 @@ mapscripts SunshineWoods_MapScripts {
         
         
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 6: SunshineWoods_Eventscript_OnWarp6
-        VAR_MITSURUS_INTRO_STATE, 21: SunshineWoods_Eventscript_MitsuruOnWarp21
+        VAR_AKIHIKOS_INTRO_STATE, A_FINDING_PAWMI: SunshineWoods_Eventscript_OnWarp6
     ]
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_TEMP_8, 0: SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru
-        VAR_AKIHIKOS_INTRO_STATE, 6: SunshineWoods_Eventscript_OnFrame6
+        VAR_AKIHIKOS_INTRO_STATE, A_FINDING_PAWMI: SunshineWoods_Eventscript_OnFrame6
        ]
 }
 
 script SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru {
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
-    if (!var(VAR_RESULT) && var(VAR_MITSURUS_INTRO_STATE) == 100){
+    if (!var(VAR_RESULT) && var(VAR_MITSURUS_INTRO_STATE) == M_INTRO_COMPLETED){
         clearflag(FLAG_TEMP_8)
         clearflag(FLAG_HIDE_QUEST_ICON)
     }
@@ -57,9 +56,6 @@ script SunshineWoods_CheckIfAkihikoPrologueIsDoneForMitsuru {
 script  SunshineWoods_Eventscript_OnWarp6 {
     applymovement(LOCALID_PLAYER, faceright)
     hideobjectat (4, MAP_SUNSHINE_WOODS)
-}
-
-script SunshineWoods_Eventscript_MitsuruOnWarp21 {
 }
 
 movement playerfaceright {
@@ -74,11 +70,9 @@ script SunshineWoods_Eventscript_DoNotEnterTheGrass {
     msgbox(format("{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}Alright, we're here.\p
     Don't enter the tall grass, okay?\p
     {SPEAKER NAME_MK}{DESTROY_MUGSHOT}Okay!"))
-    fadescreenswapbuffers(FADE_TO_BLACK)
-    release
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 6)
-    setflag(FLAG_HIDE_HELP_BUTTON) 
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_FINDING_PAWMI)
     warpsilent(MAP_SUNSHINE_WOODS, 3, 5)
+    waitstate
 }
 
 script SunshineWoods_Eventscript_OnFrame6 {
@@ -217,19 +211,16 @@ movement SunshineWoods_Eventscript_PawmiIsWeak {
 }
 
 script TakePawmiToHeal {
-    lock
     applymovement(LOCALID_PLAYER, SunshineWoods_Eventscript_Akihiko_Picking_up_Pawmi)
     msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Come on, lil' guy."))
     closemessage
-    fadescreenswapbuffers(FADE_TO_BLACK)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 7)
+    fadescreen(FADE_TO_BLACK)
+    msgbox(format("Akihiko picked up Pawmi and hurried back to the orphanage."))
     removeobject(4)
     removeobject(2)
     removeobject(3)
-    setflag(FLAG_TEMP_1)
-    warpsilent(MAP_BLANK_MAP,0,0)
-    release
-    
+    warp(MAP_SUNSHINE_ORPHANAGE_MAIN_HALL, 12, 22)
+    waitstate
 }
 //movement SunshineWoods_Eventscript_Shinjiro_joins {
  //   walk_down
@@ -301,7 +292,7 @@ text SunshineWoods_Text_HotaruPostBattle {
 
 script SunshineWoods_Eventscript_PolicemenBlockingOrphanage1 {
     setspeaker("Police Officer 1")
-    if(var(VAR_MITSURUS_INTRO_STATE) == 22){
+    if(var(VAR_MITSURUS_INTRO_STATE) == M_AMBUSH_IN_SSWOODS){
         msgbox(format("Who the hell would explode an orphanage? Are they even human?"))
     }
     else{
@@ -313,7 +304,7 @@ script SunshineWoods_Eventscript_PolicemenBlockingOrphanage1 {
 
 script SunshineWoods_Eventscript_PolicemenBlockingOrphanage2 {
     setspeaker("Police Officer 2")
-    if(var(VAR_MITSURUS_INTRO_STATE) == 22){
+    if(var(VAR_MITSURUS_INTRO_STATE) == M_AMBUSH_IN_SSWOODS){
         msgbox(format("Maybe this is what Kurosawa-san was talking about... If only the higher-ups listened to him."))
     }
     else{
@@ -348,11 +339,12 @@ script SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji {
     applymovement(11, walkinplacedown)
     waitmovement
     setspeaker("Man In Black 1")
-    msgbox(format("Keep your eyes peeled. One has silver hair and the other wears a black-red beanie."))
+    msgbox(format("Keep your eyes peeled.\p
+    One has silver hair and the other wears a black-red beanie."))
     applymovement(12, walkinplaceup)
     waitmovement
     setspeaker("Man In Black 2")
-    msgbox(format("You should cover the east. I'll search the south."))
+    msgbox(format("You should cover the east.\nI'll search the south."))
     closemessage
     delay(20)
     applymovement(12, moves(walk_fast_down*6))
@@ -370,7 +362,7 @@ script SunshineWoods_Eventscript_KGStaffTalkingAboutAkiShinji {
     setobjectxy(11, 20, 10)
     setobjectnewmovementtype(11, MOVEMENT_TYPE_WANDER_AROUND)
     release
-    setvar(VAR_MITSURUS_INTRO_STATE, 22)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_AMBUSH_IN_SSWOODS)
     fwdtime(9, 45)
     end
 }
@@ -624,11 +616,11 @@ script SunshineWoods_Eventscript_CheckIfBothKGStaffAreDown {
         msgbox(format("{SPEAKER NAME_ITLN}{CREATE MUGSHOT_INTELEON EMOTE_SERIOUS}(Inteleon reluctantly agreed.)\p
         {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}C'est magnifique. Let's move out."))
         closemessage
-        setvar(VAR_MITSURUS_INTRO_STATE, 22)
         setvar(VAR_0x8000, 0)
         setvar(VAR_0x8001, 0)
         fwdtime(15, 05)
         warp(MAP_ROUTE2_HOUSE, 3, 9)
+        waitstate
     }
 }
 
@@ -709,7 +701,7 @@ script SunshineWoods_Eventscript_AkihikoPrologueStart {
             fadescreenswapbuffers(FADE_TO_BLACK)
             switchmaincharacter
             setvar(VAR_AKIHIKOS_INTRO_STATE, 0)
-            setvar(VAR_MITSURUS_INTRO_STATE, 50)
+            setvar(VAR_MITSURUS_INTRO_STATE, M_NOT_PLAYER)
             unlockcharacter(CHARACTER_AKIHIKO)
             clearflag(FLAG_LOCK_AKIHIKO)
             setflag(FLAG_LOCK_MITSURU)
@@ -722,14 +714,11 @@ script SunshineWoods_Eventscript_AkihikoPrologueStart {
             removeitem(ITEM_CAMP_GEARS)
             removeitem(ITEM_ESCAPE_ROPE)
             removeitem(ITEM_MACH_BIKE)
-            removeallitem(ITEM_POKE_BALL, VAR_0x800A)
-            removeallitem(ITEM_GREAT_BALL, VAR_0x800B)
             destroyfollowernpc
             manuallysettime(WEEKDAY_WED, 16, 30)
             subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
             setvar(VAR_STORY_QUESTS_STATE, 1)
             warpsilent(MAP_SUNSHINE_ORPHANAGE, 13, 18)
-            special(DrawWholeMapView)
             waitstate
         }
     }

@@ -19,7 +19,7 @@ Coralport_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 7 "data/maps/Coralport/scripts.pory"
 	setrespawn HEAL_LOCATION_CORALPORT
 # 8 "data/maps/Coralport/scripts.pory"
-	compare VAR_CHAPTER_1_STATE, 3
+	compare VAR_CHAPTER_1_STATE, C1_WAITING_SHIP
 	goto_if_eq Coralport_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 Coralport_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 20 "data/maps/Coralport/scripts.pory"
@@ -145,7 +145,7 @@ Coralport_MapScripts_MAP_SCRIPT_ON_TRANSITION_16:
 
 Coralport_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 69 "data/maps/Coralport/scripts.pory"
-	map_script_2 VAR_CHAPTER_1_STATE, 3, Coralport_MapScripts_OnFrame3
+	map_script_2 VAR_CHAPTER_1_STATE, C1_WAITING_SHIP, Coralport_MapScripts_OnFrame3
 # 70 "data/maps/Coralport/scripts.pory"
 	map_script_2 VAR_QUEST_FIND_FISHERMANS_DAUGHTER_STATE, 1, Coralport_MapScripts_QuestOldRodOnFrame1
 # 71 "data/maps/Coralport/scripts.pory"
@@ -384,7 +384,7 @@ Coralport_Eventscript_SailorOnGuard::
 	compare VAR_RESULT, 0
 	goto_if_eq Coralport_Eventscript_SailorOnGuard_5
 # 242 "data/maps/Coralport/scripts.pory"
-	compare VAR_CHAPTER_1_STATE, 4
+	compare VAR_CHAPTER_1_STATE, C1_BOARDING_SHIP
 	goto_if_lt Coralport_Eventscript_SailorOnGuard_8
 # 255 "data/maps/Coralport/scripts.pory"
 	showmoneybox 0, 0
@@ -430,7 +430,7 @@ Coralport_Eventscript_SailorOnGuard_8:
 # 248 "data/maps/Coralport/scripts.pory"
 	closemessage
 # 249 "data/maps/Coralport/scripts.pory"
-	compare VAR_CHAPTER_1_STATE, 0
+	compare VAR_CHAPTER_1_STATE, C1_START
 	goto_if_eq Coralport_Eventscript_SailorOnGuard_11
 	goto Coralport_Eventscript_SailorOnGuard_7
 
@@ -557,7 +557,7 @@ Coralport_Eventscript_NotYetBoardingTime::
 # 335 "data/maps/Coralport/scripts.pory"
 	delay 1
 # 336 "data/maps/Coralport/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 1
+	setvar VAR_CHAPTER_1_STATE, C1_TO_POLICE_STATION
 # 337 "data/maps/Coralport/scripts.pory"
 	clearflag FLAG_TEMP_HIDE_FOLLOWER
 # 338 "data/maps/Coralport/scripts.pory"
@@ -822,7 +822,7 @@ Coralport_Eventscript_AkihikoQuestioningWhyMitsuruDoesntAskPoliceForHelp::
 # 505 "data/maps/Coralport/scripts.pory"
 	setflag FLAG_TEMP_2
 # 506 "data/maps/Coralport/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 4
+	setvar VAR_CHAPTER_1_STATE, C1_BOARDING_SHIP
 # 507 "data/maps/Coralport/scripts.pory"
 	addminutes 10
 # 508 "data/maps/Coralport/scripts.pory"

@@ -2,7 +2,7 @@ mapscripts ThundershardsCliff_2F_Exterior_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
     ]
     MAP_SCRIPT_ON_TRANSITION{
-        if (var(VAR_MITSURUS_INTRO_STATE) >= 15 ){
+        if (var(VAR_MITSURUS_INTRO_STATE) >= M_VS_NORBERT ){
             setflag(FLAG_TEMP_1)
         }
     }
@@ -67,7 +67,6 @@ script ThundershardsCliff_2F_Exterior_Eventscript_MitsuruApproaching_CaveEntranc
 
 script ThundershardsCliff_2F_Exterior_Eventscript_ScientistExitsCave {
     lock
-    setflag(FLAG_HIDE_HELP_BUTTON)
     fadenewbgm(MUS_P3R_FEARFUL_EXPERIENCE)
     delay(20)
     clearflag(FLAG_TEMP_1)
@@ -131,7 +130,7 @@ script ThundershardsCliff_2F_Exterior_Eventscript_ScientistRetreat {
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Wait... He said “fire”?"))
     closemessage
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
-    setvar(VAR_MITSURUS_INTRO_STATE, 16)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_EXPLOSION)
     goto(ThundershardsCliff_2F_Exterior_Eventscript_LabExploding)
     release
 }

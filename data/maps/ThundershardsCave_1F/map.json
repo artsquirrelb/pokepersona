@@ -16,6 +16,7 @@
   "object_events": [
     {
       "local_id": "NB_TDS",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_NECK_BEARD",
       "x": 16,
       "y": 10,
@@ -33,6 +34,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MINING_ROCK",
       "x": 7,
       "y": 10,
@@ -50,6 +52,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 23,
       "y": 17,
@@ -67,6 +70,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BREAKABLE_ROCK",
       "x": 20,
       "y": 8,
@@ -85,6 +89,7 @@
     },
     {
       "local_id": "NB_R",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MINING_ROCK",
       "x": 17,
       "y": 10,
@@ -102,6 +107,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
       "x": 23,
       "y": 4,
@@ -115,6 +121,7 @@
       "flag": "FLAG_ITEM_THUNDERSHARDS_CAVE_1F_TM_THUNDER_WAVE"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LIGHT_SPRITE",
       "x": 22,
       "y": 6,
@@ -128,6 +135,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 17,
       "y": 11,
@@ -182,7 +190,7 @@
       "y": 11,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "12",
+      "var_value": "M_TO_THUNDERSHARD",
       "script": "ThundershardsCave_1F_EventScript_NeckBeardInvites"
     },
     {
@@ -191,7 +199,7 @@
       "y": 12,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "12",
+      "var_value": "M_TO_THUNDERSHARD",
       "script": "ThundershardsCave_1F_EventScript_NeckBeardInvites"
     },
     {

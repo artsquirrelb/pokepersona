@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_BREEDER_M",
       "x": 4,
       "y": 21,
@@ -32,6 +33,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEMON_BREEDER_F",
       "x": 3,
       "y": 21,
@@ -49,6 +51,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LASS",
       "x": 5,
       "y": 16,
@@ -66,6 +69,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_POKEFAN_F",
       "x": 4,
       "y": 22,
@@ -83,6 +87,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_ROOFTOP_SALE_WOMAN",
       "x": 13,
       "y": 19,
@@ -100,6 +105,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
       "x": 13,
       "y": 3,
@@ -117,6 +123,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GIRL_1",
       "x": 4,
       "y": 6,
@@ -134,6 +141,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAN_4",
       "x": 11,
       "y": 10,
@@ -151,6 +159,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
       "x": 15,
       "y": 25,
@@ -168,6 +177,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PORYGON)",
       "x": 15,
       "y": 21,
@@ -186,6 +196,7 @@
     },
     {
       "local_id": "LOCALID_SUNSHINE_ORPHANAGE_BLISSEY",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(BLISSEY)",
       "x": 12,
       "y": 21,
@@ -203,6 +214,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(MINCCINO)",
       "x": 9,
       "y": 15,
@@ -216,6 +228,7 @@
       "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 11,
       "y": 22,
@@ -233,6 +246,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MIKI",
       "x": 13,
       "y": 22,
@@ -250,6 +264,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(PAWMI_DELTA)",
       "x": 12,
       "y": 22,

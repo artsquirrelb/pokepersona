@@ -1,7 +1,7 @@
 mapscripts WindwardPort_Harbor_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: WindwardPort_Harbor_MapScripts_OnTransition
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_CHAPTER_1_STATE, 4: WindwardPort_Harbor_MapScripts_OnFrame4
+        VAR_CHAPTER_1_STATE, C1_BOARDING_SHIP: WindwardPort_Harbor_MapScripts_OnFrame4
     ]
     MAP_SCRIPT_ON_RESUME: WindwardPort_Harbor_MapScripts_UpdatingNPCTime
     
@@ -12,7 +12,7 @@ script WindwardPort_Harbor_MapScripts_OnTransition{
     setflag(FLAG_TEMP_1)
     setflag(FLAG_TEMP_2)
     setflag(FLAG_TEMP_3)
-    if(var(VAR_CHAPTER_1_STATE) == 4){
+    if(var(VAR_CHAPTER_1_STATE) == C1_BOARDING_SHIP){
         clearflag(FLAG_TEMP_2)
         setflag(FLAG_SPAWN_INVISIBLE)
     }
@@ -169,7 +169,7 @@ script WindwardPort_Harbor_Eventscript_MitsuruRemindsToVisitPersonalLab {
     removeobject(M_WP)
     delay(1)
     setflag(FLAG_TEMP_2)
-    setvar(VAR_CHAPTER_1_STATE, 5)
+    setvar(VAR_CHAPTER_1_STATE, C1_TO_MAYOIDOS_LAB)
     release
     end
 }

@@ -1,54 +1,53 @@
 mapscripts SunshineMeadow_MapScripts {
     MAP_SCRIPT_ON_LOAD{
-        if (var(VAR_MITSURUS_INTRO_STATE) > 16){
+        if (var(VAR_MITSURUS_INTRO_STATE) > M_EXPLOSION){
             setmetatile(11, 5, 0x020, TRUE)
             setmetatile(12, 5, 0x01A, TRUE)
             setmetatile(8, 5, 0x01A, TRUE)
         }
     }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-        VAR_AKIHIKOS_INTRO_STATE, 34: SunshineMeadow_Eventscript_AkihikoOnWarp34
-        VAR_AKIHIKOS_INTRO_STATE, 35: SunshineMeadow_Eventscript_AkihikoOnWarp35
-        VAR_AKIHIKOS_INTRO_STATE, 37: SunshineMeadow_Eventscript_AkihikoOnWarp37
+        VAR_AKIHIKOS_INTRO_STATE, A_M_1ST_BATTLE: SunshineMeadow_Eventscript_AkihikoOnWarp35
+        VAR_AKIHIKOS_INTRO_STATE, A_SM_1ST_BATTLE: SunshineMeadow_Eventscript_AkihikoOnWarp37
         /////
-        VAR_MITSURUS_INTRO_STATE, 8: SunshineMeadow_Eventscript_MitsuruOnWarp8
+        VAR_MITSURUS_INTRO_STATE, M_TOO_LATE_NIGHT: SunshineMeadow_Eventscript_MitsuruOnWarp8
     ]
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_AKIHIKOS_INTRO_STATE, 35: SunshineMeadow_Eventscript_AkihikoOnFrame35
-        VAR_AKIHIKOS_INTRO_STATE, 37: SunshineMeadow_Eventscript_AkihikoOnFrame37
+        VAR_AKIHIKOS_INTRO_STATE, A_M_1ST_BATTLE: SunshineMeadow_Eventscript_AkihikoOnFrame35
+        VAR_AKIHIKOS_INTRO_STATE, A_SM_1ST_BATTLE: SunshineMeadow_Eventscript_AkihikoOnFrame37
         /////
-        VAR_MITSURUS_INTRO_STATE, 6: SunshineMeadow_Eventscript_MitsuruOnFrame6
-        VAR_MITSURUS_INTRO_STATE, 8: SunshineMeadow_Eventscript_MitsuruOnFrame8
-        VAR_MITSURUS_INTRO_STATE, 17: SunshineMeadow_Eventscript_MitsuruOnFrame17
-        VAR_MITSURUS_INTRO_STATE, 31: SunshineMeadow_Eventscript_MitsuruOnFrame31
+        VAR_MITSURUS_INTRO_STATE, M_LEAVING_MANSION: SunshineMeadow_Eventscript_MitsuruOnFrame6
+        VAR_MITSURUS_INTRO_STATE, M_TOO_LATE_NIGHT: SunshineMeadow_Eventscript_MitsuruOnFrame8
+        VAR_MITSURUS_INTRO_STATE, M_EXPLOSION: SunshineMeadow_Eventscript_MitsuruOnFrame17
+        VAR_MITSURUS_INTRO_STATE, M_A_1ST_BATTLE: SunshineMeadow_Eventscript_MitsuruOnFrame31
     ]
     MAP_SCRIPT_ON_TRANSITION{
-        if(var(VAR_AKIHIKOS_INTRO_STATE) == 34){
+        if(var(VAR_AKIHIKOS_INTRO_STATE) == A_TO_SUNSHINE_MEADOW){
             setflag(FLAG_TEMP_2)
         }
-        if(var(VAR_AKIHIKOS_INTRO_STATE) == 35){
+        if(var(VAR_AKIHIKOS_INTRO_STATE) == A_M_1ST_BATTLE){
             setobjectxyperm(1, 12, 11)
             setobjectxyperm(2, 12, 12)
             setobjectxyperm(3, 10, 10)
         }
-        if(var(VAR_AKIHIKOS_INTRO_STATE) == 37){
+        if(var(VAR_AKIHIKOS_INTRO_STATE) == A_SM_1ST_BATTLE){
             setobjectxyperm(1, 12, 11)
             setobjectxyperm(2, 12, 12)
             setobjectxyperm(3, 10, 10)
             setobjectxyperm(4, 7, 11)
             setobjectxyperm(5, 9, 14)
         }
-        if(var(VAR_AKIHIKOS_INTRO_STATE) >= 38 && var(VAR_MITSURUS_INTRO_STATE) != 17 && var(VAR_MITSURUS_INTRO_STATE) != 31){
+        if(var(VAR_AKIHIKOS_INTRO_STATE) >= A_M_EXPLAINS_OBJECTIVES && var(VAR_MITSURUS_INTRO_STATE) != M_EXPLOSION && var(VAR_MITSURUS_INTRO_STATE) != M_A_1ST_BATTLE){
             setflag(FLAG_TEMP_1)
             setflag(FLAG_TEMP_2)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) >= 6 && var(VAR_MITSURUS_INTRO_STATE) <= 8){
+        if (var(VAR_MITSURUS_INTRO_STATE) < M_REST_FOR_THE_NIGHT){
             setflag(FLAG_TEMP_3)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) > 16){
+        if (var(VAR_MITSURUS_INTRO_STATE) > M_VS_NORBERT){
             setobjectxyperm(12, 14, 8)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) == 17){
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_EXPLOSION){
             setflag(FLAG_SPAWN_INVISIBLE)
             setflag(FLAG_TEMP_2)
             setobjectxyperm(1, 11, 10)
@@ -58,7 +57,7 @@ mapscripts SunshineMeadow_MapScripts {
             setobjectxyperm(3, 10, 10)
             setobjectmovementtype(3, MOVEMENT_TYPE_FACE_UP)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) == 31)
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_A_1ST_BATTLE)
         {
             setobjectxyperm(5, 9, 17)
         }
@@ -91,10 +90,9 @@ script SunshineMeadow_Eventscript_AkihikoOnFrame35 {
 
 script SunshineMeadow_Eventscript_MitsuruOnFrame6 {
     lock
-    setflag(FLAG_DONT_TRANSITION_MUSIC)
-    call(Eventscript_CutsceneStarts)
-    setvar(VAR_MITSURUS_INTRO_STATE, 7)
-    warpsilent(MAP_BLANK_MAP, 0, 0)
+    setflag(FLAG_HIDE_HELP_BUTTON)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_TOO_LATE_NIGHT)
+    warpsilent(MAP_SUNSHINE_MEADOW, 15, 15)
     waitstate
 }
 
@@ -121,7 +119,7 @@ script SunshineMeadow_Eventscript_PreMitsuruFirstBattleTalk {
     delay(30)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}{COLOR DARK_GRAY}You've come. I suppose you're ready for our first battle?"), MSGBOX_YESNO)
     closemessage
-    if (var(VAR_RESULT) == FALSE){
+    if (!var(VAR_RESULT)){
         msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}No worry. We still have time."))
         release
         end
@@ -152,13 +150,9 @@ script SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle {
             msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Are you underestimating me because I'm a girl?"))
             closemessage
             subvar(VAR_MITSURU_RELATIONSHIP_POINTS, 3) //current point: 97
-            fwdtime(18, 0)
-            setflag(FLAG_HIDE_HELP_BUTTON)
-            setflag(FLAG_DONT_TRANSITION_MUSIC)
-            warpsilent(MAP_BLANK_MAP, 0, 0)
             }
     }
-    elif (var(VAR_RESULT) >= 3){
+    else{
         playse(SE_SHINY)
         applymovement(1, pointup2)
         waitse
@@ -167,10 +161,12 @@ script SunshineMeadow_Eventscript_CheckingPartyNumberForMitsuruFirstBattle {
         msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Very well. Shall we start?"))
         closemessage
         addvar(VAR_MITSURU_RELATIONSHIP_POINTS, 3) //current point: 103
-        fwdtime(18, 0)
-        setflag(FLAG_DONT_TRANSITION_MUSIC)
-        warpsilent(MAP_BLANK_MAP, 0, 0)
     }
+    fwdtime(18, 0)
+    setflag(FLAG_DONT_TRANSITION_MUSIC)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_M_1ST_BATTLE)
+    warpsilent(MAP_SUNSHINE_MEADOW, 10, 8)
+    waitstate
 }
 
 movement pointdown2 {
@@ -384,10 +380,15 @@ script SunshineMeadow_Eventscript_PostMitsuruFirstBattle {
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Whenever you are.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(I should also study more of how they fight.)"))
     closemessage
-    warpsilent(MAP_BLANK_MAP, 0, 0)
+    fadescreen(FADE_TO_BLACK)
+    delay(30)
+    msgbox(format("Shinjiro managed to knock out one of Mitsuru's Pokémon before getting wiped out by her Vulpix."))
     fwdtime(19, 10)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 36)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_SM_1ST_BATTLE)
+    warpsilent(MAP_SUNSHINE_MEADOW, 10, 11)
+    waitstate
 }
+
 movement CameraGoesLeft2 {
     walk_left*2
 }
@@ -417,10 +418,13 @@ script SunshineMeadow_Eventscript_PostMitsuruFirstBattleGameOver {
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SERIOUS}Whenever you are.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}(Let's see how Shinji fare against her.)"))
     closemessage
-    setflag(FLAG_DONT_TRANSITION_MUSIC)
-    warpsilent(MAP_BLANK_MAP, 0, 0)
+    fadescreen(FADE_TO_BLACK)
+    delay(30)
+    msgbox(format("Shinjiro didn't stand the slightest chance and was completely wiped out by Mitsuru."))
     fwdtime(19, 10)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 36)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_SM_1ST_BATTLE)
+    warpsilent(MAP_SUNSHINE_MEADOW, 10, 11)
+    waitstate
 }
 
 script SunshineMeadow_Eventscript_AkihikoOnFrame37 {
@@ -458,15 +462,13 @@ script SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattle{
     Let's go back to the house on Route 2, I'll explain our objective."))
     closemessage
     setflag(FLAG_TEMP_1)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 38)
-    clearflag(FLAG_HIDE_HELP_BUTTON)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_M_EXPLAINS_OBJECTIVES)
     clearflag(FLAG_NO_WHITEOUT)
     clearflag(FLAG_NO_BAG_USE)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fwdtime(19, 50)
     warpsilent(MAP_ROUTE2, 10, 13)
-    release
-    end
+    waitstate
 }
 
 movement MitsuruApproachesToHeal {
@@ -530,7 +532,7 @@ script SunshineMeadow_Eventscript_PostShinjiMitsuFirstBattleGameOver {
     My apology for wasting your time.\p
     Farewell."))
     closemessage
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 38)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_INTRO_GAMEOVER)
     clearflag(FLAG_NO_WHITEOUT)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     warpsilent(MAP_BLANK_MAP, 0, 0)
@@ -545,18 +547,6 @@ script SunshineMeadow_Eventscript_MeadowSign {
 script SunshineMeadow_Eventscript_DirectionSign {
     msgbox(format("Route 2 {DOWN_ARROW}"))
     closemessage
-}
-
-script SunshineMeadow_Eventscript_OW_Flabebe_White {
-    lock
-    faceplayer
-    playmoncry(SPECIES_FLABEBE, CRY_MODE_NORMAL)
-    waitmoncry
-    startoverworldencounter(7)
-    removeobject(5)
-    setflag(FLAG_TEMP_3)
-    release
-    end
 }
 
 script SunshineMeadow_Eventscript_VulpixPreBattle {
@@ -614,11 +604,10 @@ script SunshineMeadow_Eventscript_JumpOverFence{
         }
     }
     else{
-        if (var(VAR_AKIHIKOS_INTRO_STATE) < 100){
-            msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Huh, there's a footprint here. Looks like someone climbed over the fence.)\p
-            (I'd like to explore further but right now I have other more important matters to attend to.)"))
-            closemessage
-        }
+        msgbox(format("{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}(Huh, there's a footprint here. Looks like someone climbed over the fence.)\p
+        (I'd like to explore further but right now I have other more important matters to attend to.)"))
+        release
+        end
     }
     
 }
@@ -659,8 +648,6 @@ script SunshineMeadow_Eventscript_MitsuruPlansToJumpOverTheFence {
     lock
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}(The cave entrance is just on the other side of the fences.)\p
     It's not too tall so I believe I can jump over them.)"))
-    closemessage
-    setvar(VAR_MITSURUS_INTRO_STATE, 12)
     release
     end
 }
@@ -675,7 +662,7 @@ script SunshineMeadow_Eventscript_ThundershardsCliffSign {
 }
 
 script SunshineMeadow_Eventscript_MitsuruLookingOverCollapsedCave {
-    applymovement(LOCALID_PLAYER, moves(set_invisible, walk_slow_down*7, face_up))
+    applymovement(LOCALID_PLAYER, moves(walk_slow_down*7, face_up))
     waitmovement
     delay(20)
     applymovement(LOCALID_PLAYER, visible)
@@ -706,7 +693,7 @@ script SunshineMeadow_Eventscript_MitsuruLookingOverCollapsedCave {
     clearflag(FLAG_HIDE_MAP_NAME_POPUP)
     clearflag(FLAG_DONT_TRANSITION_MUSIC)
     fadedefaultbgm
-    setvar(VAR_MITSURUS_INTRO_STATE, 18)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_TO_SUNSHINE_TOWN)
     special(ShowMapNamePopup)
     release
     end
@@ -732,7 +719,7 @@ script SunshineMeadow_Eventscript_MitsuruPreFirstBattleWithAkihiko_Trigger {
             end
         }
         else{
-            setvar(VAR_MITSURUS_INTRO_STATE, 31)
+            setvar(VAR_MITSURUS_INTRO_STATE, M_A_1ST_BATTLE)
             fwdtime(18, 0)
             warpsilent(MAP_SUNSHINE_MEADOW, 9, 11)
             waitstate
@@ -903,7 +890,7 @@ script SunshineMeadow_Eventscript_ShinjiroFirstBattleResult {
             addvar(VAR_TEMP_0, 1)
             if (var(VAR_TEMP_0) == 2){
                 fadescreen(FADE_TO_WHITE)
-                setvar(VAR_MITSURUS_INTRO_STATE, 30)
+                setvar(VAR_MITSURUS_INTRO_STATE, M_TO_SUNSHINE_MEADOW)
                 clearflag(FLAG_NO_WHITEOUT)
                 clearflag(FLAG_NO_BAG_USE)
                 special(SetCB2WhiteOut)
@@ -938,7 +925,7 @@ script SunshineMeadow_Eventscript_ShinjiroFirstBattleResult {
     I suppose you both want to know further about those men.\p
     Let's go back to the house on Route 2, I'll explain our objective."))
     closemessage
-    setvar(VAR_MITSURUS_INTRO_STATE, 32)
+    setvar(VAR_MITSURUS_INTRO_STATE, M_EXPLAIN_OBJECTIVE)
     clearflag(FLAG_NO_WHITEOUT)
     clearflag(FLAG_NO_BAG_USE)
     fwdtime(19, 50)

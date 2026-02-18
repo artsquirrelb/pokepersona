@@ -1,13 +1,13 @@
 mapscripts Windwardport_MayoidosLab_MapScripts {
     MAP_SCRIPT_ON_TRANSITION: Windwardport_MayoidosLab_MapScripts_OnTransition
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_CHAPTER_1_STATE, 5: Windwardport_MayoidosLab_MapScripts_OnFrame5
-        VAR_CHAPTER_1_STATE, 6: Windwardport_MayoidosLab_MapScripts_OnFrame6
-        VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY: Windwardport_MayoidosLab_MapScripts_PostGrookey
+        VAR_CHAPTER_1_STATE, C1_TO_MAYOIDOS_LAB: Windwardport_MayoidosLab_MapScripts_OnFrame5
+        VAR_CHAPTER_1_STATE, C1_2ND_STARTERS: Windwardport_MayoidosLab_MapScripts_OnFrame6
+        VAR_CHAPTER_1_STATE, C1_POST_GROOKEY_LAB: Windwardport_MayoidosLab_MapScripts_PostGrookey
     ]
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-        VAR_CHAPTER_1_STATE, 6: Windwardport_MayoidosLab_MapScripts_OnWarp
-        VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY: Windwardport_MayoidosLab_MapScripts_OnWarp
+        VAR_CHAPTER_1_STATE, C1_2ND_STARTERS: Windwardport_MayoidosLab_MapScripts_OnWarp
+        VAR_CHAPTER_1_STATE, C1_POST_GROOKEY_LAB: Windwardport_MayoidosLab_MapScripts_OnWarp
     ]
 }
 
@@ -22,14 +22,14 @@ script Windwardport_MayoidosLab_MapScripts_OnTransition {
     setflag(FLAG_TEMP_1)
     setflag(FLAG_TEMP_2)
     setflag(FLAG_TEMP_3)
-    if (var(VAR_CHAPTER_1_STATE) == 5){
+    if (var(VAR_CHAPTER_1_STATE) == C1_TO_MAYOIDOS_LAB){
         setflag(FLAG_HIDE_QUEST_ICON)
         setobjectxyperm(WACHI_WWH, 7, 17)
         setobjectmovementtype(WACHI_WWH, MOVEMENT_TYPE_FACE_RIGHT)
         setobjectxyperm(MAYOIDO_WWH, 8, 17)
         setobjectmovementtype(MAYOIDO_WWH, MOVEMENT_TYPE_FACE_LEFT)
     }
-    if(var(VAR_CHAPTER_1_STATE) == 6){
+    if(var(VAR_CHAPTER_1_STATE) == C1_2ND_STARTERS){
         setflag(FLAG_HIDE_QUEST_ICON)
         setflag(FLAG_SPAWN_INVISIBLE)
         clearflag(FLAG_TEMP_1)
@@ -42,7 +42,7 @@ script Windwardport_MayoidosLab_MapScripts_OnTransition {
         addobject(S_WWH)
         addobject(A_WWH)
     }
-    if(var(VAR_CHAPTER_1_STATE) == VAR_RECEIVED_GROOKEY){
+    if(var(VAR_CHAPTER_1_STATE) == C1_POST_GROOKEY_LAB){
         setflag(FLAG_HIDE_QUEST_ICON)
         setflag(FLAG_SPAWN_INVISIBLE)
         clearflag(FLAG_TEMP_1)
@@ -57,7 +57,7 @@ script Windwardport_MayoidosLab_MapScripts_OnTransition {
         addobject(S_WWH)
         addobject(A_WWH)
     }
-    if(var(VAR_CHAPTER_1_STATE) > VAR_RECEIVED_GROOKEY){
+    if(var(VAR_CHAPTER_1_STATE) > C1_POST_GROOKEY_LAB){
         gettimeofday
         if(var(VAR_0x8000) == 3 || var(VAR_0x8000) == 4){
             setobjectxyperm(WACHI_WWH, 3, 9)
@@ -116,7 +116,7 @@ script Windwardport_MayoidosLab_Mayoido {
     setflag(FLAG_HIDE_QUEST_ICON)
     lock
     faceplayer
-    if (var(VAR_CHAPTER_1_STATE) == 7){
+    if (var(VAR_CHAPTER_1_STATE) == C1_A_GET_GROOKEY){
         goto(Windwardport_MayoidosLab_Mayoido_PrePickGrookey)
     }
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, QUEST_FIND_STARTERS, SUB_QUEST_FIND_STARTER_3)
@@ -592,7 +592,7 @@ script Windwardport_MayoidosLab_WachiGettingScolded {
     {SPEAKER NAME_PROF}{DESTROY_MUGSHOT}Ah, don't mind me.{PAUSE_UNTIL_PRESS}\n
     Let's get you three the Pokémon and the items now, shall we?"))
     closemessage
-    setvar(VAR_CHAPTER_1_STATE, 6)
+    setvar(VAR_CHAPTER_1_STATE, C1_2ND_STARTERS)
     warpsilent(MAP_WINDWARDPORT_MAYOIDOS_LAB, 9, 9)
     waitstate
 }
@@ -643,7 +643,7 @@ script Windwardport_MayoidosLab_Get2ndStarter {
     applymoveplayer(moves(walk_diag_southeast, face_up, set_visible))
     applymove(A_WWH, moves(set_invisible))
     removeobject(A_WWH)
-    setvar(VAR_CHAPTER_1_STATE, 7)
+    setvar(VAR_CHAPTER_1_STATE, C1_A_GET_GROOKEY)
     setflag(FLAG_TEMP_HIDE_FOLLOWER)
     updatefollowingmon
     release
@@ -777,7 +777,7 @@ script Windwardport_MayoidosLab_ReceiveDexNav {
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}I appreciate your help, Prof. Mayoido.\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}We'll take our leaves now. Please take care."))
     closemessage
-    setvar(VAR_CHAPTER_1_STATE, VAR_RECEIVED_GROOKEY)
+    setvar(VAR_CHAPTER_1_STATE, C1_POST_GROOKEY_LAB)
     additem(ITEM_ESCAPE_ROPE)
     additem(ITEM_MACH_BIKE)
     additem(ITEM_POKEMON_BOX_LINK)
@@ -813,7 +813,7 @@ script Windwardport_MayoidosLab_ContinueGoingThroughRoute4 {
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}I guess we'll know when we reach Goldenwings Mt.\p
     Let's go."))
     closemessage
-    setvar(VAR_CHAPTER_1_STATE, 9)
+    setvar(VAR_CHAPTER_1_STATE, C1_TO_ROUTE4)
     clearflag(FLAG_PREVENT_OVERWORLD_SPEEDUP)
     clearflag(FLAG_HIDE_QUEST_ICON)
     setflag(FLAG_COMPANION_MENU_GET)

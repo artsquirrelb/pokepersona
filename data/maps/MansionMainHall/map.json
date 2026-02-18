@@ -16,6 +16,7 @@
   "object_events": [
     {
       "local_id": "LOCALID_TAKEHARU",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_TAKEHARU",
       "x": 8,
       "y": 7,
@@ -34,6 +35,7 @@
     },
     {
       "local_id": "LOCALID_INTELEON",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(INTELEON)",
       "x": 7,
       "y": 7,
@@ -52,6 +54,7 @@
     },
     {
       "local_id": "LOCALID_BUTLER",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BUTLER",
       "x": 19,
       "y": 28,
@@ -69,6 +72,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WAITRESS",
       "x": 33,
       "y": 17,
@@ -86,6 +90,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WAITER",
       "x": 4,
       "y": 20,
@@ -103,6 +108,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WAITRESS",
       "x": 18,
       "y": 6,
@@ -120,6 +126,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_WAITER",
       "x": 14,
       "y": 35,
@@ -137,6 +144,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(INDEEDEE_M)",
       "x": 16,
       "y": 23,
@@ -193,8 +201,8 @@
       "x": 33,
       "y": 18,
       "elevation": 0,
-      "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "3",
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
       "script": "MansionMainHall_Eventscript_BlockingEastHall"
     },
     {
@@ -203,7 +211,7 @@
       "y": 31,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "3",
+      "var_value": "M_FIND_KUKI",
       "script": "MansionMainHall_Eventscript_NotTheWayOutToMainGarden"
     },
     {
@@ -212,7 +220,7 @@
       "y": 32,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "3",
+      "var_value": "M_FIND_KUKI",
       "script": "MansionMainHall_Eventscript_NotTheWayOutToMainGarden"
     }
   ],

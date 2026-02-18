@@ -1,34 +1,27 @@
 mapscripts SunshineTownRiverbank_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-        VAR_AKIHIKOS_INTRO_STATE, 19: SunshineTownRiverbank_Eventscript_OnWarp19
-        VAR_AKIHIKOS_INTRO_STATE, 20: SunshineTownRiverbank_Eventscript_OnWarp20
+        VAR_AKIHIKOS_INTRO_STATE, A_TO_RIVERBANK: SunshineTownRiverbank_Eventscript_OnWarp19
     ]
     MAP_SCRIPT_ON_TRANSITION: SunshineTownRiverbank_MapScripts_OnTransition
 
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 19: SunshineTownRiverbank_Eventscript_OnFrame19
-        VAR_AKIHIKOS_INTRO_STATE, 21: SunshineTownRiverbank_Eventscript_OnFrame21
+        VAR_AKIHIKOS_INTRO_STATE, A_TO_RIVERBANK: SunshineTownRiverbank_Eventscript_OnFrame19
     ]
 }
 
 script SunshineTownRiverbank_MapScripts_OnTransition {
     setflag(FLAG_TEMP_4)
-    if (var(VAR_AKIHIKOS_INTRO_STATE) < 19) {
+    if (var(VAR_AKIHIKOS_INTRO_STATE) < A_TO_RIVERBANK) {
         setflag(FLAG_TEMP_1)
         setflag(FLAG_TEMP_2)
         setflag(FLAG_TEMP_3)
     }
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 19 || var(VAR_AKIHIKOS_INTRO_STATE) == 20) {
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == A_TO_RIVERBANK) {
         playbgm(MUS_NONE, TRUE)
         setflag(FLAG_SPAWN_INVISIBLE)
             
     }
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 21){
-        setflag(FLAG_SPAWN_INVISIBLE)
-        setobjectxyperm(4, 16, 0)
-        playbgm(MUS_NONE, TRUE)
-    }
-    if(var(VAR_AKIHIKOS_INTRO_STATE) >= 22){
+    if(var(VAR_AKIHIKOS_INTRO_STATE) >= A_KUROSAWAS_HOUSE){
         setflag(FLAG_TEMP_1)
         setflag(FLAG_TEMP_2)
         setflag(FLAG_TEMP_3)
@@ -40,11 +33,6 @@ script SunshineTownRiverbank_MapScripts_OnTransition {
     }
 }
 script SunshineTownRiverbank_Eventscript_OnWarp19{
-    hideobjectat(4, MAP_SUNSHINE_TOWN_RIVERBANK)
-    hideobjectat(3, MAP_SUNSHINE_TOWN_RIVERBANK)
-}
-
-script SunshineTownRiverbank_Eventscript_OnWarp20{
     hideobjectat(4, MAP_SUNSHINE_TOWN_RIVERBANK)
     hideobjectat(3, MAP_SUNSHINE_TOWN_RIVERBANK)
 }
@@ -65,10 +53,10 @@ script SunshineTownRiverbank_Eventscript_AzumarillJumpOutOfTheRiver {
     delay(40)
     applymovement(4, AzumarillRunsOff)
     waitmovement(0)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 20)
     fadescreenswapbuffers(FADE_TO_BLACK)
-    warpsilent(MAP_BLANK_MAP, 0, 0)
-    release
+    turnobject(4, DIR_SOUTH)
+    delay(30)
+    goto(SunshineTownRiverbank_Eventscript_KurosawaFindingAkiShinji)
 }
 
 movement AzumarillJumpsOffRiver{
@@ -88,17 +76,13 @@ movement AzumarillRunsOff {
     walk_fast_up *5
 }
 
-script SunshineTownRiverbank_Eventscript_OnFrame21 {
-    lock
-    goto(SunshineTownRiverbank_Eventscript_KurosawaFindingAkiShinji)
-    release
-}
-
 script SunshineTownRiverbank_Eventscript_KurosawaFindingAkiShinji {
-    lock
+    clearflag(FLAG_TEMP_3)
+    addobject(3)
+    showobjectat(3, MAP_SUNSHINE_TOWN_RIVERBANK)
+    applymoveplayer(moves(walk_fast_up*5, walk_right))
+    fadescreenswapbuffers(FADE_FROM_BLACK)
     delay(30)
-    addobject(3, MAP_SUNSHINE_TOWN_RIVERBANK)
-    addobject(4, MAP_SUNSHINE_TOWN_RIVERBANK)
     playse(SE_PIN)
     applymovement(3, emoteexclamation)
     waitmovement(0)
@@ -107,11 +91,12 @@ script SunshineTownRiverbank_Eventscript_KurosawaFindingAkiShinji {
     applymovement(3, KurosawaFindingAkiShinji)
     waitmovement(0)
     delay(40)
-    fadescreenswapbuffers(FADE_TO_BLACK)
-    delay(16)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 22)
-    warpsilent(MAP_BLANK_MAP, 0, 0)
-    release
+    fadescreen(FADE_TO_BLACK)
+    delay(40)
+    msgbox(format("A few days later..."))
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_KUROSAWAS_HOUSE)
+    warpsilent(MAP_SUNSHINE_TOWN_KUROSAWAS_HOUSE, 4, 4)
+    waitstate
 }
 
 movement KurosawaFindingAkiShinji {

@@ -1,14 +1,14 @@
 mapscripts Mansion_MitsurusRoom2F_MapScripts {
     MAP_SCRIPT_ON_TRANSITION{
-        if (var(VAR_MITSURUS_INTRO_STATE) >= 2){
+        if (var(VAR_MITSURUS_INTRO_STATE) >= M_STOPPED_BY_TKHR){
             setflag(FLAG_TEMP_1)
         }
     }
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE[
-        VAR_MITSURUS_INTRO_STATE, 0 : Mansion_MitsurusRoom2F_Eventscript_OnWarp0
+        VAR_MITSURUS_INTRO_STATE, M_INTRO_START : Mansion_MitsurusRoom2F_Eventscript_OnWarp0
     ]
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_MITSURUS_INTRO_STATE, 0: Mansion_MitsurusRoom2F_Eventscript_OnFrame0
+        VAR_MITSURUS_INTRO_STATE, M_INTRO_START: Mansion_MitsurusRoom2F_Eventscript_OnFrame0
     ]
 }
 
@@ -17,7 +17,6 @@ script Mansion_MitsurusRoom2F_Eventscript_OnWarp0 {
 }
 
 script Mansion_MitsurusRoom2F_Eventscript_OnFrame0 {
-    setvar(VAR_MITSURUS_INTRO_STATE, 1)
     lock
     call(EventScript_TellTheTimeDayHourMinute)
     goto(Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking)
@@ -27,7 +26,6 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
     delay(30)
     applymovement(LOCALID_PLAYER, moves(emote_pensive))
     waitmovement(0)
-
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}I'll need this... and a spare pair of boots..."))
     closemessage
     setflag(FLAG_SYS_B_DASH)
@@ -102,6 +100,7 @@ script Mansion_MitsurusRoom2F_Eventscript_MitsuruPacking {
         call(EventScript_ShowHelpShinyChance)
         call(EventScript_ShowHelpStarter)
     }
+    setvar(VAR_MITSURUS_INTRO_STATE, M_GET_VULPIX)
     release
     end
 }
@@ -111,7 +110,6 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
     msgbox ("Hold out the Pokéball to Vulpix?", MSGBOX_YESNO)
     closemessage
     if(var(VAR_RESULT) == YES){
-        setvar(VAR_MITSURUS_INTRO_STATE, 2)
         givemon(SPECIES_VULPIX_DELTA, 7, ITEM_ABILITY_CHANGER, ITEM_CHERISH_BALL, NATURE_MODEST, 1, MON_FEMALE, 0, 0, 0, 0, 0, 0, 31, 31, 31, 31, 31, 31, isStoryStarter = TRUE)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
@@ -143,9 +141,10 @@ script Mansion_MitsurusRoom2F_Eventscript_PuttingVulpixInPokeball {
         applymovement (LOCALID_VULPIX, moves(emote_question_mark))
         waitmovement
         msgbox(format("Vulpix is wondering why you're hesitating."))
-        closemessage
+        release
+        end
     }
-    closemessage
+    setvar(VAR_MITSURUS_INTRO_STATE, M_STOPPED_BY_TKHR)
     release
     end
 }

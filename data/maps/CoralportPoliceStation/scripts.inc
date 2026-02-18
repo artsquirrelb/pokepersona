@@ -24,7 +24,7 @@ CoralportPoliceStation_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 
 CoralportPoliceStation_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 11 "data/maps/CoralportPoliceStation/scripts.pory"
-	map_script_2 VAR_CHAPTER_1_STATE, 1, CoralportPoliceStation_MapScripts_OnFrame1
+	map_script_2 VAR_CHAPTER_1_STATE, C1_TO_POLICE_STATION, CoralportPoliceStation_MapScripts_OnFrame1
 	.2byte 0
 
 
@@ -192,7 +192,7 @@ CoralportPoliceStation_Eventscript_OverhearingFishermansRequest::
 # 117 "data/maps/CoralportPoliceStation/scripts.pory"
 	setflag FLAG_TEMP_2
 # 118 "data/maps/CoralportPoliceStation/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 2
+	setvar VAR_CHAPTER_1_STATE, C1_ASK_ABOUT_MIKI
 # 119 "data/maps/CoralportPoliceStation/scripts.pory"
 	questmenu QUEST_MENU_UNLOCK_QUEST, QUEST_FIND_FISHERMANS_DAUGHTER
 # 120 "data/maps/CoralportPoliceStation/scripts.pory"
@@ -208,7 +208,7 @@ CoralportPoliceStation_Eventscript_PolicemanReceptionist::
 # 127 "data/maps/CoralportPoliceStation/scripts.pory"
 	setspeaker CoralportPoliceStation_Eventscript_OverhearingFishermansRequest_Text_2
 # 128 "data/maps/CoralportPoliceStation/scripts.pory"
-	compare VAR_CHAPTER_1_STATE, 2
+	compare VAR_CHAPTER_1_STATE, C1_ASK_ABOUT_MIKI
 	goto_if_eq CoralportPoliceStation_Eventscript_PolicemanReceptionist_2
 # 131 "data/maps/CoralportPoliceStation/scripts.pory"
 	compare VAR_QUEST_FIND_MINING_KIT_STATE, 1
@@ -313,7 +313,7 @@ CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki::
 # 191 "data/maps/CoralportPoliceStation/scripts.pory"
 	msgbox CoralportPoliceStation_Eventscript_AkihikoAskingAboutMiki_Text_2
 # 192 "data/maps/CoralportPoliceStation/scripts.pory"
-	setvar VAR_CHAPTER_1_STATE, 3
+	setvar VAR_CHAPTER_1_STATE, C1_WAITING_SHIP
 # 193 "data/maps/CoralportPoliceStation/scripts.pory"
 	addminutes 15
 # 194 "data/maps/CoralportPoliceStation/scripts.pory"

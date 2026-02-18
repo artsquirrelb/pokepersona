@@ -9,11 +9,11 @@ SunshineTown_KurosawasHouse_MapScripts::
 
 SunshineTown_KurosawasHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 6 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 23
+	compare VAR_AKIHIKOS_INTRO_STATE, A_KUROSAWAS_HOUSE
 	goto_if_eq SunshineTown_KurosawasHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 SunshineTown_KurosawasHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 10 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	compare VAR_AKIHIKOS_INTRO_STATE, 24
+	compare VAR_AKIHIKOS_INTRO_STATE, A_TO_ROUTE2
 	goto_if_ge SunshineTown_KurosawasHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_5
 SunshineTown_KurosawasHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_4:
 # 13 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
@@ -40,12 +40,12 @@ SunshineTown_KurosawasHouse_MapScripts_MAP_SCRIPT_ON_TRANSITION_7:
 
 SunshineTown_KurosawasHouse_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 # 3 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 23, SunshineTown_KurosawasHouse_OnWarp23
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, A_KUROSAWAS_HOUSE, SunshineTown_KurosawasHouse_OnWarp23
 	.2byte 0
 
 SunshineTown_KurosawasHouse_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 18 "data/maps/SunshineTown_KurosawasHouse/scripts.pory"
-	map_script_2 VAR_AKIHIKOS_INTRO_STATE, 23, SunshineTown_KurosawasHouse_OnFrame23
+	map_script_2 VAR_AKIHIKOS_INTRO_STATE, A_KUROSAWAS_HOUSE, SunshineTown_KurosawasHouse_OnFrame23
 	.2byte 0
 
 
@@ -582,7 +582,8 @@ SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa_Text_1:
 	.string "you on your journey.\p"
 	.string "You also should help other people if you\n"
 	.string "can.\p"
-	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Thank you, Kurosawa-san. We will.\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Thank you, Kurosawa-san.\n"
+	.string "We will.\p"
 	.string "{SPEAKER NAME_KRSW}{DESTROY_MUGSHOT}Oh, right. Hang on.$"
 
 SunshineTown_KurosawasHouse_Eventscript_SayingGoodbyeToKurosawa_Text_2:

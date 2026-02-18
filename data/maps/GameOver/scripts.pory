@@ -4,7 +4,7 @@ mapscripts GameOver_MapScripts {
         clearflag(FLAG_DONT_TRANSITION_MUSIC)
     }
     MAP_SCRIPT_ON_FRAME_TABLE[
-        VAR_AKIHIKOS_INTRO_STATE, 38: Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle
+        VAR_AKIHIKOS_INTRO_STATE, A_INTRO_GAMEOVER: Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle
         VAR_DAYS_LEFT, 0: Eventscript_GAMEOVERFromMissingDeadline
     ]
 }
@@ -25,7 +25,7 @@ script Eventscript_GAMEOVERFromAkihikoPrologueMitsuruFirstBattle {
         msgbox(format("Make your choice wisely this time."))
         closemessage
         special(HealPlayerParty)
-        setvar(VAR_AKIHIKOS_INTRO_STATE, 34)
+        setvar(VAR_AKIHIKOS_INTRO_STATE, A_TO_SUNSHINE_MEADOW)
         setvar(VAR_MITSURU_RELATIONSHIP_POINTS, 100)
         subvar(VAR_TIME_RESET_ATTEMPTS, 1)
         special(SetCB2WhiteOut)

@@ -5,7 +5,7 @@ ThundershardsCave_1F_MapScripts::
 
 ThundershardsCave_1F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 3 "data/maps/ThundershardsCave_1F/scripts.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 12
+	compare VAR_MITSURUS_INTRO_STATE, M_KG_STAFF_DOUBLE
 	goto_if_gt ThundershardsCave_1F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1
 	return
 
@@ -149,7 +149,7 @@ ThundershardsCave_1F_EventScript_NeckBeardInvites_5:
 # 90 "data/maps/ThundershardsCave_1F/scripts.pory"
 	waitmovement
 # 91 "data/maps/ThundershardsCave_1F/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 13
+	setvar VAR_MITSURUS_INTRO_STATE, M_KG_STAFF_DOUBLE
 # 92 "data/maps/ThundershardsCave_1F/scripts.pory"
 	fwdtime 8, 05
 # 93 "data/maps/ThundershardsCave_1F/scripts.pory"

@@ -9,35 +9,35 @@ ThundershardsCave_2F_MapScripts::
 
 ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION:
 # 6 "data/maps/ThundershardsCave_2F/scripts.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 13
+	compare VAR_MITSURUS_INTRO_STATE, M_KG_STAFF_DOUBLE
 	goto_if_eq ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 # 6 "data/maps/ThundershardsCave_2F/scripts.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 14
+	compare VAR_MITSURUS_INTRO_STATE, M_MUST_FIGHT_KG_STAFF
 	goto_if_eq ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_2
 ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_1:
 # 11 "data/maps/ThundershardsCave_2F/scripts.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 13
+	compare VAR_MITSURUS_INTRO_STATE, M_KG_STAFF_DOUBLE
 	goto_if_gt ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_7
 ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_6:
 # 14 "data/maps/ThundershardsCave_2F/scripts.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 14
+	compare VAR_MITSURUS_INTRO_STATE, M_MUST_FIGHT_KG_STAFF
 	goto_if_gt ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_10
 ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_9:
 # 18 "data/maps/ThundershardsCave_2F/scripts.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 15
+	compare VAR_MITSURUS_INTRO_STATE, M_VS_NORBERT
 	goto_if_eq ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_13
 ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_12:
 # 22 "data/maps/ThundershardsCave_2F/scripts.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 15
+	compare VAR_MITSURUS_INTRO_STATE, M_VS_NORBERT
 	goto_if_gt ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_16
 ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_15:
 # 25 "data/maps/ThundershardsCave_2F/scripts.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 16
+	compare VAR_MITSURUS_INTRO_STATE, M_EXPLOSION
 	goto_if_eq ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_19
 ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_18:
 # 29 "data/maps/ThundershardsCave_2F/scripts.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 20
-	goto_if_lt ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_21
+	compare VAR_MITSURUS_INTRO_STATE, M_EXPLOSION
+	goto_if_le ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_21
 	return
 
 ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_TRANSITION_2:
@@ -92,7 +92,7 @@ ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE:
 
 ThundershardsCave_2F_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
 # 34 "data/maps/ThundershardsCave_2F/scripts.pory"
-	map_script_2 VAR_MITSURUS_INTRO_STATE, 16, ThundershardsCave_2F_Eventscript_OnFrame16
+	map_script_2 VAR_MITSURUS_INTRO_STATE, M_EXPLOSION, ThundershardsCave_2F_Eventscript_OnFrame16
 	.2byte 0
 
 
@@ -112,7 +112,7 @@ ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff1::
 # 47 "data/maps/ThundershardsCave_2F/scripts.pory"
 	lock
 # 48 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 14
+	setvar VAR_MITSURUS_INTRO_STATE, M_MUST_FIGHT_KG_STAFF
 # 49 "data/maps/ThundershardsCave_2F/scripts.pory"
 	playse SE_PIN
 # 50 "data/maps/ThundershardsCave_2F/scripts.pory"
@@ -136,7 +136,7 @@ ThundershardsCave_2F_Eventscript_MitsuruNoticingKGStaff2::
 # 60 "data/maps/ThundershardsCave_2F/scripts.pory"
 	lock
 # 61 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 14
+	setvar VAR_MITSURUS_INTRO_STATE, M_MUST_FIGHT_KG_STAFF
 # 62 "data/maps/ThundershardsCave_2F/scripts.pory"
 	playse SE_PIN
 # 63 "data/maps/ThundershardsCave_2F/scripts.pory"
@@ -439,7 +439,7 @@ ThundershardsCave_2F_Eventscript_FreezingKGStaff::
 
 ThundershardsCave_2F_Eventscript_FrozenStaff::
 # 235 "data/maps/ThundershardsCave_2F/scripts.pory"
-	compare VAR_MITSURUS_INTRO_STATE, 14
+	compare VAR_MITSURUS_INTRO_STATE, M_MUST_FIGHT_KG_STAFF
 	goto_if_eq ThundershardsCave_2F_Eventscript_FrozenStaff_1
 	return
 
@@ -465,7 +465,7 @@ ThundershardsCave_2F_Eventscript_FrozenStaff_1:
 # 245 "data/maps/ThundershardsCave_2F/scripts.pory"
 	msgbox ThundershardsCave_2F_Eventscript_FrozenStaff_Text_1
 # 246 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 15
+	setvar VAR_MITSURUS_INTRO_STATE, M_VS_NORBERT
 # 247 "data/maps/ThundershardsCave_2F/scripts.pory"
 	release
 	end
@@ -599,11 +599,11 @@ ThundershardsCave_2F_Eventscript_MitsuruEscapingTheExplodingCave::
 # 317 "data/maps/ThundershardsCave_2F/scripts.pory"
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 # 318 "data/maps/ThundershardsCave_2F/scripts.pory"
-	setvar VAR_MITSURUS_INTRO_STATE, 17
-# 319 "data/maps/ThundershardsCave_2F/scripts.pory"
 	fwdtime 9, 35
-# 320 "data/maps/ThundershardsCave_2F/scripts.pory"
+# 319 "data/maps/ThundershardsCave_2F/scripts.pory"
 	warp MAP_SUNSHINE_MEADOW, 11, 3
+# 320 "data/maps/ThundershardsCave_2F/scripts.pory"
+	waitstate
 	return
 
 

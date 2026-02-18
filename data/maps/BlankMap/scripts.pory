@@ -5,142 +5,13 @@ mapscripts BlankMap_MapScripts {
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_AKIHIKOS_INTRO_STATE, 0: Eventscript_NewGameMode
-        VAR_AKIHIKOS_INTRO_STATE, 7: SunshineWoods_Eventscript_WarpBackToOrphanage
-        VAR_AKIHIKOS_INTRO_STATE, 9: SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom
-        VAR_AKIHIKOS_INTRO_STATE, 13: SunshineTown_PokemonCenter_Eventscript_Onframe13
-        VAR_AKIHIKOS_INTRO_STATE, 19: SunshineOrphanage_Burning_Eventscript_OnFrame19
-        VAR_AKIHIKOS_INTRO_STATE, 20: SunshineTownRiverbank_Eventscript_OnFrame20
-        VAR_AKIHIKOS_INTRO_STATE, 22: SunshineTownRiverbank_Eventscript_OnFrame22
-        VAR_AKIHIKOS_INTRO_STATE, 24: Route2_Eventscript_AkihikoOnFrame24
-        VAR_AKIHIKOS_INTRO_STATE, 26: Route2_Eventscript_AkihikoOnFrame26
-        VAR_AKIHIKOS_INTRO_STATE, 28: Route2_House_Eventscript_AkihikoOnFrame28
-        VAR_AKIHIKOS_INTRO_STATE, 31: Route2_House_Eventscript_AkihikoOnFrame31
-        VAR_AKIHIKOS_INTRO_STATE, 34: SunshineMeadow_Eventscript_AkihikoOnFrame34
-        VAR_AKIHIKOS_INTRO_STATE, 36: SunshineMeadow_Eventscript_AkihikoOnFrame36
-        VAR_AKIHIKOS_INTRO_STATE, 38: Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38
-        VAR_AKIHIKOS_INTRO_STATE, 42: Route2_Eventscript_AkihikoOnFrame42
+        VAR_AKIHIKOS_INTRO_STATE, A_INTRO_GAMEOVER: SunshineMeadow_Eventscript_GameOver
         ////////////////////////
-        VAR_MITSURUS_INTRO_STATE, 4: MansionsGarden_Eventscript_Onframe4
         VAR_MITSURUS_INTRO_STATE, 7: SunshineMeadow_Eventscript_MitsuruOnframe7
         VAR_MITSURUS_INTRO_STATE, 9: Route2_House_Eventscript_MitsuruOnFrame9
         VAR_MITSURUS_INTRO_STATE, 26: SunshineTown_Eventscript_MitsuruOnFrame26
         VAR_MITSURUS_INTRO_STATE, 32: Route2_House_Eventscript_MitsuruOnFrame32Warp
-
-        ]
-}
-
-
-script SunshineWoods_Eventscript_WarpBackToOrphanage {
-    lock
-    msgbox(format("{DESTROY_MUGSHOT} Akihiko picked up the Pawmi and hurried back to the orphanage."))
-    closemessage
-    fadescreenswapbuffers(FADE_TO_BLACK,0)
-    warp(MAP_SUNSHINE_ORPHANAGE_MAIN_HALL, 12, 22)
-    clearflag(FLAG_SPAWN_INVISIBLE)
-    release
-}
-
-script SunshineOrphanageMainHall_Eventscript_WarpBackToAkihikosRoom {
-    lockall
-    warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 3, 7)
-    clearflag(FLAG_SPAWN_INVISIBLE)
-    releaseall
-}
-
-script SunshineTown_PokemonCenter_Eventscript_Onframe13 {
-    lock
-    msgbox("10 minutes later...")
-    closemessage
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 14)
-    warpsilent(MAP_SUNSHINE_TOWN_POKEMON_CENTER, 11, 8)
-    clearflag(FLAG_SPAWN_INVISIBLE)
-    release
-}
-
-script SunshineOrphanage_Burning_Eventscript_OnFrame19 {
-    lock
-    delay(30)
-    warpsilent(MAP_SUNSHINE_TOWN_RIVERBANK, 17, 5)
-    clearflag(FLAG_SPAWN_INVISIBLE)
-    release
-}
-
-script SunshineTownRiverbank_Eventscript_OnFrame20 {
-    lock
-    delay(30)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 21)
-    warpsilent(MAP_SUNSHINE_TOWN_RIVERBANK, 17, 0)
-    clearflag(FLAG_SPAWN_INVISIBLE)
-}
-
-script SunshineTownRiverbank_Eventscript_OnFrame22 {
-    msgbox("A few days later.")
-    closemessage
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 23)
-    warpsilent(MAP_SUNSHINE_TOWN_KUROSAWAS_HOUSE, 4, 4)
-    
-}
-
-script Route2_Eventscript_AkihikoOnFrame24 {
-    lock
-    warpsilent(MAP_ROUTE2, 37, 11)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 25)
-    release
-}
-
-script Route2_Eventscript_AkihikoOnFrame26 {
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 27)
-    warpsilent(MAP_ROUTE2_HOUSE, 5, 3)
-    clearflag(FLAG_SPAWN_INVISIBLE)
-}
-
-script Route2_House_Eventscript_AkihikoOnFrame28 {
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 29)
-    warpsilent(MAP_ROUTE2_HOUSE, 4, 7)
-    clearflag(FLAG_SPAWN_INVISIBLE)
-}
-
-script Route2_House_Eventscript_AkihikoOnFrame31 {
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 32)
-    warpsilent(MAP_ROUTE2_HOUSE, 4, 7)
-    clearflag(FLAG_SPAWN_INVISIBLE)
-}
-
-script SunshineMeadow_Eventscript_AkihikoOnFrame34 {
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 35)
-    warpsilent(MAP_SUNSHINE_MEADOW, 10, 8)
-}
-
-script SunshineMeadow_Eventscript_AkihikoOnFrame36 {
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 37)
-    if (var(VAR_MITSURU_RELATIONSHIP_POINTS) == 0){//GAME OVER
-        msgbox(format("Shinjiro didn't stand the slightest chance and was completely wiped out by Mitsuru."))
-    }
-    else{
-        msgbox(format("Shinjiro managed to knock out one of Mitsuru's Pokémon before getting wiped out by her Vulpix."))
-    }
-    warpsilent(MAP_SUNSHINE_MEADOW, 10, 11)
-}
-
-script Route2_HouseToBlankMap_Eventscript_AkihikoOnFrame38 {
-    if (var(VAR_MITSURU_RELATIONSHIP_POINTS) == 0){
-        goto(SunshineMeadow_Eventscript_GameOver)
-        end
-    }
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 39)
-    fwdtime(22, 30)
-    msgbox(format("Later that night..."))
-    closemessage
-    warpsilent(MAP_ROUTE2_HOUSE, 3, 10)
-}
-
-script Route2_Eventscript_AkihikoOnFrame42 {
-    fwdtime(6,20)
-    fwdweekday(WEEKDAY_MON)
-    delay(60)
-    msgbox(format("The next morning..."))
-    //closemessage
-    warpsilent(MAP_ROUTE2_HOUSE, 3, 10)
+    ]
 }
 
 script SunshineMeadow_Eventscript_GameOver {
@@ -157,13 +28,6 @@ script SunshineMeadow_Eventscript_GameOver {
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     warpsilent(MAP_GAME_OVER, 0, 5)
     waitstate
-    release
-    end
-}
-
-script MansionsGarden_Eventscript_Onframe4 {
-    setvar(VAR_MITSURUS_INTRO_STATE, 5)
-    warpsilent(MAP_MANSIONS_GARDEN, 43, 18)
 }
 
 script SunshineMeadow_Eventscript_MitsuruOnframe7 {

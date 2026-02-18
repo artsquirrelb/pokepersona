@@ -1,29 +1,29 @@
 mapscripts SunshineOrphanageMainHall_MapScripts {
     MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 7: SunshineOrphanageMainHall_OnWarp7]
+        VAR_AKIHIKOS_INTRO_STATE, A_FINDING_PAWMI: SunshineOrphanageMainHall_OnWarp7]
     MAP_SCRIPT_ON_TRANSITION {
         setrespawn(HEAL_LOCATION_SUNSHINE_ORPHANAGE)
-        if (var(VAR_AKIHIKOS_INTRO_STATE) <7){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) < A_FINDING_PAWMI){
             setflag(FLAG_TEMP_2)
             setflag(FLAG_TEMP_3)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 11){
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= A_GO_MEET_KBYS){
             setflag(FLAG_TEMP_2)
             setflag(FLAG_TEMP_1)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 7) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_FINDING_PAWMI) {
             setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm (4, 11, 23)
 			setobjectmovementtype (4, MOVEMENT_TYPE_FACE_RIGHT)
             hideobjectat(15, MAP_SUNSHINE_ORPHANAGE_MAIN_HALL)}
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 11) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_GO_MEET_KBYS) {
             setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm (4, 12, 5)
             setobjectmovementtype (4, MOVEMENT_TYPE_FACE_DOWN)
             setobjectxyperm (13, 18, 6)
             setobjectmovementtype (13, MOVEMENT_TYPE_FACE_LEFT)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) > 11) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) > A_GO_MEET_KBYS) {
             setflag(FLAG_TEMP_3)
             setobjectxyperm (4, 6, 22)
             setobjectmovementtype (4, MOVEMENT_TYPE_WANDER_LEFT_AND_RIGHT)
@@ -31,8 +31,8 @@ mapscripts SunshineOrphanageMainHall_MapScripts {
     }
             
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 7: SunshineOrphanageMainHall_Eventscript_OnFrame7
-        VAR_AKIHIKOS_INTRO_STATE, 11: SunshineOrphanageMainHall_Eventscript_OnFrame11]
+        VAR_AKIHIKOS_INTRO_STATE, A_FINDING_PAWMI: SunshineOrphanageMainHall_Eventscript_OnFrame7
+        VAR_AKIHIKOS_INTRO_STATE, A_GO_MEET_KBYS: SunshineOrphanageMainHall_Eventscript_OnFrame11]
 }
 
 movement faceright {
@@ -102,10 +102,6 @@ movement PutdownbyAkihiko {
 
 script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
     lock
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 8){
-        goto (SunshineOrphanageMainHall_Eventscript_GetPawmiStarter)
-    }
-    else {  
     playmoncry(SPECIES_PAWMI, CRY_MODE_NORMAL)
     applymovement(15, HeartPawmi)
     waitmoncry
@@ -134,8 +130,8 @@ script SunshineOrphanageMainHall_Eventscript_PawmiAppreciated {
         call(EventScript_ShowHelpStarter)
         setflag(FLAG_HELP_WINDOW_GET)
     }
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 8)
-    fwdtime(20, 10)}
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_GET_PAWMI)
+    fwdtime(20, 10)
     release
     end
 }
@@ -212,7 +208,6 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     I supposed it's quite late now. You all should go to bed.\p
     See you tomorrow."))
     closemessage
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 9)
     fadescreenswapbuffers(FADE_TO_BLACK)
     playse(MUS_HEAL)
     waitse
@@ -221,8 +216,8 @@ script SunshineOrphanageMainHall_Eventscript_GoToSleep {
     removeobject(15)
     setflag(FLAG_DONT_TRANSITION_MUSIC)
     fwdtime(8, 30) //thursday
-    warpsilent(MAP_BLANK_MAP, 0, 0)
-    release
+    warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 3, 7)
+    waitstate
 }
 
 movement TeacherFacingAkihiko {
@@ -267,7 +262,7 @@ script Girl_2_MainHall {
     lock
     faceplayer
     setspeaker("Momo")
-    if (var(VAR_AKIHIKOS_INTRO_STATE) >=12){
+    if (var(VAR_AKIHIKOS_INTRO_STATE) >= A_GO_GET_PACKAGE){
         msgbox(format("Your Pokémon looks so round and cute!"))
     }
     else{msgbox(format("Akihiko! I'm also getting adopted next week!\p
@@ -299,18 +294,18 @@ script RichLady_MainHall {
 script Teacher_MainHall {
     lock
     setspeaker("Kobayashi")
-    if(var(VAR_AKIHIKOS_INTRO_STATE) < 5){
+    if(var(VAR_AKIHIKOS_INTRO_STATE) < A_MEET_MIKI_OUTSIDE){
         faceplayer
         msgbox(format(
         "Oh Akihiko, Miki is waiting for you outside with Shinjiro."))}
 
-    elif(var(VAR_AKIHIKOS_INTRO_STATE) == 5 && var(VAR_AKIHIKOS_INTRO_STATE) == 6) {
+    elif(var(VAR_AKIHIKOS_INTRO_STATE) == A_MEET_MIKI_OUTSIDE && var(VAR_AKIHIKOS_INTRO_STATE) == A_GO_TO_SUNSHINE_WOODS) {
         faceplayer
         msgbox(format(
-        "I'm a little busy right now. Can you go play somewhere else, Akihiko?"))
+        "I'm a little busy right now.\nCan you go play outside, Akihiko?"))
     }
     
-    elif(var(VAR_AKIHIKOS_INTRO_STATE) >= 12){
+    elif(var(VAR_AKIHIKOS_INTRO_STATE) >= A_GO_GET_PACKAGE){
         faceplayer
         msgbox("Take care, dear.")
     }
@@ -325,11 +320,11 @@ script Boy_3_MainHall {
     lock
     faceplayer
     setspeaker("Kenichi")
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == A_MEET_MIKI_OUTSIDE) {
         msgbox(format("Oh hey, Akihiko! Miki is waiting for you outside.\p
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}I know, thanks!"))
     }
-    elif (var(VAR_AKIHIKOS_INTRO_STATE) == 5) {msgbox("Stay safe in the woods.\p
+    elif (var(VAR_AKIHIKOS_INTRO_STATE) == A_GO_TO_SUNSHINE_WOODS) {msgbox("Stay safe in the woods.\p
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}We will!")}
     else {
         msgbox(format("I heard you found a rare Pokémon in the woods?\p
@@ -412,7 +407,9 @@ script Blissey_Heal {
     faceplayer
     playmoncry(SPECIES_BLISSEY, CRY_MODE_NORMAL)
     waitmoncry
-    if (var(VAR_AKIHIKOS_INTRO_STATE) == 8){goto (BlisseyHealedPawmi)}
+    if (var(VAR_AKIHIKOS_INTRO_STATE) == A_GET_PAWMI){
+        goto (BlisseyHealedPawmi)
+    }
     elif (flag(FLAG_SYS_POKEMON_GET) == TRUE){
         playse(MUS_HEAL)
         waitse
@@ -495,7 +492,7 @@ script SunshineOrphanageMainHall_Eventscript_MsKobayashiAskedToGoPickUpAPackage{
     waitmovement
     removeobject(13)
     setflag(FLAG_TEMP_3)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 12)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_GO_GET_PACKAGE)
     fwdtime(8, 40)
     release
     end

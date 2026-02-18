@@ -2089,7 +2089,7 @@ const u16 gTilesetPalettes_MayoidosLab[][16] =
     INCBIN_U16("data/tilesets/secondary/mayoidos_lab/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_MayoidosLab[] = INCBIN_U32("data/tilesets/secondary/mayoidos_lab/tiles.4bpp.lz");
+const u32 gTilesetTiles_MayoidosLab[] = INCBIN_U32("data/tilesets/secondary/mayoidos_lab/tiles.4bpp.fastSmol");
 
 const u16 gTilesetPalettes_RangerBuilding[][16] =
 {
@@ -2108,4 +2108,4 @@ const u16 gTilesetPalettes_RangerBuilding[][16] =
     INCBIN_U16("data/tilesets/secondary/ranger_building/palettes/12.gbapal"),
 };
 
-const u32 gTilesetTiles_RangerBuilding[] = INCBIN_U32("data/tilesets/secondary/ranger_building/tiles.4bpp.lz");
+const u32 gTilesetTiles_RangerBuilding[] = INCBIN_U32("data/tilesets/secondary/ranger_building/tiles.4bpp.fastSmol");

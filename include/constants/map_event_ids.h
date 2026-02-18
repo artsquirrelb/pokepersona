@@ -34,6 +34,9 @@
 #define INDEEDEE_F 24
 #define FURFROU 26
 
+// MAP_ROUTE1
+#define TEDDIURSA 12
+
 // MAP_ROUTE2
 #define SHINJIRO 6
 #define TAROU 14

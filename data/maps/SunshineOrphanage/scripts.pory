@@ -1,20 +1,20 @@
 mapscripts SunshineOrphanage_MapScripts {
     MAP_SCRIPT_ON_TRANSITION {
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 0) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_INTRO_START) {
             setflag(FLAG_SPAWN_INVISIBLE)
             setflag(FLAG_HIDE_HELP_BUTTON)
             setflag(FLAG_TEMP_1)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) == 4) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) == A_MEET_MIKI_OUTSIDE) {
             setflag(FLAG_HIDE_HELP_BUTTON)
         }
-        if (var(VAR_AKIHIKOS_INTRO_STATE) >= 5) {
+        if (var(VAR_AKIHIKOS_INTRO_STATE) >= A_GO_TO_SUNSHINE_WOODS) {
             setflag(FLAG_TEMP_1)
         }
     }
     MAP_SCRIPT_ON_FRAME_TABLE [
-        VAR_AKIHIKOS_INTRO_STATE, 0: SunshineOrphanageOnFrame0
-        VAR_AKIHIKOS_INTRO_STATE, 4: SunshineOrphanageOnFrame4
+        VAR_AKIHIKOS_INTRO_STATE, A_INTRO_START: SunshineOrphanageOnFrame0
+        VAR_AKIHIKOS_INTRO_STATE, A_MEET_MIKI_OUTSIDE: SunshineOrphanageOnFrame4
     ]
 }
 
@@ -22,14 +22,15 @@ script SunshineOrphanageOnFrame0 {
     goto (SunshineOrphanage_Eventscript_ShowTheMap)}
 
 script SunshineOrphanage_Eventscript_ShowTheMap {
+    delay(60)
     applymovement(LOCALID_PLAYER, SlowlyShowTheMap)
     waitmovement(0)
     msgbox(format("Akihiko's Prologue: Sunshine Memories\n
     {COLOR GREEN}{CLEAR_TO 64}Level cap: 10"))
-    warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 5, 4)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 1)
     setvar(VAR_CURRENT_LEVEL_CAP, 10)
     setvar(VAR_CURRENT_EV_CAP, 52)
+    warpsilent(MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 5, 4)
+    waitstate
 }
 
 movement SlowlyShowTheMap {
@@ -84,7 +85,7 @@ script Shinjiro_and_Miki_Join_Party {
     delay (1)
     removeobject(3)
     setflag(FLAG_TEMP_1)
-    setvar(VAR_AKIHIKOS_INTRO_STATE, 5)
+    setvar(VAR_AKIHIKOS_INTRO_STATE, A_GO_TO_SUNSHINE_WOODS)
     fwdtime(16, 40)
     release
     end

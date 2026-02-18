@@ -377,20 +377,11 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 10,
-      "y": 12,
-      "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "41",
-      "script": "Route2_Eventscript_MustBattleShinjiro"
-    },
-    {
-      "type": "trigger",
       "x": 15,
       "y": 13,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "41",
+      "var_value": "A_S_1ST_BATTLE",
       "script": "Route2_Eventscript_InitShinjiroFirstBattle"
     },
     {
@@ -399,7 +390,7 @@
       "y": 14,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "41",
+      "var_value": "A_S_1ST_BATTLE",
       "script": "Route2_Eventscript_InitShinjiroFirstBattle2"
     },
     {
@@ -408,7 +399,7 @@
       "y": 15,
       "elevation": 0,
       "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "41",
+      "var_value": "A_S_1ST_BATTLE",
       "script": "Route2_Eventscript_InitShinjiroFirstBattle3"
     },
     {
@@ -416,9 +407,9 @@
       "x": 10,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_AKIHIKOS_INTRO_STATE",
-      "var_value": "38",
-      "script": "Route2_Eventscript_ShinjiroFirstBattleWarning"
+      "var": "VAR_TEMP_F",
+      "var_value": "0",
+      "script": "Route2_Eventscript_A_Trigger"
     },
     {
       "type": "trigger",
@@ -426,7 +417,7 @@
       "y": 13,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "27",
+      "var_value": "M_TO_ROUTE_2",
       "script": "Route2_Eventscript_MitsuruPreAkiShinjiGettingAmbushed_TriggerUp"
     },
     {
@@ -435,7 +426,7 @@
       "y": 14,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "27",
+      "var_value": "M_TO_ROUTE_2",
       "script": "Route2_Eventscript_MitsuruPreAkiShinjiGettingAmbushed_TriggerDown"
     },
     {
@@ -444,7 +435,7 @@
       "y": 11,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "27",
+      "var_value": "M_TO_ROUTE_2",
       "script": "Route2_Eventscript_PicnickerBlockingMitsuruTriggerRight"
     },
     {
@@ -453,7 +444,7 @@
       "y": 11,
       "elevation": 0,
       "var": "VAR_MITSURUS_INTRO_STATE",
-      "var_value": "27",
+      "var_value": "M_TO_ROUTE_2",
       "script": "Route2_Eventscript_PicnickerBlockingMitsuruTriggerLeft"
     }
   ],

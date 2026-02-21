@@ -46,7 +46,7 @@ Optional fields for Pokemon:
           (Order does not matter)
     - EVs (252 HP / 128 Spe / 48 Def, defaults to all 0, is not capped at 512 total)
           (Order does not matter)
-    - Ball (Poke Ball or ITEM_POKE_BALL, defaults to Poke Ball)
+    - Ball (Poke or ITEM_POKE_BALL, defaults to Poke)
     - Happiness (Number between 1 and 255)
     - Nature (Rash or NATURE_RASH, defaults to Hardy)
     - Shiny (Yes/No, defaults to No)
@@ -462,7 +462,7 @@ Mugshot: Red
 
 SPECIES_FENNEKIN (F) @ITEM_LUM_BERRY
 Level: 10
-Ball: Luxury Ball
+Ball: Luxury
 Shiny: Yes
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 100 Spe
@@ -474,7 +474,7 @@ Ability: Blaze
 
 SPECIES_FURFROU_KABUKI (M) @ITEM_ORAN_BERRY
 Level: 10
-Ball: Luxury Ball
+Ball: Luxury
 IVs: 0 HP / 31 Atk / 31 Def / 0 SpA / 31 SpD / 31 Spe
 EVs: 100 Atk
 Ability: Fur Coat
@@ -485,7 +485,7 @@ Ability: Fur Coat
 
 SPECIES_VULPIX_DELTA (F) @ITEM_LUM_BERRY
 Level: 10
-Ball: Cherish Ball
+Ball: Cherish
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 100 SpA / 100 Spe
 Ability: Ice Scales
@@ -526,7 +526,7 @@ Ability: Own Tempo
 - Trailblaze
 
 SPECIES_PAWMI_DELTA (M) @ITEM_ORAN_BERRY
-Ball: Cherish Ball
+Ball: Cherish
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 40 Atk
@@ -570,7 +570,7 @@ Ability: Own Tempo
 - Trailblaze
 
 SPECIES_PAWMI_DELTA (M) @ITEM_LUM_BERRY
-Ball: Cherish Ball
+Ball: Cherish
 Level: 10
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 40 Atk

@@ -1778,7 +1778,7 @@ script Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV {
     waitmovement(0)
     fadenewbgm(MUS_RG_SS_ANNE)
     delay (60)
-    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}For now, I suggest we rest for the night.
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}For now, I suggest we rest for the night.\p
     It's late and we're all tired from the battles.\p
     We'll depart early tomorrow morning so you two may want to stay here."))
     closemessage
@@ -1794,8 +1794,8 @@ script Route2_House_Eventscript_StayingTheNightMitsuruPOV {
     applymovement(1, MitsuruLookingAtTheBed)
     waitmovement(0)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}M-my apologies, it slipped my mind that this house doesn't have guest rooms.\p
-    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}You two can take the bed. I'm okay with the floor.\p
-    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_GEEZ}For Arceus's sake, Princess. Aki's kidding.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}You two can take the bed.\nI'm okay with the floor.\p
+    {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_GEEZ}For Arceus's sake, Princess.\n Aki's kidding.\p
     Just sleep on the bed, we have our own sleeping bags."))
     closemessage
     playse(SE_PIN)
@@ -1852,8 +1852,6 @@ script Route2_House_Eventscript_StayingTheNightMitsuruPOV {
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SMILE}Hmph."))
     closemessage
     applymovement(OBJ_EVENT_ID_CAMERA, CameraSlowlyPansUpFadeScreen)
-    delay(30)
-    fadescreenswapbuffers(FADE_TO_BLACK)
     delay(80)
     waitmovement(0)
     fadescreen(FADE_TO_BLACK)

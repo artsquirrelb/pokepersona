@@ -440,6 +440,7 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
     s16 currY = gObjectEvents[gPlayerAvatar.objectEventId].currentCoords.y;
     u8 currBehavior = MapGridGetMetatileBehaviorAt(currX, currY);
 
+    gSpecialVar_Facing = direction;
     switch (direction)
     {
     case DIR_EAST:
@@ -482,7 +483,6 @@ static const u8 *GetInteractedObjectEventScript(struct MapPosition *position, u8
 
     gSelectedObjectEvent = objectEventId;
     gSpecialVar_LastTalked = gObjectEvents[objectEventId].localId;
-    gSpecialVar_Facing = direction;
 
     if (InTrainerHill() == TRUE)
         script = GetTrainerHillTrainerScript();
@@ -552,7 +552,9 @@ static const u8 *GetInteractedBackgroundEventScript(struct MapPosition *position
 static const u8 *GetInteractedMetatileScript(struct MapPosition *position, u8 metatileBehavior, enum Direction direction)
 {
     if (MetatileBehavior_IsPlayerFacingTVScreen(metatileBehavior, direction) == TRUE)
+    {
         return EventScript_TV;
+    }
     if (MetatileBehavior_IsPC(metatileBehavior) == TRUE)
         return EventScript_PC;
     if (MetatileBehavior_IsRegionMap(metatileBehavior) == TRUE)

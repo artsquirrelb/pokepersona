@@ -49,6 +49,7 @@
 #include "constants/move_relearner.h"
 #include "constants/moves.h"
 #include "constants/party_menu.h"
+#include "constants/pokeball.h"
 #include "constants/pokedex.h"
 #include "constants/pokemon.h"
 #include "constants/rtc.h"
@@ -575,6 +576,30 @@ gText_LegendaryFlewAway::
 	.include "data/text/pc_transfer.inc"
 	.include "data/text/questionnaire.inc"
 	.include "data/text/abnormal_weather.inc"
+
+EventScript_GetInGameTradeSpeciesInfo::
+	copyvar VAR_0x8005, VAR_0x8008
+	specialvar VAR_0x8009, GetInGameTradeSpeciesInfo
+	return
+
+EventScript_ChooseMonForInGameTrade::
+	special ChoosePartyMon
+	waitstate
+	lock
+	faceplayer
+	return
+
+EventScript_GetInGameTradeSpecies::
+	specialvar VAR_RESULT, GetTradeSpecies
+	return
+
+EventScript_DoInGameTrade::
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	lock
+	faceplayer
+	return
 
 EventScript_SelectWithoutRegisteredItem::
 	msgbox gText_SelectWithoutRegisteredItem, MSGBOX_SIGN

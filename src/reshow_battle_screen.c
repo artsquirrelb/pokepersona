@@ -277,7 +277,7 @@ static bool8 LoadBattlerSpriteGfx(enum BattlerId battler)
                 BattleLoadSubstituteOrMonSpriteGfx(battler, FALSE);
         }
         else if (gBattleTypeFlags & BATTLE_TYPE_SAFARI && position == B_POSITION_PLAYER_LEFT)
-            DecompressTrainerBackPic(gSaveBlock2Ptr->playerGender, battler);
+            DecompressTrainerBackPic((gSaveBlock2Ptr->playerGender == FEMALE) ? TRAINER_PIC_BACK_MAY : TRAINER_PIC_BACK_BRENDAN, battler);
         else if (gBattleTypeFlags & BATTLE_TYPE_CATCH_TUTORIAL && position == B_POSITION_PLAYER_LEFT)
             DecompressTrainerBackPic(TRAINER_PIC_BACK_WALLY, battler);
         else if (!gBattleSpritesDataPtr->battlerData[battler].behindSubstitute)
@@ -322,11 +322,12 @@ void CreateBattlerSprite(enum BattlerId battler)
         }
         else if (gBattleTypeFlags & BATTLE_TYPE_SAFARI && position == B_POSITION_PLAYER_LEFT)
         {
-            SetMultiuseSpriteTemplateToTrainerBack(gSaveBlock2Ptr->playerGender, position);
+            enum TrainerPicID trainerPicId = (gSaveBlock2Ptr->playerGender == FEMALE) ? TRAINER_PIC_BACK_MAY : TRAINER_PIC_BACK_BRENDAN;
+            SetMultiuseSpriteTemplateToTrainerBack(trainerPicId, position);
             gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate, 0x50,
-                                                (8 - gTrainerBacksprites[gSaveBlock2Ptr->playerGender].coordinates.size) * 4 + 80,
+                                                (8 - gTrainerBacksprites[trainerPicId].coordinates.size) * 4 + 80,
                                                  GetBattlerSpriteSubpriority(0));
-            gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = (8 + battler / 2);
+            gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = IndexOfSpritePaletteTag(gTrainerBacksprites[trainerPicId].palette.tag);
             gSprites[gBattlerSpriteIds[battler]].callback = SpriteCallbackDummy;
             gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
         }
@@ -336,7 +337,7 @@ void CreateBattlerSprite(enum BattlerId battler)
             gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate, 0x50,
                                                 (8 - gTrainerBacksprites[TRAINER_PIC_BACK_WALLY].coordinates.size) * 4 + 80,
                                                  GetBattlerSpriteSubpriority(0));
-            gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = (8 + battler / 2);
+            gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = IndexOfSpritePaletteTag(gTrainerBacksprites[TRAINER_PIC_BACK_WALLY].palette.tag);
             gSprites[gBattlerSpriteIds[battler]].callback = SpriteCallbackDummy;
             gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
         }

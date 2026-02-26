@@ -232,9 +232,9 @@ MansionsGarden_Eventscript_SlowlyShowTheMap::
 # 113 "data/maps/MansionsGarden/scripts.pory"
 	closemessage
 # 114 "data/maps/MansionsGarden/scripts.pory"
-	setvar VAR_CURRENT_LEVEL_CAP, 10
+	setvar VAR_CURRENT_LEVEL_CAP, VAR_LVLCAP_INTRO
 # 115 "data/maps/MansionsGarden/scripts.pory"
-	setvar VAR_CURRENT_EV_CAP, 52
+	setvar VAR_CURRENT_EV_CAP, VAR_EVCAP_INTRO
 # 116 "data/maps/MansionsGarden/scripts.pory"
 	warpsilent MAP_MITSURUS_ROOM2F, 15, 10
 # 117 "data/maps/MansionsGarden/scripts.pory"

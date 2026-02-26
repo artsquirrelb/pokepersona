@@ -1,5 +1,9 @@
 mapscripts Route2_2_MapScripts {
-    
+    MAP_SCRIPT_ON_TRANSITION{
+        if (flag(TRAINER_FLAGS_START + TRAINER_WAKAMU)){
+            setobjectmovementtype(WAKAMU, MOVEMENT_TYPE_FACE_LEFT)
+        }
+    }
 }
 
 script Route2_2_Eventscript_BerrySign {
@@ -43,35 +47,83 @@ script Route2_2_Eventscript_Man {
 }
 
 script Route2_2_Eventscript_Maniac {
-    trainerbattle_single(TRAINER_WAKAMU, Route2_Wakamu_Intro, Route2_Wakamu_Defeated)
     setspeaker("Wakamu")
-    msgbox(format("What do you mean scalper?\n
-    I'm a legit fan!"))
+    if (!flag(TRAINER_FLAGS_START + TRAINER_WAKAMU))
+    {
+        if (flag(FLAG_TEMP_1))
+        {
+            msgbox(Route2_Wakamu_Intro)
+            msgbox(format("{CREATE MUGSHOT_S EMOTE_SERIOUS}... Damned scalper."))
+            closemessage
+            faceplayer
+            doemote(VAR_LAST_TALKED, 0)
+            trainerbattle_no_intro(TRAINER_WAKAMU, Route2_Wakamu_Defeated)
+            msgbox(Route2_Wakamu_Outro)
+        }
+        else{
+            msgbox(Route2_Wakamu_Intro)
+        }
+    }
+    else
+    {
+        doemote(WAKAMU, E_ANGRY)
+        msgbox(Route2_Wakamu_Outro)
+    }
+    release
+    end
 }
 
 text Route2_Wakamu_Intro{
-    format("Hehehe, I lined up early and bought\nall the Pokémon TCG packs in store.\p
-    You gotta see the face of the kids behind me ahaha.\p
-    {CREATE MUGSHOT_S EMOTE_SERIOUS}... Damned scalper.")
+    format("Hehehe, I lined up early and bought all the Pokémon TCG packs in store.\p
+    These are gonna sell so well.")
 }
 
 text Route2_Wakamu_Defeated{
     format("Hey! Don't touch my cards!\nNooooo!")
 }
 
-script Route2_2_Eventscript_NinjaBoy {
-    trainerbattle_single(TRAINER_BENKICHI, Route2_Benkichi_Intro, Route2_Benkichi_Defeated)
-    setspeaker("Benkichi")
-    msgbox(format("Thank you for the cards!"))
-    release
-    end
+text Route2_Wakamu_Outro{
+    format("What do you mean scalper?\n
+    I'm a legit fan! Give back my cards!!")
 }
 
-script Route2_2_Eventscript_PreschoolerF {
-    trainerbattle_single(TRAINER_ICHIME, Route2_Ichime_Intro, Route2_Ichime_Defeated)
-    setspeaker("Ichime")
-    msgbox(format("Thank you!!\n
-    The cards are so cute!"))
+script Route2_2_Eventscript_NinjaBoy {
+    turnobject(BENKICHI, DIR_SOUTH)
+    turnobject(ICHIME, DIR_SOUTH)
+    setspeaker("Benkichi")
+    if(!flag(TRAINER_FLAGS_START + TRAINER_WAKAMU))
+    {
+        setflag(FLAG_TEMP_1)
+        stepinplace(BENKICHI, DIR_SOUTH)
+        msgbox(Route2_Benkichi_Intro)
+        setspeaker("Ichime")
+        stepinplace(ICHIME, DIR_SOUTH)
+        msgbox(Route2_Ichime_Intro)
+        release
+        end
+    }
+    elif (flag(FLAG_TEMP_1) && flag(TRAINER_FLAGS_START + TRAINER_WAKAMU) && !flag(TRAINER_FLAGS_START + TRAINER_BENKICHI))
+    {
+        stepinplace(BENKICHI, DIR_SOUTH)
+        msgbox(format("Woah! You defeated that guy?"))
+        stepinplace(ICHIME, DIR_SOUTH)
+        setspeaker("Ichime")
+        msgbox(format("Please battle us too!"))
+        trainerbattle_two_trainers(TRAINER_BENKICHI, Route2_Benkichi_Defeated, TRAINER_ICHIME, Route2_Ichime_Defeated)
+        stepinplace(BENKICHI, DIR_SOUTH)
+        setspeaker("Benkichi")
+        msgbox(Route2_Benkichi_Outro)
+        stepinplace(ICHIME, DIR_SOUTH)
+        setspeaker("Ichime")
+        msgbox(Route2_Ichime_Outro)
+    }
+    else{
+        stepinplace(BENKICHI, DIR_SOUTH)
+        msgbox(Route2_Benkichi_Outro)
+        stepinplace(ICHIME, DIR_SOUTH)
+        setspeaker("Ichime")
+        msgbox(Route2_Ichime_Outro)
+    }   
     release
     end
 }
@@ -81,15 +133,22 @@ text Route2_Benkichi_Intro{
 }
 
 text Route2_Benkichi_Defeated{
-    format("Wait, Ichime, look at their hands!")
+    format("Woah! Those are Pokémon cards!")
+}
+
+text Route2_Benkichi_Outro{
+    format("Thank you for the cards!")
 }
 
 text Route2_Ichime_Intro{
-    format("We're so sad, can you do a battle with us?\p
-    {CREATE MUGSHOT_A EMOTE_SURPRISED}Huh? Wait, we have-")
+    format("We're so sad...")
 }
 
 text Route2_Ichime_Defeated {
-    format("Woah! Those are Pokémon cards!\n
-    You're giving them to us?")
+    format("You're giving them to us?")
+}
+
+text Route2_Ichime_Outro {
+    format("Thank you!!\n
+        The cards are so cute!")
 }

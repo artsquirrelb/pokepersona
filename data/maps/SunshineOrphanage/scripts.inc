@@ -62,9 +62,9 @@ SunshineOrphanage_Eventscript_ShowTheMap::
 # 28 "data/maps/SunshineOrphanage/scripts.pory"
 	msgbox SunshineOrphanage_Eventscript_ShowTheMap_Text_0
 # 30 "data/maps/SunshineOrphanage/scripts.pory"
-	setvar VAR_CURRENT_LEVEL_CAP, 10
+	setvar VAR_CURRENT_LEVEL_CAP, VAR_LVLCAP_INTRO
 # 31 "data/maps/SunshineOrphanage/scripts.pory"
-	setvar VAR_CURRENT_EV_CAP, 52
+	setvar VAR_CURRENT_EV_CAP, VAR_EVCAP_INTRO
 # 32 "data/maps/SunshineOrphanage/scripts.pory"
 	warpsilent MAP_SUNSHINE_ORPHANAGE_AKIHIKOS_ROOM2F, 5, 4
 # 33 "data/maps/SunshineOrphanage/scripts.pory"

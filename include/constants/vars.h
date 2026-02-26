@@ -102,8 +102,13 @@
 #define VAR_SPECIES_DN                                   0x4052 // Registered DexNav species
 #define VAR_STEP_COUNTER                                 0x4053 // Was VAR_LAVARIDGE_TOWN_STATE // Steps for finding hidden pokemon
 #define VAR_CURRENT_EV_CAP                               0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
-#define VAR_DAYS_LEFT                                    0x4055 
+#define VAR_EVCAP_INTRO     40
+#define VAR_EVCAP_C1        80
+#define VAR_DAYS_LEFT                                    0x4055
+#define VAR_DEADLINE_C1     10
 #define VAR_CURRENT_LEVEL_CAP                            0x4056 // Set current level cap
+#define VAR_LVLCAP_INTRO    10
+#define VAR_LVLCAP_C1       18
 #define VAR_MITSURU_RELATIONSHIP_POINTS                  0x4057
 #define VAR_AKIHIKO_RELATIONSHIP_POINTS                  0x4058
 #define VAR_SHINJIRO_RELATIONSHIP_POINTS                 0x4059 // Was Unused Var

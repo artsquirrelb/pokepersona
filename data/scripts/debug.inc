@@ -1504,17 +1504,17 @@ Debug_CheatStart::
 # 768 "data/scripts/debug.pory"
 	special EnableNationalPokedex
 # 769 "data/scripts/debug.pory"
-	fwdtime 8, 0
+	fwdtime 7, 0
 # 770 "data/scripts/debug.pory"
 	setvar VAR_AKIHIKOS_INTRO_STATE, 100
 # 771 "data/scripts/debug.pory"
 	setvar VAR_MITSURUS_INTRO_STATE, 100
 # 772 "data/scripts/debug.pory"
-	setvar VAR_CURRENT_LEVEL_CAP, 18
+	setvar VAR_CURRENT_LEVEL_CAP, VAR_LVLCAP_C1
 # 773 "data/scripts/debug.pory"
-	setvar VAR_CURRENT_EV_CAP, 80
+	setvar VAR_CURRENT_EV_CAP, VAR_EVCAP_C1
 # 774 "data/scripts/debug.pory"
-	setvar VAR_DAYS_LEFT, 7
+	setvar VAR_DAYS_LEFT, VAR_DEADLINE_C1
 # 775 "data/scripts/debug.pory"
 	unlockcharacter CHARACTER_MITSURU
 # 776 "data/scripts/debug.pory"

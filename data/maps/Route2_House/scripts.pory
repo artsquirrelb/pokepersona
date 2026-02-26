@@ -64,8 +64,8 @@ mapscripts Route2_House_MapScripts {
         }
         if (var(VAR_AKIHIKOS_INTRO_STATE) > A_SHOW_MAP && var(VAR_MITSURUS_INTRO_STATE) != M_AMBUSH_IN_SSWOODS 
         && var(VAR_MITSURUS_INTRO_STATE) != M_CALLING_TKHR && var(VAR_MITSURUS_INTRO_STATE) != M_SAVED_AKSJ
-        && var(VAR_MITSURUS_INTRO_STATE) != M_EXPLAIN_OBJECTIVE && var(VAR_MITSURUS_INTRO_STATE) != 33
-        && var(VAR_MITSURUS_INTRO_STATE) != 34){
+        && var(VAR_MITSURUS_INTRO_STATE) != M_EXPLAIN_OBJECTIVE && var(VAR_MITSURUS_INTRO_STATE) != M_1ST_MORNING
+        && var(VAR_MITSURUS_INTRO_STATE) != M_SHOW_MAP){
             setflag(FLAG_TEMP_1)
             setflag(FLAG_TEMP_4)
         }
@@ -96,20 +96,21 @@ mapscripts Route2_House_MapScripts {
             setflag(FLAG_HIDE_HELP_BUTTON)
             setobjectxyperm(6, 6, 7)
             setobjectxyperm(8, 5, 7)
+            setobjectmovementtype(6, MOVEMENT_TYPE_FACE_UP)
             setobjectmovementtype(1, MOVEMENT_TYPE_FACE_RIGHT)
             setobjectmovementtype(5, MOVEMENT_TYPE_WALK_IN_PLACE_LEFT)
-            setobjectxyperm(4, 8, 4)
+            setobjectxyperm(4, 8, 3)
             setobjectmovementtype(4, MOVEMENT_TYPE_FACE_DOWN)
             playbgm(MUS_NONE, TRUE)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) == 33)
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_1ST_MORNING)
         {
             setflag(FLAG_SPAWN_INVISIBLE)
             setobjectxyperm(6, 8, 8)
             setobjectxyperm(8, 3, 10)
             setobjectmovementtype(8, MOVEMENT_TYPE_FACE_LEFT)
         }
-        if (var(VAR_MITSURUS_INTRO_STATE) == 34)
+        if (var(VAR_MITSURUS_INTRO_STATE) == M_SHOW_MAP)
         {
             setflag(FLAG_HIDE_HELP_BUTTON)
             setflag(FLAG_SPAWN_INVISIBLE)
@@ -135,7 +136,7 @@ mapscripts Route2_House_MapScripts {
         VAR_MITSURUS_INTRO_STATE, M_SAVED_AKSJ: Route2_House_Eventscript_MitsuruOnFrame28
         VAR_MITSURUS_INTRO_STATE, M_EXPLAIN_OBJECTIVE: Route2_House_Eventscript_MitsuruOnFrame32
         VAR_MITSURUS_INTRO_STATE, M_1ST_MORNING: Route2_House_Eventscript_MitsuruOnFrame33
-        VAR_MITSURUS_INTRO_STATE, 34: Route2_House_Eventscript_MitsuruOnFrame34
+        VAR_MITSURUS_INTRO_STATE, M_SHOW_MAP: Route2_House_Eventscript_MitsuruOnFrame34
         ///////
         VAR_WINDWARD_HARBOR_GHOST_BOY, 44: Route2_House_Eventscript_GhostBoyMadPostQuest
     ]
@@ -745,7 +746,7 @@ script Route2_House_Eventscript_MitsuruExplainingObjectives {
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Huh? What do you mean?\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}In the most literal way possible.\p
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}That's crazy.\p
-    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Those men you fought- no, the organization behind them,
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Those men you fought- no, the organization behind them,\l
     is researching and developping a way to do so.\p
     Lots of progress has been made and there are already a few prototypes.\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}Of course, the method isn't perfect and there are more-\p
@@ -1257,9 +1258,9 @@ script Route2_House_Eventscript_TheFirstMorning2 {
     }
     setflag(FLAG_TEMP_1)
     setvar(VAR_AKIHIKOS_INTRO_STATE, A_INTRO_COMPLETED)
-    setvar(VAR_CURRENT_LEVEL_CAP, 18)
-    setvar(VAR_CURRENT_EV_CAP, 80)
-    setvar(VAR_DAYS_LEFT, 7)
+    setvar(VAR_CURRENT_LEVEL_CAP, VAR_LVLCAP_C1)
+    setvar(VAR_CURRENT_EV_CAP, VAR_EVCAP_C1)
+    setvar(VAR_DAYS_LEFT, VAR_DEADLINE_C1)
     clearflag(FLAG_HIDE_HELP_BUTTON)
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement
@@ -1715,8 +1716,6 @@ script Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV {
     delay(20)
     applymovement(LOCALID_PLAYER, moves(walk_diag_northwest*2, walk_slow_up*4))
     waitmovement(0)
-    special(SpawnCameraObject)
-    applymovement(OBJ_EVENT_ID_CAMERA, moves(walk_slow_up))
     applymovement(1, facedown)
     delay(8)
     applymovement(5, facedown)
@@ -1739,7 +1738,8 @@ script Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV {
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Huh? What do you mean?\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}In the most literal way possible.\p
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}That's crazy.\p
-    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Those men you fought- no, the organization behind them, is researching and developping a way to do so.\p
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}Those men you fought- no, the organization behind them,\l
+    is researching and developping a way to do so.\p
     Lots of progress has been made and there are already a few prototypes.\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}Of course, the method isn't perfect and there are more-\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Wait, wait just a minute. I'm lost.\p
@@ -1747,11 +1747,13 @@ script Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV {
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SERIOUS}A new specimen of human, who is able to use Pokémon's ability, in one way or another.\p
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}You're kidding??\p
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}The more I listen to you, the crazier you sound.\p
-    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}That is to be expected. I would have thought the same."))
+    {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SAD}That is to be expected.\n
+    I would have thought the same."))
     closemessage
     delay(40)
     msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}In any case, I already told you the goal of those men.\p
-    You're free to not believe me. We can simply just part ways right here."))
+    You're free to not believe me.\n
+    We can simply just part ways right here."))
     closemessage
     delay(30)
     applymovement(8, emotepensive)
@@ -1767,6 +1769,7 @@ script Route2_House_Eventscript_MitsuruExplainingObjectivesMitsuruPOV {
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}.....\p
     Very well. I suppose that's a logical idea."))
     closemessage
+    special(SpawnCameraObject)
     applymovement(1, faceup)
     applymovement(OBJ_EVENT_ID_CAMERA, CameraPansUpToClock)
     waitmovement(0)
@@ -1865,7 +1868,8 @@ script Route2_House_Eventscript_StayingTheNightMitsuruPOV {
 script Route2_House_Eventscript_TheFirstMorningMitsuruPOV {
     lock
     delay(20)
-    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Everyone, please gather around. I'll explain our plan route."))
+    msgbox(format("{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Everyone, please gather around.\n
+    I'll explain our plan route."))
     closemessage
     special(SpawnCameraObject)
     applymovement(OBJ_EVENT_ID_CAMERA, walkdown)
@@ -1891,7 +1895,8 @@ script Route2_House_Eventscript_TheFirstMorning2MitsuruPOV {
     {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_NORMAL}Nope, the path is simple enough.\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}C'est magnifique.\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_NORMAL}Oh, before I forget.\p
-    We should make a stop at my personal researcher's lab in Windward Port. There's a package for us that I've ordered.\p
+    We should make a stop at my personal researcher's lab in Windward Port.\p
+    There's a package for us that I've ordered.\p
     It'll be a great help for our journey.\p
     {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_NORMAL}More gadgets?\p
     {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}And Pokémon.\p
@@ -1924,7 +1929,8 @@ script Route2_House_Eventscript_TheFirstMorning2MitsuruPOV {
     
     subquestmenu(QUEST_MENU_CHECK_COMPLETE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
     if (var(VAR_RESULT) == FALSE){
-        msgbox(format("{COLOR RED}Akihiko's Prologue {COLOR GREEN}unlocked. Check Quest Menu for more details."))
+        msgbox(format("{COLOR RED}Akihiko's Prologue {COLOR GREEN}unlocked.\n
+        Check Quest Menu for more details."))
         closemessage
         subquestmenu(QUEST_MENU_SET_ACTIVE, STORY_QUESTS, AKIHIKOS_PROLOGUE)
         unlockcharacter(CHARACTER_AKIHIKO)
@@ -1941,9 +1947,9 @@ script Route2_House_Eventscript_TheFirstMorning2MitsuruPOV {
     }
     setflag(FLAG_TEMP_1)
     setvar(VAR_MITSURUS_INTRO_STATE, M_INTRO_COMPLETED)
-    setvar(VAR_CURRENT_LEVEL_CAP, 18)
-    setvar(VAR_CURRENT_EV_CAP, 80)
-    setvar(VAR_DAYS_LEFT, 7)
+    setvar(VAR_CURRENT_LEVEL_CAP, VAR_LVLCAP_C1)
+    setvar(VAR_CURRENT_EV_CAP, VAR_EVCAP_C1)
+    setvar(VAR_DAYS_LEFT, VAR_DEADLINE_C1)
     applymovement(LOCALID_PLAYER, facedown)
     waitmovement
     unlockcharacter(CHARACTER_MITSURU)

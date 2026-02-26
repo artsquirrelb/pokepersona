@@ -111,8 +111,8 @@ script MansionsGarden_Eventscript_SlowlyShowTheMap {
     msgbox(format("{CLEAR_TO 10}Mitsuru's Prologue: Responsibilities\n
     {CLEAR_TO 64}{COLOR GREEN}Level cap: 10"))
     closemessage
-    setvar(VAR_CURRENT_LEVEL_CAP, 10)
-    setvar(VAR_CURRENT_EV_CAP, 52)
+    setvar(VAR_CURRENT_LEVEL_CAP, VAR_LVLCAP_INTRO)
+    setvar(VAR_CURRENT_EV_CAP, VAR_EVCAP_INTRO)
     warpsilent(MAP_MITSURUS_ROOM2F, 15, 10)
     waitstate
 }

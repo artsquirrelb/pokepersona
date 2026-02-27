@@ -1761,9 +1761,10 @@ SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_
 
 SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_1:
 # 392 "data/maps/SunshineTown/scripts.pory"
-	.string "Excuse me, young men. Can you do me a\n"
-	.string "favor?\p"
-	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Sure, ma'am. What can we do for you?$"
+	.string "Excuse me, young men.\n"
+	.string "Can you do me a favor?\p"
+	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Sure, ma'am.\n"
+	.string "What can we do for you?$"
 
 SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_2:
 # 396 "data/maps/SunshineTown/scripts.pory"
@@ -1775,9 +1776,10 @@ SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_
 
 SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_3:
 # 402 "data/maps/SunshineTown/scripts.pory"
-	.string "Excuse me, young lass. Can you do me a\n"
-	.string "favor?\p"
-	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Certainly, ma'am. What do you need?$"
+	.string "Excuse me, young lass.\n"
+	.string "Can you do me a favor?\p"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Certainly, ma'am.\n"
+	.string "What do you need?$"
 
 SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActive_Text_4:
 # 406 "data/maps/SunshineTown/scripts.pory"

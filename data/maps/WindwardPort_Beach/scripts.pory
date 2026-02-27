@@ -4,13 +4,15 @@ script WindwardPort_Beach_ParasolLady {
     lock
     faceplayer
     setspeaker("Asayo")
-    msgbox(format("Excuse me, I'm taking a selfie.\n
+    msgbox(format("Excuse me, I'm taking a selfie.\p
     Can you please step away from the camera?"))
     release
     end
 }
 
 script WindwardPort_Beach_Mareanie {
+    lock
+    faceplayer
     startoverworldencounter(255)
     fadescreenswapbuffers(FADE_TO_BLACK)
     removeobject(VAR_LAST_TALKED)

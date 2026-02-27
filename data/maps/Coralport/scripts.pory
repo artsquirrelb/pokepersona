@@ -255,7 +255,8 @@ script Coralport_Eventscript_SailorOnGuard {
         showmoneybox(0, 0)
         msgbox(format("This ship is departing for Windward Port.\p
         The trip will estimatedly take {COLOR RED}3 hours{COLOR 2}.\p
-        It costs {COLOR GREEN}¥100 {COLOR 2}per ticket. Would you like to board the ship?"), MSGBOX_YESNO)
+        It costs {COLOR GREEN}¥100 {COLOR 2}per ticket.\n
+        Would you like to board the ship?"), MSGBOX_YESNO)
         closemessage
         if (var(VAR_RESULT)){
             checkmoney(300)
@@ -290,9 +291,9 @@ script Coralport_Eventscript_SailorOnGuard {
 }
 
 script Coralport_Eventscript_ShipSchedule {
-    msgbox(format("{CLEAR_TO 45}Coralport -> Windward Port\n
-    {CLEAR_TO 30}Boarding time: 6AM - 5:59PM."))
-    closemessage
+    setspeaker(0)
+    msgbox(format("{CLEAR_TO 30}Coralport -> Windward Port\n
+    {CLEAR_TO 30}Boarding time: {COLOR 7}6AM - 5:59PM."))
     release
     end
 }

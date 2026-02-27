@@ -129,7 +129,8 @@ script WindwardPort_Harbor_Eventscript_Worker {
     faceplayer
     setspeaker("Earu")
     msgbox(format("I'm so glad my shift is in the daytime.\p
-    My co-workers said they kept hearing a weeping sound at night and honestly, I don't want to find out where that sound comes from."))
+    My co-workers said they kept hearing a weeping sound at night and honestly,\p
+    I don't want to find out where that sound comes from."))
     closemessage
     release
     end

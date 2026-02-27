@@ -389,8 +389,8 @@ script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActiv
         checkplayergender
         if (var(VAR_RESULT) == MALE)
         {
-            msgbox(format("Excuse me, young men. Can you do me a favor?\p
-            {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Sure, ma'am. What can we do for you?"))
+            msgbox(format("Excuse me, young men.\nCan you do me a favor?\p
+            {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SMILE}Sure, ma'am.\nWhat can we do for you?"))
             closemessage
             setspeaker("Fumiko")
             msgbox(format("One of the Pokémon caretakers I hired couldn't show up today.\p
@@ -399,8 +399,8 @@ script SunshineTown_Eventscript_QUEST_PLAY_WITH_PKM_FOR_SOOTHE_BELL_CheckIfActiv
             closemessage
         }
         else{
-            msgbox(format("Excuse me, young lass. Can you do me a favor?\p
-            {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Certainly, ma'am. What do you need?"))
+            msgbox(format("Excuse me, young lass.\nCan you do me a favor?\p
+            {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SMILE}Certainly, ma'am.\nWhat do you need?"))
             closemessage
             setspeaker("Fumiko")
             msgbox(format("One of the Pokémon caretakers I hired couldn't show up today.\p

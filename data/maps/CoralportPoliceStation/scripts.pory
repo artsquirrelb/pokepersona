@@ -48,7 +48,8 @@ script CoralportPoliceStation_Eventscript_OverhearingFishermansRequest {
     msgbox(format("When was the last time you saw her?"))
     applymovement(5, walkinplaceup)
     setspeaker("Ikumi")
-    msgbox(format("This morning! I woke up and she wasn't in the house!\p
+    msgbox(format("This morning!\n
+    I woke up and she wasn't in the house!\p
     I've been searching for her everywhere!"))
     applymovement(5, moves(walk_fast_right*2, walk_faster_left*2, walk_fast_right*2, walk_faster_left*2, walk_fast_right*2, walk_faster_left*2))
     setspeaker("Ikumi")

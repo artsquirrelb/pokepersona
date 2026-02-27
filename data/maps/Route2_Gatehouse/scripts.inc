@@ -100,110 +100,110 @@ Route2_Gatehouse_Eventscript_KidF::
 	setspeaker Route2_Gatehouse_Eventscript_KidF_Text_0
 # 65 "data/maps/Route2_Gatehouse/scripts.pory"
 	goto_if_unset FLAG_RECEIVED_EXP_CANDIES_ROUTE2_GATEHOUSE, Route2_Gatehouse_Eventscript_KidF_1
-# 81 "data/maps/Route2_Gatehouse/scripts.pory"
+# 84 "data/maps/Route2_Gatehouse/scripts.pory"
 	compare VAR_TEMP_0, 1
 	goto_if_eq Route2_Gatehouse_Eventscript_KidF_2
-# 101 "data/maps/Route2_Gatehouse/scripts.pory"
-	msgbox Route2_Gatehouse_Eventscript_KidF_Text_3
-# 102 "data/maps/Route2_Gatehouse/scripts.pory"
-	closemessage
-# 103 "data/maps/Route2_Gatehouse/scripts.pory"
-	setvar VAR_TEMP_0, 1
 # 104 "data/maps/Route2_Gatehouse/scripts.pory"
+	msgbox Route2_Gatehouse_Eventscript_KidF_Text_7
+# 105 "data/maps/Route2_Gatehouse/scripts.pory"
+	closemessage
+# 106 "data/maps/Route2_Gatehouse/scripts.pory"
+	setvar VAR_TEMP_0, 1
+# 107 "data/maps/Route2_Gatehouse/scripts.pory"
 	release
 	end
 
 Route2_Gatehouse_Eventscript_KidF_1:
 # 66 "data/maps/Route2_Gatehouse/scripts.pory"
 	msgbox Route2_Gatehouse_Eventscript_KidF_Text_1
-# 69 "data/maps/Route2_Gatehouse/scripts.pory"
-	setspeaker Route2_Gatehouse_Eventscript_KidF_Text_0
 # 70 "data/maps/Route2_Gatehouse/scripts.pory"
-	msgbox Route2_Gatehouse_Eventscript_KidF_Text_2
-# 71 "data/maps/Route2_Gatehouse/scripts.pory"
-	closemessage
-# 72 "data/maps/Route2_Gatehouse/scripts.pory"
-	giveitem ITEM_EXP_CANDY_S, 5
-# 73 "data/maps/Route2_Gatehouse/scripts.pory"
-	setflag FLAG_RECEIVED_EXP_CANDIES_ROUTE2_GATEHOUSE
-# 74 "data/maps/Route2_Gatehouse/scripts.pory"
-	setvar VAR_TEMP_0, 1
-# 75 "data/maps/Route2_Gatehouse/scripts.pory"
 	setspeaker Route2_Gatehouse_Eventscript_KidF_Text_0
-# 76 "data/maps/Route2_Gatehouse/scripts.pory"
-	msgbox Route2_Gatehouse_Eventscript_KidF_Text_3
-# 77 "data/maps/Route2_Gatehouse/scripts.pory"
+# 71 "data/maps/Route2_Gatehouse/scripts.pory"
+	msgbox Route2_Gatehouse_Eventscript_KidF_Text_2
+# 73 "data/maps/Route2_Gatehouse/scripts.pory"
 	closemessage
+# 74 "data/maps/Route2_Gatehouse/scripts.pory"
+	giveitem ITEM_EXP_CANDY_S, 5
+# 75 "data/maps/Route2_Gatehouse/scripts.pory"
+	setflag FLAG_RECEIVED_EXP_CANDIES_ROUTE2_GATEHOUSE
+# 76 "data/maps/Route2_Gatehouse/scripts.pory"
+	setvar VAR_TEMP_0, 1
+# 77 "data/maps/Route2_Gatehouse/scripts.pory"
+	setspeaker Route2_Gatehouse_Eventscript_KidF_Text_0
 # 78 "data/maps/Route2_Gatehouse/scripts.pory"
+	msgbox Route2_Gatehouse_Eventscript_KidF_Text_3
+# 80 "data/maps/Route2_Gatehouse/scripts.pory"
+	closemessage
+# 81 "data/maps/Route2_Gatehouse/scripts.pory"
 	release
 	end
 
 Route2_Gatehouse_Eventscript_KidF_2:
-# 82 "data/maps/Route2_Gatehouse/scripts.pory"
-	msgbox Route2_Gatehouse_Eventscript_KidF_Text_4
 # 85 "data/maps/Route2_Gatehouse/scripts.pory"
+	msgbox Route2_Gatehouse_Eventscript_KidF_Text_4
+# 88 "data/maps/Route2_Gatehouse/scripts.pory"
 	setspeaker Route2_Gatehouse_Eventscript_KidF_Text_0
-# 86 "data/maps/Route2_Gatehouse/scripts.pory"
+# 89 "data/maps/Route2_Gatehouse/scripts.pory"
 	msgbox Route2_Gatehouse_Eventscript_KidF_Text_5
-# 92 "data/maps/Route2_Gatehouse/scripts.pory"
-	setspeaker Route2_Gatehouse_Eventscript_KidF_Text_0
-# 93 "data/maps/Route2_Gatehouse/scripts.pory"
-	msgbox Route2_Gatehouse_Eventscript_KidF_Text_6
 # 95 "data/maps/Route2_Gatehouse/scripts.pory"
-	closemessage
+	setspeaker Route2_Gatehouse_Eventscript_KidF_Text_0
 # 96 "data/maps/Route2_Gatehouse/scripts.pory"
+	msgbox Route2_Gatehouse_Eventscript_KidF_Text_6
+# 98 "data/maps/Route2_Gatehouse/scripts.pory"
+	closemessage
+# 99 "data/maps/Route2_Gatehouse/scripts.pory"
 	setvar VAR_TEMP_0, 2
-# 97 "data/maps/Route2_Gatehouse/scripts.pory"
+# 100 "data/maps/Route2_Gatehouse/scripts.pory"
 	release
 	end
 
 
 Route2_Gatehouse_Eventscript_WallNoticeRight::
-# 110 "data/maps/Route2_Gatehouse/scripts.pory"
-	lock
-# 111 "data/maps/Route2_Gatehouse/scripts.pory"
-	msgbox Route2_Gatehouse_Eventscript_WallNoticeRight_Text_0
-# 112 "data/maps/Route2_Gatehouse/scripts.pory"
-	closemessage
 # 113 "data/maps/Route2_Gatehouse/scripts.pory"
+	lock
+# 114 "data/maps/Route2_Gatehouse/scripts.pory"
+	msgbox Route2_Gatehouse_Eventscript_WallNoticeRight_Text_0
+# 115 "data/maps/Route2_Gatehouse/scripts.pory"
+	closemessage
+# 116 "data/maps/Route2_Gatehouse/scripts.pory"
 	release
 	end
 
 
 Route2_Gatehouse_Eventscript_WallNoticeLeft::
-# 118 "data/maps/Route2_Gatehouse/scripts.pory"
-	lock
-# 119 "data/maps/Route2_Gatehouse/scripts.pory"
-	msgbox Route2_Gatehouse_Eventscript_WallNoticeLeft_Text_0
-# 120 "data/maps/Route2_Gatehouse/scripts.pory"
-	closemessage
 # 121 "data/maps/Route2_Gatehouse/scripts.pory"
+	lock
+# 122 "data/maps/Route2_Gatehouse/scripts.pory"
+	msgbox Route2_Gatehouse_Eventscript_WallNoticeLeft_Text_0
+# 123 "data/maps/Route2_Gatehouse/scripts.pory"
+	closemessage
+# 124 "data/maps/Route2_Gatehouse/scripts.pory"
 	release
 	end
 
 
 Route2_Gatehouse_Eventscript_Bookshelves::
-# 126 "data/maps/Route2_Gatehouse/scripts.pory"
-	lock
-# 127 "data/maps/Route2_Gatehouse/scripts.pory"
-	msgbox Route2_Gatehouse_Eventscript_Bookshelves_Text_0
 # 129 "data/maps/Route2_Gatehouse/scripts.pory"
-	closemessage
+	lock
 # 130 "data/maps/Route2_Gatehouse/scripts.pory"
+	msgbox Route2_Gatehouse_Eventscript_Bookshelves_Text_0
+# 132 "data/maps/Route2_Gatehouse/scripts.pory"
+	closemessage
+# 133 "data/maps/Route2_Gatehouse/scripts.pory"
 	release
 	end
 
 
 Route2_Gatehouse_Eventscript_Lady::
-# 135 "data/maps/Route2_Gatehouse/scripts.pory"
-	lock
-# 136 "data/maps/Route2_Gatehouse/scripts.pory"
-	faceplayer
-# 137 "data/maps/Route2_Gatehouse/scripts.pory"
-	setspeaker Route2_Gatehouse_Eventscript_Lady_Text_0
 # 138 "data/maps/Route2_Gatehouse/scripts.pory"
+	lock
+# 139 "data/maps/Route2_Gatehouse/scripts.pory"
+	faceplayer
+# 140 "data/maps/Route2_Gatehouse/scripts.pory"
+	setspeaker Route2_Gatehouse_Eventscript_Lady_Text_0
+# 141 "data/maps/Route2_Gatehouse/scripts.pory"
 	msgbox Route2_Gatehouse_Eventscript_Lady_Text_1
-# 143 "data/maps/Route2_Gatehouse/scripts.pory"
+# 146 "data/maps/Route2_Gatehouse/scripts.pory"
 	release
 	end
 
@@ -262,52 +262,58 @@ Route2_Gatehouse_Eventscript_KidF_Text_0:
 Route2_Gatehouse_Eventscript_KidF_Text_1:
 # 66 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "Hello, gorgeous sister! I like your hair!\p"
-	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}!{PAUSE 60} {CREATE MUGSHOT_M EMOTE_SMILE}My, thank you, little kid. I like your\n"
-	.string "eyes too.$"
+	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}!\n"
+	.string "{PAUSE 60} {CREATE MUGSHOT_M EMOTE_SMILE}My, thank you, little kid.\l"
+	.string "I like your eyes too.$"
 
 Route2_Gatehouse_Eventscript_KidF_Text_2:
-# 70 "data/maps/Route2_Gatehouse/scripts.pory"
-	.string "{DESTROY_MUGSHOT}Hehe, thank you. You can have these\n"
-	.string "candies!$"
+# 71 "data/maps/Route2_Gatehouse/scripts.pory"
+	.string "{DESTROY_MUGSHOT}Hehe, thank you.\n"
+	.string "You can have these candies!$"
 
 Route2_Gatehouse_Eventscript_KidF_Text_3:
-# 76 "data/maps/Route2_Gatehouse/scripts.pory"
-	.string "Please visit our shop in Coralport, you\n"
-	.string "can get more candies!$"
+# 78 "data/maps/Route2_Gatehouse/scripts.pory"
+	.string "Please visit our shop in Coralport,\n"
+	.string "you can get more candies!$"
 
 Route2_Gatehouse_Eventscript_KidF_Text_4:
-# 82 "data/maps/Route2_Gatehouse/scripts.pory"
+# 85 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "Hello, grandpa!\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}M-Me? Grandpa???\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}Hey, little girl. I'm still 16!$"
 
 Route2_Gatehouse_Eventscript_KidF_Text_5:
-# 86 "data/maps/Route2_Gatehouse/scripts.pory"
+# 89 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Oh... Then why is your hair gray like my\n"
 	.string "grandpa's?\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}I- uh......{PAUSE 60}\n"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}Psst, Shinji, why is my hair gray?\p"
-	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}How the f-{PAUSE 60} {CREATE MUGSHOT_S EMOTE_GEEZ}(How should I know!? It\n"
-	.string "probably has something to do with\l"
-	.string "genes?)\p"
+	.string "{SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}How the f-{PAUSE 60}\p"
+	.string "{CREATE MUGSHOT_S EMOTE_GEEZ}(How should I know!? It probably has\n"
+	.string "something to do with genes?)\p"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}I believe it has something to do with\n"
 	.string "genes.$"
 
 Route2_Gatehouse_Eventscript_KidF_Text_6:
-# 93 "data/maps/Route2_Gatehouse/scripts.pory"
+# 96 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "{DESTROY_MUGSHOT}Oh, I see...\p"
 	.string "{SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_GEEZ}Sigh.........$"
 
+Route2_Gatehouse_Eventscript_KidF_Text_7:
+# 104 "data/maps/Route2_Gatehouse/scripts.pory"
+	.string "Please visit our shop in Coralport, you\n"
+	.string "can get more candies!$"
+
 Route2_Gatehouse_Eventscript_WallNoticeRight_Text_0:
-# 111 "data/maps/Route2_Gatehouse/scripts.pory"
+# 114 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "Route 2 {RIGHT_ARROW}$"
 
 Route2_Gatehouse_Eventscript_WallNoticeLeft_Text_0:
-# 119 "data/maps/Route2_Gatehouse/scripts.pory"
+# 122 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "Coralport {LEFT_ARROW}$"
 
 Route2_Gatehouse_Eventscript_Bookshelves_Text_0:
-# 127 "data/maps/Route2_Gatehouse/scripts.pory"
+# 130 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "Kitoha region contains of 3 main\n"
 	.string "islands: The biggest one, Paulownia\l"
 	.string "Island on the west,\n"
@@ -316,11 +322,11 @@ Route2_Gatehouse_Eventscript_Bookshelves_Text_0:
 	.string "south.$"
 
 Route2_Gatehouse_Eventscript_Lady_Text_0:
-# 137 "data/maps/Route2_Gatehouse/scripts.pory"
+# 140 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "Daria$"
 
 Route2_Gatehouse_Eventscript_Lady_Text_1:
-# 138 "data/maps/Route2_Gatehouse/scripts.pory"
+# 141 "data/maps/Route2_Gatehouse/scripts.pory"
 	.string "I'm currently watching a drama series\n"
 	.string "called Corviknight Driver.\p"
 	.string "The protagonist and his friends run a\n"

@@ -64,16 +64,19 @@ script Route2_Gatehouse_Eventscript_KidF {
     setspeaker("Ame")
     if (flag(FLAG_RECEIVED_EXP_CANDIES_ROUTE2_GATEHOUSE) == FALSE){
         msgbox(format("Hello, gorgeous sister! I like your hair!\p
-        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}!{PAUSE 60}
-        {CREATE MUGSHOT_M EMOTE_SMILE}My, thank you, little kid. I like your eyes too."))
+        {SPEAKER NAME_M}{CREATE MUGSHOT_M EMOTE_SURPRISED}!\n{PAUSE 60}
+        {CREATE MUGSHOT_M EMOTE_SMILE}My, thank you, little kid.\l
+        I like your eyes too."))
         setspeaker("Ame")
-        msgbox(format("{DESTROY_MUGSHOT}Hehe, thank you. You can have these candies!"))
+        msgbox(format("{DESTROY_MUGSHOT}Hehe, thank you.\n
+        You can have these candies!"))
         closemessage
         giveitem(ITEM_EXP_CANDY_S, 5)
         setflag(FLAG_RECEIVED_EXP_CANDIES_ROUTE2_GATEHOUSE)
         setvar(VAR_TEMP_0, 1)
         setspeaker("Ame")
-        msgbox(format("Please visit our shop in Coralport, you can get more candies!"))
+        msgbox(format("Please visit our shop in Coralport,\n
+        you can get more candies!"))
         closemessage
         release
         end
@@ -86,7 +89,7 @@ script Route2_Gatehouse_Eventscript_KidF {
         msgbox(format("{DESTROY_MUGSHOT}Oh... Then why is your hair gray like my grandpa's?\p
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SURPRISED}I- uh......{PAUSE 60}\n
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_STRUGGLED}Psst, Shinji, why is my hair gray?\p
-        {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}How the f-{PAUSE 60}
+        {SPEAKER NAME_S}{CREATE MUGSHOT_S EMOTE_SURPRISED}How the f-{PAUSE 60}\p
         {CREATE MUGSHOT_S EMOTE_GEEZ}(How should I know!? It probably has something to do with genes?)\p
         {SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_SERIOUS}I believe it has something to do with genes."))
         setspeaker("Ame")

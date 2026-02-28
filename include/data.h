@@ -151,9 +151,10 @@ struct TypeInfo
     u16 teraTypeRGBValue;    // Most values pulled from the Tera type icon palette.
     u16 damageCategory:2;    // Used for B_PHYSICAL_SPECIAL_SPLIT <= GEN_3
     u16 useSecondTypeIconPalette:1;
+    u16 useThirdTypeIconPalette:1;
     u16 isSpecialCaseType:1;
     u16 isHiddenPowerType:1; // Changing this for any type will change the distribution of all Hidden Power types from vanilla.
-    u16 padding:11;
+    u16 padding:10;
     const u16 *const paletteTMHM;
     //u16 enhanceItem;
     //u16 berry;

@@ -3467,6 +3467,7 @@ extern const u16 gMonMarkingsMenu_Pal[];
 
 extern const u32 gBattleIcons_Gfx1[];
 extern const u32 gBattleIcons_Gfx2[];
+extern const u32 gBattleIcons_Gfx3[];
 extern const u16 gBattleIcons_Pal1[];
 extern const u16 gBattleIcons_Pal2[];
 

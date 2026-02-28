@@ -770,7 +770,7 @@ static void (*const sTextPrinterTasks[])(u8 taskId) =
 
 #define TAG_MOVE_SELECTOR 30000
 #define TAG_MON_STATUS 30001
-#define TAG_MOVE_TYPES 30002
+#define MOVE_TYPE_ICON_TAG 30002
 #define TAG_MON_MARKINGS 30003
 #define TAG_MON_SHINY_ICON 30004
 #define TAG_MON_POKERUS_CURED_ICON 30005
@@ -1258,13 +1258,13 @@ static const struct CompressedSpriteSheet sSpriteSheet_MoveTypes =
     .data = gMoveTypes_Gfx,
 #endif
     .size = (NUMBER_OF_MON_TYPES + CONTEST_CATEGORIES_COUNT) * 0x100,
-    .tag = TAG_MOVE_TYPES
+    .tag = MOVE_TYPE_ICON_TAG
 };
 
 static const struct SpriteTemplate sSpriteTemplate_MoveTypes =
 {
-    .tileTag = TAG_MOVE_TYPES,
-    .paletteTag = TAG_MOVE_TYPES,
+    .tileTag = MOVE_TYPE_ICON_TAG,
+    .paletteTag = MOVE_TYPE_ICON_TAG,
     .oam = &sOamData_MoveTypes,
     .anims = sSpriteAnimTable_MoveTypes,
     .images = NULL,

@@ -1435,12 +1435,12 @@ const u8 gText_BattleMenuR[] = _("Battle{CLEAR_TO 56}Bag\nPokémon{CLEAR_TO 56}R
 const u8 gText_BattleMenuB[] = _("Battle{CLEAR_TO 56}Bag\nPokémon{CLEAR_TO 56}Run{R_BUTTON}");
 const u8 gText_SafariZoneMenu[] = _("Ball{CLEAR_TO 56}{POKEBLOCK}\nGo Near{CLEAR_TO 56}Run");
 const u8 gText_MoveInterfacePP[] = _("PP ");
-const u8 gText_MoveInterfaceType[] = _("Type/");
+const u8 gText_MoveInterfaceType[] = _("Type");
 const u8 gText_MoveInterfacePpType[] = _("{PALETTE 5}{BACKGROUND DYNAMIC_COLOR5}{TEXT_COLORS DYNAMIC_COLOR4 DYNAMIC_COLOR6 DYNAMIC_COLOR5}PP\nType/");
 const u8 gText_MoveInterfaceDynamicColors[] = _("{PALETTE 5}{BACKGROUND DYNAMIC_COLOR5}{TEXT_COLORS DYNAMIC_COLOR4 DYNAMIC_COLOR6 DYNAMIC_COLOR5}");
 const u8 gText_WhichMoveToForget4[] = _("{PALETTE 5}{BACKGROUND DYNAMIC_COLOR5}{TEXT_COLORS DYNAMIC_COLOR4 3 3}Which move should\nbe forgotten?");
 const u8 gText_BattleYesNoChoice[] = _("{PALETTE 5}{BACKGROUND DYNAMIC_COLOR5}{TEXT_COLORS 2 3 3}Yes\nNo");
-const u8 gText_BattleSwitchWhich[] = _("{PALETTE 5}{BACKGROUND DYNAMIC_COLOR5}{TEXT_COLORS 4 3 3}Switch\nwhich?");
+const u8 gText_BattleSwitchWhich[] = _("Switch\nwhich?");
 const u8 gText_BattleSwitchWhich2[] = _("{PALETTE 5}{BACKGROUND DYNAMIC_COLOR5}{TEXT_COLORS 4 3 3}");
 const u8 gText_BattleSwitchWhich3[] = _("{UP_ARROW}");
 const u8 gText_BattleSwitchWhich4[] = _("{ESCAPE 4}");
@@ -1614,15 +1614,15 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .color.shadow = 3,
     },
     [B_WIN_PP] = {
-        .fillValue = PIXEL_FILL(3),
+        .fillValue = PIXEL_FILL(7),
         .fontId = FONT_NARROW,
         .x = 0,
         .y = 1,
         .speed = 0,
-        .color.foreground = B_SHOW_EFFECTIVENESS != SHOW_EFFECTIVENESS_NEVER ? 13 : 1,
-        .color.background = 3,
-        .color.accent = 3,
-        .color.shadow = B_SHOW_EFFECTIVENESS != SHOW_EFFECTIVENESS_NEVER ? 3 : 3,
+        .color.foreground = B_SHOW_EFFECTIVENESS != SHOW_EFFECTIVENESS_NEVER ? 3 : 3,
+        .color.background = 7,
+        .color.accent = 7,
+        .color.shadow = B_SHOW_EFFECTIVENESS != SHOW_EFFECTIVENESS_NEVER ? 7 : 7,
     },
     [B_WIN_DUMMY] = {
         .fillValue = PIXEL_FILL(4),
@@ -1636,37 +1636,37 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] =
         .color.shadow = 0,
     },
     [B_WIN_PP_REMAINING] = {
-        .fillValue = PIXEL_FILL(3),
+        .fillValue = PIXEL_FILL(7),
         .fontId = FONT_NORMAL,
         .x = 2,
         .y = 1,
         .speed = 0,
-        .color.foreground = 1,
-        .color.background = 3,
-        .color.accent = 3,
-        .color.shadow = 3,
+        .color.foreground = 3,
+        .color.background = 7,
+        .color.accent = 7,
+        .color.shadow = 7,
     },
     [B_WIN_MOVE_TYPE] = {
-        .fillValue = PIXEL_FILL(3),
+        .fillValue = PIXEL_FILL(7),
         .fontId = FONT_NARROW,
         .x = 0,
         .y = 1,
         .speed = 0,
-        .color.foreground = 1,
-        .color.background = 3,
-        .color.accent = 3,
-        .color.shadow = 3,
+        .color.foreground = 3,
+        .color.background = 7,
+        .color.accent = 7,
+        .color.shadow = 7,
     },
     [B_WIN_SWITCH_PROMPT] = {
-        .fillValue = PIXEL_FILL(3),
+        .fillValue = PIXEL_FILL(7),
         .fontId = FONT_NARROW,
         .x = 0,
         .y = 1,
         .speed = 0,
-        .color.foreground = 1,
-        .color.background = 3,
-        .color.accent = 3,
-        .color.shadow = 3,
+        .color.foreground = 3,
+        .color.background = 7,
+        .color.accent = 7,
+        .color.shadow = 7,
     },
     [B_WIN_YESNO] = {
         .fillValue = PIXEL_FILL(3),

@@ -142,3 +142,50 @@ script EventScript_NoEncounterDexNav {
     release
     end
 }
+
+script EventScript_ObtainedMoneyFromChest{
+    if (var(VAR_TEMP_A) != 0)
+    {
+        playse (MUS_OBTAIN_ITEM)
+        waitse
+        addmoney(VAR_TEMP_A)
+        buffernumberstring(STR_VAR_2, VAR_TEMP_A)
+        msgbox(Text_FoundMoney, MSGBOX_AUTOCLOSE)
+    }
+   
+}
+script EventScript_GainedTPFromChest{
+    if (var(VAR_TEMP_B) != 0)
+    {
+        playse (MUS_OBTAIN_ITEM)
+        waitse
+        addtp(VAR_TEMP_A)
+        buffernumberstring(STR_VAR_3, VAR_TEMP_B)
+        msgbox(Text_GainTP, MSGBOX_AUTOCLOSE)
+    }
+}
+
+script EventScript_RemoveMoneyFromChest{
+    if (var(VAR_TEMP_A) != 0)
+    {
+        removemoney(VAR_TEMP_A)
+    }
+}
+script EventScript_RemoveTPFromChest{
+    if (var(VAR_TEMP_B) != 0)
+    {
+        removetp(VAR_TEMP_A)
+    }
+}
+
+//for item chest
+text Text_FoundMoney {
+    format("{PLAYER} found {COLOR 7}{STR_VAR_2}¥{COLOR 2}.")
+}
+text Text_GainTP {
+    format("{PLAYER} gained {COLOR 7}{STR_VAR_3} Trainer Points{COLOR 2}.")
+}
+
+text Text_PutBack {
+    format("{PLAYER} put everything back.")
+}

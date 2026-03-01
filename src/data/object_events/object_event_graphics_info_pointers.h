@@ -278,7 +278,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Toddler;
 
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ParkBall;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeChest;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UltraChest;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GreatChest;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MegaStone;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ScriptSparkle;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_MiningRock;
@@ -368,8 +370,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M] =     &gObjectEventGraphicsInfo_CyclingTriathleteM,
     [OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F] =     &gObjectEventGraphicsInfo_CyclingTriathleteF,
     [OBJ_EVENT_GFX_NURSE] =                    &gObjectEventGraphicsInfo_Nurse,
-    [OBJ_EVENT_GFX_ITEM_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
-    [OBJ_EVENT_GFX_TM_BALL] =                  &gObjectEventGraphicsInfo_ParkBall,
+    [OBJ_EVENT_GFX_POKE_CHEST] =               &gObjectEventGraphicsInfo_PokeChest,
+    [OBJ_EVENT_GFX_GREAT_CHEST] =              &gObjectEventGraphicsInfo_GreatChest,
+    [OBJ_EVENT_GFX_ULTRA_CHEST] =              &gObjectEventGraphicsInfo_UltraChest,
     [OBJ_EVENT_GFX_MEGA_STONE] =               &gObjectEventGraphicsInfo_MegaStone,
     [OBJ_EVENT_GFX_SPARKLE] =                  &gObjectEventGraphicsInfo_ScriptSparkle,
     [OBJ_EVENT_GFX_MINING_ROCK] =              &gObjectEventGraphicsInfo_MiningRock,

@@ -455,7 +455,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ULTRA_CHEST",
       "x": 46,
       "y": 37,
       "elevation": 0,
@@ -465,11 +465,12 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_TM_WATER_PULSE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_WINDWARD_PORT_TM_WATERPULSE"
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_WINDWARD_PORT_TM_WATERPULSE"
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_CHEST",
       "x": 8,
       "y": 8,
       "elevation": 0,
@@ -479,7 +480,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_DUSK_STONE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_WINDWARD_PORT_DUSK_STONE"
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_WINDWARD_PORT_DUSK_STONE"
     },
     {
       "type": "object",
@@ -528,6 +530,21 @@
       "flag": "0",
       "d": true,
       "m": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_CHEST",
+      "x": 17,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 4,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MUSCLE_FEATHER",
+      "script": "Common_EventScript_FindItem",
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_WINDWARDPORT_MUSCLEFEATHERS"
     }
   ],
   "warp_events": [

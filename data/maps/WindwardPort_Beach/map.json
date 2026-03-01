@@ -75,7 +75,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_CHEST",
       "x": 28,
       "y": 12,
       "elevation": 0,
@@ -85,7 +85,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_MIRACLE_SEED",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_WINDWARD_BEACH_MIRACLE_SEED"
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_WINDWARD_BEACH_MIRACLE_SEED"
     }
   ],
   "warp_events": [
@@ -116,6 +117,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "WindwardPort_Beach_Sandcastle"
+    },
+    {
+      "type": "sign",
+      "x": 37,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "WindwardPort_Beach_Sign"
     }
   ]
 }

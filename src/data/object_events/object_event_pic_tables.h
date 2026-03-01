@@ -1153,8 +1153,19 @@ static const struct SpriteFrameImage sPicTable_PokeBall[] = {
     overworld_frame(gObjectEventPic_PokeBall, 2, 4, 0),
 };
 
-static const struct SpriteFrameImage sPicTable_ParkBall[] = {
-    overworld_frame(gObjectEventPic_ParkBall, 2, 4, 0),
+static const struct SpriteFrameImage sPicTable_PokeChest[] = {
+    overworld_frame(gObjectEventPic_PokeChest, 2, 2, 0),
+    overworld_frame(gObjectEventPic_PokeChest, 2, 2, 1),
+};
+
+static const struct SpriteFrameImage sPicTable_GreatChest[] = {
+    overworld_frame(gObjectEventPic_GreatChest, 2, 2, 0),
+    overworld_frame(gObjectEventPic_GreatChest, 2, 2, 1),
+};
+
+static const struct SpriteFrameImage sPicTable_UltraChest[] = {
+    overworld_frame(gObjectEventPic_UltraChest, 2, 2, 0),
+    overworld_frame(gObjectEventPic_UltraChest, 2, 2, 1),
 };
 
 static const struct SpriteFrameImage sPicTable_MegaStone[] = {

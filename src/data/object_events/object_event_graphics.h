@@ -69,6 +69,7 @@ const u16 gObjectEventPal_Npc6[] = INCBIN_U16("graphics/object_events/palettes/n
 const u16 gObjectEventPal_Npc7[] = INCBIN_U16("graphics/object_events/palettes/npc_pinkblueyellow.gbapal");
 const u16 gObjectEventPal_Npc8[] = INCBIN_U16("graphics/object_events/palettes/npc_greenyellow.gbapal");
 const u16 gObjectEventPal_KimonoGirl[] = INCBIN_U16("graphics/object_events/pics/people/kimono_girl.gbapal");
+const u16 gObjectEventPal_ItemChest[] = INCBIN_U16("graphics/object_events/pics/misc/pokechest.gbapal");
 
 
 const u16 gObjectEventPal_Brendan[] = INCBIN_U16("graphics/object_events/palettes/brendan.gbapal");
@@ -429,6 +430,9 @@ const u32 gObjectEventPic_ScriptSparkle[] = INCBIN_U32("graphics/object_events/p
 const u32 gObjectEventPic_MiningRock[] = INCBIN_U32("graphics/object_events/pics/misc/mining_rock.4bpp");
 const u16 gObjectEventPal_MiningRock[] = INCBIN_U16("graphics/object_events/pics/misc/mining_rock.gbapal");
 const u32 gObjectEventPic_QuestBoard[] = INCBIN_U32("graphics/object_events/pics/misc/quest_board.4bpp");
+const u32 gObjectEventPic_PokeChest[] = INCBIN_U32("graphics/object_events/pics/misc/pokechest.4bpp");
+const u32 gObjectEventPic_GreatChest[] = INCBIN_U32("graphics/object_events/pics/misc/greatchest.4bpp");
+const u32 gObjectEventPic_UltraChest[] = INCBIN_U32("graphics/object_events/pics/misc/ultrachest.4bpp");
 
 const u32 gObjectEventPic_DeoxysOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/deoxys.4bpp");
 const u32 gObjectEventPic_MewOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/mew.4bpp");

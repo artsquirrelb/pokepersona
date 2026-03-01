@@ -58,7 +58,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_CHEST",
       "x": 8,
       "y": 5,
       "elevation": 0,
@@ -68,7 +68,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_GREAT_BALL",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_WINDWARD_PORT_HOUSE_GREAT_BALL"
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_WINDWARD_PORT_HOUSE_GREAT_BALL"
     }
   ],
   "warp_events": [

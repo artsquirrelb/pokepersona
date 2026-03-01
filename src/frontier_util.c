@@ -1,4 +1,5 @@
 #include "global.h"
+#include "field_specials.h"
 #include "frontier_util.h"
 #include "easy_chat.h"
 #include "event_data.h"
@@ -2003,6 +2004,41 @@ static void GiveBattlePoints(void)
     if (points > 0xFFFF)
         points = 0xFFFF;
     gSaveBlock2Ptr->frontier.cardBattlePoints = points;
+}
+
+void AddTrainerPoints(u32 toAdd)
+{
+    u32 toSet = gSaveBlock2Ptr->frontier.battlePoints;
+    // can't have more trainer point than MAX
+    if (toSet + toAdd > MAX_BATTLE_FRONTIER_POINTS)
+    {
+        toSet = MAX_BATTLE_FRONTIER_POINTS;
+    }
+    else
+    {
+        toSet += toAdd;
+        // check overflow, can't have less trainer points after you receive more
+        if (toSet < gSaveBlock2Ptr->frontier.battlePoints)
+            toSet = MAX_BATTLE_FRONTIER_POINTS;
+    }
+
+    gSaveBlock2Ptr->frontier.battlePoints = toSet;
+}
+
+void RemoveTrainerPoints(u32 toAdd)
+{
+    u32 toSet = gSaveBlock2Ptr->frontier.battlePoints;
+    // can't have less than 0
+    if (toSet - toAdd < 0)
+    {
+        toSet = 0;
+    }
+    else
+    {
+        toSet -= toAdd;
+    }
+
+    gSaveBlock2Ptr->frontier.battlePoints = toSet;
 }
 
 static void GetFacilitySymbolCount(void)

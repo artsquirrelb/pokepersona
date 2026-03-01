@@ -56,3 +56,10 @@ script WindwardPort_Beach_Roughneck_Trigger {
     release
     end
 }
+
+script WindwardPort_Beach_Sign {
+    lock
+    msgbox(format("Windward Port's Lighthouse {RIGHT_ARROW}"))
+    release
+    end
+}

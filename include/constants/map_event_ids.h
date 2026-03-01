@@ -37,6 +37,9 @@
 // MAP_ROUTE1
 #define TEDDIURSA 12
 
+// MAP_ROUTE1_HIDDEN_GROTTO
+#define TAUROSA 1
+
 // MAP_ROUTE2
 #define SHINJIRO 6
 #define TAROU 14

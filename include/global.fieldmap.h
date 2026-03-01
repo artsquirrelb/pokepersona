@@ -97,11 +97,13 @@ struct __attribute__((packed, aligned(4))) ObjectEventTemplate
     /*0x0A*/ u8 movementRangeX:4;
              u8 movementRangeY:4;
     /*0x0B*/ u8 timeVisibility;
-    /*0x0C*/ u16 trainerType;
-    /*0x0E*/ u16 trainerRange_berryTreeId;
-    /*0x10*/ const u8 *script;
-    /*0x14*/ u16 flagId;
-    /*0x16*/ u16 questId; // ID of assigned quest, 0xFFFF = none;
+    /*0x0C*/ u8 trainerType;
+    /*0x0D*/ u16 trainerRange_berryTreeId;
+    /*0x0F*/ const u8 *script;
+    /*0x13*/ u16 flagId;
+    /*0x15*/ u16 questId; // ID of assigned quest, 0xFF = none; is flag ID if it's an item chest
+    /*0x17*/ u8 trainerpoint;
+    
 }; // size = 0x18
 
 struct WarpEvent

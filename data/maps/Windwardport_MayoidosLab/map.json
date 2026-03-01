@@ -47,11 +47,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Windwardport_MayoidosLab_ScientistM",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0"
     },
     {
       "local_id": "IRIA_WWH",
@@ -204,6 +200,21 @@
       "e": true,
       "m": true,
       "n": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_GREAT_CHEST",
+      "x": 12,
+      "y": 14,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 2,
+      "movement_range_y": 6,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LUMIOSE_GALETTE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_MAYOIDOLAB_CHEST"
     }
   ],
   "warp_events": [

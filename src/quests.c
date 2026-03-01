@@ -3199,10 +3199,16 @@ void HandleQuestIconForSingleObjectEvent(struct ObjectEvent *objectEvent, u32 ob
 
 	questId = obj->questId;
 
-	// Never attempt to put a quest icon on the player
-	if (objectEvent->movementType == MOVEMENT_TYPE_PLAYER)
-    	return;
+	// Never attempt to put a quest icon on the player, follower npc and follower pokemon
+	//if (objectEvent->movementType == MOVEMENT_TYPE_PLAYER)
+    //	return;
 
+	if (objectEvent->localId == LOCALID_PLAYER
+		||objectEvent->localId == LOCALID_FOLLOWING_POKEMON
+		||objectEvent->localId == OBJ_EVENT_ID_FOLLOWER
+		||objectEvent->localId == OBJ_EVENT_ID_NPC_FOLLOWER )
+		return;
+	
     if (obj == NULL)
         return;
 	

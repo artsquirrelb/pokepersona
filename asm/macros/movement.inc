@@ -191,3 +191,6 @@
 	create_movement_action step_end, MOVEMENT_ACTION_STEP_END
 	create_movement_action shake_horizontal, MOVEMENT_ACTION_SHAKE_HORIZONTAL
 	create_movement_action shake_vertical, MOVEMENT_ACTION_SHAKE_VERTICAL
+
+	create_movement_action open_chest, MOVEMENT_ACTION_OPEN_CHEST
+	create_movement_action close_chest, MOVEMENT_ACTION_CLOSE_CHEST

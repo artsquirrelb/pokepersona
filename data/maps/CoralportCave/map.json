@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
       "x": 35,
       "y": 4,
@@ -33,6 +34,7 @@
       "quest_id": 2
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_PRESCHOOLER_F",
       "x": 9,
       "y": 7,
@@ -50,6 +52,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(WOOPER_PALDEA)",
       "x": 8,
       "y": 7,
@@ -67,6 +70,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DUSKULL)",
       "x": 20,
       "y": 3,
@@ -84,6 +88,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DUSKULL)",
       "x": 10,
       "y": 8,
@@ -101,6 +106,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DUSCLOPS)",
       "x": 9,
       "y": 9,
@@ -118,6 +124,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(DUSKULL)",
       "x": 8,
       "y": 9,
@@ -135,6 +142,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(CLODSIRE)",
       "x": 6,
       "y": 17,
@@ -152,6 +160,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SHINJIRO",
       "x": 16,
       "y": 4,
@@ -169,6 +178,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_MAY_NORMAL",
       "x": 15,
       "y": 4,
@@ -186,6 +196,7 @@
       "n": true
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_BRENDAN_NORMAL",
       "x": 15,
       "y": 3,
@@ -203,7 +214,8 @@
       "n": true
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_ULTRA_CHEST",
       "x": 35,
       "y": 16,
       "elevation": 0,
@@ -213,11 +225,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_TM_ROCK_TOMB",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_CORALPORT_CAVE_TM_ROCK_TOMB",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_CORALPORT_CAVE_TM_ROCK_TOMB"
     }
   ],
   "warp_events": [

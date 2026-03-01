@@ -286,7 +286,9 @@
 // For path finder generated scripts
 #define MOVEMENT_ACTION_GENERATED_BEGIN                 0xC4
 #define MOVEMENT_ACTION_GENERATED_END                   0xC5
-
+// For Item chest
+#define MOVEMENT_ACTION_OPEN_CHEST                      0xC6
+#define MOVEMENT_ACTION_CLOSE_CHEST                     0xC7
 
 #define MOVEMENT_ACTION_STEP_END 0xFE
 #define MOVEMENT_ACTION_NONE     0xFF
@@ -355,6 +357,9 @@
 #define ANIM_FIELD_MOVE 0
 
 #define ANIM_OBJECT_SPARKLE 0
+
+#define ANIM_CHEST_CLOSE 0
+#define ANIM_CHEST_OPEN 1
 
 #define ANIM_MINING_ROCK    0
 #define ANIM_MINING_ROCK_HALF    1

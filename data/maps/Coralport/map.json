@@ -588,6 +588,21 @@
       "flag": "0",
       "e": true,
       "n": true
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_CHEST",
+      "x": 19,
+      "y": 15,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 3,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LURE_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_CORALPORT_LUREBALL"
     }
   ],
   "warp_events": [

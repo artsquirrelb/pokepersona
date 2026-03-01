@@ -133,7 +133,6 @@ Std_FindItem::
 	return
 
 EventScript_PickUpItem::
-	removeobject VAR_LAST_TALKED
 	additem VAR_0x8004, VAR_0x8005
 	copyvar VAR_0x8006 VAR_0x8004
 	specialvar VAR_RESULT, BufferTMHMMoveName
@@ -149,6 +148,9 @@ EventScript_PickUpItem::
 	goto_if_eq VAR_RESULT, PYRAMID_LOCATION_FLOOR, EventScript_PutBattlePyramidItemInBag
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
 	hideitemdescription
+	call EventScript_ObtainedMoneyFromChest
+	call EventScript_GainedTPFromChest
+	callnative SetChestItemFlag
 	return
 
 EventScript_PutBattlePyramidItemInBag::
@@ -181,6 +183,8 @@ EventScript_FoundItemMessage::
 EventScript_NoRoomToPickUpItem::
 	msgbox gText_ObtainedTheItem, MSGBOX_DEFAULT
 	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
+	callnative Script_IsChestItem
+	call_if_eq VAR_RESULT, TRUE, EventScript_CloseChest
 	setvar VAR_RESULT, FALSE
 	return
 
@@ -238,3 +242,14 @@ EventScript_NoRoomForHiddenItem::
 	setvar VAR_RESULT, 0
 	releaseall
 	end
+
+EventScript_CloseChest::
+	callnative GetItemBallIdAndAmountFromTemplate
+	call EventScript_RemoveMoneyFromChest
+	call EventScript_RemoveTPFromChest
+	callnative ClearChestItemFlag
+	msgbox Text_PutBack
+	playse SE_RG_BALL_CLICK
+	applymovement VAR_LAST_TALKED, Common_Movement_CloseChest
+	delay 10
+	return

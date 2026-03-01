@@ -245,24 +245,27 @@ string generate_map_events_text(Json map_data) {
                      << json_to_string(obj_event, "trainer_sight_or_berry_tree_id") << ", "
                      << json_to_string(obj_event, "script") << ", "
                      << json_to_string(obj_event, "flag");
-                    if (!obj_event["m"].is_null())
-                        text << ", " << json_to_string(obj_event, "m", false, true);
-                    else
-                        text << ", 0";
-                    if (!obj_event["d"].is_null())
-                        text << ", " << json_to_string(obj_event, "d", false, true);
-                    else
-                        text << ", 0";
-                    if (!obj_event["e"].is_null())
-                        text << ", " << json_to_string(obj_event, "e", false, true);
-                    else
-                        text << ", 0";
-                    if (!obj_event["n"].is_null())
-                        text << ", " << json_to_string(obj_event, "n", false, true);
-                    else
-                        text << ", 0";
+                if (!obj_event["m"].is_null())
+                    text << ", " << json_to_string(obj_event, "m", false, true);
+                else
+                    text << ", 0";
+                if (!obj_event["d"].is_null())
+                    text << ", " << json_to_string(obj_event, "d", false, true);
+                else
+                    text << ", 0";
+                if (!obj_event["e"].is_null())
+                    text << ", " << json_to_string(obj_event, "e", false, true);
+                else
+                    text << ", 0";
+                if (!obj_event["n"].is_null())
+                    text << ", " << json_to_string(obj_event, "n", false, true);
+                else
+                    text << ", 0";
                 if (!obj_event["quest_id"].is_null())
-                    text << ", " << json_to_string(obj_event, "quest_id", true) << "\n";
+                    text << ", " << json_to_string(obj_event, "quest_id", true);
+                else text << "";
+                if (!obj_event["tp"].is_null())
+                    text << ", " << json_to_string(obj_event, "tp", true) << "\n";
                 else
                     text << "\n";
             } else if (type == "clone") {

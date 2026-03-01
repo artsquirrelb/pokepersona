@@ -15,6 +15,8 @@
   "connections": null,
   "object_events": [
     {
+      "local_id": "TAUROSA",
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SPECIES(TAUROS_PALDEA_AQUA)",
       "x": 10,
       "y": 9,
@@ -25,11 +27,22 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route1_HiddenGrotto_TaurosPaldeaAqua",
-      "flag": "FLAG_DAILY_HIDDENGROTTO_ROUTE1",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_DAILY_HIDDENGROTTO_ROUTE1"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_GREAT_CHEST",
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 2,
+      "movement_range_y": 5,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MIN_REVIVE",
+      "script": "Route1_HiddenGrotto_Chest",
+      "flag": "0",
+      "quest_id": "FLAG_HIDDENGROTTO_ROUTE1_CHEST"
     }
   ],
   "warp_events": [

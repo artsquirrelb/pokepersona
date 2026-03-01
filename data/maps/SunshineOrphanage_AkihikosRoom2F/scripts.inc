@@ -237,7 +237,7 @@ Camera_Back_to_Player:
 
 GoSetTheClock::
 # 122 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	lockall
+	lock
 # 123 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	msgbox GoSetTheClock_Text_0
 # 124 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
@@ -245,7 +245,7 @@ GoSetTheClock::
 # 125 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
 	waitmovement 0
 # 126 "data/maps/SunshineOrphanage_AkihikosRoom2F/scripts.pory"
-	releaseall
+	release
 	end
 
 

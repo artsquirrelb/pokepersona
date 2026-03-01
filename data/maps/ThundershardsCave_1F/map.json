@@ -108,17 +108,18 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ULTRA_CHEST",
       "x": 23,
       "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_TM_THUNDER_WAVE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_THUNDERSHARDS_CAVE_1F_TM_THUNDER_WAVE"
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_THUNDERSHARDS_CAVE_1F_TM_THUNDER_WAVE"
     },
     {
       "type": "object",
@@ -136,7 +137,7 @@
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_CHEST",
       "x": 17,
       "y": 11,
       "elevation": 0,
@@ -146,11 +147,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_CALCIUM",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_THUNDERSHARD_CAVE_1F_CALCIUM",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_THUNDERSHARD_CAVE_1F_CALCIUM"
     }
   ],
   "warp_events": [

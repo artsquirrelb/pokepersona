@@ -84,6 +84,16 @@ WindwardPort_Beach_Roughneck_Trigger::
 	end
 
 
+WindwardPort_Beach_Sign::
+# 61 "data/maps/WindwardPort_Beach/scripts.pory"
+	lock
+# 62 "data/maps/WindwardPort_Beach/scripts.pory"
+	msgbox WindwardPort_Beach_Sign_Text_0
+# 63 "data/maps/WindwardPort_Beach/scripts.pory"
+	release
+	end
+
+
 # 52 "data/maps/WindwardPort_Beach/scripts.pory"
 WindwardPort_Beach_Roughneck_Trigger_Movement_0:
 # 52 "data/maps/WindwardPort_Beach/scripts.pory"
@@ -130,6 +140,10 @@ WindwardPort_Beach_Sandcastle_Text_0:
 WindwardPort_Beach_Roughneck_Text_0:
 # 35 "data/maps/WindwardPort_Beach/scripts.pory"
 	.string "Toshitada$"
+
+WindwardPort_Beach_Sign_Text_0:
+# 62 "data/maps/WindwardPort_Beach/scripts.pory"
+	.string "Windward Port's Lighthouse {RIGHT_ARROW}$"
 
 WindwardPort_Beach_RoughneckBlock::
 # 41 "data/maps/WindwardPort_Beach/scripts.pory"

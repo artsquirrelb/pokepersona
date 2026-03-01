@@ -26,11 +26,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_TEMP_4",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_4"
     },
     {
       "type": "object",
@@ -44,11 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_TEMP_4",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_4"
     },
     {
       "type": "object",
@@ -62,11 +54,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
-      "flag": "FLAG_TEMP_5",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_5"
     },
     {
       "type": "object",
@@ -80,11 +68,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
-      "flag": "FLAG_TEMP_5",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_5"
     },
     {
       "type": "object",
@@ -98,11 +82,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
-      "flag": "FLAG_TEMP_5",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_5"
     },
     {
       "type": "object",
@@ -116,15 +96,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_TEMP_5",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_5"
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ULTRA_CHEST",
       "x": 22,
       "y": 16,
       "elevation": 0,
@@ -134,11 +110,8 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_TM_THUNDERBOLT",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_THUNDERSHARDS_CAVE_2F_TM_THUNDERBOLT",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_THUNDERSHARDS_CAVE_2F_TM_THUNDERBOLT"
     },
     {
       "type": "object",
@@ -152,11 +125,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
-      "flag": "FLAG_TEMP_5",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_5"
     },
     {
       "type": "object",
@@ -170,11 +139,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_TEMP_5",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_5"
     },
     {
       "type": "object",
@@ -188,11 +153,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_StrengthBoulder",
-      "flag": "FLAG_TEMP_5",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_5"
     },
     {
       "type": "object",
@@ -206,11 +167,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_TEMP_5",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_5"
     },
     {
       "type": "object",
@@ -224,11 +181,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ThundershardsCave_2F_Eventscript_KirijoGenesisStaff",
-      "flag": "FLAG_TEMP_1",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_1"
     },
     {
       "type": "object",
@@ -242,11 +195,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ThundershardsCave_2F_Eventscript_KirijoGenesisStaff",
-      "flag": "FLAG_TEMP_1",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_1"
     },
     {
       "type": "object",
@@ -260,11 +209,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_2",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_2"
     },
     {
       "type": "object",
@@ -314,11 +259,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_TEMP_5",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_5"
     },
     {
       "type": "object",
@@ -332,11 +273,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_AGGRONITE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_THUNDERSHARDS_CAVE_2F_AGGRONITE",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_ITEM_THUNDERSHARDS_CAVE_2F_AGGRONITE"
     },
     {
       "type": "object",
@@ -350,11 +287,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
-      "flag": "FLAG_TEMP_3",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_3"
     },
     {
       "type": "object",
@@ -368,11 +301,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "ThundershardsCave_2F_Eventscript_FrozenStaff",
-      "flag": "FLAG_TEMP_3",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_3"
     },
     {
       "type": "object",

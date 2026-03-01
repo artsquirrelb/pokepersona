@@ -1351,6 +1351,18 @@
 	.4byte \value
 	.byte \disable
 	.endm
+	
+	@ Adds value to the player's trainer points.
+	.macro addtp value:req
+	callnative Script_addtrainerpoint
+	.4byte \value
+	.endm
+
+	@ Subtract value to the player's trainer points.
+	.macro removetp value:req
+	callnative Script_removetrainerpoint
+	.4byte \value
+	.endm
 
 	@ Creates a window showing how much money the player has.
 	@ If 'disable' is set to anything but 0 then this command does nothing.
@@ -3264,29 +3276,29 @@
 	.endif
 	.endm
 
-	@ Calls Common_Movement_WalkInPlaceFaster(Up/Down/Left/Right) for provided localid.
+	@ Calls Common_Movement_WalkInPlace(Up/Down/Left/Right) for provided localid.
 	@ If wait is not provided, then waitmovement 0 is emitted. If you don't want that
 	@ emitted (ex: multiple NPCs are moving at the same time), then provide any
 	@ argument for wait.
 	.macro stepinplace localid:req, direction:req, wait
 	.if \direction == DIR_NORTH
-		applymovement \localid, Common_Movement_WalkInPlaceFasterUp
+		applymovement \localid, Common_Movement_WalkInPlaceUp
 		.ifb \wait
 			waitmovement 0
 		.endif
 		
 	.elseif \direction == DIR_SOUTH
-		applymovement \localid, Common_Movement_WalkInPlaceFasterDown
+		applymovement \localid, Common_Movement_WalkInPlaceDown
 		.ifb \wait
 			waitmovement 0
 		.endif
 	.elseif \direction == DIR_WEST
-		applymovement \localid, Common_Movement_WalkInPlaceFasterLeft
+		applymovement \localid, Common_Movement_WalkInPlaceLeft
 		.ifb \wait
 			waitmovement 0
 		.endif
 	.elseif \direction == DIR_EAST
-		applymovement \localid, Common_Movement_WalkInPlaceFasterRight
+		applymovement \localid, Common_Movement_WalkInPlaceRight
 		.ifb \wait
 			waitmovement 0
 		.endif

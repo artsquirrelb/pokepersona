@@ -16,6 +16,16 @@ Windwardport_Juis_House_ChimcharDoll::
 	end
 
 
+Windwardport_Juis_House_Chest::
+# 13 "data/maps/Windwardport_Juis_House_2F/scripts.pory"
+	lock
+# 14 "data/maps/Windwardport_Juis_House_2F/scripts.pory"
+	msgbox Windwardport_Juis_House_Chest_Text_0
+# 15 "data/maps/Windwardport_Juis_House_2F/scripts.pory"
+	release
+	end
+
+
 Windwardport_Juis_House_ChimcharDoll_Text_0:
 # 5 "data/maps/Windwardport_Juis_House_2F/scripts.pory"
 	.string "It's a Chimchar doll.$"
@@ -23,3 +33,7 @@ Windwardport_Juis_House_ChimcharDoll_Text_0:
 Windwardport_Juis_House_ChimcharDoll_Text_1:
 # 7 "data/maps/Windwardport_Juis_House_2F/scripts.pory"
 	.string "(Looks like it holds a lot of memories.)$"
+
+Windwardport_Juis_House_Chest_Text_0:
+# 14 "data/maps/Windwardport_Juis_House_2F/scripts.pory"
+	.string "It's locked.$"

@@ -8,3 +8,10 @@ script Windwardport_Juis_House_ChimcharDoll {
     release
     end
 }
+
+script Windwardport_Juis_House_Chest {
+    lock
+    msgbox("It's locked.")
+    release
+    end
+}

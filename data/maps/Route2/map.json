@@ -363,6 +363,21 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "NULL",
       "flag": "FLAG_TEMP_5"
+    },
+    {
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_CHEST",
+      "x": 16,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 1,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_FRIEND_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_ROUTE_2_FRIENDBALL"
     }
   ],
   "warp_events": [

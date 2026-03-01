@@ -356,6 +356,9 @@
     {"pattern": "\\f", "replacement": "♀"},
     {"pattern": "\\qo", "replacement": "“"},
     {"pattern": "\\qc", "replacement": "”"},
+    {"pattern": "\\dl", "replacement": "¥"},
+    {"pattern": "\\tp", "replacement": "Trainer Points"},
     {"pattern": "\\\\h(\\d+)", "replacement": "{PAUSE_$1}", "regex": true}
+    
   ]
 }

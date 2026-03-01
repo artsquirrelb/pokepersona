@@ -273,6 +273,70 @@ EventScript_NoEncounterDexNav::
 	end
 
 
+EventScript_ObtainedMoneyFromChest::
+# 147 "data/scripts/newbagitems.pory"
+	compare VAR_TEMP_A, 0
+	goto_if_ne EventScript_ObtainedMoneyFromChest_1
+	return
+
+EventScript_ObtainedMoneyFromChest_1:
+# 149 "data/scripts/newbagitems.pory"
+	playse MUS_OBTAIN_ITEM
+# 150 "data/scripts/newbagitems.pory"
+	waitse
+# 151 "data/scripts/newbagitems.pory"
+	addmoney VAR_TEMP_A
+# 152 "data/scripts/newbagitems.pory"
+	buffernumberstring STR_VAR_2, VAR_TEMP_A
+# 153 "data/scripts/newbagitems.pory"
+	msgbox Text_FoundMoney, MSGBOX_AUTOCLOSE
+	return
+
+
+EventScript_GainedTPFromChest::
+# 158 "data/scripts/newbagitems.pory"
+	compare VAR_TEMP_B, 0
+	goto_if_ne EventScript_GainedTPFromChest_1
+	return
+
+EventScript_GainedTPFromChest_1:
+# 160 "data/scripts/newbagitems.pory"
+	playse MUS_OBTAIN_ITEM
+# 161 "data/scripts/newbagitems.pory"
+	waitse
+# 162 "data/scripts/newbagitems.pory"
+	addtp VAR_TEMP_A
+# 163 "data/scripts/newbagitems.pory"
+	buffernumberstring STR_VAR_3, VAR_TEMP_B
+# 164 "data/scripts/newbagitems.pory"
+	msgbox Text_GainTP, MSGBOX_AUTOCLOSE
+	return
+
+
+EventScript_RemoveMoneyFromChest::
+# 169 "data/scripts/newbagitems.pory"
+	compare VAR_TEMP_A, 0
+	goto_if_ne EventScript_RemoveMoneyFromChest_1
+	return
+
+EventScript_RemoveMoneyFromChest_1:
+# 171 "data/scripts/newbagitems.pory"
+	removemoney VAR_TEMP_A
+	return
+
+
+EventScript_RemoveTPFromChest::
+# 175 "data/scripts/newbagitems.pory"
+	compare VAR_TEMP_B, 0
+	goto_if_ne EventScript_RemoveTPFromChest_1
+	return
+
+EventScript_RemoveTPFromChest_1:
+# 177 "data/scripts/newbagitems.pory"
+	removetp VAR_TEMP_A
+	return
+
+
 EventScript_CampGears_Text_0:
 # 10 "data/scripts/newbagitems.pory"
 	.string "{SPEAKER NAME_A}{CREATE MUGSHOT_A EMOTE_DOUBT}(I can't set up a camp here.)$"
@@ -322,3 +386,16 @@ NotFoundNearby::
 # 134 "data/scripts/newbagitems.pory"
 	.string "It couldn't be found nearby.\n"
 	.string "Try looking in a different area!$"
+
+Text_FoundMoney::
+# 182 "data/scripts/newbagitems.pory"
+	.string "{PLAYER} found {COLOR 7}{STR_VAR_2}¥{COLOR 2}.$"
+
+Text_GainTP::
+# 185 "data/scripts/newbagitems.pory"
+	.string "{PLAYER} gained {COLOR 7}{STR_VAR_3}\n"
+	.string "Trainer Points{COLOR 2}.$"
+
+Text_PutBack::
+# 189 "data/scripts/newbagitems.pory"
+	.string "{PLAYER} put everything back.$"

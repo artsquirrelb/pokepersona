@@ -314,7 +314,11 @@ u8 MovementAction_WalkFastDiagonalUpRight_Step0(struct ObjectEvent *, struct Spr
 u8 MovementAction_WalkFastDiagonalDownLeft_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_WalkFastDiagonalDownRight_Step0(struct ObjectEvent *, struct Sprite *);
 u8 MovementAction_WalkFastDiagonal_Step1(struct ObjectEvent *, struct Sprite *);
-
+//item chest
+u8 MovementAction_ItemChestOpen_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_ItemChestOpen_Step1(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_ItemChestClose_Step0(struct ObjectEvent *, struct Sprite *);
+u8 MovementAction_ItemChestClose_Step1(struct ObjectEvent *, struct Sprite *);
 
 u8 (*const gMovementActionFuncs_FaceDown[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_FaceUp[])(struct ObjectEvent *, struct Sprite *);
@@ -514,6 +518,11 @@ u8 (*const gMovementActionFuncs_WalkFastDiagonalUpLeft[])(struct ObjectEvent *, 
 u8 (*const gMovementActionFuncs_WalkFastDiagonalUpRight[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_WalkFastDiagonalDownLeft[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_WalkFastDiagonalDownRight[])(struct ObjectEvent *, struct Sprite *);
+
+//item chest
+u8 (*const gMovementActionFuncs_OpenItemChest[])(struct ObjectEvent *, struct Sprite *);
+u8 (*const gMovementActionFuncs_CloseItemChest[])(struct ObjectEvent *, struct Sprite *);
+
 // pathfinding
 u8 (*const gMovementActionFuncs_GeneratedBegin[])(struct ObjectEvent *, struct Sprite *);
 u8 (*const gMovementActionFuncs_GeneratedEnd[])(struct ObjectEvent *, struct Sprite *);
@@ -718,6 +727,9 @@ u8 (*const *const gMovementActionFuncs[])(struct ObjectEvent *, struct Sprite *)
     // pathfinding
     [MOVEMENT_ACTION_GENERATED_BEGIN] = gMovementActionFuncs_GeneratedBegin,
     [MOVEMENT_ACTION_GENERATED_END] = gMovementActionFuncs_GeneratedEnd,
+    //item chest
+    [MOVEMENT_ACTION_OPEN_CHEST] = gMovementActionFuncs_OpenItemChest,
+    [MOVEMENT_ACTION_CLOSE_CHEST] = gMovementActionFuncs_CloseItemChest,
 
 };
 
@@ -1875,5 +1887,17 @@ u8 (*const gMovementActionFuncs_PointDown3[])(struct ObjectEvent *, struct Sprit
 };
 
 u8 (*const gMovementActionFuncs_GeneratedEnd[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_OpenItemChest[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_ItemChestOpen_Step0,
+    MovementAction_ItemChestOpen_Step1,
+    MovementAction_Finish,
+};
+
+u8 (*const gMovementActionFuncs_CloseItemChest[])(struct ObjectEvent *, struct Sprite *) = {
+    MovementAction_ItemChestClose_Step0,
+    MovementAction_ItemChestClose_Step1,
     MovementAction_Finish,
 };

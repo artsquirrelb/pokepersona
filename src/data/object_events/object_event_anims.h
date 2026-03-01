@@ -596,6 +596,18 @@ static const union AnimCmd sAnim_ObjectSparkle[] =
     ANIMCMD_JUMP(0),
 };
 
+static const union AnimCmd sAnim_ChestClose[] =
+{
+    ANIMCMD_FRAME(0, 0),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_ChestOpen[] =
+{
+    ANIMCMD_FRAME(1, 0),
+    ANIMCMD_END,
+};
+
 static const union AnimCmd sAnim_MiningRock [] =
 {
     ANIMCMD_FRAME(0, 8),
@@ -1494,6 +1506,12 @@ static const union AnimCmd *const sAnimTable_ObjectSparkle[] =
     [ANIM_OBJECT_SPARKLE] = sAnim_ObjectSparkle,
 };
 
+static const union AnimCmd *const sAnimTable_ItemChest[] =
+{
+    [ANIM_CHEST_CLOSE] = sAnim_ChestClose,
+    [ANIM_CHEST_OPEN] = sAnim_ChestOpen
+};
+
 static const union AnimCmd *const sAnimTable_MiningRock[] =
 {
     [ANIM_MINING_ROCK] = sAnim_MiningRock,
@@ -1637,5 +1655,4 @@ static const struct StepAnimTable sStepAnimTables[] = {
         .anims = sAnimTable_Fishing,
         .animPos = {1, 3, 0, 2},
     },
-    {},
 };

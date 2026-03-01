@@ -119,11 +119,11 @@ movement Camera_Back_to_Player {
 }
 
 script GoSetTheClock{
-    lockall
+    lock
     msgbox(format("{CREATE MUGSHOT_A EMOTE_NORMAL}{SPEAKER NAME_A}(I should fix the clock.)"))
     applymovement (LOCALID_PLAYER, StepBack)
     waitmovement(0)
-    releaseall
+    release
     end
 }
 movement StepBack {

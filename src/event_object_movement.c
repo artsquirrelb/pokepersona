@@ -224,6 +224,8 @@ static void CopyObjectGraphicsInfoToSpriteTemplate_WithMovementType(u16 graphics
 static u16 GetGraphicsIdForMon(u32 species, bool32 shiny, bool32 female);
 static u16 GetUnownSpecies(struct Pokemon *mon);
 
+void HandleItemChestObjectEvent(struct ObjectEvent *objectEvent, u32 objectEventId);
+
 static const struct SpriteFrameImage sPicTable_PechaBerryTree[];
 
 static void StartSlowRunningAnim(struct ObjectEvent *objectEvent, struct Sprite *sprite, enum Direction direction);
@@ -538,6 +540,8 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Npc8,                  OBJ_EVENT_PAL_TAG_NPC_8},
     {gObjectEventPal_Norbert,               OBJ_EVENT_PAL_TAG_NORBERT},
     {gObjectEventPal_KimonoGirl,            OBJ_EVENT_PAL_TAG_KIMONO_GIRL},
+    {gObjectEventPal_ItemChest,             OBJ_EVENT_PAL_TAG_ITEM_CHEST},
+    
 
 #if OW_FOLLOWERS_POKEBALLS
     {gObjectEventPal_MasterBall,            OBJ_EVENT_PAL_TAG_BALL_MASTER},
@@ -1782,8 +1786,16 @@ u8 TrySpawnObjectEventTemplate(const struct ObjectEventTemplate *objectEventTemp
     gSprites[gObjectEvents[objectEventId].spriteId].images = graphicsInfo->images;
     if (subspriteTables)
         SetSubspriteTables(&gSprites[gObjectEvents[objectEventId].spriteId], subspriteTables);
+
     HandleQuestIconForSingleObjectEvent(&gObjectEvents[objectEventId], objectEventId);
 
+    if (graphicsId == OBJ_EVENT_GFX_POKE_CHEST || graphicsId == OBJ_EVENT_GFX_GREAT_CHEST || graphicsId == OBJ_EVENT_GFX_ULTRA_CHEST)
+    {
+        if(FlagGet(objectEventTemplate->questId))
+            SetAndStartSpriteAnim(&gSprites[gObjectEvents[objectEventId].spriteId], ANIM_CHEST_OPEN, 0);
+        else
+            SetAndStartSpriteAnim(&gSprites[gObjectEvents[objectEventId].spriteId], ANIM_CHEST_CLOSE, 0);
+    }
     return objectEventId;
 }
 
@@ -2920,7 +2932,11 @@ static void SpawnObjectEventOnReturnToField(u8 objectEventId, s16 x, s16 y)
         ResetObjectEventFldEffData(objectEvent);
         SetObjectSubpriorityByElevation(objectEvent->previousElevation, sprite, 1);
     }
-    HandleQuestIconForSingleObjectEvent(objectEvent,objectEventId);
+
+    HandleQuestIconForSingleObjectEvent(objectEvent, objectEventId);
+
+    HandleItemChestObjectEvent(objectEvent, objectEventId);
+
 }
 
 static void ResetObjectEventFldEffData(struct ObjectEvent *objectEvent)
@@ -8810,6 +8826,40 @@ bool8 MovementAction_RockSmashBreak_Step2(struct ObjectEvent *objectEvent, struc
     return FALSE;
 }
 
+bool8 MovementAction_ItemChestOpen_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    SetAndStartSpriteAnim(sprite, ANIM_CHEST_OPEN, 0);
+    sprite->sActionFuncId = 1;
+    return FALSE;
+}
+
+bool8 MovementAction_ItemChestOpen_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (SpriteAnimEnded(sprite))
+    {
+        SetMovementDelay(sprite, 16);
+        sprite->sActionFuncId = 2;
+    }
+    return FALSE;
+}
+
+bool8 MovementAction_ItemChestClose_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    SetAndStartSpriteAnim(sprite, ANIM_CHEST_CLOSE, 0);
+    sprite->sActionFuncId = 1;
+    return FALSE;
+}
+
+bool8 MovementAction_ItemChestClose_Step1(struct ObjectEvent *objectEvent, struct Sprite *sprite)
+{
+    if (SpriteAnimEnded(sprite))
+    {
+        SetMovementDelay(sprite, 16);
+        sprite->sActionFuncId = 2;
+    }
+    return FALSE;
+}
+
 bool8 MovementAction_CutTree_Step0(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     SetAndStartSpriteAnim(sprite, ANIM_REMOVE_OBSTACLE, 0);
@@ -11854,4 +11904,23 @@ void SetObjectMovementType(void)
     objectEvent->playerCopyableMovement = 0;
     gSprites[objectEvent->spriteId].callback = sMovementTypeCallbacks[movementType];
     gSprites[objectEvent->spriteId].data[1] = 0;
+}
+
+void HandleItemChestObjectEvent(struct ObjectEvent *objectEvent, u32 objectEventId)
+{
+    u32 localId = objectEvent->localId;
+    u32 mapNum = objectEvent->mapNum;
+    u32 mapGroup = objectEvent->mapGroup;
+
+    const struct ObjectEventTemplate *obj = GetObjectEventTemplateByLocalIdAndMap(localId, mapNum, mapGroup);
+
+    if (obj->trainerType != TRAINER_TYPE_QUEST_GIVER
+        && (obj->graphicsId == OBJ_EVENT_GFX_POKE_CHEST || obj->graphicsId == OBJ_EVENT_GFX_GREAT_CHEST
+            || obj->graphicsId == OBJ_EVENT_GFX_ULTRA_CHEST))
+    {
+        if (FlagGet(obj->questId))
+            SetAndStartSpriteAnim(&gSprites[objectEventId], ANIM_CHEST_OPEN, 0);
+        else
+            SetAndStartSpriteAnim(&gSprites[objectEventId], ANIM_CHEST_CLOSE, 0);
+    }
 }

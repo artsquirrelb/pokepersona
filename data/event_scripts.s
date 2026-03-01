@@ -551,15 +551,15 @@ gText_SorryRecordCornerPreparation::
 
 gText_PlayerHandedOverTheItem::
 	.string "{PLAYER} handed over the\n"
-	.string "{STR_VAR_1}.$"
+	.string "{COLOR 7}{STR_VAR_1}{COLOR 2}.$"
 
 gText_ThankYouForAccessingMysteryGift::
 	.string "Thank you for accessing the\n"
 	.string "Mystery Gift System.$"
 
 gText_PlayerFoundOneTMHM::
-	.string "{PLAYER} found one {STR_VAR_1}\n"
-	.string "{STR_VAR_2}!$"
+	.string "{PLAYER} found one {COLOR 7}{STR_VAR_1}\n"
+	.string "{STR_VAR_2}{COLOR 2}!$"
 
 gText_PlayerFoundTMHMs::
 	.string "{PLAYER} found {STR_VAR_3} {STR_VAR_1}\n"

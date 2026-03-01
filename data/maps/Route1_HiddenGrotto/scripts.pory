@@ -6,7 +6,7 @@ script Route1_HiddenGrotto_TaurosPaldeaAqua {
     applymovement(1, emoteasleep)
     waitmovement(0)
     delay(20)
-    msgbox(format("The Pokémon is sleeping. Wake it up?"), MSGBOX_YESNO)
+    msgbox(format("The Pokémon is sleeping.\nWake it up?"), MSGBOX_YESNO)
     closemessage
     if (var(VAR_RESULT) == FALSE){
         msgbox(format("You left the Pokémon alone."))
@@ -18,18 +18,71 @@ script Route1_HiddenGrotto_TaurosPaldeaAqua {
         applymovement(1, emoteangry)
         waitmovement(0)
         faceplayer
-        playmoncry(SPECIES_TAUROS, CRY_MODE_ENCOUNTER)
-        waitmoncry
-        if ((var(VAR_AKIHIKOS_INTRO_STATE) >= 43 && var(VAR_AKIHIKOS_INTRO_STATE < 50 )) || var(VAR_MITSURUS_INTRO_STATE) >= 100){
-            createmon(1, 0, SPECIES_TAUROS_PALDEA_AQUA, MON_LVL_SCALED, abilityNum = 0, atkIv = 31, move1 = MOVE_AQUA_JET, move2 = MOVE_TRAILBLAZE, move3 = MOVE_WORK_UP, move4 = MOVE_TAIL_WHIP)
-        }
-        else{
-            createmon(1, 0, SPECIES_TAUROS_PALDEA_AQUA, MON_LVL_SCALED, abilityNum = 0, atkIv = 31, move1 = MOVE_AQUA_JET, move2 = MOVE_TRAILBLAZE, move3 = MOVE_WORK_UP, move4 = MOVE_TAIL_WHIP)
-        }
-        dowildbattle
-        setflag(FLAG_DAILY_HIDDENGROTTO_ROUTE1)
-        removeobject(VAR_LAST_TALKED)
+        call(StartTaurosBattle)
+        call(PostHiddenGrottoBattle)
     }
     release
     end
+}
+
+script PostHiddenGrottoBattle {
+    fadescreenswapbuffers(FADE_TO_BLACK)
+    removeobject(VAR_LAST_TALKED)
+    playse(SE_FLEE)
+    waitse
+    fadescreenswapbuffers(FADE_FROM_BLACK)
+    if (var(VAR_RESULT) != B_OUTCOME_CAUGHT)
+    {
+        msgbox(PkmRunAway)
+    }
+}
+
+text PkmRunAway{
+    format("The Pokémon ran away. It may be back tomorrow.")
+}
+
+script StartTaurosBattle{
+    playmoncry(SPECIES_TAUROS, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    if ((var(VAR_AKIHIKOS_INTRO_STATE) >= 43 && var(VAR_AKIHIKOS_INTRO_STATE < 50 )) || var(VAR_MITSURUS_INTRO_STATE) >= 100){
+        createmon(1, 0, SPECIES_TAUROS_PALDEA_AQUA, MON_LVL_SCALED, abilityNum = 0, atkIv = 31, move1 = MOVE_AQUA_JET, move2 = MOVE_TRAILBLAZE, move3 = MOVE_WORK_UP, move4 = MOVE_TAIL_WHIP)
+    }
+    else{
+        createmon(1, 0, SPECIES_TAUROS_PALDEA_AQUA, MON_LVL_SCALED, abilityNum = 0, atkIv = 31, move1 = MOVE_AQUA_JET, move2 = MOVE_TRAILBLAZE, move3 = MOVE_WORK_UP, move4 = MOVE_TAIL_WHIP)
+    }
+    dowildbattle
+}
+
+script Route1_HiddenGrotto_Chest {
+    if (!flag(FLAG_DAILY_HIDDENGROTTO_ROUTE1) && !flag(FLAG_HIDDENGROTTO_ROUTE1_CHEST))
+    {
+        doemote(1,0)
+        getplayerxy(VAR_0x8000, VAR_0x8001)
+        if (var(VAR_0x8000) == 11 && var(VAR_0x8001) == 8)
+        {
+            applymove(1, moves(emote_angry, face_right, walk_fast_right, face_up))
+            applymoveplayer(moves(emote_exclamation_mark, face_down))
+        }
+        elif (var(VAR_0x8000) == 10 && var(VAR_0x8001) == 7)
+        {
+            applymove(1, moves(emote_angry, face_up, walk_fast_right, walk_fast_up*2, face_left))
+            applymoveplayer(moves(emote_exclamation_mark, face_right))
+        }
+        else{
+            applymove(1, moves(emote_angry, face_left, walk_fast_left, face_up))
+            applymoveplayer(moves(emote_exclamation_mark, face_down))
+        }
+        call(StartTaurosBattle)
+        setvar(VAR_LAST_TALKED, TAUROSA)
+        call(PostHiddenGrottoBattle)
+        release
+        end
+    }
+    elif(!flag(FLAG_DAILY_HIDDENGROTTO_ROUTE1) && flag(FLAG_HIDDENGROTTO_ROUTE1_CHEST))
+    {
+        goto(EventScript_Chest_Empty)
+    }
+    else{
+        goto(Common_EventScript_FindItem)
+    }
 }

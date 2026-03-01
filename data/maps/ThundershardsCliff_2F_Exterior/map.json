@@ -73,11 +73,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_TEMP_6",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_6"
     },
     {
       "type": "object",
@@ -91,15 +87,11 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_TEMP_3",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_3"
     },
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKE_CHEST",
       "x": 14,
       "y": 23,
       "elevation": 0,
@@ -123,11 +115,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_AERODACTYLITE",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_THUNDERSHARDS_CAVE_2F_EXTERIOR_AERODACTYLITE",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_ITEM_THUNDERSHARDS_CAVE_2F_EXTERIOR_AERODACTYLITE"
     },
     {
       "type": "object",
@@ -187,11 +175,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "EventScript_RockSmash",
-      "flag": "FLAG_TEMP_2",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_2"
     }
   ],
   "warp_events": [

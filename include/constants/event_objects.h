@@ -63,7 +63,7 @@
 #define OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M        56
 #define OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F        57
 #define OBJ_EVENT_GFX_NURSE                       58
-#define OBJ_EVENT_GFX_ITEM_BALL                   59
+#define OBJ_EVENT_GFX_POKE_CHEST                  59
 #define OBJ_EVENT_GFX_BERRY_TREE                  60
 #define OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES     61
 #define OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES      62
@@ -257,7 +257,7 @@
 #define OBJ_EVENT_GFX_BUTLER                     250
 #define OBJ_EVENT_GFX_KIKUNO                     251
 #define OBJ_EVENT_GFX_RECEPTIONIST_F             252
-#define OBJ_EVENT_GFX_TM_BALL                    253
+#define OBJ_EVENT_GFX_ULTRA_CHEST                253
 #define OBJ_EVENT_GFX_MEGA_STONE                 254
 #define OBJ_EVENT_GFX_APRICORN_TREE              255
 #define OBJ_EVENT_GFX_SPARKLE                    256
@@ -290,11 +290,12 @@
 #define OBJ_EVENT_GFX_MAYOIDO                    283
 #define OBJ_EVENT_GFX_SCIENTIST_F                284
 #define OBJ_EVENT_GFX_ROUGHNECK_2                285
+#define OBJ_EVENT_GFX_GREAT_CHEST                286
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define NUM_OBJ_EVENT_GFX                        286
+#define NUM_OBJ_EVENT_GFX                        287
 
 
 // These are dynamic object gfx ids.
@@ -431,12 +432,13 @@
 #define OBJ_EVENT_PAL_TAG_MITSURU_SLEEPING        0x1127
 #define OBJ_EVENT_PAL_TAG_MINING_ROCK             0x1128
 #define OBJ_EVENT_PAL_TAG_NPC_6                   0x1129
-#define OBJ_EVENT_PAL_TAG_STATUE_WINDWARD         0x1130
-#define OBJ_EVENT_PAL_TAG_NPC_7                   0x1131
-#define OBJ_EVENT_PAL_TAG_NPC_8                   0x1132
-#define OBJ_EVENT_PAL_TAG_NORBERT                 0x1133
-#define OBJ_EVENT_PAL_TAG_KIMONO_GIRL             0x1134
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1135
+#define OBJ_EVENT_PAL_TAG_STATUE_WINDWARD         0x112A
+#define OBJ_EVENT_PAL_TAG_NPC_7                   0x112B
+#define OBJ_EVENT_PAL_TAG_NPC_8                   0x112C
+#define OBJ_EVENT_PAL_TAG_NORBERT                 0x112D
+#define OBJ_EVENT_PAL_TAG_KIMONO_GIRL             0x112E
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x112F
+#define OBJ_EVENT_PAL_TAG_ITEM_CHEST              0x1130
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

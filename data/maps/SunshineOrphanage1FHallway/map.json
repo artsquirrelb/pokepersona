@@ -15,6 +15,7 @@
   "connections": null,
   "object_events": [
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_GAMEBOY_KID",
       "x": 15,
       "y": 3,
@@ -25,13 +26,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BOY_1_1F",
-      "flag": "0",
-      "d": true,
-      "e": false,
-      "m": true,
-      "n": true
+      "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
       "x": 8,
       "y": 4,
@@ -42,13 +40,10 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "BOY_2_1F",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0"
     },
     {
+      "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_SCHOOL_GIRL",
       "x": 7,
       "y": 4,
@@ -59,11 +54,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "GIRL_1F",
-      "flag": "0",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0"
     }
   ],
   "warp_events": [

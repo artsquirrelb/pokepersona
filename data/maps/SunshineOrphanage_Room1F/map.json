@@ -16,21 +16,18 @@
   "object_events": [
     {
       "type": "object",
-      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_ULTRA_CHEST",
       "x": 8,
       "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 1,
-      "movement_range_y": 0,
+      "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "ITEM_TM_WILL_O_WISP",
       "script": "Common_EventScript_FindItem",
-      "flag": "FLAG_ITEM_SUNSHINE_ORPHANAGE_1F_TM_WILL_O_WISP",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "0",
+      "quest_id": "FLAG_ITEM_SUNSHINE_ORPHANAGE_1F_TM_WILL_O_WISP"
     }
   ],
   "warp_events": [

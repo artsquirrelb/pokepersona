@@ -40,11 +40,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "SunshineOrphanage_AkihikosRoom2F_Eventscript_ShinjiroInformingAboutMsKobayashi",
-      "flag": "FLAG_TEMP_2",
-      "d": true,
-      "e": true,
-      "m": true,
-      "n": true
+      "flag": "FLAG_TEMP_2"
     },
     {
       "type": "object",
